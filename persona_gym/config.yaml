@@ -1,0 +1,19 @@
+# PersonaGym Configuration
+# Minimal config - most values are overridden by CLI arguments
+
+datasets:
+  persona_file: 'data/source/Persona_Hub_200000.jsonl'
+  topics: 'travel'  # Default topic (overridden by --topic)
+  # Optional source directories for seeding conversations (set to null if not available)
+  therapy_source_dir: null
+  legal_source_dir: null
+  writing_source_dir: null
+  coding_source_dir: null
+  email_source_dir: null
+
+inference:
+  verbose: false
+  output_dir: 'outputs/'
+  output_file_name: 'conversation'
+  start_persona_idx: 0
+  start_sample_idx: 0
