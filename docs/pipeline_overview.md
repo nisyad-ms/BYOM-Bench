@@ -26,21 +26,21 @@ This document provides a comprehensive overview of the PersonaMem experimental p
 │  │  │ 2. Generate History     │  │     │  │ 2. Select Task Template │  │     │  │ • (Future:    │  ││
 │  │  │    (events over years)  │  │     │  │    (flight, hotel, etc) │  │     │  │   MemoryAgent)│  ││
 │  │  ├─────────────────────────┤  │     │  ├─────────────────────────┤  │     │  └───────────────┘  ││
-│  │  │ 3. Create Conversation  │  │     │  │ 3. Map Preferences to   │  │     │         │          ││
-│  │  │    (User ↔ Assistant)   │  │     │  │    Task Requirements    │  │     │         ▼          ││
+│  │  │ 3. Create Conversation  │  │     │  │ 3. Map Preferences to   │  │     │         │           ││
+│  │  │    (User ↔ Assistant)   │  │     │  │    Task Requirements    │  │     │         ▼           ││
 │  │  ├─────────────────────────┤  │     │  ├─────────────────────────┤  │     │  ┌───────────────┐  ││
 │  │  │ 4. Reflect & Expand     │  │     │  │ 4. Generate "Trap"      │  │     │  │ Dialogue Loop │  ││
 │  │  │    (improve quality)    │  │     │  │    Results (test memory)│  │     │  │ Agent ↔ User  │  ││
 │  │  ├─────────────────────────┤  │     │  ├─────────────────────────┤  │     │  │ + Tool Calls  │  ││
 │  │  │ 5. Parse & Validate     │  │     │  │ 5. Define Expected      │  │     │  └───────────────┘  ││
-│  │  │    (enforce alternation)│  │     │  │    Agent Behaviors      │  │     │         │          ││
-│  │  └─────────────────────────┘  │     │  └─────────────────────────┘  │     │         ▼          ││
+│  │  │    (enforce alternation)│  │     │  │    Agent Behaviors      │  │     │         │           ││
+│  │  └─────────────────────────┘  │     │  └─────────────────────────┘  │     │         ▼           ││
 │  │               │               │     │               │               │     │  ┌───────────────┐  ││
 │  │               ▼               │     │               ▼               │     │  │ LLM-as-Judge  │  ││
 │  │  ┌─────────────────────────┐  │     │  ┌─────────────────────────┐  │     │  │ Turn Classify │  ││
 │  │  │ OUTPUT:                 │  │     │  │ OUTPUT:                 │  │     │  └───────────────┘  ││
-│  │  │ • Conversation JSON     │  │     │  │ • TOD Tasks (JSONL)     │  │     │         │          ││
-│  │  │   (turns + side_notes)  │  │     │  │   - task description    │  │     │         ▼          ││
+│  │  │ • Conversation JSON     │  │     │  │ • TOD Tasks (JSONL)     │  │     │         │           ││
+│  │  │   (turns + side_notes)  │  │     │  │   - task description    │  │     │         ▼           ││
 │  │  │ • Artifacts JSON        │  │     │  │   - tool schemas        │  │     │  ┌───────────────┐  ││
 │  │  │   (persona, history,    │  │     │  │   - relevant prefs      │  │     │  │ METRICS:      │  ││
 │  │  │    preferences)         │  │     │  │   - trap results        │  │     │  │ • Pref Recall │  ││
@@ -51,9 +51,9 @@ This document provides a comprehensive overview of the PersonaMem experimental p
 │                  │         ┌───────────────────────────┘                     └──────────┬──────────┘│
 │                  │         │                                                            │           │
 │                  ▼         ▼                                                            ▼           │
-│  ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗ │
-│  ║  DATA FLOW:  Persona ──▶ Conversation + Preferences ──▶ TOD Tasks ──▶ Agent Evaluation Scores ║ │
-│  ╚═══════════════════════════════════════════════════════════════════════════════════════════════╝ │
+│  ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗  │
+│  ║  DATA FLOW:  Persona ──▶ Conversation + Preferences ──▶ TOD Tasks ──▶ Agent Evaluation Scores ║  │
+│  ╚═══════════════════════════════════════════════════════════════════════════════════════════════╝  │
 │                                                                                                     │
 └─────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
