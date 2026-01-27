@@ -1,0 +1,67 @@
+name: Evolve Preferences
+description: Determines which preferences should evolve based on a new life event
+used_by: persona_gym/data_generators/multisession.py::_evolve_preferences
+variables:
+  - persona: The user persona description
+  - life_event: The new life event that just occurred
+  - event_date: Date of the new event
+  - current_preferences: JSON list of currently active preferences with their IDs
+  - num_to_evolve: Target number of preferences to evolve (typically 1-2)
+
+template: |
+  A user has experienced a new life event. Based on this event, determine which of their current preferences would naturally change, and what the new preferences would be.
+
+  PERSONA:
+  {persona}
+
+  NEW LIFE EVENT:
+  {life_event}
+  Date: {event_date}
+
+  CURRENT ACTIVE PREFERENCES:
+  {current_preferences}
+
+  REQUIREMENTS:
+  1. Select {num_to_evolve} preference(s) that would most likely change due to this event
+  2. For each evolving preference, provide the new preference that replaces it
+  3. The evolution should be logical given the life event
+  4. NOT all preferences need to change - some should remain stable
+  5. Provide clear reasoning for why each preference changed
+  6. You may also add 0-1 completely NEW preferences if the event warrants it
+
+  EVOLUTION EXAMPLES:
+  - Life event: "Started working remotely full-time"
+    Old: "Prefers in-person meetings for important discussions"
+    New: "Has adapted to video calls but prefers camera-off for focused discussions"
+    Reason: "Remote work made in-person meetings impractical"
+
+  - Life event: "Completed intensive coding bootcamp"
+    Old: "Prefers learning through videos and passive content"
+    New: "Learns best through hands-on coding projects with immediate feedback"
+    Reason: "Bootcamp experience showed effectiveness of active learning"
+
+  OUTPUT FORMAT (JSON):
+  {{
+    "evolutions": [
+      {{
+        "old_preference_id": "pref_XXX",
+        "old_fact": "The original preference statement",
+        "new_fact": "The updated preference statement",
+        "reason": "Why this preference changed due to the life event"
+      }}
+    ],
+    "new_preferences": [
+      {{
+        "fact": "A completely new preference created by this event",
+        "category": "category_name",
+        "reason": "Why this new preference emerged"
+      }}
+    ]
+  }}
+
+  CRITICAL:
+  - Output ONLY valid JSON
+  - old_preference_id must match exactly one of the provided preference IDs
+  - If no preferences should evolve, return empty "evolutions" array
+  - "new_preferences" array can be empty if no new preferences emerge
+  - Evolutions should feel organic, not forced

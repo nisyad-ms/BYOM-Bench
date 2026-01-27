@@ -1,0 +1,59 @@
+name: Generate Initial Preferences
+description: Generates the initial set of user preferences based on persona and first life event
+used_by: persona_gym/data_generators/multisession.py::_generate_initial_preferences
+variables:
+  - persona: The user persona description
+  - life_event: The first life event and its context
+  - event_date: Date of the life event
+  - num_preferences: Number of preferences to generate (typically 5-7)
+
+template: |
+  Based on the persona and their current life situation, generate {num_preferences} specific user preferences. These should be realistic preferences that would naturally emerge from this person's background and current circumstances.
+
+  PERSONA:
+  {persona}
+
+  CURRENT LIFE SITUATION:
+  Event: {life_event}
+  Date: {event_date}
+
+  REQUIREMENTS:
+  1. Generate exactly {num_preferences} preferences
+  2. Each preference should be specific and actionable (not vague)
+  3. Preferences should span different categories (communication, scheduling, learning, etc.)
+  4. Some preferences should be clearly linked to the current life event
+  5. Include a mix of strong preferences and softer ones
+  6. Assign each preference to a category
+
+  CATEGORIES TO CONSIDER:
+  - communication_style: How they prefer to interact (email vs call, formal vs casual)
+  - scheduling: When/how they prefer to do things (morning person, batch meetings)
+  - learning_style: How they absorb information (video, reading, hands-on)
+  - work_style: How they approach tasks (deep work, collaborative, async)
+  - decision_making: How they make choices (research-heavy, intuitive, consult others)
+  - lifestyle: Personal habits and values (health, environment, budget)
+
+  EXAMPLES OF GOOD PREFERENCES:
+  - "Prefers async communication via email over video calls" (communication_style)
+  - "Needs at least 2 hours of uninterrupted focus time each morning" (work_style)
+  - "Learns best through hands-on projects rather than lectures" (learning_style)
+
+  EXAMPLES OF BAD PREFERENCES (too vague):
+  - "Likes things organized"
+  - "Prefers good quality"
+  - "Wants to be efficient"
+
+  OUTPUT FORMAT (JSON):
+  {{
+    "preferences": [
+      {{
+        "fact": "Specific preference statement",
+        "category": "category_name"
+      }}
+    ]
+  }}
+
+  CRITICAL:
+  - Output ONLY valid JSON
+  - Each preference must have both "fact" and "category" fields
+  - Generate exactly {num_preferences} preferences

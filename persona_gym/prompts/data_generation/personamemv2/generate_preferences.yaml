@@ -1,0 +1,30 @@
+name: Generate Preferences
+description: Generates specific, actionable user preferences based on persona and topics
+used_by: persona_gym/data_generators/personamem_v2.py::_generate_preferences
+variables:
+  - persona: The user persona description
+  - topics_str: Comma-separated list of relevant topics
+  - num_preferences: Number of preferences to generate (typically 5)
+
+template: |
+  Given this user persona:
+
+  {persona}
+
+  And these topic areas: {topics_str}
+
+  Generate exactly {num_preferences} specific, actionable preferences this person has.
+  Mix of likes and dislikes. Be specific (not generic).
+
+  For each preference:
+  - Make it specific and testable (e.g., "prefers window seats" not "likes comfortable seating")
+  - Include a mix of likes (positive) and dislikes (negative)
+  - All preferences should be marked as "current" type
+
+  Output as JSON array:
+  [
+    {{"fact": "specific preference statement", "type": "current", "topic": "relevant topic"}},
+    {{"fact": "another preference", "type": "current", "topic": "relevant topic"}}
+  ]
+
+  Generate exactly {num_preferences} preferences, all with type "current".

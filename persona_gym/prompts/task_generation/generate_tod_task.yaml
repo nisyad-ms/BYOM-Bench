@@ -1,0 +1,85 @@
+name: Generate TOD Task
+description: Generates a task-oriented dialogue evaluation task based on user preferences
+used_by: persona_gym/task_generator.py::generate_task_with_llm
+variables:
+  - topic: The topic domain (travel, cooking, therapy, etc.)
+  - prefs_text: Formatted list of user preferences
+  - few_shot_examples: Few-shot examples for task generation
+  - variety_instruction: Optional instruction to ensure variety from previous tasks
+
+few_shot_examples: |
+  ## Example 1 (travel - booking)
+  Preferences: likes window seats, dislikes United Airlines, prefers morning flights
+  Task: "Book me a flight to Chicago for next Thursday."
+  Why it works: Specific booking task. Agent should proactively select morning flight, window seat, avoid United.
+
+  ## Example 2 (travel - finding)
+  Preferences: likes hostels with social events, likes meeting travelers, dislikes luxury hotels
+  Task: "Find me a place to stay in Barcelona for 3 nights."
+  Why it works: Finding task. Agent should prioritize social hostels over hotels.
+
+  ## Example 3 (travel - recommendation)
+  Preferences: likes culinary tourism, likes trying local foods, dislikes chain restaurants
+  Task: "Where should I eat dinner tonight near the city center?"
+  Why it works: Recommendation task. Agent should suggest local restaurants, avoid chains.
+
+  ## Example 4 (cooking - finding)
+  Preferences: likes spicy food, dislikes dairy, prefers quick recipes
+  Task: "Find me a recipe for dinner tonight."
+  Why it works: Recipe finding. Agent should filter for dairy-free, potentially spicy, quick options.
+
+  ## Example 5 (fitness - booking)
+  Preferences: likes yoga, dislikes crowded classes, prefers morning sessions
+  Task: "Book me a fitness class for Saturday."
+  Why it works: Booking task. Agent should look for yoga, morning time, smaller class sizes.
+
+  ## Example 6 (therapy - scheduling)
+  Preferences: prefers video calls, likes evening appointments, dislikes group sessions
+  Task: "Schedule a session with my therapist for next week."
+  Why it works: Scheduling task. Agent should look for evening video call slots.
+
+template: |
+  You are designing a task-oriented dialogue evaluation task for an AI assistant.
+
+  TOPIC: {topic}
+
+  USER'S KNOWN PREFERENCES (from past conversations):
+  {prefs_text}
+
+  ## Few-Shot Examples (for reference - adapt to any topic):
+  {few_shot_examples}
+
+  ## Your Task
+  {variety_instruction}
+  Create a SPECIFIC, NARROW task for the "{topic}" domain where:
+  1. The task is a SINGLE, FOCUSED action (book ONE thing, find ONE thing, recommend ONE thing, etc.)
+  2. Only 2-3 of the user's preferences are directly relevant (not all of them!)
+  3. An assistant who REMEMBERS these preferences could proactively apply them
+  4. An assistant WITHOUT access to history would need to ask clarifying questions
+
+  **CRITICAL RULES:**
+  1. The task_description must be GENERIC and NOT mention any preferences
+  2. Create a SPECIFIC task type (booking, finding, recommendation, scheduling, etc.)
+  3. The task should test only a SUBSET of preferences, not all of them
+  4. Do NOT create broad "plan everything" or "help me with X" tasks
+
+  Output in this exact JSON format:
+  {{
+      "task_type": "booking|finding|recommendation|scheduling|other",
+      "task_description": "A SPECIFIC task request (1 sentence, no preferences mentioned)",
+      "relevant_preference_subset": ["which preferences this tests"],
+      "why_preferences_matter": "Brief explanation",
+      "tools": ["tool_name_1", "tool_name_2"],
+      "tool_schemas": {{
+          "tool_name_1": {{
+              "description": "What this tool does",
+              "params": ["param1", "param2"]
+          }}
+      }},
+      "expected_behaviors": [
+          "Should do X because user likes Y",
+          "Should avoid Z because user dislikes W"
+      ]
+  }}
+
+  Generate a specific task for the "{topic}" domain:

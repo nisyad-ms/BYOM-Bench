@@ -8,6 +8,7 @@ can be consumed by the task generation stage.
 Available generators:
     - PersonaMemGenerator: Uses PersonaMem v1 pipeline for synthetic conversations
     - PersonaMemV2Generator: Uses PersonaMem v2 pipeline with token-budgeted generation
+    - MultiSessionGenerator: Multi-session generation with life-event-driven preference evolution
     - (Future) RealDataGenerator: Load from existing conversation datasets
     - (Future) TemplateGenerator: Simple template-based generation
 
@@ -25,15 +26,26 @@ Usage:
         num_preferences=5,
     )
     output = generator_v2.generate()
+
+    # Multi-session: Life-event driven preference evolution
+    from persona_gym.data_generators import MultiSessionGenerator
+    generator = MultiSessionGenerator(
+        persona="Software engineer considering career change...",
+        num_sessions=2,
+        num_preferences=5,
+    )
+    result = generator.generate()  # Returns MultiSessionOutput
 """
 
 from persona_gym.data_generators.base import BaseDataGenerator
+from persona_gym.data_generators.multisession import MultiSessionGenerator
 from persona_gym.data_generators.personamem import PersonaMemGenerator
 from persona_gym.data_generators.personamem_v2 import PersonaMemV2Generator
 from persona_gym.schemas import DataGenerationMetadata, DataGenerationOutput
 
 __all__ = [
     "BaseDataGenerator",
+    "MultiSessionGenerator",
     "PersonaMemGenerator",
     "PersonaMemV2Generator",
     "DataGenerationOutput",

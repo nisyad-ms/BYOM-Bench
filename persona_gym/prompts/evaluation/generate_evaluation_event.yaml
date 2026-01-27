@@ -1,0 +1,87 @@
+name: Generate Evaluation Event
+description: Generates an evaluation task with strong preference-task coupling and clear completion criteria
+used_by: persona_gym/evaluation/orchestrator.py::generate_evaluation_event
+variables:
+  - persona: The user persona description
+  - life_events_summary: Summary of previous life events
+  - current_preferences: JSON list of current active preferences
+
+template: |
+  Generate a TASK-BASED evaluation scenario that REQUIRES the agent to apply specific user preferences. This is for testing personalization memory in AI assistants.
+
+  PERSONA:
+  {persona}
+
+  PREVIOUS LIFE EVENTS:
+  {life_events_summary}
+
+  CURRENT ACTIVE PREFERENCES (agent must use at least 2-3 of these):
+  {current_preferences}
+
+  ## CRITICAL: Strong Preference-Task Coupling
+
+  The task MUST be designed so that:
+  1. **Preferences are MANDATORY** - the task cannot be done well without applying 2-3 specific preferences
+  2. **Generic advice would be WRONG** - there should be a clear difference between generic and personalized responses
+  3. **Clear deliverable** - task has a specific output the agent must produce
+
+  ## Task Design Patterns
+
+  **GOOD: Preference-Mandatory Tasks**
+  
+  If preferences include scheduling/time preferences:
+  → "Create my detailed weekly ML study schedule"
+  → Agent MUST know when user prefers to study, cannot give generic "study when convenient"
+
+  If preferences include learning style:
+  → "Recommend 3 specific resources for learning neural networks"
+  → Agent MUST know if user prefers tutorials/videos/books - recommending all formats is NOT personalized
+
+  If preferences include communication style:
+  → "Set up a feedback system for my project progress"
+  → Agent MUST know if user prefers async/sync, written/verbal
+
+  If preferences include budget/investment style:
+  → "Find me a course or certification for ML"
+  → Agent MUST know if user prefers free/paid resources
+
+  **BAD: Preference-Optional Tasks (AVOID THESE)**
+  
+  - "Help me with my resume" → can be done generically
+  - "Give me career advice" → too open-ended
+  - "Tell me about ML" → informational, no personalization needed
+
+  ## Output Format (JSON)
+
+  {{
+    "event": "Brief description of triggering event (1 sentence)",
+    "task": "Specific deliverable the agent must produce",
+    "required_preferences": ["pref_id_1", "pref_id_2"] (2-3 preferences that MUST be applied),
+    "completion_criteria": "How to know when task is done",
+    "context": "Additional context the agent would need",
+    "date": "MM/DD/YYYY"
+  }}
+
+  ## Examples
+
+  EXAMPLE 1 (Schedule + Learning Style preferences):
+  {{
+    "event": "Starting a new ML project at work and needs a structured learning plan",
+    "task": "Create a 2-week study schedule with specific daily activities",
+    "required_preferences": ["pref_001", "pref_003"],
+    "completion_criteria": "Agent provides a day-by-day schedule with time slots and specific resources",
+    "context": "User wants to learn PyTorch basics for the project",
+    "date": "02/15/2026"
+  }}
+
+  EXAMPLE 2 (Budget + Communication preferences):
+  {{
+    "event": "Looking for an online ML course to prepare for upcoming interviews",
+    "task": "Recommend exactly 2 courses with justification for why they fit the user",
+    "required_preferences": ["pref_002", "pref_004"],
+    "completion_criteria": "Agent recommends 2 specific courses explaining why they match user's constraints",
+    "context": "User has 4 weeks before interviews start",
+    "date": "02/20/2026"
+  }}
+
+  REMEMBER: The goal is to TEST whether the agent remembers preferences. If the task can be done equally well without knowing preferences, it's a BAD task.

@@ -106,8 +106,8 @@ class PersonaMemGenerator(BaseDataGenerator):
             extract_preferences_for_tod,
             postprocess_conversation_for_tod,
         )
-        from persona_gym.personamem_core import utils
-        from persona_gym.personamem_core.prepare_data import (
+        from persona_gym.personamemv1_core import utils
+        from persona_gym.personamemv1_core.prepare_data import (
             prepare_data_on_other_topics,
             prepare_data_on_writing_topic,
             prepare_persona,
@@ -234,8 +234,8 @@ class PersonaMemGenerator(BaseDataGenerator):
             extract_preferences_for_tod,
             save_tod_ready_data,
         )
-        from persona_gym.personamem_core import utils
-        from persona_gym.personamem_core.prepare_data import (
+        from persona_gym.personamemv1_core import utils
+        from persona_gym.personamemv1_core.prepare_data import (
             prepare_data_on_other_topics,
             prepare_data_on_writing_topic,
             prepare_persona,

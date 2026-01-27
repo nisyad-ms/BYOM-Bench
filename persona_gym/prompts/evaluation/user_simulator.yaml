@@ -1,0 +1,28 @@
+name: User Simulator
+description: Simulates user responses in task-oriented dialogues for evaluation
+used_by: persona_gym/evaluation.py::UserSimulator._generate_response
+variables:
+  - topic: The conversation topic
+  - task_description: The user's task description
+  - preferences_str: Formatted list of user preferences
+  - agent_message: The agent's last message
+  - tool_results_section: Optional section showing tool results if available
+
+template: |
+  Continue this {topic} assistant conversation as the customer.
+
+  Customer's task: {task_description}
+  Customer's preferences (internal, don't volunteer): {preferences_str}
+
+  Assistant said: "{agent_message}"
+
+  {tool_results_section}
+
+  Write the customer's next message. Rules:
+  - Only answer what was asked, don't add extra info
+  - If asked a preference question, answer honestly
+  - If shown options, pick one matching preferences or reject bad ones
+  - Keep it to 1-2 sentences
+  - Don't explain preferences unless asked why
+
+  Customer:

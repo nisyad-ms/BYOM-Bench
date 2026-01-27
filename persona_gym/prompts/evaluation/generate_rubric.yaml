@@ -1,0 +1,46 @@
+name: Generate Expected Behaviors
+description: Generates expected good behaviors and trap behaviors for the evaluation rubric
+used_by: persona_gym/evaluation/orchestrator.py::generate_rubric
+variables:
+  - evaluation_event: The event and context
+  - current_preferences: JSON list of current active preferences
+  - stale_preferences: JSON list of superseded preferences (traps)
+
+template: |
+  Given the user's situation and their preferences, generate evaluation criteria for how well an AI assistant handles their request.
+
+  USER'S SITUATION:
+  {evaluation_event}
+
+  CURRENT ACTIVE PREFERENCES (agent SHOULD use these):
+  {current_preferences}
+
+  SUPERSEDED/STALE PREFERENCES (agent should NOT use these):
+  {stale_preferences}
+
+  Generate:
+  1. Expected good behaviors - specific actions a good agent would take
+  2. Trap behaviors - mistakes an agent might make if using stale preferences
+
+  OUTPUT FORMAT (JSON):
+  {{
+    "expected_behaviors": [
+      "Specific good behavior 1 (mention which preference it demonstrates)",
+      "Specific good behavior 2",
+      ...
+    ],
+    "trap_behaviors": [
+      "Mistake if using stale preference X: what the agent might incorrectly do",
+      ...
+    ]
+  }}
+
+  EXAMPLES:
+  - Expected: "Suggest daytime study sessions (uses current scheduling preference)"
+  - Trap: "Suggest evening sessions after 7 PM (uses stale scheduling preference)"
+
+  CRITICAL:
+  - Each expected behavior should map to a current preference
+  - Each trap behavior should map to a stale preference
+  - Be specific about what the agent would say/do
+  - Output ONLY valid JSON

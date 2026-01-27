@@ -7,19 +7,23 @@ based on user preferences and topics. Unlike v1, v2:
 - Generates exactly 5 preferences per user
 - Creates sessions that fit within the token budget
 - Generates topics based on user personas
+- Supports preference evolution (40% of preferences change over time)
 
 The v2 approach focuses on generating meaningful preferences first, then
 creating conversations that naturally reveal those preferences.
 """
 
 import logging
-from datetime import datetime
+import random
+import uuid
+from datetime import datetime, timedelta
 from typing import Any, Optional
 
 import tiktoken
 
 from persona_gym.client import LLMClient, get_client
 from persona_gym.data_generators.base import BaseDataGenerator, GenerationError
+from persona_gym.prompts import render_prompt
 from persona_gym.schemas import (
     ConversationTurn,
     DataGenerationMetadata,
@@ -90,17 +94,10 @@ class PersonaMemV2Generator(BaseDataGenerator):
 
     def _generate_persona(self) -> str:
         """Generate a user persona if not provided."""
-        prompt = f"""Generate a detailed user persona for someone who might seek assistance with {self.topic}.
-
-Include:
-- A name
-- Age range (e.g., "30s", "mid-40s")
-- Occupation or background
-- Personality traits (2-3 traits)
-- A brief life context that makes them interested in {self.topic}
-
-Output only the persona description as a single paragraph. No JSON, no labels."""
-
+        prompt = render_prompt(
+            "data_generation/personamemv2/generate_persona",
+            topic=self.topic,
+        )
         return self.llm.complete(prompt, max_tokens=300, temperature=0.8)
 
     def _generate_topics_for_persona(self, persona: str) -> list[str]:
@@ -112,16 +109,11 @@ Output only the persona description as a single paragraph. No JSON, no labels.""
         Returns:
             List of topic areas relevant to this persona
         """
-        prompt = f"""Given this user persona:
-
-{persona}
-
-And the main topic area: {self.topic}
-
-Generate 3-5 specific subtopics or aspects of {self.topic} that this person would likely discuss.
-These should be natural areas of interest based on their background.
-
-Output as a JSON array of strings, e.g.: ["subtopic1", "subtopic2", "subtopic3"]"""
+        prompt = render_prompt(
+            "data_generation/personamemv2/generate_subtopics",
+            persona=persona,
+            topic=self.topic,
+        )
 
         try:
             result = self.llm.complete_json(prompt, max_tokens=200, temperature=0.7)
@@ -148,28 +140,12 @@ Output as a JSON array of strings, e.g.: ["subtopic1", "subtopic2", "subtopic3"]
             List of PreferenceItem objects
         """
         topics_str = ", ".join(topics)
-        prompt = f"""Given this user persona:
-
-{persona}
-
-And these topic areas: {topics_str}
-
-Generate exactly {self.num_preferences} specific, actionable preferences this person has.
-Mix of likes and dislikes. Be specific (not generic).
-
-For each preference:
-- Make it specific and testable (e.g., "prefers window seats" not "likes comfortable seating")
-- Include a mix of likes (positive) and dislikes (negative)
-- At least one should be a preference that could change over time (for "updated" type)
-
-Output as JSON array:
-[
-  {{"fact": "specific preference statement", "type": "current", "topic": "relevant topic"}},
-  {{"fact": "another preference", "type": "current", "topic": "relevant topic"}},
-  {{"fact": "preference that changed", "type": "updated", "topic": "relevant topic", "old_value": "previous preference", "reason_of_change": "why it changed"}}
-]
-
-Include {self.num_preferences} preferences total, with at least 1 "updated" type."""
+        prompt = render_prompt(
+            "data_generation/personamemv2/generate_preferences",
+            persona=persona,
+            topics_str=topics_str,
+            num_preferences=self.num_preferences,
+        )
 
         try:
             result = self.llm.complete_json(prompt, max_tokens=800, temperature=0.7)
@@ -187,6 +163,7 @@ Include {self.num_preferences} preferences total, with at least 1 "updated" type
                     topic=p.get("topic", self.topic),
                     old_value=p.get("old_value") if pref_type == "updated" else None,
                     reason_of_change=p.get("reason_of_change") if pref_type == "updated" else None,
+                    preference_id=str(uuid.uuid4())[:8],  # Short UUID for readability
                 ))
 
             # Ensure we have the right number of preferences
@@ -196,6 +173,7 @@ Include {self.num_preferences} preferences total, with at least 1 "updated" type
                     preference_type="current",
                     source_date=datetime.now().strftime("%m/%d/%Y"),
                     topic=self.topic,
+                    preference_id=str(uuid.uuid4())[:8],
                 ))
 
             return preferences[:self.num_preferences]
@@ -208,9 +186,132 @@ Include {self.num_preferences} preferences total, with at least 1 "updated" type
                     preference_type="current",
                     source_date=datetime.now().strftime("%m/%d/%Y"),
                     topic=self.topic,
+                    preference_id=str(uuid.uuid4())[:8],
                 )
                 for _ in range(self.num_preferences)
             ]
+
+    def _evolve_preferences(
+        self,
+        preferences: list[PreferenceItem],
+        persona: str,
+        evolution_rate: float = 0.4,
+    ) -> list[PreferenceItem]:
+        """Evolve a subset of preferences to simulate change over time.
+
+        Takes existing preferences and creates updated versions for ~40% of them,
+        simulating how user preferences change. Updates can be:
+        - Direct contradiction: "I don't like X anymore"
+        - Indirect implication: "I was diagnosed with allergy" (implies dietary changes)
+
+        Args:
+            preferences: List of original preferences
+            persona: User persona for context
+            evolution_rate: Fraction of preferences to evolve (default: 0.4 = 40%)
+
+        Returns:
+            List containing both original and evolved preferences, with evolved
+            preferences having supersedes_id pointing to the original.
+        """
+        num_to_evolve = max(1, int(len(preferences) * evolution_rate))
+
+        # Select preferences to evolve (avoid already-updated ones)
+        candidates = [p for p in preferences if p.preference_type == "current"]
+        if len(candidates) < num_to_evolve:
+            candidates = preferences[:num_to_evolve]
+
+        # Randomly select which preferences to evolve
+        to_evolve = random.sample(candidates, min(num_to_evolve, len(candidates)))
+
+        if not to_evolve:
+            return preferences
+
+        # Format preferences for prompt
+        prefs_to_evolve = "\n".join([
+            f"- ID: {p.preference_id}, Preference: {p.fact}, Category: {p.topic}"
+            for p in to_evolve
+        ])
+
+        prompt = render_prompt(
+            "data_generation/personamemv2/evolve_preferences",
+            persona=persona,
+            prefs_to_evolve=prefs_to_evolve,
+            num_evolutions=len(to_evolve),
+        )
+
+        try:
+            result = self.llm.complete_json(prompt, max_tokens=800, temperature=0.7)
+            logger.debug(f"Evolution LLM response: {result}")
+
+            # Handle various response formats
+            if isinstance(result, list):
+                evolutions = result
+            elif isinstance(result, dict):
+                # Try common key names the LLM might use
+                evolutions = (
+                    result.get("evolutions") or
+                    result.get("data") or
+                    result.get("preferences") or
+                    result.get("updates") or
+                    result.get("evolved_preferences") or
+                    result.get("results") or
+                    []
+                )
+            else:
+                evolutions = []
+
+            logger.debug(f"Parsed evolutions: {evolutions}")
+
+            # Build map of original preferences by ID
+            pref_map = {p.preference_id: p for p in preferences}
+            logger.debug(f"Preference map keys: {list(pref_map.keys())}")
+
+            # Create evolved preferences
+            evolved_prefs = []
+            evolved_ids = set()
+
+            for evo in evolutions:
+                original_id = evo.get("original_id")
+                logger.debug(f"Processing evolution for original_id: {original_id}")
+                if original_id not in pref_map:
+                    logger.debug("  -> original_id not found in pref_map")
+                    continue
+                if original_id in evolved_ids:
+                    logger.debug("  -> original_id already evolved")
+                    continue
+
+                original = pref_map[original_id]
+                evolved_ids.add(original_id)
+
+                # Generate a new date that's later than the original
+                # Parse original date and add some time
+                try:
+                    original_date = datetime.strptime(original.source_date, "%m/%d/%Y")
+                    new_date = original_date + timedelta(days=random.randint(30, 180))
+                    new_date_str = new_date.strftime("%m/%d/%Y")
+                except ValueError:
+                    new_date_str = evo.get("new_source_date", datetime.now().strftime("%m/%d/%Y"))
+
+                evolved_prefs.append(PreferenceItem(
+                    fact=evo.get("new_fact", f"no longer: {original.fact}"),
+                    preference_type="updated",
+                    source_date=new_date_str,
+                    topic=original.topic,
+                    old_value=original.fact,
+                    reason_of_change=evo.get("reason_of_change", "preference changed"),
+                    preference_id=str(uuid.uuid4())[:8],
+                    supersedes_id=original_id,
+                ))
+
+            logger.info(f"Created {len(evolved_prefs)} evolved preferences")
+
+            # Return original preferences + evolved ones
+            # The evolved ones will have supersedes_id linking to originals
+            return preferences + evolved_prefs
+
+        except Exception as e:
+            logger.warning(f"Failed to evolve preferences: {e}, returning originals")
+            return preferences
 
     def _generate_conversation(
         self,
@@ -239,38 +340,16 @@ Include {self.num_preferences} preferences total, with at least 1 "updated" type
         # Calculate target conversation length based on token budget
         # Reserve some tokens for structure overhead
         target_tokens = self.token_budget - 500
+        current_date = datetime.now().strftime("%m/%d/%Y")
 
-        prompt = f"""Generate a natural conversation between a user and an assistant about {self.topic}.
-
-USER PERSONA:
-{persona}
-
-PREFERENCES TO REVEAL (user should naturally mention ALL of these during conversation):
-{prefs_text}
-
-REQUIREMENTS:
-1. Generate a multi-turn conversation (aim for 8-12 turns total)
-2. The user should naturally reveal each preference during the conversation
-3. For "updated" preferences, show the change naturally (e.g., "I used to X but now I prefer Y because...")
-4. Keep the total conversation length around {target_tokens} tokens
-5. Make the conversation feel natural, not like a survey
-
-OUTPUT FORMAT (JSON):
-{{
-  "turns": [
-    {{"role": "user", "content": "message", "side_note": {{"event": "what preference is revealed", "date": "{datetime.now().strftime('%m/%d/%Y')}"}}}},
-    {{"role": "assistant", "content": "response", "side_note": null}},
-    ...
-  ],
-  "topic": "{self.topic}",
-  "period": "INIT"
-}}
-
-CRITICAL:
-- Every turn must have role as exactly "user" or "assistant"
-- Every turn must have side_note field (null if no preference revealed)
-- Strictly alternate user/assistant
-- Output ONLY valid JSON"""
+        prompt = render_prompt(
+            "data_generation/personamemv2/generate_conversation",
+            topic=self.topic,
+            persona=persona,
+            prefs_text=prefs_text,
+            target_tokens=target_tokens,
+            current_date=current_date,
+        )
 
         try:
             result = self.llm.complete_json(prompt, max_tokens=4000, temperature=0.7)
@@ -382,15 +461,20 @@ CRITICAL:
             topics = self._generate_topics_for_persona(persona)
             logger.info(f"Generated topics: {topics}")
 
-            # Step 3: Generate preferences
+            # Step 3: Generate initial preferences
             preferences = self._generate_preferences(persona, topics)
-            logger.info(f"Generated {len(preferences)} preferences")
+            logger.info(f"Generated {len(preferences)} initial preferences")
 
-            # Step 4: Generate conversation revealing preferences
+            # Step 4: Evolve preferences (40% will change over time)
+            preferences = self._evolve_preferences(preferences, persona)
+            num_evolved = len([p for p in preferences if p.supersedes_id])
+            logger.info(f"Evolved {num_evolved} preferences, total now: {len(preferences)}")
+
+            # Step 5: Generate conversation revealing preferences
             conversation = self._generate_conversation(persona, preferences)
             logger.info(f"Generated conversation with {len(conversation.turns)} turns")
 
-            # Step 5: Validate token budget
+            # Step 6: Validate token budget
             conversation = self._validate_token_budget(conversation)
             final_tokens = self._count_tokens(" ".join(t.content for t in conversation.turns))
             logger.info(f"Final conversation: {len(conversation.turns)} turns, {final_tokens} tokens")
@@ -433,13 +517,16 @@ CRITICAL:
             # Step 2: Generate topics based on persona
             topics = self._generate_topics_for_persona(persona)
 
-            # Step 3: Generate preferences
-            preferences = self._generate_preferences(persona, topics)
+            # Step 3: Generate initial preferences
+            initial_preferences = self._generate_preferences(persona, topics)
 
-            # Step 4: Generate conversation revealing preferences
+            # Step 4: Evolve preferences (40% will change over time)
+            preferences = self._evolve_preferences(initial_preferences, persona)
+
+            # Step 5: Generate conversation revealing preferences
             conversation = self._generate_conversation(persona, preferences)
 
-            # Step 5: Validate token budget
+            # Step 6: Validate token budget
             conversation = self._validate_token_budget(conversation)
 
             # Convert to output format
@@ -462,9 +549,12 @@ CRITICAL:
             )
 
             # Build artifacts for debugging
+            evolved_prefs = [p for p in preferences if p.supersedes_id]
             artifacts = {
                 "persona": persona,
                 "generated_topics": topics,
+                "initial_preferences": [p.to_dict() for p in initial_preferences],
+                "evolved_preferences": [p.to_dict() for p in evolved_prefs],
                 "raw_conversation": conversation.model_dump(),
                 "token_count": self._count_tokens(" ".join(t.content for t in conversation.turns)),
                 "config": {

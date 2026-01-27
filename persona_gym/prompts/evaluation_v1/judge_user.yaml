@@ -1,0 +1,64 @@
+name: Judge User Prompt
+description: User prompt template for LLM-as-judge evaluation with few-shot examples
+used_by: persona_gym/metric.py::build_judge_prompt
+variables:
+  - few_shot_examples: Formatted few-shot examples for calibration
+  - preferences_json: JSON of user's known preferences
+  - task_description: The task given to the agent
+  - transcript: JSON of the conversation transcript
+
+template: |
+  ## Few-Shot Examples for Calibration
+
+  {few_shot_examples}
+
+  ---
+
+  ## Now Evaluate This Dialogue
+
+  ### User's Known Preferences (from conversation history):
+  {preferences_json}
+
+  ### Task Given to Agent:
+  {task_description}
+
+  ### Conversation Transcript:
+  {transcript}
+
+  ---
+
+  ## Your Evaluation
+
+  For each preference listed above, search the ENTIRE conversation for explicit evidence that the agent 
+  proactively recalled it. Look for:
+  1. Agent explicitly mentioning/referencing the preference
+  2. Agent including the preference in tool call parameters
+  3. Agent explaining their recommendation is based on the preference
+
+  If you cannot find explicit evidence, mark the preference as "ignored".
+
+  Provide your evaluation in the following JSON format:
+
+  ```json
+  {{
+      "turn_classifications": [
+          {{"turn": 1, "speaker": "user|agent", "type": "productive|correction|repeated_correction", "reasoning": "brief note"}},
+          ...
+      ],
+      "preference_usage": {{
+          "<preference_fact>": "proactive|ignored|not_applicable",
+          ...
+      }},
+      "task_completed": true|false,
+      "total_turns": <int>,
+      "correction_turns": <int>,
+      "repeated_correction_turns": <int>,
+      "efficiency_score": <float 0-1>,
+      "preference_score": <float 0-1>,
+      "task_success_score": <float 0-1>,
+      "final_score": <float 0-1>,
+      "reasoning": "<brief overall assessment>"
+  }}
+  ```
+
+  Provide only the JSON output, no additional text.

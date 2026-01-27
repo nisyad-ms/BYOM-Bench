@@ -40,12 +40,28 @@ from typing import Any, Optional, TypeVar
 
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from dotenv import load_dotenv
-from openai import AzureOpenAI
+from openai import APIStatusError, AzureOpenAI
 from pydantic import BaseModel
+from tenacity import (
+    before_sleep_log,
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+)
 
 load_dotenv()
 
 logger = logging.getLogger(__name__)
+
+# Retry decorator for LLM calls - retries on API errors including content filter blocks
+_llm_retry = retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(multiplier=1, min=2, max=10),
+    retry=retry_if_exception_type((APIStatusError, Exception)),
+    before_sleep=before_sleep_log(logger, logging.WARNING),
+    reraise=True,
+)
 
 # Type variable for structured outputs
 T = TypeVar("T", bound=BaseModel)
@@ -107,6 +123,7 @@ class LLMClient:
 
         logger.debug(f"LLMClient initialized: endpoint={self.endpoint}, deployment={self.deployment}")
 
+    @_llm_retry
     def complete(
         self,
         prompt: str,
@@ -139,6 +156,7 @@ class LLMClient:
 
         return response.output_text
 
+    @_llm_retry
     def complete_chat(
         self,
         messages: list[dict[str, str]],
@@ -164,6 +182,7 @@ class LLMClient:
 
         return response.output_text
 
+    @_llm_retry
     def complete_json(
         self,
         prompt: str,
@@ -200,6 +219,7 @@ class LLMClient:
 
         return json.loads(response.output_text)
 
+    @_llm_retry
     def complete_structured(
         self,
         prompt: str,

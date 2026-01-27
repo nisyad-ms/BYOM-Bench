@@ -1,0 +1,58 @@
+name: Generate Life Story
+description: Generates a sequence of life events based on a persona that will drive preference evolution
+used_by: persona_gym/data_generators/multisession.py::_generate_life_story
+variables:
+  - persona: The user persona description
+  - num_events: Number of life events to generate (typically 2-4)
+  - start_date: Starting date for the timeline (MM/DD/YYYY)
+
+template: |
+  Based on the following persona, generate a realistic sequence of {num_events} life events that could happen over the course of several weeks/months. These events should be significant enough to potentially change the user's preferences, habits, or priorities.
+
+  PERSONA:
+  {persona}
+
+  REQUIREMENTS:
+  1. Events should be chronologically ordered, starting from {start_date}
+  2. Events should be plausible given the persona's background
+  3. Events should create natural opportunities for preference changes
+  4. Include both positive and challenging events for variety
+  5. Events should be specific and concrete, not vague
+  6. Space events 2-8 weeks apart for realistic timeline
+
+  EXAMPLES OF GOOD LIFE EVENTS:
+  - "Started a new remote job requiring frequent video calls"
+  - "Moved to a new city for partner's job"
+  - "Completed a certification course in data analytics"
+  - "Experienced burnout and took a mental health break"
+  - "Adopted a rescue dog"
+  - "Started training for a marathon"
+
+  EXAMPLES OF BAD LIFE EVENTS (too vague):
+  - "Things changed"
+  - "Had some experiences"
+  - "Life happened"
+
+  OUTPUT FORMAT (JSON):
+  {{
+    "events": [
+      {{
+        "session_id": 0,
+        "date": "{start_date}",
+        "event": "Brief description of what happened",
+        "context": "How this might affect their daily life, priorities, or preferences"
+      }},
+      {{
+        "session_id": 1,
+        "date": "MM/DD/YYYY",
+        "event": "...",
+        "context": "..."
+      }}
+    ]
+  }}
+
+  CRITICAL:
+  - Output ONLY valid JSON
+  - session_id must be sequential starting from 0
+  - Dates must be in MM/DD/YYYY format
+  - Each event needs both "event" and "context" fields

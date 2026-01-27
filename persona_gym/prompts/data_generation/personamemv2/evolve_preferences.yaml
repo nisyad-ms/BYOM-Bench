@@ -1,0 +1,42 @@
+name: Evolve Preferences
+description: Evolves a subset of preferences to simulate change over time (40% flip to opposite)
+used_by: persona_gym/data_generators/personamem_v2.py::_evolve_preferences
+variables:
+  - persona: The user persona description
+  - prefs_to_evolve: Formatted list of preferences to evolve (ID, fact, category)
+  - num_evolutions: Number of evolutions to generate
+
+template: |
+  You are creating training data for an AI personalization benchmark.
+
+  User persona: {persona}
+
+  The following preferences need to FLIP to their OPPOSITE over time:
+  {prefs_to_evolve}
+
+  CRITICAL REQUIREMENTS:
+  1. The new preference must be CLEARLY OPPOSITE to the original (like → dislike, prefer X → prefer Y, avoid → seek out)
+  2. The change must be OBVIOUS and VERIFIABLE by a non-expert reader
+  3. The reason must be SIMPLE and RELATABLE (e.g., "moved to new city", "changed careers", "had bad experience")
+
+  GOOD EXAMPLE:
+  - Original: "Dislikes attending virtual job fairs, preferring in-person networking where existing backend contacts are"
+  - Evolved: "Now prefers virtual job fairs because being new to AI, there are too many events to attend in person"
+  - Reason: "Pivoting to AI means starting fresh without an established network, making virtual events more practical"
+
+  BAD EXAMPLE (too subtle):
+  - Original: "Prefers PyTorch"
+  - Evolved: "Now also likes TensorFlow alongside PyTorch" (NOT opposite enough!)
+
+  Output as JSON array:
+  [
+    {{
+      "original_id": "the preference_id being replaced",
+      "evolution_type": "direct" or "indirect",
+      "new_fact": "the OPPOSITE preference statement",
+      "reason_of_change": "simple, relatable reason for the flip",
+      "new_source_date": "MM/DD/YYYY format, should be LATER than original"
+    }}
+  ]
+
+  Generate {num_evolutions} evolutions with CLEAR OPPOSITES.

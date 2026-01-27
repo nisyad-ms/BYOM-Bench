@@ -26,8 +26,8 @@ from typing import Any
 import yaml
 from dotenv import load_dotenv
 
-from persona_gym.personamem_core import utils
-from persona_gym.personamem_core.prepare_data import (
+from persona_gym.personamemv1_core import utils
+from persona_gym.personamemv1_core.prepare_data import (
     prepare_data_on_other_topics,
     prepare_data_on_writing_topic,
     prepare_persona,
@@ -451,7 +451,7 @@ class AzureQueryLLM:
         from azure.identity import DefaultAzureCredential, get_bearer_token_provider
         from openai import AzureOpenAI
 
-        from persona_gym.personamem_core import prompts as prompts_module
+        from persona_gym.personamemv1_core import prompts as prompts_module
 
         self.args = args
         self.prompts = prompts_module

@@ -1,0 +1,17 @@
+name: Generate Persona
+description: Generates a detailed user persona for a given topic domain
+used_by: persona_gym/data_generators/personamem_v2.py::_generate_persona
+variables:
+  - topic: The conversation topic domain (e.g., "travel", "cooking", "therapy")
+
+template: |
+  Generate a detailed user persona for someone who might seek assistance with {topic}.
+
+  Include:
+  - A name
+  - Age range (e.g., "30s", "mid-40s")
+  - Occupation or background
+  - Personality traits (2-3 traits)
+  - A brief life context that makes them interested in {topic}
+
+  Output only the persona description as a single paragraph. No JSON, no labels.

@@ -1,0 +1,42 @@
+name: Generate Conversation
+description: Generates a multi-turn conversation that naturally reveals user preferences
+used_by: persona_gym/data_generators/personamem_v2.py::_generate_conversation
+variables:
+  - topic: The conversation topic
+  - persona: The user persona description
+  - prefs_text: Formatted list of preferences to reveal
+  - target_tokens: Target token count for conversation
+  - current_date: Current date in MM/DD/YYYY format
+
+template: |
+  Generate a natural conversation between a user and an assistant about {topic}.
+
+  USER PERSONA:
+  {persona}
+
+  PREFERENCES TO REVEAL (user should naturally mention ALL of these during conversation):
+  {prefs_text}
+
+  REQUIREMENTS:
+  1. Generate a multi-turn conversation (aim for 8-12 turns total)
+  2. The user should naturally reveal each preference during the conversation
+  3. For "updated" preferences, show the change naturally (e.g., "I used to X but now I prefer Y because...")
+  4. Keep the total conversation length around {target_tokens} tokens
+  5. Make the conversation feel natural, not like a survey
+
+  OUTPUT FORMAT (JSON):
+  {{
+    "turns": [
+      {{"role": "user", "content": "message", "side_note": {{"event": "what preference is revealed", "date": "{current_date}"}}}},
+      {{"role": "assistant", "content": "response", "side_note": null}},
+      ...
+    ],
+    "topic": "{topic}",
+    "period": "INIT"
+  }}
+
+  CRITICAL:
+  - Every turn must have role as exactly "user" or "assistant"
+  - Every turn must have side_note field (null if no preference revealed)
+  - Strictly alternate user/assistant
+  - Output ONLY valid JSON

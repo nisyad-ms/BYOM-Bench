@@ -1,0 +1,41 @@
+name: Generate User Initial Prompt
+description: Generates the initial message the user sends to start the evaluation conversation
+used_by: persona_gym/evaluation/orchestrator.py::generate_user_prompt
+variables:
+  - persona: The user persona description
+  - evaluation_event: The event and task that triggered this conversation
+  - current_preferences: JSON list of current active preferences (for context, user won't list them)
+
+template: |
+  You are the user described below. Generate the FIRST message you would send to an AI assistant to ask for help with a SPECIFIC TASK.
+
+  YOUR PERSONA:
+  {persona}
+
+  WHAT HAPPENED AND WHAT YOU NEED:
+  {evaluation_event}
+
+  YOUR PREFERENCES (you know these but DON'T explicitly list them):
+  {current_preferences}
+
+  ## CRITICAL REQUIREMENTS
+
+  1. **Request a SPECIFIC deliverable** - Ask for the exact task mentioned above
+  2. DO NOT reveal your preferences upfront
+  3. Be conversational but clear about what you need
+  4. Make it obvious when the task would be COMPLETE (e.g., "I need a weekly schedule" or "recommend exactly 2 courses")
+
+  ## Examples
+
+  **GOOD** (specific deliverable, clear completion point):
+  "Hey! I just started a new ML project at work and need to get up to speed on PyTorch quickly. Can you help me create a 2-week study schedule? I need day-by-day activities with specific time blocks."
+
+  **GOOD** (clear task, measurable output):
+  "I have interviews coming up in 4 weeks and want to brush up on ML. Can you recommend exactly 2 online courses that would be good for me? I want specific recommendations, not a long list."
+
+  **BAD** (too vague, no clear completion):
+  "Can you help me learn ML?"
+  "I need some career advice."
+  "What courses should I take?"
+
+  OUTPUT: Just the message text (2-4 sentences), no JSON or formatting.

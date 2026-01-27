@@ -97,6 +97,8 @@ class PreferenceItem:
         topic: Optional topic category
         old_value: For updated preferences, the previous value
         reason_of_change: For updated preferences, why it changed
+        preference_id: Unique identifier for this preference (for linking)
+        supersedes_id: ID of the preference this one replaces (for preference evolution)
     """
 
     fact: str
@@ -105,6 +107,8 @@ class PreferenceItem:
     topic: str = ""
     old_value: Optional[str] = None
     reason_of_change: Optional[str] = None
+    preference_id: Optional[str] = None
+    supersedes_id: Optional[str] = None
 
     def to_dict(self) -> dict[str, Any]:
         result = {
@@ -118,6 +122,472 @@ class PreferenceItem:
             result["old_value"] = self.old_value
         if self.reason_of_change:
             result["reason_of_change"] = self.reason_of_change
+        if self.preference_id:
+            result["preference_id"] = self.preference_id
+        if self.supersedes_id:
+            result["supersedes_id"] = self.supersedes_id
+        return result
+
+
+# =============================================================================
+# Multi-Session Models (V3 - Life Story Based Generation)
+# =============================================================================
+
+
+@dataclass
+class LifeEvent:
+    """A significant event in the user's life that may trigger preference changes.
+
+    Attributes:
+        session_id: Which session this event corresponds to
+        date: Date of the event (MM/DD/YYYY format)
+        event: Description of what happened
+        context: Additional context about the event's impact
+        task: Specific deliverable the agent must produce (for evaluation events)
+        required_preferences: List of preference IDs that MUST be applied (for evaluation events)
+        completion_criteria: How to know when task is done (for evaluation events)
+    """
+
+    session_id: int
+    date: str
+    event: str
+    context: str = ""
+    task: str = ""
+    required_preferences: list[str] = field(default_factory=list)
+    completion_criteria: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        result = {
+            "session_id": self.session_id,
+            "date": self.date,
+            "event": self.event,
+            "context": self.context,
+        }
+        # Include task fields only if they're set (for evaluation events)
+        if self.task:
+            result["task"] = self.task
+        if self.required_preferences:
+            result["required_preferences"] = self.required_preferences
+        if self.completion_criteria:
+            result["completion_criteria"] = self.completion_criteria
+        return result
+
+
+@dataclass
+class Preference:
+    """A user preference with full lifecycle tracking.
+
+    Unlike PreferenceItem (used in evaluation), this tracks the complete
+    history of a preference including when it was created and superseded.
+
+    Attributes:
+        preference_id: Unique identifier (e.g., "pref_001")
+        fact: The preference statement
+        category: Topic category (e.g., "learning_style", "career", "communication")
+        created_at_session: Session when this preference was first expressed
+        created_at_date: Date when this preference was first expressed
+        superseded_at_session: Session when this preference was replaced (None if still active)
+        superseded_by: ID of the preference that replaced this one (None if still active)
+        reason_for_change: Why this preference was superseded (if applicable)
+    """
+
+    preference_id: str
+    fact: str
+    category: str
+    created_at_session: int
+    created_at_date: str
+    superseded_at_session: int | None = None
+    superseded_by: str | None = None
+    reason_for_change: str | None = None
+
+    @property
+    def is_active(self) -> bool:
+        """Returns True if this preference has not been superseded."""
+        return self.superseded_at_session is None
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "preference_id": self.preference_id,
+            "fact": self.fact,
+            "category": self.category,
+            "created_at_session": self.created_at_session,
+            "created_at_date": self.created_at_date,
+            "superseded_at_session": self.superseded_at_session,
+            "superseded_by": self.superseded_by,
+            "reason_for_change": self.reason_for_change,
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> "Preference":
+        return cls(
+            preference_id=data["preference_id"],
+            fact=data["fact"],
+            category=data.get("category", ""),
+            created_at_session=data["created_at_session"],
+            created_at_date=data.get("created_at_date", ""),
+            superseded_at_session=data.get("superseded_at_session"),
+            superseded_by=data.get("superseded_by"),
+            reason_for_change=data.get("reason_for_change"),
+        )
+
+
+@dataclass
+class PreferenceTimeline:
+    """Central store tracking all preferences across sessions.
+
+    This is the source of truth for preference state. It maintains
+    the full history of preferences and their evolution over time.
+
+    Attributes:
+        preferences: Dict mapping preference_id to Preference
+        _next_id: Counter for generating unique preference IDs
+    """
+
+    preferences: dict[str, Preference] = field(default_factory=dict)
+    _next_id: int = 1
+
+    def add_preference(
+        self,
+        fact: str,
+        category: str,
+        session_id: int,
+        date: str,
+    ) -> str:
+        """Add a new preference and return its ID."""
+        pref_id = f"pref_{self._next_id:03d}"
+        self._next_id += 1
+        self.preferences[pref_id] = Preference(
+            preference_id=pref_id,
+            fact=fact,
+            category=category,
+            created_at_session=session_id,
+            created_at_date=date,
+        )
+        return pref_id
+
+    def evolve_preference(
+        self,
+        old_id: str,
+        new_fact: str,
+        session_id: int,
+        date: str,
+        reason: str = "",
+    ) -> str:
+        """Mark old preference as superseded and create new one. Returns new ID."""
+        old_pref = self.preferences.get(old_id)
+        if not old_pref:
+            raise ValueError(f"Preference {old_id} not found")
+
+        # Create new preference
+        new_id = f"pref_{self._next_id:03d}"
+        self._next_id += 1
+        self.preferences[new_id] = Preference(
+            preference_id=new_id,
+            fact=new_fact,
+            category=old_pref.category,
+            created_at_session=session_id,
+            created_at_date=date,
+        )
+
+        # Mark old preference as superseded
+        old_pref.superseded_at_session = session_id
+        old_pref.superseded_by = new_id
+        old_pref.reason_for_change = reason
+
+        return new_id
+
+    def get_active_preferences(self) -> list[Preference]:
+        """Returns all currently active (not superseded) preferences."""
+        return [p for p in self.preferences.values() if p.is_active]
+
+    def get_active_at_session(self, session_id: int) -> list[Preference]:
+        """Returns preferences that were active during a specific session.
+
+        A preference is active at session N if:
+        - It was created at or before session N
+        - It was not superseded before session N
+        """
+        return [
+            p
+            for p in self.preferences.values()
+            if p.created_at_session <= session_id
+            and (p.superseded_at_session is None or p.superseded_at_session > session_id)
+        ]
+
+    def get_preference_ids_at_session(self, session_id: int) -> list[str]:
+        """Returns IDs of preferences active at a specific session."""
+        return [p.preference_id for p in self.get_active_at_session(session_id)]
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "preferences": {k: v.to_dict() for k, v in self.preferences.items()},
+            "_next_id": self._next_id,
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> "PreferenceTimeline":
+        timeline = cls()
+        timeline._next_id = data.get("_next_id", 1)
+        for pref_id, pref_data in data.get("preferences", {}).items():
+            timeline.preferences[pref_id] = Preference.from_dict(pref_data)
+        return timeline
+
+
+@dataclass
+class Session:
+    """A single conversation session tied to a life event.
+
+    Attributes:
+        session_id: Unique identifier for this session
+        life_event: The event that triggered this session
+        conversation: List of conversation turns
+        active_preference_ids: IDs of preferences active during this session
+        new_preference_ids: IDs of preferences created in this session
+        evolved_preference_ids: IDs of preferences that evolved (old -> new mappings)
+    """
+
+    session_id: int
+    life_event: LifeEvent
+    conversation: list[dict[str, str]]  # [{role, content}, ...]
+    active_preference_ids: list[str]
+    new_preference_ids: list[str] = field(default_factory=list)
+    evolved_preference_ids: dict[str, str] = field(default_factory=dict)  # old_id -> new_id
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "session_id": self.session_id,
+            "life_event": self.life_event.to_dict(),
+            "conversation": self.conversation,
+            "active_preference_ids": self.active_preference_ids,
+            "new_preference_ids": self.new_preference_ids,
+            "evolved_preference_ids": self.evolved_preference_ids,
+        }
+
+
+@dataclass
+class MultiSessionOutput:
+    """Complete output from multi-session generation.
+
+    This is the top-level output containing the persona, life story,
+    preference timeline, and all generated sessions.
+
+    Attributes:
+        persona: The original persona description
+        persona_id: Identifier for the persona
+        life_events: Sequence of life events
+        timeline: Central preference timeline with full history
+        sessions: List of generated conversation sessions
+        generation_timestamp: When this was generated
+    """
+
+    persona: str
+    persona_id: str
+    life_events: list[LifeEvent]
+    timeline: PreferenceTimeline
+    sessions: list[Session]
+    generation_timestamp: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "persona": self.persona,
+            "persona_id": self.persona_id,
+            "life_events": [e.to_dict() for e in self.life_events],
+            "timeline": self.timeline.to_dict(),
+            "sessions": [s.to_dict() for s in self.sessions],
+            "generation_timestamp": self.generation_timestamp,
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> "MultiSessionOutput":
+        return cls(
+            persona=data["persona"],
+            persona_id=data.get("persona_id", ""),
+            life_events=[
+                LifeEvent(
+                    session_id=e["session_id"],
+                    date=e["date"],
+                    event=e["event"],
+                    context=e.get("context", ""),
+                )
+                for e in data.get("life_events", [])
+            ],
+            timeline=PreferenceTimeline.from_dict(data.get("timeline", {})),
+            sessions=[
+                Session(
+                    session_id=s["session_id"],
+                    life_event=LifeEvent(
+                        session_id=s["life_event"]["session_id"],
+                        date=s["life_event"]["date"],
+                        event=s["life_event"]["event"],
+                        context=s["life_event"].get("context", ""),
+                    ),
+                    conversation=s["conversation"],
+                    active_preference_ids=s["active_preference_ids"],
+                    new_preference_ids=s.get("new_preference_ids", []),
+                    evolved_preference_ids=s.get("evolved_preference_ids", {}),
+                )
+                for s in data.get("sessions", [])
+            ],
+            generation_timestamp=data.get("generation_timestamp", ""),
+        )
+
+    def get_all_conversations_flat(self) -> list[dict[str, str]]:
+        """Returns all conversations concatenated in chronological order."""
+        all_turns = []
+        for session in self.sessions:
+            all_turns.extend(session.conversation)
+        return all_turns
+
+    def get_current_preferences(self) -> list[Preference]:
+        """Returns currently active preferences (latest state)."""
+        return self.timeline.get_active_preferences()
+
+    def get_superseded_preferences(self) -> list[Preference]:
+        """Returns all superseded (stale) preferences."""
+        return [p for p in self.timeline.preferences.values() if not p.is_active]
+
+
+# =============================================================================
+# Multi-Session Evaluation Models
+# =============================================================================
+
+
+@dataclass
+class EvaluationRubric:
+    """Evaluation rubric generated by orchestrator for the judge.
+
+    This defines what the judge should look for when scoring the conversation.
+
+    Attributes:
+        current_preferences: Active preferences the agent should use
+        stale_preferences: Superseded preferences the agent should NOT use
+        expected_behaviors: What a good agent should do
+        trap_behaviors: What using stale preferences looks like
+        required_preferences: Preference IDs that MUST be applied for this specific task
+        completion_criteria: How to determine if the task is complete
+    """
+
+    current_preferences: list[Preference]
+    stale_preferences: list[Preference]
+    expected_behaviors: list[str]
+    trap_behaviors: list[str]
+    required_preferences: list[str] = field(default_factory=list)
+    completion_criteria: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "current_preferences": [p.to_dict() for p in self.current_preferences],
+            "stale_preferences": [p.to_dict() for p in self.stale_preferences],
+            "expected_behaviors": self.expected_behaviors,
+            "trap_behaviors": self.trap_behaviors,
+            "required_preferences": self.required_preferences,
+            "completion_criteria": self.completion_criteria,
+        }
+
+
+@dataclass
+class EvaluationTask:
+    """An evaluation task for multi-session preference recall.
+
+    Contains the evaluation event, user's initial prompt, and rubric for scoring.
+
+    Attributes:
+        task_id: Unique identifier
+        evaluation_event: The life event triggering this evaluation
+        user_prompt: The initial message the user sends
+        rubric: The evaluation rubric for the judge
+        persona_summary: Brief summary of the persona for user simulator
+        max_turns: Maximum conversation turns (agent replies)
+    """
+
+    task_id: str
+    evaluation_event: LifeEvent
+    user_prompt: str
+    rubric: EvaluationRubric
+    persona_summary: str
+    max_turns: int = 10
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "task_id": self.task_id,
+            "evaluation_event": self.evaluation_event.to_dict(),
+            "user_prompt": self.user_prompt,
+            "rubric": self.rubric.to_dict(),
+            "persona_summary": self.persona_summary,
+            "max_turns": self.max_turns,
+        }
+
+
+@dataclass
+class MultiSessionEvaluationResult:
+    """Result from evaluating an agent on multi-session data.
+
+    Attributes:
+        task_id: Which task was evaluated
+        task_completed: Did the conversation reach a natural conclusion?
+        conversation: Full conversation transcript
+        preference_usage: How each current preference was handled
+        stale_preference_usage: Which stale preferences the agent incorrectly used
+        total_turns: Number of turns in dialogue
+        productive_turns: Agent turns that made meaningful progress
+        clarifying_turns: Agent turns asking about known preferences
+        correction_turns: How many times user corrected agent
+        efficiency_score: Score based on turn efficiency
+        preference_score: Score based on current preference usage
+        stale_penalty: Penalty for using stale preferences
+        task_success_score: 1.0 if task completed, 0.0 otherwise
+        final_score: Weighted combination of all scores
+        reasoning: Judge's overall reasoning
+    """
+
+    task_id: str
+    task_completed: bool
+    conversation: list[dict[str, str]]
+    preference_usage: dict[str, str]  # pref_id -> "proactive" | "prompted" | "ignored"
+    stale_preference_usage: list[str]  # List of stale pref_ids that were incorrectly used
+    evaluation_event: "LifeEvent | None" = None  # The evaluation scenario
+    rubric: "EvaluationRubric | None" = None  # The rubric used for evaluation
+    total_turns: int = 0
+    productive_turns: int = 0
+    clarifying_turns: int = 0
+    correction_turns: int = 0
+    efficiency_score: float = 0.0
+    preference_score: float = 0.0
+    stale_penalty: float = 0.0
+    task_success_score: float = 0.0
+    final_score: float = 0.0
+    reasoning: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        result = {
+            "task_id": self.task_id,
+            "final_score": self.final_score,
+            "task_success_score": self.task_success_score,
+            "preference_score": self.preference_score,
+            "efficiency_score": self.efficiency_score,
+            "stale_penalty": self.stale_penalty,
+            "task_completed": self.task_completed,
+        }
+        if self.evaluation_event:
+            result["evaluation_event"] = self.evaluation_event.to_dict()
+        result.update({
+            "conversation": self.conversation,
+            "preference_usage": self.preference_usage,
+            "stale_preference_usage": self.stale_preference_usage,
+            "scores": {
+                "total_turns": self.total_turns,
+                "productive_turns": self.productive_turns,
+                "clarifying_turns": self.clarifying_turns,
+                "correction_turns": self.correction_turns,
+                "efficiency_score": self.efficiency_score,
+                "preference_score": self.preference_score,
+                "stale_penalty": self.stale_penalty,
+                "task_success_score": self.task_success_score,
+            },
+            "reasoning": self.reasoning,
+        })
+        if self.rubric:
+            result["rubric"] = self.rubric.to_dict()
         return result
 
 
@@ -424,6 +894,8 @@ class DataGenerationOutput:
                     topic=p.get("topic", ""),
                     old_value=p.get("old_value"),
                     reason_of_change=p.get("reason_of_change"),
+                    preference_id=p.get("preference_id"),
+                    supersedes_id=p.get("supersedes_id"),
                 )
                 for p in data.get("preferences", [])
             ],
