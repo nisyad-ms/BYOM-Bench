@@ -1,228 +1,124 @@
-# PersonaMem Experimental Module
+# PersonaGym
 
-Experimental code for generating persona-grounded conversation data and evaluating Task-Oriented Dialogue (TOD) agents on memory and preference recall.
+A benchmark for evaluating LLM personalization through multi-turn conversations with embedded user preferences.
 
 ## Overview
 
-This module provides an isolated sandbox for:
-1. **Data Generation** - Creating synthetic user-assistant conversations grounded in persona histories
-2. **TOD Task Generation** - Generating task-oriented dialogue tasks from conversation data
-3. **Agent Evaluation** - Evaluating agents on their ability to recall and apply user preferences
+PersonaGym measures how well AI agents remember and proactively use user preferences without requiring users to repeat themselves.
+
+**Three-Stage Pipeline:**
+1. **Data Generation** - Create synthetic conversations from personas with embedded preferences
+2. **Task Generation** - Generate task-oriented dialogue (TOD) tasks that test preference recall
+3. **Evaluation** - Score agents on preference recall, turn efficiency, and task completion
 
 ## Directory Structure
 
 ```
-experimental/
-├── README.md                     # This file
-├── requirements.txt              # Python dependencies
-├── sample_data_generation.py     # Main entry point for data generation
-├── tod_task_generation.py        # Generate TOD tasks from conversations
-├── tod_evaluation.py             # Evaluate agents on TOD tasks
-├── tod_metric.py                 # Evaluation metrics and scoring
+persona_gym/
+├── __init__.py                   # Package entry
+├── schemas.py                    # All data models + pipeline contracts
+├── client.py                     # Shared LLMClient (Azure OpenAI Responses API)
+├── task_generator.py             # Generate TOD tasks from conversations
+├── evaluation.py                 # Evaluate agents on TOD tasks
+├── metric.py                     # Scoring and metrics
 ├── agent.py                      # Agent implementations (ContextAware, NoContext)
 ├── tool_simulator.py             # Simulated tool responses for evaluation
-└── personamem_core/              # Core data generation library
-    ├── __init__.py
-    ├── schemas.py                # Pydantic models for structured data
-    ├── prompts.py                # LLM prompt templates
-    ├── prepare_data.py           # Data preparation and generation
-    ├── query_llm.py              # LLM query interface
-    └── utils.py                  # Utility functions
+├── prompts/                      # Centralized prompt management (YAML files)
+│   ├── __init__.py               # render_prompt(), list_prompts()
+│   ├── data_generation/          # Data generation prompts
+│   ├── task_generation/          # TOD task generation prompts
+│   └── evaluation/               # Judge and user simulator prompts
+├── data_generators/              # Pluggable data generation strategies
+│   ├── base.py                   # BaseDataGenerator ABC
+│   ├── personamem_v2.py          # Token-budgeted generation with preference evolution
+│   └── multisession.py           # Multi-session generation with life events
+└── evaluation_multisession/      # Multi-session evaluation system
+    ├── orchestrator.py           # Orchestrates evaluation task generation
+    ├── judge.py                  # LLM judge for scoring dialogues
+    ├── user_simulator.py         # Simulates user responses
+    └── agents.py                 # FullContextAgent, NoContextAgent
 ```
 
-Note: Log files are written to `logs/` in the project root (outside the package).
-
-## Setup
-
-### 1. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 2. Azure OpenAI Configuration
-
-Set the following environment variables (or use a `.env` file):
-
-```bash
-export AZURE_OPENAI_ENDPOINT="https://your-endpoint.openai.azure.com/"
-export AZURE_OPENAI_DEPLOYMENT="gpt-4"           # Your deployment name
-export AZURE_OPENAI_API_VERSION="2024-12-01-preview"
-```
-
-Authentication uses `DefaultAzureCredential` from `azure-identity`, so ensure you are logged in via:
-- Azure CLI (`az login`)
-- Visual Studio Code Azure extension
-- Or have appropriate environment credentials configured
+Note: Log files are written to `logs/` in the project root.
 
 ## Usage
 
 ### Generate Conversation Data
 
-Generate synthetic conversations for a specific topic:
+```python
+from persona_gym.data_generators import PersonaMemV2Generator, MultiSessionGenerator
 
-```bash
-# Full generation (~15+ minutes) - recommended for actual data
-python experimental/sample_data_generation.py --topic travel
+# V2: Token-budgeted generation with preference evolution
+generator = PersonaMemV2Generator(
+    topic="travel",
+    token_budget=8000,
+    num_preferences=5,
+)
+output = generator.generate()
 
-# Quick mode (~2-3 minutes) - init + week steps, with preference updates
-python experimental/sample_data_generation.py --topic travel --quick
-
-# Debug mode (~1 minute) - minimal for testing core logic
-python experimental/sample_data_generation.py --topic travel --debug
-
-# With verbose output
-python experimental/sample_data_generation.py --topic travel --verbose
+# Multi-session: Life-event driven preference evolution
+generator = MultiSessionGenerator(
+    persona="Software engineer considering career change...",
+    num_sessions=2,
+    num_preferences=5,
+)
+output = generator.generate()
 ```
-
-**Run Modes:**
-| Mode | Flag | Time | Use Case |
-|------|------|------|----------|
-| Full | (none) | ~15+ min | Production data with all history expansion + conversation reflection |
-| Quick | `--quick` | ~2-3 min | Testing with preference evolution (init + week steps) |
-| Debug | `--debug` | ~1 min | Verify core logic works (init steps only, no reflection) |
-
-**Supported Topics:** travel, therapy, food, writing, email, coding, legal
-
-**Output:** Files are saved to `data/output_sample/{topic}/`:
-- `sample_conversation_{topic}_persona{N}_sample{M}[_quick|_debug]_artifacts.json` - Full artifacts
-- `sample_conversation_{topic}_persona{N}_sample{M}[_quick|_debug]_conversation.json` - Processed conversation
 
 ### Generate TOD Tasks
 
-Generate task-oriented dialogue tasks from conversation data:
+```python
+from persona_gym.task_generator import generate_tasks_from_data
 
+task_output = generate_tasks_from_data(data_output, num_tasks=3)
+```
+
+Or via CLI:
 ```bash
-python experimental/tod_task_generation.py \
-    --input data/output_sample/travel/sample_conversation_travel_persona0_sample0_conversation.json \
-    --output data/output_sample/travel/tod_tasks.jsonl
+python -m persona_gym.task_generator \
+    --input outputs/travel/conversation_artifacts.json \
+    --output outputs/travel/tasks.jsonl
 ```
 
 ### Evaluate Agents
 
-Run TOD evaluation with an agent:
+```python
+from persona_gym.evaluation import evaluate_from_tasks
+
+eval_output = evaluate_from_tasks(task_output, agent_type="context")
+print(f"Final Score: {eval_output.aggregate.average_final_score:.2f}")
+```
+
+Or via CLI:
+```bash
+python -m persona_gym.evaluation \
+    --tasks outputs/travel/tasks.jsonl \
+    --context outputs/travel/conversation.json \
+    --agent context  # or no_context
+```
+
+## Evaluation Metrics
+
+| Metric | Description |
+|--------|-------------|
+| Preference Recall | Proactive vs. prompted usage of preferences |
+| Turn Efficiency | Penalizes clarifying questions and corrections |
+| Task Completion | Binary success indicator |
+| Final Score | Weighted combination of metrics |
+
+## Agent Types
+
+- **ContextAwareAgent** - Has access to user's conversation history (upper bound)
+- **NoContextAgent** - No access to past conversations (baseline)
+
+## Configuration
+
+Set environment variables (or use `.env` file):
 
 ```bash
-python experimental/tod_evaluation.py \
-    --tasks data/output_sample/travel/tod_tasks.jsonl \
-    --context data/output_sample/travel/sample_conversation_travel_persona0_sample0_conversation.json \
-    --output data/output_sample/travel/evaluation_results.json
+AZURE_OPENAI_ENDPOINT="https://your-endpoint.openai.azure.com/"
+AZURE_OPENAI_DEPLOYMENT="gpt-4"
+AZURE_OPENAI_API_VERSION="2025-03-01-preview"
 ```
 
-## Core Components
-
-### personamem_core/schemas.py
-
-Pydantic models for structured outputs (OpenAI Structured Outputs compatible):
-
-- **`SideNote`** - Metadata annotation linking user turns to persona facts
-- **`ConversationTurn`** - Single turn with role, content, and optional side note
-- **`GeneratedConversation`** - Complete multi-turn conversation (used as response_format schema)
-
-### personamem_core/prompts.py
-
-LLM prompt templates for:
-- Persona expansion
-- Conversation generation with structured JSON schema
-- History generation
-
-### personamem_core/query_llm.py
-
-LLM query interface with:
-- **`query_llm()`** - Standard LLM calls for text generation
-- **`query_llm_structured()`** - Structured output calls with Pydantic schema validation
-
-### Agent Types (agent.py)
-
-- **`ContextAwareAgent`** - Has access to user's conversation history (upper bound)
-- **`NoContextAgent`** - No access to past conversations (lower bound baseline)
-
-### Evaluation Metrics (tod_metric.py)
-
-- **Preference Recall** - Proactive vs. prompted usage of preferences
-- **Turn Efficiency** - Penalizing unnecessary clarification/correction turns
-- **Task Completion** - Overall success rate
-
-## Key Features
-
-### Structured Outputs (No Legacy Parsing)
-
-The pipeline uses OpenAI Structured Outputs to guarantee valid conversation format:
-
-```python
-# All conversation generation uses structured outputs
-conversation = LLM.query_llm_structured(
-    prompt=prompt,
-    response_schema=GeneratedConversation,  # Pydantic model
-)
-# Returns validated GeneratedConversation - no regex/JSON repair needed
-```
-
-Benefits:
-- Type-safe output guaranteed by the API
-- No `repair_json` or regex parsing for conversations
-- Explicit role values (`"user"`, `"assistant"`) enforced by schema
-- Side notes always present (null or object) - no guessing
-
-### Tool Simulation
-
-The `tool_simulator.py` generates realistic tool outputs without knowledge of user preferences, enabling proper evaluation of preference-aware filtering by agents.
-
-## Output Format
-
-### Conversation JSON
-
-```json
-{
-  "turns": [
-    {
-      "role": "user",
-      "content": "I need to book a flight to Paris.",
-      "side_note": {
-        "event": "Prefers window seats on flights",
-        "date": "03/15/2024"
-      }
-    },
-    {
-      "role": "assistant",
-      "content": "I'd be happy to help you book a flight to Paris..."
-    }
-  ],
-  "topic": "travel",
-  "period": "INIT"
-}
-```
-
-### TOD Task JSONL
-
-```json
-{
-  "task_id": "uuid",
-  "description": "Book a flight from NYC to Paris for April 15th",
-  "tools": ["search_flights", "book_flight", "select_seat"],
-  "preferences": [
-    {"category": "flight", "value": "window seat", "source": "conversation"}
-  ],
-  "expected_behaviors": ["Should proactively select window seat"]
-}
-```
-
-## Development Notes
-
-- All logs are written to `logs/` in the project root
-- The pipeline is designed to be modular - each component can be used independently
-- Legacy format support (`["User: content", "Assistant: response"]`) is maintained for compatibility
-
-## Troubleshooting
-
-### Azure Content Filter Errors
-
-If you see `content_filter` errors in logs, the retry logic will handle them automatically. If generation fails completely, check:
-1. Your deployment's content filter settings
-2. The input persona for potentially problematic content
-
-### Missing Assistant Turns
-
-With structured outputs, the `GeneratedConversation` schema validates the conversation at generation time. If you still see issues:
-1. Ensure you're using `query_llm_structured()` with the `GeneratedConversation` schema
-2. Check that prompts include role alternation instructions
+Authentication uses `DefaultAzureCredential` from `azure-identity`.

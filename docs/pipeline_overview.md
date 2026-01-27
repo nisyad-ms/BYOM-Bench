@@ -1,12 +1,12 @@
-# PersonaMem Pipeline Overview
+# PersonaGym Pipeline Overview
 
-This document provides a comprehensive overview of the PersonaMem experimental pipeline, covering data generation, task generation, and evaluation.
+This document provides a comprehensive overview of the PersonaGym pipeline, covering data generation, task generation, and evaluation.
 
 ## High-Level Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                    PersonaMem++ Pipeline                                            │
+│                                    PersonaGym Pipeline                                              │
 ├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                                     │
 │  ╔═══════════════════════════════╗                                                                  │
@@ -141,8 +141,8 @@ This document provides a comprehensive overview of the PersonaMem experimental p
 
 ## Part 1: Data Generation
 
-**Entry Point:** `sample_data_generation.py`  
-**Core Library:** `personamem_core/`
+**Entry Point:** `data_generators/`  
+**Core Modules:** `personamem_v2.py`, `multisession.py`
 
 The data generation pipeline creates synthetic user-assistant conversations grounded in persona histories. The goal is to produce conversations where users naturally reveal their preferences over time.
 
@@ -284,11 +284,6 @@ The data generation pipeline creates synthetic user-assistant conversations grou
 
 | File | Purpose |
 |------|---------|
-| `sample_data_generation.py` | Main entry point, orchestrates the pipeline |
-| `personamem_core/prepare_data.py` | Data preparation functions |
-| `personamem_core/prompts.py` | LLM prompt templates |
-| `personamem_core/schemas.py` | Pydantic models for structured data |
-| `personamem_core/query_llm.py` | LLM query interface |
 
 ---
 

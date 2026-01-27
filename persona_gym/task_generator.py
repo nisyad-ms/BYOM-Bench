@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-task_generator.py - Generate TOD Tasks from PersonaMem Conversation Data
+task_generator.py - Generate TOD Tasks from Conversation Data
 
 This module generates Task-Oriented Dialogue (TOD) evaluation tasks from 
-PersonaMem conversation data. Each task includes:
+conversation data. Each task includes:
 - A realistic task description (e.g., "Book a flight", "Find a restaurant")
 - Tool schemas appropriate for the task
 - Relevant user preferences extracted from conversation history
@@ -26,7 +26,6 @@ from typing import Any, Optional
 from dotenv import load_dotenv
 
 from persona_gym.client import LLMClient
-from persona_gym.personamemv1_core import utils
 from persona_gym.schemas import (
     DataGenerationOutput,
     PreferenceItem,
@@ -624,11 +623,11 @@ def generate_tasks_from_data(
         TaskGenerationOutput containing context and tasks for evaluation
 
     Example:
-        from persona_gym.data_generators import PersonaMemGenerator
+        from persona_gym.data_generators import PersonaMemV2Generator
         from persona_gym.task_generator import generate_tasks_from_data
 
         # Generate data
-        generator = PersonaMemGenerator(topic="travel")
+        generator = PersonaMemV2Generator(topic="travel")
         data_output = generator.generate()
 
         # Generate tasks
@@ -663,7 +662,7 @@ def generate_tasks_from_data(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Generate TOD tasks from PersonaMem conversation data",
+        description="Generate TOD tasks from conversation data",
     )
     parser.add_argument('--input', '-i', type=str, required=True,
                         help='Path to input artifacts JSON file (or legacy full data file)')
@@ -733,14 +732,14 @@ def main():
     logger.info(f"Saved {len(tasks)} tasks to {args.output}")
 
     # Print summary
-    print(f"\n{utils.Colors.OKGREEN}=== TOD Task Generation Summary ==={utils.Colors.ENDC}")
+    print(f"\n=== TOD Task Generation Summary ===")
     print(f"Input: {args.input}")
     print(f"Output: {args.output}")
     print(f"Topic: {topic}")
     print(f"Tasks generated: {len(tasks)}")
 
     for i, task in enumerate(tasks, 1):
-        print(f"\n{utils.Colors.OKBLUE}Task {i}:{utils.Colors.ENDC} {task.task_description}")
+        print(f"\nTask {i}: {task.task_description}")
         print(f"  Preferences: {len(task.relevant_preferences)}")
         print(f"  Tools: {list(task.tool_schemas.keys())}")
         print(f"  Expected behaviors: {len(task.expected_behaviors)}")

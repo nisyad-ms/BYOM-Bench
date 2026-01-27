@@ -530,12 +530,12 @@ def evaluate_from_tasks(
         EvaluationOutput containing scores and detailed results
 
     Example:
-        from persona_gym.data_generators import PersonaMemGenerator
+        from persona_gym.data_generators import PersonaMemV2Generator
         from persona_gym.task_generator import generate_tasks_from_data
         from persona_gym.evaluation import evaluate_from_tasks
 
         # Full pipeline
-        data_output = PersonaMemGenerator(topic="travel").generate()
+        data_output = PersonaMemV2Generator(topic="travel").generate()
         task_output = generate_tasks_from_data(data_output, num_tasks=3)
         eval_output = evaluate_from_tasks(task_output)
 

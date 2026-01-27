@@ -2,7 +2,7 @@
 Shared data models for PersonaGym.
 
 This module consolidates all data models used across the PersonaGym pipeline:
-- Conversation models (from personamem_core)
+- Conversation models for multi-turn dialogues
 - Preference and task models (for evaluation)
 - Evaluation result models
 
@@ -19,7 +19,7 @@ from typing import Any, Literal, Optional
 from pydantic import BaseModel, Field
 
 # =============================================================================
-# Conversation Generation Models (from personamem_core)
+# Conversation Generation Models
 # =============================================================================
 
 

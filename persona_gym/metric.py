@@ -1,5 +1,5 @@
 """
-Task-Oriented Dialogue (TOD) Evaluation Metrics for PersonaMem.
+Task-Oriented Dialogue (TOD) Evaluation Metrics for PersonaGym.
 
 This module provides evaluation metrics for assessing an agent's ability to use
 historical user preferences in task-oriented dialogues. Key metrics include:

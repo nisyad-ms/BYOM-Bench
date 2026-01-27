@@ -35,7 +35,7 @@ Create a `.env` file with your Azure OpenAI credentials:
 ```bash
 AZURE_OPENAI_ENDPOINT="https://your-endpoint.openai.azure.com/"
 AZURE_OPENAI_DEPLOYMENT="gpt-4"
-AZURE_OPENAI_API_VERSION="2024-12-01-preview"
+AZURE_OPENAI_API_VERSION="2025-03-01-preview"
 ```
 
 Authenticate using Azure CLI:
@@ -47,33 +47,40 @@ az login
 
 ### Generate Conversation Data
 
-```bash
-# Debug mode (~1 minute) - minimal for testing
-python -m persona_gym.data_generation --topic travel --debug
+```python
+from persona_gym.data_generators import PersonaMemV2Generator, MultiSessionGenerator
 
-# Quick mode (~2-3 minutes) - init + week steps
-python -m persona_gym.data_generation --topic travel --quick
+# V2: Token-budgeted generation with preference evolution
+generator = PersonaMemV2Generator(
+    topic="travel",
+    token_budget=8000,
+    num_preferences=5,
+)
+output = generator.generate()
 
-# Full generation (~15+ minutes) - all steps
-python -m persona_gym.data_generation --topic travel
+# Multi-session: Life-event driven preference evolution
+generator = MultiSessionGenerator(
+    persona="Software engineer considering career change...",
+    num_sessions=2,
+    num_preferences=5,
+)
+output = generator.generate()
 ```
-
-**Supported Topics:** travel, therapy, food, writing, email, coding, legal
 
 ### Generate Tasks
 
 ```bash
 python -m persona_gym.task_generator \
-    --input outputs/travel/sample_conversation_travel_persona0_sample0_debug_artifacts.json
+    --input outputs/travel/conversation_artifacts.json
 ```
 
 ### Evaluate Agents
 
 ```bash
 python -m persona_gym.evaluation \
-    --tasks outputs/travel/sample_conversation_travel_persona0_sample0_debug_tasks.jsonl \
-    --context outputs/travel/sample_conversation_travel_persona0_sample0_debug_conversation.json \
-    --agent no_context
+    --tasks outputs/travel/tasks.jsonl \
+    --context outputs/travel/conversation.json \
+    --agent context  # or no_context
 ```
 
 ## Project Structure
@@ -88,18 +95,18 @@ persona_gym/
 └── persona_gym/                  # Main package
     ├── __init__.py
     ├── config.yaml               # Configuration file
-    ├── data_generation.py        # Data generation entry point
+    ├── schemas.py                # All data models
+    ├── client.py                 # Shared LLM client
     ├── task_generator.py         # Task generation
     ├── evaluation.py             # Evaluation runner
     ├── metric.py                 # Metrics and scoring
     ├── agent.py                  # Agent implementations
     ├── tool_simulator.py         # Tool simulation
-    └── personamem_core/          # Core generation modules
-        ├── schemas.py            # Pydantic models
-        ├── prompts.py            # LLM prompts
-        ├── prepare_data.py       # Data preparation
-        ├── query_llm.py          # LLM interface
-        └── utils.py              # Utilities
+    ├── prompts/                  # Centralized prompt management
+    ├── data_generators/          # Data generation strategies
+    │   ├── personamem_v2.py      # Token-budgeted generation
+    │   └── multisession.py       # Multi-session generation
+    └── evaluation_multisession/  # Multi-session evaluation
 ```
 
 ## Evaluation Metrics

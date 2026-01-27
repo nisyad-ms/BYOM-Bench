@@ -11,7 +11,7 @@ Pipeline Contracts (for swapping components):
     - EvaluationOutput: Stage 3 → Final Results
 
 Main modules:
-    - data_generators: Data generation strategies (PersonaMemGenerator, etc.)
+    - data_generators: Data generation strategies (PersonaMemV2Generator, MultiSessionGenerator)
     - task_generator: Generate TOD tasks from conversations
     - evaluation: Evaluate agents on TOD tasks
     - schemas: All data models and pipeline contracts
@@ -19,14 +19,15 @@ Main modules:
     - agent: Agent implementations (ContextAware, NoContext)
 
 Usage:
-    # Generate data using PersonaMem
-    from persona_gym.data_generators import PersonaMemGenerator
-    generator = PersonaMemGenerator(topic="travel")
+    # Generate data using V2 generator
+    from persona_gym.data_generators import PersonaMemV2Generator
+    generator = PersonaMemV2Generator(topic="travel")
     data_output = generator.generate()
 
-    # Or load from existing files
-    from persona_gym.data_generators import PersonaMemGenerator
-    data_output = PersonaMemGenerator.from_files("conversation.json", "artifacts.json")
+    # Or use multi-session generator
+    from persona_gym.data_generators import MultiSessionGenerator
+    generator = MultiSessionGenerator(persona="Software engineer...")
+    data_output = generator.generate()
 
     # Generate TOD tasks
     from persona_gym.task_generator import generate_tod_tasks
