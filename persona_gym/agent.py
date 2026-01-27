@@ -94,7 +94,7 @@ class AzureOpenAIMixin:
         self.client = AzureOpenAI(
             azure_endpoint=endpoint,
             azure_ad_token_provider=token_provider,
-            api_version="2024-12-01-preview"
+            api_version=os.environ.get("AZURE_OPENAI_API_VERSION", "2025-03-01-preview")
         )
         self.deployment = deployment
 
@@ -114,13 +114,13 @@ class AzureOpenAIMixin:
 
     def _call_llm(self, messages: List[Dict], max_tokens: int = 1024, temperature: float = 0.7) -> str:
         """Make a call to Azure OpenAI and return the content."""
-        response = self.client.chat.completions.create(
+        response = self.client.responses.create(
             model=self.deployment,
-            messages=messages,
-            max_tokens=max_tokens,
+            input=messages,
+            max_output_tokens=max_tokens,
             temperature=temperature,
         )
-        return response.choices[0].message.content
+        return response.output_text
 
 
 # =============================================================================

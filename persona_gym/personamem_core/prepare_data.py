@@ -8,8 +8,7 @@ Key functions:
     - prepare_persona: Load/create persona and expand it
     - prepare_topics: Set up topic-specific source data
     - prepare_data_on_other_topics: Generate conversation data for most topics
-    - prepare_data_on_writing_topic: Generate conversation data for writing/email/coding topics
-    
+    - prepare_data_on_writing_topic: Generate conversation data for writing/email/coding topic
 Note: This module uses OpenAI Structured Outputs for conversation generation,
 ensuring type-safe, validated output without manual JSON parsing.
 """

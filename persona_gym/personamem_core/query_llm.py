@@ -103,7 +103,7 @@ class QueryLLM:
     ) -> T:
         """Query LLM with structured output using Pydantic schema.
 
-        Uses OpenAI's response_format parameter to guarantee the response
+        Uses OpenAI's responses.parse to guarantee the response
         matches the specified Pydantic schema. This eliminates the need for
         regex parsing, json_repair, and legacy format conversion.
 
@@ -118,14 +118,14 @@ class QueryLLM:
         """
         model = model or self.args['models']['llm_model']
 
-        response = self.client.beta.chat.completions.parse(
+        response = self.client.responses.parse(
             model=model,
-            messages=[{"role": "user", "content": prompt}],
-            response_format=response_schema,
-            max_tokens=10000
+            input=[{"role": "user", "content": prompt}],
+            text_format=response_schema,
+            max_output_tokens=10000
         )
 
-        parsed = response.choices[0].message.parsed
+        parsed = response.output_parsed
 
         if verbose:
             print(f'{utils.Colors.OKGREEN}Structured Response:{utils.Colors.ENDC}')
@@ -216,13 +216,13 @@ class QueryLLM:
         if (step == 'expand_persona' or step == 'qa_helper' or step == 'expand_conversation_section' or step == 'translate_code'
                 or step == 'rewrite_email' or step == 'rewrite_creative_writing' or step == 'new_content' or step == 'find_stereotype'):
             model = 'gpt-4o-mini' if step == 'expand_conversation_section' else self.args['models']['llm_model']
-            response = self.client.chat.completions.create(
+            response = self.client.responses.create(
                 model=model,
-                messages=[{"role": "user",
-                           "content": prompt}],
-                max_tokens=10000
+                input=[{"role": "user",
+                        "content": prompt}],
+                max_output_tokens=10000
             )
-            response = response.choices[0].message.content
+            response = response.output_text
             if verbose:
                 print(f'{utils.Colors.OKGREEN}{step.capitalize()}:{utils.Colors.ENDC} {response}')
 

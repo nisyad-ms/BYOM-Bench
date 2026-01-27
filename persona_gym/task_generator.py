@@ -13,9 +13,6 @@ Usage:
     python -m persona_gym.task_generator --input <conversation.json> --output <tasks.jsonl>
 """
 
-# =============================================================================
-# PATH SETUP - Must come before ANY imports from this project
-# =============================================================================
 import argparse
 import json
 import logging
@@ -24,14 +21,18 @@ import random
 import re
 import sys
 import uuid
-from typing import Any, Dict, List, Optional
+from typing import Any, Optional
 
-from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from dotenv import load_dotenv
-from openai import AzureOpenAI
 
-from persona_gym.metric import PreferenceItem, TODTask
+from persona_gym.client import LLMClient
 from persona_gym.personamem_core import utils
+from persona_gym.schemas import (
+    DataGenerationOutput,
+    PreferenceItem,
+    TaskGenerationOutput,
+    TODTask,
+)
 
 load_dotenv()
 
@@ -230,39 +231,12 @@ TOOL_SCHEMAS = {
 }
 
 
-class AzureLLMClient:
-    """Simple Azure OpenAI client for task generation."""
-
-    def __init__(self):
-        endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
-        deployment = os.environ.get("AZURE_OPENAI_DEPLOYMENT", "gpt-4o")
-
-        if not endpoint:
-            raise ValueError("AZURE_OPENAI_ENDPOINT environment variable required")
-
-        credential = DefaultAzureCredential()
-        token_provider = get_bearer_token_provider(
-            credential, "https://cognitiveservices.azure.com/.default"
-        )
-
-        self.client = AzureOpenAI(
-            azure_endpoint=endpoint,
-            azure_ad_token_provider=token_provider,
-            api_version="2024-12-01-preview"
-        )
-        self.deployment = deployment
-
-    def query(self, prompt: str, max_tokens: int = 2048, temperature: float = 0.7) -> str:
-        response = self.client.chat.completions.create(
-            model=self.deployment,
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=max_tokens,
-            temperature=temperature
-        )
-        return response.choices[0].message.content
+# AzureLLMClient is now an alias for the shared LLMClient
+# This preserves backward compatibility with function signatures
+AzureLLMClient = LLMClient
 
 
-def extract_preferences_from_data(data: Dict[str, Any], topic: str) -> List[PreferenceItem]:
+def extract_preferences_from_data(data: dict[str, Any], topic: str) -> list[PreferenceItem]:
     """Extract preferences from PersonaMem conversation data."""
     preferences = []
 
@@ -344,7 +318,7 @@ def extract_preferences_from_data(data: Dict[str, Any], topic: str) -> List[Pref
     return preferences
 
 
-def generate_task_description(template: Dict, llm: AzureLLMClient, preferences: List[PreferenceItem]) -> str:
+def generate_task_description(template: dict, llm: AzureLLMClient, preferences: list[PreferenceItem]) -> str:
     """Generate a concrete task description from a template."""
     task = template["task"]
 
@@ -363,7 +337,7 @@ def generate_task_description(template: Dict, llm: AzureLLMClient, preferences: 
     return task
 
 
-def generate_expected_behaviors(preferences: List[PreferenceItem], task_context: str) -> List[str]:
+def generate_expected_behaviors(preferences: list[PreferenceItem], task_context: str) -> list[str]:
     """Generate expected agent behaviors based on preferences."""
     behaviors = []
 
@@ -424,11 +398,11 @@ Why it works: Scheduling task. Agent should look for evening video call slots.
 
 
 def generate_task_with_llm(
-    preferences: List[PreferenceItem],
+    preferences: list[PreferenceItem],
     topic: str,
     llm: AzureLLMClient,
-    previously_generated: Optional[List[str]] = None,
-) -> Dict[str, Any]:
+    previously_generated: Optional[list[str]] = None,
+) -> dict[str, Any]:
     """
     Use LLM to generate a task that tests the given preferences.
 
@@ -513,7 +487,7 @@ Output in this exact JSON format:
 
 Generate a specific task for the "{topic}" domain:"""
 
-    response = llm.query(prompt, max_tokens=1500, temperature=0.7)
+    response = llm.complete(prompt, max_tokens=1500, temperature=0.7)
 
     # Parse JSON from response
     try:
@@ -529,11 +503,11 @@ Generate a specific task for the "{topic}" domain:"""
 
 
 def generate_tod_task(
-    data: Dict[str, Any],
+    data: dict[str, Any],
     topic: str,
     llm: Optional[AzureLLMClient] = None,
     task_idx: int = 0,
-    previously_generated: Optional[List[str]] = None,
+    previously_generated: Optional[list[str]] = None,
 ) -> TODTask:
     """Generate a single TOD task from conversation data using LLM.
 
@@ -601,14 +575,14 @@ def generate_tod_task(
 
 
 def generate_all_tasks(
-    data: Dict[str, Any],
+    data: dict[str, Any],
     topic: str,
     num_tasks: int = 3,
     llm: Optional[AzureLLMClient] = None,
-) -> List[TODTask]:
+) -> list[TODTask]:
     """Generate multiple TOD tasks from conversation data with variety."""
     tasks = []
-    previously_generated: List[str] = []
+    previously_generated: list[str] = []
 
     for i in range(num_tasks):
         try:
@@ -624,6 +598,67 @@ def generate_all_tasks(
             logger.warning(f"Failed to generate task {i+1}: {e}")
 
     return tasks
+
+
+# =============================================================================
+# Contract-based API (Pipeline Integration)
+# =============================================================================
+
+
+def generate_tasks_from_data(
+    data_output: DataGenerationOutput,
+    num_tasks: int = 3,
+    use_llm: bool = True,
+) -> TaskGenerationOutput:
+    """Generate TOD tasks from DataGenerationOutput (Stage 1 → Stage 2 contract).
+
+    This is the primary API for pipeline integration. It accepts the output
+    from data generation and produces TaskGenerationOutput for evaluation.
+
+    Args:
+        data_output: Output from data generation stage (DataGenerationOutput)
+        num_tasks: Number of tasks to generate
+        use_llm: Whether to use LLM for task generation
+
+    Returns:
+        TaskGenerationOutput containing context and tasks for evaluation
+
+    Example:
+        from persona_gym.data_generators import PersonaMemGenerator
+        from persona_gym.task_generator import generate_tasks_from_data
+
+        # Generate data
+        generator = PersonaMemGenerator(topic="travel")
+        data_output = generator.generate()
+
+        # Generate tasks
+        task_output = generate_tasks_from_data(data_output, num_tasks=3)
+
+        # task_output.context - conversation for agent memory
+        # task_output.tasks - list of TODTask to evaluate
+    """
+    topic = data_output.metadata.topic
+
+    # Build data dict expected by existing functions
+    # This bridges the contract to the existing implementation
+    data = {
+        "preferences": [p.to_dict() for p in data_output.preferences],
+        "topic": topic,
+    }
+
+    # Initialize LLM if requested
+    llm = AzureLLMClient() if use_llm else None
+
+    # Generate tasks using existing logic
+    tasks = generate_all_tasks(data, topic, num_tasks, llm)
+
+    logger.info(f"Generated {len(tasks)} tasks for topic '{topic}'")
+
+    return TaskGenerationOutput(
+        context=data_output.conversation,
+        tasks=tasks,
+        metadata=data_output.metadata,
+    )
 
 
 def main():

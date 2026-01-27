@@ -43,7 +43,7 @@ This document provides a comprehensive overview of the PersonaMem experimental p
 │  │  │   (turns + side_notes)  │  │     │  │   - task description    │  │     │         ▼           ││
 │  │  │ • Artifacts JSON        │  │     │  │   - tool schemas        │  │     │  ┌───────────────┐  ││
 │  │  │   (persona, history,    │  │     │  │   - relevant prefs      │  │     │  │ METRICS:      │  ││
-│  │  │    preferences)         │  │     │  │   - trap results        │  │     │  │ • Pref Recall │  ││
+│  │  │    preferences)         │  │     │  │                         │  │     │  │ • Pref Recall │  ││
 │  │  └─────────────────────────┘  │     │  └─────────────────────────┘  │     │  │ • Turn Effic. │  ││
 │  │                               │     │                               │     │  │ • Task Compl. │  ││
 │  └───────────────┬───────────────┘     └───────────────┬───────────────┘     │  └───────────────┘  ││

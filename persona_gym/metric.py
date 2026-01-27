@@ -11,149 +11,35 @@ The evaluation uses an LLM-as-judge approach with few-shot examples for calibrat
 """
 
 import json
-from dataclasses import dataclass, field
-from enum import Enum
-from typing import Optional
 
-# =============================================================================
-# Turn Classification Types
-# =============================================================================
+# Import all data models from consolidated schemas
+from persona_gym.schemas import (
+    PREFERENCE_USAGE_SCORES,
+    SCORE_WEIGHTS,
+    PreferenceItem,
+    PreferenceUsage,
+    TODEvaluationResult,
+    TODTask,
+    TurnAnalysis,
+    TurnType,
+)
 
-
-class TurnType(Enum):
-    """Classification of dialogue turns based on preference handling."""
-    PRODUCTIVE = "productive"  # Advances task, uses preferences correctly
-    JUSTIFIED_CLARIFICATION = "justified_clarification"  # Asks about genuinely ambiguous/conflicting prefs
-    UNNECESSARY_CLARIFICATION = "unnecessary_clarification"  # Asks about clearly stated preference
-    CORRECTION = "correction"  # User had to remind agent of forgotten preference
-    REPEATED_CORRECTION = "repeated_correction"  # Agent ignores correction or repeats same mistake
-
-
-class PreferenceUsage(Enum):
-    """How the agent handled a specific preference."""
-    PROACTIVE = "proactive"  # Agent explicitly mentioned/used it without user prompting
-    IGNORED = "ignored"  # Agent didn't use it OR only used after user reminded them
-    NOT_APPLICABLE = "not_applicable"  # Preference wasn't relevant to this task
-
-
-# =============================================================================
-# Scoring Weights and Rubrics
-# =============================================================================
-
-PREFERENCE_USAGE_SCORES = {
-    PreferenceUsage.PROACTIVE: 1.0,
-    PreferenceUsage.IGNORED: 0.0,
-    PreferenceUsage.NOT_APPLICABLE: None,  # Excluded from calculation
-}
-
-# Weights for final score computation
-SCORE_WEIGHTS = {
-    "task_success": 0.34,
-    "preference_score": 0.33,
-    "efficiency_score": 0.33,
-}
-
-
-# =============================================================================
-# Data Classes
-# =============================================================================
-
-@dataclass
-class PreferenceItem:
-    """A user preference extracted from conversation history."""
-    fact: str
-    preference_type: str  # "current", "updated", "static"
-    source_date: str
-    old_value: Optional[str] = None  # For updated preferences
-    reason_of_change: Optional[str] = None  # For updated preferences
-
-    def to_dict(self) -> dict:
-        result = {
-            "fact": self.fact,
-            "type": self.preference_type,
-            "source_date": self.source_date,
-        }
-        if self.old_value:
-            result["old_value"] = self.old_value
-        if self.reason_of_change:
-            result["reason_of_change"] = self.reason_of_change
-        return result
-
-
-@dataclass
-class TODTask:
-    """A task-oriented dialogue evaluation task."""
-    task_id: str
-    task_description: str
-    topic: str
-    relevant_preferences: list[PreferenceItem]
-    expected_behaviors: list[str]
-    tool_schemas: dict
-
-    def to_dict(self) -> dict:
-        return {
-            "task_id": self.task_id,
-            "task_description": self.task_description,
-            "topic": self.topic,
-            "relevant_preferences": [p.to_dict() for p in self.relevant_preferences],
-            "expected_behaviors": self.expected_behaviors,
-            "tool_schemas": self.tool_schemas,
-        }
-
-
-@dataclass
-class TurnAnalysis:
-    """Analysis of a single dialogue turn."""
-    turn_number: int
-    speaker: str  # "user" or "agent"
-    content: str
-    turn_type: TurnType
-    affected_preferences: list[str] = field(default_factory=list)
-    reasoning: str = ""
-
-
-@dataclass
-class TODEvaluationResult:
-    """Complete evaluation result for a TOD session."""
-    task_id: str
-    task_completed: bool
-    turn_classifications: list[TurnAnalysis]
-    preference_usage: dict[str, PreferenceUsage]
-    total_turns: int = 0
-    correction_turns: int = 0
-    repeated_correction_turns: int = 0
-    efficiency_score: float = 0.0
-    preference_score: float = 0.0
-    task_success_score: float = 0.0
-    final_score: float = 0.0
-    reasoning: str = ""
-
-    def to_dict(self) -> dict:
-        return {
-            "task_id": self.task_id,
-            "task_completed": self.task_completed,
-            "turn_classifications": [
-                {
-                    "turn_number": t.turn_number,
-                    "speaker": t.speaker,
-                    "turn_type": t.turn_type.value,
-                    "affected_preferences": t.affected_preferences,
-                    "reasoning": t.reasoning,
-                }
-                for t in self.turn_classifications
-            ],
-            "preference_usage": {k: v.value for k, v in self.preference_usage.items()},
-            "scores": {
-                "total_turns": self.total_turns,
-                "correction_turns": self.correction_turns,
-                "repeated_correction_turns": self.repeated_correction_turns,
-                "efficiency_score": self.efficiency_score,
-                "preference_score": self.preference_score,
-                "task_success_score": self.task_success_score,
-                "final_score": self.final_score,
-            },
-            "reasoning": self.reasoning,
-        }
+# Re-export for backward compatibility
+__all__ = [
+    "PreferenceItem",
+    "PreferenceUsage",
+    "TODEvaluationResult",
+    "TODTask",
+    "TurnAnalysis",
+    "TurnType",
+    "PREFERENCE_USAGE_SCORES",
+    "SCORE_WEIGHTS",
+    "build_judge_prompt",
+    "parse_judge_response",
+    "compute_efficiency_score",
+    "compute_preference_score",
+    "compute_final_score",
+]
 
 
 # =============================================================================

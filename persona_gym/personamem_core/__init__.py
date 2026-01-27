@@ -7,20 +7,29 @@ Modules:
     - prompts: All prompt templates for LLM queries
     - prepare_data: Data generation functions (persona, topics, conversations)
     - query_llm: LLM query interface (original OpenAI Assistants API version)
-    - schemas: Pydantic models for structured conversation data
+    - schemas: Re-exports from persona_gym.schemas for backward compatibility
 
 Usage:
-    from persona_gym.personamem_core import utils, prompts, schemas
+    from persona_gym.personamem_core import utils, prompts
     from persona_gym.personamem_core.prepare_data import prepare_persona, prepare_topics
-    from persona_gym.personamem_core.schemas import (
-        ConversationTurn, GeneratedConversation, SideNote
-    )
+    
+    # Preferred: import directly from persona_gym.schemas
+    from persona_gym.schemas import ConversationTurn, GeneratedConversation, SideNote
 """
 
-from . import prompts, schemas, utils
+# Re-export schemas from the consolidated location for backward compatibility
+from persona_gym.schemas import (
+    ConversationTurn,
+    GeneratedConversation,
+    SideNote,
+)
+
+from . import prompts, utils
 
 __all__ = [
     'utils',
     'prompts',
-    'schemas',
+    'ConversationTurn',
+    'GeneratedConversation',
+    'SideNote',
 ]

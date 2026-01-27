@@ -15,17 +15,13 @@ Usage:
     python -m persona_gym.data_generation --topic therapy --verbose
 """
 
-# =============================================================================
-# PATH SETUP - Must come before ANY imports from this project
-# =============================================================================
 import argparse
 import json
 import logging
 import os
 import re
 import sys
-from dataclasses import dataclass
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 import yaml
 from dotenv import load_dotenv
@@ -37,9 +33,7 @@ from persona_gym.personamem_core.prepare_data import (
     prepare_persona,
     prepare_topics,
 )
-from persona_gym.personamem_core.schemas import (
-    GeneratedConversation,
-)
+from persona_gym.schemas import GeneratedConversation, PreferenceItem
 
 load_dotenv()
 
@@ -95,31 +89,8 @@ logger = setup_logging(os.path.join(LOG_DIR, 'data_generation.log'))
 # TOD PREFERENCE EXTRACTION (for Task-Oriented Dialogue evaluation)
 # ============================================================================
 
-@dataclass
-class PreferenceItem:
-    """A user preference extracted from conversation history for TOD evaluation."""
-    fact: str  # e.g., "prefers window seats"
-    preference_type: str  # "current", "updated", "static"
-    source_date: str  # When the preference was expressed
-    topic: str = ""  # Topic category
-    old_value: Optional[str] = None  # For updated preferences
-    reason_of_change: Optional[str] = None  # For updated preferences
 
-    def to_dict(self) -> dict:
-        result = {
-            "fact": self.fact,
-            "type": self.preference_type,
-            "source_date": self.source_date,
-            "topic": self.topic,
-        }
-        if self.old_value:
-            result["old_value"] = self.old_value
-        if self.reason_of_change:
-            result["reason_of_change"] = self.reason_of_change
-        return result
-
-
-def extract_preferences_for_tod(data: Dict[str, Any], topic: str = "") -> List[PreferenceItem]:
+def extract_preferences_for_tod(data: dict[str, Any], topic: str = "") -> list[PreferenceItem]:
     """
     Extract structured preferences from PersonaMem conversation data for TOD evaluation.
 
@@ -291,9 +262,9 @@ def extract_preferences_for_tod(data: Dict[str, Any], topic: str = "") -> List[P
 
 
 def postprocess_conversation_for_tod(
-    data: Dict[str, Any],
+    data: dict[str, Any],
     topic: str = ""
-) -> List[Dict[str, str]]:
+) -> list[dict[str, str]]:
     """
     Post-process PersonaMem conversation data into clean user/assistant format for TOD evaluation.
 
@@ -345,7 +316,7 @@ def postprocess_conversation_for_tod(
     return messages
 
 
-def save_tod_ready_data(data: Dict[str, Any], output_path: str, topic: str) -> tuple[str, str]:
+def save_tod_ready_data(data: dict[str, Any], output_path: str, topic: str) -> tuple[str, str]:
     """
     Save conversation data in two files:
     1. Main conversation file - clean messages format for TOD evaluation
@@ -582,20 +553,20 @@ class AzureQueryLLM:
             return 'persona'
 
     def _call_chat_completion(self, messages, model=None):
-        """Call Azure OpenAI Chat Completions API."""
+        """Call Azure OpenAI Responses API."""
         model_used = model or self.deployment
-        logger.debug("Calling Azure OpenAI Chat Completions API")
+        logger.debug("Calling Azure OpenAI Responses API")
         logger.debug(f"  Model: {model_used}")
         logger.debug(f"  Number of messages: {len(messages)}")
         logger.debug("  Max tokens: 10000")
 
-        response = self.client.chat.completions.create(
+        response = self.client.responses.create(
             model=model_used,
-            messages=messages,
-            max_tokens=10000,
+            input=messages,
+            max_output_tokens=10000,
         )
 
-        response_text = response.choices[0].message.content
+        response_text = response.output_text
         logger.debug(f"  Response length: {len(response_text)} characters")
         return response_text
 
@@ -616,18 +587,18 @@ class AzureQueryLLM:
             An instance of the response_schema class with parsed data
         """
         model_used = model or self.deployment
-        logger.debug("Calling Azure OpenAI Chat Completions API with structured output")
+        logger.debug("Calling Azure OpenAI Responses API with structured output")
         logger.debug(f"  Model: {model_used}")
         logger.debug(f"  Schema: {response_schema.__name__}")
 
-        response = self.client.beta.chat.completions.parse(
+        response = self.client.responses.parse(
             model=model_used,
-            messages=[{"role": "user", "content": prompt}],
-            response_format=response_schema,
-            max_tokens=10000,
+            input=[{"role": "user", "content": prompt}],
+            text_format=response_schema,
+            max_output_tokens=10000,
         )
 
-        parsed = response.choices[0].message.parsed
+        parsed = response.output_parsed
 
         if verbose:
             import utils

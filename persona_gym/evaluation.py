@@ -9,36 +9,36 @@ This module orchestrates TOD evaluation:
 4. Evaluates agent performance using LLM judge
 
 Usage:
-    python -m persona_gym.evaluation --context <shared_context.json> --task <tod_task.json> --agent openai
+    python -m persona_gym.evaluation --context <shared_context.json> --tasks <tod_tasks.jsonl> --agent context
 """
 
-# =============================================================================
-# PATH SETUP - Must come before ANY imports from this project
-# =============================================================================
 import argparse
 import json
 import logging
 import os
-from dataclasses import asdict, dataclass
+from dataclasses import asdict
 from datetime import datetime
-from typing import Any, Dict, List, Optional
+from typing import Any, Optional
 
-from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from dotenv import load_dotenv
-from openai import AzureOpenAI
 
 from persona_gym.agent import BaseAgent, create_agent
-from persona_gym.metric import (
+from persona_gym.client import get_client
+from persona_gym.metric import build_judge_prompt, parse_judge_response
+from persona_gym.schemas import (
+    AggregateScores,
+    DialogueTurn,
+    EvaluationOutput,
     PreferenceItem,
     PreferenceUsage,
+    TaskGenerationOutput,
     TODEvaluationResult,
     TODTask,
+    ToolResponse,
     TurnAnalysis,
     TurnType,
-    build_judge_prompt,
-    parse_judge_response,
 )
-from persona_gym.tool_simulator import ToolResponse, create_simulator_from_task
+from persona_gym.tool_simulator import create_simulator_from_task
 
 load_dotenv()
 
@@ -69,21 +69,7 @@ class SimulatedUser:
         deployment: Optional[str] = None,
     ):
         self.task = task
-
-        endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
-        deployment = deployment or os.environ.get("AZURE_OPENAI_DEPLOYMENT", "gpt-4o")
-
-        credential = DefaultAzureCredential()
-        token_provider = get_bearer_token_provider(
-            credential, "https://cognitiveservices.azure.com/.default"
-        )
-
-        self.client = AzureOpenAI(
-            azure_endpoint=endpoint,
-            azure_ad_token_provider=token_provider,
-            api_version="2024-12-01-preview"
-        )
-        self.deployment = deployment
+        self._client = get_client(deployment=deployment)
         self.turn_count = 0
         self.max_turns = 15
         self.task_completed = False
@@ -92,7 +78,7 @@ class SimulatedUser:
         """Get the initial task message from the user."""
         return self.task.task_description
 
-    def respond(self, agent_message: str, tool_results: Optional[List[ToolResponse]] = None) -> str:
+    def respond(self, agent_message: str, tool_results: Optional[list[ToolResponse]] = None) -> str:
         """Generate user response to agent's message."""
         self.turn_count += 1
 
@@ -132,14 +118,7 @@ Write the customer's next message. Rules:
 
 Customer:"""
 
-        response = self.client.chat.completions.create(
-            model=self.deployment,
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=150,
-            temperature=0.7,
-        )
-
-        user_response = response.choices[0].message.content.strip()
+        user_response = self._client.complete(prompt, max_tokens=150, temperature=0.7).strip()
 
         # Only mark complete if user response is a clear thank-you for completion
         # AND the agent's previous message indicated completion
@@ -154,23 +133,14 @@ Customer:"""
 # Dialogue Runner
 # =============================================================================
 
-@dataclass
-class DialogueTurn:
-    """A single turn in the dialogue."""
-    turn_number: int
-    speaker: str  # "user" or "agent"
-    content: str
-    tool_calls: Optional[List[Dict]] = None
-    tool_results: Optional[List[Dict]] = None
-
 
 def run_tod_dialogue(
     agent: BaseAgent,
     task: TODTask,
-    context_messages: Optional[List[Dict]] = None,
+    context_messages: Optional[list[dict]] = None,
     max_turns: int = 20,
     verbose: bool = False,
-) -> List[DialogueTurn]:
+) -> list[DialogueTurn]:
     """
     Run a complete TOD dialogue between agent and simulated user.
 
@@ -271,7 +241,7 @@ def run_tod_dialogue(
 # =============================================================================
 
 def evaluate_dialogue(
-    dialogue: List[DialogueTurn],
+    dialogue: list[DialogueTurn],
     task: TODTask,
     judge_deployment: Optional[str] = None,
 ) -> TODEvaluationResult:
@@ -303,23 +273,9 @@ def evaluate_dialogue(
     # Build judge prompt
     system_prompt, user_prompt = build_judge_prompt(task, transcript)
 
-    # Call judge
-    endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
-    deployment = judge_deployment or os.environ.get("AZURE_OPENAI_DEPLOYMENT", "gpt-4o")
-
-    credential = DefaultAzureCredential()
-    token_provider = get_bearer_token_provider(
-        credential, "https://cognitiveservices.azure.com/.default"
-    )
-
-    client = AzureOpenAI(
-        azure_endpoint=endpoint,
-        azure_ad_token_provider=token_provider,
-        api_version="2024-12-01-preview"
-    )
-
-    response = client.chat.completions.create(
-        model=deployment,
+    # Call judge using shared client
+    judge_client = get_client(deployment=judge_deployment)
+    judge_response = judge_client.complete_chat(
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
@@ -327,8 +283,6 @@ def evaluate_dialogue(
         max_tokens=2048,
         temperature=0.0,
     )
-
-    judge_response = response.choices[0].message.content
 
     # Parse judge response
     try:
@@ -416,9 +370,8 @@ def run_full_evaluation(
     task_path: str,
     output_path: Optional[str] = None,
     verbose: bool = False,
-    no_context: bool = False,
     agent_type: str = "context",
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     """
     Run full TOD evaluation pipeline.
 
@@ -427,7 +380,6 @@ def run_full_evaluation(
         task_path: Path to TOD task JSONL
         output_path: Path to save results
         verbose: Print progress
-        no_context: If True, agent receives only the task query (no conversation history)
         agent_type: Type of agent to use ('context', 'no_context')
 
     Returns:
@@ -439,7 +391,7 @@ def run_full_evaluation(
         context_data = json.load(f)
 
     # Extract messages from context (handle different formats)
-    if no_context:
+    if agent_type == "no_context":
         # No memory baseline - agent only receives task query
         context_messages = []
         logger.info("Running in NO-CONTEXT mode (baseline without memory)")
@@ -488,9 +440,7 @@ def run_full_evaluation(
     logger.info(f"Loaded {len(tasks)} tasks")
 
     # Initialize agent based on type
-    # Note: if no_context flag is set, override to use no_context agent
-    effective_agent_type = "no_context" if no_context else agent_type
-    agent = create_agent(effective_agent_type)
+    agent = create_agent(agent_type)
     logger.info(f"Using agent: {agent.name} (uses_context={agent.uses_context})")
 
     # Run evaluations
@@ -537,7 +487,7 @@ def run_full_evaluation(
         "num_tasks": len(tasks),
         "agent_type": agent.name,
         "agent_uses_context": agent.uses_context,
-        "evaluation_mode": "no_context" if no_context else "with_context",
+        "evaluation_mode": agent_type,
         "aggregate_scores": {
             "average_final_score": avg_score,
             "average_preference_score": avg_preference,
@@ -556,6 +506,92 @@ def run_full_evaluation(
     return output
 
 
+# =============================================================================
+# Contract-based API (Pipeline Integration)
+# =============================================================================
+
+
+def evaluate_from_tasks(
+    task_output: TaskGenerationOutput,
+    agent_type: str = "context",
+    verbose: bool = False,
+) -> EvaluationOutput:
+    """Run evaluation from TaskGenerationOutput (Stage 2 → Stage 3 contract).
+
+    This is the primary API for pipeline integration. It accepts the output
+    from task generation and produces EvaluationOutput with scores.
+
+    Args:
+        task_output: Output from task generation stage (TaskGenerationOutput)
+        agent_type: Agent type ('context' or 'no_context')
+        verbose: Print dialogue progress
+
+    Returns:
+        EvaluationOutput containing scores and detailed results
+
+    Example:
+        from persona_gym.data_generators import PersonaMemGenerator
+        from persona_gym.task_generator import generate_tasks_from_data
+        from persona_gym.evaluation import evaluate_from_tasks
+
+        # Full pipeline
+        data_output = PersonaMemGenerator(topic="travel").generate()
+        task_output = generate_tasks_from_data(data_output, num_tasks=3)
+        eval_output = evaluate_from_tasks(task_output)
+
+        print(f"Final Score: {eval_output.aggregate_scores.average_final_score:.2f}")
+    """
+    context_messages = task_output.context
+    tasks = task_output.tasks
+
+    # Initialize agent
+    agent = create_agent(agent_type)
+    logger.info(f"Using agent: {agent.name} (uses_context={agent.uses_context})")
+
+    # Run evaluations
+    results: list[TODEvaluationResult] = []
+    for i, task in enumerate(tasks):
+        logger.info(f"Running task {i+1}/{len(tasks)}: {task.task_description[:50]}...")
+
+        try:
+            dialogue = run_tod_dialogue(
+                agent=agent,
+                task=task,
+                context_messages=context_messages,
+                verbose=verbose,
+            )
+
+            eval_result = evaluate_dialogue(dialogue, task)
+            results.append(eval_result)
+
+            logger.info(f"  Score: {eval_result.final_score:.2f}")
+        except Exception as e:
+            logger.warning(f"  Task failed with error: {e}")
+            logger.warning("  Skipping task and continuing...")
+            continue
+
+    # Compute aggregate scores
+    if results:
+        avg_score = sum(r.final_score for r in results) / len(results)
+        avg_preference = sum(r.preference_score for r in results) / len(results)
+        avg_efficiency = sum(r.efficiency_score for r in results) / len(results)
+    else:
+        avg_score = avg_preference = avg_efficiency = 0.0
+
+    return EvaluationOutput(
+        results=results,
+        aggregate=AggregateScores(
+            average_final_score=avg_score,
+            average_preference_score=avg_preference,
+            average_efficiency_score=avg_efficiency,
+            num_tasks_evaluated=len(tasks),
+            num_tasks_completed=len(results),
+        ),
+        metadata=task_output.metadata,
+        agent_type=agent.name,
+    )
+
+
 def main():
     parser = argparse.ArgumentParser(description="Run TOD evaluation")
     parser.add_argument('--context', '-c', type=str, required=True,
@@ -569,17 +605,12 @@ def main():
                         help='Agent type: context (with memory), no_context (baseline)')
     parser.add_argument('--verbose', '-v', action='store_true',
                         help='Print dialogue progress')
-    parser.add_argument('--no-context', action='store_true',
-                        help='Run without conversation context (baseline without memory)')
 
     args = parser.parse_args()
 
-    # Handle agent type: --no-context flag overrides --agent
-    agent_type = 'no_context' if args.no_context else args.agent
-
     if args.output is None:
         base = os.path.splitext(args.tasks)[0]
-        suffix = f"_{agent_type}" if agent_type != "context" else ""
+        suffix = f"_{args.agent}" if args.agent != "context" else ""
         args.output = f"{base}_evaluation_results{suffix}.json"
 
     results = run_full_evaluation(
@@ -587,8 +618,7 @@ def main():
         task_path=args.tasks,
         output_path=args.output,
         verbose=args.verbose,
-        no_context=args.no_context,
-        agent_type=agent_type,
+        agent_type=args.agent,
     )
 
     # Print summary

@@ -12,76 +12,16 @@ an option that violates user preferences, leading to a correction turn.
 """
 
 import json
-import os
 import uuid
-from dataclasses import dataclass
-from typing import Any, Dict, List
+from typing import Optional
 
-from azure.identity import DefaultAzureCredential, get_bearer_token_provider
-from openai import AzureOpenAI
-
-
-@dataclass
-class ToolResultItem:
-    """A single result item from a tool call."""
-    result_id: str
-    data: Dict[str, Any]
-
-    def to_dict(self) -> Dict:
-        return {"result_id": self.result_id, **self.data}
+from persona_gym.client import get_client
+from persona_gym.schemas import ToolResponse, ToolResult, ToolResultItem
 
 
-@dataclass
-class ToolResponse:
-    """Complete response from a tool call (compatible interface)."""
-    tool_name: str
-    success: bool
-    results: List[ToolResultItem]
-    message: str = ""
-    preferences_applied: List[str] = None
-
-    def __post_init__(self):
-        if self.preferences_applied is None:
-            self.preferences_applied = []
-
-    def to_dict(self) -> Dict:
-        return {
-            "tool": self.tool_name,
-            "success": self.success,
-            "message": self.message,
-            "results": [r.to_dict() for r in self.results],
-            "preferences_applied": self.preferences_applied,
-        }
-
-    def to_agent_view(self) -> Dict:
-        """Return view that the agent sees (without preferences_applied metadata)."""
-        return {
-            "tool": self.tool_name,
-            "success": self.success,
-            "message": self.message,
-            "results": [r.to_dict() for r in self.results],
-        }
-
-
-@dataclass
-class ToolResult:
-    """Legacy result format for backward compatibility.
-
-    Attributes:
-        tool_name: Name of the tool that was called.
-        result: The simulated result data as a dictionary.
-        result_text: Human-readable summary of the result for conversation.
-        preferences_applied: List of preferences that were explicitly requested
-                            by the agent and applied to filter results.
-    """
-    tool_name: str
-    result: dict
-    result_text: str
-    preferences_applied: list = None
-
-    def __post_init__(self):
-        if self.preferences_applied is None:
-            self.preferences_applied = []
+def __post_init__(self):
+    if self.preferences_applied is None:
+        self.preferences_applied = []
 
 
 TOOL_SIMULATOR_SYSTEM_PROMPT = """You are a realistic API simulator that generates plausible tool/API responses.
@@ -187,7 +127,7 @@ class ToolSimulator:
         # Result will respect these explicit requirements
     """
 
-    def __init__(self, model: str = None, preferences: list[str] = None):
+    def __init__(self, model: Optional[str] = None, preferences: Optional[list[str]] = None):
         """Initialize the tool simulator.
 
         Args:
@@ -196,17 +136,8 @@ class ToolSimulator:
             preferences: List of user preference strings. The simulator will only
                         apply these if the agent explicitly requests them in tool calls.
         """
-        self.model = model or os.environ.get("AZURE_OPENAI_DEPLOYMENT", "gpt-4o")
         self.preferences = preferences or []
-        token_provider = get_bearer_token_provider(
-            DefaultAzureCredential(),
-            "https://cognitiveservices.azure.com/.default"
-        )
-        self.client = AzureOpenAI(
-            azure_ad_token_provider=token_provider,
-            api_version=os.environ.get("AZURE_OPENAI_API_VERSION", "2024-12-01-preview"),
-            azure_endpoint=os.environ["AZURE_OPENAI_ENDPOINT"],
-        )
+        self._client = get_client(deployment=model)
 
     def execute(self, tool_name: str, params: dict) -> ToolResult:
         """Execute a simulated tool call and return realistic results.
@@ -227,17 +158,11 @@ class ToolSimulator:
             preferences_json=preferences_json,
         )
 
-        response = self.client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {"role": "system", "content": TOOL_SIMULATOR_SYSTEM_PROMPT},
-                {"role": "user", "content": user_prompt},
-            ],
+        result_data = self._client.complete_json(
+            prompt=user_prompt,
+            system_prompt=TOOL_SIMULATOR_SYSTEM_PROMPT,
             temperature=0.8,  # Some variety in results
-            response_format={"type": "json_object"},
         )
-
-        result_data = json.loads(response.choices[0].message.content)
 
         return ToolResult(
             tool_name=tool_name,
