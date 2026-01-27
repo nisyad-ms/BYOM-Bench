@@ -1,44 +1,36 @@
 """PersonaGym: A benchmark for evaluating LLM personalization through multi-turn conversations.
 
-This package provides a 3-stage pipeline:
-1. Data Generation - Creating synthetic user-assistant conversations with preferences
-2. Task Generation - Generating task-oriented dialogue tasks from conversation data
-3. Evaluation - Evaluating agents on their ability to recall and apply user preferences
-
-Pipeline Contracts (for swapping components):
-    - DataGenerationOutput: Stage 1 → Stage 2
-    - TaskGenerationOutput: Stage 2 → Stage 3
-    - EvaluationOutput: Stage 3 → Final Results
+This package provides a 2-stage pipeline:
+1. Data Generation - Creating synthetic multi-session conversations with evolving preferences
+2. Evaluation - Evaluating agents on their ability to recall and apply user preferences
 
 Main modules:
-    - data_generators: Data generation strategies (PersonaMemV2Generator, MultiSessionGenerator)
-    - task_generator: Generate TOD tasks from conversations
-    - evaluation: Evaluate agents on TOD tasks
-    - schemas: All data models and pipeline contracts
+    - data_generators: MultiSessionGenerator for life-event-driven preference evolution
+    - task_generators: Generate evaluation tasks from multi-session data (standalone inspection)
+    - evaluation_multisession: Evaluate agents on preference recall across sessions
+    - schemas: All data models (MultiSessionOutput, PreferenceTimeline, etc.)
     - client: Shared LLM client
-    - agent: Agent implementations (ContextAware, NoContext)
 
 Usage:
-    # Generate data using V2 generator
-    from persona_gym.data_generators import PersonaMemV2Generator
-    generator = PersonaMemV2Generator(topic="travel")
-    data_output = generator.generate()
-
-    # Or use multi-session generator
     from persona_gym.data_generators import MultiSessionGenerator
-    generator = MultiSessionGenerator(persona="Software engineer...")
-    data_output = generator.generate()
 
-    # Generate TOD tasks
-    from persona_gym.task_generator import generate_tod_tasks
-    tasks = generate_tod_tasks(data_output)
+    # Generate multi-session data with preference evolution
+    generator = MultiSessionGenerator(
+        persona="Software engineer considering career change...",
+        num_sessions=2,
+        num_preferences=5,
+    )
+    result = generator.generate_multi_session()
 
-    # Evaluate agents
-    from persona_gym.evaluation import run_evaluation
-    results = run_evaluation(data_output, tasks, agent_type="context")
+    # Generate evaluation task (inspect without full evaluation)
+    from persona_gym.task_generators import generate_evaluation_task
+    task = generate_evaluation_task(result)
+    print(task.evaluation_event.task)
+    print(task.rubric.required_preferences)
 
-    # Import contracts directly
-    from persona_gym.schemas import DataGenerationOutput, TaskGenerationOutput, EvaluationOutput
+    # Run full evaluation
+    from persona_gym.evaluation_multisession import run_evaluation
+    eval_result = run_evaluation(result, agent_type="full_context")
 """
 
 __version__ = "0.1.0"
@@ -47,5 +39,6 @@ __version__ = "0.1.0"
 # Users should import directly from submodules:
 #   from persona_gym.schemas import ...
 #   from persona_gym.data_generators import ...
+#   from persona_gym.task_generators import ...
 
 __all__ = ["__version__"]

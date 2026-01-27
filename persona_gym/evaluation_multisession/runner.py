@@ -19,9 +19,9 @@ from persona_gym.schemas import (
     MultiSessionEvaluationResult,
     MultiSessionOutput,
 )
+from persona_gym.task_generators import EvaluationTaskGenerator
 
 from .judge import MultiSessionJudge
-from .orchestrator import EvaluationOrchestrator
 from .user_simulator import MultiSessionUserSimulator
 
 logger = logging.getLogger(__name__)
@@ -59,10 +59,8 @@ def run_evaluation(
 
     # Step 1: Generate evaluation task
     logger.info("Generating evaluation task...")
-    orchestrator = EvaluationOrchestrator(client)
-    eval_task = orchestrator.generate_evaluation_task(
-        multisession_data, num_stale_traps
-    )
+    task_generator = EvaluationTaskGenerator(client)
+    eval_task = task_generator.generate(multisession_data, num_stale_traps)
     logger.info(f"Generated task: {eval_task.evaluation_event.event}")
 
     # Step 2: Run dialogue

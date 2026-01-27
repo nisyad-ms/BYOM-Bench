@@ -49,14 +49,14 @@ def test_evaluation_components():
     for p in stale_prefs:
         logger.info(f"  - [STALE] {p.preference_id}: {p.fact[:40]}... -> {p.superseded_by}")
 
-    # Test orchestrator
-    logger.info("\n--- Testing Orchestrator ---")
-    from persona_gym.evaluation_multisession.orchestrator import EvaluationOrchestrator
+    # Test task generator
+    logger.info("\n--- Testing Task Generator ---")
+    from persona_gym.task_generators import EvaluationTaskGenerator
 
     client = LLMClient()
-    orchestrator = EvaluationOrchestrator(client)
+    task_generator = EvaluationTaskGenerator(client)
 
-    eval_task = orchestrator.generate_evaluation_task(multisession_data, num_stale_traps=2)
+    eval_task = task_generator.generate(multisession_data, num_stale_traps=2)
 
     logger.info(f"Generated evaluation event: {eval_task.evaluation_event.event}")
     logger.info(f"User prompt: {eval_task.user_prompt[:100]}...")

@@ -1,16 +1,33 @@
 # PersonaGym
 
-A benchmark for evaluating LLM personalization through multi-turn conversations with embedded user preferences.
+A benchmark for evaluating LLM personalization through multi-session conversations with evolving user preferences.
 
 ## Overview
 
-PersonaGym generates synthetic user-assistant conversations grounded in persona histories, then evaluates how well LLMs can recall and use those preferences in task-oriented dialogues.
+PersonaGym measures how well AI agents remember and proactively use user preferences across multiple conversation sessions. Preferences evolve over time due to life events, testing whether agents can:
+- Recall and apply current preferences
+- Avoid using stale/superseded preferences
+- Minimize clarifying questions by leveraging known context
 
-### Key Components
+## Architecture
 
-1. **Data Generation** - Creating synthetic user-assistant conversations grounded in persona histories
-2. **TOD Task Generation** - Generating task-oriented dialogue tasks from conversation data  
-3. **Agent Evaluation** - Evaluating agents on their ability to recall and apply user preferences
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                        PersonaGym Pipeline                              │
+├─────────────────────────────────────────────────────────────────────────┤
+│  INPUT: Persona description                                             │
+│           ↓                                                             │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────┐   │
+│  │ 1. DATA GENERATION              │→ │ 2. EVALUATION               │   │
+│  │ - Generate life events          │  │ - Generate evaluation task  │   │
+│  │ - Create preferences            │  │ - Run agent dialogue        │   │
+│  │ - Evolve preferences over time  │  │ - Judge performance         │   │
+│  │ - Generate conversations        │  │ - Compute scores            │   │
+│  └─────────────────────────────────┘  └─────────────────────────────┘   │
+│           ↓                                   ↓                         │
+│  OUTPUT: MultiSessionOutput          Evaluation Scores                  │
+└─────────────────────────────────────────────────────────────────────────┘
+```
 
 ## Installation
 
@@ -28,8 +45,6 @@ pip install -e .
 
 ## Configuration
 
-### Azure OpenAI Setup
-
 Create a `.env` file with your Azure OpenAI credentials:
 
 ```bash
@@ -45,42 +60,46 @@ az login
 
 ## Quick Start
 
-### Generate Conversation Data
+### Generate Multi-Session Data
 
 ```python
-from persona_gym.data_generators import PersonaMemV2Generator, MultiSessionGenerator
+from persona_gym.data_generators import MultiSessionGenerator
 
-# V2: Token-budgeted generation with preference evolution
-generator = PersonaMemV2Generator(
-    topic="travel",
-    token_budget=8000,
-    num_preferences=5,
-)
-output = generator.generate()
-
-# Multi-session: Life-event driven preference evolution
 generator = MultiSessionGenerator(
-    persona="Software engineer considering career change...",
+    persona="A 32-year-old software engineer considering a career change...",
     num_sessions=2,
     num_preferences=5,
+    num_to_evolve=2,
 )
-output = generator.generate()
+result = generator.generate_multi_session()
+
+print(f"Sessions: {len(result.sessions)}")
+print(f"Total preferences: {len(result.timeline.preferences)}")
+print(f"Active preferences: {len(result.timeline.get_active_preferences())}")
 ```
 
-### Generate Tasks
+### Run Evaluation
 
-```bash
-python -m persona_gym.task_generator \
-    --input outputs/travel/conversation_artifacts.json
+```python
+from persona_gym.evaluation_multisession import run_evaluation_from_file
+
+# Run with full context (agent has access to preference history)
+result = run_evaluation_from_file("outputs/test_multisession_output.json", agent_type="full")
+print(f"Score: {result.final_score:.2f}")
+
+# Run without context (baseline)
+result = run_evaluation_from_file("outputs/test_multisession_output.json", agent_type="no_context")
+print(f"Score: {result.final_score:.2f}")
 ```
 
-### Evaluate Agents
-
+Or use the test scripts:
 ```bash
-python -m persona_gym.evaluation \
-    --tasks outputs/travel/tasks.jsonl \
-    --context outputs/travel/conversation.json \
-    --agent context  # or no_context
+# Generate test data
+python test_multisession.py
+
+# Run evaluation
+python test_evaluation.py --full      # Full context agent
+python test_evaluation.py --no-context  # No context baseline
 ```
 
 ## Project Structure
@@ -88,34 +107,48 @@ python -m persona_gym.evaluation \
 ```
 persona_gym/
 ├── pyproject.toml                # Package configuration
-├── README.md                     # This file
 ├── data/source/                  # Source persona data
 ├── outputs/                      # Generated outputs
 ├── logs/                         # Log files
+├── test_multisession.py          # Test data generation
+├── test_evaluation.py            # Test evaluation
 └── persona_gym/                  # Main package
     ├── __init__.py
-    ├── config.yaml               # Configuration file
     ├── schemas.py                # All data models
     ├── client.py                 # Shared LLM client
-    ├── task_generator.py         # Task generation
-    ├── evaluation.py             # Evaluation runner
-    ├── metric.py                 # Metrics and scoring
-    ├── agent.py                  # Agent implementations
-    ├── tool_simulator.py         # Tool simulation
-    ├── prompts/                  # Centralized prompt management
-    ├── data_generators/          # Data generation strategies
-    │   ├── personamem_v2.py      # Token-budgeted generation
-    │   └── multisession.py       # Multi-session generation
-    └── evaluation_multisession/  # Multi-session evaluation
+    ├── data_generators/          # Data generation
+    │   ├── base.py               # Base generator class
+    │   └── multisession.py       # Multi-session generator
+    ├── evaluation_multisession/  # Evaluation system
+    │   ├── orchestrator.py       # Task generation
+    │   ├── judge.py              # LLM judge
+    │   ├── user_simulator.py     # User simulation
+    │   └── runner.py             # Evaluation runner
+    └── prompts/                  # YAML prompt templates
+        ├── data_generation/      # Data gen prompts
+        └── evaluation/           # Evaluation prompts
 ```
 
 ## Evaluation Metrics
 
 | Metric | Description |
 |--------|-------------|
-| **Preference Recall** | Did the agent proactively use known preferences? |
-| **Turn Efficiency** | Did the agent avoid unnecessary clarification questions? |
-| **Task Completion** | Did the agent successfully complete the task? |
+| **Preference Score** | Did the agent proactively use current preferences? |
+| **Efficiency Score** | Did the agent avoid unnecessary clarifying questions? |
+| **Task Completion** | Did the agent complete the requested task? |
+| **Final Score** | Weighted combination of all metrics |
+
+## Key Concepts
+
+### Preference Evolution
+Preferences change over time due to life events. For example:
+- "Prefers morning study sessions" → life event: "Started new job with early meetings" → "Prefers evening study sessions"
+
+### Evaluation Task Design
+Tasks are designed to **require** preference knowledge:
+- Each task has `required_preferences` that must be applied
+- Generic advice without preference awareness scores poorly
+- Agent must demonstrate explicit knowledge of user context
 
 ## Development
 
@@ -124,15 +157,6 @@ persona_gym/
 uv sync --all-extras
 
 # Run tests
-pytest
-
-# Format code
-ruff format persona_gym/
-
-# Lint
-ruff check persona_gym/
+python test_multisession.py  # Data generation
+python test_evaluation.py --full  # Evaluation
 ```
-
-## License
-
-MIT License
