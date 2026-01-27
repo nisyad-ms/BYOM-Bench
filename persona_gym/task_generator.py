@@ -732,7 +732,7 @@ def main():
     logger.info(f"Saved {len(tasks)} tasks to {args.output}")
 
     # Print summary
-    print(f"\n=== TOD Task Generation Summary ===")
+    print("\n=== TOD Task Generation Summary ===")
     print(f"Input: {args.input}")
     print(f"Output: {args.output}")
     print(f"Topic: {topic}")
