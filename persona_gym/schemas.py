@@ -151,6 +151,7 @@ class ExpandedPersona:
         health_and_wellness: 3-5 facts about physical/mental health
         travel_and_experiences: 3-5 facts about travel history and preferences
         hobbies_and_interests: 3-5 facts about how they spend free time
+        baseline_preferences: Core personality preferences that exist BEFORE any life events
     """
 
     base_persona: str
@@ -162,6 +163,11 @@ class ExpandedPersona:
     health_and_wellness: list[str]
     travel_and_experiences: list[str]
     hobbies_and_interests: list[str]
+    baseline_preferences: list[dict[str, str]] = None  # List of {"fact": ..., "category": ...}
+
+    def __post_init__(self):
+        if self.baseline_preferences is None:
+            self.baseline_preferences = []
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -174,6 +180,7 @@ class ExpandedPersona:
             "health_and_wellness": self.health_and_wellness,
             "travel_and_experiences": self.travel_and_experiences,
             "hobbies_and_interests": self.hobbies_and_interests,
+            "baseline_preferences": self.baseline_preferences,
         }
 
     @classmethod
@@ -188,6 +195,7 @@ class ExpandedPersona:
             health_and_wellness=data.get("health_and_wellness", []),
             travel_and_experiences=data.get("travel_and_experiences", []),
             hobbies_and_interests=data.get("hobbies_and_interests", []),
+            baseline_preferences=data.get("baseline_preferences", []),
         )
 
     def get_domain_facts(self, domain: str) -> list[str]:
@@ -234,6 +242,11 @@ class ExpandedPersona:
             "Hobbies & Interests:",
             *[f"  - {fact}" for fact in self.hobbies_and_interests],
         ]
+        if self.baseline_preferences:
+            lines.append("")
+            lines.append("Baseline Preferences (core personality):")
+            for pref in self.baseline_preferences:
+                lines.append(f"  - [{pref.get('category', 'general')}] {pref.get('fact', '')}")
         return "\n".join(lines)
 
 

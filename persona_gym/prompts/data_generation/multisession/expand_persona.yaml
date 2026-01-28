@@ -1,11 +1,11 @@
 name: Expand Persona
-description: Expands a basic persona into a rich character with details across all life domains
+description: Expands a basic persona into a rich character with details across all life domains, including baseline preferences
 used_by: persona_gym/data_generators/multisession.py::_expand_persona
 variables:
   - persona: Basic persona description (can be brief)
 
 template: |
-  Given a basic persona description, expand it into a fully realized character with specific details across all major life domains. Output a structured JSON with discrete facts about this person.
+  Given a basic persona description, expand it into a fully realized character with specific details across all major life domains AND their baseline preferences (core personality traits that exist before any life events).
 
   BASIC PERSONA:
   {persona}
@@ -34,27 +34,62 @@ template: |
   6. HOBBIES & INTERESTS: How they spend free time, passions, entertainment.
      - Fills remaining picture of who they are
 
-  REQUIREMENTS:
+  7. BASELINE PREFERENCES: Core personality traits/preferences that exist BEFORE any life events.
+     - Generate EXACTLY 5 preferences per domain (5 domains = 25 total preferences)
+     - These represent stable aspects of who this person IS
+     - Include both LIKES and DISLIKES (things they actively avoid)
+     - Be SPECIFIC and CONCRETE (not vague like "likes good food")
+     - These preferences should be CHANGEABLE by dramatic life events later
+     - Categories: diet, communication_style, shopping, entertainment, social, fitness, work_style, travel, technology
+
+  DOMAINS FOR BASELINE PREFERENCES:
+  - work_education: Work style, learning preferences, productivity habits
+  - health_wellness: Diet, fitness, wellness routines, health attitudes
+  - travel_experiences: Travel style, accommodation preferences, destination choices
+  - relationships_personal: Communication style, social preferences, gift-giving, event planning
+  - hobbies_interests: Entertainment choices, technology use, shopping habits
+
+  REQUIREMENTS FOR DOMAIN FACTS:
   - 3-5 specific facts per domain (not all domains need the same count)
   - Each fact should be concrete and specific, not vague
   - Facts should be consistent with each other
   - Facts should provide hooks for generating life events
   - Adapt to life stage (student, working, retired, etc.)
 
+  REQUIREMENTS FOR BASELINE PREFERENCES:
+  - EXACTLY 5 preferences per domain
+  - Mix of likes AND dislikes
+  - Specific and actionable (an agent could use these to personalize recommendations)
+  - Should feel like core personality, not recent discoveries
+  - Format: {{"fact": "description", "category": "category_name"}}
+
   EXAMPLES:
 
   Basic: "A college student studying biology"
-  Output: {{"base_persona": "A college student studying biology", "age": 20, "gender": "female", "location": "Boston, MA", "work_and_education": ["Junior at Boston University majoring in Biology", "Pre-med track, planning to apply to medical schools next year", "Works part-time as a lab assistant (10 hrs/week)", "Struggling with organic chemistry this semester"], "relationships_and_personal": ["Lives in off-campus apartment with two roommates", "Single, focused on studies but open to dating", "Parents live in Connecticut, visits monthly", "Close friend group from freshman dorm"], "health_and_wellness": ["Generally healthy but sleep-deprived during exam periods", "Stress eats when overwhelmed", "Used to play soccer in high school, now rarely exercises"], "travel_and_experiences": ["Studied abroad in Spain sophomore year", "Limited budget constrains travel", "Goes home for holidays and summer"], "hobbies_and_interests": ["Watches medical dramas for 'research'", "Enjoys hiking when she has time", "Active on social media, especially Instagram", "Recently started a bullet journal"]}}
-
-  Basic: "Retired teacher, 67, lives in Florida"
-  Output: {{"base_persona": "Retired teacher, 67, lives in Florida", "age": 67, "gender": "male", "location": "Sarasota, FL", "work_and_education": ["Taught high school history for 35 years", "Retired 2 years ago from public school system", "Master's degree in Education from FSU", "Occasionally guest lectures at local community college", "Volunteers at historical society"], "relationships_and_personal": ["Widowed 4 years ago, still adjusting", "Two adult children - daughter in Atlanta, son in Chicago", "Three grandchildren ages 4, 7, and 9", "Active in church community, sings in choir"], "health_and_wellness": ["Managing high blood pressure with medication", "Walks 2 miles every morning", "Had knee replacement surgery last year", "Watches sodium intake"], "travel_and_experiences": ["Has visited all 50 states over his lifetime", "Takes annual trip to see grandchildren", "Prefers road trips over flying now", "Dreams of visiting Ireland to trace ancestry"], "hobbies_and_interests": ["Avid reader, especially Civil War history", "Tends a vegetable garden", "Learning to play guitar", "Watches Jeopardy every evening"]}}
+  Output: {{"base_persona": "A college student studying biology", "age": 20, "gender": "female", "location": "Boston, MA", "work_and_education": ["Junior at Boston University majoring in Biology", "Pre-med track, planning to apply to medical schools next year", "Works part-time as a lab assistant (10 hrs/week)", "Struggling with organic chemistry this semester"], "relationships_and_personal": ["Lives in off-campus apartment with two roommates", "Single, focused on studies but open to dating", "Parents live in Connecticut, visits monthly", "Close friend group from freshman dorm"], "health_and_wellness": ["Generally healthy but sleep-deprived during exam periods", "Stress eats when overwhelmed", "Used to play soccer in high school, now rarely exercises"], "travel_and_experiences": ["Studied abroad in Spain sophomore year", "Limited budget constrains travel", "Goes home for holidays and summer"], "hobbies_and_interests": ["Watches medical dramas for 'research'", "Enjoys hiking when she has time", "Active on social media, especially Instagram", "Recently started a bullet journal"], "baseline_preferences": [{{"fact": "Prefers studying in complete silence - even instrumental music is distracting", "category": "work_style"}}, {{"fact": "Always uses physical flashcards over digital apps for memorization", "category": "work_style"}}, {{"fact": "Hates group projects - prefers individual work with clear accountability", "category": "work_style"}}, {{"fact": "Studies best late at night (10pm-2am) rather than mornings", "category": "work_style"}}, {{"fact": "Refuses to buy used textbooks - needs to highlight and annotate fresh copies", "category": "shopping"}}, {{"fact": "Vegetarian since age 14 for ethical reasons", "category": "diet"}}, {{"fact": "Despises running but loves team sports and dance-based workouts", "category": "fitness"}}, {{"fact": "Cannot stand energy drinks - relies only on coffee for caffeine", "category": "diet"}}, {{"fact": "Practices yoga every morning, even if just 10 minutes", "category": "fitness"}}, {{"fact": "Tracks sleep religiously with a Fitbit", "category": "fitness"}}, {{"fact": "Refuses to fly budget airlines - values legroom over savings", "category": "travel"}}, {{"fact": "Always chooses window seats, cannot sleep on aisle", "category": "travel"}}, {{"fact": "Prefers Airbnbs with kitchens over hotels", "category": "travel"}}, {{"fact": "Never travels without physical backup of important documents", "category": "travel"}}, {{"fact": "Plans trips months in advance, hates spontaneous travel", "category": "travel"}}, {{"fact": "Prefers texting over phone calls, even for complex conversations", "category": "communication_style"}}, {{"fact": "Always arrives 15 minutes early to any meeting or event", "category": "social"}}, {{"fact": "Hates surprise parties - prefers planned celebrations", "category": "social"}}, {{"fact": "Gives very practical gifts (gift cards, needed items) over sentimental ones", "category": "social"}}, {{"fact": "Prefers small gatherings (3-5 people) over large parties", "category": "social"}}, {{"fact": "Will only watch movies in theaters, never at home for new releases", "category": "entertainment"}}, {{"fact": "Refuses to use TikTok but active on Instagram and YouTube", "category": "technology"}}, {{"fact": "Prefers physical books over e-readers", "category": "entertainment"}}, {{"fact": "Compulsive list-maker - uses paper to-do lists, not apps", "category": "technology"}}, {{"fact": "Hates podcast format - prefers reading articles", "category": "entertainment"}}]}}
 
   OUTPUT FORMAT (JSON):
-  {{"base_persona": "The original persona description", "age": <number>, "gender": "<male/female/non-binary>", "location": "<city, state/country>", "work_and_education": ["fact 1", "fact 2", ...], "relationships_and_personal": ["fact 1", "fact 2", ...], "health_and_wellness": ["fact 1", "fact 2", ...], "travel_and_experiences": ["fact 1", "fact 2", ...], "hobbies_and_interests": ["fact 1", "fact 2", ...]}}
+  {{
+    "base_persona": "The original persona description",
+    "age": <number>,
+    "gender": "<male/female/non-binary>",
+    "location": "<city, state/country>",
+    "work_and_education": ["fact 1", "fact 2", ...],
+    "relationships_and_personal": ["fact 1", "fact 2", ...],
+    "health_and_wellness": ["fact 1", "fact 2", ...],
+    "travel_and_experiences": ["fact 1", "fact 2", ...],
+    "hobbies_and_interests": ["fact 1", "fact 2", ...],
+    "baseline_preferences": [
+      {{"fact": "specific preference 1", "category": "category_name"}},
+      {{"fact": "specific preference 2", "category": "category_name"}},
+      ... (exactly 25 preferences: 5 per domain)
+    ]
+  }}
 
   CRITICAL:
   - Output ONLY valid JSON
   - Each domain should have 3-5 facts
-  - Facts must be specific and concrete (no vague statements)
-  - All facts should be consistent with each other and the base persona
+  - baseline_preferences must have EXACTLY 25 items (5 per domain)
+  - Facts and preferences must be specific and concrete (no vague statements)
+  - All content should be consistent with each other and the base persona
   - Adapt appropriately to life stage (student, working, retired, etc.)

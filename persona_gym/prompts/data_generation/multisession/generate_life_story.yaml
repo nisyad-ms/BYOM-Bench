@@ -1,5 +1,5 @@
 name: Generate Life Event
-description: Generates a single life event for a specified domain based on a persona, building on previous events
+description: Generates a single life event for a specified domain, with natural narrative coherence to previous events
 used_by: persona_gym/data_generators/multisession.py::_generate_life_event
 variables:
   - persona: The full expanded persona description
@@ -8,7 +8,7 @@ variables:
   - previous_events: List of previously generated events to build upon
 
 template: |
-  Generate a realistic life event for the specified domain that is personalized to this persona. The event should be significant enough to potentially change the user's preferences, habits, or priorities.
+  Generate a realistic life event for the specified domain that is personalized to this persona. The event should be significant enough to DRAMATICALLY change the user's preferences, habits, or priorities.
 
   PERSONA:
   {persona}
@@ -21,106 +21,117 @@ template: |
   PREVIOUS EVENTS IN THIS PERSON'S STORY:
   {previous_events}
 
-  NARRATIVE COHERENCE REQUIREMENTS:
-  - If there are previous events, this new event should be CONNECTED to them when natural
-  - Events can be consequences, continuations, or related developments
-  - Cross-domain connections are encouraged (e.g., work stress → health changes → relationship impact)
-  - The events should tell a coherent story about this person's life trajectory
-  - However, don't force connections - if the domain naturally leads elsewhere, that's fine
+  ═══════════════════════════════════════════════════════════════════════════════
+  NARRATIVE COHERENCE: NATURAL CONNECTIONS OVER MONTHS, NOT TIGHT CHAINING
+  ═══════════════════════════════════════════════════════════════════════════════
+  
+  Life events should feel like a coherent story unfolding over MONTHS, not a chain reaction of immediate consequences.
+  
+  GOOD COHERENCE (natural life progression over time):
+  - Event 1 (Jan): "Diagnosed with early diabetes at annual checkup"
+  - Event 2 (Apr): "Wife gets job offer in Portland, family considering relocation" 
+    → Natural life event, loosely connected (health situation is background context)
+  - Event 3 (Jul): "After settling into Portland, joined a local hiking group to stay active"
+    → Builds on relocation, connects to health management
+  
+  BAD COHERENCE (too tight, immediate consequences):
+  - Event 1: "Diagnosed with diabetes"
+  - Event 2: "Due to diabetes, can't eat at favorite restaurants" ← Too immediate
+  - Event 3: "Restaurant restrictions caused social isolation" ← Artificial chain
+  
+  GUIDELINES FOR NATURAL COHERENCE:
+  1. Events can ACKNOWLEDGE previous events as background context
+  2. Events should feel like MONTHS have passed, not days
+  3. New events should introduce FRESH situations, not just extend consequences
+  4. Cross-domain connections are encouraged (health affects work, family affects hobbies)
+  5. Some events can be unrelated - not everything needs to connect
+  6. Avoid phrases like "due to", "as a result of", "because of the previous..."
+  
+  THINK OF IT AS: "What might happen to this person 2-3 months later, given their life context?"
+  NOT: "What is the immediate consequence of the last event?"
 
   DOMAIN DEFINITIONS:
-  - work_education: Work, career changes, education, learning, professional development, skill building
-  - health_wellness: Physical health, mental health, fitness, diet, medical conditions, wellness routines
-  - travel_experiences: Travel, vacations, relocations, exploring new places, cultural experiences
-  - relationships_personal: Romantic relationships, family dynamics, friendships, personal life changes, living situations
-  - hobbies_interests: Hobbies, creative pursuits, sports, entertainment preferences, leisure activities
+  - work_education: Career changes, job transitions, education, professional development
+  - health_wellness: Physical/mental health, fitness, diet, medical conditions
+  - travel_experiences: Relocations, travel habits, living situation changes
+  - relationships_personal: Family dynamics, romantic relationships, friendships, living arrangements
+  - hobbies_interests: Hobbies, creative pursuits, entertainment preferences, leisure activities
 
   REQUIREMENTS:
   1. The event MUST belong to the "{domain}" domain
-  2. The event must be plausible and personalized given the persona's background, age, and circumstances
-  3. The event should create natural opportunities for preference changes
+  2. The event must be plausible given the persona's background, age, and life context
+  3. The event should create opportunities for DRAMATIC preference changes
   4. The event should be specific and concrete, not vague
   5. Include enough detail to understand the impact on daily life
-  6. The event could just be an opportunity the user is exploring, not necessarily something that has already happened
+  6. Natural connections to previous events are welcome, but avoid tight causal chaining
 
-  CRITICAL: PREFER CONSTRAINT-GENERATING EVENTS
+  PREFER CONSTRAINT-GENERATING EVENTS (~60-70%)
   
-  About 60-70% of events should introduce CONSTRAINTS or LIMITATIONS that force preference changes:
-  - Health diagnoses (allergies, conditions, injuries)
-  - New responsibilities (caregiving, parenthood, demanding job)
-  - Resource changes (budget constraints, time limitations)
-  - Relationship constraints (partner's needs, family obligations)
+  Events that force REPLACEMENT of existing preferences (not just refinement):
+  - Health diagnoses that eliminate options (allergies, conditions, injuries)
+  - Life role changes (new parent, caregiver, new demanding job)
+  - Major relationship shifts (new partner with different lifestyle, divorce)
+  - Resource constraints (budget cuts, time limitations, relocation)
   
-  Why? Constraint events create DRAMATIC, VERIFIABLE preference changes:
-  - "Loved spicy food" → "Diagnosed with GERD, now avoids all spicy food"
-  - "Runs 10k daily" → "Knee surgery, switched to swimming"
-  - "Works late nights" → "New baby, strict 9pm bedtime"
+  These create VERIFIABLE preference changes:
+  - OLD: "Loves steak" → NEW: "Partner is vegan, household is now plant-based"
+  - OLD: "Night owl, works until 2am" → NEW: "New baby, strict 9pm bedtime"
+  - OLD: "Runs marathons" → NEW: "Knee surgery, now swims instead"
   
-  These changes are easily verifiable: if an agent recommends spicy food to someone with GERD, that's clearly wrong.
-  
-  The remaining 30-40% can be positive/additive events (new opportunities, hobbies, relationships).
+  The remaining 30-40% can be positive shifts (new opportunities, discoveries, lifestyle upgrades).
 
   EXAMPLES OF GOOD LIFE EVENTS BY DOMAIN:
 
   work_education:
-  - "Laid off unexpectedly, now job hunting with tighter budget constraints"
-  - "Promoted to demanding role requiring 60+ hour weeks and frequent travel"
-  - "Switched to night shift, completely reversing sleep schedule"
-  - "Company downsized, took significant pay cut to keep job"
-  - "New manager requires strict in-office presence, ending remote work flexibility"
-  - "Started caregiving for sick parent while working, severely limiting personal time"
-  - "Diagnosed with repetitive strain injury, must limit computer use to 6 hours/day"
-  - "Company relocated office 2 hours away, now has brutal commute"
-  - "Went back to school part-time, evenings and weekends now devoted to studying"
-  - "Took over failing family business, working 7 days a week to save it"
+  - "Laid off unexpectedly, now job hunting with tighter budget"
+  - "Promoted to VP role requiring 60+ hour weeks and constant travel"
+  - "Switched to night shift, completely reversing daily schedule"
+  - "New manager requires strict 9-5 in-office, ending all remote work"
+  - "Went back to grad school part-time, evenings/weekends now studying"
+  - "Started own consulting business, irregular income and hours"
 
   health_wellness:
-  - "Diagnosed with celiac disease, must now follow strict gluten-free diet"
-  - "Discovered severe lactose intolerance after years of stomach issues"
-  - "Diagnosed with Type 2 diabetes, requiring blood sugar monitoring and diet changes"
-  - "Knee replacement surgery, can no longer run - switched to low-impact activities"
-  - "Developed chronic insomnia, now follows strict sleep hygiene protocol"
-  - "Diagnosed with high blood pressure, must limit sodium and caffeine"
-  - "Developed acid reflux (GERD), had to eliminate spicy and acidic foods"
-  - "Sports injury requiring 6 months of physical therapy and activity restrictions"
-  - "Started therapy after burnout, now prioritizing mental health boundaries"
-  - "Began medication that requires avoiding alcohol and certain foods"
+  - "Diagnosed with celiac disease, must follow strict gluten-free diet"
+  - "Discovered severe shellfish allergy after ER visit"
+  - "Knee replacement surgery, running is now impossible - must find alternatives"
+  - "Diagnosed with Type 2 diabetes, complete diet overhaul required"
+  - "Developed chronic migraines, avoiding screens after 6pm"
+  - "Doctor ordered strict low-sodium diet due to blood pressure"
 
   travel_experiences:
-  - "Took a solo backpacking trip through Southeast Asia for two months"
-  - "Relocated to a new country for a fresh start"
-  - "Started traveling frequently for work, away from home 2 weeks per month"
-  - "Planned and completed a road trip across multiple national parks"
-  - "Moved from a city apartment to a rural area seeking quieter life"
-  - "Began exploring local weekend getaways to disconnect from routine"
+  - "Relocated to a different country for spouse's job"
+  - "Sold car after moving downtown, now fully car-free"
+  - "Job now requires 50% travel, home only half the month"
+  - "Moved from city apartment to rural farmhouse 2 hours from town"
+  - "Downsized to tiny home, minimal possessions only"
 
   relationships_personal:
-  - "Partner has strict vegan diet, now cooking all meals plant-based at home"
-  - "Became a parent for the first time, sleep-deprived and no personal time"
-  - "Moved in with aging parent who needs 24/7 care, lost all privacy"
-  - "Partner accepted job abroad, now in long-distance relationship for 2 years"
-  - "Going through difficult divorce, dividing assets and changing living situation"
-  - "Child diagnosed with severe food allergies, entire household diet changed"
-  - "Elderly parent moved in, house now needs to be quiet by 8pm"
-  - "Partner works opposite shift, rarely see each other and must coordinate carefully"
-  - "Started dating someone with young children, weekends now family-focused"
-  - "Roommate with severe pet allergy moved in, had to rehome beloved cat"
+  - "New partner is strictly vegan, household now plant-based"
+  - "Became first-time parent, no personal time or sleep"
+  - "Elderly parent moved in, needs quiet house by 8pm"
+  - "Going through divorce, selling house and splitting assets"
+  - "Child diagnosed with severe nut allergy, entire household diet changed"
+  - "Partner works nights, now have opposite schedules"
 
   hobbies_interests:
-  - "Adopted a rescue dog requiring significant time and attention"
-  - "Joined a local community garden and started growing vegetables"
-  - "Picked up pottery as a creative outlet during weekends"
-  - "Started volunteering at a local animal shelter every Saturday"
-  - "Joined a recreational sports league and plays twice a week"
-  - "Began learning to play guitar after attending a concert"
+  - "Adopted two rescue dogs requiring daily 2-hour walks"
+  - "Got deeply into competitive chess, plays 3 hours daily"
+  - "Discovered passion for woodworking, converted garage to workshop"
+  - "Joined amateur theater group, rehearsals every evening"
+  - "Started serious photography, spends weekends on photo trips"
 
-  EXAMPLES OF BAD LIFE EVENTS (avoid these patterns):
-  - "Moved to a new city" (why? what's the impact?)
-  - "Things changed at work" (what changed specifically?)
-  - "Had some health issues" (what kind? how does it affect daily life?)
+  EXAMPLES OF BAD EVENTS (avoid these):
+
+  ❌ TOO TIGHTLY CHAINED:
+  - "Due to the diabetes diagnosis, now also dealing with..." 
+  - "As a direct result of the relocation..."
+  - "The stress from the previous changes caused..."
+  
+  ❌ TOO VAGUE:
+  - "Moved to a new city" (why? what's different?)
+  - "Things changed at work" (what specifically?)
+  - "Had some health issues" (what kind? what impact?)
   - "Life got busy" (with what? why?)
-  - "Started something new" (what exactly?)
-  - "Made a big decision" (what decision? context?)
 
   OUTPUT FORMAT (JSON):
   {{
