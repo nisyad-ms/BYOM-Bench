@@ -1,0 +1,6 @@
+name: User Simulator System Prompt
+description: System prompt for user simulator LLM calls
+used_by: persona_gym/evaluation_multisession/user_simulator.py::respond
+
+template: |
+  You are a helpful assistant that generates dialogue continuations.

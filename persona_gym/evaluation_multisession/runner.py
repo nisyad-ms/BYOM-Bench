@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from persona_gym.client import LLMClient
+from persona_gym.prompts import render_prompt
 from persona_gym.schemas import (
     EvaluationTask,
     MultiSessionEvaluationResult,
@@ -31,7 +32,6 @@ def run_evaluation(
     multisession_data: MultiSessionOutput,
     agent_system_prompt: str | None = None,
     max_turns: int = 10,
-    num_stale_traps: int = 2,
     include_history: bool = True,
     client: LLMClient | None = None,
 ) -> MultiSessionEvaluationResult:
@@ -47,7 +47,6 @@ def run_evaluation(
         agent_system_prompt: Custom system prompt for the agent being evaluated.
             If None, uses a generic helpful assistant prompt.
         max_turns: Maximum agent turns before ending (default 10)
-        num_stale_traps: Number of stale preferences to include as traps
         include_history: Whether to include conversation history in agent context.
             Set to False for no-context agent evaluation.
         client: Shared LLM client. If None, creates a new one.
@@ -60,7 +59,7 @@ def run_evaluation(
     # Step 1: Generate evaluation task
     logger.info("Generating evaluation task...")
     task_generator = EvaluationTaskGenerator(client)
-    eval_task = task_generator.generate(multisession_data, num_stale_traps)
+    eval_task = task_generator.generate(multisession_data)
     logger.info(f"Generated task: {eval_task.evaluation_event.event}")
 
     # Step 2: Run dialogue
@@ -166,13 +165,7 @@ def build_agent_context(
     """
     # If no history, just return the custom prompt (no-context agent)
     if not include_history:
-        return custom_system_prompt or """You are a helpful AI assistant. This is your first conversation with this user. You have no prior context or history with them.
-
-Be helpful and ask clarifying questions as needed since you don't know anything about the user's preferences."""
-
-    base_prompt = custom_system_prompt or """You are a helpful AI assistant. You have access to conversation history with this user from previous sessions. Use this context to provide personalized recommendations and remember their preferences.
-
-Be proactive about using what you know about the user - don't wait for them to remind you of their preferences."""
+        return custom_system_prompt or render_prompt("evaluation/agent_system_no_context")
 
     # Format conversation history
     history_parts = []
@@ -187,7 +180,9 @@ Be proactive about using what you know about the user - don't wait for them to r
 
     conversation_history = "\n".join(history_parts)
 
-    return f"""{base_prompt}
+    if custom_system_prompt:
+        # User provided custom prompt, just append history
+        return f"""{custom_system_prompt}
 
 ## Previous Conversation History with This User
 
@@ -196,6 +191,12 @@ Be proactive about using what you know about the user - don't wait for them to r
 ---
 
 Now respond to the user's new message. Remember to use the context from previous conversations to personalize your response."""
+
+    # Use standard prompt from YAML
+    return render_prompt(
+        "evaluation/agent_system_with_context",
+        conversation_history=conversation_history,
+    )
 
 
 def get_agent_response(
@@ -219,13 +220,7 @@ def get_agent_response(
         for turn in conversation
     )
 
-    prompt = f"""Here is the current conversation:
-
-{messages_str}
-
-How do you respond as the assistant? Be helpful and personalized based on what you know about this user from previous conversations.
-
-Respond with just your message (no "Assistant:" prefix)."""
+    prompt = render_prompt("evaluation/agent_response", conversation=messages_str)
 
     response = client.complete(
         prompt=prompt,
@@ -304,20 +299,12 @@ if __name__ == "__main__":
         default=10,
         help="Maximum agent turns (default: 10)",
     )
-    parser.add_argument(
-        "--stale-traps",
-        type=int,
-        default=2,
-        help="Number of stale preferences to test (default: 2)",
-    )
-
     args = parser.parse_args()
 
     result = run_evaluation_from_file(
         args.input,
         output_path=args.output,
         max_turns=args.max_turns,
-        num_stale_traps=args.stale_traps,
     )
 
     print(f"\n{'='*50}")

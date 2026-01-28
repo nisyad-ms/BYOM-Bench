@@ -18,6 +18,22 @@ template: |
   CURRENT ACTIVE PREFERENCES (agent must use at least 2-3 of these):
   {current_preferences}
 
+  ## CRITICAL: Event Must Be Connected to Previous Life Events
+
+  The evaluation event MUST be **plausibly connected** to this persona's situation and recent life events:
+  - The event should feel like a natural continuation of the user's journey
+  - It should be something that could realistically happen AFTER the previous life events
+  - The preferences revealed during those conversations should be naturally relevant to this new task
+  - Do NOT create an unrelated scenario that ignores the user's established context
+
+  **GOOD**: If previous events were about "started ML course" → "got promotion, less time":
+  - "Planning a weekend ML workshop" ✓ (uses time/learning preferences from those events)
+  - "Preparing for ML conference" ✓ (related domain, uses established preferences)
+
+  **BAD**: Creating events unrelated to the established narrative:
+  - "Help me buy a car" ✗ (ignores ML/career context)
+  - "Plan a vacation" ✗ (unrelated, won't test revealed preferences)
+
   ## CRITICAL: Strong Preference-Task Coupling
 
   The task MUST be designed so that:

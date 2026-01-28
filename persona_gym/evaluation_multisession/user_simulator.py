@@ -94,28 +94,25 @@ class MultiSessionUserSimulator:
         # Format conversation for context
         conv_formatted = self._format_conversation(conversation_history)
 
-        # Combine everything in user prompt to avoid jailbreak detection with system prompts
-        user_prompt = f"""Continue this dialogue. The person seeking help has these PRIVATE preferences (do not reveal unless violated):
-{json.dumps([{"preference": p.fact} for p in self.current_preferences], indent=2, ensure_ascii=False)}
+        # Build user prompt from YAML template
+        preferences_json = json.dumps(
+            [{"preference": p.fact} for p in self.current_preferences],
+            indent=2,
+            ensure_ascii=False,
+        )
 
-Conversation so far:
-{conv_formatted}
+        user_prompt = render_prompt(
+            "evaluation/user_simulator_respond",
+            preferences=preferences_json,
+            conversation=conv_formatted,
+            agent_message=agent_message,
+        )
 
-The assistant just said: "{agent_message}"
-
-CRITICAL RULES:
-- DO NOT proactively mention or hint at your preferences
-- DO NOT say "I prefer X" or "I like Y" or explain why something works for you
-- Only reveal a preference IF the assistant's suggestion directly CONFLICTS with it
-- When violated, politely correct: "Actually, I'd prefer X instead"
-- Accept good suggestions without explaining why they match your preferences
-- Keep response brief (1-3 sentences)
-
-Write the next response from the person seeking help. Output only the response text."""
+        system_prompt = render_prompt("evaluation/user_simulator_system")
 
         response = self.client.complete(
             prompt=user_prompt,
-            system_prompt="You are a helpful assistant that generates dialogue continuations.",
+            system_prompt=system_prompt,
             max_tokens=max_tokens,
             temperature=0.8,
         )

@@ -68,8 +68,7 @@ from persona_gym.data_generators import MultiSessionGenerator
 generator = MultiSessionGenerator(
     persona="A 32-year-old software engineer considering a career change...",
     num_sessions=2,
-    num_preferences=5,
-    num_to_evolve=2,
+    num_preferences=3,  # 3 preferences per life event
 )
 result = generator.generate_multi_session()
 

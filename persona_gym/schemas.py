@@ -135,6 +135,109 @@ class PreferenceItem:
 
 
 @dataclass
+class ExpandedPersona:
+    """A persona expanded across all life domains.
+
+    Takes a basic persona description and enriches it with specific details
+    across work, health, travel, relationships, and hobbies domains.
+
+    Attributes:
+        base_persona: The original basic persona description
+        age: Person's age
+        gender: Person's gender (male/female/non-binary)
+        location: City and state/country
+        work_and_education: 3-5 facts about work and educational background
+        relationships_and_personal: 3-5 facts about family, friends, social life
+        health_and_wellness: 3-5 facts about physical/mental health
+        travel_and_experiences: 3-5 facts about travel history and preferences
+        hobbies_and_interests: 3-5 facts about how they spend free time
+    """
+
+    base_persona: str
+    age: int
+    gender: str
+    location: str
+    work_and_education: list[str]
+    relationships_and_personal: list[str]
+    health_and_wellness: list[str]
+    travel_and_experiences: list[str]
+    hobbies_and_interests: list[str]
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "base_persona": self.base_persona,
+            "age": self.age,
+            "gender": self.gender,
+            "location": self.location,
+            "work_and_education": self.work_and_education,
+            "relationships_and_personal": self.relationships_and_personal,
+            "health_and_wellness": self.health_and_wellness,
+            "travel_and_experiences": self.travel_and_experiences,
+            "hobbies_and_interests": self.hobbies_and_interests,
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> "ExpandedPersona":
+        return cls(
+            base_persona=data.get("base_persona", ""),
+            age=data.get("age", 0),
+            gender=data.get("gender", ""),
+            location=data.get("location", ""),
+            work_and_education=data.get("work_and_education", []),
+            relationships_and_personal=data.get("relationships_and_personal", []),
+            health_and_wellness=data.get("health_and_wellness", []),
+            travel_and_experiences=data.get("travel_and_experiences", []),
+            hobbies_and_interests=data.get("hobbies_and_interests", []),
+        )
+
+    def get_domain_facts(self, domain: str) -> list[str]:
+        """Get facts for a specific life domain.
+
+        Args:
+            domain: One of work_education, health_wellness, travel_experiences,
+                    relationships_personal, hobbies_interests
+
+        Returns:
+            List of facts for that domain
+        """
+        domain_mapping = {
+            "work_education": self.work_and_education,
+            "health_wellness": self.health_and_wellness,
+            "travel_experiences": self.travel_and_experiences,
+            "relationships_personal": self.relationships_and_personal,
+            "hobbies_interests": self.hobbies_and_interests,
+        }
+        return domain_mapping.get(domain, [])
+
+    def to_full_description(self) -> str:
+        """Generate a full prose description of the persona.
+
+        Returns:
+            Multi-line description suitable for prompts
+        """
+        lines = [
+            f"Base: {self.base_persona}",
+            f"Demographics: {self.age} year old {self.gender} in {self.location}",
+            "",
+            "Work & Education:",
+            *[f"  - {fact}" for fact in self.work_and_education],
+            "",
+            "Relationships & Personal:",
+            *[f"  - {fact}" for fact in self.relationships_and_personal],
+            "",
+            "Health & Wellness:",
+            *[f"  - {fact}" for fact in self.health_and_wellness],
+            "",
+            "Travel & Experiences:",
+            *[f"  - {fact}" for fact in self.travel_and_experiences],
+            "",
+            "Hobbies & Interests:",
+            *[f"  - {fact}" for fact in self.hobbies_and_interests],
+        ]
+        return "\n".join(lines)
+
+
+@dataclass
 class LifeEvent:
     """A significant event in the user's life that may trigger preference changes.
 
@@ -353,27 +456,15 @@ class Session:
     new_preference_ids: list[str] = field(default_factory=list)
     evolved_preference_ids: dict[str, str] = field(default_factory=dict)  # old_id -> new_id
 
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "session_id": self.session_id,
-            "life_event": self.life_event.to_dict(),
-            "conversation": self.conversation,
-            "active_preference_ids": self.active_preference_ids,
-            "new_preference_ids": self.new_preference_ids,
-            "evolved_preference_ids": self.evolved_preference_ids,
-        }
-
 
 @dataclass
 class MultiSessionOutput:
     """Complete output from multi-session generation.
 
-    This is the top-level output containing the persona, life story,
-    preference timeline, and all generated sessions.
-
     Attributes:
         persona: The original persona description
         persona_id: Identifier for the persona
+        expanded_persona: The persona expanded across all life domains (optional)
         life_events: Sequence of life events
         timeline: Central preference timeline with full history
         sessions: List of generated conversation sessions
@@ -386,57 +477,149 @@ class MultiSessionOutput:
     timeline: PreferenceTimeline
     sessions: list[Session]
     generation_timestamp: str = ""
+    expanded_persona: ExpandedPersona | None = None
+
+    def _extract_domain(self, context: str) -> str:
+        """Extract domain from context string like '[work_education] ...'"""
+        if context.startswith("[") and "]" in context:
+            return context[1:context.index("]")]
+        return ""
+
+    def _clean_context(self, context: str) -> str:
+        """Remove domain prefix from context string."""
+        if context.startswith("[") and "]" in context:
+            return context[context.index("]") + 1:].strip()
+        return context
+
+    def _session_to_dict(self, session: Session) -> dict[str, Any]:
+        """Serialize a session with inline preferences."""
+        # Build created preferences
+        created = [
+            {"id": p.preference_id, "fact": p.fact, "category": p.category}
+            for pid in session.new_preference_ids
+            if (p := self.timeline.preferences.get(pid))
+        ]
+
+        # Build evolved preferences
+        evolved = []
+        for old_id, new_id in session.evolved_preference_ids.items():
+            old_p = self.timeline.preferences.get(old_id)
+            new_p = self.timeline.preferences.get(new_id)
+            if old_p and new_p:
+                evolved.append({
+                    "from": {"id": old_p.preference_id, "fact": old_p.fact},
+                    "to": {"id": new_p.preference_id, "fact": new_p.fact, "category": new_p.category},
+                    "reason": old_p.reason_for_change or "",
+                })
+
+        return {
+            "session_id": session.session_id,
+            "life_event": {
+                "date": session.life_event.date,
+                "event": session.life_event.event,
+                "domain": self._extract_domain(session.life_event.context),
+                "context": self._clean_context(session.life_event.context),
+            },
+            "preferences": {"created": created, "evolved": evolved},
+            "conversation": session.conversation,
+        }
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        """Serialize to clean format with inline preferences per session."""
+        active = [
+            {"id": p.preference_id, "fact": p.fact, "category": p.category, "created_at_session": p.created_at_session}
+            for p in self.timeline.get_active_preferences()
+        ]
+        superseded = [
+            {
+                "id": p.preference_id, "fact": p.fact, "category": p.category,
+                "created_at_session": p.created_at_session, "superseded_at_session": p.superseded_at_session,
+                "replaced_by": p.superseded_by, "reason": p.reason_for_change or "",
+            }
+            for p in self.timeline.preferences.values() if not p.is_active
+        ]
+
+        result = {
             "persona": self.persona,
             "persona_id": self.persona_id,
-            "life_events": [e.to_dict() for e in self.life_events],
-            "timeline": self.timeline.to_dict(),
-            "sessions": [s.to_dict() for s in self.sessions],
-            "generation_timestamp": self.generation_timestamp,
         }
+        # Add expanded_persona right after persona_id if present
+        if self.expanded_persona:
+            result["expanded_persona"] = self.expanded_persona.to_dict()
+        result["sessions"] = [self._session_to_dict(s) for s in self.sessions]
+        result["final_state"] = {"active_preferences": active, "superseded_preferences": superseded}
+        result["generation_timestamp"] = self.generation_timestamp
+        return result
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "MultiSessionOutput":
+        """Deserialize from dict."""
+        timeline = PreferenceTimeline()
+        life_events: list[LifeEvent] = []
+        sessions: list[Session] = []
+
+        for s_data in data.get("sessions", []):
+            session_id = s_data["session_id"]
+            le_data = s_data["life_event"]
+
+            # Reconstruct life event with domain in context
+            domain = le_data.get("domain", "")
+            context = f"[{domain}] {le_data.get('context', '')}" if domain else le_data.get("context", "")
+            life_event = LifeEvent(session_id=session_id, date=le_data["date"], event=le_data["event"], context=context)
+            life_events.append(life_event)
+
+            prefs_data = s_data.get("preferences", {})
+            new_preference_ids: list[str] = []
+            evolved_preference_ids: dict[str, str] = {}
+
+            # Process created preferences
+            for p in prefs_data.get("created", []):
+                pref_id = p["id"]
+                if pref_id not in timeline.preferences:
+                    timeline.preferences[pref_id] = Preference(
+                        preference_id=pref_id, fact=p["fact"], category=p.get("category", ""),
+                        created_at_session=session_id, created_at_date=le_data["date"],
+                    )
+                    timeline._next_id = max(timeline._next_id, int(pref_id.split("_")[1]) + 1)
+                new_preference_ids.append(pref_id)
+
+            # Process evolved preferences
+            for e in prefs_data.get("evolved", []):
+                old_id, new_id = e["from"]["id"], e["to"]["id"]
+                if old_id not in timeline.preferences:
+                    timeline.preferences[old_id] = Preference(
+                        preference_id=old_id, fact=e["from"]["fact"], category=e["to"].get("category", ""),
+                        created_at_session=0, created_at_date="",
+                    )
+                timeline.preferences[old_id].superseded_at_session = session_id
+                timeline.preferences[old_id].superseded_by = new_id
+                timeline.preferences[old_id].reason_for_change = e.get("reason", "")
+
+                if new_id not in timeline.preferences:
+                    timeline.preferences[new_id] = Preference(
+                        preference_id=new_id, fact=e["to"]["fact"], category=e["to"].get("category", ""),
+                        created_at_session=session_id, created_at_date=le_data["date"],
+                    )
+                    timeline._next_id = max(timeline._next_id, int(new_id.split("_")[1]) + 1)
+                new_preference_ids.append(new_id)
+                evolved_preference_ids[old_id] = new_id
+
+            sessions.append(Session(
+                session_id=session_id, life_event=life_event, conversation=s_data.get("conversation", []),
+                active_preference_ids=timeline.get_preference_ids_at_session(session_id),
+                new_preference_ids=new_preference_ids, evolved_preference_ids=evolved_preference_ids,
+            ))
+
         return cls(
-            persona=data["persona"],
-            persona_id=data.get("persona_id", ""),
-            life_events=[
-                LifeEvent(
-                    session_id=e["session_id"],
-                    date=e["date"],
-                    event=e["event"],
-                    context=e.get("context", ""),
-                )
-                for e in data.get("life_events", [])
-            ],
-            timeline=PreferenceTimeline.from_dict(data.get("timeline", {})),
-            sessions=[
-                Session(
-                    session_id=s["session_id"],
-                    life_event=LifeEvent(
-                        session_id=s["life_event"]["session_id"],
-                        date=s["life_event"]["date"],
-                        event=s["life_event"]["event"],
-                        context=s["life_event"].get("context", ""),
-                    ),
-                    conversation=s["conversation"],
-                    active_preference_ids=s["active_preference_ids"],
-                    new_preference_ids=s.get("new_preference_ids", []),
-                    evolved_preference_ids=s.get("evolved_preference_ids", {}),
-                )
-                for s in data.get("sessions", [])
-            ],
+            persona=data["persona"], persona_id=data.get("persona_id", ""),
+            life_events=life_events, timeline=timeline, sessions=sessions,
             generation_timestamp=data.get("generation_timestamp", ""),
+            expanded_persona=ExpandedPersona.from_dict(data["expanded_persona"]) if data.get("expanded_persona") else None,
         )
 
     def get_all_conversations_flat(self) -> list[dict[str, str]]:
         """Returns all conversations concatenated in chronological order."""
-        all_turns = []
-        for session in self.sessions:
-            all_turns.extend(session.conversation)
-        return all_turns
+        return [turn for session in self.sessions for turn in session.conversation]
 
     def get_current_preferences(self) -> list[Preference]:
         """Returns currently active preferences (latest state)."""

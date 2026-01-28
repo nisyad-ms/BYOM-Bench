@@ -1,159 +1,124 @@
-"""
-Test multi-session evaluation system.
+#!/usr/bin/env python
+"""Test evaluation - Run agent dialogue and scoring on generated task.
 
-This test:
-1. Loads previously generated multi-session data
-2. Generates an evaluation task
-3. Runs a short evaluation dialogue
-4. Evaluates with the judge
+Usage:
+    python test_evaluation.py --input outputs/data_generation_output.json
+    python test_evaluation.py --no-context  # Test agent without memory
+    python test_evaluation.py --max-turns 10
 """
 
+import argparse
 import json
-import logging
+import sys
 from pathlib import Path
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-)
-logger = logging.getLogger(__name__)
+from utils import add_file_logging, setup_logging
+
+logger = setup_logging("evaluation")
 
 
-def test_evaluation_components():
-    """Test individual components of the evaluation system."""
-    from persona_gym.client import LLMClient
+def main():
+    parser = argparse.ArgumentParser(description="Test evaluation system")
+    parser.add_argument("--input", type=str, default="outputs/data_generation_output.json",
+                        help="Path to multi-session data JSON file")
+    parser.add_argument("--output", type=str, default="outputs/evaluation_output.json",
+                        help="Output file path")
+    parser.add_argument("--no-context", action="store_true",
+                        help="Evaluate agent without conversation history (should score poorly)")
+    parser.add_argument("--max-turns", type=int, default=5,
+                        help="Maximum agent turns in dialogue")
+    args = parser.parse_args()
+
+    # Check input exists
+    input_path = Path(args.input)
+    if not input_path.exists():
+        logger.error(f"Input file not found: {input_path}")
+        logger.info("Run test_data_generation.py first")
+        sys.exit(1)
+
+    from persona_gym.evaluation_multisession import run_evaluation
     from persona_gym.schemas import MultiSessionOutput
 
-    # Load test data
-    data_path = Path("outputs/test_multisession_output.json")
-    if not data_path.exists():
-        logger.error(f"Test data not found at {data_path}")
-        logger.info("Run test_multisession.py first to generate test data")
-        return
+    # Load data
+    logger.info("=" * 60)
+    logger.info("EVALUATION TEST")
+    logger.info("=" * 60)
+    logger.info("")
+    logger.info("Configuration:")
+    logger.info(f"  Input: {input_path}")
+    logger.info(f"  Mode: {'No-Context Agent' if args.no_context else 'Full-Context Agent'}")
+    logger.info(f"  Max Turns: {args.max_turns}")
+    logger.info("")
 
-    with open(data_path) as f:
-        data = json.load(f)
+    with open(input_path, "r", encoding="utf-8") as f:
+        raw_data = json.load(f)
+    data = MultiSessionOutput.from_dict(raw_data)
+    logger.info(f"Loaded {len(data.sessions)} sessions")
+    logger.info("")
 
-    multisession_data = MultiSessionOutput.from_dict(data)
-    logger.info(f"Loaded multi-session data: {len(multisession_data.sessions)} sessions")
-
-    # Check preferences
-    current_prefs = multisession_data.get_current_preferences()
-    stale_prefs = multisession_data.get_superseded_preferences()
-    logger.info(f"Current preferences: {len(current_prefs)}")
-    logger.info(f"Stale preferences: {len(stale_prefs)}")
-
-    for p in current_prefs:
-        logger.info(f"  - {p.preference_id}: {p.fact[:60]}...")
-
-    for p in stale_prefs:
-        logger.info(f"  - [STALE] {p.preference_id}: {p.fact[:40]}... -> {p.superseded_by}")
-
-    # Test task generator
-    logger.info("\n--- Testing Task Generator ---")
-    from persona_gym.task_generators import EvaluationTaskGenerator
-
-    client = LLMClient()
-    task_generator = EvaluationTaskGenerator(client)
-
-    eval_task = task_generator.generate(multisession_data, num_stale_traps=2)
-
-    logger.info(f"Generated evaluation event: {eval_task.evaluation_event.event}")
-    logger.info(f"User prompt: {eval_task.user_prompt[:100]}...")
-    logger.info(f"Current prefs in rubric: {len(eval_task.rubric.current_preferences)}")
-    logger.info(f"Stale prefs in rubric: {len(eval_task.rubric.stale_preferences)}")
-
-    # Test user simulator
-    logger.info("\n--- Testing User Simulator ---")
-    from persona_gym.evaluation_multisession.user_simulator import MultiSessionUserSimulator
-
-    user_sim = MultiSessionUserSimulator(eval_task, client)
-    initial_msg = user_sim.get_initial_message()
-    logger.info(f"Initial user message: {initial_msg}")
-
-    # Simulate one turn
-    test_agent_msg = "I'd be happy to help you with that! What specific details would you like me to consider?"
-    test_history = [
-        {"role": "user", "content": initial_msg},
-        {"role": "assistant", "content": test_agent_msg},
-    ]
-
-    user_response = user_sim.respond(test_agent_msg, test_history)
-    logger.info(f"User response: {user_response}")
-
-    return eval_task, client
-
-
-def test_full_evaluation(no_context: bool = False):
-    """Test full evaluation flow.
-
-    Args:
-        no_context: If True, evaluate an agent without access to conversation history.
-            This agent should score poorly since it can't recall preferences.
-    """
-    from persona_gym.evaluation_multisession.runner import run_evaluation_from_file
-
-    data_path = Path("outputs/test_multisession_output.json")
-    if not data_path.exists():
-        logger.error(f"Test data not found at {data_path}")
-        return
-
-    if no_context:
-        logger.info("\n--- Running No-Context Agent Evaluation ---")
-        output_path = Path("outputs/evaluation_result_no_context.json")
-        # System prompt that explicitly has NO access to history
-        agent_system_prompt = """You are a helpful AI assistant. This is your first conversation with this user - you have no prior context or history with them.
-
-Be helpful and ask clarifying questions as needed since you don't know anything about the user's preferences, background, or previous discussions."""
+    # Configure agent mode
+    if args.no_context:
         include_history = False
+        output_path = Path(args.output.replace(".json", "_no_context.json"))
     else:
-        logger.info("\n--- Running Full Evaluation ---")
-        output_path = Path("outputs/evaluation_result.json")
-        agent_system_prompt = None  # Uses default with history
         include_history = True
+        output_path = Path(args.output)
 
-    result = run_evaluation_from_file(
-        data_path,
-        agent_system_prompt=agent_system_prompt,
-        output_path=output_path,
-        max_turns=5,  # Short test
-        num_stale_traps=2,
+    # Run evaluation
+    logger.info("--- Running Evaluation ---")
+    logger.info("")
+    result = run_evaluation(
+        data,
+        max_turns=args.max_turns,
         include_history=include_history,
     )
 
-    logger.info(f"\n{'='*50}")
+    # Log results
+    logger.info("")
+    logger.info("=" * 60)
     logger.info("EVALUATION RESULTS")
-    logger.info(f"{'='*50}")
-    logger.info(f"Task Completed: {result.task_completed}")
-    logger.info(f"Total Turns: {result.total_turns}")
-    logger.info(f"Productive Turns: {result.productive_turns}")
-    logger.info(f"Clarifying Turns: {result.clarifying_turns}")
-    logger.info(f"Correction Turns: {result.correction_turns}")
-    logger.info(f"Efficiency Score: {result.efficiency_score:.2f}")
-    logger.info(f"Preference Score: {result.preference_score:.2f}")
-    logger.info(f"Stale Penalty: {result.stale_penalty:.2f}")
-    logger.info(f"Final Score: {result.final_score:.2f}")
-    logger.info(f"\nReasoning: {result.reasoning}")
+    logger.info("=" * 60)
+    logger.info("")
+    logger.info("Scores:")
+    logger.info(f"  Final Score: {result.final_score:.2f}")
+    logger.info(f"  Preference Score: {result.preference_score:.2f}")
+    logger.info(f"  Efficiency Score: {result.efficiency_score:.2f}")
+    logger.info(f"  Stale Penalty: {result.stale_penalty:.2f}")
+    logger.info("")
+    logger.info("Turn Analysis:")
+    logger.info(f"  Task Completed: {result.task_completed}")
+    logger.info(f"  Total Turns: {result.total_turns}")
+    logger.info(f"  Productive Turns: {result.productive_turns}")
+    logger.info(f"  Clarifying Turns: {result.clarifying_turns}")
+    logger.info(f"  Correction Turns: {result.correction_turns}")
+    logger.info("")
+    logger.info("Judge Reasoning:")
+    logger.info("-" * 40)
+    for line in result.reasoning.split('\n'):
+        logger.info(f"  {line}")
+    logger.info("-" * 40)
+    logger.info("")
 
-    # Log conversation
-    logger.info(f"\n--- Conversation ({len(result.conversation)} turns) ---")
-    for turn in result.conversation:
+    logger.info("--- Full Conversation ---")
+    logger.info("")
+    for i, turn in enumerate(result.conversation):
         role = turn["role"].upper()
-        content = turn["content"][:100] + ("..." if len(turn["content"]) > 100 else "")
-        logger.info(f"{role}: {content}")
+        content = turn["content"]
+        logger.info(f"[Turn {i+1}] {role}:")
+        for line in content.split('\n'):
+            logger.info(f"  {line}")
+        logger.info("")
+    logger.info("-" * 40)
+    logger.info("")
 
-    return result
+    # Save output
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
+    logger.info(f"Results saved to: {output_path}")
+    logger.info("")
 
 
 if __name__ == "__main__":
-    import sys
-
-    if "--no-context" in sys.argv:
-        test_full_evaluation(no_context=True)
-    elif "--full" in sys.argv:
-        test_full_evaluation(no_context=False)
-    else:
-        # Quick component test
-        test_evaluation_components()
-        logger.info("\nTo run full evaluation, use: python test_evaluation.py --full")
-        logger.info("To test no-context agent, use: python test_evaluation.py --no-context")
+    add_file_logging(logger)
+    main()

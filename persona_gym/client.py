@@ -249,7 +249,7 @@ class LLMClient:
         response = self._client.responses.parse(
             model=self.deployment,
             input=input_content,
-            text_format=response_schema,
+            response_schema=response_schema,
             max_output_tokens=max_tokens,
         )
 

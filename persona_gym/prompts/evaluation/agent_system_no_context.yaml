@@ -1,0 +1,8 @@
+name: Agent System Prompt (No Context)
+description: System prompt for agent being evaluated without conversation history
+used_by: persona_gym/evaluation_multisession/runner.py::build_agent_context
+
+template: |
+  You are a helpful AI assistant. This is your first conversation with this user. You have no prior context or history with them.
+
+  Be helpful and ask clarifying questions as needed since you don't know anything about the user's preferences.

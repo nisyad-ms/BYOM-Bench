@@ -57,13 +57,11 @@ class EvaluationTaskGenerator:
     def generate(
         self,
         multisession_output: MultiSessionOutput,
-        num_stale_traps: int = 2,
     ) -> EvaluationTask:
         """Generate an evaluation task from multi-session data.
 
         Args:
             multisession_output: Complete multi-session generation output
-            num_stale_traps: Number of stale preferences to include as traps
 
         Returns:
             EvaluationTask ready for evaluation
@@ -72,8 +70,8 @@ class EvaluationTaskGenerator:
         current_prefs = multisession_output.get_current_preferences()
         stale_prefs = multisession_output.get_superseded_preferences()
 
-        # Limit stale traps to what's available
-        stale_traps = stale_prefs[:num_stale_traps] if stale_prefs else []
+        # Use all stale preferences as traps
+        stale_traps = stale_prefs
 
         logger.info(
             f"Found {len(current_prefs)} current preferences, "
@@ -147,7 +145,7 @@ class EvaluationTaskGenerator:
 
         response = self.client.complete_json(
             prompt=prompt,
-            system_prompt="You are an expert at creating evaluation tasks that test personalization memory.",
+            system_prompt=render_prompt("evaluation/task_generator_system"),
         )
 
         try:
@@ -212,7 +210,7 @@ class EvaluationTaskGenerator:
 
         response = self.client.complete(
             prompt=prompt,
-            system_prompt="You are an expert at writing natural user messages that request specific deliverables.",
+            system_prompt=render_prompt("evaluation/user_prompt_generator_system"),
         )
 
         # Clean up the response - extract just the message
@@ -313,14 +311,12 @@ class EvaluationTaskGenerator:
 def generate_evaluation_task(
     multisession_output: MultiSessionOutput,
     client: LLMClient | None = None,
-    num_stale_traps: int = 2,
 ) -> EvaluationTask:
     """Convenience function to generate an evaluation task from multi-session data.
 
     Args:
         multisession_output: Output from MultiSessionGenerator
         client: Optional LLM client
-        num_stale_traps: Number of stale preferences to use as traps
 
     Returns:
         EvaluationTask ready for evaluation
@@ -334,4 +330,4 @@ def generate_evaluation_task(
         >>> print(f"Required preferences: {task.rubric.required_preferences}")
     """
     generator = EvaluationTaskGenerator(client)
-    return generator.generate(multisession_output, num_stale_traps)
+    return generator.generate(multisession_output)

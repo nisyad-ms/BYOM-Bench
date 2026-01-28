@@ -1,0 +1,60 @@
+name: Expand Persona
+description: Expands a basic persona into a rich character with details across all life domains
+used_by: persona_gym/data_generators/multisession.py::_expand_persona
+variables:
+  - persona: Basic persona description (can be brief)
+
+template: |
+  Given a basic persona description, expand it into a fully realized character with specific details across all major life domains. Output a structured JSON with discrete facts about this person.
+
+  BASIC PERSONA:
+  {persona}
+
+  EXPANSION STEPS (follow this order - each informs the next):
+
+  1. DEMOGRAPHICS: Assign age and gender if not specified. Infer a plausible location.
+  
+  2. WORK & EDUCATION: Their occupation and educational background.
+     - Students: focus on school, maybe part-time work
+     - Working adults: current job, career trajectory, education history
+     - Retirees: past career, current activities (volunteering, hobbies-as-work)
+     - Stay-at-home parents: parenting as primary occupation, past career if any
+  
+  3. RELATIONSHIPS & PERSONAL: 
+     - Family, romantic life, friendships, living situation.
+     - Personal value systems, major life circumstances.
+  
+  4. HEALTH & WELLNESS: Physical health, fitness, diet, mental health, sleep, any conditions.
+     - Informed by age, work stress, family situation
+     - For variety, include both positive and negative health aspects
+  
+  5. TRAVEL & EXPERIENCES: Travel history, preferences, constraints.
+     - Informed by income, job flexibility, family, health
+  
+  6. HOBBIES & INTERESTS: How they spend free time, passions, entertainment.
+     - Fills remaining picture of who they are
+
+  REQUIREMENTS:
+  - 3-5 specific facts per domain (not all domains need the same count)
+  - Each fact should be concrete and specific, not vague
+  - Facts should be consistent with each other
+  - Facts should provide hooks for generating life events
+  - Adapt to life stage (student, working, retired, etc.)
+
+  EXAMPLES:
+
+  Basic: "A college student studying biology"
+  Output: {{"base_persona": "A college student studying biology", "age": 20, "gender": "female", "location": "Boston, MA", "work_and_education": ["Junior at Boston University majoring in Biology", "Pre-med track, planning to apply to medical schools next year", "Works part-time as a lab assistant (10 hrs/week)", "Struggling with organic chemistry this semester"], "relationships_and_personal": ["Lives in off-campus apartment with two roommates", "Single, focused on studies but open to dating", "Parents live in Connecticut, visits monthly", "Close friend group from freshman dorm"], "health_and_wellness": ["Generally healthy but sleep-deprived during exam periods", "Stress eats when overwhelmed", "Used to play soccer in high school, now rarely exercises"], "travel_and_experiences": ["Studied abroad in Spain sophomore year", "Limited budget constrains travel", "Goes home for holidays and summer"], "hobbies_and_interests": ["Watches medical dramas for 'research'", "Enjoys hiking when she has time", "Active on social media, especially Instagram", "Recently started a bullet journal"]}}
+
+  Basic: "Retired teacher, 67, lives in Florida"
+  Output: {{"base_persona": "Retired teacher, 67, lives in Florida", "age": 67, "gender": "male", "location": "Sarasota, FL", "work_and_education": ["Taught high school history for 35 years", "Retired 2 years ago from public school system", "Master's degree in Education from FSU", "Occasionally guest lectures at local community college", "Volunteers at historical society"], "relationships_and_personal": ["Widowed 4 years ago, still adjusting", "Two adult children - daughter in Atlanta, son in Chicago", "Three grandchildren ages 4, 7, and 9", "Active in church community, sings in choir"], "health_and_wellness": ["Managing high blood pressure with medication", "Walks 2 miles every morning", "Had knee replacement surgery last year", "Watches sodium intake"], "travel_and_experiences": ["Has visited all 50 states over his lifetime", "Takes annual trip to see grandchildren", "Prefers road trips over flying now", "Dreams of visiting Ireland to trace ancestry"], "hobbies_and_interests": ["Avid reader, especially Civil War history", "Tends a vegetable garden", "Learning to play guitar", "Watches Jeopardy every evening"]}}
+
+  OUTPUT FORMAT (JSON):
+  {{"base_persona": "The original persona description", "age": <number>, "gender": "<male/female/non-binary>", "location": "<city, state/country>", "work_and_education": ["fact 1", "fact 2", ...], "relationships_and_personal": ["fact 1", "fact 2", ...], "health_and_wellness": ["fact 1", "fact 2", ...], "travel_and_experiences": ["fact 1", "fact 2", ...], "hobbies_and_interests": ["fact 1", "fact 2", ...]}}
+
+  CRITICAL:
+  - Output ONLY valid JSON
+  - Each domain should have 3-5 facts
+  - Facts must be specific and concrete (no vague statements)
+  - All facts should be consistent with each other and the base persona
+  - Adapt appropriately to life stage (student, working, retired, etc.)

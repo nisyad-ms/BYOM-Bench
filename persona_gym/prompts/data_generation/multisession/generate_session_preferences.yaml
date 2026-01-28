@@ -1,0 +1,98 @@
+name: Generate Session Preferences
+description: Generates new preferences for a session (session > 0) based on the life event. These are NEW preferences, not evolutions of existing ones.
+used_by: persona_gym/data_generators/multisession.py::_generate_session_preferences
+variables:
+  - persona: The user persona description
+  - life_event: The life event and its context
+  - event_date: Date of the life event
+  - current_preferences: JSON list of currently active preferences (to avoid duplication)
+  - num_preferences: Number of new preferences to generate (typically 3)
+
+template: |
+  Based on the persona and their current life event, generate exactly {num_preferences} NEW specific user preferences. These preferences must be directly relevant to the life event and DIFFERENT from existing preferences.
+
+  PERSONA:
+  {persona}
+
+  LIFE EVENT:
+  Event: {life_event}
+  Date: {event_date}
+
+  CURRENTLY ACTIVE PREFERENCES (do NOT duplicate these):
+  {current_preferences}
+
+  REQUIREMENTS:
+  1. Generate exactly {num_preferences} NEW preferences
+  2. All preferences must be directly tied to this life event
+  3. Preferences must NOT overlap with or duplicate any existing preferences
+  4. Each preference should naturally surface when discussing/handling this event
+  5. Preferences must be specific and actionable (not vague)
+  6. Assign each preference a descriptive category that fits naturally
+
+  CRITICAL: MAKE PREFERENCES CONCRETE AND SPECIFIC
+  
+  Preferences must be specific enough that they could be REVERSED or DRAMATICALLY CHANGED by a future life event.
+  Include: WHAT specifically they do, WHEN they do it, HOW OFTEN, WHAT they consume/avoid.
+  
+  ❌ BAD (vague): "Prefers healthy eating"
+  ✓ GOOD (concrete): "Eats grilled salmon for dinner every Tuesday and Thursday - never misses it"
+  
+  ❌ BAD (abstract): "Values quality time with partner"
+  ✓ GOOD (specific): "Has a strict 'no phones' rule during dinner, 7pm-8pm every night"
+  
+  ❌ BAD (process-focused): "Tries to exercise regularly"
+  ✓ GOOD (behavior-focused): "Swims 40 laps at the community pool every morning at 6am"
+
+  KEY PRINCIPLE:
+  These are BRAND NEW preferences that emerge from this life event, not modifications of existing ones. Evolution of existing preferences is handled separately.
+
+  CATEGORY GUIDANCE:
+  Create categories that fit the preference naturally. Categories should be short (1-3 words) and descriptive.
+  Examples: "cooking", "communication", "fitness", "travel", "parenting", "music", "health", "scheduling", "budget", "dietary", "accommodation"
+  
+  Do NOT force categories - let them emerge from the preferences.
+
+  EXAMPLES OF GOOD NEW PREFERENCES:
+
+  Life Event: "Diagnosed with Type 2 diabetes after years of unhealthy eating"
+  Existing preferences might be about work schedule, travel, etc.
+  NEW preferences (health-specific, not overlapping):
+  - "Needs to check blood sugar before and after meals" (health_monitoring)
+  - "Prefers restaurants that publish nutritional information" (dining)
+  - "Carries emergency glucose tablets everywhere" (health_preparedness)
+
+  Life Event: "Adopted a rescue dog who needs extensive training"
+  Existing preferences might be about diet, work hours, etc.
+  NEW preferences (pet-specific, not overlapping):
+  - "Cannot travel overnight without arranging dog care first" (travel_planning)
+  - "Prefers outdoor cafes and restaurants that allow dogs" (dining)
+  - "Morning routine must include 30-minute dog walk before work" (scheduling)
+
+  Life Event: "Started dating someone who lives 2 hours away"
+  Existing preferences might be about fitness, food, hobbies, etc.
+  NEW preferences (relationship-specific, not overlapping):
+  - "Prefers weekend plans to be finalized by Wednesday for travel coordination" (scheduling)
+  - "Needs good cell reception for daily video calls" (communication)
+  - "Looking for activities that work well as virtual dates" (entertainment)
+
+  BAD EXAMPLES (these overlap with or duplicate existing preferences):
+  If existing: "Prefers direct flights for work travel"
+  BAD new: "Likes non-stop flights" (too similar)
+  GOOD new: "Books flights with extra legroom on long trips" (different aspect)
+
+  OUTPUT FORMAT (JSON):
+  {{
+    "preferences": [
+      {{
+        "fact": "Specific NEW preference statement tied to this event",
+        "category": "descriptive_category"
+      }}
+    ]
+  }}
+
+  CRITICAL:
+  - Output ONLY valid JSON
+  - Each preference must have both "fact" and "category" fields
+  - Generate exactly {num_preferences} preferences
+  - EVERY preference must be NEW and NOT duplicate existing ones
+  - EVERY preference must be relevant to discussing/handling this life event

@@ -1,0 +1,26 @@
+name: User Simulator Response
+description: Prompt for user simulator to generate next user response
+used_by: persona_gym/evaluation_multisession/user_simulator.py::respond
+variables:
+  - preferences: JSON list of user preferences (private, not to be revealed)
+  - conversation: Formatted conversation so far
+  - agent_message: The assistant's last message
+
+template: |
+  Continue this dialogue. The person seeking help has these PRIVATE preferences (do not reveal unless violated):
+  {preferences}
+
+  Conversation so far:
+  {conversation}
+
+  The assistant just said: "{agent_message}"
+
+  CRITICAL RULES:
+  - DO NOT proactively mention or hint at your preferences
+  - DO NOT say "I prefer X" or "I like Y" or explain why something works for you
+  - Only reveal a preference IF the assistant's suggestion directly CONFLICTS with it
+  - When violated, politely correct: "Actually, I'd prefer X instead"
+  - Accept good suggestions without explaining why they match your preferences
+  - Keep response brief (1-3 sentences)
+
+  Write the next response from the person seeking help. Output only the response text.

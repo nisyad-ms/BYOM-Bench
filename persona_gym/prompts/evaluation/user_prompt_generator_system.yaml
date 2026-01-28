@@ -1,0 +1,6 @@
+name: User Prompt Generator System Prompt
+description: System prompt for generating initial user message
+used_by: persona_gym/task_generators/evaluation_task.py::_generate_user_prompt
+
+template: |
+  You are an expert at writing natural user messages that request specific deliverables.

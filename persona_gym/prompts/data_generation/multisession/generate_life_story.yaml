@@ -1,58 +1,137 @@
-name: Generate Life Story
-description: Generates a sequence of life events based on a persona that will drive preference evolution
-used_by: persona_gym/data_generators/multisession.py::_generate_life_story
+name: Generate Life Event
+description: Generates a single life event for a specified domain based on a persona, building on previous events
+used_by: persona_gym/data_generators/multisession.py::_generate_life_event
 variables:
-  - persona: The user persona description
-  - num_events: Number of life events to generate (typically 2-4)
-  - start_date: Starting date for the timeline (MM/DD/YYYY)
+  - persona: The full expanded persona description
+  - domain: The life domain for this event (work_education, health_wellness, travel_experiences, relationships_personal, hobbies_interests)
+  - domain_facts: Specific facts about the persona for this domain
+  - previous_events: List of previously generated events to build upon
 
 template: |
-  Based on the following persona, generate a realistic sequence of {num_events} life events that could happen over the course of several weeks/months. These events should be significant enough to potentially change the user's preferences, habits, or priorities.
+  Generate a realistic life event for the specified domain that is personalized to this persona. The event should be significant enough to potentially change the user's preferences, habits, or priorities.
 
   PERSONA:
   {persona}
 
+  TARGET DOMAIN: {domain}
+
+  DOMAIN-SPECIFIC FACTS (use these to personalize the event):
+  {domain_facts}
+
+  PREVIOUS EVENTS IN THIS PERSON'S STORY:
+  {previous_events}
+
+  NARRATIVE COHERENCE REQUIREMENTS:
+  - If there are previous events, this new event should be CONNECTED to them when natural
+  - Events can be consequences, continuations, or related developments
+  - Cross-domain connections are encouraged (e.g., work stress → health changes → relationship impact)
+  - The events should tell a coherent story about this person's life trajectory
+  - However, don't force connections - if the domain naturally leads elsewhere, that's fine
+
+  DOMAIN DEFINITIONS:
+  - work_education: Work, career changes, education, learning, professional development, skill building
+  - health_wellness: Physical health, mental health, fitness, diet, medical conditions, wellness routines
+  - travel_experiences: Travel, vacations, relocations, exploring new places, cultural experiences
+  - relationships_personal: Romantic relationships, family dynamics, friendships, personal life changes, living situations
+  - hobbies_interests: Hobbies, creative pursuits, sports, entertainment preferences, leisure activities
+
   REQUIREMENTS:
-  1. Events should be chronologically ordered, starting from {start_date}
-  2. Events should be plausible given the persona's background
-  3. Events should create natural opportunities for preference changes
-  4. Include both positive and challenging events for variety
-  5. Events should be specific and concrete, not vague
-  6. Space events 2-8 weeks apart for realistic timeline
+  1. The event MUST belong to the "{domain}" domain
+  2. The event must be plausible and personalized given the persona's background, age, and circumstances
+  3. The event should create natural opportunities for preference changes
+  4. The event should be specific and concrete, not vague
+  5. Include enough detail to understand the impact on daily life
+  6. The event could just be an opportunity the user is exploring, not necessarily something that has already happened
 
-  EXAMPLES OF GOOD LIFE EVENTS:
-  - "Started a new remote job requiring frequent video calls"
-  - "Moved to a new city for partner's job"
-  - "Completed a certification course in data analytics"
-  - "Experienced burnout and took a mental health break"
-  - "Adopted a rescue dog"
-  - "Started training for a marathon"
+  CRITICAL: PREFER CONSTRAINT-GENERATING EVENTS
+  
+  About 60-70% of events should introduce CONSTRAINTS or LIMITATIONS that force preference changes:
+  - Health diagnoses (allergies, conditions, injuries)
+  - New responsibilities (caregiving, parenthood, demanding job)
+  - Resource changes (budget constraints, time limitations)
+  - Relationship constraints (partner's needs, family obligations)
+  
+  Why? Constraint events create DRAMATIC, VERIFIABLE preference changes:
+  - "Loved spicy food" → "Diagnosed with GERD, now avoids all spicy food"
+  - "Runs 10k daily" → "Knee surgery, switched to swimming"
+  - "Works late nights" → "New baby, strict 9pm bedtime"
+  
+  These changes are easily verifiable: if an agent recommends spicy food to someone with GERD, that's clearly wrong.
+  
+  The remaining 30-40% can be positive/additive events (new opportunities, hobbies, relationships).
 
-  EXAMPLES OF BAD LIFE EVENTS (too vague):
-  - "Things changed"
-  - "Had some experiences"
-  - "Life happened"
+  EXAMPLES OF GOOD LIFE EVENTS BY DOMAIN:
+
+  work_education:
+  - "Laid off unexpectedly, now job hunting with tighter budget constraints"
+  - "Promoted to demanding role requiring 60+ hour weeks and frequent travel"
+  - "Switched to night shift, completely reversing sleep schedule"
+  - "Company downsized, took significant pay cut to keep job"
+  - "New manager requires strict in-office presence, ending remote work flexibility"
+  - "Started caregiving for sick parent while working, severely limiting personal time"
+  - "Diagnosed with repetitive strain injury, must limit computer use to 6 hours/day"
+  - "Company relocated office 2 hours away, now has brutal commute"
+  - "Went back to school part-time, evenings and weekends now devoted to studying"
+  - "Took over failing family business, working 7 days a week to save it"
+
+  health_wellness:
+  - "Diagnosed with celiac disease, must now follow strict gluten-free diet"
+  - "Discovered severe lactose intolerance after years of stomach issues"
+  - "Diagnosed with Type 2 diabetes, requiring blood sugar monitoring and diet changes"
+  - "Knee replacement surgery, can no longer run - switched to low-impact activities"
+  - "Developed chronic insomnia, now follows strict sleep hygiene protocol"
+  - "Diagnosed with high blood pressure, must limit sodium and caffeine"
+  - "Developed acid reflux (GERD), had to eliminate spicy and acidic foods"
+  - "Sports injury requiring 6 months of physical therapy and activity restrictions"
+  - "Started therapy after burnout, now prioritizing mental health boundaries"
+  - "Began medication that requires avoiding alcohol and certain foods"
+
+  travel_experiences:
+  - "Took a solo backpacking trip through Southeast Asia for two months"
+  - "Relocated to a new country for a fresh start"
+  - "Started traveling frequently for work, away from home 2 weeks per month"
+  - "Planned and completed a road trip across multiple national parks"
+  - "Moved from a city apartment to a rural area seeking quieter life"
+  - "Began exploring local weekend getaways to disconnect from routine"
+
+  relationships_personal:
+  - "Partner has strict vegan diet, now cooking all meals plant-based at home"
+  - "Became a parent for the first time, sleep-deprived and no personal time"
+  - "Moved in with aging parent who needs 24/7 care, lost all privacy"
+  - "Partner accepted job abroad, now in long-distance relationship for 2 years"
+  - "Going through difficult divorce, dividing assets and changing living situation"
+  - "Child diagnosed with severe food allergies, entire household diet changed"
+  - "Elderly parent moved in, house now needs to be quiet by 8pm"
+  - "Partner works opposite shift, rarely see each other and must coordinate carefully"
+  - "Started dating someone with young children, weekends now family-focused"
+  - "Roommate with severe pet allergy moved in, had to rehome beloved cat"
+
+  hobbies_interests:
+  - "Adopted a rescue dog requiring significant time and attention"
+  - "Joined a local community garden and started growing vegetables"
+  - "Picked up pottery as a creative outlet during weekends"
+  - "Started volunteering at a local animal shelter every Saturday"
+  - "Joined a recreational sports league and plays twice a week"
+  - "Began learning to play guitar after attending a concert"
+
+  EXAMPLES OF BAD LIFE EVENTS (avoid these patterns):
+  - "Moved to a new city" (why? what's the impact?)
+  - "Things changed at work" (what changed specifically?)
+  - "Had some health issues" (what kind? how does it affect daily life?)
+  - "Life got busy" (with what? why?)
+  - "Started something new" (what exactly?)
+  - "Made a big decision" (what decision? context?)
 
   OUTPUT FORMAT (JSON):
   {{
-    "events": [
-      {{
-        "session_id": 0,
-        "date": "{start_date}",
-        "event": "Brief description of what happened",
-        "context": "How this might affect their daily life, priorities, or preferences"
-      }},
-      {{
-        "session_id": 1,
-        "date": "MM/DD/YYYY",
-        "event": "...",
-        "context": "..."
-      }}
-    ]
+    "event": "Specific description of what happened, personalized to this persona",
+    "domain": "{domain}",
+    "context": "How this event affects their daily life, priorities, or preferences"
   }}
 
   CRITICAL:
   - Output ONLY valid JSON
-  - session_id must be sequential starting from 0
-  - Dates must be in MM/DD/YYYY format
-  - Each event needs both "event" and "context" fields
+  - The "domain" field must be exactly "{domain}"
+  - The event must be appropriate for the specified domain
+  - The event must be personalized to the persona (consider their age, background, interests)
+  - Provide enough context to understand the impact on preferences

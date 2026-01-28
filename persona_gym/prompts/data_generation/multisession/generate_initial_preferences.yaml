@@ -1,54 +1,97 @@
 name: Generate Initial Preferences
-description: Generates the initial set of user preferences based on persona and first life event
+description: Generates event-relevant preferences based on persona and life event. All preferences must naturally surface during the conversation about this event.
 used_by: persona_gym/data_generators/multisession.py::_generate_initial_preferences
 variables:
   - persona: The user persona description
   - life_event: The first life event and its context
   - event_date: Date of the life event
-  - num_preferences: Number of preferences to generate (typically 5-7)
+  - num_preferences: Number of preferences to generate (typically 3)
 
 template: |
-  Based on the persona and their current life situation, generate {num_preferences} specific user preferences. These should be realistic preferences that would naturally emerge from this person's background and current circumstances.
+  Based on the persona and their current life event, generate exactly {num_preferences} specific user preferences. Every preference must be directly relevant to the life event - these will be revealed during a conversation about this event.
 
   PERSONA:
   {persona}
 
-  CURRENT LIFE SITUATION:
+  LIFE EVENT:
   Event: {life_event}
   Date: {event_date}
 
   REQUIREMENTS:
   1. Generate exactly {num_preferences} preferences
-  2. Each preference should be specific and actionable (not vague)
-  3. Preferences should span different categories (communication, scheduling, learning, etc.)
-  4. Some preferences should be clearly linked to the current life event
-  5. Include a mix of strong preferences and softer ones
-  6. Assign each preference to a category
+  2. All preferences must be directly tied to this life event
+  3. Each preference should naturally surface when discussing/handling this event
+  4. Preferences must be specific and actionable (not vague)
+  5. Assign each preference a descriptive category that fits naturally
 
-  CATEGORIES TO CONSIDER:
-  - communication_style: How they prefer to interact (email vs call, formal vs casual)
-  - scheduling: When/how they prefer to do things (morning person, batch meetings)
-  - learning_style: How they absorb information (video, reading, hands-on)
-  - work_style: How they approach tasks (deep work, collaborative, async)
-  - decision_making: How they make choices (research-heavy, intuitive, consult others)
-  - lifestyle: Personal habits and values (health, environment, budget)
+  CRITICAL: MAKE PREFERENCES CONCRETE AND SPECIFIC
+  
+  Preferences must be specific enough that they could be REVERSED or DRAMATICALLY CHANGED by a future life event.
+  
+  ❌ BAD (too abstract): "Wants to maintain work-life balance"
+  ✓ GOOD (concrete): "Never takes work calls after 6pm, keeps evenings strictly for family"
+  
+  ❌ BAD (process-focused): "Prefers to delegate tasks"  
+  ✓ GOOD (behavior-focused): "Runs 10km every morning before work, rain or shine"
+  
+  ❌ BAD (vague): "Enjoys Italian food"
+  ✓ GOOD (specific): "Eats pasta with meat sauce for dinner at least 3 times per week"
+  
+  ❌ BAD (abstract): "Values health and wellness"
+  ✓ GOOD (concrete): "Does intense CrossFit workouts 5 days a week at 6am"
+  
+  Think about: WHAT specifically do they do? WHEN do they do it? HOW OFTEN? WHAT do they consume/avoid?
+  These specifics make preferences verifiable and allow for dramatic reversals later.
 
-  EXAMPLES OF GOOD PREFERENCES:
-  - "Prefers async communication via email over video calls" (communication_style)
-  - "Needs at least 2 hours of uninterrupted focus time each morning" (work_style)
-  - "Learns best through hands-on projects rather than lectures" (learning_style)
+  KEY PRINCIPLE:
+  These preferences will be used in a conversation about this specific life event. If a preference wouldn't naturally come up while discussing or dealing with this event, don't include it.
 
-  EXAMPLES OF BAD PREFERENCES (too vague):
-  - "Likes things organized"
-  - "Prefers good quality"
-  - "Wants to be efficient"
+  CATEGORY GUIDANCE:
+  Create categories that fit the preference naturally. Categories should be short (1-3 words) and descriptive.
+  Examples: "cooking", "communication", "fitness", "travel", "parenting", "music", "health", "scheduling", "budget", "dietary", "accommodation"
+  
+  Do NOT force categories - let them emerge from the preferences.
+
+  EXAMPLES OF GOOD PREFERENCES (concrete, specific, reversible):
+
+  Life Event: "Planning a two-week trip to Japan"
+  - "Always stays in traditional ryokans with tatami floors - refuses modern hotels even if cheaper" (accommodation)
+  - "Strictly vegetarian for 10 years - won't eat any meat or fish, needs dedicated vegetarian restaurants" (dietary)
+  - "Wakes up at 5am to visit temples before crowds, in bed by 9pm every night" (travel_style)
+
+  Life Event: "Starting a new job as a remote software engineer"
+  - "Works from a dedicated home office with door closed - cannot concentrate in open spaces or coffee shops" (work_environment)
+  - "Refuses video calls entirely - only communicates via Slack messages and email" (communication)
+  - "Takes exactly 45-minute lunch at 12:30pm, never skips or shortens it" (scheduling)
+
+  Life Event: "Training for first marathon in 6 months"
+  - "Runs 15km every morning at 5:30am, never misses a day regardless of weather" (training)
+  - "Eats a large bowl of pasta the night before every long run - carb-loading ritual" (nutrition)
+  - "Only runs outdoors on trails - hates treadmills and refuses to use gym equipment" (exercise)
+
+  Life Event: "Diagnosed with high cholesterol at annual checkup"
+  - "Eats red meat (steak, burgers) at least 4 times per week - it's his main protein source" (dietary)
+  - "Drinks 3-4 glasses of whole milk daily - has done so since childhood" (beverages)
+  - "Skips breakfast entirely, has large lunch and dinner instead" (eating_schedule)
+
+  Life Event: "Moving to a new apartment next month"
+  - "Hires professional movers for everything - never asks friends or lifts heavy items himself" (moving_logistics)
+  - "Donates any item not used in past 6 months - strict minimalist rule" (organization)
+  - "Only moves on Saturdays - refuses to take time off work for personal errands" (scheduling)
+
+  EXAMPLES OF BAD PREFERENCES (not tied to the event):
+
+  Life Event: "Planning a two-week trip to Japan"
+  - "Prefers morning workouts" (unrelated to trip planning)
+  - "Likes to read before bed" (irrelevant to travel discussion)
+  - "Responds to emails within 24 hours" (won't come up in trip conversation)
 
   OUTPUT FORMAT (JSON):
   {{
     "preferences": [
       {{
-        "fact": "Specific preference statement",
-        "category": "category_name"
+        "fact": "Specific preference statement tied to this event",
+        "category": "descriptive_category"
       }}
     ]
   }}
@@ -57,3 +100,4 @@ template: |
   - Output ONLY valid JSON
   - Each preference must have both "fact" and "category" fields
   - Generate exactly {num_preferences} preferences
+  - EVERY preference must be relevant to discussing/handling this life event
