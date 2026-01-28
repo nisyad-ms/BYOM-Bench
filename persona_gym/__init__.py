@@ -18,7 +18,6 @@ Usage:
     generator = MultiSessionGenerator(
         persona="Software engineer considering career change...",
         num_sessions=2,
-        num_preferences=5,
     )
     result = generator.generate_multi_session()
 

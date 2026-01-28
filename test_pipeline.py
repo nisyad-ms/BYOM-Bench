@@ -12,7 +12,7 @@ Usage:
     python test_pipeline.py --compare-agents
 
     # Custom configuration
-    python test_pipeline.py --sessions 3 --preferences 6 --max-turns 8
+    python test_pipeline.py --sessions 3 --max-turns 8
 """
 
 import argparse
@@ -53,7 +53,6 @@ def run_data_generation(args: argparse.Namespace) -> Path:
     generator = MultiSessionGenerator(
         persona=persona,
         num_sessions=args.sessions,
-        num_preferences=args.preferences,
     )
 
     result = generator.generate_multi_session()
@@ -212,7 +211,6 @@ def main():
 
     # Data generation params
     parser.add_argument("--sessions", type=int, default=2, help="Number of sessions")
-    parser.add_argument("--preferences", type=int, default=3, help="Number of preferences per session")
     parser.add_argument("--persona", type=str, default=None, help="Custom persona")
 
     # Evaluation params

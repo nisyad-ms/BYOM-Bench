@@ -4,7 +4,7 @@
 Usage:
     python test_data_generation.py
     python test_data_generation.py --output outputs/my_data.json
-    python test_data_generation.py --sessions 3 --preferences 6
+    python test_data_generation.py --sessions 3
 """
 
 import argparse
@@ -26,7 +26,6 @@ def main():
     parser.add_argument("--output", type=str, default="outputs/data_generation_output.json",
                         help="Output file path")
     parser.add_argument("--sessions", type=int, default=2, help="Number of sessions")
-    parser.add_argument("--preferences", type=int, default=3, help="Number of preferences per session")
     parser.add_argument("--persona", type=str, default=None, help="Custom persona description")
     args = parser.parse_args()
 
@@ -40,7 +39,6 @@ def main():
     logger.info("")
     logger.info("Configuration:")
     logger.info(f"  Sessions: {args.sessions}")
-    logger.info(f"  Preferences: {args.preferences}")
     logger.info("")
     logger.info("Persona:")
     logger.info("-" * 40)
@@ -52,7 +50,6 @@ def main():
     generator = MultiSessionGenerator(
         persona=persona,
         num_sessions=args.sessions,
-        num_preferences=args.preferences,
     )
 
     result = generator.generate_multi_session()
@@ -81,7 +78,7 @@ def main():
     logger.info("")
     for pref_id, pref in result.timeline.preferences.items():
         status = "ACTIVE" if pref.is_active else f"SUPERSEDED by {pref.superseded_by}"
-        logger.info(f"  {pref_id}: [{pref.category}] ({status})")
+        logger.info(f"  {pref_id}: [{pref.domain}] ({status})")
         logger.info(f"    {pref.fact}")
         logger.info("")
 

@@ -9,14 +9,12 @@ Usage:
     from persona_gym.prompts import load_prompt, render_prompt
 
     # Load a prompt template
-    prompt = load_prompt("data_generation/personamemv2/generate_preferences")
+    prompt = load_prompt("data_generation/multisession/expand_persona")
 
     # Render with variables
     text = render_prompt(
-        "data_generation/personamemv2/generate_preferences",
+        "data_generation/multisession/expand_persona",
         persona="A software engineer...",
-        topics="travel, coding",
-        num_preferences=5,
     )
 """
 

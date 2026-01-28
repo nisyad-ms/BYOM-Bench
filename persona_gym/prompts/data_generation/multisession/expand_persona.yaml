@@ -1,74 +1,242 @@
 name: Expand Persona
-description: Expands a basic persona into a rich character with details across all life domains, including baseline preferences
+description: Expands a basic persona into a rich character with details across all life domains, then generates baseline preferences
 used_by: persona_gym/data_generators/multisession.py::_expand_persona
 variables:
   - persona: Basic persona description (can be brief)
 
 template: |
-  Given a basic persona description, expand it into a fully realized character with specific details across all major life domains AND their baseline preferences (core personality traits that exist before any life events).
+  Given a basic persona description, create a fully realized character in TWO phases:
+  
+  PHASE 1: Expand into domain facts (WHAT they do, have, are)
+  PHASE 2: Generate baseline preferences (Given the domain facts, HOW they do things)
 
   BASIC PERSONA:
   {persona}
 
-  EXPANSION STEPS (follow this order - each informs the next):
-
-  1. DEMOGRAPHICS: Assign age and gender if not specified. Infer a plausible location.
+  ═══════════════════════════════════════════════════════════════════════════════
+  CRITICAL: FACTS vs PREFERENCES ARE DIFFERENT OUTPUTS
+  ═══════════════════════════════════════════════════════════════════════════════
   
-  2. WORK & EDUCATION: Their occupation and educational background.
-     - Students: focus on school, maybe part-time work
+  You will produce TWO types of output. Do NOT confuse or duplicate them.
+  
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │ DOMAIN FACTS (Phase 1) = BIOGRAPHY at persona creation                      │
+  │ Static snapshot of their life - won't be updated by life events             │
+  ├─────────────────────────────────────────────────────────────────────────────┤
+  │ WHO they are   │ Age, gender, identity, roles                               │
+  │ WHERE they are │ Location, living situation, places been                    │
+  │ WHAT they do   │ Job, activities, hobbies, routines                         │
+  │ WHAT they have │ Conditions, possessions, circumstances                     │
+  │ WHO they know  │ Family, relationships, social connections                  │
+  ├─────────────────────────────────────────────────────────────────────────────┤
+  │ Language: "is", "has", "does", "works", "lives"                             │
+  │ Examples: "Is 32", "Has hypertension", "Runs 5K twice weekly", "Has 2 kids" │
+  └─────────────────────────────────────────────────────────────────────────────┘
+  
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │ BASELINE PREFERENCES (Phase 2) = HOW they engage with their life            │
+  │ Dynamic - will evolve as life events occur                                  │
+  ├─────────────────────────────────────────────────────────────────────────────┤
+  │ Choices, constraints, habits, routines, commitments, restrictions, methods  │
+  ├─────────────────────────────────────────────────────────────────────────────┤
+  │ VARIED STARTERS (mix these - don't overuse "Prefers"):                      │
+  │   Habits:      "Runs 5K every morning", "Meditates before bed"              │
+  │   Routines:    "Attends yoga class Tuesdays", "Meal preps on Sundays"       │
+  │   Constraints: "Only eats gluten-free", "Never works past 6pm"              │
+  │   Choices:     "Chooses window seats", "Takes stairs over elevators"        │
+  │   Preferences: "Prefers quiet cafes", "Likes audiobooks over reading"       │
+  │   Avoidances:  "Avoids crowded places", "Refuses to fly budget airlines"    │
+  │   Commitments: "Volunteers at shelter every Saturday"                       │
+  │   Activities:  "Swims 40 laps at 6am daily", "Walks dog twice daily"        │
+  └─────────────────────────────────────────────────────────────────────────────┘
+  
+  CORRECT SEPARATION (Fact → Preference):
+    ✓ "Goes hiking"              → "Likes to hike on rocky terrain; avoids crowded trails"
+    ✓ "Reads books"              → "Loves to read hard sci-fi"
+    ✓ "Has two kids"             → "Prefers structured family activities with advance planning"
+    ✓ "Works as software engineer" → "Prefers in-person communication over virtual meetings"
+  
+  WRONG (preference language in facts, or duplicated info):
+    ✗ Fact: "Prefers city breaks"     (wrong: preference word in fact)
+    ✗ Fact: "Reads sci-fi novels" → Preference: "Loves science fiction" (duplicated)
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  PHASE 1: LIFE DOMAIN EXPANSION (Facts - WHAT they do)
+  ═══════════════════════════════════════════════════════════════════════════════
+  
+  Expand the persona across 6 life domains. Each domain should have 3-5 facts as necessary.
+  Facts describe history, activities, circumstances, achievements, etc. - NOT preferences.
+
+  1. DEMOGRAPHICS
+     - Assign age and gender if not specified
+     - Infer a plausible location
+
+  2. WORK & EDUCATION
+     - Students: school, maybe part-time work
      - Working adults: current job, career trajectory, education history
-     - Retirees: past career, current activities (volunteering, hobbies-as-work)
-     - Stay-at-home parents: parenting as primary occupation, past career if any
-  
-  3. RELATIONSHIPS & PERSONAL: 
-     - Family, romantic life, friendships, living situation.
-     - Personal value systems, major life circumstances.
-  
-  4. HEALTH & WELLNESS: Physical health, fitness, diet, mental health, sleep, any conditions.
-     - Informed by age, work stress, family situation
-     - For variety, include both positive and negative health aspects
-  
-  5. TRAVEL & EXPERIENCES: Travel history, preferences, constraints.
-     - Informed by income, job flexibility, family, health
-  
-  6. HOBBIES & INTERESTS: How they spend free time, passions, entertainment.
-     - Fills remaining picture of who they are
+     - Retirees: past career, current activities
+     - Stay-at-home parents: parenting focus, past career if any
 
-  7. BASELINE PREFERENCES: Core personality traits/preferences that exist BEFORE any life events.
-     - Generate EXACTLY 5 preferences per domain (5 domains = 25 total preferences)
-     - These represent stable aspects of who this person IS
-     - Include both LIKES and DISLIKES (things they actively avoid)
-     - Be SPECIFIC and CONCRETE (not vague like "likes good food")
-     - These preferences should be CHANGEABLE by dramatic life events later
-     - Categories: diet, communication_style, shopping, entertainment, social, fitness, work_style, travel, technology
+  3. RELATIONSHIPS & PERSONAL
+     - Family, romantic life, friendships, living situation
+     - Personal circumstances
 
-  DOMAINS FOR BASELINE PREFERENCES:
-  - work_education: Work style, learning preferences, productivity habits
-  - health_wellness: Diet, fitness, wellness routines, health attitudes
-  - travel_experiences: Travel style, accommodation preferences, destination choices
-  - relationships_personal: Communication style, social preferences, gift-giving, event planning
-  - hobbies_interests: Entertainment choices, technology use, shopping habits
+  4. HEALTH & WELLNESS
+     - Physical health, fitness activities, conditions, sleep patterns
+     - Focus on WHAT they do/have (not HOW they prefer to do it)
+     - Include both positive and negative health aspects
 
-  REQUIREMENTS FOR DOMAIN FACTS:
-  - 3-5 specific facts per domain (not all domains need the same count)
-  - Each fact should be concrete and specific, not vague
-  - Facts should be consistent with each other
-  - Facts should provide hooks for generating life events
-  - Adapt to life stage (student, working, retired, etc.)
+  5. TRAVEL & EXPERIENCES
+     - Travel history and experiences
+     - Focus on WHERE they've been and WHAT they do (not HOW they prefer to travel)
 
-  REQUIREMENTS FOR BASELINE PREFERENCES:
-  - EXACTLY 5 preferences per domain
-  - Mix of likes AND dislikes
+  6. HOBBIES & INTERESTS
+     - Activities they engage in during free time
+     - Focus on WHAT activities (not HOW they prefer to do them)
+     - Examples: "Plays guitar", "Goes hiking", "Reads books"
+
+  DOMAIN FACTS REQUIREMENTS:
+  - 3-5 facts per domain
+  - Use WHAT/WHO/WHERE language
+  - NO preference words (prefers, avoids, likes, dislikes, only, never)
+  - Facts should provide hooks for life events later
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  PHASE 2: BASELINE PREFERENCES (HOW they do things)
+  ═══════════════════════════════════════════════════════════════════════════════
+  
+  AFTER establishing facts, generate preferences that describe HOW they engage
+  with their activities and life. These exist BEFORE any life events occur.
+
+  Generate EXACTLY 5 preferences for each of these 5 domains (25 total):
+
+  1. work_education (5 preferences)
+     - Work style, learning preferences, productivity habits
+     - HOW they work, learn, and manage their professional life
+  
+  2. health_wellness (5 preferences)
+     - Diet choices, fitness preferences, wellness routines
+     - HOW they eat, exercise, and maintain health
+  
+  3. travel_experiences (5 preferences)
+     - Travel style, accommodation preferences, booking habits
+     - HOW they travel and experience new places
+  
+  4. relationships_personal (5 preferences)
+     - Communication style, social preferences, values
+     - HOW they interact and live their personal life
+  
+  5. hobbies_interests (5 preferences)
+     - Entertainment choices, technology preferences, hobby specifics
+     - HOW they engage with leisure activities
+
+  BASELINE PREFERENCES REQUIREMENTS:
+  - EXACTLY 5 per domain (25 total)
+  - USE VARIED STARTERS - mix habits, routines, constraints, choices, commitments
+    (Don't start every preference with "Prefers..." - vary the language!)
   - Specific and actionable (an agent could use these to personalize recommendations)
-  - Should feel like core personality, not recent discoveries
-  - Format: {{"fact": "description", "category": "category_name"}}
+  - Include both positive behaviors AND restrictions/avoidances
+  - Must NOT duplicate domain facts
+  - Should be CHANGEABLE by dramatic life events later
+  
+  STARTER VARIETY (use a mix across all 25 preferences):
+  ✓ Habits:      "Runs every morning", "Reads before bed", "Drinks 3L water daily"
+  ✓ Routines:    "Attends...", "Practices...", "Does X every [day/week]"
+  ✓ Constraints: "Only uses...", "Never eats...", "Requires...", "Must have..."
+  ✓ Choices:     "Chooses...", "Takes...", "Picks...", "Opts for..."
+  ✓ Commitments: "Volunteers at...", "Maintains...", "Follows..."
+  ✓ Preferences: "Prefers...", "Likes...", "Loves...", "Enjoys..."
+  ✓ Avoidances:  "Avoids...", "Refuses...", "Won't...", "Dislikes..."
 
-  EXAMPLES:
+  ═══════════════════════════════════════════════════════════════════════════════
+  EXAMPLE
+  ═══════════════════════════════════════════════════════════════════════════════
 
   Basic: "A college student studying biology"
-  Output: {{"base_persona": "A college student studying biology", "age": 20, "gender": "female", "location": "Boston, MA", "work_and_education": ["Junior at Boston University majoring in Biology", "Pre-med track, planning to apply to medical schools next year", "Works part-time as a lab assistant (10 hrs/week)", "Struggling with organic chemistry this semester"], "relationships_and_personal": ["Lives in off-campus apartment with two roommates", "Single, focused on studies but open to dating", "Parents live in Connecticut, visits monthly", "Close friend group from freshman dorm"], "health_and_wellness": ["Generally healthy but sleep-deprived during exam periods", "Stress eats when overwhelmed", "Used to play soccer in high school, now rarely exercises"], "travel_and_experiences": ["Studied abroad in Spain sophomore year", "Limited budget constrains travel", "Goes home for holidays and summer"], "hobbies_and_interests": ["Watches medical dramas for 'research'", "Enjoys hiking when she has time", "Active on social media, especially Instagram", "Recently started a bullet journal"], "baseline_preferences": [{{"fact": "Prefers studying in complete silence - even instrumental music is distracting", "category": "work_style"}}, {{"fact": "Always uses physical flashcards over digital apps for memorization", "category": "work_style"}}, {{"fact": "Hates group projects - prefers individual work with clear accountability", "category": "work_style"}}, {{"fact": "Studies best late at night (10pm-2am) rather than mornings", "category": "work_style"}}, {{"fact": "Refuses to buy used textbooks - needs to highlight and annotate fresh copies", "category": "shopping"}}, {{"fact": "Vegetarian since age 14 for ethical reasons", "category": "diet"}}, {{"fact": "Despises running but loves team sports and dance-based workouts", "category": "fitness"}}, {{"fact": "Cannot stand energy drinks - relies only on coffee for caffeine", "category": "diet"}}, {{"fact": "Practices yoga every morning, even if just 10 minutes", "category": "fitness"}}, {{"fact": "Tracks sleep religiously with a Fitbit", "category": "fitness"}}, {{"fact": "Refuses to fly budget airlines - values legroom over savings", "category": "travel"}}, {{"fact": "Always chooses window seats, cannot sleep on aisle", "category": "travel"}}, {{"fact": "Prefers Airbnbs with kitchens over hotels", "category": "travel"}}, {{"fact": "Never travels without physical backup of important documents", "category": "travel"}}, {{"fact": "Plans trips months in advance, hates spontaneous travel", "category": "travel"}}, {{"fact": "Prefers texting over phone calls, even for complex conversations", "category": "communication_style"}}, {{"fact": "Always arrives 15 minutes early to any meeting or event", "category": "social"}}, {{"fact": "Hates surprise parties - prefers planned celebrations", "category": "social"}}, {{"fact": "Gives very practical gifts (gift cards, needed items) over sentimental ones", "category": "social"}}, {{"fact": "Prefers small gatherings (3-5 people) over large parties", "category": "social"}}, {{"fact": "Will only watch movies in theaters, never at home for new releases", "category": "entertainment"}}, {{"fact": "Refuses to use TikTok but active on Instagram and YouTube", "category": "technology"}}, {{"fact": "Prefers physical books over e-readers", "category": "entertainment"}}, {{"fact": "Compulsive list-maker - uses paper to-do lists, not apps", "category": "technology"}}, {{"fact": "Hates podcast format - prefers reading articles", "category": "entertainment"}}]}}
+  
+  Output:
+  {{
+    "base_persona": "A college student studying biology",
+    "age": 20,
+    "gender": "female",
+    "location": "Boston, MA",
+    "work_and_education": [
+      "Junior at Boston University majoring in Biology",
+      "Pre-med track, planning to apply to medical schools next year",
+      "Works part-time as a lab assistant (10 hrs/week)",
+      "Struggling with organic chemistry this semester"
+    ],
+    "relationships_and_personal": [
+      "Lives in off-campus apartment with two roommates",
+      "Single, focused on studies but open to dating",
+      "Parents live in Connecticut, visits monthly",
+      "Close friend group from freshman dorm"
+    ],
+    "health_and_wellness": [
+      "Generally healthy but sleep-deprived during exam periods",
+      "Experiences stress eating when overwhelmed",
+      "Played soccer in high school, now exercises occasionally",
+      "Has mild seasonal allergies"
+    ],
+    "travel_and_experiences": [
+      "Studied abroad in Spain sophomore year",
+      "Limited budget constrains travel frequency",
+      "Goes home for holidays and summer breaks"
+    ],
+    "hobbies_and_interests": [
+      "Watches medical dramas",
+      "Goes hiking when she has time",
+      "Active on social media",
+      "Keeps a bullet journal"
+    ],
+    "baseline_preferences": {{
+      "work_education": [
+        "Studies in complete silence only - even instrumental music is distracting",
+        "Uses physical flashcards exclusively for memorization, never digital apps",
+        "Works independently on projects - avoids group work when possible",
+        "Studies late at night (10pm-2am) and sleeps through mornings",
+        "Buys new textbooks only - needs to highlight and annotate fresh copies"
+      ],
+      "health_wellness": [
+        "Eats strictly vegetarian - avoids all meat for ethical reasons",
+        "Does team sports and dance workouts; refuses to run",
+        "Drinks only coffee for caffeine - won't touch energy drinks",
+        "Practices morning yoga for 10 minutes before class",
+        "Tracks sleep every night with Fitbit - reviews data weekly"
+      ],
+      "travel_experiences": [
+        "Flies only full-service airlines - won't book budget carriers",
+        "Chooses window seats on every flight - can't sleep on aisle",
+        "Books Airbnbs with kitchens rather than hotels",
+        "Carries physical backup of all travel documents",
+        "Plans trips 3+ months in advance - never travels spontaneously"
+      ],
+      "relationships_personal": [
+        "Texts instead of calling, even for complex conversations",
+        "Arrives 15 minutes early to every meeting and event",
+        "Requests no surprise parties - wants planned celebrations",
+        "Gives practical gifts (gift cards, needed items) only",
+        "Attends small gatherings (3-5 people) but skips large parties"
+      ],
+      "hobbies_interests": [
+        "Watches new movie releases in theaters only, never streams at home",
+        "Uses Instagram and YouTube daily but refuses to install TikTok",
+        "Reads physical books exclusively - won't use e-readers",
+        "Maintains paper to-do lists instead of digital apps",
+        "Reads articles for information; avoids podcasts entirely"
+      ]
+    }}
+  }}
 
-  OUTPUT FORMAT (JSON):
+  Note the separation:
+  - Fact: "Watches medical dramas" (WHAT) → Preference: "Only watches in theaters" (HOW)
+  - Fact: "Goes hiking" (WHAT) → Preference: "Plans trips months in advance" (HOW)
+  - Fact: "Exercises occasionally" (WHAT) → Preference: "Despises running, loves team sports" (HOW)
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  OUTPUT FORMAT (JSON)
+  ═══════════════════════════════════════════════════════════════════════════════
+
   {{
     "base_persona": "The original persona description",
     "age": <number>,
@@ -79,17 +247,19 @@ template: |
     "health_and_wellness": ["fact 1", "fact 2", ...],
     "travel_and_experiences": ["fact 1", "fact 2", ...],
     "hobbies_and_interests": ["fact 1", "fact 2", ...],
-    "baseline_preferences": [
-      {{"fact": "specific preference 1", "category": "category_name"}},
-      {{"fact": "specific preference 2", "category": "category_name"}},
-      ... (exactly 25 preferences: 5 per domain)
-    ]
+    "baseline_preferences": {{
+      "work_education": ["pref 1", "pref 2", "pref 3", "pref 4", "pref 5"],
+      "health_wellness": ["pref 1", "pref 2", "pref 3", "pref 4", "pref 5"],
+      "travel_experiences": ["pref 1", "pref 2", "pref 3", "pref 4", "pref 5"],
+      "relationships_personal": ["pref 1", "pref 2", "pref 3", "pref 4", "pref 5"],
+      "hobbies_interests": ["pref 1", "pref 2", "pref 3", "pref 4", "pref 5"]
+    }}
   }}
 
   CRITICAL:
   - Output ONLY valid JSON
-  - Each domain should have 3-5 facts
-  - baseline_preferences must have EXACTLY 25 items (5 per domain)
-  - Facts and preferences must be specific and concrete (no vague statements)
-  - All content should be consistent with each other and the base persona
-  - Adapt appropriately to life stage (student, working, retired, etc.)
+  - Each domain fact list: 3-5 items
+  - baseline_preferences: object with 5 domains, EXACTLY 5 preferences per domain
+  - Facts use WHAT language, preferences use HOW language
+  - No duplication between facts and preferences
+  - Adapt to life stage (student, working, retired, etc.)

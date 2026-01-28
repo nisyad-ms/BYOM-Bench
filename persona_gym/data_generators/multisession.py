@@ -48,7 +48,6 @@ LIFE_DOMAINS = [
 
 # Default configuration
 DEFAULT_NUM_SESSIONS = 2
-DEFAULT_NUM_PREFERENCES = 3
 
 
 class MultiSessionGenerator(BaseDataGenerator):
@@ -61,7 +60,6 @@ class MultiSessionGenerator(BaseDataGenerator):
     Attributes:
         persona: User persona description
         num_sessions: Number of sessions to generate (default: 2)
-        num_preferences: Initial number of preferences (default: 3)
         start_date: Starting date for the timeline
         output_dir: Directory for output files
     """
@@ -70,7 +68,6 @@ class MultiSessionGenerator(BaseDataGenerator):
         self,
         persona: str,
         num_sessions: int = DEFAULT_NUM_SESSIONS,
-        num_preferences: int = DEFAULT_NUM_PREFERENCES,
         start_date: str | None = None,
         output_dir: str | None = None,
     ):
@@ -79,7 +76,6 @@ class MultiSessionGenerator(BaseDataGenerator):
         Args:
             persona: User persona description (required)
             num_sessions: Number of sessions to generate
-            num_preferences: Initial number of preferences
             start_date: Start date (MM/DD/YYYY), defaults to today
             output_dir: Output directory (optional)
         """
@@ -87,7 +83,6 @@ class MultiSessionGenerator(BaseDataGenerator):
         super().__init__(topic="", output_dir=output_dir)
         self.persona = persona
         self.num_sessions = num_sessions
-        self.num_preferences = num_preferences
         self.start_date = start_date or datetime.now().strftime("%m/%d/%Y")
         self._llm: LLMClient | None = None
 
@@ -114,7 +109,7 @@ class MultiSessionGenerator(BaseDataGenerator):
 
         try:
             # Increased token limit to accommodate 25 baseline preferences
-            result = self.llm.complete_json(prompt, max_tokens=4000, temperature=0.8)
+            result = self.llm.complete_json(prompt, max_tokens=8000, temperature=0.8)
 
             if not isinstance(result, dict):
                 raise GenerationError(f"Unexpected response type: {type(result)}")
@@ -239,177 +234,204 @@ class MultiSessionGenerator(BaseDataGenerator):
         # Use a date before the start_date to indicate these are pre-existing
         baseline_date = "01/01/2000"  # Marker date for baseline preferences
 
-        for pref in expanded_persona.baseline_preferences:
-            pref_id = timeline.add_preference(
-                fact=pref.get("fact", ""),
-                category=pref.get("category", "general"),
-                session_id=-1,  # -1 indicates baseline (pre-event)
-                date=baseline_date,
-            )
-            baseline_ids.append(pref_id)
+        for domain, prefs in expanded_persona.baseline_preferences.items():
+            for pref in prefs:
+                pref_id = timeline.add_preference(
+                    fact=pref,
+                    domain=domain,
+                    session_id=-1,  # -1 indicates baseline (pre-event)
+                    date=baseline_date,
+                )
+                baseline_ids.append(pref_id)
 
         logger.info(f"Loaded {len(baseline_ids)} baseline preferences into timeline")
         return baseline_ids
 
-    def _generate_event_preferences(
+    def _format_domain_facts(self, expanded_persona: ExpandedPersona) -> str:
+        """Format all domain facts for prompt inclusion."""
+        sections = []
+        domains = [
+            ("Work & Education", expanded_persona.work_and_education),
+            ("Health & Wellness", expanded_persona.health_and_wellness),
+            ("Travel & Experiences", expanded_persona.travel_and_experiences),
+            ("Relationships & Personal", expanded_persona.relationships_and_personal),
+            ("Hobbies & Interests", expanded_persona.hobbies_and_interests),
+        ]
+        for name, facts in domains:
+            if facts:
+                facts_str = "\n".join(f"  - {f}" for f in facts)
+                sections.append(f"{name}:\n{facts_str}")
+        return "\n\n".join(sections) if sections else "No domain facts available"
+
+    def _format_evolution_history(self, timeline: PreferenceTimeline) -> str:
+        """Format the complete preference evolution history for prompt inclusion."""
+        superseded = [p for p in timeline.preferences.values() if not p.is_active]
+        if not superseded:
+            return "No evolutions yet (all preferences are original)"
+
+        history = []
+        for old_pref in superseded:
+            new_pref = timeline.preferences.get(old_pref.superseded_by)
+            if new_pref:
+                history.append({
+                    "session": old_pref.superseded_at_session,
+                    "from_id": old_pref.preference_id,
+                    "from": old_pref.fact,
+                    "to_id": new_pref.preference_id,
+                    "to": new_pref.fact,
+                    "reason": old_pref.reason_for_change or "Not specified",
+                })
+
+        return json.dumps(history, indent=2, ensure_ascii=False)
+
+    def _format_previous_events(self, life_events: list[LifeEvent], current_session: int) -> str:
+        """Format all previous life events for prompt inclusion."""
+        previous = [e for e in life_events if e.session_id < current_session]
+        if not previous:
+            return "None (this is the first event)"
+
+        lines = []
+        for e in previous:
+            lines.append(f"- Session {e.session_id} ({e.date}): {e.event}")
+            if e.context:
+                # Clean up context display
+                context = e.context
+                if context.startswith("[") and "]" in context:
+                    context = context[context.index("]") + 1:].strip()
+                if context:
+                    lines.append(f"  Context: {context}")
+        return "\n".join(lines)
+
+    def _update_preferences(
         self,
         life_event: LifeEvent,
+        all_events: list[LifeEvent],
         timeline: PreferenceTimeline,
         session_id: int,
         expanded_persona: ExpandedPersona,
-    ) -> list[str]:
-        """Generate new preferences that emerge from a life event.
+    ) -> tuple[dict[str, str], list[str]]:
+        """Unified method to evolve existing preferences and create new ones.
 
-        These are brand NEW preferences that didn't exist before, not evolutions
-        of existing ones. Evolution is handled separately.
-
-        Works for all sessions (including session 0).
+        This method replaces the separate _evolve_preferences and _generate_event_preferences
+        methods. It provides the LLM with full context including:
+        - All previous life events
+        - Complete preference evolution history
+        - All domain facts
+        - All currently active preferences
 
         Args:
-            life_event: The life event for this session
+            life_event: The current life event being processed
+            all_events: All life events (for history context)
             timeline: PreferenceTimeline with current state
             session_id: Current session number
             expanded_persona: The expanded persona with domain facts
 
         Returns:
-            List of new preference IDs that were created
+            Tuple of (evolved_mapping, new_pref_ids):
+            - evolved_mapping: {old_preference_id: new_preference_id} for evolved preferences
+            - new_pref_ids: List of newly created preference IDs
         """
-        # Get current active preferences to avoid duplication
+        # Format all context for the prompt
         active_prefs = timeline.get_active_preferences()
-        current_prefs_json = json.dumps(
-            [{"preference_id": p.preference_id, "fact": p.fact, "category": p.category}
+        active_prefs_json = json.dumps(
+            [{"preference_id": p.preference_id, "fact": p.fact, "domain": p.domain}
              for p in active_prefs],
             indent=2,
             ensure_ascii=False,
-        ) if active_prefs else "[]"
+        )
+
+        domain_facts_str = self._format_domain_facts(expanded_persona)
+        evolution_history_str = self._format_evolution_history(timeline)
+        previous_events_str = self._format_previous_events(all_events, session_id)
+        current_event_str = f"{life_event.event}\nContext: {life_event.context}"
 
         prompt = render_prompt(
-            "data_generation/multisession/generate_event_preferences",
+            "data_generation/multisession/update_preferences",
             persona=expanded_persona.to_full_description(),
-            life_event=f"{life_event.event}\nContext: {life_event.context}",
+            domain_facts=domain_facts_str,
+            current_event=current_event_str,
             event_date=life_event.date,
-            current_preferences=current_prefs_json,
-            num_preferences=self.num_preferences,
+            previous_events=previous_events_str,
+            active_preferences=active_prefs_json,
+            evolution_history=evolution_history_str,
         )
 
         try:
-            result = self.llm.complete_json(prompt, max_tokens=800, temperature=0.7)
+            result = self.llm.complete_json(prompt, max_tokens=2000, temperature=0.7)
 
-            # Handle response format
-            if isinstance(result, dict):
-                prefs_data = result.get("preferences", [])
-            elif isinstance(result, list):
-                prefs_data = result
-            else:
-                raise GenerationError(f"Unexpected response type: {type(result)}")
+            if not isinstance(result, dict):
+                result = {"evolutions": [], "new_preferences": []}
 
-            created_ids = []
-            for p in prefs_data:
+            # Process evolutions
+            evolutions = result.get("evolutions", [])
+            evolved_mapping: dict[str, str] = {}
+
+            # Build lookup from preference text to ID (fallback for matching)
+            pref_text_to_id = {p.fact: p.preference_id for p in active_prefs}
+
+            for evo in evolutions:
+                # Try to get preference_id directly, fall back to text matching
+                old_id = evo.get("preference_id", "")
+                if not old_id:
+                    original_text = evo.get("original_preference", "")
+                    old_id = pref_text_to_id.get(original_text, "")
+
+                evolved_text = evo.get("evolved_preference", "")
+                reason = evo.get("reason", "")
+                # Use 'domain' field if provided (allows domain change on evolution)
+                new_domain = evo.get("domain")
+
+                if old_id and evolved_text and old_id in timeline.preferences:
+                    # Check if this preference is still active (not already evolved)
+                    if timeline.preferences[old_id].is_active:
+                        try:
+                            new_id = timeline.evolve_preference(
+                                old_id=old_id,
+                                new_fact=evolved_text,
+                                session_id=session_id,
+                                date=life_event.date,
+                                reason=reason,
+                                new_domain=new_domain,
+                            )
+                            evolved_mapping[old_id] = new_id
+                            logger.info(f"Evolved {old_id} -> {new_id}: {reason[:50]}...")
+                        except ValueError as e:
+                            logger.warning(f"Failed to evolve preference {old_id}: {e}")
+                    else:
+                        logger.warning(f"Preference {old_id} already superseded, skipping")
+
+            # Process new preferences
+            new_prefs_data = result.get("new_preferences", [])
+            new_pref_ids: list[str] = []
+
+            for p in new_prefs_data:
+                # Use 'domain' field (new format) or fall back to 'category' (old format)
+                pref_domain = p.get("domain") or p.get("category", "general")
                 pref_id = timeline.add_preference(
                     fact=p.get("fact", ""),
-                    category=p.get("category", "general"),
+                    domain=pref_domain,
                     session_id=session_id,
                     date=life_event.date,
                 )
-                created_ids.append(pref_id)
+                new_pref_ids.append(pref_id)
 
-            logger.info(f"Generated {len(created_ids)} new preferences for session {session_id}")
-            return created_ids
-
-        except Exception as e:
-            logger.error(f"Failed to generate event preferences for session {session_id}: {e}")
-            # Return empty on failure
-            return []
-
-    def _evolve_preferences(
-        self,
-        life_event: LifeEvent,
-        timeline: PreferenceTimeline,
-        session_id: int,
-        expanded_persona: ExpandedPersona,
-    ) -> dict[str, str]:
-        """Evolve preferences based on a new life event.
-
-        Evolution is event-driven: the model decides which (0 or more)
-        preferences naturally evolve given the life event.
-
-        Args:
-            life_event: The new life event
-            timeline: PreferenceTimeline with current preferences
-            session_id: Current session number
-            expanded_persona: The expanded persona with domain facts
-
-        Returns:
-            Mapping of {old_preference_id: new_preference_id} for evolved preferences
-        """
-        # Pass ALL active preferences to the prompt
-        active_prefs = timeline.get_active_preferences()
-        current_prefs_json = json.dumps(
-            [{"preference_id": p.preference_id, "fact": p.fact, "category": p.category}
-             for p in active_prefs],
-            indent=2,
-            ensure_ascii=False,
-        )
-
-        prompt = render_prompt(
-            "data_generation/multisession/evolve_preferences",
-            persona=expanded_persona.to_full_description(),
-            life_event=f"{life_event.event}\nContext: {life_event.context}",
-            event_date=life_event.date,
-            current_preferences=current_prefs_json,
-        )
-
-        try:
-            result = self.llm.complete_json(prompt, max_tokens=1000, temperature=0.7)
-
-            if not isinstance(result, dict):
-                result = {"evolutions": []}
-
-            # Handle new response format with evolutions array
-            evolutions = result.get("evolutions", [])
-            unchanged_count = result.get("unchanged_count", 0)
-
-            evolved_mapping: dict[str, str] = {}
-
-            # Build lookup from original preference text to ID
-            pref_text_to_id = {p.fact: p.preference_id for p in active_prefs}
-
-            # Process evolutions (new format uses original_preference/evolved_preference)
-            for evo in evolutions:
-                # Support both old and new format
-                original_text = evo.get("original_preference", "")
-                evolved_text = evo.get("evolved_preference", evo.get("new_fact", ""))
-                reason = evo.get("reason", "")
-
-                # Find the preference ID from the original text
-                old_id = evo.get("old_preference_id", pref_text_to_id.get(original_text, ""))
-
-                if old_id and evolved_text and old_id in timeline.preferences:
-                    try:
-                        new_id = timeline.evolve_preference(
-                            old_id=old_id,
-                            new_fact=evolved_text,
-                            session_id=session_id,
-                            date=life_event.date,
-                            reason=reason,
-                        )
-                        evolved_mapping[old_id] = new_id
-                        logger.info(f"Evolved {old_id} -> {new_id}: {reason}")
-                    except ValueError as e:
-                        logger.warning(f"Failed to evolve preference: {e}")
-                elif original_text and not old_id:
-                    logger.warning(f"Could not find preference matching: {original_text[:50]}...")
+            # Log analysis if provided
+            analysis = result.get("analysis", {})
+            rationale = analysis.get("rationale", "")
+            if rationale:
+                logger.info(f"Update rationale: {rationale[:100]}...")
 
             logger.info(
-                f"Evolution complete: {len(evolved_mapping)} evolved, "
-                f"{unchanged_count} unchanged"
+                f"Session {session_id}: {len(evolved_mapping)} evolved, "
+                f"{len(new_pref_ids)} new preferences created"
             )
-            return evolved_mapping
+
+            return evolved_mapping, new_pref_ids
 
         except Exception as e:
-            logger.error(f"Failed to evolve preferences: {e}")
-            # Return empty evolution on failure (preferences stay the same)
-            return {}
+            logger.error(f"Failed to update preferences for session {session_id}: {e}")
+            # Return empty results on failure
+            return {}, []
 
     def _generate_session_conversation(
         self,
@@ -434,7 +456,7 @@ class MultiSessionGenerator(BaseDataGenerator):
         # Get active preferences
         active_prefs = timeline.get_active_at_session(session_id)
         active_prefs_json = json.dumps(
-            [{"preference_id": p.preference_id, "fact": p.fact, "category": p.category}
+            [{"preference_id": p.preference_id, "fact": p.fact, "domain": p.domain}
              for p in active_prefs],
             indent=2,
         )
@@ -527,20 +549,19 @@ class MultiSessionGenerator(BaseDataGenerator):
         sessions: list[Session] = []
 
         # Step 3: Process each session
-        # NEW FLOW: All sessions (including session 0) can evolve preferences
-        # and generate new event-specific preferences
+        # UNIFIED FLOW: Single call to update preferences (evolve + create new)
+        # with full context (all events, evolution history, domain facts)
         for idx, event in enumerate(life_events):
             logger.info(f"Step 3.{idx}: Processing session {idx}...")
 
-            # Evolve existing preferences (including baseline) based on life event
-            # This runs for ALL sessions, including session 0
-            evolved_mapping = self._evolve_preferences(
-                event, timeline, idx, expanded_persona
-            )
-
-            # Generate new event-specific preferences
-            new_pref_ids = self._generate_event_preferences(
-                event, timeline, idx, expanded_persona
+            # Unified preference update: evolve existing AND create new
+            # This single call sees full context including:
+            # - All previous life events
+            # - Complete preference evolution history
+            # - All domain facts
+            # - All currently active preferences
+            evolved_mapping, new_pref_ids = self._update_preferences(
+                event, life_events, timeline, idx, expanded_persona
             )
 
             # Generate conversation for this session
@@ -606,7 +627,7 @@ class MultiSessionGenerator(BaseDataGenerator):
                 fact=p.fact,
                 preference_type="current" if p.is_active else "superseded",
                 source_date=p.created_at_date,
-                topic=p.category,
+                topic=p.domain,
                 preference_id=p.preference_id,
                 supersedes_id=None,  # Reverse lookup would be expensive
             )
@@ -628,7 +649,6 @@ class MultiSessionGenerator(BaseDataGenerator):
 def generate_multi_session(
     persona: str,
     num_sessions: int = DEFAULT_NUM_SESSIONS,
-    num_preferences: int = DEFAULT_NUM_PREFERENCES,
     output_dir: str | None = None,
     domains: list[str] | None = None,
 ) -> MultiSessionOutput:
@@ -637,7 +657,6 @@ def generate_multi_session(
     Args:
         persona: User persona description
         num_sessions: Number of sessions to generate
-        num_preferences: Initial number of preferences
         output_dir: Output directory
         domains: Optional list of domains to use for life events
 
@@ -647,7 +666,6 @@ def generate_multi_session(
     generator = MultiSessionGenerator(
         persona=persona,
         num_sessions=num_sessions,
-        num_preferences=num_preferences,
         output_dir=output_dir,
     )
     return generator.generate_multi_session(domains=domains)

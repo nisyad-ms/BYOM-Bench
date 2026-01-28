@@ -108,7 +108,7 @@ class MultiSessionJudge:
                 {
                     "id": p.preference_id,
                     "fact": p.fact,
-                    "category": p.category,
+                    "domain": p.domain,
                 }
                 for p in rubric.current_preferences
             ],

@@ -131,7 +131,7 @@ class EvaluationTaskGenerator:
 
         # Format preferences for prompt - include IDs for required_preferences reference
         current_prefs_str = json.dumps(
-            [{"id": p.preference_id, "fact": p.fact, "category": p.category} for p in current_prefs],
+            [{"id": p.preference_id, "fact": p.fact, "domain": p.domain} for p in current_prefs],
             indent=2,
             ensure_ascii=False,
         )
@@ -185,7 +185,7 @@ class EvaluationTaskGenerator:
         but the task should allow for preference-based recommendations.
         """
         prefs_str = json.dumps(
-            [{"fact": p.fact, "category": p.category} for p in current_prefs],
+            [{"fact": p.fact, "domain": p.domain} for p in current_prefs],
             indent=2,
             ensure_ascii=False,
         )

@@ -151,7 +151,7 @@ class ExpandedPersona:
         health_and_wellness: 3-5 facts about physical/mental health
         travel_and_experiences: 3-5 facts about travel history and preferences
         hobbies_and_interests: 3-5 facts about how they spend free time
-        baseline_preferences: Core personality preferences that exist BEFORE any life events
+        baseline_preferences: Core personality preferences grouped by domain (5 per domain)
     """
 
     base_persona: str
@@ -163,11 +163,11 @@ class ExpandedPersona:
     health_and_wellness: list[str]
     travel_and_experiences: list[str]
     hobbies_and_interests: list[str]
-    baseline_preferences: list[dict[str, str]] = None  # List of {"fact": ..., "category": ...}
+    baseline_preferences: dict[str, list[str]] = None  # {domain: [pref1, pref2, ...]}
 
     def __post_init__(self):
         if self.baseline_preferences is None:
-            self.baseline_preferences = []
+            self.baseline_preferences = {}
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -245,8 +245,10 @@ class ExpandedPersona:
         if self.baseline_preferences:
             lines.append("")
             lines.append("Baseline Preferences (core personality):")
-            for pref in self.baseline_preferences:
-                lines.append(f"  - [{pref.get('category', 'general')}] {pref.get('fact', '')}")
+            for domain, prefs in self.baseline_preferences.items():
+                lines.append(f"  [{domain}]")
+                for pref in prefs:
+                    lines.append(f"    - {pref}")
         return "\n".join(lines)
 
 
@@ -299,7 +301,7 @@ class Preference:
     Attributes:
         preference_id: Unique identifier (e.g., "pref_001")
         fact: The preference statement
-        category: Topic category (e.g., "learning_style", "career", "communication")
+        domain: Life domain (work_education, health_wellness, travel_experiences, relationships_personal, hobbies_interests)
         created_at_session: Session when this preference was first expressed
         created_at_date: Date when this preference was first expressed
         superseded_at_session: Session when this preference was replaced (None if still active)
@@ -309,7 +311,7 @@ class Preference:
 
     preference_id: str
     fact: str
-    category: str
+    domain: str
     created_at_session: int
     created_at_date: str
     superseded_at_session: int | None = None
@@ -325,7 +327,7 @@ class Preference:
         return {
             "preference_id": self.preference_id,
             "fact": self.fact,
-            "category": self.category,
+            "domain": self.domain,
             "created_at_session": self.created_at_session,
             "created_at_date": self.created_at_date,
             "superseded_at_session": self.superseded_at_session,
@@ -338,7 +340,7 @@ class Preference:
         return cls(
             preference_id=data["preference_id"],
             fact=data["fact"],
-            category=data.get("category", ""),
+            domain=data.get("domain") or data.get("category", ""),  # backward compat
             created_at_session=data["created_at_session"],
             created_at_date=data.get("created_at_date", ""),
             superseded_at_session=data.get("superseded_at_session"),
@@ -365,7 +367,7 @@ class PreferenceTimeline:
     def add_preference(
         self,
         fact: str,
-        category: str,
+        domain: str,
         session_id: int,
         date: str,
     ) -> str:
@@ -375,7 +377,7 @@ class PreferenceTimeline:
         self.preferences[pref_id] = Preference(
             preference_id=pref_id,
             fact=fact,
-            category=category,
+            domain=domain,
             created_at_session=session_id,
             created_at_date=date,
         )
@@ -388,19 +390,29 @@ class PreferenceTimeline:
         session_id: int,
         date: str,
         reason: str = "",
+        new_domain: str | None = None,
     ) -> str:
-        """Mark old preference as superseded and create new one. Returns new ID."""
+        """Mark old preference as superseded and create new one. Returns new ID.
+
+        Args:
+            old_id: ID of preference to evolve
+            new_fact: The new preference text
+            session_id: Session when evolution occurs
+            date: Date of evolution
+            reason: Why this preference changed
+            new_domain: Optional new domain (defaults to inheriting from old preference)
+        """
         old_pref = self.preferences.get(old_id)
         if not old_pref:
             raise ValueError(f"Preference {old_id} not found")
 
-        # Create new preference
+        # Create new preference (use new_domain if provided, else inherit)
         new_id = f"pref_{self._next_id:03d}"
         self._next_id += 1
         self.preferences[new_id] = Preference(
             preference_id=new_id,
             fact=new_fact,
-            category=old_pref.category,
+            domain=new_domain or old_pref.domain,
             created_at_session=session_id,
             created_at_date=date,
         )
@@ -508,7 +520,7 @@ class MultiSessionOutput:
         """Serialize a session with inline preferences."""
         # Build created preferences
         created = [
-            {"id": p.preference_id, "fact": p.fact, "category": p.category}
+            {"id": p.preference_id, "fact": p.fact, "domain": p.domain}
             for pid in session.new_preference_ids
             if (p := self.timeline.preferences.get(pid))
         ]
@@ -521,7 +533,7 @@ class MultiSessionOutput:
             if old_p and new_p:
                 evolved.append({
                     "from": {"id": old_p.preference_id, "fact": old_p.fact},
-                    "to": {"id": new_p.preference_id, "fact": new_p.fact, "category": new_p.category},
+                    "to": {"id": new_p.preference_id, "fact": new_p.fact, "domain": new_p.domain},
                     "reason": old_p.reason_for_change or "",
                 })
 
@@ -540,12 +552,12 @@ class MultiSessionOutput:
     def to_dict(self) -> dict[str, Any]:
         """Serialize to clean format with inline preferences per session."""
         active = [
-            {"id": p.preference_id, "fact": p.fact, "category": p.category, "created_at_session": p.created_at_session}
+            {"id": p.preference_id, "fact": p.fact, "domain": p.domain, "created_at_session": p.created_at_session}
             for p in self.timeline.get_active_preferences()
         ]
         superseded = [
             {
-                "id": p.preference_id, "fact": p.fact, "category": p.category,
+                "id": p.preference_id, "fact": p.fact, "domain": p.domain,
                 "created_at_session": p.created_at_session, "superseded_at_session": p.superseded_at_session,
                 "replaced_by": p.superseded_by, "reason": p.reason_for_change or "",
             }
@@ -590,7 +602,8 @@ class MultiSessionOutput:
                 pref_id = p["id"]
                 if pref_id not in timeline.preferences:
                     timeline.preferences[pref_id] = Preference(
-                        preference_id=pref_id, fact=p["fact"], category=p.get("category", ""),
+                        preference_id=pref_id, fact=p["fact"],
+                        domain=p.get("domain") or p.get("category", ""),  # backward compat
                         created_at_session=session_id, created_at_date=le_data["date"],
                     )
                     timeline._next_id = max(timeline._next_id, int(pref_id.split("_")[1]) + 1)
@@ -601,7 +614,8 @@ class MultiSessionOutput:
                 old_id, new_id = e["from"]["id"], e["to"]["id"]
                 if old_id not in timeline.preferences:
                     timeline.preferences[old_id] = Preference(
-                        preference_id=old_id, fact=e["from"]["fact"], category=e["to"].get("category", ""),
+                        preference_id=old_id, fact=e["from"]["fact"],
+                        domain=e["to"].get("domain") or e["to"].get("category", ""),  # backward compat
                         created_at_session=0, created_at_date="",
                     )
                 timeline.preferences[old_id].superseded_at_session = session_id
@@ -610,7 +624,8 @@ class MultiSessionOutput:
 
                 if new_id not in timeline.preferences:
                     timeline.preferences[new_id] = Preference(
-                        preference_id=new_id, fact=e["to"]["fact"], category=e["to"].get("category", ""),
+                        preference_id=new_id, fact=e["to"]["fact"],
+                        domain=e["to"].get("domain") or e["to"].get("category", ""),  # backward compat
                         created_at_session=session_id, created_at_date=le_data["date"],
                     )
                     timeline._next_id = max(timeline._next_id, int(new_id.split("_")[1]) + 1)

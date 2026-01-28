@@ -53,7 +53,7 @@ template: |
   DOMAIN DEFINITIONS:
   - work_education: Career changes, job transitions, education, professional development
   - health_wellness: Physical/mental health, fitness, diet, medical conditions
-  - travel_experiences: Relocations, travel habits, living situation changes
+  - travel_experiences: Travel style, transportation habits, commute changes, vacation preferences (NOTE: relocations are RARE - most travel_experiences events should be about HOW someone travels, not WHERE they live)
   - relationships_personal: Family dynamics, romantic relationships, friendships, living arrangements
   - hobbies_interests: Hobbies, creative pursuits, entertainment preferences, leisure activities
 
@@ -65,60 +65,74 @@ template: |
   5. Include enough detail to understand the impact on daily life
   6. Natural connections to previous events are welcome, but avoid tight causal chaining
 
-  PREFER CONSTRAINT-GENERATING EVENTS (~60-70%)
+  ═══════════════════════════════════════════════════════════════════════════════
+  EVENTS THAT FORCE REAL CHANGE (not just refinement)
+  ═══════════════════════════════════════════════════════════════════════════════
   
-  Events that force REPLACEMENT of existing preferences (not just refinement):
-  - Health diagnoses that eliminate options (allergies, conditions, injuries)
-  - Life role changes (new parent, caregiver, new demanding job)
-  - Major relationship shifts (new partner with different lifestyle, divorce)
-  - Resource constraints (budget cuts, time limitations, relocation)
+  Events must DISPLACE old preferences, not just add to them. Two mechanisms:
   
-  These create VERIFIABLE preference changes:
-  - OLD: "Loves steak" → NEW: "Partner is vegan, household is now plant-based"
-  - OLD: "Night owl, works until 2am" → NEW: "New baby, strict 9pm bedtime"
-  - OLD: "Runs marathons" → NEW: "Knee surgery, now swims instead"
+  1. CONSTRAINTS (~50%): Things you CAN'T do anymore → forces alternatives
+     - Health: diagnoses, injuries, new dietary requirements
+     - Resources: budget cuts, time limitations, schedule conflicts
+     - Circumstances: job demands, caregiving duties
   
-  The remaining 30-40% can be positive shifts (new opportunities, discoveries, lifestyle upgrades).
+  2. NEW PRIORITIES (~50%): Things you NOW COMMIT TO → displaces old behaviors
+     - New relationships: partner's lifestyle, new baby, new pet
+     - Discoveries: found a passion, joined a community, learned a skill
+     - Upgrades: promotion allows new lifestyle, paid off debt, more free time
+  
+  BOTH create verifiable preference changes:
+  - CONSTRAINT: "Runs marathons" → "Knee surgery, now swims instead"
+  - NEW PRIORITY: "Weekends gaming indoors" → "Partner loves hiking, now outdoors every Saturday"
+  - CONSTRAINT: "Night owl, works until 2am" → "New baby requires strict 9pm bedtime"
+  - NEW PRIORITY: "Ate out constantly" → "Discovered cooking passion, now meal preps weekly"
+  
+  AIM FOR BALANCE: Over the full story arc, include a mix of both challenging and positive events.
+  Consecutive events of the same type are fine—life has natural clusters.
 
   EXAMPLES OF GOOD LIFE EVENTS BY DOMAIN:
+  (✓ = new priority/positive, ✗ = constraint/challenging)
 
   work_education:
-  - "Laid off unexpectedly, now job hunting with tighter budget"
-  - "Promoted to VP role requiring 60+ hour weeks and constant travel"
-  - "Switched to night shift, completely reversing daily schedule"
-  - "New manager requires strict 9-5 in-office, ending all remote work"
-  - "Went back to grad school part-time, evenings/weekends now studying"
-  - "Started own consulting business, irregular income and hours"
+  ✗ "Laid off unexpectedly, now job hunting with tighter budget"
+  ✓ "Promoted to director role with bigger budget for team outings and travel"
+  ✗ "New manager requires strict 9-5 in-office, ending all remote work"
+  ✓ "Company went fully remote, now works from anywhere"
+  ✗ "Switched to night shift, completely reversing daily schedule"
+  ✓ "Finished MBA, now has evenings free for the first time in 3 years"
 
   health_wellness:
-  - "Diagnosed with celiac disease, must follow strict gluten-free diet"
-  - "Discovered severe shellfish allergy after ER visit"
-  - "Knee replacement surgery, running is now impossible - must find alternatives"
-  - "Diagnosed with Type 2 diabetes, complete diet overhaul required"
-  - "Developed chronic migraines, avoiding screens after 6pm"
-  - "Doctor ordered strict low-sodium diet due to blood pressure"
+  ✗ "Diagnosed with celiac disease, must follow strict gluten-free diet"
+  ✓ "Completed Couch-to-5K program, now runs every morning before work"
+  ✗ "Knee injury ended running career, must find low-impact alternatives"
+  ✓ "Started working with a nutritionist, completely transformed eating habits"
+  ✗ "Developed chronic migraines, avoiding screens after 6pm"
+  ✓ "Hit fitness goal, now training for first triathlon"
 
   travel_experiences:
-  - "Relocated to a different country for spouse's job"
-  - "Sold car after moving downtown, now fully car-free"
-  - "Job now requires 50% travel, home only half the month"
-  - "Moved from city apartment to rural farmhouse 2 hours from town"
-  - "Downsized to tiny home, minimal possessions only"
+  ✗ "Developed fear of flying after turbulent flight, now only drives or takes trains"
+  ✓ "Got Global Entry and TSA PreCheck, now flies frequently for weekend trips"
+  ✗ "Car broke down permanently, now relies on public transit and rideshares"
+  ✓ "Bought an RV, now takes month-long road trips instead of flying"
+  ✗ "New job requires 50% travel, rarely home for full weekends"
+  ✓ "Partner introduced them to camping, now prefers outdoors over hotels"
+  (NOTE: Avoid relocation events unless absolutely necessary for the story)
 
   relationships_personal:
-  - "New partner is strictly vegan, household now plant-based"
-  - "Became first-time parent, no personal time or sleep"
-  - "Elderly parent moved in, needs quiet house by 8pm"
-  - "Going through divorce, selling house and splitting assets"
-  - "Child diagnosed with severe nut allergy, entire household diet changed"
-  - "Partner works nights, now have opposite schedules"
+  ✗ "Going through divorce, completely restructuring daily life and finances"
+  ✓ "Got married to partner who loves hosting, now entertains guests weekly"
+  ✗ "Elderly parent moved in, house must be quiet by 8pm"
+  ✓ "Had first child, weekends now revolve around family activities"
+  ✗ "Partner works nights, now have completely opposite schedules"
+  ✓ "New partner is a foodie, now explores restaurants together every weekend"
 
   hobbies_interests:
-  - "Adopted two rescue dogs requiring daily 2-hour walks"
-  - "Got deeply into competitive chess, plays 3 hours daily"
-  - "Discovered passion for woodworking, converted garage to workshop"
-  - "Joined amateur theater group, rehearsals every evening"
-  - "Started serious photography, spends weekends on photo trips"
+  ✗ "Repetitive strain injury ended guitar playing, had to find new creative outlet"
+  ✓ "Discovered passion for woodworking, converted garage to workshop"
+  ✗ "Adopted two rescue dogs requiring strict 6am and 8pm walk schedule"
+  ✓ "Joined a local running club, now has active social circle around fitness"
+  ✗ "Gaming addiction intervention, now limiting screen time strictly"
+  ✓ "Started pottery classes, now spends every Saturday at the studio"
 
   EXAMPLES OF BAD EVENTS (avoid these):
 
@@ -132,6 +146,11 @@ template: |
   - "Things changed at work" (what specifically?)
   - "Had some health issues" (what kind? what impact?)
   - "Life got busy" (with what? why?)
+  
+  ❌ OVERUSED (avoid unless story demands it):
+  - Relocation/moving (use sparingly - once per persona MAX)
+  - Another medical diagnosis (vary the types of health events)
+  - Another job loss (mix with positive career changes)
 
   OUTPUT FORMAT (JSON):
   {{
