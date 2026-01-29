@@ -261,18 +261,18 @@ class LifeEvent:
         date: Date of the event (MM/DD/YYYY format)
         event: Description of what happened
         context: Additional context about the event's impact
-        task: Specific deliverable the agent must produce (for evaluation events)
-        required_preferences: List of preference IDs that MUST be applied (for evaluation events)
-        completion_criteria: How to know when task is done (for evaluation events)
+        user_prompt: Natural user message (preference-neutral) to start the conversation
+        task_internal: Detailed task for judge (with preference requirements)
+        task: Legacy field - use task_internal instead
     """
 
     session_id: int
     date: str
     event: str
     context: str = ""
-    task: str = ""
-    required_preferences: list[str] = field(default_factory=list)
-    completion_criteria: str = ""
+    user_prompt: str = ""  # Starting message (for agent) - NO preference details
+    task_internal: str = ""  # Detailed task (for judge) - includes preference requirements
+    task: str = ""  # Legacy field - kept for backward compatibility
 
     def to_dict(self) -> dict[str, Any]:
         result = {
@@ -282,12 +282,12 @@ class LifeEvent:
             "context": self.context,
         }
         # Include task fields only if they're set (for evaluation events)
+        if self.user_prompt:
+            result["user_prompt"] = self.user_prompt
+        if self.task_internal:
+            result["task_internal"] = self.task_internal
         if self.task:
             result["task"] = self.task
-        if self.required_preferences:
-            result["required_preferences"] = self.required_preferences
-        if self.completion_criteria:
-            result["completion_criteria"] = self.completion_criteria
         return result
 
 
@@ -657,6 +657,41 @@ class MultiSessionOutput:
         """Returns all superseded (stale) preferences."""
         return [p for p in self.timeline.preferences.values() if not p.is_active]
 
+    def get_evolved_preferences(self) -> list[tuple[Preference, Preference]]:
+        """Returns pairs of (stale_preference, evolved_preference) for all evolutions.
+
+        An evolved preference is a current preference that replaced a stale one.
+        This is the crown jewel of our evaluation - testing whether agents
+        use the new preference vs the old one.
+
+        Returns:
+            List of (old_pref, new_pref) tuples showing the evolution chain
+        """
+        evolutions = []
+        for stale in self.get_superseded_preferences():
+            if stale.superseded_by:
+                new_pref = self.timeline.preferences.get(stale.superseded_by)
+                if new_pref and new_pref.is_active:
+                    evolutions.append((stale, new_pref))
+        return evolutions
+
+    def get_evolved_preference_ids(self) -> set[str]:
+        """Returns IDs of current preferences that evolved from stale ones.
+
+        These are the preferences that replaced older versions and are
+        critical for testing preference recall.
+        """
+        return {new_pref.preference_id for _, new_pref in self.get_evolved_preferences()}
+
+    def get_baseline_preferences(self) -> list[Preference]:
+        """Returns current preferences that are NOT evolved (original baseline).
+
+        These are preferences that have never changed - either baseline prefs
+        (created_at_session=-1) or new prefs that were never superseded.
+        """
+        evolved_ids = self.get_evolved_preference_ids()
+        return [p for p in self.get_current_preferences() if p.preference_id not in evolved_ids]
+
 
 # =============================================================================
 # Multi-Session Evaluation Models
@@ -675,7 +710,7 @@ class EvaluationRubric:
         expected_behaviors: What a good agent should do
         trap_behaviors: What using stale preferences looks like
         required_preferences: Preference IDs that MUST be applied for this specific task
-        completion_criteria: How to determine if the task is complete
+        completion_criteria: Per-preference criteria for task completion
     """
 
     current_preferences: list[Preference]
@@ -683,7 +718,7 @@ class EvaluationRubric:
     expected_behaviors: list[str]
     trap_behaviors: list[str]
     required_preferences: list[str] = field(default_factory=list)
-    completion_criteria: str = ""
+    completion_criteria: dict[str, str] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -700,29 +735,32 @@ class EvaluationRubric:
 class EvaluationTask:
     """An evaluation task for multi-session preference recall.
 
-    Contains the evaluation event, user's initial prompt, and rubric for scoring.
+    Contains the evaluation event and rubric for scoring.
+    The user's initial prompt is accessed via evaluation_event.user_prompt.
 
     Attributes:
         task_id: Unique identifier
-        evaluation_event: The life event triggering this evaluation
-        user_prompt: The initial message the user sends
-        rubric: The evaluation rubric for the judge
+        evaluation_event: The life event triggering this evaluation (contains user_prompt)
+        rubric: The evaluation rubric for the judge (contains required_preferences, completion_criteria)
         persona_summary: Brief summary of the persona for user simulator
         max_turns: Maximum conversation turns (agent replies)
     """
 
     task_id: str
     evaluation_event: LifeEvent
-    user_prompt: str
     rubric: EvaluationRubric
     persona_summary: str
     max_turns: int = 10
+
+    @property
+    def user_prompt(self) -> str:
+        """Convenience accessor for the starting user message."""
+        return self.evaluation_event.user_prompt
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "task_id": self.task_id,
             "evaluation_event": self.evaluation_event.to_dict(),
-            "user_prompt": self.user_prompt,
             "rubric": self.rubric.to_dict(),
             "persona_summary": self.persona_summary,
             "max_turns": self.max_turns,

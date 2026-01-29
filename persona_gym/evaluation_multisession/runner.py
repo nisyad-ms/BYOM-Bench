@@ -152,12 +152,12 @@ def build_agent_context(
     custom_system_prompt: str | None = None,
     include_history: bool = True,
 ) -> str:
-    """Build the agent's system prompt with conversation history context.
+    """Build the agent's system prompt with structured preference history.
 
     Args:
         multisession_data: The multi-session data (agent's "memory")
         custom_system_prompt: Optional custom system prompt
-        include_history: Whether to include conversation history. If False,
+        include_history: Whether to include preference history. If False,
             the agent has no context (simulates a no-memory agent).
 
     Returns:
@@ -167,36 +167,94 @@ def build_agent_context(
     if not include_history:
         return custom_system_prompt or render_prompt("evaluation/agent_system_no_context")
 
-    # Format conversation history
-    history_parts = []
-    for session in multisession_data.sessions:
-        session_header = f"\n--- Session {session.session_id}: {session.life_event.event} ({session.life_event.date}) ---"
-        history_parts.append(session_header)
-
-        for turn in session.conversation:
-            role = turn.get("role", "unknown").capitalize()
-            content = turn.get("content", "")
-            history_parts.append(f"{role}: {content}")
-
-    conversation_history = "\n".join(history_parts)
+    # Build structured preference history (not raw conversations)
+    preference_history = _format_preference_history(multisession_data)
 
     if custom_system_prompt:
-        # User provided custom prompt, just append history
+        # User provided custom prompt, just append preference history
         return f"""{custom_system_prompt}
 
-## Previous Conversation History with This User
-
-{conversation_history}
+{preference_history}
 
 ---
 
-Now respond to the user's new message. Remember to use the context from previous conversations to personalize your response."""
+Now respond to the user's new message. Use your knowledge of their preferences to personalize your response proactively."""
 
     # Use standard prompt from YAML
     return render_prompt(
         "evaluation/agent_system_with_context",
-        conversation_history=conversation_history,
+        preference_history=preference_history,
     )
+
+
+def _format_preference_history(data: MultiSessionOutput) -> str:
+    """Format preference history as structured memory for the agent.
+
+    This provides the agent with:
+    1. Baseline preferences (before any life events)
+    2. Preference evolution per session (what changed and why)
+    3. Currently active preferences
+
+    Args:
+        data: Multi-session output with preference timeline
+
+    Returns:
+        Formatted preference history string
+    """
+    parts = ["## User Preference History\n"]
+
+    # 1. Baseline preferences (created_at_session == -1)
+    baseline_prefs = [
+        p for p in data.timeline.preferences.values()
+        if p.created_at_session == -1
+    ]
+    if baseline_prefs:
+        parts.append("### Baseline Preferences (established before any life events)\n")
+        for pref in sorted(baseline_prefs, key=lambda p: (p.domain, p.preference_id)):
+            status = "" if pref.is_active else " [SUPERSEDED]"
+            parts.append(f"- [{pref.domain}] {pref.fact}{status}")
+        parts.append("")
+
+    # 2. Preference evolution per session
+    if data.sessions:
+        parts.append("### Preference Evolution\n")
+        for session in data.sessions:
+            # Session header with life event context
+            event = session.life_event
+            parts.append(f"**Session {session.session_id} ({event.date}) - {event.event}**")
+
+            # Evolved preferences
+            for old_id, new_id in session.evolved_preference_ids.items():
+                old_pref = data.timeline.preferences.get(old_id)
+                new_pref = data.timeline.preferences.get(new_id)
+                if old_pref and new_pref:
+                    reason = f" (reason: {old_pref.reason_for_change})" if old_pref.reason_for_change else ""
+                    parts.append(f"- EVOLVED: \"{old_pref.fact}\" → \"{new_pref.fact}\"{reason}")
+
+            # New preferences created this session
+            for pref_id in session.new_preference_ids:
+                pref = data.timeline.preferences.get(pref_id)
+                if pref:
+                    parts.append(f"- NEW: [{pref.domain}] {pref.fact}")
+
+            parts.append("")
+
+    # 3. Currently active preferences
+    active_prefs = data.timeline.get_active_preferences()
+    if active_prefs:
+        parts.append("### Currently Active Preferences\n")
+        # Group by domain for readability
+        by_domain: dict[str, list] = {}
+        for pref in active_prefs:
+            by_domain.setdefault(pref.domain, []).append(pref)
+
+        for domain in sorted(by_domain.keys()):
+            parts.append(f"**{domain}:**")
+            for pref in by_domain[domain]:
+                parts.append(f"- {pref.fact}")
+            parts.append("")
+
+    return "\n".join(parts)
 
 
 def get_agent_response(

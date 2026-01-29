@@ -55,14 +55,14 @@ def main():
     logger.info(f"Current preferences ({len(current_prefs)}):")
     logger.info("")
     for p in current_prefs:
-        logger.info(f"  [{p.preference_id}] [{p.category}]")
+        logger.info(f"  [{p.preference_id}] [{p.domain}]")
         logger.info(f"    {p.fact}")
         logger.info("")
 
     logger.info(f"Stale/superseded preferences ({len(stale_prefs)}):")
     logger.info("")
     for p in stale_prefs:
-        logger.info(f"  [{p.preference_id}] [{p.category}] -> superseded by {p.superseded_by}")
+        logger.info(f"  [{p.preference_id}] [{p.domain}] -> superseded by {p.superseded_by}")
         logger.info(f"    {p.fact}")
         logger.info("")
 

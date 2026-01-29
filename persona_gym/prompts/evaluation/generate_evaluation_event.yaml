@@ -1,103 +1,153 @@
 name: Generate Evaluation Event
-description: Generates an evaluation task with strong preference-task coupling and clear completion criteria
-used_by: persona_gym/evaluation/orchestrator.py::generate_evaluation_event
+description: Generates an evaluation task that tests preference recall, especially evolved preferences
+used_by: persona_gym/task_generators/evaluation_task.py::_generate_evaluation_event
 variables:
   - persona: The user persona description
-  - life_events_summary: Summary of previous life events
-  - current_preferences: JSON list of current active preferences
+  - preference_evolution_story: Chronological narrative of preference evolution through life events
+  - required_preferences: JSON list of preferences that MUST be tested in this task
+  - num_required: Total number of required preferences
+  - num_evolved: Number of evolved preferences in required set
+  - num_baseline: Number of baseline preferences in required set
 
 template: |
-  Generate a TASK-BASED evaluation scenario that REQUIRES the agent to apply specific user preferences. This is for testing personalization memory in AI assistants.
+  Generate a TASK-BASED evaluation scenario that tests an AI assistant's preference memory.
 
-  PERSONA:
+  HOW THIS TASK WILL BE USED:
+  - An AI agent has gathered user preferences over multiple past conversations with the user.
+  - Using those preferences, the agent must complete a specific task for the user.
+  - The agent is being evaluated on how well it recalls and applies the user's preferences.
+
+  CRITICAL FOCUS: EVOLVED PREFERENCES
+  The most important test is whether the agent uses CURRENT preferences vs STALE ones.
+  Preferences marked [EVOLVED] evolved from older versions - the agent MUST use the NEW version.
+
+  USER PERSONA:
   {persona}
 
-  PREVIOUS LIFE EVENTS:
-  {life_events_summary}
+  ===============================================================================
+  PREFERENCE EVOLUTION STORY
+  ===============================================================================
 
-  CURRENT ACTIVE PREFERENCES (agent must use at least 2-3 of these):
-  {current_preferences}
+  {preference_evolution_story}
 
-  ## CRITICAL: Event Must Be Connected to Previous Life Events
+  ===============================================================================
+  REQUIRED PREFERENCES FOR THIS TASK
+  ===============================================================================
 
-  The evaluation event MUST be **plausibly connected** to this persona's situation and recent life events:
-  - The event should feel like a natural continuation of the user's journey
-  - It should be something that could realistically happen AFTER the previous life events
-  - The preferences revealed during those conversations should be naturally relevant to this new task
-  - Do NOT create an unrelated scenario that ignores the user's established context
+  Your task MUST meaningfully test ALL {num_required} of these preferences:
+  - {num_evolved} are EVOLVED preferences (marked "is_evolved": true) - MOST CRITICAL
+  - {num_baseline} are BASELINE preferences (unchanged)
 
-  **GOOD**: If previous events were about "started ML course" → "got promotion, less time":
-  - "Planning a weekend ML workshop" ✓ (uses time/learning preferences from those events)
-  - "Preparing for ML conference" ✓ (related domain, uses established preferences)
+  {required_preferences}
 
-  **BAD**: Creating events unrelated to the established narrative:
-  - "Help me buy a car" ✗ (ignores ML/career context)
-  - "Plan a vacation" ✗ (unrelated, won't test revealed preferences)
+  ===============================================================================
+  WHY EVOLVED PREFERENCES MATTER
+  ===============================================================================
 
-  ## CRITICAL: Strong Preference-Task Coupling
+  Evolved preferences show "evolved_from" - what the user USED to prefer.
 
-  The task MUST be designed so that:
-  1. **Preferences are MANDATORY** - the task cannot be done well without applying 2-3 specific preferences
-  2. **Generic advice would be WRONG** - there should be a clear difference between generic and personalized responses
-  3. **Clear deliverable** - task has a specific output the agent must produce
+  Testing rationale:
+  - Agent WITHOUT memory -> might guess old preference (FAIL)
+  - Agent WITH memory -> uses current preference (PASS)
 
-  ## Task Design Patterns
+  EXAMPLE:
+  "fact": "Swims 3x/week due to knee replacement"
+  "evolved_from": "Runs marathons, trains 5x/week"
 
-  **GOOD: Preference-Mandatory Tasks**
-  
-  If preferences include scheduling/time preferences:
-  → "Create my detailed weekly ML study schedule"
-  → Agent MUST know when user prefers to study, cannot give generic "study when convenient"
+  GOOD TASK: "Plan my exercise routine for next month"
+  -> Tests if agent remembers knee surgery -> recommends swimming NOT running
 
-  If preferences include learning style:
-  → "Recommend 3 specific resources for learning neural networks"
-  → Agent MUST know if user prefers tutorials/videos/books - recommending all formats is NOT personalized
+  BAD TASK: "What's a good protein powder?"
+  -> Both agents answer equally well (doesn't test evolution)
 
-  If preferences include communication style:
-  → "Set up a feedback system for my project progress"
-  → Agent MUST know if user prefers async/sync, written/verbal
+  ===============================================================================
+  TASK REQUIREMENTS
+  ===============================================================================
 
-  If preferences include budget/investment style:
-  → "Find me a course or certification for ML"
-  → Agent MUST know if user prefers free/paid resources
+  1. MUST require ALL {num_required} preferences to complete well
+  2. Each preference should be NECESSARY - removing it makes task incomplete
+  3. Evolved preferences MUST be testable - old vs new clearly matters
+  4. Task should have a CONCRETE DELIVERABLE (not vague advice)
 
-  **BAD: Preference-Optional Tasks (AVOID THESE)**
-  
-  - "Help me with my resume" → can be done generically
-  - "Give me career advice" → too open-ended
-  - "Tell me about ML" → informational, no personalization needed
+  GOOD TASK PATTERNS:
+  - PLANNING (schedules, itineraries, routines) - require knowing constraints
+  - RECOMMENDATIONS (specific items) - require knowing to narrow down
+  - DECISION SUPPORT (help choosing) - require knowing priorities
 
-  ## Output Format (JSON)
+  BAD TASK PATTERNS:
+  - "Help me with X" (too vague)
+  - "Tell me about X" (informational, no personalization)
+  - "What are some options?" (can list everything)
+  - Tasks where only 2-3 preferences matter (must use ALL {num_required})
+
+  ===============================================================================
+  OUTPUT FORMAT (JSON)
+  ===============================================================================
 
   {{
-    "event": "Brief description of triggering event (1 sentence)",
-    "task": "Specific deliverable the agent must produce",
-    "required_preferences": ["pref_id_1", "pref_id_2"] (2-3 preferences that MUST be applied),
-    "completion_criteria": "How to know when task is done",
-    "context": "Additional context the agent would need",
+    "event": "Brief triggering situation (1 sentence)",
+    "user_prompt": "What the user NATURALLY asks for - NO preference details",
+    "task_internal": "Detailed task for JUDGE ONLY - includes what preferences should apply",
+    "completion_criteria": {{
+      "pref_id_1": "How this preference should be applied for task success",
+      "pref_id_2": "How this preference should be applied for task success"
+    }},
+    "context": "Additional situational context (NO preference details)",
     "date": "MM/DD/YYYY"
   }}
 
-  ## Examples
+  ===============================================================================
+  CRITICAL: user_prompt vs task_internal
+  ===============================================================================
 
-  EXAMPLE 1 (Schedule + Learning Style preferences):
+  **user_prompt** is what the USER says to the agent. It MUST:
+  - Be a NATURAL request without revealing any preferences
+  - NOT mention dietary restrictions, health conditions, constraints, or specifics
+  - Let the agent PROACTIVELY apply known preferences
+
+  **task_internal** is for SCORING. It describes what perfect completion looks like.
+
+  WHY THIS MATTERS:
+  - Agent WITH context -> proactively applies preferences -> high score
+  - Agent WITHOUT context -> gives generic advice or asks questions -> low score
+
+  If user_prompt REVEALS preferences, even a no-context agent succeeds!
+
+  ===============================================================================
+  EXAMPLE (5 required preferences: 3 evolved, 2 baseline)
+  ===============================================================================
+
+  Required preferences:
+  - "Swims 3x/week due to knee replacement" ([EVOLVED] from "runs marathons")
+  - "Works remotely, flexible schedule" ([EVOLVED] from "9-5 office job")
+  - "Vegetarian diet" ([EVOLVED] from "loved steakhouses")
+  - "Budget: $2000/month discretionary" ([BASELINE])
+  - "Lives in Seattle" ([BASELINE])
+
+  BAD user_prompt (LEAKS PREFERENCES):
+  - "Plan a wellness retreat with swimming, vegetarian meals, under $2000, near Seattle"
+  - "I need a retreat - remember I can't run anymore due to my knee"
+
+  GOOD user_prompt (NATURAL, NO LEAKS):
+  - "I've had a stressful quarter and want to plan a solo wellness retreat. Can you help?"
+  - "I'm thinking of taking a week off for self-care. What would you suggest?"
+
+  Output:
   {{
-    "event": "Starting a new ML project at work and needs a structured learning plan",
-    "task": "Create a 2-week study schedule with specific daily activities",
-    "required_preferences": ["pref_001", "pref_003"],
-    "completion_criteria": "Agent provides a day-by-day schedule with time slots and specific resources",
-    "context": "User wants to learn PyTorch basics for the project",
-    "date": "02/15/2026"
+    "event": "Planning a week-long solo wellness retreat after a stressful quarter",
+    "user_prompt": "I've had an exhausting quarter and really need a reset. Can you help me plan a week-long solo wellness retreat?",
+    "task_internal": "Create a 7-day retreat itinerary with accommodations, daily activities, and meal plans that respects: swimming-only exercise (knee), vegetarian diet, flexible timing, Seattle area, $2000 budget",
+    "completion_criteria": {{
+      "pref_swim": "Swimming/water activities recommended, NOT running/hiking",
+      "pref_veg": "Vegetarian meal options at each location",
+      "pref_remote": "Flexible-schedule activities that don't require fixed times",
+      "pref_budget": "Total cost under $2000",
+      "pref_seattle": "Seattle-area or easily accessible destination"
+    }},
+    "context": "First real vacation in 8 months since surgery",
+    "date": "03/20/2026"
   }}
 
-  EXAMPLE 2 (Budget + Communication preferences):
-  {{
-    "event": "Looking for an online ML course to prepare for upcoming interviews",
-    "task": "Recommend exactly 2 courses with justification for why they fit the user",
-    "required_preferences": ["pref_002", "pref_004"],
-    "completion_criteria": "Agent recommends 2 specific courses explaining why they match user's constraints",
-    "context": "User has 4 weeks before interviews start",
-    "date": "02/20/2026"
-  }}
+  REMEMBER: If ANY preference can be ignored without affecting task quality, redesign the task.
+  REMEMBER: user_prompt must NEVER reveal preferences - that defeats the benchmark!
 
-  REMEMBER: The goal is to TEST whether the agent remembers preferences. If the task can be done equally well without knowing preferences, it's a BAD task.
