@@ -1,0 +1,98 @@
+name: Generate Evaluation Event (v2 - LLM selects preferences)
+description: LLM selects 6 coherent preferences (3 evolved, 3 baseline) and generates a task testing them
+used_by: persona_gym/task_generators/evaluation_task.py::_generate_evaluation_event
+variables:
+  - persona: The user persona description
+  - preference_evolution_story: Preference ledger with baseline and evolution history
+  - num_evolved_required: Number of evolved preferences to select (default 3)
+  - num_baseline_required: Number of baseline preferences to select (default 3)
+
+template: |
+  Generate an evaluation task testing an AI agent's preference memory.
+
+  CONTEXT:
+  - Agent has learned user preferences across multiple conversations
+  - Some preferences EVOLVED due to life events (old version is now STALE)
+  - We test if the agent recalls CURRENT preferences, not stale ones
+
+  For your reference, you are given the following:
+
+  USER PERSONA: {persona}
+
+  PREFERENCE EVOLUTION HISTORY:
+  {preference_evolution_story}
+
+  YOUR TASK:
+  1. SELECT {num_evolved_required} evolved preferences and {num_baseline_required} baseline preferences that work well together for a coherent task
+  2. DESIGN a challenging task where all 6 preferences naturally matter
+  3. The task should have a CLEAR GOAL and CONCRETE DELIVERABLE
+  4. **Very Important** AVOID common patterns like travel planning; be CREATIVE
+  5. WRITE a descriptive user_prompt that does NOT reveal any preferences
+
+  SELECTION CRITERIA:
+  - Choose preferences that fit naturally in ONE scenario
+  - Evolved preferences are CRITICAL - they test memory quality of the agent
+  - Avoid forcing unrelated preferences together
+
+  OUTPUT FORMAT (JSON):
+  {{
+    "selected_preferences": [
+      {{"id": "pref_XXX", "fact": "...", "is_evolved": true/false, "evolved_from": "..." or null}}
+    ],
+    "event": "Brief situation (1 sentence)",
+    "user_prompt": "Natural request - NO preference details revealed",
+    "task_internal": "What perfect completion looks like (for judge)",
+    "date": "MM/DD/YYYY"
+  }}
+
+  CRITICAL RULES:
+  - user_prompt must NOT mention any preferences, constraints, or conditions
+  - If user_prompt reveals preferences, a no-memory agent can succeed (defeats the test!)
+  - Each selected preference must be NECESSARY for task completion
+
+  EXAMPLES:
+
+  Example 1 - Wellness Retreat Planning:
+  Selected preferences:
+  - [EVOLVED] Now swims instead of running (due to knee surgery)
+  - [EVOLVED] Flexible work schedule (was rigid 9-5)
+  - [EVOLVED] Vegetarian diet (was meat-eater)
+  - [BASELINE] Budget $2000/month discretionary
+  - [BASELINE] Lives in Seattle
+  - [BASELINE] Prefers boutique hotels
+
+  BAD user_prompt: "Plan a retreat with swimming, vegetarian food, under $2000 near Seattle"
+  (Reveals: exercise type, diet, budget, location - agent doesn't need memory!)
+
+  GOOD user_prompt: "I've had an exhausting quarter and really need a reset. Can you help me plan a week-long solo wellness retreat?"
+  (Natural request - agent must recall preferences to personalize)
+
+  Example 2 - Home Office Setup:
+  Selected preferences:
+  - [EVOLVED] Works from home permanently (was office-based)
+  - [EVOLVED] Needs ergonomic setup for back pain (was fine with standard desk)
+  - [EVOLVED] Prefers natural lighting (developed light sensitivity)
+  - [BASELINE] Budget-conscious, researches before buying
+  - [BASELINE] Minimalist aesthetic preference
+  - [BASELINE] Tech-savvy, prefers smart home integration
+
+  BAD user_prompt: "I need an ergonomic home office with natural lighting, minimalist design, and smart features under $3000"
+  (Reveals all preferences directly)
+
+  GOOD user_prompt: "I'm finally setting up a proper workspace at home. What should I consider?"
+  (Open-ended - agent must apply known preferences)
+
+  Example 3 - Birthday Dinner Planning:
+  Selected preferences:
+  - [EVOLVED] Avoids loud venues (developed tinnitus)
+  - [EVOLVED] Early dinner times (sleep schedule changed)
+  - [EVOLVED] Seafood allergy (recent diagnosis)
+  - [BASELINE] Prefers small gatherings over large parties
+  - [BASELINE] Values experiences over gifts
+  - [BASELINE] Partner loves Italian cuisine
+
+  BAD user_prompt: "Plan a quiet early dinner for 6 people at an Italian place with no seafood"
+  (Specifies venue type, time, size, and dietary restriction)
+
+  GOOD user_prompt: "My partner's birthday is coming up and I want to plan something special. Any suggestions?"
+  (Agent must recall partner's preferences AND user's constraints)

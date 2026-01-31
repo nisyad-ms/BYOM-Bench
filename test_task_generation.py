@@ -2,9 +2,8 @@
 """Test task generation - Generate evaluation tasks from multi-session data.
 
 Usage:
-    python test_task_generation.py
-    python test_task_generation.py --input outputs/data_generation_output.json
-    python test_task_generation.py --save --output outputs/task_generation_output.json
+    python test_task_generation.py                    # Uses latest session, creates new task
+    python test_task_generation.py --session <file>   # Use specific session
 """
 
 import argparse
@@ -12,36 +11,60 @@ import json
 import sys
 from pathlib import Path
 
-from utils import add_file_logging, setup_logging
+from utils import (
+    add_file_logging,
+    extract_session_id,
+    get_latest_session,
+    get_next_task_num,
+    get_task_path,
+    setup_logging,
+)
 
 logger = setup_logging("task_generation")
 
 
 def main():
     parser = argparse.ArgumentParser(description="Test evaluation task generation")
-    parser.add_argument("--input", type=str, default="outputs/data_generation_output.json",
-                        help="Path to multi-session data JSON file")
-    parser.add_argument("--save", action="store_true", help="Save generated task to file")
-    parser.add_argument("--output", type=str, default="outputs/task_generation_output.json",
-                        help="Output file path")
+    parser.add_argument("--session", type=str, default=None,
+                        help="Path to session file (default: latest)")
     args = parser.parse_args()
 
-    # Check input file exists
-    input_path = Path(args.input)
-    if not input_path.exists():
-        logger.error(f"Input file not found: {input_path}")
-        logger.info("Run test_data_generation.py first")
+    # Find session file
+    if args.session:
+        input_path = Path(args.session)
+        if not input_path.exists():
+            logger.error(f"Session file not found: {input_path}")
+            sys.exit(1)
+    else:
+        input_path = get_latest_session()
+        if input_path is None:
+            logger.error("No session files found in outputs/conversation/")
+            logger.info("Run test_data_generation.py first")
+            sys.exit(1)
+        logger.info(f"Using latest session: {input_path.name}")
+
+    # Extract session ID and determine output path
+    session_id = extract_session_id(input_path)
+    if session_id is None:
+        logger.error(f"Could not extract session ID from: {input_path}")
+        logger.info("Expected filename format: sessions_XX.json")
         sys.exit(1)
+
+    # Get next task number for this session
+    task_num = get_next_task_num(session_id)
+    output_path = get_task_path(session_id, task_num)
 
     from persona_gym.schemas import MultiSessionOutput
     from persona_gym.task_generators import generate_evaluation_task
 
     # Load multi-session data
-    logger.info(f"Loading multi-session data from {input_path}")
+    logger.info(f"Loading session data from {input_path}")
     with open(input_path, "r", encoding="utf-8") as f:
         raw_data = json.load(f)
     data = MultiSessionOutput.from_dict(raw_data)
     logger.info(f"Loaded {len(data.sessions)} sessions with {len(data.timeline.preferences)} preferences")
+    logger.info(f"Session ID: {session_id}")
+    logger.info(f"Output: {output_path}")
     logger.info("")
 
     # Display current vs stale preferences
@@ -83,20 +106,14 @@ def main():
     logger.info("Event:")
     logger.info(f"  {task.evaluation_event.event}")
     logger.info("")
-    logger.info("Task:")
-    for line in task.evaluation_event.task.split('\n'):
-        logger.info(f"  {line}")
+    logger.info("Domain:")
+    logger.info(f"  {task.evaluation_event.domain}")
     logger.info("")
-    logger.info("Context:")
-    for line in task.evaluation_event.context.split('\n'):
-        logger.info(f"  {line}")
-    logger.info("")
-    logger.info("Completion Criteria:")
-    for line in task.evaluation_event.completion_criteria.split('\n'):
-        logger.info(f"  {line}")
-    logger.info("")
-    logger.info(f"Required Preferences: {task.evaluation_event.required_preferences}")
-    logger.info("")
+    if task.evaluation_event.task_internal:
+        logger.info("Task (internal for judge):")
+        for line in task.evaluation_event.task_internal.split('\n'):
+            logger.info(f"  {line}")
+        logger.info("")
 
     logger.info("-" * 40)
     logger.info("USER PROMPT")
@@ -110,19 +127,11 @@ def main():
     logger.info("EVALUATION RUBRIC")
     logger.info("-" * 40)
     logger.info("")
-    logger.info(f"Required Preferences: {task.rubric.required_preferences}")
-    logger.info("")
-    logger.info("Completion Criteria:")
-    for line in task.rubric.completion_criteria.split('\n'):
-        logger.info(f"  {line}")
-    logger.info("")
-    logger.info(f"Expected Behaviors ({len(task.rubric.expected_behaviors)}):")
-    for b in task.rubric.expected_behaviors:
-        logger.info(f"  • {b}")
-    logger.info("")
-    logger.info(f"Trap Behaviors ({len(task.rubric.trap_behaviors)}):")
-    for b in task.rubric.trap_behaviors:
-        logger.info(f"  ⚠ {b}")
+    logger.info(f"Required Preferences ({len(task.rubric.required_preferences)}):")
+    for p in task.rubric.required_preferences:
+        logger.info(f"  [{p['id']}] {p['fact']}")
+        if "supersedes" in p:
+            logger.info(f"    ↳ supersedes: {p['supersedes']['fact']}")
     logger.info("")
 
     logger.info("-" * 40)
@@ -133,14 +142,12 @@ def main():
         logger.info(f"  {line}")
     logger.info("")
 
-    # Save if requested
-    if args.save:
-        output_path = Path(args.output)
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(task.to_dict(), f, indent=2, ensure_ascii=False)
-        logger.info(f"Task saved to {output_path}")
-        logger.info("")
+    # Save task
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(task.to_dict(), f, indent=2, ensure_ascii=False)
+    logger.info(f"Task saved to: {output_path}")
+    logger.info("")
 
     logger.info("=" * 60)
     logger.info("TASK GENERATION COMPLETE")

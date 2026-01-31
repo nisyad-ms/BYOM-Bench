@@ -21,7 +21,7 @@ class MultiSessionUserSimulator:
 
     The user simulator:
     - Acts naturally based on persona and current situation
-    - Knows its current preferences
+    - Knows its current preferences (from required_preferences)
     - Corrects the agent when recommendations don't match preferences
     - Does NOT know which preferences are "stale" - it just knows what it wants now
 
@@ -43,29 +43,31 @@ class MultiSessionUserSimulator:
         self.task = evaluation_task
         self.client = client or LLMClient()
 
-        # Extract current preferences from rubric
-        self.current_preferences = evaluation_task.rubric.current_preferences
+        # Extract preferences from rubric.required_preferences
+        # These are dicts with {id, fact, supersedes?: ...}
+        # User only needs to know their current preferences (ignores supersedes)
+        self.required_preferences = evaluation_task.rubric.required_preferences
 
         # Build system prompt once
         self._system_prompt = self._build_system_prompt()
 
     def _build_system_prompt(self) -> str:
         """Build the system prompt for the user simulator."""
-        # Format preferences for the prompt
+        # Format preferences for the prompt (user only needs id and fact)
         prefs_formatted = json.dumps(
             [
-                {"id": p.preference_id, "preference": p.fact}
-                for p in self.current_preferences
+                {"id": p["id"], "preference": p["fact"]}
+                for p in self.required_preferences
             ],
             indent=2,
             ensure_ascii=False,
         )
 
         return render_prompt(
-            "evaluation/multisession_user_simulator",
+            "evaluation/user_simulator_system",
             persona_summary=self.task.persona_summary,
             evaluation_event=self.task.evaluation_event.event,
-            current_preferences=prefs_formatted,
+            required_preferences=prefs_formatted,
         )
 
     def get_initial_message(self) -> str:
@@ -94,25 +96,16 @@ class MultiSessionUserSimulator:
         # Format conversation for context
         conv_formatted = self._format_conversation(conversation_history)
 
-        # Build user prompt from YAML template
-        preferences_json = json.dumps(
-            [{"preference": p.fact} for p in self.current_preferences],
-            indent=2,
-            ensure_ascii=False,
-        )
-
+        # Build user prompt - just conversation context (rules are in system prompt)
         user_prompt = render_prompt(
-            "evaluation/user_simulator_respond",
-            preferences=preferences_json,
+            "evaluation/user_simulator_instruction",
             conversation=conv_formatted,
             agent_message=agent_message,
         )
 
-        system_prompt = render_prompt("evaluation/user_simulator_system")
-
         response = self.client.complete(
             prompt=user_prompt,
-            system_prompt=system_prompt,
+            system_prompt=self._system_prompt,  # Use the pre-built system prompt
             max_tokens=max_tokens,
             temperature=0.8,
         )

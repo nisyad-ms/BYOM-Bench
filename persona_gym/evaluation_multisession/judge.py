@@ -1,18 +1,14 @@
 """
 Multi-Session Judge for Evaluation.
 
-The judge evaluates a completed dialogue by analyzing:
-1. How well the agent used current preferences (proactive vs prompted vs ignored)
-2. Whether the agent incorrectly used stale preferences
-3. Turn efficiency (how many corrections were needed)
-4. Task completion
+The judge evaluates a completed dialogue using two separate LLM calls:
+1. Preference Judge: Scores preference recall using First-Mention Rule
+2. Efficiency Judge: Scores turn efficiency based on corrections and clarifying questions
 """
 
 import json
 import logging
 from typing import Any
-
-import yaml
 
 from persona_gym.client import LLMClient
 from persona_gym.prompts import render_prompt
@@ -29,62 +25,13 @@ logger = logging.getLogger(__name__)
 class MultiSessionJudge:
     """Evaluates agent performance on multi-session preference recall.
 
-    The judge:
-    1. Receives the completed dialogue and rubric
-    2. Analyzes each turn for preference usage and corrections
-    3. Identifies any stale preference usage
-    4. Computes scores based on the rubric
+    Uses two separate LLM calls for cleaner separation of concerns:
+    1. Preference Judge: First-mention analysis for preference recall
+    2. Efficiency Judge: Turn classification for efficiency scoring
     """
 
     def __init__(self, client: LLMClient | None = None):
-        """Initialize judge with optional LLM client.
-
-        Args:
-            client: LLM client for evaluation. If None, creates a new one.
-        """
         self.client = client or LLMClient()
-        self._few_shot_examples = self._load_few_shot_examples()
-
-    def _load_few_shot_examples(self) -> str:
-        """Load few-shot examples from YAML file."""
-        try:
-            import importlib.resources as pkg_resources
-
-            # Read the YAML file
-            prompts_path = pkg_resources.files("persona_gym.prompts.evaluation")
-            examples_file = prompts_path / "multisession_judge_examples.yaml"
-            content = examples_file.read_text()
-
-            data = yaml.safe_load(content)
-            examples = data.get("examples", [])
-
-            # Format examples for the prompt
-            formatted = []
-            for i, ex in enumerate(examples, 1):
-                formatted.append(
-                    f"""### Example {i}: {ex['scenario']}
-
-**Current Preferences:**
-{json.dumps(ex['current_preferences'], indent=2, ensure_ascii=False)}
-
-**Stale Preferences:**
-{json.dumps(ex['stale_preferences'], indent=2, ensure_ascii=False)}
-
-**Evaluation Event:** {ex['evaluation_event']}
-
-**Transcript:**
-{json.dumps(ex['transcript'], indent=2, ensure_ascii=False)}
-
-**Correct Evaluation:**
-{json.dumps(ex['evaluation'], indent=2, ensure_ascii=False)}
-"""
-                )
-
-            return "\n---\n".join(formatted)
-
-        except Exception as e:
-            logger.warning(f"Failed to load few-shot examples: {e}")
-            return "No few-shot examples available."
 
     def evaluate(
         self,
@@ -101,95 +48,29 @@ class MultiSessionJudge:
             MultiSessionEvaluationResult with scores and analysis
         """
         rubric = evaluation_task.rubric
-
-        # Format inputs for judge prompt
-        current_prefs_json = json.dumps(
-            [
-                {
-                    "id": p.preference_id,
-                    "fact": p.fact,
-                    "domain": p.domain,
-                }
-                for p in rubric.current_preferences
-            ],
-            indent=2,
-            ensure_ascii=False,
-        )
-
-        stale_prefs_json = json.dumps(
-            [
-                {
-                    "id": p.preference_id,
-                    "fact": p.fact,
-                    "superseded_by": p.superseded_by,
-                    "reason": p.reason_for_change,
-                }
-                for p in rubric.stale_preferences
-            ],
-            indent=2,
-            ensure_ascii=False,
-        )
-
-        # Format required preferences - include the full preference info for context
-        required_prefs_info = []
-        for pref_id in rubric.required_preferences:
-            for p in rubric.current_preferences:
-                if p.preference_id == pref_id:
-                    required_prefs_info.append({
-                        "id": p.preference_id,
-                        "fact": p.fact,
-                    })
-                    break
-        required_prefs_json = json.dumps(required_prefs_info, indent=2, ensure_ascii=False)
-
-        # Get completion criteria
-        completion_criteria = rubric.completion_criteria or "Complete the user's task successfully"
-
+        agent_turns = sum(1 for turn in conversation if turn.get("role") == "assistant")
+        required_prefs_json = json.dumps(rubric.required_preferences, indent=2, ensure_ascii=False)
         transcript_json = json.dumps(conversation, indent=2, ensure_ascii=False)
+        num_required = len(rubric.required_preferences)
 
-        # Build event description with task info
-        event_info = evaluation_task.evaluation_event
-        event_description = event_info.event
-        if event_info.task:
-            event_description += f"\n\nSpecific Task: {event_info.task}"
-
-        # Build prompts
-        system_prompt = render_prompt("evaluation/multisession_judge_system")
-
-        user_prompt = render_prompt(
-            "evaluation/multisession_judge_user",
-            few_shot_examples=self._few_shot_examples,
-            current_preferences=current_prefs_json,
-            stale_preferences=stale_prefs_json,
-            required_preferences=required_prefs_json,
-            completion_criteria=completion_criteria,
-            evaluation_event=event_description,
-            transcript=transcript_json,
-        )
-
-        # Get judge's evaluation
         try:
-            result = self.client.complete_json(
-                prompt=user_prompt,
-                system_prompt=system_prompt,
-                max_tokens=2048,
-                temperature=0.1,  # Low temperature for consistent evaluation
-            )
+            pref_result = self._call_preference_judge(required_prefs_json, transcript_json, num_required)
+            eff_result = self._call_efficiency_judge(required_prefs_json, transcript_json, agent_turns)
 
-            return self._parse_judge_result(
+            return self._combine_results(
                 evaluation_task.task_id,
-                result,
                 conversation,
                 evaluation_task.evaluation_event,
                 evaluation_task.rubric,
+                pref_result,
+                eff_result,
+                agent_turns,
             )
 
         except Exception as e:
             logger.error(f"Judge evaluation failed: {e}")
-            # Return a failure result
             return MultiSessionEvaluationResult(
                 task_id=evaluation_task.task_id,
-                task_completed=False,
                 conversation=conversation,
                 preference_usage={},
                 stale_preference_usage=[],
@@ -198,59 +79,105 @@ class MultiSessionJudge:
                 reasoning=f"Evaluation failed: {e}",
             )
 
-    def _parse_judge_result(
+    def _call_preference_judge(
+        self,
+        required_prefs_json: str,
+        transcript_json: str,
+        num_required: int,
+    ) -> dict[str, Any]:
+        """Call the preference judge LLM."""
+        system_prompt = render_prompt("evaluation/preference_judge_system")
+        user_prompt = render_prompt(
+            "evaluation/preference_judge_instruction",
+            required_preferences=required_prefs_json,
+            transcript=transcript_json,
+            num_required=num_required,
+        )
+
+        return self.client.complete_json(
+            prompt=user_prompt,
+            system_prompt=system_prompt,
+            max_tokens=2048,
+            temperature=0.1,
+        )
+
+    def _call_efficiency_judge(
+        self,
+        required_prefs_json: str,
+        transcript_json: str,
+        agent_turns: int,
+    ) -> dict[str, Any]:
+        """Call the efficiency judge LLM."""
+        system_prompt = render_prompt("evaluation/efficiency_judge_system")
+        user_prompt = render_prompt(
+            "evaluation/efficiency_judge_instruction",
+            required_preferences=required_prefs_json,
+            transcript=transcript_json,
+            agent_turns=agent_turns,
+        )
+
+        return self.client.complete_json(
+            prompt=user_prompt,
+            system_prompt=system_prompt,
+            max_tokens=2048,
+            temperature=0.1,
+        )
+
+    def _combine_results(
         self,
         task_id: str,
-        result: dict[str, Any],
         conversation: list[dict[str, str]],
         evaluation_event: "LifeEvent",
         rubric: "EvaluationRubric",
+        pref_result: dict[str, Any],
+        eff_result: dict[str, Any],
+        agent_turns: int,
     ) -> MultiSessionEvaluationResult:
-        """Parse the judge's JSON output into a result object."""
-        # Extract preference usage
-        current_usage = result.get("current_preference_usage", {})
+        """Combine results from preference and efficiency judges."""
+        pref_usage_raw = pref_result.get("preference_usage", {})
         preference_usage = {
-            pref_id: details.get("usage", "ignored")
-            for pref_id, details in current_usage.items()
+            pref_id: details.get("usage", "ignored") if isinstance(details, dict) else details
+            for pref_id, details in pref_usage_raw.items()
         }
 
-        # Extract stale preference issues
-        stale_usage = result.get("stale_preference_usage", {})
         stale_used = [
             pref_id
-            for pref_id, details in stale_usage.items()
-            if details.get("usage") == "stale_used"
+            for pref_id, details in pref_usage_raw.items()
+            if isinstance(details, dict) and details.get("stale_used", False)
         ]
 
-        # Extract scores
-        efficiency_score = float(result.get("efficiency_score", 0.0))
-        preference_score = float(result.get("preference_score", 0.0))
-        task_success = float(result.get("task_success_score", 0.0))
-        stale_penalty = float(result.get("stale_penalty", 0.0))
-        final_score = float(result.get("final_score", 0.0))
+        first_mention_trace = pref_result.get("first_mention_trace", [])
+        turn_classifications = eff_result.get("turn_classifications", [])
 
-        # Extract turn classification counts
-        productive_turns = int(result.get("productive_turns", 0))
-        clarifying_turns = int(result.get("clarifying_turns", 0))
+        preference_score = float(pref_result.get("preference_score", 0.0))
+        efficiency_score = float(eff_result.get("efficiency_score", 0.0))
+        final_score = 0.5 * preference_score + 0.5 * efficiency_score
+
+        pref_reasoning = pref_result.get("reasoning", "")
+        eff_reasoning = eff_result.get("reasoning", "")
+        combined_reasoning = f"Preference: {pref_reasoning}\nEfficiency: {eff_reasoning}"
 
         return MultiSessionEvaluationResult(
             task_id=task_id,
-            task_completed=result.get("task_completed", False),
             conversation=conversation,
             preference_usage=preference_usage,
             stale_preference_usage=stale_used,
             evaluation_event=evaluation_event,
             rubric=rubric,
-            total_turns=int(result.get("total_turns", len(conversation))),
-            productive_turns=productive_turns,
-            clarifying_turns=clarifying_turns,
-            correction_turns=int(result.get("correction_turns", 0)),
+            first_mention_trace=first_mention_trace,
+            turn_classifications=turn_classifications,
+            total_turns=agent_turns,
+            productive_turns=int(eff_result.get("productive_turns", 0)),
+            clarifying_turns=int(eff_result.get("clarifying_turns", 0)),
+            correction_turns=int(eff_result.get("correction_turns", 0)),
+            ignored_turns=int(eff_result.get("ignored_turns", 0)),
+            repeated_correction_turns=int(eff_result.get("repeated_correction_turns", 0)),
+            stale_count=int(pref_result.get("stale_count", 0)),
+            proactive_count=int(pref_result.get("proactive_count", 0)),
             efficiency_score=efficiency_score,
             preference_score=preference_score,
-            stale_penalty=stale_penalty,
-            task_success_score=task_success,
             final_score=final_score,
-            reasoning=result.get("reasoning", ""),
+            reasoning=combined_reasoning,
         )
 
 
@@ -259,15 +186,6 @@ def evaluate_dialogue(
     conversation: list[dict[str, str]],
     client: LLMClient | None = None,
 ) -> MultiSessionEvaluationResult:
-    """Convenience function to evaluate a dialogue.
-
-    Args:
-        evaluation_task: The evaluation task with rubric
-        conversation: The completed dialogue
-        client: Optional LLM client
-
-    Returns:
-        Evaluation result with scores
-    """
+    """Convenience function to evaluate a dialogue."""
     judge = MultiSessionJudge(client)
     return judge.evaluate(evaluation_task, conversation)

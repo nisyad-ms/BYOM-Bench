@@ -2,8 +2,8 @@
 Shared data models for PersonaGym.
 
 This module consolidates all data models used across the PersonaGym pipeline:
-- Conversation models for multi-turn dialogues
 - Preference and task models (for evaluation)
+- Multi-session conversation and timeline models
 - Evaluation result models
 
 Having all schemas in one place:
@@ -13,69 +13,7 @@ Having all schemas in one place:
 """
 
 from dataclasses import dataclass, field
-from enum import Enum
-from typing import Any, Literal, Optional
-
-from pydantic import BaseModel, Field
-
-# =============================================================================
-# Conversation Generation Models
-# =============================================================================
-
-
-class SideNote(BaseModel):
-    """Metadata annotation linking a user turn to a persona fact.
-
-    Side notes capture the implicit information being revealed in a user's
-    message, connecting it back to the original persona history.
-
-    Attributes:
-        event: Description of the persona event/preference being revealed
-        date: Date in MM/DD/YYYY format when this event occurred
-    """
-
-    event: str = Field(
-        description="Description of the persona event/preference being revealed"
-    )
-    date: str = Field(description="Date in MM/DD/YYYY format when this event occurred")
-
-
-class ConversationTurn(BaseModel):
-    """A single turn in a generated conversation.
-
-    Represents one message in the conversation, either from the user or
-    the assistant. User turns may optionally include a side note annotation.
-
-    Attributes:
-        role: The speaker - either "user" or "assistant"
-        content: The actual message content
-        side_note: Optional annotation for user turns
-    """
-
-    role: Literal["user", "assistant"]
-    content: str
-    side_note: Optional[SideNote] = Field(
-        default=None,
-        description="Annotation for user turns indicating what preference/fact is being revealed",
-    )
-
-
-class GeneratedConversation(BaseModel):
-    """Complete conversation generated from persona history.
-
-    Represents a full multi-turn conversation that has been generated
-    based on a persona's history.
-
-    Attributes:
-        turns: List of conversation turns in chronological order
-        topic: Topic of conversation (e.g., travel, therapy, food)
-        period: Time period identifier (INIT, WEEK, MONTH, YEAR)
-    """
-
-    turns: list[ConversationTurn]
-    topic: str = Field(description="Topic of conversation: travel, therapy, food, etc.")
-    period: str = Field(default="INIT", description="Time period: INIT, WEEK, MONTH, YEAR")
-
+from typing import Any, Optional
 
 # =============================================================================
 # Preference Models (used in evaluation)
@@ -260,35 +198,42 @@ class LifeEvent:
         session_id: Which session this event corresponds to
         date: Date of the event (MM/DD/YYYY format)
         event: Description of what happened
-        context: Additional context about the event's impact
+        domain: Life domain for this event
         user_prompt: Natural user message (preference-neutral) to start the conversation
         task_internal: Detailed task for judge (with preference requirements)
-        task: Legacy field - use task_internal instead
     """
 
     session_id: int
     date: str
     event: str
-    context: str = ""
+    domain: str = ""
     user_prompt: str = ""  # Starting message (for agent) - NO preference details
     task_internal: str = ""  # Detailed task (for judge) - includes preference requirements
-    task: str = ""  # Legacy field - kept for backward compatibility
 
     def to_dict(self) -> dict[str, Any]:
         result = {
             "session_id": self.session_id,
             "date": self.date,
             "event": self.event,
-            "context": self.context,
+            "domain": self.domain,
         }
         # Include task fields only if they're set (for evaluation events)
         if self.user_prompt:
             result["user_prompt"] = self.user_prompt
         if self.task_internal:
             result["task_internal"] = self.task_internal
-        if self.task:
-            result["task"] = self.task
         return result
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> "LifeEvent":
+        return cls(
+            session_id=data["session_id"],
+            date=data["date"],
+            event=data["event"],
+            domain=data.get("domain", ""),
+            user_prompt=data.get("user_prompt", ""),
+            task_internal=data.get("task_internal", ""),
+        )
 
 
 @dataclass
@@ -340,7 +285,7 @@ class Preference:
         return cls(
             preference_id=data["preference_id"],
             fact=data["fact"],
-            domain=data.get("domain") or data.get("category", ""),  # backward compat
+            domain=data.get("domain", ""),
             created_at_session=data["created_at_session"],
             created_at_date=data.get("created_at_date", ""),
             superseded_at_session=data.get("superseded_at_session"),
@@ -504,18 +449,6 @@ class MultiSessionOutput:
     generation_timestamp: str = ""
     expanded_persona: ExpandedPersona | None = None
 
-    def _extract_domain(self, context: str) -> str:
-        """Extract domain from context string like '[work_education] ...'"""
-        if context.startswith("[") and "]" in context:
-            return context[1:context.index("]")]
-        return ""
-
-    def _clean_context(self, context: str) -> str:
-        """Remove domain prefix from context string."""
-        if context.startswith("[") and "]" in context:
-            return context[context.index("]") + 1:].strip()
-        return context
-
     def _session_to_dict(self, session: Session) -> dict[str, Any]:
         """Serialize a session with inline preferences."""
         # Build created preferences
@@ -542,8 +475,7 @@ class MultiSessionOutput:
             "life_event": {
                 "date": session.life_event.date,
                 "event": session.life_event.event,
-                "domain": self._extract_domain(session.life_event.context),
-                "context": self._clean_context(session.life_event.context),
+                "domain": session.life_event.domain,
             },
             "preferences": {"created": created, "evolved": evolved},
             "conversation": session.conversation,
@@ -578,69 +510,72 @@ class MultiSessionOutput:
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "MultiSessionOutput":
-        """Deserialize from dict."""
+        """Deserialize from dict.
+
+        Reads the complete preference ledger from final_state, which contains:
+        - All 25 baseline preferences (created_at_session=-1)
+        - All preferences created during sessions
+        - All superseded preferences with full evolution metadata
+        """
         timeline = PreferenceTimeline()
         life_events: list[LifeEvent] = []
         sessions: list[Session] = []
+
+        final_state = data.get("final_state", {})
+
+        for p in final_state.get("active_preferences", []):
+            pref_id = p["id"]
+            timeline.preferences[pref_id] = Preference(
+                preference_id=pref_id,
+                fact=p["fact"],
+                domain=p.get("domain", ""),
+                created_at_session=p.get("created_at_session", -1),
+                created_at_date="",
+            )
+            timeline._next_id = max(timeline._next_id, int(pref_id.split("_")[1]) + 1)
+
+        for p in final_state.get("superseded_preferences", []):
+            pref_id = p["id"]
+            timeline.preferences[pref_id] = Preference(
+                preference_id=pref_id,
+                fact=p["fact"],
+                domain=p.get("domain", ""),
+                created_at_session=p.get("created_at_session", -1),
+                created_at_date="",
+                superseded_at_session=p.get("superseded_at_session"),
+                superseded_by=p.get("replaced_by"),
+                reason_for_change=p.get("reason", ""),
+            )
+            timeline._next_id = max(timeline._next_id, int(pref_id.split("_")[1]) + 1)
 
         for s_data in data.get("sessions", []):
             session_id = s_data["session_id"]
             le_data = s_data["life_event"]
 
-            # Reconstruct life event with domain in context
-            domain = le_data.get("domain", "")
-            context = f"[{domain}] {le_data.get('context', '')}" if domain else le_data.get("context", "")
-            life_event = LifeEvent(session_id=session_id, date=le_data["date"], event=le_data["event"], context=context)
+            life_event = LifeEvent(session_id=session_id, date=le_data["date"], event=le_data["event"], domain=le_data.get("domain", ""))
             life_events.append(life_event)
 
             prefs_data = s_data.get("preferences", {})
-            new_preference_ids: list[str] = []
-            evolved_preference_ids: dict[str, str] = {}
-
-            # Process created preferences
-            for p in prefs_data.get("created", []):
-                pref_id = p["id"]
-                if pref_id not in timeline.preferences:
-                    timeline.preferences[pref_id] = Preference(
-                        preference_id=pref_id, fact=p["fact"],
-                        domain=p.get("domain") or p.get("category", ""),  # backward compat
-                        created_at_session=session_id, created_at_date=le_data["date"],
-                    )
-                    timeline._next_id = max(timeline._next_id, int(pref_id.split("_")[1]) + 1)
-                new_preference_ids.append(pref_id)
-
-            # Process evolved preferences
+            new_preference_ids = [p["id"] for p in prefs_data.get("created", [])]
             for e in prefs_data.get("evolved", []):
-                old_id, new_id = e["from"]["id"], e["to"]["id"]
-                if old_id not in timeline.preferences:
-                    timeline.preferences[old_id] = Preference(
-                        preference_id=old_id, fact=e["from"]["fact"],
-                        domain=e["to"].get("domain") or e["to"].get("category", ""),  # backward compat
-                        created_at_session=0, created_at_date="",
-                    )
-                timeline.preferences[old_id].superseded_at_session = session_id
-                timeline.preferences[old_id].superseded_by = new_id
-                timeline.preferences[old_id].reason_for_change = e.get("reason", "")
-
-                if new_id not in timeline.preferences:
-                    timeline.preferences[new_id] = Preference(
-                        preference_id=new_id, fact=e["to"]["fact"],
-                        domain=e["to"].get("domain") or e["to"].get("category", ""),  # backward compat
-                        created_at_session=session_id, created_at_date=le_data["date"],
-                    )
-                    timeline._next_id = max(timeline._next_id, int(new_id.split("_")[1]) + 1)
-                new_preference_ids.append(new_id)
-                evolved_preference_ids[old_id] = new_id
+                new_preference_ids.append(e["to"]["id"])
+            evolved_preference_ids = {e["from"]["id"]: e["to"]["id"] for e in prefs_data.get("evolved", [])}
 
             sessions.append(Session(
-                session_id=session_id, life_event=life_event, conversation=s_data.get("conversation", []),
+                session_id=session_id,
+                life_event=life_event,
+                conversation=s_data.get("conversation", []),
                 active_preference_ids=timeline.get_preference_ids_at_session(session_id),
-                new_preference_ids=new_preference_ids, evolved_preference_ids=evolved_preference_ids,
+                new_preference_ids=new_preference_ids,
+                evolved_preference_ids=evolved_preference_ids,
             ))
 
         return cls(
-            persona=data["persona"], persona_id=data.get("persona_id", ""),
-            life_events=life_events, timeline=timeline, sessions=sessions,
+            persona=data["persona"],
+            persona_id=data.get("persona_id", ""),
+            life_events=life_events,
+            timeline=timeline,
+            sessions=sessions,
             generation_timestamp=data.get("generation_timestamp", ""),
             expanded_persona=ExpandedPersona.from_dict(data["expanded_persona"]) if data.get("expanded_persona") else None,
         )
@@ -705,30 +640,25 @@ class EvaluationRubric:
     This defines what the judge should look for when scoring the conversation.
 
     Attributes:
-        current_preferences: Active preferences the agent should use
-        stale_preferences: Superseded preferences the agent should NOT use
-        expected_behaviors: What a good agent should do
-        trap_behaviors: What using stale preferences looks like
-        required_preferences: Preference IDs that MUST be applied for this specific task
-        completion_criteria: Per-preference criteria for task completion
+        required_preferences: Preferences that MUST be applied for this task.
+            Each entry is a dict with {id, fact, supersedes?: {id, fact}}.
+            - id: Preference identifier
+            - fact: The preference statement
+            - supersedes: (optional) The stale preference this replaced
     """
 
-    current_preferences: list[Preference]
-    stale_preferences: list[Preference]
-    expected_behaviors: list[str]
-    trap_behaviors: list[str]
-    required_preferences: list[str] = field(default_factory=list)
-    completion_criteria: dict[str, str] = field(default_factory=dict)
+    required_preferences: list[dict]  # [{id, fact, supersedes?: {id, fact}}, ...]
 
     def to_dict(self) -> dict[str, Any]:
         return {
-            "current_preferences": [p.to_dict() for p in self.current_preferences],
-            "stale_preferences": [p.to_dict() for p in self.stale_preferences],
-            "expected_behaviors": self.expected_behaviors,
-            "trap_behaviors": self.trap_behaviors,
             "required_preferences": self.required_preferences,
-            "completion_criteria": self.completion_criteria,
         }
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> "EvaluationRubric":
+        return cls(
+            required_preferences=data["required_preferences"],
+        )
 
 
 @dataclass
@@ -741,16 +671,14 @@ class EvaluationTask:
     Attributes:
         task_id: Unique identifier
         evaluation_event: The life event triggering this evaluation (contains user_prompt)
-        rubric: The evaluation rubric for the judge (contains required_preferences, completion_criteria)
+        rubric: The evaluation rubric for the judge (contains required_preferences)
         persona_summary: Brief summary of the persona for user simulator
-        max_turns: Maximum conversation turns (agent replies)
     """
 
     task_id: str
     evaluation_event: LifeEvent
     rubric: EvaluationRubric
     persona_summary: str
-    max_turns: int = 10
 
     @property
     def user_prompt(self) -> str:
@@ -763,8 +691,16 @@ class EvaluationTask:
             "evaluation_event": self.evaluation_event.to_dict(),
             "rubric": self.rubric.to_dict(),
             "persona_summary": self.persona_summary,
-            "max_turns": self.max_turns,
         }
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> "EvaluationTask":
+        return cls(
+            task_id=data["task_id"],
+            evaluation_event=LifeEvent.from_dict(data["evaluation_event"]),
+            rubric=EvaluationRubric.from_dict(data["rubric"]),
+            persona_summary=data["persona_summary"],
+        )
 
 
 @dataclass
@@ -773,37 +709,41 @@ class MultiSessionEvaluationResult:
 
     Attributes:
         task_id: Which task was evaluated
-        task_completed: Did the conversation reach a natural conclusion?
         conversation: Full conversation transcript
         preference_usage: How each current preference was handled
         stale_preference_usage: Which stale preferences the agent incorrectly used
+        turn_classifications: Per-turn scoring details from judge (for debugging)
         total_turns: Number of turns in dialogue
         productive_turns: Agent turns that made meaningful progress
         clarifying_turns: Agent turns asking about known preferences
         correction_turns: How many times user corrected agent
+        repeated_correction_turns: Same preference violated after being corrected
+        stale_count: Number of stale (outdated) preferences used
+        proactive_count: Number of preferences proactively applied
         efficiency_score: Score based on turn efficiency
-        preference_score: Score based on current preference usage
-        stale_penalty: Penalty for using stale preferences
-        task_success_score: 1.0 if task completed, 0.0 otherwise
+        preference_score: Score based on preference usage (stale penalty integrated)
         final_score: Weighted combination of all scores
         reasoning: Judge's overall reasoning
     """
 
     task_id: str
-    task_completed: bool
     conversation: list[dict[str, str]]
-    preference_usage: dict[str, str]  # pref_id -> "proactive" | "prompted" | "ignored"
+    preference_usage: dict[str, str]  # pref_id -> "proactive" | "ignored"
     stale_preference_usage: list[str]  # List of stale pref_ids that were incorrectly used
     evaluation_event: "LifeEvent | None" = None  # The evaluation scenario
     rubric: "EvaluationRubric | None" = None  # The rubric used for evaluation
+    first_mention_trace: list[dict[str, Any]] | None = None  # v2: Chronological first-mention analysis
+    turn_classifications: list[dict[str, Any]] | None = None  # Per-turn scoring details
     total_turns: int = 0
     productive_turns: int = 0
     clarifying_turns: int = 0
     correction_turns: int = 0
+    ignored_turns: int = 0  # Agent omitted preference, user revealed it (no efficiency penalty)
+    repeated_correction_turns: int = 0
+    stale_count: int = 0
+    proactive_count: int = 0
     efficiency_score: float = 0.0
     preference_score: float = 0.0
-    stale_penalty: float = 0.0
-    task_success_score: float = 0.0
     final_score: float = 0.0
     reasoning: str = ""
 
@@ -811,11 +751,8 @@ class MultiSessionEvaluationResult:
         result = {
             "task_id": self.task_id,
             "final_score": self.final_score,
-            "task_success_score": self.task_success_score,
             "preference_score": self.preference_score,
             "efficiency_score": self.efficiency_score,
-            "stale_penalty": self.stale_penalty,
-            "task_completed": self.task_completed,
         }
         if self.evaluation_event:
             result["evaluation_event"] = self.evaluation_event.to_dict()
@@ -823,258 +760,25 @@ class MultiSessionEvaluationResult:
             "conversation": self.conversation,
             "preference_usage": self.preference_usage,
             "stale_preference_usage": self.stale_preference_usage,
+            "first_mention_trace": self.first_mention_trace,
+            "turn_classifications": self.turn_classifications,
             "scores": {
                 "total_turns": self.total_turns,
                 "productive_turns": self.productive_turns,
                 "clarifying_turns": self.clarifying_turns,
                 "correction_turns": self.correction_turns,
+                "ignored_turns": self.ignored_turns,
+                "repeated_correction_turns": self.repeated_correction_turns,
+                "stale_count": self.stale_count,
+                "proactive_count": self.proactive_count,
                 "efficiency_score": self.efficiency_score,
                 "preference_score": self.preference_score,
-                "stale_penalty": self.stale_penalty,
-                "task_success_score": self.task_success_score,
             },
             "reasoning": self.reasoning,
         })
         if self.rubric:
             result["rubric"] = self.rubric.to_dict()
         return result
-
-
-# =============================================================================
-# Task Models (TOD evaluation)
-# =============================================================================
-
-
-@dataclass
-class TODTask:
-    """A task-oriented dialogue evaluation task.
-
-    Defines what the simulated user will ask and what preferences
-    should be tested.
-
-    Attributes:
-        task_id: Unique identifier for the task
-        task_description: The user's request (e.g., "Book a flight to NYC")
-        topic: Domain (travel, cooking, therapy, etc.)
-        relevant_preferences: Preferences the agent should use
-        expected_behaviors: What a good agent should do
-        tool_schemas: Available tools for this task
-    """
-
-    task_id: str
-    task_description: str
-    topic: str
-    relevant_preferences: list[PreferenceItem]
-    expected_behaviors: list[str]
-    tool_schemas: dict[str, Any]
-
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "task_id": self.task_id,
-            "task_description": self.task_description,
-            "topic": self.topic,
-            "relevant_preferences": [p.to_dict() for p in self.relevant_preferences],
-            "expected_behaviors": self.expected_behaviors,
-            "tool_schemas": self.tool_schemas,
-        }
-
-
-# =============================================================================
-# Evaluation Models
-# =============================================================================
-
-
-class TurnType(Enum):
-    """Classification of dialogue turns based on preference handling."""
-
-    PRODUCTIVE = "productive"  # Advances task, uses preferences correctly
-    JUSTIFIED_CLARIFICATION = "justified_clarification"  # Asks about ambiguous prefs
-    UNNECESSARY_CLARIFICATION = "unnecessary_clarification"  # Asks about clear prefs
-    CORRECTION = "correction"  # User had to remind agent
-    REPEATED_CORRECTION = "repeated_correction"  # Agent ignores correction
-
-
-class PreferenceUsage(Enum):
-    """How the agent handled a specific preference."""
-
-    PROACTIVE = "proactive"  # Agent used it without prompting
-    IGNORED = "ignored"  # Agent didn't use it or used after reminder
-    NOT_APPLICABLE = "not_applicable"  # Preference wasn't relevant
-
-
-@dataclass
-class TurnAnalysis:
-    """Analysis of a single dialogue turn."""
-
-    turn_number: int
-    speaker: str  # "user" or "agent"
-    content: str
-    turn_type: TurnType
-    affected_preferences: list[str] = field(default_factory=list)
-    reasoning: str = ""
-
-
-@dataclass
-class DialogueTurn:
-    """A single turn in an evaluation dialogue.
-
-    Used during TOD evaluation to track the conversation.
-
-    Attributes:
-        turn_number: Position in the dialogue
-        speaker: "user" or "agent"
-        content: The message content
-        tool_calls: Any tool calls made (agent only)
-        tool_results: Results from tool calls
-    """
-
-    turn_number: int
-    speaker: str  # "user" or "agent"
-    content: str
-    tool_calls: Optional[list[dict[str, Any]]] = None
-    tool_results: Optional[list[dict[str, Any]]] = None
-
-
-@dataclass
-class TODEvaluationResult:
-    """Complete evaluation result for a TOD session.
-
-    Contains all metrics and analysis from evaluating an agent
-    on a single task.
-
-    Attributes:
-        task_id: Which task was evaluated
-        task_completed: Did the agent complete the task?
-        turn_classifications: Analysis of each turn
-        preference_usage: How each preference was handled
-        total_turns: Number of turns in dialogue
-        correction_turns: How many correction turns
-        repeated_correction_turns: How many repeated corrections
-        efficiency_score: Score based on turn efficiency
-        preference_score: Score based on preference usage
-        task_success_score: 1.0 if completed, 0.0 otherwise
-        final_score: Weighted combination of all scores
-        reasoning: Judge's overall reasoning
-    """
-
-    task_id: str
-    task_completed: bool
-    turn_classifications: list[TurnAnalysis]
-    preference_usage: dict[str, PreferenceUsage]
-    total_turns: int = 0
-    correction_turns: int = 0
-    repeated_correction_turns: int = 0
-    efficiency_score: float = 0.0
-    preference_score: float = 0.0
-    task_success_score: float = 0.0
-    final_score: float = 0.0
-    reasoning: str = ""
-
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "task_id": self.task_id,
-            "task_completed": self.task_completed,
-            "turn_classifications": [
-                {
-                    "turn_number": t.turn_number,
-                    "speaker": t.speaker,
-                    "turn_type": t.turn_type.value,
-                    "affected_preferences": t.affected_preferences,
-                    "reasoning": t.reasoning,
-                }
-                for t in self.turn_classifications
-            ],
-            "preference_usage": {k: v.value for k, v in self.preference_usage.items()},
-            "scores": {
-                "total_turns": self.total_turns,
-                "correction_turns": self.correction_turns,
-                "repeated_correction_turns": self.repeated_correction_turns,
-                "efficiency_score": self.efficiency_score,
-                "preference_score": self.preference_score,
-                "task_success_score": self.task_success_score,
-                "final_score": self.final_score,
-            },
-            "reasoning": self.reasoning,
-        }
-
-
-# =============================================================================
-# Tool Simulation Models
-# =============================================================================
-
-
-@dataclass
-class ToolResultItem:
-    """A single result item from a tool call."""
-
-    result_id: str
-    data: dict[str, Any]
-
-    def to_dict(self) -> dict[str, Any]:
-        return {"result_id": self.result_id, **self.data}
-
-
-@dataclass
-class ToolResponse:
-    """Complete response from a tool call."""
-
-    tool_name: str
-    success: bool
-    results: list[ToolResultItem]
-    message: str = ""
-    preferences_applied: list[str] = field(default_factory=list)
-
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "tool": self.tool_name,
-            "success": self.success,
-            "message": self.message,
-            "results": [r.to_dict() for r in self.results],
-            "preferences_applied": self.preferences_applied,
-        }
-
-    def to_agent_view(self) -> dict[str, Any]:
-        """Return view that the agent sees (without preferences_applied metadata)."""
-        return {
-            "tool": self.tool_name,
-            "success": self.success,
-            "message": self.message,
-            "results": [r.to_dict() for r in self.results],
-        }
-
-
-@dataclass
-class ToolResult:
-    """Legacy tool result format for backward compatibility.
-
-    Attributes:
-        tool_name: Name of the tool that was called.
-        result: The simulated result data as a dictionary.
-        result_text: Human-readable summary of the result.
-        preferences_applied: List of preferences applied to filter results.
-    """
-
-    tool_name: str
-    result: dict[str, Any]
-    result_text: str
-    preferences_applied: list[str] = field(default_factory=list)
-
-
-# =============================================================================
-# Scoring Constants
-# =============================================================================
-
-PREFERENCE_USAGE_SCORES = {
-    PreferenceUsage.PROACTIVE: 1.0,
-    PreferenceUsage.IGNORED: 0.0,
-    PreferenceUsage.NOT_APPLICABLE: None,  # Excluded from calculation
-}
-
-SCORE_WEIGHTS = {
-    "task_success": 0.34,
-    "preference_score": 0.33,
-    "efficiency_score": 0.33,
-}
 
 
 # =============================================================================
@@ -1155,83 +859,3 @@ class DataGenerationOutput:
                 source_file=metadata.get("source_file", ""),
             ),
         )
-
-
-@dataclass
-class TaskGenerationOutput:
-    """Contract: Output from Stage 2 (Task Generation) → Input to Stage 3 (Evaluation).
-
-    Contains the conversation context for the agent's memory and the tasks to evaluate.
-
-    Attributes:
-        context: Conversation messages for agent memory (same as DataGenerationOutput.conversation)
-        tasks: List of TOD tasks to evaluate the agent on
-        metadata: Original generation metadata (passed through)
-    """
-
-    context: list[dict[str, str]]
-    tasks: list[TODTask]
-    metadata: DataGenerationMetadata
-
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "context": self.context,
-            "tasks": [t.to_dict() for t in self.tasks],
-            "metadata": {
-                "topic": self.metadata.topic,
-                "persona_id": self.metadata.persona_id,
-                "timestamp": self.metadata.timestamp,
-                "source_file": self.metadata.source_file,
-            },
-        }
-
-
-@dataclass
-class AggregateScores:
-    """Aggregate scores across all evaluated tasks."""
-
-    average_final_score: float = 0.0
-    average_preference_score: float = 0.0
-    average_efficiency_score: float = 0.0
-    average_task_success_score: float = 0.0
-    num_tasks_evaluated: int = 0
-    num_tasks_completed: int = 0
-
-
-@dataclass
-class EvaluationOutput:
-    """Contract: Output from Stage 3 (Evaluation) → Final Results.
-
-    Contains per-task results and aggregate metrics.
-
-    Attributes:
-        results: List of evaluation results for each task
-        aggregate: Aggregate scores across all tasks
-        metadata: Original generation metadata (passed through)
-        agent_type: Type of agent evaluated
-    """
-
-    results: list[TODEvaluationResult]
-    aggregate: AggregateScores
-    metadata: DataGenerationMetadata
-    agent_type: str = ""
-
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "results": [r.to_dict() for r in self.results],
-            "aggregate": {
-                "average_final_score": self.aggregate.average_final_score,
-                "average_preference_score": self.aggregate.average_preference_score,
-                "average_efficiency_score": self.aggregate.average_efficiency_score,
-                "average_task_success_score": self.aggregate.average_task_success_score,
-                "num_tasks_evaluated": self.aggregate.num_tasks_evaluated,
-                "num_tasks_completed": self.aggregate.num_tasks_completed,
-            },
-            "metadata": {
-                "topic": self.metadata.topic,
-                "persona_id": self.metadata.persona_id,
-                "timestamp": self.metadata.timestamp,
-                "source_file": self.metadata.source_file,
-            },
-            "agent_type": self.agent_type,
-        }

@@ -1,0 +1,81 @@
+name: Multi-Session Judge User Prompt
+description: User prompt template for LLM judge with few-shot examples and dialogue to evaluate
+used_by: persona_gym/evaluation/multisession.py::MultiSessionJudge
+variables:
+  - few_shot_examples: Formatted few-shot examples for calibration
+  - required_preferences: List of required preferences with optional supersedes info
+  - evaluation_event: Description of the evaluation scenario
+  - transcript: JSON formatted dialogue transcript
+  - agent_turns: Number of agent turns in the conversation
+
+template: |
+  ## Few-Shot Examples for Calibration
+
+  {few_shot_examples}
+
+  ---
+
+  ## Now Evaluate This Dialogue
+
+  ### Evaluation Context:
+  - **agent_turns**: {agent_turns} (use this for efficiency calculation)
+
+  ### ⭐ REQUIRED Preferences to Score:
+  These are the preferences you will evaluate. Each MUST be explicitly applied by the agent.
+  
+  Each preference includes:
+  - `id`: Unique identifier
+  - `fact`: The preference statement the agent should apply
+  - `supersedes` (optional): The stale preference this replaced - if agent uses THIS, mark `stale_used: true`
+
+  {required_preferences}
+
+  ### Evaluation Scenario:
+  {evaluation_event}
+
+  ### Conversation Transcript:
+  {transcript}
+
+  ---
+
+  ## Your Evaluation
+
+  **IMPORTANT**: Only score the REQUIRED preferences listed above.
+  **IMPORTANT**: Only classify and score AGENT turns. User turns are not evaluated.
+
+  1. For each REQUIRED preference:
+     - Check if the agent proactively applied the preference `fact`
+     - "proactive": Agent explicitly referenced/applied the preference without being asked
+     - "ignored": Agent did not proactively demonstrate awareness (even if user reminded them later)
+  2. For preferences with `supersedes`, check if agent used the OUTDATED preference (stale trap).
+  3. Classify each AGENT turn only (productive, clarifying_question, correction, ignored, repeated_correction). Do NOT include user turns.
+  4. Check if the task was completed based on the required preferences.
+
+  Provide your evaluation in the following JSON format:
+
+  ```json
+  {{
+      "turn_classifications": [
+          {{"turn": <agent_turn_number>, "type": "productive|clarifying_question|correction|ignored|repeated_correction", "reasoning": "brief note"}},
+          ... (ONLY agent turns - do NOT include user turns)
+      ],
+      "required_preference_usage": {{
+          "<preference_id>": {{"usage": "proactive|ignored", "stale_used": true|false, "evidence": "quote or null"}},
+          ... (for EACH required preference; stale_used only applies if preference has supersedes field)
+      }},
+      "total_turns": <int, count of agent turns only>,
+      "productive_turns": <int>,
+      "clarifying_turns": <int>,
+      "correction_turns": <int>,
+      "ignored_turns": <int>,
+      "repeated_correction_turns": <int>,
+      "stale_count": <int>,
+      "proactive_count": <int>,
+      "efficiency_score": <float 0-1>,
+      "preference_score": <float 0-1, formula: max(0, (proactive_count - stale_count) / total_required)>,
+      "final_score": <float 0-1, formula: 0.5 * preference_score + 0.5 * efficiency_score>,
+      "reasoning": "<brief overall assessment including any stale preference issues>"
+  }}
+  ```
+
+  Provide only the JSON output, no additional text.

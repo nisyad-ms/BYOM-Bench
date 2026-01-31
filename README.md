@@ -82,12 +82,12 @@ print(f"Active preferences: {len(result.timeline.get_active_preferences())}")
 ```python
 from persona_gym.evaluation_multisession import run_evaluation_from_file
 
-# Run with full context (agent has access to preference history)
-result = run_evaluation_from_file("outputs/test_multisession_output.json", agent_type="full")
+# Run with full context (agent has access to conversation history)
+result = run_evaluation_from_file("outputs/conversation/data_generation_output.json", include_history=True)
 print(f"Score: {result.final_score:.2f}")
 
-# Run without context (baseline)
-result = run_evaluation_from_file("outputs/test_multisession_output.json", agent_type="no_context")
+# Run without context (baseline - agent has no memory)
+result = run_evaluation_from_file("outputs/conversation/data_generation_output.json", include_history=False)
 print(f"Score: {result.final_score:.2f}")
 ```
 
@@ -108,6 +108,9 @@ persona_gym/
 ├── pyproject.toml                # Package configuration
 ├── data/source/                  # Source persona data
 ├── outputs/                      # Generated outputs
+│   ├── conversation/             # Data generation outputs
+│   ├── tasks/                    # Generated evaluation tasks
+│   └── evaluation/               # Evaluation results
 ├── logs/                         # Log files
 ├── test_multisession.py          # Test data generation
 ├── test_evaluation.py            # Test evaluation

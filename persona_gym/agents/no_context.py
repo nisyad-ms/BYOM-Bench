@@ -1,0 +1,22 @@
+"""No-context agent (baseline) with no memory of past conversations."""
+
+from persona_gym.prompts import render_prompt
+from persona_gym.schemas import MultiSessionOutput
+
+from .base import BaseAgent
+
+
+class NoContextAgent(BaseAgent):
+    """Agent with no access to user preference history.
+
+    Used as baseline for evaluation.
+
+    Expected behavior:
+    - preference_score ~0.0 (all IGNORED - user mentions everything first)
+    - efficiency_score ~1.0 (no corrections, just asks clarifying questions)
+    """
+
+    def build_context(self, multisession_data: MultiSessionOutput) -> str:
+        """Build system prompt without any preference history."""
+        self._system_prompt = render_prompt("agents/agent_system_no_context")
+        return self._system_prompt

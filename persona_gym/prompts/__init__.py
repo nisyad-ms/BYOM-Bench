@@ -5,41 +5,88 @@ This module provides a centralized system for loading and managing prompts
 used across the PersonaGym pipeline. Prompts are stored as YAML files with
 metadata describing their purpose and usage.
 
+Prompt versions are controlled via prompt_config.yaml at project root.
+
 Usage:
-    from persona_gym.prompts import load_prompt, render_prompt
+    from persona_gym.prompts import render_prompt
 
-    # Load a prompt template
-    prompt = load_prompt("data_generation/multisession/expand_persona")
-
-    # Render with variables
+    # Render with variables (version resolved from config)
     text = render_prompt(
-        "data_generation/multisession/expand_persona",
+        "data_generation/multisession/expand_persona_instruction",
         persona="A software engineer...",
     )
 """
 
 import logging
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 import yaml
 
 logger = logging.getLogger(__name__)
 
-# Cache for loaded prompts
 _prompt_cache: dict[str, dict[str, Any]] = {}
+_config_cache: dict[str, str] | None = None
 
-# Base directory for prompts
 PROMPTS_DIR = Path(__file__).parent
+PROJECT_ROOT = PROMPTS_DIR.parent.parent
 
 
-def load_prompt(prompt_name: str, reload: bool = False) -> dict[str, Any]:
+def _load_prompt_config() -> dict[str, str]:
+    """Load prompt version configuration from prompt_config.yaml."""
+    global _config_cache
+    if _config_cache is not None:
+        return _config_cache
+
+    config_path = PROJECT_ROOT / "prompt_config.yaml"
+    if not config_path.exists():
+        logger.warning(f"prompt_config.yaml not found at {config_path}, using default versions")
+        _config_cache = {}
+        return _config_cache
+
+    with open(config_path, encoding="utf-8") as f:
+        config = yaml.safe_load(f) or {}
+
+    _config_cache = config.get("prompts", {})
+    logger.debug(f"Loaded prompt config with {len(_config_cache)} entries")
+    return _config_cache
+
+
+def _resolve_prompt_name(prompt_name: str) -> str:
+    """Resolve prompt name to versioned name based on config.
+
+    Args:
+        prompt_name: Base prompt name (e.g., "data_generation/multisession/generate_life_story_instruction")
+
+    Returns:
+        Versioned prompt name (e.g., "data_generation/multisession/generate_life_story_instruction_v2")
+    """
+    config = _load_prompt_config()
+    version = config.get(prompt_name, "")
+
+    if version:
+        resolved = f"{prompt_name}_{version}"
+        logger.debug(f"Resolved prompt {prompt_name} -> {resolved}")
+        return resolved
+
+    return prompt_name
+
+
+def reload_config() -> None:
+    """Force reload of prompt configuration. Useful for testing."""
+    global _config_cache
+    _config_cache = None
+    _load_prompt_config()
+
+
+def load_prompt(prompt_name: str, reload: bool = False, use_config: bool = True) -> dict[str, Any]:
     """Load a prompt template from YAML file.
 
     Args:
         prompt_name: Path to prompt relative to prompts/ directory,
-                    without .yaml extension (e.g., "data_generation/personamemv2/generate_preferences")
+                    without .yaml extension (e.g., "data_generation/multisession/expand_persona_instruction")
         reload: If True, bypass cache and reload from disk
+        use_config: If True, resolve version from prompt_config.yaml
 
     Returns:
         Dict containing prompt metadata and template
@@ -48,10 +95,15 @@ def load_prompt(prompt_name: str, reload: bool = False) -> dict[str, Any]:
         FileNotFoundError: If prompt file doesn't exist
         yaml.YAMLError: If YAML parsing fails
     """
-    if not reload and prompt_name in _prompt_cache:
-        return _prompt_cache[prompt_name]
+    if use_config:
+        resolved_name = _resolve_prompt_name(prompt_name)
+    else:
+        resolved_name = prompt_name
 
-    prompt_path = PROMPTS_DIR / f"{prompt_name}.yaml"
+    if not reload and resolved_name in _prompt_cache:
+        return _prompt_cache[resolved_name]
+
+    prompt_path = PROMPTS_DIR / f"{resolved_name}.yaml"
 
     if not prompt_path.exists():
         raise FileNotFoundError(f"Prompt not found: {prompt_path}")
@@ -59,17 +111,18 @@ def load_prompt(prompt_name: str, reload: bool = False) -> dict[str, Any]:
     with open(prompt_path, encoding="utf-8") as f:
         prompt_data = yaml.safe_load(f)
 
-    _prompt_cache[prompt_name] = prompt_data
-    logger.debug(f"Loaded prompt: {prompt_name}")
+    _prompt_cache[resolved_name] = prompt_data
+    logger.debug(f"Loaded prompt: {resolved_name}")
 
     return prompt_data
 
 
-def render_prompt(prompt_name: str, **variables: Any) -> str:
+def render_prompt(prompt_name: str, use_config: bool = True, **variables: Any) -> str:
     """Load and render a prompt template with variables.
 
     Args:
         prompt_name: Path to prompt relative to prompts/ directory
+        use_config: If True, resolve version from prompt_config.yaml
         **variables: Variables to substitute in the template
 
     Returns:
@@ -77,12 +130,11 @@ def render_prompt(prompt_name: str, **variables: Any) -> str:
 
     Example:
         text = render_prompt(
-            "data_generation/personamemv2/generate_preferences",
+            "data_generation/multisession/expand_persona_instruction",
             persona="A software engineer...",
-            topics="travel, coding",
         )
     """
-    prompt_data = load_prompt(prompt_name)
+    prompt_data = load_prompt(prompt_name, use_config=use_config)
     template = prompt_data.get("template", "")
 
     try:
@@ -90,42 +142,3 @@ def render_prompt(prompt_name: str, **variables: Any) -> str:
     except KeyError as e:
         logger.error(f"Missing variable in prompt {prompt_name}: {e}")
         raise ValueError(f"Missing required variable for prompt '{prompt_name}': {e}") from e
-
-
-def get_prompt_metadata(prompt_name: str) -> dict[str, Any]:
-    """Get metadata for a prompt without the template.
-
-    Args:
-        prompt_name: Path to prompt relative to prompts/ directory
-
-    Returns:
-        Dict with name, description, used_by, variables (excludes template)
-    """
-    prompt_data = load_prompt(prompt_name)
-    return {k: v for k, v in prompt_data.items() if k != "template"}
-
-
-def list_prompts(category: Optional[str] = None) -> list[str]:
-    """List available prompts.
-
-    Args:
-        category: Optional category filter (e.g., "data_generation", "evaluation")
-
-    Returns:
-        List of prompt names (relative paths without .yaml)
-    """
-    search_dir = PROMPTS_DIR / category if category else PROMPTS_DIR
-    prompts = []
-
-    for yaml_file in search_dir.rglob("*.yaml"):
-        relative_path = yaml_file.relative_to(PROMPTS_DIR)
-        prompt_name = str(relative_path.with_suffix(""))
-        prompts.append(prompt_name)
-
-    return sorted(prompts)
-
-
-def clear_cache() -> None:
-    """Clear the prompt cache."""
-    _prompt_cache.clear()
-    logger.debug("Prompt cache cleared")

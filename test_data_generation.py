@@ -3,15 +3,14 @@
 
 Usage:
     python test_data_generation.py
-    python test_data_generation.py --output outputs/my_data.json
     python test_data_generation.py --sessions 3
+    python test_data_generation.py --persona "A software engineer at Google"
 """
 
 import argparse
 import json
-from pathlib import Path
 
-from utils import add_file_logging, setup_logging
+from utils import add_file_logging, get_session_path, setup_logging
 
 logger = setup_logging("data_generation")
 
@@ -23,8 +22,6 @@ A senior software engineer working at Microsoft.
 
 def main():
     parser = argparse.ArgumentParser(description="Test multi-session data generation")
-    parser.add_argument("--output", type=str, default="outputs/data_generation_output.json",
-                        help="Output file path")
     parser.add_argument("--sessions", type=int, default=2, help="Number of sessions")
     parser.add_argument("--persona", type=str, default=None, help="Custom persona description")
     args = parser.parse_args()
@@ -33,12 +30,15 @@ def main():
 
     persona = args.persona or DEFAULT_PERSONA
 
+    output_path = get_session_path()
+
     logger.info("=" * 60)
     logger.info("DATA GENERATION TEST")
     logger.info("=" * 60)
     logger.info("")
     logger.info("Configuration:")
     logger.info(f"  Sessions: {args.sessions}")
+    logger.info(f"  Output: {output_path}")
     logger.info("")
     logger.info("Persona:")
     logger.info("-" * 40)
@@ -70,8 +70,7 @@ def main():
     logger.info("")
     for event in result.life_events:
         logger.info(f"  [{event.session_id}] {event.date}: {event.event}")
-        if event.context:
-            logger.info(f"      Context: {event.context}")
+        logger.info(f"      Domain: {event.domain}")
 
     logger.info("")
     logger.info("--- Preference Timeline ---")
@@ -104,7 +103,6 @@ def main():
         logger.info("    " + "-" * 50)
 
     # Save output
-    output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)

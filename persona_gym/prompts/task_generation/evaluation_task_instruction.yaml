@@ -15,11 +15,29 @@ template: |
   HOW THIS TASK WILL BE USED:
   - An AI agent has gathered user preferences over multiple past conversations with the user.
   - Using those preferences, the agent must complete a specific task for the user.
-  - The agent is being evaluated on how well it recalls and applies the user's preferences.
+  - Each conversation corresponds to a life event that may have changed/ evolved some preferences.
+  - The agent is being evaluated on how well it recalls and applies the user's active preferences while completing the task.
 
-  CRITICAL FOCUS: EVOLVED PREFERENCES
-  The most important test is whether the agent uses CURRENT preferences vs STALE ones.
-  Preferences marked [EVOLVED] evolved from older versions - the agent MUST use the NEW version.
+  CRITICAL FOCUS: EVOLVED PREFERENCES  
+  - The most important test is whether the agent uses CURRENT preferences vs STALE ones.
+  - Preferences marked [EVOLVED] evolved from older preferences which should no longer be used.
+
+  WHY EVOLVED PREFERENCES MATTER for EVALUATION:
+
+  - Agent WITH poor memory -> might recall old preference (FAIL)
+  - Agent WITH excellent memory -> uses current preference (PASS)
+
+  EXAMPLE:
+  "old preference": "Runs marathons, trains 5x/week"
+  "evolved_preference" (after a life event): "Swims 3x/week due to knee replacement (life event: knee surgery)"
+
+  GOOD TASK: "Plan my exercise routine for next month"
+  -> Tests if agent remembers knee surgery -> recommends swimming NOT running
+
+  BAD TASK: "What's a good protein powder?"
+  -> Both agents answer equally well (doesn't test evolution)
+
+  For your reference, here is the USER PERSONA and PREFERENCE EVOLUTION STORY.
 
   USER PERSONA:
   {persona}
@@ -34,31 +52,12 @@ template: |
   REQUIRED PREFERENCES FOR THIS TASK
   ===============================================================================
 
-  Your task MUST meaningfully test ALL {num_required} of these preferences:
+  We have randomly selected {num_required} preferences from the user's profile. Your task MUST meaningfully test ALL {num_required} of these preferences:
   - {num_evolved} are EVOLVED preferences (marked "is_evolved": true) - MOST CRITICAL
   - {num_baseline} are BASELINE preferences (unchanged)
 
   {required_preferences}
 
-  ===============================================================================
-  WHY EVOLVED PREFERENCES MATTER
-  ===============================================================================
-
-  Evolved preferences show "evolved_from" - what the user USED to prefer.
-
-  Testing rationale:
-  - Agent WITHOUT memory -> might guess old preference (FAIL)
-  - Agent WITH memory -> uses current preference (PASS)
-
-  EXAMPLE:
-  "fact": "Swims 3x/week due to knee replacement"
-  "evolved_from": "Runs marathons, trains 5x/week"
-
-  GOOD TASK: "Plan my exercise routine for next month"
-  -> Tests if agent remembers knee surgery -> recommends swimming NOT running
-
-  BAD TASK: "What's a good protein powder?"
-  -> Both agents answer equally well (doesn't test evolution)
 
   ===============================================================================
   TASK REQUIREMENTS
@@ -68,11 +67,14 @@ template: |
   2. Each preference should be NECESSARY - removing it makes task incomplete
   3. Evolved preferences MUST be testable - old vs new clearly matters
   4. Task should have a CONCRETE DELIVERABLE (not vague advice)
+  5. **Very Important** BE CREATIVE in task design - avoid common patterns
 
-  GOOD TASK PATTERNS:
-  - PLANNING (schedules, itineraries, routines) - require knowing constraints
-  - RECOMMENDATIONS (specific items) - require knowing to narrow down
-  - DECISION SUPPORT (help choosing) - require knowing priorities
+  GOOD TASK PATTERN EXAMPLES (not exhaustive; vary these!):
+  - PLANNING: daily routines, weekly schedules, project timelines, meal plans
+  - RECOMMENDATIONS: products, services, tools, resources, venues
+  - DECISION SUPPORT: comparing options, prioritizing choices
+  - LIFESTYLE: home setup, workspace organization, habit building
+  - EVENTS: hosting, celebrations, meetings, gatherings
 
   BAD TASK PATTERNS:
   - "Help me with X" (too vague)
@@ -88,11 +90,6 @@ template: |
     "event": "Brief triggering situation (1 sentence)",
     "user_prompt": "What the user NATURALLY asks for - NO preference details",
     "task_internal": "Detailed task for JUDGE ONLY - includes what preferences should apply",
-    "completion_criteria": {{
-      "pref_id_1": "How this preference should be applied for task success",
-      "pref_id_2": "How this preference should be applied for task success"
-    }},
-    "context": "Additional situational context (NO preference details)",
     "date": "MM/DD/YYYY"
   }}
 
@@ -137,14 +134,6 @@ template: |
     "event": "Planning a week-long solo wellness retreat after a stressful quarter",
     "user_prompt": "I've had an exhausting quarter and really need a reset. Can you help me plan a week-long solo wellness retreat?",
     "task_internal": "Create a 7-day retreat itinerary with accommodations, daily activities, and meal plans that respects: swimming-only exercise (knee), vegetarian diet, flexible timing, Seattle area, $2000 budget",
-    "completion_criteria": {{
-      "pref_swim": "Swimming/water activities recommended, NOT running/hiking",
-      "pref_veg": "Vegetarian meal options at each location",
-      "pref_remote": "Flexible-schedule activities that don't require fixed times",
-      "pref_budget": "Total cost under $2000",
-      "pref_seattle": "Seattle-area or easily accessible destination"
-    }},
-    "context": "First real vacation in 8 months since surgery",
     "date": "03/20/2026"
   }}
 

@@ -24,12 +24,12 @@ Usage:
     # Generate evaluation task (inspect without full evaluation)
     from persona_gym.task_generators import generate_evaluation_task
     task = generate_evaluation_task(result)
-    print(task.evaluation_event.task)
+    print(task.evaluation_event.task_internal)
     print(task.rubric.required_preferences)
 
     # Run full evaluation
     from persona_gym.evaluation_multisession import run_evaluation
-    eval_result = run_evaluation(result, agent_type="full_context")
+    eval_result = run_evaluation(result, include_history=True)
 """
 
 __version__ = "0.1.0"

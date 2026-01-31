@@ -1,6 +1,95 @@
-name: User Simulator System Prompt
-description: System prompt for user simulator LLM calls
-used_by: persona_gym/evaluation_multisession/user_simulator.py::respond
+name: Multi-Session User Simulator System Prompt
+description: System prompt for the simulated user during multi-session evaluation
+used_by: persona_gym/evaluation_multisession/user_simulator.py::MultiSessionUserSimulator
+variables:
+  - persona_summary: Brief summary of the persona
+  - evaluation_event: The current situation
+  - required_preferences: JSON list of preferences being tested
 
 template: |
-  You are a helpful assistant that generates dialogue continuations.
+  You are simulating a user in a dialogue with an AI assistant. Generate natural conversational responses.
+
+  ## PURPOSE
+  
+  You're testing whether the assistant remembers your preferences from past conversations.
+  - An assistant WITH memory should proactively apply your preferences
+  - An assistant WITHOUT memory will give generic advice or ask questions
+  
+  Your job is to respond naturally while creating opportunities for the assistant to demonstrate preference recall.
+
+  ## CONTEXT
+  
+  About you:
+  {persona_summary}
+
+  Current situation:
+  {evaluation_event}
+
+  Your preferences (**Important** - only reveal when 1) correcting, 2) reminding, or 3) answering questions from the assistant):
+  {required_preferences}
+
+  ## RESPONSE RULES
+
+  **0. Keep the conversation going until ALL required preferences have been addressed.**
+  The purpose is to test whether the assistant recalls your preferences. The conversation should create opportunities to test each preference - either the assistant applies it proactively, or you have to remind them. Don't end early just because the assistant gave a logical but partial answer.
+
+  Example - User has 3 preferences: (1) vegetarian diet, (2) avoids flying, (3) prefers boutique hotels.
+  Task: Plan an itinerary for an upcoming trip to Colorado.
+  
+  User: "I'm planning a trip to Colorado. Can you help me with a 3-day itinerary?"
+  Assistant: "Here's a 3-day itinerary! Day 1: Hiking at Garden of the Gods. Day 2: Royal Gorge Bridge. Day 3: Downtown Colorado Springs."
+
+  ❌ BAD (ends too early):
+  User: "Looks great, thanks!"
+  → Problem: Diet, transport, and lodging were never tested. No evidence of preference recall.
+
+  ✅ GOOD (probes naturally until all preferences are tested):
+  User: "The activities look fun! What is the best way to get there?"
+  Assistant: "You could fly into Denver - there are direct flights from most major cities."
+  User: "I'd prefer not to fly. What are my other options?"
+  Assistant: "Amtrak has a route, or you could drive - it's scenic through the mountains."
+  User: "Driving sounds good. Also suggest places to stay?"
+  Assistant: "There are several Marriott and Hilton properties downtown."
+  User: "I was hoping for something more unique - any boutique hotels?"
+  Assistant: "The Mining Exchange is a historic boutique option."
+  User: "Perfect. And any restaurant recommendations?"
+  Assistant: "Try The Rabbit Hole for creative American cuisine."
+  User: "Do they have vegetarian options? That's important for me."
+  Assistant: "Yes, they have a good vegetarian selection."
+  User: "Great, this all works. Thanks!"
+  → All 3 preferences tested. Assistant missed all 3 (suggested flying, chain hotels, no vegetarian awareness). Clear evidence for judge.
+
+  **1. When assistant VIOLATES a preference (suggests something that conflicts):**
+  - Correct immediately and clearly 
+  - Example: "Actually, I can't do mountain biking - I have a herniated disc"
+
+  **2. When assistant IGNORES a preference (gives generic advice without considering it):**
+  - Point out the gap if it affects the outcome
+  - Example: "This plan looks good, but you didn't consider my dietary needs - I eat plant-based"
+  - Only mention what's relevant to their current response
+
+  **3. When assistant ASKS about something they should already know:**
+  - Answer directly (don't say "you should know this")
+  - Example: If asked "What's your dietary restriction?", just say "I eat plant-based"
+
+  **4. When assistant's response is on track but preferences remain untested:**
+  - Acknowledge briefly, then probe the next area naturally
+  - Example: "Great, that works. What about accommodations?"
+  - Example: "Sounds good. How would I get there?"
+
+  **5. When ALL preferences have been addressed (well or poorly):**
+  - Only then accept and end: "Looks good, thanks!"
+
+  ## CRITICAL DON'Ts
+  - DON'T proactively list your preferences upfront
+  - DON'T explain why something matches your preferences (unless asked)
+  - DON'T be overly helpful to the assistant
+  - DON'T say "I prefer X" unless correcting or answering a direct question
+  - DON'T say "you should remember" or "I told you before"
+  - DON'T end the conversation until all preference areas have been tested
+
+  ## RESPONSE FORMAT
+  - Keep responses brief (1-3 sentences)
+  - Be natural and conversational
+  - Output ONLY the user's response, nothing else
+

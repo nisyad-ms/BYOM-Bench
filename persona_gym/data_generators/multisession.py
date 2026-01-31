@@ -1,14 +1,14 @@
 """
-Multi-session data generator (V3).
+Multi-session data generator.
 
 This generator creates realistic multi-session conversations where user
 preferences evolve organically over time due to life events.
 
-Key differences from V2:
+Key capabilities:
 - Generates a life story (sequence of events) for the persona
 - Creates multiple conversation sessions, one per life event
 - Tracks preference evolution across sessions with a central timeline
-- Preferences change naturally due to life events, not within a single session
+- Preferences change naturally due to life events
 
 The flow:
 1. Persona → Life Story (sequence of events)
@@ -103,7 +103,7 @@ class MultiSessionGenerator(BaseDataGenerator):
             ExpandedPersona with facts across all domains and baseline_preferences
         """
         prompt = render_prompt(
-            "data_generation/multisession/expand_persona",
+            "data_generation/multisession/expand_persona_instruction",
             persona=self.persona,
         )
 
@@ -171,11 +171,6 @@ class MultiSessionGenerator(BaseDataGenerator):
         Returns:
             LifeEvent with domain stored in context
         """
-        # Get domain-specific facts from expanded persona
-        domain_facts = expanded_persona.get_domain_facts(domain)
-        domain_facts_str = "\n".join(f"- {fact}" for fact in domain_facts) if domain_facts else "No specific facts available"
-
-        # Format previous events for context
         if previous_events:
             previous_events_str = "\n".join(
                 f"- Event {e.session_id + 1}: {e.event}" for e in previous_events
@@ -184,10 +179,9 @@ class MultiSessionGenerator(BaseDataGenerator):
             previous_events_str = "None (this is the first event)"
 
         prompt = render_prompt(
-            "data_generation/multisession/generate_life_story",
+            "data_generation/multisession/generate_life_story_instruction",
             persona=expanded_persona.to_full_description(),
             domain=domain,
-            domain_facts=domain_facts_str,
             previous_events=previous_events_str,
         )
 
@@ -199,9 +193,9 @@ class MultiSessionGenerator(BaseDataGenerator):
 
             return LifeEvent(
                 session_id=session_id,
-                date=self.start_date,  # Could enhance to add time offsets
+                date=self.start_date,
                 event=result.get("event", ""),
-                context=f"[{domain}] {result.get('context', '')}",
+                domain=domain,
             )
 
         except Exception as e:
@@ -293,13 +287,6 @@ class MultiSessionGenerator(BaseDataGenerator):
         lines = []
         for e in previous:
             lines.append(f"- Session {e.session_id} ({e.date}): {e.event}")
-            if e.context:
-                # Clean up context display
-                context = e.context
-                if context.startswith("[") and "]" in context:
-                    context = context[context.index("]") + 1:].strip()
-                if context:
-                    lines.append(f"  Context: {context}")
         return "\n".join(lines)
 
     def _update_preferences(
@@ -340,15 +327,13 @@ class MultiSessionGenerator(BaseDataGenerator):
             ensure_ascii=False,
         )
 
-        domain_facts_str = self._format_domain_facts(expanded_persona)
         evolution_history_str = self._format_evolution_history(timeline)
         previous_events_str = self._format_previous_events(all_events, session_id)
-        current_event_str = f"{life_event.event}\nContext: {life_event.context}"
+        current_event_str = life_event.event
 
         prompt = render_prompt(
-            "data_generation/multisession/update_preferences",
+            "data_generation/multisession/update_preferences_instruction",
             persona=expanded_persona.to_full_description(),
-            domain_facts=domain_facts_str,
             current_event=current_event_str,
             event_date=life_event.date,
             previous_events=previous_events_str,
@@ -475,9 +460,9 @@ class MultiSessionGenerator(BaseDataGenerator):
         evolved_prefs_json = json.dumps(evolved_prefs, indent=2) if evolved_prefs else "None"
 
         prompt = render_prompt(
-            "data_generation/multisession/generate_session_conversation",
+            "data_generation/multisession/generate_session_conversation_instruction",
             persona=expanded_persona.to_full_description(),
-            life_event=f"{life_event.event}\nContext: {life_event.context}",
+            life_event=life_event.event,
             event_date=life_event.date,
             active_preferences=active_prefs_json,
             evolved_preferences=evolved_prefs_json,

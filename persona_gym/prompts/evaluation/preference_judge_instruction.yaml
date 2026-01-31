@@ -1,0 +1,61 @@
+name: Preference Judge User Prompt (v2)
+description: User prompt for preference recall scoring with first-mention trace
+used_by: persona_gym/evaluation_multisession/judge.py::MultiSessionJudge
+variables:
+  - required_preferences: List of required preferences with optional supersedes info
+  - transcript: JSON formatted dialogue transcript
+
+template: |
+  ## Required Preferences to Evaluate
+
+  {required_preferences}
+
+  ## Conversation Transcript
+
+  {transcript}
+
+  ---
+
+  ## Your Task
+
+  For EACH required preference, scan the conversation chronologically and identify:
+  1. The FIRST time this preference concept appears
+  2. WHO said it (User or Agent)
+  3. The exact quote
+  4. If the preference has `supersedes`: did the agent mention the OLD preference?
+
+  Then classify each preference as PROACTIVE or IGNORED based on who mentioned it first.
+
+  ---
+
+  ## Output Format
+
+  Provide your evaluation in this JSON format:
+
+  ```json
+  {{
+    "first_mention_trace": [
+      {{
+        "preference_id": "<id>",
+        "first_mentioned_by": "User|Agent",
+        "turn_number": <int>,
+        "quote": "<exact quote showing first mention>",
+        "stale_used": true|false
+      }}
+    ],
+    "preference_usage": {{
+      "<preference_id>": {{"usage": "proactive|ignored", "stale_used": true|false, "evidence": "<quote>"}}
+    }},
+    "proactive_count": <int>,
+    "stale_count": <int>,
+    "preference_score": <float 0-1>,
+    "reasoning": "<brief summary>"
+  }}
+  ```
+
+  Rules:
+  - If Agent mentioned first → "proactive"
+  - If User mentioned first (any form) → "ignored"
+  - preference_score = max(0, (proactive_count - stale_count) / {num_required})
+
+  Provide only the JSON output, no additional text.

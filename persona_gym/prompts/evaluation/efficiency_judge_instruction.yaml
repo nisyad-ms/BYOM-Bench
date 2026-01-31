@@ -1,0 +1,60 @@
+name: Efficiency Judge User Prompt (v2)
+description: User prompt for turn efficiency scoring
+used_by: persona_gym/evaluation_multisession/judge.py::MultiSessionJudge
+variables:
+  - required_preferences: List of required preferences (for context on what agent should know)
+  - transcript: JSON formatted dialogue transcript
+  - agent_turns: Number of agent turns in the conversation
+
+template: |
+  ## Context: Required Preferences the Agent Should Know
+
+  These are preferences the agent should already have in memory. If the agent asks about these, it's a CLARIFYING_QUESTION. If the agent suggests something contradicting these, it's a CORRECTION.
+
+  {required_preferences}
+
+  ## Conversation Transcript
+
+  {transcript}
+
+  ---
+
+  ## Your Task
+
+  Classify each AGENT turn (not user turns) using the Look-Ahead Test:
+
+  For each agent turn, look at the USER's NEXT message:
+  - Did user CORRECT something? → **CORRECTION**
+  - Did user REVEAL a preference? → **IGNORED** (no efficiency penalty)
+  - Did user accept/continue? → **PRODUCTIVE**
+  - Did agent ask about a required preference? → **CLARIFYING_QUESTION**
+  - Did agent repeat a mistake after correction? → **REPEATED_CORRECTION**
+
+  **Agent turns in this conversation:** {agent_turns}
+
+  ---
+
+  ## Output Format
+
+  ```json
+  {{
+    "turn_classifications": [
+      {{"turn": <agent_turn_number>, "type": "productive|clarifying_question|correction|ignored|repeated_correction", "reasoning": "<brief note>"}}
+    ],
+    "productive_turns": <int>,
+    "clarifying_turns": <int>,
+    "correction_turns": <int>,
+    "ignored_turns": <int>,
+    "repeated_correction_turns": <int>,
+    "efficiency_score": <float 0-1>,
+    "reasoning": "<brief summary>"
+  }}
+  ```
+
+  **Efficiency formula:**
+  - If repeated_correction_turns > 0: efficiency_score = 0.0
+  - Otherwise: efficiency_score = max(0, ({agent_turns} - 0.5 × clarifying_turns - correction_turns) / {agent_turns})
+
+  **Remember:** IGNORED turns have NO penalty. Only CLARIFYING (0.5) and CORRECTION (1.0) reduce efficiency.
+
+  Provide only the JSON output, no additional text.

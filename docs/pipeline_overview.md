@@ -142,7 +142,7 @@ This document provides a comprehensive overview of the PersonaGym pipeline, cove
 ## Part 1: Data Generation
 
 **Entry Point:** `data_generators/`  
-**Core Modules:** `personamem_v2.py`, `multisession.py`
+**Core Module:** `multisession.py`
 
 The data generation pipeline creates synthetic user-assistant conversations grounded in persona histories. The goal is to produce conversations where users naturally reveal their preferences over time.
 
@@ -430,7 +430,7 @@ The task generation pipeline creates Task-Oriented Dialogue (TOD) evaluation tas
 | Concept | Description |
 |---------|-------------|
 | **Relevant Preferences** | Preferences from conversation history that apply to this task |
-| **Expected Usage** | How the agent should use the preference (proactive vs. prompted) |
+| **Expected Usage** | How the agent should use the preference (proactive = 1.0, ignored = 0.0) |
 | **Expected Behaviors** | Specific actions the agent should take based on user preferences |
 | **Tool Schemas** | OpenAI-style function schemas for each tool |
 
@@ -438,9 +438,10 @@ The task generation pipeline creates Task-Oriented Dialogue (TOD) evaluation tas
 
 ## Part 3: Evaluation
 
-**Entry Points:** `tod_evaluation.py`, `agent.py`, `tool_simulator.py`, `tod_metric.py`
+**Entry Point:** `evaluation_multisession/`  
+**Core Modules:** `runner.py`, `judge.py`, `user_simulator.py`
 
-The evaluation pipeline assesses how well agents recall and apply user preferences during task-oriented dialogues.
+The evaluation pipeline assesses how well agents recall and apply user preferences during multi-turn dialogues.
 
 ### Evaluation Flow
 
@@ -612,9 +613,8 @@ The evaluation pipeline assesses how well agents recall and apply user preferenc
 │   │  │ OVERALL SCORE                                           │     │      │
 │   │  │                                                         │     │      │
 │   │  │ Weighted combination:                                   │     │      │
-│   │  │ • preference_recall × 0.5                               │     │      │
-│   │  │ • turn_efficiency × 0.3                                 │     │      │
-│   │  │ • task_completion × 0.2                                 │     │      │
+│   │  │ • preference_score × 0.5                                │     │      │
+│   │  │ • efficiency_score × 0.5                                │     │      │
 │   │  └────────────────────────────────────────────────────────┘     │      │
 │   └─────────────────────────────────────────────────────────────────┘      │
 │                                                                             │
@@ -629,10 +629,9 @@ The evaluation pipeline assesses how well agents recall and apply user preferenc
 │     "agent_type": "ContextAwareAgent",                                      │
 │     "tasks_evaluated": 10,                                                  │
 │     "metrics": {                                                            │
-│       "preference_recall": 0.85,                                            │
-│       "turn_efficiency": 0.92,                                              │
-│       "task_completion": 0.90,                                              │
-│       "overall_score": 0.88                                                 │
+│       "preference_score": 0.85,                                             │
+│       "efficiency_score": 0.92,                                             │
+│       "final_score": 0.88                                                   │
 │     },                                                                      │
 │     "per_task_results": [...]                                               │
 │   }                                                                         │
@@ -644,30 +643,42 @@ The evaluation pipeline assesses how well agents recall and apply user preferenc
 
 | File | Purpose |
 |------|---------|
-| `tod_evaluation.py` | Main evaluation orchestrator |
-| `agent.py` | Agent implementations (ContextAware, NoContext) |
-| `tool_simulator.py` | Generates realistic tool responses |
-| `tod_metric.py` | Metric definitions and scoring logic |
+| `evaluation_multisession/runner.py` | Main evaluation orchestrator |
+| `evaluation_multisession/judge.py` | LLM judge for scoring dialogues |
+| `evaluation_multisession/user_simulator.py` | Simulates user responses |
+| `task_generators/evaluation_task.py` | Generates evaluation tasks from data |
 
 ---
 
 ## End-to-End Example
 
 ```bash
-# Step 1: Generate conversation data
-python sample_data_generation.py --topic travel --verbose
+# Step 1: Generate multi-session conversation data
+python test_data_generation.py --num-sessions 3
 
-# Step 2: Generate TOD tasks
-python tod_task_generation.py \
-    --input data/output_sample/travel/sample_conversation_travel_persona0_sample0_conversation.json \
-    --output data/output_sample/travel/tod_tasks.jsonl
+# Step 2: Generate evaluation tasks (optional - can inspect without full eval)
+python test_task_generation.py --input outputs/conversation/data_generation_output.json
 
-# Step 3: Run evaluation
-python tod_evaluation.py \
-    --tasks data/output_sample/travel/tod_tasks.jsonl \
-    --context data/output_sample/travel/sample_conversation_travel_persona0_sample0_conversation.json \
-    --agent context_aware \
-    --output data/output_sample/travel/evaluation_results.json
+# Step 3: Run evaluation with full context
+python test_evaluation.py --full
+
+# Step 4: Run evaluation without context (baseline)
+python test_evaluation.py --no-context
+```
+
+Or use the Python API:
+
+```python
+from persona_gym.data_generators import MultiSessionGenerator
+from persona_gym.evaluation_multisession import run_evaluation
+
+# Generate data
+generator = MultiSessionGenerator(persona="...", num_sessions=3)
+result = generator.generate_multi_session()
+
+# Evaluate with full context
+eval_result = run_evaluation(result, include_history=True)
+print(f"Score: {eval_result.final_score:.2f}")
 ```
 
 ---
@@ -675,7 +686,6 @@ python tod_evaluation.py \
 ## Design Principles
 
 1. **Strict Alternation**: Every User turn MUST be followed by an Assistant turn
-2. **Preference Grounding**: All preferences traced back to conversation history
-3. **Fair Evaluation**: Tool simulator is preference-agnostic
-4. **LLM-as-Judge**: Uses few-shot examples for calibrated turn classification
-5. **Modular Design**: Each component can be used independently
+2. **Preference Grounding**: All preferences traced back to life events
+3. **Preference Evolution**: Preferences change over time due to life events
+4. **LLM-as-Judge**: Uses few-shot examples for calibrated scoring
