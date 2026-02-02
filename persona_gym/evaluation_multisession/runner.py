@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from persona_gym.agents import ContextAwareAgent, NoContextAgent
-from persona_gym.client import LLMClient
+from persona_gym.client import AsyncLLMPool, LLMClient
 from persona_gym.schemas import (
     EvaluationTask,
     MultiSessionEvaluationResult,
@@ -233,3 +233,50 @@ if __name__ == "__main__":
     print(f"Preference Score: {result.preference_score:.2f}")
     print(f"Final Score: {result.final_score:.2f}")
     print(f"\nReasoning: {result.reasoning}")
+
+
+def _run_single_evaluation_with_client(
+    client: LLMClient,
+    context: dict,
+) -> MultiSessionEvaluationResult:
+    """Run a single evaluation using provided client (for parallel execution).
+
+    Args:
+        client: LLM client to use
+        context: Dict containing multisession_data, eval_task, include_history, max_agent_turns
+
+    Returns:
+        MultiSessionEvaluationResult
+    """
+    return run_evaluation(
+        multisession_data=context["multisession_data"],
+        eval_task=context["eval_task"],
+        include_history=context["include_history"],
+        max_agent_turns=context["max_agent_turns"],
+        client=client,
+    )
+
+
+async def run_evaluations_parallel(
+    contexts: list[dict],
+) -> list[MultiSessionEvaluationResult]:
+    """Run multiple evaluations in parallel across deployments.
+
+    Args:
+        contexts: List of dicts, each containing:
+            - multisession_data: MultiSessionOutput
+            - eval_task: EvaluationTask
+            - include_history: bool
+            - max_agent_turns: int
+
+    Returns:
+        List of MultiSessionEvaluationResult objects
+    """
+    pool = AsyncLLMPool()
+
+    results = await pool.run_parallel(
+        items=contexts,
+        func=_run_single_evaluation_with_client,
+    )
+
+    return results

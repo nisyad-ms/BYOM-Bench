@@ -98,7 +98,6 @@ class MultiSessionJudge:
             prompt=user_prompt,
             system_prompt=system_prompt,
             max_tokens=2048,
-            temperature=0.1,
         )
 
     def _call_efficiency_judge(
@@ -120,7 +119,6 @@ class MultiSessionJudge:
             prompt=user_prompt,
             system_prompt=system_prompt,
             max_tokens=2048,
-            temperature=0.1,
         )
 
     def _combine_results(

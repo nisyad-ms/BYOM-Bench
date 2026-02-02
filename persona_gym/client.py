@@ -17,7 +17,6 @@ Usage:
     response = client.complete(
         prompt="Tell me a joke",
         max_tokens=100,
-        temperature=0.9,
     )
 
     # With system prompt
@@ -33,10 +32,11 @@ Usage:
     )
 """
 
+import asyncio
 import json
 import logging
 import os
-from typing import Any, Optional, TypeVar
+from typing import Any, Callable, Optional, TypeVar
 
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from dotenv import load_dotenv
@@ -129,7 +129,6 @@ class LLMClient:
         prompt: str,
         system_prompt: Optional[str] = None,
         max_tokens: int = 2048,
-        temperature: float = 0.7,
     ) -> str:
         """Generate a text completion.
 
@@ -137,7 +136,6 @@ class LLMClient:
             prompt: The user prompt/question.
             system_prompt: Optional system prompt to set context.
             max_tokens: Maximum tokens in response.
-            temperature: Sampling temperature (0.0-2.0).
 
         Returns:
             The generated text response.
@@ -151,7 +149,7 @@ class LLMClient:
             model=self.deployment,
             input=input_content,
             max_output_tokens=max_tokens,
-            temperature=temperature,
+            reasoning={"effort": "high"},
         )
 
         return response.output_text
@@ -161,14 +159,12 @@ class LLMClient:
         self,
         messages: list[dict[str, str]],
         max_tokens: int = 2048,
-        temperature: float = 0.7,
     ) -> str:
         """Generate a completion from a list of messages.
 
         Args:
             messages: List of message dicts with "role" and "content" keys.
             max_tokens: Maximum tokens in response.
-            temperature: Sampling temperature (0.0-2.0).
 
         Returns:
             The generated text response.
@@ -177,7 +173,6 @@ class LLMClient:
             model=self.deployment,
             input=messages,
             max_output_tokens=max_tokens,
-            temperature=temperature,
         )
 
         return response.output_text
@@ -188,7 +183,6 @@ class LLMClient:
         prompt: str,
         system_prompt: Optional[str] = None,
         max_tokens: int = 2048,
-        temperature: float = 0.7,
     ) -> dict[str, Any]:
         """Generate a JSON response.
 
@@ -196,7 +190,6 @@ class LLMClient:
             prompt: The user prompt/question.
             system_prompt: Optional system prompt to set context.
             max_tokens: Maximum tokens in response.
-            temperature: Sampling temperature (0.0-2.0).
 
         Returns:
             Parsed JSON as a dictionary.
@@ -213,7 +206,6 @@ class LLMClient:
             model=self.deployment,
             input=input_content,
             max_output_tokens=max_tokens,
-            temperature=temperature,
             text={"format": {"type": "json_object"}},
         )
 
@@ -298,3 +290,81 @@ def reset_client() -> None:
     """
     global _client_instance
     _client_instance = None
+
+
+class AsyncLLMPool:
+    """Pool of LLM clients across multiple deployments for parallel calls.
+
+    Uses round-robin assignment to distribute work across deployments.
+    Each deployment gets its own semaphore to prevent overloading.
+
+    Usage:
+        pool = AsyncLLMPool()  # Uses AZURE_OPENAI_DEPLOYMENTS env var
+
+        # Run multiple tasks in parallel
+        results = await pool.run_parallel(
+            items=[task1, task2, task3],
+            func=generate_single_task,  # sync function taking (client, item)
+        )
+    """
+
+    def __init__(self, deployments: Optional[list[str]] = None):
+        """Initialize the pool with multiple deployments.
+
+        Args:
+            deployments: List of deployment names. Defaults to AZURE_OPENAI_DEPLOYMENTS env var.
+        """
+        if deployments is None:
+            deployments_str = os.environ.get("AZURE_OPENAI_DEPLOYMENTS", "")
+            if not deployments_str:
+                single = os.environ.get("AZURE_OPENAI_DEPLOYMENT", "gpt-4o")
+                deployments = [single]
+            else:
+                deployments = [d.strip() for d in deployments_str.split(",") if d.strip()]
+
+        if not deployments:
+            raise ValueError("No deployments configured")
+
+        self.deployments = deployments
+        self.clients = [LLMClient(deployment=d) for d in deployments]
+        self._index = 0
+        self._lock = asyncio.Lock()
+
+        logger.info(f"AsyncLLMPool initialized with {len(self.clients)} deployments: {deployments}")
+
+    async def _get_next_client(self) -> LLMClient:
+        """Get next client using round-robin."""
+        async with self._lock:
+            client = self.clients[self._index]
+            self._index = (self._index + 1) % len(self.clients)
+            return client
+
+    async def run_parallel(
+        self,
+        items: list[Any],
+        func: Callable[[LLMClient, Any], Any],
+    ) -> list[Any]:
+        """Run a function on multiple items in parallel across deployments.
+
+        Args:
+            items: List of items to process.
+            func: Sync function taking (client, item) and returning result.
+
+        Returns:
+            List of results in same order as items.
+        """
+        async def process_item(item: Any) -> Any:
+            client = await self._get_next_client()
+            return await asyncio.to_thread(func, client, item)
+
+        tasks = [process_item(item) for item in items]
+        return await asyncio.gather(*tasks)
+
+
+def get_deployments() -> list[str]:
+    """Get list of configured deployments."""
+    deployments_str = os.environ.get("AZURE_OPENAI_DEPLOYMENTS", "")
+    if not deployments_str:
+        single = os.environ.get("AZURE_OPENAI_DEPLOYMENT", "gpt-4o")
+        return [single]
+    return [d.strip() for d in deployments_str.split(",") if d.strip()]

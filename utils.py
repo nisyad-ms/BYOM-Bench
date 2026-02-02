@@ -178,3 +178,18 @@ def validate_task_session_match(session_path: Path, task_path: Path) -> bool:
         return False
 
     return session_id == task_session_id
+
+
+def get_all_tasks_for_session(session_id: str) -> list[Path]:
+    """Get all task files for a given session, sorted by task number."""
+    TASKS_DIR.mkdir(parents=True, exist_ok=True)
+
+    matching = []
+    for f in TASKS_DIR.iterdir():
+        match = TASK_PATTERN.match(f.name)
+        if match and match.group(1) == session_id:
+            task_num = int(match.group(2)) if match.group(2) else 1
+            matching.append((task_num, f))
+
+    matching.sort(key=lambda x: x[0])
+    return [f for _, f in matching]

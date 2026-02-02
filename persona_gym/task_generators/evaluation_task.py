@@ -17,7 +17,7 @@ import random
 import uuid
 from datetime import datetime
 
-from persona_gym.client import LLMClient
+from persona_gym.client import AsyncLLMPool, LLMClient
 from persona_gym.prompts import render_prompt
 from persona_gym.schemas import (
     EvaluationRubric,
@@ -423,7 +423,6 @@ class EvaluationTaskGenerator:
                         old_pref = timeline.preferences.get(old_id)
                         new_pref = timeline.preferences.get(new_id)
                         if old_pref and new_pref:
-                            old_origin = "baseline" if old_pref.created_at_session == -1 else f"session {old_pref.created_at_session}"
                             parts.append(f"    - [{new_id}] EVOLVED from [{old_id}]: \"{old_pref.fact}\"")
                             parts.append(f"      → \"{new_pref.fact}\"")
                     parts.append("")
@@ -550,3 +549,46 @@ def generate_evaluation_tasks(
     """
     generator = EvaluationTaskGenerator(client)
     return generator.generate_batch(multisession_output, num_tasks, prefs_per_task)
+
+
+def _generate_single_task_with_client(
+    client: LLMClient,
+    context: dict,
+) -> EvaluationTask:
+    """Generate a single task using provided client (for parallel execution).
+
+    Args:
+        client: LLM client to use
+        context: Dict containing multisession_output and task config
+
+    Returns:
+        EvaluationTask
+    """
+    generator = EvaluationTaskGenerator(client)
+    multisession_output = context["multisession_output"]
+    return generator.generate(multisession_output)
+
+
+async def generate_evaluation_tasks_parallel(
+    multisession_output: MultiSessionOutput,
+    num_tasks: int = 3,
+) -> list[EvaluationTask]:
+    """Generate multiple evaluation tasks in parallel across deployments.
+
+    Args:
+        multisession_output: Output from MultiSessionGenerator
+        num_tasks: Number of tasks to generate
+
+    Returns:
+        List of EvaluationTask objects
+    """
+    pool = AsyncLLMPool()
+
+    contexts = [{"multisession_output": multisession_output} for _ in range(num_tasks)]
+
+    tasks = await pool.run_parallel(
+        items=contexts,
+        func=_generate_single_task_with_client,
+    )
+
+    return tasks

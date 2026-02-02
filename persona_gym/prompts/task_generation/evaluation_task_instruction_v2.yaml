@@ -12,27 +12,34 @@ template: |
 
   CONTEXT:
   - Agent has learned user preferences across multiple conversations
-  - Some preferences EVOLVED due to life events (old version is now STALE)
-  - We test if the agent recalls CURRENT preferences, not stale ones
+  - Each conversation corresponds to a life event where the user talked to the agent
+  - Some preferences EVOLVED due to life events (old preference is now STALE)
+  - Based on this evaluation task generation in this step, we will test if the agent recalls CURRENT preferences AND not stale ones while completing the task
 
-  For your reference, you are given the following:
+  To help you generate a meaningful task that meets these criteria, you are given the following:
 
   USER PERSONA: {persona}
 
   PREFERENCE EVOLUTION HISTORY:
   {preference_evolution_story}
 
-  YOUR TASK:
+  LETS DO THIS STEP BY STEP. YOUR TASK:
   1. SELECT {num_evolved_required} evolved preferences and {num_baseline_required} baseline preferences that work well together for a coherent task
   2. DESIGN a challenging task where all 6 preferences naturally matter
-  3. The task should have a CLEAR GOAL and CONCRETE DELIVERABLE
+  3. The task should have a CLEAR GOAL and CONCRETE DELIVERABLE  
   4. **Very Important** AVOID common patterns like travel planning; be CREATIVE
-  5. WRITE a descriptive user_prompt that does NOT reveal any preferences
-
-  SELECTION CRITERIA:
+  
+  PREFERENCE SELECTION CRITERIA:
   - Choose preferences that fit naturally in ONE scenario
   - Evolved preferences are CRITICAL - they test memory quality of the agent
   - Avoid forcing unrelated preferences together
+
+  CRITICAL - TASK MUST BE USER-CENTRIC:
+  - The task MUST directly benefit the USER, not others
+  - AVOID tasks where user organizes events/activities for a group (team offsites, workshops for colleagues, hackathons for others)
+  - When organizing for others, the user's personal preferences (sleep schedule, diet, hobbies) don't naturally apply
+  - GOOD: "Help me plan MY trip", "Help me set up MY workspace", "Help me create MY meal plan"
+  - BAD: "Help me organize a fun event for my community", "Help me plan a hackathon for engineers"
 
   OUTPUT FORMAT (JSON):
   {{
@@ -40,16 +47,17 @@ template: |
       {{"id": "pref_XXX", "fact": "...", "is_evolved": true/false, "evolved_from": "..." or null}}
     ],
     "event": "Brief situation (1 sentence)",
-    "user_prompt": "Natural request - NO preference details revealed",
-    "task_internal": "What perfect completion looks like (for judge)",
+    "user_prompt": "The task prompt to be given to the AI assistant - NO preference details revealed",
+    "task_internal": "What perfect completion looks like (for judge) with recall of all preferences by the AI assistant",
     "date": "MM/DD/YYYY"
   }}
 
-  CRITICAL RULES:
-  - user_prompt must NOT mention any preferences, constraints, or conditions
-  - If user_prompt reveals preferences, a no-memory agent can succeed (defeats the test!)
-  - Each selected preference must be NECESSARY for task completion
-
+  SELF-REFLECTION CHECK:
+  - Is the task user-centric where the user's preferences matter?
+  - Does the task require recalling ALL selected preferences?
+  - Does the user_prompt hide all preference details effectively? If user_prompt reveals preferences, a no-memory agent can succeed (defeats the test!)
+  - Is the task reastonable and achievable for an AI assistant
+  
   EXAMPLES:
 
   Example 1 - Wellness Retreat Planning:
@@ -96,3 +104,25 @@ template: |
 
   GOOD user_prompt: "My partner's birthday is coming up and I want to plan something special. Any suggestions?"
   (Agent must recall partner's preferences AND user's constraints)
+
+  Example 4 - AVOID THIS PATTERN (Organizing for Others):
+  Selected preferences:
+  - [EVOLVED] Starts work later due to CPAP therapy
+  - [EVOLVED] Flexible travel planning with printed backups
+  - [BASELINE] Uses standing desk 4 hours daily
+  - [BASELINE] Experiments with fusion recipes
+  - [BASELINE] Pair programming for complex tasks
+
+  BAD task: "Help me organize a hackathon for my engineering team"
+  WHY IT FAILS:
+  - User's sleep schedule shouldn't dictate event start time for 20 colleagues
+  - User's standing desk preference doesn't apply to workspace setup for others
+  - User's fusion recipe hobby is irrelevant to team catering
+  - Preferences feel forced and awkward when imposed on group events
+
+  GOOD alternative: "I'm attending a week-long hackathon in a new city. Help me plan my daily routine during the event."
+  WHY IT WORKS:
+  - User's sleep schedule affects THEIR wake-up time
+  - User can request standing desk for THEIR workspace
+  - User can explore fusion restaurants for THEIR meals
+  - All preferences naturally apply to the user's personal experience

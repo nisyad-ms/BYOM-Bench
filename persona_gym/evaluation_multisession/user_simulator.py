@@ -6,7 +6,6 @@ It knows its current preferences and will naturally correct the agent
 if recommendations don't match those preferences.
 """
 
-import json
 import logging
 
 from persona_gym.client import LLMClient
@@ -53,18 +52,13 @@ class MultiSessionUserSimulator:
 
     def _build_system_prompt(self) -> str:
         """Build the system prompt for the user simulator."""
-        # Format preferences for the prompt (user only needs id and fact)
-        prefs_formatted = json.dumps(
-            [
-                {"id": p["id"], "preference": p["fact"]}
-                for p in self.required_preferences
-            ],
-            indent=2,
-            ensure_ascii=False,
+        prefs_formatted = "\n".join(
+            f"- {p['fact']}"
+            for p in self.required_preferences
         )
 
         return render_prompt(
-            "evaluation/user_simulator_system",
+            "evaluation/user_simulator_system_v2",
             persona_summary=self.task.persona_summary,
             evaluation_event=self.task.evaluation_event.event,
             required_preferences=prefs_formatted,
@@ -93,21 +87,12 @@ class MultiSessionUserSimulator:
         Returns:
             User's response message
         """
-        # Format conversation for context
-        conv_formatted = self._format_conversation(conversation_history)
+        messages = [{"role": "system", "content": self._system_prompt}]
+        messages.extend(conversation_history)
 
-        # Build user prompt - just conversation context (rules are in system prompt)
-        user_prompt = render_prompt(
-            "evaluation/user_simulator_instruction",
-            conversation=conv_formatted,
-            agent_message=agent_message,
-        )
-
-        response = self.client.complete(
-            prompt=user_prompt,
-            system_prompt=self._system_prompt,  # Use the pre-built system prompt
+        response = self.client.complete_chat(
+            messages=messages,
             max_tokens=max_tokens,
-            temperature=0.8,
         )
 
         return response.strip()

@@ -66,6 +66,48 @@ template: |
 
   ---
 
+  ## CRITICAL: Generic Advice vs. Personalized Recall
+
+  **This is the most important distinction to make.**
+
+  Generic best practices that ANY competent agent would give should NOT count as preference recall.
+  Only count it as PROACTIVE if the agent mentions **specific details unique to this user's preference**.
+
+  ### How to Tell the Difference
+
+  **Ask yourself**: Would a general-purpose AI assistant give this same advice to ANY user asking this question, 
+  even without knowing this specific user's history?
+
+  - If YES → Generic advice → NOT PROACTIVE (mark as IGNORED)
+  - If NO → Personalized recall → Count as PROACTIVE
+
+  ### Examples of Generic vs. Personalized
+
+  **Preference**: "Uses CPAP therapy every night as part of his sleep routine"
+
+  | Agent Says | Classification | Reasoning |
+  |------------|----------------|-----------|
+  | "Make sure to get quality sleep" | IGNORED | Generic advice anyone would give |
+  | "Start your day a bit later if you had a bad night's sleep" | IGNORED | Generic recovery advice |
+  | "Set up your CPAP machine before bed as part of your wind-down" | PROACTIVE | Mentions CPAP specifically |
+  | "Include time for your CPAP setup and maintenance" | PROACTIVE | Mentions CPAP specifically |
+
+  **Preference**: "Uses Kanban boards for all projects, avoids traditional to-do lists"
+
+  | Agent Says | Classification | Reasoning |
+  |------------|----------------|-----------|
+  | "Stay organized with your tasks" | IGNORED | Generic advice |
+  | "Create a checklist or to-do list" | IGNORED | Actually violates the preference! |
+  | "Use your Kanban board to track on-call items" | PROACTIVE | Mentions Kanban specifically |
+  | "Set up columns for Backlog, In Progress, and Done" | PROACTIVE | Kanban-specific workflow |
+
+  ### The Specificity Test
+
+  For a preference to be recalled PROACTIVELY, the agent's response must include **at least one distinguishing detail** 
+  from the preference that wouldn't appear in generic advice. If none of these distinguishing details appear → Agent is giving generic advice → Mark as IGNORED
+
+  ---
+
   ## Stale Preferences
 
   Some preferences have a `supersedes` field showing an outdated preference they replaced:

@@ -109,7 +109,7 @@ class MultiSessionGenerator(BaseDataGenerator):
 
         try:
             # Increased token limit to accommodate 25 baseline preferences
-            result = self.llm.complete_json(prompt, max_tokens=8000, temperature=0.8)
+            result = self.llm.complete_json(prompt, max_tokens=8000)
 
             if not isinstance(result, dict):
                 raise GenerationError(f"Unexpected response type: {type(result)}")
@@ -186,7 +186,7 @@ class MultiSessionGenerator(BaseDataGenerator):
         )
 
         try:
-            result = self.llm.complete_json(prompt, max_tokens=500, temperature=0.8)
+            result = self.llm.complete_json(prompt, max_tokens=500)
 
             if not isinstance(result, dict):
                 raise GenerationError(f"Unexpected response type: {type(result)}")
@@ -342,7 +342,7 @@ class MultiSessionGenerator(BaseDataGenerator):
         )
 
         try:
-            result = self.llm.complete_json(prompt, max_tokens=2000, temperature=0.7)
+            result = self.llm.complete_json(prompt, max_tokens=2000)
 
             if not isinstance(result, dict):
                 result = {"evolutions": [], "new_preferences": []}
@@ -470,7 +470,7 @@ class MultiSessionGenerator(BaseDataGenerator):
         )
 
         try:
-            result = self.llm.complete_json(prompt, max_tokens=2000, temperature=0.8)
+            result = self.llm.complete_json(prompt, max_tokens=2000)
 
             if isinstance(result, dict):
                 conversation = result.get("conversation", result.get("turns", []))
