@@ -17,7 +17,7 @@ import random
 import uuid
 from datetime import datetime
 
-from persona_gym.client import AsyncLLMPool, LLMClient
+from persona_gym.client import CONFIG, AsyncLLMPool, LLMClient
 from persona_gym.prompts import render_prompt
 from persona_gym.schemas import (
     EvaluationRubric,
@@ -284,6 +284,7 @@ class EvaluationTaskGenerator:
         response = self.client.complete_json(
             prompt=prompt,
             system_prompt=render_prompt("task_generation/evaluation_task_system"),
+            max_tokens=CONFIG["max_tokens"]["task_generation"],
         )
 
         selected_prefs = response.get("selected_preferences", [])
@@ -349,6 +350,7 @@ class EvaluationTaskGenerator:
         response = self.client.complete_json(
             prompt=prompt,
             system_prompt=render_prompt("task_generation/evaluation_task_system"),
+            max_tokens=CONFIG["max_tokens"]["task_generation"],
         )
 
         try:
@@ -540,7 +542,7 @@ def generate_evaluation_tasks(
         >>> from persona_gym.task_generators import generate_evaluation_tasks
         >>> from persona_gym.schemas import MultiSessionOutput
         >>> import json
-        >>> with open("outputs/conversation/data_generation_output.json") as f:
+        >>> with open("outputs/sessions/data_generation_output.json") as f:
         ...     data = MultiSessionOutput.from_dict(json.load(f))
         >>> tasks = generate_evaluation_tasks(data, num_tasks=3)
         >>> for task in tasks:

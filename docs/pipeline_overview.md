@@ -657,7 +657,7 @@ The evaluation pipeline assesses how well agents recall and apply user preferenc
 python test_data_generation.py --num-sessions 3
 
 # Step 2: Generate evaluation tasks (optional - can inspect without full eval)
-python test_task_generation.py --input outputs/conversation/data_generation_output.json
+python test_task_generation.py --input outputs/sessions/data_generation_output.json
 
 # Step 3: Run evaluation with full context
 python test_evaluation.py --full

@@ -10,11 +10,10 @@ Usage:
 import argparse
 import json
 
-from utils import add_file_logging, get_session_path, setup_logging
+from utils import add_file_logging, create_session_dir, get_session_path, setup_logging
 
 logger = setup_logging("data_generation")
 
-# Default test persona
 DEFAULT_PERSONA = """
 A senior software engineer working at Microsoft.
 """.strip()
@@ -29,8 +28,8 @@ def main():
     from persona_gym.data_generators import MultiSessionGenerator
 
     persona = args.persona or DEFAULT_PERSONA
-
-    output_path = get_session_path()
+    session_dir = create_session_dir()
+    output_path = get_session_path(session_dir)
 
     generator = MultiSessionGenerator(
         persona=persona,
@@ -39,8 +38,6 @@ def main():
 
     result = generator.generate_multi_session()
 
-    # Save output
-    output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
     logger.info(f"Saved to {output_path}")

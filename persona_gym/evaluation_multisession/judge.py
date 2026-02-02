@@ -10,7 +10,7 @@ import json
 import logging
 from typing import Any
 
-from persona_gym.client import LLMClient
+from persona_gym.client import CONFIG, LLMClient
 from persona_gym.prompts import render_prompt
 from persona_gym.schemas import (
     EvaluationRubric,
@@ -97,7 +97,7 @@ class MultiSessionJudge:
         return self.client.complete_json(
             prompt=user_prompt,
             system_prompt=system_prompt,
-            max_tokens=2048,
+            max_tokens=CONFIG["max_tokens"]["preference_judge"],
         )
 
     def _call_efficiency_judge(
@@ -118,7 +118,7 @@ class MultiSessionJudge:
         return self.client.complete_json(
             prompt=user_prompt,
             system_prompt=system_prompt,
-            max_tokens=2048,
+            max_tokens=CONFIG["max_tokens"]["efficiency_judge"],
         )
 
     def _combine_results(

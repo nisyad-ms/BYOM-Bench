@@ -8,7 +8,7 @@ if recommendations don't match those preferences.
 
 import logging
 
-from persona_gym.client import LLMClient
+from persona_gym.client import CONFIG, LLMClient
 from persona_gym.prompts import render_prompt
 from persona_gym.schemas import EvaluationTask
 
@@ -75,14 +75,12 @@ class MultiSessionUserSimulator:
         self,
         agent_message: str,
         conversation_history: list[dict[str, str]],
-        max_tokens: int = 256,
     ) -> str:
         """Generate user response to agent message.
 
         Args:
             agent_message: The agent's most recent message
             conversation_history: Full conversation so far (including agent_message)
-            max_tokens: Maximum tokens in response
 
         Returns:
             User's response message
@@ -92,7 +90,7 @@ class MultiSessionUserSimulator:
 
         response = self.client.complete_chat(
             messages=messages,
-            max_tokens=max_tokens,
+            max_tokens=CONFIG["max_tokens"]["user_simulator"],
         )
 
         return response.strip()

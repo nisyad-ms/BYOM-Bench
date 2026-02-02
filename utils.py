@@ -3,20 +3,30 @@
 Includes:
 - Logging configuration
 - File naming and discovery for outputs
+
+Output structure:
+    outputs/
+        prompts/
+        <date>_<HHMM>/           # e.g., 2026-02-02_1430
+            sessions.json
+            tasks/
+                task_01.json
+                task_02.json
+            evaluation/
+                eval_01_context.json
+                eval_01_nocontext.json
 """
 
 import logging
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
-SESSIONS_DIR = Path("outputs/conversation")
-TASKS_DIR = Path("outputs/tasks")
-EVAL_DIR = Path("outputs/evaluation")
-
-SESSION_PATTERN = re.compile(r"^sessions_(\d{2})\.json$")
-TASK_PATTERN = re.compile(r"^tasks_(\d{2})(?:_(\d{2}))?\.json$")
-EVAL_PATTERN = re.compile(r"^eval_(\d{2})_(\d{2})_(\w+)\.json$")
+OUTPUTS_DIR = Path("outputs")
+SESSION_DIR_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}_\d{4}$")
+TASK_PATTERN = re.compile(r"^task_(\d{2})\.json$")
+EVAL_PATTERN = re.compile(r"^eval_(\d{2})_(\w+)\.json$")
 
 
 def setup_logging(name: str) -> logging.Logger:
@@ -44,11 +54,10 @@ def setup_logging(name: str) -> logging.Logger:
 
 
 def add_file_logging(logger: logging.Logger, log_dir: str = "logs") -> Path:
-    """Add file handler to logger."""
+    """Add file handler to logger and persona_gym logger."""
     log_path = Path(log_dir)
     log_path.mkdir(parents=True, exist_ok=True)
 
-    from datetime import datetime
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     log_file = log_path / f"{logger.name}_{timestamp}.log"
 
@@ -60,56 +69,64 @@ def add_file_logging(logger: logging.Logger, log_dir: str = "logs") -> Path:
 
     logger.addHandler(file_handler)
 
+    persona_gym_logger = logging.getLogger("persona_gym")
+    persona_gym_logger.addHandler(file_handler)
+
     return log_file
 
 
-def get_next_session_id() -> str:
-    """Get the next available session ID (01, 02, etc.)."""
-    SESSIONS_DIR.mkdir(parents=True, exist_ok=True)
-
-    existing = []
-    for f in SESSIONS_DIR.iterdir():
-        match = SESSION_PATTERN.match(f.name)
-        if match:
-            existing.append(int(match.group(1)))
-
-    next_num = max(existing, default=0) + 1
-    return f"{next_num:02d}"
+def create_session_dir() -> Path:
+    """Create a new session directory with timestamp (e.g., 2026-02-02_1430)."""
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H%M")
+    session_dir = OUTPUTS_DIR / timestamp
+    session_dir.mkdir(parents=True, exist_ok=True)
+    return session_dir
 
 
-def get_session_path(session_id: str | None = None) -> Path:
-    """Get path for a session file."""
-    sid = session_id or get_next_session_id()
-    return SESSIONS_DIR / f"sessions_{sid}.json"
+def get_latest_session_dir() -> Path | None:
+    """Find the most recent session directory."""
+    OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    dirs = []
+    for d in OUTPUTS_DIR.iterdir():
+        if d.is_dir() and SESSION_DIR_PATTERN.match(d.name):
+            dirs.append(d)
+
+    if not dirs:
+        return None
+
+    dirs.sort(key=lambda x: x.name, reverse=True)
+    return dirs[0]
 
 
-def get_task_path(session_id: str, task_num: int = 1) -> Path:
-    """Get path for a task file (tasks_01_01.json, tasks_01_02.json, etc.)."""
-    return TASKS_DIR / f"tasks_{session_id}_{task_num:02d}.json"
+def get_session_dir(session_path: Path | str | None) -> Path | None:
+    """Get session directory from a session file path or find latest."""
+    if session_path:
+        path = Path(session_path)
+        if path.is_file():
+            return path.parent
+        if path.is_dir():
+            return path
+    return get_latest_session_dir()
 
 
-def get_eval_path(session_id: str, task_num: int, agent_type: str) -> Path:
-    """Get path for an evaluation file (eval_01_01_context.json, etc.)."""
-    return EVAL_DIR / f"eval_{session_id}_{task_num:02d}_{agent_type}.json"
+def get_session_path(session_dir: Path) -> Path:
+    """Get path for sessions.json in a session directory."""
+    return session_dir / "sessions.json"
 
 
-def extract_session_id(filepath: Path | str) -> str | None:
-    """Extract session ID from a session, task, or eval filename."""
-    filename = Path(filepath).name
+def get_task_path(session_dir: Path, task_num: int) -> Path:
+    """Get path for a task file."""
+    tasks_dir = session_dir / "tasks"
+    tasks_dir.mkdir(parents=True, exist_ok=True)
+    return tasks_dir / f"task_{task_num:02d}.json"
 
-    match = SESSION_PATTERN.match(filename)
-    if match:
-        return match.group(1)
 
-    match = TASK_PATTERN.match(filename)
-    if match:
-        return match.group(1)  # Returns session_id (e.g., "01")
-
-    match = EVAL_PATTERN.match(filename)
-    if match:
-        return match.group(1)  # Returns session_id
-
-    return None
+def get_eval_path(session_dir: Path, task_num: int, agent_type: str) -> Path:
+    """Get path for an evaluation file."""
+    eval_dir = session_dir / "evaluation"
+    eval_dir.mkdir(parents=True, exist_ok=True)
+    return eval_dir / f"eval_{task_num:02d}_{agent_type}.json"
 
 
 def extract_task_num(filepath: Path | str) -> int | None:
@@ -117,84 +134,52 @@ def extract_task_num(filepath: Path | str) -> int | None:
     filename = Path(filepath).name
 
     match = TASK_PATTERN.match(filename)
-    if match and match.group(2):
-        return int(match.group(2))
+    if match:
+        return int(match.group(1))
 
     match = EVAL_PATTERN.match(filename)
     if match:
-        return int(match.group(2))
+        return int(match.group(1))
 
     return None
 
 
-def get_latest_session() -> Path | None:
-    """Find the most recent session file (highest number)."""
-    SESSIONS_DIR.mkdir(parents=True, exist_ok=True)
+def get_all_tasks(session_dir: Path) -> list[Path]:
+    """Get all task files in a session directory, sorted by task number."""
+    tasks_dir = session_dir / "tasks"
+    if not tasks_dir.exists():
+        return []
 
-    sessions = []
-    for f in SESSIONS_DIR.iterdir():
-        match = SESSION_PATTERN.match(f.name)
+    matching = []
+    for f in tasks_dir.iterdir():
+        match = TASK_PATTERN.match(f.name)
         if match:
-            sessions.append((int(match.group(1)), f))
-
-    if not sessions:
-        return None
-
-    sessions.sort(key=lambda x: x[0], reverse=True)
-    return sessions[0][1]
-
-
-def get_latest_task_for_session(session_id: str) -> Path | None:
-    """Find the latest task file for a given session (highest task number)."""
-    TASKS_DIR.mkdir(parents=True, exist_ok=True)
-
-    matching = []
-    for f in TASKS_DIR.iterdir():
-        match = TASK_PATTERN.match(f.name)
-        if match and match.group(1) == session_id:
-            task_num = int(match.group(2)) if match.group(2) else 1
-            matching.append((task_num, f))
-
-    if not matching:
-        return None
-
-    matching.sort(key=lambda x: x[0], reverse=True)
-    return matching[0][1]
-
-
-def get_next_task_num(session_id: str) -> int:
-    """Get the next available task number for a session."""
-    latest = get_latest_task_for_session(session_id)
-    if latest is None:
-        return 1
-
-    match = TASK_PATTERN.match(latest.name)
-    if match and match.group(2):
-        return int(match.group(2)) + 1
-    return 2  # If old format without task_num, next is 2
-
-
-def validate_task_session_match(session_path: Path, task_path: Path) -> bool:
-    """Validate that a task file matches a session file."""
-    session_id = extract_session_id(session_path)
-    task_session_id = extract_session_id(task_path)
-
-    if session_id is None or task_session_id is None:
-        return False
-
-    return session_id == task_session_id
-
-
-def get_all_tasks_for_session(session_id: str) -> list[Path]:
-    """Get all task files for a given session, sorted by task number."""
-    TASKS_DIR.mkdir(parents=True, exist_ok=True)
-
-    matching = []
-    for f in TASKS_DIR.iterdir():
-        match = TASK_PATTERN.match(f.name)
-        if match and match.group(1) == session_id:
-            task_num = int(match.group(2)) if match.group(2) else 1
+            task_num = int(match.group(1))
             matching.append((task_num, f))
 
     matching.sort(key=lambda x: x[0])
     return [f for _, f in matching]
+
+
+def get_next_task_num(session_dir: Path) -> int:
+    """Get the next available task number for a session."""
+    tasks = get_all_tasks(session_dir)
+    if not tasks:
+        return 1
+
+    last_task = tasks[-1]
+    match = TASK_PATTERN.match(last_task.name)
+    if match:
+        return int(match.group(1)) + 1
+    return 1
+
+
+def get_latest_task(session_dir: Path) -> Path | None:
+    """Get the latest task file in a session directory."""
+    tasks = get_all_tasks(session_dir)
+    return tasks[-1] if tasks else None
+
+
+def validate_task_session_match(session_dir: Path, task_path: Path) -> bool:
+    """Validate that a task file belongs to the session directory."""
+    return task_path.parent.parent == session_dir

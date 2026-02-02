@@ -10,7 +10,7 @@ def load_latest_session():
     """Load the latest session data."""
     session_path = get_latest_session()
     if not session_path:
-        raise FileNotFoundError("No session files found in outputs/conversation/")
+        raise FileNotFoundError("No session files found in outputs/sessions/")
 
     with open(session_path) as f:
         return json.load(f), session_path
@@ -20,7 +20,7 @@ def load_latest_task():
     """Load the latest task for the latest session."""
     session_path = get_latest_session()
     if not session_path:
-        raise FileNotFoundError("No session files found in outputs/conversation/")
+        raise FileNotFoundError("No session files found in outputs/sessions/")
 
     session_id = extract_session_id(session_path)
     task_path = get_latest_task_for_session(session_id)

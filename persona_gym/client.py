@@ -36,8 +36,10 @@ import asyncio
 import json
 import logging
 import os
+from pathlib import Path
 from typing import Any, Callable, Optional, TypeVar
 
+import yaml
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from dotenv import load_dotenv
 from openai import APIStatusError, AzureOpenAI
@@ -54,10 +56,13 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 
-# Retry decorator for LLM calls - retries on API errors including content filter blocks
+_config_path = Path(__file__).parent / "client_config.yaml"
+with open(_config_path) as f:
+    CONFIG = yaml.safe_load(f)
+
 _llm_retry = retry(
-    stop=stop_after_attempt(3),
-    wait=wait_exponential(multiplier=1, min=2, max=10),
+    stop=stop_after_attempt(CONFIG["retry"]["max_attempts"]),
+    wait=wait_exponential(multiplier=1, min=CONFIG["retry"]["wait_seconds"], max=CONFIG["retry"]["wait_seconds"]),
     retry=retry_if_exception_type((APIStatusError, Exception)),
     before_sleep=before_sleep_log(logger, logging.WARNING),
     reraise=True,
@@ -65,6 +70,21 @@ _llm_retry = retry(
 
 # Type variable for structured outputs
 T = TypeVar("T", bound=BaseModel)
+
+
+def _get_deployments() -> list[str]:
+    """Get list of configured deployments from AZURE_OPENAI_DEPLOYMENTS."""
+    deployments_str = os.environ.get("AZURE_OPENAI_DEPLOYMENTS", "")
+    if not deployments_str:
+        return []
+    return [d.strip() for d in deployments_str.split(",") if d.strip()]
+
+
+def _get_default_deployment() -> str:
+    """Get default deployment (first from DEPLOYMENTS, or fallback to gpt-4o)."""
+    deployments = _get_deployments()
+    return deployments[0] if deployments else "gpt-4o"
+
 
 class LLMClient:
     """Simple Azure OpenAI client for general-purpose LLM queries.
@@ -96,7 +116,7 @@ class LLMClient:
             ValueError: If endpoint is not provided and AZURE_OPENAI_ENDPOINT is not set.
         """
         self.endpoint = endpoint or os.environ.get("AZURE_OPENAI_ENDPOINT")
-        self.deployment = deployment or os.environ.get("AZURE_OPENAI_DEPLOYMENT", "gpt-4o")
+        self.deployment = deployment or _get_default_deployment()
         self.api_version = api_version or os.environ.get("AZURE_OPENAI_API_VERSION", "2025-03-01-preview")
 
         if not self.endpoint:
@@ -270,12 +290,9 @@ class AsyncLLMPool:
             deployments: List of deployment names. Defaults to AZURE_OPENAI_DEPLOYMENTS env var.
         """
         if deployments is None:
-            deployments_str = os.environ.get("AZURE_OPENAI_DEPLOYMENTS", "")
-            if not deployments_str:
-                single = os.environ.get("AZURE_OPENAI_DEPLOYMENT", "gpt-4o")
-                deployments = [single]
-            else:
-                deployments = [d.strip() for d in deployments_str.split(",") if d.strip()]
+            deployments = _get_deployments()
+            if not deployments:
+                deployments = [_get_default_deployment()]
 
         if not deployments:
             raise ValueError("No deployments configured")
@@ -318,8 +335,5 @@ class AsyncLLMPool:
 
 def get_deployments() -> list[str]:
     """Get list of configured deployments."""
-    deployments_str = os.environ.get("AZURE_OPENAI_DEPLOYMENTS", "")
-    if not deployments_str:
-        single = os.environ.get("AZURE_OPENAI_DEPLOYMENT", "gpt-4o")
-        return [single]
-    return [d.strip() for d in deployments_str.split(",") if d.strip()]
+    deployments = _get_deployments()
+    return deployments if deployments else [_get_default_deployment()]

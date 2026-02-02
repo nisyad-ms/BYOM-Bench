@@ -22,7 +22,7 @@ import logging
 import random
 from datetime import datetime
 
-from persona_gym.client import LLMClient
+from persona_gym.client import CONFIG, LLMClient
 from persona_gym.data_generators.base import BaseDataGenerator, GenerationError
 from persona_gym.prompts import render_prompt
 from persona_gym.schemas import (
@@ -110,8 +110,7 @@ class MultiSessionGenerator(BaseDataGenerator):
         )
 
         try:
-            # Increased token limit to accommodate 25 baseline preferences
-            result = self.llm.complete_json(prompt, max_tokens=8000)
+            result = self.llm.complete_json(prompt, max_tokens=CONFIG["max_tokens"]["expand_persona"])
 
             if not isinstance(result, dict):
                 raise GenerationError(f"Unexpected response type: {type(result)}")
@@ -185,7 +184,7 @@ class MultiSessionGenerator(BaseDataGenerator):
         )
 
         try:
-            result = self.llm.complete_json(prompt, max_tokens=500)
+            result = self.llm.complete_json(prompt, max_tokens=CONFIG["max_tokens"]["life_event"])
 
             if not isinstance(result, dict):
                 raise GenerationError(f"Unexpected response type: {type(result)}")
@@ -341,7 +340,7 @@ class MultiSessionGenerator(BaseDataGenerator):
         )
 
         try:
-            result = self.llm.complete_json(prompt, max_tokens=2000)
+            result = self.llm.complete_json(prompt, max_tokens=CONFIG["max_tokens"]["update_preferences"])
 
             if not isinstance(result, dict):
                 result = {"evolutions": [], "new_preferences": []}
@@ -457,7 +456,7 @@ class MultiSessionGenerator(BaseDataGenerator):
         )
 
         try:
-            result = self.llm.complete_json(prompt, max_tokens=2000)
+            result = self.llm.complete_json(prompt, max_tokens=CONFIG["max_tokens"]["session_conversation"])
 
             if isinstance(result, dict):
                 conversation = result.get("conversation", result.get("turns", []))

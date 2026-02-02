@@ -83,11 +83,11 @@ print(f"Active preferences: {len(result.timeline.get_active_preferences())}")
 from persona_gym.evaluation_multisession import run_evaluation_from_file
 
 # Run with full context (agent has access to conversation history)
-result = run_evaluation_from_file("outputs/conversation/data_generation_output.json", include_history=True)
+result = run_evaluation_from_file("outputs/sessions/data_generation_output.json", include_history=True)
 print(f"Score: {result.final_score:.2f}")
 
 # Run without context (baseline - agent has no memory)
-result = run_evaluation_from_file("outputs/conversation/data_generation_output.json", include_history=False)
+result = run_evaluation_from_file("outputs/sessions/data_generation_output.json", include_history=False)
 print(f"Score: {result.final_score:.2f}")
 ```
 

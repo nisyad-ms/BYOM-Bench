@@ -4,7 +4,7 @@
 Usage:
     python test_task_generation.py                    # Single task, latest session
     python test_task_generation.py --count 3          # Generate 3 tasks in parallel
-    python test_task_generation.py --session <file>   # Use specific session
+    python test_task_generation.py --session <path>   # Use specific session dir or file
 """
 
 import argparse
@@ -15,9 +15,9 @@ from pathlib import Path
 
 from utils import (
     add_file_logging,
-    extract_session_id,
-    get_latest_session,
     get_next_task_num,
+    get_session_dir,
+    get_session_path,
     get_task_path,
     setup_logging,
 )
@@ -25,22 +25,21 @@ from utils import (
 logger = setup_logging("task_generation")
 
 
-def generate_single(data, session_id: str, task_num: int, total: int = 1):
+def generate_single(data, session_dir: Path, task_num: int):
     """Generate a single task synchronously."""
     from persona_gym.task_generators import generate_evaluation_task
 
-    logger.info(f"Generated task {task_num}/{task_num + total - 1}")
-    output_path = get_task_path(session_id, task_num)
     task = generate_evaluation_task(data)
+    output_path = get_task_path(session_dir, task_num)
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(task.to_dict(), f, indent=2, ensure_ascii=False)
 
+    logger.info(f"Generated task {task_num}")
     return task
 
 
-async def generate_multiple(data, session_id: str, start_task_num: int, count: int):
+async def generate_multiple(data, session_dir: Path, start_task_num: int, count: int):
     """Generate multiple tasks in parallel."""
     from persona_gym.task_generators import generate_evaluation_tasks_parallel
 
@@ -48,12 +47,12 @@ async def generate_multiple(data, session_id: str, start_task_num: int, count: i
 
     for i, task in enumerate(tasks):
         task_num = start_task_num + i
-        logger.info(f"Generated task {task_num}/{start_task_num + count - 1}")
-        output_path = get_task_path(session_id, task_num)
+        output_path = get_task_path(session_dir, task_num)
 
-        output_path.parent.mkdir(parents=True, exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(task.to_dict(), f, indent=2, ensure_ascii=False)
+
+        logger.info(f"Generated task {task_num}/{start_task_num + count - 1}")
 
     return tasks
 
@@ -61,39 +60,33 @@ async def generate_multiple(data, session_id: str, start_task_num: int, count: i
 def main():
     parser = argparse.ArgumentParser(description="Test evaluation task generation")
     parser.add_argument("--session", type=str, default=None,
-                        help="Path to session file (default: latest)")
+                        help="Path to session dir or file (default: latest)")
     parser.add_argument("--count", type=int, default=1,
                         help="Number of tasks to generate (default: 1, uses parallel if > 1)")
     args = parser.parse_args()
 
-    if args.session:
-        input_path = Path(args.session)
-        if not input_path.exists():
-            logger.error(f"Session file not found: {input_path}")
-            sys.exit(1)
-    else:
-        input_path = get_latest_session()
-        if input_path is None:
-            logger.error("No session files found in outputs/conversation/")
-            sys.exit(1)
+    session_dir = get_session_dir(args.session)
+    if session_dir is None:
+        logger.error("No session found. Run test_data_generation.py first.")
+        sys.exit(1)
 
-    session_id = extract_session_id(input_path)
-    if session_id is None:
-        logger.error(f"Could not extract session ID from: {input_path}")
+    session_file = get_session_path(session_dir)
+    if not session_file.exists():
+        logger.error(f"Session file not found: {session_file}")
         sys.exit(1)
 
     from persona_gym.schemas import MultiSessionOutput
 
-    with open(input_path, "r", encoding="utf-8") as f:
+    with open(session_file, "r", encoding="utf-8") as f:
         raw_data = json.load(f)
     data = MultiSessionOutput.from_dict(raw_data)
 
-    start_task_num = get_next_task_num(session_id)
+    start_task_num = get_next_task_num(session_dir)
 
     if args.count == 1:
-        generate_single(data, session_id, start_task_num)
+        generate_single(data, session_dir, start_task_num)
     else:
-        asyncio.run(generate_multiple(data, session_id, start_task_num, args.count))
+        asyncio.run(generate_multiple(data, session_dir, start_task_num, args.count))
 
 
 if __name__ == "__main__":
