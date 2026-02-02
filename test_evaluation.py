@@ -34,19 +34,6 @@ from utils import (
 logger = setup_logging("evaluation")
 
 
-def log_result(result, task_path: Path, output_path: Path):
-    """Log evaluation result summary."""
-    logger.info("-" * 40)
-    logger.info(f"RESULT: {task_path.name}")
-    logger.info("-" * 40)
-    logger.info(f"Final Score: {result.final_score:.2f}")
-    logger.info(f"  Preference: {result.preference_score:.2f}")
-    logger.info(f"  Efficiency: {result.efficiency_score:.2f}")
-    logger.info(f"Turns: {result.total_turns} total, {result.correction_turns} corrections")
-    logger.info(f"Saved to: {output_path}")
-    logger.info("")
-
-
 def run_single_evaluation(
     session_path: Path,
     task_path: Path,
@@ -71,7 +58,6 @@ def run_single_evaluation(
 
     include_history = agent_type == "context"
 
-    logger.info(f"Running evaluation: {task_path.name} with {agent_type} agent...")
     result = run_evaluation(
         data,
         max_agent_turns=max_agent_turns,
@@ -83,7 +69,7 @@ def run_single_evaluation(
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
 
-    log_result(result, task_path, output_path)
+    logger.info(f"Evaluation for task {task_num} completed")
     return result
 
 
@@ -117,9 +103,6 @@ async def run_all_evaluations(
             "task_path": task_path,
         })
 
-    logger.info(f"Running {len(contexts)} evaluations in parallel with {agent_type} agent...")
-    logger.info("")
-
     results = await run_evaluations_parallel(contexts)
 
     session_id = extract_session_id(session_path)
@@ -132,7 +115,7 @@ async def run_all_evaluations(
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
 
-        log_result(result, task_path, output_path)
+        logger.info(f"Evaluation for task {task_num} completed")
 
     return results
 
@@ -158,32 +141,18 @@ def main():
         session_path = get_latest_session()
         if session_path is None:
             logger.error("No session files found in outputs/conversation/")
-            logger.info("Run test_data_generation.py first")
             sys.exit(1)
-        logger.info(f"Using latest session: {session_path.name}")
 
     session_id = extract_session_id(session_path)
     if session_id is None:
         logger.error(f"Could not extract session ID from: {session_path}")
         sys.exit(1)
 
-    logger.info("=" * 60)
-    logger.info("EVALUATION")
-    logger.info("=" * 60)
-    logger.info("")
-    logger.info(f"Session: {session_path.name}")
-    logger.info(f"Agent: {args.agent}")
-    logger.info(f"Max turns: {args.max_agent_turns}")
-    logger.info("")
-
     if args.task == "all":
         task_paths = get_all_tasks_for_session(session_id)
         if not task_paths:
             logger.error(f"No task files found for session: {session_id}")
-            logger.info("Run test_task_generation.py first")
             sys.exit(1)
-        logger.info(f"Found {len(task_paths)} tasks")
-        logger.info("")
 
         asyncio.run(run_all_evaluations(
             session_path,
@@ -204,9 +173,7 @@ def main():
             task_path = get_latest_task_for_session(session_id)
             if task_path is None:
                 logger.error(f"No task files found for session: {session_id}")
-                logger.info("Run test_task_generation.py first")
                 sys.exit(1)
-            logger.info(f"Using latest task: {task_path.name}")
 
         run_single_evaluation(
             session_path,
@@ -214,11 +181,6 @@ def main():
             args.agent,
             args.max_agent_turns,
         )
-
-    logger.info("=" * 60)
-    logger.info("EVALUATION COMPLETE")
-    logger.info("=" * 60)
-    logger.info("")
 
 
 if __name__ == "__main__":

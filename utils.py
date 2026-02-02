@@ -35,6 +35,11 @@ def setup_logging(name: str) -> logging.Logger:
 
     logger.addHandler(console_handler)
 
+    persona_gym_logger = logging.getLogger("persona_gym")
+    if not persona_gym_logger.handlers:
+        persona_gym_logger.setLevel(logging.DEBUG)
+        persona_gym_logger.addHandler(console_handler)
+
     return logger
 
 

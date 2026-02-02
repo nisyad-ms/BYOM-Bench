@@ -25,31 +25,11 @@ from utils import (
 logger = setup_logging("task_generation")
 
 
-def log_task_details(task, task_num: int, output_path: Path):
-    """Log details for a single task."""
-    logger.info("-" * 40)
-    logger.info(f"TASK {task_num}")
-    logger.info("-" * 40)
-    logger.info("")
-    logger.info(f"Date: {task.evaluation_event.date}")
-    logger.info(f"Event: {task.evaluation_event.event}")
-    logger.info("")
-    logger.info("User Prompt:")
-    for line in task.user_prompt.split('\n'):
-        logger.info(f"  {line}")
-    logger.info("")
-    logger.info(f"Required Preferences ({len(task.rubric.required_preferences)}):")
-    for p in task.rubric.required_preferences:
-        logger.info(f"  [{p['id']}] {p['fact'][:80]}...")
-    logger.info("")
-    logger.info(f"Saved to: {output_path}")
-    logger.info("")
-
-
-def generate_single(data, session_id: str, task_num: int):
+def generate_single(data, session_id: str, task_num: int, total: int = 1):
     """Generate a single task synchronously."""
     from persona_gym.task_generators import generate_evaluation_task
 
+    logger.info(f"Generated task {task_num}/{task_num + total - 1}")
     output_path = get_task_path(session_id, task_num)
     task = generate_evaluation_task(data)
 
@@ -57,7 +37,6 @@ def generate_single(data, session_id: str, task_num: int):
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(task.to_dict(), f, indent=2, ensure_ascii=False)
 
-    log_task_details(task, task_num, output_path)
     return task
 
 
@@ -65,20 +44,16 @@ async def generate_multiple(data, session_id: str, start_task_num: int, count: i
     """Generate multiple tasks in parallel."""
     from persona_gym.task_generators import generate_evaluation_tasks_parallel
 
-    logger.info(f"Generating {count} tasks in parallel...")
-    logger.info("")
-
     tasks = await generate_evaluation_tasks_parallel(data, num_tasks=count)
 
     for i, task in enumerate(tasks):
         task_num = start_task_num + i
+        logger.info(f"Generated task {task_num}/{start_task_num + count - 1}")
         output_path = get_task_path(session_id, task_num)
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(task.to_dict(), f, indent=2, ensure_ascii=False)
-
-        log_task_details(task, task_num, output_path)
 
     return tasks
 
@@ -100,50 +75,18 @@ def main():
         input_path = get_latest_session()
         if input_path is None:
             logger.error("No session files found in outputs/conversation/")
-            logger.info("Run test_data_generation.py first")
             sys.exit(1)
-        logger.info(f"Using latest session: {input_path.name}")
 
     session_id = extract_session_id(input_path)
     if session_id is None:
         logger.error(f"Could not extract session ID from: {input_path}")
-        logger.info("Expected filename format: sessions_XX.json")
         sys.exit(1)
 
     from persona_gym.schemas import MultiSessionOutput
 
-    logger.info(f"Loading session data from {input_path}")
     with open(input_path, "r", encoding="utf-8") as f:
         raw_data = json.load(f)
     data = MultiSessionOutput.from_dict(raw_data)
-    logger.info(f"Loaded {len(data.sessions)} sessions with {len(data.timeline.preferences)} preferences")
-    logger.info("")
-
-    current_prefs = data.get_current_preferences()
-    stale_prefs = data.get_superseded_preferences()
-
-    logger.info("=" * 60)
-    logger.info("PREFERENCE ANALYSIS")
-    logger.info("=" * 60)
-    logger.info("")
-    logger.info(f"Current preferences ({len(current_prefs)}):")
-    logger.info("")
-    for p in current_prefs:
-        logger.info(f"  [{p.preference_id}] [{p.domain}]")
-        logger.info(f"    {p.fact}")
-        logger.info("")
-
-    logger.info(f"Stale/superseded preferences ({len(stale_prefs)}):")
-    logger.info("")
-    for p in stale_prefs:
-        logger.info(f"  [{p.preference_id}] [{p.domain}] -> superseded by {p.superseded_by}")
-        logger.info(f"    {p.fact}")
-        logger.info("")
-
-    logger.info("=" * 60)
-    logger.info(f"GENERATING {args.count} EVALUATION TASK(S)")
-    logger.info("=" * 60)
-    logger.info("")
 
     start_task_num = get_next_task_num(session_id)
 
@@ -151,11 +94,6 @@ def main():
         generate_single(data, session_id, start_task_num)
     else:
         asyncio.run(generate_multiple(data, session_id, start_task_num, args.count))
-
-    logger.info("=" * 60)
-    logger.info("TASK GENERATION COMPLETE")
-    logger.info("=" * 60)
-    logger.info("")
 
 
 if __name__ == "__main__":

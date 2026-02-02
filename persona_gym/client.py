@@ -7,10 +7,10 @@ data_generation's AzureQueryLLM with conversation threading) should keep
 their specialized implementations.
 
 Usage:
-    from persona_gym.client import get_client, LLMClient
+    from persona_gym.client import LLMClient
 
     # Simple query
-    client = get_client()
+    client = LLMClient()
     response = client.complete("What is 2+2?")
 
     # With custom parameters
@@ -65,10 +65,6 @@ _llm_retry = retry(
 
 # Type variable for structured outputs
 T = TypeVar("T", bound=BaseModel)
-
-# Module-level singleton
-_client_instance: Optional["LLMClient"] = None
-
 
 class LLMClient:
     """Simple Azure OpenAI client for general-purpose LLM queries.
@@ -249,47 +245,6 @@ class LLMClient:
         result = response.output_parsed
         assert result is not None, "Structured output parsing returned None"
         return result
-
-
-def get_client(
-    endpoint: Optional[str] = None,
-    deployment: Optional[str] = None,
-    api_version: Optional[str] = None,
-    force_new: bool = False,
-) -> LLMClient:
-    """Get a shared LLMClient instance (singleton pattern).
-
-    By default, returns the same client instance across calls. This is efficient
-    since the Azure OpenAI client handles connection pooling internally.
-
-    Args:
-        endpoint: Azure OpenAI endpoint URL.
-        deployment: Model deployment name.
-        api_version: API version.
-        force_new: If True, create a new instance instead of reusing.
-
-    Returns:
-        An LLMClient instance.
-    """
-    global _client_instance
-
-    if force_new or _client_instance is None:
-        _client_instance = LLMClient(
-            endpoint=endpoint,
-            deployment=deployment,
-            api_version=api_version,
-        )
-
-    return _client_instance
-
-
-def reset_client() -> None:
-    """Reset the singleton client instance.
-
-    Useful for testing or when environment variables change.
-    """
-    global _client_instance
-    _client_instance = None
 
 
 class AsyncLLMPool:

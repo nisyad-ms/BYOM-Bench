@@ -22,7 +22,7 @@ import logging
 import random
 from datetime import datetime
 
-from persona_gym.client import LLMClient, get_client
+from persona_gym.client import LLMClient
 from persona_gym.data_generators.base import BaseDataGenerator, GenerationError
 from persona_gym.prompts import render_prompt
 from persona_gym.schemas import (
@@ -67,6 +67,7 @@ class MultiSessionGenerator(BaseDataGenerator):
     def __init__(
         self,
         persona: str,
+        llm: LLMClient | None = None,
         num_sessions: int = DEFAULT_NUM_SESSIONS,
         start_date: str | None = None,
         output_dir: str | None = None,
@@ -75,6 +76,7 @@ class MultiSessionGenerator(BaseDataGenerator):
 
         Args:
             persona: User persona description (required)
+            llm: LLMClient instance (optional, creates one if not provided)
             num_sessions: Number of sessions to generate
             start_date: Start date (MM/DD/YYYY), defaults to today
             output_dir: Output directory (optional)
@@ -84,13 +86,13 @@ class MultiSessionGenerator(BaseDataGenerator):
         self.persona = persona
         self.num_sessions = num_sessions
         self.start_date = start_date or datetime.now().strftime("%m/%d/%Y")
-        self._llm: LLMClient | None = None
+        self._llm = llm
 
     @property
     def llm(self) -> LLMClient:
         """Lazy-load LLM client."""
         if self._llm is None:
-            self._llm = get_client()
+            self._llm = LLMClient()
         return self._llm
 
     def _expand_persona(self) -> ExpandedPersona:
@@ -115,10 +117,8 @@ class MultiSessionGenerator(BaseDataGenerator):
                 raise GenerationError(f"Unexpected response type: {type(result)}")
 
             expanded = ExpandedPersona.from_dict(result)
-            baseline_count = len(expanded.baseline_preferences) if expanded.baseline_preferences else 0
             logger.info(
-                f"Expanded persona: {expanded.age}yo {expanded.gender} in {expanded.location}, "
-                f"{baseline_count} baseline preferences"
+                f"Expanded persona: {expanded.age}yo {expanded.gender} in {expanded.location}"
             )
             return expanded
 
@@ -150,7 +150,6 @@ class MultiSessionGenerator(BaseDataGenerator):
             event = self._generate_single_life_event(idx, domain, expanded_persona, events)
             events.append(event)
 
-        logger.info(f"Generated {len(events)} life events")
         return events
 
     def _generate_single_life_event(
@@ -191,6 +190,7 @@ class MultiSessionGenerator(BaseDataGenerator):
             if not isinstance(result, dict):
                 raise GenerationError(f"Unexpected response type: {type(result)}")
 
+            logger.info(f"Generated life event {session_id}")
             return LifeEvent(
                 session_id=session_id,
                 date=self.start_date,
@@ -238,7 +238,6 @@ class MultiSessionGenerator(BaseDataGenerator):
                 )
                 baseline_ids.append(pref_id)
 
-        logger.info(f"Loaded {len(baseline_ids)} baseline preferences into timeline")
         return baseline_ids
 
     def _format_domain_facts(self, expanded_persona: ExpandedPersona) -> str:
@@ -379,11 +378,10 @@ class MultiSessionGenerator(BaseDataGenerator):
                                 new_domain=new_domain,
                             )
                             evolved_mapping[old_id] = new_id
-                            logger.info(f"Evolved {old_id} -> {new_id}: {reason[:50]}...")
                         except ValueError as e:
                             logger.warning(f"Failed to evolve preference {old_id}: {e}")
                     else:
-                        logger.warning(f"Preference {old_id} already superseded, skipping")
+                        pass
 
             # Process new preferences
             new_prefs_data = result.get("new_preferences", [])
@@ -399,17 +397,6 @@ class MultiSessionGenerator(BaseDataGenerator):
                     date=life_event.date,
                 )
                 new_pref_ids.append(pref_id)
-
-            # Log analysis if provided
-            analysis = result.get("analysis", {})
-            rationale = analysis.get("rationale", "")
-            if rationale:
-                logger.info(f"Update rationale: {rationale[:100]}...")
-
-            logger.info(
-                f"Session {session_id}: {len(evolved_mapping)} evolved, "
-                f"{len(new_pref_ids)} new preferences created"
-            )
 
             return evolved_mapping, new_pref_ids
 
@@ -487,7 +474,7 @@ class MultiSessionGenerator(BaseDataGenerator):
                 if role in ("user", "assistant") and content:
                     normalized.append({"role": role, "content": content})
 
-            logger.info(f"Generated conversation with {len(normalized)} turns")
+            logger.info(f"Generated conversation for session {session_id}")
             return normalized
 
         except Exception as e:
@@ -512,39 +499,17 @@ class MultiSessionGenerator(BaseDataGenerator):
         Returns:
             MultiSessionOutput with full timeline and sessions
         """
-        logger.info(f"Starting multi-session generation for persona: {self.persona[:50]}...")
-
-        # Step 1: Expand the basic persona into a rich character
-        logger.info("Step 1: Expanding persona across life domains...")
         expanded_persona = self._expand_persona()
 
-        # Step 2: Generate life events (distributed across domains)
-        logger.info("Step 2: Generating life events...")
         life_events = self._generate_life_events(expanded_persona, domains)
-        logger.info(f"Generated {len(life_events)} life events")
 
-        # Initialize timeline and load baseline preferences
         timeline = PreferenceTimeline()
-
-        # Step 2.5: Load baseline preferences (core personality traits)
-        logger.info("Step 2.5: Loading baseline preferences...")
-        baseline_ids = self._load_baseline_preferences(timeline, expanded_persona)
-        logger.info(f"Loaded {len(baseline_ids)} baseline preferences")
+        self._load_baseline_preferences(timeline, expanded_persona)
 
         sessions: list[Session] = []
 
-        # Step 3: Process each session
-        # UNIFIED FLOW: Single call to update preferences (evolve + create new)
-        # with full context (all events, evolution history, domain facts)
         for idx, event in enumerate(life_events):
-            logger.info(f"Step 3.{idx}: Processing session {idx}...")
 
-            # Unified preference update: evolve existing AND create new
-            # This single call sees full context including:
-            # - All previous life events
-            # - Complete preference evolution history
-            # - All domain facts
-            # - All currently active preferences
             evolved_mapping, new_pref_ids = self._update_preferences(
                 event, life_events, timeline, idx, expanded_persona
             )
@@ -566,14 +531,7 @@ class MultiSessionGenerator(BaseDataGenerator):
             )
             sessions.append(session)
 
-            logger.info(
-                f"Session {idx}: {len(conversation)} turns, "
-                f"{len(active_pref_ids)} active prefs, "
-                f"{len(evolved_mapping)} evolved"
-            )
-
-        # Build final output
-        output = MultiSessionOutput(
+        return MultiSessionOutput(
             persona=self.persona,
             persona_id=persona_id or f"persona_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
             life_events=life_events,
@@ -582,14 +540,6 @@ class MultiSessionGenerator(BaseDataGenerator):
             generation_timestamp=datetime.now().isoformat(),
             expanded_persona=expanded_persona,
         )
-
-        logger.info(
-            f"Generation complete: {len(sessions)} sessions, "
-            f"{len(timeline.preferences)} total preferences "
-            f"({len(baseline_ids)} baseline)"
-        )
-
-        return output
 
     def generate(self) -> DataGenerationOutput:
         """Generate data in the standard pipeline format.
