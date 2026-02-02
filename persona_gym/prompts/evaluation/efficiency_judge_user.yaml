@@ -1,0 +1,18 @@
+name: Efficiency Judge User Prompt
+description: User prompt providing data for turn efficiency scoring
+used_by: persona_gym/evaluation_multisession/judge.py::MultiSessionJudge
+variables:
+  - required_preferences: List of required preferences (for context on what agent should know)
+  - transcript: JSON formatted dialogue transcript
+  - agent_turns: Number of agent turns in the conversation
+
+template: |
+  ## Required Preferences
+  {required_preferences}
+
+  ## Conversation Transcript
+  {transcript}
+
+  Number of agent turns: {agent_turns}
+
+  Classify each agent turn and calculate efficiency. Output JSON only.

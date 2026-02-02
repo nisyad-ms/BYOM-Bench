@@ -284,10 +284,18 @@ template: |
 
   ## Output Format
 
-  Your output must be valid JSON with:
-  - `first_mention_trace`: Array showing chronological analysis for each preference
-  - `preference_usage`: Object with usage classification per preference
-  - `proactive_count`: Number of PROACTIVE preferences
-  - `stale_count`: Number of preferences where stale version was used
-  - `preference_score`: Calculated score
-  - `reasoning`: Brief summary
+  Your output must be valid JSON with this structure:
+
+  ```json
+  {{
+    "first_mention_trace": [
+      {{"preference_id": "<id>", "first_mentioned_by": "User|Agent", "turn_number": <int>, "quote": "<exact quote>", "stale_used": true|false}}
+    ],
+    "preference_usage": {{
+      "<preference_id>": {{"usage": "proactive|ignored", "stale_used": true|false, "evidence": "<quote>"}}
+    }},
+    "proactive_count": <int>,
+    "stale_count": <int>,
+    "preference_score": <float 0-1>
+  }}
+  ```

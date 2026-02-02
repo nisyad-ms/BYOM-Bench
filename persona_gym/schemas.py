@@ -722,7 +722,6 @@ class MultiSessionEvaluationResult:
         proactive_count: Number of preferences proactively applied
         efficiency_score: Score based on turn efficiency
         preference_score: Score based on preference usage (stale penalty integrated)
-        final_score: Weighted combination of all scores
         reasoning: Judge's overall reasoning
     """
 
@@ -744,37 +743,36 @@ class MultiSessionEvaluationResult:
     proactive_count: int = 0
     efficiency_score: float = 0.0
     preference_score: float = 0.0
-    final_score: float = 0.0
     reasoning: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         result = {
             "task_id": self.task_id,
-            "final_score": self.final_score,
-            "preference_score": self.preference_score,
-            "efficiency_score": self.efficiency_score,
+            "scores": {
+                "preference_score": self.preference_score,
+                "efficiency_score": self.efficiency_score,
+            },
         }
         if self.evaluation_event:
             result["evaluation_event"] = self.evaluation_event.to_dict()
         result.update({
             "conversation": self.conversation,
-            "preference_usage": self.preference_usage,
-            "stale_preference_usage": self.stale_preference_usage,
-            "first_mention_trace": self.first_mention_trace,
-            "turn_classifications": self.turn_classifications,
-            "scores": {
+            "preference_scoring": {
+                "proactive_count": self.proactive_count,
+                "stale_count": self.stale_count,
+                "preference_usage": self.preference_usage,
+                "stale_preference_usage": self.stale_preference_usage,
+                "first_mention_trace": self.first_mention_trace,
+            },
+            "efficiency_scoring": {
                 "total_turns": self.total_turns,
                 "productive_turns": self.productive_turns,
                 "clarifying_turns": self.clarifying_turns,
                 "correction_turns": self.correction_turns,
                 "ignored_turns": self.ignored_turns,
                 "repeated_correction_turns": self.repeated_correction_turns,
-                "stale_count": self.stale_count,
-                "proactive_count": self.proactive_count,
-                "efficiency_score": self.efficiency_score,
-                "preference_score": self.preference_score,
+                "turn_classifications": self.turn_classifications,
             },
-            "reasoning": self.reasoning,
         })
         if self.rubric:
             result["rubric"] = self.rubric.to_dict()

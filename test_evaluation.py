@@ -18,6 +18,7 @@ import argparse
 import asyncio
 import json
 import sys
+import time
 from pathlib import Path
 
 from utils import (
@@ -137,6 +138,8 @@ def main():
         logger.error("No session found. Run test_data_generation.py first.")
         sys.exit(1)
 
+    add_file_logging(logger, session_dir)
+
     session_file = get_session_path(session_dir)
     if not session_file.exists():
         logger.error(f"Session file not found: {session_file}")
@@ -178,5 +181,7 @@ def main():
 
 
 if __name__ == "__main__":
-    add_file_logging(logger)
+    start_time = time.time()
     main()
+    elapsed = time.time() - start_time
+    print(f"Time taken: {elapsed:.1f}s")

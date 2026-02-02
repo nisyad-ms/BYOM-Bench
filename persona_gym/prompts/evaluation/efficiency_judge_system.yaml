@@ -236,3 +236,29 @@ template: |
 
   **Calculation:** 4 agent turns, 0 corrections, 3 clarifying
   efficiency = (4 - 0.5×3 - 0) / 4 = (4 - 1.5) / 4 = **0.625**
+
+  ---
+
+  ## Output Format
+
+  Your output must be valid JSON with this structure:
+
+  ```json
+  {{
+    "turn_classifications": [
+      {{"turn": 1, "type": "productive|clarifying_question|correction|ignored|repeated_correction", "reasoning": "<brief note>"}}
+    ],
+    "productive_turns": <int>,
+    "clarifying_turns": <int>,
+    "correction_turns": <int>,
+    "ignored_turns": <int>,
+    "repeated_correction_turns": <int>,
+    "efficiency_score": <float 0-1>
+  }}
+  ```
+
+  **Efficiency formula:**
+  - If repeated_correction_turns > 0: efficiency_score = 0.0
+  - Otherwise: efficiency_score = max(0, (agent_turns - 0.5 × clarifying_turns - correction_turns) / agent_turns)
+
+  **Remember:** IGNORED turns have NO penalty. Only CLARIFYING (0.5) and CORRECTION (1.0) reduce efficiency.

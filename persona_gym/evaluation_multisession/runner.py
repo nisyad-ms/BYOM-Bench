@@ -83,7 +83,7 @@ def run_evaluation(
     logger.info("Evaluating dialogue with judge...")
     judge = MultiSessionJudge(client)
     result = judge.evaluate(eval_task, conversation)
-    logger.info(f"Evaluation complete. Final score: {result.final_score:.2f}")
+    logger.info(f"Evaluation complete. Preference: {result.preference_score:.2f}, Efficiency: {result.efficiency_score:.2f}")
 
     return result
 
@@ -231,7 +231,6 @@ if __name__ == "__main__":
     print(f"Correction Turns: {result.correction_turns}")
     print(f"Efficiency Score: {result.efficiency_score:.2f}")
     print(f"Preference Score: {result.preference_score:.2f}")
-    print(f"Final Score: {result.final_score:.2f}")
     print(f"\nReasoning: {result.reasoning}")
 
 

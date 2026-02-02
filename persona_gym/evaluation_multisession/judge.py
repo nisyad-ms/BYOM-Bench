@@ -88,7 +88,7 @@ class MultiSessionJudge:
         """Call the preference judge LLM."""
         system_prompt = render_prompt("evaluation/preference_judge_system")
         user_prompt = render_prompt(
-            "evaluation/preference_judge_instruction",
+            "evaluation/preference_judge_user",
             required_preferences=required_prefs_json,
             transcript=transcript_json,
             num_required=num_required,
@@ -109,7 +109,7 @@ class MultiSessionJudge:
         """Call the efficiency judge LLM."""
         system_prompt = render_prompt("evaluation/efficiency_judge_system")
         user_prompt = render_prompt(
-            "evaluation/efficiency_judge_instruction",
+            "evaluation/efficiency_judge_user",
             required_preferences=required_prefs_json,
             transcript=transcript_json,
             agent_turns=agent_turns,
@@ -149,11 +149,6 @@ class MultiSessionJudge:
 
         preference_score = float(pref_result.get("preference_score", 0.0))
         efficiency_score = float(eff_result.get("efficiency_score", 0.0))
-        final_score = 0.5 * preference_score + 0.5 * efficiency_score
-
-        pref_reasoning = pref_result.get("reasoning", "")
-        eff_reasoning = eff_result.get("reasoning", "")
-        combined_reasoning = f"Preference: {pref_reasoning}\nEfficiency: {eff_reasoning}"
 
         return MultiSessionEvaluationResult(
             task_id=task_id,
@@ -174,8 +169,6 @@ class MultiSessionJudge:
             proactive_count=int(pref_result.get("proactive_count", 0)),
             efficiency_score=efficiency_score,
             preference_score=preference_score,
-            final_score=final_score,
-            reasoning=combined_reasoning,
         )
 
 

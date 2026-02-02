@@ -24,6 +24,7 @@ from datetime import datetime
 from pathlib import Path
 
 OUTPUTS_DIR = Path("outputs")
+LOGS_DIR = Path("logs")
 SESSION_DIR_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}_\d{4}$")
 TASK_PATTERN = re.compile(r"^task_(\d{2})\.json$")
 EVAL_PATTERN = re.compile(r"^eval_(\d{2})_(\w+)\.json$")
@@ -47,15 +48,23 @@ def setup_logging(name: str) -> logging.Logger:
 
     persona_gym_logger = logging.getLogger("persona_gym")
     if not persona_gym_logger.handlers:
-        persona_gym_logger.setLevel(logging.DEBUG)
+        persona_gym_logger.setLevel(logging.INFO)
         persona_gym_logger.addHandler(console_handler)
 
     return logger
 
 
-def add_file_logging(logger: logging.Logger, log_dir: str = "logs") -> Path:
-    """Add file handler to logger and persona_gym logger."""
-    log_path = Path(log_dir)
+def add_file_logging(logger: logging.Logger, session_dir: Path | None = None) -> Path:
+    """Add file handler to logger and persona_gym logger.
+    
+    Args:
+        logger: The logger to add file handler to
+        session_dir: Session directory to mirror in logs/. If None, uses flat logs/ dir.
+    """
+    if session_dir:
+        log_path = LOGS_DIR / session_dir.name
+    else:
+        log_path = LOGS_DIR
     log_path.mkdir(parents=True, exist_ok=True)
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

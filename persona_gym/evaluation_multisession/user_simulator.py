@@ -58,7 +58,7 @@ class MultiSessionUserSimulator:
         )
 
         return render_prompt(
-            "evaluation/user_simulator_system_v2",
+            "evaluation/user_simulator_system",
             persona_summary=self.task.persona_summary,
             evaluation_event=self.task.evaluation_event.event,
             required_preferences=prefs_formatted,

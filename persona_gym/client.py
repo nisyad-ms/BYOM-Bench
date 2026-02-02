@@ -175,12 +175,14 @@ class LLMClient:
         self,
         messages: list[dict[str, str]],
         max_tokens: int = 2048,
+        temperature: float = 1.0,
     ) -> str:
         """Generate a completion from a list of messages.
 
         Args:
             messages: List of message dicts with "role" and "content" keys.
             max_tokens: Maximum tokens in response.
+            temperature: Sampling temperature.
 
         Returns:
             The generated text response.
@@ -189,6 +191,7 @@ class LLMClient:
             model=self.deployment,
             input=messages,
             max_output_tokens=max_tokens,
+            temperature=temperature,
         )
 
         return response.output_text

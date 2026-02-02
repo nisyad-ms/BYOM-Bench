@@ -9,6 +9,7 @@ Usage:
 
 import argparse
 import json
+import time
 
 from utils import add_file_logging, create_session_dir, get_session_path, setup_logging
 
@@ -29,6 +30,7 @@ def main():
 
     persona = args.persona or DEFAULT_PERSONA
     session_dir = create_session_dir()
+    add_file_logging(logger, session_dir)
     output_path = get_session_path(session_dir)
 
     generator = MultiSessionGenerator(
@@ -44,5 +46,7 @@ def main():
 
 
 if __name__ == "__main__":
-    add_file_logging(logger)
+    start_time = time.time()
     main()
+    elapsed = time.time() - start_time
+    print(f"Time taken: {elapsed:.1f}s")
