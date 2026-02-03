@@ -8,9 +8,9 @@ if recommendations don't match those preferences.
 
 import logging
 
-from persona_gym.client import CONFIG, LLMClient
-from persona_gym.prompts import render_prompt
-from persona_gym.schemas import EvaluationTask
+from memory_gym.client import CONFIG, LLMClient
+from memory_gym.prompts import render_prompt
+from memory_gym.schemas import EvaluationTask
 
 logger = logging.getLogger(__name__)
 
@@ -52,10 +52,7 @@ class MultiSessionUserSimulator:
 
     def _build_system_prompt(self) -> str:
         """Build the system prompt for the user simulator."""
-        prefs_formatted = "\n".join(
-            f"- {p['fact']}"
-            for p in self.required_preferences
-        )
+        prefs_formatted = "\n".join(f"- {p['fact']}" for p in self.required_preferences)
 
         return render_prompt(
             "evaluation/user_simulator_system",
@@ -130,9 +127,7 @@ class MultiSessionUserSimulator:
                 ]
                 if any(phrase in last_user for phrase in end_phrases):
                     # Check it's actually an ending, not mid-conversation thanks
-                    if len(last_user) < 100 and (
-                        "?" not in last_user or last_user.strip().endswith("!")
-                    ):
+                    if len(last_user) < 100 and ("?" not in last_user or last_user.strip().endswith("!")):
                         return True
 
         return False

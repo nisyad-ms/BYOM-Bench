@@ -41,8 +41,8 @@ def run_single_evaluation(
     force_recreate_memory: bool = False,
 ):
     """Run evaluation for a single task."""
-    from persona_gym.evaluation_multisession import run_evaluation
-    from persona_gym.schemas import EvaluationTask, MultiSessionOutput
+    from memory_gym.evaluation_multisession import run_evaluation
+    from memory_gym.schemas import EvaluationTask, MultiSessionOutput
 
     task_num = extract_task_num(task_path) or 1
     output_path = get_eval_path(session_dir, task_num, agent_type)
@@ -81,8 +81,8 @@ async def run_all_evaluations(
     max_agent_turns: int,
 ):
     """Run evaluations for all tasks in parallel."""
-    from persona_gym.evaluation_multisession import run_evaluations_parallel
-    from persona_gym.schemas import EvaluationTask, MultiSessionOutput
+    from memory_gym.evaluation_multisession import run_evaluations_parallel
+    from memory_gym.schemas import EvaluationTask, MultiSessionOutput
 
     session_file = get_session_path(session_dir)
 
@@ -98,14 +98,16 @@ async def run_all_evaluations(
             raw_task = json.load(f)
         eval_task = EvaluationTask.from_dict(raw_task)
 
-        contexts.append({
-            "multisession_data": data,
-            "eval_task": eval_task,
-            "agent_type": agent_type,
-            "memory_store_name": memory_store_name,
-            "max_agent_turns": max_agent_turns,
-            "task_path": task_path,
-        })
+        contexts.append(
+            {
+                "multisession_data": data,
+                "eval_task": eval_task,
+                "agent_type": agent_type,
+                "memory_store_name": memory_store_name,
+                "max_agent_turns": max_agent_turns,
+                "task_path": task_path,
+            }
+        )
 
     results = await run_evaluations_parallel(contexts)
 
@@ -124,16 +126,23 @@ async def run_all_evaluations(
 
 def main():
     parser = argparse.ArgumentParser(description="Test evaluation system")
-    parser.add_argument("--session", type=str, default=None,
-                        help="Session name (e.g., 2026-02-02_1414). Default: latest")
-    parser.add_argument("--task", type=str, default=None,
-                        help="Path to task file, or 'all' for all tasks (default: latest)")
-    parser.add_argument("--agent", type=str, choices=["context", "nocontext", "foundry"], default="context",
-                        help="Agent type: context, nocontext, or foundry")
-    parser.add_argument("--max-agent-turns", type=int, default=10,
-                        help="Maximum agent turns in dialogue")
-    parser.add_argument("--no-cache", action="store_true",
-                        help="Force recreate memory store from scratch (foundry agent only)")
+    parser.add_argument(
+        "--session", type=str, default=None, help="Session name (e.g., 2026-02-02_1414). Default: latest"
+    )
+    parser.add_argument(
+        "--task", type=str, default=None, help="Path to task file, or 'all' for all tasks (default: latest)"
+    )
+    parser.add_argument(
+        "--agent",
+        type=str,
+        choices=["context", "nocontext", "foundry"],
+        default="context",
+        help="Agent type: context, nocontext, or foundry",
+    )
+    parser.add_argument("--max-agent-turns", type=int, default=10, help="Maximum agent turns in dialogue")
+    parser.add_argument(
+        "--no-cache", action="store_true", help="Force recreate memory store from scratch (foundry agent only)"
+    )
     args = parser.parse_args()
 
     session_dir = get_session_dir(args.session)
@@ -154,12 +163,14 @@ def main():
             logger.error("No task files found. Run test_task_generation.py first.")
             sys.exit(1)
 
-        asyncio.run(run_all_evaluations(
-            session_dir,
-            task_paths,
-            args.agent,
-            args.max_agent_turns,
-        ))
+        asyncio.run(
+            run_all_evaluations(
+                session_dir,
+                task_paths,
+                args.agent,
+                args.max_agent_turns,
+            )
+        )
     else:
         if args.task:
             task_path = Path(args.task)

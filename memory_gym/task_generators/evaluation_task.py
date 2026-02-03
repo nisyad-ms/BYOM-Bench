@@ -17,9 +17,9 @@ import random
 import uuid
 from datetime import datetime
 
-from persona_gym.client import CONFIG, AsyncLLMPool, LLMClient
-from persona_gym.prompts import render_prompt
-from persona_gym.schemas import (
+from memory_gym.client import CONFIG, AsyncLLMPool, LLMClient
+from memory_gym.prompts import render_prompt
+from memory_gym.schemas import (
     EvaluationRubric,
     EvaluationTask,
     LifeEvent,
@@ -40,7 +40,7 @@ class EvaluationTaskGenerator:
     4. Creates user prompts and rubrics for evaluation
 
     Example usage:
-        >>> from persona_gym.task_generators import EvaluationTaskGenerator
+        >>> from memory_gym.task_generators import EvaluationTaskGenerator
         >>> generator = EvaluationTaskGenerator()
         >>> tasks = generator.generate_batch(multisession_output, num_tasks=3)
         >>> for task in tasks:
@@ -100,10 +100,7 @@ class EvaluationTaskGenerator:
 
         # Calculate required evolved preferences per task
         # Target 50% but at least MIN_EVOLVED_PREFS
-        num_evolved_required = max(
-            self.MIN_EVOLVED_PREFS,
-            int(prefs_per_task * self.EVOLVED_PREF_RATIO)
-        )
+        num_evolved_required = max(self.MIN_EVOLVED_PREFS, int(prefs_per_task * self.EVOLVED_PREF_RATIO))
         num_baseline_required = prefs_per_task - num_evolved_required
 
         # Validate we have enough preferences
@@ -117,8 +114,7 @@ class EvaluationTaskGenerator:
 
         if len(baseline_prefs) < num_baseline_required:
             logger.warning(
-                f"Only {len(baseline_prefs)} baseline preferences available, "
-                f"will adjust task preference count."
+                f"Only {len(baseline_prefs)} baseline preferences available, will adjust task preference count."
             )
             num_baseline_required = len(baseline_prefs)
 
@@ -201,33 +197,32 @@ class EvaluationTaskGenerator:
                 if pref_id in timeline.preferences:
                     selected_prefs.append(timeline.preferences[pref_id])
 
-            selected_evolved_ids = {p.preference_id for p in selected_prefs if p.preference_id in multisession_output.get_evolved_preference_ids()}
-            relevant_stale = [
-                old for old, new in evolutions
-                if new.preference_id in selected_evolved_ids
-            ]
+            selected_evolved_ids = {
+                p.preference_id
+                for p in selected_prefs
+                if p.preference_id in multisession_output.get_evolved_preference_ids()
+            }
+            relevant_stale = [old for old, new in evolutions if new.preference_id in selected_evolved_ids]
         else:
             selected_evolved = random.sample(evolved_prefs, min(num_evolved, len(evolved_prefs)))
             selected_baseline = random.sample(baseline_prefs, min(num_baseline, len(baseline_prefs)))
             selected_prefs = selected_evolved + selected_baseline
 
             selected_evolved_ids = {p.preference_id for p in selected_evolved}
-            relevant_stale = [
-                old for old, new in evolutions
-                if new.preference_id in selected_evolved_ids
-            ]
+            relevant_stale = [old for old, new in evolutions if new.preference_id in selected_evolved_ids]
 
             evaluation_event = self._generate_evaluation_event(
                 multisession_output=multisession_output,
                 required_prefs=selected_prefs,
-                required_evolutions=[(old, new) for old, new in evolutions if new.preference_id in selected_evolved_ids],
+                required_evolutions=[
+                    (old, new) for old, new in evolutions if new.preference_id in selected_evolved_ids
+                ],
                 num_evolved=len(selected_evolved),
                 num_baseline=len(selected_baseline),
             )
 
         logger.debug(
-            f"Task {task_index}: {len(selected_prefs)} prefs selected, "
-            f"{len(relevant_stale)} relevant stale traps"
+            f"Task {task_index}: {len(selected_prefs)} prefs selected, {len(relevant_stale)} relevant stale traps"
         )
 
         rubric = self._build_rubric(
@@ -361,10 +356,7 @@ class EvaluationTaskGenerator:
         """
         persona_summary = multisession_output.persona.split(".")[0] + "."
 
-        prefs_formatted = "\n".join(
-            f"- [{p.get('id', 'unknown')}] {p.get('fact', '')}"
-            for p in selected_prefs
-        )
+        prefs_formatted = "\n".join(f"- [{p.get('id', 'unknown')}] {p.get('fact', '')}" for p in selected_prefs)
 
         system_prompt = render_prompt(
             "task_generation/user_prompt_generator_system",
@@ -468,10 +460,7 @@ class EvaluationTaskGenerator:
         parts = []
         timeline = multisession_output.timeline
 
-        baseline_prefs = [
-            p for p in timeline.preferences.values()
-            if p.created_at_session == -1
-        ]
+        baseline_prefs = [p for p in timeline.preferences.values() if p.created_at_session == -1]
         if baseline_prefs:
             parts.append("CORE PREFERENCES (before any life events):\n")
             by_domain: dict[str, list[Preference]] = {}
@@ -484,7 +473,9 @@ class EvaluationTaskGenerator:
                     if pref.is_active:
                         parts.append(f"  - [{pref.preference_id}] {pref.fact}")
                     else:
-                        parts.append(f"  - [{pref.preference_id}] {pref.fact} [CHANGED in session {pref.superseded_at_session}]")
+                        parts.append(
+                            f"  - [{pref.preference_id}] {pref.fact} [CHANGED in session {pref.superseded_at_session}]"
+                        )
                 parts.append("")
 
         if multisession_output.sessions:
@@ -494,8 +485,7 @@ class EvaluationTaskGenerator:
                 parts.append(f"Session {session.session_id}: {event.event}\n")
 
                 non_evolved_new = [
-                    pid for pid in session.new_preference_ids
-                    if pid not in session.evolved_preference_ids.values()
+                    pid for pid in session.new_preference_ids if pid not in session.evolved_preference_ids.values()
                 ]
                 if non_evolved_new:
                     parts.append("  New preferences:")
@@ -511,8 +501,8 @@ class EvaluationTaskGenerator:
                         old_pref = timeline.preferences.get(old_id)
                         new_pref = timeline.preferences.get(new_id)
                         if old_pref and new_pref:
-                            parts.append(f"    - [{new_id}] EVOLVED from [{old_id}]: \"{old_pref.fact}\"")
-                            parts.append(f"      → \"{new_pref.fact}\"")
+                            parts.append(f'    - [{new_id}] EVOLVED from [{old_id}]: "{old_pref.fact}"')
+                            parts.append(f'      → "{new_pref.fact}"')
                     parts.append("")
 
         return "\n".join(parts)
@@ -627,8 +617,8 @@ def generate_evaluation_tasks(
         List of EvaluationTask objects ready for evaluation
 
     Example:
-        >>> from persona_gym.task_generators import generate_evaluation_tasks
-        >>> from persona_gym.schemas import MultiSessionOutput
+        >>> from memory_gym.task_generators import generate_evaluation_tasks
+        >>> from memory_gym.schemas import MultiSessionOutput
         >>> import json
         >>> with open("outputs/sessions/data_generation_output.json") as f:
         ...     data = MultiSessionOutput.from_dict(json.load(f))

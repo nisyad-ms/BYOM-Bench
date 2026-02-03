@@ -5,9 +5,9 @@ import sys
 
 sys.path.insert(0, ".")
 
-from persona_gym.agents import ContextAwareAgent
-from persona_gym.client import LLMClient
-from persona_gym.schemas import MultiSessionOutput
+from memory_gym.agents import ContextAwareAgent
+from memory_gym.client import LLMClient
+from memory_gym.schemas import MultiSessionOutput
 from test_prompts._utils import load_latest_session, save_prompt
 
 

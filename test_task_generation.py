@@ -43,7 +43,7 @@ def get_existing_events(session_dir: Path) -> list[str]:
 
 def generate_tasks(data, session_dir: Path, start_task_num: int, count: int):
     """Generate tasks sequentially, sharing previous events for diversity."""
-    from persona_gym.task_generators import generate_evaluation_tasks
+    from memory_gym.task_generators import generate_evaluation_tasks
 
     previous_events = get_existing_events(session_dir)
     logger.info(f"Found {len(previous_events)} existing task events")
@@ -68,10 +68,10 @@ def generate_tasks(data, session_dir: Path, start_task_num: int, count: int):
 
 def main():
     parser = argparse.ArgumentParser(description="Test evaluation task generation")
-    parser.add_argument("--session", type=str, default=None,
-                        help="Path to session dir or file (default: latest)")
-    parser.add_argument("--count", type=int, default=1,
-                        help="Number of tasks to generate (default: 1, uses parallel if > 1)")
+    parser.add_argument("--session", type=str, default=None, help="Path to session dir or file (default: latest)")
+    parser.add_argument(
+        "--count", type=int, default=1, help="Number of tasks to generate (default: 1, uses parallel if > 1)"
+    )
     args = parser.parse_args()
 
     session_dir = get_session_dir(args.session)
@@ -86,7 +86,7 @@ def main():
         logger.error(f"Session file not found: {session_file}")
         sys.exit(1)
 
-    from persona_gym.schemas import MultiSessionOutput
+    from memory_gym.schemas import MultiSessionOutput
 
     with open(session_file, "r", encoding="utf-8") as f:
         raw_data = json.load(f)

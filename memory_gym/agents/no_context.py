@@ -1,7 +1,7 @@
 """No-context agent (baseline) with no memory of past conversations."""
 
-from persona_gym.prompts import render_prompt
-from persona_gym.schemas import MultiSessionOutput
+from memory_gym.prompts import render_prompt
+from memory_gym.schemas import MultiSessionOutput
 
 from .base import BaseAgent
 

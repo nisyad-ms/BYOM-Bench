@@ -10,9 +10,9 @@ import json
 import logging
 from typing import Any
 
-from persona_gym.client import CONFIG, LLMClient
-from persona_gym.prompts import render_prompt
-from persona_gym.schemas import (
+from memory_gym.client import CONFIG, LLMClient
+from memory_gym.prompts import render_prompt
+from memory_gym.schemas import (
     EvaluationRubric,
     EvaluationTask,
     LifeEvent,
@@ -135,24 +135,13 @@ class MultiSessionJudge:
         first_mention_trace = pref_result.get("first_mention_trace", [])
         turn_classifications = eff_result.get("turn_classifications", [])
 
-        preference_usage = {
-            entry.get("preference_id"): entry.get("usage", "ignored")
-            for entry in first_mention_trace
-        }
+        preference_usage = {entry.get("preference_id"): entry.get("usage", "ignored") for entry in first_mention_trace}
 
-        stale_used = [
-            entry.get("preference_id")
-            for entry in first_mention_trace
-            if entry.get("stale_used", False)
-        ]
+        stale_used = [entry.get("preference_id") for entry in first_mention_trace if entry.get("stale_used", False)]
 
-        proactive_count, stale_count, preference_score = self._calculate_preference_score(
-            first_mention_trace
-        )
+        proactive_count, stale_count, preference_score = self._calculate_preference_score(first_mention_trace)
 
-        turn_counts, efficiency_score = self._calculate_efficiency_score(
-            turn_classifications, agent_turns
-        )
+        turn_counts, efficiency_score = self._calculate_efficiency_score(turn_classifications, agent_turns)
 
         return MultiSessionEvaluationResult(
             task_id=task_id,
@@ -175,9 +164,7 @@ class MultiSessionJudge:
             preference_score=preference_score,
         )
 
-    def _calculate_preference_score(
-        self, first_mention_trace: list[dict[str, Any]]
-    ) -> tuple[int, int, float]:
+    def _calculate_preference_score(self, first_mention_trace: list[dict[str, Any]]) -> tuple[int, int, float]:
         """Calculate preference score from first_mention_trace.
 
         Returns:
@@ -188,8 +175,7 @@ class MultiSessionJudge:
             return 0, 0, 0.0
 
         proactive_count = sum(
-            1 for e in first_mention_trace
-            if e.get("usage") == "proactive" and not e.get("stale_used", False)
+            1 for e in first_mention_trace if e.get("usage") == "proactive" and not e.get("stale_used", False)
         )
         stale_count = sum(1 for e in first_mention_trace if e.get("stale_used", False))
 

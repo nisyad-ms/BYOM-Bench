@@ -1,10 +1,10 @@
-# PersonaGym
+# MemoryGym
 
 A benchmark for evaluating LLM personalization through multi-session conversations with evolving user preferences.
 
 ## Overview
 
-PersonaGym measures how well AI agents remember and proactively use user preferences across multiple conversation sessions. Preferences evolve over time due to life events, testing whether agents can:
+MemoryGym measures how well AI agents remember and proactively use user preferences across multiple conversation sessions. Preferences evolve over time due to life events, testing whether agents can:
 
 - **Recall and apply current preferences** proactively without being asked
 - **Avoid using stale/superseded preferences** that have been replaced
@@ -12,13 +12,13 @@ PersonaGym measures how well AI agents remember and proactively use user prefere
 
 ### How Evaluation Works
 
-Unlike simple Q&A benchmarks, PersonaGym evaluates agents through **multi-turn task completion**. At evaluation time, the agent is given a complex task (e.g., "plan a week-long meal plan") that requires proactively applying multiple user preferences to complete successfully. A simulated user interacts with the agent, and evaluation metrics are calculated based on the entire conversation—measuring whether the agent applied preferences before being asked, avoided stale preferences, and completed the task efficiently.
+Unlike simple Q&A benchmarks, MemoryGym evaluates agents through **multi-turn task completion**. At evaluation time, the agent is given a complex task (e.g., "plan a week-long meal plan") that requires proactively applying multiple user preferences to complete successfully. A simulated user interacts with the agent, and evaluation metrics are calculated based on the entire conversation—measuring whether the agent applied preferences before being asked, avoided stale preferences, and completed the task efficiently.
 
 ## Pipeline Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                          PersonaGym Pipeline                                │
+│                          MemoryGym Pipeline                                │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
 │  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐      │
@@ -35,12 +35,14 @@ Unlike simple Q&A benchmarks, PersonaGym evaluates agents through **multi-turn t
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+For a detailed explanation of the pipeline, see [docs/pipeline_overview.md](docs/pipeline_overview.md).
+
 ## Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/persona_gym.git
-cd persona_gym
+git clone https://github.com/your-org/memory_gym.git
+cd memory_gym
 
 # Install with uv (recommended)
 uv sync
@@ -172,7 +174,7 @@ efficiency_score = max(0, (agent_turns - 0.5 × clarifying - corrections) / agen
 ## Project Structure
 
 ```
-persona_gym/
+memory_gym/
 ├── configs/
 │   ├── client_config.yaml      # LLM client settings
 │   └── prompt_config.yaml      # Prompt version configuration
@@ -186,7 +188,7 @@ persona_gym/
 │       └── evaluation/         # Stage 3 output
 │           └── eval_XX_<agent>.json
 ├── logs/                       # Log files (mirrors output structure)
-├── persona_gym/                # Main package
+├── memory_gym/                # Main package
 │   ├── agents/                 # Agent implementations
 │   │   ├── base.py             # ContextAwareAgent, NoContextAgent
 │   │   └── foundry_agent.py    # FoundryMemoryAgent
@@ -230,5 +232,5 @@ ruff check .
 ruff format .
 
 # Type checking
-mypy persona_gym
+mypy memory_gym
 ```

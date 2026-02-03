@@ -6,8 +6,8 @@ import sys
 
 sys.path.insert(0, ".")
 
-from persona_gym.prompts import render_prompt
-from persona_gym.schemas import ExpandedPersona, MultiSessionOutput
+from memory_gym.prompts import render_prompt
+from memory_gym.schemas import ExpandedPersona, MultiSessionOutput
 from test_prompts._utils import load_latest_session, save_prompt
 
 
@@ -26,8 +26,7 @@ def main():
     life_event = session.life_event
 
     active_prefs = [
-        {"id": p.preference_id, "fact": p.fact, "domain": p.domain}
-        for p in data.get_current_preferences()[:15]
+        {"id": p.preference_id, "fact": p.fact, "domain": p.domain} for p in data.get_current_preferences()[:15]
     ]
     active_prefs_json = json.dumps(active_prefs, indent=2, ensure_ascii=False)
 

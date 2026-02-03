@@ -8,7 +8,7 @@ metadata describing their purpose and usage.
 Prompt versions are controlled via prompt_config.yaml at project root.
 
 Usage:
-    from persona_gym.prompts import render_prompt
+    from memory_gym.prompts import render_prompt
 
     # Render with variables (version resolved from config)
     text = render_prompt(

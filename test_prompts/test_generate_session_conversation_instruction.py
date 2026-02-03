@@ -6,8 +6,8 @@ import sys
 
 sys.path.insert(0, ".")
 
-from persona_gym.prompts import render_prompt
-from persona_gym.schemas import ExpandedPersona, MultiSessionOutput
+from memory_gym.prompts import render_prompt
+from memory_gym.schemas import ExpandedPersona, MultiSessionOutput
 from test_prompts._utils import load_latest_session, save_prompt
 
 
@@ -26,8 +26,7 @@ def main():
     life_event = session.life_event
 
     active_prefs = [
-        {"id": p.preference_id, "fact": p.fact, "domain": p.domain}
-        for p in data.get_current_preferences()[:10]
+        {"id": p.preference_id, "fact": p.fact, "domain": p.domain} for p in data.get_current_preferences()[:10]
     ]
     active_prefs_json = json.dumps(active_prefs, indent=2, ensure_ascii=False)
 
@@ -37,11 +36,13 @@ def main():
         old_pref = pref_by_id.get(old_id)
         new_pref = pref_by_id.get(new_id)
         if old_pref and new_pref:
-            evolved_prefs.append({
-                "old_fact": old_pref.fact,
-                "new_fact": new_pref.fact,
-                "reason": new_pref.reason_for_change or old_pref.reason_for_change or "",
-            })
+            evolved_prefs.append(
+                {
+                    "old_fact": old_pref.fact,
+                    "new_fact": new_pref.fact,
+                    "reason": new_pref.reason_for_change or old_pref.reason_for_change or "",
+                }
+            )
     evolved_prefs_json = json.dumps(evolved_prefs, indent=2) if evolved_prefs else "None"
 
     prompt = render_prompt(

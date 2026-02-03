@@ -6,7 +6,7 @@ import sys
 
 sys.path.insert(0, ".")
 
-from persona_gym.prompts import render_prompt
+from memory_gym.prompts import render_prompt
 from test_prompts._utils import load_latest_task, save_prompt
 
 
@@ -52,10 +52,7 @@ def main():
         ]
         print("No evaluation found, using sample conversation based on task")
 
-    conv_formatted = "\n".join(
-        f"{turn['role'].capitalize()}: {turn['content']}"
-        for turn in conversation
-    )
+    conv_formatted = "\n".join(f"{turn['role'].capitalize()}: {turn['content']}" for turn in conversation)
 
     agent_message = ""
     for turn in reversed(conversation):

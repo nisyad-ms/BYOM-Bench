@@ -13,14 +13,14 @@ import logging
 from pathlib import Path
 from typing import Any, Literal
 
-from persona_gym.agents import ContextAwareAgent, FoundryMemoryAgent, NoContextAgent
-from persona_gym.client import AsyncLLMPool, LLMClient
-from persona_gym.schemas import (
+from memory_gym.agents import ContextAwareAgent, FoundryMemoryAgent, NoContextAgent
+from memory_gym.client import AsyncLLMPool, LLMClient
+from memory_gym.schemas import (
     EvaluationTask,
     MultiSessionEvaluationResult,
     MultiSessionOutput,
 )
-from persona_gym.task_generators import EvaluationTaskGenerator
+from memory_gym.task_generators import EvaluationTaskGenerator
 
 from .judge import MultiSessionJudge
 from .user_simulator import MultiSessionUserSimulator
@@ -95,7 +95,9 @@ def run_evaluation(
     logger.info("Evaluating dialogue with judge...")
     judge = MultiSessionJudge(client)
     result = judge.evaluate(eval_task, conversation)
-    logger.info(f"Evaluation complete. Preference: {result.preference_score:.2f}, Efficiency: {result.efficiency_score:.2f}")
+    logger.info(
+        f"Evaluation complete. Preference: {result.preference_score:.2f}, Efficiency: {result.efficiency_score:.2f}"
+    )
 
     return result
 
@@ -220,9 +222,7 @@ if __name__ == "__main__":
 
     logging.basicConfig(level=logging.INFO)
 
-    parser = argparse.ArgumentParser(
-        description="Run multi-session preference recall evaluation"
-    )
+    parser = argparse.ArgumentParser(description="Run multi-session preference recall evaluation")
     parser.add_argument(
         "--input",
         required=True,
@@ -246,9 +246,9 @@ if __name__ == "__main__":
         max_agent_turns=args.max_agent_turns,
     )
 
-    print(f"\n{'='*50}")
+    print(f"\n{'=' * 50}")
     print("EVALUATION RESULTS")
-    print(f"{'='*50}")
+    print(f"{'=' * 50}")
     print(f"Total Turns: {result.total_turns}")
     print(f"Correction Turns: {result.correction_turns}")
     print(f"Efficiency Score: {result.efficiency_score:.2f}")

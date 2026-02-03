@@ -5,8 +5,8 @@ import sys
 
 sys.path.insert(0, ".")
 
-from persona_gym.prompts import render_prompt
-from persona_gym.schemas import ExpandedPersona
+from memory_gym.prompts import render_prompt
+from memory_gym.schemas import ExpandedPersona
 from test_prompts._utils import load_latest_session, save_prompt
 
 

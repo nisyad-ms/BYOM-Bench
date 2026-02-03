@@ -14,14 +14,14 @@ from azure.identity import DefaultAzureCredential
 # Initialize the client
 client = AIProjectClient(
     endpoint="https://docimage-dev-foundry-wus.services.ai.azure.com/api/projects/docimage-dev-foundry-wus",
-    credential=DefaultAzureCredential()
+    credential=DefaultAzureCredential(),
 )
 
 # Create memory store
 definition = MemoryStoreDefaultDefinition(
     chat_model="gpt-4.1-001",  # Your chat model deployment name
     embedding_model="text-embedding-3-small-001",  # Your embedding model deployment name
-    options=MemoryStoreDefaultOptions(user_profile_enabled=True, chat_summary_enabled=True)
+    options=MemoryStoreDefaultOptions(user_profile_enabled=True, chat_summary_enabled=True),
 )
 
 MEMORY_STORE_NAME = "my_memory_store_ny"
@@ -59,9 +59,7 @@ simple_test_thread = [
     ],
 ]
 
-simple_query_thread = [
-    ResponsesUserMessageItemParam(content="What items do I have?")
-]
+simple_query_thread = [ResponsesUserMessageItemParam(content="What items do I have?")]
 
 
 scope = "user_123"
@@ -71,7 +69,9 @@ for i, thread in enumerate(simple_test_thread):
         name=MEMORY_STORE_NAME,
         scope=scope,
         items=thread,  # Pass conversation items that you want to add to memory
-        previous_update_id=update_poller.update_id if i > 0 else None,  # Extend from previous update ID  # noqa: F821  # ty:ignore[unresolved-reference]
+        previous_update_id=update_poller.update_id
+        if i > 0
+        else None,  # Extend from previous update ID  # noqa: F821  # ty:ignore[unresolved-reference]
         update_delay=0,  # Trigger update immediately without waiting for inactivity
     )
 
@@ -85,10 +85,7 @@ for i, thread in enumerate(simple_test_thread):
 
 # Sanity check - search memories with sample query
 result = client.memory_stores.search_memories(
-    name=MEMORY_STORE_NAME,
-    scope=scope,
-    items=simple_query_thread,
-    options=MemorySearchOptions(max_memories=5)
+    name=MEMORY_STORE_NAME, scope=scope, items=simple_query_thread, options=MemorySearchOptions(max_memories=5)
 )
 
 print("Sample Search Results:")
@@ -100,7 +97,7 @@ for memory in result.memories:
 tool = MemorySearchTool(
     memory_store_name=MEMORY_STORE_NAME,
     scope=scope,
-    update_delay=300  # Wait 5 minutes of inactivity before updating memories
+    update_delay=300,  # Wait 5 minutes of inactivity before updating memories
 )
 
 # Create a prompt agent with memory search tool
@@ -110,7 +107,7 @@ agent = client.agents.create_version(
         model="gpt-4.1-001",  # Use the correct deployment name
         instructions="You are a helpful assistant that answers general questions",
         tools=[tool],
-    )
+    ),
 )
 
 # Now create a conversation with the agent

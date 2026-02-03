@@ -10,7 +10,7 @@ set -e
 # uv run python test_task_generation.py --session "$SESSION_DIR" --count 3
 # echo ""
 
-SESSION_DIR="/home/nisyad/repos/persona_gym/outputs/2026-02-02_1414/sessions.json"
+SESSION_DIR="/home/nisyad/repos/memory_gym/outputs/2026-02-02_1414/sessions.json"
 
 echo "=== Stage 3a: Evaluation (context agent) ==="
 uv run python test_evaluation.py --session "$SESSION_DIR" --task all --agent context

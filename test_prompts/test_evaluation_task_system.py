@@ -5,7 +5,7 @@ import sys
 
 sys.path.insert(0, ".")
 
-from persona_gym.prompts import render_prompt
+from memory_gym.prompts import render_prompt
 from test_prompts._utils import save_prompt
 
 

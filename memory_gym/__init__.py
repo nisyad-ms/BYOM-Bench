@@ -12,7 +12,7 @@ Main modules:
     - client: Shared LLM client
 
 Usage:
-    from persona_gym.data_generators import MultiSessionGenerator
+    from memory_gym.data_generators import MultiSessionGenerator
 
     # Generate multi-session data with preference evolution
     generator = MultiSessionGenerator(
@@ -22,13 +22,13 @@ Usage:
     result = generator.generate_multi_session()
 
     # Generate evaluation task (inspect without full evaluation)
-    from persona_gym.task_generators import generate_evaluation_task
+    from memory_gym.task_generators import generate_evaluation_task
     task = generate_evaluation_task(result)
     print(task.evaluation_event.task_internal)
     print(task.rubric.required_preferences)
 
     # Run full evaluation
-    from persona_gym.evaluation_multisession import run_evaluation
+    from memory_gym.evaluation_multisession import run_evaluation
     eval_result = run_evaluation(result, include_history=True)
 """
 
@@ -36,8 +36,8 @@ __version__ = "0.1.0"
 
 # Don't import submodules here to avoid circular imports
 # Users should import directly from submodules:
-#   from persona_gym.schemas import ...
-#   from persona_gym.data_generators import ...
-#   from persona_gym.task_generators import ...
+#   from memory_gym.schemas import ...
+#   from memory_gym.data_generators import ...
+#   from memory_gym.task_generators import ...
 
 __all__ = ["__version__"]

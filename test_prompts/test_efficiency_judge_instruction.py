@@ -6,7 +6,7 @@ import sys
 
 sys.path.insert(0, ".")
 
-from persona_gym.prompts import render_prompt
+from memory_gym.prompts import render_prompt
 from test_prompts._utils import load_latest_task, save_prompt
 
 
@@ -46,7 +46,10 @@ def main():
         print(f"Using evaluation: {eval_path}")
     else:
         transcript = [
-            {"role": "user", "content": task_data.get("evaluation_event", {}).get("user_prompt", "I need help with something.")},
+            {
+                "role": "user",
+                "content": task_data.get("evaluation_event", {}).get("user_prompt", "I need help with something."),
+            },
             {"role": "assistant", "content": "I'd be happy to help! What specifically do you need?"},
             {"role": "user", "content": "Can you suggest some activities for this weekend?"},
             {"role": "assistant", "content": "Sure! What kind of activities do you enjoy?"},

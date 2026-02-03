@@ -26,7 +26,7 @@ def main():
     parser.add_argument("--persona", type=str, default=None, help="Custom persona description")
     args = parser.parse_args()
 
-    from persona_gym.data_generators import MultiSessionGenerator
+    from memory_gym.data_generators import MultiSessionGenerator
 
     persona = args.persona or DEFAULT_PERSONA
     session_dir = create_session_dir()

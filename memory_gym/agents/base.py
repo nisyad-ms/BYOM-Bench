@@ -2,8 +2,8 @@
 
 from abc import ABC, abstractmethod
 
-from persona_gym.client import CONFIG, LLMClient
-from persona_gym.schemas import MultiSessionOutput
+from memory_gym.client import CONFIG, LLMClient
+from memory_gym.schemas import MultiSessionOutput
 
 
 class BaseAgent(ABC):

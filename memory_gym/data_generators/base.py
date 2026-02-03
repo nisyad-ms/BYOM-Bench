@@ -8,7 +8,7 @@ the generate() method to produce DataGenerationOutput.
 from abc import ABC, abstractmethod
 from typing import Optional
 
-from persona_gym.schemas import DataGenerationOutput
+from memory_gym.schemas import DataGenerationOutput
 
 
 class BaseDataGenerator(ABC):

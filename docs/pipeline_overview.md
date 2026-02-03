@@ -1,691 +1,324 @@
-# PersonaGym Pipeline Overview
+# MemoryGym Pipeline Overview
 
-This document provides a comprehensive overview of the PersonaGym pipeline, covering data generation, task generation, and evaluation.
+End-to-end synthetic benchmark for evaluating agentic memory in LLMs.
 
 ## High-Level Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                    PersonaGym Pipeline                                              │
-├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                                     │
-│  ╔═══════════════════════════════╗                                                                  │
-│  ║     INPUT: Persona Hub        ║                                                                  │
-│  ║   (200K persona descriptions) ║                                                                  │
-│  ╚═══════════════╤═══════════════╝                                                                  │
-│                  │                                                                                  │
-│                  ▼                                                                                  │
-│  ┌───────────────────────────────┐     ┌───────────────────────────────┐     ┌─────────────────────┐│
-│  │    1. DATA GENERATION         │     │    2. TASK GENERATION         │     │   3. EVALUATION     ││
-│  │    ════════════════════       │     │    ═══════════════════        │     │   ════════════      ││
-│  │                               │     │                               │     │                     ││
-│  │  ┌─────────────────────────┐  │     │  ┌─────────────────────────┐  │     │  ┌───────────────┐  ││
-│  │  │ 1. Expand Persona       │  │     │  │ 1. Extract Preferences  │  │     │  │ Agent Types:  │  ││
-│  │  │    (name, traits, bio)  │  │     │  │    from Side Notes      │  │     │  │ • ContextAware│  ││
-│  │  ├─────────────────────────┤  │     │  ├─────────────────────────┤  │     │  │ • NoContext   │  ││
-│  │  │ 2. Generate History     │  │     │  │ 2. Select Task Template │  │     │  │ • (Future:    │  ││
-│  │  │    (events over years)  │  │     │  │    (flight, hotel, etc) │  │     │  │   MemoryAgent)│  ││
-│  │  ├─────────────────────────┤  │     │  ├─────────────────────────┤  │     │  └───────────────┘  ││
-│  │  │ 3. Create Conversation  │  │     │  │ 3. Map Preferences to   │  │     │         │           ││
-│  │  │    (User ↔ Assistant)   │  │     │  │    Task Requirements    │  │     │         ▼           ││
-│  │  ├─────────────────────────┤  │     │  ├─────────────────────────┤  │     │  ┌───────────────┐  ││
-│  │  │ 4. Reflect & Expand     │  │     │  │ 4. Generate "Trap"      │  │     │  │ Dialogue Loop │  ││
-│  │  │    (improve quality)    │  │     │  │    Results (test memory)│  │     │  │ Agent ↔ User  │  ││
-│  │  ├─────────────────────────┤  │     │  ├─────────────────────────┤  │     │  │ + Tool Calls  │  ││
-│  │  │ 5. Parse & Validate     │  │     │  │ 5. Define Expected      │  │     │  └───────────────┘  ││
-│  │  │    (enforce alternation)│  │     │  │    Agent Behaviors      │  │     │         │           ││
-│  │  └─────────────────────────┘  │     │  └─────────────────────────┘  │     │         ▼           ││
-│  │               │               │     │               │               │     │  ┌───────────────┐  ││
-│  │               ▼               │     │               ▼               │     │  │ LLM-as-Judge  │  ││
-│  │  ┌─────────────────────────┐  │     │  ┌─────────────────────────┐  │     │  │ Turn Classify │  ││
-│  │  │ OUTPUT:                 │  │     │  │ OUTPUT:                 │  │     │  └───────────────┘  ││
-│  │  │ • Conversation JSON     │  │     │  │ • TOD Tasks (JSONL)     │  │     │         │           ││
-│  │  │   (turns + side_notes)  │  │     │  │   - task description    │  │     │         ▼           ││
-│  │  │ • Artifacts JSON        │  │     │  │   - tool schemas        │  │     │  ┌───────────────┐  ││
-│  │  │   (persona, history,    │  │     │  │   - relevant prefs      │  │     │  │ METRICS:      │  ││
-│  │  │    preferences)         │  │     │  │                         │  │     │  │ • Pref Recall │  ││
-│  │  └─────────────────────────┘  │     │  └─────────────────────────┘  │     │  │ • Turn Effic. │  ││
-│  │                               │     │                               │     │  │ • Task Compl. │  ││
-│  └───────────────┬───────────────┘     └───────────────┬───────────────┘     │  └───────────────┘  ││
-│                  │                                     │                     │                     ││
-│                  │         ┌───────────────────────────┘                     └──────────┬──────────┘│
-│                  │         │                                                            │           │
-│                  ▼         ▼                                                            ▼           │
-│  ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗  │
-│  ║  DATA FLOW:  Persona ──▶ Conversation + Preferences ──▶ TOD Tasks ──▶ Agent Evaluation Scores ║  │
-│  ╚═══════════════════════════════════════════════════════════════════════════════════════════════╝  │
-│                                                                                                     │
-└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
-```
-
-### Stage 1: Data Generation — Creating Realistic User Profiles & Conversations
-
-**Goal:** Generate synthetic but realistic user-assistant conversations where users naturally reveal their preferences, habits, and life events over time.
-
-| Step | What Happens | Output |
-|------|--------------|--------|
-| **1.1 Load Persona** | Sample a base persona from Persona Hub (200K personas) | Raw persona description |
-| **1.2 Expand Persona** | LLM enriches persona with name, demographics, personality traits | Detailed persona profile |
-| **1.3 Generate Personal History** | Create timeline of life events, preferences, likes/dislikes spanning years | Dated events (Long-term & Short-term) |
-| **1.4 Elaborate Topic** | Define what aspects of the topic (e.g., travel) the user might discuss | Topic elaboration |
-| **1.5 Generate Conversation** | Create multi-turn dialogue where user naturally mentions their history | Raw conversation with Side Notes |
-| **1.6 Reflect & Expand** | Improve conversation quality, ensure all events are covered, expand sections | Refined conversation |
-| **1.7 Parse & Validate** | Convert to structured format, enforce User↔Assistant alternation | Final conversation JSON |
-
-**Key Artifacts:**
-- **Personal History Events:** Dated entries like "08/17/1954: Launched local radio show..." with Long-Term/Short-Term categories
-- **Preferences:** Likes (window seats, vegetarian food), Dislikes (cruises, adventure sports), Habits (planned travel, writing journals)
-- **Side Notes:** Annotations linking each user turn to the original persona fact being revealed
-
----
-
-### Stage 2: Task Generation — Creating Evaluation Tasks from User Profiles
-
-**Goal:** Generate realistic Task-Oriented Dialogue (TOD) tasks that test whether an agent can recall and apply the user's preferences from their conversation history.
-
-**Inputs:**
-- Processed conversation with embedded preferences (from Stage 1)
-- Topic-specific task templates (flight booking, hotel search, etc.)
-
-| Step | What Happens | Output |
-|------|--------------|--------|
-| **2.1 Extract Preferences** | Parse Side Notes to identify all user preferences from conversation | List of preferences with categories |
-| **2.2 Select Task Template** | Choose appropriate task type for the topic (e.g., "Book a flight") | Task template with tool schemas |
-| **2.3 Map Relevant Preferences** | Identify which preferences apply to this specific task | Relevant preference list |
-| **2.4 Define Expected Behaviors** | Specify how agent should handle each preference (proactive use) | Expected usage patterns |
-| **2.5 Generate Task & Tools** | Create task description and OpenAI-style tool schemas | Complete TOD task definition |
-
-**Key Outputs:**
-- **Task Description:** "Book a flight from NYC to Paris for April 15th"
-- **Tool Schemas:** OpenAI-style function definitions (search_flights, book_flight, select_seat)
-- **Relevant Preferences:** User prefers window seats, avoids red-eye flights, likes specific airlines
-- **Expected Behaviors:** "Should proactively request window seat", "Should avoid suggesting red-eye flights"
-
----
-
-### Stage 3: Evaluation — Measuring Agent Memory & Preference Recall
-
-**Goal:** Assess how well an agent remembers and proactively applies user preferences during task completion, without requiring the user to repeat themselves.
-
-**Inputs:**
-- TOD Tasks (from Stage 2)
-- Conversation History (context for ContextAwareAgent)
-- Agent to evaluate (ContextAware vs NoContext baseline)
-
-| What is Evaluated | Metric | What It Measures |
-|-------------------|--------|------------------|
-| **Preference Usage** | **Preference Recall** | Did the agent proactively use known preferences without being reminded? |
-| **Dialogue Efficiency** | **Turn Efficiency** | Did the agent avoid unnecessary clarification questions about stated preferences? |
-| **Task Success** | **Task Completion** | Did the agent successfully complete the requested task? |
-| **Error Handling** | **Correction Penalty** | How often did the user need to correct the agent's mistakes? |
-
-**Metric Details:**
-
-| Metric | Formula | Interpretation |
-|--------|---------|----------------|
-| **Preference Recall** | `(# proactively used) / (# relevant preferences)` | 1.0 = perfect memory, 0.0 = forgot everything |
-| **Turn Efficiency** | `1 - (penalty_turns / total_turns)` | 1.0 = no wasted turns, lower = inefficient dialogue |
-| **Task Completion** | Binary (0 or 1) | Did the task get completed successfully? |
-| **Overall Score** | `0.5×recall + 0.3×efficiency + 0.2×completion` | Weighted combination favoring memory |
-
-**Turn Classification (LLM-as-Judge):**
-- ✅ **Productive (+1.0):** Agent advances task, correctly applies preferences
-- ⚠️ **Justified Clarification (+0.5):** Agent asks about genuinely ambiguous/conflicting preferences
-- ❌ **Unnecessary Clarification (-0.25):** Agent asks about clearly stated preference (forgot it)
-- ❌ **Correction (-0.5):** User had to remind agent of forgotten preference
-- ❌ **Repeated Correction (-1.0):** Agent ignores correction or makes same mistake twice
-
----
-
----
-
-## Part 1: Data Generation
-
-**Entry Point:** `data_generators/`  
-**Core Module:** `multisession.py`
-
-The data generation pipeline creates synthetic user-assistant conversations grounded in persona histories. The goal is to produce conversations where users naturally reveal their preferences over time.
-
-### Data Generation Flow
-
-```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         DATA GENERATION PIPELINE                            │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 1: LOAD & EXPAND PERSONA                                              │
+│                          MemoryGym Pipeline                                 │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
-│   Persona_Hub_200000.jsonl                                                  │
-│          │                                                                  │
-│          ▼                                                                  │
-│   ┌──────────────────────────────────────────────────┐                     │
-│   │ Raw Persona:                                      │                     │
-│   │ "A charismatic talk show host who advocates       │                     │
-│   │  for natural remedies..."                         │                     │
-│   └──────────────────────────────────────────────────┘                     │
-│          │                                                                  │
-│          │  LLM: expand_persona                                             │
-│          ▼                                                                  │
-│   ┌──────────────────────────────────────────────────┐                     │
-│   │ Expanded Persona:                                 │                     │
-│   │ "Name: Carlos Rivera, Hispanic male, born 1936,   │                     │
-│   │  known for warm presence, values traditional      │                     │
-│   │  wisdom and natural remedies..."                  │                     │
-│   └──────────────────────────────────────────────────┘                     │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 2: ELABORATE TOPIC                                                    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   Topic: "travel"                                                           │
-│          │                                                                  │
-│          │  LLM: elaborate_topic                                            │
-│          ▼                                                                  │
-│   ┌──────────────────────────────────────────────────┐                     │
-│   │ Topic Elaboration:                                │                     │
-│   │ - Favorite destinations                           │                     │
-│   │ - Travel experiences & stories                    │                     │
-│   │ - Travel tips & planning                          │                     │
-│   │ - Food and culture                                │                     │
-│   │ - Personal growth through travel                  │                     │
-│   └──────────────────────────────────────────────────┘                     │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 3: GENERATE PERSONAL HISTORY (Longitudinal)                           │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐    │
-│   │    INIT     │──▶│   +WEEK     │──▶│   +MONTH    │──▶│   +YEAR     │    │
-│   │  (10 events)│   │  (expand)   │   │  (expand)   │   │  (expand)   │    │
-│   └─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘    │
-│          │                                                                  │
-│          ▼                                                                  │
-│   ┌──────────────────────────────────────────────────┐                     │
-│   │ Personal History Events:                          │                     │
-│   │ {                                                 │                     │
-│   │   "08/17/1954": {                                 │                     │
-│   │     "Event": "Launched local radio show...",      │                     │
-│   │     "Category": "Long-Term"                       │                     │
-│   │   },                                              │                     │
-│   │   "09/02/1954": {                                 │                     │
-│   │     "Event": "Prepared herbal tea at studio...",  │                     │
-│   │     "Category": "Short-Term"                      │                     │
-│   │   },                                              │                     │
-│   │   ...                                             │                     │
-│   │ }                                                 │                     │
-│   └──────────────────────────────────────────────────┘                     │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 4: GENERATE CONVERSATION (Structured Output)                          │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   Personal History + Topic                                                  │
-│          │                                                                  │
-│          │  LLM.query_llm_structured(response_schema=GeneratedConversation) │
-│          ▼                                                                  │
-│   ┌──────────────────────────────────────────────────┐                     │
-│   │ GeneratedConversation (Pydantic):                 │                     │
-│   │ {                                                 │                     │
-│   │   "turns": [                                      │                     │
-│   │     {                                             │                     │
-│   │       "role": "user",                             │                     │
-│   │       "content": "I've been thinking...",         │                     │
-│   │       "side_note": {                              │                     │
-│   │         "event": "Launched radio show",           │                     │
-│   │         "date": "08/17/1954"                      │                     │
-│   │       }                                           │                     │
-│   │     },                                            │                     │
-│   │     {                                             │                     │
-│   │       "role": "assistant",                        │                     │
-│   │       "content": "That sounds wonderful!",        │                     │
-│   │       "side_note": null                           │                     │
-│   │     }                                             │                     │
-│   │   ],                                              │                     │
-│   │   "topic": "travel",                              │                     │
-│   │   "period": "INIT"                                │                     │
-│   │ }                                                 │                     │
-│   └──────────────────────────────────────────────────┘                     │
-│                                                                             │
-│   ✓ Guaranteed valid JSON (API enforced)                                    │
-│   ✓ Type-safe: role is exactly "user" or "assistant"                        │
-│   ✓ side_note always present (null or object) - no guessing                 │
-│   ✓ No regex parsing or json_repair needed                                  │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  OUTPUT FILES                                                               │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   data/output_sample/{topic}/                                               │
-│   ├── sample_conversation_{topic}_persona{N}_sample{M}_artifacts.json       │
-│   │   └── Full artifacts (persona, raw conversation, preferences)           │
-│   │                                                                         │
-│   └── sample_conversation_{topic}_persona{N}_sample{M}_conversation.json    │
-│       └── Processed conversation (ready for TOD task generation)            │
+│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐      │
+│  │ 1. DATA GEN      │ →  │ 2. TASK GEN      │ →  │ 3. EVALUATION    │      │
+│  │                  │    │                  │    │                  │      │
+│  │ • Expand persona │    │ • Select 6 prefs │    │ • Run dialogue   │      │
+│  │ • Life events    │    │ • Create event   │    │ • Preference     │      │
+│  │ • 25 preferences │    │ • User prompt    │    │   judge          │      │
+│  │ • 10 sessions    │    │ (50% evolved)    │    │ • Efficiency     │      │
+│  │ • Conversations  │    │                  │    │   judge          │      │
+│  └──────────────────┘    └──────────────────┘    └──────────────────┘      │
+│         ↓                        ↓                       ↓                 │
+│   sessions.json            task_XX.json          eval_XX_agent.json        │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Key Files
+## Stage 1: Data Generation
 
-| File | Purpose |
-|------|---------|
+**Module:** `memory_gym/data_generators/multisession.py`
 
----
+Generates multi-session conversation data with evolving preferences.
 
-## Part 2: Task Generation
-
-**Entry Point:** `tod_task_generation.py`
-
-The task generation pipeline creates Task-Oriented Dialogue (TOD) evaluation tasks from the generated conversation data.
-
-### Task Generation Flow
+### Flow
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                         TASK GENERATION PIPELINE                            │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 1: LOAD CONVERSATION DATA                                             │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   sample_conversation_{topic}_conversation.json                             │
-│          │                                                                  │
-│          ▼                                                                  │
-│   ┌──────────────────────────────────────────────────┐                     │
-│   │ Conversation with embedded preferences:           │                     │
-│   │ - User mentions window seat preference            │                     │
-│   │ - User reveals vegetarian dietary needs           │                     │
-│   │ - User shares fear of flying over water           │                     │
-│   │ - User prefers boutique hotels                    │                     │
-│   └──────────────────────────────────────────────────┘                     │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 2: EXTRACT PREFERENCES                                                │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   Parse side_notes from conversation turns                                  │
-│          │                                                                  │
-│          │  LLM: extract_preferences                                        │
-│          ▼                                                                  │
-│   ┌──────────────────────────────────────────────────┐                     │
-│   │ Extracted Preferences:                            │                     │
-│   │ [                                                 │                     │
-│   │   {                                               │                     │
-│   │     "category": "flight",                         │                     │
-│   │     "preference": "Always prefers window seat",   │                     │
-│   │     "source_turn": 12,                            │                     │
-│   │     "strength": "strong"                          │                     │
-│   │   },                                              │                     │
-│   │   {                                               │                     │
-│   │     "category": "food",                           │                     │
-│   │     "preference": "Vegetarian, avoids meat",      │                     │
-│   │     "source_turn": 24,                            │                     │
-│   │     "strength": "strict"                          │                     │
-│   │   }                                               │                     │
-│   │ ]                                                 │                     │
-│   └──────────────────────────────────────────────────┘                     │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 3: SELECT TASK TEMPLATE                                               │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   Topic-specific templates:                                                 │
-│                                                                             │
-│   ┌─────────────────────────────────────────────────────────────────┐      │
-│   │  TRAVEL TEMPLATES:                                               │      │
-│   │  • Book a flight from {origin} to {destination}                  │      │
-│   │  • Find and book a hotel in {location}                           │      │
-│   │  • Plan a trip itinerary for {duration}                          │      │
-│   │  • Reserve a rental car                                          │      │
-│   │                                                                  │      │
-│   │  THERAPY TEMPLATES:                                              │      │
-│   │  • Schedule a therapy session                                    │      │
-│   │  • Find a support group                                          │      │
-│   │  • Set up self-care reminders                                    │      │
-│   └─────────────────────────────────────────────────────────────────┘      │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 4: GENERATE TOD TASK                                                  │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   Template + Preferences + LLM                                              │
-│          │                                                                  │
-│          ▼                                                                  │
-│   ┌──────────────────────────────────────────────────┐                     │
-│   │ TOD Task:                                         │                     │
-│   │ {                                                 │                     │
-│   │   "task_id": "uuid-1234",                         │                     │
-│   │   "description": "Book a flight from NYC to       │                     │
-│   │                   Paris for April 15th",          │                     │
-│   │                                                   │                     │
-│   │   "tools": [                                      │                     │
-│   │     {                                             │                     │
-│   │       "name": "search_flights",                   │                     │
-│   │       "schema": {...}                             │                     │
-│   │     },                                            │                     │
-│   │     {                                             │                     │
-│   │       "name": "book_flight",                      │                     │
-│   │       "schema": {...}                             │                     │
-│   │     }                                             │                     │
-│   │   ],                                              │                     │
-│   │                                                   │                     │
-│   │   "relevant_preferences": [                       │                     │
-│   │     {                                             │                     │
-│   │       "item": "window seat",                      │                     │
-│   │       "expected_usage": "proactive"               │                     │
-│   │     }                                             │                     │
-│   │   ],                                              │                     │
-│   │                                                   │                     │
-│   │   "expected_behaviors": [                         │  ◀── How agent      │
-│   │     "Should proactively request window seat",     │      should act     │
-│   │     "Should avoid suggesting red-eye flights",    │                     │
-│   │     "Should complete task efficiently"            │                     │
-│   │   ]                                               │                     │
-│   │ }                                                 │                     │
-│   └──────────────────────────────────────────────────┘                     │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  OUTPUT: tod_tasks.jsonl                                                    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   One task per line (JSONL format):                                         │
-│   {"task_id": "...", "description": "Book flight...", ...}                  │
-│   {"task_id": "...", "description": "Find hotel...", ...}                   │
-│   {"task_id": "...", "description": "Reserve car...", ...}                  │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
+Input: Base persona description
+         ↓
+┌─────────────────────────────────────┐
+│ 1. Expand Persona                   │
+│    - Name, demographics, traits     │
+│    - 25 baseline preferences        │
+│      (5 per domain)                 │
+└─────────────────────────────────────┘
+         ↓
+┌─────────────────────────────────────┐
+│ 2. Generate Life Events             │
+│    - Timeline of significant events │
+│    - Each event evolves preferences │
+└─────────────────────────────────────┘
+         ↓
+┌─────────────────────────────────────┐
+│ 3. Generate Sessions (10 total)     │
+│    - Natural conversations          │
+│    - Preferences revealed gradually │
+│    - Some preferences superseded    │
+└─────────────────────────────────────┘
+         ↓
+Output: sessions.json
 ```
 
 ### Key Concepts
 
 | Concept | Description |
 |---------|-------------|
-| **Relevant Preferences** | Preferences from conversation history that apply to this task |
-| **Expected Usage** | How the agent should use the preference (proactive = 1.0, ignored = 0.0) |
-| **Expected Behaviors** | Specific actions the agent should take based on user preferences |
-| **Tool Schemas** | OpenAI-style function schemas for each tool |
+| **Baseline Preferences** | 25 initial preferences across 5 domains |
+| **Life Events** | Significant events that cause preference changes |
+| **Evolved Preferences** | New preferences that supersede old ones |
+| **PreferenceTimeline** | Tracks active vs stale preferences over time |
+
+### Output Structure
+
+```json
+{
+  "persona": "Expanded persona description...",
+  "sessions": [
+    {
+      "session_id": 0,
+      "date": "01/15/2024",
+      "life_event": "Started new job with early meetings",
+      "conversation": [
+        {"role": "user", "content": "..."},
+        {"role": "assistant", "content": "..."}
+      ]
+    }
+  ],
+  "timeline": {
+    "preferences": [...],
+    "active_preference_ids": [...],
+    "superseded_map": {"pref_047": "pref_009"}
+  }
+}
+```
 
 ---
 
-## Part 3: Evaluation
+## Stage 2: Task Generation
 
-**Entry Point:** `evaluation_multisession/`  
-**Core Modules:** `runner.py`, `judge.py`, `user_simulator.py`
+**Module:** `memory_gym/task_generators/evaluation_task.py`
 
-The evaluation pipeline assesses how well agents recall and apply user preferences during multi-turn dialogues.
+Creates evaluation tasks that require proactive preference application.
 
-### Evaluation Flow
+### Flow
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                          EVALUATION PIPELINE                                │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 1: LOAD INPUTS                                                        │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   ┌─────────────────┐         ┌─────────────────┐                          │
-│   │  TOD Tasks      │         │  Conversation   │                          │
-│   │  (tod_tasks.    │         │  History        │                          │
-│   │   jsonl)        │         │  (context.json) │                          │
-│   └────────┬────────┘         └────────┬────────┘                          │
-│            │                           │                                    │
-│            └───────────┬───────────────┘                                    │
-│                        ▼                                                    │
-│            ┌─────────────────────┐                                          │
-│            │   Evaluation        │                                          │
-│            │   Orchestrator      │                                          │
-│            └─────────────────────┘                                          │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 2: INITIALIZE AGENT                                                   │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   ┌─────────────────────────────────────────────────────────────────┐      │
-│   │                        AGENT TYPES                               │      │
-│   │                                                                  │      │
-│   │  ┌────────────────────────┐    ┌────────────────────────┐       │      │
-│   │  │   ContextAwareAgent    │    │    NoContextAgent      │       │      │
-│   │  │   (Upper Bound)        │    │    (Lower Bound)       │       │      │
-│   │  ├────────────────────────┤    ├────────────────────────┤       │      │
-│   │  │ • Has full access to   │    │ • No access to past    │       │      │
-│   │  │   conversation history │    │   conversations        │       │      │
-│   │  │ • Can retrieve all     │    │ • Must rely on user    │       │      │
-│   │  │   user preferences     │    │   explicitly stating   │       │      │
-│   │  │ • Expected to apply    │    │   preferences          │       │      │
-│   │  │   preferences          │    │ • Baseline for         │       │      │
-│   │  │   proactively          │    │   comparison           │       │      │
-│   │  └────────────────────────┘    └────────────────────────┘       │      │
-│   │                                                                  │      │
-│   │  Future: MemoryAgent (agent with custom memory retrieval)        │      │
-│   └─────────────────────────────────────────────────────────────────┘      │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 3: RUN DIALOGUE SIMULATION                                            │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   For each TOD task:                                                        │
-│                                                                             │
-│   ┌─────────────────────────────────────────────────────────────────┐      │
-│   │                    DIALOGUE LOOP                                 │      │
-│   │                                                                  │      │
-│   │    ┌──────────┐      ┌──────────┐      ┌──────────────┐         │      │
-│   │    │ Simulated│      │  Agent   │      │    Tool      │         │      │
-│   │    │   User   │─────▶│ Response │─────▶│  Simulator   │         │      │
-│   │    └──────────┘      └──────────┘      └──────────────┘         │      │
-│   │         ▲                                     │                  │      │
-│   │         │                                     │                  │      │
-│   │         └─────────────────────────────────────┘                  │      │
-│   │                                                                  │      │
-│   │    Continue until task complete or max turns reached             │      │
-│   └─────────────────────────────────────────────────────────────────┘      │
-│                                                                             │
-│   ┌─────────────────────────────────────────────────────────────────┐      │
-│   │                    TOOL SIMULATOR                                │      │
-│   │                                                                  │      │
-│   │  • Generates realistic tool results                              │      │
-│   │  • NO knowledge of user preferences                              │      │
-│   │  • Returns diverse options (some violate preferences)            │      │
-│   │  • Tests agent's preference-aware filtering                      │      │
-│   │                                                                  │      │
-│   │  Example: search_flights returns mix of window/middle/aisle      │      │
-│   │           Agent should filter for user's window preference       │      │
-│   └─────────────────────────────────────────────────────────────────┘      │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 4: CLASSIFY TURNS                                                     │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   LLM Judge analyzes each dialogue turn:                                    │
-│                                                                             │
-│   ┌─────────────────────────────────────────────────────────────────┐      │
-│   │                      TURN TYPES                                  │      │
-│   │                                                                  │      │
-│   │  ┌────────────────────────────────────────────────────────┐     │      │
-│   │  │ PRODUCTIVE                                              │     │      │
-│   │  │ Agent advances task, uses preferences correctly         │     │      │
-│   │  │ Score: +1.0                                             │     │      │
-│   │  └────────────────────────────────────────────────────────┘     │      │
-│   │                                                                  │      │
-│   │  ┌────────────────────────────────────────────────────────┐     │      │
-│   │  │ JUSTIFIED_CLARIFICATION                                 │     │      │
-│   │  │ Agent asks about genuinely ambiguous/conflicting prefs  │     │      │
-│   │  │ Score: +0.5                                             │     │      │
-│   │  └────────────────────────────────────────────────────────┘     │      │
-│   │                                                                  │      │
-│   │  ┌────────────────────────────────────────────────────────┐     │      │
-│   │  │ UNNECESSARY_CLARIFICATION                               │     │      │
-│   │  │ Agent asks about clearly stated preference              │     │      │
-│   │  │ Score: -0.25                                            │     │      │
-│   │  └────────────────────────────────────────────────────────┘     │      │
-│   │                                                                  │      │
-│   │  ┌────────────────────────────────────────────────────────┐     │      │
-│   │  │ CORRECTION                                              │     │      │
-│   │  │ User had to remind agent of forgotten preference        │     │      │
-│   │  │ Score: -0.5                                             │     │      │
-│   │  └────────────────────────────────────────────────────────┘     │      │
-│   │                                                                  │      │
-│   │  ┌────────────────────────────────────────────────────────┐     │      │
-│   │  │ REPEATED_CORRECTION                                     │     │      │
-│   │  │ Agent ignores correction or repeats same mistake        │     │      │
-│   │  │ Score: -1.0                                             │     │      │
-│   │  └────────────────────────────────────────────────────────┘     │      │
-│   └─────────────────────────────────────────────────────────────────┘      │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  STEP 5: CALCULATE METRICS                                                  │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   ┌─────────────────────────────────────────────────────────────────┐      │
-│   │                      KEY METRICS                                 │      │
-│   │                                                                  │      │
-│   │  ┌────────────────────────────────────────────────────────┐     │      │
-│   │  │ PREFERENCE RECALL                                       │     │      │
-│   │  │                                                         │     │      │
-│   │  │ For each relevant preference:                           │     │      │
-│   │  │ • PROACTIVE: Agent used it without prompting = 1.0      │     │      │
-│   │  │ • IGNORED: Agent didn't use it / needed reminder = 0.0  │     │      │
-│   │  │                                                         │     │      │
-│   │  │ Score = (# PROACTIVE) / (# relevant preferences)        │     │      │
-│   │  └────────────────────────────────────────────────────────┘     │      │
-│   │                                                                  │      │
-│   │  ┌────────────────────────────────────────────────────────┐     │      │
-│   │  │ TURN EFFICIENCY                                         │     │      │
-│   │  │                                                         │     │      │
-│   │  │ Penalizes unnecessary turns:                            │     │      │
-│   │  │ Score = 1 - (penalty_turns / total_turns)               │     │      │
-│   │  │                                                         │     │      │
-│   │  │ Where penalty_turns = corrections + unnecessary_clarifs │     │      │
-│   │  └────────────────────────────────────────────────────────┘     │      │
-│   │                                                                  │      │
-│   │  ┌────────────────────────────────────────────────────────┐     │      │
-│   │  │ TASK COMPLETION                                         │     │      │
-│   │  │                                                         │     │      │
-│   │  │ Binary: Did the agent complete the task?                │     │      │
-│   │  │ • All required tool calls made                          │     │      │
-│   │  │ • User satisfied (no abandonment)                       │     │      │
-│   │  └────────────────────────────────────────────────────────┘     │      │
-│   │                                                                  │      │
-│   │  ┌────────────────────────────────────────────────────────┐     │      │
-│   │  │ OVERALL SCORE                                           │     │      │
-│   │  │                                                         │     │      │
-│   │  │ Weighted combination:                                   │     │      │
-│   │  │ • preference_score × 0.5                                │     │      │
-│   │  │ • efficiency_score × 0.5                                │     │      │
-│   │  └────────────────────────────────────────────────────────┘     │      │
-│   └─────────────────────────────────────────────────────────────────┘      │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  OUTPUT: evaluation_results.json                                            │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   {                                                                         │
-│     "agent_type": "ContextAwareAgent",                                      │
-│     "tasks_evaluated": 10,                                                  │
-│     "metrics": {                                                            │
-│       "preference_score": 0.85,                                             │
-│       "efficiency_score": 0.92,                                             │
-│       "final_score": 0.88                                                   │
-│     },                                                                      │
-│     "per_task_results": [...]                                               │
-│   }                                                                         │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
+Input: sessions.json
+         ↓
+┌─────────────────────────────────────┐
+│ 1. Select 6 Required Preferences    │
+│    - 50% must be evolved (recent)   │
+│    - Coherent theme for task        │
+└─────────────────────────────────────┘
+         ↓
+┌─────────────────────────────────────┐
+│ 2. Generate Evaluation Event        │
+│    - Complex task description       │
+│    - Requires multiple preferences  │
+└─────────────────────────────────────┘
+         ↓
+┌─────────────────────────────────────┐
+│ 3. Generate User Prompt             │
+│    - Preference-neutral request     │
+│    - Does not mention preferences   │
+└─────────────────────────────────────┘
+         ↓
+Output: task_XX.json
 ```
 
-### Key Files
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Required Preferences** | 6 preferences agent must apply proactively |
+| **Evolved Preference** | Preference that supersedes an older one |
+| **User Prompt** | Initial message that doesn't reveal preferences |
+| **Task Internal** | Detailed breakdown of what agent should do |
+
+### Output Structure
+
+```json
+{
+  "task_id": "eval_abc123",
+  "evaluation_event": {
+    "event": "Help design a week-long meal plan...",
+    "user_prompt": "I need help with meal planning...",
+    "task_internal": "1. Apply Mediterranean diet... 2. Avoid caffeine..."
+  },
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_006",
+        "fact": "Follows Mediterranean diet"
+      },
+      {
+        "id": "pref_047",
+        "fact": "Eliminates caffeine after noon",
+        "supersedes": {
+          "id": "pref_009",
+          "fact": "Limits caffeine to morning espresso"
+        }
+      }
+    ]
+  }
+}
+```
+
+---
+
+## Stage 3: Evaluation
+
+**Module:** `memory_gym/evaluation_multisession/`
+
+Runs agent dialogue and scores with LLM judges.
+
+### Flow
+
+```
+Input: sessions.json + task_XX.json
+         ↓
+┌─────────────────────────────────────┐
+│ 1. Initialize Agent                 │
+│    - ContextAwareAgent (full hist)  │
+│    - NoContextAgent (baseline)      │
+│    - FoundryMemoryAgent (memory)    │
+└─────────────────────────────────────┘
+         ↓
+┌─────────────────────────────────────┐
+│ 2. Run Dialogue Loop                │
+│    - User simulator sends messages  │
+│    - Agent responds                 │
+│    - Max 10 agent turns             │
+└─────────────────────────────────────┘
+         ↓
+┌─────────────────────────────────────┐
+│ 3. Preference Judge                 │
+│    - First-mention analysis         │
+│    - Who mentioned preference first?│
+│    - Agent (PROACTIVE) or User?     │
+└─────────────────────────────────────┘
+         ↓
+┌─────────────────────────────────────┐
+│ 4. Efficiency Judge                 │
+│    - Classify each agent turn       │
+│    - PRODUCTIVE, IGNORED, etc.      │
+└─────────────────────────────────────┘
+         ↓
+Output: eval_XX_agent.json
+```
+
+### Agent Types
+
+| Agent | Context | Expected Scores |
+|-------|---------|-----------------|
+| **ContextAwareAgent** | Full conversation history | preference ~0.8-1.0 |
+| **NoContextAgent** | None (baseline) | preference ~0.0, efficiency ~1.0 |
+| **FoundryMemoryAgent** | Azure AI Foundry memory store | Varies |
+
+### Scoring
+
+#### Preference Score
+
+Measures proactive preference recall:
+
+```
+preference_score = max(0, (proactive_count - stale_count) / total_required)
+```
+
+| Classification | Description | Impact |
+|----------------|-------------|--------|
+| **PROACTIVE** | Agent mentioned preference before user | +1 |
+| **IGNORED** | User mentioned preference first | 0 |
+| **STALE** | Agent used superseded preference | -1 |
+
+#### Efficiency Score
+
+Measures conversation efficiency:
+
+```
+efficiency_score = max(0, (agent_turns - 0.5×clarifying - corrections) / agent_turns)
+```
+
+| Turn Type | Description | Penalty |
+|-----------|-------------|---------|
+| **PRODUCTIVE** | Useful, preference-aware response | 0 |
+| **IGNORED** | User revealed preference agent missed | 0 |
+| **CLARIFYING** | Asked about known preference | 0.5 |
+| **CORRECTION** | Wrong suggestion, user corrected | 1.0 |
+
+### Output Structure
+
+```json
+{
+  "task_id": "eval_abc123",
+  "scores": {
+    "preference_score": 0.83,
+    "efficiency_score": 0.90
+  },
+  "conversation": [...],
+  "preference_scoring": {
+    "proactive_count": 5,
+    "stale_count": 0,
+    "first_mention_trace": [...]
+  },
+  "efficiency_scoring": {
+    "total_turns": 10,
+    "productive_turns": 7,
+    "ignored_turns": 3,
+    "turn_classifications": [...]
+  },
+  "rubric": {
+    "required_preferences": [...]
+  }
+}
+```
+
+---
+
+## Key Files
 
 | File | Purpose |
 |------|---------|
-| `evaluation_multisession/runner.py` | Main evaluation orchestrator |
-| `evaluation_multisession/judge.py` | LLM judge for scoring dialogues |
-| `evaluation_multisession/user_simulator.py` | Simulates user responses |
-| `task_generators/evaluation_task.py` | Generates evaluation tasks from data |
+| `memory_gym/schemas.py` | All data models (MultiSessionOutput, EvaluationTask, etc.) |
+| `memory_gym/client.py` | Azure OpenAI client with retry logic |
+| `memory_gym/data_generators/multisession.py` | Stage 1: MultiSessionGenerator |
+| `memory_gym/task_generators/evaluation_task.py` | Stage 2: EvaluationTaskGenerator |
+| `memory_gym/evaluation_multisession/runner.py` | Stage 3: Evaluation orchestration |
+| `memory_gym/evaluation_multisession/judge.py` | Preference + efficiency judges |
+| `memory_gym/evaluation_multisession/user_simulator.py` | Simulated user for dialogue |
+| `memory_gym/agents/base.py` | ContextAwareAgent, NoContextAgent |
+| `memory_gym/agents/foundry_agent.py` | FoundryMemoryAgent (Azure AI Foundry) |
 
 ---
 
-## End-to-End Example
+## Running the Pipeline
 
 ```bash
-# Step 1: Generate multi-session conversation data
-python test_data_generation.py --num-sessions 3
+# Stage 1: Generate session data
+uv run python test_data_generation.py
 
-# Step 2: Generate evaluation tasks (optional - can inspect without full eval)
-python test_task_generation.py --input outputs/sessions/data_generation_output.json
+# Stage 2: Generate evaluation tasks
+uv run python test_task_generation.py --count 3
 
-# Step 3: Run evaluation with full context
-python test_evaluation.py --full
-
-# Step 4: Run evaluation without context (baseline)
-python test_evaluation.py --no-context
-```
-
-Or use the Python API:
-
-```python
-from persona_gym.data_generators import MultiSessionGenerator
-from persona_gym.evaluation_multisession import run_evaluation
-
-# Generate data
-generator = MultiSessionGenerator(persona="...", num_sessions=3)
-result = generator.generate_multi_session()
-
-# Evaluate with full context
-eval_result = run_evaluation(result, include_history=True)
-print(f"Score: {eval_result.final_score:.2f}")
+# Stage 3: Run evaluations
+uv run python test_evaluation.py --agent context
+uv run python test_evaluation.py --agent nocontext
+uv run python test_evaluation.py --agent foundry --no-cache
 ```
 
 ---
 
-## Design Principles
+## Output Directory Structure
 
-1. **Strict Alternation**: Every User turn MUST be followed by an Assistant turn
-2. **Preference Grounding**: All preferences traced back to life events
-3. **Preference Evolution**: Preferences change over time due to life events
-4. **LLM-as-Judge**: Uses few-shot examples for calibrated scoring
+```
+outputs/
+  2026-02-03_1430/
+    sessions.json           # Stage 1 output
+    tasks/
+      task_01.json          # Stage 2 output
+      task_02.json
+      task_03.json
+    evaluation/
+      eval_01_context.json  # Stage 3 output
+      eval_01_nocontext.json
+      eval_01_foundry.json
+```

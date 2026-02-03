@@ -464,11 +464,13 @@ class MultiSessionOutput:
             old_p = self.timeline.preferences.get(old_id)
             new_p = self.timeline.preferences.get(new_id)
             if old_p and new_p:
-                evolved.append({
-                    "from": {"id": old_p.preference_id, "fact": old_p.fact},
-                    "to": {"id": new_p.preference_id, "fact": new_p.fact, "domain": new_p.domain},
-                    "reason": old_p.reason_for_change or "",
-                })
+                evolved.append(
+                    {
+                        "from": {"id": old_p.preference_id, "fact": old_p.fact},
+                        "to": {"id": new_p.preference_id, "fact": new_p.fact, "domain": new_p.domain},
+                        "reason": old_p.reason_for_change or "",
+                    }
+                )
 
         return {
             "session_id": session.session_id,
@@ -489,11 +491,16 @@ class MultiSessionOutput:
         ]
         superseded = [
             {
-                "id": p.preference_id, "fact": p.fact, "domain": p.domain,
-                "created_at_session": p.created_at_session, "superseded_at_session": p.superseded_at_session,
-                "replaced_by": p.superseded_by, "reason": p.reason_for_change or "",
+                "id": p.preference_id,
+                "fact": p.fact,
+                "domain": p.domain,
+                "created_at_session": p.created_at_session,
+                "superseded_at_session": p.superseded_at_session,
+                "replaced_by": p.superseded_by,
+                "reason": p.reason_for_change or "",
             }
-            for p in self.timeline.preferences.values() if not p.is_active
+            for p in self.timeline.preferences.values()
+            if not p.is_active
         ]
 
         result = {
@@ -552,7 +559,9 @@ class MultiSessionOutput:
             session_id = s_data["session_id"]
             le_data = s_data["life_event"]
 
-            life_event = LifeEvent(session_id=session_id, date=le_data["date"], event=le_data["event"], domain=le_data.get("domain", ""))
+            life_event = LifeEvent(
+                session_id=session_id, date=le_data["date"], event=le_data["event"], domain=le_data.get("domain", "")
+            )
             life_events.append(life_event)
 
             prefs_data = s_data.get("preferences", {})
@@ -561,14 +570,16 @@ class MultiSessionOutput:
                 new_preference_ids.append(e["to"]["id"])
             evolved_preference_ids = {e["from"]["id"]: e["to"]["id"] for e in prefs_data.get("evolved", [])}
 
-            sessions.append(Session(
-                session_id=session_id,
-                life_event=life_event,
-                conversation=s_data.get("conversation", []),
-                active_preference_ids=timeline.get_preference_ids_at_session(session_id),
-                new_preference_ids=new_preference_ids,
-                evolved_preference_ids=evolved_preference_ids,
-            ))
+            sessions.append(
+                Session(
+                    session_id=session_id,
+                    life_event=life_event,
+                    conversation=s_data.get("conversation", []),
+                    active_preference_ids=timeline.get_preference_ids_at_session(session_id),
+                    new_preference_ids=new_preference_ids,
+                    evolved_preference_ids=evolved_preference_ids,
+                )
+            )
 
         return cls(
             persona=data["persona"],
@@ -577,7 +588,9 @@ class MultiSessionOutput:
             timeline=timeline,
             sessions=sessions,
             generation_timestamp=data.get("generation_timestamp", ""),
-            expanded_persona=ExpandedPersona.from_dict(data["expanded_persona"]) if data.get("expanded_persona") else None,
+            expanded_persona=ExpandedPersona.from_dict(data["expanded_persona"])
+            if data.get("expanded_persona")
+            else None,
         )
 
     def get_all_conversations_flat(self) -> list[dict[str, str]]:
@@ -755,24 +768,26 @@ class MultiSessionEvaluationResult:
         }
         if self.evaluation_event:
             result["evaluation_event"] = self.evaluation_event.to_dict()
-        result.update({
-            "conversation": self.conversation,
-            "preference_scoring": {
-                "proactive_count": self.proactive_count,
-                "stale_count": self.stale_count,
-                "stale_preference_usage": self.stale_preference_usage,
-                "first_mention_trace": self.first_mention_trace,
-            },
-            "efficiency_scoring": {
-                "total_turns": self.total_turns,
-                "productive_turns": self.productive_turns,
-                "clarifying_turns": self.clarifying_turns,
-                "correction_turns": self.correction_turns,
-                "ignored_turns": self.ignored_turns,
-                "repeated_correction_turns": self.repeated_correction_turns,
-                "turn_classifications": self.turn_classifications,
-            },
-        })
+        result.update(
+            {
+                "conversation": self.conversation,
+                "preference_scoring": {
+                    "proactive_count": self.proactive_count,
+                    "stale_count": self.stale_count,
+                    "stale_preference_usage": self.stale_preference_usage,
+                    "first_mention_trace": self.first_mention_trace,
+                },
+                "efficiency_scoring": {
+                    "total_turns": self.total_turns,
+                    "productive_turns": self.productive_turns,
+                    "clarifying_turns": self.clarifying_turns,
+                    "correction_turns": self.correction_turns,
+                    "ignored_turns": self.ignored_turns,
+                    "repeated_correction_turns": self.repeated_correction_turns,
+                    "turn_classifications": self.turn_classifications,
+                },
+            }
+        )
         if self.rubric:
             result["rubric"] = self.rubric.to_dict()
         return result

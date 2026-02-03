@@ -1,7 +1,7 @@
 """Context-aware agent with full preference history."""
 
-from persona_gym.prompts import render_prompt
-from persona_gym.schemas import MultiSessionOutput
+from memory_gym.prompts import render_prompt
+from memory_gym.schemas import MultiSessionOutput
 
 from .base import BaseAgent
 
@@ -33,10 +33,7 @@ def _format_preference_history(data: MultiSessionOutput) -> str:
     """
     parts = ["## User Preference History\n"]
 
-    baseline_prefs = [
-        p for p in data.timeline.preferences.values()
-        if p.created_at_session == -1
-    ]
+    baseline_prefs = [p for p in data.timeline.preferences.values() if p.created_at_session == -1]
     if baseline_prefs:
         parts.append("### Core Preferences (before user started talking to the agent)\n")
         by_domain: dict[str, list] = {}
@@ -60,8 +57,7 @@ def _format_preference_history(data: MultiSessionOutput) -> str:
 
             if session.new_preference_ids:
                 non_evolved_new = [
-                    pid for pid in session.new_preference_ids
-                    if pid not in session.evolved_preference_ids.values()
+                    pid for pid in session.new_preference_ids if pid not in session.evolved_preference_ids.values()
                 ]
                 if non_evolved_new:
                     parts.append("New preferences:")
@@ -77,9 +73,13 @@ def _format_preference_history(data: MultiSessionOutput) -> str:
                     old_pref = data.timeline.preferences.get(old_id)
                     new_pref = data.timeline.preferences.get(new_id)
                     if old_pref and new_pref:
-                        old_origin = "baseline" if old_pref.created_at_session == -1 else f"session {old_pref.created_at_session}"
-                        parts.append(f"- EVOLVED: \"{old_pref.fact}\" [from {old_origin}]")
-                        parts.append(f"  → \"{new_pref.fact}\"")
+                        old_origin = (
+                            "baseline"
+                            if old_pref.created_at_session == -1
+                            else f"session {old_pref.created_at_session}"
+                        )
+                        parts.append(f'- EVOLVED: "{old_pref.fact}" [from {old_origin}]')
+                        parts.append(f'  → "{new_pref.fact}"')
                 parts.append("")
 
     return "\n".join(parts)

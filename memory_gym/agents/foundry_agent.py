@@ -16,7 +16,7 @@ from azure.ai.projects.models import (
 )
 from azure.identity import DefaultAzureCredential
 
-from persona_gym.schemas import MultiSessionOutput
+from memory_gym.schemas import MultiSessionOutput
 
 logger = logging.getLogger(__name__)
 
@@ -53,11 +53,9 @@ class FoundryMemoryAgent:
         self._agent = None
         self._conversation_id = None
 
-    def ensure_memory_store(
-        self, multisession_data: MultiSessionOutput, force_recreate: bool = False
-    ) -> None:
+    def ensure_memory_store(self, multisession_data: MultiSessionOutput, force_recreate: bool = False) -> None:
         """Create memory store if needed and populate with conversation history.
-        
+
         Args:
             multisession_data: Session data to populate memories from
             force_recreate: If True, delete existing memory store and recreate
@@ -114,9 +112,7 @@ class FoundryMemoryAgent:
             )
 
             result = update_poller.result()
-            logger.info(
-                f"Session {session.session_id}: {len(result.memory_operations)} memory operations"
-            )
+            logger.info(f"Session {session.session_id}: {len(result.memory_operations)} memory operations")
 
         logger.info("Memory population complete")
 
@@ -141,11 +137,9 @@ class FoundryMemoryAgent:
         )
         logger.info(f"Created Foundry agent: {self._agent.name}")
 
-    def build_context(
-        self, multisession_data: MultiSessionOutput, force_recreate: bool = False
-    ) -> str:
+    def build_context(self, multisession_data: MultiSessionOutput, force_recreate: bool = False) -> str:
         """Ensure memory store is populated and agent is ready.
-        
+
         Args:
             multisession_data: Session data to build context from
             force_recreate: If True, delete and recreate memory store
@@ -228,7 +222,4 @@ def _search_memories(
         options=MemorySearchOptions(max_memories=max_memories),
     )
 
-    return [
-        {"id": m.memory_item.memory_id, "content": m.memory_item.content}
-        for m in result.memories
-    ]
+    return [{"id": m.memory_item.memory_id, "content": m.memory_item.content} for m in result.memories]

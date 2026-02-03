@@ -22,10 +22,10 @@ import logging
 import random
 from datetime import datetime
 
-from persona_gym.client import CONFIG, LLMClient
-from persona_gym.data_generators.base import BaseDataGenerator, GenerationError
-from persona_gym.prompts import render_prompt
-from persona_gym.schemas import (
+from memory_gym.client import CONFIG, LLMClient
+from memory_gym.data_generators.base import BaseDataGenerator, GenerationError
+from memory_gym.prompts import render_prompt
+from memory_gym.schemas import (
     DataGenerationMetadata,
     DataGenerationOutput,
     ExpandedPersona,
@@ -116,9 +116,7 @@ class MultiSessionGenerator(BaseDataGenerator):
                 raise GenerationError(f"Unexpected response type: {type(result)}")
 
             expanded = ExpandedPersona.from_dict(result)
-            logger.info(
-                f"Expanded persona: {expanded.age}yo {expanded.gender} in {expanded.location}"
-            )
+            logger.info(f"Expanded persona: {expanded.age}yo {expanded.gender} in {expanded.location}")
             return expanded
 
         except Exception as e:
@@ -144,7 +142,7 @@ class MultiSessionGenerator(BaseDataGenerator):
             domains = random.choices(LIFE_DOMAINS, k=self.num_sessions)
 
         events: list[LifeEvent] = []
-        for idx, domain in enumerate(domains[:self.num_sessions]):
+        for idx, domain in enumerate(domains[: self.num_sessions]):
             # Pass previous events to ensure coherent narrative
             event = self._generate_single_life_event(idx, domain, expanded_persona, events)
             events.append(event)
@@ -170,9 +168,7 @@ class MultiSessionGenerator(BaseDataGenerator):
             LifeEvent with domain stored in context
         """
         if previous_events:
-            previous_events_str = "\n".join(
-                f"- Event {e.session_id + 1}: {e.event}" for e in previous_events
-            )
+            previous_events_str = "\n".join(f"- Event {e.session_id + 1}: {e.event}" for e in previous_events)
         else:
             previous_events_str = "None (this is the first event)"
 
@@ -265,14 +261,16 @@ class MultiSessionGenerator(BaseDataGenerator):
         for old_pref in superseded:
             new_pref = timeline.preferences.get(old_pref.superseded_by)
             if new_pref:
-                history.append({
-                    "session": old_pref.superseded_at_session,
-                    "from_id": old_pref.preference_id,
-                    "from": old_pref.fact,
-                    "to_id": new_pref.preference_id,
-                    "to": new_pref.fact,
-                    "reason": old_pref.reason_for_change or "Not specified",
-                })
+                history.append(
+                    {
+                        "session": old_pref.superseded_at_session,
+                        "from_id": old_pref.preference_id,
+                        "from": old_pref.fact,
+                        "to_id": new_pref.preference_id,
+                        "to": new_pref.fact,
+                        "reason": old_pref.reason_for_change or "Not specified",
+                    }
+                )
 
         return json.dumps(history, indent=2, ensure_ascii=False)
 
@@ -319,8 +317,7 @@ class MultiSessionGenerator(BaseDataGenerator):
         # Format all context for the prompt
         active_prefs = timeline.get_active_preferences()
         active_prefs_json = json.dumps(
-            [{"preference_id": p.preference_id, "fact": p.fact, "domain": p.domain}
-             for p in active_prefs],
+            [{"preference_id": p.preference_id, "fact": p.fact, "domain": p.domain} for p in active_prefs],
             indent=2,
             ensure_ascii=False,
         )
@@ -427,8 +424,7 @@ class MultiSessionGenerator(BaseDataGenerator):
         # Get active preferences
         active_prefs = timeline.get_active_at_session(session_id)
         active_prefs_json = json.dumps(
-            [{"preference_id": p.preference_id, "fact": p.fact, "domain": p.domain}
-             for p in active_prefs],
+            [{"preference_id": p.preference_id, "fact": p.fact, "domain": p.domain} for p in active_prefs],
             indent=2,
         )
 
@@ -438,11 +434,13 @@ class MultiSessionGenerator(BaseDataGenerator):
             old_pref = timeline.preferences.get(old_id)
             new_pref = timeline.preferences.get(new_id)
             if old_pref and new_pref:
-                evolved_prefs.append({
-                    "old_fact": old_pref.fact,
-                    "new_fact": new_pref.fact,
-                    "reason": new_pref.reason_for_change or old_pref.reason_for_change or "",
-                })
+                evolved_prefs.append(
+                    {
+                        "old_fact": old_pref.fact,
+                        "new_fact": new_pref.fact,
+                        "reason": new_pref.reason_for_change or old_pref.reason_for_change or "",
+                    }
+                )
         evolved_prefs_json = json.dumps(evolved_prefs, indent=2) if evolved_prefs else "None"
 
         prompt = render_prompt(
@@ -508,15 +506,12 @@ class MultiSessionGenerator(BaseDataGenerator):
         sessions: list[Session] = []
 
         for idx, event in enumerate(life_events):
-
             evolved_mapping, new_pref_ids = self._update_preferences(
                 event, life_events, timeline, idx, expanded_persona
             )
 
             # Generate conversation for this session
-            conversation = self._generate_session_conversation(
-                event, timeline, idx, evolved_mapping, expanded_persona
-            )
+            conversation = self._generate_session_conversation(event, timeline, idx, evolved_mapping, expanded_persona)
 
             # Create session record
             active_pref_ids = timeline.get_preference_ids_at_session(idx)
@@ -554,7 +549,7 @@ class MultiSessionGenerator(BaseDataGenerator):
         all_turns = result.get_all_conversations_flat()
 
         # Convert current preferences to PreferenceItem format
-        from persona_gym.schemas import PreferenceItem
+        from memory_gym.schemas import PreferenceItem
 
         preferences = [
             PreferenceItem(

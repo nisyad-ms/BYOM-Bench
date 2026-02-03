@@ -7,7 +7,7 @@ data_generation's AzureQueryLLM with conversation threading) should keep
 their specialized implementations.
 
 Usage:
-    from persona_gym.client import LLMClient
+    from memory_gym.client import LLMClient
 
     # Simple query
     client = LLMClient()
@@ -127,9 +127,7 @@ class LLMClient:
 
         # Set up Azure AD authentication
         credential = DefaultAzureCredential()
-        token_provider = get_bearer_token_provider(
-            credential, "https://cognitiveservices.azure.com/.default"
-        )
+        token_provider = get_bearer_token_provider(credential, "https://cognitiveservices.azure.com/.default")
 
         self._client = AzureOpenAI(
             azure_endpoint=self.endpoint,
@@ -328,6 +326,7 @@ class AsyncLLMPool:
         Returns:
             List of results in same order as items.
         """
+
         async def process_item(item: Any) -> Any:
             client = await self._get_next_client()
             return await asyncio.to_thread(func, client, item)

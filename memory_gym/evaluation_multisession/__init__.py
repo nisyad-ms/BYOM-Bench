@@ -6,13 +6,13 @@ Evaluates agent preference recall across multiple sessions with preference evolu
 For standalone task generation, use persona_gym.task_generators.
 """
 
-from persona_gym.evaluation_multisession.judge import MultiSessionJudge
-from persona_gym.evaluation_multisession.runner import (
+from memory_gym.evaluation_multisession.judge import MultiSessionJudge
+from memory_gym.evaluation_multisession.runner import (
     run_evaluation,
     run_evaluation_from_file,
     run_evaluations_parallel,
 )
-from persona_gym.evaluation_multisession.user_simulator import MultiSessionUserSimulator
+from memory_gym.evaluation_multisession.user_simulator import MultiSessionUserSimulator
 
 __all__ = [
     "MultiSessionJudge",
