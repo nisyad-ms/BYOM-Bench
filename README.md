@@ -10,6 +10,10 @@ PersonaGym measures how well AI agents remember and proactively use user prefere
 - **Avoid using stale/superseded preferences** that have been replaced
 - **Minimize clarifying questions** by leveraging known context
 
+### How Evaluation Works
+
+Unlike simple Q&A benchmarks, PersonaGym evaluates agents through **multi-turn task completion**. At evaluation time, the agent is given a complex task (e.g., "plan a week-long meal plan") that requires proactively applying multiple user preferences to complete successfully. A simulated user interacts with the agent, and evaluation metrics are calculated based on the entire conversation—measuring whether the agent applied preferences before being asked, avoided stale preferences, and completed the task efficiently.
+
 ## Pipeline Architecture
 
 ```
