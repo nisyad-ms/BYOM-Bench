@@ -131,18 +131,6 @@ template: |
 
   ---
 
-  ## Scoring Formula
-
-  ```
-  preference_score = max(0, (proactive_count - stale_count) / total_required_preferences)
-  ```
-
-  - Each PROACTIVE adds +1
-  - Each stale_used subtracts -1
-  - IGNORED adds 0 (no penalty, but no credit)
-
-  ---
-
   ## Worked Examples
 
   ### Example 1: Perfect Recall (All PROACTIVE)
@@ -163,10 +151,6 @@ template: |
   **First-Mention Analysis:**
   - pref_001 (afternoon meetings): Agent mentioned "afternoon slots between 2-4 PM" in Turn 2, BEFORE user mentioned it → **PROACTIVE**
   - pref_002 (video calls): Agent mentioned "video call" in Turn 2, BEFORE user mentioned it → **PROACTIVE**
-
-  **Scores:**
-  - proactive_count = 2, stale_count = 0, total = 2
-  - preference_score = (2 - 0) / 2 = **1.0**
 
   ---
 
@@ -193,10 +177,6 @@ template: |
   - pref_002 (no flying): User mentioned "we don't fly" in Turn 3, BEFORE agent → **IGNORED**
   - pref_003 (plant-based): User mentioned "we're plant-based" in Turn 5, BEFORE agent → **IGNORED**
 
-  **Scores:**
-  - proactive_count = 0, stale_count = 0, total = 3
-  - preference_score = (0 - 0) / 3 = **0.0**
-
   **Note:** The agent adapted well and produced a good final result, but showed ZERO preference memory.
 
   ---
@@ -217,14 +197,8 @@ template: |
   ```
 
   **First-Mention Analysis:**
-  - pref_004 (pescatarian): Agent mentioned STALE preference "vegetarian" in Turn 2. User corrected in Turn 3. → **IGNORED** + **stale_used: true**
+  - pref_004 (pescatarian): Agent mentioned STALE preference "vegetarian" in Turn 2. User corrected in Turn 3. → **STALE** (stale_used: true)
   - pref_001 (quiet ambiance): Agent mentioned "quiet ambiance" in Turn 2, BEFORE user → **PROACTIVE**
-
-  **Scores:**
-  - proactive_count = 1, stale_count = 1, total = 2
-  - preference_score = max(0, (1 - 1) / 2) = **0.0**
-
-  **Note:** Using the stale preference canceled out the proactive point.
 
   ---
 
@@ -249,10 +223,6 @@ template: |
   - pref_002 (budget): Agent asked about budget in Turn 2, user answered in Turn 3 → User mentioned first → **IGNORED**
   - pref_003 (evening sessions): Agent mentioned "evenings" in Turn 4, BEFORE user mentioned it → **PROACTIVE**
 
-  **Scores:**
-  - proactive_count = 2, stale_count = 0, total = 3
-  - preference_score = (2 - 0) / 3 = **0.67**
-
   ---
 
   ### Example 5: User Answers Agent's Question (IGNORED)
@@ -274,10 +244,6 @@ template: |
   - pref_001 (window seats): Agent asked about preference, User answered "Window" in Turn 3 → User mentioned first → **IGNORED**
   - pref_002 (extra legroom): User mentioned "extra legroom since I'm tall" in Turn 3, BEFORE agent → **IGNORED**
 
-  **Scores:**
-  - proactive_count = 0, stale_count = 0, total = 2
-  - preference_score = (0 - 0) / 2 = **0.0**
-
   **Note:** Even though the agent asked politely, the user still had to TELL the agent their preferences. No memory demonstrated.
 
   ---
@@ -289,13 +255,17 @@ template: |
   ```json
   {{
     "first_mention_trace": [
-      {{"preference_id": "<id>", "first_mentioned_by": "User|Agent", "turn_number": <int>, "quote": "<exact quote>", "stale_used": true|false}}
-    ],
-    "preference_usage": {{
-      "<preference_id>": {{"usage": "proactive|ignored", "stale_used": true|false, "evidence": "<quote>"}}
-    }},
-    "proactive_count": <int>,
-    "stale_count": <int>,
-    "preference_score": <float 0-1>
+      {{
+        "preference_id": "<id>",
+        "first_mentioned_by": "User|Agent",
+        "turn_number": <int>,
+        "stale_used": true|false,
+        "usage": "proactive|ignored",
+        "reasoning": "<1-2 sentence explanation of usage classification. Don't just say... because it was first mentioned by X>",
+        "quote": "<exact quote for searching - first 5-6 words>"
+      }}
+    ]
   }}
   ```
+
+  Focus ONLY on classification. Score calculation is handled separately.

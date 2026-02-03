@@ -118,22 +118,22 @@ template: |
 
   ```
   If any REPEATED_CORRECTION: efficiency = 0.0
-  Otherwise: efficiency = max(0.0, (agent_turns - 0.5 × clarifying_turns - correction_turns) / agent_turns)
+  Otherwise: efficiency = max(0.0, (agent_turns - 0.5 × clarifying_turns - 0.5 × ignored_turns - correction_turns) / agent_turns)
   ```
 
-  **CRITICAL**: 
-  - IGNORED turns have NO penalty (they only affect preference score, not efficiency)
-  - PRODUCTIVE and IGNORED are both "neutral" for efficiency
-  - Only CLARIFYING (0.5 penalty) and CORRECTION (1.0 penalty) reduce efficiency
+  **Penalties**:
+  - CLARIFYING_QUESTION: 0.5 (agent asked about known preference)
+  - IGNORED: 0.5 (user had to reveal preference, wasting a turn)
+  - CORRECTION: 1.0 (agent made wrong suggestion)
+  - REPEATED_CORRECTION: automatic 0.0
 
-  **Intuition**: Efficiency measures whether the agent made MISTAKES (corrections) or asked unnecessary questions (clarifying). 
-  IGNORED turns show lack of memory but aren't mistakes - the agent just didn't proactively apply knowledge.
+  **Intuition**: Efficiency measures how quickly the agent completes the task. Both asking unnecessary questions (CLARIFYING) and requiring user reminders (IGNORED) waste turns.
 
   ---
 
   ## Worked Examples
 
-  ### Example 1: No-Context Agent (High Efficiency Expected)
+  ### Example 1: No-Context Agent (Lower Efficiency Due to IGNORED)
 
   **Required Preferences:**
   - pref_001: "prefers staying in camper van or campgrounds rather than hotels"
@@ -154,10 +154,10 @@ template: |
   - Turn 3: IGNORED (user revealed diet preference next)
   - Turn 5: PRODUCTIVE (user accepted the output)
 
-  **Calculation:** 3 agent turns, 0 corrections, 0 clarifying
-  efficiency = (3 - 0 - 0) / 3 = **1.0**
+  **Calculation:** 3 agent turns, 0 corrections, 0 clarifying, 2 ignored
+  efficiency = (3 - 0.5×2 - 0 - 0) / 3 = **0.67**
 
-  **Note:** Despite 2 IGNORED turns, efficiency is 1.0 because the agent made no mistakes.
+  **Note:** The 2 IGNORED turns each incur 0.5 penalty since user had to reveal preferences.
 
   ---
 
@@ -247,18 +247,8 @@ template: |
   {{
     "turn_classifications": [
       {{"turn": 1, "type": "productive|clarifying_question|correction|ignored|repeated_correction", "reasoning": "<brief note>"}}
-    ],
-    "productive_turns": <int>,
-    "clarifying_turns": <int>,
-    "correction_turns": <int>,
-    "ignored_turns": <int>,
-    "repeated_correction_turns": <int>,
-    "efficiency_score": <float 0-1>
+    ]
   }}
   ```
 
-  **Efficiency formula:**
-  - If repeated_correction_turns > 0: efficiency_score = 0.0
-  - Otherwise: efficiency_score = max(0, (agent_turns - 0.5 × clarifying_turns - correction_turns) / agent_turns)
-
-  **Remember:** IGNORED turns have NO penalty. Only CLARIFYING (0.5) and CORRECTION (1.0) reduce efficiency.
+  Focus ONLY on classification. Score calculation is handled separately.

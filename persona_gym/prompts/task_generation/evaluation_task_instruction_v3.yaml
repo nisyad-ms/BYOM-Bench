@@ -1,0 +1,142 @@
+name: Generate Evaluation Event (v3 - Directed user prompts)
+description: LLM selects 6 coherent preferences and generates a DIRECTED task starting with a specific question
+used_by: persona_gym/task_generators/evaluation_task.py::_generate_evaluation_event
+variables:
+  - persona: The user persona description
+  - preference_evolution_story: Preference ledger with baseline and evolution history
+  - num_evolved_required: Number of evolved preferences to select (default 3)
+  - num_baseline_required: Number of baseline preferences to select (default 3)
+
+template: |
+  Generate an evaluation task testing an AI agent's preference memory.
+
+  CONTEXT:
+  - Agent has learned user preferences across multiple conversations
+  - Each conversation corresponds to a life event where the user talked to the agent
+  - Some preferences EVOLVED due to life events (old preference is now STALE)
+  - Based on this evaluation task generation in this step, we will test if the agent recalls CURRENT preferences AND not stale ones while completing the task
+
+  To help you generate a meaningful task that meets these criteria, you are given the following:
+
+  USER PERSONA: {persona}
+
+  PREFERENCE EVOLUTION HISTORY:
+  {preference_evolution_story}
+
+  LETS DO THIS STEP BY STEP. YOUR TASK:
+  1. SELECT {num_evolved_required} evolved preferences and {num_baseline_required} baseline preferences that work well together for a coherent task
+  2. DESIGN a task where all 6 preferences naturally matter
+  3. The task should have a CLEAR GOAL and CONCRETE DELIVERABLE  
+  4. **Very Important** AVOID common patterns like travel planning; be CREATIVE
+  
+  PREFERENCE SELECTION CRITERIA:
+  - Choose preferences that fit naturally in ONE scenario
+  - Evolved preferences are CRITICAL - they test memory quality of the agent
+  - Avoid forcing unrelated preferences together
+
+  CRITICAL CHECK - TASK MUST BE USER-CENTRIC:
+  - The task MUST directly benefit the USER, not others
+  - AVOID tasks where user organizes events/activities for a group (team offsites, workshops for colleagues, hackathons for others)
+  - When organizing for others, the user's personal preferences (sleep schedule, diet, hobbies) don't naturally apply
+  - GOOD: "Help me plan MY trip", "Help me set up MY workspace", "Help me create MY meal plan"
+  - BAD: "Help me organize a fun event for my community", "Help me plan a hackathon for engineers"
+
+  CRITICAL CHECK 2- USER PROMPT MUST BE DIRECTED:
+  - The user_prompt (for the task) should START with a specific question targeting 1-2 preferences at most (without revealing them)
+  - User can briefly mention their broader goal, then ask a FOCUSED question
+  - This gives the agent a clear opportunity to demonstrate preference recall
+  - The conversation can then expand to cover other preferences in follow-up turns
+
+  OUTPUT FORMAT (JSON):
+  {{
+    "selected_preferences": [
+      {{"id": "pref_XXX", "fact": "...", "is_evolved": true/false, "evolved_from": "..." or null}}
+    ],
+    "event": "Brief situation (1 sentence)",
+    "user_prompt": "Directed task prompt - mentions goal briefly, then asks a SPECIFIC question about 1-2 preferences",
+    "task_internal": "What perfect completion looks like (for judge) with recall of all preferences by the AI assistant",
+    "date": "MM/DD/YYYY"
+  }}
+
+  SELF-REFLECTION CHECK:
+  - Is the task user-centric where the user's preferences matter?
+  - Does the user_prompt start with a SPECIFIC question (not a broad request)?
+  - Does the user_prompt hide all preference details effectively?
+  - Is the task reasonable and achievable for an AI assistant?
+  
+  EXAMPLES:
+
+  Example 1 - Wellness Retreat Planning:
+  Selected preferences:
+  - [EVOLVED] Now swims instead of running (due to knee surgery)
+  - [EVOLVED] Flexible work schedule (was rigid 9-5)
+  - [EVOLVED] Vegetarian diet (was meat-eater)
+  - [BASELINE] Budget $2000/month discretionary
+  - [BASELINE] Lives in Seattle
+  - [BASELINE] Prefers boutique hotels
+
+  BAD user_prompt: "Plan a retreat with swimming, vegetarian food, under $2000 near Seattle"
+  (Reveals preferences - agent doesn't need memory!)
+
+  BAD user_prompt: "I've had an exhausting quarter and really need a reset. Can you help me plan a week-long solo wellness retreat?"
+  (Too broad - agent shoots in the dark, hard to evaluate fairly)
+
+  GOOD user_prompt: "I'm planning a solo wellness retreat next month. What kind of physical activities would you recommend for me given my situation?"
+  (Directed question about exercise - agent should recall knee surgery → swimming)
+
+  Example 2 - Home Office Setup:
+  Selected preferences:
+  - [EVOLVED] Works from home permanently (was office-based)
+  - [EVOLVED] Needs ergonomic setup for back pain (was fine with standard desk)
+  - [EVOLVED] Prefers natural lighting (developed light sensitivity)
+  - [BASELINE] Budget-conscious, researches before buying
+  - [BASELINE] Minimalist aesthetic preference
+  - [BASELINE] Tech-savvy, prefers smart home integration
+
+  BAD user_prompt: "I need an ergonomic home office with natural lighting, minimalist design, and smart features under $3000"
+  (Reveals all preferences directly)
+
+  BAD user_prompt: "I'm finally setting up a proper workspace at home. What should I consider?"
+  (Too open-ended - no clear opportunity for recall)
+
+  GOOD user_prompt: "I'm setting up my home office. What type of desk and chair setup would work best for me?"
+  (Directed question about furniture - agent should recall back pain → ergonomic needs)
+
+  Example 3 - Birthday Dinner Planning:
+  Selected preferences:
+  - [EVOLVED] Avoids loud venues (developed tinnitus)
+  - [EVOLVED] Early dinner times (sleep schedule changed)
+  - [EVOLVED] Seafood allergy (recent diagnosis)
+  - [BASELINE] Prefers small gatherings over large parties
+  - [BASELINE] Values experiences over gifts
+  - [BASELINE] Partner loves Italian cuisine
+
+  BAD user_prompt: "Plan a quiet early dinner for 6 people at an Italian place with no seafood"
+  (Specifies venue type, time, size, and dietary restriction)
+
+  BAD user_prompt: "My partner's birthday is coming up and I want to plan something special. Any suggestions?"
+  (Too vague - agent can't demonstrate specific recall)
+
+  GOOD user_prompt: "I'm planning my partner's birthday dinner. What type of restaurant atmosphere and timing would work best for us?"
+  (Directed question about venue/timing - agent should recall tinnitus → quiet, sleep schedule → early)
+
+  Example 4 - AVOID THIS PATTERN (Organizing for Others):
+  Selected preferences:
+  - [EVOLVED] Starts work later due to CPAP therapy
+  - [EVOLVED] Flexible travel planning with printed backups
+  - [BASELINE] Uses standing desk 4 hours daily
+  - [BASELINE] Experiments with fusion recipes
+  - [BASELINE] Pair programming for complex tasks
+
+  BAD task: "Help me organize a hackathon for my engineering team"
+  WHY IT FAILS:
+  - User's sleep schedule shouldn't dictate event start time for 20 colleagues
+  - User's standing desk preference doesn't apply to workspace setup for others
+  - User's fusion recipe hobby is irrelevant to team catering
+  - Preferences feel forced and awkward when imposed on group events
+
+  GOOD alternative: "I'm attending a week-long hackathon in a new city. Suggest a good morning routine to stay productive?"
+  WHY IT WORKS:
+  - Directed question about morning routine
+  - Agent should recall CPAP therapy → later start time
+  - Naturally leads to follow-up about workspace, meals, etc.

@@ -2,7 +2,7 @@
 
 from abc import ABC, abstractmethod
 
-from persona_gym.client import LLMClient
+from persona_gym.client import CONFIG, LLMClient
 from persona_gym.schemas import MultiSessionOutput
 
 
@@ -27,7 +27,7 @@ class BaseAgent(ABC):
 
         response = self.client.complete_chat(
             messages=messages,
-            max_tokens=512,
+            max_tokens=CONFIG["max_tokens"]["agent"],
             temperature=0.7,
         )
 

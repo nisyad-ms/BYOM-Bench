@@ -131,24 +131,28 @@ class MultiSessionJudge:
         eff_result: dict[str, Any],
         agent_turns: int,
     ) -> MultiSessionEvaluationResult:
-        """Combine results from preference and efficiency judges."""
-        pref_usage_raw = pref_result.get("preference_usage", {})
-        preference_usage = {
-            pref_id: details.get("usage", "ignored") if isinstance(details, dict) else details
-            for pref_id, details in pref_usage_raw.items()
-        }
-
-        stale_used = [
-            pref_id
-            for pref_id, details in pref_usage_raw.items()
-            if isinstance(details, dict) and details.get("stale_used", False)
-        ]
-
+        """Combine results from preference and efficiency judges and calculate scores."""
         first_mention_trace = pref_result.get("first_mention_trace", [])
         turn_classifications = eff_result.get("turn_classifications", [])
 
-        preference_score = float(pref_result.get("preference_score", 0.0))
-        efficiency_score = float(eff_result.get("efficiency_score", 0.0))
+        preference_usage = {
+            entry.get("preference_id"): entry.get("usage", "ignored")
+            for entry in first_mention_trace
+        }
+
+        stale_used = [
+            entry.get("preference_id")
+            for entry in first_mention_trace
+            if entry.get("stale_used", False)
+        ]
+
+        proactive_count, stale_count, preference_score = self._calculate_preference_score(
+            first_mention_trace
+        )
+
+        turn_counts, efficiency_score = self._calculate_efficiency_score(
+            turn_classifications, agent_turns
+        )
 
         return MultiSessionEvaluationResult(
             task_id=task_id,
@@ -160,16 +164,76 @@ class MultiSessionJudge:
             first_mention_trace=first_mention_trace,
             turn_classifications=turn_classifications,
             total_turns=agent_turns,
-            productive_turns=int(eff_result.get("productive_turns", 0)),
-            clarifying_turns=int(eff_result.get("clarifying_turns", 0)),
-            correction_turns=int(eff_result.get("correction_turns", 0)),
-            ignored_turns=int(eff_result.get("ignored_turns", 0)),
-            repeated_correction_turns=int(eff_result.get("repeated_correction_turns", 0)),
-            stale_count=int(pref_result.get("stale_count", 0)),
-            proactive_count=int(pref_result.get("proactive_count", 0)),
+            productive_turns=turn_counts["productive"],
+            clarifying_turns=turn_counts["clarifying"],
+            correction_turns=turn_counts["correction"],
+            ignored_turns=turn_counts["ignored"],
+            repeated_correction_turns=turn_counts["repeated_correction"],
+            stale_count=stale_count,
+            proactive_count=proactive_count,
             efficiency_score=efficiency_score,
             preference_score=preference_score,
         )
+
+    def _calculate_preference_score(
+        self, first_mention_trace: list[dict[str, Any]]
+    ) -> tuple[int, int, float]:
+        """Calculate preference score from first_mention_trace.
+
+        Returns:
+            (proactive_count, stale_count, preference_score)
+        """
+        total = len(first_mention_trace)
+        if total == 0:
+            return 0, 0, 0.0
+
+        proactive_count = sum(
+            1 for e in first_mention_trace
+            if e.get("usage") == "proactive" and not e.get("stale_used", False)
+        )
+        stale_count = sum(1 for e in first_mention_trace if e.get("stale_used", False))
+
+        preference_score = max(0.0, (proactive_count - stale_count) / total)
+        return proactive_count, stale_count, round(preference_score, 2)
+
+    def _calculate_efficiency_score(
+        self, turn_classifications: list[dict[str, Any]], agent_turns: int
+    ) -> tuple[dict[str, int], float]:
+        """Calculate efficiency score from turn_classifications.
+
+        Returns:
+            (turn_counts dict, efficiency_score)
+        """
+        counts = {
+            "productive": 0,
+            "clarifying": 0,
+            "correction": 0,
+            "ignored": 0,
+            "repeated_correction": 0,
+        }
+
+        for tc in turn_classifications:
+            turn_type = tc.get("type", "").lower()
+            if turn_type == "productive":
+                counts["productive"] += 1
+            elif turn_type == "clarifying_question":
+                counts["clarifying"] += 1
+            elif turn_type == "correction":
+                counts["correction"] += 1
+            elif turn_type == "ignored":
+                counts["ignored"] += 1
+            elif turn_type == "repeated_correction":
+                counts["repeated_correction"] += 1
+
+        if counts["repeated_correction"] > 0:
+            efficiency_score = 0.0
+        elif agent_turns == 0:
+            efficiency_score = 1.0
+        else:
+            penalty = 0.5 * counts["clarifying"] + 0.5 * counts["ignored"] + counts["correction"]
+            efficiency_score = max(0.0, (agent_turns - penalty) / agent_turns)
+
+        return counts, round(efficiency_score, 2)
 
 
 def evaluate_dialogue(

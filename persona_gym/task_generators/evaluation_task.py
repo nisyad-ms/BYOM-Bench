@@ -67,6 +67,7 @@ class EvaluationTaskGenerator:
         multisession_output: MultiSessionOutput,
         num_tasks: int = DEFAULT_NUM_TASKS,
         prefs_per_task: int = DEFAULT_PREFS_PER_TASK,
+        previous_events: list[str] | None = None,
     ) -> list[EvaluationTask]:
         """Generate multiple evaluation tasks from multi-session data.
 
@@ -128,6 +129,7 @@ class EvaluationTaskGenerator:
 
         # Generate tasks
         tasks = []
+        generated_events = list(previous_events) if previous_events else []
         for i in range(num_tasks):
             logger.info(f"Generating task {i + 1}/{num_tasks}...")
             task = self._generate_single_task(
@@ -139,8 +141,10 @@ class EvaluationTaskGenerator:
                 num_evolved=num_evolved_required,
                 num_baseline=num_baseline_required,
                 task_index=i,
+                previous_events=generated_events,
             )
             tasks.append(task)
+            generated_events.append(task.evaluation_event.event)
 
         return tasks
 
@@ -155,6 +159,7 @@ class EvaluationTaskGenerator:
         num_baseline: int,
         task_index: int,
         use_v2: bool = True,
+        previous_events: list[str] | None = None,
     ) -> EvaluationTask:
         """Generate a single evaluation task with specified preference mix.
 
@@ -177,6 +182,7 @@ class EvaluationTaskGenerator:
                 multisession_output=multisession_output,
                 num_evolved=num_evolved,
                 num_baseline=num_baseline,
+                previous_events=previous_events,
             )
 
             timeline = multisession_output.timeline
@@ -257,6 +263,7 @@ class EvaluationTaskGenerator:
         multisession_output: MultiSessionOutput,
         num_evolved: int,
         num_baseline: int,
+        previous_events: list[str] | None = None,
     ) -> tuple[LifeEvent, list[dict]]:
         """Generate an evaluation event where LLM selects preferences (v2).
 
@@ -273,12 +280,19 @@ class EvaluationTaskGenerator:
         """
         preference_story = self._build_preference_evolution_story(multisession_output)
 
+        previous_events_str = ""
+        if previous_events:
+            previous_events_str = "\n".join(f"- {e}" for e in previous_events)
+        else:
+            previous_events_str = "(none yet)"
+
         prompt = render_prompt(
-            "task_generation/evaluation_task_instruction_v2",
+            "task_generation/evaluation_task_instruction",
             persona=multisession_output.persona,
             preference_evolution_story=preference_story,
             num_evolved_required=num_evolved,
             num_baseline_required=num_baseline,
+            previous_events=previous_events_str,
         )
 
         response = self.client.complete_json(
@@ -288,16 +302,69 @@ class EvaluationTaskGenerator:
         )
 
         selected_prefs = response.get("selected_preferences", [])
+        event_text = response.get("event", "General task")
+        task_internal = response.get("task_internal", "")
+
+        user_prompt = self._generate_user_prompt(
+            multisession_output=multisession_output,
+            event=event_text,
+            selected_prefs=selected_prefs,
+        )
 
         life_event = LifeEvent(
             session_id=-1,
             date=response.get("date", datetime.now().strftime("%m/%d/%Y")),
-            event=response.get("event", "General task"),
+            event=event_text,
             domain="",
-            user_prompt=response.get("user_prompt", ""),
-            task_internal=response.get("task_internal", ""),
+            user_prompt=user_prompt,
+            task_internal=task_internal,
         )
         return life_event, selected_prefs
+
+    def _generate_user_prompt(
+        self,
+        multisession_output: MultiSessionOutput,
+        event: str,
+        selected_prefs: list[dict],
+    ) -> str:
+        """Generate a high-quality opening message for the evaluation conversation.
+
+        This is a separate LLM call focused on creating a directed user prompt
+        that tests preferences without revealing them.
+
+        Args:
+            multisession_output: Source data for persona summary
+            event: The evaluation event/situation
+            selected_prefs: List of preference dicts being tested
+
+        Returns:
+            User's opening message
+        """
+        persona_summary = multisession_output.persona.split(".")[0] + "."
+
+        prefs_formatted = "\n".join(
+            f"- [{p.get('id', 'unknown')}] {p.get('fact', '')}"
+            for p in selected_prefs
+        )
+
+        system_prompt = render_prompt(
+            "task_generation/user_prompt_generator_system",
+            persona_summary=persona_summary,
+            evaluation_event=event,
+            required_preferences=prefs_formatted,
+        )
+
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": "Generate the user's opening message."},
+        ]
+
+        response = self.client.complete_chat(
+            messages=messages,
+            max_tokens=CONFIG["max_tokens"].get("user_prompt_generator", 256),
+        )
+
+        return response.strip()
 
     def _generate_evaluation_event(
         self,

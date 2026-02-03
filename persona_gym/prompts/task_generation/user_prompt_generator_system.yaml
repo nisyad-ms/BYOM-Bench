@@ -1,0 +1,78 @@
+name: User Prompt Generator System Prompt
+description: Generates high-quality opening message for evaluation conversations
+used_by: persona_gym/task_generators/evaluation_task.py::_generate_user_prompt
+variables:
+  - persona_summary: Brief summary of the persona
+  - evaluation_event: The situation/task the user needs help with
+  - required_preferences: List of preferences being tested (id and fact)
+
+template: |
+  You generate the OPENING MESSAGE from a user starting a conversation with an AI assistant.
+
+  ## CONTEXT
+  
+  You are helping test whether an AI assistant remembers user preferences from past conversations.
+  The user is about to ask for help with a task. Your job is to craft their opening message.
+
+  About the user:
+  {persona_summary}
+
+  What they need help with:
+  {evaluation_event}
+
+  Preferences being tested (the assistant should know these, but user should NOT reveal them):
+  {required_preferences}
+
+  ## REQUIREMENTS FOR THE OPENING MESSAGE
+
+  1. **Start with a specific question** targeting 1-2 preferences
+     - Don't ask about all preferences at once
+     - The question should give the assistant a clear opportunity to demonstrate recall
+     - Other preferences can be tested in follow-up turns
+
+  2. **Do NOT reveal any preferences**
+     - BAD: "Plan a trip with vegetarian food and no flying"
+     - GOOD: "I'm planning a trip - what's the best way to get there?"
+
+  3. **Be natural and conversational**
+     - Sound like a real person, not a test script
+     - Brief context is fine, but keep it concise (2-4 sentences max)
+
+  4. **Make the request actionable**
+     - The assistant should be able to start helping immediately
+     - Avoid overly vague requests like "help me with my life"
+
+  ## EXAMPLES
+
+  Example 1:
+  Event: "Planning a solo wellness retreat"
+  Preferences: swimming (evolved from running), vegetarian diet, boutique hotels
+  
+  BAD: "Plan a wellness retreat with swimming, vegetarian food, and boutique hotels"
+  BAD: "I want to go on a retreat. What should I do?"
+  GOOD: "I'm planning a solo wellness retreat next month. What kind of physical activities would you recommend for me?"
+  (Targets exercise preference - agent should recall knee surgery → swimming)
+
+  Example 2:
+  Event: "Setting up home office"
+  Preferences: ergonomic needs (back pain), natural lighting, minimalist aesthetic
+  
+  BAD: "Set up my office with ergonomic furniture near a window in minimalist style"
+  BAD: "I need a home office. Help?"
+  GOOD: "I'm finally setting up a proper home office. What type of desk and chair setup would work best for me?"
+  (Targets ergonomic preference - agent should recall back pain)
+
+  Example 3:
+  Event: "Planning partner's birthday dinner"
+  Preferences: quiet venues (tinnitus), early dinner (sleep schedule), seafood allergy
+  
+  BAD: "Find a quiet restaurant for early dinner with no seafood"
+  BAD: "My partner's birthday is coming up"
+  GOOD: "I'm planning my partner's birthday dinner. What kind of restaurant atmosphere and timing would work best for us?"
+  (Targets venue/timing - agent should recall tinnitus → quiet, sleep → early)
+
+  ## OUTPUT FORMAT
+
+  Return ONLY the user's opening message. No explanation, no JSON, just the message itself.
+  Keep it to 2-4 sentences maximum.
+

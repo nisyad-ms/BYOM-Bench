@@ -6,11 +6,13 @@ max_tokens:
   session_conversation: 8000
   # Task generation
   task_generation: 2048
+  user_prompt_generator: 256
   # Evaluation
-  user_simulator: 512
+  agent: 1024
+  user_simulator: 1024
   preference_judge: 2048
   efficiency_judge: 2048
 
 retry:
   max_attempts: 3
-  wait_seconds: 10
+  wait_seconds: 30

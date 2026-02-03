@@ -760,7 +760,6 @@ class MultiSessionEvaluationResult:
             "preference_scoring": {
                 "proactive_count": self.proactive_count,
                 "stale_count": self.stale_count,
-                "preference_usage": self.preference_usage,
                 "stale_preference_usage": self.stale_preference_usage,
                 "first_mention_trace": self.first_mention_trace,
             },
