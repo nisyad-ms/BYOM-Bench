@@ -6,12 +6,9 @@ Usage:
     python test_evaluation.py --agent context
 
     # All tasks for a session in parallel
-    python test_evaluation.py --task all --agent context
-    python test_evaluation.py --task all --agent nocontext
-
-    # Specify session and/or task explicitly
-    python test_evaluation.py --session outputs/2026-02-02_1430 --agent context
-    python test_evaluation.py --session outputs/2026-02-02_1430 --task outputs/2026-02-02_1430/tasks/task_01.json
+    python test_evaluation.py --session 2026-02-02_1414 --task all --agent context
+    python test_evaluation.py --session 2026-02-02_1414 --task all --agent nocontext
+    python test_evaluation.py --session 2026-02-02_1414 --task all --agent foundry
 """
 
 import argparse
@@ -41,6 +38,7 @@ def run_single_evaluation(
     task_path: Path,
     agent_type: str,
     max_agent_turns: int,
+    force_recreate_memory: bool = False,
 ):
     """Run evaluation for a single task."""
     from persona_gym.evaluation_multisession import run_evaluation
@@ -58,13 +56,15 @@ def run_single_evaluation(
         raw_task = json.load(f)
     eval_task = EvaluationTask.from_dict(raw_task)
 
-    include_history = agent_type == "context"
+    memory_store_name = session_dir.name if agent_type == "foundry" else None
 
     result = run_evaluation(
         data,
         max_agent_turns=max_agent_turns,
-        include_history=include_history,
         eval_task=eval_task,
+        agent_type=agent_type,
+        memory_store_name=memory_store_name,
+        force_recreate_memory=force_recreate_memory,
     )
 
     with open(output_path, "w", encoding="utf-8") as f:
@@ -90,7 +90,7 @@ async def run_all_evaluations(
         raw_data = json.load(f)
     data = MultiSessionOutput.from_dict(raw_data)
 
-    include_history = agent_type == "context"
+    memory_store_name = session_dir.name if agent_type == "foundry" else None
 
     contexts = []
     for task_path in task_paths:
@@ -101,7 +101,8 @@ async def run_all_evaluations(
         contexts.append({
             "multisession_data": data,
             "eval_task": eval_task,
-            "include_history": include_history,
+            "agent_type": agent_type,
+            "memory_store_name": memory_store_name,
             "max_agent_turns": max_agent_turns,
             "task_path": task_path,
         })
@@ -124,13 +125,15 @@ async def run_all_evaluations(
 def main():
     parser = argparse.ArgumentParser(description="Test evaluation system")
     parser.add_argument("--session", type=str, default=None,
-                        help="Path to session dir or file (default: latest)")
+                        help="Session name (e.g., 2026-02-02_1414). Default: latest")
     parser.add_argument("--task", type=str, default=None,
                         help="Path to task file, or 'all' for all tasks (default: latest)")
-    parser.add_argument("--agent", type=str, choices=["context", "nocontext"], default="context",
-                        help="Agent type: context (full history) or nocontext (baseline)")
+    parser.add_argument("--agent", type=str, choices=["context", "nocontext", "foundry"], default="context",
+                        help="Agent type: context, nocontext, or foundry")
     parser.add_argument("--max-agent-turns", type=int, default=10,
                         help="Maximum agent turns in dialogue")
+    parser.add_argument("--no-cache", action="store_true",
+                        help="Force recreate memory store from scratch (foundry agent only)")
     args = parser.parse_args()
 
     session_dir = get_session_dir(args.session)
@@ -177,6 +180,7 @@ def main():
             task_path,
             args.agent,
             args.max_agent_turns,
+            args.no_cache,
         )
 
 

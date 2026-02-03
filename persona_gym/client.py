@@ -56,7 +56,7 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 
-_config_path = Path(__file__).parent.parent / "client_config.yaml"
+_config_path = Path(__file__).parent.parent / "configs" / "client_config.yaml"
 with open(_config_path) as f:
     CONFIG = yaml.safe_load(f)
 

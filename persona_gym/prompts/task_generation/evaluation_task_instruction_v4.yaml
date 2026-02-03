@@ -47,13 +47,13 @@ template: |
 
   ## TASK MUST BE A NEW SCENARIO
   - The task MUST be a NEW life event that has NOT already happened with the user
-  - The sessions in the history are PAST events - create a FUTURE scenario
+  - The sessions in the preference evolution history are PAST events - create a FUTURE scenario which is different from all previous ones
   - **Be creative and DIVERSE:** 
     - AVOID defaulting to travel/vacation scenarios - these are overused
     - Consider unique events like home renovation, new hobby, career transition, health routine, learning a skill, family or relationship milestones, etc.
   - The preferences were learned from past events, but the evaluation task should be a fresh situation that tests user preferences in a NEW context
 
-  ## ALREADY GENERATED EVENTS (if present - create something DIFFERENT from these)
+  ## ALREADY GENERATED EVALUATION EVENTS (if present - create something DIFFERENT from these)
   {previous_events}
 
   ## OUTPUT FORMAT (JSON)
@@ -62,7 +62,7 @@ template: |
       {{"id": "pref_XXX", "fact": "...", "is_evolved": true/false, "evolved_from": "..." or null}}
     ],
     "event": "Brief situation description (1-3 sentences) - what the user needs help with",
-    "task_internal": "What perfect completion looks like - how the agent should apply each preference",
+    "task_internal": "What perfect completion looks like - how the agent should apply each preference. Number each point for clarity.",
     "date": "MM/DD/YYYY"
   }}
 

@@ -11,13 +11,13 @@ prompts:
 
   # Task generation prompts
   task_generation/evaluation_task_system: ""
-  task_generation/evaluation_task_instruction: "v4"
+  task_generation/evaluation_task_instruction: "v6"
   task_generation/user_prompt_generator_system: ""
 
   # Evaluation prompts
   evaluation/preference_judge_system: ""
   evaluation/preference_judge_user: ""
-  evaluation/efficiency_judge_system: ""
+  evaluation/efficiency_judge_system: "v3"
   evaluation/efficiency_judge_user: ""
   evaluation/user_simulator_system: "v4"
 

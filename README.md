@@ -5,28 +5,30 @@ A benchmark for evaluating LLM personalization through multi-session conversatio
 ## Overview
 
 PersonaGym measures how well AI agents remember and proactively use user preferences across multiple conversation sessions. Preferences evolve over time due to life events, testing whether agents can:
-- Recall and apply current preferences
-- Avoid using stale/superseded preferences
-- Minimize clarifying questions by leveraging known context
 
-## Architecture
+- **Recall and apply current preferences** proactively without being asked
+- **Avoid using stale/superseded preferences** that have been replaced
+- **Minimize clarifying questions** by leveraging known context
+
+## Pipeline Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                        PersonaGym Pipeline                              │
-├─────────────────────────────────────────────────────────────────────────┤
-│  INPUT: Persona description                                             │
-│           ↓                                                             │
-│  ┌─────────────────────────────────┐  ┌─────────────────────────────┐   │
-│  │ 1. DATA GENERATION              │→ │ 2. EVALUATION               │   │
-│  │ - Generate life events          │  │ - Generate evaluation task  │   │
-│  │ - Create preferences            │  │ - Run agent dialogue        │   │
-│  │ - Evolve preferences over time  │  │ - Judge performance         │   │
-│  │ - Generate conversations        │  │ - Compute scores            │   │
-│  └─────────────────────────────────┘  └─────────────────────────────┘   │
-│           ↓                                   ↓                         │
-│  OUTPUT: MultiSessionOutput          Evaluation Scores                  │
-└─────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          PersonaGym Pipeline                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐      │
+│  │ 1. DATA GEN      │ →  │ 2. TASK GEN      │ →  │ 3. EVALUATION    │      │
+│  │                  │    │                  │    │                  │      │
+│  │ • Expand persona │    │ • Select prefs   │    │ • Run dialogue   │      │
+│  │ • Life events    │    │ • Create event   │    │ • Judge prefs    │      │
+│  │ • Preferences    │    │ • User prompt    │    │ • Judge turns    │      │
+│  │ • Conversations  │    │                  │    │ • Compute scores │      │
+│  └──────────────────┘    └──────────────────┘    └──────────────────┘      │
+│         ↓                        ↓                       ↓                 │
+│   sessions.json            task_XX.json          eval_XX_agent.json        │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ## Installation
@@ -45,112 +47,173 @@ pip install -e .
 
 ## Configuration
 
+### Azure OpenAI
+
 Create a `.env` file with your Azure OpenAI credentials:
 
 ```bash
 AZURE_OPENAI_ENDPOINT="https://your-endpoint.openai.azure.com/"
-AZURE_OPENAI_DEPLOYMENT="gpt-4"
 AZURE_OPENAI_API_VERSION="2025-03-01-preview"
+AZURE_OPENAI_DEPLOYMENTS="gpt-4-001,gpt-4-002,gpt-4-003"  # Comma-separated for parallel execution
 ```
 
-Authenticate using Azure CLI:
+### Azure AI Foundry (Optional)
+
+For the Foundry Memory Agent:
+
+```bash
+AZURE_FOUNDRY_ENDPOINT="https://your-foundry-endpoint.services.ai.azure.com/api/projects/your-project"
+```
+
+### Authentication
+
 ```bash
 az login
 ```
 
-## Quick Start
+## Running Components
 
-### Generate Multi-Session Data
+### Stage 1: Data Generation
 
-```python
-from persona_gym.data_generators import MultiSessionGenerator
+Generates multi-session conversation data with evolving preferences.
 
-generator = MultiSessionGenerator(
-    persona="A 32-year-old software engineer considering a career change...",
-    num_sessions=2,
-    num_preferences=3,  # 3 preferences per life event
-)
-result = generator.generate_multi_session()
-
-print(f"Sessions: {len(result.sessions)}")
-print(f"Total preferences: {len(result.timeline.preferences)}")
-print(f"Active preferences: {len(result.timeline.get_active_preferences())}")
-```
-
-### Run Evaluation
-
-```python
-from persona_gym.evaluation_multisession import run_evaluation_from_file
-
-# Run with full context (agent has access to conversation history)
-result = run_evaluation_from_file("outputs/sessions/data_generation_output.json", include_history=True)
-print(f"Score: {result.final_score:.2f}")
-
-# Run without context (baseline - agent has no memory)
-result = run_evaluation_from_file("outputs/sessions/data_generation_output.json", include_history=False)
-print(f"Score: {result.final_score:.2f}")
-```
-
-Or use the test scripts:
 ```bash
-# Generate test data
-python test_multisession.py
-
-# Run evaluation
-python test_evaluation.py --full      # Full context agent
-python test_evaluation.py --no-context  # No context baseline
+uv run python test_data_generation.py
 ```
+
+Output: `outputs/<timestamp>/sessions.json`
+
+### Stage 2: Task Generation
+
+Creates evaluation tasks from the generated session data.
+
+```bash
+# Generate a single task
+uv run python test_task_generation.py
+
+# Generate multiple tasks in parallel
+uv run python test_task_generation.py --count 3
+
+# Use a specific session
+uv run python test_task_generation.py --session 2026-02-02_1414
+```
+
+Output: `outputs/<timestamp>/tasks/task_XX.json`
+
+### Stage 3: Evaluation
+
+Runs agent dialogue and scoring on generated tasks.
+
+```bash
+# Context agent (has full conversation history)
+uv run python test_evaluation.py --agent context
+
+# No-context agent (baseline, no memory)
+uv run python test_evaluation.py --agent nocontext
+
+# Foundry memory agent (Azure AI Foundry memory store)
+uv run python test_evaluation.py --agent foundry
+
+# Run all tasks in parallel
+uv run python test_evaluation.py --task all --agent context
+
+# Force recreate memory store (foundry only)
+uv run python test_evaluation.py --agent foundry --no-cache
+```
+
+Output: `outputs/<timestamp>/evaluation/eval_XX_<agent>.json`
+
+## End-to-End Test
+
+Run the complete pipeline:
+
+```bash
+# 1. Generate session data
+uv run python test_data_generation.py
+
+# 2. Generate evaluation tasks
+uv run python test_task_generation.py --count 3
+
+# 3. Run evaluations for all agents
+uv run python test_evaluation.py --task all --agent context
+uv run python test_evaluation.py --task all --agent nocontext
+```
+
+## Evaluation Metrics
+
+### Preference Score
+
+Measures proactive preference recall:
+
+```
+preference_score = max(0, (proactive_count - stale_count) / total_required)
+```
+
+- **PROACTIVE**: Agent mentioned preference before user (+1)
+- **STALE**: Agent used superseded preference (-1)
+
+### Efficiency Score
+
+Measures conversation efficiency:
+
+```
+efficiency_score = max(0, (agent_turns - 0.5 × clarifying - corrections) / agent_turns)
+```
+
+- **PRODUCTIVE**: Agent provided useful, preference-aware response
+- **IGNORED**: User mentioned preference first (no penalty)
+- **CLARIFYING**: Agent asked about known preference (-0.5)
+- **CORRECTION**: Agent made wrong suggestion (-1.0)
 
 ## Project Structure
 
 ```
 persona_gym/
-├── pyproject.toml                # Package configuration
-├── data/source/                  # Source persona data
-├── outputs/                      # Generated outputs
-│   ├── conversation/             # Data generation outputs
-│   ├── tasks/                    # Generated evaluation tasks
-│   └── evaluation/               # Evaluation results
-├── logs/                         # Log files
-├── test_multisession.py          # Test data generation
-├── test_evaluation.py            # Test evaluation
-└── persona_gym/                  # Main package
-    ├── __init__.py
-    ├── schemas.py                # All data models
-    ├── client.py                 # Shared LLM client
-    ├── data_generators/          # Data generation
-    │   ├── base.py               # Base generator class
-    │   └── multisession.py       # Multi-session generator
-    ├── evaluation_multisession/  # Evaluation system
-    │   ├── orchestrator.py       # Task generation
-    │   ├── judge.py              # LLM judge
-    │   ├── user_simulator.py     # User simulation
-    │   └── runner.py             # Evaluation runner
-    └── prompts/                  # YAML prompt templates
-        ├── data_generation/      # Data gen prompts
-        └── evaluation/           # Evaluation prompts
+├── configs/
+│   ├── client_config.yaml      # LLM client settings
+│   └── prompt_config.yaml      # Prompt version configuration
+├── data/source/                # Source persona data
+├── docs/                       # Documentation and examples
+├── outputs/                    # Generated outputs
+│   └── <timestamp>/
+│       ├── sessions.json       # Stage 1 output
+│       ├── tasks/              # Stage 2 output
+│       │   └── task_XX.json
+│       └── evaluation/         # Stage 3 output
+│           └── eval_XX_<agent>.json
+├── logs/                       # Log files (mirrors output structure)
+├── persona_gym/                # Main package
+│   ├── agents/                 # Agent implementations
+│   │   ├── base.py             # ContextAwareAgent, NoContextAgent
+│   │   └── foundry_agent.py    # FoundryMemoryAgent
+│   ├── client.py               # Shared Azure OpenAI client
+│   ├── data_generators/        # Stage 1: Data generation
+│   │   └── multisession.py     # MultiSessionGenerator
+│   ├── evaluation_multisession/# Stage 3: Evaluation
+│   │   ├── judge.py            # Preference + efficiency judges
+│   │   ├── runner.py           # Evaluation orchestration
+│   │   └── user_simulator.py   # Simulated user for dialogue
+│   ├── prompts/                # YAML prompt templates
+│   │   ├── data_generation/
+│   │   ├── evaluation/
+│   │   └── task_generation/
+│   ├── schemas.py              # All data models
+│   └── task_generators/        # Stage 2: Task generation
+│       └── evaluation_task.py
+├── test_data_generation.py     # Stage 1 test script
+├── test_task_generation.py     # Stage 2 test script
+├── test_evaluation.py          # Stage 3 test script
+├── utils.py                    # Shared utilities
+└── pyproject.toml              # Package configuration
 ```
 
-## Evaluation Metrics
+## Agent Types
 
-| Metric | Description |
-|--------|-------------|
-| **Preference Score** | Did the agent proactively use current preferences? |
-| **Efficiency Score** | Did the agent avoid unnecessary clarifying questions? |
-| **Task Completion** | Did the agent complete the requested task? |
-| **Final Score** | Weighted combination of all metrics |
-
-## Key Concepts
-
-### Preference Evolution
-Preferences change over time due to life events. For example:
-- "Prefers morning study sessions" → life event: "Started new job with early meetings" → "Prefers evening study sessions"
-
-### Evaluation Task Design
-Tasks are designed to **require** preference knowledge:
-- Each task has `required_preferences` that must be applied
-- Generic advice without preference awareness scores poorly
-- Agent must demonstrate explicit knowledge of user context
+| Agent | Description | Expected Scores |
+|-------|-------------|-----------------|
+| **context** | Full conversation history access | preference ~0.8-1.0 |
+| **nocontext** | No past context (baseline) | preference ~0.0, efficiency ~1.0 |
+| **foundry** | Azure AI Foundry memory store | Varies by memory quality |
 
 ## Development
 
@@ -158,7 +221,10 @@ Tasks are designed to **require** preference knowledge:
 # Install dev dependencies
 uv sync --all-extras
 
-# Run tests
-python test_multisession.py  # Data generation
-python test_evaluation.py --full  # Evaluation
+# Linting
+ruff check .
+ruff format .
+
+# Type checking
+mypy persona_gym
 ```

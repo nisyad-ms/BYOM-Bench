@@ -1,0 +1,153 @@
+name: Generate Help Request Scenario (v6 - Scenario First)
+description: LLM picks scenario type first, then selects fitting preferences for diversity
+used_by: persona_gym/task_generators/evaluation_task.py::_generate_evaluation_event_v2
+variables:
+  - persona: The user persona description
+  - preference_evolution_story: Preference ledger with baseline and evolution history
+  - num_evolved_required: Number of evolved preferences to select (default 3)
+  - num_baseline_required: Number of baseline preferences to select (default 3)
+  - previous_situations: List of situations already generated (to avoid duplicates)
+  - used_baseline_preferences: List of baseline preference IDs already used in previous tasks
+
+template: |
+  You are generating a scenario where a user seeks help from an AI assistant.
+
+  ## BACKGROUND CONTEXT
+
+  The user has had multiple conversations with an AI assistant over time. Through these conversations, the assistant learned the user's preferences. Some preferences EVOLVED due to life changes (the old preference is now STALE and should not be used).
+
+  Through this scenario, we want to test: Does the assistant remember and apply the user's CURRENT preferences?
+
+  ## USER BACKGROUND
+
+  PERSONA: 
+  {persona}
+
+  KNOWN PREFERENCES:
+  {preference_evolution_story}
+
+  ## YOUR TASK: SCENARIO-FIRST APPROACH
+
+  Create a NEW situation where this user approaches the AI assistant for help.
+  
+  **IMPORTANT**: To ensure diversity, you MUST pick the scenario type FIRST, then find preferences that fit.
+
+  ### STEP 1: Choose a Scenario
+
+  Generate one broad scenario DIFFERENT from previously generated situations (provided below). We will expand on this scenario in later steps to describe the specific situation.
+  
+  Examples of good scenarios (not exhaustive; treat as inspiration):
+  - Home renovation or workspace setup
+  - Health/fitness routine planning  
+  - Learning a new skill or starting a hobby
+  - Career decision or job transition
+  - Financial planning or major purchase decision
+  - Daily/weekly routine optimization
+  - Equipment or gear selection
+  - Meal planning or dietary overhaul
+  - Wardrobe refresh or personal style
+  - Book/reading list or media curation
+  - Gift selection for someone special
+  - Tech ecosystem setup (devices, smart home)
+  - Side project or creative endeavor
+  - Job interview or presentation prep
+  - Personal finance organization
+
+  ### STEP 2: Select Preferences That Fit
+
+  Now find {num_evolved_required} evolved and {num_baseline_required} baseline preferences that naturally apply to your generated scenario.
+
+  **CRITICAL - PREFERENCE DIVERSITY**:
+  - AVOID re-using these baseline preferences (already used in previous tasks): {used_baseline_preferences}
+  - Evolved preferences can be reused if needed but prefer not to (there are fewer of them)
+
+  Requirements:
+  - All selected preferences should meaningfully influence the response
+  - Don't force unrelated preferences - it's better to have natural fit
+
+  ### STEP 3: Expand and Design the Specific Situation
+
+  Use the chosen scenario and preferences to create a specific situation the user is facing where they'd want AI help.
+  Requirements:
+  - **Preferences**: The situation should allow all selected preferences to be applied
+  - **User-centric**: The help directly benefits the user personally based on their preferences.
+    - GOOD: "Design MY morning routine", "Help ME choose a laptop"
+    - BAD: "Plan a family reunion dinner" (focus shifts to others)
+  - **Clear deliverable**: E.g. the user wants a plan, recommendation, or advice, etc.
+  - **Fresh**: Different from previously generated situations
+
+  ### STEP 4: Define Ideal Response
+
+  How should the assistant apply each preference? Number each point.
+
+  ## PREVIOUSLY GENERATED (create something DIFFERENT)
+  
+  Situations: {previous_situations}
+  
+  Baseline preferences already used: {used_baseline_preferences}
+
+  ## AVOID COMMON / OVERUSED SCENARIO TYPES
+
+  - Travel, vacation, trip, getaway, relocation
+
+  ## OUTPUT FORMAT (JSON)
+
+  {{
+    "scenario_type": "The type you chose from Step 1",
+    "selected_preferences": [
+      {{"id": "pref_XXX", "fact": "...", "is_evolved": true/false, "evolved_from": "..." or null}}
+    ],
+    "situation": "1-3 sentences describing what the user is facing and what help they need",
+    "ideal_response": "How the assistant should apply each preference. Number each point.",
+    "date": "MM/DD/YYYY"
+  }}
+
+  ## EXAMPLES
+
+  Example 1 - Home Office Setup:
+  {{
+    "scenario_type": "Home renovation or workspace setup",
+    "selected_preferences": [
+      {{"id": "pref_031", "fact": "Prefers quiet environments for focus", "is_evolved": true, "evolved_from": "Loved working in busy cafes"}},
+      {{"id": "pref_032", "fact": "Needs ergonomic setup due to chronic back pain", "is_evolved": true, "evolved_from": "No physical constraints"}},
+      {{"id": "pref_033", "fact": "Sensitive to harsh lighting, prefers natural light", "is_evolved": true, "evolved_from": "No lighting preferences"}},
+      {{"id": "pref_008", "fact": "Budget-conscious, researches thoroughly before buying", "is_evolved": false, "evolved_from": null}},
+      {{"id": "pref_015", "fact": "Minimalist aesthetic preference", "is_evolved": false, "evolved_from": null}},
+      {{"id": "pref_022", "fact": "Tech-savvy, enjoys smart home integration", "is_evolved": false, "evolved_from": null}}
+    ],
+    "situation": "The user is setting up a dedicated home office after their company announced permanent remote work. They want recommendations for furniture, layout, and equipment.",
+    "ideal_response": "1. Recommend soundproofing solutions or quiet room selection (not suggesting cafe-style setups). 2. Prioritize ergonomic chair and adjustable desk for back pain. 3. Suggest desk placement near windows for natural light, recommend warm-tone bulbs. 4. Provide budget-friendly options with comparison research. 5. Recommend clean, minimalist furniture designs. 6. Include smart home ideas like automated lighting and voice-controlled devices.",
+    "date": "04/20/2024"
+  }}
+
+  Example 2 - Major Purchase Decision:
+  {{
+    "scenario_type": "Financial planning or major purchase decision",
+    "selected_preferences": [
+      {{"id": "pref_041", "fact": "Values reliability over brand prestige after car breakdown", "is_evolved": true, "evolved_from": "Preferred luxury European brands"}},
+      {{"id": "pref_042", "fact": "Prioritizes fuel efficiency after gas price spike", "is_evolved": true, "evolved_from": "Didn't consider fuel costs"}},
+      {{"id": "pref_043", "fact": "Needs space for sports equipment after taking up cycling", "is_evolved": true, "evolved_from": "Only needed commuter space"}},
+      {{"id": "pref_007", "fact": "Lives in hilly area with harsh winters", "is_evolved": false, "evolved_from": null}},
+      {{"id": "pref_018", "fact": "Prefers to buy certified pre-owned", "is_evolved": false, "evolved_from": null}},
+      {{"id": "pref_025", "fact": "Wants Apple CarPlay integration", "is_evolved": false, "evolved_from": null}}
+    ],
+    "situation": "The user needs to buy a new car and wants help narrowing down options that fit their current lifestyle and priorities.",
+    "ideal_response": "1. Recommend reliable brands (Toyota, Honda) over luxury European (not BMW/Mercedes). 2. Filter for hybrid or high-MPG vehicles. 3. Prioritize SUVs or wagons with cargo space for bike transport. 4. Consider AWD capability for hills and winter conditions. 5. Search certified pre-owned inventory. 6. Verify Apple CarPlay is standard or available.",
+    "date": "05/10/2024"
+  }}
+
+  Example 3 - Learning a New Skill:
+  {{
+    "scenario_type": "Learning a new skill or starting a hobby",
+    "selected_preferences": [
+      {{"id": "pref_051", "fact": "Prefers self-paced learning after bad group class experience", "is_evolved": true, "evolved_from": "Enjoyed group classes"}},
+      {{"id": "pref_052", "fact": "Limited to 30min sessions due to new childcare duties", "is_evolved": true, "evolved_from": "Had 2-hour blocks for hobbies"}},
+      {{"id": "pref_053", "fact": "Avoids screens in evening after eye strain diagnosis", "is_evolved": true, "evolved_from": "No screen limitations"}},
+      {{"id": "pref_003", "fact": "Budget of $100/month for hobbies", "is_evolved": false, "evolved_from": null}},
+      {{"id": "pref_019", "fact": "Interested in creative/artistic pursuits", "is_evolved": false, "evolved_from": null}},
+      {{"id": "pref_023", "fact": "Prefers tactile, hands-on activities", "is_evolved": false, "evolved_from": null}}
+    ],
+    "situation": "The user wants to pick up a new creative hobby they can practice at home during spare moments. They need help choosing what to learn and how to get started.",
+    "ideal_response": "1. Suggest self-paced options (books, kits) rather than scheduled classes. 2. Recommend hobbies that work in 30-minute increments (sketching, hand lettering, origami). 3. Focus on non-screen activities - physical books, paper crafts, not digital art. 4. Stay within $100/month - suggest starter kits and free resources. 5. Prioritize creative/artistic hobbies over technical ones. 6. Emphasize tactile crafts - drawing, calligraphy, paper crafts.",
+    "date": "06/15/2024"
+  }}

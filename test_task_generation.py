@@ -3,12 +3,11 @@
 
 Usage:
     python test_task_generation.py                    # Single task, latest session
-    python test_task_generation.py --count 3          # Generate 3 tasks in parallel
+    python test_task_generation.py --count 3          # Generate 3 tasks sequentially
     python test_task_generation.py --session <path>   # Use specific session dir or file
 """
 
 import argparse
-import asyncio
 import json
 import sys
 import time
@@ -26,25 +25,34 @@ from utils import (
 logger = setup_logging("task_generation")
 
 
-def generate_single(data, session_dir: Path, task_num: int):
-    """Generate a single task synchronously."""
-    from persona_gym.task_generators import generate_evaluation_task
+def get_existing_events(session_dir: Path) -> list[str]:
+    """Get event descriptions from existing tasks in the session."""
+    tasks_dir = session_dir / "tasks"
+    if not tasks_dir.exists():
+        return []
 
-    task = generate_evaluation_task(data)
-    output_path = get_task_path(session_dir, task_num)
+    events = []
+    for task_file in sorted(tasks_dir.glob("task_*.json")):
+        with open(task_file, "r", encoding="utf-8") as f:
+            task_data = json.load(f)
+        event = task_data.get("evaluation_event", {}).get("event", "")
+        if event:
+            events.append(event)
+    return events
 
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(task.to_dict(), f, indent=2, ensure_ascii=False)
 
-    logger.info(f"Generated task {task_num}")
-    return task
+def generate_tasks(data, session_dir: Path, start_task_num: int, count: int):
+    """Generate tasks sequentially, sharing previous events for diversity."""
+    from persona_gym.task_generators import generate_evaluation_tasks
 
+    previous_events = get_existing_events(session_dir)
+    logger.info(f"Found {len(previous_events)} existing task events")
 
-async def generate_multiple(data, session_dir: Path, start_task_num: int, count: int):
-    """Generate multiple tasks in parallel."""
-    from persona_gym.task_generators import generate_evaluation_tasks_parallel
-
-    tasks = await generate_evaluation_tasks_parallel(data, num_tasks=count)
+    tasks = generate_evaluation_tasks(
+        data,
+        num_tasks=count,
+        previous_events=previous_events,
+    )
 
     for i, task in enumerate(tasks):
         task_num = start_task_num + i
@@ -53,7 +61,7 @@ async def generate_multiple(data, session_dir: Path, start_task_num: int, count:
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(task.to_dict(), f, indent=2, ensure_ascii=False)
 
-        logger.info(f"Generated task {task_num}/{start_task_num + count - 1}")
+        logger.info(f"Generated task {task_num}")
 
     return tasks
 
@@ -85,11 +93,7 @@ def main():
     data = MultiSessionOutput.from_dict(raw_data)
 
     start_task_num = get_next_task_num(session_dir)
-
-    if args.count == 1:
-        generate_single(data, session_dir, start_task_num)
-    else:
-        asyncio.run(generate_multiple(data, session_dir, start_task_num, args.count))
+    generate_tasks(data, session_dir, start_task_num, args.count)
 
 
 if __name__ == "__main__":

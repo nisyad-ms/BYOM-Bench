@@ -130,6 +130,7 @@ class EvaluationTaskGenerator:
         # Generate tasks
         tasks = []
         generated_events = list(previous_events) if previous_events else []
+        used_baseline_prefs: list[str] = []
         for i in range(num_tasks):
             logger.info(f"Generating task {i + 1}/{num_tasks}...")
             task = self._generate_single_task(
@@ -142,9 +143,13 @@ class EvaluationTaskGenerator:
                 num_baseline=num_baseline_required,
                 task_index=i,
                 previous_events=generated_events,
+                used_baseline_prefs=used_baseline_prefs,
             )
             tasks.append(task)
             generated_events.append(task.evaluation_event.event)
+            for pref in task.rubric.required_preferences:
+                if not pref.get("supersedes"):
+                    used_baseline_prefs.append(pref["id"])
 
         return tasks
 
@@ -160,6 +165,7 @@ class EvaluationTaskGenerator:
         task_index: int,
         use_v2: bool = True,
         previous_events: list[str] | None = None,
+        used_baseline_prefs: list[str] | None = None,
     ) -> EvaluationTask:
         """Generate a single evaluation task with specified preference mix.
 
@@ -173,6 +179,8 @@ class EvaluationTaskGenerator:
             num_baseline: Number of baseline preferences to require
             task_index: Index for shuffling seed
             use_v2: Use v2 prompt where LLM selects preferences
+            previous_events: Previously generated event descriptions
+            used_baseline_prefs: Baseline preference IDs already used
 
         Returns:
             Single EvaluationTask
@@ -183,6 +191,7 @@ class EvaluationTaskGenerator:
                 num_evolved=num_evolved,
                 num_baseline=num_baseline,
                 previous_events=previous_events,
+                used_baseline_prefs=used_baseline_prefs,
             )
 
             timeline = multisession_output.timeline
@@ -264,6 +273,7 @@ class EvaluationTaskGenerator:
         num_evolved: int,
         num_baseline: int,
         previous_events: list[str] | None = None,
+        used_baseline_prefs: list[str] | None = None,
     ) -> tuple[LifeEvent, list[dict]]:
         """Generate an evaluation event where LLM selects preferences (v2).
 
@@ -274,17 +284,25 @@ class EvaluationTaskGenerator:
             multisession_output: Full multi-session data with preference timeline
             num_evolved: Number of evolved preferences LLM should select
             num_baseline: Number of baseline preferences LLM should select
+            previous_events: Previously generated event descriptions
+            used_baseline_prefs: Baseline preference IDs already used in previous tasks
 
         Returns:
             Tuple of (LifeEvent, list of selected preference dicts)
         """
         preference_story = self._build_preference_evolution_story(multisession_output)
 
-        previous_events_str = ""
+        previous_situations_str = ""
         if previous_events:
-            previous_events_str = "\n".join(f"- {e}" for e in previous_events)
+            previous_situations_str = "\n".join(f"- {e}" for e in previous_events)
         else:
-            previous_events_str = "(none yet)"
+            previous_situations_str = "(none yet)"
+
+        used_baseline_str = ""
+        if used_baseline_prefs:
+            used_baseline_str = ", ".join(used_baseline_prefs)
+        else:
+            used_baseline_str = "(none yet)"
 
         prompt = render_prompt(
             "task_generation/evaluation_task_instruction",
@@ -292,7 +310,8 @@ class EvaluationTaskGenerator:
             preference_evolution_story=preference_story,
             num_evolved_required=num_evolved,
             num_baseline_required=num_baseline,
-            previous_events=previous_events_str,
+            previous_situations=previous_situations_str,
+            used_baseline_preferences=used_baseline_str,
         )
 
         response = self.client.complete_json(
@@ -302,22 +321,22 @@ class EvaluationTaskGenerator:
         )
 
         selected_prefs = response.get("selected_preferences", [])
-        event_text = response.get("event", "General task")
-        task_internal = response.get("task_internal", "")
+        situation = response.get("situation", response.get("event", "General task"))
+        ideal_response = response.get("ideal_response", response.get("task_internal", ""))
 
         user_prompt = self._generate_user_prompt(
             multisession_output=multisession_output,
-            event=event_text,
+            event=situation,
             selected_prefs=selected_prefs,
         )
 
         life_event = LifeEvent(
             session_id=-1,
             date=response.get("date", datetime.now().strftime("%m/%d/%Y")),
-            event=event_text,
+            event=situation,
             domain="",
             user_prompt=user_prompt,
-            task_internal=task_internal,
+            task_internal=ideal_response,
         )
         return life_event, selected_prefs
 
@@ -590,6 +609,7 @@ def generate_evaluation_tasks(
     num_tasks: int = EvaluationTaskGenerator.DEFAULT_NUM_TASKS,
     prefs_per_task: int = EvaluationTaskGenerator.DEFAULT_PREFS_PER_TASK,
     client: LLMClient | None = None,
+    previous_events: list[str] | None = None,
 ) -> list[EvaluationTask]:
     """Generate multiple evaluation tasks from multi-session data.
 
@@ -601,6 +621,7 @@ def generate_evaluation_tasks(
         num_tasks: Number of tasks to generate (default 3)
         prefs_per_task: Number of preferences required per task (default 6)
         client: Optional LLM client
+        previous_events: List of already-generated event descriptions to avoid
 
     Returns:
         List of EvaluationTask objects ready for evaluation
@@ -617,7 +638,7 @@ def generate_evaluation_tasks(
         ...     print(f"Required: {len(task.rubric.required_preferences)} preferences")
     """
     generator = EvaluationTaskGenerator(client)
-    return generator.generate_batch(multisession_output, num_tasks, prefs_per_task)
+    return generator.generate_batch(multisession_output, num_tasks, prefs_per_task, previous_events)
 
 
 def _generate_single_task_with_client(

@@ -11,9 +11,9 @@ Orchestrates the complete evaluation flow:
 import json
 import logging
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
-from persona_gym.agents import ContextAwareAgent, NoContextAgent
+from persona_gym.agents import ContextAwareAgent, FoundryMemoryAgent, NoContextAgent
 from persona_gym.client import AsyncLLMPool, LLMClient
 from persona_gym.schemas import (
     EvaluationTask,
@@ -35,6 +35,9 @@ def run_evaluation(
     include_history: bool = True,
     client: LLMClient | None = None,
     eval_task: EvaluationTask | None = None,
+    agent_type: Literal["context", "nocontext", "foundry"] | None = None,
+    memory_store_name: str | None = None,
+    force_recreate_memory: bool = False,
 ) -> MultiSessionEvaluationResult:
     """Run a complete evaluation on multi-session data.
 
@@ -49,14 +52,21 @@ def run_evaluation(
             If None, uses a generic helpful assistant prompt.
         max_agent_turns: Maximum agent turns before ending (default 10)
         include_history: Whether to include conversation history in agent context.
-            Set to False for no-context agent evaluation.
+            Set to False for no-context agent evaluation. Ignored if agent_type is set.
         client: Shared LLM client. If None, creates a new one.
         eval_task: Pre-generated evaluation task. If None, generates a new one.
+        agent_type: Type of agent to use: "context", "nocontext", or "foundry".
+            If None, uses include_history to determine (for backward compatibility).
+        memory_store_name: Name of memory store for foundry agent (required if agent_type="foundry").
+        force_recreate_memory: If True, recreate memory store from scratch (foundry only).
 
     Returns:
         MultiSessionEvaluationResult with scores and analysis
     """
     client = client or LLMClient()
+
+    if agent_type is None:
+        agent_type = "context" if include_history else "nocontext"
 
     # Step 1: Generate or use provided evaluation task
     if eval_task is None:
@@ -74,8 +84,10 @@ def run_evaluation(
         multisession_data,
         agent_system_prompt,
         max_agent_turns,
-        include_history,
+        agent_type,
         client,
+        memory_store_name,
+        force_recreate_memory,
     )
     logger.info(f"Dialogue completed: {len(conversation)} turns")
 
@@ -93,8 +105,10 @@ def run_dialogue(
     multisession_data: MultiSessionOutput,
     agent_system_prompt: str | None,
     max_agent_turns: int,
-    include_history: bool,
+    agent_type: Literal["context", "nocontext", "foundry"],
     client: LLMClient,
+    memory_store_name: str | None = None,
+    force_recreate_memory: bool = False,
 ) -> list[dict[str, str]]:
     """Run the evaluation dialogue between agent and user simulator.
 
@@ -103,19 +117,27 @@ def run_dialogue(
         multisession_data: Source data (used to build agent context)
         agent_system_prompt: Agent's system prompt
         max_agent_turns: Maximum agent turns
-        include_history: Whether to include conversation history in agent context
+        agent_type: Type of agent: "context", "nocontext", or "foundry"
         client: LLM client
+        memory_store_name: Name of memory store for foundry agent
+        force_recreate_memory: If True, recreate memory store from scratch (foundry only)
 
     Returns:
         Conversation transcript
     """
     user_sim = MultiSessionUserSimulator(eval_task, client)
 
-    if include_history:
+    if agent_type == "foundry":
+        if not memory_store_name:
+            raise ValueError("memory_store_name required for foundry agent")
+        agent = FoundryMemoryAgent(memory_store_name=memory_store_name)
+        agent.build_context(multisession_data, force_recreate=force_recreate_memory)
+    elif agent_type == "context":
         agent = ContextAwareAgent(client)
+        agent.build_context(multisession_data)
     else:
         agent = NoContextAgent(client)
-    agent.build_context(multisession_data)
+        agent.build_context(multisession_data)
 
     conversation: list[dict[str, str]] = []
 
@@ -242,7 +264,8 @@ def _run_single_evaluation_with_client(
 
     Args:
         client: LLM client to use
-        context: Dict containing multisession_data, eval_task, include_history, max_agent_turns
+        context: Dict containing multisession_data, eval_task, include_history, max_agent_turns,
+                 and optionally agent_type, memory_store_name
 
     Returns:
         MultiSessionEvaluationResult
@@ -250,9 +273,12 @@ def _run_single_evaluation_with_client(
     return run_evaluation(
         multisession_data=context["multisession_data"],
         eval_task=context["eval_task"],
-        include_history=context["include_history"],
+        include_history=context.get("include_history", True),
         max_agent_turns=context["max_agent_turns"],
         client=client,
+        agent_type=context.get("agent_type"),
+        memory_store_name=context.get("memory_store_name"),
+        force_recreate_memory=context.get("force_recreate_memory", False),
     )
 
 
@@ -265,8 +291,10 @@ async def run_evaluations_parallel(
         contexts: List of dicts, each containing:
             - multisession_data: MultiSessionOutput
             - eval_task: EvaluationTask
-            - include_history: bool
+            - include_history: bool (or agent_type)
             - max_agent_turns: int
+            - agent_type: Optional["context", "nocontext", "foundry"]
+            - memory_store_name: Optional[str] (required if agent_type="foundry")
 
     Returns:
         List of MultiSessionEvaluationResult objects

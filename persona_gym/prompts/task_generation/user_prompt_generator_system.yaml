@@ -25,8 +25,10 @@ template: |
 
   ## REQUIREMENTS FOR THE OPENING MESSAGE
 
+  Describe the overall task and context briefly in 1 sentence. Then:
+
   1. **Start with a specific question** targeting 1-2 preferences
-     - Don't ask about all preferences at once
+     - Don't ask about all preferences at once. This makes it unnatural and hard to respond to.
      - The question should give the assistant a clear opportunity to demonstrate recall
      - Other preferences can be tested in follow-up turns
 

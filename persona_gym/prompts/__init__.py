@@ -38,7 +38,7 @@ def _load_prompt_config() -> dict[str, str]:
     if _config_cache is not None:
         return _config_cache
 
-    config_path = PROJECT_ROOT / "prompt_config.yaml"
+    config_path = PROJECT_ROOT / "configs" / "prompt_config.yaml"
     if not config_path.exists():
         logger.warning(f"prompt_config.yaml not found at {config_path}, using default versions")
         _config_cache = {}

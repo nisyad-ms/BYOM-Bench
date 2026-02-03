@@ -40,9 +40,7 @@ def setup_logging(name: str) -> logging.Logger:
 
     console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setLevel(logging.INFO)
-    console_handler.setFormatter(logging.Formatter(
-        "%(asctime)s - %(levelname)s - %(message)s"
-    ))
+    console_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
 
     logger.addHandler(console_handler)
 
@@ -56,7 +54,7 @@ def setup_logging(name: str) -> logging.Logger:
 
 def add_file_logging(logger: logging.Logger, session_dir: Path | None = None) -> Path:
     """Add file handler to logger and persona_gym logger.
-    
+
     Args:
         logger: The logger to add file handler to
         session_dir: Session directory to mirror in logs/. If None, uses flat logs/ dir.
@@ -72,9 +70,7 @@ def add_file_logging(logger: logging.Logger, session_dir: Path | None = None) ->
 
     file_handler = logging.FileHandler(log_file, encoding="utf-8")
     file_handler.setLevel(logging.DEBUG)
-    file_handler.setFormatter(logging.Formatter(
-        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-    ))
+    file_handler.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
 
     logger.addHandler(file_handler)
 
@@ -108,14 +104,20 @@ def get_latest_session_dir() -> Path | None:
     return dirs[0]
 
 
-def get_session_dir(session_path: Path | str | None) -> Path | None:
-    """Get session directory from a session file path or find latest."""
-    if session_path:
-        path = Path(session_path)
-        if path.is_file():
-            return path.parent
+def get_session_dir(session_name: str | None) -> Path | None:
+    """Get session directory from session name or find latest.
+
+    Args:
+        session_name: Session folder name (e.g., '2026-02-02_1414') or None for latest
+
+    Returns:
+        Path to session directory or None if not found
+    """
+    if session_name:
+        path = OUTPUTS_DIR / session_name
         if path.is_dir():
             return path
+        return None
     return get_latest_session_dir()
 
 
