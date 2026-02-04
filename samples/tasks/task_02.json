@@ -1,0 +1,52 @@
+{
+  "task_id": "eval_454a7191",
+  "evaluation_event": {
+    "session_id": -1,
+    "date": "06/21/2024",
+    "event": "The user wants the AI assistant's help to design a weekly schedule and daily routines that balance his demanding work commitments—including late-evening global meetings—his responsibilities as the main caregiver for his father and family, and his strict sleep apnea protocols (including evening wind-down). He’s looking for a printable, paper-based plan that fits his personal tracking preferences and makes it easy to keep up with financial news, urgent communication habits, and avoids social overload. ",
+    "domain": "",
+    "user_prompt": "I'm working on designing a weekly schedule that helps me juggle my workload, late meetings with overseas teams, and my responsibilities at home. Could you recommend a way to structure my evenings so I still have time to unwind properly before bed, even when meetings run late?",
+    "task_internal": "1. Schedule a strict two-hour wind-down routine before bed, ensuring all high-stimulation activities (meetings, screens, calls) stop before this period; include nightly CPAP setup/maintenance and non-digital relaxation activities. 2. Integrate global advisory team calls, late-evening videoconferences, or hybrid work sessions at firm-mandated times, removing exclusive early-morning meeting blocks. 3. Limit any social or household event recommendations to immediate family and essential caregiving visits; don’t suggest dinner parties or outside gatherings. 4. Structure daily tasks and priorities on printable paper planning sheets or analog templates—no digital task manager, app, or online checklist solutions. 5. Allocate time each morning for a focused session at his desk to review financial news using the Bloomberg Terminal—before other work begins. 6. Reserve regular blocks throughout each day for checking and returning texts/emails within a two-hour window, with reminders to avoid leaving unread messages overnight."
+  },
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_048",
+        "fact": "Enforces a strict two-hour wind-down routine before bed and uses a CPAP machine nightly, as directed for sleep apnea treatment, prioritizing sleep quality and structure over just quantity.",
+        "supersedes": {
+          "id": "pref_030",
+          "fact": "Prioritizes achieving a minimum of 8 hours of sleep nightly as part of his recovery plan"
+        }
+      },
+      {
+        "id": "pref_055",
+        "fact": "Adapts meeting schedule to accommodate late-evening global videoconferences and frequent time zone shifts, relinquishing exclusive early-morning scheduling in favor of firm-mandated hybrid hours and cross-continental team calls.",
+        "supersedes": {
+          "id": "pref_001",
+          "fact": "Schedules meetings in the early morning to maximize productivity before market open"
+        }
+      },
+      {
+        "id": "pref_059",
+        "fact": "No longer hosts dinner parties at home, instead keeps gatherings limited to immediate family and essential caregiving visitors due to live-in, multi-generational caregiving responsibilities.",
+        "supersedes": {
+          "id": "pref_017",
+          "fact": "Likes to host small dinner parties at home rather than attending large social events"
+        }
+      },
+      {
+        "id": "pref_002",
+        "fact": "Uses paper notebooks to track key tasks, avoids digital task managers"
+      },
+      {
+        "id": "pref_004",
+        "fact": "Reviews financial news on Bloomberg Terminal every morning at his desk"
+      },
+      {
+        "id": "pref_016",
+        "fact": "Returns texts and emails within 2 hours—won't leave messages unanswered overnight"
+      }
+    ]
+  },
+  "persona_summary": "an investment banker working in new york city\n\nKey preferences:\n- Enforces a strict two-hour wind-down routine before bed and uses a CPAP machine nightly, as directed\n- Adapts meeting schedule to accommodate late-evening global videoconferences and frequent time zone s\n- No longer hosts dinner parties at home, instead keeps gatherings limited to immediate family and ess\n- Uses paper notebooks to track key tasks, avoids digital task managers"
+}

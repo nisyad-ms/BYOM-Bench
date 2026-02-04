@@ -1,0 +1,48 @@
+{
+  "task_id": "eval_bdbcd952",
+  "evaluation_event": {
+    "session_id": -1,
+    "date": "06/18/2024",
+    "event": "The user wants help designing a week-long personalized meal plan and daily wellness routine that fit his current dietary needs, sleep health restrictions, and stress management habits—while also making it easy to stick to his blood pressure tracking and digital downtime goals.",
+    "domain": "",
+    "user_prompt": "I’m looking to set up a personalized weekly meal plan that supports my overall health and energy levels, given my hectic work schedule. Could you help me outline some meal and snack ideas that would be easy to put together after long days?",
+    "task_internal": "1. Generate meal options consistent with Mediterranean diet principles, using whole foods and avoiding processed ingredients. 2. Exclude any caffeinated beverages (coffee, black/green/herbal teas with caffeine) after noon in both meal suggestions and daily beverage lists. 3. Arrange meals and wellness activities to promote sleep hygiene: plan an early light dinner, schedule the last snack at least 2 hours before bed, and provide a checklist for wind-down routine including CPAP setup. 4. Include a reminder for booking or self-administered stress-reduction activities (massage, stretching, mindfulness) as part of the weekly planner. 5. Integrate blood pressure check reminders, synced with meal and wellness activities, ensuring easy data logging for his doctor. 6. Design each daily schedule with built-in device-free periods, recommending offline wellness activities (nature walks, reading print biographies, painting) and suggesting meal tracking without reliance on digital devices."
+  },
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_006",
+        "fact": "Follows a Mediterranean diet and avoids processed foods"
+      },
+      {
+        "id": "pref_047",
+        "fact": "Eliminates all caffeine after noon—including herbal teas with caffeine—to comply with sleep specialist's orders for sleep apnea management",
+        "supersedes": {
+          "id": "pref_009",
+          "fact": "Limits caffeine intake to one morning espresso and herbal teas in afternoon"
+        }
+      },
+      {
+        "id": "pref_048",
+        "fact": "Enforces a strict two-hour wind-down routine before bed and uses a CPAP machine nightly, as directed for sleep apnea treatment, prioritizing sleep quality and structure over just quantity.",
+        "supersedes": {
+          "id": "pref_030",
+          "fact": "Prioritizes achieving a minimum of 8 hours of sleep nightly as part of his recovery plan"
+        }
+      },
+      {
+        "id": "pref_008",
+        "fact": "Books monthly deep-tissue massages for stress management"
+      },
+      {
+        "id": "pref_010",
+        "fact": "Tracks blood pressure weekly and updates his doctor through a mobile app"
+      },
+      {
+        "id": "pref_053",
+        "fact": "Regularly participates in digital device-free days, limiting screen and internet use to short, scheduled windows—especially during extended wellness getaways."
+      }
+    ]
+  },
+  "persona_summary": "an investment banker working in new york city\n\nKey preferences:\n- Follows a Mediterranean diet and avoids processed foods\n- Eliminates all caffeine after noon—including herbal teas with caffeine—to comply with sleep speciali\n- Enforces a strict two-hour wind-down routine before bed and uses a CPAP machine nightly, as directed\n- Books monthly deep-tissue massages for stress management"
+}

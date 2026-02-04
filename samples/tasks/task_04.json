@@ -1,0 +1,52 @@
+{
+  "task_id": "eval_13ef07ec",
+  "evaluation_event": {
+    "session_id": -1,
+    "date": "06/19/2024",
+    "event": "The user is seeking recommendations for compact, travel-friendly gear to support his multi-generational family's upcoming extended train/ferry trip across Northern Europe. He needs specific suggestions for CPAP-friendly accessories, accessible mobility equipment for his father, low-impact fitness choices, and gear suited for communal outdoor activities, with an emphasis on products that will fit well into shared family spaces and not interfere with caregiving routines.",
+    "domain": "",
+    "user_prompt": "I'm organizing an extended family trip across Northern Europe by train and ferry, and I'm looking for recommendations on compact travel gear that could help maintain my sleep routine. Are there any CPAP-friendly accessories you'd suggest that are especially useful for long journeys and shared accommodations?",
+    "task_internal": "1. Recommend compact, portable CPAP machine accessories (battery packs, travel cases, universal adapters) that simplify nightly use and daily maintenance during travel. 2. Suggest accessible and easily transportable mobility equipment (such as lightweight travel wheelchairs, foldable ramps, or adaptive devices) that allow his father to join intergenerational tours, workshops, and group activities. 3. Propose versatile, space-saving gear for indoor, low-impact cardiac-approved exercise (e.g., resistance bands, collapsible pedal bikes) and avoid recommending equipment for outdoor running or high-intensity sports. 4. Highlight communal activity gear that enables family bonding and wellness outdoors (like portable picnic mats, adaptive group games, and multi-generational-friendly hiking poles) suited to shared recreation rather than solo pursuits. 5. Choose products that can be easily packed and integrated into limited shared lodging space, avoiding anything bulky or disruptive to caregiving. 6. Do not recommend items related to hosting larger social groups or dinner parties; focus exclusively on immediate family and essential caregiving needs."
+  },
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_049",
+        "fact": "Uses a CPAP machine every night as prescribed, and performs daily maintenance (cleaning/mask checks) as part of evening routine"
+      },
+      {
+        "id": "pref_064",
+        "fact": "Prioritizes intergenerational activities—such as accessible museum tours, farm stays, and hands-on workshops—that enable participation from children, adults, and elders together during travel."
+      },
+      {
+        "id": "pref_054",
+        "fact": "Joins communal, family-led outdoor activities and guided group wellness sessions as a primary form of recreation while traveling in remote settings."
+      },
+      {
+        "id": "pref_062",
+        "fact": "Arranges overland travel by train and ferry for family trips, explicitly avoiding air travel due to accessibility, medical, and family needs; prioritizes comfort, flexibility, and accessibility over speed or efficiency.",
+        "supersedes": {
+          "id": "pref_011",
+          "fact": "Books direct flights exclusively, avoids layovers whenever possible"
+        }
+      },
+      {
+        "id": "pref_026",
+        "fact": "No longer runs outdoors or performs high-intensity exercise; temporarily substitutes with low-impact, cardiac-approved activities indoors per doctor's orders",
+        "supersedes": {
+          "id": "pref_007",
+          "fact": "Runs only outdoors, regardless of weather—never uses treadmills"
+        }
+      },
+      {
+        "id": "pref_059",
+        "fact": "No longer hosts dinner parties at home, instead keeps gatherings limited to immediate family and essential caregiving visitors due to live-in, multi-generational caregiving responsibilities.",
+        "supersedes": {
+          "id": "pref_017",
+          "fact": "Likes to host small dinner parties at home rather than attending large social events"
+        }
+      }
+    ]
+  },
+  "persona_summary": "an investment banker working in new york city\n\nKey preferences:\n- Uses a CPAP machine every night as prescribed, and performs daily maintenance (cleaning/mask checks)\n- Prioritizes intergenerational activities—such as accessible museum tours, farm stays, and hands-on w\n- Joins communal, family-led outdoor activities and guided group wellness sessions as a primary form o\n- Arranges overland travel by train and ferry for family trips, explicitly avoiding air travel due to "
+}

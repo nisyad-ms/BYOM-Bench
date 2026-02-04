@@ -1,0 +1,44 @@
+{
+  "task_id": "eval_1b8a18d2",
+  "evaluation_event": {
+    "session_id": -1,
+    "date": "06/18/2024",
+    "event": "The user wants help curating a personal print reading list for the upcoming quarter—he’s specifically looking for biography recommendations as well as insightful books and events (art-related exhibitions, artist talks) that will expand his understanding of the contemporary arts scene, deepen his connections in nonprofit arts circles, and provide topics for discussion with his monthly art group. He explicitly does not want digital or e-reader options, nor any finance- or watch-related material.",
+    "domain": "",
+    "user_prompt": "I'm putting together a personal reading list for the upcoming quarter and want to focus on biographies this time. Can you recommend a few standout print editions that would be engaging and insightful?",
+    "task_internal": "1. Recommend recent, highly acclaimed print biographies, ensuring all suggestions skip e-book or digital-only editions. 2. Include notable titles about key figures in performing arts, especially those with connections to theater or the orchestra scene. 3. Curate books and art media that highlight contemporary gallery openings, nonprofit art leaders, or artist talk events, prioritizing content relevant to nonprofit arts and social gatherings. 4. Propose reading and discussion topics suited for monthly art group meetings, fostering engagement with creative professionals rather than finance contacts. 5. Suggest resources or upcoming events hosted by local arts nonprofits, underlining opportunities to deepen the user's involvement and connections in these circles. 6. Filter out all watch/auction-themed literature or finance-centric media recommendations."
+  },
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_023",
+        "fact": "Reads biographies cover-to-cover in print editions—refuses to use e-readers"
+      },
+      {
+        "id": "pref_024",
+        "fact": "Selects orchestra section for every Broadway show he attends"
+      },
+      {
+        "id": "pref_036",
+        "fact": "Frequently attends gallery openings, artist talks, and nonprofit arts gatherings, prioritizing these over former finance-centric networking activities"
+      },
+      {
+        "id": "pref_033",
+        "fact": "Participates in a monthly group of fellow professionals to discuss and exhibit artwork, engaging socially outside his traditional finance network."
+      },
+      {
+        "id": "pref_037",
+        "fact": "Maintains active involvement with local arts nonprofits, considering fellow board and committee members as a new core peer group"
+      },
+      {
+        "id": "pref_034",
+        "fact": "No longer attends or follows in-person watch auctions, having shifted leisure focus to organizing and participating in charitable art events and exhibitions",
+        "supersedes": {
+          "id": "pref_022",
+          "fact": "Researches watch auctions online weekly, bids only in-person at select events"
+        }
+      }
+    ]
+  },
+  "persona_summary": "an investment banker working in new york city\n\nKey preferences:\n- Reads biographies cover-to-cover in print editions—refuses to use e-readers\n- Selects orchestra section for every Broadway show he attends\n- Frequently attends gallery openings, artist talks, and nonprofit arts gatherings, prioritizing these\n- Participates in a monthly group of fellow professionals to discuss and exhibit artwork, engaging soc"
+}
