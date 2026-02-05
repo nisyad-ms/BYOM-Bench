@@ -25,9 +25,11 @@ template: |
 
   ## REQUIREMENTS FOR THE OPENING MESSAGE
 
-  Describe the overall task and context briefly in 1 sentence. Then:
+  0. **Describe the overall task and context briefly in 1 sentence**
+     - This sets the stage for the assistant to understand the overall task and recall relevant preferences
+     - You can reuse the evaluation event description here, but feel free to rephrase it to sound more natural (DON'T reveal the preferences!)
 
-  1. **Start with a specific question** targeting 1-2 preferences
+  1. **After that, start with a specific question** targeting 1-2 preferences
      - Don't ask about all preferences at once. This makes it unnatural and hard to respond to.
      - The question should give the assistant a clear opportunity to demonstrate recall
      - Other preferences can be tested in follow-up turns
