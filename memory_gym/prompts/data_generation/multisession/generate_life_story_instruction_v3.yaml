@@ -1,0 +1,221 @@
+name: Generate Life Event (v3)
+description: Generates a single life event for a specified domain. Events describe WHAT HAPPENED, not behavioral outcomes. Enforces diversity and limits on relocation events.
+used_by: persona_gym/data_generators/multisession.py::_generate_life_event
+variables:
+  - persona: The full expanded persona description (includes domain facts and baseline preferences)
+  - domain: The life domain for this event (work_education, health_wellness, travel_experiences, relationships_personal, hobbies_interests)
+  - previous_events: List of previously generated events to build upon
+
+template: |
+  Generate a realistic life event for the specified domain that is personalized to this persona. The event should be significant enough to DRAMATICALLY change the user's preferences, habits, or priorities.
+
+  PERSONA:
+  {persona}
+
+  TARGET DOMAIN: {domain}
+
+  Use the domain facts AND baseline preferences from the persona above to personalize the event.
+
+  PREVIOUS EVENTS IN THIS PERSON'S STORY:
+  {previous_events}
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  NARRATIVE COHERENCE: NATURAL CONNECTIONS OVER MONTHS, NOT TIGHT CHAINING
+  ═══════════════════════════════════════════════════════════════════════════════
+  
+  Life events should feel like a coherent story unfolding over MONTHS, not a chain reaction of immediate consequences.
+  
+  GOOD COHERENCE (natural life progression over time):
+  - Event 1 (Jan): "Diagnosed with early diabetes at annual checkup"
+  - Event 2 (Apr): "Wife gets job offer in Portland, family considering relocation" 
+    → Natural life event, loosely connected (health situation is background context)
+  - Event 3 (Jul): "After settling into Portland, joined a local hiking group to stay active"
+    → Builds on relocation, connects to health management
+  
+  BAD COHERENCE (too tight, immediate consequences):
+  - Event 1: "Diagnosed with diabetes"
+  - Event 2: "Due to diabetes, can't eat at favorite restaurants" ← Too immediate
+  - Event 3: "Restaurant restrictions caused social isolation" ← Artificial chain
+  
+  GUIDELINES FOR NATURAL COHERENCE:
+  1. Events can ACKNOWLEDGE previous events as background context
+  2. Events should feel like MONTHS have passed, not days
+  3. New events should introduce FRESH situations, not just extend consequences
+  4. **Important** Cross-domain connections are encouraged (health affects work, family affects hobbies)
+  5. Some events can be unrelated - not everything needs to connect
+  6. Avoid phrases like "due to", "as a result of", "because of the previous..."
+  
+  THINK OF IT AS: "What might happen to this person 2-3 months later, given their life context?"
+  NOT: "What is the immediate consequence of the last event?"
+
+  DOMAIN DEFINITIONS (not exhaustive):
+  - work_education: Career changes, job transitions, education, professional development, etc.
+  - health_wellness: Physical/mental health, fitness, diet, medical conditions, etc.
+  - travel_experiences: Travel style, transportation habits, commute changes, vacation preferences, etc.
+  - relationships_personal: Family dynamics, romantic relationships, friendships, living arrangements, etc.
+  - hobbies_interests: Hobbies, creative pursuits, entertainment preferences, leisure activities, etc.
+
+  REQUIREMENTS:
+  1. The event MUST belong to the "{domain}" domain
+  2. The event must be plausible given the persona's background, age, and life context
+  3. The event should create opportunities for DRAMATIC preference changes
+  4. The event should be specific and concrete, not vague
+  5. Include enough detail to understand the impact on daily life
+  6. Natural connections to previous events are welcome, but avoid tight causal chaining
+  7. **CRITICAL**: Relocation/moving events can only be used ONCE per persona. Check previous_events - if ANY relocation has occurred, do NOT generate another.
+  8. **CRITICAL**: Avoid repeating event patterns (e.g., multiple medical diagnoses, multiple job losses, multiple moves)
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  EVENTS THAT FORCE REAL CHANGE (not just refinement)
+  ═══════════════════════════════════════════════════════════════════════════════
+  
+  **IMPORTANT**: You are generating an EVENT (what happened), NOT the preference change.
+  A separate prompt will determine how preferences evolve based on your event.
+  
+  Your event should be SIGNIFICANT enough to force preference changes. Two mechanisms:
+  
+  1. CONSTRAINTS (~50%): Events that PREVENT old behaviors
+     - Health: diagnoses, injuries, new dietary requirements
+     - Resources: budget cuts, time limitations, schedule conflicts
+     - Circumstances: job demands, caregiving duties
+  
+  2. NEW PRIORITIES (~50%): Events that INTRODUCE new commitments
+     - New relationships: partner's lifestyle, new baby, new pet
+     - Discoveries: found a passion, joined a community, learned a skill
+     - Upgrades: promotion, paid off debt, more free time
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  EXAMPLES OF GOOD LIFE EVENTS BY DOMAIN
+  ═══════════════════════════════════════════════════════════════════════════════
+  
+  (✓ = new priority/positive, ✗ = constraint/challenging)
+  
+  NOTE: Describe WHAT HAPPENED, not the behavioral outcome.
+
+  work_education:
+  ✗ "Laid off after company downsizing; severance covers 3 months"
+  ✓ "Promoted to VP of Engineering with a team of 40 reports"
+  ✗ "New CEO mandated return-to-office 5 days a week starting next month"
+  ✓ "Company announced permanent remote-first policy"
+  ✗ "Assigned to a high-stakes project with strict 6-month deadline"
+  ✓ "Completed executive MBA after 3 years of evening classes"
+  ✗ "Team restructured; now reporting to a micromanaging director"
+  ✓ "Selected for a leadership development program with executive coaching"
+  ✗ "Budget cuts eliminated the annual conference travel allowance"
+  ✓ "Negotiated a 4-day work week with current employer"
+  ✗ "New compliance requirements added 10 hours of weekly documentation"
+  ✓ "Mentor introduced them to a professional network in their field"
+
+  health_wellness:
+  ✗ "Diagnosed with celiac disease after months of digestive issues"
+  ✓ "Completed first marathon after a year of training"
+  ✗ "Tore ACL during a pickup basketball game, surgery scheduled"
+  ✓ "Started working with a personal trainer 3x per week"
+  ✗ "Diagnosed with early-stage Type 2 diabetes at annual checkup"
+  ✓ "Blood pressure normalized after 6 months of lifestyle changes"
+  ✗ "Developed seasonal allergies requiring daily medication"
+  ✓ "Discovered meditation through an app; now practices daily"
+  ✗ "Sleep study revealed moderate sleep apnea requiring CPAP"
+  ✓ "Joined a yoga studio and completed 200-hour teacher training"
+  ✗ "Stress-related burnout led doctor to recommend reduced workload"
+  ✓ "Hit goal weight and signed up for first triathlon"
+
+  travel_experiences:
+  ✗ "Experienced severe turbulence and emergency landing on a flight"
+  ✓ "Got TSA PreCheck and Global Entry approved"
+  ✗ "Car totaled in accident; insurance payout insufficient to replace"
+  ✓ "Purchased a camper van for weekend adventures"
+  ✗ "New role requires 50% travel across time zones"
+  ✓ "Partner introduced them to backpacking on a trip to Yosemite"
+  ✗ "Commute doubled after company moved office to suburbs"
+  ✓ "Got motorcycle license and bought a bike for daily commute"
+  ✗ "Developed motion sickness making long car rides uncomfortable"
+  ✓ "Discovered credit card points strategy; now flies business class"
+  ✗ "Rising gas prices strained monthly budget significantly"
+  ✓ "Found a reliable pet-sitter, enabling spontaneous weekend trips"
+  ✗ "New pet requires being home every 4 hours for walks"
+  ✓ "Started a travel photography Instagram documenting day trips"
+  ✗ "Partner's work schedule now conflicts with weekend travel"
+  ✓ "Joined a local cycling club that does monthly multi-day tours"
+
+  relationships_personal:
+  ✗ "Spouse filed for divorce after 12 years of marriage"
+  ✓ "Got engaged to partner of 3 years"
+  ✗ "Elderly mother with dementia moved into the house"
+  ✓ "Wife gave birth to their first child"
+  ✗ "Partner accepted a job requiring opposite shift schedule"
+  ✓ "Started dating someone who is deeply involved in local theater"
+  ✗ "Best friend moved across the country for a job"
+  ✓ "Reconnected with college roommate who lives nearby"
+  ✗ "Sibling's financial crisis required lending significant money"
+  ✓ "Joined a co-ed sports league and made new friend group"
+  ✗ "Roommate moved out unexpectedly, doubling rent burden"
+  ✓ "Partner's family welcomed them warmly into holiday traditions"
+  ✗ "Teenage child started having behavioral issues at school"
+  ✓ "Neighbors became close friends after a block party"
+
+  hobbies_interests:
+  ✗ "Developed severe tendinitis in wrist from guitar playing"
+  ✓ "Took a woodworking class and built first piece of furniture"
+  ✗ "Adopted two high-energy rescue dogs from a shelter"
+  ✓ "Joined a local running club through a coworker"
+  ✗ "Family staged an intervention about gaming habits"
+  ✓ "Discovered pottery at a team offsite and signed up for classes"
+  ✗ "Favorite hobby shop closed, ending weekly game nights there"
+  ✓ "Started a book club with neighbors that meets monthly"
+  ✗ "Noise complaint from neighbor ended late-night music practice"
+  ✓ "Won a local photography contest and gained confidence"
+  ✗ "Rising costs priced them out of their golf club membership"
+  ✓ "Volunteered at animal shelter and found it deeply fulfilling"
+  ✗ "Seasonal allergies made outdoor gardening miserable"
+  ✓ "Discovered board game cafes and now hosts game nights"
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  BEFORE GENERATING - MANDATORY CHECKS
+  ═══════════════════════════════════════════════════════════════════════════════
+  
+  Review previous_events and verify:
+  1. NO existing relocation/moving event - if one exists, do NOT generate another
+  2. NO pattern repetition - avoid generating similar events (e.g., another diagnosis if one exists)
+  3. Balance of positive/negative - check if recent events skew one way, consider the other
+  
+  If you cannot generate a valid event for this domain without violating these rules,
+  generate a DIFFERENT type of event within the same domain.
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  EXAMPLES OF BAD EVENTS (avoid these)
+  ═══════════════════════════════════════════════════════════════════════════════
+
+  ❌ INCLUDES BEHAVIORAL OUTCOME (let update_preferences handle this):
+  - "Knee injury ended running career, must find low-impact alternatives"
+    → Better: "Tore ACL during a half-marathon, requiring surgery"
+  - "Developed fear of flying, now only drives or takes trains"
+    → Better: "Experienced severe turbulence and emergency landing"
+  - "Had first child, weekends now revolve around family activities"
+    → Better: "Wife gave birth to their first child"
+
+  ❌ TOO VAGUE:
+  - "Moved to a new city" (why? what's different?)
+  - "Things changed at work" (what specifically?)
+  - "Had some health issues" (what kind?)
+  - "Life got busy" (with what? why?)
+  
+  ❌ OVERUSED - CHECK PREVIOUS_EVENTS FIRST:
+  - Relocation/moving (MAXIMUM ONCE per persona - check first!)
+  - Multiple medical diagnoses (vary event types)
+  - Multiple job losses (mix with other work events)
+  - Multiple relationship endings (vary relationship events)
+
+  OUTPUT FORMAT (JSON):
+  {{
+    "event": "Detailed description of what happened, personalized to this persona. Include relevant circumstances, timing, and people involved.",
+    "domain": "{domain}"
+  }}
+
+  CRITICAL:
+  - Output ONLY valid JSON
+  - The "domain" field must be exactly "{domain}"
+  - The event must be appropriate for the specified domain
+  - The event must be personalized to the persona (consider their age, background, interests)
+  - The event description should be self-contained with all relevant details
+  - VERIFY no relocation exists in previous_events before generating a move/relocation

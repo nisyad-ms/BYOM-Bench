@@ -39,13 +39,14 @@ def run_single_evaluation(
     agent_type: str,
     max_agent_turns: int,
     force_recreate_memory: bool = False,
+    run_id: int | None = None,
 ):
     """Run evaluation for a single task."""
     from memory_gym.evaluation_multisession import run_evaluation
     from memory_gym.schemas import EvaluationTask, MultiSessionOutput
 
     task_num = extract_task_num(task_path) or 1
-    output_path = get_eval_path(session_dir, task_num, agent_type)
+    output_path = get_eval_path(session_dir, task_num, agent_type, run_id)
     session_file = get_session_path(session_dir)
 
     with open(session_file, "r", encoding="utf-8") as f:
@@ -79,6 +80,7 @@ async def run_all_evaluations(
     task_paths: list[Path],
     agent_type: str,
     max_agent_turns: int,
+    run_id: int | None = None,
 ):
     """Run evaluations for all tasks in parallel."""
     from memory_gym.evaluation_multisession import run_evaluations_parallel
@@ -109,17 +111,18 @@ async def run_all_evaluations(
             }
         )
 
-    results = await run_evaluations_parallel(contexts)
-
-    for ctx, result in zip(contexts, results):
+    def save_result(index: int, ctx: dict, result):
+        """Save result immediately when evaluation completes."""
         task_path = ctx["task_path"]
         task_num = extract_task_num(task_path) or 1
-        output_path = get_eval_path(session_dir, task_num, agent_type)
+        output_path = get_eval_path(session_dir, task_num, agent_type, run_id)
 
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
 
-        logger.info(f"Evaluation for task {task_num} completed")
+        logger.info(f"Evaluation for task {task_num} (run {run_id or 'single'}) completed")
+
+    results = await run_evaluations_parallel(contexts, on_result=save_result)
 
     return results
 
@@ -142,6 +145,9 @@ def main():
     parser.add_argument("--max-agent-turns", type=int, default=10, help="Maximum agent turns in dialogue")
     parser.add_argument(
         "--no-cache", action="store_true", help="Force recreate memory store from scratch (foundry agent only)"
+    )
+    parser.add_argument(
+        "--run", type=int, default=None, help="Run ID for multiple evaluation runs (e.g., 1, 2, 3)"
     )
     args = parser.parse_args()
 
@@ -169,6 +175,7 @@ def main():
                 task_paths,
                 args.agent,
                 args.max_agent_turns,
+                args.run,
             )
         )
     else:
@@ -192,6 +199,7 @@ def main():
             args.agent,
             args.max_agent_turns,
             args.no_cache,
+            args.run,
         )
 
 

@@ -27,14 +27,18 @@ template: |
 
   0. **Describe the overall task and context briefly in 1 sentence**
      - This sets the stage for the assistant to understand the overall task and recall relevant preferences
-     - You can reuse the evaluation event description here, but feel free to rephrase it to sound more natural (DON'T reveal the preferences!)
+     - You can reuse the evaluation event description except for any preference details (see point 2), but feel free to rephrase it to sound more natural
 
-  1. **After that, start with a specific question** targeting 1-2 preferences
+  1. **After that, start with a specific question** around 1-2 preferences without explicitly revealing them. This is the key part that allows us to test recall.
      - Don't ask about all preferences at once. This makes it unnatural and hard to respond to.
      - The question should give the assistant a clear opportunity to demonstrate recall
      - Other preferences can be tested in follow-up turns
+     - Example: If the user has a preference for vegetarian food and swimming, 
+         GOOD: "I'm planning a trip and want to make sure I can stick to my diet and exercise routine. What are some good options for getting around and staying active?" This hints at both preferences without stating them outright.
+         BAD: "Plan a trip with vegetarian food" (too explicit)
 
   2. **Do NOT reveal any preferences**
+     - The user should not explicitly state any of the preferences being tested in the opening message
      - BAD: "Plan a trip with vegetarian food and no flying"
      - GOOD: "I'm planning a trip - what's the best way to get there?"
 
@@ -52,8 +56,10 @@ template: |
   Event: "Planning a solo wellness retreat"
   Preferences: swimming (evolved from running), vegetarian diet, boutique hotels
   
-  BAD: "Plan a wellness retreat with swimming, vegetarian food, and boutique hotels"
-  BAD: "I want to go on a retreat. What should I do?"
+  BAD: "Plan a wellness retreat with swimming, vegetarian food, and boutique hotels" (too explicit)
+  BAD: "I want to go on a retreat. What should I do?" (too vague)
+  BAD: "I'm planning a wellness retreat. Can you help?" (not actionable)
+  BAD: "I'm planning a wellness retreat. Help me figure out food, hotels and physical activities." (too many preferences at once)
   GOOD: "I'm planning a solo wellness retreat next month. What kind of physical activities would you recommend for me?"
   (Targets exercise preference - agent should recall knee surgery → swimming)
 

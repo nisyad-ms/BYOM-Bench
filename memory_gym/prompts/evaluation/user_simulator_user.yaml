@@ -1,0 +1,12 @@
+name: User Simulator User Prompt
+description: User prompt providing conversation history for user simulator to respond to
+used_by: memory_gym/evaluation_multisession/user_simulator.py::MultiSessionUserSimulator
+variables:
+  - conversation: Formatted conversation history as string
+
+template: |
+  ## Conversation so far:
+  {conversation}
+
+  ---
+  Now respond as the User:

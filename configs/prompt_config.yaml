@@ -5,7 +5,7 @@
 prompts:
   # Data generation prompts
   data_generation/multisession/expand_persona_instruction: ""
-  data_generation/multisession/generate_life_story_instruction: "v2"
+  data_generation/multisession/generate_life_story_instruction: "v3"
   data_generation/multisession/update_preferences_instruction: "v2"
   data_generation/multisession/generate_session_conversation_instruction: ""
 
@@ -19,7 +19,7 @@ prompts:
   evaluation/preference_judge_user: ""
   evaluation/efficiency_judge_system: "v4"
   evaluation/efficiency_judge_user: ""
-  evaluation/user_simulator_system: "v4"
+  evaluation/user_simulator_system: "v5"
 
   # Agent prompts
   agents/agent_system_with_context: ""

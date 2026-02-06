@@ -316,23 +316,30 @@ class AsyncLLMPool:
         self,
         items: list[Any],
         func: Callable[[LLMClient, Any], Any],
+        on_result: Callable[[int, Any, Any], None] | None = None,
     ) -> list[Any]:
         """Run a function on multiple items in parallel across deployments.
 
         Args:
             items: List of items to process.
             func: Sync function taking (client, item) and returning result.
+            on_result: Optional callback(index, item, result) called as each completes.
 
         Returns:
             List of results in same order as items.
         """
+        results: list[Any] = [None] * len(items)
 
-        async def process_item(item: Any) -> Any:
+        async def process_item(index: int, item: Any) -> None:
             client = await self._get_next_client()
-            return await asyncio.to_thread(func, client, item)
+            result = await asyncio.to_thread(func, client, item)
+            results[index] = result
+            if on_result:
+                on_result(index, item, result)
 
-        tasks = [process_item(item) for item in items]
-        return await asyncio.gather(*tasks)
+        tasks = [process_item(i, item) for i, item in enumerate(items)]
+        await asyncio.gather(*tasks)
+        return results
 
 
 def get_deployments() -> list[str]:

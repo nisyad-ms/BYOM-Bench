@@ -9,15 +9,25 @@ Usage:
 
 import argparse
 import json
+import random
 import time
+from pathlib import Path
 
 from utils import add_file_logging, create_session_dir, get_session_path, setup_logging
 
 logger = setup_logging("data_generation")
 
-DEFAULT_PERSONA = """
-A senior software engineer working at Microsoft.
-""".strip()
+BASE_PERSONAS_FILE = Path(__file__).parent / "configs" / "base_personas.txt"
+
+
+def load_random_persona() -> str:
+    """Load a random persona from base_personas.txt."""
+    if not BASE_PERSONAS_FILE.exists():
+        raise FileNotFoundError(f"Base personas file not found: {BASE_PERSONAS_FILE}")
+    personas = [line.strip() for line in BASE_PERSONAS_FILE.read_text().splitlines() if line.strip()]
+    if not personas:
+        raise ValueError("No personas found in base_personas.txt")
+    return random.choice(personas)
 
 
 def main():
@@ -28,7 +38,11 @@ def main():
 
     from memory_gym.data_generators import MultiSessionGenerator
 
-    persona = args.persona or DEFAULT_PERSONA
+    if args.persona:
+        persona = args.persona
+    else:
+        persona = load_random_persona()
+        logger.info(f"Randomly selected persona: {persona}")
     session_dir = create_session_dir()
     add_file_logging(logger, session_dir)
     output_path = get_session_path(session_dir)

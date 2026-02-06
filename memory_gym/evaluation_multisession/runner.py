@@ -11,7 +11,7 @@ Orchestrates the complete evaluation flow:
 import json
 import logging
 from pathlib import Path
-from typing import Any, Literal
+from typing import Any, Callable, Literal
 
 from memory_gym.agents import ContextAwareAgent, FoundryMemoryAgent, NoContextAgent
 from memory_gym.client import AsyncLLMPool, LLMClient
@@ -79,7 +79,7 @@ def run_evaluation(
 
     # Step 2: Run dialogue
     logger.info("Running evaluation dialogue...")
-    conversation = run_dialogue(
+    conversation_with_scratchpads, clean_conversation = run_dialogue(
         eval_task,
         multisession_data,
         agent_system_prompt,
@@ -89,12 +89,15 @@ def run_evaluation(
         memory_store_name,
         force_recreate_memory,
     )
-    logger.info(f"Dialogue completed: {len(conversation)} turns")
+    logger.info(f"Dialogue completed: {len(clean_conversation)} turns")
 
-    # Step 3: Evaluate with judge
+    # Step 3: Evaluate with judge (using clean conversation without scratchpads)
     logger.info("Evaluating dialogue with judge...")
     judge = MultiSessionJudge(client)
-    result = judge.evaluate(eval_task, conversation)
+    result = judge.evaluate(eval_task, clean_conversation)
+
+    # Replace conversation with version that includes scratchpads for output
+    result.conversation = conversation_with_scratchpads
     logger.info(
         f"Evaluation complete. Preference: {result.preference_score:.2f}, Efficiency: {result.efficiency_score:.2f}"
     )
@@ -111,7 +114,7 @@ def run_dialogue(
     client: LLMClient,
     memory_store_name: str | None = None,
     force_recreate_memory: bool = False,
-) -> list[dict[str, str]]:
+) -> tuple[list[dict[str, str | None]], list[dict[str, str]]]:
     """Run the evaluation dialogue between agent and user simulator.
 
     Args:
@@ -125,7 +128,9 @@ def run_dialogue(
         force_recreate_memory: If True, recreate memory store from scratch (foundry only)
 
     Returns:
-        Conversation transcript
+        Tuple of (conversation_with_scratchpads, clean_conversation)
+        - conversation_with_scratchpads: List with "scratchpad" key on user turns (for output JSON)
+        - clean_conversation: List without scratchpads (for judge)
     """
     user_sim = MultiSessionUserSimulator(eval_task, client)
 
@@ -141,20 +146,23 @@ def run_dialogue(
         agent = NoContextAgent(client)
         agent.build_context(multisession_data)
 
-    conversation: list[dict[str, str]] = []
+    conversation_with_scratchpads: list[dict[str, str | None]] = []
+    clean_conversation: list[dict[str, str]] = []
 
     user_message = user_sim.get_initial_message()
-    conversation.append({"role": "user", "content": user_message})
+    conversation_with_scratchpads.append({"role": "user", "content": user_message})
+    clean_conversation.append({"role": "user", "content": user_message})
     logger.debug(f"User: {user_message[:100]}...")
 
     agent_turns = 0
     while agent_turns < max_agent_turns:
-        agent_response = agent.respond(conversation)
-        conversation.append({"role": "assistant", "content": agent_response})
+        agent_response = agent.respond(clean_conversation)
+        conversation_with_scratchpads.append({"role": "assistant", "content": agent_response})
+        clean_conversation.append({"role": "assistant", "content": agent_response})
         agent_turns += 1
         logger.debug(f"Agent: {agent_response[:100]}...")
 
-        if user_sim.should_end_conversation(agent_response, conversation):
+        if user_sim.should_end_conversation(agent_response, clean_conversation):
             logger.info(f"Conversation ended naturally after {agent_turns} agent turns")
             break
 
@@ -162,15 +170,18 @@ def run_dialogue(
             logger.warning(f"Conversation hit max agent turns limit ({max_agent_turns})")
             break
 
-        user_response = user_sim.respond(agent_response, conversation)
-        conversation.append({"role": "user", "content": user_response})
+        user_response, scratchpad = user_sim.respond(agent_response, clean_conversation)
+        conversation_with_scratchpads.append({"role": "user", "content": user_response, "scratchpad": scratchpad})
+        clean_conversation.append({"role": "user", "content": user_response})
         logger.debug(f"User: {user_response[:100]}...")
+        if scratchpad:
+            logger.debug(f"Scratchpad: {scratchpad[:200]}...")
 
-        if user_sim.should_end_conversation("", conversation):
+        if user_sim.should_end_conversation("", clean_conversation):
             logger.info(f"User ended conversation after {agent_turns} agent turns")
             break
 
-    return conversation
+    return conversation_with_scratchpads, clean_conversation
 
 
 def run_evaluation_from_file(
@@ -284,6 +295,7 @@ def _run_single_evaluation_with_client(
 
 async def run_evaluations_parallel(
     contexts: list[dict],
+    on_result: Callable[[int, dict, "MultiSessionEvaluationResult"], None] | None = None,
 ) -> list[MultiSessionEvaluationResult]:
     """Run multiple evaluations in parallel across deployments.
 
@@ -295,6 +307,7 @@ async def run_evaluations_parallel(
             - max_agent_turns: int
             - agent_type: Optional["context", "nocontext", "foundry"]
             - memory_store_name: Optional[str] (required if agent_type="foundry")
+        on_result: Optional callback(index, context, result) called as each completes.
 
     Returns:
         List of MultiSessionEvaluationResult objects
@@ -304,6 +317,7 @@ async def run_evaluations_parallel(
     results = await pool.run_parallel(
         items=contexts,
         func=_run_single_evaluation_with_client,
+        on_result=on_result,
     )
 
     return results

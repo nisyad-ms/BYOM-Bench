@@ -133,10 +133,22 @@ def get_task_path(session_dir: Path, task_num: int) -> Path:
     return tasks_dir / f"task_{task_num:02d}.json"
 
 
-def get_eval_path(session_dir: Path, task_num: int, agent_type: str) -> Path:
-    """Get path for an evaluation file."""
+def get_eval_path(session_dir: Path, task_num: int, agent_type: str, run_id: int | None = None) -> Path:
+    """Get path for an evaluation file.
+    
+    Args:
+        session_dir: Session directory
+        task_num: Task number
+        agent_type: Agent type (context, nocontext, foundry)
+        run_id: Optional run ID for multiple runs (1, 2, 3, etc.)
+    
+    Returns:
+        Path like eval_04_context.json or eval_04_context_01.json (with run_id)
+    """
     eval_dir = session_dir / "evaluation"
     eval_dir.mkdir(parents=True, exist_ok=True)
+    if run_id is not None:
+        return eval_dir / f"eval_{task_num:02d}_{agent_type}_{run_id:02d}.json"
     return eval_dir / f"eval_{task_num:02d}_{agent_type}.json"
 
 

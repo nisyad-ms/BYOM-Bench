@@ -125,6 +125,7 @@ class FoundryMemoryAgent:
             memory_store_name=self.memory_store_name,
             scope=self.scope,
             update_delay=300,
+            search_options=MemorySearchOptions(max_memories=100),
         )
 
         self._agent = self.client.agents.create_version(

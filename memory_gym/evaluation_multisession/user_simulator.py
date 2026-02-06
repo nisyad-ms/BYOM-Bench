@@ -7,6 +7,7 @@ if recommendations don't match those preferences.
 """
 
 import logging
+import re
 
 from memory_gym.client import CONFIG, LLMClient
 from memory_gym.prompts import render_prompt
@@ -72,7 +73,7 @@ class MultiSessionUserSimulator:
         self,
         agent_message: str,
         conversation_history: list[dict[str, str]],
-    ) -> str:
+    ) -> tuple[str, str | None]:
         """Generate user response to agent message.
 
         Args:
@@ -80,17 +81,40 @@ class MultiSessionUserSimulator:
             conversation_history: Full conversation so far (including agent_message)
 
         Returns:
-            User's response message
+            Tuple of (user_response, scratchpad_or_none)
+            - user_response: Clean response to add to conversation
+            - scratchpad: Raw scratchpad content for debugging, or None if not present
         """
-        messages = [{"role": "system", "content": self._system_prompt}]
-        messages.extend(conversation_history)
+        conv_text = self._format_conversation_as_string(conversation_history)
+        user_prompt = render_prompt(
+            "evaluation/user_simulator_user",
+            conversation=conv_text,
+        )
+
+        messages = [
+            {"role": "system", "content": self._system_prompt},
+            {"role": "user", "content": user_prompt},
+        ]
 
         response = self.client.complete_chat(
             messages=messages,
             max_tokens=CONFIG["max_tokens"]["user_simulator"],
         )
 
-        return response.strip()
+        raw_response = response.strip()
+        clean_response, scratchpad = self._extract_scratchpad(raw_response)
+        return clean_response, scratchpad
+
+    def _extract_scratchpad(self, response: str) -> tuple[str, str | None]:
+        """Extract scratchpad and clean response separately.
+
+        Returns:
+            Tuple of (clean_response, scratchpad_content_or_none)
+        """
+        match = re.search(r"<scratchpad>(.*?)</scratchpad>", response, flags=re.DOTALL)
+        scratchpad = match.group(1).strip() if match else None
+        clean = re.sub(r"<scratchpad>.*?</scratchpad>\s*", "", response, flags=re.DOTALL)
+        return clean.strip(), scratchpad
 
     def should_end_conversation(
         self,
@@ -131,6 +155,15 @@ class MultiSessionUserSimulator:
                         return True
 
         return False
+
+    def _format_conversation_as_string(self, history: list[dict[str, str]]) -> str:
+        """Format conversation history as labeled string for the prompt."""
+        lines = []
+        for turn in history:
+            role = "User" if turn.get("role") == "user" else "Agent"
+            content = turn.get("content", "")
+            lines.append(f"{role}: {content}")
+        return "\n\n".join(lines)
 
     def _format_conversation(self, history: list[dict[str, str]]) -> str:
         """Format conversation history for the prompt."""
