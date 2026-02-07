@@ -104,6 +104,13 @@ def get_latest_session_dir() -> Path | None:
     return dirs[0]
 
 
+def get_all_session_dirs() -> list[Path]:
+    OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
+    dirs = [d for d in OUTPUTS_DIR.iterdir() if d.is_dir() and SESSION_DIR_PATTERN.match(d.name)]
+    dirs.sort(key=lambda x: x.name)
+    return dirs
+
+
 def get_session_dir(session_name: str | None) -> Path | None:
     """Get session directory from session name or find latest.
 
@@ -135,13 +142,13 @@ def get_task_path(session_dir: Path, task_num: int) -> Path:
 
 def get_eval_path(session_dir: Path, task_num: int, agent_type: str, run_id: int | None = None) -> Path:
     """Get path for an evaluation file.
-    
+
     Args:
         session_dir: Session directory
         task_num: Task number
         agent_type: Agent type (context, nocontext, foundry)
         run_id: Optional run ID for multiple runs (1, 2, 3, etc.)
-    
+
     Returns:
         Path like eval_04_context.json or eval_04_context_01.json (with run_id)
     """
@@ -197,12 +204,12 @@ def get_next_task_num(session_dir: Path) -> int:
     return 1
 
 
-def get_latest_task(session_dir: Path) -> Path | None:
-    """Get the latest task file in a session directory."""
-    tasks = get_all_tasks(session_dir)
-    return tasks[-1] if tasks else None
-
-
-def validate_task_session_match(session_dir: Path, task_path: Path) -> bool:
-    """Validate that a task file belongs to the session directory."""
-    return task_path.parent.parent == session_dir
+def get_tasks_by_nums(session_dir: Path, task_nums: str) -> list[Path]:
+    paths = []
+    for num_str in task_nums.split(","):
+        num = int(num_str.strip())
+        path = get_task_path(session_dir, num)
+        if path.exists():
+            paths.append(path)
+    paths.sort(key=lambda p: p.name)
+    return paths

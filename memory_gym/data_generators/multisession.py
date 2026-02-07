@@ -22,7 +22,7 @@ import logging
 import random
 from datetime import datetime
 
-from memory_gym.client import CONFIG, LLMClient
+from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
 from memory_gym.data_generators.base import BaseDataGenerator, GenerationError
 from memory_gym.prompts import render_prompt
 from memory_gym.schemas import (
@@ -67,7 +67,7 @@ class MultiSessionGenerator(BaseDataGenerator):
     def __init__(
         self,
         persona: str,
-        llm: LLMClient | None = None,
+        llm: LLMClient | PooledLLMClient | None = None,
         num_sessions: int = DEFAULT_NUM_SESSIONS,
         start_date: str | None = None,
         output_dir: str | None = None,
@@ -89,10 +89,10 @@ class MultiSessionGenerator(BaseDataGenerator):
         self._llm = llm
 
     @property
-    def llm(self) -> LLMClient:
+    def llm(self) -> LLMClient | PooledLLMClient:
         """Lazy-load LLM client."""
         if self._llm is None:
-            self._llm = LLMClient()
+            self._llm = PooledLLMClient()
         return self._llm
 
     def _expand_persona(self) -> ExpandedPersona:

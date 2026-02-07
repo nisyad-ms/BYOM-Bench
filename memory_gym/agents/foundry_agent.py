@@ -2,10 +2,12 @@
 
 import logging
 import os
+import threading
+import uuid
 
+import openai
 from azure.ai.projects import AIProjectClient
 from azure.ai.projects.models import (
-    MemorySearchOptions,
     MemorySearchTool,
     MemoryStoreDefaultDefinition,
     MemoryStoreDefaultOptions,
@@ -15,27 +17,50 @@ from azure.ai.projects.models import (
     ResponsesUserMessageItemParam,
 )
 from azure.identity import DefaultAzureCredential
+from tenacity import (
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+)
 
 from memory_gym.schemas import MultiSessionOutput
 
 logger = logging.getLogger(__name__)
 
 
+def _get_foundry_deployments() -> list[str]:
+    """Get Foundry deployment names from AZURE_FOUNDRY_DEPLOYMENTS env var."""
+    deployments_str = os.environ.get("AZURE_FOUNDRY_DEPLOYMENTS", "")
+    if not deployments_str:
+        return []
+    return [d.strip() for d in deployments_str.split(",") if d.strip()]
+
+
+def _get_foundry_embedding_deployments() -> list[str]:
+    deployments_str = os.environ.get("AZURE_FOUNDRY_EMBEDDINGS_DEPLOYMENTS", "")
+    if not deployments_str:
+        return []
+    return [d.strip() for d in deployments_str.split(",") if d.strip()]
+
+
+def get_foundry_embedding_models() -> list[str]:
+    return _get_foundry_embedding_deployments() or ["text-embedding-3-small-001"]
+
+
 class FoundryMemoryAgent:
     """Agent using Azure AI Foundry memory store for preference recall.
 
-    This agent:
-    1. Creates a memory store (if needed) and populates it with conversation history
-    2. Uses the Foundry agent with memory search tool to respond
-    3. Memory persists across evaluation tasks for the same session data
+    Creates one Foundry agent per deployment model and routes respond() calls
+    to the least-busy agent, spreading load across all endpoints.
     """
 
     def __init__(
         self,
         memory_store_name: str,
         scope: str = "user",
-        chat_model: str = "gpt-4.1-001",
-        embedding_model: str = "text-embedding-3-small-001",
+        chat_models: list[str] | None = None,
+        embedding_model: str | None = None,
     ):
         endpoint = os.getenv("AZURE_FOUNDRY_ENDPOINT")
         if not endpoint:
@@ -47,51 +72,60 @@ class FoundryMemoryAgent:
         )
         self.memory_store_name = memory_store_name
         self.scope = scope
-        self.chat_model = chat_model
+        if embedding_model is None:
+            embedding_model = (_get_foundry_embedding_deployments() or ["text-embedding-3-small-001"])[0]
         self.embedding_model = embedding_model
         self._memory_populated = False
-        self._agent = None
-        self._conversation_id = None
+        self._init_lock = threading.Lock()
+
+        if chat_models is None:
+            chat_models = _get_foundry_deployments() or ["gpt-4.1-001"]
+        self.chat_models = chat_models
+        self._agents: list = []
+        self._agent_ids = [str(uuid.uuid4())[:8] for _ in chat_models]
+        self._in_flight = [0] * len(chat_models)
+        self._local = threading.local()
 
     def ensure_memory_store(self, multisession_data: MultiSessionOutput, force_recreate: bool = False) -> None:
         """Create memory store if needed and populate with conversation history.
 
-        Args:
-            multisession_data: Session data to populate memories from
-            force_recreate: If True, delete existing memory store and recreate
+        Thread-safe: only one thread will create/populate the store.
         """
-        existing_stores = [ms.name for ms in self.client.memory_stores.list()]
-
-        if self.memory_store_name in existing_stores:
-            if force_recreate:
-                logger.info(f"Deleting existing memory store '{self.memory_store_name}'...")
-                self.client.memory_stores.delete(self.memory_store_name)
-            else:
-                logger.info(f"Memory store '{self.memory_store_name}' already exists")
-                self._memory_populated = True
+        with self._init_lock:
+            if self._memory_populated and not force_recreate:
                 return
 
-        logger.info(f"Creating memory store '{self.memory_store_name}'...")
-        definition = MemoryStoreDefaultDefinition(
-            chat_model=self.chat_model,
-            embedding_model=self.embedding_model,
-            options=MemoryStoreDefaultOptions(
-                user_profile_enabled=True,
-                chat_summary_enabled=True,
-            ),
-        )
+            existing_stores = [ms.name for ms in self.client.memory_stores.list()]
 
-        self.client.memory_stores.create(
-            name=self.memory_store_name,
-            definition=definition,
-            description=f"Memory store for persona: {multisession_data.persona[:50]}",
-        )
+            if self.memory_store_name in existing_stores:
+                if force_recreate:
+                    logger.info(f"Deleting existing memory store '{self.memory_store_name}'...")
+                    self.client.memory_stores.delete(self.memory_store_name)
+                else:
+                    logger.info(f"Memory store '{self.memory_store_name}' already exists")
+                    self._memory_populated = True
+                    return
 
-        self._populate_memories(multisession_data)
-        self._memory_populated = True
+            logger.info(f"Creating memory store '{self.memory_store_name}'...")
+            definition = MemoryStoreDefaultDefinition(
+                chat_model=self.chat_models[0],
+                embedding_model=self.embedding_model,
+                options=MemoryStoreDefaultOptions(
+                    user_profile_enabled=True,
+                    chat_summary_enabled=True,
+                ),
+            )
+
+            self.client.memory_stores.create(
+                name=self.memory_store_name,
+                definition=definition,
+                description=f"Memory store for persona: {multisession_data.persona[:50]}",
+            )
+
+            self._populate_memories(multisession_data)
+            self._memory_populated = True
 
     def _populate_memories(self, multisession_data: MultiSessionOutput) -> None:
-        """Populate memory store with all session conversations."""
         logger.info("Populating memory store with conversation history...")
 
         update_poller = None
@@ -116,68 +150,116 @@ class FoundryMemoryAgent:
 
         logger.info("Memory population complete")
 
-    def _ensure_agent(self) -> None:
-        """Create or get the Foundry agent with memory search tool."""
-        if self._agent is not None:
-            return
+    def _ensure_agents(self) -> None:
+        """Create one Foundry agent per deployment model.
 
-        tool = MemorySearchTool(
-            memory_store_name=self.memory_store_name,
-            scope=self.scope,
-            update_delay=300,
-            search_options=MemorySearchOptions(max_memories=100),
-        )
+        Thread-safe: only one thread will create the agents.
+        """
+        with self._init_lock:
+            if self._agents:
+                return
 
-        self._agent = self.client.agents.create_version(
-            agent_name="PersonaGymAgent",
-            definition=PromptAgentDefinition(
-                model=self.chat_model,
-                instructions="You are a helpful assistant that remembers user preferences and applies them proactively.",
-                tools=[tool],
-            ),
-        )
-        logger.info(f"Created Foundry agent: {self._agent.name}")
+            tool = MemorySearchTool(
+                memory_store_name=self.memory_store_name,
+                scope=self.scope,
+                update_delay=300,
+            )
+
+            for i, model in enumerate(self.chat_models):
+                agent = self.client.agents.create_version(
+                    agent_name=f"PersonaGymAgent-{self._agent_ids[i]}",
+                    definition=PromptAgentDefinition(
+                        model=model,
+                        instructions="You are a helpful assistant that remembers user preferences and applies them proactively.",
+                        tools=[tool],
+                    ),
+                )
+                self._agents.append(agent)
+                logger.info(f"Created Foundry agent: {agent.name} (model={model})")
+
+            logger.info(f"Created {len(self._agents)} Foundry agents across deployments")
+
+    def _acquire_agent(self) -> tuple[int, object]:
+        with self._init_lock:
+            idx = min(range(len(self._in_flight)), key=lambda i: self._in_flight[i])
+            self._in_flight[idx] += 1
+            return idx, self._agents[idx]
+
+    def _release_agent(self, idx: int) -> None:
+        with self._init_lock:
+            self._in_flight[idx] -= 1
 
     def build_context(self, multisession_data: MultiSessionOutput, force_recreate: bool = False) -> str:
-        """Ensure memory store is populated and agent is ready.
-
-        Args:
-            multisession_data: Session data to build context from
-            force_recreate: If True, delete and recreate memory store
-        """
+        """Ensure memory store is populated and agents are ready."""
         self.ensure_memory_store(multisession_data, force_recreate=force_recreate)
-        self._ensure_agent()
+        self._ensure_agents()
         return "Foundry agent with memory search"
 
     def respond(self, conversation: list[dict[str, str]]) -> str:
-        """Generate a response using Foundry agent with memory search."""
-        if self._agent is None:
-            raise ValueError("Agent not initialized. Call build_context first.")
+        """Generate a response using least-busy Foundry agent.
 
-        openai_client = self.client.get_openai_client()
+        Thread-safe: each thread gets its own conversation ID per agent index.
+        """
+        if not self._agents:
+            raise ValueError("Agents not initialized. Call build_context first.")
 
-        if self._conversation_id is None:
-            conv = openai_client.conversations.create()
-            self._conversation_id = conv.id
-            logger.debug(f"Created new conversation: {self._conversation_id}")
+        idx, agent = self._acquire_agent()
+        try:
+            conv_key = f"conversation_id_{idx}"
+            openai_client = self.client.get_openai_client()
 
-        last_user_message = ""
-        for msg in reversed(conversation):
-            if msg["role"] == "user":
-                last_user_message = msg["content"]
-                break
+            conv_id = getattr(self._local, conv_key, None)
+            if conv_id is None:
+                conv = openai_client.conversations.create()
+                setattr(self._local, conv_key, conv.id)
+                conv_id = conv.id
+                logger.debug(f"Created new conversation: {conv_id} (agent {idx})")
 
-        response = openai_client.responses.create(
-            input=last_user_message,
-            conversation=self._conversation_id,
-            extra_body={"agent": {"name": self._agent.name, "type": "agent_reference"}},
+            last_user_message = ""
+            for msg in reversed(conversation):
+                if msg["role"] == "user":
+                    last_user_message = msg["content"]
+                    break
+
+            response = self._call_with_retry(
+                openai_client,
+                last_user_message,
+                conv_id,
+                agent,
+            )
+
+            for item in response.output:
+                item_type = getattr(item, "type", "unknown")
+                if item_type in ("function_call", "custom_tool_call", "mcp_call"):
+                    tool_name = getattr(item, "name", "unknown")
+                    tool_input = getattr(item, "arguments", None) or getattr(item, "input", None)
+                    logger.info(f"[TOOL TRACE] type={item_type} name={tool_name} input={tool_input}")
+                elif item_type == "message":
+                    pass
+                else:
+                    logger.info(f"[TOOL TRACE] unexpected output item type={item_type}: {item}")
+
+            return response.output_text
+        finally:
+            self._release_agent(idx)
+
+    @retry(
+        retry=retry_if_exception_type((openai.RateLimitError, openai.APIConnectionError, openai.InternalServerError)),
+        wait=wait_exponential(multiplier=2, min=5, max=120),
+        stop=stop_after_attempt(12),
+    )
+    def _call_with_retry(self, openai_client, message: str, conversation_id: str, agent):
+        """Call responses.create with retry logic for rate limits."""
+        return openai_client.responses.create(
+            input=message,
+            conversation=conversation_id,
+            extra_body={"agent": {"name": agent.name, "type": "agent_reference"}},
         )
 
-        return response.output_text
-
     def reset_conversation(self) -> None:
-        """Reset the conversation for a new evaluation task."""
-        self._conversation_id = None
+        """Reset all conversation IDs for the current thread."""
+        for i in range(len(self.chat_models)):
+            setattr(self._local, f"conversation_id_{i}", None)
 
     def delete_memory_store(self) -> None:
         """Delete the memory store (for cleanup)."""
@@ -206,21 +288,3 @@ def _to_foundry_messages(
             messages.append(ResponsesAssistantMessageItemParam(content=content))
 
     return messages
-
-
-def _search_memories(
-    client: AIProjectClient,
-    memory_store_name: str,
-    scope: str,
-    query: str,
-    max_memories: int = 5,
-) -> list[dict]:
-    """Search memories for debugging/inspection."""
-    result = client.memory_stores.search_memories(
-        name=memory_store_name,
-        scope=scope,
-        items=[ResponsesUserMessageItemParam(content=query)],
-        options=MemorySearchOptions(max_memories=max_memories),
-    )
-
-    return [{"id": m.memory_item.memory_id, "content": m.memory_item.content} for m in result.memories]

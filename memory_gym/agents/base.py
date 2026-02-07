@@ -2,14 +2,14 @@
 
 from abc import ABC, abstractmethod
 
-from memory_gym.client import CONFIG, LLMClient
+from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
 from memory_gym.schemas import MultiSessionOutput
 
 
 class BaseAgent(ABC):
     """Abstract base class for evaluation agents."""
 
-    def __init__(self, client: LLMClient):
+    def __init__(self, client: LLMClient | PooledLLMClient):
         self.client = client
         self._system_prompt: str | None = None
 

@@ -36,6 +36,7 @@ import asyncio
 import json
 import logging
 import os
+import threading
 from pathlib import Path
 from typing import Any, Callable, Optional, TypeVar
 
@@ -268,6 +269,66 @@ class LLMClient:
         return result
 
 
+class PooledLLMClient:
+    """LLM client that routes every call to the least-busy deployment.
+
+    Drop-in replacement for LLMClient that tracks in-flight requests
+    per deployment and always picks the one with the fewest active calls.
+    This ensures no endpoint sits idle while another is saturated.
+
+    Usage:
+        pool = PooledLLMClient()  # Uses AZURE_OPENAI_DEPLOYMENTS env var
+        response = pool.complete("Hello")  # Routes to least-busy deployment
+    """
+
+    def __init__(self, deployments: Optional[list[str]] = None):
+        if deployments is None:
+            deployments = _get_deployments()
+            if not deployments:
+                deployments = [_get_default_deployment()]
+
+        if not deployments:
+            raise ValueError("No deployments configured")
+
+        self.deployments = deployments
+        self.clients = [LLMClient(deployment=d) for d in deployments]
+        self._in_flight = [0] * len(self.clients)
+        self._lock = threading.Lock()
+
+        logger.info(f"PooledLLMClient initialized with {len(self.clients)} deployments: {deployments}")
+
+    def _acquire_client(self) -> tuple[int, LLMClient]:
+        with self._lock:
+            idx = min(range(len(self._in_flight)), key=lambda i: self._in_flight[i])
+            self._in_flight[idx] += 1
+            return idx, self.clients[idx]
+
+    def _release_client(self, idx: int) -> None:
+        with self._lock:
+            self._in_flight[idx] -= 1
+
+    def _call(self, method: str, *args: Any, **kwargs: Any) -> Any:
+        idx, client = self._acquire_client()
+        try:
+            return getattr(client, method)(*args, **kwargs)
+        finally:
+            self._release_client(idx)
+
+    def complete(self, prompt: str, system_prompt: Optional[str] = None, max_tokens: int = 2048) -> str:
+        return self._call("complete", prompt, system_prompt, max_tokens)
+
+    def complete_chat(self, messages: list[dict[str, str]], max_tokens: int = 2048, temperature: float = 1.0) -> str:
+        return self._call("complete_chat", messages, max_tokens, temperature)
+
+    def complete_json(self, prompt: str, system_prompt: Optional[str] = None, max_tokens: int = 2048) -> dict[str, Any]:
+        return self._call("complete_json", prompt, system_prompt, max_tokens)
+
+    def complete_structured(
+        self, prompt: str, response_schema: type[T], system_prompt: Optional[str] = None, max_tokens: int = 4096
+    ) -> T:
+        return self._call("complete_structured", prompt, response_schema, system_prompt, max_tokens)
+
+
 class AsyncLLMPool:
     """Pool of LLM clients across multiple deployments for parallel calls.
 
@@ -299,43 +360,46 @@ class AsyncLLMPool:
             raise ValueError("No deployments configured")
 
         self.deployments = deployments
-        self.clients = [LLMClient(deployment=d) for d in deployments]
-        self._index = 0
-        self._lock = asyncio.Lock()
+        self._pooled_client = PooledLLMClient(deployments=deployments)
 
-        logger.info(f"AsyncLLMPool initialized with {len(self.clients)} deployments: {deployments}")
-
-    async def _get_next_client(self) -> LLMClient:
-        """Get next client using round-robin."""
-        async with self._lock:
-            client = self.clients[self._index]
-            self._index = (self._index + 1) % len(self.clients)
-            return client
+        logger.info(f"AsyncLLMPool initialized with {len(deployments)} deployments: {deployments}")
 
     async def run_parallel(
         self,
         items: list[Any],
-        func: Callable[[LLMClient, Any], Any],
+        func: Callable[["LLMClient | PooledLLMClient", Any], Any],
         on_result: Callable[[int, Any, Any], None] | None = None,
+        max_concurrency: int | None = None,
     ) -> list[Any]:
         """Run a function on multiple items in parallel across deployments.
+
+        Each item's function receives a PooledLLMClient that distributes
+        individual LLM calls across all deployments via round-robin.
 
         Args:
             items: List of items to process.
             func: Sync function taking (client, item) and returning result.
             on_result: Optional callback(index, item, result) called as each completes.
+            max_concurrency: Maximum number of concurrent tasks. Defaults to 2x deployments.
 
         Returns:
             List of results in same order as items.
         """
+        if max_concurrency is None:
+            max_concurrency = len(self.deployments) * 2
+
+        semaphore = asyncio.Semaphore(max_concurrency)
         results: list[Any] = [None] * len(items)
 
         async def process_item(index: int, item: Any) -> None:
-            client = await self._get_next_client()
-            result = await asyncio.to_thread(func, client, item)
-            results[index] = result
-            if on_result:
-                on_result(index, item, result)
+            async with semaphore:
+                try:
+                    result = await asyncio.to_thread(func, self._pooled_client, item)
+                    results[index] = result
+                    if on_result:
+                        on_result(index, item, result)
+                except Exception as e:
+                    logger.error(f"Task {index} failed: {e}")
 
         tasks = [process_item(i, item) for i, item in enumerate(items)]
         await asyncio.gather(*tasks)

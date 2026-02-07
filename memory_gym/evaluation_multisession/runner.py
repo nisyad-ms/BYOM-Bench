@@ -8,13 +8,11 @@ Orchestrates the complete evaluation flow:
 4. Evaluate with judge
 """
 
-import json
 import logging
-from pathlib import Path
-from typing import Any, Callable, Literal
+from typing import Callable, Literal
 
 from memory_gym.agents import ContextAwareAgent, FoundryMemoryAgent, NoContextAgent
-from memory_gym.client import AsyncLLMPool, LLMClient
+from memory_gym.client import AsyncLLMPool, LLMClient, PooledLLMClient
 from memory_gym.schemas import (
     EvaluationTask,
     MultiSessionEvaluationResult,
@@ -33,11 +31,12 @@ def run_evaluation(
     agent_system_prompt: str | None = None,
     max_agent_turns: int = 10,
     include_history: bool = True,
-    client: LLMClient | None = None,
+    client: LLMClient | PooledLLMClient | None = None,
     eval_task: EvaluationTask | None = None,
     agent_type: Literal["context", "nocontext", "foundry"] | None = None,
     memory_store_name: str | None = None,
     force_recreate_memory: bool = False,
+    foundry_agent: FoundryMemoryAgent | None = None,
 ) -> MultiSessionEvaluationResult:
     """Run a complete evaluation on multi-session data.
 
@@ -63,7 +62,7 @@ def run_evaluation(
     Returns:
         MultiSessionEvaluationResult with scores and analysis
     """
-    client = client or LLMClient()
+    client = client or PooledLLMClient()
 
     if agent_type is None:
         agent_type = "context" if include_history else "nocontext"
@@ -88,6 +87,7 @@ def run_evaluation(
         client,
         memory_store_name,
         force_recreate_memory,
+        foundry_agent,
     )
     logger.info(f"Dialogue completed: {len(clean_conversation)} turns")
 
@@ -111,9 +111,10 @@ def run_dialogue(
     agent_system_prompt: str | None,
     max_agent_turns: int,
     agent_type: Literal["context", "nocontext", "foundry"],
-    client: LLMClient,
+    client: LLMClient | PooledLLMClient,
     memory_store_name: str | None = None,
     force_recreate_memory: bool = False,
+    foundry_agent: FoundryMemoryAgent | None = None,
 ) -> tuple[list[dict[str, str | None]], list[dict[str, str]]]:
     """Run the evaluation dialogue between agent and user simulator.
 
@@ -135,10 +136,15 @@ def run_dialogue(
     user_sim = MultiSessionUserSimulator(eval_task, client)
 
     if agent_type == "foundry":
-        if not memory_store_name:
-            raise ValueError("memory_store_name required for foundry agent")
-        agent = FoundryMemoryAgent(memory_store_name=memory_store_name)
-        agent.build_context(multisession_data, force_recreate=force_recreate_memory)
+        if foundry_agent is not None:
+            agent = foundry_agent
+            agent.reset_conversation()
+            agent.build_context(multisession_data, force_recreate=force_recreate_memory)
+        else:
+            if not memory_store_name:
+                raise ValueError("memory_store_name required for foundry agent")
+            agent = FoundryMemoryAgent(memory_store_name=memory_store_name)
+            agent.build_context(multisession_data, force_recreate=force_recreate_memory)
     elif agent_type == "context":
         agent = ContextAwareAgent(client)
         agent.build_context(multisession_data)
@@ -184,91 +190,8 @@ def run_dialogue(
     return conversation_with_scratchpads, clean_conversation
 
 
-def run_evaluation_from_file(
-    data_path: str | Path,
-    agent_system_prompt: str | None = None,
-    output_path: str | Path | None = None,
-    **kwargs: Any,
-) -> MultiSessionEvaluationResult:
-    """Run evaluation from a saved multi-session JSON file.
-
-    Args:
-        data_path: Path to the multi-session output JSON
-        agent_system_prompt: Custom agent system prompt
-        output_path: Optional path to save results
-        **kwargs: Additional arguments passed to run_evaluation
-
-    Returns:
-        Evaluation result
-    """
-    data_path = Path(data_path)
-
-    # Load data
-    with open(data_path) as f:
-        data = json.load(f)
-
-    multisession_data = MultiSessionOutput.from_dict(data)
-
-    # Run evaluation
-    result = run_evaluation(
-        multisession_data,
-        agent_system_prompt=agent_system_prompt,
-        **kwargs,
-    )
-
-    # Save if output path provided
-    if output_path:
-        output_path = Path(output_path)
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(output_path, "w") as f:
-            json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
-        logger.info(f"Results saved to {output_path}")
-
-    return result
-
-
-# CLI entry point
-if __name__ == "__main__":
-    import argparse
-
-    logging.basicConfig(level=logging.INFO)
-
-    parser = argparse.ArgumentParser(description="Run multi-session preference recall evaluation")
-    parser.add_argument(
-        "--input",
-        required=True,
-        help="Path to multi-session output JSON",
-    )
-    parser.add_argument(
-        "--output",
-        help="Path to save evaluation results",
-    )
-    parser.add_argument(
-        "--max-agent-turns",
-        type=int,
-        default=10,
-        help="Maximum agent turns (default: 10)",
-    )
-    args = parser.parse_args()
-
-    result = run_evaluation_from_file(
-        args.input,
-        output_path=args.output,
-        max_agent_turns=args.max_agent_turns,
-    )
-
-    print(f"\n{'=' * 50}")
-    print("EVALUATION RESULTS")
-    print(f"{'=' * 50}")
-    print(f"Total Turns: {result.total_turns}")
-    print(f"Correction Turns: {result.correction_turns}")
-    print(f"Efficiency Score: {result.efficiency_score:.2f}")
-    print(f"Preference Score: {result.preference_score:.2f}")
-    print(f"\nReasoning: {result.reasoning}")
-
-
 def _run_single_evaluation_with_client(
-    client: LLMClient,
+    client: LLMClient | PooledLLMClient,
     context: dict,
 ) -> MultiSessionEvaluationResult:
     """Run a single evaluation using provided client (for parallel execution).
@@ -290,6 +213,7 @@ def _run_single_evaluation_with_client(
         agent_type=context.get("agent_type"),
         memory_store_name=context.get("memory_store_name"),
         force_recreate_memory=context.get("force_recreate_memory", False),
+        foundry_agent=context.get("foundry_agent"),
     )
 
 

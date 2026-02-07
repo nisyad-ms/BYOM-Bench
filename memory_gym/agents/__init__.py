@@ -9,12 +9,13 @@ Provides different agent types:
 
 from .base import BaseAgent
 from .context_aware import ContextAwareAgent
-from .foundry_agent import FoundryMemoryAgent
+from .foundry_agent import FoundryMemoryAgent, get_foundry_embedding_models
 from .no_context import NoContextAgent
 
 __all__ = [
     "BaseAgent",
     "ContextAwareAgent",
     "FoundryMemoryAgent",
+    "get_foundry_embedding_models",
     "NoContextAgent",
 ]

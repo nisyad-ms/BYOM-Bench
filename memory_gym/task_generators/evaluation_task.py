@@ -17,7 +17,7 @@ import random
 import uuid
 from datetime import datetime
 
-from memory_gym.client import CONFIG, AsyncLLMPool, LLMClient
+from memory_gym.client import CONFIG, AsyncLLMPool, LLMClient, PooledLLMClient
 from memory_gym.prompts import render_prompt
 from memory_gym.schemas import (
     EvaluationRubric,
@@ -54,13 +54,13 @@ class EvaluationTaskGenerator:
     MIN_EVOLVED_PREFS = 3  # Minimum evolved preferences per task
     EVOLVED_PREF_RATIO = 0.5  # Target 50% evolved preferences
 
-    def __init__(self, client: LLMClient | None = None):
+    def __init__(self, client: LLMClient | PooledLLMClient | None = None):
         """Initialize task generator with optional LLM client.
 
         Args:
             client: LLM client for generation. If None, creates a new one.
         """
-        self.client = client or LLMClient()
+        self.client = client or PooledLLMClient()
 
     def generate_batch(
         self,
@@ -576,7 +576,7 @@ class EvaluationTaskGenerator:
 
 def generate_evaluation_task(
     multisession_output: MultiSessionOutput,
-    client: LLMClient | None = None,
+    client: LLMClient | PooledLLMClient | None = None,
 ) -> EvaluationTask:
     """Convenience function to generate a single evaluation task.
 
@@ -598,7 +598,7 @@ def generate_evaluation_tasks(
     multisession_output: MultiSessionOutput,
     num_tasks: int = EvaluationTaskGenerator.DEFAULT_NUM_TASKS,
     prefs_per_task: int = EvaluationTaskGenerator.DEFAULT_PREFS_PER_TASK,
-    client: LLMClient | None = None,
+    client: LLMClient | PooledLLMClient | None = None,
     previous_events: list[str] | None = None,
 ) -> list[EvaluationTask]:
     """Generate multiple evaluation tasks from multi-session data.
@@ -632,7 +632,7 @@ def generate_evaluation_tasks(
 
 
 def _generate_single_task_with_client(
-    client: LLMClient,
+    client: LLMClient | PooledLLMClient,
     context: dict,
 ) -> EvaluationTask:
     """Generate a single task using provided client (for parallel execution).

@@ -8,9 +8,10 @@ The judge evaluates a completed dialogue using two separate LLM calls:
 
 import json
 import logging
+from concurrent.futures import ThreadPoolExecutor
 from typing import Any
 
-from memory_gym.client import CONFIG, LLMClient
+from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
 from memory_gym.prompts import render_prompt
 from memory_gym.schemas import (
     EvaluationRubric,
@@ -30,8 +31,8 @@ class MultiSessionJudge:
     2. Efficiency Judge: Turn classification for efficiency scoring
     """
 
-    def __init__(self, client: LLMClient | None = None):
-        self.client = client or LLMClient()
+    def __init__(self, client: LLMClient | PooledLLMClient | None = None):
+        self.client = client or PooledLLMClient()
 
     def evaluate(
         self,
@@ -54,8 +55,15 @@ class MultiSessionJudge:
         num_required = len(rubric.required_preferences)
 
         try:
-            pref_result = self._call_preference_judge(required_prefs_json, transcript_json, num_required)
-            eff_result = self._call_efficiency_judge(required_prefs_json, transcript_json, agent_turns)
+            with ThreadPoolExecutor(max_workers=2) as executor:
+                pref_future = executor.submit(
+                    self._call_preference_judge, required_prefs_json, transcript_json, num_required
+                )
+                eff_future = executor.submit(
+                    self._call_efficiency_judge, required_prefs_json, transcript_json, agent_turns
+                )
+                pref_result = pref_future.result()
+                eff_result = eff_future.result()
 
             return self._combine_results(
                 evaluation_task.task_id,
@@ -225,7 +233,7 @@ class MultiSessionJudge:
 def evaluate_dialogue(
     evaluation_task: EvaluationTask,
     conversation: list[dict[str, str]],
-    client: LLMClient | None = None,
+    client: LLMClient | PooledLLMClient | None = None,
 ) -> MultiSessionEvaluationResult:
     """Convenience function to evaluate a dialogue."""
     judge = MultiSessionJudge(client)

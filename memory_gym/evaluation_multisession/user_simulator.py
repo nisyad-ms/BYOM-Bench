@@ -9,7 +9,7 @@ if recommendations don't match those preferences.
 import logging
 import re
 
-from memory_gym.client import CONFIG, LLMClient
+from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
 from memory_gym.prompts import render_prompt
 from memory_gym.schemas import EvaluationTask
 
@@ -32,7 +32,7 @@ class MultiSessionUserSimulator:
     def __init__(
         self,
         evaluation_task: EvaluationTask,
-        client: LLMClient | None = None,
+        client: LLMClient | PooledLLMClient | None = None,
     ):
         """Initialize user simulator for a specific evaluation task.
 
@@ -41,7 +41,7 @@ class MultiSessionUserSimulator:
             client: LLM client for generation. If None, creates a new one.
         """
         self.task = evaluation_task
-        self.client = client or LLMClient()
+        self.client = client or PooledLLMClient()
 
         # Extract preferences from rubric.required_preferences
         # These are dicts with {id, fact, supersedes?: ...}
@@ -177,7 +177,7 @@ class MultiSessionUserSimulator:
 
 def create_user_simulator(
     evaluation_task: EvaluationTask,
-    client: LLMClient | None = None,
+    client: LLMClient | PooledLLMClient | None = None,
 ) -> MultiSessionUserSimulator:
     """Convenience function to create a user simulator.
 
