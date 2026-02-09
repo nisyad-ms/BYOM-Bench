@@ -5,6 +5,7 @@ Usage:
     python test_task_generation.py                    # Single task, latest session
     python test_task_generation.py --count 3          # Generate 3 tasks sequentially
     python test_task_generation.py --session <path>   # Use specific session dir or file
+    python test_task_generation.py --version v2       # Use specific task version
 """
 
 import argparse
@@ -16,6 +17,7 @@ from pathlib import Path
 from utils import (
     add_file_logging,
     get_next_task_num,
+    get_next_task_version,
     get_session_dir,
     get_session_path,
     get_task_path,
@@ -26,22 +28,24 @@ logger = setup_logging("task_generation")
 
 
 def get_existing_events(session_dir: Path) -> list[str]:
-    """Get event descriptions from existing tasks in the session."""
     tasks_dir = session_dir / "tasks"
     if not tasks_dir.exists():
         return []
 
     events = []
-    for task_file in sorted(tasks_dir.glob("task_*.json")):
-        with open(task_file, "r", encoding="utf-8") as f:
-            task_data = json.load(f)
-        event = task_data.get("evaluation_event", {}).get("event", "")
-        if event:
-            events.append(event)
+    for version_dir in sorted(tasks_dir.iterdir()):
+        if not version_dir.is_dir():
+            continue
+        for task_file in sorted(version_dir.glob("task_*.json")):
+            with open(task_file, "r", encoding="utf-8") as f:
+                task_data = json.load(f)
+            event = task_data.get("evaluation_event", {}).get("event", "")
+            if event:
+                events.append(event)
     return events
 
 
-def generate_tasks(data, session_dir: Path, start_task_num: int, count: int):
+def generate_tasks(data, session_dir: Path, version: str, start_task_num: int, count: int):
     """Generate tasks sequentially, sharing previous events for diversity."""
     from memory_gym.task_generators import generate_evaluation_tasks
 
@@ -56,7 +60,7 @@ def generate_tasks(data, session_dir: Path, start_task_num: int, count: int):
 
     for i, task in enumerate(tasks):
         task_num = start_task_num + i
-        output_path = get_task_path(session_dir, task_num)
+        output_path = get_task_path(session_dir, task_num, version)
 
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(task.to_dict(), f, indent=2, ensure_ascii=False)
@@ -72,12 +76,22 @@ def main():
     parser.add_argument(
         "--count", type=int, default=1, help="Number of tasks to generate (default: 1, uses parallel if > 1)"
     )
+    parser.add_argument(
+        "--version", type=str, default=None, help="Task version (e.g., v2). If not provided, auto-increments."
+    )
     args = parser.parse_args()
 
     session_dir = get_session_dir(args.session)
     if session_dir is None:
         logger.error("No session found. Run test_data_generation.py first.")
         sys.exit(1)
+
+    if args.version:
+        version = args.version
+    else:
+        version = get_next_task_version(session_dir)
+
+    logger.info(f"Using task version: {version}")
 
     add_file_logging(logger, session_dir)
 
@@ -92,8 +106,8 @@ def main():
         raw_data = json.load(f)
     data = MultiSessionOutput.from_dict(raw_data)
 
-    start_task_num = get_next_task_num(session_dir)
-    generate_tasks(data, session_dir, start_task_num, args.count)
+    start_task_num = get_next_task_num(session_dir, version)
+    generate_tasks(data, session_dir, version, start_task_num, args.count)
 
 
 if __name__ == "__main__":

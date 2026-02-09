@@ -17,17 +17,21 @@ import asyncio
 import json
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
 
 from utils import (
     add_file_logging,
+    create_eval_run_dir,
     extract_task_num,
     get_all_session_dirs,
     get_all_tasks,
     get_eval_path,
+    get_latest_task_version,
     get_session_dir,
     get_session_path,
     get_tasks_by_nums,
+    save_eval_run_config,
     setup_logging,
 )
 
@@ -39,6 +43,8 @@ async def run_session_evals(
     task_paths: list[Path],
     agent_type: str,
     max_agent_turns: int,
+    task_version: str,
+    eval_run_dir: Path,
     force_recreate_memory: bool = False,
     num_runs: int = 1,
     embedding_model: str | None = None,
@@ -94,7 +100,7 @@ async def run_session_evals(
         task_path = ctx["task_path"]
         run_id = ctx["run_id"]
         task_num = extract_task_num(task_path) or 1
-        output_path = get_eval_path(session_dir, task_num, agent_type, run_id)
+        output_path = get_eval_path(eval_run_dir, task_num, agent_type, run_id)
 
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
@@ -115,6 +121,7 @@ async def run_all_sessions(
     max_agent_turns: int,
     force_recreate_memory: bool,
     num_runs: int,
+    task_version: str | None,
 ):
     embedding_models = ["text-embedding-3-small-001"]
     if agent_type == "foundry":
@@ -126,6 +133,7 @@ async def run_all_sessions(
         f"Running {len(session_dirs)} sessions with {agent_type} agent ({len(embedding_models)} embedding models)"
     )
 
+    eval_configs: list[tuple[Path, dict]] = []
     tasks = []
     for i, session_dir in enumerate(session_dirs):
         session_file = get_session_path(session_dir)
@@ -133,12 +141,33 @@ async def run_all_sessions(
             logger.warning(f"Skipping {session_dir.name}: no sessions.json")
             continue
 
-        task_paths = get_all_tasks(session_dir)
+        resolved_version = task_version
+        if resolved_version is None:
+            resolved_version = get_latest_task_version(session_dir)
+            if resolved_version is None:
+                logger.warning(f"Skipping {session_dir.name}: no task files")
+                continue
+
+        task_paths = get_all_tasks(session_dir, resolved_version)
         if not task_paths:
             logger.warning(f"Skipping {session_dir.name}: no task files")
             continue
 
+        eval_run_dir = create_eval_run_dir(session_dir)
         emb_model = embedding_models[i % len(embedding_models)] if agent_type == "foundry" else None
+
+        eval_configs.append(
+            (
+                eval_run_dir,
+                {
+                    "agent_type": agent_type,
+                    "task_version": resolved_version,
+                    "num_runs": num_runs,
+                    "max_agent_turns": max_agent_turns,
+                    "timestamp": datetime.now().isoformat(),
+                },
+            )
+        )
 
         tasks.append(
             run_session_evals(
@@ -146,6 +175,8 @@ async def run_all_sessions(
                 task_paths,
                 agent_type,
                 max_agent_turns,
+                resolved_version,
+                eval_run_dir,
                 force_recreate_memory,
                 num_runs,
                 emb_model,
@@ -153,6 +184,9 @@ async def run_all_sessions(
         )
 
     await asyncio.gather(*tasks)
+
+    for eval_run_dir, config in eval_configs:
+        save_eval_run_config(eval_run_dir, config)
 
 
 def main():
@@ -168,6 +202,12 @@ def main():
         type=str,
         default="all",
         help="'all' for all tasks, or comma-separated task numbers (e.g., '01,02,03'). Only with single session.",
+    )
+    parser.add_argument(
+        "--task-version",
+        type=str,
+        default=None,
+        help="Task version (e.g., 'v1', 'v2'). Defaults to latest version.",
     )
     parser.add_argument(
         "--agent",
@@ -203,6 +243,7 @@ def main():
                 args.max_agent_turns,
                 args.no_cache,
                 args.num_runs,
+                args.task_version,
             )
         )
     else:
@@ -218,14 +259,23 @@ def main():
             logger.error(f"Session file not found: {session_file}")
             sys.exit(1)
 
+        resolved_task_version = args.task_version
+        if resolved_task_version is None:
+            resolved_task_version = get_latest_task_version(session_dir)
+            if resolved_task_version is None:
+                logger.error("No task files found. Run test_task_generation.py first.")
+                sys.exit(1)
+
         if args.task == "all":
-            task_paths = get_all_tasks(session_dir)
+            task_paths = get_all_tasks(session_dir, resolved_task_version)
         else:
-            task_paths = get_tasks_by_nums(session_dir, args.task)
+            task_paths = get_tasks_by_nums(session_dir, args.task, resolved_task_version)
 
         if not task_paths:
             logger.error("No task files found. Run test_task_generation.py first.")
             sys.exit(1)
+
+        eval_run_dir = create_eval_run_dir(session_dir)
 
         asyncio.run(
             run_session_evals(
@@ -233,10 +283,21 @@ def main():
                 task_paths,
                 args.agent,
                 args.max_agent_turns,
+                resolved_task_version,
+                eval_run_dir,
                 args.no_cache,
                 args.num_runs,
             )
         )
+
+        config = {
+            "agent_type": args.agent,
+            "task_version": resolved_task_version,
+            "num_runs": args.num_runs,
+            "max_agent_turns": args.max_agent_turns,
+            "timestamp": datetime.now().isoformat(),
+        }
+        save_eval_run_config(eval_run_dir, config)
 
 
 if __name__ == "__main__":
