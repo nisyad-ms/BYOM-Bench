@@ -21,7 +21,6 @@ from datetime import datetime
 from pathlib import Path
 
 from utils import (
-    add_file_logging,
     create_eval_run_dir,
     extract_task_num,
     get_all_session_dirs,
@@ -32,10 +31,7 @@ from utils import (
     get_session_path,
     get_tasks_by_nums,
     save_eval_run_config,
-    setup_logging,
 )
-
-logger = setup_logging("evaluation")
 
 
 async def run_session_evals(
@@ -92,10 +88,6 @@ async def run_session_evals(
                 }
             )
 
-    logger.info(
-        f"[{session_dir.name}] Launching {len(contexts)} evaluations ({len(task_paths)} tasks x {num_runs} runs)"
-    )
-
     def save_result(index: int, ctx: dict, result):
         task_path = ctx["task_path"]
         run_id = ctx["run_id"]
@@ -104,12 +96,6 @@ async def run_session_evals(
 
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
-
-        run_label = f"run {run_id}" if run_id else "single"
-        logger.info(
-            f"[{session_dir.name}] Task {task_num} ({run_label}) completed: "
-            f"pref={result.preference_score:.2f} eff={result.efficiency_score:.2f}"
-        )
 
     results = await run_evaluations_parallel(contexts, on_result=save_result)
     return results
@@ -129,28 +115,24 @@ async def run_all_sessions(
 
         embedding_models = get_foundry_embedding_models()
 
-    logger.info(
-        f"Running {len(session_dirs)} sessions with {agent_type} agent ({len(embedding_models)} embedding models)"
-    )
-
     eval_configs: list[tuple[Path, dict]] = []
     tasks = []
     for i, session_dir in enumerate(session_dirs):
         session_file = get_session_path(session_dir)
         if not session_file.exists():
-            logger.warning(f"Skipping {session_dir.name}: no sessions.json")
+            print(f"Skipping {session_dir.name}: no sessions.json")
             continue
 
         resolved_version = task_version
         if resolved_version is None:
             resolved_version = get_latest_task_version(session_dir)
             if resolved_version is None:
-                logger.warning(f"Skipping {session_dir.name}: no task files")
+                print(f"Skipping {session_dir.name}: no task files")
                 continue
 
         task_paths = get_all_tasks(session_dir, resolved_version)
         if not task_paths:
-            logger.warning(f"Skipping {session_dir.name}: no task files")
+            print(f"Skipping {session_dir.name}: no task files")
             continue
 
         eval_run_dir = create_eval_run_dir(session_dir)
@@ -225,17 +207,14 @@ def main():
 
     if args.session == "all":
         if args.task != "all":
-            logger.error("--task cannot be used with --session all")
+            print("--task cannot be used with --session all")
             sys.exit(1)
 
         session_dirs = get_all_session_dirs()
         if not session_dirs:
-            logger.error("No sessions found in outputs/")
+            print("No sessions found in outputs/")
             sys.exit(1)
 
-        add_file_logging(logger)
-
-        logger.info(f"Found {len(session_dirs)} sessions: {[d.name for d in session_dirs]}")
         asyncio.run(
             run_all_sessions(
                 session_dirs,
@@ -249,21 +228,19 @@ def main():
     else:
         session_dir = get_session_dir(args.session)
         if session_dir is None:
-            logger.error(f"Session not found: {args.session}")
+            print(f"Session not found: {args.session}")
             sys.exit(1)
-
-        add_file_logging(logger, session_dir)
 
         session_file = get_session_path(session_dir)
         if not session_file.exists():
-            logger.error(f"Session file not found: {session_file}")
+            print(f"Session file not found: {session_file}")
             sys.exit(1)
 
         resolved_task_version = args.task_version
         if resolved_task_version is None:
             resolved_task_version = get_latest_task_version(session_dir)
             if resolved_task_version is None:
-                logger.error("No task files found. Run test_task_generation.py first.")
+                print("No task files found. Run test_task_generation.py first.")
                 sys.exit(1)
 
         if args.task == "all":
@@ -272,7 +249,7 @@ def main():
             task_paths = get_tasks_by_nums(session_dir, args.task, resolved_task_version)
 
         if not task_paths:
-            logger.error("No task files found. Run test_task_generation.py first.")
+            print("No task files found. Run test_task_generation.py first.")
             sys.exit(1)
 
         eval_run_dir = create_eval_run_dir(session_dir)

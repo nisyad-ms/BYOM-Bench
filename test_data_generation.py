@@ -13,9 +13,7 @@ import random
 import time
 from pathlib import Path
 
-from utils import add_file_logging, create_session_dir, get_session_path, setup_logging
-
-logger = setup_logging("data_generation")
+from utils import create_session_dir, get_session_path
 
 BASE_PERSONAS_FILE = Path(__file__).parent / "configs" / "base_personas.txt"
 
@@ -42,9 +40,7 @@ def main():
         persona = args.persona
     else:
         persona = load_random_persona()
-        logger.info(f"Randomly selected persona: {persona}")
     session_dir = create_session_dir()
-    add_file_logging(logger, session_dir)
     output_path = get_session_path(session_dir)
 
     generator = MultiSessionGenerator(
@@ -56,7 +52,6 @@ def main():
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
-    logger.info(f"Saved to {output_path}")
 
 
 if __name__ == "__main__":

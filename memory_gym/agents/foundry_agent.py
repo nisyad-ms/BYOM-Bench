@@ -234,6 +234,9 @@ class FoundryMemoryAgent:
                     tool_name = getattr(item, "name", "unknown")
                     tool_input = getattr(item, "arguments", None) or getattr(item, "input", None)
                     logger.info(f"[TOOL TRACE] type={item_type} name={tool_name} input={tool_input}")
+                elif item_type == "memory_search_call":
+                    status = getattr(item, "status", "unknown")
+                    logger.info(f"[TOOL TRACE] memory_search_call status={status}")
                 elif item_type == "message":
                     pass
                 else:

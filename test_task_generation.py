@@ -15,16 +15,12 @@ import time
 from pathlib import Path
 
 from utils import (
-    add_file_logging,
     get_next_task_num,
     get_next_task_version,
     get_session_dir,
     get_session_path,
     get_task_path,
-    setup_logging,
 )
-
-logger = setup_logging("task_generation")
 
 
 def get_existing_events(session_dir: Path) -> list[str]:
@@ -50,7 +46,6 @@ def generate_tasks(data, session_dir: Path, version: str, start_task_num: int, c
     from memory_gym.task_generators import generate_evaluation_tasks
 
     previous_events = get_existing_events(session_dir)
-    logger.info(f"Found {len(previous_events)} existing task events")
 
     tasks = generate_evaluation_tasks(
         data,
@@ -64,8 +59,6 @@ def generate_tasks(data, session_dir: Path, version: str, start_task_num: int, c
 
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(task.to_dict(), f, indent=2, ensure_ascii=False)
-
-        logger.info(f"Generated task {task_num}")
 
     return tasks
 
@@ -83,7 +76,7 @@ def main():
 
     session_dir = get_session_dir(args.session)
     if session_dir is None:
-        logger.error("No session found. Run test_data_generation.py first.")
+        print("No session found. Run test_data_generation.py first.")
         sys.exit(1)
 
     if args.version:
@@ -91,13 +84,9 @@ def main():
     else:
         version = get_next_task_version(session_dir)
 
-    logger.info(f"Using task version: {version}")
-
-    add_file_logging(logger, session_dir)
-
     session_file = get_session_path(session_dir)
     if not session_file.exists():
-        logger.error(f"Session file not found: {session_file}")
+        print(f"Session file not found: {session_file}")
         sys.exit(1)
 
     from memory_gym.schemas import MultiSessionOutput
