@@ -200,15 +200,13 @@ class LifeEvent:
         event: Description of what happened
         domain: Life domain for this event
         user_prompt: Natural user message (preference-neutral) to start the conversation
-        task_internal: Detailed task for judge (with preference requirements)
     """
 
     session_id: int
     date: str
     event: str
     domain: str = ""
-    user_prompt: str = ""  # Starting message (for agent) - NO preference details
-    task_internal: str = ""  # Detailed task (for judge) - includes preference requirements
+    user_prompt: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         result = {
@@ -220,8 +218,6 @@ class LifeEvent:
         # Include task fields only if they're set (for evaluation events)
         if self.user_prompt:
             result["user_prompt"] = self.user_prompt
-        if self.task_internal:
-            result["task_internal"] = self.task_internal
         return result
 
     @classmethod
@@ -232,7 +228,6 @@ class LifeEvent:
             event=data["event"],
             domain=data.get("domain", ""),
             user_prompt=data.get("user_prompt", ""),
-            task_internal=data.get("task_internal", ""),
         )
 
 

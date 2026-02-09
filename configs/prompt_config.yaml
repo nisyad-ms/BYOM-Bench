@@ -10,8 +10,8 @@ prompts:
   data_generation/multisession/generate_session_conversation_instruction: ""
 
   # Task generation prompts
-  task_generation/evaluation_task_system: ""
   task_generation/evaluation_task_instruction: "v6"
+  task_generation/event_summary_instruction: ""
   task_generation/user_prompt_generator_system: ""
 
   # Evaluation prompts

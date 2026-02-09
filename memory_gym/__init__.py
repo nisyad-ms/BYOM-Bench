@@ -24,7 +24,7 @@ Usage:
     # Generate evaluation task (inspect without full evaluation)
     from memory_gym.task_generators import generate_evaluation_task
     task = generate_evaluation_task(result)
-    print(task.evaluation_event.task_internal)
+    print(task.evaluation_event.event)
     print(task.rubric.required_preferences)
 
     # Run full evaluation

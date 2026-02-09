@@ -9,10 +9,12 @@ Orchestrates the complete evaluation flow:
 """
 
 import logging
+import re
 from typing import Callable, Literal
 
 from memory_gym.agents import ContextAwareAgent, FoundryMemoryAgent, NoContextAgent
 from memory_gym.client import AsyncLLMPool, LLMClient, PooledLLMClient
+from memory_gym.formatting import summarize_events
 from memory_gym.schemas import (
     EvaluationTask,
     MultiSessionEvaluationResult,
@@ -24,6 +26,14 @@ from .judge import MultiSessionJudge
 from .user_simulator import MultiSessionUserSimulator
 
 logger = logging.getLogger(__name__)
+
+
+def _is_uncovered_empty(scratchpad: str) -> bool:
+    match = re.search(r"UNCOVERED:\s*\[([^\]]*)\]", scratchpad)
+    if match:
+        return match.group(1).strip() == ""
+    match = re.search(r"UNCOVERED:\s*$", scratchpad, flags=re.MULTILINE)
+    return match is not None
 
 
 def run_evaluation(
@@ -134,6 +144,7 @@ def run_dialogue(
         - clean_conversation: List without scratchpads (for judge)
     """
     user_sim = MultiSessionUserSimulator(eval_task, client)
+    event_summaries = summarize_events(multisession_data, client)
 
     if agent_type == "foundry":
         if foundry_agent is not None:
@@ -147,7 +158,7 @@ def run_dialogue(
             agent.build_context(multisession_data, force_recreate=force_recreate_memory)
     elif agent_type == "context":
         agent = ContextAwareAgent(client)
-        agent.build_context(multisession_data)
+        agent.build_context(multisession_data, event_summaries=event_summaries)
     else:
         agent = NoContextAgent(client)
         agent.build_context(multisession_data)
@@ -183,8 +194,8 @@ def run_dialogue(
         if scratchpad:
             logger.debug(f"Scratchpad: {scratchpad[:200]}...")
 
-        if user_sim.should_end_conversation("", clean_conversation):
-            logger.info(f"User ended conversation after {agent_turns} agent turns")
+        if scratchpad and _is_uncovered_empty(scratchpad):
+            logger.info(f"All preferences covered. Ending after {agent_turns} agent turns")
             break
 
     return conversation_with_scratchpads, clean_conversation

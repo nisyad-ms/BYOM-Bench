@@ -1,6 +1,0 @@
-name: Task Generator System Prompt
-description: System prompt for evaluation task generation
-used_by: persona_gym/task_generators/evaluation_task.py::_generate_evaluation_event
-
-template: |
-  You are an expert at creating evaluation tasks that test personalization memory.

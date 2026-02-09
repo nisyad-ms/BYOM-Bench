@@ -5,7 +5,7 @@ Includes:
 
 Output structure:
     outputs/
-        <date>_<HHMM>/           # e.g., 2026-02-02_1430
+        <date>_<HHMMSS>/         # e.g., 2026-02-02_143022
             sessions.json
             tasks/
                 v1/
@@ -26,7 +26,7 @@ from datetime import datetime
 from pathlib import Path
 
 OUTPUTS_DIR = Path("outputs")
-SESSION_DIR_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}_\d{4}$")
+SESSION_DIR_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}_\d{6}$")
 TASK_PATTERN = re.compile(r"^task_(\d{2})\.json$")
 EVAL_PATTERN = re.compile(r"^eval_(\d{2})_(\w+?)(?:_(\d{2}))?\.json$")
 VERSION_PATTERN = re.compile(r"^v(\d+)$")
@@ -34,7 +34,7 @@ EVAL_TIMESTAMP_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}_\d{6}$")
 
 
 def create_session_dir() -> Path:
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H%M")
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
     session_dir = OUTPUTS_DIR / timestamp
     session_dir.mkdir(parents=True, exist_ok=True)
     return session_dir

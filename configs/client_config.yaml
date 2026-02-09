@@ -6,6 +6,7 @@ max_tokens:
   session_conversation: 8000
   # Task generation
   task_generation: 2048
+  event_summary: 4096
   user_prompt_generator: 256
   # Evaluation
   agent: 1024

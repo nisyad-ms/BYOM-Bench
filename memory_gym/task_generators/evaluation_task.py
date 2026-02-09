@@ -18,6 +18,7 @@ import uuid
 from datetime import datetime
 
 from memory_gym.client import CONFIG, AsyncLLMPool, LLMClient, PooledLLMClient
+from memory_gym.formatting import format_preference_history, summarize_events
 from memory_gym.prompts import render_prompt
 from memory_gym.schemas import (
     EvaluationRubric,
@@ -285,7 +286,8 @@ class EvaluationTaskGenerator:
         Returns:
             Tuple of (LifeEvent, list of selected preference dicts)
         """
-        preference_story = self._build_preference_evolution_story(multisession_output)
+        event_summaries = summarize_events(multisession_output, self.client)
+        preference_story = format_preference_history(multisession_output, event_summaries=event_summaries)
 
         previous_situations_str = ""
         if previous_events:
@@ -311,13 +313,13 @@ class EvaluationTaskGenerator:
 
         response = self.client.complete_json(
             prompt=prompt,
-            system_prompt=render_prompt("task_generation/evaluation_task_system"),
             max_tokens=CONFIG["max_tokens"]["task_generation"],
         )
 
         selected_prefs = response.get("selected_preferences", [])
         situation = response.get("situation", response.get("event", "General task"))
-        ideal_response = response.get("ideal_response", response.get("task_internal", ""))
+        reasoning = response.get("reasoning", response.get("ideal_response", ""))
+        logger.debug(f"Task reasoning (chain-of-thought): {reasoning[:200]}...")
 
         user_prompt = self._generate_user_prompt(
             multisession_output=multisession_output,
@@ -331,7 +333,6 @@ class EvaluationTaskGenerator:
             event=situation,
             domain="",
             user_prompt=user_prompt,
-            task_internal=ideal_response,
         )
         return life_event, selected_prefs
 
@@ -400,7 +401,8 @@ class EvaluationTaskGenerator:
         Returns:
             LifeEvent containing the evaluation task
         """
-        preference_story = self._build_preference_evolution_story(multisession_output)
+        event_summaries = summarize_events(multisession_output, self.client)
+        preference_story = format_preference_history(multisession_output, event_summaries=event_summaries)
 
         required_evolved_ids = {new.preference_id for _, new in required_evolutions}
 
@@ -427,7 +429,6 @@ class EvaluationTaskGenerator:
 
         response = self.client.complete_json(
             prompt=prompt,
-            system_prompt=render_prompt("task_generation/evaluation_task_system"),
             max_tokens=CONFIG["max_tokens"]["task_generation"],
         )
 
@@ -438,7 +439,6 @@ class EvaluationTaskGenerator:
                 event=response.get("event", "General task"),
                 domain=response.get("domain", ""),
                 user_prompt=response.get("user_prompt", ""),
-                task_internal=response.get("task_internal", ""),
             )
             return life_event
         except KeyError as e:
@@ -449,63 +449,6 @@ class EvaluationTaskGenerator:
                 event="User needs help with a task",
                 domain="",
             )
-
-    def _build_preference_evolution_story(self, multisession_output: MultiSessionOutput) -> str:
-        """Build preference history using the same ledger format as the agent.
-
-        Structure:
-        1. Core Preferences - baseline preferences grouped by domain
-        2. Preference Evolution History - per session changes
-        """
-        parts = []
-        timeline = multisession_output.timeline
-
-        baseline_prefs = [p for p in timeline.preferences.values() if p.created_at_session == -1]
-        if baseline_prefs:
-            parts.append("CORE PREFERENCES (before any life events):\n")
-            by_domain: dict[str, list[Preference]] = {}
-            for pref in baseline_prefs:
-                by_domain.setdefault(pref.domain, []).append(pref)
-
-            for domain in sorted(by_domain.keys()):
-                parts.append(f"[{domain}]")
-                for pref in sorted(by_domain[domain], key=lambda p: p.preference_id):
-                    if pref.is_active:
-                        parts.append(f"  - [{pref.preference_id}] {pref.fact}")
-                    else:
-                        parts.append(
-                            f"  - [{pref.preference_id}] {pref.fact} [CHANGED in session {pref.superseded_at_session}]"
-                        )
-                parts.append("")
-
-        if multisession_output.sessions:
-            parts.append("PREFERENCE EVOLUTION HISTORY:\n")
-            for session in multisession_output.sessions:
-                event = session.life_event
-                parts.append(f"Session {session.session_id}: {event.event}\n")
-
-                non_evolved_new = [
-                    pid for pid in session.new_preference_ids if pid not in session.evolved_preference_ids.values()
-                ]
-                if non_evolved_new:
-                    parts.append("  New preferences:")
-                    for pref_id in non_evolved_new:
-                        pref = timeline.preferences.get(pref_id)
-                        if pref:
-                            parts.append(f"    - [{pref.preference_id}] [{pref.domain}] {pref.fact}")
-                    parts.append("")
-
-                if session.evolved_preference_ids:
-                    parts.append("  Evolved preferences:")
-                    for old_id, new_id in session.evolved_preference_ids.items():
-                        old_pref = timeline.preferences.get(old_id)
-                        new_pref = timeline.preferences.get(new_id)
-                        if old_pref and new_pref:
-                            parts.append(f'    - [{new_id}] EVOLVED from [{old_id}]: "{old_pref.fact}"')
-                            parts.append(f'      → "{new_pref.fact}"')
-                    parts.append("")
-
-        return "\n".join(parts)
 
     def _build_rubric(
         self,
