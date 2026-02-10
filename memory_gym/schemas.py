@@ -679,10 +679,10 @@ class EvaluationTask:
     Attributes:
         task_id: Unique identifier
         evaluation_event: The life event triggering this evaluation (contains user_prompt)
-        rubric: The evaluation rubric for the judge (contains required_preferences)
-        persona_summary: Brief summary of the persona for user simulator
         scenario_type: Broad scenario category chosen by the task generator
         reasoning: Task generator's reasoning about how preferences interact in this scenario
+        rubric: The evaluation rubric for the judge (contains required_preferences)
+        persona_summary: Brief summary of the persona for user simulator
     """
 
     task_id: str
@@ -698,16 +698,16 @@ class EvaluationTask:
         return self.evaluation_event.user_prompt
 
     def to_dict(self) -> dict[str, Any]:
-        result = {
+        result: dict[str, Any] = {
             "task_id": self.task_id,
             "evaluation_event": self.evaluation_event.to_dict(),
-            "rubric": self.rubric.to_dict(),
-            "persona_summary": self.persona_summary,
         }
         if self.scenario_type:
-            result["scenario_type"] = self.scenario_type
+            result["event_type"] = self.scenario_type
         if self.reasoning:
             result["reasoning"] = self.reasoning
+        result["rubric"] = self.rubric.to_dict()
+        result["persona_summary"] = self.persona_summary
         return result
 
     @classmethod
@@ -717,7 +717,7 @@ class EvaluationTask:
             evaluation_event=LifeEvent.from_dict(data["evaluation_event"]),
             rubric=EvaluationRubric.from_dict(data["rubric"]),
             persona_summary=data["persona_summary"],
-            scenario_type=data.get("scenario_type", ""),
+            scenario_type=data.get("event_type", data.get("scenario_type", "")),
             reasoning=data.get("reasoning", ""),
         )
 
