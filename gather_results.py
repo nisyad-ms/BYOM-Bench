@@ -73,7 +73,7 @@ def main():
                     "required_preferences": len(data.get("rubric", {}).get("required_preferences", [])),
                     "total_turns": eff.get("total_turns", ""),
                     "productive_turns": eff.get("productive_turns", ""),
-                    "clarifying_turns": eff.get("clarifying_turns", ""),
+                    "generic_turns": eff.get("generic_turns", eff.get("clarifying_turns", "")),
                     "correction_turns": eff.get("correction_turns", ""),
                     "ignored_turns": eff.get("ignored_turns", ""),
                 }

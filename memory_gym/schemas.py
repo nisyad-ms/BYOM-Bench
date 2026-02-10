@@ -681,12 +681,16 @@ class EvaluationTask:
         evaluation_event: The life event triggering this evaluation (contains user_prompt)
         rubric: The evaluation rubric for the judge (contains required_preferences)
         persona_summary: Brief summary of the persona for user simulator
+        scenario_type: Broad scenario category chosen by the task generator
+        reasoning: Task generator's reasoning about how preferences interact in this scenario
     """
 
     task_id: str
     evaluation_event: LifeEvent
     rubric: EvaluationRubric
     persona_summary: str
+    scenario_type: str = ""
+    reasoning: str = ""
 
     @property
     def user_prompt(self) -> str:
@@ -694,12 +698,17 @@ class EvaluationTask:
         return self.evaluation_event.user_prompt
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        result = {
             "task_id": self.task_id,
             "evaluation_event": self.evaluation_event.to_dict(),
             "rubric": self.rubric.to_dict(),
             "persona_summary": self.persona_summary,
         }
+        if self.scenario_type:
+            result["scenario_type"] = self.scenario_type
+        if self.reasoning:
+            result["reasoning"] = self.reasoning
+        return result
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "EvaluationTask":
@@ -708,6 +717,8 @@ class EvaluationTask:
             evaluation_event=LifeEvent.from_dict(data["evaluation_event"]),
             rubric=EvaluationRubric.from_dict(data["rubric"]),
             persona_summary=data["persona_summary"],
+            scenario_type=data.get("scenario_type", ""),
+            reasoning=data.get("reasoning", ""),
         )
 
 
@@ -722,9 +733,10 @@ class MultiSessionEvaluationResult:
         stale_preference_usage: Which stale preferences the agent incorrectly used
         turn_classifications: Per-turn scoring details from judge (for debugging)
         total_turns: Number of turns in dialogue
-        productive_turns: Agent turns that made meaningful progress
-        clarifying_turns: Agent turns asking about known preferences
+        productive_turns: Agent turns that demonstrated specific preference knowledge
+        generic_turns: Agent turns with helpful but unpersonalized advice
         correction_turns: How many times user corrected agent
+        ignored_turns: Agent omitted preference, user had to reveal it
         repeated_correction_turns: Same preference violated after being corrected
         stale_count: Number of stale (outdated) preferences used
         proactive_count: Number of preferences proactively applied
@@ -743,9 +755,9 @@ class MultiSessionEvaluationResult:
     turn_classifications: list[dict[str, Any]] | None = None  # Per-turn scoring details
     total_turns: int = 0
     productive_turns: int = 0
-    clarifying_turns: int = 0
+    generic_turns: int = 0
     correction_turns: int = 0
-    ignored_turns: int = 0  # Agent omitted preference, user revealed it (no efficiency penalty)
+    ignored_turns: int = 0
     repeated_correction_turns: int = 0
     stale_count: int = 0
     proactive_count: int = 0
@@ -775,7 +787,7 @@ class MultiSessionEvaluationResult:
                 "efficiency_scoring": {
                     "total_turns": self.total_turns,
                     "productive_turns": self.productive_turns,
-                    "clarifying_turns": self.clarifying_turns,
+                    "generic_turns": self.generic_turns,
                     "correction_turns": self.correction_turns,
                     "ignored_turns": self.ignored_turns,
                     "repeated_correction_turns": self.repeated_correction_turns,

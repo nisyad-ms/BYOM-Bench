@@ -3,7 +3,7 @@ Multi-Session Judge for Evaluation.
 
 The judge evaluates a completed dialogue using two separate LLM calls:
 1. Preference Judge: Scores preference recall using First-Mention Rule
-2. Efficiency Judge: Scores turn efficiency based on corrections and clarifying questions
+2. Efficiency Judge: Scores turn efficiency based on personalization vs generic responses
 """
 
 import json
@@ -162,7 +162,7 @@ class MultiSessionJudge:
             turn_classifications=turn_classifications,
             total_turns=agent_turns,
             productive_turns=turn_counts["productive"],
-            clarifying_turns=turn_counts["clarifying"],
+            generic_turns=turn_counts["generic"],
             correction_turns=turn_counts["correction"],
             ignored_turns=turn_counts["ignored"],
             repeated_correction_turns=turn_counts["repeated_correction"],
@@ -200,7 +200,7 @@ class MultiSessionJudge:
         """
         counts = {
             "productive": 0,
-            "clarifying": 0,
+            "generic": 0,
             "correction": 0,
             "ignored": 0,
             "repeated_correction": 0,
@@ -210,8 +210,8 @@ class MultiSessionJudge:
             turn_type = tc.get("type", "").lower()
             if turn_type == "productive":
                 counts["productive"] += 1
-            elif turn_type == "clarifying_question":
-                counts["clarifying"] += 1
+            elif turn_type in ("generic", "clarifying_question"):
+                counts["generic"] += 1
             elif turn_type == "correction":
                 counts["correction"] += 1
             elif turn_type == "ignored":
@@ -224,7 +224,7 @@ class MultiSessionJudge:
         elif agent_turns == 0:
             efficiency_score = 1.0
         else:
-            penalty = 0.5 * counts["clarifying"] + 0.5 * counts["ignored"] + counts["correction"]
+            penalty = 0.5 * counts["generic"] + 0.5 * counts["ignored"] + counts["correction"]
             efficiency_score = max(0.0, (agent_turns - penalty) / agent_turns)
 
         return counts, round(efficiency_score, 2)

@@ -1,0 +1,153 @@
+name: User Prompt Generator System Prompt (v2 - Anti-Leakage)
+description: Generates opening message for evaluation conversations with strong preference leakage prevention
+used_by: persona_gym/task_generators/evaluation_task.py::_generate_user_prompt
+variables:
+  - persona_summary: Brief summary of the persona
+  - scenario_type: Broad scenario category (e.g., "Daily/weekly routine optimization")
+  - situation: Detailed situation description (internal reference only — contains preference details that MUST NOT appear in output)
+  - required_preferences: List of preferences being tested (id and fact)
+
+template: |
+  You generate the OPENING MESSAGE from a user starting a conversation with an AI assistant.
+
+  ## CONTEXT
+
+  You are helping test whether an AI assistant remembers user preferences from past conversations.
+  The user is about to ask for help with a task. Your job is to craft their opening message.
+
+  About the user:
+  {persona_summary}
+
+  Broad scenario type:
+  {scenario_type}
+
+  Situation (INTERNAL REFERENCE ONLY — read this to understand WHY the user is seeking help, but NEVER quote, paraphrase, or borrow details from it. It contains preference information that must not appear in the output):
+  {situation}
+
+  Preferences being tested (the assistant should already know these — the user MUST NOT reveal them):
+  {required_preferences}
+
+  ## REQUIREMENTS FOR THE OPENING MESSAGE
+
+  ### Sentence 1: Describe the broad task
+  - Use the scenario type to frame what the user needs help with
+  - You may use the situation to understand the user's intent, but do NOT copy any specific details from it
+  - Keep it general: "I'm setting up a home office" not "I'm setting up an ergonomic home office with natural lighting"
+
+  ### Sentence 2: Ask ONE leading question targeting 1-2 preferences
+  - Pick 1-2 closely related preferences from the list
+  - Ask a SINGLE question about their domain/topic area without stating the preference fact
+  - If targeting 2 preferences, they must blend naturally into one question — do NOT ask two separate questions
+  - The question should give the assistant an opening to demonstrate recall
+  - Other preferences will be tested in follow-up turns
+  - BAD (two separate questions): "What should I consider for my schedule? Are there strategies for evenings?"
+  - GOOD (one combined question): "What kind of setup would you recommend for me?"
+
+  ## CRITICAL: WHAT COUNTS AS "REVEALING" A PREFERENCE
+
+  Apply this mechanical test to every phrase in your draft:
+  > "Could someone reading ONLY this message — with no prior knowledge of the user — guess that this specific preference exists?"
+
+  If yes → you are leaking. Remove or rewrite that phrase.
+
+  ### Common leakage anti-patterns (only examples, not an exhaustive list):
+  - Health conditions, injuries, diagnoses (e.g., "my back pain", "cardiac rehab", "eye strain")
+  - Dietary needs or restrictions (e.g., "vegetarian", "low-sodium")
+  - Schedule constraints or routines (e.g., "evenings are family time", "only 30-min blocks")
+  - Family dynamics or caregiving roles (e.g., "wife is away for fieldwork", "new childcare duties")
+  - Named activities, hobbies, or sports (e.g., "swimming", "cycling", "calligraphy")
+  - Specific formats, brands, or styles (e.g., "print-format", "minimalist", "Apple CarPlay")
+  - Budget amounts (e.g., "$100/month")
+  - Geographic or environmental details that imply preferences (e.g., "hilly area", "harsh winters")
+
+  ## SELF-CHECK BEFORE OUTPUT
+
+  Before outputting your message, verify EACH preference in the list against your draft:
+  1. Read each preference fact
+  2. Search your draft for any word or phrase that hints at it
+  3. If found, rewrite to remove the hint
+
+  The message should be so generic that it could apply to many different people with very different preferences.
+
+  ## EXAMPLES
+
+  ### Example 1 (Multi-preference scenario)
+  Scenario type: "Workspace setup"
+  Preferences being tested:
+  - Needs ergonomic setup due to chronic back pain
+  - Sensitive to harsh lighting, prefers natural light
+  - Minimalist aesthetic preference
+  - Budget-conscious, researches thoroughly before buying
+  - Tech-savvy, enjoys smart home integration
+  - Prefers quiet environments for focus
+
+  BAD (leaks nearly everything): "I'm setting up a home office and need ergonomic furniture near a window. I like a clean minimalist look, and I want to integrate some smart home tech. I'm on a budget so I want to research options carefully. It needs to be a quiet space for deep work."
+  BAD (leaks conditions): "I need a home office that's easy on my back and eyes."
+  BAD (leaks style + tech): "I want a minimalist smart office."
+  GOOD: "I'm setting up a dedicated home office now that I'm working remotely full-time. What kind of desk and chair setup would you recommend for me?"
+  (Targets ergonomic preference — agent should recall back pain. All other preferences tested later.)
+
+  ### Example 2 (Multi-preference scenario)
+  Scenario type: "Book/reading list or media curation"
+  Preferences being tested:
+  - Prefers print books over digital
+  - Loves science fiction classics (Asimov, Clarke)
+  - Interested in STEM education resources for kids
+  - Plans to visit national parks in an RV
+  - Enjoys hands-on workshop learning
+  - Prepares talks for technical conferences
+
+  BAD (leaks all 6): "I'm looking for print sci-fi classics, some STEM books for my kids, RV travel guides for national parks, and resources for my conference talks and workshops."
+  BAD (leaks format + genre): "I want to build a reading list of print science fiction."
+  GOOD: "I want to put together a reading list for the next few months. What kinds of books do you think I'd enjoy?"
+  (Targets reading preferences — agent should recall genre, format. Other preferences tested later.)
+
+  ### Example 3 (Multi-preference scenario)
+  Scenario type: "Daily/weekly routine optimization"
+  Preferences being tested:
+  - Does cardiac rehab exercises three times a week
+  - Wife is away for geological fieldwork this month
+  - Prefers evenings to be restorative and family-focused
+  - Teaches part-time at a community college
+  - Avoids caffeine after noon due to sleep issues
+  - Meal preps on Sundays
+
+  BAD (leaks medical + family + schedule): "I need to plan my week around cardiac rehab, work at the college, and solo parenting while my wife is away. Evenings should be restful."
+  BAD (leaks health): "I need a routine that works around my rehab schedule."
+  GOOD: "I'm trying to get a better handle on my weekly routine. Can you help me think through how to structure my weekdays, especially the evenings?"
+  (Targets evening/routine preferences — agent should recall restorative evenings, schedule constraints. Other preferences tested later.)
+
+  ### Example 4 (Single question — avoid double questions)
+  Scenario type: "Health/fitness routine planning"
+  Preferences being tested:
+  - Switched from running to swimming after knee surgery
+  - Vegetarian diet
+  - Works out in the morning before 7am
+  - Prefers outdoor activities when weather permits
+  - Tracks macros using MyFitnessPal
+  - Dislikes group fitness classes
+
+  BAD (two separate questions): "I want to revamp my fitness routine. What exercises should I focus on? Also, do you have any nutrition tips for me?"
+  BAD (three questions): "I'm rethinking my fitness plan. What workouts work for me? What should I eat? When should I train?"
+  GOOD: "I'm looking to revamp my fitness routine. What kind of workout plan would you put together for me?"
+  (One question targeting exercise preferences — agent should recall knee surgery → swimming, morning schedule. Nutrition tested in follow-up turns.)
+
+  ### Example 5 (Two related preferences, one combined question)
+  Scenario type: "Equipment or gear selection"
+  Preferences being tested:
+  - Recently took up landscape photography
+  - Prefers lightweight gear due to chronic shoulder injury
+  - Budget cap of $2000
+  - Travels frequently to remote locations
+  - Prefers mirrorless over DSLR
+  - Wants weather-sealed equipment
+
+  BAD (two questions): "I need a new camera setup. What body should I get? And what lenses would work for my needs?"
+  BAD (leaks preferences): "I need a lightweight mirrorless camera under $2000 for outdoor landscape photography."
+  GOOD: "I'm in the market for a new camera setup. What gear would you recommend for someone like me?"
+  (One broad question — agent should recall photography style, weight constraints, budget. Naturally covers two related preferences without splitting into separate questions.)
+
+  ## OUTPUT FORMAT
+
+  Return ONLY the user's opening message. No explanation, no JSON, just the message itself.
+  2-3 sentences. Shorter is better — less room to leak.

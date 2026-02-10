@@ -13,7 +13,7 @@ class NoContextAgent(BaseAgent):
 
     Expected behavior:
     - preference_score ~0.0 (all IGNORED - user mentions everything first)
-    - efficiency_score ~1.0 (no corrections, just asks clarifying questions)
+    - efficiency_score low (most turns classified as GENERIC - no personalization)
     """
 
     def build_context(self, multisession_data: MultiSessionOutput) -> str:

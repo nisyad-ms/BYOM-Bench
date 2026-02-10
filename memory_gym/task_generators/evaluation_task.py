@@ -183,7 +183,7 @@ class EvaluationTaskGenerator:
             Single EvaluationTask
         """
         if use_v2:
-            evaluation_event, selected_pref_dicts = self._generate_evaluation_event_v2(
+            evaluation_event, selected_pref_dicts, scenario_type, reasoning = self._generate_evaluation_event_v2(
                 multisession_output=multisession_output,
                 num_evolved=num_evolved,
                 num_baseline=num_baseline,
@@ -221,6 +221,8 @@ class EvaluationTaskGenerator:
                 num_evolved=len(selected_evolved),
                 num_baseline=len(selected_baseline),
             )
+            scenario_type = ""
+            reasoning = ""
 
         logger.debug(
             f"Task {task_index}: {len(selected_prefs)} prefs selected, {len(relevant_stale)} relevant stale traps"
@@ -243,6 +245,8 @@ class EvaluationTaskGenerator:
             evaluation_event=evaluation_event,
             rubric=rubric,
             persona_summary=persona_summary,
+            scenario_type=scenario_type,
+            reasoning=reasoning,
         )
 
     def generate(
@@ -270,7 +274,7 @@ class EvaluationTaskGenerator:
         num_baseline: int,
         previous_events: list[str] | None = None,
         used_baseline_prefs: list[str] | None = None,
-    ) -> tuple[LifeEvent, list[dict]]:
+    ) -> tuple[LifeEvent, list[dict], str, str]:
         """Generate an evaluation event where LLM selects preferences (v2).
 
         The LLM chooses coherent preferences that work well together for a task,
@@ -284,7 +288,7 @@ class EvaluationTaskGenerator:
             used_baseline_prefs: Baseline preference IDs already used in previous tasks
 
         Returns:
-            Tuple of (LifeEvent, list of selected preference dicts)
+            Tuple of (LifeEvent, list of selected preference dicts, scenario_type, reasoning)
         """
         event_summaries = summarize_events(multisession_output, self.client)
         preference_story = format_preference_history(multisession_output, event_summaries=event_summaries)
@@ -318,12 +322,14 @@ class EvaluationTaskGenerator:
 
         selected_prefs = response.get("selected_preferences", [])
         situation = response.get("situation", response.get("event", "General task"))
+        scenario_type = response.get("scenario_type", "")
         reasoning = response.get("reasoning", response.get("ideal_response", ""))
         logger.debug(f"Task reasoning (chain-of-thought): {reasoning[:200]}...")
 
         user_prompt = self._generate_user_prompt(
             multisession_output=multisession_output,
-            event=situation,
+            scenario_type=scenario_type,
+            situation=situation,
             selected_prefs=selected_prefs,
         )
 
@@ -334,12 +340,13 @@ class EvaluationTaskGenerator:
             domain="",
             user_prompt=user_prompt,
         )
-        return life_event, selected_prefs
+        return life_event, selected_prefs, scenario_type, reasoning
 
     def _generate_user_prompt(
         self,
         multisession_output: MultiSessionOutput,
-        event: str,
+        scenario_type: str,
+        situation: str,
         selected_prefs: list[dict],
     ) -> str:
         """Generate a high-quality opening message for the evaluation conversation.
@@ -349,7 +356,8 @@ class EvaluationTaskGenerator:
 
         Args:
             multisession_output: Source data for persona summary
-            event: The evaluation event/situation
+            scenario_type: Broad scenario category (e.g., "Daily/weekly routine optimization")
+            situation: Detailed situation description (internal reference for the LLM)
             selected_prefs: List of preference dicts being tested
 
         Returns:
@@ -362,7 +370,8 @@ class EvaluationTaskGenerator:
         system_prompt = render_prompt(
             "task_generation/user_prompt_generator_system",
             persona_summary=persona_summary,
-            evaluation_event=event,
+            scenario_type=scenario_type,
+            situation=situation,
             required_preferences=prefs_formatted,
         )
 
