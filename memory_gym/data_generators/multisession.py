@@ -22,11 +22,8 @@ import random
 from datetime import datetime
 
 from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
-from memory_gym.data_generators.base import BaseDataGenerator, GenerationError
 from memory_gym.prompts import render_prompt
 from memory_gym.schemas import (
-    DataGenerationMetadata,
-    DataGenerationOutput,
     ExpandedPersona,
     LifeEvent,
     MultiSessionOutput,
@@ -47,7 +44,13 @@ LIFE_DOMAINS = [
 DEFAULT_NUM_SESSIONS = 2
 
 
-class MultiSessionGenerator(BaseDataGenerator):
+class GenerationError(Exception):
+    """Raised when data generation fails."""
+
+    pass
+
+
+class MultiSessionGenerator:
     """Generate multi-session conversation data with preference evolution.
 
     This generator creates realistic user journeys where preferences
@@ -78,8 +81,7 @@ class MultiSessionGenerator(BaseDataGenerator):
             start_date: Start date (MM/DD/YYYY), defaults to today
             output_dir: Output directory (optional)
         """
-        # We don't need a topic - it's inferred from persona
-        super().__init__(topic="", output_dir=output_dir)
+        self.output_dir = output_dir
         self.persona = persona
         self.num_sessions = num_sessions
         self.start_date = start_date or datetime.now().strftime("%m/%d/%Y")
@@ -366,8 +368,8 @@ class MultiSessionGenerator(BaseDataGenerator):
                                 new_domain=new_domain,
                             )
                             evolved_mapping[old_id] = new_id
-                        except ValueError as e:
-                            logger.warning(f"Failed to evolve preference {old_id}: {e}")
+                        except ValueError:
+                            pass
 
             # Process new preferences
             new_prefs_data = result.get("new_preferences", [])
@@ -521,42 +523,4 @@ class MultiSessionGenerator(BaseDataGenerator):
             sessions=sessions,
             generation_timestamp=datetime.now().isoformat(),
             expanded_persona=expanded_persona,
-        )
-
-    def generate(self) -> DataGenerationOutput:
-        """Generate data in the standard pipeline format.
-
-        This method implements the BaseDataGenerator interface by
-        flattening all sessions into a single conversation.
-
-        Note: For full multi-session data, use generate_multi_session() instead.
-        """
-        result = self.generate_multi_session()
-
-        # Flatten all conversations
-        all_turns = result.get_all_conversations_flat()
-
-        # Convert current preferences to PreferenceItem format
-        from memory_gym.schemas import PreferenceItem
-
-        preferences = [
-            PreferenceItem(
-                fact=p.fact,
-                preference_type="current" if p.is_active else "superseded",
-                source_date=p.created_at_date,
-                topic=p.domain,
-                preference_id=p.preference_id,
-                supersedes_id=None,  # Reverse lookup would be expensive
-            )
-            for p in result.timeline.preferences.values()
-        ]
-
-        return DataGenerationOutput(
-            conversation=all_turns,
-            preferences=preferences,
-            metadata=DataGenerationMetadata(
-                topic="multi-session",
-                persona_id=result.persona_id,
-                timestamp=result.generation_timestamp,
-            ),
         )

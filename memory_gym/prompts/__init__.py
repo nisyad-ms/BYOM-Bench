@@ -65,13 +65,6 @@ def _resolve_prompt_name(prompt_name: str) -> str:
     return prompt_name
 
 
-def reload_config() -> None:
-    """Force reload of prompt configuration. Useful for testing."""
-    global _config_cache
-    _config_cache = None
-    _load_prompt_config()
-
-
 def load_prompt(prompt_name: str, reload: bool = False, use_config: bool = True) -> dict[str, Any]:
     """Load a prompt template from YAML file.
 

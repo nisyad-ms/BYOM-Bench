@@ -161,28 +161,3 @@ class MultiSessionUserSimulator:
             content = turn.get("content", "")
             lines.append(f"{role}: {content}")
         return "\n\n".join(lines)
-
-    def _format_conversation(self, history: list[dict[str, str]]) -> str:
-        """Format conversation history for the prompt."""
-        lines = []
-        for turn in history:
-            role = turn.get("role", "unknown").capitalize()
-            content = turn.get("content", "")
-            lines.append(f"{role}: {content}")
-        return "\n".join(lines)
-
-
-def create_user_simulator(
-    evaluation_task: EvaluationTask,
-    client: LLMClient | PooledLLMClient | None = None,
-) -> MultiSessionUserSimulator:
-    """Convenience function to create a user simulator.
-
-    Args:
-        evaluation_task: The evaluation task
-        client: Optional LLM client
-
-    Returns:
-        Configured MultiSessionUserSimulator
-    """
-    return MultiSessionUserSimulator(evaluation_task, client)

@@ -34,8 +34,6 @@ Usage:
 
 import asyncio
 import json
-import asyncio
-import json
 import os
 import threading
 from pathlib import Path
@@ -142,7 +140,6 @@ class LLMClient:
             azure_ad_token_provider=token_provider,
             api_version=self.api_version,
         )
-
 
     @_llm_retry
     def complete(
@@ -301,7 +298,6 @@ class PooledLLMClient:
         self._in_flight = [0] * len(self.clients)
         self._lock = threading.Lock()
 
-
     def _acquire_client(self) -> tuple[int, LLMClient]:
         with self._lock:
             idx = min(range(len(self._in_flight)), key=lambda i: self._in_flight[i])
@@ -367,7 +363,6 @@ class AsyncLLMPool:
         self.deployments = deployments
         self._pooled_client = PooledLLMClient(deployments=deployments)
 
-
     async def run_parallel(
         self,
         items: list[Any],
@@ -408,9 +403,3 @@ class AsyncLLMPool:
         tasks = [process_item(i, item) for i, item in enumerate(items)]
         await asyncio.gather(*tasks)
         return results
-
-
-def get_deployments() -> list[str]:
-    """Get list of configured deployments."""
-    deployments = _get_deployments()
-    return deployments if deployments else [_get_default_deployment()]

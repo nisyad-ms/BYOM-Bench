@@ -225,13 +225,3 @@ class MultiSessionJudge:
             efficiency_score = max(0.0, (agent_turns - penalty) / agent_turns)
 
         return counts, round(efficiency_score, 2)
-
-
-def evaluate_dialogue(
-    evaluation_task: EvaluationTask,
-    conversation: list[dict[str, str]],
-    client: LLMClient | PooledLLMClient | None = None,
-) -> MultiSessionEvaluationResult:
-    """Convenience function to evaluate a dialogue."""
-    judge = MultiSessionJudge(client)
-    return judge.evaluate(evaluation_task, conversation)

@@ -11,8 +11,6 @@ This module can be used standalone to generate and inspect evaluation tasks
 without running the full evaluation pipeline.
 """
 
-import json
-import random
 import uuid
 from datetime import datetime
 
@@ -42,7 +40,7 @@ class EvaluationTaskGenerator:
         >>> generator = EvaluationTaskGenerator()
         >>> tasks = generator.generate_batch(multisession_output, num_tasks=3)
         >>> for task in tasks:
-        ...     print(task.evaluation_event.task_internal)
+        ...     print(task.evaluation_event.event)
         ...     print(task.rubric.required_preferences)
     """
 
@@ -82,7 +80,6 @@ class EvaluationTaskGenerator:
         """
         # Analyze preference landscape
         current_prefs = multisession_output.get_current_preferences()
-        stale_prefs = multisession_output.get_superseded_preferences()
         evolutions = multisession_output.get_evolved_preferences()
         evolved_ids = multisession_output.get_evolved_preference_ids()
 
@@ -105,25 +102,19 @@ class EvaluationTaskGenerator:
             num_baseline_required = prefs_per_task - num_evolved_required
 
         if len(baseline_prefs) < num_baseline_required:
-            print(
-                f"Only {len(baseline_prefs)} baseline preferences available, will adjust task preference count."
-            )
+            print(f"Only {len(baseline_prefs)} baseline preferences available, will adjust task preference count.")
             num_baseline_required = len(baseline_prefs)
 
         # Generate tasks
         tasks = []
         generated_events = list(previous_events) if previous_events else []
         used_baseline_prefs: list[str] = []
-        for i in range(num_tasks):
+        for _ in range(num_tasks):
             task = self._generate_single_task(
                 multisession_output=multisession_output,
-                evolved_prefs=evolved_prefs,
-                baseline_prefs=baseline_prefs,
-                stale_prefs=stale_prefs,
                 evolutions=evolutions,
                 num_evolved=num_evolved_required,
                 num_baseline=num_baseline_required,
-                task_index=i,
                 previous_events=generated_events,
                 used_baseline_prefs=used_baseline_prefs,
             )
@@ -138,14 +129,9 @@ class EvaluationTaskGenerator:
     def _generate_single_task(
         self,
         multisession_output: MultiSessionOutput,
-        evolved_prefs: list[Preference],
-        baseline_prefs: list[Preference],
-        stale_prefs: list[Preference],
         evolutions: list[tuple[Preference, Preference]],
         num_evolved: int,
         num_baseline: int,
-        task_index: int,
-        use_v2: bool = True,
         previous_events: list[str] | None = None,
         used_baseline_prefs: list[str] | None = None,
     ) -> EvaluationTask:
@@ -153,76 +139,47 @@ class EvaluationTaskGenerator:
 
         Args:
             multisession_output: Source data
-            evolved_prefs: List of evolved (current) preferences
-            baseline_prefs: List of baseline (unchanged) preferences
-            stale_prefs: All stale preferences (for traps)
             evolutions: List of (old, new) preference pairs
             num_evolved: Number of evolved preferences to require
             num_baseline: Number of baseline preferences to require
-            task_index: Index for shuffling seed
-            use_v2: Use v2 prompt where LLM selects preferences
             previous_events: Previously generated event descriptions
             used_baseline_prefs: Baseline preference IDs already used
 
         Returns:
             Single EvaluationTask
         """
-        if use_v2:
-            evaluation_event, selected_pref_dicts, scenario_type, reasoning = self._generate_evaluation_event_v2(
-                multisession_output=multisession_output,
-                num_evolved=num_evolved,
-                num_baseline=num_baseline,
-                previous_events=previous_events,
-                used_baseline_prefs=used_baseline_prefs,
-            )
+        evaluation_event, selected_pref_dicts, scenario_type, reasoning = self._generate_evaluation_event(
+            multisession_output=multisession_output,
+            num_evolved=num_evolved,
+            num_baseline=num_baseline,
+            previous_events=previous_events,
+            used_baseline_prefs=used_baseline_prefs,
+        )
 
-            timeline = multisession_output.timeline
-            selected_prefs = []
-            for pref_dict in selected_pref_dicts:
-                pref_id = pref_dict.get("id", "")
-                if pref_id in timeline.preferences:
-                    selected_prefs.append(timeline.preferences[pref_id])
+        timeline = multisession_output.timeline
+        selected_prefs = []
+        for pref_dict in selected_pref_dicts:
+            pref_id = pref_dict.get("id", "")
+            if pref_id in timeline.preferences:
+                selected_prefs.append(timeline.preferences[pref_id])
 
-            selected_evolved_ids = {
-                p.preference_id
-                for p in selected_prefs
-                if p.preference_id in multisession_output.get_evolved_preference_ids()
-            }
-            relevant_stale = [old for old, new in evolutions if new.preference_id in selected_evolved_ids]
-        else:
-            selected_evolved = random.sample(evolved_prefs, min(num_evolved, len(evolved_prefs)))
-            selected_baseline = random.sample(baseline_prefs, min(num_baseline, len(baseline_prefs)))
-            selected_prefs = selected_evolved + selected_baseline
-
-            selected_evolved_ids = {p.preference_id for p in selected_evolved}
-            relevant_stale = [old for old, new in evolutions if new.preference_id in selected_evolved_ids]
-
-            evaluation_event = self._generate_evaluation_event(
-                multisession_output=multisession_output,
-                required_prefs=selected_prefs,
-                required_evolutions=[
-                    (old, new) for old, new in evolutions if new.preference_id in selected_evolved_ids
-                ],
-                num_evolved=len(selected_evolved),
-                num_baseline=len(selected_baseline),
-            )
-            scenario_type = ""
-            reasoning = ""
+        selected_evolved_ids = {
+            p.preference_id
+            for p in selected_prefs
+            if p.preference_id in multisession_output.get_evolved_preference_ids()
+        }
+        relevant_stale = [old for old, new in evolutions if new.preference_id in selected_evolved_ids]
 
         rubric = self._build_rubric(
-            current_prefs=multisession_output.get_current_preferences(),
-            stale_prefs=stale_prefs,
             required_prefs=selected_prefs,
             relevant_stale=relevant_stale,
         )
-
-        persona_summary = multisession_output.persona
 
         return EvaluationTask(
             task_id=f"eval_{uuid.uuid4().hex[:8]}",
             evaluation_event=evaluation_event,
             rubric=rubric,
-            persona_summary=persona_summary,
+            persona_summary=multisession_output.persona,
             scenario_type=scenario_type,
             reasoning=reasoning,
         )
@@ -231,10 +188,7 @@ class EvaluationTaskGenerator:
         self,
         multisession_output: MultiSessionOutput,
     ) -> EvaluationTask:
-        """Generate a single evaluation task (legacy interface).
-
-        For new code, prefer generate_batch() which generates multiple
-        tasks with proper evolved/baseline preference mix.
+        """Generate a single evaluation task.
 
         Args:
             multisession_output: Complete multi-session generation output
@@ -245,7 +199,7 @@ class EvaluationTaskGenerator:
         tasks = self.generate_batch(multisession_output, num_tasks=1)
         return tasks[0]
 
-    def _generate_evaluation_event_v2(
+    def _generate_evaluation_event(
         self,
         multisession_output: MultiSessionOutput,
         num_evolved: int,
@@ -253,7 +207,7 @@ class EvaluationTaskGenerator:
         previous_events: list[str] | None = None,
         used_baseline_prefs: list[str] | None = None,
     ) -> tuple[LifeEvent, list[dict], str, str]:
-        """Generate an evaluation event where LLM selects preferences (v2).
+        """Generate an evaluation event where LLM selects preferences.
 
         The LLM chooses coherent preferences that work well together for a task,
         rather than us pre-sampling random ones.
@@ -364,82 +318,8 @@ class EvaluationTaskGenerator:
 
         return response.strip()
 
-    def _generate_evaluation_event(
-        self,
-        multisession_output: MultiSessionOutput,
-        required_prefs: list[Preference],
-        required_evolutions: list[tuple[Preference, Preference]],
-        num_evolved: int,
-        num_baseline: int,
-    ) -> LifeEvent:
-        """Generate an evaluation event that tests preference recall (v1).
-
-        Provides the LLM with a chronological narrative of the user's preference
-        evolution - how life events shaped their preferences over time.
-
-        Args:
-            multisession_output: Full multi-session data with preference timeline
-            required_prefs: Preferences that MUST be tested in this task
-            required_evolutions: (old, new) pairs for required evolved preferences
-            num_evolved: Number of evolved preferences in required set
-            num_baseline: Number of baseline preferences in required set
-
-        Returns:
-            LifeEvent containing the evaluation task
-        """
-        event_summaries = summarize_events(multisession_output, self.client)
-        preference_story = format_preference_history(multisession_output, event_summaries=event_summaries)
-
-        required_evolved_ids = {new.preference_id for _, new in required_evolutions}
-
-        required_prefs_list = []
-        for p in required_prefs:
-            pref_info = {"id": p.preference_id, "fact": p.fact, "domain": p.domain}
-            if p.preference_id in required_evolved_ids:
-                pref_info["is_evolved"] = True
-                for old, new in required_evolutions:
-                    if new.preference_id == p.preference_id:
-                        pref_info["evolved_from"] = old.fact
-                        break
-            required_prefs_list.append(pref_info)
-
-        prompt = render_prompt(
-            "task_generation/evaluation_task_instruction",
-            persona=multisession_output.persona,
-            preference_evolution_story=preference_story,
-            required_preferences=json.dumps(required_prefs_list, indent=2, ensure_ascii=False),
-            num_required=len(required_prefs),
-            num_evolved=num_evolved,
-            num_baseline=num_baseline,
-        )
-
-        response = self.client.complete_json(
-            prompt=prompt,
-            max_tokens=CONFIG["max_tokens"]["task_generation"],
-        )
-
-        try:
-            life_event = LifeEvent(
-                session_id=-1,
-                date=response.get("date", datetime.now().strftime("%m/%d/%Y")),
-                event=response.get("event", "General task"),
-                domain=response.get("domain", ""),
-                user_prompt=response.get("user_prompt", ""),
-            )
-            return life_event
-        except KeyError as e:
-            print(f"Failed to parse evaluation event: {e}")
-            return LifeEvent(
-                session_id=-1,
-                date=datetime.now().strftime("%m/%d/%Y"),
-                event="User needs help with a task",
-                domain="",
-            )
-
     def _build_rubric(
         self,
-        current_prefs: list[Preference],
-        stale_prefs: list[Preference],
         required_prefs: list[Preference],
         relevant_stale: list[Preference] | None = None,
     ) -> EvaluationRubric:
@@ -450,8 +330,6 @@ class EvaluationTaskGenerator:
         judge for stale preference detection.
 
         Args:
-            current_prefs: All current active preferences (for reference)
-            stale_prefs: All stale preferences (for reference)
             required_prefs: Preferences that MUST be applied for this task
             relevant_stale: Stale preferences that are counterparts to the
                             required evolved preferences
@@ -506,17 +384,6 @@ def generate_evaluation_tasks(
 
     Returns:
         List of EvaluationTask objects ready for evaluation
-
-    Example:
-        >>> from memory_gym.task_generators import generate_evaluation_tasks
-        >>> from memory_gym.schemas import MultiSessionOutput
-        >>> import json
-        >>> with open("outputs/sessions/data_generation_output.json") as f:
-        ...     data = MultiSessionOutput.from_dict(json.load(f))
-        >>> tasks = generate_evaluation_tasks(data, num_tasks=3)
-        >>> for task in tasks:
-        ...     print(f"Task: {task.evaluation_event.task_internal}")
-        ...     print(f"Required: {len(task.rubric.required_preferences)} preferences")
     """
     generator = EvaluationTaskGenerator(client)
     return generator.generate_batch(multisession_output, num_tasks, prefs_per_task, previous_events)

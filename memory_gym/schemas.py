@@ -13,59 +13,7 @@ Having all schemas in one place:
 """
 
 from dataclasses import dataclass, field
-from typing import Any, Optional
-
-# =============================================================================
-# Preference Models (used in evaluation)
-# =============================================================================
-
-
-@dataclass
-class PreferenceItem:
-    """A user preference extracted from conversation history.
-
-    Used for both:
-    - Extracting preferences from generated conversations
-    - Defining relevant preferences in TOD tasks
-
-    Attributes:
-        fact: The preference statement (e.g., "prefers window seats")
-        preference_type: One of "current", "updated", "static"
-        source_date: When the preference was expressed
-        topic: Optional topic category
-        old_value: For updated preferences, the previous value
-        reason_of_change: For updated preferences, why it changed
-        preference_id: Unique identifier for this preference (for linking)
-        supersedes_id: ID of the preference this one replaces (for preference evolution)
-    """
-
-    fact: str
-    preference_type: str  # "current", "updated", "static"
-    source_date: str
-    topic: str = ""
-    old_value: Optional[str] = None
-    reason_of_change: Optional[str] = None
-    preference_id: Optional[str] = None
-    supersedes_id: Optional[str] = None
-
-    def to_dict(self) -> dict[str, Any]:
-        result = {
-            "fact": self.fact,
-            "type": self.preference_type,
-            "source_date": self.source_date,
-        }
-        if self.topic:
-            result["topic"] = self.topic
-        if self.old_value:
-            result["old_value"] = self.old_value
-        if self.reason_of_change:
-            result["reason_of_change"] = self.reason_of_change
-        if self.preference_id:
-            result["preference_id"] = self.preference_id
-        if self.supersedes_id:
-            result["supersedes_id"] = self.supersedes_id
-        return result
-
+from typing import Any
 
 # =============================================================================
 # Multi-Session Models (V3 - Life Story Based Generation)
@@ -135,25 +83,6 @@ class ExpandedPersona:
             hobbies_and_interests=data.get("hobbies_and_interests", []),
             baseline_preferences=data.get("baseline_preferences", []),
         )
-
-    def get_domain_facts(self, domain: str) -> list[str]:
-        """Get facts for a specific life domain.
-
-        Args:
-            domain: One of work_education, health_wellness, travel_experiences,
-                    relationships_personal, hobbies_interests
-
-        Returns:
-            List of facts for that domain
-        """
-        domain_mapping = {
-            "work_education": self.work_and_education,
-            "health_wellness": self.health_and_wellness,
-            "travel_experiences": self.travel_and_experiences,
-            "relationships_personal": self.relationships_and_personal,
-            "hobbies_interests": self.hobbies_and_interests,
-        }
-        return domain_mapping.get(domain, [])
 
     def to_full_description(self) -> str:
         """Generate a full prose description of the persona.
@@ -588,10 +517,6 @@ class MultiSessionOutput:
             else None,
         )
 
-    def get_all_conversations_flat(self) -> list[dict[str, str]]:
-        """Returns all conversations concatenated in chronological order."""
-        return [turn for session in self.sessions for turn in session.conversation]
-
     def get_current_preferences(self) -> list[Preference]:
         """Returns currently active preferences (latest state)."""
         return self.timeline.get_active_preferences()
@@ -798,83 +723,3 @@ class MultiSessionEvaluationResult:
         if self.rubric:
             result["rubric"] = self.rubric.to_dict()
         return result
-
-
-# =============================================================================
-# Pipeline Contracts (Input/Output between stages)
-# =============================================================================
-
-
-@dataclass
-class DataGenerationMetadata:
-    """Metadata about a generated conversation sample.
-
-    Attributes:
-        topic: The conversation topic (e.g., "travel", "cooking")
-        persona_id: Identifier for the persona used
-        timestamp: When the data was generated
-        source_file: Path to the original output file (if any)
-    """
-
-    topic: str
-    persona_id: str = ""
-    timestamp: str = ""
-    source_file: str = ""
-
-
-@dataclass
-class DataGenerationOutput:
-    """Contract: Output from Stage 1 (Data Generation) → Input to Stage 2 (Task Generation).
-
-    This is the standard output format that any data generation strategy must produce.
-    Different generators (synthetic, real data, etc.) can be swapped as long as they
-    conform to this contract.
-
-    Attributes:
-        conversation: List of conversation messages in {role, content} format
-        preferences: List of extracted user preferences
-        metadata: Generation metadata (topic, persona, timestamps)
-    """
-
-    conversation: list[dict[str, str]]
-    preferences: list[PreferenceItem]
-    metadata: DataGenerationMetadata
-
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "conversation": self.conversation,
-            "preferences": [p.to_dict() for p in self.preferences],
-            "metadata": {
-                "topic": self.metadata.topic,
-                "persona_id": self.metadata.persona_id,
-                "timestamp": self.metadata.timestamp,
-                "source_file": self.metadata.source_file,
-            },
-        }
-
-    @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "DataGenerationOutput":
-        """Load from dictionary (e.g., from JSON file)."""
-        metadata = data.get("metadata", {})
-        return cls(
-            conversation=data.get("conversation", []),
-            preferences=[
-                PreferenceItem(
-                    fact=p.get("fact", ""),
-                    preference_type=p.get("type", p.get("preference_type", "current")),
-                    source_date=p.get("source_date", ""),
-                    topic=p.get("topic", ""),
-                    old_value=p.get("old_value"),
-                    reason_of_change=p.get("reason_of_change"),
-                    preference_id=p.get("preference_id"),
-                    supersedes_id=p.get("supersedes_id"),
-                )
-                for p in data.get("preferences", [])
-            ],
-            metadata=DataGenerationMetadata(
-                topic=metadata.get("topic", ""),
-                persona_id=metadata.get("persona_id", ""),
-                timestamp=metadata.get("timestamp", ""),
-                source_file=metadata.get("source_file", ""),
-            ),
-        )

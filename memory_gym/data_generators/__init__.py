@@ -13,16 +13,12 @@ Usage:
         persona="Software engineer considering career change...",
         num_sessions=2,
     )
-    result = generator.generate()  # Returns MultiSessionOutput
+    result = generator.generate_multi_session()  # Returns MultiSessionOutput
 """
 
-from memory_gym.data_generators.base import BaseDataGenerator
-from memory_gym.data_generators.multisession import MultiSessionGenerator
-from memory_gym.schemas import DataGenerationMetadata, DataGenerationOutput
+from memory_gym.data_generators.multisession import GenerationError, MultiSessionGenerator
 
 __all__ = [
-    "BaseDataGenerator",
+    "GenerationError",
     "MultiSessionGenerator",
-    "DataGenerationOutput",
-    "DataGenerationMetadata",
 ]

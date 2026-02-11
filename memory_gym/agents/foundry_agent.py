@@ -236,13 +236,6 @@ class FoundryMemoryAgent:
         for i in range(len(self.chat_models)):
             setattr(self._local, f"conversation_id_{i}", None)
 
-    def delete_memory_store(self) -> None:
-        """Delete the memory store (for cleanup)."""
-        try:
-            self.client.memory_stores.delete(self.memory_store_name)
-        except Exception:
-            pass
-
 
 def _to_foundry_messages(
     conversation: list[dict[str, str]],
