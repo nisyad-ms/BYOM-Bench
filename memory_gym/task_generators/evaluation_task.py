@@ -235,10 +235,7 @@ class EvaluationTaskGenerator:
             relevant_stale=relevant_stale,
         )
 
-        persona_summary = self._create_persona_summary(
-            persona=multisession_output.persona,
-            current_prefs=selected_prefs,
-        )
+        persona_summary = multisession_output.persona
 
         return EvaluationTask(
             task_id=f"eval_{uuid.uuid4().hex[:8]}",
@@ -363,7 +360,7 @@ class EvaluationTaskGenerator:
         Returns:
             User's opening message
         """
-        persona_summary = multisession_output.persona.split(".")[0] + "."
+        persona_summary = multisession_output.persona
 
         prefs_formatted = "\n".join(f"- [{p.get('id', 'unknown')}] {p.get('fact', '')}" for p in selected_prefs)
 
@@ -506,24 +503,6 @@ class EvaluationTaskGenerator:
         return EvaluationRubric(
             required_preferences=required_prefs_objects,
         )
-
-    def _create_persona_summary(
-        self,
-        persona: str,
-        current_prefs: list[Preference],
-    ) -> str:
-        """Create a brief persona summary for the user simulator.
-
-        This summary helps the user simulator act consistently without
-        needing the full persona history.
-        """
-        # Extract just key facts, avoid long descriptions that may trigger filters
-        # Take first sentence of persona only
-        first_sentence = persona.split(".")[0] + "." if "." in persona else persona[:200]
-
-        prefs_summary = "\n".join(f"- {p.fact[:100]}" for p in current_prefs[:4])
-
-        return f"{first_sentence}\n\nKey preferences:\n{prefs_summary}"
 
 
 def generate_evaluation_task(
