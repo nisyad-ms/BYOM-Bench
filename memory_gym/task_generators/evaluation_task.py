@@ -17,7 +17,7 @@ import random
 import uuid
 from datetime import datetime
 
-from memory_gym.client import CONFIG, AsyncLLMPool, LLMClient, PooledLLMClient
+from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
 from memory_gym.formatting import format_preference_history, summarize_events
 from memory_gym.prompts import render_prompt
 from memory_gym.schemas import (
@@ -505,26 +505,6 @@ class EvaluationTaskGenerator:
         )
 
 
-def generate_evaluation_task(
-    multisession_output: MultiSessionOutput,
-    client: LLMClient | PooledLLMClient | None = None,
-) -> EvaluationTask:
-    """Convenience function to generate a single evaluation task.
-
-    For new code, prefer generate_evaluation_tasks() which generates multiple
-    tasks with proper evolved/baseline preference mix.
-
-    Args:
-        multisession_output: Output from MultiSessionGenerator
-        client: Optional LLM client
-
-    Returns:
-        EvaluationTask ready for evaluation
-    """
-    generator = EvaluationTaskGenerator(client)
-    return generator.generate(multisession_output)
-
-
 def generate_evaluation_tasks(
     multisession_output: MultiSessionOutput,
     num_tasks: int = EvaluationTaskGenerator.DEFAULT_NUM_TASKS,
@@ -560,46 +540,3 @@ def generate_evaluation_tasks(
     """
     generator = EvaluationTaskGenerator(client)
     return generator.generate_batch(multisession_output, num_tasks, prefs_per_task, previous_events)
-
-
-def _generate_single_task_with_client(
-    client: LLMClient | PooledLLMClient,
-    context: dict,
-) -> EvaluationTask:
-    """Generate a single task using provided client (for parallel execution).
-
-    Args:
-        client: LLM client to use
-        context: Dict containing multisession_output and task config
-
-    Returns:
-        EvaluationTask
-    """
-    generator = EvaluationTaskGenerator(client)
-    multisession_output = context["multisession_output"]
-    return generator.generate(multisession_output)
-
-
-async def generate_evaluation_tasks_parallel(
-    multisession_output: MultiSessionOutput,
-    num_tasks: int = 3,
-) -> list[EvaluationTask]:
-    """Generate multiple evaluation tasks in parallel across deployments.
-
-    Args:
-        multisession_output: Output from MultiSessionGenerator
-        num_tasks: Number of tasks to generate
-
-    Returns:
-        List of EvaluationTask objects
-    """
-    pool = AsyncLLMPool()
-
-    contexts = [{"multisession_output": multisession_output} for _ in range(num_tasks)]
-
-    tasks = await pool.run_parallel(
-        items=contexts,
-        func=_generate_single_task_with_client,
-    )
-
-    return tasks
