@@ -16,7 +16,7 @@ import random
 import uuid
 from datetime import datetime
 
-from memory_gym.client import CONFIG, AsyncLLMPool, LLMClient, PooledLLMClient
+from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
 from memory_gym.formatting import format_preference_history, summarize_events
 from memory_gym.prompts import render_prompt
 from memory_gym.schemas import (
@@ -216,10 +216,7 @@ class EvaluationTaskGenerator:
             relevant_stale=relevant_stale,
         )
 
-        persona_summary = self._create_persona_summary(
-            persona=multisession_output.persona,
-            current_prefs=selected_prefs,
-        )
+        persona_summary = multisession_output.persona
 
         return EvaluationTask(
             task_id=f"eval_{uuid.uuid4().hex[:8]}",
@@ -343,7 +340,7 @@ class EvaluationTaskGenerator:
         Returns:
             User's opening message
         """
-        persona_summary = multisession_output.persona.split(".")[0] + "."
+        persona_summary = multisession_output.persona
 
         prefs_formatted = "\n".join(f"- [{p.get('id', 'unknown')}] {p.get('fact', '')}" for p in selected_prefs)
 
@@ -487,44 +484,6 @@ class EvaluationTaskGenerator:
             required_preferences=required_prefs_objects,
         )
 
-    def _create_persona_summary(
-        self,
-        persona: str,
-        current_prefs: list[Preference],
-    ) -> str:
-        """Create a brief persona summary for the user simulator.
-
-        This summary helps the user simulator act consistently without
-        needing the full persona history.
-        """
-        # Extract just key facts, avoid long descriptions that may trigger filters
-        # Take first sentence of persona only
-        first_sentence = persona.split(".")[0] + "." if "." in persona else persona[:200]
-
-        prefs_summary = "\n".join(f"- {p.fact[:100]}" for p in current_prefs[:4])
-
-        return f"{first_sentence}\n\nKey preferences:\n{prefs_summary}"
-
-
-def generate_evaluation_task(
-    multisession_output: MultiSessionOutput,
-    client: LLMClient | PooledLLMClient | None = None,
-) -> EvaluationTask:
-    """Convenience function to generate a single evaluation task.
-
-    For new code, prefer generate_evaluation_tasks() which generates multiple
-    tasks with proper evolved/baseline preference mix.
-
-    Args:
-        multisession_output: Output from MultiSessionGenerator
-        client: Optional LLM client
-
-    Returns:
-        EvaluationTask ready for evaluation
-    """
-    generator = EvaluationTaskGenerator(client)
-    return generator.generate(multisession_output)
-
 
 def generate_evaluation_tasks(
     multisession_output: MultiSessionOutput,
@@ -561,46 +520,3 @@ def generate_evaluation_tasks(
     """
     generator = EvaluationTaskGenerator(client)
     return generator.generate_batch(multisession_output, num_tasks, prefs_per_task, previous_events)
-
-
-def _generate_single_task_with_client(
-    client: LLMClient | PooledLLMClient,
-    context: dict,
-) -> EvaluationTask:
-    """Generate a single task using provided client (for parallel execution).
-
-    Args:
-        client: LLM client to use
-        context: Dict containing multisession_output and task config
-
-    Returns:
-        EvaluationTask
-    """
-    generator = EvaluationTaskGenerator(client)
-    multisession_output = context["multisession_output"]
-    return generator.generate(multisession_output)
-
-
-async def generate_evaluation_tasks_parallel(
-    multisession_output: MultiSessionOutput,
-    num_tasks: int = 3,
-) -> list[EvaluationTask]:
-    """Generate multiple evaluation tasks in parallel across deployments.
-
-    Args:
-        multisession_output: Output from MultiSessionGenerator
-        num_tasks: Number of tasks to generate
-
-    Returns:
-        List of EvaluationTask objects
-    """
-    pool = AsyncLLMPool()
-
-    contexts = [{"multisession_output": multisession_output} for _ in range(num_tasks)]
-
-    tasks = await pool.run_parallel(
-        items=contexts,
-        func=_generate_single_task_with_client,
-    )
-
-    return tasks

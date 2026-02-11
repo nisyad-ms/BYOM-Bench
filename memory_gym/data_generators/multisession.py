@@ -366,10 +366,8 @@ class MultiSessionGenerator(BaseDataGenerator):
                                 new_domain=new_domain,
                             )
                             evolved_mapping[old_id] = new_id
-                        except ValueError:
-                            pass
-                    else:
-                        pass
+                        except ValueError as e:
+                            logger.warning(f"Failed to evolve preference {old_id}: {e}")
 
             # Process new preferences
             new_prefs_data = result.get("new_preferences", [])
@@ -562,29 +560,3 @@ class MultiSessionGenerator(BaseDataGenerator):
                 timestamp=result.generation_timestamp,
             ),
         )
-
-
-# Convenience function for CLI usage
-def generate_multi_session(
-    persona: str,
-    num_sessions: int = DEFAULT_NUM_SESSIONS,
-    output_dir: str | None = None,
-    domains: list[str] | None = None,
-) -> MultiSessionOutput:
-    """Generate multi-session data with preference evolution.
-
-    Args:
-        persona: User persona description
-        num_sessions: Number of sessions to generate
-        output_dir: Output directory
-        domains: Optional list of domains to use for life events
-
-    Returns:
-        MultiSessionOutput with full timeline and sessions
-    """
-    generator = MultiSessionGenerator(
-        persona=persona,
-        num_sessions=num_sessions,
-        output_dir=output_dir,
-    )
-    return generator.generate_multi_session(domains=domains)

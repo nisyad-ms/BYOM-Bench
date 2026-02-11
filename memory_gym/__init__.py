@@ -21,11 +21,12 @@ Usage:
     )
     result = generator.generate_multi_session()
 
-    # Generate evaluation task (inspect without full evaluation)
-    from memory_gym.task_generators import generate_evaluation_task
-    task = generate_evaluation_task(result)
-    print(task.evaluation_event.event)
-    print(task.rubric.required_preferences)
+    # Generate evaluation tasks (inspect without full evaluation)
+    from memory_gym.task_generators import EvaluationTaskGenerator
+    generator = EvaluationTaskGenerator()
+    tasks = generator.generate_batch(result, num_tasks=1)
+    print(tasks[0].evaluation_event.event)
+    print(tasks[0].rubric.required_preferences)
 
     # Run full evaluation
     from memory_gym.evaluation_multisession import run_evaluation
