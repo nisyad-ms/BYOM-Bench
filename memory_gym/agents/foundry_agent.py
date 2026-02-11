@@ -1,6 +1,5 @@
 """Foundry Memory Agent using Azure AI Foundry memory store."""
 
-import logging
 import os
 import threading
 import uuid
@@ -25,8 +24,6 @@ from tenacity import (
 )
 
 from memory_gym.schemas import MultiSessionOutput
-
-logger = logging.getLogger(__name__)
 
 
 def _get_foundry_deployments() -> list[str]:
@@ -99,14 +96,11 @@ class FoundryMemoryAgent:
 
             if self.memory_store_name in existing_stores:
                 if force_recreate:
-                    logger.info(f"Deleting existing memory store '{self.memory_store_name}'...")
                     self.client.memory_stores.delete(self.memory_store_name)
                 else:
-                    logger.info(f"Memory store '{self.memory_store_name}' already exists")
                     self._memory_populated = True
                     return
 
-            logger.info(f"Creating memory store '{self.memory_store_name}'...")
             definition = MemoryStoreDefaultDefinition(
                 chat_model=self.chat_models[0],
                 embedding_model=self.embedding_model,
@@ -126,8 +120,6 @@ class FoundryMemoryAgent:
             self._memory_populated = True
 
     def _populate_memories(self, multisession_data: MultiSessionOutput) -> None:
-        logger.info("Populating memory store with conversation history...")
-
         update_poller = None
         for session in multisession_data.sessions:
             if not session.conversation:
@@ -146,9 +138,7 @@ class FoundryMemoryAgent:
             )
 
             result = update_poller.result()
-            logger.info(f"Session {session.session_id}: {len(result.memory_operations)} memory operations")
-
-        logger.info("Memory population complete")
+            print(f"Session {session.session_id}: {len(result.memory_operations)} memory operations")
 
     def _ensure_agents(self) -> None:
         """Create one Foundry agent per deployment model.
@@ -175,9 +165,6 @@ class FoundryMemoryAgent:
                     ),
                 )
                 self._agents.append(agent)
-                logger.info(f"Created Foundry agent: {agent.name} (model={model})")
-
-            logger.info(f"Created {len(self._agents)} Foundry agents across deployments")
 
     def _acquire_agent(self) -> tuple[int, object]:
         with self._init_lock:
@@ -213,7 +200,6 @@ class FoundryMemoryAgent:
                 conv = openai_client.conversations.create()
                 setattr(self._local, conv_key, conv.id)
                 conv_id = conv.id
-                logger.debug(f"Created new conversation: {conv_id} (agent {idx})")
 
             last_user_message = ""
             for msg in reversed(conversation):
@@ -227,20 +213,6 @@ class FoundryMemoryAgent:
                 conv_id,
                 agent,
             )
-
-            for item in response.output:
-                item_type = getattr(item, "type", "unknown")
-                if item_type in ("function_call", "custom_tool_call", "mcp_call"):
-                    tool_name = getattr(item, "name", "unknown")
-                    tool_input = getattr(item, "arguments", None) or getattr(item, "input", None)
-                    logger.info(f"[TOOL TRACE] type={item_type} name={tool_name} input={tool_input}")
-                elif item_type == "memory_search_call":
-                    status = getattr(item, "status", "unknown")
-                    logger.info(f"[TOOL TRACE] memory_search_call status={status}")
-                elif item_type == "message":
-                    pass
-                else:
-                    logger.info(f"[TOOL TRACE] unexpected output item type={item_type}: {item}")
 
             return response.output_text
         finally:
@@ -268,9 +240,8 @@ class FoundryMemoryAgent:
         """Delete the memory store (for cleanup)."""
         try:
             self.client.memory_stores.delete(self.memory_store_name)
-            logger.info(f"Deleted memory store: {self.memory_store_name}")
-        except Exception as e:
-            logger.warning(f"Failed to delete memory store: {e}")
+        except Exception:
+            pass
 
 
 def _to_foundry_messages(

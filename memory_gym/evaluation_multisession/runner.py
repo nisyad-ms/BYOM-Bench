@@ -8,7 +8,6 @@ Orchestrates the complete evaluation flow:
 4. Evaluate with judge
 """
 
-import logging
 import re
 from typing import Callable, Literal
 
@@ -24,8 +23,6 @@ from memory_gym.task_generators import EvaluationTaskGenerator
 
 from .judge import MultiSessionJudge
 from .user_simulator import MultiSessionUserSimulator
-
-logger = logging.getLogger(__name__)
 
 
 def _is_uncovered_empty(scratchpad: str) -> bool:
@@ -79,15 +76,10 @@ def run_evaluation(
 
     # Step 1: Generate or use provided evaluation task
     if eval_task is None:
-        logger.info("Generating evaluation task...")
         task_generator = EvaluationTaskGenerator(client)
         eval_task = task_generator.generate(multisession_data)
-        logger.info(f"Generated task: {eval_task.evaluation_event.event}")
-    else:
-        logger.info(f"Using provided task: {eval_task.evaluation_event.event}")
 
     # Step 2: Run dialogue
-    logger.info("Running evaluation dialogue...")
     conversation_with_scratchpads, clean_conversation = run_dialogue(
         eval_task,
         multisession_data,
@@ -99,18 +91,13 @@ def run_evaluation(
         force_recreate_memory,
         foundry_agent,
     )
-    logger.info(f"Dialogue completed: {len(clean_conversation)} turns")
 
     # Step 3: Evaluate with judge (using clean conversation without scratchpads)
-    logger.info("Evaluating dialogue with judge...")
     judge = MultiSessionJudge(client)
     result = judge.evaluate(eval_task, clean_conversation)
 
     # Replace conversation with version that includes scratchpads for output
     result.conversation = conversation_with_scratchpads
-    logger.info(
-        f"Evaluation complete. Preference: {result.preference_score:.2f}, Efficiency: {result.efficiency_score:.2f}"
-    )
 
     return result
 
@@ -169,7 +156,6 @@ def run_dialogue(
     user_message = user_sim.get_initial_message()
     conversation_with_scratchpads.append({"role": "user", "content": user_message})
     clean_conversation.append({"role": "user", "content": user_message})
-    logger.debug(f"User: {user_message[:100]}...")
 
     agent_turns = 0
     while agent_turns < max_agent_turns:
@@ -177,25 +163,19 @@ def run_dialogue(
         conversation_with_scratchpads.append({"role": "assistant", "content": agent_response})
         clean_conversation.append({"role": "assistant", "content": agent_response})
         agent_turns += 1
-        logger.debug(f"Agent: {agent_response[:100]}...")
 
         if user_sim.should_end_conversation(agent_response, clean_conversation):
-            logger.info(f"Conversation ended naturally after {agent_turns} agent turns")
             break
 
         if agent_turns >= max_agent_turns:
-            logger.warning(f"Conversation hit max agent turns limit ({max_agent_turns})")
+            print(f"Conversation hit max agent turns limit ({max_agent_turns})")
             break
 
         user_response, scratchpad = user_sim.respond(agent_response, clean_conversation)
         conversation_with_scratchpads.append({"role": "user", "content": user_response, "scratchpad": scratchpad})
         clean_conversation.append({"role": "user", "content": user_response})
-        logger.debug(f"User: {user_response[:100]}...")
-        if scratchpad:
-            logger.debug(f"Scratchpad: {scratchpad[:200]}...")
 
         if scratchpad and _is_uncovered_empty(scratchpad):
-            logger.info(f"All preferences covered. Ending after {agent_turns} agent turns")
             break
 
     return conversation_with_scratchpads, clean_conversation

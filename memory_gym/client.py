@@ -34,7 +34,8 @@ Usage:
 
 import asyncio
 import json
-import logging
+import asyncio
+import json
 import os
 import threading
 from pathlib import Path
@@ -46,7 +47,6 @@ from dotenv import load_dotenv
 from openai import APIStatusError, AzureOpenAI
 from pydantic import BaseModel
 from tenacity import (
-    before_sleep_log,
     retry,
     retry_if_exception_type,
     stop_after_attempt,
@@ -55,17 +55,24 @@ from tenacity import (
 
 load_dotenv()
 
-logger = logging.getLogger(__name__)
-
 _config_path = Path(__file__).parent.parent / "configs" / "client_config.yaml"
 with open(_config_path) as f:
     CONFIG = yaml.safe_load(f)
+
+
+def _before_sleep_print(retry_state):
+    exc = retry_state.outcome.exception()
+    wait = retry_state.next_action.sleep
+    fn = retry_state.fn
+    name = f"{fn.__module__}.{fn.__qualname__}" if fn else "unknown"
+    print(f"Retrying {name} in {wait:.1f} seconds as it raised {type(exc).__name__}: {exc}")
+
 
 _llm_retry = retry(
     stop=stop_after_attempt(CONFIG["retry"]["max_attempts"]),
     wait=wait_exponential(multiplier=1, min=CONFIG["retry"]["wait_seconds"], max=CONFIG["retry"]["wait_seconds"]),
     retry=retry_if_exception_type((APIStatusError, Exception)),
-    before_sleep=before_sleep_log(logger, logging.WARNING),
+    before_sleep=_before_sleep_print,
     reraise=True,
 )
 
@@ -136,7 +143,6 @@ class LLMClient:
             api_version=self.api_version,
         )
 
-        logger.debug(f"LLMClient initialized: endpoint={self.endpoint}, deployment={self.deployment}")
 
     @_llm_retry
     def complete(
@@ -295,7 +301,6 @@ class PooledLLMClient:
         self._in_flight = [0] * len(self.clients)
         self._lock = threading.Lock()
 
-        logger.info(f"PooledLLMClient initialized with {len(self.clients)} deployments: {deployments}")
 
     def _acquire_client(self) -> tuple[int, LLMClient]:
         with self._lock:
@@ -362,7 +367,6 @@ class AsyncLLMPool:
         self.deployments = deployments
         self._pooled_client = PooledLLMClient(deployments=deployments)
 
-        logger.info(f"AsyncLLMPool initialized with {len(deployments)} deployments: {deployments}")
 
     async def run_parallel(
         self,
@@ -399,7 +403,7 @@ class AsyncLLMPool:
                     if on_result:
                         on_result(index, item, result)
                 except Exception as e:
-                    logger.error(f"Task {index} failed: {e}")
+                    print(f"Task {index} failed: {e}")
 
         tasks = [process_item(i, item) for i, item in enumerate(items)]
         await asyncio.gather(*tasks)

@@ -17,13 +17,10 @@ Usage:
     )
 """
 
-import logging
 from pathlib import Path
 from typing import Any
 
 import yaml
-
-logger = logging.getLogger(__name__)
 
 _prompt_cache: dict[str, dict[str, Any]] = {}
 _config_cache: dict[str, str] | None = None
@@ -40,7 +37,6 @@ def _load_prompt_config() -> dict[str, str]:
 
     config_path = PROJECT_ROOT / "configs" / "prompt_config.yaml"
     if not config_path.exists():
-        logger.warning(f"prompt_config.yaml not found at {config_path}, using default versions")
         _config_cache = {}
         return _config_cache
 
@@ -48,7 +44,6 @@ def _load_prompt_config() -> dict[str, str]:
         config = yaml.safe_load(f) or {}
 
     _config_cache = config.get("prompts", {})
-    logger.debug(f"Loaded prompt config with {len(_config_cache)} entries")
     return _config_cache
 
 
@@ -65,9 +60,7 @@ def _resolve_prompt_name(prompt_name: str) -> str:
     version = config.get(prompt_name, "")
 
     if version:
-        resolved = f"{prompt_name}_{version}"
-        logger.debug(f"Resolved prompt {prompt_name} -> {resolved}")
-        return resolved
+        return f"{prompt_name}_{version}"
 
     return prompt_name
 
@@ -112,7 +105,6 @@ def load_prompt(prompt_name: str, reload: bool = False, use_config: bool = True)
         prompt_data = yaml.safe_load(f)
 
     _prompt_cache[resolved_name] = prompt_data
-    logger.debug(f"Loaded prompt: {resolved_name}")
 
     return prompt_data
 
@@ -140,5 +132,4 @@ def render_prompt(prompt_name: str, use_config: bool = True, **variables: Any) -
     try:
         return template.format(**variables)
     except KeyError as e:
-        logger.error(f"Missing variable in prompt {prompt_name}: {e}")
         raise ValueError(f"Missing required variable for prompt '{prompt_name}': {e}") from e

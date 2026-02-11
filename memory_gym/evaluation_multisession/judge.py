@@ -7,7 +7,6 @@ The judge evaluates a completed dialogue using two separate LLM calls:
 """
 
 import json
-import logging
 from concurrent.futures import ThreadPoolExecutor
 from typing import Any
 
@@ -19,8 +18,6 @@ from memory_gym.schemas import (
     LifeEvent,
     MultiSessionEvaluationResult,
 )
-
-logger = logging.getLogger(__name__)
 
 
 class MultiSessionJudge:
@@ -76,7 +73,7 @@ class MultiSessionJudge:
             )
 
         except Exception as e:
-            logger.error(f"Judge evaluation failed: {e}")
+            print(f"Judge evaluation failed: {e}")
             return MultiSessionEvaluationResult(
                 task_id=evaluation_task.task_id,
                 conversation=conversation,

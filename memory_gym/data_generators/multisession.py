@@ -18,7 +18,6 @@ The flow:
 """
 
 import json
-import logging
 import random
 from datetime import datetime
 
@@ -34,8 +33,6 @@ from memory_gym.schemas import (
     PreferenceTimeline,
     Session,
 )
-
-logger = logging.getLogger(__name__)
 
 # Life domains for event generation
 LIFE_DOMAINS = [
@@ -116,11 +113,9 @@ class MultiSessionGenerator(BaseDataGenerator):
                 raise GenerationError(f"Unexpected response type: {type(result)}")
 
             expanded = ExpandedPersona.from_dict(result)
-            logger.info(f"Expanded persona: {expanded.age}yo {expanded.gender} in {expanded.location}")
             return expanded
 
         except Exception as e:
-            logger.error(f"Failed to expand persona: {e}")
             raise GenerationError(f"Persona expansion failed: {e}") from e
 
     def _generate_life_events(
@@ -185,7 +180,6 @@ class MultiSessionGenerator(BaseDataGenerator):
             if not isinstance(result, dict):
                 raise GenerationError(f"Unexpected response type: {type(result)}")
 
-            logger.info(f"Generated life event {session_id}")
             return LifeEvent(
                 session_id=session_id,
                 date=self.start_date,
@@ -194,7 +188,6 @@ class MultiSessionGenerator(BaseDataGenerator):
             )
 
         except Exception as e:
-            logger.error(f"Failed to generate life event for domain {domain}: {e}")
             raise GenerationError(f"Life event generation failed: {e}") from e
 
     def _load_baseline_preferences(
@@ -216,7 +209,6 @@ class MultiSessionGenerator(BaseDataGenerator):
             List of baseline preference IDs that were added
         """
         if not expanded_persona.baseline_preferences:
-            logger.warning("No baseline preferences found in expanded persona")
             return []
 
         baseline_ids = []
@@ -374,8 +366,8 @@ class MultiSessionGenerator(BaseDataGenerator):
                                 new_domain=new_domain,
                             )
                             evolved_mapping[old_id] = new_id
-                        except ValueError as e:
-                            logger.warning(f"Failed to evolve preference {old_id}: {e}")
+                        except ValueError:
+                            pass
                     else:
                         pass
 
@@ -397,7 +389,7 @@ class MultiSessionGenerator(BaseDataGenerator):
             return evolved_mapping, new_pref_ids
 
         except Exception as e:
-            logger.error(f"Failed to update preferences for session {session_id}: {e}")
+            print(f"Failed to update preferences for session {session_id}: {e}")
             # Return empty results on failure
             return {}, []
 
@@ -471,11 +463,9 @@ class MultiSessionGenerator(BaseDataGenerator):
                 if role in ("user", "assistant") and content:
                     normalized.append({"role": role, "content": content})
 
-            logger.info(f"Generated conversation for session {session_id}")
             return normalized
 
         except Exception as e:
-            logger.error(f"Failed to generate conversation: {e}")
             raise GenerationError(f"Conversation generation failed: {e}") from e
 
     def generate_multi_session(

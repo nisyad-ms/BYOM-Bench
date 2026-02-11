@@ -6,14 +6,11 @@ It knows its current preferences and will naturally correct the agent
 if recommendations don't match those preferences.
 """
 
-import logging
 import re
 
 from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
 from memory_gym.prompts import render_prompt
 from memory_gym.schemas import EvaluationTask
-
-logger = logging.getLogger(__name__)
 
 
 class MultiSessionUserSimulator:

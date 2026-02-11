@@ -12,7 +12,6 @@ without running the full evaluation pipeline.
 """
 
 import json
-import logging
 import random
 import uuid
 from datetime import datetime
@@ -27,8 +26,6 @@ from memory_gym.schemas import (
     MultiSessionOutput,
     Preference,
 )
-
-logger = logging.getLogger(__name__)
 
 
 class EvaluationTaskGenerator:
@@ -93,12 +90,6 @@ class EvaluationTaskGenerator:
         evolved_prefs = [p for p in current_prefs if p.preference_id in evolved_ids]
         baseline_prefs = [p for p in current_prefs if p.preference_id not in evolved_ids]
 
-        logger.info(
-            f"Preference landscape: {len(current_prefs)} current "
-            f"({len(evolved_prefs)} evolved, {len(baseline_prefs)} baseline), "
-            f"{len(stale_prefs)} stale"
-        )
-
         # Calculate required evolved preferences per task
         # Target 50% but at least MIN_EVOLVED_PREFS
         num_evolved_required = max(self.MIN_EVOLVED_PREFS, int(prefs_per_task * self.EVOLVED_PREF_RATIO))
@@ -106,7 +97,7 @@ class EvaluationTaskGenerator:
 
         # Validate we have enough preferences
         if len(evolved_prefs) < num_evolved_required:
-            logger.warning(
+            print(
                 f"Only {len(evolved_prefs)} evolved preferences available, "
                 f"need {num_evolved_required}. Will use all evolved preferences."
             )
@@ -114,22 +105,16 @@ class EvaluationTaskGenerator:
             num_baseline_required = prefs_per_task - num_evolved_required
 
         if len(baseline_prefs) < num_baseline_required:
-            logger.warning(
+            print(
                 f"Only {len(baseline_prefs)} baseline preferences available, will adjust task preference count."
             )
             num_baseline_required = len(baseline_prefs)
-
-        logger.info(
-            f"Task config: {prefs_per_task} prefs/task "
-            f"({num_evolved_required} evolved, {num_baseline_required} baseline)"
-        )
 
         # Generate tasks
         tasks = []
         generated_events = list(previous_events) if previous_events else []
         used_baseline_prefs: list[str] = []
         for i in range(num_tasks):
-            logger.info(f"Generating task {i + 1}/{num_tasks}...")
             task = self._generate_single_task(
                 multisession_output=multisession_output,
                 evolved_prefs=evolved_prefs,
@@ -223,10 +208,6 @@ class EvaluationTaskGenerator:
             )
             scenario_type = ""
             reasoning = ""
-
-        logger.debug(
-            f"Task {task_index}: {len(selected_prefs)} prefs selected, {len(relevant_stale)} relevant stale traps"
-        )
 
         rubric = self._build_rubric(
             current_prefs=multisession_output.get_current_preferences(),
@@ -324,7 +305,6 @@ class EvaluationTaskGenerator:
         situation = response.get("situation", response.get("event", "General task"))
         scenario_type = response.get("scenario_type", "")
         reasoning = response.get("reasoning", response.get("ideal_response", ""))
-        logger.debug(f"Task reasoning (chain-of-thought): {reasoning[:200]}...")
 
         user_prompt = self._generate_user_prompt(
             multisession_output=multisession_output,
@@ -451,7 +431,7 @@ class EvaluationTaskGenerator:
             )
             return life_event
         except KeyError as e:
-            logger.error(f"Failed to parse evaluation event: {e}")
+            print(f"Failed to parse evaluation event: {e}")
             return LifeEvent(
                 session_id=-1,
                 date=datetime.now().strftime("%m/%d/%Y"),

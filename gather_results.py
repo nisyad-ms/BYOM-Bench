@@ -6,6 +6,7 @@ import json
 import re
 import sys
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
 
 from openpyxl import Workbook
@@ -111,11 +112,11 @@ def main():
             ]
         )
 
-    for eval_run_dir in eval_run_dirs:
-        output_file = eval_run_dir / "results.xlsx"
-        wb.save(output_file)
-        print(f"  Saved to {output_file}")
-    print(f"Wrote {len(rows)} results to {len(eval_run_dirs)} eval run(s) (2 sheets)")
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+    combined_output = Path("outputs") / f"results_{timestamp}.xlsx"
+    wb.save(combined_output)
+    print(f"Saved to {combined_output}")
+    print(f"Wrote {len(rows)} results from {len(eval_run_dirs)} session(s) (2 sheets)")
 
 
 if __name__ == "__main__":
