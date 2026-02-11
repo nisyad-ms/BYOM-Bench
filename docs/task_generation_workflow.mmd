@@ -1,0 +1,49 @@
+---
+title: "Task Generation: Evaluation Task"
+---
+flowchart TD
+    A[sessions.json] --> B[Analyze Preference Timeline]
+    B --> B1[Current Preferences]
+    B --> B2[Evolved Preferences]
+    B --> B3[Baseline Preferences]
+
+    B1 --> C[Summarize Events]
+    B2 --> C
+    B3 --> C
+    C --> D[Format Preference History]
+
+    D --> E[Generate Evaluation Event]
+    E --> E1["LLM selects 6 preferences\n(≥50% evolved)"]
+    E1 --> E2[Situation + Scenario Type]
+
+    E2 --> F[Generate User Prompt]
+    F --> F1["Preference-neutral\nopening message"]
+
+    F1 --> G[Build Rubric]
+    G --> G1[Required Preferences]
+    G --> G2[Supersedes Map]
+
+    G1 --> H[EvaluationTask]
+    G2 --> H
+    H --> I{More Tasks?}
+    I -- Yes --> E
+    I -- No --> J[task_XX.json]
+
+    style A fill:#4A90D9,color:#fff
+    style B fill:#5BA55B,color:#fff
+    style B1 fill:#5BA55B,color:#fff
+    style B2 fill:#5BA55B,color:#fff
+    style B3 fill:#5BA55B,color:#fff
+    style C fill:#E8A838,color:#fff
+    style D fill:#E8A838,color:#fff
+    style E fill:#7B68AE,color:#fff
+    style E1 fill:#7B68AE,color:#fff
+    style E2 fill:#7B68AE,color:#fff
+    style F fill:#7B68AE,color:#fff
+    style F1 fill:#7B68AE,color:#fff
+    style G fill:#D95B5B,color:#fff
+    style G1 fill:#D95B5B,color:#fff
+    style G2 fill:#D95B5B,color:#fff
+    style H fill:#4A90D9,color:#fff
+    style I fill:#7B68AE,color:#fff
+    style J fill:#4A90D9,color:#fff

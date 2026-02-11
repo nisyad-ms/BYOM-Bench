@@ -1,0 +1,40 @@
+---
+title: "Evaluation — Part 1: Dialogue Generation"
+---
+flowchart TD
+    A[sessions.json + task_XX.json] --> B[Initialize Agent]
+    B --> B1[ContextAwareAgent\nFull preference history]
+    B --> B2[NoContextAgent\nNo past context]
+    B --> B3[FoundryMemoryAgent\nMemory store]
+
+    B1 --> C[Initialize User Simulator]
+    B2 --> C
+    B3 --> C
+    C --> C1["Knows current preferences\nDoes not know stale prefs"]
+
+    C1 --> D[User Sends Opening Message]
+    D --> E{Dialogue Loop\nmax 10 agent turns}
+
+    E --> F[Agent Responds]
+    F --> G{All Prefs Covered\nOR Max Turns?}
+    G -- No --> H[User Simulator Responds]
+    H --> H1["Scratchpad tracks\nUNCOVERED preferences"]
+    H1 --> E
+    G -- Yes --> I[Clean Conversation\nRemove scratchpads]
+    I --> J[conversation + scratchpads]
+
+    style A fill:#4A90D9,color:#fff
+    style B fill:#5BA55B,color:#fff
+    style B1 fill:#5BA55B,color:#fff
+    style B2 fill:#5BA55B,color:#fff
+    style B3 fill:#5BA55B,color:#fff
+    style C fill:#5BA55B,color:#fff
+    style C1 fill:#5BA55B,color:#fff
+    style D fill:#E8A838,color:#fff
+    style E fill:#7B68AE,color:#fff
+    style F fill:#7B68AE,color:#fff
+    style G fill:#7B68AE,color:#fff
+    style H fill:#7B68AE,color:#fff
+    style H1 fill:#7B68AE,color:#fff
+    style I fill:#E8A838,color:#fff
+    style J fill:#4A90D9,color:#fff

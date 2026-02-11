@@ -1,0 +1,52 @@
+---
+title: "Evaluation — Part 2: Judging + Scoring"
+---
+flowchart TD
+    A[Clean Conversation + Rubric] --> B["Parallel LLM Judge Calls\n(ThreadPoolExecutor)"]
+    B --> C[Preference Judge]
+    B --> D[Efficiency Judge]
+
+    C --> C1["First-Mention Analysis\nper required preference"]
+    C1 --> C2[PROACTIVE\nAgent mentioned first]
+    C1 --> C3[IGNORED\nUser mentioned first]
+    C1 --> C4[STALE\nUsed superseded pref]
+
+    D --> D1["Turn Classification\nper agent turn"]
+    D1 --> D2[PRODUCTIVE\nApplied specific pref]
+    D1 --> D3[GENERIC\nUnpersonalized advice]
+    D1 --> D4[CORRECTION\nUser corrected agent]
+    D1 --> D5[REPEATED_CORRECTION\nSame pref violated twice]
+
+    C2 --> E[Calculate Scores]
+    C3 --> E
+    C4 --> E
+    D2 --> E
+    D3 --> E
+    D4 --> E
+    D5 --> E
+
+    E --> E1["preference_score =\nmax(0, (proactive - stale) / total)"]
+    E --> E2["efficiency_score =\nmax(0, (turns - 0.5*generic\n- 0.5*ignored - correction) / turns)\nOR 0 if repeated_correction"]
+
+    E1 --> F[MultiSessionEvaluationResult]
+    E2 --> F
+    F --> G[eval_XX_agent.json]
+
+    style A fill:#4A90D9,color:#fff
+    style B fill:#7B68AE,color:#fff
+    style C fill:#D95B5B,color:#fff
+    style C1 fill:#D95B5B,color:#fff
+    style C2 fill:#D95B5B,color:#fff
+    style C3 fill:#D95B5B,color:#fff
+    style C4 fill:#D95B5B,color:#fff
+    style D fill:#D95B5B,color:#fff
+    style D1 fill:#D95B5B,color:#fff
+    style D2 fill:#D95B5B,color:#fff
+    style D3 fill:#D95B5B,color:#fff
+    style D4 fill:#D95B5B,color:#fff
+    style D5 fill:#D95B5B,color:#fff
+    style E fill:#E8A838,color:#fff
+    style E1 fill:#E8A838,color:#fff
+    style E2 fill:#E8A838,color:#fff
+    style F fill:#4A90D9,color:#fff
+    style G fill:#4A90D9,color:#fff

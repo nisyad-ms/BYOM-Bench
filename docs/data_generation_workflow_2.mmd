@@ -1,0 +1,24 @@
+---
+title: "Data Generation — Part 2: Per-Session Loop"
+---
+flowchart TD
+    F[Preference Timeline] --> G{For Each Session}
+    G --> H[Life Event N]
+    H --> I[Update Preferences]
+    I --> I1[Evolve Existing Preferences]
+    I --> I2[Create New Preferences]
+    I1 --> J[Generate Conversation]
+    I2 --> J
+    J --> K{More Sessions?}
+    K -- Yes --> G
+    K -- No --> L[Build MultiSessionOutput]
+
+    style F fill:#7B68AE,color:#fff
+    style G fill:#7B68AE,color:#fff
+    style H fill:#E8A838,color:#fff
+    style I fill:#D95B5B,color:#fff
+    style I1 fill:#D95B5B,color:#fff
+    style I2 fill:#D95B5B,color:#fff
+    style J fill:#4A90D9,color:#fff
+    style K fill:#7B68AE,color:#fff
+    style L fill:#5BA55B,color:#fff
