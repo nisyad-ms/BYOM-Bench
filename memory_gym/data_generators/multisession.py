@@ -44,10 +44,17 @@ LIFE_DOMAINS = [
 DEFAULT_NUM_SESSIONS = 2
 
 
+def _active_prefs_to_json(prefs: list) -> str:
+    """Serialize active preferences to JSON for prompt inclusion."""
+    return json.dumps(
+        [{"preference_id": p.preference_id, "fact": p.fact, "domain": p.domain} for p in prefs],
+        indent=2,
+        ensure_ascii=False,
+    )
+
+
 class GenerationError(Exception):
     """Raised when data generation fails."""
-
-    pass
 
 
 class MultiSessionGenerator:
@@ -225,22 +232,6 @@ class MultiSessionGenerator:
 
         return baseline_ids
 
-    def _format_domain_facts(self, expanded_persona: ExpandedPersona) -> str:
-        """Format all domain facts for prompt inclusion."""
-        sections = []
-        domains = [
-            ("Work & Education", expanded_persona.work_and_education),
-            ("Health & Wellness", expanded_persona.health_and_wellness),
-            ("Travel & Experiences", expanded_persona.travel_and_experiences),
-            ("Relationships & Personal", expanded_persona.relationships_and_personal),
-            ("Hobbies & Interests", expanded_persona.hobbies_and_interests),
-        ]
-        for name, facts in domains:
-            if facts:
-                facts_str = "\n".join(f"  - {f}" for f in facts)
-                sections.append(f"{name}:\n{facts_str}")
-        return "\n\n".join(sections) if sections else "No domain facts available"
-
     def _format_evolution_history(self, timeline: PreferenceTimeline) -> str:
         """Format the complete preference evolution history for prompt inclusion."""
         superseded = [p for p in timeline.preferences.values() if not p.is_active]
@@ -249,6 +240,8 @@ class MultiSessionGenerator:
 
         history = []
         for old_pref in superseded:
+            if not old_pref.superseded_by:
+                continue
             new_pref = timeline.preferences.get(old_pref.superseded_by)
             if new_pref:
                 history.append(
@@ -306,20 +299,15 @@ class MultiSessionGenerator:
         """
         # Format all context for the prompt
         active_prefs = timeline.get_active_preferences()
-        active_prefs_json = json.dumps(
-            [{"preference_id": p.preference_id, "fact": p.fact, "domain": p.domain} for p in active_prefs],
-            indent=2,
-            ensure_ascii=False,
-        )
+        active_prefs_json = _active_prefs_to_json(active_prefs)
 
         evolution_history_str = self._format_evolution_history(timeline)
         previous_events_str = self._format_previous_events(all_events, session_id)
-        current_event_str = life_event.event
 
         prompt = render_prompt(
             "data_generation/multisession/update_preferences_instruction",
             persona=expanded_persona.to_full_description(),
-            current_event=current_event_str,
+            current_event=life_event.event,
             event_date=life_event.date,
             previous_events=previous_events_str,
             active_preferences=active_prefs_json,
@@ -385,9 +373,7 @@ class MultiSessionGenerator:
             return evolved_mapping, new_pref_ids
 
         except Exception as e:
-            print(f"Failed to update preferences for session {session_id}: {e}")
-            # Return empty results on failure
-            return {}, []
+            raise GenerationError(f"Failed to update preferences for session {session_id}: {e}") from e
 
     def _generate_session_conversation(
         self,
@@ -411,10 +397,7 @@ class MultiSessionGenerator:
         """
         # Get active preferences
         active_prefs = timeline.get_active_at_session(session_id)
-        active_prefs_json = json.dumps(
-            [{"preference_id": p.preference_id, "fact": p.fact, "domain": p.domain} for p in active_prefs],
-            indent=2,
-        )
+        active_prefs_json = _active_prefs_to_json(active_prefs)
 
         # Get evolved preferences (the new ones that replaced old ones)
         evolved_prefs = []

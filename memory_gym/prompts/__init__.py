@@ -43,7 +43,8 @@ def _load_prompt_config() -> dict[str, str]:
     with open(config_path, encoding="utf-8") as f:
         config = yaml.safe_load(f) or {}
 
-    _config_cache = config.get("prompts", {})
+    result: dict[str, str] = config.get("prompts", {})
+    _config_cache = result
     return _config_cache
 
 

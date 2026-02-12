@@ -130,8 +130,8 @@ class MultiSessionJudge:
         self,
         task_id: str,
         conversation: list[dict[str, str]],
-        evaluation_event: "LifeEvent",
-        rubric: "EvaluationRubric",
+        evaluation_event: LifeEvent,
+        rubric: EvaluationRubric,
         pref_result: dict[str, Any],
         eff_result: dict[str, Any],
         agent_turns: int,
@@ -140,9 +140,17 @@ class MultiSessionJudge:
         first_mention_trace = pref_result.get("first_mention_trace", [])
         turn_classifications = eff_result.get("turn_classifications", [])
 
-        preference_usage = {entry.get("preference_id"): entry.get("usage", "ignored") for entry in first_mention_trace}
+        preference_usage = {
+            entry["preference_id"]: entry.get("usage", "ignored")
+            for entry in first_mention_trace
+            if entry.get("preference_id")
+        }
 
-        stale_used = [entry.get("preference_id") for entry in first_mention_trace if entry.get("stale_used", False)]
+        stale_used = [
+            entry["preference_id"]
+            for entry in first_mention_trace
+            if entry.get("stale_used", False) and entry.get("preference_id")
+        ]
 
         proactive_count, stale_count, preference_score = self._calculate_preference_score(first_mention_trace)
 

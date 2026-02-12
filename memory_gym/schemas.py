@@ -49,7 +49,7 @@ class ExpandedPersona:
     health_and_wellness: list[str]
     travel_and_experiences: list[str]
     hobbies_and_interests: list[str]
-    baseline_preferences: dict[str, list[str]] = None  # {domain: [pref1, pref2, ...]}
+    baseline_preferences: dict[str, list[str]] | None = None  # {domain: [pref1, pref2, ...]}
 
     def __post_init__(self):
         if self.baseline_preferences is None:
@@ -81,7 +81,7 @@ class ExpandedPersona:
             health_and_wellness=data.get("health_and_wellness", []),
             travel_and_experiences=data.get("travel_and_experiences", []),
             hobbies_and_interests=data.get("hobbies_and_interests", []),
-            baseline_preferences=data.get("baseline_preferences", []),
+            baseline_preferences=data.get("baseline_preferences", {}),
         )
 
     def to_full_description(self) -> str:
@@ -191,18 +191,6 @@ class Preference:
     def is_active(self) -> bool:
         """Returns True if this preference has not been superseded."""
         return self.superseded_at_session is None
-
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "preference_id": self.preference_id,
-            "fact": self.fact,
-            "domain": self.domain,
-            "created_at_session": self.created_at_session,
-            "created_at_date": self.created_at_date,
-            "superseded_at_session": self.superseded_at_session,
-            "superseded_by": self.superseded_by,
-            "reason_for_change": self.reason_for_change,
-        }
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "Preference":
@@ -315,20 +303,6 @@ class PreferenceTimeline:
         """Returns IDs of preferences active at a specific session."""
         return [p.preference_id for p in self.get_active_at_session(session_id)]
 
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "preferences": {k: v.to_dict() for k, v in self.preferences.items()},
-            "_next_id": self._next_id,
-        }
-
-    @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "PreferenceTimeline":
-        timeline = cls()
-        timeline._next_id = data.get("_next_id", 1)
-        for pref_id, pref_data in data.get("preferences", {}).items():
-            timeline.preferences[pref_id] = Preference.from_dict(pref_data)
-        return timeline
-
 
 @dataclass
 class Session:
@@ -427,7 +401,7 @@ class MultiSessionOutput:
             if not p.is_active
         ]
 
-        result = {
+        result: dict[str, Any] = {
             "persona": self.persona,
             "persona_id": self.persona_id,
         }
@@ -551,15 +525,6 @@ class MultiSessionOutput:
         """
         return {new_pref.preference_id for _, new_pref in self.get_evolved_preferences()}
 
-    def get_baseline_preferences(self) -> list[Preference]:
-        """Returns current preferences that are NOT evolved (original baseline).
-
-        These are preferences that have never changed - either baseline prefs
-        (created_at_session=-1) or new prefs that were never superseded.
-        """
-        evolved_ids = self.get_evolved_preference_ids()
-        return [p for p in self.get_current_preferences() if p.preference_id not in evolved_ids]
-
 
 # =============================================================================
 # Multi-Session Evaluation Models
@@ -580,7 +545,7 @@ class EvaluationRubric:
             - supersedes: (optional) The stale preference this replaced
     """
 
-    required_preferences: list[dict]  # [{id, fact, supersedes?: {id, fact}}, ...]
+    required_preferences: list[dict[str, Any]]  # [{id, fact, supersedes?: {id, fact}}, ...]
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -674,8 +639,8 @@ class MultiSessionEvaluationResult:
     conversation: list[dict[str, str]]
     preference_usage: dict[str, str]  # pref_id -> "proactive" | "ignored"
     stale_preference_usage: list[str]  # List of stale pref_ids that were incorrectly used
-    evaluation_event: "LifeEvent | None" = None  # The evaluation scenario
-    rubric: "EvaluationRubric | None" = None  # The rubric used for evaluation
+    evaluation_event: LifeEvent | None = None  # The evaluation scenario
+    rubric: EvaluationRubric | None = None  # The rubric used for evaluation
     first_mention_trace: list[dict[str, Any]] | None = None  # v2: Chronological first-mention analysis
     turn_classifications: list[dict[str, Any]] | None = None  # Per-turn scoring details
     total_turns: int = 0

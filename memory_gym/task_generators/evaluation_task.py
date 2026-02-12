@@ -13,6 +13,7 @@ without running the full evaluation pipeline.
 
 import uuid
 from datetime import datetime
+from typing import Any
 
 from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
 from memory_gym.formatting import format_preference_history, summarize_events
@@ -343,9 +344,9 @@ class EvaluationTaskGenerator:
                 stale_by_superseded[sp.superseded_by] = sp
 
         # Build required_preferences with optional supersedes info
-        required_prefs_objects: list[dict] = []
+        required_prefs_objects: list[dict[str, Any]] = []
         for p in required_prefs:
-            pref_entry = {
+            pref_entry: dict[str, Any] = {
                 "id": p.preference_id,
                 "fact": p.fact,
             }

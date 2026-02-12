@@ -3,10 +3,12 @@
 import os
 import threading
 import uuid
+from typing import Any
 
 import openai
 from azure.ai.projects import AIProjectClient
 from azure.ai.projects.models import (
+    AgentVersionDetails,
     MemorySearchTool,
     MemoryStoreDefaultDefinition,
     MemoryStoreDefaultOptions,
@@ -23,7 +25,7 @@ from tenacity import (
     wait_exponential,
 )
 
-from memory_gym.client import LeastBusyPool, _parse_env_list
+from memory_gym.client import LeastBusyPool, _before_sleep_print, _parse_env_list
 from memory_gym.schemas import MultiSessionOutput
 
 
@@ -67,7 +69,7 @@ class FoundryMemoryAgent(LeastBusyPool):
         self.memory_store_name = memory_store_name
         self.scope = scope
         if embedding_model is None:
-            embedding_model = (_get_foundry_embedding_deployments() or ["text-embedding-3-small-001"])[0]
+            embedding_model = get_foundry_embedding_models()[0]
         self.embedding_model = embedding_model
         self._memory_populated = False
         self._init_lock = threading.Lock()
@@ -75,7 +77,7 @@ class FoundryMemoryAgent(LeastBusyPool):
         if chat_models is None:
             chat_models = _get_foundry_deployments() or ["gpt-4.1-001"]
         self.chat_models = chat_models
-        self._agents: list = []
+        self._agents: list[AgentVersionDetails] = []
         self._agent_ids = [str(uuid.uuid4())[:8] for _ in chat_models]
         self._local = threading.local()
 
@@ -128,7 +130,7 @@ class FoundryMemoryAgent(LeastBusyPool):
             update_poller = self.client.memory_stores.begin_update_memories(
                 name=self.memory_store_name,
                 scope=self.scope,
-                items=messages,
+                items=messages,  # type: ignore[arg-type]  # SDK accepts these message types at runtime
                 previous_update_id=update_poller.update_id if update_poller else None,
                 update_delay=0,
             )
@@ -210,8 +212,11 @@ class FoundryMemoryAgent(LeastBusyPool):
         retry=retry_if_exception_type((openai.RateLimitError, openai.APIConnectionError, openai.InternalServerError)),
         wait=wait_exponential(multiplier=2, min=5, max=120),
         stop=stop_after_attempt(12),
+        before_sleep=_before_sleep_print,
     )
-    def _call_with_retry(self, openai_client, message: str, conversation_id: str, agent):
+    def _call_with_retry(
+        self, openai_client: openai.OpenAI, message: str, conversation_id: str, agent: AgentVersionDetails
+    ) -> Any:
         """Call responses.create with retry logic for rate limits."""
         return openai_client.responses.create(
             input=message,

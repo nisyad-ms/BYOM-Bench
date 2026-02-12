@@ -27,13 +27,14 @@ import json
 import os
 import threading
 from pathlib import Path
-from typing import Any, Callable, Optional
+from typing import Any, Callable
 
 import yaml
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from dotenv import load_dotenv
 from openai import APIStatusError, AzureOpenAI
 from tenacity import (
+    RetryCallState,
     retry,
     retry_if_exception_type,
     stop_after_attempt,
@@ -47,9 +48,9 @@ with open(_config_path) as f:
     CONFIG = yaml.safe_load(f)
 
 
-def _before_sleep_print(retry_state):
-    exc = retry_state.outcome.exception()
-    wait = retry_state.next_action.sleep
+def _before_sleep_print(retry_state: RetryCallState) -> None:
+    exc = retry_state.outcome.exception() if retry_state.outcome else None
+    wait = retry_state.next_action.sleep if retry_state.next_action else 0
     fn = retry_state.fn
     name = f"{fn.__module__}.{fn.__qualname__}" if fn else "unknown"
     print(f"Retrying {name} in {wait:.1f} seconds as it raised {type(exc).__name__}: {exc}")
@@ -83,7 +84,7 @@ def _get_default_deployment() -> str:
     return deployments[0] if deployments else "gpt-4o"
 
 
-def _build_input(prompt: str, system_prompt: Optional[str] = None) -> list[dict[str, str]]:
+def _build_input(prompt: str, system_prompt: str | None = None) -> list[dict[str, str]]:
     """Build a message list from a prompt and optional system prompt."""
     messages: list[dict[str, str]] = []
     if system_prompt:
@@ -132,9 +133,9 @@ class LLMClient:
 
     def __init__(
         self,
-        endpoint: Optional[str] = None,
-        deployment: Optional[str] = None,
-        api_version: Optional[str] = None,
+        endpoint: str | None = None,
+        deployment: str | None = None,
+        api_version: str | None = None,
     ):
         """Initialize the Azure OpenAI client.
 
@@ -185,7 +186,7 @@ class LLMClient:
         """
         response = self._client.responses.create(
             model=self.deployment,
-            input=messages,
+            input=messages,  # type: ignore[arg-type]  # SDK accepts list[dict] at runtime
             max_output_tokens=max_tokens,
             temperature=temperature,
         )
@@ -196,7 +197,7 @@ class LLMClient:
     def complete_json(
         self,
         prompt: str,
-        system_prompt: Optional[str] = None,
+        system_prompt: str | None = None,
         max_tokens: int = 2048,
     ) -> dict[str, Any]:
         """Generate a JSON response.
@@ -214,12 +215,23 @@ class LLMClient:
         """
         response = self._client.responses.create(
             model=self.deployment,
-            input=_build_input(prompt, system_prompt),
+            input=_build_input(prompt, system_prompt),  # type: ignore[arg-type]  # SDK accepts list[dict] at runtime
             max_output_tokens=max_tokens,
             text={"format": {"type": "json_object"}},
         )
 
         return json.loads(response.output_text)
+
+
+def _resolve_deployments(deployments: list[str] | None = None) -> list[str]:
+    """Resolve deployment list from argument or environment, raising if empty."""
+    if deployments is None:
+        deployments = _get_deployments()
+        if not deployments:
+            deployments = [_get_default_deployment()]
+    if not deployments:
+        raise ValueError("No deployments configured")
+    return deployments
 
 
 class PooledLLMClient(LeastBusyPool):
@@ -234,16 +246,10 @@ class PooledLLMClient(LeastBusyPool):
         response = pool.complete_chat(messages)  # Routes to least-busy deployment
     """
 
-    def __init__(self, deployments: Optional[list[str]] = None):
+    def __init__(self, deployments: list[str] | None = None):
         super().__init__()
 
-        if deployments is None:
-            deployments = _get_deployments()
-            if not deployments:
-                deployments = [_get_default_deployment()]
-
-        if not deployments:
-            raise ValueError("No deployments configured")
+        deployments = _resolve_deployments(deployments)
 
         self.deployments = deployments
         self.clients = [LLMClient(deployment=d) for d in deployments]
@@ -259,7 +265,7 @@ class PooledLLMClient(LeastBusyPool):
     def complete_chat(self, messages: list[dict[str, str]], max_tokens: int = 2048, temperature: float = 1.0) -> str:
         return self._call("complete_chat", messages, max_tokens, temperature)
 
-    def complete_json(self, prompt: str, system_prompt: Optional[str] = None, max_tokens: int = 2048) -> dict[str, Any]:
+    def complete_json(self, prompt: str, system_prompt: str | None = None, max_tokens: int = 2048) -> dict[str, Any]:
         return self._call("complete_json", prompt, system_prompt, max_tokens)
 
 
@@ -279,19 +285,13 @@ class AsyncLLMPool:
         )
     """
 
-    def __init__(self, deployments: Optional[list[str]] = None):
+    def __init__(self, deployments: list[str] | None = None):
         """Initialize the pool with multiple deployments.
 
         Args:
             deployments: List of deployment names. Defaults to AZURE_OPENAI_DEPLOYMENTS env var.
         """
-        if deployments is None:
-            deployments = _get_deployments()
-            if not deployments:
-                deployments = [_get_default_deployment()]
-
-        if not deployments:
-            raise ValueError("No deployments configured")
+        deployments = _resolve_deployments(deployments)
 
         self.deployments = deployments
         self._pooled_client = PooledLLMClient(deployments=deployments)
@@ -332,6 +332,7 @@ class AsyncLLMPool:
                         on_result(index, item, result)
                 except Exception as e:
                     print(f"Task {index} failed: {e}")
+                    raise
 
         tasks = [process_item(i, item) for i, item in enumerate(items)]
         await asyncio.gather(*tasks)

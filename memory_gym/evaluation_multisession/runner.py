@@ -36,10 +36,9 @@ def _is_uncovered_empty(scratchpad: str) -> bool:
 def run_evaluation(
     multisession_data: MultiSessionOutput,
     max_agent_turns: int = 10,
-    include_history: bool = True,
     client: LLMClient | PooledLLMClient | None = None,
     eval_task: EvaluationTask | None = None,
-    agent_type: Literal["context", "nocontext", "foundry"] | None = None,
+    agent_type: Literal["context", "nocontext", "foundry"] = "context",
     memory_store_name: str | None = None,
     force_recreate_memory: bool = False,
     foundry_agent: FoundryMemoryAgent | None = None,
@@ -54,12 +53,9 @@ def run_evaluation(
     Args:
         multisession_data: Output from MultiSessionGenerator
         max_agent_turns: Maximum agent turns before ending (default 10)
-        include_history: Whether to include conversation history in agent context.
-            Set to False for no-context agent evaluation. Ignored if agent_type is set.
         client: Shared LLM client. If None, creates a new one.
         eval_task: Pre-generated evaluation task. If None, generates a new one.
         agent_type: Type of agent to use: "context", "nocontext", or "foundry".
-            If None, uses include_history to determine (for backward compatibility).
         memory_store_name: Name of memory store for foundry agent (required if agent_type="foundry").
         force_recreate_memory: If True, recreate memory store from scratch (foundry only).
 
@@ -67,9 +63,6 @@ def run_evaluation(
         MultiSessionEvaluationResult with scores and analysis
     """
     client = client or PooledLLMClient()
-
-    if agent_type is None:
-        agent_type = "context" if include_history else "nocontext"
 
     # Step 1: Generate or use provided evaluation task
     if eval_task is None:
@@ -93,7 +86,7 @@ def run_evaluation(
     result = judge.evaluate(eval_task, clean_conversation)
 
     # Replace conversation with version that includes scratchpads for output
-    result.conversation = conversation_with_scratchpads
+    result.conversation = conversation_with_scratchpads  # type: ignore[assignment]  # scratchpad key adds None values
 
     return result
 
@@ -180,7 +173,7 @@ def _run_single_evaluation_with_client(
 
     Args:
         client: LLM client to use
-        context: Dict containing multisession_data, eval_task, include_history, max_agent_turns,
+        context: Dict containing multisession_data, eval_task, max_agent_turns,
                  and optionally agent_type, memory_store_name
 
     Returns:
@@ -189,10 +182,9 @@ def _run_single_evaluation_with_client(
     return run_evaluation(
         multisession_data=context["multisession_data"],
         eval_task=context["eval_task"],
-        include_history=context.get("include_history", True),
         max_agent_turns=context["max_agent_turns"],
         client=client,
-        agent_type=context.get("agent_type"),
+        agent_type=context.get("agent_type", "context"),
         memory_store_name=context.get("memory_store_name"),
         force_recreate_memory=context.get("force_recreate_memory", False),
         foundry_agent=context.get("foundry_agent"),
@@ -209,9 +201,8 @@ async def run_evaluations_parallel(
         contexts: List of dicts, each containing:
             - multisession_data: MultiSessionOutput
             - eval_task: EvaluationTask
-            - include_history: bool (or agent_type)
+            - agent_type: "context", "nocontext", or "foundry" (default: "context")
             - max_agent_turns: int
-            - agent_type: Optional["context", "nocontext", "foundry"]
             - memory_store_name: Optional[str] (required if agent_type="foundry")
         on_result: Optional callback(index, context, result) called as each completes.
 

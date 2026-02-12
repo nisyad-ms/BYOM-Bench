@@ -30,7 +30,7 @@ Usage:
 
     # Run full evaluation
     from memory_gym.evaluation_multisession import run_evaluation
-    eval_result = run_evaluation(result, include_history=True)
+    eval_result = run_evaluation(result, agent_type="context")
 """
 
 __version__ = "0.1.0"

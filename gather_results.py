@@ -3,7 +3,6 @@
 
 import argparse
 import json
-import re
 import sys
 from collections import defaultdict
 from datetime import datetime
@@ -12,6 +11,7 @@ from pathlib import Path
 from openpyxl import Workbook
 
 from utils import (
+    EVAL_PATTERN,
     get_all_session_dirs,
     get_eval_run_dir,
     get_latest_eval_run_dir,
@@ -45,7 +45,7 @@ def main():
         eval_run_name = eval_run_dir.name
 
         for eval_file in sorted(eval_run_dir.glob("eval_*.json")):
-            match = re.match(r"eval_(\d+)_(\w+?)(?:_(\d+))?\.json", eval_file.name)
+            match = EVAL_PATTERN.match(eval_file.name)
             if not match:
                 continue
 
