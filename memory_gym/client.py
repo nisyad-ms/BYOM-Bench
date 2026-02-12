@@ -9,20 +9,10 @@ their specialized implementations.
 Usage:
     from memory_gym.client import LLMClient
 
-    # Simple query
+    # Chat completion
     client = LLMClient()
-    response = client.complete("What is 2+2?")
-
-    # With custom parameters
-    response = client.complete(
-        prompt="Tell me a joke",
-        max_tokens=100,
-    )
-
-    # With system prompt
-    response = client.complete(
-        prompt="What's the weather?",
-        system_prompt="You are a helpful assistant.",
+    response = client.complete_chat(
+        messages=[{"role": "user", "content": "Hello"}],
     )
 
     # JSON response
@@ -37,13 +27,12 @@ import json
 import os
 import threading
 from pathlib import Path
-from typing import Any, Callable, Optional, TypeVar
+from typing import Any, Callable, Optional
 
 import yaml
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from dotenv import load_dotenv
 from openai import APIStatusError, AzureOpenAI
-from pydantic import BaseModel
 from tenacity import (
     retry,
     retry_if_exception_type,
@@ -69,21 +58,23 @@ def _before_sleep_print(retry_state):
 _llm_retry = retry(
     stop=stop_after_attempt(CONFIG["retry"]["max_attempts"]),
     wait=wait_exponential(multiplier=1, min=CONFIG["retry"]["wait_seconds"], max=CONFIG["retry"]["wait_seconds"]),
-    retry=retry_if_exception_type((APIStatusError, Exception)),
+    retry=retry_if_exception_type(APIStatusError),
     before_sleep=_before_sleep_print,
     reraise=True,
 )
 
-# Type variable for structured outputs
-T = TypeVar("T", bound=BaseModel)
+
+def _parse_env_list(var_name: str) -> list[str]:
+    """Parse a comma-separated environment variable into a list of stripped strings."""
+    raw = os.environ.get(var_name, "")
+    if not raw:
+        return []
+    return [item.strip() for item in raw.split(",") if item.strip()]
 
 
 def _get_deployments() -> list[str]:
     """Get list of configured deployments from AZURE_OPENAI_DEPLOYMENTS."""
-    deployments_str = os.environ.get("AZURE_OPENAI_DEPLOYMENTS", "")
-    if not deployments_str:
-        return []
-    return [d.strip() for d in deployments_str.split(",") if d.strip()]
+    return _parse_env_list("AZURE_OPENAI_DEPLOYMENTS")
 
 
 def _get_default_deployment() -> str:
@@ -92,14 +83,48 @@ def _get_default_deployment() -> str:
     return deployments[0] if deployments else "gpt-4o"
 
 
+def _build_input(prompt: str, system_prompt: Optional[str] = None) -> list[dict[str, str]]:
+    """Build a message list from a prompt and optional system prompt."""
+    messages: list[dict[str, str]] = []
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+    messages.append({"role": "user", "content": prompt})
+    return messages
+
+
+class LeastBusyPool:
+    """Mixin providing least-busy selection across a pool of resources.
+
+    Subclasses must set `self._pool_items` (list of resources) before use.
+    """
+
+    def __init__(self) -> None:
+        self._pool_items: list[Any] = []
+        self._in_flight: list[int] = []
+        self._pool_lock = threading.Lock()
+
+    def _init_pool(self, items: list[Any]) -> None:
+        self._pool_items = items
+        self._in_flight = [0] * len(items)
+
+    def _acquire(self) -> tuple[int, Any]:
+        with self._pool_lock:
+            idx = min(range(len(self._in_flight)), key=lambda i: self._in_flight[i])
+            self._in_flight[idx] += 1
+            return idx, self._pool_items[idx]
+
+    def _release(self, idx: int) -> None:
+        with self._pool_lock:
+            self._in_flight[idx] -= 1
+
+
 class LLMClient:
     """Simple Azure OpenAI client for general-purpose LLM queries.
 
     This client handles:
     - Azure AD authentication via DefaultAzureCredential
-    - Basic chat completions
+    - Chat completions
     - JSON-formatted responses
-    - Structured outputs with Pydantic schemas
 
     For complex use cases with conversation threading or state management,
     use a specialized client (e.g., AzureQueryLLM in data_generation.py).
@@ -140,37 +165,6 @@ class LLMClient:
             azure_ad_token_provider=token_provider,
             api_version=self.api_version,
         )
-
-    @_llm_retry
-    def complete(
-        self,
-        prompt: str,
-        system_prompt: Optional[str] = None,
-        max_tokens: int = 2048,
-    ) -> str:
-        """Generate a text completion.
-
-        Args:
-            prompt: The user prompt/question.
-            system_prompt: Optional system prompt to set context.
-            max_tokens: Maximum tokens in response.
-
-        Returns:
-            The generated text response.
-        """
-        input_content = []
-        if system_prompt:
-            input_content.append({"role": "system", "content": system_prompt})
-        input_content.append({"role": "user", "content": prompt})
-
-        response = self._client.responses.create(
-            model=self.deployment,
-            input=input_content,
-            max_output_tokens=max_tokens,
-            reasoning={"effort": "high"},
-        )
-
-        return response.output_text
 
     @_llm_retry
     def complete_chat(
@@ -218,61 +212,17 @@ class LLMClient:
         Raises:
             json.JSONDecodeError: If the response is not valid JSON.
         """
-        input_content = []
-        if system_prompt:
-            input_content.append({"role": "system", "content": system_prompt})
-        input_content.append({"role": "user", "content": prompt})
-
         response = self._client.responses.create(
             model=self.deployment,
-            input=input_content,
+            input=_build_input(prompt, system_prompt),
             max_output_tokens=max_tokens,
             text={"format": {"type": "json_object"}},
         )
 
         return json.loads(response.output_text)
 
-    @_llm_retry
-    def complete_structured(
-        self,
-        prompt: str,
-        response_schema: type[T],
-        system_prompt: Optional[str] = None,
-        max_tokens: int = 4096,
-    ) -> T:
-        """Generate a structured response matching a Pydantic schema.
 
-        Uses OpenAI's structured outputs feature to guarantee the response
-        conforms to the provided schema.
-
-        Args:
-            prompt: The user prompt/question.
-            response_schema: A Pydantic BaseModel class defining the expected structure.
-            system_prompt: Optional system prompt to set context.
-            max_tokens: Maximum tokens in response.
-
-        Returns:
-            An instance of response_schema with the parsed data.
-        """
-        input_content = []
-        if system_prompt:
-            input_content.append({"role": "system", "content": system_prompt})
-        input_content.append({"role": "user", "content": prompt})
-
-        response = self._client.responses.parse(
-            model=self.deployment,
-            input=input_content,
-            response_schema=response_schema,
-            max_output_tokens=max_tokens,
-        )
-
-        # The parsed result is guaranteed to match response_schema
-        result = response.output_parsed
-        assert result is not None, "Structured output parsing returned None"
-        return result
-
-
-class PooledLLMClient:
+class PooledLLMClient(LeastBusyPool):
     """LLM client that routes every call to the least-busy deployment.
 
     Drop-in replacement for LLMClient that tracks in-flight requests
@@ -281,10 +231,12 @@ class PooledLLMClient:
 
     Usage:
         pool = PooledLLMClient()  # Uses AZURE_OPENAI_DEPLOYMENTS env var
-        response = pool.complete("Hello")  # Routes to least-busy deployment
+        response = pool.complete_chat(messages)  # Routes to least-busy deployment
     """
 
     def __init__(self, deployments: Optional[list[str]] = None):
+        super().__init__()
+
         if deployments is None:
             deployments = _get_deployments()
             if not deployments:
@@ -295,39 +247,20 @@ class PooledLLMClient:
 
         self.deployments = deployments
         self.clients = [LLMClient(deployment=d) for d in deployments]
-        self._in_flight = [0] * len(self.clients)
-        self._lock = threading.Lock()
-
-    def _acquire_client(self) -> tuple[int, LLMClient]:
-        with self._lock:
-            idx = min(range(len(self._in_flight)), key=lambda i: self._in_flight[i])
-            self._in_flight[idx] += 1
-            return idx, self.clients[idx]
-
-    def _release_client(self, idx: int) -> None:
-        with self._lock:
-            self._in_flight[idx] -= 1
+        self._init_pool(self.clients)
 
     def _call(self, method: str, *args: Any, **kwargs: Any) -> Any:
-        idx, client = self._acquire_client()
+        idx, client = self._acquire()
         try:
             return getattr(client, method)(*args, **kwargs)
         finally:
-            self._release_client(idx)
-
-    def complete(self, prompt: str, system_prompt: Optional[str] = None, max_tokens: int = 2048) -> str:
-        return self._call("complete", prompt, system_prompt, max_tokens)
+            self._release(idx)
 
     def complete_chat(self, messages: list[dict[str, str]], max_tokens: int = 2048, temperature: float = 1.0) -> str:
         return self._call("complete_chat", messages, max_tokens, temperature)
 
     def complete_json(self, prompt: str, system_prompt: Optional[str] = None, max_tokens: int = 2048) -> dict[str, Any]:
         return self._call("complete_json", prompt, system_prompt, max_tokens)
-
-    def complete_structured(
-        self, prompt: str, response_schema: type[T], system_prompt: Optional[str] = None, max_tokens: int = 4096
-    ) -> T:
-        return self._call("complete_structured", prompt, response_schema, system_prompt, max_tokens)
 
 
 class AsyncLLMPool:

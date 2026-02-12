@@ -35,7 +35,6 @@ def _is_uncovered_empty(scratchpad: str) -> bool:
 
 def run_evaluation(
     multisession_data: MultiSessionOutput,
-    agent_system_prompt: str | None = None,
     max_agent_turns: int = 10,
     include_history: bool = True,
     client: LLMClient | PooledLLMClient | None = None,
@@ -54,8 +53,6 @@ def run_evaluation(
 
     Args:
         multisession_data: Output from MultiSessionGenerator
-        agent_system_prompt: Custom system prompt for the agent being evaluated.
-            If None, uses a generic helpful assistant prompt.
         max_agent_turns: Maximum agent turns before ending (default 10)
         include_history: Whether to include conversation history in agent context.
             Set to False for no-context agent evaluation. Ignored if agent_type is set.
@@ -83,7 +80,6 @@ def run_evaluation(
     conversation_with_scratchpads, clean_conversation = run_dialogue(
         eval_task,
         multisession_data,
-        agent_system_prompt,
         max_agent_turns,
         agent_type,
         client,
@@ -105,7 +101,6 @@ def run_evaluation(
 def run_dialogue(
     eval_task: EvaluationTask,
     multisession_data: MultiSessionOutput,
-    agent_system_prompt: str | None,
     max_agent_turns: int,
     agent_type: Literal["context", "nocontext", "foundry"],
     client: LLMClient | PooledLLMClient,
@@ -118,7 +113,6 @@ def run_dialogue(
     Args:
         eval_task: The evaluation task
         multisession_data: Source data (used to build agent context)
-        agent_system_prompt: Agent's system prompt
         max_agent_turns: Maximum agent turns
         agent_type: Type of agent: "context", "nocontext", or "foundry"
         client: LLM client
@@ -164,14 +158,11 @@ def run_dialogue(
         clean_conversation.append({"role": "assistant", "content": agent_response})
         agent_turns += 1
 
-        if user_sim.should_end_conversation(agent_response, clean_conversation):
-            break
-
         if agent_turns >= max_agent_turns:
             print(f"Conversation hit max agent turns limit ({max_agent_turns})")
             break
 
-        user_response, scratchpad = user_sim.respond(agent_response, clean_conversation)
+        user_response, scratchpad = user_sim.respond(clean_conversation)
         conversation_with_scratchpads.append({"role": "user", "content": user_response, "scratchpad": scratchpad})
         clean_conversation.append({"role": "user", "content": user_response})
 

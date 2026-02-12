@@ -61,7 +61,6 @@ class MultiSessionGenerator:
         persona: User persona description
         num_sessions: Number of sessions to generate (default: 2)
         start_date: Starting date for the timeline
-        output_dir: Directory for output files
     """
 
     def __init__(
@@ -70,7 +69,6 @@ class MultiSessionGenerator:
         llm: LLMClient | PooledLLMClient | None = None,
         num_sessions: int = DEFAULT_NUM_SESSIONS,
         start_date: str | None = None,
-        output_dir: str | None = None,
     ):
         """Initialize MultiSession generator.
 
@@ -79,9 +77,7 @@ class MultiSessionGenerator:
             llm: LLMClient instance (optional, creates one if not provided)
             num_sessions: Number of sessions to generate
             start_date: Start date (MM/DD/YYYY), defaults to today
-            output_dir: Output directory (optional)
         """
-        self.output_dir = output_dir
         self.persona = persona
         self.num_sessions = num_sessions
         self.start_date = start_date or datetime.now().strftime("%m/%d/%Y")

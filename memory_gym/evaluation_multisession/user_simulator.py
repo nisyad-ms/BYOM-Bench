@@ -68,14 +68,12 @@ class MultiSessionUserSimulator:
 
     def respond(
         self,
-        agent_message: str,
         conversation_history: list[dict[str, str]],
     ) -> tuple[str, str | None]:
-        """Generate user response to agent message.
+        """Generate user response to the latest agent message.
 
         Args:
-            agent_message: The agent's most recent message
-            conversation_history: Full conversation so far (including agent_message)
+            conversation_history: Full conversation so far (including latest agent message)
 
         Returns:
             Tuple of (user_response, scratchpad_or_none)
@@ -112,46 +110,6 @@ class MultiSessionUserSimulator:
         scratchpad = match.group(1).strip() if match else None
         clean = re.sub(r"<scratchpad>.*?</scratchpad>\s*", "", response, flags=re.DOTALL)
         return clean.strip(), scratchpad
-
-    def should_end_conversation(
-        self,
-        agent_message: str,
-        conversation_history: list[dict[str, str]],
-    ) -> bool:
-        """Determine if the conversation should end naturally.
-
-        The conversation ends when:
-        - User explicitly thanks and ends (detected in their response)
-        - Task appears complete
-        - Maximum turns reached (handled externally)
-        """
-        # Check for common ending phrases in the last user response
-        if conversation_history:
-            last_user = None
-            for turn in reversed(conversation_history):
-                if turn.get("role") == "user":
-                    last_user = turn.get("content", "").lower()
-                    break
-
-            if last_user:
-                end_phrases = [
-                    "thank you",
-                    "thanks",
-                    "that's all",
-                    "that's perfect",
-                    "sounds good",
-                    "i'm good",
-                    "that works",
-                    "perfect",
-                    "great, thanks",
-                    "appreciate it",
-                ]
-                if any(phrase in last_user for phrase in end_phrases):
-                    # Check it's actually an ending, not mid-conversation thanks
-                    if len(last_user) < 100 and ("?" not in last_user or last_user.strip().endswith("!")):
-                        return True
-
-        return False
 
     def _format_conversation_as_string(self, history: list[dict[str, str]]) -> str:
         """Format conversation history as labeled string for the prompt."""

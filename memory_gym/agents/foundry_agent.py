@@ -23,29 +23,24 @@ from tenacity import (
     wait_exponential,
 )
 
+from memory_gym.client import LeastBusyPool, _parse_env_list
 from memory_gym.schemas import MultiSessionOutput
 
 
 def _get_foundry_deployments() -> list[str]:
     """Get Foundry deployment names from AZURE_FOUNDRY_DEPLOYMENTS env var."""
-    deployments_str = os.environ.get("AZURE_FOUNDRY_DEPLOYMENTS", "")
-    if not deployments_str:
-        return []
-    return [d.strip() for d in deployments_str.split(",") if d.strip()]
+    return _parse_env_list("AZURE_FOUNDRY_DEPLOYMENTS")
 
 
 def _get_foundry_embedding_deployments() -> list[str]:
-    deployments_str = os.environ.get("AZURE_FOUNDRY_EMBEDDINGS_DEPLOYMENTS", "")
-    if not deployments_str:
-        return []
-    return [d.strip() for d in deployments_str.split(",") if d.strip()]
+    return _parse_env_list("AZURE_FOUNDRY_EMBEDDINGS_DEPLOYMENTS")
 
 
 def get_foundry_embedding_models() -> list[str]:
     return _get_foundry_embedding_deployments() or ["text-embedding-3-small-001"]
 
 
-class FoundryMemoryAgent:
+class FoundryMemoryAgent(LeastBusyPool):
     """Agent using Azure AI Foundry memory store for preference recall.
 
     Creates one Foundry agent per deployment model and routes respond() calls
@@ -59,6 +54,8 @@ class FoundryMemoryAgent:
         chat_models: list[str] | None = None,
         embedding_model: str | None = None,
     ):
+        super().__init__()
+
         endpoint = os.getenv("AZURE_FOUNDRY_ENDPOINT")
         if not endpoint:
             raise ValueError("AZURE_FOUNDRY_ENDPOINT not set in environment")
@@ -80,7 +77,6 @@ class FoundryMemoryAgent:
         self.chat_models = chat_models
         self._agents: list = []
         self._agent_ids = [str(uuid.uuid4())[:8] for _ in chat_models]
-        self._in_flight = [0] * len(chat_models)
         self._local = threading.local()
 
     def ensure_memory_store(self, multisession_data: MultiSessionOutput, force_recreate: bool = False) -> None:
@@ -166,15 +162,7 @@ class FoundryMemoryAgent:
                 )
                 self._agents.append(agent)
 
-    def _acquire_agent(self) -> tuple[int, object]:
-        with self._init_lock:
-            idx = min(range(len(self._in_flight)), key=lambda i: self._in_flight[i])
-            self._in_flight[idx] += 1
-            return idx, self._agents[idx]
-
-    def _release_agent(self, idx: int) -> None:
-        with self._init_lock:
-            self._in_flight[idx] -= 1
+            self._init_pool(self._agents)
 
     def build_context(self, multisession_data: MultiSessionOutput, force_recreate: bool = False) -> str:
         """Ensure memory store is populated and agents are ready."""
@@ -190,7 +178,7 @@ class FoundryMemoryAgent:
         if not self._agents:
             raise ValueError("Agents not initialized. Call build_context first.")
 
-        idx, agent = self._acquire_agent()
+        idx, agent = self._acquire()
         try:
             conv_key = f"conversation_id_{idx}"
             openai_client = self.client.get_openai_client()
@@ -216,7 +204,7 @@ class FoundryMemoryAgent:
 
             return response.output_text
         finally:
-            self._release_agent(idx)
+            self._release(idx)
 
     @retry(
         retry=retry_if_exception_type((openai.RateLimitError, openai.APIConnectionError, openai.InternalServerError)),
