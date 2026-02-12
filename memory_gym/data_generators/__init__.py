@@ -1,5 +1,5 @@
 """
-Data generators for PersonaGym.
+Data generators for MemoryGym.
 
 This module provides strategies for generating conversation data with user preferences.
 

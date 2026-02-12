@@ -1,4 +1,5 @@
 max_tokens:
+  default: 2048
   # Data generation
   expand_persona: 8000
   life_event: 500
@@ -17,3 +18,10 @@ max_tokens:
 retry:
   max_attempts: 3
   wait_seconds: 30
+
+# Foundry agents hit aggressive rate limits, so they need more retries
+retry_foundry:
+  max_attempts: 12
+  multiplier: 2
+  min_seconds: 5
+  max_seconds: 120

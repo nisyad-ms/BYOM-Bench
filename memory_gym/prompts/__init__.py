@@ -1,8 +1,8 @@
 """
-Prompt management for PersonaGym.
+Prompt management for MemoryGym.
 
 This module provides a centralized system for loading and managing prompts
-used across the PersonaGym pipeline. Prompts are stored as YAML files with
+used across the MemoryGym pipeline. Prompts are stored as YAML files with
 metadata describing their purpose and usage.
 
 Prompt versions are controlled via prompt_config.yaml at project root.

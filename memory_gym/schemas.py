@@ -1,7 +1,7 @@
 """
-Shared data models for PersonaGym.
+Shared data models for MemoryGym.
 
-This module consolidates all data models used across the PersonaGym pipeline:
+This module consolidates all data models used across the MemoryGym pipeline:
 - Preference and task models (for evaluation)
 - Multi-session conversation and timeline models
 - Evaluation result models
@@ -192,19 +192,6 @@ class Preference:
         """Returns True if this preference has not been superseded."""
         return self.superseded_at_session is None
 
-    @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "Preference":
-        return cls(
-            preference_id=data["preference_id"],
-            fact=data["fact"],
-            domain=data.get("domain", ""),
-            created_at_session=data["created_at_session"],
-            created_at_date=data.get("created_at_date", ""),
-            superseded_at_session=data.get("superseded_at_session"),
-            superseded_by=data.get("superseded_by"),
-            reason_for_change=data.get("reason_for_change"),
-        )
-
 
 @dataclass
 class PreferenceTimeline:
@@ -215,11 +202,11 @@ class PreferenceTimeline:
 
     Attributes:
         preferences: Dict mapping preference_id to Preference
-        _next_id: Counter for generating unique preference IDs
+        next_id: Counter for generating unique preference IDs
     """
 
     preferences: dict[str, Preference] = field(default_factory=dict)
-    _next_id: int = 1
+    next_id: int = 1
 
     def add_preference(
         self,
@@ -229,8 +216,8 @@ class PreferenceTimeline:
         date: str,
     ) -> str:
         """Add a new preference and return its ID."""
-        pref_id = f"pref_{self._next_id:03d}"
-        self._next_id += 1
+        pref_id = f"pref_{self.next_id:03d}"
+        self.next_id += 1
         self.preferences[pref_id] = Preference(
             preference_id=pref_id,
             fact=fact,
@@ -264,8 +251,8 @@ class PreferenceTimeline:
             raise ValueError(f"Preference {old_id} not found")
 
         # Create new preference (use new_domain if provided, else inherit)
-        new_id = f"pref_{self._next_id:03d}"
-        self._next_id += 1
+        new_id = f"pref_{self.next_id:03d}"
+        self.next_id += 1
         self.preferences[new_id] = Preference(
             preference_id=new_id,
             fact=new_fact,
@@ -437,7 +424,7 @@ class MultiSessionOutput:
                 created_at_session=p.get("created_at_session", -1),
                 created_at_date="",
             )
-            timeline._next_id = max(timeline._next_id, int(pref_id.split("_")[1]) + 1)
+            timeline.next_id = max(timeline.next_id, int(pref_id.split("_")[1]) + 1)
 
         for p in final_state.get("superseded_preferences", []):
             pref_id = p["id"]
@@ -451,7 +438,7 @@ class MultiSessionOutput:
                 superseded_by=p.get("replaced_by"),
                 reason_for_change=p.get("reason", ""),
             )
-            timeline._next_id = max(timeline._next_id, int(pref_id.split("_")[1]) + 1)
+            timeline.next_id = max(timeline.next_id, int(pref_id.split("_")[1]) + 1)
 
         for s_data in data.get("sessions", []):
             session_id = s_data["session_id"]
@@ -633,6 +620,7 @@ class MultiSessionEvaluationResult:
         efficiency_score: Score based on turn efficiency
         preference_score: Score based on preference usage (stale penalty integrated)
         reasoning: Judge's overall reasoning
+        error: Error message if evaluation failed (None if successful)
     """
 
     task_id: str
@@ -654,6 +642,7 @@ class MultiSessionEvaluationResult:
     efficiency_score: float = 0.0
     preference_score: float = 0.0
     reasoning: str = ""
+    error: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         result = {
@@ -687,4 +676,6 @@ class MultiSessionEvaluationResult:
         )
         if self.rubric:
             result["rubric"] = self.rubric.to_dict()
+        if self.error:
+            result["error"] = self.error
         return result

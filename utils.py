@@ -1,4 +1,4 @@
-"""Shared utilities for PersonaGym test scripts.
+"""Shared utilities for MemoryGym test scripts.
 
 Includes:
 - File naming and discovery for outputs

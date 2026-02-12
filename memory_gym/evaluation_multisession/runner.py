@@ -86,7 +86,7 @@ def run_evaluation(
     result = judge.evaluate(eval_task, clean_conversation)
 
     # Replace conversation with version that includes scratchpads for output
-    result.conversation = conversation_with_scratchpads  # type: ignore[assignment]  # scratchpad key adds None values
+    result.conversation = conversation_with_scratchpads  # type: ignore[assignment]  # scratchpad adds None values
 
     return result
 

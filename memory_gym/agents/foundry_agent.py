@@ -25,7 +25,8 @@ from tenacity import (
     wait_exponential,
 )
 
-from memory_gym.client import LeastBusyPool, _before_sleep_print, _parse_env_list
+from memory_gym.client import CONFIG, LeastBusyPool, _before_sleep_print, _parse_env_list
+from memory_gym.prompts import render_prompt
 from memory_gym.schemas import MultiSessionOutput
 
 
@@ -158,7 +159,7 @@ class FoundryMemoryAgent(LeastBusyPool):
                     agent_name=f"PersonaGymAgent-{self._agent_ids[i]}",
                     definition=PromptAgentDefinition(
                         model=model,
-                        instructions="You are a helpful assistant that remembers user preferences and applies them proactively.",
+                        instructions=render_prompt("agents/agent_system_foundry"),
                         tools=[tool],
                     ),
                 )
@@ -208,10 +209,16 @@ class FoundryMemoryAgent(LeastBusyPool):
         finally:
             self._release(idx)
 
+    _foundry_retry = CONFIG["retry_foundry"]
+
     @retry(
         retry=retry_if_exception_type((openai.RateLimitError, openai.APIConnectionError, openai.InternalServerError)),
-        wait=wait_exponential(multiplier=2, min=5, max=120),
-        stop=stop_after_attempt(12),
+        wait=wait_exponential(
+            multiplier=_foundry_retry["multiplier"],
+            min=_foundry_retry["min_seconds"],
+            max=_foundry_retry["max_seconds"],
+        ),
+        stop=stop_after_attempt(_foundry_retry["max_attempts"]),
         before_sleep=_before_sleep_print,
     )
     def _call_with_retry(

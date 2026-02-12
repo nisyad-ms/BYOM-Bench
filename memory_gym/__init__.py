@@ -1,4 +1,4 @@
-"""PersonaGym: A benchmark for evaluating LLM personalization through multi-turn conversations.
+"""MemoryGym: A benchmark for evaluating LLM personalization through multi-turn conversations.
 
 This package provides a 2-stage pipeline:
 1. Data Generation - Creating synthetic multi-session conversations with evolving preferences

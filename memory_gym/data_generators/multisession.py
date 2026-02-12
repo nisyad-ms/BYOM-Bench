@@ -27,6 +27,7 @@ from memory_gym.schemas import (
     ExpandedPersona,
     LifeEvent,
     MultiSessionOutput,
+    Preference,
     PreferenceTimeline,
     Session,
 )
@@ -44,7 +45,7 @@ LIFE_DOMAINS = [
 DEFAULT_NUM_SESSIONS = 2
 
 
-def _active_prefs_to_json(prefs: list) -> str:
+def _active_prefs_to_json(prefs: list[Preference]) -> str:
     """Serialize active preferences to JSON for prompt inclusion."""
     return json.dumps(
         [{"preference_id": p.preference_id, "fact": p.fact, "domain": p.domain} for p in prefs],
@@ -353,7 +354,7 @@ class MultiSessionGenerator:
                             )
                             evolved_mapping[old_id] = new_id
                         except ValueError:
-                            pass
+                            print(f"  Skipped evolution of {old_id}: preference not found or inactive")
 
             # Process new preferences
             new_prefs_data = result.get("new_preferences", [])

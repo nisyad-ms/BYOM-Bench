@@ -1,5 +1,5 @@
 """
-Shared Azure OpenAI client for PersonaGym.
+Shared Azure OpenAI client for MemoryGym.
 
 This module provides a simple, reusable Azure OpenAI client for components
 that need basic LLM access. Components with more complex needs (like
@@ -46,6 +46,8 @@ load_dotenv()
 _config_path = Path(__file__).parent.parent / "configs" / "client_config.yaml"
 with open(_config_path) as f:
     CONFIG = yaml.safe_load(f)
+
+_DEFAULT_MAX_TOKENS: int = CONFIG["max_tokens"]["default"]
 
 
 def _before_sleep_print(retry_state: RetryCallState) -> None:
@@ -171,7 +173,7 @@ class LLMClient:
     def complete_chat(
         self,
         messages: list[dict[str, str]],
-        max_tokens: int = 2048,
+        max_tokens: int = _DEFAULT_MAX_TOKENS,
         temperature: float = 1.0,
     ) -> str:
         """Generate a completion from a list of messages.
@@ -198,7 +200,7 @@ class LLMClient:
         self,
         prompt: str,
         system_prompt: str | None = None,
-        max_tokens: int = 2048,
+        max_tokens: int = _DEFAULT_MAX_TOKENS,
     ) -> dict[str, Any]:
         """Generate a JSON response.
 
@@ -262,10 +264,14 @@ class PooledLLMClient(LeastBusyPool):
         finally:
             self._release(idx)
 
-    def complete_chat(self, messages: list[dict[str, str]], max_tokens: int = 2048, temperature: float = 1.0) -> str:
+    def complete_chat(
+        self, messages: list[dict[str, str]], max_tokens: int = _DEFAULT_MAX_TOKENS, temperature: float = 1.0
+    ) -> str:
         return self._call("complete_chat", messages, max_tokens, temperature)
 
-    def complete_json(self, prompt: str, system_prompt: str | None = None, max_tokens: int = 2048) -> dict[str, Any]:
+    def complete_json(
+        self, prompt: str, system_prompt: str | None = None, max_tokens: int = _DEFAULT_MAX_TOKENS
+    ) -> dict[str, Any]:
         return self._call("complete_json", prompt, system_prompt, max_tokens)
 
 

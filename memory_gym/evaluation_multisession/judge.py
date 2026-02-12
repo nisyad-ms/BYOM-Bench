@@ -82,6 +82,7 @@ class MultiSessionJudge:
                 evaluation_event=evaluation_task.evaluation_event,
                 rubric=evaluation_task.rubric,
                 reasoning=f"Evaluation failed: {e}",
+                error=str(e),
             )
 
     def _call_preference_judge(
