@@ -28,7 +28,6 @@ class BaseAgent(ABC):
         response = self.client.complete_chat(
             messages=messages,
             max_tokens=CONFIG["max_tokens"]["agent"],
-            temperature=0.7,
         )
 
         return response.strip()
