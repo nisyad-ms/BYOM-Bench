@@ -11,7 +11,7 @@ Orchestrates the complete evaluation flow:
 import re
 from typing import Callable, Literal
 
-from memory_gym.agents import ContextAwareAgent, FoundryMemoryAgent, NoContextAgent
+from memory_gym.agents import ContextAwareAgent, FoundryMemoryAgent, GoogleMemoryAgent, NoContextAgent
 from memory_gym.client import AsyncLLMPool, LLMClient, PooledLLMClient
 from memory_gym.formatting import summarize_events
 from memory_gym.schemas import (
@@ -38,10 +38,11 @@ def run_evaluation(
     max_agent_turns: int = 10,
     client: LLMClient | PooledLLMClient | None = None,
     eval_task: EvaluationTask | None = None,
-    agent_type: Literal["context", "nocontext", "foundry"] = "context",
+    agent_type: Literal["context", "nocontext", "foundry", "google"] = "context",
     memory_store_name: str | None = None,
     force_recreate_memory: bool = False,
     foundry_agent: FoundryMemoryAgent | None = None,
+    google_agent: GoogleMemoryAgent | None = None,
 ) -> MultiSessionEvaluationResult:
     """Run a complete evaluation on multi-session data.
 
@@ -55,9 +56,9 @@ def run_evaluation(
         max_agent_turns: Maximum agent turns before ending (default 10)
         client: Shared LLM client. If None, creates a new one.
         eval_task: Pre-generated evaluation task. If None, generates a new one.
-        agent_type: Type of agent to use: "context", "nocontext", or "foundry".
+        agent_type: Type of agent to use: "context", "nocontext", "foundry", or "google".
         memory_store_name: Name of memory store for foundry agent (required if agent_type="foundry").
-        force_recreate_memory: If True, recreate memory store from scratch (foundry only).
+        force_recreate_memory: If True, recreate memory store from scratch (foundry/google only).
 
     Returns:
         MultiSessionEvaluationResult with scores and analysis
@@ -79,6 +80,7 @@ def run_evaluation(
         memory_store_name,
         force_recreate_memory,
         foundry_agent,
+        google_agent,
     )
 
     # Step 3: Evaluate with judge (using clean conversation without scratchpads)
@@ -95,11 +97,12 @@ def run_dialogue(
     eval_task: EvaluationTask,
     multisession_data: MultiSessionOutput,
     max_agent_turns: int,
-    agent_type: Literal["context", "nocontext", "foundry"],
+    agent_type: Literal["context", "nocontext", "foundry", "google"],
     client: LLMClient | PooledLLMClient,
     memory_store_name: str | None = None,
     force_recreate_memory: bool = False,
     foundry_agent: FoundryMemoryAgent | None = None,
+    google_agent: GoogleMemoryAgent | None = None,
 ) -> tuple[list[dict[str, str | None]], list[dict[str, str]]]:
     """Run the evaluation dialogue between agent and user simulator.
 
@@ -107,7 +110,7 @@ def run_dialogue(
         eval_task: The evaluation task
         multisession_data: Source data (used to build agent context)
         max_agent_turns: Maximum agent turns
-        agent_type: Type of agent: "context", "nocontext", or "foundry"
+        agent_type: Type of agent: "context", "nocontext", "foundry", or "google"
         client: LLM client
         memory_store_name: Name of memory store for foundry agent
         force_recreate_memory: If True, recreate memory store from scratch (foundry only)
@@ -129,6 +132,14 @@ def run_dialogue(
             if not memory_store_name:
                 raise ValueError("memory_store_name required for foundry agent")
             agent = FoundryMemoryAgent(memory_store_name=memory_store_name)
+            agent.build_context(multisession_data, force_recreate=force_recreate_memory)
+    elif agent_type == "google":
+        if google_agent is not None:
+            agent = google_agent
+            agent.reset_conversation()
+            agent.build_context(multisession_data, force_recreate=force_recreate_memory)
+        else:
+            agent = GoogleMemoryAgent()
             agent.build_context(multisession_data, force_recreate=force_recreate_memory)
     elif agent_type == "context":
         agent = ContextAwareAgent(client)
@@ -188,6 +199,7 @@ def _run_single_evaluation_with_client(
         memory_store_name=context.get("memory_store_name"),
         force_recreate_memory=context.get("force_recreate_memory", False),
         foundry_agent=context.get("foundry_agent"),
+        google_agent=context.get("google_agent"),
     )
 
 
@@ -201,7 +213,7 @@ async def run_evaluations_parallel(
         contexts: List of dicts, each containing:
             - multisession_data: MultiSessionOutput
             - eval_task: EvaluationTask
-            - agent_type: "context", "nocontext", or "foundry" (default: "context")
+            - agent_type: "context", "nocontext", "foundry", or "google" (default: "context")
             - max_agent_turns: int
             - memory_store_name: Optional[str] (required if agent_type="foundry")
         on_result: Optional callback(index, context, result) called as each completes.

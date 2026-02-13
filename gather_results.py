@@ -98,8 +98,8 @@ def main():
         key = (row["session"], row["eval_run"], row["task"])
         scores_by_key[key][row["agent"]].append(float(row["preference_score"]))
 
-    ws2 = wb.create_sheet("summary_results")
-    ws2.append(["session", "eval_run", "task", "context", "foundry", "nocontext"])
+    ws2 = wb.create_sheet("summary_preference")
+    ws2.append(["session", "eval_run", "task", "context", "foundry", "google", "nocontext"])
     for (session, eval_run, task), agents in sorted(scores_by_key.items()):
         ws2.append(
             [
@@ -108,6 +108,28 @@ def main():
                 task,
                 round(sum(agents.get("context", [0])) / max(len(agents.get("context", [0])), 1), 2),
                 round(sum(agents.get("foundry", [0])) / max(len(agents.get("foundry", [0])), 1), 2),
+                round(sum(agents.get("google", [0])) / max(len(agents.get("google", [0])), 1), 2),
+                round(sum(agents.get("nocontext", [0])) / max(len(agents.get("nocontext", [0])), 1), 2),
+            ]
+        )
+
+    eff_by_key: dict[tuple[str, str, str], dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
+    for row in rows:
+        key = (row["session"], row["eval_run"], row["task"])
+        if row["efficiency_score"] != "":
+            eff_by_key[key][row["agent"]].append(float(row["efficiency_score"]))
+
+    ws3 = wb.create_sheet("summary_efficiency")
+    ws3.append(["session", "eval_run", "task", "context", "foundry", "google", "nocontext"])
+    for (session, eval_run, task), agents in sorted(eff_by_key.items()):
+        ws3.append(
+            [
+                session,
+                eval_run,
+                task,
+                round(sum(agents.get("context", [0])) / max(len(agents.get("context", [0])), 1), 2),
+                round(sum(agents.get("foundry", [0])) / max(len(agents.get("foundry", [0])), 1), 2),
+                round(sum(agents.get("google", [0])) / max(len(agents.get("google", [0])), 1), 2),
                 round(sum(agents.get("nocontext", [0])) / max(len(agents.get("nocontext", [0])), 1), 2),
             ]
         )
@@ -116,7 +138,7 @@ def main():
     combined_output = Path("outputs") / f"results_{timestamp}.xlsx"
     wb.save(combined_output)
     print(f"Saved to {combined_output}")
-    print(f"Wrote {len(rows)} results from {len(eval_run_dirs)} session(s) (2 sheets)")
+    print(f"Wrote {len(rows)} results from {len(eval_run_dirs)} session(s) (3 sheets)")
 
 
 if __name__ == "__main__":

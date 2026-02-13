@@ -61,7 +61,7 @@ def _before_sleep_print(retry_state: RetryCallState) -> None:
 _llm_retry = retry(
     stop=stop_after_attempt(CONFIG["retry"]["max_attempts"]),
     wait=wait_exponential(multiplier=1, min=CONFIG["retry"]["wait_seconds"], max=CONFIG["retry"]["wait_seconds"]),
-    retry=retry_if_exception_type(APIStatusError),
+    retry=retry_if_exception_type((APIStatusError, json.JSONDecodeError)),
     before_sleep=_before_sleep_print,
     reraise=True,
 )
