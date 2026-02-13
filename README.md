@@ -69,6 +69,24 @@ For the Foundry Memory Agent:
 
 ```bash
 AZURE_FOUNDRY_ENDPOINT="https://your-foundry-endpoint.services.ai.azure.com/api/projects/your-project"
+AZURE_FOUNDRY_DEPLOYMENTS="deployment-001,deployment-002"
+AZURE_FOUNDRY_EMBEDDINGS_DEPLOYMENTS="embedding-001,embedding-002"
+```
+
+### Google Vertex AI (Optional)
+
+For the Google Memory Agent:
+
+```bash
+GCLOUD_PROJECT_ID="your-project-id"
+GCLOUD_LOCATION="us-central1"  # default
+```
+
+Requires:
+
+```bash
+gcloud auth application-default login
+gcloud auth application-default set-quota-project <project>  # if needed
 ```
 
 ### Authentication
@@ -100,36 +118,52 @@ uv run python test_task_generation.py
 # Generate multiple tasks in parallel
 uv run python test_task_generation.py --count 3
 
+# Force a specific task version (default: auto-increment)
+uv run python test_task_generation.py --count 3 --version v1
+
 # Use a specific session
 uv run python test_task_generation.py --session 2026-02-02_1414
 ```
 
-Output: `outputs/<timestamp>/tasks/task_XX.json`
+Output: `outputs/<timestamp>/tasks/<version>/task_XX.json`
 
 ### Stage 3: Evaluation
 
 Runs agent dialogue and scoring on generated tasks.
 
 ```bash
-# Context agent (has full conversation history)
-uv run python test_evaluation.py --agent context
+# Single session with a specific agent
+uv run python test_evaluation.py --session <name> --agent context
 
-# No-context agent (baseline, no memory)
-uv run python test_evaluation.py --agent nocontext
+# All sessions
+uv run python test_evaluation.py --session all --agent foundry --task-version v1
 
-# Foundry memory agent (Azure AI Foundry memory store)
-uv run python test_evaluation.py --agent foundry
+# Specific tasks within a session
+uv run python test_evaluation.py --session <name> --task 01,02 --task-version v2
 
-# Run all tasks in parallel
-uv run python test_evaluation.py --task all --agent context
+# Multiple evaluation runs
+uv run python test_evaluation.py --session all --agent foundry --num-runs 3
 
-# Force recreate memory store (foundry only)
-uv run python test_evaluation.py --agent foundry --no-cache
+# Force recreate memory store
+uv run python test_evaluation.py --session all --agent foundry --no-cache
+
+# Google Vertex AI agent
+uv run python test_evaluation.py --session <name> --agent google --no-cache
 ```
 
-Output: `outputs/<timestamp>/evaluation/eval_XX_<agent>.json`
+Output: `outputs/<timestamp>/evaluations/<eval_timestamp>/eval_XX_<agent>.json`
 
-## End-to-End Test
+### Gathering Results
+
+```bash
+# Latest eval run per session
+uv run python gather_results.py
+
+# Specific eval run
+uv run python gather_results.py --eval-run 2026-02-09_143022
+```
+
+## End-to-End Example
 
 Run the complete pipeline:
 
@@ -140,9 +174,14 @@ uv run python test_data_generation.py
 # 2. Generate evaluation tasks
 uv run python test_task_generation.py --count 3
 
-# 3. Run evaluations for all agents
-uv run python test_evaluation.py --task all --agent context
-uv run python test_evaluation.py --task all --agent nocontext
+# 3. Run evaluations
+uv run python test_evaluation.py --session all --agent context --task-version v1
+uv run python test_evaluation.py --session all --agent nocontext --task-version v1
+uv run python test_evaluation.py --session all --agent foundry --task-version v1
+uv run python test_evaluation.py --session all --agent google --task-version v1
+
+# 4. Gather results
+uv run python gather_results.py
 ```
 
 ## Evaluation Metrics
@@ -177,22 +216,25 @@ efficiency_score = max(0, (agent_turns - 0.5 × clarifying - corrections) / agen
 memory_gym/
 ├── configs/
 │   ├── client_config.yaml      # LLM client settings
-│   └── prompt_config.yaml      # Prompt version configuration
-├── data/source/                # Source persona data
-├── docs/                       # Documentation and examples
+│   ├── prompt_config.yaml      # Prompt version configuration
+│   └── base_personas.txt       # Base persona definitions
+├── docs/                       # Mermaid diagrams for pipeline workflows
 ├── outputs/                    # Generated outputs
 │   └── <timestamp>/
 │       ├── sessions.json       # Stage 1 output
 │       ├── tasks/              # Stage 2 output
-│       │   └── task_XX.json
-│       └── evaluation/         # Stage 3 output
-│           └── eval_XX_<agent>.json
-├── logs/                       # Log files (mirrors output structure)
-├── memory_gym/                # Main package
+│       │   └── <version>/
+│       │       └── task_XX.json
+│       └── evaluations/        # Stage 3 output
+│           └── <eval_timestamp>/
+│               └── eval_XX_<agent>.json
+├── memory_gym/                 # Main package
 │   ├── agents/                 # Agent implementations
 │   │   ├── base.py             # ContextAwareAgent, NoContextAgent
-│   │   └── foundry_agent.py    # FoundryMemoryAgent
-│   ├── client.py               # Shared Azure OpenAI client
+│   │   ├── foundry_agent.py    # FoundryMemoryAgent
+│   │   └── google_agent.py     # GoogleMemoryAgent
+│   ├── client.py               # Azure OpenAI client (Responses API + tenacity retry)
+│   ├── formatting.py           # Shared preference history formatting and event summarization
 │   ├── data_generators/        # Stage 1: Data generation
 │   │   └── multisession.py     # MultiSessionGenerator
 │   ├── evaluation_multisession/# Stage 3: Evaluation
@@ -200,16 +242,18 @@ memory_gym/
 │   │   ├── runner.py           # Evaluation orchestration
 │   │   └── user_simulator.py   # Simulated user for dialogue
 │   ├── prompts/                # YAML prompt templates
+│   │   ├── agents/
 │   │   ├── data_generation/
 │   │   ├── evaluation/
 │   │   └── task_generation/
 │   ├── schemas.py              # All data models
 │   └── task_generators/        # Stage 2: Task generation
 │       └── evaluation_task.py
-├── test_data_generation.py     # Stage 1 test script
-├── test_task_generation.py     # Stage 2 test script
-├── test_evaluation.py          # Stage 3 test script
-├── utils.py                    # Shared utilities
+├── test_data_generation.py     # Stage 1 entry point
+├── test_task_generation.py     # Stage 2 entry point
+├── test_evaluation.py          # Stage 3 entry point
+├── gather_results.py           # Result aggregation
+├── utils.py                    # Shared output path helpers and regex patterns
 └── pyproject.toml              # Package configuration
 ```
 
@@ -218,8 +262,9 @@ memory_gym/
 | Agent | Description | Expected Scores |
 |-------|-------------|-----------------|
 | **context** | Full conversation history access | preference ~0.8-1.0 |
-| **nocontext** | No past context (baseline) | preference ~0.0, efficiency ~1.0 |
-| **foundry** | Azure AI Foundry memory store | Varies by memory quality |
+| **nocontext** | No past context (baseline) | preference ~0.0 |
+| **foundry** | Azure AI Foundry memory store | Varies |
+| **google** | Google Vertex AI Agent Engine memory | Varies |
 
 ## Development
 
@@ -228,9 +273,9 @@ memory_gym/
 uv sync --all-extras
 
 # Linting
-ruff check .
-ruff format .
+uv run ruff check .
+uv run ruff format .
 
 # Type checking
-mypy memory_gym
+uv run pyright
 ```
