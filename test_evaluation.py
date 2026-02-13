@@ -41,10 +41,10 @@ async def run_session_evals(
     max_agent_turns: int,
     task_version: str,
     eval_run_dir: Path,
-    force_recreate_memory: bool = False,
     num_runs: int = 1,
     embedding_model: str | None = None,
     memory_semaphore: asyncio.Semaphore | None = None,
+    foundry_memory_type: str = "api",
 ):
     from memory_gym.evaluation_multisession import run_evaluations_parallel
     from memory_gym.schemas import EvaluationTask, MultiSessionOutput
@@ -83,29 +83,36 @@ async def run_session_evals(
     memory_store_name = session_dir.name if agent_type == "foundry" else None
 
     shared_foundry_agent = None
-    if agent_type == "foundry":
-        from memory_gym.agents import FoundryMemoryAgent
-
-        shared_foundry_agent = FoundryMemoryAgent(
-            memory_store_name=memory_store_name,
-            embedding_model=embedding_model,
-        )
-        await asyncio.to_thread(shared_foundry_agent.build_context, data, force_recreate=force_recreate_memory)
-
     shared_google_agent = None
-    if agent_type == "google":
-        from memory_gym.agents import GoogleMemoryAgent
+    try:
+        if agent_type == "foundry":
+            from memory_gym.agents import FoundryMemoryAgent, FoundryMemoryAPIAgent
 
-        shared_google_agent = GoogleMemoryAgent()
-        if memory_semaphore:
-            async with memory_semaphore:
-                await asyncio.to_thread(shared_google_agent.build_context, data, force_recreate=force_recreate_memory)
-        else:
-            await asyncio.to_thread(shared_google_agent.build_context, data, force_recreate=force_recreate_memory)
+            if foundry_memory_type == "api":
+                shared_foundry_agent = FoundryMemoryAPIAgent(
+                    memory_store_name=memory_store_name,  # type: ignore[arg-type]  # guaranteed str when agent_type="foundry"
+                    embedding_model=embedding_model,
+                )
+            else:
+                shared_foundry_agent = FoundryMemoryAgent(
+                    memory_store_name=memory_store_name,  # type: ignore[arg-type]  # guaranteed str when agent_type="foundry"
+                    embedding_model=embedding_model,
+                )
+            await asyncio.to_thread(shared_foundry_agent.build_context, data)
 
-    contexts = []
-    for task_path, eval_task, run_id in pending_tasks:
-        contexts.append(
+        if agent_type == "google":
+            from memory_gym.agents import GoogleMemoryAgent
+
+            shared_google_agent = GoogleMemoryAgent()
+            if memory_semaphore:
+                async with memory_semaphore:
+                    await asyncio.to_thread(shared_google_agent.build_context, data)
+            else:
+                await asyncio.to_thread(shared_google_agent.build_context, data)
+
+        contexts = []
+        for task_path, eval_task, run_id in pending_tasks:
+            contexts.append(
                 {
                     "multisession_data": data,
                     "eval_task": eval_task,
@@ -116,30 +123,36 @@ async def run_session_evals(
                     "foundry_agent": shared_foundry_agent,
                     "google_agent": shared_google_agent,
                     "run_id": run_id,
+                    "foundry_memory_type": foundry_memory_type,
                 }
             )
 
-    def save_result(index: int, ctx: dict, result):
-        task_path = ctx["task_path"]
-        run_id = ctx["run_id"]
-        task_num = extract_task_num(task_path) or 1
-        output_path = get_eval_path(eval_run_dir, task_num, agent_type, run_id)
+        def save_result(index: int, ctx: dict, result):
+            task_path = ctx["task_path"]
+            run_id = ctx["run_id"]
+            task_num = extract_task_num(task_path) or 1
+            output_path = get_eval_path(eval_run_dir, task_num, agent_type, run_id)
 
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
+            with open(output_path, "w", encoding="utf-8") as f:
+                json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
 
-    results = await run_evaluations_parallel(contexts, on_result=save_result)
-    return results
+        results = await run_evaluations_parallel(contexts, on_result=save_result)
+        return results
+    finally:
+        if shared_foundry_agent is not None:
+            await asyncio.to_thread(shared_foundry_agent.cleanup)
+        if shared_google_agent is not None:
+            await asyncio.to_thread(shared_google_agent.cleanup)
 
 
 async def run_all_sessions(
     session_dirs: list[Path],
     agent_type: str,
     max_agent_turns: int,
-    force_recreate_memory: bool,
     num_runs: int,
     task_version: str | None,
     eval_run: str | None = None,
+    foundry_memory_type: str = "api",
 ):
     embedding_models = ["text-embedding-3-small-001"]
     if agent_type == "foundry":
@@ -185,6 +198,7 @@ async def run_all_sessions(
                     "task_version": resolved_version,
                     "num_runs": num_runs,
                     "max_agent_turns": max_agent_turns,
+                    "foundry_memory_type": foundry_memory_type if agent_type == "foundry" else None,
                     "timestamp": datetime.now().isoformat(),
                 },
             )
@@ -198,10 +212,10 @@ async def run_all_sessions(
                 max_agent_turns,
                 resolved_version,
                 eval_run_dir,
-                force_recreate_memory,
                 num_runs,
                 emb_model,
                 memory_semaphore,
+                foundry_memory_type,
             )
         )
 
@@ -239,15 +253,19 @@ def main():
         help="Agent type: context, nocontext, foundry, or google",
     )
     parser.add_argument("--max-agent-turns", type=int, default=10, help="Maximum agent turns in dialogue")
-    parser.add_argument(
-        "--no-cache", action="store_true", help="Force recreate memory store from scratch (foundry/google agent only)"
-    )
     parser.add_argument("--num-runs", type=int, default=1, help="Number of runs per task (default: 1)")
     parser.add_argument(
         "--eval-run",
         type=str,
         default=None,
         help="Resume into existing eval run (e.g., '2026-02-12_173909'). Skips already-completed tasks.",
+    )
+    parser.add_argument(
+        "--foundry-memory-type",
+        type=str,
+        choices=["tool", "api"],
+        default="api",
+        help="Foundry memory mode: 'tool' (agent-managed) or 'api' (manual search via API, default)",
     )
     args = parser.parse_args()
 
@@ -266,10 +284,10 @@ def main():
                 session_dirs,
                 args.agent,
                 args.max_agent_turns,
-                args.no_cache,
                 args.num_runs,
                 args.task_version,
                 args.eval_run,
+                args.foundry_memory_type,
             )
         )
     else:
@@ -313,8 +331,8 @@ def main():
                 args.max_agent_turns,
                 resolved_task_version,
                 eval_run_dir,
-                args.no_cache,
                 args.num_runs,
+                foundry_memory_type=args.foundry_memory_type,
             )
         )
 
@@ -323,6 +341,7 @@ def main():
             "task_version": resolved_task_version,
             "num_runs": args.num_runs,
             "max_agent_turns": args.max_agent_turns,
+            "foundry_memory_type": args.foundry_memory_type if args.agent == "foundry" else None,
             "timestamp": datetime.now().isoformat(),
         }
         save_eval_run_config(eval_run_dir, config)

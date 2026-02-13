@@ -67,16 +67,16 @@ class GoogleMemoryAgent:
         self._memory_populated = False
         self._init_lock = threading.Lock()
 
-    def build_context(self, multisession_data: MultiSessionOutput, force_recreate: bool = False) -> str:
+    def build_context(self, multisession_data: MultiSessionOutput) -> str:
         """Create agent engine and populate memories from conversation history.
 
         Thread-safe: only one thread will create/populate the engine.
         """
         with self._init_lock:
-            if self._memory_populated and not force_recreate:
+            if self._memory_populated:
                 return "Google agent with memory search"
 
-            if self._agent_engine_name is not None and force_recreate:
+            if self._agent_engine_name is not None:
                 try:
                     self._vertex_client.agent_engines.delete(name=self._agent_engine_name, force=True)
                 except Exception as e:
@@ -129,9 +129,7 @@ class GoogleMemoryAgent:
     )
     def _create_engine_with_retry(self, memory_config: dict) -> Any:
         """Create a Vertex AI agent engine with retry logic."""
-        return self._vertex_client.agent_engines.create(
-            config={"context_spec": {"memory_bank_config": memory_config}}
-        )
+        return self._vertex_client.agent_engines.create(config={"context_spec": {"memory_bank_config": memory_config}})
 
     def _populate_memories(self, multisession_data: MultiSessionOutput) -> None:
         """Generate memories from all sessions."""
@@ -239,7 +237,9 @@ class GoogleMemoryAgent:
     _azure_retry = CONFIG["retry"]
 
     @retry(
-        retry=retry_if_exception_type((openai.RateLimitError, openai.APIConnectionError, openai.InternalServerError)),
+        retry=retry_if_exception_type(
+            (openai.RateLimitError, openai.APIConnectionError, openai.InternalServerError, json.JSONDecodeError)
+        ),
         wait=wait_exponential(
             multiplier=1,
             min=_azure_retry["wait_seconds"],

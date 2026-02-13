@@ -37,9 +37,7 @@ class GoogleMemoryBank:
         self.project_id = project_id or os.environ.get("GCLOUD_PROJECT_ID")
         self.location = location or os.environ.get("GCLOUD_LOCATION", "us-central1")
         if not self.project_id:
-            raise ValueError(
-                "project_id must be provided or set via GCLOUD_PROJECT_ID env var"
-            )
+            raise ValueError("project_id must be provided or set via GCLOUD_PROJECT_ID env var")
 
         self.client = vertexai.Client(project=self.project_id, location=self.location)
         self._agent_engine: Any = None
@@ -118,9 +116,7 @@ class GoogleMemoryBank:
         vertex_messages = []
         for msg in messages:
             role = "user" if msg["role"] in ("user", "system") else "model"
-            vertex_messages.append(
-                {"content": {"role": role, "parts": [{"text": msg["content"]}]}}
-            )
+            vertex_messages.append({"content": {"role": role, "parts": [{"text": msg["content"]}]}})
 
         result = self.client.agent_engines.memories.generate(
             name=self._agent_engine_name,
@@ -196,12 +192,9 @@ class GoogleMemoryBank:
             return
 
         logger.warning(
-            "Deleting entire agent engine (per-user deletion not supported). "
-            "All users' memories will be removed."
+            "Deleting entire agent engine (per-user deletion not supported). All users' memories will be removed."
         )
-        self.client.agent_engines.delete(
-            name=self._agent_engine_name, force=True
-        )
+        self.client.agent_engines.delete(name=self._agent_engine_name, force=True)
         logger.info("Deleted agent engine: %s", self._agent_engine_name)
         self._agent_engine = None
         self._agent_engine_name = None
@@ -211,9 +204,7 @@ class GoogleMemoryBank:
         if self._agent_engine_name is None:
             return
         try:
-            self.client.agent_engines.delete(
-                name=self._agent_engine_name, force=True
-            )
+            self.client.agent_engines.delete(name=self._agent_engine_name, force=True)
             logger.info("Cleaned up agent engine: %s", self._agent_engine_name)
         except Exception as e:
             if "404" in str(e) or "NOT_FOUND" in str(e):

@@ -11,7 +11,13 @@ Orchestrates the complete evaluation flow:
 import re
 from typing import Callable, Literal
 
-from memory_gym.agents import ContextAwareAgent, FoundryMemoryAgent, GoogleMemoryAgent, NoContextAgent
+from memory_gym.agents import (
+    ContextAwareAgent,
+    FoundryMemoryAgent,
+    FoundryMemoryAPIAgent,
+    GoogleMemoryAgent,
+    NoContextAgent,
+)
 from memory_gym.client import AsyncLLMPool, LLMClient, PooledLLMClient
 from memory_gym.formatting import summarize_events
 from memory_gym.schemas import (
@@ -40,9 +46,9 @@ def run_evaluation(
     eval_task: EvaluationTask | None = None,
     agent_type: Literal["context", "nocontext", "foundry", "google"] = "context",
     memory_store_name: str | None = None,
-    force_recreate_memory: bool = False,
-    foundry_agent: FoundryMemoryAgent | None = None,
+    foundry_agent: FoundryMemoryAgent | FoundryMemoryAPIAgent | None = None,
     google_agent: GoogleMemoryAgent | None = None,
+    foundry_memory_type: Literal["tool", "api"] = "api",
 ) -> MultiSessionEvaluationResult:
     """Run a complete evaluation on multi-session data.
 
@@ -58,7 +64,6 @@ def run_evaluation(
         eval_task: Pre-generated evaluation task. If None, generates a new one.
         agent_type: Type of agent to use: "context", "nocontext", "foundry", or "google".
         memory_store_name: Name of memory store for foundry agent (required if agent_type="foundry").
-        force_recreate_memory: If True, recreate memory store from scratch (foundry/google only).
 
     Returns:
         MultiSessionEvaluationResult with scores and analysis
@@ -78,9 +83,9 @@ def run_evaluation(
         agent_type,
         client,
         memory_store_name,
-        force_recreate_memory,
         foundry_agent,
         google_agent,
+        foundry_memory_type,
     )
 
     # Step 3: Evaluate with judge (using clean conversation without scratchpads)
@@ -100,9 +105,9 @@ def run_dialogue(
     agent_type: Literal["context", "nocontext", "foundry", "google"],
     client: LLMClient | PooledLLMClient,
     memory_store_name: str | None = None,
-    force_recreate_memory: bool = False,
-    foundry_agent: FoundryMemoryAgent | None = None,
+    foundry_agent: FoundryMemoryAgent | FoundryMemoryAPIAgent | None = None,
     google_agent: GoogleMemoryAgent | None = None,
+    foundry_memory_type: Literal["tool", "api"] = "api",
 ) -> tuple[list[dict[str, str | None]], list[dict[str, str]]]:
     """Run the evaluation dialogue between agent and user simulator.
 
@@ -113,7 +118,6 @@ def run_dialogue(
         agent_type: Type of agent: "context", "nocontext", "foundry", or "google"
         client: LLM client
         memory_store_name: Name of memory store for foundry agent
-        force_recreate_memory: If True, recreate memory store from scratch (foundry only)
 
     Returns:
         Tuple of (conversation_with_scratchpads, clean_conversation)
@@ -127,20 +131,23 @@ def run_dialogue(
         if foundry_agent is not None:
             agent = foundry_agent
             agent.reset_conversation()
-            agent.build_context(multisession_data, force_recreate=force_recreate_memory)
+            agent.build_context(multisession_data)
         else:
             if not memory_store_name:
                 raise ValueError("memory_store_name required for foundry agent")
-            agent = FoundryMemoryAgent(memory_store_name=memory_store_name)
-            agent.build_context(multisession_data, force_recreate=force_recreate_memory)
+            if foundry_memory_type == "api":
+                agent = FoundryMemoryAPIAgent(memory_store_name=memory_store_name)
+            else:
+                agent = FoundryMemoryAgent(memory_store_name=memory_store_name)
+            agent.build_context(multisession_data)
     elif agent_type == "google":
         if google_agent is not None:
             agent = google_agent
             agent.reset_conversation()
-            agent.build_context(multisession_data, force_recreate=force_recreate_memory)
+            agent.build_context(multisession_data)
         else:
             agent = GoogleMemoryAgent()
-            agent.build_context(multisession_data, force_recreate=force_recreate_memory)
+            agent.build_context(multisession_data)
     elif agent_type == "context":
         agent = ContextAwareAgent(client)
         agent.build_context(multisession_data, event_summaries=event_summaries)
@@ -197,9 +204,9 @@ def _run_single_evaluation_with_client(
         client=client,
         agent_type=context.get("agent_type", "context"),
         memory_store_name=context.get("memory_store_name"),
-        force_recreate_memory=context.get("force_recreate_memory", False),
         foundry_agent=context.get("foundry_agent"),
         google_agent=context.get("google_agent"),
+        foundry_memory_type=context.get("foundry_memory_type", "api"),
     )
 
 
