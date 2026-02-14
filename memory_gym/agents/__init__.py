@@ -6,8 +6,10 @@ Provides different agent types:
 - NoContextAgent: No memory of past conversations (baseline)
 - FoundryMemoryAgent: Uses Azure AI Foundry memory store
 - GoogleMemoryAgent: Uses Google Vertex AI Agent Engine memory
+- AWSMemoryAgent: Uses AWS Bedrock AgentCore memory
 """
 
+from .aws_agent import AWSMemoryAgent
 from .base import BaseAgent
 from .context_aware import ContextAwareAgent
 from .foundry_agent import FoundryMemoryAgent, FoundryMemoryAPIAgent, get_foundry_embedding_models
@@ -15,6 +17,7 @@ from .google_agent import GoogleMemoryAgent
 from .no_context import NoContextAgent
 
 __all__ = [
+    "AWSMemoryAgent",
     "BaseAgent",
     "ContextAwareAgent",
     "FoundryMemoryAgent",

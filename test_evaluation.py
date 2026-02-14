@@ -80,10 +80,12 @@ async def run_session_evals(
     print(f"{session_dir.name}: {len(pending_tasks)} tasks to run")
 
     # Build agent context only if there are pending tasks
-    memory_store_name = session_dir.name if agent_type == "foundry" else None
+    memory_store_name = session_dir.name if agent_type in ("foundry", "aws") else None
 
     shared_foundry_agent = None
     shared_google_agent = None
+    shared_aws_agent = None
+    session_start = time.time()
     try:
         if agent_type == "foundry":
             from memory_gym.agents import FoundryMemoryAgent, FoundryMemoryAPIAgent
@@ -110,6 +112,12 @@ async def run_session_evals(
             else:
                 await asyncio.to_thread(shared_google_agent.build_context, data)
 
+        if agent_type == "aws":
+            from memory_gym.agents import AWSMemoryAgent
+
+            shared_aws_agent = AWSMemoryAgent(memory_name=session_dir.name)
+            await asyncio.to_thread(shared_aws_agent.build_context, data)
+
         contexts = []
         for task_path, eval_task, run_id in pending_tasks:
             contexts.append(
@@ -122,6 +130,7 @@ async def run_session_evals(
                     "task_path": task_path,
                     "foundry_agent": shared_foundry_agent,
                     "google_agent": shared_google_agent,
+                    "aws_agent": shared_aws_agent,
                     "run_id": run_id,
                     "foundry_memory_type": foundry_memory_type,
                 }
@@ -143,6 +152,10 @@ async def run_session_evals(
             await asyncio.to_thread(shared_foundry_agent.cleanup)
         if shared_google_agent is not None:
             await asyncio.to_thread(shared_google_agent.cleanup)
+        if shared_aws_agent is not None:
+            await asyncio.to_thread(shared_aws_agent.cleanup)
+        session_elapsed = time.time() - session_start
+        print(f"{session_dir.name}: completed in {session_elapsed:.1f}s")
 
 
 async def run_all_sessions(
@@ -248,9 +261,9 @@ def main():
     parser.add_argument(
         "--agent",
         type=str,
-        choices=["context", "nocontext", "foundry", "google"],
+        choices=["context", "nocontext", "foundry", "google", "aws"],
         default="context",
-        help="Agent type: context, nocontext, foundry, or google",
+        help="Agent type: context, nocontext, foundry, google, or aws",
     )
     parser.add_argument("--max-agent-turns", type=int, default=10, help="Maximum agent turns in dialogue")
     parser.add_argument("--num-runs", type=int, default=1, help="Number of runs per task (default: 1)")

@@ -99,7 +99,7 @@ def main():
         scores_by_key[key][row["agent"]].append(float(row["preference_score"]))
 
     ws2 = wb.create_sheet("summary_preference")
-    ws2.append(["session", "eval_run", "task", "context", "foundry", "foundry_tool", "google", "nocontext"])
+    ws2.append(["session", "eval_run", "task", "context", "foundry", "foundry_tool", "google", "aws", "nocontext"])
     for (session, eval_run, task), agents in sorted(scores_by_key.items()):
         ws2.append(
             [
@@ -110,6 +110,7 @@ def main():
                 round(sum(agents.get("foundry", [0])) / max(len(agents.get("foundry", [0])), 1), 2),
                 round(sum(agents.get("foundry_tool", [0])) / max(len(agents.get("foundry_tool", [0])), 1), 2),
                 round(sum(agents.get("google", [0])) / max(len(agents.get("google", [0])), 1), 2),
+                round(sum(agents.get("aws", [0])) / max(len(agents.get("aws", [0])), 1), 2),
                 round(sum(agents.get("nocontext", [0])) / max(len(agents.get("nocontext", [0])), 1), 2),
             ]
         )
@@ -121,7 +122,7 @@ def main():
             eff_by_key[key][row["agent"]].append(float(row["efficiency_score"]))
 
     ws3 = wb.create_sheet("summary_efficiency")
-    ws3.append(["session", "eval_run", "task", "context", "foundry", "foundry_tool", "google", "nocontext"])
+    ws3.append(["session", "eval_run", "task", "context", "foundry", "foundry_tool", "google", "aws", "nocontext"])
     for (session, eval_run, task), agents in sorted(eff_by_key.items()):
         ws3.append(
             [
@@ -132,6 +133,7 @@ def main():
                 round(sum(agents.get("foundry", [0])) / max(len(agents.get("foundry", [0])), 1), 2),
                 round(sum(agents.get("foundry_tool", [0])) / max(len(agents.get("foundry_tool", [0])), 1), 2),
                 round(sum(agents.get("google", [0])) / max(len(agents.get("google", [0])), 1), 2),
+                round(sum(agents.get("aws", [0])) / max(len(agents.get("aws", [0])), 1), 2),
                 round(sum(agents.get("nocontext", [0])) / max(len(agents.get("nocontext", [0])), 1), 2),
             ]
         )

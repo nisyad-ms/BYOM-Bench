@@ -32,3 +32,10 @@ retry_google:
   multiplier: 2
   min_seconds: 5
   max_seconds: 60
+
+# AWS Bedrock AgentCore memory retries
+retry_aws:
+  max_attempts: 6
+  multiplier: 2
+  min_seconds: 5
+  max_seconds: 60
