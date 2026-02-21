@@ -547,55 +547,36 @@ class EvaluationRubric:
 
 
 @dataclass
-class EvaluationTask:
-    """An evaluation task for multi-session preference recall.
+class EvaluationTaskSpec:
+    """Minimal evaluation task specification for multi-session preference recall.
 
-    Contains the evaluation event and rubric for scoring.
-    The user's initial prompt is accessed via evaluation_event.user_prompt.
+    Contains only the task ID, rubric (which preferences to test), and the
+    base persona string. Preference selection is random; the user simulator
+    drives the conversation from its own opening message.
 
     Attributes:
-        task_id: Unique identifier
-        evaluation_event: The life event triggering this evaluation (contains user_prompt)
-        scenario_type: Broad scenario category chosen by the task generator
-        reasoning: Task generator's reasoning about how preferences interact in this scenario
-        rubric: The evaluation rubric for the judge (contains required_preferences)
-        persona_summary: Brief summary of the persona for user simulator
+        task_id: Unique identifier (e.g., "eval_a1b2c3d4")
+        rubric: The evaluation rubric (contains required_preferences with supersedes info)
+        persona: The base persona string from MultiSessionOutput.persona
     """
 
     task_id: str
-    evaluation_event: LifeEvent
     rubric: EvaluationRubric
-    persona_summary: str
-    scenario_type: str = ""
-    reasoning: str = ""
-
-    @property
-    def user_prompt(self) -> str:
-        """Convenience accessor for the starting user message."""
-        return self.evaluation_event.user_prompt
+    persona: str
 
     def to_dict(self) -> dict[str, Any]:
-        result: dict[str, Any] = {
+        return {
             "task_id": self.task_id,
-            "evaluation_event": self.evaluation_event.to_dict(),
+            "rubric": self.rubric.to_dict(),
+            "persona": self.persona,
         }
-        if self.scenario_type:
-            result["event_type"] = self.scenario_type
-        if self.reasoning:
-            result["reasoning"] = self.reasoning
-        result["rubric"] = self.rubric.to_dict()
-        result["persona_summary"] = self.persona_summary
-        return result
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "EvaluationTask":
+    def from_dict(cls, data: dict[str, Any]) -> "EvaluationTaskSpec":
         return cls(
             task_id=data["task_id"],
-            evaluation_event=LifeEvent.from_dict(data["evaluation_event"]),
             rubric=EvaluationRubric.from_dict(data["rubric"]),
-            persona_summary=data["persona_summary"],
-            scenario_type=data.get("event_type", data.get("scenario_type", "")),
-            reasoning=data.get("reasoning", ""),
+            persona=data["persona"],
         )
 
 
@@ -627,8 +608,6 @@ class MultiSessionEvaluationResult:
     conversation: list[dict[str, str]]
     preference_usage: dict[str, str]  # pref_id -> "proactive" | "ignored"
     stale_preference_usage: list[str]  # List of stale pref_ids that were incorrectly used
-    evaluation_event: LifeEvent | None = None  # The evaluation scenario
-    rubric: EvaluationRubric | None = None  # The rubric used for evaluation
     first_mention_trace: list[dict[str, Any]] | None = None  # v2: Chronological first-mention analysis
     turn_classifications: list[dict[str, Any]] | None = None  # Per-turn scoring details
     total_turns: int = 0
@@ -652,8 +631,6 @@ class MultiSessionEvaluationResult:
                 "efficiency_score": self.efficiency_score,
             },
         }
-        if self.evaluation_event:
-            result["evaluation_event"] = self.evaluation_event.to_dict()
         result.update(
             {
                 "conversation": self.conversation,
@@ -674,8 +651,6 @@ class MultiSessionEvaluationResult:
                 },
             }
         )
-        if self.rubric:
-            result["rubric"] = self.rubric.to_dict()
         if self.error:
             result["error"] = self.error
         return result

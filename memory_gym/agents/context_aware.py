@@ -23,7 +23,7 @@ class ContextAwareAgent(BaseAgent):
         """Build system prompt with structured preference history."""
         if event_summaries is None:
             event_summaries = {}
-        preference_history = format_preference_history(multisession_data, event_summaries)
+        preference_history = format_preference_history(multisession_data, event_summaries, include_ids=False)
         self._system_prompt = render_prompt(
             "agents/agent_system_with_context",
             preference_history=preference_history,

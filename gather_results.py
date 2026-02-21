@@ -71,7 +71,7 @@ def main():
                     "efficiency_score": scores.get("efficiency_score", ""),
                     "proactive_count": pref.get("proactive_count", ""),
                     "stale_count": pref.get("stale_count", ""),
-                    "required_preferences": len(data.get("rubric", {}).get("required_preferences", [])),
+                    "required_preferences": len(pref.get("first_mention_trace", [])),
                     "total_turns": eff.get("total_turns", ""),
                     "productive_turns": eff.get("productive_turns", ""),
                     "generic_turns": eff.get("generic_turns", eff.get("clarifying_turns", "")),

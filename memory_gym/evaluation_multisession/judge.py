@@ -13,9 +13,7 @@ from typing import Any
 from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
 from memory_gym.prompts import render_prompt
 from memory_gym.schemas import (
-    EvaluationRubric,
-    EvaluationTask,
-    LifeEvent,
+    EvaluationTaskSpec,
     MultiSessionEvaluationResult,
 )
 
@@ -33,7 +31,7 @@ class MultiSessionJudge:
 
     def evaluate(
         self,
-        evaluation_task: EvaluationTask,
+        evaluation_task: EvaluationTaskSpec,
         conversation: list[dict[str, str]],
     ) -> MultiSessionEvaluationResult:
         """Evaluate a completed dialogue.
@@ -65,8 +63,7 @@ class MultiSessionJudge:
             return self._combine_results(
                 evaluation_task.task_id,
                 conversation,
-                evaluation_task.evaluation_event,
-                evaluation_task.rubric,
+                rubric.required_preferences,
                 pref_result,
                 eff_result,
                 agent_turns,
@@ -79,8 +76,6 @@ class MultiSessionJudge:
                 conversation=conversation,
                 preference_usage={},
                 stale_preference_usage=[],
-                evaluation_event=evaluation_task.evaluation_event,
-                rubric=evaluation_task.rubric,
                 reasoning=f"Evaluation failed: {e}",
                 error=str(e),
             )
@@ -131,8 +126,7 @@ class MultiSessionJudge:
         self,
         task_id: str,
         conversation: list[dict[str, str]],
-        evaluation_event: LifeEvent,
-        rubric: EvaluationRubric,
+        required_preferences: list[dict[str, Any]],
         pref_result: dict[str, Any],
         eff_result: dict[str, Any],
         agent_turns: int,
@@ -140,6 +134,19 @@ class MultiSessionJudge:
         """Combine results from preference and efficiency judges and calculate scores."""
         first_mention_trace = pref_result.get("first_mention_trace", [])
         turn_classifications = eff_result.get("turn_classifications", [])
+
+        # Enrich trace entries with preference content and type for easier manual review
+        pref_lookup = {p["id"]: p for p in required_preferences}
+        for entry in first_mention_trace:
+            pref_id = entry.get("preference_id")
+            if pref_id and pref_id in pref_lookup:
+                pref = pref_lookup[pref_id]
+                entry["preference"] = pref["fact"]
+                if "supersedes" in pref:
+                    entry["type"] = "evolved"
+                    entry["supersedes"] = pref["supersedes"]
+                else:
+                    entry["type"] = "baseline"
 
         preference_usage = {
             entry["preference_id"]: entry.get("usage", "ignored")
@@ -162,8 +169,6 @@ class MultiSessionJudge:
             conversation=conversation,
             preference_usage=preference_usage,
             stale_preference_usage=stale_used,
-            evaluation_event=evaluation_event,
-            rubric=rubric,
             first_mention_trace=first_mention_trace,
             turn_classifications=turn_classifications,
             total_turns=agent_turns,

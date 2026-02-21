@@ -32,13 +32,12 @@ from typing import Any, Callable
 import yaml
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from dotenv import load_dotenv
-from openai import APIStatusError, AzureOpenAI
+from openai import APIStatusError, AuthenticationError, AzureOpenAI
 from tenacity import (
     RetryCallState,
     retry,
     retry_if_exception_type,
     stop_after_attempt,
-    wait_exponential,
 )
 
 load_dotenv()
@@ -58,9 +57,22 @@ def _before_sleep_print(retry_state: RetryCallState) -> None:
     print(f"Retrying {name} in {wait:.1f} seconds as it raised {type(exc).__name__}: {exc}")
 
 
+def _wait_by_error_type(retry_state: RetryCallState) -> float:
+    """Return wait time based on exception type.
+
+    Auth errors (expired token) retry after 2 seconds since the token provider
+    refreshes automatically. Other errors (rate limits, server errors) use the
+    configured wait time.
+    """
+    exc = retry_state.outcome.exception() if retry_state.outcome else None
+    if isinstance(exc, AuthenticationError):
+        return 2
+    return float(CONFIG["retry"]["wait_seconds"])
+
+
 _llm_retry = retry(
     stop=stop_after_attempt(CONFIG["retry"]["max_attempts"]),
-    wait=wait_exponential(multiplier=1, min=CONFIG["retry"]["wait_seconds"], max=CONFIG["retry"]["wait_seconds"]),
+    wait=_wait_by_error_type,
     retry=retry_if_exception_type((APIStatusError, json.JSONDecodeError)),
     before_sleep=_before_sleep_print,
     reraise=True,

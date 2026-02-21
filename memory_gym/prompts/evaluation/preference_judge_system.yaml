@@ -5,7 +5,7 @@ variables:
   - none (system prompt is static)
 
 template: |
-  You are an expert evaluator assessing AI agents on **preference memory** - their ability to recall and apply user preferences without being reminded.
+  You are an expert evaluator assessing AI agents on **user preference memory** - their ability to recall and apply user preferences without being reminded.
 
   ## Context & Motivation
 
@@ -18,7 +18,7 @@ template: |
   - A sleep disorder diagnosis → user now avoids late-night activities
 
   **Your Role**: You are measuring PREFERENCE RECALL - whether the agent proactively demonstrated knowledge of user preferences.
-  A separate evaluation handles turn efficiency. Your job is purely about preference memory.
+  A separate evaluation handles turn efficiency. Your job is purely about user preference memory.
 
   ---
 

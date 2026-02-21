@@ -47,7 +47,7 @@ async def run_session_evals(
     foundry_memory_type: str = "api",
 ):
     from memory_gym.evaluation_multisession import run_evaluations_parallel
-    from memory_gym.schemas import EvaluationTask, MultiSessionOutput
+    from memory_gym.schemas import EvaluationTaskSpec, MultiSessionOutput
 
     session_file = get_session_path(session_dir)
 
@@ -56,13 +56,13 @@ async def run_session_evals(
     data = MultiSessionOutput.from_dict(raw_data)
 
     # Build list of pending tasks (skip already-completed ones)
-    run_ids = list(range(1, num_runs + 1)) if num_runs > 1 else [None]
+    run_ids = list(range(1, num_runs + 1))
 
-    pending_tasks: list[tuple[Path, EvaluationTask, int | None]] = []
+    pending_tasks: list[tuple[Path, EvaluationTaskSpec, int | None]] = []
     for task_path in task_paths:
         with open(task_path, "r", encoding="utf-8") as f:
             raw_task = json.load(f)
-        eval_task = EvaluationTask.from_dict(raw_task)
+        eval_task = EvaluationTaskSpec.from_dict(raw_task)
 
         for run_id in run_ids:
             task_num = extract_task_num(task_path) or 1

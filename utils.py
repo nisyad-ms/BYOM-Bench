@@ -214,10 +214,8 @@ def get_eval_run_dir(session_dir: Path, eval_run: str) -> Path | None:
     return None
 
 
-def get_eval_path(eval_run_dir: Path, task_num: int, agent_type: str, run_id: int | None = None) -> Path:
-    if run_id is not None:
-        return eval_run_dir / f"eval_{task_num:02d}_{agent_type}_{run_id:02d}.json"
-    return eval_run_dir / f"eval_{task_num:02d}_{agent_type}.json"
+def get_eval_path(eval_run_dir: Path, task_num: int, agent_type: str, run_id: int) -> Path:
+    return eval_run_dir / f"eval_{task_num:02d}_{agent_type}_{run_id:02d}.json"
 
 
 def save_eval_run_config(eval_run_dir: Path, config: dict) -> Path:

@@ -22,7 +22,7 @@ from memory_gym.agents import (
 from memory_gym.client import AsyncLLMPool, LLMClient, PooledLLMClient
 from memory_gym.formatting import summarize_events
 from memory_gym.schemas import (
-    EvaluationTask,
+    EvaluationTaskSpec,
     MultiSessionEvaluationResult,
     MultiSessionOutput,
 )
@@ -40,11 +40,53 @@ def _is_uncovered_empty(scratchpad: str) -> bool:
     return match is not None
 
 
+def _parse_scratchpad(raw: str) -> dict[str, str | list[str]]:
+    """Parse raw scratchpad text into a structured dict for JSON output.
+
+    Extracts COVERED, UNCOVERED, EVALUATION, ACTION, and TESTING fields.
+    Falls back to returning the raw text if parsing fails.
+    """
+    result: dict[str, str | list[str]] = {}
+
+    # COVERED: [pref_004, pref_019] or COVERED: []
+    covered = re.search(r"COVERED:\s*\[([^\]]*)\]", raw)
+    if covered:
+        items = [s.strip() for s in covered.group(1).split(",") if s.strip()]
+        result["covered"] = items
+
+    # UNCOVERED: [pref_052, pref_042] or UNCOVERED: []
+    uncovered = re.search(r"UNCOVERED:\s*\[([^\]]*)\]", raw)
+    if uncovered:
+        items = [s.strip() for s in uncovered.group(1).split(",") if s.strip()]
+        result["uncovered"] = items
+
+    # EVALUATION: free-form text up to next field
+    evaluation = re.search(r"EVALUATION:\s*(.+?)(?=\nACTION:|\nTESTING:|\Z)", raw, flags=re.DOTALL)
+    if evaluation:
+        result["evaluation"] = evaluation.group(1).strip()
+
+    # ACTION: free-form text up to next field
+    action = re.search(r"ACTION:\s*(.+?)(?=\nTESTING:|\Z)", raw, flags=re.DOTALL)
+    if action:
+        result["action"] = action.group(1).strip()
+
+    # TESTING: pref_id — full fact text
+    testing = re.search(r"TESTING:\s*(.+)", raw)
+    if testing:
+        result["testing"] = testing.group(1).strip()
+
+    # If we couldn't parse any fields, return raw text
+    if not result:
+        result["raw"] = raw
+
+    return result
+
+
 def run_evaluation(
     multisession_data: MultiSessionOutput,
     max_agent_turns: int = 10,
     client: LLMClient | PooledLLMClient | None = None,
-    eval_task: EvaluationTask | None = None,
+    eval_task: EvaluationTaskSpec | None = None,
     agent_type: Literal["context", "nocontext", "foundry", "google", "aws"] = "context",
     memory_store_name: str | None = None,
     foundry_agent: FoundryMemoryAgent | FoundryMemoryAPIAgent | None = None,
@@ -74,7 +116,7 @@ def run_evaluation(
 
     # Step 1: Generate or use provided evaluation task
     if eval_task is None:
-        task_generator = EvaluationTaskGenerator(client)
+        task_generator = EvaluationTaskGenerator()
         eval_task = task_generator.generate(multisession_data)
 
     # Step 2: Run dialogue
@@ -96,13 +138,18 @@ def run_evaluation(
     result = judge.evaluate(eval_task, clean_conversation)
 
     # Replace conversation with version that includes scratchpads for output
-    result.conversation = conversation_with_scratchpads  # type: ignore[assignment]  # scratchpad adds None values
+    # Parse raw scratchpad strings into structured dicts for readable JSON
+    for turn in conversation_with_scratchpads:
+        raw = turn.get("scratchpad")
+        if isinstance(raw, str):
+            turn["scratchpad"] = _parse_scratchpad(raw)  # type: ignore[assignment]
+    result.conversation = conversation_with_scratchpads  # type: ignore[assignment]  # scratchpad adds structured data
 
     return result
 
 
 def run_dialogue(
-    eval_task: EvaluationTask,
+    eval_task: EvaluationTaskSpec,
     multisession_data: MultiSessionOutput,
     max_agent_turns: int,
     agent_type: Literal["context", "nocontext", "foundry", "google", "aws"],
@@ -172,8 +219,8 @@ def run_dialogue(
     conversation_with_scratchpads: list[dict[str, str | None]] = []
     clean_conversation: list[dict[str, str]] = []
 
-    user_message = user_sim.get_initial_message()
-    conversation_with_scratchpads.append({"role": "user", "content": user_message})
+    user_message, initial_scratchpad = user_sim.get_initial_message()
+    conversation_with_scratchpads.append({"role": "user", "content": user_message, "scratchpad": initial_scratchpad})
     clean_conversation.append({"role": "user", "content": user_message})
 
     agent_turns = 0
@@ -187,7 +234,7 @@ def run_dialogue(
             print(f"Conversation hit max agent turns limit ({max_agent_turns})")
             break
 
-        user_response, scratchpad = user_sim.respond(clean_conversation)
+        user_response, scratchpad = user_sim.respond(clean_conversation, conversation_with_scratchpads)
         conversation_with_scratchpads.append({"role": "user", "content": user_response, "scratchpad": scratchpad})
         clean_conversation.append({"role": "user", "content": user_response})
 
@@ -234,7 +281,7 @@ async def run_evaluations_parallel(
     Args:
         contexts: List of dicts, each containing:
             - multisession_data: MultiSessionOutput
-            - eval_task: EvaluationTask
+            - eval_task: EvaluationTaskSpec
             - agent_type: "context", "nocontext", "foundry", "google", or "aws" (default: "context")
             - max_agent_turns: int
             - memory_store_name: Optional[str] (required if agent_type="foundry")

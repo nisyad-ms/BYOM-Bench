@@ -23,35 +23,11 @@ from utils import (
 )
 
 
-def get_existing_events(session_dir: Path) -> list[str]:
-    tasks_dir = session_dir / "tasks"
-    if not tasks_dir.exists():
-        return []
-
-    events = []
-    for version_dir in sorted(tasks_dir.iterdir()):
-        if not version_dir.is_dir():
-            continue
-        for task_file in sorted(version_dir.glob("task_*.json")):
-            with open(task_file, "r", encoding="utf-8") as f:
-                task_data = json.load(f)
-            event = task_data.get("evaluation_event", {}).get("event", "")
-            if event:
-                events.append(event)
-    return events
-
-
 def generate_tasks(data, session_dir: Path, version: str, start_task_num: int, count: int):
-    """Generate tasks sequentially, sharing previous events for diversity."""
+    """Generate tasks — pure random selection, no LLM calls."""
     from memory_gym.task_generators import generate_evaluation_tasks
 
-    previous_events = get_existing_events(session_dir)
-
-    tasks = generate_evaluation_tasks(
-        data,
-        num_tasks=count,
-        previous_events=previous_events,
-    )
+    tasks = generate_evaluation_tasks(data, num_tasks=count)
 
     for i, task in enumerate(tasks):
         task_num = start_task_num + i

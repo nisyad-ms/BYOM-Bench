@@ -2,22 +2,24 @@
 Multi-Session User Simulator.
 
 The user simulator acts as a realistic user during evaluation dialogues.
-It knows its current preferences and will naturally correct the agent
-if recommendations don't match those preferences.
+It generates its own opening message and drives the full conversation,
+testing all required preferences through natural interaction.
 """
 
 import re
+from collections.abc import Mapping, Sequence
 
 from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
 from memory_gym.prompts import render_prompt
-from memory_gym.schemas import EvaluationTask
+from memory_gym.schemas import EvaluationTaskSpec
 
 
 class MultiSessionUserSimulator:
     """Simulates a user in evaluation dialogues.
 
     The user simulator:
-    - Acts naturally based on persona and current situation
+    - Generates its own opening message (no pre-generated prompt)
+    - Acts naturally based on persona and preferences
     - Knows its current preferences (from required_preferences)
     - Corrects the agent when recommendations don't match preferences
     - Does NOT know which preferences are "stale" - it just knows what it wants now
@@ -28,13 +30,13 @@ class MultiSessionUserSimulator:
 
     def __init__(
         self,
-        evaluation_task: EvaluationTask,
+        evaluation_task: EvaluationTaskSpec,
         client: LLMClient | PooledLLMClient | None = None,
     ):
         """Initialize user simulator for a specific evaluation task.
 
         Args:
-            evaluation_task: The evaluation task containing persona, event, and preferences
+            evaluation_task: The evaluation task spec containing persona and preferences
             client: LLM client for generation. If None, creates a new one.
         """
         self.task = evaluation_task
@@ -50,39 +52,61 @@ class MultiSessionUserSimulator:
 
     def _build_system_prompt(self) -> str:
         """Build the system prompt for the user simulator."""
-        prefs_formatted = "\n".join(f"- {p['fact']}" for p in self.required_preferences)
+        prefs_formatted = "\n".join(f"- {p['id']}: {p['fact']}" for p in self.required_preferences)
 
         return render_prompt(
-            "evaluation/user_simulator_system",
-            persona_summary=self.task.persona_summary,
-            evaluation_event=self.task.evaluation_event.event,
+            "user_simulator/user_simulator_system",
+            persona_summary=self.task.persona,
             required_preferences=prefs_formatted,
         )
 
-    def get_initial_message(self) -> str:
-        """Get the initial user message to start the dialogue.
+    def get_initial_message(self) -> tuple[str, str | None]:
+        """Generate the initial user message to start the dialogue.
 
-        This is the pre-generated user prompt from the orchestrator.
+        Makes an LLM call using the system prompt plus an instruction to
+        generate a natural opening message. Different each evaluation run.
+
+        Returns:
+            Tuple of (opening_message, scratchpad_or_none)
         """
-        return self.task.user_prompt
+        messages = [
+            {"role": "system", "content": self._system_prompt},
+            {
+                "role": "user",
+                "content": "Generate your opening message to the AI assistant. Remember to include your scratchpad.",
+            },
+        ]
+
+        response = self.client.complete_chat(
+            messages=messages,
+            max_tokens=CONFIG["max_tokens"]["user_simulator"],
+        )
+
+        raw_response = response.strip()
+        clean_response, scratchpad = self._extract_scratchpad(raw_response)
+        return clean_response, scratchpad
 
     def respond(
         self,
         conversation_history: list[dict[str, str]],
+        conversation_with_scratchpads: list[dict[str, str | None]] | None = None,
     ) -> tuple[str, str | None]:
         """Generate user response to the latest agent message.
 
         Args:
-            conversation_history: Full conversation so far (including latest agent message)
+            conversation_history: Clean conversation so far (without scratchpads)
+            conversation_with_scratchpads: Conversation with scratchpad data on user turns.
+                If provided, user simulator sees its own prior scratchpads for state continuity.
 
         Returns:
             Tuple of (user_response, scratchpad_or_none)
             - user_response: Clean response to add to conversation
             - scratchpad: Raw scratchpad content for debugging, or None if not present
         """
-        conv_text = self._format_conversation_as_string(conversation_history)
+        history_for_prompt = conversation_with_scratchpads if conversation_with_scratchpads else conversation_history
+        conv_text = self._format_conversation_as_string(history_for_prompt)
         user_prompt = render_prompt(
-            "evaluation/user_simulator_user",
+            "user_simulator/user_simulator_user",
             conversation=conv_text,
         )
 
@@ -111,11 +135,19 @@ class MultiSessionUserSimulator:
         clean = re.sub(r"<scratchpad>.*?</scratchpad>\s*", "", response, flags=re.DOTALL)
         return clean.strip(), scratchpad
 
-    def _format_conversation_as_string(self, history: list[dict[str, str]]) -> str:
-        """Format conversation history as labeled string for the prompt."""
+    def _format_conversation_as_string(self, history: Sequence[Mapping[str, str | None]]) -> str:
+        """Format conversation history as labeled string for the prompt.
+
+        If user turns contain a 'scratchpad' key, it is included so the model
+        can see its own prior reasoning (COVERED/UNCOVERED state).
+        """
         lines = []
         for turn in history:
             role = "User" if turn.get("role") == "user" else "Agent"
             content = turn.get("content", "")
-            lines.append(f"{role}: {content}")
+            scratchpad = turn.get("scratchpad")
+            if role == "User" and scratchpad:
+                lines.append(f"{role}:\n<scratchpad>\n{scratchpad}\n</scratchpad>\n\n{content}")
+            else:
+                lines.append(f"{role}: {content}")
         return "\n\n".join(lines)

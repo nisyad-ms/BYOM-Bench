@@ -25,7 +25,6 @@ Usage:
     from memory_gym.task_generators import EvaluationTaskGenerator
     generator = EvaluationTaskGenerator()
     tasks = generator.generate_batch(result, num_tasks=1)
-    print(tasks[0].evaluation_event.event)
     print(tasks[0].rubric.required_preferences)
 
     # Run full evaluation
