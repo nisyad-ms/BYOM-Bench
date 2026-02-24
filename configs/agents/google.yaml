@@ -1,0 +1,9 @@
+# Google Vertex AI Agent Engine configuration.
+
+retry:
+  max_attempts: 6
+  multiplier: 2
+  min_seconds: 5
+  max_seconds: 60
+
+num_memories: 10

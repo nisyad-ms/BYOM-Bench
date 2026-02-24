@@ -1,0 +1,83 @@
+name: Expand Life Facts — User
+description: User prompt for expanding a base persona into a detailed biography across 5 life domains.
+used_by: memory_gym/data_generators/multisession.py::_expand_persona
+variables:
+  - persona: Basic persona description (can be brief)
+
+template: |
+  Expand this persona into a detailed biography.
+
+  PERSONA: {persona}
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  TASK
+  ═══════════════════════════════════════════════════════════════════════════════
+
+  1. Assign age, gender, and location (if not already specified).
+  2. Write life facts across 5 domains (3-5 facts each).
+
+  Life facts are WHAT/WHO/WHERE — static biographical details.
+  Language: "is", "has", "does", "works", "lives", etc.
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  5 DOMAINS (3-5 facts each)
+  ═══════════════════════════════════════════════════════════════════════════════
+
+  1. work_and_education: Job, career trajectory, education, certifications
+  2. relationships_and_personal: Family, romantic life, friendships, living situation
+  3. health_and_wellness: Physical health, fitness activities, conditions, sleep
+  4. travel_and_experiences: Travel history, commute, places lived/visited
+  5. hobbies_and_interests: Activities, creative pursuits, entertainment, leisure
+
+  Rules:
+  - Use WHAT/WHO/WHERE language only — no preference words (prefers, avoids, likes, only, never)
+  - Adapt to life stage (student, working adult, retiree, etc.)
+  - Include both positive and negative aspects (e.g., health conditions alongside fitness)
+  - Facts should provide hooks for dramatic life events later
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  EXAMPLE
+  ═══════════════════════════════════════════════════════════════════════════════
+
+  Input: "A college student studying biology"
+
+  Output:
+  {{
+    "base_persona": "A college student studying biology",
+    "age": 20,
+    "gender": "female",
+    "location": "Boston, MA",
+    "work_and_education": [
+      "Junior at Boston University majoring in Biology",
+      "Pre-med track, planning to apply to medical schools next year",
+      "Works part-time as a lab assistant (10 hrs/week)",
+      "Struggling with organic chemistry this semester"
+    ],
+    "relationships_and_personal": [
+      "Lives in off-campus apartment with two roommates",
+      "Single, focused on studies but open to dating",
+      "Parents live in Connecticut, visits monthly"
+    ],
+    "health_and_wellness": [
+      "Generally healthy but sleep-deprived during exam periods",
+      "Experiences stress eating when overwhelmed",
+      "Played soccer in high school, now exercises occasionally",
+      "Has mild seasonal allergies"
+    ],
+    "travel_and_experiences": [
+      "Studied abroad in Spain sophomore year",
+      "Limited budget constrains travel frequency",
+      "Goes home for holidays and summer breaks"
+    ],
+    "hobbies_and_interests": [
+      "Watches medical dramas",
+      "Goes hiking when she has time",
+      "Active on social media",
+      "Keeps a bullet journal"
+    ]
+  }}
+
+  CRITICAL:
+  - Output ONLY valid JSON matching the structure above
+  - Each domain: 3-5 facts
+  - No preference language in facts

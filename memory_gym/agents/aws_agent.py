@@ -1,45 +1,29 @@
 """AWS Memory Agent using AWS Bedrock AgentCore for memory storage."""
 
-import json
 import os
 import re
 import threading
 import time
 from typing import Any
 
-import openai
 from botocore.exceptions import ClientError
 from tenacity import (
     retry,
     retry_if_exception,
-    retry_if_exception_type,
     stop_after_attempt,
     wait_exponential,
 )
 
-from memory_gym.client import CONFIG, PooledLLMClient, _before_sleep_print
-from memory_gym.prompts import render_prompt
+from memory_gym.client import PooledLLMClient, _before_sleep_print, get_agent_config
 from memory_gym.schemas import MultiSessionOutput
 
-_SEARCH_MEMORIES_TOOL = {
-    "type": "function",
-    "name": "search_user_memories",
-    "description": "Search stored memories about the user's preferences, habits, and personal information.",
-    "parameters": {
-        "type": "object",
-        "properties": {
-            "query": {
-                "type": "string",
-                "description": "Search query to find relevant memories about the user.",
-            },
-        },
-        "required": ["query"],
-    },
-}
+from ._tool_calling import respond_with_memory_search
+
+_aws_cfg = get_agent_config("aws")
 
 # Bedrock memory extraction is async; poll until results appear.
-_EXTRACTION_POLL_INTERVAL = 2  # seconds
-_EXTRACTION_MAX_WAIT = 35  # seconds
+_EXTRACTION_POLL_INTERVAL: int = _aws_cfg["polling"]["extraction_interval"]
+_EXTRACTION_MAX_WAIT: int = _aws_cfg["timeouts"]["extraction_max_wait"]
 
 # Non-retryable error codes from AWS — permanent failures that shouldn't be retried.
 _NON_RETRYABLE_CODES = {"AccessDeniedException", "UnauthorizedAccess", "ValidationException"}
@@ -65,18 +49,20 @@ class AWSMemoryAgent:
         memory_name: str,
         user_id: str = "default-user",
         region_name: str | None = None,
-        num_memories: int = 10,
-        event_expiry_days: int = 7,
+        num_memories: int | None = None,
+        event_expiry_days: int | None = None,
     ):
         self.user_id = user_id
-        self.region_name = region_name or os.environ.get("AWS_REGION", "us-west-2")
+        self.region_name = region_name or os.environ.get("AWS_REGION")
+        if not self.region_name:
+            raise ValueError("AWS_REGION not set in environment")
         # AWS memory names must match [a-zA-Z][a-zA-Z0-9_]{0,47}
         sanitized = re.sub(r"[^a-zA-Z0-9_]", "_", memory_name)
         if not sanitized[0].isalpha():
             sanitized = f"mg_{sanitized}"
         self.memory_name = sanitized[:48]
-        self.num_memories = num_memories
-        self.event_expiry_days = event_expiry_days
+        self.num_memories = num_memories if num_memories is not None else _aws_cfg["num_memories"]
+        self.event_expiry_days = event_expiry_days if event_expiry_days is not None else _aws_cfg["event_expiry_days"]
 
         from bedrock_agentcore.memory import MemoryClient, MemoryControlPlaneClient
 
@@ -148,7 +134,7 @@ class AWSMemoryAgent:
             else:
                 raise
 
-    _aws_retry = CONFIG["retry_aws"]
+    _aws_retry = _aws_cfg["retry"]
 
     @retry(
         retry=retry_if_exception(_is_retryable_client_error),
@@ -177,8 +163,8 @@ class AWSMemoryAgent:
         print(f"Created AWS memory store: {memory_id}, waiting for ACTIVE...")
 
         # Poll until ACTIVE (or FAILED / timeout)
-        max_wait = 300
-        poll_interval = 5
+        max_wait = _aws_cfg["timeouts"]["memory_store_creation"]
+        poll_interval = _aws_cfg["polling"]["creation_interval"]
         start = time.time()
         while time.time() - start < max_wait:
             status = self._memory_client.get_memory_status(memory_id)
@@ -241,18 +227,19 @@ class AWSMemoryAgent:
 
         # Snapshot existing record IDs so we can identify new ones
         existing_ids: set[str] = set()
+        internal_top_k = _aws_cfg["search"]["internal_top_k"]
         for ns in namespaces:
             try:
                 records = self._memory_client.retrieve_memories(
                     memory_id=self._memory_id,
                     namespace=ns,
                     query=last_content,
-                    top_k=100,
+                    top_k=internal_top_k,
                 )
                 for r in records:
                     existing_ids.add(_get_record_id(r))
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"Warning: failed to snapshot existing records in {ns}: {e}")
 
         # Create the event - triggers async memory extraction
         self._memory_client.create_event(
@@ -274,14 +261,14 @@ class AWSMemoryAgent:
                         memory_id=self._memory_id,
                         namespace=ns,
                         query=last_content,
-                        top_k=100,
+                        top_k=internal_top_k,
                     )
                     for r in records:
                         rid = _get_record_id(r)
                         if rid and rid not in existing_ids:
                             new_records.append(_record_to_dict(r))
-                except Exception:
-                    pass
+                except Exception as e:
+                    print(f"Warning: failed to poll records in {ns}: {e}")
             if new_records:
                 break
 
@@ -325,8 +312,8 @@ class AWSMemoryAgent:
                         content = _get_record_content(r)
                         if content:
                             memories.append({"fact": content})
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"Warning: failed to retrieve memories from {ns}: {e}")
 
         return memories[: self.num_memories]
 
@@ -358,83 +345,13 @@ class AWSMemoryAgent:
 
         return "AWS agent with memory search"
 
-    def respond(self, conversation: list[dict[str, str]]) -> str:
-        """Generate a response using Azure OpenAI with AWS memory search tool.
-
-        Uses tool-calling: the LLM decides when to search memories.
-        """
+    def respond(self, conversation: list[dict[str, str]]) -> tuple[str, list[dict]]:
+        """Generate a response using Azure OpenAI with AWS memory search tool."""
         if self._memory_id is None:
             raise ValueError("Memory store not initialized. Call build_context first.")
-
-        system_prompt = render_prompt("agents/agent_system_aws")
-
-        messages: list[dict[str, Any]] = [{"role": "system", "content": system_prompt}]
-        for msg in conversation:
-            messages.append({"role": msg["role"], "content": msg["content"]})
-
-        idx, llm_client = self._llm_client._acquire()
-        try:
-            azure_client = llm_client._client
-            return self._respond_with_tools(azure_client, llm_client.deployment, messages)
-        finally:
-            self._llm_client._release(idx)
-
-    _azure_retry = CONFIG["retry"]
-
-    @retry(
-        retry=retry_if_exception_type(
-            (openai.RateLimitError, openai.APIConnectionError, openai.InternalServerError, json.JSONDecodeError)
-        ),
-        wait=wait_exponential(
-            multiplier=1,
-            min=_azure_retry["wait_seconds"],
-            max=_azure_retry["wait_seconds"],
-        ),
-        stop=stop_after_attempt(_azure_retry["max_attempts"]),
-        before_sleep=_before_sleep_print,
-    )
-    def _respond_with_tools(
-        self, azure_client: openai.AzureOpenAI, deployment: str, messages: list[dict[str, Any]]
-    ) -> str:
-        """Make Azure OpenAI call with tool-calling loop."""
-        response = azure_client.responses.create(
-            model=deployment,
-            input=messages,  # type: ignore[arg-type]
-            tools=[_SEARCH_MEMORIES_TOOL],  # type: ignore[list-item]
-            max_output_tokens=CONFIG["max_tokens"]["agent"],
+        return respond_with_memory_search(
+            self._llm_client, "agents/agent_system_memory", conversation, self._retrieve_memories
         )
-
-        while True:
-            tool_calls = [item for item in response.output if item.type == "function_call"]
-            if not tool_calls:
-                break
-
-            tool_results: list[dict[str, Any]] = []
-            for tool_call in tool_calls:
-                if tool_call.name == "search_user_memories":
-                    args = json.loads(tool_call.arguments)
-                    query = args["query"]
-                    memories = self._retrieve_memories(query)
-                    output = json.dumps(memories, ensure_ascii=False)
-                else:
-                    output = json.dumps({"error": f"Unknown tool: {tool_call.name}"})
-
-                tool_results.append(
-                    {
-                        "type": "function_call_output",
-                        "call_id": tool_call.call_id,
-                        "output": output,
-                    }
-                )
-
-            response = azure_client.responses.create(
-                model=deployment,
-                input=response.output + tool_results,  # type: ignore[arg-type,operator]
-                tools=[_SEARCH_MEMORIES_TOOL],  # type: ignore[list-item]
-                max_output_tokens=CONFIG["max_tokens"]["agent"],
-            )
-
-        return response.output_text
 
     def reset_conversation(self) -> None:
         """No-op: no per-conversation state to reset."""
@@ -443,8 +360,8 @@ class AWSMemoryAgent:
         """Delete the memory store to free resources."""
         self._cleanup_memory_store()
 
-    _CLEANUP_POLL_INTERVAL = 5  # seconds
-    _CLEANUP_MAX_WAIT = 120  # seconds
+    _CLEANUP_POLL_INTERVAL: int = _aws_cfg["polling"]["cleanup_interval"]
+    _CLEANUP_MAX_WAIT: int = _aws_cfg["timeouts"]["cleanup_max_wait"]
 
     def _cleanup_memory_store(self) -> None:
         """Delete the AWS memory store, retrying if it's in a transitional state."""

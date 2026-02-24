@@ -1,0 +1,27 @@
+# Shared LLM call defaults.
+# Agent-specific overrides live in configs/agents/<agent>.yaml.
+
+defaults:
+  temperature: 1.0
+  api_version: "2025-03-01-preview"
+
+max_tokens:
+  default: 2048
+  # Data generation
+  expand_persona: 8000
+  life_event: 500
+  update_preferences: 4000
+  session_conversation: 8000
+  # Task generation
+  task_generation: 2048
+  event_summary: 4096
+  user_prompt_generator: 256
+  # Evaluation
+  agent: 2048
+  user_simulator: 1024
+  preference_judge: 2048
+  efficiency_judge: 2048
+
+retry:
+  max_attempts: 3
+  wait_seconds: 30

@@ -1,0 +1,15 @@
+# Existing Memories (dates in UTC):
+
+{% for memory in similar_memories %}## memory_id: {{ loop.index0 }}
+memory_kind: {{ memory.kind.name }}
+memory_date: {{ datetime.fromtimestamp(memory.updated_at).astimezone(timezone.utc).isoformat() }}
+memory: {{ memory.content }}{% if not loop.last %}
+{% endif %}{% endfor %}
+
+# New Memories (dates in UTC):
+
+{% for memory in extracted_memories %}## memory_id: {{ loop.index0 + similar_memories|length }}
+memory_kind: {{ memory.kind.name }}
+memory_date: {{ datetime.fromtimestamp(memory.updated_at).astimezone(timezone.utc).isoformat() }}
+memory: {{ memory.content }}{% if not loop.last %}
+{% endif %}{% endfor %}

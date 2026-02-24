@@ -14,12 +14,15 @@ import random
 import uuid
 from typing import Any
 
+from memory_gym.client import PIPELINE_CONFIG
 from memory_gym.schemas import (
     EvaluationRubric,
     EvaluationTaskSpec,
     MultiSessionOutput,
     Preference,
 )
+
+_task_cfg = PIPELINE_CONFIG["task_generation"]
 
 
 class EvaluationTaskGenerator:
@@ -40,10 +43,10 @@ class EvaluationTaskGenerator:
         ...     print(task.rubric.required_preferences)
     """
 
-    DEFAULT_NUM_TASKS = 1
-    DEFAULT_PREFS_PER_TASK = 6
-    MIN_EVOLVED_PREFS = 2
-    EVOLVED_PREF_RATIO = 1 / 3  # Target ~33% evolved preferences (2 of 6)
+    DEFAULT_NUM_TASKS: int = _task_cfg["default_num_tasks"]
+    DEFAULT_PREFS_PER_TASK: int = _task_cfg["prefs_per_task"]
+    MIN_EVOLVED_PREFS: int = _task_cfg["min_evolved_prefs"]
+    EVOLVED_PREF_RATIO: float = _task_cfg["evolved_pref_ratio"]
 
     def generate_batch(
         self,

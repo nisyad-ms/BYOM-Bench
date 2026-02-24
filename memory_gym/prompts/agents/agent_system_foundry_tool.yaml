@@ -1,6 +1,0 @@
-name: Agent System Prompt (Foundry Memory Tool)
-description: System prompt for Foundry agent with agent-managed memory search tool
-used_by: memory_gym/agents/foundry_agent.py::FoundryMemoryAgent
-
-template: |
-  You are a helpful assistant that remembers user preferences and applies them proactively.

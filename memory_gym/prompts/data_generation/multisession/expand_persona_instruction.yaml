@@ -7,8 +7,8 @@ variables:
 template: |
   Given a basic persona description, create a fully realized character in TWO phases:
   
-  PHASE 1: Expand into domain facts (WHAT they do, have, are)
-  PHASE 2: Generate baseline preferences (Given the domain facts, HOW they do things)
+  PHASE 1: Expand into life facts (WHAT they do, have, are)
+  PHASE 2: Generate baseline preferences (Given the life facts, HOW they do things)
 
   BASIC PERSONA:
   {persona}
@@ -20,7 +20,7 @@ template: |
   You will produce TWO types of output. Do NOT confuse or duplicate them.
   
   ┌─────────────────────────────────────────────────────────────────────────────┐
-  │ DOMAIN FACTS (Phase 1) = BIOGRAPHY at persona creation                      │
+  │ LIFE FACTS (Phase 1) = BIOGRAPHY at persona creation                        │
   │ Static snapshot of their life - won't be updated by life events             │
   ├─────────────────────────────────────────────────────────────────────────────┤
   │ WHO they are   │ Age, gender, identity, roles                               │
@@ -95,7 +95,7 @@ template: |
      - Focus on WHAT activities (not HOW they prefer to do them)
      - Examples: "Plays guitar", "Goes hiking", "Reads books"
 
-  DOMAIN FACTS REQUIREMENTS:
+  LIFE FACTS REQUIREMENTS:
   - 3-5 facts per domain
   - Use WHAT/WHO/WHERE language
   - NO preference words (prefers, avoids, likes, dislikes, only, never)
@@ -136,7 +136,7 @@ template: |
     (Don't start every preference with "Prefers..." - vary the language!)
   - Specific and actionable (an agent could use these to personalize recommendations)
   - Include both positive behaviors AND restrictions/avoidances
-  - Must NOT duplicate domain facts
+  - Must NOT duplicate life facts
   - Should be CHANGEABLE by dramatic life events later
   
   STARTER VARIETY (use a mix across all 25 preferences):
@@ -258,7 +258,7 @@ template: |
 
   CRITICAL:
   - Output ONLY valid JSON
-  - Each domain fact list: 3-5 items
+  - Each life fact list: 3-5 items
   - baseline_preferences: object with 5 domains, EXACTLY 5 preferences per domain
   - Facts use WHAT language, preferences use HOW language
   - No duplication between facts and preferences

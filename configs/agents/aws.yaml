@@ -1,0 +1,23 @@
+# AWS Bedrock AgentCore agent configuration.
+
+retry:
+  max_attempts: 6
+  multiplier: 2
+  min_seconds: 5
+  max_seconds: 60
+
+num_memories: 10
+event_expiry_days: 7
+
+timeouts:
+  memory_store_creation: 300
+  extraction_max_wait: 35
+  cleanup_max_wait: 120
+
+polling:
+  creation_interval: 5
+  extraction_interval: 2
+  cleanup_interval: 5
+
+search:
+  internal_top_k: 100

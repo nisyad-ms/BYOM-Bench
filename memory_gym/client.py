@@ -40,11 +40,37 @@ from tenacity import (
     stop_after_attempt,
 )
 
+EndpointDeployment = tuple[str, str]  # (endpoint_url, deployment_name)
+
 load_dotenv()
 
-_config_path = Path(__file__).parent.parent / "configs" / "client_config.yaml"
-with open(_config_path) as f:
-    CONFIG = yaml.safe_load(f)
+_CONFIGS_DIR = Path(__file__).parent.parent / "configs"
+
+
+def _load_yaml(path: Path) -> dict[str, Any]:
+    with open(path) as f:
+        return yaml.safe_load(f) or {}
+
+
+# Core LLM config (max_tokens, retry, defaults)
+CONFIG: dict[str, Any] = _load_yaml(_CONFIGS_DIR / "llm.yaml")
+
+# Pipeline config (data_generation, task_generation)
+PIPELINE_CONFIG: dict[str, Any] = _load_yaml(_CONFIGS_DIR / "pipeline.yaml")
+
+# Agent configs keyed by agent type name
+_agent_config_cache: dict[str, dict[str, Any]] = {}
+
+
+def get_agent_config(agent_type: str) -> dict[str, Any]:
+    """Load and cache agent-specific config from configs/agents/<agent_type>.yaml."""
+    if agent_type not in _agent_config_cache:
+        path = _CONFIGS_DIR / "agents" / f"{agent_type}.yaml"
+        if not path.exists():
+            raise FileNotFoundError(f"Agent config not found: {path}")
+        _agent_config_cache[agent_type] = _load_yaml(path)
+    return _agent_config_cache[agent_type]
+
 
 _DEFAULT_MAX_TOKENS: int = CONFIG["max_tokens"]["default"]
 
@@ -93,9 +119,46 @@ def _get_deployments() -> list[str]:
 
 
 def _get_default_deployment() -> str:
-    """Get default deployment (first from DEPLOYMENTS, or fallback to gpt-4o)."""
+    """Get default deployment (first from AZURE_OPENAI_DEPLOYMENTS).
+
+    Raises:
+        ValueError: If AZURE_OPENAI_DEPLOYMENTS is not set.
+    """
     deployments = _get_deployments()
-    return deployments[0] if deployments else "gpt-4o"
+    if not deployments:
+        raise ValueError("No deployments configured. Set AZURE_OPENAI_DEPLOYMENTS environment variable.")
+    return deployments[0]
+
+
+def _discover_all_endpoints(
+    endpoint_var: str = "AZURE_OPENAI_ENDPOINT",
+    deployments_var: str = "AZURE_OPENAI_DEPLOYMENTS",
+) -> list[EndpointDeployment]:
+    """Discover all (endpoint, deployment) pairs from environment variables.
+
+    Reads the primary endpoint_var / deployments_var, then iterates
+    {endpoint_var}_N / {deployments_var}_N for N=2, 3, ... until a missing
+    endpoint is found.
+    """
+    pairs: list[EndpointDeployment] = []
+
+    primary_endpoint = os.environ.get(endpoint_var, "")
+    primary_deployments = _parse_env_list(deployments_var)
+    if primary_endpoint and primary_deployments:
+        for d in primary_deployments:
+            pairs.append((primary_endpoint, d))
+
+    n = 2
+    while True:
+        endpoint = os.environ.get(f"{endpoint_var}_{n}", "")
+        if not endpoint:
+            break
+        deployments = _parse_env_list(f"{deployments_var}_{n}")
+        for d in deployments:
+            pairs.append((endpoint, d))
+        n += 1
+
+    return pairs
 
 
 def _build_input(prompt: str, system_prompt: str | None = None) -> list[dict[str, str]]:
@@ -155,15 +218,16 @@ class LLMClient:
 
         Args:
             endpoint: Azure OpenAI endpoint URL. Defaults to AZURE_OPENAI_ENDPOINT env var.
-            deployment: Model deployment name. Defaults to AZURE_OPENAI_DEPLOYMENT or "gpt-4o".
-            api_version: API version. Defaults to AZURE_OPENAI_API_VERSION or "2025-03-01-preview".
+            deployment: Model deployment name. Defaults to first AZURE_OPENAI_DEPLOYMENTS entry.
+            api_version: API version. Defaults to AZURE_OPENAI_API_VERSION env var or config default.
 
         Raises:
             ValueError: If endpoint is not provided and AZURE_OPENAI_ENDPOINT is not set.
+            ValueError: If no deployments are configured.
         """
         self.endpoint = endpoint or os.environ.get("AZURE_OPENAI_ENDPOINT")
         self.deployment = deployment or _get_default_deployment()
-        self.api_version = api_version or os.environ.get("AZURE_OPENAI_API_VERSION", "2025-03-01-preview")
+        self.api_version = api_version or os.environ.get("AZURE_OPENAI_API_VERSION", CONFIG["defaults"]["api_version"])
 
         if not self.endpoint:
             raise ValueError(
@@ -237,15 +301,36 @@ class LLMClient:
         return json.loads(response.output_text)
 
 
-def _resolve_deployments(deployments: list[str] | None = None) -> list[str]:
-    """Resolve deployment list from argument or environment, raising if empty."""
+def _resolve_deployments(deployments: list[str] | None = None) -> list[EndpointDeployment]:
+    """Resolve deployment list from argument or environment, raising if empty.
+
+    When deployments is None (the common case), auto-discovers all configured
+    endpoints from AZURE_OPENAI_ENDPOINT[_N] / AZURE_OPENAI_DEPLOYMENTS[_N].
+
+    When deployments is an explicit list of names, pairs each with the primary
+    AZURE_OPENAI_ENDPOINT.
+    """
     if deployments is None:
-        deployments = _get_deployments()
-        if not deployments:
-            deployments = [_get_default_deployment()]
+        pairs = _discover_all_endpoints()
+        if pairs:
+            return pairs
+        primary_endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT", "")
+        if not primary_endpoint:
+            raise ValueError(
+                "Azure OpenAI endpoint required. Set AZURE_OPENAI_ENDPOINT environment variable "
+                "or pass endpoint parameter."
+            )
+        return [(primary_endpoint, _get_default_deployment())]
+
     if not deployments:
         raise ValueError("No deployments configured")
-    return deployments
+
+    primary_endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT", "")
+    if not primary_endpoint:
+        raise ValueError(
+            "Azure OpenAI endpoint required. Set AZURE_OPENAI_ENDPOINT environment variable or pass endpoint parameter."
+        )
+    return [(primary_endpoint, d) for d in deployments]
 
 
 class PooledLLMClient(LeastBusyPool):
@@ -263,11 +348,17 @@ class PooledLLMClient(LeastBusyPool):
     def __init__(self, deployments: list[str] | None = None):
         super().__init__()
 
-        deployments = _resolve_deployments(deployments)
+        endpoint_deployments = _resolve_deployments(deployments)
 
-        self.deployments = deployments
-        self.clients = [LLMClient(deployment=d) for d in deployments]
+        self.deployments = [d for _, d in endpoint_deployments]
+        self.clients = [LLMClient(endpoint=ep, deployment=d) for ep, d in endpoint_deployments]
         self._init_pool(self.clients)
+
+        endpoints_summary: dict[str, int] = {}
+        for ep, _ in endpoint_deployments:
+            endpoints_summary[ep] = endpoints_summary.get(ep, 0) + 1
+        for ep, count in endpoints_summary.items():
+            print(f"PooledLLMClient: {ep} -> {count} deployments")
 
     def _call(self, method: str, *args: Any, **kwargs: Any) -> Any:
         idx, client = self._acquire()
@@ -307,12 +398,11 @@ class AsyncLLMPool:
         """Initialize the pool with multiple deployments.
 
         Args:
-            deployments: List of deployment names. Defaults to AZURE_OPENAI_DEPLOYMENTS env var.
+            deployments: List of deployment names (paired with primary endpoint).
+                         Defaults to auto-discovery of all AZURE_OPENAI_ENDPOINT[_N] env vars.
         """
-        deployments = _resolve_deployments(deployments)
-
-        self.deployments = deployments
         self._pooled_client = PooledLLMClient(deployments=deployments)
+        self.deployments = self._pooled_client.deployments
 
     async def run_parallel(
         self,

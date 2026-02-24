@@ -2,7 +2,7 @@ name: Generate Life Event (v3)
 description: Generates a single life event for a specified domain. Events describe WHAT HAPPENED, not behavioral outcomes. Enforces diversity and limits on relocation events.
 used_by: persona_gym/data_generators/multisession.py::_generate_life_event
 variables:
-  - persona: The full expanded persona description (includes domain facts and baseline preferences)
+  - persona: The full expanded persona description (includes life facts and baseline preferences)
   - domain: The life domain for this event (work_education, health_wellness, travel_experiences, relationships_personal, hobbies_interests)
   - previous_events: List of previously generated events to build upon
 
@@ -14,7 +14,7 @@ template: |
 
   TARGET DOMAIN: {domain}
 
-  Use the domain facts AND baseline preferences from the persona above to personalize the event.
+  Use the life facts AND baseline preferences from the persona above to personalize the event.
 
   PREVIOUS EVENTS IN THIS PERSON'S STORY:
   {previous_events}

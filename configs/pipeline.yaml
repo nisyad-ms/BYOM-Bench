@@ -1,0 +1,10 @@
+# Data generation and task generation defaults.
+
+data_generation:
+  default_num_sessions: 2
+
+task_generation:
+  default_num_tasks: 1
+  prefs_per_task: 5
+  min_evolved_prefs: 2
+  evolved_pref_ratio: 0.4

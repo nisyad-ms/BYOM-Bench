@@ -1,0 +1,9 @@
+# Azure AI Foundry agent configuration.
+
+retry:
+  max_attempts: 12
+  multiplier: 2
+  min_seconds: 5
+  max_seconds: 120
+
+num_memories: 10

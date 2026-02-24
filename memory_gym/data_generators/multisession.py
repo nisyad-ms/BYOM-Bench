@@ -21,7 +21,7 @@ import json
 import random
 from datetime import datetime
 
-from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
+from memory_gym.client import CONFIG, PIPELINE_CONFIG, LLMClient, PooledLLMClient
 from memory_gym.prompts import render_prompt
 from memory_gym.schemas import (
     ExpandedPersona,
@@ -42,7 +42,7 @@ LIFE_DOMAINS = [
 ]
 
 # Default configuration
-DEFAULT_NUM_SESSIONS = 2
+DEFAULT_NUM_SESSIONS: int = PIPELINE_CONFIG["data_generation"]["default_num_sessions"]
 
 
 def _active_prefs_to_json(prefs: list[Preference]) -> str:
@@ -99,30 +99,54 @@ class MultiSessionGenerator:
         return self._llm
 
     def _expand_persona(self) -> ExpandedPersona:
-        """Expand the basic persona into a rich character with details across all life domains.
+        """Expand the basic persona into a rich character with life facts and preferences.
 
-        Also generates 25 baseline preferences (5 per domain) that represent
-        the person's core personality before any life events.
+        Makes two LLM calls:
+        1. Generate life facts (biography across 5 domains)
+        2. Generate 25 baseline preferences from those life facts
 
         Returns:
             ExpandedPersona with facts across all domains and baseline_preferences
         """
-        prompt = render_prompt(
-            "data_generation/multisession/expand_persona_instruction",
-            persona=self.persona,
+        # --- Call 1: Life facts ---
+        life_facts_system = render_prompt("data_generation/multisession/expand_life_facts_system")
+        life_facts_user = render_prompt("data_generation/multisession/expand_life_facts_user", persona=self.persona)
+
+        try:
+            facts_result = self.llm.complete_json(
+                life_facts_user,
+                system_prompt=life_facts_system,
+                max_tokens=CONFIG["max_tokens"]["expand_persona"],
+            )
+            if not isinstance(facts_result, dict):
+                raise GenerationError(f"Life facts: unexpected response type: {type(facts_result)}")
+        except Exception as e:
+            raise GenerationError(f"Life facts generation failed: {e}") from e
+
+        # Build partial ExpandedPersona (no preferences yet) for to_full_description()
+        facts_result["baseline_preferences"] = {}
+        expanded = ExpandedPersona.from_dict(facts_result)
+
+        # --- Call 2: Baseline preferences ---
+        prefs_system = render_prompt("data_generation/multisession/generate_baseline_preferences_system")
+        prefs_user = render_prompt(
+            "data_generation/multisession/generate_baseline_preferences_user",
+            persona=expanded.to_full_description(),
         )
 
         try:
-            result = self.llm.complete_json(prompt, max_tokens=CONFIG["max_tokens"]["expand_persona"])
-
-            if not isinstance(result, dict):
-                raise GenerationError(f"Unexpected response type: {type(result)}")
-
-            expanded = ExpandedPersona.from_dict(result)
-            return expanded
-
+            prefs_result = self.llm.complete_json(
+                prefs_user,
+                system_prompt=prefs_system,
+                max_tokens=CONFIG["max_tokens"]["expand_persona"],
+            )
+            if not isinstance(prefs_result, dict):
+                raise GenerationError(f"Baseline preferences: unexpected response type: {type(prefs_result)}")
         except Exception as e:
-            raise GenerationError(f"Persona expansion failed: {e}") from e
+            raise GenerationError(f"Baseline preferences generation failed: {e}") from e
+
+        expanded.baseline_preferences = prefs_result.get("baseline_preferences", {})
+        return expanded
 
     def _generate_life_events(
         self,
@@ -132,7 +156,7 @@ class MultiSessionGenerator:
         """Generate a sequence of life events for the persona.
 
         Args:
-            expanded_persona: The expanded persona with domain facts
+            expanded_persona: The expanded persona with life facts
             domains: List of domains to use, or None to randomly sample from LIFE_DOMAINS
 
         Returns:
@@ -162,7 +186,7 @@ class MultiSessionGenerator:
         Args:
             session_id: The session this event corresponds to
             domain: The life domain for this event
-            expanded_persona: The expanded persona with domain facts
+            expanded_persona: The expanded persona with life facts
             previous_events: List of previously generated events for context
 
         Returns:
@@ -283,7 +307,7 @@ class MultiSessionGenerator:
         methods. It provides the LLM with full context including:
         - All previous life events
         - Complete preference evolution history
-        - All domain facts
+        - All life facts
         - All currently active preferences
 
         Args:
@@ -291,7 +315,7 @@ class MultiSessionGenerator:
             all_events: All life events (for history context)
             timeline: PreferenceTimeline with current state
             session_id: Current session number
-            expanded_persona: The expanded persona with domain facts
+            expanded_persona: The expanded persona with life facts
 
         Returns:
             Tuple of (evolved_mapping, new_pref_ids):
@@ -391,7 +415,7 @@ class MultiSessionGenerator:
             timeline: PreferenceTimeline with current state
             session_id: Current session number
             evolved_mapping: Mapping of old_id -> new_id for recently evolved prefs
-            expanded_persona: The expanded persona with domain facts
+            expanded_persona: The expanded persona with life facts
 
         Returns:
             List of conversation turns [{role, content}, ...]

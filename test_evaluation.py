@@ -42,9 +42,8 @@ async def run_session_evals(
     task_version: str,
     eval_run_dir: Path,
     num_runs: int = 1,
-    embedding_model: str | None = None,
+    foundry_config: tuple[str, str, str] | None = None,
     memory_semaphore: asyncio.Semaphore | None = None,
-    foundry_memory_type: str = "api",
 ):
     from memory_gym.evaluation_multisession import run_evaluations_parallel
     from memory_gym.schemas import EvaluationTaskSpec, MultiSessionOutput
@@ -85,21 +84,19 @@ async def run_session_evals(
     shared_foundry_agent = None
     shared_google_agent = None
     shared_aws_agent = None
+    shared_foundry_local_agent = None
     session_start = time.time()
     try:
         if agent_type == "foundry":
-            from memory_gym.agents import FoundryMemoryAgent, FoundryMemoryAPIAgent
+            from memory_gym.agents import FoundryMemoryAgent
 
-            if foundry_memory_type == "api":
-                shared_foundry_agent = FoundryMemoryAPIAgent(
-                    memory_store_name=memory_store_name,  # type: ignore[arg-type]  # guaranteed str when agent_type="foundry"
-                    embedding_model=embedding_model,
-                )
-            else:
-                shared_foundry_agent = FoundryMemoryAgent(
-                    memory_store_name=memory_store_name,  # type: ignore[arg-type]  # guaranteed str when agent_type="foundry"
-                    embedding_model=embedding_model,
-                )
+            endpoint, chat_model, emb_model = foundry_config or (None, None, None)
+            shared_foundry_agent = FoundryMemoryAgent(
+                memory_store_name=memory_store_name,  # type: ignore[arg-type]  # guaranteed str when agent_type="foundry"
+                endpoint=endpoint,
+                chat_model=chat_model,
+                embedding_model=emb_model,
+            )
             await asyncio.to_thread(shared_foundry_agent.build_context, data)
 
         if agent_type == "google":
@@ -118,6 +115,12 @@ async def run_session_evals(
             shared_aws_agent = AWSMemoryAgent(memory_name=session_dir.name)
             await asyncio.to_thread(shared_aws_agent.build_context, data)
 
+        if agent_type == "foundry_local":
+            from memory_gym.agents import FoundryLocalAgent
+
+            shared_foundry_local_agent = FoundryLocalAgent(db_path=f"./.lancedb_foundry_local_{session_dir.name}")
+            await asyncio.to_thread(shared_foundry_local_agent.build_context, data)
+
         contexts = []
         for task_path, eval_task, run_id in pending_tasks:
             contexts.append(
@@ -131,8 +134,8 @@ async def run_session_evals(
                     "foundry_agent": shared_foundry_agent,
                     "google_agent": shared_google_agent,
                     "aws_agent": shared_aws_agent,
+                    "foundry_local_agent": shared_foundry_local_agent,
                     "run_id": run_id,
-                    "foundry_memory_type": foundry_memory_type,
                 }
             )
 
@@ -154,6 +157,8 @@ async def run_session_evals(
             await asyncio.to_thread(shared_google_agent.cleanup)
         if shared_aws_agent is not None:
             await asyncio.to_thread(shared_aws_agent.cleanup)
+        if shared_foundry_local_agent is not None:
+            await asyncio.to_thread(shared_foundry_local_agent.cleanup)
         session_elapsed = time.time() - session_start
         print(f"{session_dir.name}: completed in {session_elapsed:.1f}s")
 
@@ -165,13 +170,13 @@ async def run_all_sessions(
     num_runs: int,
     task_version: str | None,
     eval_run: str | None = None,
-    foundry_memory_type: str = "api",
 ):
-    embedding_models = ["text-embedding-3-small-001"]
+    foundry_configs: list[tuple[str, str, str]] = []
     if agent_type == "foundry":
-        from memory_gym.agents import get_foundry_embedding_models
+        from memory_gym.agents import get_foundry_configs
 
-        embedding_models = get_foundry_embedding_models()
+        foundry_configs = get_foundry_configs()
+        print(f"Foundry configs: {len(foundry_configs)} (endpoint, chat, embedding) triples")
 
     # Limit concurrent memory creation to avoid Google Vertex AI API rate limits
     memory_semaphore = asyncio.Semaphore(3) if agent_type == "google" else None
@@ -201,7 +206,7 @@ async def run_all_sessions(
             eval_run_dir.mkdir(parents=True, exist_ok=True)
         else:
             eval_run_dir = create_eval_run_dir(session_dir)
-        emb_model = embedding_models[i % len(embedding_models)] if agent_type == "foundry" else None
+        foundry_config = foundry_configs[i % len(foundry_configs)] if foundry_configs else None
 
         eval_configs.append(
             (
@@ -211,7 +216,6 @@ async def run_all_sessions(
                     "task_version": resolved_version,
                     "num_runs": num_runs,
                     "max_agent_turns": max_agent_turns,
-                    "foundry_memory_type": foundry_memory_type if agent_type == "foundry" else None,
                     "timestamp": datetime.now().isoformat(),
                 },
             )
@@ -226,9 +230,8 @@ async def run_all_sessions(
                 resolved_version,
                 eval_run_dir,
                 num_runs,
-                emb_model,
+                foundry_config,
                 memory_semaphore,
-                foundry_memory_type,
             )
         )
 
@@ -261,9 +264,9 @@ def main():
     parser.add_argument(
         "--agent",
         type=str,
-        choices=["context", "nocontext", "foundry", "google", "aws"],
+        choices=["context", "nocontext", "foundry", "google", "aws", "foundry_local"],
         default="context",
-        help="Agent type: context, nocontext, foundry, google, or aws",
+        help="Agent type: context, nocontext, foundry, google, aws, or foundry_local",
     )
     parser.add_argument("--max-agent-turns", type=int, default=10, help="Maximum agent turns in dialogue")
     parser.add_argument("--num-runs", type=int, default=1, help="Number of runs per task (default: 1)")
@@ -272,13 +275,6 @@ def main():
         type=str,
         default=None,
         help="Resume into existing eval run (e.g., '2026-02-12_173909'). Skips already-completed tasks.",
-    )
-    parser.add_argument(
-        "--foundry-memory-type",
-        type=str,
-        choices=["tool", "api"],
-        default="api",
-        help="Foundry memory mode: 'tool' (agent-managed) or 'api' (manual search via API, default)",
     )
     args = parser.parse_args()
 
@@ -300,7 +296,6 @@ def main():
                 args.num_runs,
                 args.task_version,
                 args.eval_run,
-                args.foundry_memory_type,
             )
         )
     else:
@@ -345,7 +340,6 @@ def main():
                 resolved_task_version,
                 eval_run_dir,
                 args.num_runs,
-                foundry_memory_type=args.foundry_memory_type,
             )
         )
 
@@ -354,7 +348,6 @@ def main():
             "task_version": resolved_task_version,
             "num_runs": args.num_runs,
             "max_agent_turns": args.max_agent_turns,
-            "foundry_memory_type": args.foundry_memory_type if args.agent == "foundry" else None,
             "timestamp": datetime.now().isoformat(),
         }
         save_eval_run_config(eval_run_dir, config)

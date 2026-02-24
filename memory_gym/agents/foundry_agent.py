@@ -1,20 +1,19 @@
-"""Foundry Memory Agent using Azure AI Foundry memory store."""
+"""Foundry Memory Agent using Azure AI Foundry memory store (API mode only).
 
-import json
+Memory retrieval is done via the Foundry memory store search API, with the
+LLM tool-calling loop handled by the shared `_tool_calling` module.
+"""
+
+import itertools
 import os
 import threading
-import uuid
 from typing import Any
 
-import openai
 from azure.ai.projects import AIProjectClient
 from azure.ai.projects.models import (
-    AgentVersionDetails,
     MemorySearchOptions,
-    MemorySearchTool,
     MemoryStoreDefaultDefinition,
     MemoryStoreDefaultOptions,
-    PromptAgentDefinition,
     ResponsesAssistantMessageItemParam,
     ResponsesSystemMessageItemParam,
     ResponsesUserMessageItemParam,
@@ -29,25 +28,16 @@ from tenacity import (
     wait_exponential,
 )
 
-from memory_gym.client import CONFIG, LeastBusyPool, PooledLLMClient, _before_sleep_print, _parse_env_list
-from memory_gym.prompts import render_prompt
+from memory_gym.client import (
+    PooledLLMClient,
+    _before_sleep_print,
+    _discover_all_endpoints,
+    _parse_env_list,
+    get_agent_config,
+)
 from memory_gym.schemas import MultiSessionOutput
 
-_SEARCH_MEMORIES_TOOL = {
-    "type": "function",
-    "name": "search_user_memories",
-    "description": "Search stored memories about the user's preferences, habits, and personal information.",
-    "parameters": {
-        "type": "object",
-        "properties": {
-            "query": {
-                "type": "string",
-                "description": "Search query to find relevant memories about the user.",
-            },
-        },
-        "required": ["query"],
-    },
-}
+from ._tool_calling import respond_with_memory_search
 
 
 def _get_foundry_deployments() -> list[str]:
@@ -59,30 +49,76 @@ def _get_foundry_embedding_deployments() -> list[str]:
     return _parse_env_list("AZURE_FOUNDRY_EMBEDDINGS_DEPLOYMENTS")
 
 
-def get_foundry_embedding_models() -> list[str]:
-    return _get_foundry_embedding_deployments() or ["text-embedding-3-small-001"]
+def get_foundry_configs() -> list[tuple[str, str, str]]:
+    """Return all (endpoint, chat_model, embedding_model) triples.
+
+    Discovers endpoints via AZURE_FOUNDRY_ENDPOINT[_N] and pairs each chat
+    deployment with an embedding deployment via round-robin.  The result is
+    a flat list of triples suitable for round-robin assignment to sessions.
+
+    Raises:
+        ValueError: If no Foundry deployments or embeddings are configured.
+    """
+    chat_pairs = _discover_all_endpoints("AZURE_FOUNDRY_ENDPOINT", "AZURE_FOUNDRY_DEPLOYMENTS")
+    embedding_pairs = _discover_all_endpoints("AZURE_FOUNDRY_ENDPOINT", "AZURE_FOUNDRY_EMBEDDINGS_DEPLOYMENTS")
+
+    if not chat_pairs:
+        primary = os.environ.get("AZURE_FOUNDRY_ENDPOINT", "")
+        if not primary:
+            raise ValueError("AZURE_FOUNDRY_ENDPOINT not set in environment")
+        chat = _get_foundry_deployments()
+        if not chat:
+            raise ValueError("AZURE_FOUNDRY_DEPLOYMENTS not set in environment")
+        emb = _get_foundry_embedding_deployments()
+        if not emb:
+            raise ValueError("AZURE_FOUNDRY_EMBEDDINGS_DEPLOYMENTS not set in environment")
+        return [(primary, c, emb[i % len(emb)]) for i, c in enumerate(chat)]
+
+    # Group embeddings by endpoint for round-robin pairing
+    emb_by_endpoint: dict[str, list[str]] = {}
+    for ep, dep in embedding_pairs:
+        emb_by_endpoint.setdefault(ep, []).append(dep)
+
+    triples: list[tuple[str, str, str]] = []
+    for ep, chat_model in chat_pairs:
+        emb_list = emb_by_endpoint.get(ep)
+        if not emb_list:
+            emb_list = _get_foundry_embedding_deployments()
+        if not emb_list:
+            raise ValueError(
+                f"No embedding deployments configured for Foundry endpoint {ep}. "
+                "Set AZURE_FOUNDRY_EMBEDDINGS_DEPLOYMENTS environment variable."
+            )
+        emb_model = emb_list[len(triples) % len(emb_list)]
+        triples.append((ep, chat_model, emb_model))
+
+    return triples
 
 
-_foundry_retry_config = CONFIG["retry_foundry"]
+_foundry_cfg = get_agent_config("foundry")
+_foundry_retry_config = _foundry_cfg["retry"]
+
+# Class-level counter for round-robin chat model selection in create_memory_store
+_chat_model_counter = itertools.count()
 
 
-class FoundryMemoryAgent(LeastBusyPool):
+class FoundryMemoryAgent:
     """Agent using Azure AI Foundry memory store for preference recall.
 
-    Creates one Foundry agent per deployment model and routes respond() calls
-    to the least-busy agent, spreading load across all endpoints.
+    Uses the memory store search API for retrieval and the shared tool-calling
+    loop for LLM interaction.  No Foundry prompt agents are created.
     """
 
     def __init__(
         self,
         memory_store_name: str,
         scope: str = "user",
-        chat_models: list[str] | None = None,
+        chat_model: str | None = None,
         embedding_model: str | None = None,
+        endpoint: str | None = None,
+        num_memories: int | None = None,
     ):
-        super().__init__()
-
-        endpoint = os.getenv("AZURE_FOUNDRY_ENDPOINT")
+        endpoint = endpoint or os.getenv("AZURE_FOUNDRY_ENDPOINT")
         if not endpoint:
             raise ValueError("AZURE_FOUNDRY_ENDPOINT not set in environment")
 
@@ -92,18 +128,25 @@ class FoundryMemoryAgent(LeastBusyPool):
         )
         self.memory_store_name = memory_store_name
         self.scope = scope
+        self.num_memories = num_memories if num_memories is not None else _foundry_cfg["num_memories"]
+
+        if chat_model is None:
+            deployments = _get_foundry_deployments()
+            if not deployments:
+                raise ValueError("AZURE_FOUNDRY_DEPLOYMENTS not set in environment")
+            chat_model = deployments[next(_chat_model_counter) % len(deployments)]
+        self.chat_model = chat_model
+
         if embedding_model is None:
-            embedding_model = get_foundry_embedding_models()[0]
+            emb_deployments = _get_foundry_embedding_deployments()
+            if not emb_deployments:
+                raise ValueError("AZURE_FOUNDRY_EMBEDDINGS_DEPLOYMENTS not set in environment")
+            embedding_model = emb_deployments[0]
         self.embedding_model = embedding_model
+
         self._memory_populated = False
         self._init_lock = threading.Lock()
-
-        if chat_models is None:
-            chat_models = _get_foundry_deployments() or ["gpt-4.1-001"]
-        self.chat_models = chat_models
-        self._agents: list[AgentVersionDetails] = []
-        self._agent_ids = [str(uuid.uuid4())[:8] for _ in chat_models]
-        self._local = threading.local()
+        self._llm_client: PooledLLMClient | None = None
 
     def create_memory_store(self, multisession_data: MultiSessionOutput) -> None:
         """Delete any existing memory store, create fresh, and populate with conversation history.
@@ -120,7 +163,7 @@ class FoundryMemoryAgent(LeastBusyPool):
                 self.client.memory_stores.delete(self.memory_store_name)
 
             definition = MemoryStoreDefaultDefinition(
-                chat_model=self.chat_models[0],
+                chat_model=self.chat_model,
                 embedding_model=self.embedding_model,
                 options=MemoryStoreDefaultOptions(
                     user_profile_enabled=True,
@@ -179,110 +222,37 @@ class FoundryMemoryAgent(LeastBusyPool):
         poller.result()  # blocks until complete; raises HttpResponseError on server failures
         return poller
 
-    def _ensure_agents(self) -> None:
-        """Create one Foundry agent per deployment model.
-
-        Thread-safe: only one thread will create the agents.
-        """
-        with self._init_lock:
-            if self._agents:
-                return
-
-            tool = MemorySearchTool(
-                memory_store_name=self.memory_store_name,
-                scope=self.scope,
-                update_delay=300,
-            )
-
-            for i, model in enumerate(self.chat_models):
-                agent = self.client.agents.create_version(
-                    agent_name=f"PersonaGymAgent-{self._agent_ids[i]}",
-                    definition=PromptAgentDefinition(
-                        model=model,
-                        instructions=render_prompt("agents/agent_system_foundry_tool"),
-                        tools=[tool],
-                    ),
-                )
-                self._agents.append(agent)
-
-            self._init_pool(self._agents)
+    def _search_memories(self, query: str) -> list[dict[str, str]]:
+        """Search memories via Foundry memory store API."""
+        query_message = ResponsesUserMessageItemParam(content=query)
+        search_response = self.client.memory_stores.search_memories(
+            name=self.memory_store_name,
+            scope=self.scope,
+            items=[query_message],  # type: ignore[arg-type]  # SDK accepts this message type at runtime
+            options=MemorySearchOptions(max_memories=self.num_memories),
+        )
+        return [{"fact": m.memory_item.content} for m in search_response.memories]
 
     def build_context(self, multisession_data: MultiSessionOutput) -> str:
-        """Ensure memory store is populated and agents are ready."""
+        """Ensure memory store is populated and LLM client pool is ready."""
         self.create_memory_store(multisession_data)
-        self._ensure_agents()
-        return "Foundry agent with memory search"
+        if self._llm_client is None:
+            self._llm_client = PooledLLMClient()
+        return "Foundry agent with memory API"
 
-    def respond(self, conversation: list[dict[str, str]]) -> str:
-        """Generate a response using least-busy Foundry agent.
-
-        Thread-safe: each thread gets its own conversation ID per agent index.
-        """
-        if not self._agents:
-            raise ValueError("Agents not initialized. Call build_context first.")
-
-        idx, agent = self._acquire()
-        try:
-            conv_key = f"conversation_id_{idx}"
-            openai_client = self.client.get_openai_client()
-
-            conv_id = getattr(self._local, conv_key, None)
-            if conv_id is None:
-                conv = openai_client.conversations.create()
-                setattr(self._local, conv_key, conv.id)
-                conv_id = conv.id
-
-            last_user_message = ""
-            for msg in reversed(conversation):
-                if msg["role"] == "user":
-                    last_user_message = msg["content"]
-                    break
-
-            response = self._call_with_retry(
-                openai_client,
-                last_user_message,
-                conv_id,
-                agent,
-            )
-
-            return response.output_text
-        finally:
-            self._release(idx)
-
-    _foundry_retry = CONFIG["retry_foundry"]
-
-    @retry(
-        retry=retry_if_exception_type((openai.RateLimitError, openai.APIConnectionError, openai.InternalServerError)),
-        wait=wait_exponential(
-            multiplier=_foundry_retry["multiplier"],
-            min=_foundry_retry["min_seconds"],
-            max=_foundry_retry["max_seconds"],
-        ),
-        stop=stop_after_attempt(_foundry_retry["max_attempts"]),
-        before_sleep=_before_sleep_print,
-    )
-    def _call_with_retry(
-        self, openai_client: openai.OpenAI, message: str, conversation_id: str, agent: AgentVersionDetails
-    ) -> Any:
-        """Call responses.create with retry logic for rate limits."""
-        return openai_client.responses.create(
-            input=message,
-            conversation=conversation_id,
-            extra_body={"agent": {"name": agent.name, "type": "agent_reference"}},
+    def respond(self, conversation: list[dict[str, str]]) -> tuple[str, list[dict]]:
+        """Generate a response using Azure OpenAI with Foundry memory search."""
+        if self._llm_client is None:
+            raise ValueError("LLM client not initialized. Call build_context first.")
+        return respond_with_memory_search(
+            self._llm_client, "agents/agent_system_memory", conversation, self._search_memories
         )
 
-    def cleanup(self) -> None:
-        """Delete all agents and the memory store created by this instance."""
-        for agent in self._agents:
-            try:
-                self.client.agents.delete(agent.name)
-                print(f"Deleted agent: {agent.name}")
-            except Exception as e:
-                if "404" not in str(e) and "NotFound" not in str(e):
-                    raise
-                print(f"Agent already deleted: {agent.name}")
-        self._agents.clear()
+    def reset_conversation(self) -> None:
+        """No-op: no per-conversation state to reset."""
 
+    def cleanup(self) -> None:
+        """Delete the memory store created by this instance."""
         try:
             self.client.memory_stores.delete(self.memory_store_name)
             print(f"Deleted memory store: {self.memory_store_name}")
@@ -291,11 +261,6 @@ class FoundryMemoryAgent(LeastBusyPool):
                 raise
             print(f"Memory store already deleted: {self.memory_store_name}")
         self._memory_populated = False
-
-    def reset_conversation(self) -> None:
-        """Reset all conversation IDs for the current thread."""
-        for i in range(len(self.chat_models)):
-            setattr(self._local, f"conversation_id_{i}", None)
 
 
 def _to_foundry_messages(
@@ -316,129 +281,3 @@ def _to_foundry_messages(
             messages.append(ResponsesAssistantMessageItemParam(content=content))
 
     return messages
-
-
-class FoundryMemoryAPIAgent(FoundryMemoryAgent):
-    """Agent using Azure AI Foundry memory store via direct API calls.
-
-    Instead of attaching MemorySearchTool to a Foundry prompt agent,
-    this agent manually searches memories via the memory store API and
-    uses a tool-calling loop (like GoogleMemoryAgent) so we control
-    memory retrieval.
-    """
-
-    def __init__(
-        self,
-        memory_store_name: str,
-        scope: str = "user",
-        chat_models: list[str] | None = None,
-        embedding_model: str | None = None,
-        num_memories: int = 10,
-    ):
-        super().__init__(
-            memory_store_name=memory_store_name,
-            scope=scope,
-            chat_models=chat_models,
-            embedding_model=embedding_model,
-        )
-        self.num_memories = num_memories
-        self._llm_client: PooledLLMClient | None = None
-
-    def build_context(self, multisession_data: MultiSessionOutput) -> str:
-        """Ensure memory store is populated and LLM client pool is ready."""
-        self.create_memory_store(multisession_data)
-        if self._llm_client is None:
-            self._llm_client = PooledLLMClient()
-        return "Foundry agent with memory API"
-
-    def _search_memories(self, query: str) -> list[dict[str, str]]:
-        """Search memories via Foundry memory store API."""
-        query_message = ResponsesUserMessageItemParam(content=query)
-        search_response = self.client.memory_stores.search_memories(
-            name=self.memory_store_name,
-            scope=self.scope,
-            items=[query_message],  # type: ignore[arg-type]  # SDK accepts this message type at runtime
-            options=MemorySearchOptions(max_memories=self.num_memories),
-        )
-        return [{"fact": m.memory_item.content} for m in search_response.memories]
-
-    def respond(self, conversation: list[dict[str, str]]) -> str:
-        """Generate a response using Azure OpenAI with Foundry memory search via API.
-
-        Uses tool-calling: the LLM decides when to search memories.
-        """
-        if self._llm_client is None:
-            raise ValueError("LLM client not initialized. Call build_context first.")
-
-        system_prompt = render_prompt("agents/agent_system_foundry_api")
-
-        messages: list[dict[str, Any]] = [{"role": "system", "content": system_prompt}]
-        for msg in conversation:
-            messages.append({"role": msg["role"], "content": msg["content"]})
-
-        idx, llm_client = self._llm_client._acquire()
-        try:
-            azure_client = llm_client._client
-            return self._respond_with_tools(azure_client, llm_client.deployment, messages)
-        finally:
-            self._llm_client._release(idx)
-
-    _azure_retry = CONFIG["retry"]
-
-    @retry(
-        retry=retry_if_exception_type(
-            (openai.RateLimitError, openai.APIConnectionError, openai.InternalServerError, json.JSONDecodeError)
-        ),
-        wait=wait_exponential(
-            multiplier=1,
-            min=_azure_retry["wait_seconds"],
-            max=_azure_retry["wait_seconds"],
-        ),
-        stop=stop_after_attempt(_azure_retry["max_attempts"]),
-        before_sleep=_before_sleep_print,
-    )
-    def _respond_with_tools(
-        self, azure_client: openai.AzureOpenAI, deployment: str, messages: list[dict[str, Any]]
-    ) -> str:
-        """Make Azure OpenAI call with tool-calling loop."""
-        response = azure_client.responses.create(
-            model=deployment,
-            input=messages,  # type: ignore[arg-type]
-            tools=[_SEARCH_MEMORIES_TOOL],  # type: ignore[list-item]
-            max_output_tokens=CONFIG["max_tokens"]["agent"],
-        )
-
-        while True:
-            tool_calls = [item for item in response.output if item.type == "function_call"]
-            if not tool_calls:
-                break
-
-            tool_results: list[dict[str, Any]] = []
-            for tool_call in tool_calls:
-                if tool_call.name == "search_user_memories":
-                    args = json.loads(tool_call.arguments)
-                    query = args["query"]
-                    memories = self._search_memories(query)
-                    output = json.dumps(memories, ensure_ascii=False)
-                else:
-                    output = json.dumps({"error": f"Unknown tool: {tool_call.name}"})
-
-                tool_results.append(
-                    {
-                        "type": "function_call_output",
-                        "call_id": tool_call.call_id,
-                        "output": output,
-                    }
-                )
-
-            response = azure_client.responses.create(
-                model=deployment,
-                input=response.output + tool_results,  # type: ignore[arg-type,operator]
-                tools=[_SEARCH_MEMORIES_TOOL],  # type: ignore[list-item]
-                max_output_tokens=CONFIG["max_tokens"]["agent"],
-            )
-
-        return response.output_text
-
-    def reset_conversation(self) -> None:
-        """No-op: no per-conversation state to reset."""

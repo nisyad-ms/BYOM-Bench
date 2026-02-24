@@ -4,7 +4,10 @@
 
 prompts:
   # Data generation prompts
-  data_generation/multisession/expand_persona_instruction: ""
+  data_generation/multisession/expand_life_facts_system: ""
+  data_generation/multisession/expand_life_facts_user: ""
+  data_generation/multisession/generate_baseline_preferences_system: ""
+  data_generation/multisession/generate_baseline_preferences_user: ""
   data_generation/multisession/generate_life_story_instruction: "v3"
   data_generation/multisession/update_preferences_instruction: "v2"
   data_generation/multisession/generate_session_conversation_instruction: ""
@@ -22,3 +25,4 @@ prompts:
   # Agent prompts
   agents/agent_system_with_context: ""
   agents/agent_system_no_context: ""
+  agents/agent_system_memory: ""

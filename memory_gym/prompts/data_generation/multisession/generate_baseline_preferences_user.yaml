@@ -1,0 +1,105 @@
+name: Generate Baseline Preferences — User
+description: User prompt for generating 25 baseline preferences from an expanded persona's life facts.
+used_by: memory_gym/data_generators/multisession.py::_expand_persona
+variables:
+  - persona: The full expanded persona description (life facts formatted as text)
+
+template: |
+  Generate baseline preferences for this persona — habits, routines, and choices that describe HOW they engage with their life.
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  PERSONA
+  ═══════════════════════════════════════════════════════════════════════════════
+
+  {persona}
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  TASK
+  ═══════════════════════════════════════════════════════════════════════════════
+
+  Generate EXACTLY 5 preferences for each of these 5 domains (25 total):
+    work_education, health_wellness, travel_experiences, relationships_personal, hobbies_interests
+
+  Rules:
+  - Specific and actionable (an AI agent could use these to personalize recommendations)
+  - Include both positive behaviors AND restrictions/avoidances
+  - Must NOT restate life facts — facts say WHAT they do, preferences say HOW
+  - Use varied starters — do NOT start every preference with "Prefers...":
+    Habits: "Runs every morning", "Reads before bed"
+    Routines: "Attends yoga Tuesdays", "Meal preps Sundays"
+    Constraints: "Only eats...", "Never works past 6pm", "Must have..."
+    Choices: "Chooses window seats", "Takes stairs over elevators"
+    Commitments: "Volunteers at shelter Saturdays", "Maintains daily journal"
+    Avoidances: "Avoids crowded places", "Refuses budget airlines"
+    Preferences: "Prefers quiet cafes" (use sparingly)
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  EVOLVABILITY TEST (apply to every preference)
+  ═══════════════════════════════════════════════════════════════════════════════
+
+  Before finalizing each preference, ask:
+  "Can I imagine a realistic life event that would REVERSE or REPLACE this?"
+
+  ✓ GOOD — evolvable:
+    "Runs 5K every morning"           → knee injury ends this
+    "Cooks every meal at home"        → demanding new job kills this
+    "Only flies economy class"        → promotion or points strategy changes this
+    "Hosts dinner parties monthly"    → newborn ends this
+
+  ✗ BAD — too niche or trivial to evolve:
+    "Uses mechanical keyboard"        → what life event changes this?
+    "Prefers dark mode on all apps"   → too trivial
+    "Listens to lo-fi while coding"   → gear/tool preference, not life-changeable
+    "Uses Notion for note-taking"     → specific tool, not a behavioral pattern
+
+  Focus on BEHAVIORS, ROUTINES, and LIFESTYLE CHOICES — not tool/gear/app preferences.
+
+  ═══════════════════════════════════════════════════════════════════════════════
+  EXAMPLE
+  ═══════════════════════════════════════════════════════════════════════════════
+
+  For a college biology student:
+  {{
+    "baseline_preferences": {{
+      "work_education": [
+        "Studies in complete silence only - even instrumental music is distracting",
+        "Works independently on projects - avoids group work when possible",
+        "Studies late at night (10pm-2am) and sleeps through mornings",
+        "Buys new textbooks only - needs to highlight and annotate fresh copies",
+        "Attends every office hour - never emails professors with questions"
+      ],
+      "health_wellness": [
+        "Eats strictly vegetarian - avoids all meat for ethical reasons",
+        "Does team sports and dance workouts; refuses to run solo",
+        "Drinks only coffee for caffeine - won't touch energy drinks",
+        "Practices morning yoga for 10 minutes before class",
+        "Skips breakfast entirely - first meal is always lunch"
+      ],
+      "travel_experiences": [
+        "Flies only full-service airlines - won't book budget carriers",
+        "Chooses window seats on every flight - can't sleep on aisle",
+        "Books Airbnbs with kitchens rather than hotels",
+        "Plans trips 3+ months in advance - never travels spontaneously",
+        "Walks everywhere at destinations - avoids taxis and ride-shares"
+      ],
+      "relationships_personal": [
+        "Texts instead of calling, even for complex conversations",
+        "Arrives 15 minutes early to every meeting and event",
+        "Attends small gatherings (3-5 people) but skips large parties",
+        "Gives practical gifts (gift cards, needed items) only",
+        "Hosts study groups at her apartment twice a week"
+      ],
+      "hobbies_interests": [
+        "Watches new movie releases in theaters only, never streams at home",
+        "Reads physical books exclusively - won't use e-readers",
+        "Maintains paper to-do lists instead of digital apps",
+        "Spends Sunday afternoons hiking - treats it as non-negotiable",
+        "Journals by hand every night before bed"
+      ]
+    }}
+  }}
+
+  CRITICAL:
+  - Output ONLY valid JSON matching the structure above
+  - EXACTLY 5 preferences per domain, 25 total
+  - Every preference must pass the evolvability test

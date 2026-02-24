@@ -2,7 +2,7 @@ name: Update Preferences (v2)
 description: Evolves existing preferences and creates new ones based on life events. Includes verifiability test for dramatic changes.
 used_by: persona_gym/data_generators/multisession.py::_update_preferences
 variables:
-  - persona: The full expanded persona description (includes domain facts and baseline preferences)
+  - persona: The full expanded persona description (includes life facts and baseline preferences)
   - current_event: The current life event being processed
   - event_date: Date of the current event
   - previous_events: List of all previous life events (empty for session 0)

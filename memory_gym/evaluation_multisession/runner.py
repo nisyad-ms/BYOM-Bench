@@ -9,13 +9,13 @@ Orchestrates the complete evaluation flow:
 """
 
 import re
-from typing import Callable, Literal
+from typing import Any, Callable, Literal
 
 from memory_gym.agents import (
     AWSMemoryAgent,
     ContextAwareAgent,
+    FoundryLocalAgent,
     FoundryMemoryAgent,
-    FoundryMemoryAPIAgent,
     GoogleMemoryAgent,
     NoContextAgent,
 )
@@ -87,12 +87,12 @@ def run_evaluation(
     max_agent_turns: int = 10,
     client: LLMClient | PooledLLMClient | None = None,
     eval_task: EvaluationTaskSpec | None = None,
-    agent_type: Literal["context", "nocontext", "foundry", "google", "aws"] = "context",
+    agent_type: Literal["context", "nocontext", "foundry", "google", "aws", "foundry_local"] = "context",
     memory_store_name: str | None = None,
-    foundry_agent: FoundryMemoryAgent | FoundryMemoryAPIAgent | None = None,
+    foundry_agent: FoundryMemoryAgent | None = None,
     google_agent: GoogleMemoryAgent | None = None,
     aws_agent: AWSMemoryAgent | None = None,
-    foundry_memory_type: Literal["tool", "api"] = "api",
+    foundry_local_agent: FoundryLocalAgent | None = None,
 ) -> MultiSessionEvaluationResult:
     """Run a complete evaluation on multi-session data.
 
@@ -129,8 +129,8 @@ def run_evaluation(
         memory_store_name,
         foundry_agent,
         google_agent,
-        foundry_memory_type,
         aws_agent,
+        foundry_local_agent,
     )
 
     # Step 3: Evaluate with judge (using clean conversation without scratchpads)
@@ -152,14 +152,14 @@ def run_dialogue(
     eval_task: EvaluationTaskSpec,
     multisession_data: MultiSessionOutput,
     max_agent_turns: int,
-    agent_type: Literal["context", "nocontext", "foundry", "google", "aws"],
+    agent_type: Literal["context", "nocontext", "foundry", "google", "aws", "foundry_local"],
     client: LLMClient | PooledLLMClient,
     memory_store_name: str | None = None,
-    foundry_agent: FoundryMemoryAgent | FoundryMemoryAPIAgent | None = None,
+    foundry_agent: FoundryMemoryAgent | None = None,
     google_agent: GoogleMemoryAgent | None = None,
-    foundry_memory_type: Literal["tool", "api"] = "api",
     aws_agent: AWSMemoryAgent | None = None,
-) -> tuple[list[dict[str, str | None]], list[dict[str, str]]]:
+    foundry_local_agent: FoundryLocalAgent | None = None,
+) -> tuple[list[dict[str, Any]], list[dict[str, str]]]:
     """Run the evaluation dialogue between agent and user simulator.
 
     Args:
@@ -186,10 +186,7 @@ def run_dialogue(
         else:
             if not memory_store_name:
                 raise ValueError("memory_store_name required for foundry agent")
-            if foundry_memory_type == "api":
-                agent = FoundryMemoryAPIAgent(memory_store_name=memory_store_name)
-            else:
-                agent = FoundryMemoryAgent(memory_store_name=memory_store_name)
+            agent = FoundryMemoryAgent(memory_store_name=memory_store_name)
             agent.build_context(multisession_data)
     elif agent_type == "google":
         if google_agent is not None:
@@ -209,6 +206,14 @@ def run_dialogue(
                 raise ValueError("memory_store_name required for aws agent")
             agent = AWSMemoryAgent(memory_name=memory_store_name)
             agent.build_context(multisession_data)
+    elif agent_type == "foundry_local":
+        if foundry_local_agent is not None:
+            agent = foundry_local_agent
+            agent.reset_conversation()
+            agent.build_context(multisession_data)
+        else:
+            agent = FoundryLocalAgent()
+            agent.build_context(multisession_data)
     elif agent_type == "context":
         agent = ContextAwareAgent(client)
         agent.build_context(multisession_data, event_summaries=event_summaries)
@@ -216,7 +221,7 @@ def run_dialogue(
         agent = NoContextAgent(client)
         agent.build_context(multisession_data)
 
-    conversation_with_scratchpads: list[dict[str, str | None]] = []
+    conversation_with_scratchpads: list[dict[str, Any]] = []
     clean_conversation: list[dict[str, str]] = []
 
     user_message, initial_scratchpad = user_sim.get_initial_message()
@@ -225,8 +230,14 @@ def run_dialogue(
 
     agent_turns = 0
     while agent_turns < max_agent_turns:
-        agent_response = agent.respond(clean_conversation)
-        conversation_with_scratchpads.append({"role": "assistant", "content": agent_response})
+        agent_response, retrieved_memories = agent.respond(clean_conversation)
+        conversation_with_scratchpads.append(
+            {
+                "role": "assistant",
+                "retrieved_memories": retrieved_memories if retrieved_memories else None,
+                "content": agent_response,
+            }
+        )
         clean_conversation.append({"role": "assistant", "content": agent_response})
         agent_turns += 1
 
@@ -268,7 +279,7 @@ def _run_single_evaluation_with_client(
         foundry_agent=context.get("foundry_agent"),
         google_agent=context.get("google_agent"),
         aws_agent=context.get("aws_agent"),
-        foundry_memory_type=context.get("foundry_memory_type", "api"),
+        foundry_local_agent=context.get("foundry_local_agent"),
     )
 
 
@@ -282,7 +293,7 @@ async def run_evaluations_parallel(
         contexts: List of dicts, each containing:
             - multisession_data: MultiSessionOutput
             - eval_task: EvaluationTaskSpec
-            - agent_type: "context", "nocontext", "foundry", "google", or "aws" (default: "context")
+            - agent_type: "context", "nocontext", "foundry", "google", "aws", or "foundry_local" (default: "context")
             - max_agent_turns: int
             - memory_store_name: Optional[str] (required if agent_type="foundry")
         on_result: Optional callback(index, context, result) called as each completes.

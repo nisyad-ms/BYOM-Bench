@@ -5,7 +5,7 @@ This module provides a centralized system for loading and managing prompts
 used across the MemoryGym pipeline. Prompts are stored as YAML files with
 metadata describing their purpose and usage.
 
-Prompt versions are controlled via prompt_config.yaml at project root.
+Prompt versions are controlled via prompts.yaml at project root.
 
 Usage:
     from memory_gym.prompts import render_prompt
@@ -30,12 +30,12 @@ PROJECT_ROOT = PROMPTS_DIR.parent.parent
 
 
 def _load_prompt_config() -> dict[str, str]:
-    """Load prompt version configuration from prompt_config.yaml."""
+    """Load prompt version configuration from prompts.yaml."""
     global _config_cache
     if _config_cache is not None:
         return _config_cache
 
-    config_path = PROJECT_ROOT / "configs" / "prompt_config.yaml"
+    config_path = PROJECT_ROOT / "configs" / "prompts.yaml"
     if not config_path.exists():
         _config_cache = {}
         return _config_cache
@@ -73,7 +73,7 @@ def load_prompt(prompt_name: str, reload: bool = False, use_config: bool = True)
         prompt_name: Path to prompt relative to prompts/ directory,
                     without .yaml extension (e.g., "data_generation/multisession/expand_persona_instruction")
         reload: If True, bypass cache and reload from disk
-        use_config: If True, resolve version from prompt_config.yaml
+        use_config: If True, resolve version from prompts.yaml
 
     Returns:
         Dict containing prompt metadata and template
@@ -108,7 +108,7 @@ def render_prompt(prompt_name: str, use_config: bool = True, **variables: Any) -
 
     Args:
         prompt_name: Path to prompt relative to prompts/ directory
-        use_config: If True, resolve version from prompt_config.yaml
+        use_config: If True, resolve version from prompts.yaml
         **variables: Variables to substitute in the template
 
     Returns:

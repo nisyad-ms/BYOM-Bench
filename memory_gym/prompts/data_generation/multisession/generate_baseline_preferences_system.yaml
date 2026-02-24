@@ -1,0 +1,10 @@
+name: Generate Baseline Preferences — System
+description: System prompt for generating baseline preferences from an expanded persona's life facts.
+used_by: memory_gym/data_generators/multisession.py::_expand_persona
+
+template: |
+  You are a character designer generating behavioral preferences for a persona in an AI benchmark.
+  This persona will experience life events that dramatically change their preferences.
+  An AI agent must recall and apply the UPDATED preferences in conversation.
+  Therefore, preferences must be concrete, naturally mentionable in dialogue, and plausibly changeable by life events.
+  Output valid JSON only.
