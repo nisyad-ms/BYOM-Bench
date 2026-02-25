@@ -32,13 +32,13 @@ from memory_gym.schemas import (
     Session,
 )
 
-# Life domains for event generation
+# Preference domains for life event generation (same as preference domains)
 LIFE_DOMAINS = [
-    "work_education",
-    "health_wellness",
-    "travel_experiences",
-    "relationships_personal",
-    "hobbies_interests",
+    "work_habits",
+    "health_body",
+    "social_relationships",
+    "leisure_hobbies",
+    "daily_routines",
 ]
 
 # Default configuration
@@ -197,15 +197,20 @@ class MultiSessionGenerator:
         else:
             previous_events_str = "None (this is the first event)"
 
+        system_prompt = render_prompt("data_generation/multisession/generate_life_event_system")
         prompt = render_prompt(
-            "data_generation/multisession/generate_life_story_instruction",
+            "data_generation/multisession/generate_life_event_user",
             persona=expanded_persona.to_full_description(),
             domain=domain,
             previous_events=previous_events_str,
         )
 
         try:
-            result = self.llm.complete_json(prompt, max_tokens=CONFIG["max_tokens"]["life_event"])
+            result = self.llm.complete_json(
+                prompt,
+                system_prompt=system_prompt,
+                max_tokens=CONFIG["max_tokens"]["life_event"],
+            )
 
             if not isinstance(result, dict):
                 raise GenerationError(f"Unexpected response type: {type(result)}")
@@ -329,8 +334,9 @@ class MultiSessionGenerator:
         evolution_history_str = self._format_evolution_history(timeline)
         previous_events_str = self._format_previous_events(all_events, session_id)
 
+        system_prompt = render_prompt("data_generation/multisession/update_preferences_system")
         prompt = render_prompt(
-            "data_generation/multisession/update_preferences_instruction",
+            "data_generation/multisession/update_preferences_user",
             persona=expanded_persona.to_full_description(),
             current_event=life_event.event,
             event_date=life_event.date,
@@ -340,7 +346,11 @@ class MultiSessionGenerator:
         )
 
         try:
-            result = self.llm.complete_json(prompt, max_tokens=CONFIG["max_tokens"]["update_preferences"])
+            result = self.llm.complete_json(
+                prompt,
+                system_prompt=system_prompt,
+                max_tokens=CONFIG["max_tokens"]["update_preferences"],
+            )
 
             if not isinstance(result, dict):
                 result = {"evolutions": [], "new_preferences": []}
@@ -406,6 +416,7 @@ class MultiSessionGenerator:
         timeline: PreferenceTimeline,
         session_id: int,
         evolved_mapping: dict[str, str],
+        new_pref_ids: list[str],
         expanded_persona: ExpandedPersona,
     ) -> list[dict[str, str]]:
         """Generate a conversation for a session.
@@ -415,37 +426,43 @@ class MultiSessionGenerator:
             timeline: PreferenceTimeline with current state
             session_id: Current session number
             evolved_mapping: Mapping of old_id -> new_id for recently evolved prefs
+            new_pref_ids: IDs of newly created preferences this session
             expanded_persona: The expanded persona with life facts
 
         Returns:
             List of conversation turns [{role, content}, ...]
         """
-        # Get active preferences
-        active_prefs = timeline.get_active_at_session(session_id)
-        active_prefs_json = _active_prefs_to_json(active_prefs)
-
-        # Get evolved preferences (the new ones that replaced old ones)
-        evolved_prefs = []
+        # Build session delta: evolved preferences (old -> new) and newly created preferences
+        session_delta = []
         for old_id, new_id in evolved_mapping.items():
             old_pref = timeline.preferences.get(old_id)
             new_pref = timeline.preferences.get(new_id)
             if old_pref and new_pref:
-                evolved_prefs.append(
+                session_delta.append(
                     {
-                        "old_fact": old_pref.fact,
-                        "new_fact": new_pref.fact,
-                        "reason": new_pref.reason_for_change or old_pref.reason_for_change or "",
+                        "type": "evolved",
+                        "old": old_pref.fact,
+                        "new": new_pref.fact,
+                        "reason": old_pref.reason_for_change or "",
                     }
                 )
-        evolved_prefs_json = json.dumps(evolved_prefs, indent=2) if evolved_prefs else "None"
+        for pref_id in new_pref_ids:
+            pref = timeline.preferences.get(pref_id)
+            if pref:
+                session_delta.append(
+                    {
+                        "type": "new",
+                        "fact": pref.fact,
+                    }
+                )
+        session_delta_json = json.dumps(session_delta, indent=2) if session_delta else "None"
 
         prompt = render_prompt(
-            "data_generation/multisession/generate_session_conversation_instruction",
+            "data_generation/multisession/generate_session_conversation_user",
             persona=expanded_persona.to_full_description(),
             life_event=life_event.event,
             event_date=life_event.date,
-            active_preferences=active_prefs_json,
-            evolved_preferences=evolved_prefs_json,
+            session_delta=session_delta_json,
             session_id=session_id,
         )
 
@@ -505,7 +522,7 @@ class MultiSessionGenerator:
             )
 
             # Generate conversation for this session
-            conversation = self._generate_session_conversation(event, timeline, idx, evolved_mapping, expanded_persona)
+            conversation = self._generate_session_conversation(event, timeline, idx, evolved_mapping, new_pref_ids, expanded_persona)
 
             # Create session record
             active_pref_ids = timeline.get_preference_ids_at_session(idx)

@@ -12,7 +12,7 @@ Usage:
 
     # Render with variables (version resolved from config)
     text = render_prompt(
-        "data_generation/multisession/expand_persona_instruction",
+        "data_generation/multisession/expand_life_facts_user",
         persona="A software engineer...",
     )
 """
@@ -52,10 +52,10 @@ def _resolve_prompt_name(prompt_name: str) -> str:
     """Resolve prompt name to versioned name based on config.
 
     Args:
-        prompt_name: Base prompt name (e.g., "data_generation/multisession/generate_life_story_instruction")
+        prompt_name: Base prompt name (e.g., "data_generation/multisession/generate_life_event_user")
 
     Returns:
-        Versioned prompt name (e.g., "data_generation/multisession/generate_life_story_instruction_v2")
+        Versioned prompt name (e.g., "data_generation/multisession/generate_life_event_user_v4")
     """
     config = _load_prompt_config()
     version = config.get(prompt_name, "")
@@ -71,7 +71,7 @@ def load_prompt(prompt_name: str, reload: bool = False, use_config: bool = True)
 
     Args:
         prompt_name: Path to prompt relative to prompts/ directory,
-                    without .yaml extension (e.g., "data_generation/multisession/expand_persona_instruction")
+                    without .yaml extension (e.g., "data_generation/multisession/expand_life_facts_user")
         reload: If True, bypass cache and reload from disk
         use_config: If True, resolve version from prompts.yaml
 
@@ -116,7 +116,7 @@ def render_prompt(prompt_name: str, use_config: bool = True, **variables: Any) -
 
     Example:
         text = render_prompt(
-            "data_generation/multisession/expand_persona_instruction",
+            "data_generation/multisession/expand_life_facts_user",
             persona="A software engineer...",
         )
     """

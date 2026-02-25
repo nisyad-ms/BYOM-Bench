@@ -3,8 +3,128 @@ description: System prompt for generating baseline preferences from an expanded 
 used_by: memory_gym/data_generators/multisession.py::_expand_persona
 
 template: |
-  You are a character designer generating behavioral preferences for a persona in an AI benchmark.
+  You are a character designer generating behavioral preferences for a user persona in an AI benchmark.
   This persona will experience life events that dramatically change their preferences.
   An AI agent must recall and apply the UPDATED preferences in conversation.
   Therefore, preferences must be concrete, naturally mentionable in dialogue, and plausibly changeable by life events.
-  Output valid JSON only.
+
+  ## What is a preference?
+
+  A preference is a **behavioral pattern that a personal AI agent should remember and act on**.
+  It describes HOW this person lives their life — their habits, routines, and non-negotiables.
+
+  Preferences are:
+  - **Actionable**: an AI agent can use them to give personalized advice
+  - **Evolvable**: a moderate life event could reverse or replace them
+  - **Observable in conversation**: they come up naturally when discussing plans, recommendations, decisions
+  - **Independent**: they can change without the persona's core identity changing
+
+  Preferences are NOT:
+  - Biographical facts ("works at Google", "has two kids") — these are already in the input persona
+  - Restatements of life facts ("attends physical therapy twice a month" when the persona already says this) — generate independent patterns, not fact echoes
+  - One-time events ("went to Paris last year") — must be ongoing patterns
+
+  ## Task
+
+  Generate EXACTLY 5 preferences for each of the 5 domains below (25 total).
+
+  Use the persona's life facts as backdrop — preferences should feel plausible for this person
+  without being direct restatements of their facts. A demanding job sets the context; the preferences
+  describe independent habits and choices this person happens to hold alongside that job.
+
+  ### Domains
+
+  - **work_habits**: How they work, manage time, communicate, handle workload and learning
+  - **health_body**: Diet, exercise, sleep, medical routines, physical choices
+  - **social_relationships**: How they maintain relationships, communicate, socialize, handle family obligations
+  - **leisure_hobbies**: How they spend free time — hobbies, entertainment, travel, weekends
+  - **daily_routines**: Recurring patterns that cut across domains: morning/evening habits, errands, spending, digital habits
+
+  Use varied language — not everything starts with "Prefers":
+  - Routines: "Runs every Tuesday and Thursday at 6am"
+  - Constraints: "Never schedules meetings before 10am"
+  - Non-negotiables: "Always cooks at home on weeknights — never orders in"
+  - Avoidances: "Refuses budget airlines regardless of price difference"
+  - Commitments: "Attends son's football games every Saturday without exception"
+
+  ## Evolvability check
+
+  Every preference must pass TWO tests before including it:
+
+  **Test 1 — Independence**: Could this preference change while the persona still holds the same job,
+  lives in the same place, and has the same family? If NO — it's too circumstance-locked, cut it.
+
+  **Test 2 — Moderate event**: Can a realistic, moderate life event (injury, new relationship, financial
+  change, new hobby, schedule shift) reverse or replace it? If only a total life upheaval could change it — cut it.
+
+  GOOD (pass both tests):
+  - "Eats steak twice a week" → vegetarian partner, health diagnosis, or financial pressure changes this
+  - "Runs 5K every morning" → knee injury ends this; same job, same home, preference gone
+  - "Always cooks dinner at home" → new demanding project, new baby, or breakup changes this
+  - "Watches baseball on weekends" → new hobby, child's Saturday activities, or new partner replaces this
+  - "Grabs coffee from the same drive-thru every morning" → remote work or back pain ends this routine
+
+  BAD — circumstance-locked (fails Test 1):
+  - "Checks loyalty app metrics every morning" — only stops if he leaves retail entirely; inseparable from job identity
+  - "Goes to physical therapy twice a month" — only stops if the condition resolves; this IS the life fact
+  - "Attends quarterly industry webinars" — essentially immovable without a career change
+
+  BAD — too trivial or niche (fails Test 2):
+  - "Uses mechanical keyboard" — no life event changes this
+  - "Prefers dark mode" — too trivial
+  - "Listens to podcasts while commuting" — barely a behavioral pattern
+
+  ## Example
+
+  Input persona: biology student (20, female, Boston)
+  - Junior at BU, pre-med, MCAT prep, struggling with organic chemistry
+  - Chronically sleep-deprived, stress eating, mild allergies
+  - Lives with roommates, recently single, calls parents twice a week
+
+  Output:
+  {{
+    "baseline_preferences": {{
+      "work_habits": [
+        "Studies in complete silence only — even instrumental music is distracting",
+        "Works independently on projects; avoids group work when possible",
+        "Studies late at night (10pm-2am) and sleeps through mornings",
+        "Attends every professor office hour rather than emailing questions",
+        "Buys new physical textbooks only — needs to annotate her own copies"
+      ],
+      "health_body": [
+        "Eats strictly vegetarian — avoids all meat for ethical reasons",
+        "Skips breakfast entirely; first meal is always lunch",
+        "Only does team or class-based workouts — never exercises alone",
+        "Meal preps on Sundays to avoid unhealthy choices during busy weeks",
+        "Tracks sleep nightly and reviews weekly patterns"
+      ],
+      "social_relationships": [
+        "Texts rather than calls, even for important conversations",
+        "Arrives 15 minutes early to everything",
+        "Attends small gatherings only (5 people or fewer); skips large parties",
+        "Calls parents every Sunday evening without exception",
+        "Hosts weekly study sessions for her lab group at her apartment"
+      ],
+      "leisure_hobbies": [
+        "Goes hiking every weekend the weather permits — treats it as non-negotiable",
+        "Watches new movie releases in theaters only — never streams films at home",
+        "Reads physical books exclusively; won't use e-readers",
+        "Posts to her science Instagram account every week without fail",
+        "Visits new neighborhoods in the city on Saturday afternoons"
+      ],
+      "daily_routines": [
+        "Journals by hand every night before bed",
+        "Checks email only twice a day — never during study sessions",
+        "Buys groceries only at the farmers market on Sunday mornings",
+        "Plans the coming week every Sunday night before sleep",
+        "Always walks to campus regardless of weather — never takes the T for short trips"
+      ]
+    }}
+  }}
+
+  CRITICAL:
+  - Output ONLY valid JSON matching the structure above
+  - EXACTLY 5 preferences per domain, 25 total
+  - Every preference must describe an ongoing behavioral pattern, not a one-time event
+  - Every preference must pass both the independence test and the moderate event test
+  - Do NOT restate life facts — if the persona already says it, don't echo it as a preference

@@ -1,19 +1,21 @@
 # Prompt version configuration
 # Maps prompt base names to version suffixes (empty string for no suffix)
-# Example: "generate_life_story_instruction" with version "v2" -> "generate_life_story_instruction_v2"
+# Example: "generate_life_event_user" with version "v4" -> "generate_life_event_user_v4"
 
 prompts:
   # Data generation prompts
   data_generation/multisession/expand_life_facts_system: ""
-  data_generation/multisession/expand_life_facts_user: ""
+  data_generation/multisession/expand_life_facts_user: "v3"
   data_generation/multisession/generate_baseline_preferences_system: ""
-  data_generation/multisession/generate_baseline_preferences_user: ""
-  data_generation/multisession/generate_life_story_instruction: "v3"
-  data_generation/multisession/update_preferences_instruction: "v2"
-  data_generation/multisession/generate_session_conversation_instruction: ""
+  data_generation/multisession/generate_baseline_preferences_user: "v3"
+  data_generation/multisession/generate_life_event_system: ""
+  data_generation/multisession/generate_life_event_user: "v4"
+  data_generation/multisession/update_preferences_system: ""
+  data_generation/multisession/update_preferences_user: "v3"
+  data_generation/multisession/generate_session_conversation_user: "v2"
 
   # Task generation prompts
-  data_generation/event_summary_instruction: ""
+  data_generation/event_summary_user: ""
 
   # Evaluation prompts
   evaluation/preference_judge_system: ""
@@ -21,6 +23,7 @@ prompts:
   evaluation/efficiency_judge_system: "v5"
   evaluation/efficiency_judge_user: ""
   user_simulator/user_simulator_system: "v7"
+  user_simulator/user_simulator_user: ""
 
   # Agent prompts
   agents/agent_system_with_context: ""

@@ -22,33 +22,30 @@ from typing import Any
 
 @dataclass
 class ExpandedPersona:
-    """A persona expanded across all life domains.
+    """A persona expanded across 3 life circumstance domains.
 
-    Takes a basic persona description and enriches it with specific details
-    across work, health, travel, relationships, and hobbies domains.
+    Life circumstances describe who the person is and what their situation is —
+    not their behaviors or habits (those are captured as preferences).
 
     Attributes:
         base_persona: The original basic persona description
         age: Person's age
         gender: Person's gender (male/female/non-binary)
         location: City and state/country
-        work_and_education: 3-5 facts about work and educational background
-        relationships_and_personal: 3-5 facts about family, friends, social life
-        health_and_wellness: 3-5 facts about physical/mental health
-        travel_and_experiences: 3-5 facts about travel history and preferences
-        hobbies_and_interests: 3-5 facts about how they spend free time
-        baseline_preferences: Core personality preferences grouped by domain (5 per domain)
+        work_education: 3-5 circumstances about job, career, education, commute
+        health_wellness: 3-5 circumstances about medical history, fitness level, conditions
+        family_relationships: 3-5 circumstances about family structure, partner, living situation
+        baseline_preferences: Behavioral patterns grouped by domain (5 per domain, 25 total)
+            Domains: work_habits, health_body, social_relationships, leisure_hobbies, daily_routines
     """
 
     base_persona: str
     age: int
     gender: str
     location: str
-    work_and_education: list[str]
-    relationships_and_personal: list[str]
-    health_and_wellness: list[str]
-    travel_and_experiences: list[str]
-    hobbies_and_interests: list[str]
+    work_education: list[str]
+    health_wellness: list[str]
+    family_relationships: list[str]
     baseline_preferences: dict[str, list[str]] | None = None  # {domain: [pref1, pref2, ...]}
 
     def __post_init__(self):
@@ -61,11 +58,9 @@ class ExpandedPersona:
             "age": self.age,
             "gender": self.gender,
             "location": self.location,
-            "work_and_education": self.work_and_education,
-            "relationships_and_personal": self.relationships_and_personal,
-            "health_and_wellness": self.health_and_wellness,
-            "travel_and_experiences": self.travel_and_experiences,
-            "hobbies_and_interests": self.hobbies_and_interests,
+            "work_education": self.work_education,
+            "health_wellness": self.health_wellness,
+            "family_relationships": self.family_relationships,
             "baseline_preferences": self.baseline_preferences,
         }
 
@@ -76,42 +71,34 @@ class ExpandedPersona:
             age=data.get("age", 0),
             gender=data.get("gender", ""),
             location=data.get("location", ""),
-            work_and_education=data.get("work_and_education", []),
-            relationships_and_personal=data.get("relationships_and_personal", []),
-            health_and_wellness=data.get("health_and_wellness", []),
-            travel_and_experiences=data.get("travel_and_experiences", []),
-            hobbies_and_interests=data.get("hobbies_and_interests", []),
+            work_education=data.get("work_education", []),
+            health_wellness=data.get("health_wellness", []),
+            family_relationships=data.get("family_relationships", []),
             baseline_preferences=data.get("baseline_preferences", {}),
         )
 
     def to_full_description(self) -> str:
-        """Generate a full prose description of the persona.
+        """Generate a full prose description of the persona for use in prompts.
 
         Returns:
-            Multi-line description suitable for prompts
+            Multi-line description with life circumstances and preferences
         """
         lines = [
             f"Base: {self.base_persona}",
             f"Demographics: {self.age} year old {self.gender} in {self.location}",
             "",
             "Work & Education:",
-            *[f"  - {fact}" for fact in self.work_and_education],
-            "",
-            "Relationships & Personal:",
-            *[f"  - {fact}" for fact in self.relationships_and_personal],
+            *[f"  - {fact}" for fact in self.work_education],
             "",
             "Health & Wellness:",
-            *[f"  - {fact}" for fact in self.health_and_wellness],
+            *[f"  - {fact}" for fact in self.health_wellness],
             "",
-            "Travel & Experiences:",
-            *[f"  - {fact}" for fact in self.travel_and_experiences],
-            "",
-            "Hobbies & Interests:",
-            *[f"  - {fact}" for fact in self.hobbies_and_interests],
+            "Family & Relationships:",
+            *[f"  - {fact}" for fact in self.family_relationships],
         ]
         if self.baseline_preferences:
             lines.append("")
-            lines.append("Baseline Preferences (core personality):")
+            lines.append("Baseline Preferences:")
             for domain, prefs in self.baseline_preferences.items():
                 lines.append(f"  [{domain}]")
                 for pref in prefs:
@@ -170,7 +157,7 @@ class Preference:
     Attributes:
         preference_id: Unique identifier (e.g., "pref_001")
         fact: The preference statement
-        domain: Life domain (work_education, health_wellness, travel_experiences, relationships_personal, hobbies_interests)
+        domain: Life domain (work_habits, health_body, social_relationships, leisure_hobbies, daily_routines)
         created_at_session: Session when this preference was first expressed
         created_at_date: Date when this preference was first expressed
         superseded_at_session: Session when this preference was replaced (None if still active)

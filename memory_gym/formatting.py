@@ -24,7 +24,7 @@ def summarize_events(
     events_block = "\n".join(f"Session {s.session_id}: {s.life_event.event}" for s in data.sessions)
 
     prompt = render_prompt(
-        "data_generation/event_summary_instruction",
+        "data_generation/event_summary_user",
         events=events_block,
     )
 

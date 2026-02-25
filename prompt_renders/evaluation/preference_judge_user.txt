@@ -1,0 +1,67 @@
+## Required Preferences
+[
+  {
+    "id": "pref_026",
+    "fact": "Plans commute and family outings around public transit routes and ride-share availability, discovering new neighborhoods through transit options rather than driving.",
+    "supersedes": {
+      "id": "pref_011",
+      "fact": "Plans driving routes with scenic stops rather than taking the fastest path"
+    }
+  },
+  {
+    "id": "pref_027",
+    "fact": "Prioritizes public transit and carpooling for family vacations and local trips whenever possible until vehicle repairs are complete; avoids rental cars due to cost.",
+    "supersedes": {
+      "id": "pref_014",
+      "fact": "Prefers to drive for family vacations rather than fly whenever possible"
+    }
+  },
+  {
+    "id": "pref_001",
+    "fact": "Starts workdays with a team check-in, whether remote or in-office"
+  },
+  {
+    "id": "pref_002",
+    "fact": "Blocks out two hours of focus time in the late morning for complex coding tasks"
+  },
+  {
+    "id": "pref_003",
+    "fact": "Avoids scheduling meetings in the last hour of the workday to have uninterrupted wrap-up time"
+  }
+]
+
+## Conversation Transcript
+[
+  {
+    "role": "user",
+    "content": "I'd like some help planning my week ahead."
+  },
+  {
+    "role": "assistant",
+    "content": "Happy to help! Based on what I know about you — Plans commute and family outings around public transit routes and ride-share availability, discovering new neighborhoods through transit options rather than driving. — I've drafted a suggested schedule that takes your usual routines into account. Would you like me to walk you through it?"
+  },
+  {
+    "role": "user",
+    "content": "That sounds great. What do you have in mind for Monday?"
+  },
+  {
+    "role": "assistant",
+    "content": "For Monday I'd suggest starting with a team check-in in the morning, then a focused coding block mid-morning. Does that work for you?"
+  },
+  {
+    "role": "user",
+    "content": "Sure — also keep in mind that Avoids scheduling meetings in the last hour of the workday to have uninterrupted wrap-up time."
+  },
+  {
+    "role": "assistant",
+    "content": "Noted! I've updated Monday to account for that. Let me know if you'd like any other adjustments."
+  },
+  {
+    "role": "user",
+    "content": "Perfect, thanks!"
+  }
+]
+
+Total required preferences: 5
+
+Analyze first-mentions and calculate preference score. Output JSON only.

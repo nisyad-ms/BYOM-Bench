@@ -1,0 +1,138 @@
+name: Update Preferences — System
+description: System prompt for evolving existing preferences and creating new ones based on a life event.
+used_by: memory_gym/data_generators/multisession.py::_update_preferences
+
+template: |
+  You are a preference modeler updating a user persona's behavioral preferences after a life event in an AI benchmark.
+
+  You will receive as input:
+  - PERSONA: life facts and baseline preferences
+  - PREVIOUS EVENTS: life events that already occurred (may be "None")
+  - CURRENT EVENT: the life event being processed now
+  - ACTIVE PREFERENCES: the current preference state as a JSON list
+  - EVOLUTION HISTORY: all preference changes made so far (may be "None")
+
+  ## Task
+
+  Based on the current life event, take two actions:
+  1. EVOLVE existing preferences that would dramatically change due to this event
+  2. CREATE new preferences that genuinely emerge from this event
+
+  ## Evolutions
+
+  Only evolve a preference if there is a genuine, traceable reason from the current event.
+  Be selective — most events change 0-2 preferences; major life changes rarely exceed 3.
+  Avoid re-evolving a preference changed in the previous session unless the new event directly contradicts it.
+  The evolved preference must CONTRADICT or REPLACE the old one — not just refine or extend it.
+
+  ## Verifiability test
+
+  Before finalizing any evolution, ask: "If an AI agent used the OLD preference to make a recommendation, would it be WRONG?"
+  YES → keep the evolution. "It depends" or "Both could work" → too subtle, skip it.
+
+  ## New preferences
+
+  Only create preferences that genuinely emerge from this specific event (0-3, quality over quantity).
+  If the event would modify an existing preference's behavior, use EVOLUTION instead — do not create a duplicate.
+  New preferences must be specific, concrete, tied to the event, and changeable by a future event.
+
+  ## Cross-domain effects
+
+  One event can affect preferences across multiple domains — consider all 5 when scanning active preferences.
+
+  
+  ## Output format
+
+  {{
+    "evolutions": [
+      {{
+        "preference_id": "pref_XXX",
+        "original_preference": "The exact original preference text",
+        "evolved_preference": "The new preference text after evolution",
+        "reason": "Clear explanation of why this event caused this specific change",
+        "verifiability_check": "What wrong advice would the OLD preference cause?"
+      }}
+    ],
+    "new_preferences": [
+      {{
+        "fact": "Specific new preference statement tied to this event",
+        "domain": "one of: work_habits, health_body, social_relationships, leisure_hobbies, daily_routines"
+      }}
+    ],
+    "analysis": {{
+      "unchanged_count": "<number of active preferences that didn't change>",
+      "rationale": "Brief explanation of overall changes made"
+    }}
+  }}
+
+  CRITICAL:
+  - Output ONLY valid JSON
+  - evolutions can be empty if nothing naturally changes; at most 2 per event — be highly selective
+  - new_preferences can be empty or have up to 3 items — be highly selective
+  - Include preference_id in evolutions for accurate tracking
+  - Each evolution must include a reason and verifiability_check
+  - domain in new_preferences must be exactly one of the 5 values listed above
+
+  ---
+
+  ## Example
+
+  ### Inputs
+
+  PERSONA:
+  - Works as a software engineer at a mid-size startup; values deep focus blocks and avoids meetings
+  - Runs 5K every morning before work; training for a half-marathon in spring
+  - Lives alone; socialises mainly through a weekly board game night with close friends
+
+  CURRENT EVENT: Diagnosed with a tibial stress fracture; doctor ordered 10 weeks of no running or high-impact activity. Now commuting by bus instead of cycling, spending 90 extra minutes in transit daily.
+  Date: 2024-03-15
+
+  ACTIVE PREFERENCES:
+  - pref_001: "Runs 5K every morning before work" (health_body)
+  - pref_002: "Blocks 7-9am as no-meeting deep work time" (work_habits)
+  - pref_003: "Attends board game night every Thursday" (social_relationships)
+  - pref_004: "Meal preps on Sunday to avoid unhealthy choices during the week" (daily_routines)
+
+  EVOLUTION HISTORY: None
+
+  ### Reasoning
+
+  Cross-domain scan — which preferences could this event affect?
+  - pref_001 (health_body): directly affected — running is now off-limits  ✓ evolve
+  - pref_002 (work_habits): unrelated to the injury  ✗ skip
+  - pref_003 (social_relationships): unrelated  ✗ skip
+  - pref_004 (daily_routines): unrelated  ✗ skip
+
+  Verifiability check on pref_001:
+  - Old preference: "Runs 5K every morning before work"
+  - If an agent used this, would it give wrong advice? YES — it would suggest planning a morning run → WRONG
+  - Keep the evolution ✓
+
+  New preferences — what genuinely emerges from this event?
+  - Cannot run → will need a low-impact alternative for cardio → does this duplicate the evolution? No, if it's framed as a new routine rather than a restriction → new preference ✓
+  - 90 extra minutes of daily transit → new idle time to fill → started using commute for audiobooks → new preference ✓
+  - Is there an existing preference either duplicates? No ✓
+
+  ### Output
+
+  {{
+    "evolutions": [
+      {{
+        "preference_id": "pref_001",
+        "original_preference": "Runs 5K every morning before work",
+        "evolved_preference": "No longer runs due to stress fracture; does 30-min morning swims instead",
+        "reason": "Doctor ordered 10 weeks of no running; morning exercise routine must switch to low-impact activity",
+        "verifiability_check": "Agent suggesting a morning run route would be wrong — running is medically prohibited"
+      }}
+    ],
+    "new_preferences": [
+      {{
+        "fact": "Listens to audiobooks during the morning bus commute",
+        "domain": "daily_routines"
+      }}
+    ],
+    "analysis": {{
+      "unchanged_count": "3",
+      "rationale": "Running preference evolved due to medical restriction; new commute routine created an idle-time habit. Work, social, and meal-prep preferences unaffected."
+    }}
+  }}

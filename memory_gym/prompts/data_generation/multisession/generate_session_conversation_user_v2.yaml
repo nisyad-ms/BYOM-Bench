@@ -1,0 +1,75 @@
+name: Generate Session Conversation (v2)
+description: Generates a conversation around a life event where the user naturally reveals only the preferences that changed this session (new + evolved), not all active preferences.
+used_by: memory_gym/data_generators/multisession.py::_generate_session_conversation
+variables:
+  - persona: The user persona description
+  - life_event: The life event context for this session
+  - event_date: Date of the session
+  - session_delta: JSON list of preferences that changed this session (new + evolved)
+  - session_id: The session number (0, 1, 2, ...)
+
+template: |
+  Generate a natural conversation between a user and an AI assistant. The conversation takes place shortly after the described life event.
+
+  PERSONA:
+  {persona}
+
+  LIFE EVENT (just happened):
+  {life_event}
+  Date: {event_date}
+
+  PREFERENCES THAT CHANGED THIS SESSION:
+  {session_delta}
+
+  SESSION NUMBER: {session_id}
+
+  ## Requirements
+
+  1. Generate 8-12 conversation turns (user and assistant alternating)
+  2. The user's first message MUST share or allude to the life event before asking for concrete help
+  3. The conversation is a genuine problem-solving exchange — the user asks questions, the assistant makes suggestions, the user responds with what works or doesn't
+  4. **ALL changed preferences MUST surface** — but through the flow of conversation, not as announcements:
+     - While asking for help: "I can't do mornings anymore — any other time that could work?"
+     - As pushback on a suggestion: "That won't work, I've got DND on all weekend"
+     - As context explaining a constraint: "My knee's been acting up since the surgery, so running is out"
+  5. Do not end the conversation until all preferences from the delta have surfaced
+
+  ## Example
+
+  Life event: Promoted to VP of Engineering — larger team, heavier schedule, travel now required
+
+  Preferences that changed:
+  [
+    {{"type": "evolved", "old": "Runs 5K every morning before work", "new": "Takes a 20-min walk at lunch — only exercise that fits the new schedule", "reason": "Back-to-back meetings now start at 7am, eliminating morning free time"}},
+    {{"type": "evolved", "old": "Hosts dinner party for friends every other Friday", "new": "Rarely hosts; too drained after the week to have people over", "reason": "VP role leaves little social energy by Friday evening"}},
+    {{"type": "new", "fact": "Books Friday 2-4pm as a no-meeting thinking block every week"}},
+    {{"type": "new", "fact": "Keeps phone on Do Not Disturb all weekend — no work calls Saturday or Sunday"}}
+  ]
+
+  Good conversation (annotations show how each preference surfaces):
+  [user]: "So I finally got the VP title — officially started three weeks ago. It's a lot. The team doubled and I'm already on a plane twice a month. I'm struggling to keep any kind of routine. Any thoughts on how to structure the week so I don't just react to everything?"
+  [assistant]: "Congrats on the promotion — that's a big shift. The reactive feeling is common when scope jumps suddenly. One thing that helps is anchoring a few fixed blocks before the week fills in. Do you have any protected time right now, or is the calendar basically open season?"
+  [user]: "I've started blocking Friday afternoons — 2 to 4 — as a no-meeting zone. Just for thinking and planning. If I don't put something there immediately, someone books it within minutes."  ← NEW pref surfaced while asking for help
+  [assistant]: "That's exactly the right instinct. Friday afternoon works well because most people are winding down anyway. Have you thought about protecting anything earlier in the week for deeper work, or is the meeting load too unpredictable?"
+  [user]: "Mornings used to be my time — I'd run and then have an hour before anyone else was online. That's completely gone now. Standups start at 7. I've been squeezing in a 20-minute walk at lunch just to get outside, but it's not the same."  ← EVOLVED pref surfaces as context explaining a constraint
+  [assistant]: "It's not the same, but don't underestimate it — consistent movement mid-day actually helps with afternoon focus. On the morning front, have you considered whether some of those 7am standups actually need you, or could you delegate a few?"
+  [user]: "Honestly, probably yes. I've been defaulting to attending everything because it's new and I want visibility. But you're right — I should audit them. The harder thing is evenings and weekends. I'm getting pinged constantly. What do other people do about that?"
+  [assistant]: "The most sustainable thing is an explicit boundary that your team knows about — not just turning off notifications, but communicating the policy. Something like: async messages anytime, but no expectation of response until Monday morning. Have you set anything like that?"
+  [user]: "I did actually — phone goes on Do Not Disturb all weekend. I told the team to email if something is truly on fire. It felt awkward to say out loud but it's been fine so far. The harder thing is I used to host dinners on Fridays to stay connected with friends, and I've just... stopped. By Friday evening I have nothing left."  ← NEW pref as pushback on suggestion (already done); EVOLVED pref surfaces as context
+  [assistant]: "That makes sense — hosting takes energy you no longer have at the end of the week. Could you shift it to a lower-effort format, or move it to Saturday when you've had a night to recover?"
+  [user]: "Maybe Saturday lunch could work. Lower stakes than a dinner. I'll try that. Thanks — this was actually useful, I came in feeling like I was just firefighting."
+
+  OUTPUT FORMAT (JSON):
+  {{
+    "conversation": [
+      {{"role": "user", "content": "User's message..."}},
+      {{"role": "assistant", "content": "Assistant's response..."}},
+      ...
+    ]
+  }}
+
+  CRITICAL:
+  - Output ONLY valid JSON
+  - Roles must alternate starting with "user"
+  - Each turn must have exactly "role" and "content" fields
+  - Role values must be exactly "user" or "assistant"

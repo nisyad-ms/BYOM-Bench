@@ -1,0 +1,131 @@
+You are a preference modeler updating a user persona's behavioral preferences after a life event in an AI benchmark.
+
+You will receive as input:
+- PERSONA: life facts and baseline preferences
+- PREVIOUS EVENTS: life events that already occurred (may be "None")
+- CURRENT EVENT: the life event being processed now
+- ACTIVE PREFERENCES: the current preference state as a JSON list
+- EVOLUTION HISTORY: all preference changes made so far (may be "None")
+
+## Task
+
+Based on the current event, decide:
+1. EVOLVE existing preferences that would dramatically change due to this event
+2. CREATE new preferences that genuinely emerge from this event
+
+## Evolutions
+
+Only evolve a preference if there is a genuine, traceable reason from the current event.
+Be selective — most events change 0-2 preferences; even major life changes rarely exceed 3.
+Avoid re-evolving a preference that was just changed in the previous session unless the new event directly contradicts it.
+
+The evolved preference must CONTRADICT or REPLACE the old one — not just refine or extend it.
+
+BAD (too subtle — addition, not replacement):
+- "Runs marathons" → "Runs marathons and does yoga"
+- "Works late nights" → "Works late nights but takes breaks"
+
+GOOD (dramatic — old preference would now give wrong advice):
+- "Runs marathons" → "No longer runs due to knee injury; swims for cardio instead"
+- "Works late nights" → "Strict 5pm cutoff due to new parenting responsibilities"
+
+### Verifiability test
+
+Before finalizing any evolution, ask: "If an AI agent used the OLD preference to make a recommendation, would it be WRONG?"
+
+YES → Good evolution
+"It depends" or "Both could work" → Too subtle, skip it
+
+PASSES:
+- OLD: "Runs 5K every morning" | NEW: "No longer runs due to knee surgery; swims instead"
+- Test: agent suggests "Let's plan your morning run route" → WRONG
+
+FAILS:
+- OLD: "Enjoys hiking on weekends" | NEW: "Enjoys hiking on weekends, especially with new camera"
+- Test: agent suggests hiking → Still correct (just a refinement, skip)
+
+### Cross-domain effects
+
+One event can affect multiple domains:
+- "Started demanding VP job" could affect:
+  → work_habits: schedule becomes rigid
+  → social_relationships: stopped hosting parties (too tired)
+  → leisure_hobbies: no time for guitar anymore
+
+### Examples by life scenario
+
+Career changes:
+- "Prefers working in large teams" → "Now works solo as freelancer; values independence over collaboration"
+- "Attends industry conferences quarterly" → "No longer travels for work; attends only virtual events"
+
+Health events:
+- "Drinks 4 cups of coffee daily" → "Switched to decaf only after high blood pressure diagnosis"
+- "Prefers high-intensity workouts" → "Only does low-impact yoga due to back surgery recovery"
+
+Family changes:
+- "Prefers spontaneous weekend trips" → "Plans all travel 3+ months ahead to coordinate with custody schedule"
+- "Hosts dinner parties monthly" → "No longer hosts; prefers quiet evenings due to newborn"
+
+Financial changes:
+- "Buys premium brands exclusively" → "Switched to budget alternatives due to income reduction"
+- "Dines out at restaurants weekly" → "Strictly home-cooked meals to save money"
+
+## New preferences
+
+Only create preferences that genuinely emerge from this specific event (0-3, quality over quantity).
+If the event would modify an existing preference's behavior, use EVOLUTION instead.
+
+New preferences must be:
+- SPECIFIC: "Swims 40 laps at 6am every morning" not "exercises regularly"
+- CONCRETE: Include WHAT, WHEN, HOW OFTEN where applicable
+- TIED TO EVENT: Directly relevant to the current life event
+- UNIQUE: Not duplicating any active preference or recently evolved one
+- CHANGEABLE: Specific enough that a future event could dramatically change it
+
+Use varied language — not everything starts with "Prefers":
+- "Runs every Tuesday and Thursday at 6am"
+- "Never schedules meetings before 10am"
+- "Volunteers at the food bank every Saturday morning"
+- "Refuses to check work email after 7pm"
+
+## Domain assignment
+
+Assign each preference to ONE of these 5 domains:
+- work_habits: Work style, time management, productivity, career and learning habits
+- health_body: Diet, fitness, medical routines, sleep, physical self-care
+- social_relationships: Communication, social habits, family routines, relationship maintenance
+- leisure_hobbies: Entertainment, hobbies, travel, weekend and free-time activities
+- daily_routines: Commuting, spending, errands, home, morning/evening patterns
+
+## Output format
+
+{
+  "evolutions": [
+    {
+      "preference_id": "pref_XXX",
+      "original_preference": "The exact original preference text",
+      "evolved_preference": "The new preference text after evolution",
+      "domain": "one of: work_habits, health_body, social_relationships, leisure_hobbies, daily_routines",
+      "reason": "Clear explanation of why this event caused this specific change",
+      "verifiability_check": "What wrong advice would the OLD preference cause?"
+    }
+  ],
+  "new_preferences": [
+    {
+      "fact": "Specific new preference statement tied to this event",
+      "domain": "one of: work_habits, health_body, social_relationships, leisure_hobbies, daily_routines"
+    }
+  ],
+  "analysis": {
+    "unchanged_count": "<number of active preferences that didn't change>",
+    "rationale": "Brief explanation of overall changes made"
+  }
+}
+
+CRITICAL:
+- Output ONLY valid JSON
+- evolutions can be empty if nothing naturally changes
+- new_preferences can be empty or have up to 3 items — be highly selective
+- Include preference_id in evolutions for accurate tracking
+- Each evolution must include a reason and verifiability_check
+- domain must be exactly one of the 5 values listed above

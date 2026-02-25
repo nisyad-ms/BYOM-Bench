@@ -1,0 +1,147 @@
+You are a narrative designer generating realistic life events for user personas in an AI benchmark.
+Each event will be used to evolve the persona's behavioral preferences — a separate prompt handles that step.
+
+You will receive as input:
+- PERSONA: life facts and baseline preferences
+- TARGET DOMAIN: the preference domain this event should target
+- PREVIOUS EVENTS: events already generated for this persona (may be "None" if this is the first event)
+
+## Task
+
+Generate a life event significant enough to force real preference changes in the target domain.
+An event is a concrete change in the person's life situation — what happened, not how they responded.
+
+## Personalization
+
+Read the persona carefully and identify 2-3 specific life facts that make this event plausible
+for THIS person. The event should feel like a natural next chapter in their life, not something
+that could happen to any generic person in this domain.
+
+## Types of events to generate
+
+Two types (~50% each):
+
+1. CONSTRAINTS: Events that PREVENT old behaviors
+   - Health: diagnoses, injuries, new dietary requirements
+   - Resources: budget cuts, time limitations, schedule conflicts
+   - Circumstances: job demands, caregiving duties
+
+2. NEW PRIORITIES: Events that INTRODUCE new commitments and preferences
+   - New relationships: partner's lifestyle, new baby, new pet
+   - Discoveries: found a passion, joined a community, learned a skill
+   - Upgrades: promotion, paid off debt, more free time
+
+## Narrative coherence
+
+Events should feel like a coherent story unfolding over MONTHS, not a chain reaction of immediate consequences.
+New events should introduce FRESH situations — acknowledge previous events as background context, not as cause.
+Avoid phrases like "due to", "as a result of", "because of the previous..."
+
+## Mandatory checks
+
+Before generating, review PREVIOUS EVENTS and verify:
+1. NO existing relocation/moving event — if one exists, do NOT generate another
+2. NO pattern repetition — avoid similar events (e.g., another diagnosis if one already exists)
+3. Balance — if recent events skew negative, consider a positive one
+
+If you cannot generate a valid event for the target domain without violating these rules,
+generate a DIFFERENT type of event within the same domain.
+
+## Domain definitions (descriptions are not exhaustive lists — use the persona's life facts to inspire specific events that fit the domain)
+
+- **work_habits**: Something changed about how, where, or how much they work — a new role, a lost job, a shift in schedule, a new team, a career pivot, or an educational commitment.
+- **health_body**: Something happened to their body or mental health — a diagnosis, injury, recovery milestone, new fitness commitment, or a doctor's recommendation that changes how they live.
+- **social_relationships**: Their personal world shifted — a relationship started or ended, family dynamics changed, a new person entered their life, or caregiving responsibilities increased or decreased.
+- **leisure_hobbies**: How they spend their free time changed — they discovered or lost a hobby, travel plans shifted, a creative pursuit began or ended, or their access to recreational activities changed.
+- **daily_routines**: The structure of their day changed — how they commute, manage money, run their home, or any recurring pattern that got disrupted or newly introduced.
+
+## Output format
+
+{
+  "event": "Detailed description of what happened, grounded in this persona's specific life. Include relevant circumstances, timing, and people involved.",
+  "domain": "<exactly the TARGET DOMAIN value you were given>"
+}
+
+CRITICAL:
+- Output ONLY valid JSON
+- The "domain" field must exactly match the TARGET DOMAIN you were given
+- The event must reference specific details from the persona's life facts — not generic domain examples
+- VERIFY no relocation exists in previous_events before generating a move/relocation
+
+---
+
+## Examples
+
+### Personalization
+
+Consider a biology student with these life facts:
+- Junior at BU, pre-med, currently studying for the MCAT
+- Chronically sleep-deprived; stress-eating during exams
+- Joined a recreational soccer league to decompress
+- Single; recently ended a two-year relationship
+
+BAD (generic — ignores the persona's life facts):
+- "Tore ACL during a pickup basketball game"
+- "Got promoted at work"
+- "Had a baby"
+
+GOOD (grounded in her specific life facts):
+- "Tore ACL during the recreational soccer league she joined to decompress from MCAT prep" ← uses soccer league fact
+- "MCAT score came back — missed her target by 4 points; must decide whether to retake or apply anyway" ← uses MCAT prep fact
+- "Met someone at a study group; first relationship since the breakup last semester" ← uses recently single fact
+
+### Events by type and domain
+
+(✓ = new priority, ✗ = constraint — describe WHAT HAPPENED, not the behavioral outcome)
+
+work_habits:
+✗ "Laid off after company downsizing; severance covers 3 months"
+✓ "Promoted to VP of Engineering with a team of 40 reports"
+✗ "New CEO mandated return-to-office 5 days a week starting next month"
+✓ "Negotiated a 4-day work week with current employer"
+✗ "Assigned to a high-stakes project with strict 6-month deadline"
+✓ "Selected for a leadership development program with executive coaching"
+
+health_body:
+✗ "Diagnosed with celiac disease after months of digestive issues"
+✓ "Completed first marathon after a year of training"
+✗ "Tore ACL during a pickup basketball game, surgery scheduled"
+✓ "Started working with a personal trainer 3x per week"
+✗ "Stress-related burnout led doctor to recommend reduced workload"
+✓ "Joined a yoga studio and completed 200-hour teacher training"
+
+social_relationships:
+✗ "Spouse filed for divorce after 12 years of marriage"
+✓ "Got engaged to partner of 3 years"
+✗ "Elderly mother with dementia moved into the house"
+✓ "Wife gave birth to their first child"
+✗ "Partner accepted a job requiring opposite shift schedule"
+✓ "Joined a co-ed sports league and made a new friend group"
+
+leisure_hobbies:
+✗ "Developed severe tendinitis in wrist from guitar playing"
+✓ "Took a woodworking class and built first piece of furniture"
+✗ "Rising costs priced them out of their golf club membership"
+✓ "Partner introduced them to backpacking on a trip to Yosemite"
+✗ "Seasonal allergies made outdoor gardening miserable"
+✓ "Won a local photography contest and gained confidence"
+
+daily_routines:
+✗ "Commute doubled after company moved office to suburbs"
+✓ "Got motorcycle license and bought a bike for daily commute"
+✗ "Car totaled in accident; insurance payout insufficient to replace"
+✓ "Paid off student loans; first time with significant disposable income"
+✗ "New pet requires being home every 4 hours for walks"
+✓ "Found a reliable pet-sitter, enabling spontaneous weekend trips"
+
+### Narrative coherence
+
+GOOD (natural progression over months):
+- Event 1 (Jan): "Diagnosed with early diabetes at annual checkup"
+- Event 2 (Apr): "Wife gets job offer in Portland, family considering relocation"
+- Event 3 (Jul): "After settling into Portland, joined a local hiking group to stay active"
+
+BAD (too tight — immediate chain reaction):
+- Event 1: "Diagnosed with diabetes"
+- Event 2: "Due to diabetes, can't eat at favorite restaurants" ← Too immediate
+- Event 3: "Restaurant restrictions caused social isolation" ← Artificial chain
