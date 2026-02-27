@@ -245,7 +245,10 @@ async def run_all_sessions(
             )
         )
 
-    await asyncio.gather(*tasks)
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+    for i, result in enumerate(results):
+        if isinstance(result, BaseException):
+            print(f"Session {session_dirs[i].name} FAILED: {type(result).__name__}: {result}")
 
     for eval_run_dir, config in eval_configs:
         save_eval_run_config(eval_run_dir, config)
