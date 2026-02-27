@@ -5,16 +5,12 @@ variables:
   - persona: The full expanded persona description (life facts and baseline preferences)
   - current_event: The current life event being processed
   - event_date: Date of the current event
-  - previous_events: List of all previous life events (empty for session 0)
   - active_preferences: JSON list of currently active preferences
-  - evolution_history: JSON list showing all preference evolutions so far
+  - evolution_history: JSON list showing all preference changes (evolutions and drops) so far
 
 template: |
   PERSONA:
   {persona}
-
-  PREVIOUS EVENTS:
-  {previous_events}
 
   CURRENT EVENT:
   {current_event}
@@ -23,5 +19,5 @@ template: |
   ACTIVE PREFERENCES:
   {active_preferences}
 
-  EVOLUTION HISTORY:
+  PREFERENCE CHANGE HISTORY:
   {evolution_history}

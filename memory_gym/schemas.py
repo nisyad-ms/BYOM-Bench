@@ -77,11 +77,14 @@ class ExpandedPersona:
             baseline_preferences=data.get("baseline_preferences", {}),
         )
 
-    def to_full_description(self) -> str:
+    def to_full_description(self, include_preferences: bool = True) -> str:
         """Generate a full prose description of the persona for use in prompts.
 
+        Args:
+            include_preferences: Whether to include baseline preferences (default True).
+
         Returns:
-            Multi-line description with life circumstances and preferences
+            Multi-line description with life circumstances and optionally preferences
         """
         lines = [
             f"Base: {self.base_persona}",
@@ -96,7 +99,7 @@ class ExpandedPersona:
             "Family & Relationships:",
             *[f"  - {fact}" for fact in self.family_relationships],
         ]
-        if self.baseline_preferences:
+        if include_preferences and self.baseline_preferences:
             lines.append("")
             lines.append("Baseline Preferences:")
             for domain, prefs in self.baseline_preferences.items():
@@ -255,6 +258,19 @@ class PreferenceTimeline:
 
         return new_id
 
+    def drop_preference(self, pref_id: str, session_id: int, reason: str = "") -> None:
+        """Mark a preference as dropped (no replacement).
+
+        Used when the underlying life circumstance no longer exists,
+        making the preference invalid rather than evolved.
+        """
+        pref = self.preferences.get(pref_id)
+        if not pref:
+            raise ValueError(f"Preference {pref_id} not found")
+        pref.superseded_at_session = session_id
+        pref.superseded_by = None
+        pref.reason_for_change = reason
+
     def get_active_preferences(self) -> list[Preference]:
         """Returns all currently active (not superseded) preferences."""
         return [p for p in self.preferences.values() if p.is_active]
@@ -289,6 +305,7 @@ class Session:
         active_preference_ids: IDs of preferences active during this session
         new_preference_ids: IDs of preferences created in this session
         evolved_preference_ids: IDs of preferences that evolved (old -> new mappings)
+        dropped_preference_ids: IDs of preferences dropped (circumstance no longer exists)
     """
 
     session_id: int
@@ -297,6 +314,7 @@ class Session:
     active_preference_ids: list[str]
     new_preference_ids: list[str] = field(default_factory=list)
     evolved_preference_ids: dict[str, str] = field(default_factory=dict)  # old_id -> new_id
+    dropped_preference_ids: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -344,6 +362,13 @@ class MultiSessionOutput:
                     }
                 )
 
+        # Build dropped preferences
+        dropped = [
+            {"id": p.preference_id, "fact": p.fact, "domain": p.domain, "reason": p.reason_for_change or ""}
+            for pid in session.dropped_preference_ids
+            if (p := self.timeline.preferences.get(pid))
+        ]
+
         return {
             "session_id": session.session_id,
             "life_event": {
@@ -351,7 +376,7 @@ class MultiSessionOutput:
                 "event": session.life_event.event,
                 "domain": session.life_event.domain,
             },
-            "preferences": {"created": created, "evolved": evolved},
+            "preferences": {"created": created, "evolved": evolved, "dropped": dropped},
             "conversation": session.conversation,
         }
 

@@ -25,14 +25,14 @@ template: |
 
   ## Requirements
 
-  1. Generate 8-12 conversation turns (user and assistant alternating)
-  2. The user's first message MUST share or allude to the life event before asking for concrete help
+  1. Keep the conversation to 8-16 turns (one turn = one user message + one assistant response). You don't have to reveal all preferences in the first few turns — let them surface naturally as the user asks for help and responds to suggestions. Some turns may not reveal any preferences at all, and that's fine — the conversation should flow naturally, not be forced to hit a quota of revealed preferences each turn.
+    - Ask follow-up questions, push back on suggestions, share context about what works and doesn't — just like a real conversation. The assistant should be an active participant, not just a source of advice. This creates natural and varied entry points for preferences to surface, rather than revealing them monotonously as the user lists them off one by one.
+  2. The user's first message MUST share or allude to the life event before asking for concrete help around the new reality — the assistant should not have to guess the context
   3. The conversation is a genuine problem-solving exchange — the user asks questions, the assistant makes suggestions, the user responds with what works or doesn't
-  4. **ALL changed preferences MUST surface** — but through the flow of conversation, not as announcements:
-     - While asking for help: "I can't do mornings anymore — any other time that could work?"
-     - As pushback on a suggestion: "That won't work, I've got DND on all weekend"
-     - As context explaining a constraint: "My knee's been acting up since the surgery, so running is out"
-  5. Do not end the conversation until all preferences from the delta have surfaced
+  4. **The USER always reveals changed preferences — the assistant NEVER guesses or assumes them.** The assistant may ask open-ended questions ("How has that affected your routine?"), but must not preemptively state the change ("I imagine you've stopped running"). If the assistant suggests something the old preference would have covered, the user corrects them — this is the natural way preferences surface.
+  5. **ALL changed preferences MUST surface** — but through the flow of conversation, not as announcements.
+    - NOTE: Changed preferences include new, evolved and dropped preferences. Don't forget to surface dropped preferences as well.
+  6. Do not end the conversation until all preferences from the delta have surfaced
 
   ## Example
 
@@ -43,7 +43,8 @@ template: |
     {{"type": "evolved", "old": "Runs 5K every morning before work", "new": "Takes a 20-min walk at lunch — only exercise that fits the new schedule", "reason": "Back-to-back meetings now start at 7am, eliminating morning free time"}},
     {{"type": "evolved", "old": "Hosts dinner party for friends every other Friday", "new": "Rarely hosts; too drained after the week to have people over", "reason": "VP role leaves little social energy by Friday evening"}},
     {{"type": "new", "fact": "Books Friday 2-4pm as a no-meeting thinking block every week"}},
-    {{"type": "new", "fact": "Keeps phone on Do Not Disturb all weekend — no work calls Saturday or Sunday"}}
+    {{"type": "new", "fact": "Keeps phone on Do Not Disturb all weekend — no work calls Saturday or Sunday"}},
+    {{"type": "drop", "fact": "Reserves the office conference room every Tuesday for team whiteboard sessions", "reason": "Now travels Tuesdays; no longer in the office on that day"}}
   ]
 
   Good conversation (annotations show how each preference surfaces):
@@ -57,7 +58,9 @@ template: |
   [assistant]: "The most sustainable thing is an explicit boundary that your team knows about — not just turning off notifications, but communicating the policy. Something like: async messages anytime, but no expectation of response until Monday morning. Have you set anything like that?"
   [user]: "I did actually — phone goes on Do Not Disturb all weekend. I told the team to email if something is truly on fire. It felt awkward to say out loud but it's been fine so far. The harder thing is I used to host dinners on Fridays to stay connected with friends, and I've just... stopped. By Friday evening I have nothing left."  ← NEW pref as pushback on suggestion (already done); EVOLVED pref surfaces as context
   [assistant]: "That makes sense — hosting takes energy you no longer have at the end of the week. Could you shift it to a lower-effort format, or move it to Saturday when you've had a night to recover?"
-  [user]: "Maybe Saturday lunch could work. Lower stakes than a dinner. I'll try that. Thanks — this was actually useful, I came in feeling like I was just firefighting."
+  [user]: "Maybe Saturday lunch could work. Lower stakes than a dinner. Oh, and I had to give up my Tuesday whiteboard sessions — I'm traveling most Tuesdays now, so that's just gone. Need to find another way to keep the team aligned."  ← DROP surfaced naturally — the user mentions the old habit is gone due to changed circumstances
+  [assistant]: "Losing that regular touchpoint is tough. You could try async alternatives — a shared doc or a short Loom video — to keep alignment without needing everyone in a room. Would that work for your team?"
+  [user]: "Yeah, async might actually be better given the new pace. I'll try that. Thanks — this was actually useful, I came in feeling like I was just firefighting."
 
   OUTPUT FORMAT (JSON):
   {{

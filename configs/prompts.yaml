@@ -5,14 +5,14 @@
 prompts:
   # Data generation prompts
   data_generation/multisession/expand_life_facts_system: ""
-  data_generation/multisession/expand_life_facts_user: "v3"
+  data_generation/multisession/expand_life_facts_user: ""
   data_generation/multisession/generate_baseline_preferences_system: ""
-  data_generation/multisession/generate_baseline_preferences_user: "v3"
+  data_generation/multisession/generate_baseline_preferences_user: ""
   data_generation/multisession/generate_life_event_system: ""
-  data_generation/multisession/generate_life_event_user: "v4"
+  data_generation/multisession/generate_life_event_user: ""
   data_generation/multisession/update_preferences_system: ""
-  data_generation/multisession/update_preferences_user: "v3"
-  data_generation/multisession/generate_session_conversation_user: "v2"
+  data_generation/multisession/update_preferences_user: ""
+  data_generation/multisession/generate_session_conversation_user: ""
 
   # Task generation prompts
   data_generation/event_summary_user: ""

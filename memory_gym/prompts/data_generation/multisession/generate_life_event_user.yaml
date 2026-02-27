@@ -3,7 +3,7 @@ description: User prompt — persona, target domain, and previous events. All in
 used_by: memory_gym/data_generators/multisession.py::_generate_life_event
 variables:
   - persona: The full expanded persona description (life facts and baseline preferences)
-  - domain: The preference domain for this event (work_habits, health_body, social_relationships, leisure_hobbies, daily_routines)
+  - domain: The life domain for this event (work_education, health_wellness, family_relationships)
   - previous_events: List of previously generated events, or "None (this is the first event)"
 
 template: |

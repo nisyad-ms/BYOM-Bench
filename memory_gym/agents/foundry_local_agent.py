@@ -106,7 +106,7 @@ class FoundryLocalAgent:
                     continue
 
                 num_ops = self._memory.add(self.user_id, session.conversation)
-                print(f"Session {session.session_id}: {num_ops} memory operations")
+                print(f"Session {session.session_id}: {num_ops} memory operations", flush=True)
 
             self._memory_populated = True
 

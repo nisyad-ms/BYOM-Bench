@@ -3,45 +3,38 @@ description: System prompt for expanding a base persona into life facts across 3
 used_by: memory_gym/data_generators/multisession.py::_expand_persona
 
 template: |
-  You are a character designer creating detailed, realistic user personas for an AI benchmark.
+  You are an expert at generating realistic user personas for an AI benchmark.
   These personas will later experience life events that dramatically alter their habits and preferences.
-  Your facts should set up interesting possibilities for such changes.
+  The details you generate should set up interesting possibilities for such changes.
+
+  **CRITICAL: All examples in this prompt (inline and end-to-end) are STRICTLY for inspiration — they illustrate format, reasoning, and quality standards ONLY. Do NOT simply reuse - Be creative and original. Every fact you generate must be wholly your own invention, tailored to the specific persona.**
 
   ## Task
 
-  Given a brief persona description, expand it into detailed life facts:
+  Given a brief persona description, expand it into a detailed biography with life facts:
 
-  1. Assign age, gender, and location (if not already specified).
-  2. Write 3-5 life details across each of the 3 domains below.
+  1. Assign age and location (if not already specified). Gender is provided in the input.
+  2. Assign 3-5 facts across each of the 3 domains below that collectively paint a rich picture of the person's life.
 
   ## Domains
 
   1. **work_education**: The person's professional or academic situation — their role, where they are in their career or studies, what they're navigating at work or school right now.
-     - "Principal engineer at Amazon leading a backend team of 12; recently promoted after a major product launch"
-     - "Laid off three months ago after a round of cuts; actively interviewing but savings are running low"
-     - "First-year MBA student at Wharton; left a stable corporate job to make the switch"
-
-  2. **health_wellness**: Their physical and mental health situation — conditions, injuries, energy levels, anything affecting how they feel day-to-day.
-     - "Recovering from ACL surgery; cleared to return to sport in 3 months"
-     - "Diagnosed with Type 2 diabetes last year; managing with diet changes and medication"
-     - "Burned out after two years of overwork; recently started seeing a therapist"
-
+  2. **health_wellness**: Their physical and mental health situation — conditions, injuries, diet, sleep, energy levels, fitness, anything affecting how they feel day-to-day. 
   3. **family_relationships**: Their home life and close relationships — who they live with, family structure, key relationships and any caregiving responsibilities.
-     - "Married 8 years; wife works rotating night shifts as an ER nurse"
-     - "Primary caregiver for his father, who was recently diagnosed with early-stage dementia"
-     - "Recently divorced after 11 years; shares custody of two kids, ages 7 and 10"
 
-  ## Requirements
+  ## Requirements for Generating Good Life Facts
 
-  1. Be specific and detailed — avoid vague generalities that could apply to almost anyone.
+  1. ** IMPORTANT ** Prefer facts that shape how the person spends their time, energy, or attention day-to-day. Static background details are less useful than facts that imply ongoing routines, priorities, or trade-offs. These facts will be used to generate future life events that cause significant changes, so they should set up interesting possibilities for change.
+     GOOD: "Runs 30 miles a week training for her third marathon" — implies schedule, diet, social circle, recovery time
+     BAD: "Grew up in Ohio" — describes background but doesn't drive current behavior or possibility of change in future
+
+  2. Be specific and detailed — avoid vague generalities that could apply to almost anyone.
      BAD: "Is married", "Has some health issues", "Works in tech"
      GOOD: "Married 8 years; wife works rotating night shifts as an ER nurse", "Recovering from wrist surgery from repetitive strain 6 months ago", "Leads cloud infrastructure team of 10 at Microsoft, hybrid schedule"
 
-  2. Include challenges, not just positives — a mix is more realistic and gives better context for how preferences might evolve.
+  3. Include a realistic mix of facts — not every domain needs a problem. Some people are healthy, happily married, or thriving at work. Pure-negative personas are as unrealistic as pure-positive ones.
      POSITIVE: "Just promoted to VP of Engineering at a 200-person company"
      CHALLENGE: "Mother recently diagnosed with early-stage Parkinson's; visits monthly"
-
-  3. Use the examples as inspiration, not strict templates — be creative with language and details.
 
   ## Example
 
@@ -60,9 +53,9 @@ template: |
       "Struggling with organic chemistry this semester; at risk of needing to repeat it"
     ],
     "health_wellness": [
-      "Played competitive soccer in high school; no longer plays organized sport",
-      "Chronically sleep-deprived during term; averages 5-6 hours on weeknights",
-      "Gained 15 pounds since freshman year due to stress eating during exams",
+      "Played competitive soccer in high school; still plays pickup games on weekends",
+      "Generally healthy; goes to the gym 3-4 times a week with her roommate",
+      "Chronically sleep-deprived during finals; otherwise averages 7 hours",
       "Mild seasonal allergies that worsen in spring"
     ],
     "family_relationships": [

@@ -231,6 +231,7 @@ def run_dialogue(
     agent_turns = 0
     while agent_turns < max_agent_turns:
         agent_response, retrieved_memories = agent.respond(clean_conversation)
+        print(f"  Turn {agent_turns + 1}: agent responded ({len(retrieved_memories)} memories retrieved)", flush=True)
         conversation_with_scratchpads.append(
             {
                 "role": "assistant",

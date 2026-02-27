@@ -298,7 +298,35 @@ class LLMClient:
             text={"format": {"type": "json_object"}},
         )
 
-        return json.loads(response.output_text)
+        try:
+            return json.loads(response.output_text)
+        except json.JSONDecodeError:
+            # Log raw output for debugging truncation/malformed JSON
+            raw = response.output_text
+            status = response.status
+            reason = response.incomplete_details.reason if response.incomplete_details else None
+            # Dump full response dict to find Azure-specific content filter fields
+            try:
+                resp_dict = response.model_dump()
+                # Look for any content_filter keys in the response
+                import pprint
+                filter_keys = {
+                    k: v for k, v in resp_dict.items() if "filter" in str(k).lower() or "safety" in str(k).lower()
+                }
+                if filter_keys:
+                    print(f"  Content filter details: {pprint.pformat(filter_keys)}")
+                # Also check output items for extra fields
+                for i, item in enumerate(resp_dict.get("output", [])):
+                    extra = {k: v for k, v in item.items() if k not in ("id", "type", "text", "status")}
+                    if extra:
+                        print(f"  Output item {i} extra fields: {pprint.pformat(extra)}")
+            except Exception:
+                pass
+            print(
+                f"  JSON parse failed | status={status} | reason={reason}"
+                f" | len={len(raw)} | tail=...{raw[-100:]!r}"
+            )
+            raise
 
 
 def _resolve_deployments(deployments: list[str] | None = None) -> list[EndpointDeployment]:
@@ -361,11 +389,28 @@ class PooledLLMClient(LeastBusyPool):
             print(f"PooledLLMClient: {ep} -> {count} deployments")
 
     def _call(self, method: str, *args: Any, **kwargs: Any) -> Any:
+        """Route a call to the least-busy client, retrying with different clients on auth errors."""
         idx, client = self._acquire()
         try:
-            return getattr(client, method)(*args, **kwargs)
-        finally:
+            result = getattr(client, method)(*args, **kwargs)
+        except AuthenticationError as first_exc:
             self._release(idx)
+            failed = {idx}
+            print(f"  Auth error on {client.endpoint}/{client.deployment}, trying other clients...")
+            for fallback_idx, fallback_client in enumerate(self.clients):
+                if fallback_idx in failed:
+                    continue
+                try:
+                    return getattr(fallback_client, method)(*args, **kwargs)
+                except AuthenticationError:
+                    failed.add(fallback_idx)
+                    print(f"  Auth error on {fallback_client.endpoint}/{fallback_client.deployment}, trying another...")
+            raise first_exc
+        except Exception:
+            self._release(idx)
+            raise
+        self._release(idx)
+        return result
 
     def complete_chat(
         self, messages: list[dict[str, str]], max_tokens: int = _DEFAULT_MAX_TOKENS, temperature: float = 1.0

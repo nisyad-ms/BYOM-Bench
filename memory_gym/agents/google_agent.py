@@ -134,7 +134,7 @@ class GoogleMemoryAgent:
             elapsed = time.time() - t0
 
             mem_count = 0
-            if result is not None and result.response is not None:
+            if result is not None and result.response is not None and result.response.generated_memories is not None:
                 mem_count = len(result.response.generated_memories)
 
             print(f"Session {session.session_id}: {mem_count} memories generated ({elapsed:.1f}s)")

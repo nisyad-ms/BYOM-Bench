@@ -76,7 +76,7 @@ async def run_session_evals(
         print(f"All tasks already completed for {session_dir.name}")
         return []
 
-    print(f"{session_dir.name}: {len(pending_tasks)} tasks to run")
+    print(f"{session_dir.name}: {len(pending_tasks)} tasks to run", flush=True)
 
     # Build agent context only if there are pending tasks
     memory_store_name = session_dir.name if agent_type in ("foundry", "aws") else None
@@ -97,12 +97,14 @@ async def run_session_evals(
                 chat_model=chat_model,
                 embedding_model=emb_model,
             )
+            print(f"{session_dir.name}: building Foundry memory store...", flush=True)
             await asyncio.to_thread(shared_foundry_agent.build_context, data)
 
         if agent_type == "google":
             from memory_gym.agents import GoogleMemoryAgent
 
             shared_google_agent = GoogleMemoryAgent()
+            print(f"{session_dir.name}: building Google memory store...", flush=True)
             if memory_semaphore:
                 async with memory_semaphore:
                     await asyncio.to_thread(shared_google_agent.build_context, data)
@@ -113,12 +115,14 @@ async def run_session_evals(
             from memory_gym.agents import AWSMemoryAgent
 
             shared_aws_agent = AWSMemoryAgent(memory_name=session_dir.name)
+            print(f"{session_dir.name}: building AWS memory store...", flush=True)
             await asyncio.to_thread(shared_aws_agent.build_context, data)
 
         if agent_type == "foundry_local":
             from memory_gym.agents import FoundryLocalAgent
 
             shared_foundry_local_agent = FoundryLocalAgent(db_path=f"./.lancedb_foundry_local_{session_dir.name}")
+            print(f"{session_dir.name}: building local Foundry memory store...", flush=True)
             await asyncio.to_thread(shared_foundry_local_agent.build_context, data)
 
         contexts = []
@@ -144,6 +148,12 @@ async def run_session_evals(
             run_id = ctx["run_id"]
             task_num = extract_task_num(task_path) or 1
             output_path = get_eval_path(eval_run_dir, task_num, agent_type, run_id)
+            run_label = f" run {run_id}" if run_id else ""
+            print(
+                f"{session_dir.name}: task {task_num:02d}{run_label} done "
+                f"(pref={result.preference_score}, eff={result.efficiency_score})",
+                flush=True,
+            )
 
             with open(output_path, "w", encoding="utf-8") as f:
                 json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
