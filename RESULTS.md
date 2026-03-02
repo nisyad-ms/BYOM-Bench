@@ -10,9 +10,9 @@ Evaluation across 250 unique samples (50 personas, 5 tasks per persona, 3 eval r
 | Agent | Preference Recall | Turn Efficiency |
 |-------|------------|-----------|
 | perfect_memory | 0.90 | 0.96 |
-| foundry_local | 0.72 | 0.86 |
-| aws | 0.63* | 0.82* |
+| foundry_local | 0.71 | 0.86 |
+| aws | 0.64 | 0.82 |
 | google | 0.55 | 0.78 |
 | no_memory | 0.02 | 0.66 |
 
-\* ~80 samples are still running for AWS.
+
