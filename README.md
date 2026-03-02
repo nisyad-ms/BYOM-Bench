@@ -18,8 +18,8 @@ Unlike simple Q&A benchmarks, MemoryGym evaluates agents through **multi-turn ta
 
 ```
 │                          MemoryGym Pipeline                                │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
 │  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐      │
 │  │ 1. DATA GEN      │ →  │ 2. TASK GEN      │ →  │ 3. EVALUATION    │      │
 │  │                  │    │                  │    │                  │      │
@@ -30,8 +30,8 @@ Unlike simple Q&A benchmarks, MemoryGym evaluates agents through **multi-turn ta
 │  └──────────────────┘    └──────────────────┘    └──────────────────┘      │
 │         ↓                        ↓                       ↓                 │
 │   sessions.json            task_XX.json          eval_XX_agent.json        │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
 ```
 
 For a detailed explanation of the pipeline, see [docs/pipeline_overview.md](docs/pipeline_overview.md).
@@ -52,46 +52,28 @@ pip install -e .
 
 ## Configuration
 
-### Azure OpenAI
-
-Create a `.env` file with your Azure OpenAI credentials:
+Copy `.env.example` to `.env` and fill in your credentials:
 
 ```bash
-AZURE_OPENAI_ENDPOINT="https://your-endpoint.openai.azure.com/"
-AZURE_OPENAI_API_VERSION="2025-03-01-preview"
-AZURE_OPENAI_DEPLOYMENTS="gpt-4.1-001,gpt-4.1-002,gpt-4.1-003"  # Comma-separated for parallel execution
+cp .env.example .env
 ```
 
-### Azure AI Foundry (Optional)
+Azure OpenAI is required for all agents. Foundry, Google, and AWS credentials are only needed for their respective agents. See [`.env.example`](.env.example) for all available settings.
 
-For the Foundry Memory Agent:
+Pipeline behavior is controlled by YAML files in `configs/`:
 
-```bash
-AZURE_FOUNDRY_ENDPOINT="https://your-foundry-endpoint.services.ai.azure.com/api/projects/your-project"
-AZURE_FOUNDRY_DEPLOYMENTS="deployment-001,deployment-002"
-AZURE_FOUNDRY_EMBEDDINGS_DEPLOYMENTS="embedding-001,embedding-002"
-```
+| File | Description |
+|------|-------------|
+| `llm.yaml` | Shared LLM defaults — temperature, max tokens per call type, retry settings |
+| `pipeline.yaml` | Data and task generation defaults — number of sessions, preferences per task, evolved preference ratio |
+| `prompts.yaml` | Prompt version mappings — maps each prompt to a versioned template file |
+| `agents/<agent>.yaml` | Per-agent configs — retry, timeouts, polling intervals, search limits |
 
-### Google Vertex AI (Optional)
-
-For the Google Memory Agent:
-
-```bash
-GCLOUD_PROJECT_ID="your-project-id"
-GCLOUD_LOCATION="us-central1"  # default
-```
-
-Requires:
+Authentication:
 
 ```bash
-gcloud auth application-default login
-gcloud auth application-default set-quota-project <project>  # if needed
-```
-
-### Authentication
-
-```bash
-az login
+az login                              # Azure
+gcloud auth application-default login # Google (if using google agent)
 ```
 
 ## Running the Pipeline
@@ -114,16 +96,18 @@ Format — a JSON object mapping domain names to arrays of persona descriptions:
     "A mid-career backend developer at a fintech startup",
     "A 24-year-old mobile app developer freelancing full-time"
   ],
-  "cooking": [
-    "A home cook experimenting with fermentation",
-    "A pastry chef running a small bakery"
+  "finance and accounting": [
+    "A 32-year-old mid-career accountant at a regional firm specializing in nonprofits",
+    "A freelance financial consultant with clients across multiple industries",
   ]
 }
 ```
 
 ### Stage 1: Data Generation
 
-Generates multi-session conversation data with evolving preferences.
+Generates multi-session conversation data with evolving preferences. A **session** is one complete multi-turn conversation between the user and an AI assistant. A complete dataset for a persona contains N sessions, where preferences evolve across sessions via life events.
+
+This is the most time-consuming step of the pipeline. For quick testing, use the default `--sessions 2` which generates 2 sessions and takes a few minutes.
 
 ```bash
 uv run python scripts/test_data_generation.py
@@ -131,8 +115,8 @@ uv run python scripts/test_data_generation.py
 
 | Flag | Default | Description |
 |------|---------|-------------|
-| `--sessions N` | `2` | Number of sessions per persona |
-| `--persona VALUE` | random | `"single"`, `"test"`, `"all"`, or a domain name (e.g., `"software development"`) |
+| `--sessions N` | `2` | Number of sessions to generate per persona |
+| `--persona VALUE` | 1 random | `"single"`, `"test"`, `"all"`, or a domain name. If not set, picks 1 random persona from `base_personas.json`. |
 | `--num N` | all | Use first N personas from the resolved list. Only valid with `--persona`. |
 
 Output: `outputs/<timestamp>/sessions.json` (one folder per persona)
