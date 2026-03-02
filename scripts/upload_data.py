@@ -34,7 +34,7 @@ def upload_directory(local_path: Path, prefix: str, overwrite: bool) -> None:
     uploaded = 0
     skipped = 0
     for filepath in sorted(files):
-        blob_name = prefix + str(filepath.relative_to(local_path))
+        blob_name = prefix + str(filepath.relative_to(local_path.parent))
         blob_client = container.get_blob_client(blob_name)
 
         if not overwrite:
