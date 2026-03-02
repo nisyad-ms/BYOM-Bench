@@ -262,6 +262,8 @@ Turn classifications (evaluated using the user's next message as look-ahead):
 | **google** | Google Vertex AI Agent Engine memory |
 | **aws** | AWS Bedrock AgentCore memory |
 
+For the latest benchmark results, see [RESULTS.md](RESULTS.md).
+
 ## Development
 
 ```bash
