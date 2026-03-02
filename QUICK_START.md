@@ -47,7 +47,7 @@ Results are saved to `outputs/`. See [README.md](README.md) for the full referen
 
 ## 4. Evaluate an existing dataset
 
-If you already have generated data and tasks in `outputs/`, skip stages 1-2 and run evaluation directly:
+Download pre-generated data from [Azure Storage](<TODO: ADD LINK>) and place it in `outputs/`. Then run evaluation directly:
 
 ```bash
 # Run evaluation on all datasets in outputs/
