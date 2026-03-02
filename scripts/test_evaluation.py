@@ -20,7 +20,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-from utils import (
+from memory_gym.utils import (
     create_eval_run_dir,
     extract_task_num,
     get_all_session_dirs,

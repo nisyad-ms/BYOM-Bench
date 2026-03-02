@@ -17,11 +17,12 @@ import random
 import time
 from pathlib import Path
 
-from utils import create_session_dir, get_session_path
+from memory_gym.utils import create_session_dir, get_session_path
 
-DATA_DIR = Path(__file__).parent / "data"
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 BASE_PERSONAS_FILE = DATA_DIR / "base_personas.json"
 TEST_PERSONAS_FILE = DATA_DIR / "base_personas_test.json"
+SINGLE_PERSONAS_FILE = DATA_DIR / "base_personas_single.json"
 
 
 def _load_base_personas() -> dict[str, list[str]]:
@@ -35,6 +36,13 @@ def _load_test_personas() -> list[str]:
     if not TEST_PERSONAS_FILE.exists():
         raise FileNotFoundError(f"Test personas file not found: {TEST_PERSONAS_FILE}")
     with open(TEST_PERSONAS_FILE, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _load_single_personas() -> list[str]:
+    if not SINGLE_PERSONAS_FILE.exists():
+        raise FileNotFoundError(f"Single personas file not found: {SINGLE_PERSONAS_FILE}")
+    with open(SINGLE_PERSONAS_FILE, encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -52,6 +60,12 @@ def resolve_personas(persona_arg: str | None) -> list[str]:
         personas = _load_test_personas()
         if not personas:
             raise ValueError("No personas found in base_personas_test.json")
+        return personas
+
+    if persona_arg == "single":
+        personas = _load_single_personas()
+        if not personas:
+            raise ValueError("No personas found in base_personas_single.json")
         return personas
 
     data = _load_base_personas()
@@ -75,7 +89,7 @@ def resolve_personas(persona_arg: str | None) -> list[str]:
         return personas
 
     raise ValueError(
-        f"Unknown persona value: '{persona_arg}'. Use 'test', 'all', or a domain name: {list(data.keys())}"
+        f"Unknown persona value: '{persona_arg}'. Use 'single', 'test', 'all', or a domain name: {list(data.keys())}"
     )
 
 
@@ -106,7 +120,7 @@ def main():
         "--persona",
         type=str,
         default=None,
-        help="'test', 'all', or a domain name. Default: 1 random persona.",
+        help="'single', 'test', 'all', or a domain name. Default: 1 random persona.",
     )
     parser.add_argument(
         "--num",

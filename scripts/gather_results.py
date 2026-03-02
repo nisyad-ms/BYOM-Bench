@@ -10,7 +10,7 @@ from pathlib import Path
 
 from openpyxl import Workbook
 
-from utils import (
+from memory_gym.utils import (
     EVAL_PATTERN,
     get_all_session_dirs,
     get_eval_run_dir,

@@ -14,7 +14,7 @@ import sys
 import time
 from pathlib import Path
 
-from utils import (
+from memory_gym.utils import (
     get_next_task_num,
     get_next_task_version,
     get_session_dir,
