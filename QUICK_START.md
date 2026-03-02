@@ -30,6 +30,7 @@ az login
 
 ```bash
 # Stage 1: Generate conversation data (1 persona, 2 sessions — takes a few minutes)
+# For a rich evolution of user preferences, use ~10 sessions
 uv run python scripts/test_data_generation.py --persona single --sessions 2
 
 # Stage 2: Generate 3 evaluation tasks
