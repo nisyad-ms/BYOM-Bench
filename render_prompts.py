@@ -348,17 +348,6 @@ def main() -> None:
             )
 
         # ------------------------------------------------------------------
-        # data_generation/event_summary_user
-        # Variable: events = "Session {id}: {event}" joined by newlines
-        # ------------------------------------------------------------------
-        elif prompt_name == "data_generation/event_summary_user":
-            events_lines = "\n".join(
-                f"Session {s['session_id']}: {s['life_event']['event']}"
-                for s in raw_sessions
-            )
-            rendered = render_prompt(prompt_name, events=events_lines)
-
-        # ------------------------------------------------------------------
         # evaluation/preference_judge_system
         # No variables — static system prompt.
         # ------------------------------------------------------------------
@@ -467,7 +456,6 @@ def main() -> None:
         elif prompt_name == "agents/agent_system_with_context":
             preference_history = format_preference_history(
                 multisession_output,
-                event_summaries={},
                 include_ids=False,
             )
             rendered = render_prompt(

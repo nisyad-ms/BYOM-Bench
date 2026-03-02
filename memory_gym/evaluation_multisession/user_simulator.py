@@ -60,14 +60,14 @@ class MultiSessionUserSimulator:
             required_preferences=prefs_formatted,
         )
 
-    def get_initial_message(self) -> tuple[str, str | None]:
+    def get_initial_message(self) -> tuple[str, str | None, str | None]:
         """Generate the initial user message to start the dialogue.
 
         Makes an LLM call using the system prompt plus an instruction to
         generate a natural opening message. Different each evaluation run.
 
         Returns:
-            Tuple of (opening_message, scratchpad_or_none)
+            Tuple of (opening_message, scratchpad_or_none, plan_or_none)
         """
         messages = [
             {"role": "system", "content": self._system_prompt},
@@ -84,7 +84,8 @@ class MultiSessionUserSimulator:
 
         raw_response = response.strip()
         clean_response, scratchpad = self._extract_scratchpad(raw_response)
-        return clean_response, scratchpad
+        plan = self._extract_plan(raw_response)
+        return clean_response, scratchpad, plan
 
     def respond(
         self,
@@ -127,27 +128,65 @@ class MultiSessionUserSimulator:
     def _extract_scratchpad(self, response: str) -> tuple[str, str | None]:
         """Extract scratchpad and clean response separately.
 
+        Handles both properly closed <scratchpad>...</scratchpad> tags and
+        unclosed <scratchpad> tags (e.g. from content filter interruptions).
+        Also strips <plan> tags from the clean response.
+
         Returns:
             Tuple of (clean_response, scratchpad_content_or_none)
         """
+        # Try closed tag first
         match = re.search(r"<scratchpad>(.*?)</scratchpad>", response, flags=re.DOTALL)
-        scratchpad = match.group(1).strip() if match else None
-        clean = re.sub(r"<scratchpad>.*?</scratchpad>\s*", "", response, flags=re.DOTALL)
-        return clean.strip(), scratchpad
+        if match:
+            scratchpad = match.group(1).strip()
+            clean = re.sub(r"<scratchpad>.*?</scratchpad>\s*", "", response, flags=re.DOTALL)
+            clean = re.sub(r"<plan>.*?</plan>\s*", "", clean, flags=re.DOTALL)
+            return clean.strip(), scratchpad
+
+        # Fallback: unclosed <scratchpad> tag (content filter interrupted mid-generation)
+        match = re.search(r"<scratchpad>(.*)", response, flags=re.DOTALL)
+        if match:
+            scratchpad = match.group(1).strip()
+            # Everything before the tag is the clean response (usually empty in this case)
+            clean = response[: match.start()].strip()
+            clean = re.sub(r"<plan>.*?</plan>\s*", "", clean, flags=re.DOTALL)
+            return clean, scratchpad
+
+        clean = re.sub(r"<plan>.*?</plan>\s*", "", response, flags=re.DOTALL)
+        return clean.strip(), None
+
+    def _extract_plan(self, response: str) -> str | None:
+        """Extract the <plan> block from a response.
+
+        Returns:
+            Plan content or None if no plan block found.
+        """
+        match = re.search(r"<plan>(.*?)</plan>", response, flags=re.DOTALL)
+        if match:
+            return match.group(1).strip()
+        return None
 
     def _format_conversation_as_string(self, history: Sequence[Mapping[str, str | None]]) -> str:
         """Format conversation history as labeled string for the prompt.
 
         If user turns contain a 'scratchpad' key, it is included so the model
         can see its own prior reasoning (COVERED/UNCOVERED state).
+        The 'plan' key on the first user turn is also included.
         """
         lines = []
         for turn in history:
             role = "User" if turn.get("role") == "user" else "Agent"
             content = turn.get("content", "")
+            plan = turn.get("plan")
             scratchpad = turn.get("scratchpad")
-            if role == "User" and scratchpad:
-                lines.append(f"{role}:\n<scratchpad>\n{scratchpad}\n</scratchpad>\n\n{content}")
+            if role == "User" and (plan or scratchpad):
+                parts = []
+                if plan:
+                    parts.append(f"<plan>\n{plan}\n</plan>")
+                if scratchpad:
+                    parts.append(f"<scratchpad>\n{scratchpad}\n</scratchpad>")
+                parts.append(str(content))
+                lines.append(f"{role}:\n" + "\n\n".join(parts))
             else:
                 lines.append(f"{role}: {content}")
         return "\n\n".join(lines)

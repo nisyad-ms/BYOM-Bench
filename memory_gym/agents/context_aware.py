@@ -21,12 +21,9 @@ class ContextAwareAgent:
     def build_context(
         self,
         multisession_data: MultiSessionOutput,
-        event_summaries: dict[int, str] | None = None,
     ) -> str:
         """Build system prompt with structured preference history."""
-        if event_summaries is None:
-            event_summaries = {}
-        preference_history = format_preference_history(multisession_data, event_summaries, include_ids=False)
+        preference_history = format_preference_history(multisession_data, include_ids=False)
         self._system_prompt = render_prompt(
             "agents/agent_system_with_context",
             preference_history=preference_history,

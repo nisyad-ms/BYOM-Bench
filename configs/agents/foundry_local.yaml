@@ -1,6 +1,6 @@
 # Local Foundry (LanceDB) agent configuration.
 
-num_memories: 10
+num_memories: 5
 
 extraction:
   temperature: 0
@@ -12,6 +12,6 @@ retry:
 
 search:
   initial_top_k: 5
-  default_top_k: 10
+  default_top_k: 5
 
 embedding_dim: 1536

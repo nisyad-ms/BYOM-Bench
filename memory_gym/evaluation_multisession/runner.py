@@ -20,7 +20,6 @@ from memory_gym.agents import (
     NoContextAgent,
 )
 from memory_gym.client import AsyncLLMPool, LLMClient, PooledLLMClient
-from memory_gym.formatting import summarize_events
 from memory_gym.schemas import (
     EvaluationTaskSpec,
     MultiSessionEvaluationResult,
@@ -176,7 +175,6 @@ def run_dialogue(
         - clean_conversation: List without scratchpads (for judge)
     """
     user_sim = MultiSessionUserSimulator(eval_task, client)
-    event_summaries = summarize_events(multisession_data, client)
 
     if agent_type == "foundry":
         if foundry_agent is not None:
@@ -216,7 +214,7 @@ def run_dialogue(
             agent.build_context(multisession_data)
     elif agent_type == "context":
         agent = ContextAwareAgent(client)
-        agent.build_context(multisession_data, event_summaries=event_summaries)
+        agent.build_context(multisession_data)
     else:
         agent = NoContextAgent(client)
         agent.build_context(multisession_data)
@@ -224,8 +222,10 @@ def run_dialogue(
     conversation_with_scratchpads: list[dict[str, Any]] = []
     clean_conversation: list[dict[str, str]] = []
 
-    user_message, initial_scratchpad = user_sim.get_initial_message()
-    conversation_with_scratchpads.append({"role": "user", "content": user_message, "scratchpad": initial_scratchpad})
+    user_message, initial_scratchpad, plan = user_sim.get_initial_message()
+    conversation_with_scratchpads.append(
+        {"role": "user", "content": user_message, "scratchpad": initial_scratchpad, "plan": plan}
+    )
     clean_conversation.append({"role": "user", "content": user_message})
 
     agent_turns = 0

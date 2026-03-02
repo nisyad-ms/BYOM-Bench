@@ -25,6 +25,7 @@ Usage:
 import asyncio
 import json
 import os
+import pprint
 import threading
 from pathlib import Path
 from typing import Any, Callable
@@ -113,18 +114,13 @@ def _parse_env_list(var_name: str) -> list[str]:
     return [item.strip() for item in raw.split(",") if item.strip()]
 
 
-def _get_deployments() -> list[str]:
-    """Get list of configured deployments from AZURE_OPENAI_DEPLOYMENTS."""
-    return _parse_env_list("AZURE_OPENAI_DEPLOYMENTS")
-
-
 def _get_default_deployment() -> str:
     """Get default deployment (first from AZURE_OPENAI_DEPLOYMENTS).
 
     Raises:
         ValueError: If AZURE_OPENAI_DEPLOYMENTS is not set.
     """
-    deployments = _get_deployments()
+    deployments = _parse_env_list("AZURE_OPENAI_DEPLOYMENTS")
     if not deployments:
         raise ValueError("No deployments configured. Set AZURE_OPENAI_DEPLOYMENTS environment variable.")
     return deployments[0]
@@ -149,25 +145,17 @@ def _discover_all_endpoints(
             pairs.append((primary_endpoint, d))
 
     n = 2
-    while True:
+    while n <= 10:
         endpoint = os.environ.get(f"{endpoint_var}_{n}", "")
         if not endpoint:
-            break
+            n += 1
+            continue
         deployments = _parse_env_list(f"{deployments_var}_{n}")
         for d in deployments:
             pairs.append((endpoint, d))
         n += 1
 
     return pairs
-
-
-def _build_input(prompt: str, system_prompt: str | None = None) -> list[dict[str, str]]:
-    """Build a message list from a prompt and optional system prompt."""
-    messages: list[dict[str, str]] = []
-    if system_prompt:
-        messages.append({"role": "system", "content": system_prompt})
-    messages.append({"role": "user", "content": prompt})
-    return messages
 
 
 class LeastBusyPool:
@@ -291,9 +279,13 @@ class LLMClient:
         Raises:
             json.JSONDecodeError: If the response is not valid JSON.
         """
+        messages: list[dict[str, str]] = []
+        if system_prompt:
+            messages.append({"role": "system", "content": system_prompt})
+        messages.append({"role": "user", "content": prompt})
         response = self._client.responses.create(
             model=self.deployment,
-            input=_build_input(prompt, system_prompt),  # type: ignore[arg-type]  # SDK accepts list[dict] at runtime
+            input=messages,  # type: ignore[arg-type]  # SDK accepts list[dict] at runtime
             max_output_tokens=max_tokens,
             text={"format": {"type": "json_object"}},
         )
@@ -309,7 +301,6 @@ class LLMClient:
             try:
                 resp_dict = response.model_dump()
                 # Look for any content_filter keys in the response
-                import pprint
                 filter_keys = {
                     k: v for k, v in resp_dict.items() if "filter" in str(k).lower() or "safety" in str(k).lower()
                 }

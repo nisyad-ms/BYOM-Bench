@@ -121,7 +121,7 @@ async def run_session_evals(
         if agent_type == "foundry_local":
             from memory_gym.agents import FoundryLocalAgent
 
-            shared_foundry_local_agent = FoundryLocalAgent(db_path=f"./.lancedb_foundry_local_{session_dir.name}")
+            shared_foundry_local_agent = FoundryLocalAgent(db_path=f".lancedb/{session_dir.name}")
             print(f"{session_dir.name}: building local Foundry memory store...", flush=True)
             await asyncio.to_thread(shared_foundry_local_agent.build_context, data)
 

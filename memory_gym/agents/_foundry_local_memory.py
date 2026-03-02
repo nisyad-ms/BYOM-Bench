@@ -73,7 +73,7 @@ class LocalMemoryKind(IntEnum):
     Profile = 1
 
 
-def NameEnum(enum: type):  # noqa: N802
+def name_enum(enum: type):
     """
     Returns an Annotated type that parses from Enum member names and
     serializes to the Enum member name (not value).
@@ -102,7 +102,7 @@ def NameEnum(enum: type):  # noqa: N802
     ]
 
 
-StrLocalMemoryKind = NameEnum(LocalMemoryKind)
+StrLocalMemoryKind = name_enum(LocalMemoryKind)
 
 
 @dataclass
@@ -200,7 +200,7 @@ class FoundryLocalMemory:
         embedding_client: AzureOpenAI,
         completion_model: str,
         embedding_model: str,
-        db_path: str = "./.lancedb_foundry_local_memory",
+        db_path: str = ".lancedb/foundry_local_memory",
         user_profile_enabled: bool = True,
         chat_summary_enabled: bool = True,
     ):

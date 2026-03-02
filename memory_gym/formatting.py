@@ -1,44 +1,10 @@
 """Shared formatting utilities for preference history."""
 
-from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
-from memory_gym.prompts import render_prompt
 from memory_gym.schemas import MultiSessionOutput, Preference
-
-
-def summarize_events(
-    data: MultiSessionOutput,
-    client: LLMClient | PooledLLMClient,
-) -> dict[int, str]:
-    """Summarize all session events in a single LLM call.
-
-    Args:
-        data: Multi-session output with sessions to summarize
-        client: LLM client for generation
-
-    Returns:
-        Dict mapping session_id to 1-3 sentence summary
-    """
-    if not data.sessions:
-        return {}
-
-    events_block = "\n".join(f"Session {s.session_id}: {s.life_event.event}" for s in data.sessions)
-
-    prompt = render_prompt(
-        "data_generation/event_summary_user",
-        events=events_block,
-    )
-
-    response = client.complete_json(
-        prompt=prompt,
-        max_tokens=CONFIG["max_tokens"].get("event_summary", 4096),
-    )
-
-    return {int(k): v for k, v in response.items()}
 
 
 def format_preference_history(
     data: MultiSessionOutput,
-    event_summaries: dict[int, str],
     *,
     include_ids: bool = True,
 ) -> str:
@@ -46,7 +12,6 @@ def format_preference_history(
 
     Args:
         data: Multi-session output with timeline and sessions
-        event_summaries: Dict mapping session_id to summarized event text
         include_ids: Whether to include preference IDs (e.g. [pref_004]) in the output.
             Set to False for agent-facing prompts so the agent treats preferences as
             natural knowledge rather than labeled data points.
@@ -79,8 +44,7 @@ def format_preference_history(
     if data.sessions:
         parts.append("EVOLUTION HISTORY:\n")
         for session in data.sessions:
-            summary = event_summaries.get(session.session_id, "")
-            parts.append(f"Session {session.session_id}: {summary}")
+            parts.append(f"Session {session.session_id}: {session.life_event.event}")
 
             non_evolved_new = [
                 pid for pid in session.new_preference_ids if pid not in session.evolved_preference_ids.values()
