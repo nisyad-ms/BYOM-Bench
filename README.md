@@ -204,7 +204,7 @@ uv run python scripts/gather_results.py
 
 Measures proactive preference recall:
 
-$$\text{preference\_score} = \max\left(0, \frac{\text{proactive} - \text{stale}}{\text{total\_required}}\right)$$
+$$\text{preference\\_score} = \max\left(0, \frac{\text{proactive} - \text{stale}}{\text{total\\_required}}\right)$$
 
 - **PROACTIVE**: Agent mentioned/applied preference before the user did (+1)
 - **IGNORED**: User mentioned the preference first (no contribution)
@@ -216,7 +216,7 @@ Measures conversation efficiency:
 
 $$\text{penalty} = 0.5 \times \text{generic} + 0.5 \times \text{ignored} + 1.0 \times \text{correction}$$
 
-$$\text{efficiency\_score} = \max\left(0, \frac{\text{agent\_turns} - \text{penalty}}{\text{agent\_turns}}\right)$$
+$$\text{efficiency\\_score} = \max\left(0, \frac{\text{agent\\_turns} - \text{penalty}}{\text{agent\\_turns}}\right)$$
 
 If any **REPEATED_CORRECTION** occurs, the efficiency score is automatically **0.0**.
 
