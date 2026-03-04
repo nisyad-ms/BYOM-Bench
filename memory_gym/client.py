@@ -43,6 +43,11 @@ from tenacity import (
 
 EndpointDeployment = tuple[str, str]  # (endpoint_url, deployment_name)
 
+
+class ContentFilterError(Exception):
+    """Raised when Azure content filter blocks or truncates a response."""
+
+
 load_dotenv()
 
 _CONFIGS_DIR = Path(__file__).parent.parent / "configs"
@@ -100,10 +105,33 @@ def _wait_by_error_type(retry_state: RetryCallState) -> float:
 _llm_retry = retry(
     stop=stop_after_attempt(CONFIG["retry"]["max_attempts"]),
     wait=_wait_by_error_type,
-    retry=retry_if_exception_type((APIStatusError, json.JSONDecodeError)),
+    retry=retry_if_exception_type((APIStatusError, json.JSONDecodeError, ContentFilterError)),
     before_sleep=_before_sleep_print,
     reraise=True,
 )
+
+
+def _check_content_filter(response: Any) -> None:
+    """Raise ContentFilterError if the response was truncated by Azure content filter.
+
+    Checks response.incomplete_details.reason == "content_filter". This is the
+    structured signal from the API — more reliable than keyword matching.
+    """
+    if (
+        response.status == "incomplete"
+        and response.incomplete_details
+        and response.incomplete_details.reason == "content_filter"
+    ):
+        # Extract filter details for the error message
+        details = ""
+        resp_dict = response.model_dump()
+        for cf in resp_dict.get("content_filters", []):
+            if cf.get("blocked") and cf.get("source_type") == "completion":
+                categories = cf.get("content_filter_results", {})
+                triggered = [cat for cat, info in categories.items() if info.get("filtered")]
+                if triggered:
+                    details = f" (categories: {', '.join(triggered)})"
+        raise ContentFilterError(f"Azure content filter blocked completion{details}")
 
 
 def _parse_env_list(var_name: str) -> list[str]:
@@ -156,6 +184,28 @@ def _discover_all_endpoints(
         n += 1
 
     return pairs
+
+
+def resolve_azure_openai_config() -> tuple[str, str, str, str, str]:
+    """Return ``(endpoint, chat_deployment, emb_endpoint, emb_deployment, api_version)``.
+
+    Convenience wrapper around :func:`_discover_all_endpoints` that resolves the
+    primary Azure OpenAI chat and embedding endpoints in one call.  Used by
+    memory stores that need both LLM and embedding access.
+    """
+    pairs = _discover_all_endpoints("AZURE_OPENAI_ENDPOINT", "AZURE_OPENAI_DEPLOYMENTS")
+    if not pairs:
+        raise ValueError("No AZURE_OPENAI_ENDPOINT / AZURE_OPENAI_DEPLOYMENTS configured")
+    endpoint, chat_deployment = pairs[0]
+
+    embedding_pairs = _discover_all_endpoints("AZURE_OPENAI_ENDPOINT", "AZURE_OPENAI_EMBEDDINGS_DEPLOYMENTS")
+    if not embedding_pairs:
+        raise ValueError("No AZURE_OPENAI_EMBEDDINGS_DEPLOYMENTS configured")
+    emb_endpoint, emb_deployment = embedding_pairs[0]
+
+    api_version: str = os.environ.get("AZURE_OPENAI_API_VERSION") or CONFIG["defaults"]["api_version"]
+
+    return endpoint, chat_deployment, emb_endpoint, emb_deployment, api_version
 
 
 class LeastBusyPool:
@@ -256,6 +306,7 @@ class LLMClient:
             max_output_tokens=max_tokens,
             temperature=temperature,
         )
+        _check_content_filter(response)
 
         return response.output_text
 
@@ -289,6 +340,7 @@ class LLMClient:
             max_output_tokens=max_tokens,
             text={"format": {"type": "json_object"}},
         )
+        _check_content_filter(response)
 
         try:
             return json.loads(response.output_text)
@@ -313,10 +365,7 @@ class LLMClient:
                         print(f"  Output item {i} extra fields: {pprint.pformat(extra)}")
             except Exception:
                 pass
-            print(
-                f"  JSON parse failed | status={status} | reason={reason}"
-                f" | len={len(raw)} | tail=...{raw[-100:]!r}"
-            )
+            print(f"  JSON parse failed | status={status} | reason={reason} | len={len(raw)} | tail=...{raw[-100:]!r}")
             raise
 
 

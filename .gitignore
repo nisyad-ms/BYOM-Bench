@@ -1,6 +1,5 @@
 # Environment
 .env
-.env.*
 
 # GitHub
 .github/
@@ -11,6 +10,10 @@ logs/
 ztmp/
 debug/
 .lancedb*
+.qdrant*/
+.kuzu*/
+.hindsight/
+.memory_sentinels/
 
 # Python
 __pycache__/

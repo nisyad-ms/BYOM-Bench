@@ -9,7 +9,7 @@ testing all required preferences through natural interaction.
 import re
 from collections.abc import Mapping, Sequence
 
-from memory_gym.client import CONFIG, LLMClient, PooledLLMClient
+from memory_gym.client import CONFIG, ContentFilterError, LLMClient, PooledLLMClient
 from memory_gym.prompts import render_prompt
 from memory_gym.schemas import EvaluationTaskSpec
 
@@ -128,14 +128,13 @@ class MultiSessionUserSimulator:
     def _extract_scratchpad(self, response: str) -> tuple[str, str | None]:
         """Extract scratchpad and clean response separately.
 
-        Handles both properly closed <scratchpad>...</scratchpad> tags and
-        unclosed <scratchpad> tags (e.g. from content filter interruptions).
-        Also strips <plan> tags from the clean response.
+        Raises ContentFilterError if an opening <scratchpad> tag is found
+        without a matching closing tag — this indicates the content filter
+        truncated the response mid-generation.
 
         Returns:
             Tuple of (clean_response, scratchpad_content_or_none)
         """
-        # Try closed tag first
         match = re.search(r"<scratchpad>(.*?)</scratchpad>", response, flags=re.DOTALL)
         if match:
             scratchpad = match.group(1).strip()
@@ -143,14 +142,9 @@ class MultiSessionUserSimulator:
             clean = re.sub(r"<plan>.*?</plan>\s*", "", clean, flags=re.DOTALL)
             return clean.strip(), scratchpad
 
-        # Fallback: unclosed <scratchpad> tag (content filter interrupted mid-generation)
-        match = re.search(r"<scratchpad>(.*)", response, flags=re.DOTALL)
-        if match:
-            scratchpad = match.group(1).strip()
-            # Everything before the tag is the clean response (usually empty in this case)
-            clean = response[: match.start()].strip()
-            clean = re.sub(r"<plan>.*?</plan>\s*", "", clean, flags=re.DOTALL)
-            return clean, scratchpad
+        # Unclosed <scratchpad> tag means content filter truncated mid-generation
+        if re.search(r"<scratchpad>", response):
+            raise ContentFilterError("Content filter truncated response: unclosed <scratchpad> tag")
 
         clean = re.sub(r"<plan>.*?</plan>\s*", "", response, flags=re.DOTALL)
         return clean.strip(), None

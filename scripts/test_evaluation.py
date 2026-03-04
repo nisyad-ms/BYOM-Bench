@@ -19,7 +19,9 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
+from typing import Any
 
+from memory_gym.agents.stores import get_available_agent_types
 from memory_gym.utils import (
     create_eval_run_dir,
     extract_task_num,
@@ -34,6 +36,44 @@ from memory_gym.utils import (
 )
 
 
+def _create_memory_agent(
+    agent_type: str,
+    session_dir: Path,
+    foundry_config: tuple[str, str, str] | None = None,
+    sentinel_dir: Path | None = None,
+) -> Any:
+    """Create a MemoryAgent wrapping the appropriate store for *agent_type*.
+
+    Returns None for baseline agents (context / nocontext) — those are
+    created inside the runner.
+    """
+    from memory_gym.agents import MemoryAgent
+
+    # Special case: foundry needs endpoint config from multi-endpoint discovery
+    if agent_type == "foundry":
+        from memory_gym.agents import FoundryMemoryStore
+
+        endpoint, chat_model, emb_model = foundry_config or (None, None, None)
+        store = FoundryMemoryStore(
+            memory_store_name=session_dir.name,
+            endpoint=endpoint,
+            chat_model=chat_model,
+            embedding_model=emb_model,
+        )
+        return MemoryAgent(store)
+
+    # Generic: look up store class from registry
+    from memory_gym.agents.stores import get_store_class
+
+    store_cls = get_store_class(agent_type)
+    if store_cls is not None:
+        store = store_cls(session_dir=session_dir, sentinel_dir=sentinel_dir, session_name=session_dir.name)
+        return MemoryAgent(store)
+
+    # Baseline agents (context / nocontext) — handled by the runner
+    return None
+
+
 async def run_session_evals(
     session_dir: Path,
     task_paths: list[Path],
@@ -44,6 +84,7 @@ async def run_session_evals(
     num_runs: int = 1,
     foundry_config: tuple[str, str, str] | None = None,
     memory_semaphore: asyncio.Semaphore | None = None,
+    sentinel_dir: Path | None = None,
 ):
     from memory_gym.evaluation_multisession import run_evaluations_parallel
     from memory_gym.schemas import EvaluationTaskSpec, MultiSessionOutput
@@ -78,52 +119,16 @@ async def run_session_evals(
 
     print(f"{session_dir.name}: {len(pending_tasks)} tasks to run", flush=True)
 
-    # Build agent context only if there are pending tasks
-    memory_store_name = session_dir.name if agent_type in ("foundry", "aws") else None
-
-    shared_foundry_agent = None
-    shared_google_agent = None
-    shared_aws_agent = None
-    shared_foundry_local_agent = None
+    shared_agent = _create_memory_agent(agent_type, session_dir, foundry_config, sentinel_dir)
     session_start = time.time()
     try:
-        if agent_type == "foundry":
-            from memory_gym.agents import FoundryMemoryAgent
-
-            endpoint, chat_model, emb_model = foundry_config or (None, None, None)
-            shared_foundry_agent = FoundryMemoryAgent(
-                memory_store_name=memory_store_name,  # type: ignore[arg-type]  # guaranteed str when agent_type="foundry"
-                endpoint=endpoint,
-                chat_model=chat_model,
-                embedding_model=emb_model,
-            )
-            print(f"{session_dir.name}: building Foundry memory store...", flush=True)
-            await asyncio.to_thread(shared_foundry_agent.build_context, data)
-
-        if agent_type == "google":
-            from memory_gym.agents import GoogleMemoryAgent
-
-            shared_google_agent = GoogleMemoryAgent()
-            print(f"{session_dir.name}: building Google memory store...", flush=True)
+        if shared_agent is not None:
+            print(f"{session_dir.name}: building {agent_type} memory store...", flush=True)
             if memory_semaphore:
                 async with memory_semaphore:
-                    await asyncio.to_thread(shared_google_agent.build_context, data)
+                    await asyncio.to_thread(shared_agent.build_context, data)
             else:
-                await asyncio.to_thread(shared_google_agent.build_context, data)
-
-        if agent_type == "aws":
-            from memory_gym.agents import AWSMemoryAgent
-
-            shared_aws_agent = AWSMemoryAgent(memory_name=session_dir.name)
-            print(f"{session_dir.name}: building AWS memory store...", flush=True)
-            await asyncio.to_thread(shared_aws_agent.build_context, data)
-
-        if agent_type == "foundry_local":
-            from memory_gym.agents import FoundryLocalAgent
-
-            shared_foundry_local_agent = FoundryLocalAgent(db_path=f".lancedb/{session_dir.name}")
-            print(f"{session_dir.name}: building local Foundry memory store...", flush=True)
-            await asyncio.to_thread(shared_foundry_local_agent.build_context, data)
+                await asyncio.to_thread(shared_agent.build_context, data)
 
         contexts = []
         for task_path, eval_task, run_id in pending_tasks:
@@ -132,13 +137,9 @@ async def run_session_evals(
                     "multisession_data": data,
                     "eval_task": eval_task,
                     "agent_type": agent_type,
-                    "memory_store_name": memory_store_name,
                     "max_agent_turns": max_agent_turns,
                     "task_path": task_path,
-                    "foundry_agent": shared_foundry_agent,
-                    "google_agent": shared_google_agent,
-                    "aws_agent": shared_aws_agent,
-                    "foundry_local_agent": shared_foundry_local_agent,
+                    "agent": shared_agent,
                     "run_id": run_id,
                 }
             )
@@ -161,14 +162,11 @@ async def run_session_evals(
         results = await run_evaluations_parallel(contexts, on_result=save_result)
         return results
     finally:
-        if shared_foundry_agent is not None:
-            await asyncio.to_thread(shared_foundry_agent.cleanup)
-        if shared_google_agent is not None:
-            await asyncio.to_thread(shared_google_agent.cleanup)
-        if shared_aws_agent is not None:
-            await asyncio.to_thread(shared_aws_agent.cleanup)
-        if shared_foundry_local_agent is not None:
-            await asyncio.to_thread(shared_foundry_local_agent.cleanup)
+        if shared_agent is not None:
+            if sentinel_dir is None:
+                await asyncio.to_thread(shared_agent.cleanup)
+            else:
+                print(f"{session_dir.name}: skipping cleanup (--reuse-stores)")
         session_elapsed = time.time() - session_start
         print(f"{session_dir.name}: completed in {session_elapsed:.1f}s")
 
@@ -180,6 +178,7 @@ async def run_all_sessions(
     num_runs: int,
     task_version: str | None,
     eval_run: str | None = None,
+    sentinel_dir: Path | None = None,
 ):
     foundry_configs: list[tuple[str, str, str]] = []
     if agent_type == "foundry":
@@ -188,8 +187,16 @@ async def run_all_sessions(
         foundry_configs = get_foundry_configs()
         print(f"Foundry configs: {len(foundry_configs)} (endpoint, chat, embedding) triples")
 
-    # Limit concurrent memory creation to avoid Google Vertex AI API rate limits
+    # Limit concurrency to avoid cloud API rate/quota limits.
+    # Google: semaphore on build_context only (retrieval quota is generous).
+    # AWS: semaphore on entire session (retrieval quota is tight).
     memory_semaphore = asyncio.Semaphore(3) if agent_type == "google" else None
+    session_semaphore: asyncio.Semaphore | None = None
+    if agent_type == "aws":
+        from memory_gym.client import get_agent_config
+
+        aws_cfg = get_agent_config("aws")
+        session_semaphore = asyncio.Semaphore(aws_cfg.get("max_concurrent_sessions", 5))
 
     eval_configs: list[tuple[Path, dict]] = []
     tasks = []
@@ -231,19 +238,28 @@ async def run_all_sessions(
             )
         )
 
-        tasks.append(
-            run_session_evals(
-                session_dir,
-                task_paths,
-                agent_type,
-                max_agent_turns,
-                resolved_version,
-                eval_run_dir,
-                num_runs,
-                foundry_config,
-                memory_semaphore,
-            )
+        coro = run_session_evals(
+            session_dir,
+            task_paths,
+            agent_type,
+            max_agent_turns,
+            resolved_version,
+            eval_run_dir,
+            num_runs,
+            foundry_config,
+            memory_semaphore,
+            sentinel_dir,
         )
+
+        if session_semaphore is not None:
+
+            async def _gated(sem: asyncio.Semaphore, c):  # noqa: E501
+                async with sem:
+                    return await c
+
+            coro = _gated(session_semaphore, coro)
+
+        tasks.append(coro)
 
     results = await asyncio.gather(*tasks, return_exceptions=True)
     for i, result in enumerate(results):
@@ -277,9 +293,9 @@ def main():
     parser.add_argument(
         "--agent",
         type=str,
-        choices=["context", "nocontext", "foundry", "google", "aws", "foundry_local"],
+        choices=["context", "nocontext", "foundry"] + get_available_agent_types(),
         default="context",
-        help="Agent type: context, nocontext, foundry, google, aws, or foundry_local",
+        help="Agent type: context, nocontext, foundry, or any autodiscovered store",
     )
     parser.add_argument("--max-agent-turns", type=int, default=10, help="Maximum agent turns in dialogue")
     parser.add_argument("--num-runs", type=int, default=1, help="Number of runs per task (default: 1)")
@@ -289,7 +305,16 @@ def main():
         default=None,
         help="Resume into existing eval run (e.g., '2026-02-12_173909'). Skips already-completed tasks.",
     )
+    parser.add_argument(
+        "--reuse-stores",
+        action="store_true",
+        help="Reuse existing memory stores if sentinel is valid. Skips cleanup so stores persist.",
+    )
     args = parser.parse_args()
+
+    sentinel_dir = Path(".memory_sentinels") if args.reuse_stores else None
+    if sentinel_dir is not None:
+        sentinel_dir.mkdir(exist_ok=True)
 
     if args.session == "all":
         if args.task != "all":
@@ -309,6 +334,7 @@ def main():
                 args.num_runs,
                 args.task_version,
                 args.eval_run,
+                sentinel_dir,
             )
         )
     else:
@@ -353,6 +379,7 @@ def main():
                 resolved_task_version,
                 eval_run_dir,
                 args.num_runs,
+                sentinel_dir=sentinel_dir,
             )
         )
 

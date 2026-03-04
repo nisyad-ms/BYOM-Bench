@@ -34,7 +34,12 @@ template: |
 
   3. Include a realistic mix of facts — not every domain needs a problem. Some people are healthy, happily married, or thriving at work. Pure-negative personas are as unrealistic as pure-positive ones.
      POSITIVE: "Just promoted to VP of Engineering at a 200-person company"
-     CHALLENGE: "Mother recently diagnosed with early-stage Parkinson's; visits monthly"
+     CHALLENGE: "Father recently had a knee replacement; drives him to physical therapy weekly"
+
+  4. **Content safety**: The generated text will be processed by AI systems with content filters. To avoid false positives:
+     - Do NOT generate scenarios where adult siblings or relatives share living space (e.g., sister/brother moving in, cohabiting with relatives). Use professional relationship changes instead (e.g., new roommate, partner moving in).
+     - For child-related facts, use age-appropriate activity language (e.g., "reads to kids at bedtime", "plays in the park with son") — avoid intimate-sounding vocabulary like "cuddling", "bath time", "co-sleeping".
+     - For parent health facts, focus on logistical impact (driving to appointments, managing schedules) rather than intimate caregiving details (bathing, dressing, personal care).
 
   ## Example
 

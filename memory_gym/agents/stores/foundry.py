@@ -1,12 +1,10 @@
-"""Foundry Memory Agent using Azure AI Foundry memory store (API mode only).
+"""Foundry Memory Store using Azure AI Foundry memory store (API mode only).
 
-Memory retrieval is done via the Foundry memory store search API, with the
-LLM tool-calling loop handled by the shared `_tool_calling` module.
+Memory retrieval is done via the Foundry memory store search API.
 """
 
 import itertools
 import os
-import threading
 from typing import Any
 
 from azure.ai.projects import AIProjectClient
@@ -29,15 +27,12 @@ from tenacity import (
 )
 
 from memory_gym.client import (
-    PooledLLMClient,
     _before_sleep_print,
     _discover_all_endpoints,
     _parse_env_list,
     get_agent_config,
 )
 from memory_gym.schemas import MultiSessionOutput
-
-from ._tool_calling import respond_with_memory_search
 
 
 def _get_foundry_deployments() -> list[str]:
@@ -102,11 +97,10 @@ _foundry_retry_config = _foundry_cfg["retry"]
 _chat_model_counter = itertools.count()
 
 
-class FoundryMemoryAgent:
-    """Agent using Azure AI Foundry memory store for preference recall.
+class FoundryMemoryStore:
+    """Memory store backed by Azure AI Foundry memory store API.
 
-    Uses the memory store search API for retrieval and the shared tool-calling
-    loop for LLM interaction.  No Foundry prompt agents are created.
+    Implements the ``MemoryStore`` protocol: ``populate``, ``retrieve``, ``cleanup``.
     """
 
     def __init__(
@@ -144,46 +138,63 @@ class FoundryMemoryAgent:
             embedding_model = emb_deployments[0]
         self.embedding_model = embedding_model
 
-        self._memory_populated = False
-        self._init_lock = threading.Lock()
-        self._llm_client: PooledLLMClient | None = None
+    # ------------------------------------------------------------------
+    # MemoryStore protocol
+    # ------------------------------------------------------------------
 
-    def create_memory_store(self, multisession_data: MultiSessionOutput) -> None:
-        """Delete any existing memory store, create fresh, and populate with conversation history.
+    def populate(self, multisession_data: MultiSessionOutput) -> None:
+        """Delete any existing memory store, create fresh, and populate with conversation history."""
+        existing_stores = [ms.name for ms in self.client.memory_stores.list()]
 
-        Thread-safe: only one thread will create/populate the store.
-        """
-        with self._init_lock:
-            if self._memory_populated:
-                return
+        if self.memory_store_name in existing_stores:
+            self.client.memory_stores.delete(self.memory_store_name)
 
-            existing_stores = [ms.name for ms in self.client.memory_stores.list()]
+        definition = MemoryStoreDefaultDefinition(
+            chat_model=self.chat_model,
+            embedding_model=self.embedding_model,
+            options=MemoryStoreDefaultOptions(
+                user_profile_enabled=True,
+                chat_summary_enabled=True,
+            ),
+        )
 
-            if self.memory_store_name in existing_stores:
-                self.client.memory_stores.delete(self.memory_store_name)
+        self.client.memory_stores.create(
+            name=self.memory_store_name,
+            definition=definition,
+            description=f"Memory store for persona: {multisession_data.persona[:50]}",
+        )
 
-            definition = MemoryStoreDefaultDefinition(
-                chat_model=self.chat_model,
-                embedding_model=self.embedding_model,
-                options=MemoryStoreDefaultOptions(
-                    user_profile_enabled=True,
-                    chat_summary_enabled=True,
-                ),
-            )
+        try:
+            self._populate_memories(multisession_data)
+        except Exception:
+            print(f"Memory population failed — deleting partial store '{self.memory_store_name}'")
+            self.client.memory_stores.delete(self.memory_store_name)
+            raise
 
-            self.client.memory_stores.create(
-                name=self.memory_store_name,
-                definition=definition,
-                description=f"Memory store for persona: {multisession_data.persona[:50]}",
-            )
+    def retrieve(self, query: str) -> list[str]:
+        """Search memories via Foundry memory store API and return fact strings."""
+        query_message = ResponsesUserMessageItemParam(content=query)
+        search_response = self.client.memory_stores.search_memories(
+            name=self.memory_store_name,
+            scope=self.scope,
+            items=[query_message],  # type: ignore[arg-type]  # SDK accepts this message type at runtime
+            options=MemorySearchOptions(max_memories=self.num_memories),
+        )
+        return [m.memory_item.content for m in search_response.memories]
 
-            try:
-                self._populate_memories(multisession_data)
-            except Exception:
-                print(f"Memory population failed — deleting partial store '{self.memory_store_name}'")
-                self.client.memory_stores.delete(self.memory_store_name)
+    def cleanup(self) -> None:
+        """Delete the memory store created by this instance."""
+        try:
+            self.client.memory_stores.delete(self.memory_store_name)
+            print(f"Deleted memory store: {self.memory_store_name}")
+        except Exception as e:
+            if "404" not in str(e) and "NotFound" not in str(e):
                 raise
-            self._memory_populated = True
+            print(f"Memory store already deleted: {self.memory_store_name}")
+
+    # ------------------------------------------------------------------
+    # Internal helpers
+    # ------------------------------------------------------------------
 
     def _populate_memories(self, multisession_data: MultiSessionOutput) -> None:
         previous_update_id = None
@@ -221,46 +232,6 @@ class FoundryMemoryAgent:
         )
         poller.result()  # blocks until complete; raises HttpResponseError on server failures
         return poller
-
-    def _search_memories(self, query: str) -> list[dict[str, str]]:
-        """Search memories via Foundry memory store API."""
-        query_message = ResponsesUserMessageItemParam(content=query)
-        search_response = self.client.memory_stores.search_memories(
-            name=self.memory_store_name,
-            scope=self.scope,
-            items=[query_message],  # type: ignore[arg-type]  # SDK accepts this message type at runtime
-            options=MemorySearchOptions(max_memories=self.num_memories),
-        )
-        return [{"fact": m.memory_item.content} for m in search_response.memories]
-
-    def build_context(self, multisession_data: MultiSessionOutput) -> str:
-        """Ensure memory store is populated and LLM client pool is ready."""
-        self.create_memory_store(multisession_data)
-        if self._llm_client is None:
-            self._llm_client = PooledLLMClient()
-        return "Foundry agent with memory API"
-
-    def respond(self, conversation: list[dict[str, str]]) -> tuple[str, list[dict]]:
-        """Generate a response using Azure OpenAI with Foundry memory search."""
-        if self._llm_client is None:
-            raise ValueError("LLM client not initialized. Call build_context first.")
-        return respond_with_memory_search(
-            self._llm_client, "agents/agent_system_memory", conversation, self._search_memories
-        )
-
-    def reset_conversation(self) -> None:
-        """No-op: no per-conversation state to reset."""
-
-    def cleanup(self) -> None:
-        """Delete the memory store created by this instance."""
-        try:
-            self.client.memory_stores.delete(self.memory_store_name)
-            print(f"Deleted memory store: {self.memory_store_name}")
-        except Exception as e:
-            if "404" not in str(e) and "NotFound" not in str(e):
-                raise
-            print(f"Memory store already deleted: {self.memory_store_name}")
-        self._memory_populated = False
 
 
 def _to_foundry_messages(

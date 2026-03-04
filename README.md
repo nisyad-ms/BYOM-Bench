@@ -2,6 +2,8 @@
 
 A benchmark for evaluating LLM personalization through multi-session conversations with evolving user preferences.
 
+For a minimal setup guide, see [QUICK_START.md](QUICK_START.md).
+
 ## Overview
 
 MemoryGym measures how well AI agents remember and proactively use user preferences across multiple conversation sessions. Preferences evolve over time due to life events, testing whether agents can:
@@ -48,6 +50,14 @@ uv sync
 
 # Or install with pip
 pip install -e .
+
+# Optional memory stores (third-party)
+pip install -e ".[mem0]"        # Mem0 open-source memory layer
+pip install -e ".[zep]"         # Graphiti temporal knowledge graph (Kùzu)
+pip install -e ".[hindsight]"   # Hindsight biomimetic memory (bundles torch + embedded PostgreSQL)
+pip install -e ".[all]"         # All optional stores
+
+# To add your own memory backend, see BRING_YOUR_OWN_MEMORY.md
 ```
 
 ## Configuration
@@ -148,7 +158,7 @@ uv run python scripts/test_evaluation.py --session <name> --agent context
 | Flag | Default | Description |
 |------|---------|-------------|
 | `--session NAME` | *(required)* | `"all"` or a session name — the `<timestamp>` folder created by Stage 1 (one per persona) |
-| `--agent TYPE` | `context` | Agent type: `context`, `nocontext`, `foundry`, `foundry_local`, `google`, `aws` |
+| `--agent TYPE` | `context` | Agent type: `context`, `nocontext`, `foundry`, `foundry_local`, `google`, `aws`, `mem0`, `zep`, `hindsight` |
 | `--task TASKS` | `all` | `"all"` or comma-separated task numbers (e.g., `01,02,03`) |
 | `--task-version VERSION` | latest | Task version (e.g., `v1`) |
 | `--num-runs N` | `1` | Number of evaluation runs per task |
@@ -253,14 +263,19 @@ Turn classifications (evaluated using the user's next message as look-ahead):
 
 ## Agent Types
 
-| Agent | Description |
-|-------|-------------|
-| **context** | Full ground-truth preference list provided (upper bound) |
-| **nocontext** | No past context provided (lower bound) |
-| **foundry** | Azure AI Foundry memory store |
-| **foundry_local** | Local LanceDB replicating Foundry pipeline |
-| **google** | Google Vertex AI Agent Engine memory |
-| **aws** | AWS Bedrock AgentCore memory |
+| Agent | Description | Install |
+|-------|-------------|---------|
+| **context** | Full ground-truth preference list provided (upper bound) | core |
+| **nocontext** | No past context provided (lower bound) | core |
+| **foundry** | Azure AI Foundry memory store | core |
+| **foundry_local** | Local LanceDB replicating Foundry pipeline | core |
+| **google** | Google Vertex AI Agent Engine memory | core |
+| **aws** | AWS Bedrock AgentCore memory | core |
+| **mem0** | Mem0 open-source memory layer | `.[mem0]` |
+| **zep** | Graphiti temporal knowledge graph (Kùzu) | `.[zep]` |
+| **hindsight** | Hindsight biomimetic memory | `.[hindsight]` |
+
+To add a custom memory backend, see [BRING_YOUR_OWN_MEMORY.md](BRING_YOUR_OWN_MEMORY.md).
 
 For the latest benchmark results, see [RESULTS.md](RESULTS.md).
 

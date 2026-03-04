@@ -1,8 +1,8 @@
-"""Google Memory Agent using Google Vertex AI Agent Engine for memory storage."""
+"""Google Memory Store using Google Vertex AI Agent Engine for memory storage."""
 
 import os
-import threading
 import time
+from pathlib import Path
 from typing import Any
 
 import vertexai
@@ -15,27 +15,32 @@ from tenacity import (
     wait_exponential,
 )
 
-from memory_gym.client import PooledLLMClient, _before_sleep_print, get_agent_config
+from memory_gym.client import _before_sleep_print, get_agent_config
 from memory_gym.schemas import MultiSessionOutput
 
-from ._tool_calling import respond_with_memory_search
+from ._sentinel import SentinelMixin
 
 _google_cfg = get_agent_config("google")
 
 
-class GoogleMemoryAgent:
-    """Agent using Google Vertex AI Agent Engine for memory storage and Azure OpenAI for LLM responses.
+class GoogleMemoryStore(SentinelMixin):
+    """Memory store backed by Google Vertex AI Agent Engine.
 
-    Creates a Vertex AI agent engine to store/retrieve memories, while using
-    Azure OpenAI for chat responses with a search_memories tool.
+    Implements the ``MemoryStore`` protocol: ``populate``, ``retrieve``, ``cleanup``.
     """
+
+    _sentinel_agent_type = "google"
 
     def __init__(
         self,
+        *,
+        session_dir: Path,
         user_id: str = "default-user",
         project_id: str | None = None,
         location: str | None = None,
         num_memories: int | None = None,
+        sentinel_dir: Path | None = None,
+        session_name: str | None = None,
     ):
         self.user_id = user_id
         self.project_id = project_id or os.environ.get("GCLOUD_PROJECT_ID")
@@ -48,55 +53,89 @@ class GoogleMemoryAgent:
             raise ValueError("location must be provided or set via GCLOUD_LOCATION env var")
 
         self._vertex_client = vertexai.Client(project=self.project_id, location=self.location)  # type: ignore[attr-defined]  # Client is lazy-loaded via __getattr__
-        self._llm_client = PooledLLMClient()
         self._agent_engine: Any = None
         self._agent_engine_name: str | None = None
-        self._memory_populated = False
-        self._init_lock = threading.Lock()
+        self._sentinel_dir = sentinel_dir
+        self._session_name = session_name
 
-    def build_context(self, multisession_data: MultiSessionOutput) -> str:
+    # ------------------------------------------------------------------
+    # MemoryStore protocol
+    # ------------------------------------------------------------------
+
+    def populate(self, multisession_data: MultiSessionOutput) -> None:
         """Create agent engine and populate memories from conversation history.
 
-        Thread-safe: only one thread will create/populate the engine.
+        If a valid sentinel exists and the cloud resource is alive, reuses it.
         """
-        with self._init_lock:
-            if self._memory_populated:
-                return "Google agent with memory search"
+        # Check sentinel for existing valid store
+        sentinel = self._read_sentinel()
+        if sentinel and sentinel["sessions_ingested"] == len(multisession_data.sessions):
+            store_id = sentinel["store_id"]
+            if self._check_store_exists(store_id):
+                self._agent_engine_name = store_id
+                print(f"Reusing existing Google agent engine: {store_id} (sentinel valid)")
+                return
+        # Sentinel invalid or store gone — delete stale sentinel
+        self._delete_sentinel()
 
-            if self._agent_engine_name is not None:
-                try:
-                    self._vertex_client.agent_engines.delete(name=self._agent_engine_name, force=True)
-                except Exception as e:
-                    if "404" not in str(e) and "NOT_FOUND" not in str(e):
-                        raise
-                self._agent_engine = None
-                self._agent_engine_name = None
+        if self._agent_engine_name is not None:
+            try:
+                self._vertex_client.agent_engines.delete(name=self._agent_engine_name, force=True)
+            except Exception as e:
+                if "404" not in str(e) and "NOT_FOUND" not in str(e):
+                    raise
+            self._agent_engine = None
+            self._agent_engine_name = None
 
-            if self._agent_engine is None:
-                memory_config: dict = {
-                    "customization_configs": [
-                        {
-                            "memory_topics": [
-                                {"managed_memory_topic": {"managed_topic_enum": "USER_PERSONAL_INFO"}},
-                                {"managed_memory_topic": {"managed_topic_enum": "USER_PREFERENCES"}},
-                                {"managed_memory_topic": {"managed_topic_enum": "KEY_CONVERSATION_DETAILS"}},
-                                {"managed_memory_topic": {"managed_topic_enum": "EXPLICIT_INSTRUCTIONS"}},
-                            ]
-                        }
-                    ]
-                }
-                self._agent_engine = self._create_engine_with_retry(memory_config)
-                self._agent_engine_name = self._agent_engine.api_resource.name
-                print(f"Created Google agent engine: {self._agent_engine_name}")
+        if self._agent_engine is None:
+            memory_config: dict = {
+                "customization_configs": [
+                    {
+                        "memory_topics": [
+                            {"managed_memory_topic": {"managed_topic_enum": "USER_PERSONAL_INFO"}},
+                            {"managed_memory_topic": {"managed_topic_enum": "USER_PREFERENCES"}},
+                            {"managed_memory_topic": {"managed_topic_enum": "KEY_CONVERSATION_DETAILS"}},
+                            {"managed_memory_topic": {"managed_topic_enum": "EXPLICIT_INSTRUCTIONS"}},
+                        ]
+                    }
+                ]
+            }
+            self._agent_engine = self._create_engine_with_retry(memory_config)
+            self._agent_engine_name = self._agent_engine.api_resource.name
+            print(f"Created Google agent engine: {self._agent_engine_name}")
 
-            self._populate_memories(multisession_data)
-            self._memory_populated = True
+        self._populate_memories(multisession_data)
+        self._write_sentinel(len(multisession_data.sessions), store_id=self._agent_engine_name)
 
-        return "Google agent with memory search"
+    def retrieve(self, query: str) -> list[str]:
+        """Retrieve fact strings from Google agent engine memory."""
+        results = self._retrieve_memories_with_retry(query)
+        return [m["fact"] for m in results]
+
+    def cleanup(self) -> None:
+        """Delete the agent engine and sentinel to free resources."""
+        self._delete_sentinel()
+        if self._agent_engine_name is None:
+            return
+        try:
+            self._vertex_client.agent_engines.delete(name=self._agent_engine_name, force=True)
+            print(f"Cleaned up Google agent engine: {self._agent_engine_name}")
+        except Exception as e:
+            if "404" in str(e) or "NOT_FOUND" in str(e):
+                print("Google agent engine already deleted.")
+            else:
+                raise
+        finally:
+            self._agent_engine = None
+            self._agent_engine_name = None
+
+    # ------------------------------------------------------------------
+    # Internal helpers
+    # ------------------------------------------------------------------
 
     _google_retry = _google_cfg["retry"]
 
-    @retry(
+    _google_retry_decorator = retry(
         retry=retry_if_exception_type(
             (
                 google_exceptions.ServiceUnavailable,
@@ -114,6 +153,8 @@ class GoogleMemoryAgent:
         stop=stop_after_attempt(_google_retry["max_attempts"]),
         before_sleep=_before_sleep_print,
     )
+
+    @_google_retry_decorator
     def _create_engine_with_retry(self, memory_config: dict) -> Any:
         """Create a Vertex AI agent engine with retry logic."""
         return self._vertex_client.agent_engines.create(config={"context_spec": {"memory_bank_config": memory_config}})
@@ -141,24 +182,7 @@ class GoogleMemoryAgent:
         total_elapsed = time.time() - total_start
         print(f"Memory population complete: {len(multisession_data.sessions)} sessions in {total_elapsed:.1f}s")
 
-    @retry(
-        retry=retry_if_exception_type(
-            (
-                google_exceptions.ServiceUnavailable,
-                google_exceptions.InternalServerError,
-                google_exceptions.DeadlineExceeded,
-                google_exceptions.ResourceExhausted,
-                GenAIClientError,
-            )
-        ),
-        wait=wait_exponential(
-            multiplier=_google_retry["multiplier"],
-            min=_google_retry["min_seconds"],
-            max=_google_retry["max_seconds"],
-        ),
-        stop=stop_after_attempt(_google_retry["max_attempts"]),
-        before_sleep=_before_sleep_print,
-    )
+    @_google_retry_decorator
     def _generate_memories_with_retry(self, vertex_messages: list[dict]) -> Any:
         """Call Google memories.generate() with retry logic."""
         return self._vertex_client.agent_engines.memories.generate(
@@ -168,24 +192,7 @@ class GoogleMemoryAgent:
             config={"wait_for_completion": True},
         )
 
-    @retry(
-        retry=retry_if_exception_type(
-            (
-                google_exceptions.ServiceUnavailable,
-                google_exceptions.InternalServerError,
-                google_exceptions.DeadlineExceeded,
-                google_exceptions.ResourceExhausted,
-                GenAIClientError,
-            )
-        ),
-        wait=wait_exponential(
-            multiplier=_google_retry["multiplier"],
-            min=_google_retry["min_seconds"],
-            max=_google_retry["max_seconds"],
-        ),
-        stop=stop_after_attempt(_google_retry["max_attempts"]),
-        before_sleep=_before_sleep_print,
-    )
+    @_google_retry_decorator
     def _retrieve_memories_with_retry(self, query: str) -> list[dict]:
         """Call Google memories.retrieve() with retry logic."""
         top_k = self.num_memories
@@ -199,32 +206,19 @@ class GoogleMemoryAgent:
         )
         return [{"fact": m.memory.fact} for m in results]
 
-    def respond(self, conversation: list[dict[str, str]]) -> tuple[str, list[dict]]:
-        """Generate a response using Azure OpenAI with Google memory search tool."""
-        if self._agent_engine_name is None:
-            raise ValueError("Agent engine not initialized. Call build_context first.")
-        return respond_with_memory_search(
-            self._llm_client, "agents/agent_system_memory", conversation, self._retrieve_memories_with_retry
-        )
+    # ------------------------------------------------------------------
+    # Sentinel helpers
+    # ------------------------------------------------------------------
 
-    def reset_conversation(self) -> None:
-        """No-op: no per-conversation state to reset."""
-
-    def cleanup(self) -> None:
-        """Delete the agent engine to free resources."""
-        if self._agent_engine_name is None:
-            return
+    def _check_store_exists(self, store_id: str) -> bool:
+        """Check if Google agent engine still exists via lightweight API call."""
         try:
-            self._vertex_client.agent_engines.delete(name=self._agent_engine_name, force=True)
-            print(f"Cleaned up Google agent engine: {self._agent_engine_name}")
+            self._vertex_client.agent_engines.get(name=store_id)
+            return True
         except Exception as e:
             if "404" in str(e) or "NOT_FOUND" in str(e):
-                print("Google agent engine already deleted.")
-            else:
-                raise
-        finally:
-            self._agent_engine = None
-            self._agent_engine_name = None
+                return False
+            raise
 
 
 def _to_vertex_messages(conversation: list[dict[str, str]]) -> list[dict]:

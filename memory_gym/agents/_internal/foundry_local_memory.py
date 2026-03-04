@@ -39,7 +39,7 @@ _foundry_local_cfg = get_agent_config("foundry_local")
 # Prompt constants — loaded from prompts/foundry_local/
 # ---------------------------------------------------------------------------
 
-_PROMPT_DIR = Path(__file__).parent.parent / "prompts" / "foundry_local"
+_PROMPT_DIR = Path(__file__).parent.parent.parent / "prompts" / "foundry_local"
 
 EXTRACT_MEMORIES_SYSTEM_PROMPT = (_PROMPT_DIR / "extraction_system.txt").read_text(encoding="utf-8")
 EXTRACT_MEMORIES_USER_PROMPT_TEMPLATE = (_PROMPT_DIR / "extraction_instructions.txt").read_text(encoding="utf-8")
@@ -221,9 +221,6 @@ class FoundryLocalMemory:
             personal_data_admin="the user or developer",
         )
 
-        # Usage tracking — reset per public call
-        self._usage: dict[str, int] = {}
-
     # ------------------------------------------------------------------
     # Public API
     # ------------------------------------------------------------------
@@ -233,8 +230,6 @@ class FoundryLocalMemory:
 
         Returns the number of memory operations performed.
         """
-        self._usage = {}
-
         messages = self._conversation_to_internal_messages(conversation)
         if not messages:
             return 0
@@ -317,7 +312,6 @@ class FoundryLocalMemory:
 
     def retrieve(self, user_id: str, query: str, top_k: int | None = None) -> list[str]:
         """Contextual retrieval: hybrid search using query string."""
-        self._usage = {}
         scope = user_id
         resolved_top_k: int = top_k if top_k is not None else _foundry_local_cfg["search"]["default_top_k"]
 

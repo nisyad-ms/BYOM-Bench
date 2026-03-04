@@ -2,6 +2,8 @@
 
 ## 1. Install
 
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) if you don't have it, then:
+
 ```bash
 uv sync
 ```
@@ -56,3 +58,7 @@ uv run python scripts/test_evaluation.py --session all --agent foundry_local
 # Gather results
 uv run python scripts/gather_results.py
 ```
+
+## 5. Bring your own memory
+
+Want to evaluate a custom memory backend? See [BRING_YOUR_OWN_MEMORY.md](BRING_YOUR_OWN_MEMORY.md) for how to implement and register a new memory store.

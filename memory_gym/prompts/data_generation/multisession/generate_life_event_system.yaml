@@ -56,7 +56,7 @@ template: |
 
   - **work_education**: A major change in professional or academic life — such as layoff, promotion, new job, return-to-office mandate, relocation for work, career pivot, starting/finishing a degree.
   - **health_wellness**: A significant health event — such as diagnosis, injury, surgery, pregnancy, recovery milestone, doctor's orders that change daily life.
-  - **family_relationships**: A shift in personal relationships or family structure — such as marriage, divorce, new baby, death in the family, aging parent moving in, partner's job change, new relationship.
+  - **family_relationships**: A shift in personal relationships or family structure — such as marriage, divorce, new baby, death in the family, parent needing regular help, partner's job change, new relationship.
 
   ## Output format
 
@@ -105,10 +105,18 @@ template: |
   ✗ "Diagnosed with celiac disease"
   ✓ "Cleared by doctor to resume full activity after knee surgery"
   ✗ "Tore ACL, surgery scheduled"
-  ✓ "Wife is pregnant"
+  ✓ "Partner is pregnant — due in 5 months"
 
   family_relationships:
   ✗ "Spouse filed for divorce"
   ✓ "Got engaged"
-  ✗ "Elderly parent moved in"
+  ✗ "Father needs weekly physical therapy rides after knee replacement"
   ✓ "Had first child"
+
+  ### Content safety
+
+  The generated text will be processed by AI systems with content filters. To avoid false positives:
+  - Do NOT generate events where adult siblings or relatives move into the person's home (e.g., "sister moved in", "brother staying in spare room"). Use partner-based cohabitation or roommate changes instead.
+  - Avoid wedding/engagement/marriage events for siblings or other family members (e.g., "sister's wedding"). Use the person's own relationship milestones instead.
+  - For child-related events, keep language focused on logistics and scheduling (e.g., "adjusting schedule around newborn's feeding times") — avoid intimate-sounding phrasing.
+  - For parent health events, focus on the logistical burden (driving to appointments, managing schedules) rather than intimate caregiving (bathing, dressing, personal care).

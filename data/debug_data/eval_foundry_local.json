@@ -1,0 +1,165 @@
+{
+  "task_id": "eval_debug_001",
+  "scores": {
+    "preference_score": 1.0,
+    "efficiency_score": 1.0
+  },
+  "conversation": [
+    {
+      "role": "user",
+      "content": "I work from home in a shared office space, and sometimes it can be tough to concentrate. Any advice for staying focused in that kind of setting?",
+      "scratchpad": {
+        "covered": [],
+        "uncovered": [
+          "pref_005",
+          "pref_003"
+        ],
+        "evaluation": "N/A (first message — no agent reply yet)",
+        "action": "Probe for pref_005.",
+        "testing": "pref_005 — Now wears noise-canceling headphones with white noise since partner plays music in the shared office"
+      },
+      "plan": "TOPIC GROUPS:\n- Group 1 \"Work Environment\": [pref_005]\n- Group 2 \"Dining & Food Allergies\": [pref_003]\n\nTESTING ORDER: [pref_005, pref_003]\nOPENING TOPIC: Work Environment — Ask about tips for focusing while working in a shared home office.\nBRIDGES:\n- Work Environment → Dining & Food Allergies: After discussing ways to focus better at work, transition to asking about lunch ideas or meal planning."
+    },
+    {
+      "role": "assistant",
+      "retrieved_memories": [
+        {
+          "query": "work from home, shared office space, concentration, focus tips",
+          "results": [
+            {
+              "fact": "User prefers to work in silence or with white noise rather than music, and uses noise-canceling headphones with white noise to focus in a shared office environment."
+            },
+            {
+              "fact": "The user described a recent change in their home office environment: their partner moved into the user's home office and plays music throughout the day. Previously, the user worked in complete silence. To adapt, the user now wears noise-canceling headphones and listens to white noise to block out the music. The user reports that this adaptation is working well. Aside from this change, the user's routine remains consistent: the user continues to use dark mode on their devices, drinks two cups of green tea each morning, and avoids shellfish."
+            },
+            {
+              "fact": "User's partner now shares the user's home office and plays music during the day."
+            },
+            {
+              "fact": "The user is a graphic designer who recently set up a new home office as of March 4, 2026. The user consistently uses dark mode in all applications because it reduces eye strain from prolonged screen exposure. The user has a severe shellfish allergy, specifically to shrimp, crab, and lobster, which is relevant for lunch delivery orders during work hours. The user prefers to work in complete silence, avoiding music and podcasts, and follows a morning routine of drinking exactly two cups of green tea, never coffee. These habits and preferences contribute to the user's focused and productive work environment."
+            },
+            {
+              "fact": "User set up a new home office as of March 4, 2026."
+            }
+          ]
+        }
+      ],
+      "content": "Based on your recent changes in your home office setup and preferences:\n\n- You prefer working in silence or with white noise, using noise-canceling headphones to block out distractions (especially music your partner plays).\n- You've adapted well to your partner sharing the space by using white noise to maintain focus.\n- You consistently use dark mode to reduce eye strain.\n- Your morning routine includes two cups of green tea (never coffee).\n- You have a severe shellfish allergy, important for lunch choices.\n\nIf you want more tips to maintain focus or adapt further to a shared office environment, I can suggest strategies tailored to your needs, such as optimizing your workspace for privacy, improving your headphone setup, or other ways to boost concentration despite background noise. Let me know what area you'd like more advice on!"
+    },
+    {
+      "role": "user",
+      "content": "Thanks for the suggestions! Now that I'm thinking about lunch, I’d love some healthy meal ideas—anything quick and easy that works well for someone working from home?",
+      "scratchpad": {
+        "covered": [
+          "pref_005"
+        ],
+        "uncovered": [
+          "pref_003"
+        ],
+        "evaluation": "Agent said: \"You prefer working in silence or with white noise, using noise-canceling headphones to block out distractions (especially music your partner plays)\" and \"You have a severe shellfish allergy, important for lunch choices.\" This addresses pref_005 and also proactively mentions pref_003 (though not in detail).",
+        "action": "Mark pref_005 COVERED. Next, probe for pref_003 (severe shellfish allergy) in a natural way, following the planned bridge to dining/food.",
+        "testing": "pref_003 — Severely allergic to shellfish — cannot eat shrimp, crab, or lobster"
+      }
+    },
+    {
+      "role": "assistant",
+      "retrieved_memories": [
+        {
+          "query": "healthy lunch ideas, working from home, quick meals, shellfish allergy",
+          "results": [
+            {
+              "fact": "User has a severe shellfish allergy to shrimp, crab, and lobster and avoids shellfish."
+            },
+            {
+              "fact": "The user is a graphic designer who recently set up a new home office as of March 4, 2026. The user consistently uses dark mode in all applications because it reduces eye strain from prolonged screen exposure. The user has a severe shellfish allergy, specifically to shrimp, crab, and lobster, which is relevant for lunch delivery orders during work hours. The user prefers to work in complete silence, avoiding music and podcasts, and follows a morning routine of drinking exactly two cups of green tea, never coffee. These habits and preferences contribute to the user's focused and productive work environment."
+            },
+            {
+              "fact": "User sometimes orders lunch delivery while working."
+            },
+            {
+              "fact": "The user described a recent change in their home office environment: their partner moved into the user's home office and plays music throughout the day. Previously, the user worked in complete silence. To adapt, the user now wears noise-canceling headphones and listens to white noise to block out the music. The user reports that this adaptation is working well. Aside from this change, the user's routine remains consistent: the user continues to use dark mode on their devices, drinks two cups of green tea each morning, and avoids shellfish."
+            },
+            {
+              "fact": "User prefers to work in silence or with white noise rather than music, and uses noise-canceling headphones with white noise to focus in a shared office environment."
+            }
+          ]
+        }
+      ],
+      "content": "Here are some healthy, quick lunch ideas for working from home that avoid shellfish and suit your busy schedule:\n\n1. Grilled Chicken Salad: Toss grilled chicken breast with mixed greens, cherry tomatoes, cucumbers, and a light vinaigrette.\n2. Quinoa Veggie Bowl: Combine cooked quinoa with roasted veggies, chickpeas, and a lemon-tahini dressing.\n3. Turkey or Veggie Wrap: Roll up turkey slices or roasted veggies in a whole-wheat tortilla with hummus and spinach.\n4. Avocado Toast with Egg: Top whole-grain bread with smashed avocado and a poached or boiled egg; sprinkle with pepper and chili flakes.\n5. Greek Yogurt Parfait: Layer non-fat Greek yogurt with fresh berries, nuts, and a drizzle of honey.\n6. Lentil Soup: Heat up a homemade or store-bought lentil soup and pair it with whole-grain crackers.\n7. Caprese Salad: Slice fresh mozzarella, tomatoes, and basil, drizzle with olive oil and balsamic vinegar, and serve with mixed greens.\n\nAll these options are shellfish-free, quick to prepare, and healthy—perfect for work-from-home lunch breaks! If you want a delivery recommendation, let me know your preferred cuisine or dietary focus."
+    },
+    {
+      "role": "user",
+      "content": "That’s perfect—thanks so much for the personalized suggestions and help!",
+      "scratchpad": {
+        "covered": [
+          "pref_005",
+          "pref_003"
+        ],
+        "uncovered": [],
+        "evaluation": "Agent said: \"Here are some healthy, quick lunch ideas for working from home that avoid shellfish...\" The agent specifically provided shellfish-free options and mentioned avoiding shellfish in their advice. → RECALLED",
+        "action": "All preferences have been covered and correctly recalled; end conversation with a brief thank-you.",
+        "testing": "none"
+      }
+    }
+  ],
+  "preference_scoring": {
+    "proactive_count": 2,
+    "stale_count": 0,
+    "stale_preference_usage": [],
+    "first_mention_trace": [
+      {
+        "preference_id": "pref_005",
+        "first_mentioned_by": "Agent",
+        "turn_number": 2,
+        "stale_used": false,
+        "usage": "proactive",
+        "reasoning": "Check 1: The agent referenced the user's use of noise-canceling headphones with white noise, and adapting due to the partner playing music in the shared office, in Turn 2 before the user specifically said anything about these details. Check 2: Distinguishing details include 'noise-canceling headphones,' 'white noise,' and 'music your partner plays.' The agent named all the unique, up-to-date aspects of this preference, beyond generic office focus advice. Check 3: The superseded (old) preference was complete silence; the agent applied the current (noise-canceling/white noise) preference, not the old one.",
+        "quote": "Based on your recent changes in your home office setup and preferences:\n\n- You prefer working in silence or with white noise, using noise-canceling headphones to block out distractions (especially music your partner plays).",
+        "preference": "Now wears noise-canceling headphones with white noise since partner plays music in the shared office",
+        "type": "evolved",
+        "supersedes": {
+          "id": "pref_002",
+          "fact": "Prefers to work in complete silence — no music, no podcasts"
+        }
+      },
+      {
+        "preference_id": "pref_003",
+        "first_mentioned_by": "Agent",
+        "turn_number": 2,
+        "stale_used": false,
+        "usage": "proactive",
+        "reasoning": "Check 1: The agent proactively mentioned the user's severe shellfish allergy in Turn 2 ('You have a severe shellfish allergy, important for lunch choices') before the user referenced food or allergies at all. Check 2: The agent named the distinguishing detail of a 'severe shellfish allergy,' not generic dietary restrictions, specifically stating its importance for lunch. Then in Turn 4 all meals recommended are affirmed shellfish-free, showing application. Check 3: No superseded preference, not applicable.",
+        "quote": "You have a severe shellfish allergy, important for lunch choices.",
+        "preference": "Severely allergic to shellfish — cannot eat shrimp, crab, or lobster",
+        "type": "baseline"
+      }
+    ]
+  },
+  "efficiency_scoring": {
+    "total_turns": 2,
+    "productive_turns": 2,
+    "generic_turns": 0,
+    "correction_turns": 0,
+    "ignored_turns": 0,
+    "repeated_correction_turns": 0,
+    "turn_classifications": [
+      {
+        "turn": 1,
+        "type": "productive",
+        "reasoning": "Agent references pref_005 ('noise-canceling headphones with white noise') and pref_003 ('severe shellfish allergy'), directly demonstrating knowledge of both required preferences. Agent explicitly mentions working with white noise due to shared office distractions and shellfish allergy as relevant for lunch choices.",
+        "preference_ids": [
+          "pref_005",
+          "pref_003"
+        ]
+      },
+      {
+        "turn": 2,
+        "type": "productive",
+        "reasoning": "Agent demonstrates knowledge of pref_003 ('severely allergic to shellfish') by stating 'avoid shellfish' and giving only shellfish-free meal suggestions. The phrase 'All these options are shellfish-free, quick to prepare, and healthy' shows explicit application of the allergy preference.",
+        "preference_ids": [
+          "pref_003"
+        ]
+      }
+    ]
+  }
+}

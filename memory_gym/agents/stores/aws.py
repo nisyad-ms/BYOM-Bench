@@ -1,9 +1,10 @@
-"""AWS Memory Agent using AWS Bedrock AgentCore for memory storage."""
+"""AWS Memory Store using AWS Bedrock AgentCore for memory storage."""
 
+import json
 import os
 import re
-import threading
 import time
+from pathlib import Path
 from typing import Any
 
 from botocore.exceptions import ClientError
@@ -14,10 +15,10 @@ from tenacity import (
     wait_exponential,
 )
 
-from memory_gym.client import PooledLLMClient, _before_sleep_print, get_agent_config
+from memory_gym.client import _before_sleep_print, get_agent_config
 from memory_gym.schemas import MultiSessionOutput
 
-from ._tool_calling import respond_with_memory_search
+from ._sentinel import SentinelMixin
 
 _aws_cfg = get_agent_config("aws")
 
@@ -37,27 +38,31 @@ def _is_retryable_client_error(exc: BaseException) -> bool:
     return code not in _NON_RETRYABLE_CODES
 
 
-class AWSMemoryAgent:
-    """Agent using AWS Bedrock AgentCore for memory storage and Azure OpenAI for LLM responses.
+class AWSMemoryStore(SentinelMixin):
+    """Memory store backed by AWS Bedrock AgentCore.
 
-    Creates a Bedrock memory store to store/retrieve memories, while using
-    Azure OpenAI for chat responses with a search_memories tool.
+    Implements the ``MemoryStore`` protocol: ``populate``, ``retrieve``, ``cleanup``.
     """
+
+    _sentinel_agent_type = "aws"
 
     def __init__(
         self,
-        memory_name: str,
+        *,
+        session_dir: Path,
         user_id: str = "default-user",
         region_name: str | None = None,
         num_memories: int | None = None,
         event_expiry_days: int | None = None,
+        sentinel_dir: Path | None = None,
+        session_name: str | None = None,
     ):
         self.user_id = user_id
         self.region_name = region_name or os.environ.get("AWS_REGION")
         if not self.region_name:
             raise ValueError("AWS_REGION not set in environment")
         # AWS memory names must match [a-zA-Z][a-zA-Z0-9_]{0,47}
-        sanitized = re.sub(r"[^a-zA-Z0-9_]", "_", memory_name)
+        sanitized = re.sub(r"[^a-zA-Z0-9_]", "_", session_dir.name)
         if not sanitized[0].isalpha():
             sanitized = f"mg_{sanitized}"
         self.memory_name = sanitized[:48]
@@ -68,10 +73,78 @@ class AWSMemoryAgent:
 
         self._memory_client = MemoryClient(region_name=self.region_name)
         self._control_plane_client = MemoryControlPlaneClient(region_name=self.region_name)
-        self._llm_client = PooledLLMClient()
         self._memory_id: str | None = None
-        self._memory_populated = False
-        self._init_lock = threading.Lock()
+        self._sentinel_dir = sentinel_dir
+        self._session_name = session_name
+
+    # ------------------------------------------------------------------
+    # MemoryStore protocol
+    # ------------------------------------------------------------------
+
+    def populate(self, multisession_data: MultiSessionOutput) -> None:
+        """Create the memory store and ingest all sessions.
+
+        If a valid sentinel exists and the cloud store is ACTIVE, reuses it.
+        Cleans up on populate failure as defense-in-depth.
+        """
+        # Check sentinel for existing valid store
+        sentinel = self._read_sentinel()
+        if sentinel and sentinel["sessions_ingested"] == len(multisession_data.sessions):
+            store_id = sentinel["store_id"]
+            if self._check_store_exists(store_id):
+                self._memory_id = store_id
+                print(f"Reusing existing AWS memory store: {store_id} (sentinel valid)")
+                return
+        # Sentinel invalid or store gone — delete stale sentinel
+        self._delete_sentinel()
+
+        # Evict completed stores if approaching the account limit
+        self._evict_if_needed()
+
+        self._create_memory_store()
+
+        try:
+            self._populate_memories(multisession_data)
+        except Exception:
+            print(f"Memory population failed — cleaning up AWS memory store '{self.memory_name}'")
+            self._cleanup_memory_store()
+            raise
+
+        self._write_sentinel(len(multisession_data.sessions), store_id=self._memory_id)
+
+    def retrieve(self, query: str) -> list[str]:
+        """Retrieve fact strings across all namespaces for the user."""
+        assert self._memory_id is not None
+        namespaces = self._namespaces_for_user(self.user_id)
+        per_ns = max(self.num_memories // len(namespaces), 1)
+
+        facts: list[str] = []
+        seen_ids: set[str] = set()
+
+        for ns in namespaces:
+            try:
+                records = self._memory_client.retrieve_memories(
+                    memory_id=self._memory_id,
+                    namespace=ns,
+                    query=query,
+                    top_k=per_ns,
+                )
+                for r in records:
+                    rid = _get_record_id(r)
+                    if rid not in seen_ids:
+                        seen_ids.add(rid)
+                        content = _get_record_content(r)
+                        if content:
+                            facts.append(content)
+            except Exception as e:
+                print(f"Warning: failed to retrieve memories from {ns}: {e}")
+
+        return facts[: self.num_memories]
+
+    def cleanup(self) -> None:
+        """Delete the memory store and sentinel to free resources."""
+        self._delete_sentinel()
+        self._cleanup_memory_store()
 
     # ------------------------------------------------------------------
     # Memory lifecycle
@@ -147,11 +220,7 @@ class AWSMemoryAgent:
         before_sleep=_before_sleep_print,
     )
     def _create_and_wait(self, strategies: list[dict]) -> None:
-        """Create memory store, capture its ID immediately, then wait for ACTIVE.
-
-        Sets self._memory_id right after the create call so cleanup can always
-        find the store, even if the wait-for-active step fails or times out.
-        """
+        """Create memory store, capture its ID immediately, then wait for ACTIVE."""
         memory = self._memory_client.create_memory(
             name=self.memory_name,
             description="MemoryGym long-term memory store",
@@ -275,90 +344,8 @@ class AWSMemoryAgent:
         return new_records
 
     # ------------------------------------------------------------------
-    # Memory retrieval
+    # Cleanup
     # ------------------------------------------------------------------
-
-    @retry(
-        retry=retry_if_exception(_is_retryable_client_error),
-        wait=wait_exponential(
-            multiplier=_aws_retry["multiplier"],
-            min=_aws_retry["min_seconds"],
-            max=_aws_retry["max_seconds"],
-        ),
-        stop=stop_after_attempt(_aws_retry["max_attempts"]),
-        before_sleep=_before_sleep_print,
-    )
-    def _retrieve_memories(self, query: str) -> list[dict[str, str]]:
-        """Retrieve memories across all namespaces for the user."""
-        assert self._memory_id is not None
-        namespaces = self._namespaces_for_user(self.user_id)
-        per_ns = max(self.num_memories // len(namespaces), 1)
-
-        memories: list[dict[str, str]] = []
-        seen_ids: set[str] = set()
-
-        for ns in namespaces:
-            try:
-                records = self._memory_client.retrieve_memories(
-                    memory_id=self._memory_id,
-                    namespace=ns,
-                    query=query,
-                    top_k=per_ns,
-                )
-                for r in records:
-                    rid = _get_record_id(r)
-                    if rid not in seen_ids:
-                        seen_ids.add(rid)
-                        content = _get_record_content(r)
-                        if content:
-                            memories.append({"fact": content})
-            except Exception as e:
-                print(f"Warning: failed to retrieve memories from {ns}: {e}")
-
-        return memories[: self.num_memories]
-
-    # ------------------------------------------------------------------
-    # Agent interface
-    # ------------------------------------------------------------------
-
-    def build_context(self, multisession_data: MultiSessionOutput) -> str:
-        """Create memory store and populate memories from conversation history.
-
-        Thread-safe: only one thread will create/populate the store.
-        Cleans up on populate failure as defense-in-depth; the caller
-        (test_evaluation.py) also owns cleanup via try/finally.
-        """
-        with self._init_lock:
-            if self._memory_populated:
-                return "AWS agent with memory search"
-
-            self._create_memory_store()
-
-            try:
-                self._populate_memories(multisession_data)
-            except Exception:
-                print(f"Memory population failed — cleaning up AWS memory store '{self.memory_name}'")
-                self._cleanup_memory_store()
-                raise
-
-            self._memory_populated = True
-
-        return "AWS agent with memory search"
-
-    def respond(self, conversation: list[dict[str, str]]) -> tuple[str, list[dict]]:
-        """Generate a response using Azure OpenAI with AWS memory search tool."""
-        if self._memory_id is None:
-            raise ValueError("Memory store not initialized. Call build_context first.")
-        return respond_with_memory_search(
-            self._llm_client, "agents/agent_system_memory", conversation, self._retrieve_memories
-        )
-
-    def reset_conversation(self) -> None:
-        """No-op: no per-conversation state to reset."""
-
-    def cleanup(self) -> None:
-        """Delete the memory store to free resources."""
-        self._cleanup_memory_store()
 
     _CLEANUP_POLL_INTERVAL: int = _aws_cfg["polling"]["cleanup_interval"]
     _CLEANUP_MAX_WAIT: int = _aws_cfg["timeouts"]["cleanup_max_wait"]
@@ -369,7 +356,6 @@ class AWSMemoryAgent:
             return
         memory_id = self._memory_id
         self._memory_id = None
-        self._memory_populated = False
 
         deadline = time.time() + self._CLEANUP_MAX_WAIT
         while True:
@@ -387,6 +373,81 @@ class AWSMemoryAgent:
                     time.sleep(self._CLEANUP_POLL_INTERVAL)
                     continue
                 raise
+
+    # ------------------------------------------------------------------
+    # Store eviction (--reuse-stores only)
+    # ------------------------------------------------------------------
+
+    def _evict_if_needed(self) -> None:
+        """Delete completed stores when approaching the AWS account limit.
+
+        Only runs when --reuse-stores is active (sentinel_dir is set).
+        Finds stores with valid sentinel files (i.e., completed), deletes
+        the oldest ones until store count is below the limit with headroom.
+        """
+        if self._sentinel_dir is None:
+            return
+
+        max_stores = _aws_cfg.get("max_memory_stores", 20)
+        headroom = 2  # leave room for new store creation
+
+        try:
+            stores = self._memory_client.list_memories()
+        except Exception as e:
+            print(f"Warning: failed to list AWS memory stores for eviction check: {e}")
+            return
+
+        if len(stores) < max_stores - headroom:
+            return
+
+        # Build mapping: sentinel file → (store_id, timestamp)
+        eviction_candidates: list[tuple[str, Path, str]] = []  # (timestamp, sentinel_path, store_id)
+        for sentinel_path in sorted(self._sentinel_dir.glob("*_aws.json")):
+            try:
+                sentinel_data = json.loads(sentinel_path.read_text())
+                store_id = sentinel_data.get("store_id")
+                timestamp = sentinel_data.get("timestamp", "")
+                if store_id and any(s.get("id", s.get("memoryId")) == store_id for s in stores):
+                    eviction_candidates.append((timestamp, sentinel_path, store_id))
+            except (json.JSONDecodeError, OSError):
+                continue
+
+        # Sort by timestamp ascending (oldest first) — skip our own store
+        eviction_candidates.sort(key=lambda x: x[0])
+
+        to_evict = len(stores) - (max_stores - headroom)
+        evicted = 0
+        for timestamp, sentinel_path, store_id in eviction_candidates:
+            if evicted >= to_evict:
+                break
+            # Don't evict our own store
+            if store_id == self._memory_id:
+                continue
+            try:
+                print(f"Evicting AWS memory store {store_id} (sentinel: {sentinel_path.name})")
+                self._memory_client.delete_memory_and_wait(memory_id=store_id)
+                sentinel_path.unlink(missing_ok=True)
+                evicted += 1
+            except Exception as e:
+                print(f"Warning: failed to evict store {store_id}: {e}")
+
+        if evicted > 0:
+            print(f"Evicted {evicted} completed AWS memory store(s) to stay under {max_stores} limit")
+
+    # ------------------------------------------------------------------
+    # Sentinel helpers
+    # ------------------------------------------------------------------
+
+    def _check_store_exists(self, store_id: str) -> bool:
+        """Check if AWS memory store still exists and is ACTIVE."""
+        try:
+            status = self._memory_client.get_memory_status(store_id)
+            return status == "ACTIVE"
+        except Exception as e:
+            msg = str(e).lower()
+            if "not found" in msg or "404" in str(e):
+                return False
+            raise
 
 
 def _to_bedrock_messages(conversation: list[dict[str, str]]) -> list[tuple[str, str]]:

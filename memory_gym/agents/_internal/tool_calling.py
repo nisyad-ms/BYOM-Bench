@@ -9,7 +9,7 @@ dispatch.
 import json
 from typing import Any, Callable
 
-from memory_gym.client import CONFIG, PooledLLMClient, _llm_retry
+from memory_gym.client import CONFIG, PooledLLMClient, _check_content_filter, _llm_retry
 from memory_gym.prompts import render_prompt
 
 _AGENT_MAX_TOKENS: int = CONFIG["max_tokens"]["agent"]
@@ -58,6 +58,7 @@ def _respond_with_tools(
         tools=[SEARCH_MEMORIES_TOOL],  # type: ignore[list-item]
         max_output_tokens=_AGENT_MAX_TOKENS,
     )
+    _check_content_filter(response)
 
     while True:
         tool_calls = [item for item in response.output if item.type == "function_call"]
@@ -89,6 +90,7 @@ def _respond_with_tools(
             tools=[SEARCH_MEMORIES_TOOL],  # type: ignore[list-item]
             max_output_tokens=_AGENT_MAX_TOKENS,
         )
+        _check_content_filter(response)
 
     return response.output_text, all_retrieved
 

@@ -62,6 +62,13 @@ template: |
        GOOD: "Listens to audiobooks during commute — never music or podcasts"
        Not every preference needs a negation, but aim for at least half.
 
+  ### Content safety
+
+  The generated text will be processed by AI systems with content filters. To avoid false positives:
+  - For child-related preferences, use age-appropriate activity language (e.g., "reads to kids at bedtime", "takes son to the park every Saturday") — avoid intimate-sounding vocabulary like "cuddling", "bath time", "co-sleeping".
+  - For family caregiving preferences, focus on logistics (driving to appointments, coordinating schedules) rather than intimate personal care.
+  - Avoid preferences involving adult siblings or relatives sharing living space.
+
   ## End to End Example
 
   Input:

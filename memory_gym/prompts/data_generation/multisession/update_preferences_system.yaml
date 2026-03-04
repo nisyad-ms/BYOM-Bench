@@ -60,6 +60,13 @@ template: |
   If the event would modify an existing preference's behavior, use EVOLUTION instead — do not create a duplicate.
   New preferences must be specific, concrete, tied to the event, and changeable by a future event.
 
+  ### Content safety
+
+  The generated text will be processed by AI systems with content filters. To avoid false positives:
+  - For child-related preferences, use age-appropriate activity language (e.g., "reads to kids at bedtime", "weekend park trips with daughter") — avoid intimate-sounding vocabulary like "cuddling", "bath time", "co-sleeping".
+  - For family caregiving preferences, focus on logistics (driving to appointments, coordinating schedules) rather than intimate personal care (bathing, dressing).
+  - Avoid preferences involving adult siblings or relatives sharing living space (e.g., "sister staying in spare room").
+
   ## Cross-domain effects
 
   One event can affect preferences across multiple domains — consider all 5 when scanning active preferences.

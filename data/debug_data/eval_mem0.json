@@ -1,0 +1,164 @@
+{
+  "task_id": "eval_debug_001",
+  "scores": {
+    "preference_score": 1.0,
+    "efficiency_score": 1.0
+  },
+  "conversation": [
+    {
+      "role": "user",
+      "content": "I'm looking for ways to stay focused while working from home. Do you have any advice for people who share an office with someone who listens to music?",
+      "scratchpad": {
+        "covered": [],
+        "uncovered": [
+          "pref_005",
+          "pref_003"
+        ],
+        "evaluation": "N/A (first message — no agent reply yet)",
+        "action": "Probe for pref_005.",
+        "testing": "pref_005 — Now wears noise-canceling headphones with white noise since partner plays music in the shared office"
+      },
+      "plan": "TOPIC GROUPS:\n- Group 1 \"Work environment / Productivity\": [pref_005]\n- Group 2 \"Dining / Health\": [pref_003]\n\nTESTING ORDER: [pref_005, pref_003]\nOPENING TOPIC: Work environment / Productivity — Open the conversation by mentioning shared workspace challenges and ask for productivity tips.\nBRIDGES:\n- Work environment → Dining: After discussing workspace and productivity, mention lunch options or meal planning as a segue to dining/health."
+    },
+    {
+      "role": "assistant",
+      "retrieved_memories": [
+        {
+          "query": "work from home focus tips, shared office, music distractions, user preferences",
+          "results": [
+            {
+              "fact": "Partner moved into home office and plays music all day"
+            },
+            {
+              "fact": "Has set up a new home office"
+            },
+            {
+              "fact": "Now wears noise-canceling headphones with white noise to block out music"
+            },
+            {
+              "fact": "Used to work in complete silence"
+            },
+            {
+              "fact": "Finds dark mode easier on the eyes due to staring at screens all day"
+            }
+          ]
+        }
+      ],
+      "content": "Based on your situation:\n\n- Your partner moved into your home office and plays music all day.\n- You used to work in complete silence.\n- Now, you wear noise-canceling headphones with white noise to block out music and help you focus.\n\nHere are some personalized tips to maintain focus while working from home in a shared office with music distractions:\n\n1. **Continue Using Noise-Canceling Headphones**: You’ve already found them useful. Consider experimenting with different types of white noise or ambient sounds (like rain or forest sounds) to see what helps your concentration the most.\n2. **Set Boundaries for Music Volume**: If possible, discuss mutual “quiet hours” or times when your partner can use headphones instead, so you occasionally get periods of silence.\n3. **Visual Comfort**: Since you find dark mode easier on your eyes, ensure all your main apps and browser are in dark mode to reduce eye strain and avoid fatigue.\n4. **Time Blocking**: Schedule your most focus-intensive work during times when distractions are lowest, or when your partner’s music is less active.\n5. **Physical Workspace Tweaks**: If you can, rearrange your workspace so you’re not directly facing the source of sound. Using dividers, shelving, or plants can also help dampen noise.\n6. **Breaks Away from the Room**: Regularly step away from your desk for short breaks in quiet spaces to recharge your mental energy.\n7. **Shared Playlist Experiment**: If you and your partner are open to it, try a mutually agreeable playlist with calmer, instrumental tracks that might serve as background rather than distraction.\n\nLet me know if you’d like more advice specific to your work type, or if you want recommendations for the best noise-canceling headphones or white noise apps!"
+    },
+    {
+      "role": "user",
+      "content": "Thanks, these tips are really helpful! On a related note, since I usually work through lunch, I'm thinking about easy meal ideas I can prepare quickly. Do you have suggestions for healthy lunches that are safe for people with allergies?",
+      "scratchpad": {
+        "covered": [
+          "pref_005"
+        ],
+        "uncovered": [
+          "pref_003"
+        ],
+        "evaluation": "Agent said: \"Now, you wear noise-canceling headphones with white noise to block out music and help you focus.\" This directly references pref_005 and offers tailored advice. → RECALLED",
+        "action": "Mark pref_005 COVERED. Select pref_003 to probe. Bridge to Dining/Health by mentioning lunch or meal planning.",
+        "testing": "pref_003 — Severely allergic to shellfish — cannot eat shrimp, crab, or lobster"
+      }
+    },
+    {
+      "role": "assistant",
+      "retrieved_memories": [
+        {
+          "query": "food allergies, healthy lunch ideas, quick meals, working from home",
+          "results": [
+            {
+              "fact": "Sometimes orders lunch delivery while working"
+            },
+            {
+              "fact": "Has a severe shellfish allergy (no shrimp, crab, or lobster)"
+            },
+            {
+              "fact": "Avoids shellfish"
+            },
+            {
+              "fact": "Partner moved into home office and plays music all day"
+            },
+            {
+              "fact": "Has set up a new home office"
+            }
+          ]
+        }
+      ],
+      "content": "Here are some healthy lunch ideas for you, considering your severe shellfish allergy and need for quick meals while working from home:\n\n1. Grilled chicken salad with mixed greens, avocado, and vinaigrette.\n2. Turkey and veggie wrap with whole wheat tortilla, spinach, and hummus.\n3. Quinoa bowl with roasted vegetables and feta cheese.\n4. Mediterranean chickpea salad with cucumber, tomato, olives, and lemon dressing.\n5. Lentil soup with a side of whole-grain bread.\n\nThese options are allergy-safe (no shellfish), nutritious, and easy to prepare or order for delivery if needed. Let me know if you want recipes or more delivery-friendly suggestions!"
+    },
+    {
+      "role": "user",
+      "content": "That’s perfect—thanks so much for the thoughtful recommendations and advice!",
+      "scratchpad": {
+        "covered": [
+          "pref_005",
+          "pref_003"
+        ],
+        "uncovered": [],
+        "evaluation": "Agent said: \"Here are some healthy lunch ideas for you, considering your severe shellfish allergy...\" and \"These options are allergy-safe (no shellfish)...\" This directly addresses pref_003 by acknowledging the severe shellfish allergy and offering safe meal suggestions. → RECALLED",
+        "action": "Both preferences are now COVERED. End the conversation with a brief thank you.",
+        "testing": "none"
+      }
+    }
+  ],
+  "preference_scoring": {
+    "proactive_count": 2,
+    "stale_count": 0,
+    "stale_preference_usage": [],
+    "first_mention_trace": [
+      {
+        "preference_id": "pref_005",
+        "first_mentioned_by": "Agent",
+        "turn_number": 2,
+        "stale_used": false,
+        "usage": "proactive",
+        "reasoning": "Check 1: The agent mentions in Turn 2, before the user references headphones or white noise. Check 2: The agent gives specific details unique to the user: 'noise-canceling headphones with white noise' to block out partner's music, referencing both the device and the reason. These are distinguishing details not present in generic advice. Check 3: The agent references the old preference (working in complete silence) to contrast, but recommends and applies the current one (headphones/white noise), not the outdated pattern.",
+        "quote": "Based on your situation:\n\n- Your partner moved...",
+        "preference": "Now wears noise-canceling headphones with white noise since partner plays music in the shared office",
+        "type": "evolved",
+        "supersedes": {
+          "id": "pref_002",
+          "fact": "Prefers to work in complete silence — no music, no podcasts"
+        }
+      },
+      {
+        "preference_id": "pref_003",
+        "first_mentioned_by": "Agent",
+        "turn_number": 4,
+        "stale_used": false,
+        "usage": "proactive",
+        "reasoning": "Check 1: The agent is the first to mention the user's severe shellfish allergy in Turn 4. The user only asks for 'healthy lunches that are safe for people with allergies' — this alone is too general to assume knowledge of shellfish specifically. The agent provides 'considering your severe shellfish allergy' and specifies 'no shellfish,' referencing the exact allergy and relevant foods to avoid. Check 2: The distinguishing detail is 'severe shellfish allergy' and ensuring 'no shellfish' in meal suggestions, which is specific to this user's dietary needs and not generic allergy advice.",
+        "quote": "Here are some healthy lunch ideas for you, considering your severe shellfish allergy...",
+        "preference": "Severely allergic to shellfish — cannot eat shrimp, crab, or lobster",
+        "type": "baseline"
+      }
+    ]
+  },
+  "efficiency_scoring": {
+    "total_turns": 2,
+    "productive_turns": 2,
+    "generic_turns": 0,
+    "correction_turns": 0,
+    "ignored_turns": 0,
+    "repeated_correction_turns": 0,
+    "turn_classifications": [
+      {
+        "turn": 1,
+        "type": "productive",
+        "reasoning": "Agent references pref_005 ('Now wears noise-canceling headphones with white noise') in multiple places: 'Now, you wear noise-canceling headphones with white noise to block out music and help you focus.' Also mentions partner playing music and prior silence, directly referencing the user's history and current strategy. Content passes. User's next message accepts and continues without revealing or correcting any preference.",
+        "preference_ids": [
+          "pref_005"
+        ]
+      },
+      {
+        "turn": 2,
+        "type": "productive",
+        "reasoning": "Agent references pref_003 ('Severely allergic to shellfish') with: 'considering your severe shellfish allergy' and specifies lunch ideas are 'allergy-safe (no shellfish)'. Content passes. User's next message is positive and does not reveal or correct any preference.",
+        "preference_ids": [
+          "pref_003"
+        ]
+      }
+    ]
+  }
+}

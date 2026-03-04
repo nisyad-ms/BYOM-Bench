@@ -21,3 +21,12 @@ polling:
 
 search:
   internal_top_k: 100
+
+# Maximum concurrent sessions (build_context + evals) to avoid quota limits.
+# AWS Bedrock quota errors happen during both store creation and retrieval,
+# so the entire session must be gated, not just build_context.
+max_concurrent_sessions: 10
+
+# AWS account limit for memory stores. When --reuse-stores is active and
+# store count reaches this limit, completed stores are evicted to make room.
+max_memory_stores: 20
