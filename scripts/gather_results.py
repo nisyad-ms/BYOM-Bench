@@ -44,6 +44,14 @@ def main():
         eval_run_dirs.append(eval_run_dir)
         eval_run_name = eval_run_dir.name
 
+        # Load build_context_seconds from run_config.json if available
+        run_config_path = eval_run_dir / "run_config.json"
+        build_context_seconds = ""
+        if run_config_path.exists():
+            with open(run_config_path, "r", encoding="utf-8") as f:
+                run_config = json.load(f)
+            build_context_seconds = run_config.get("build_context_seconds", "")
+
         for eval_file in sorted(eval_run_dir.glob("eval_*.json")):
             match = EVAL_PATTERN.match(eval_file.name)
             if not match:
@@ -69,6 +77,8 @@ def main():
                     "run": run_id,
                     "preference_score": scores.get("preference_score", ""),
                     "efficiency_score": scores.get("efficiency_score", ""),
+                    "eval_seconds": scores.get("eval_seconds", ""),
+                    "build_context_seconds": build_context_seconds,
                     "recalled_count": pref.get("recalled_count", pref.get("proactive_count", "")),
                     "stale_count": pref.get("stale_count", ""),
                     "required_preferences": len(pref.get("preference_verdicts", pref.get("first_mention_trace", []))),

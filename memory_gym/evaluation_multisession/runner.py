@@ -9,6 +9,7 @@ Orchestrates the complete evaluation flow:
 """
 
 import re
+import time
 from typing import Any, Callable, Literal
 
 from memory_gym.agents import ContextAwareAgent, NoContextAgent
@@ -203,7 +204,8 @@ def _run_single_evaluation_with_client(
     context: dict,
 ) -> MultiSessionEvaluationResult:
     """Run a single evaluation using provided client (for parallel execution)."""
-    return run_evaluation(
+    t0 = time.monotonic()
+    result = run_evaluation(
         multisession_data=context["multisession_data"],
         eval_task=context["eval_task"],
         max_agent_turns=context["max_agent_turns"],
@@ -211,6 +213,8 @@ def _run_single_evaluation_with_client(
         agent_type=context.get("agent_type", "context"),
         agent=context.get("agent"),
     )
+    result.eval_seconds = round(time.monotonic() - t0, 2)
+    return result
 
 
 async def run_evaluations_parallel(

@@ -632,6 +632,7 @@ class MultiSessionEvaluationResult:
     recalled_count: int = 0
     efficiency_score: float = 0.0
     preference_score: float = 0.0
+    eval_seconds: float | None = None
     reasoning: str = ""
     error: str | None = None
 
@@ -641,6 +642,7 @@ class MultiSessionEvaluationResult:
             "scores": {
                 "preference_score": self.preference_score,
                 "efficiency_score": self.efficiency_score,
+                "eval_seconds": self.eval_seconds,
             },
         }
         result.update(
