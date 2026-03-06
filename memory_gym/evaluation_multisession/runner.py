@@ -76,7 +76,7 @@ def _parse_scratchpad(raw: str) -> dict[str, str | list[str]]:
 
 def run_evaluation(
     multisession_data: MultiSessionOutput,
-    max_agent_turns: int = 10,
+    max_agent_turns: int = 20,
     client: LLMClient | PooledLLMClient | None = None,
     eval_task: EvaluationTaskSpec | None = None,
     agent_type: Literal["context", "nocontext"] = "context",
@@ -113,8 +113,9 @@ def run_evaluation(
     )
 
     # Step 3: Evaluate with judge (using clean conversation without scratchpads)
+    # Pass scratchpad conversation so the judge can extract simulator verdicts
     judge = MultiSessionJudge(client)
-    result = judge.evaluate(eval_task, clean_conversation)
+    result = judge.evaluate(eval_task, clean_conversation, conversation_with_scratchpads)
 
     # Replace conversation with version that includes scratchpads for output
     # Parse raw scratchpad strings into structured dicts for readable JSON

@@ -258,7 +258,7 @@ efficiency_score = max(0, (agent_turns - 0.5×clarifying - corrections) / agent_
   "preference_scoring": {
     "proactive_count": 5,
     "stale_count": 0,
-    "first_mention_trace": [...]
+    "preference_verdicts": [...]
   },
   "efficiency_scoring": {
     "total_turns": 10,

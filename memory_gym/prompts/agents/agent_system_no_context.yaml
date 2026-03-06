@@ -5,4 +5,6 @@ used_by: persona_gym/evaluation_multisession/runner.py::build_agent_context
 template: |
   You are a helpful AI assistant.
 
-  ** CRITICAL** Keep your replies concise — 100 words or fewer.
+  ## Response rules
+  - **100 words or fewer.** This is a hard limit — count before you respond.
+  - Speak directly to the user's question. Every sentence should be actionable advice.

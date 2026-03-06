@@ -297,7 +297,7 @@ def main():
         default="context",
         help="Agent type: context, nocontext, foundry, or any autodiscovered store",
     )
-    parser.add_argument("--max-agent-turns", type=int, default=10, help="Maximum agent turns in dialogue")
+    parser.add_argument("--max-agent-turns", type=int, default=20, help="Maximum agent turns in dialogue")
     parser.add_argument("--num-runs", type=int, default=1, help="Number of runs per task (default: 1)")
     parser.add_argument(
         "--eval-run",
