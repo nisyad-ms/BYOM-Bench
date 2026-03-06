@@ -115,20 +115,24 @@ async def run_session_evals(
 
     if not pending_tasks:
         print(f"All tasks already completed for {session_dir.name}")
-        return []
+        return [], None
 
     print(f"{session_dir.name}: {len(pending_tasks)} tasks to run", flush=True)
 
     shared_agent = _create_memory_agent(agent_type, session_dir, foundry_config, sentinel_dir)
+    build_context_seconds: float | None = None
     session_start = time.time()
     try:
         if shared_agent is not None:
             print(f"{session_dir.name}: building {agent_type} memory store...", flush=True)
+            t0 = time.monotonic()
             if memory_semaphore:
                 async with memory_semaphore:
                     await asyncio.to_thread(shared_agent.build_context, data)
             else:
                 await asyncio.to_thread(shared_agent.build_context, data)
+            build_context_seconds = round(time.monotonic() - t0, 2)
+            print(f"{session_dir.name}: build_context completed in {build_context_seconds:.1f}s", flush=True)
 
         contexts = []
         for task_path, eval_task, run_id in pending_tasks:
@@ -152,7 +156,8 @@ async def run_session_evals(
             run_label = f" run {run_id}" if run_id else ""
             print(
                 f"{session_dir.name}: task {task_num:02d}{run_label} done "
-                f"(pref={result.preference_score}, eff={result.efficiency_score})",
+                f"(pref={result.preference_score}, eff={result.efficiency_score}, "
+                f"time={result.eval_seconds}s)",
                 flush=True,
             )
 
@@ -160,7 +165,7 @@ async def run_session_evals(
                 json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
 
         results = await run_evaluations_parallel(contexts, on_result=save_result)
-        return results
+        return results, build_context_seconds
     finally:
         if shared_agent is not None:
             if sentinel_dir is None:
@@ -198,7 +203,7 @@ async def run_all_sessions(
         aws_cfg = get_agent_config("aws")
         session_semaphore = asyncio.Semaphore(aws_cfg.get("max_concurrent_sessions", 5))
 
-    eval_configs: list[tuple[Path, dict]] = []
+    eval_configs: list[tuple[Path, dict, str]] = []
     tasks = []
     for i, session_dir in enumerate(session_dirs):
         session_file = get_session_path(session_dir)
@@ -235,6 +240,7 @@ async def run_all_sessions(
                     "max_agent_turns": max_agent_turns,
                     "timestamp": datetime.now().isoformat(),
                 },
+                session_dir.name,
             )
         )
 
@@ -264,9 +270,13 @@ async def run_all_sessions(
     results = await asyncio.gather(*tasks, return_exceptions=True)
     for i, result in enumerate(results):
         if isinstance(result, BaseException):
-            print(f"Session {session_dirs[i].name} FAILED: {type(result).__name__}: {result}")
+            print(f"Session {eval_configs[i][2]} FAILED: {type(result).__name__}: {result}")
+        else:
+            _, build_seconds = result
+            if build_seconds is not None:
+                eval_configs[i][1]["build_context_seconds"] = build_seconds
 
-    for eval_run_dir, config in eval_configs:
+    for eval_run_dir, config, _ in eval_configs:
         save_eval_run_config(eval_run_dir, config)
 
 
@@ -297,7 +307,7 @@ def main():
         default="context",
         help="Agent type: context, nocontext, foundry, or any autodiscovered store",
     )
-    parser.add_argument("--max-agent-turns", type=int, default=10, help="Maximum agent turns in dialogue")
+    parser.add_argument("--max-agent-turns", type=int, default=20, help="Maximum agent turns in dialogue")
     parser.add_argument("--num-runs", type=int, default=1, help="Number of runs per task (default: 1)")
     parser.add_argument(
         "--eval-run",
@@ -370,7 +380,7 @@ def main():
         else:
             eval_run_dir = create_eval_run_dir(session_dir)
 
-        asyncio.run(
+        _, build_context_seconds = asyncio.run(
             run_session_evals(
                 session_dir,
                 task_paths,
@@ -383,13 +393,15 @@ def main():
             )
         )
 
-        config = {
+        config: dict[str, Any] = {
             "agent_type": args.agent,
             "task_version": resolved_task_version,
             "num_runs": args.num_runs,
             "max_agent_turns": args.max_agent_turns,
             "timestamp": datetime.now().isoformat(),
         }
+        if build_context_seconds is not None:
+            config["build_context_seconds"] = build_context_seconds
         save_eval_run_config(eval_run_dir, config)
 
 

@@ -9,5 +9,7 @@
 - [x] hindsight memory store integration
 
 ## v0.3-internal
-- [ ] fix user simulator preference leak issue
+- [x] improved user simulator preference leak. Updated results. 
+
+## v0.4-internal
 - [ ] add dropped preferences. Currently user preferences remain same or updated during the conversations. But preferences can expire or be dropped. This feature will add the ability to drop preferences after a certain time or after a certain number of conversations. At testing stage, the user simulator will test if the agent recalls an expired preference or not.

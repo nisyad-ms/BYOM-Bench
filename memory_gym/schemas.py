@@ -609,7 +609,7 @@ class MultiSessionEvaluationResult:
         ignored_turns: Agent omitted preference, user had to reveal it
         repeated_correction_turns: Same preference violated after being corrected
         stale_count: Number of stale (outdated) preferences used
-        proactive_count: Number of preferences proactively applied
+        recalled_count: Number of preferences recalled by the agent
         efficiency_score: Score based on turn efficiency
         preference_score: Score based on preference usage (stale penalty integrated)
         reasoning: Judge's overall reasoning
@@ -618,9 +618,9 @@ class MultiSessionEvaluationResult:
 
     task_id: str
     conversation: list[dict[str, str]]
-    preference_usage: dict[str, str]  # pref_id -> "proactive" | "ignored"
+    preference_usage: dict[str, str]  # pref_id -> "recalled" | "missed"
     stale_preference_usage: list[str]  # List of stale pref_ids that were incorrectly used
-    first_mention_trace: list[dict[str, Any]] | None = None  # v2: Chronological first-mention analysis
+    preference_verdicts: list[dict[str, Any]] | None = None  # Per-preference recall verdicts from judge
     turn_classifications: list[dict[str, Any]] | None = None  # Per-turn scoring details
     total_turns: int = 0
     productive_turns: int = 0
@@ -629,9 +629,10 @@ class MultiSessionEvaluationResult:
     ignored_turns: int = 0
     repeated_correction_turns: int = 0
     stale_count: int = 0
-    proactive_count: int = 0
+    recalled_count: int = 0
     efficiency_score: float = 0.0
     preference_score: float = 0.0
+    eval_seconds: float | None = None
     reasoning: str = ""
     error: str | None = None
 
@@ -641,16 +642,17 @@ class MultiSessionEvaluationResult:
             "scores": {
                 "preference_score": self.preference_score,
                 "efficiency_score": self.efficiency_score,
+                "eval_seconds": self.eval_seconds,
             },
         }
         result.update(
             {
                 "conversation": self.conversation,
                 "preference_scoring": {
-                    "proactive_count": self.proactive_count,
+                    "recalled_count": self.recalled_count,
                     "stale_count": self.stale_count,
                     "stale_preference_usage": self.stale_preference_usage,
-                    "first_mention_trace": self.first_mention_trace,
+                    "preference_verdicts": self.preference_verdicts,
                 },
                 "efficiency_scoring": {
                     "total_turns": self.total_turns,
