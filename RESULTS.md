@@ -1,6 +1,6 @@
 # Results
 
-## 2026-03-02
+## 2026-03-02 (v0.1, v0.2)
 
 Evaluation across 250 unique samples (50 personas, 5 tasks per persona, 3 eval runs per task). Scores are macro-averaged across the 3 eval runs and then averaged across the 5 tasks, then 50 personas.
 
