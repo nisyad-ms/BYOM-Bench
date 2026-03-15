@@ -33,6 +33,10 @@ def _extract_simulator_verdicts(
     pref_ids = {p["id"] for p in required_preferences}
     verdicts: dict[str, dict[str, str]] = {}
 
+    # The evaluation field on turn N assesses the PREVIOUS turn's testing pref,
+    # so we track the previous testing pref_id across iterations.
+    prev_testing_pref_id: str | None = None
+
     for turn in conversation_with_scratchpads:
         if turn.get("role") != "user":
             continue
@@ -59,33 +63,23 @@ def _extract_simulator_verdicts(
             if covered_match:
                 covered_list = [s.strip() for s in covered_match.group(1).split(",") if s.strip()]
 
-        # Skip initial "N/A" evaluation (turn 1)
-        if "N/A" in evaluation:
-            continue
+        # Use evaluation to resolve the PREVIOUS turn's testing pref
+        if prev_testing_pref_id is not None and prev_testing_pref_id not in verdicts:
+            if "N/A" not in evaluation:
+                eval_lower = evaluation.lower()
+                verdict = "recalled" if "recalled" in eval_lower else "missed"
+                verdicts[prev_testing_pref_id] = {
+                    "pref_id": prev_testing_pref_id,
+                    "verdict": verdict,
+                }
 
-        # Find which pref_id is being tested
-        testing_pref_id = None
+        # Track current testing pref for next iteration
+        testing_pref_id: str | None = None
         for pid in pref_ids:
             if pid in testing:
                 testing_pref_id = pid
                 break
-
-        if testing_pref_id is None or testing_pref_id in verdicts:
-            continue
-
-        # Determine verdict from evaluation text
-        eval_lower = evaluation.lower()
-        if "recalled" in eval_lower:
-            verdict = "recalled"
-        elif "missed" in eval_lower:
-            verdict = "missed"
-        else:
-            verdict = "missed"
-
-        verdicts[testing_pref_id] = {
-            "pref_id": testing_pref_id,
-            "verdict": verdict,
-        }
+        prev_testing_pref_id = testing_pref_id
 
     # Also check for proactive recalls: preferences that moved to COVERED without being TESTING
     # (agent proactively applied them). Walk through covered lists to find these.
