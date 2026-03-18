@@ -113,12 +113,12 @@ class AWSMemoryStore(SentinelMixin):
         self._write_sentinel(len(multisession_data.sessions), store_id=self._memory_id)
 
     def retrieve(self, query: str) -> list[str]:
-        """Retrieve fact strings across all namespaces for the user."""
+        """Retrieve fact strings across all namespaces, sorted by relevance score."""
         assert self._memory_id is not None
         namespaces = self._namespaces_for_user(self.user_id)
-        per_ns = max(self.num_memories // len(namespaces), 1)
+        per_ns = -(-self.num_memories // len(namespaces))  # ceiling division
 
-        facts: list[str] = []
+        scored_facts: list[tuple[float, str]] = []
         seen_ids: set[str] = set()
 
         for ns in namespaces:
@@ -135,11 +135,13 @@ class AWSMemoryStore(SentinelMixin):
                         seen_ids.add(rid)
                         content = _get_record_content(r)
                         if content:
-                            facts.append(content)
+                            score = _get_record_score(r)
+                            scored_facts.append((score, content))
             except Exception as e:
                 print(f"Warning: failed to retrieve memories from {ns}: {e}")
 
-        return facts[: self.num_memories]
+        scored_facts.sort(key=lambda x: x[0], reverse=True)
+        return [content for _, content in scored_facts[: self.num_memories]]
 
     def cleanup(self) -> None:
         """Delete the memory store and sentinel to free resources."""
@@ -485,6 +487,13 @@ def _get_record_content(record: Any) -> str:
     if content is not None and hasattr(content, "text"):
         return content.text
     return str(content) if content else ""
+
+
+def _get_record_score(record: Any) -> float:
+    """Extract the relevance score from a Bedrock memory record."""
+    if isinstance(record, dict):
+        return float(record.get("score", 0.0))
+    return float(getattr(record, "score", 0.0))
 
 
 def _record_to_dict(record: Any) -> dict[str, Any]:

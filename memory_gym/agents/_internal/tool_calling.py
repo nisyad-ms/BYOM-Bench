@@ -9,8 +9,12 @@ dispatch.
 import json
 from typing import Any, Callable
 
+import tiktoken
+
 from memory_gym.client import CONFIG, PooledLLMClient, _check_content_filter, _llm_retry
 from memory_gym.prompts import render_prompt
+
+_TOKENIZER = tiktoken.get_encoding("cl100k_base")
 
 _AGENT_MAX_TOKENS: int = CONFIG["max_tokens"]["agent"]
 
@@ -31,12 +35,26 @@ SEARCH_MEMORIES_TOOL: dict[str, Any] = {
 }
 
 
+def _truncate_to_token_budget(memories: list[dict], max_tokens: int) -> list[dict]:
+    """Keep whole facts in order until the token budget is exhausted."""
+    kept: list[dict] = []
+    used = 0
+    for mem in memories:
+        n = len(_TOKENIZER.encode(mem.get("fact", "")))
+        if used + n > max_tokens and kept:
+            break
+        kept.append(mem)
+        used += n
+    return kept
+
+
 @_llm_retry
 def _respond_with_tools(
     azure_client: Any,
     deployment: str,
     messages: list[dict[str, Any]],
     retrieve_fn: Callable[[str], list[dict]],
+    memory_token_budget: int | None = None,
 ) -> tuple[str, list[dict]]:
     """Run the Azure OpenAI tool-calling loop.
 
@@ -45,6 +63,7 @@ def _respond_with_tools(
         deployment: Model deployment name.
         messages: Conversation messages (including system prompt).
         retrieve_fn: Callable(query) -> list of memory dicts.
+        memory_token_budget: If set, truncate retrieved memories to this many tokens per retrieval call.
 
     Returns:
         Tuple of (final_text, retrieved_memories) where retrieved_memories
@@ -71,6 +90,8 @@ def _respond_with_tools(
                 args = json.loads(tool_call.arguments)
                 query = args["query"]
                 memories = retrieve_fn(query)
+                if memory_token_budget is not None:
+                    memories = _truncate_to_token_budget(memories, memory_token_budget)
                 all_retrieved.append({"query": query, "results": memories})
                 output = json.dumps(memories, ensure_ascii=False)
             else:
@@ -100,6 +121,7 @@ def respond_with_memory_search(
     prompt_name: str,
     conversation: list[dict[str, str]],
     retrieve_fn: Callable[[str], list[dict]],
+    memory_token_budget: int | None = None,
 ) -> tuple[str, list[dict]]:
     """Build messages, acquire a pool slot, and run the tool-calling loop.
 
@@ -108,6 +130,7 @@ def respond_with_memory_search(
         prompt_name: Prompt template name (e.g. "agents/agent_system_memory").
         conversation: The dialogue so far.
         retrieve_fn: Memory search callable.
+        memory_token_budget: If set, truncate retrieved memories to this many tokens per retrieval call.
 
     Returns:
         Tuple of (response_text, retrieved_memories).
@@ -120,6 +143,6 @@ def respond_with_memory_search(
 
     idx, llm = llm_client._acquire()
     try:
-        return _respond_with_tools(llm._client, llm.deployment, messages, retrieve_fn)
+        return _respond_with_tools(llm._client, llm.deployment, messages, retrieve_fn, memory_token_budget)
     finally:
         llm_client._release(idx)

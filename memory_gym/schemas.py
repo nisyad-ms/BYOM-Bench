@@ -601,16 +601,8 @@ class MultiSessionEvaluationResult:
         conversation: Full conversation transcript
         preference_usage: How each current preference was handled
         stale_preference_usage: Which stale preferences the agent incorrectly used
-        turn_classifications: Per-turn scoring details from judge (for debugging)
-        total_turns: Number of turns in dialogue
-        productive_turns: Agent turns that demonstrated specific preference knowledge
-        generic_turns: Agent turns with helpful but unpersonalized advice
-        correction_turns: How many times user corrected agent
-        ignored_turns: Agent omitted preference, user had to reveal it
-        repeated_correction_turns: Same preference violated after being corrected
         stale_count: Number of stale (outdated) preferences used
         recalled_count: Number of preferences recalled by the agent
-        efficiency_score: Score based on turn efficiency
         preference_score: Score based on preference usage (stale penalty integrated)
         reasoning: Judge's overall reasoning
         error: Error message if evaluation failed (None if successful)
@@ -621,16 +613,8 @@ class MultiSessionEvaluationResult:
     preference_usage: dict[str, str]  # pref_id -> "recalled" | "missed"
     stale_preference_usage: list[str]  # List of stale pref_ids that were incorrectly used
     preference_verdicts: list[dict[str, Any]] | None = None  # Per-preference recall verdicts from judge
-    turn_classifications: list[dict[str, Any]] | None = None  # Per-turn scoring details
-    total_turns: int = 0
-    productive_turns: int = 0
-    generic_turns: int = 0
-    correction_turns: int = 0
-    ignored_turns: int = 0
-    repeated_correction_turns: int = 0
     stale_count: int = 0
     recalled_count: int = 0
-    efficiency_score: float = 0.0
     preference_score: float = 0.0
     eval_seconds: float | None = None
     reasoning: str = ""
@@ -641,7 +625,6 @@ class MultiSessionEvaluationResult:
             "task_id": self.task_id,
             "scores": {
                 "preference_score": self.preference_score,
-                "efficiency_score": self.efficiency_score,
                 "eval_seconds": self.eval_seconds,
             },
         }
@@ -653,15 +636,6 @@ class MultiSessionEvaluationResult:
                     "stale_count": self.stale_count,
                     "stale_preference_usage": self.stale_preference_usage,
                     "preference_verdicts": self.preference_verdicts,
-                },
-                "efficiency_scoring": {
-                    "total_turns": self.total_turns,
-                    "productive_turns": self.productive_turns,
-                    "generic_turns": self.generic_turns,
-                    "correction_turns": self.correction_turns,
-                    "ignored_turns": self.ignored_turns,
-                    "repeated_correction_turns": self.repeated_correction_turns,
-                    "turn_classifications": self.turn_classifications,
                 },
             }
         )

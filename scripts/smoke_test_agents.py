@@ -70,8 +70,8 @@ async def run_smoke(agent_type: str) -> None:
         )
 
         elapsed = time.time() - t0
-        print(f"  pref_score={result.preference_score}, eff_score={result.efficiency_score}")
-        print(f"  turns={result.total_turns}, elapsed={elapsed:.1f}s")
+        print(f"  pref_score={result.preference_score}")
+        print(f"  elapsed={elapsed:.1f}s")
 
         # Save eval result to debug_data for inspection (overwrites previous run)
         output_path = DATA_DIR / f"eval_{agent_type}.json"

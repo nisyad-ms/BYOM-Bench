@@ -7,3 +7,6 @@ retry:
   max_seconds: 60
 
 num_memories: 5
+
+# Concurrent build_context calls (retrieval quota is generous, write quota is tight: 10/min).
+max_concurrent_build_context: 3

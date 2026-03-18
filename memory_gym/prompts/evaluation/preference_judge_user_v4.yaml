@@ -4,13 +4,12 @@ description: >
   verdicts extracted from scratchpads alongside required preferences and transcript.
 used_by: memory_gym/evaluation_multisession/judge.py::MultiSessionJudge
 variables:
-  - required_preferences: List of required preferences with optional supersedes info
+  - required_preferences: List of preferences to evaluate with optional supersedes info
   - transcript: JSON formatted dialogue transcript
-  - num_required: Number of required preferences
   - simulator_verdicts: Formatted simulator verdicts per preference (from scratchpad data)
 
 template: |
-  ## Required Preferences
+  ## Preferences to Evaluate
   {required_preferences}
 
   ## Simulator Verdicts
@@ -18,7 +17,3 @@ template: |
 
   ## Conversation Transcript
   {transcript}
-
-  Total required preferences: {num_required}
-
-  Validate each simulator verdict using the specificity, independent verification, and stale checks described in the system prompt. Output JSON only.

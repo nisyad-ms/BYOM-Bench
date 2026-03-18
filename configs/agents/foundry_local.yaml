@@ -1,6 +1,7 @@
 # Local Foundry (LanceDB) agent configuration.
 
 num_memories: 5
+max_concurrent_sessions: 20
 
 extraction:
   temperature: 0

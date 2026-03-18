@@ -1,0 +1,84 @@
+name: User Simulator Conversation Planner (v1)
+description: >
+  Dedicated planning prompt for the user simulator. Groups preferences by topic
+  affinity, orders them for natural conversation flow, plans bridges between
+  topics, and generates per-preference probe strategies. Output is consumed by
+  the dialogue runner which deterministically walks the TESTING ORDER.
+used_by: memory_gym/evaluation_multisession/user_simulator.py::MultiSessionUserSimulator
+variables:
+  - persona_summary: Brief summary of the persona
+  - required_preferences: 'Bullet list of "id: fact" entries'
+
+template: |
+  You are planning a conversation between a user and an AI assistant. The user
+  wants to test whether the assistant remembers specific preferences from past
+  conversations — without revealing them.
+
+  ## About the user
+  {persona_summary}
+
+  ## Preferences to test
+  {required_preferences}
+
+  ## Your task
+
+  Plan a natural conversation flow that creates opportunities to test each
+  preference. The plan will guide a separate conversation model, so be specific
+  and actionable.
+
+  ### Step 1 — Group preferences by topic affinity
+
+  Cluster preferences that could naturally come up in the same conversation
+  topic. For example, "vegetarian diet" and "prefers local restaurants" both fit
+  under dining. "Avoids flying" and "prefers boutique hotels" both fit under
+  travel. A preference can only belong to one group.
+
+  ### Step 2 — Order the groups
+
+  Decide which topic to start with and how to move between topics. Think about
+  what a real person would bring up first and what flows naturally from there.
+
+  ### Step 3 — Order preferences within each group
+
+  Within a topic cluster, lead with the one that sets up the broadest context
+  so the others can follow naturally.
+
+  ### Step 4 — Plan topic bridges
+
+  For each transition between groups, write a natural 1-sentence segue a real
+  person might use. The bridge should feel like a genuine change of subject, not
+  a forced pivot.
+
+  ### Step 5 — Write probe strategies
+
+  For EACH preference, write a 1-sentence description of how the user could
+  naturally bring up the topic and create an opportunity for the assistant to
+  demonstrate recall — WITHOUT revealing the preference itself.
+
+  Apply this anti-leakage test to each strategy: could someone who does NOT know
+  the preference guess it from the probe alone? If yes, make the probe more
+  indirect.
+
+  ## Output format
+
+  Output ONLY the plan in this exact format (no other text):
+
+  ```
+  TOPIC GROUPS:
+  - Group 1 "[topic label]": [pref_id, pref_id, ...]
+  - Group 2 "[topic label]": [pref_id, ...]
+  - ...
+
+  TESTING ORDER: [pref_id, pref_id, pref_id, ...]
+
+  OPENING TOPIC: [topic label] — [1 sentence on how to open the conversation]
+
+  BRIDGES:
+  - [topic A] → [topic B]: [1-sentence natural transition]
+  - ...
+
+  PROBE STRATEGIES:
+  - pref_id: [1-sentence probe approach]
+  - pref_id: [1-sentence probe approach]
+  - ...
+  ```

@@ -196,14 +196,18 @@ class GoogleMemoryStore(SentinelMixin):
     def _retrieve_memories_with_retry(self, query: str) -> list[dict]:
         """Call Google memories.retrieve() with retry logic."""
         top_k = self.num_memories
-        results = self._vertex_client.agent_engines.memories.retrieve(
-            name=self._agent_engine_name,
-            scope={"user_id": self.user_id},
-            similarity_search_params={
-                "search_query": query,
-                "top_k": top_k,
-            },
+        results = list(
+            self._vertex_client.agent_engines.memories.retrieve(
+                name=self._agent_engine_name,
+                scope={"user_id": self.user_id},
+                similarity_search_params={
+                    "search_query": query,
+                    "top_k": top_k,
+                },
+            )
         )
+        # Sort by distance ascending (smaller = more similar) as a safety check
+        results.sort(key=lambda m: m.distance if m.distance is not None else float("inf"))
         return [{"fact": m.memory.fact} for m in results]
 
     # ------------------------------------------------------------------

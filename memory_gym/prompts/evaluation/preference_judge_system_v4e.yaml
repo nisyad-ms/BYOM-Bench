@@ -1,11 +1,9 @@
-name: Preference Judge System Prompt (v4)
+name: Preference Judge System Prompt (v4e)
 description: >
-  Bidirectional preference recall judge that validates BOTH the user simulator's
-  RECALLED and MISSED verdicts. Performs three checks: (1) specificity validation
-  on RECALLED verdicts to catch generic advice, (2) independent verification of
-  MISSED verdicts to catch simulator errors, and (3) stale detection on evolved
-  preferences. Updated from v3: judge now independently verifies missed verdicts
-  instead of auto-accepting them.
+  Experiment iteration of v4. Strengthened counterfactual test with explicit
+  "common knowledge" override: if the advice matches standard self-help,
+  productivity, or wellness guidance, it is MISSED regardless of keyword overlap.
+  Added tiered specificity examples.
 used_by: memory_gym/evaluation_multisession/judge.py::MultiSessionJudge
 variables:
   - none (system prompt is static)
@@ -26,29 +24,45 @@ template: |
 
   For each preference the simulator marked as RECALLED, verify that the agent's response was genuinely personalized — not just generic advice.
 
-  **Apply this counterfactual test:** Would a competent AI assistant give this same advice to ANY user asking this question, even without knowing this specific user's history?
+  **Apply this strict counterfactual test:** Would a competent AI assistant give this same advice to ANY user asking a similar question, even without knowing this specific user's history?
 
   - If YES → Generic advice → override to **MISSED**
   - If NO → Personalized recall → confirm as **RECALLED**
 
-  The agent's response must include **at least one distinguishing detail** from the preference that wouldn't appear in generic advice. Distinguishing details are specific nouns, names, times, frequencies, tools, locations, or constraints that set this preference apart from general domain advice.
+  **Common-knowledge override:** Many preferences describe behaviors that are also standard advice in self-help, productivity, wellness, or professional development. If the agent's response matches what a generic advice column, self-help book, or standard best practice would recommend, it is MISSED — even if keywords overlap with the preference. The agent must demonstrate it is drawing from THIS USER'S specific history, not from general knowledge.
 
-  When confirming RECALLED, you MUST name the distinguishing detail(s) in your reasoning. If you cannot point to a specific detail — only topical overlap — override to MISSED.
+  Examples of common knowledge that does NOT count as recall:
+  - "Limit screen time before bed" — universal sleep hygiene advice
+  - "Use bullet points for documentation" — standard writing advice
+  - "Use a shared calendar to coordinate" — standard coordination advice
+  - "Try herbal tea instead of caffeine" — generic wellness advice
+  - "Host game nights at home" — common socializing suggestion
+  - "Use one-on-one meetings for sensitive topics" — standard management advice
+  - "Plan your week on Sunday" — common productivity tip
+  - "Read a book before bed instead of screens" — universal sleep advice
+
+  The agent's response must include **at least one distinguishing detail** from the preference that is NOT common knowledge and wouldn't appear in generic advice. Distinguishing details are specific nouns, names, times, frequencies, tools, locations, or constraints that set this preference apart from general domain advice.
+
+  When confirming RECALLED, you MUST name the distinguishing detail(s) in your reasoning AND explain why that detail would NOT appear in generic advice. If you cannot point to a specific detail that goes beyond common knowledge — only topical overlap — override to MISSED.
 
   Examples:
   - Preference: "Goes to the Riverside Farmers Market every Saturday at 7am — always visits the organic dairy stall first"
     - Agent says: "You might enjoy checking out local farmers markets for fresh produce." → **MISSED** (generic advice, no distinguishing details)
     - Agent says: "Don't forget the Riverside Farmers Market this Saturday — you'll want to get to the organic dairy stall early." → **RECALLED** (specific name, specific stall)
 
-  - Preference: "Attends monthly local art exhibitions to support emerging artists"
-    - Agent says: "You might enjoy attending local art events or gallery openings." → **MISSED** (generic hobby advice)
-    - Agent says: "There's likely a new exhibition this month — you usually enjoy discovering emerging artists at the local galleries." → **RECALLED** (monthly frequency, emerging artists motivation)
+  - Preference: "Shuts down all screens an hour before bed"
+    - Agent says: "Limit screen time an hour before bed; use dim lighting instead." → **MISSED** (this is universal sleep hygiene advice — any competent assistant would say this)
+    - Agent says: "I know you have that strict no-screens rule starting at 10pm — want me to schedule your evening reminders before then?" → **RECALLED** (references the user's specific routine with a concrete time)
+
+  - Preference: "Prefers group hangouts at home over bars"
+    - Agent says: "Host casual game nights or movie marathons at home." → **MISSED** (common socializing advice)
+    - Agent says: "Since you prefer hosting at your place rather than going to bars, how about setting up a board game night this Friday?" → **RECALLED** (explicitly references the user's known preference pattern with contrast)
 
   ## Check 2: Independent Verification (MISSED verdicts)
 
   For each preference the simulator marked as MISSED, verify that the agent truly did NOT recall the preference. The simulator can be wrong — it may fail to recognize valid recall.
 
-  **Search the full conversation** for any agent response that demonstrates specific knowledge of this preference. Apply the same specificity standard as Check 1: the agent must include at least one distinguishing detail from the preference.
+  **Search the full conversation** for any agent response that demonstrates specific knowledge of this preference. Apply the same specificity standard as Check 1: the agent must include at least one distinguishing detail from the preference that goes BEYOND common knowledge.
 
   - If the agent DID show specific recall → override to **RECALLED** (name the distinguishing detail(s))
   - If the agent gave no specific response for this preference → confirm as **MISSED**
@@ -85,8 +99,8 @@ template: |
   For each preference:
 
   1. **Read the simulator verdict** (recalled or missed).
-  2. **If recalled** → Run Check 1 (specificity). If specific enough → `final_verdict: "recalled"`. If generic → `final_verdict: "missed"`.
-  3. **If missed** → Run Check 2 (independent verification). Search the conversation for any agent response demonstrating specific knowledge of this preference. If the agent DID show specific recall → override to `final_verdict: "recalled"`. If no specific response → confirm `final_verdict: "missed"`.
+  2. **If recalled** → Run Check 1 (specificity). Apply the counterfactual test AND the common-knowledge override. If the response contains a distinguishing detail beyond common knowledge → `final_verdict: "recalled"`. If generic or matches common knowledge → `final_verdict: "missed"`.
+  3. **If missed** → Run Check 2 (independent verification). Search the conversation for any agent response demonstrating specific knowledge beyond common knowledge. If the agent DID show specific recall → override to `final_verdict: "recalled"`. If no specific response → confirm `final_verdict: "missed"`.
   4. **If evolved** (has `supersedes` field) → Run Check 3 (stale detection) regardless of verdict. If `stale_used: true` → override `final_verdict` to `"missed"`.
 
   **CRITICAL: A stale recall is NOT a genuine recall.** If the agent applied the outdated superseded preference instead of the current one, you MUST set `final_verdict: "missed"` even if the simulator marked it as recalled and even if the response was specific. Using outdated information is worse than not recalling at all.
@@ -103,7 +117,7 @@ template: |
         "simulator_verdict": "recalled|missed",
         "final_verdict": "recalled|missed",
         "stale_used": true|false,
-        "reasoning": "<Check 1/2: specificity or independent verification — name distinguishing detail(s) or explain why generic/absent. Check 3: stale check if evolved.>",
+        "reasoning": "<Check 1/2: specificity or independent verification — name distinguishing detail(s) and explain why they go beyond common knowledge, or explain why the response is generic. Check 3: stale check if evolved.>",
         "quote": "<exact quote from the agent demonstrating recall, or 'N/A'>"
       }}
     ]
@@ -175,7 +189,7 @@ template: |
         "simulator_verdict": "recalled",
         "final_verdict": "recalled",
         "stale_used": false,
-        "reasoning": "Check 1 (specificity): Agent said 'since you're vegetarian' and recommended a specific vegetarian restaurant (WaterCourse Foods). Distinguishing detail: 'vegetarian' dietary restriction. This is personalized, not generic advice. Confirmed RECALLED.",
+        "reasoning": "Check 1 (specificity): Agent said 'since you're vegetarian' and recommended a specific vegetarian restaurant (WaterCourse Foods). Distinguishing detail: 'vegetarian' dietary restriction applied to this specific user with a named restaurant. This goes beyond common knowledge — a generic assistant would not assume vegetarianism without prior knowledge. Confirmed RECALLED.",
         "quote": "since you're vegetarian, I'd recommend checking out WaterCourse Foods"
       }},
       {{
@@ -191,7 +205,7 @@ template: |
         "simulator_verdict": "recalled",
         "final_verdict": "missed",
         "stale_used": false,
-        "reasoning": "Check 1 (specificity): Agent said 'local farmers markets' and 'early in the morning'. Counterfactual test: would any competent assistant suggest farmers markets and going early? Yes — this is standard generic advice. No mention of Riverside, Saturday, or 7am. No distinguishing details. Override to MISSED.",
+        "reasoning": "Check 1 (specificity): Agent said 'local farmers markets' and 'early in the morning'. Counterfactual test: would any competent assistant suggest farmers markets and going early? Yes — this is standard generic advice. Common-knowledge override applies: 'visit farmers markets' and 'go early for best selection' are universal shopping tips. No mention of Riverside, Saturday, or 7am. No distinguishing details beyond common knowledge. Override to MISSED.",
         "quote": "N/A"
       }},
       {{
@@ -207,7 +221,7 @@ template: |
   ```
 
   **Summary of cases demonstrated:**
-  - **pref_010**: Simulator said RECALLED → Check 1 confirms (specific detail found) → `recalled`
+  - **pref_010**: Simulator said RECALLED → Check 1 confirms (specific detail beyond common knowledge) → `recalled`
   - **pref_022**: Simulator said MISSED → Check 2 confirms (no recall found) → `missed`
-  - **pref_033**: Simulator said RECALLED → Check 1 overrides (generic advice, no distinguishing details) → `missed`
+  - **pref_033**: Simulator said RECALLED → Check 1 overrides (generic advice, common knowledge) → `missed`
   - **pref_048**: Simulator said RECALLED → Check 1 finds specificity, but Check 3 detects stale usage (applied old schedule instead of current) → `missed`

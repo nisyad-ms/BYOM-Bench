@@ -23,7 +23,7 @@ class _BaselineAgent:
         """Build the system prompt.  **Override in subclasses.**"""
         raise NotImplementedError
 
-    def respond(self, conversation: list[dict[str, str]]) -> tuple[str, list[dict]]:
+    def respond(self, conversation: list[dict[str, str]], memory_token_budget: int | None = None) -> tuple[str, list[dict]]:
         """Generate a response given the conversation history.
 
         Returns:

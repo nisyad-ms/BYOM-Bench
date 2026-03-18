@@ -22,6 +22,7 @@ from pathlib import Path
 from typing import Any
 
 from memory_gym.agents.stores import get_available_agent_types
+from memory_gym.prompts import _load_prompt_config
 from memory_gym.utils import (
     create_eval_run_dir,
     extract_task_num,
@@ -34,6 +35,12 @@ from memory_gym.utils import (
     get_tasks_by_nums,
     save_eval_run_config,
 )
+
+
+def _get_prompt_versions() -> dict[str, str]:
+    """Return the active prompt version map from configs/prompts.yaml."""
+    config = _load_prompt_config()
+    return {k: v if v else "(default)" for k, v in config.items()}
 
 
 def _create_memory_agent(
@@ -85,6 +92,7 @@ async def run_session_evals(
     foundry_config: tuple[str, str, str] | None = None,
     memory_semaphore: asyncio.Semaphore | None = None,
     sentinel_dir: Path | None = None,
+    memory_token_budget: int | None = None,
 ):
     from memory_gym.evaluation_multisession import run_evaluations_parallel
     from memory_gym.schemas import EvaluationTaskSpec, MultiSessionOutput
@@ -145,6 +153,7 @@ async def run_session_evals(
                     "task_path": task_path,
                     "agent": shared_agent,
                     "run_id": run_id,
+                    "memory_token_budget": memory_token_budget,
                 }
             )
 
@@ -156,7 +165,7 @@ async def run_session_evals(
             run_label = f" run {run_id}" if run_id else ""
             print(
                 f"{session_dir.name}: task {task_num:02d}{run_label} done "
-                f"(pref={result.preference_score}, eff={result.efficiency_score}, "
+                f"(pref={result.preference_score}, "
                 f"time={result.eval_seconds}s)",
                 flush=True,
             )
@@ -184,6 +193,7 @@ async def run_all_sessions(
     task_version: str | None,
     eval_run: str | None = None,
     sentinel_dir: Path | None = None,
+    memory_token_budget: int | None = None,
 ):
     foundry_configs: list[tuple[str, str, str]] = []
     if agent_type == "foundry":
@@ -194,14 +204,18 @@ async def run_all_sessions(
 
     # Limit concurrency to avoid cloud API rate/quota limits.
     # Google: semaphore on build_context only (retrieval quota is generous).
-    # AWS: semaphore on entire session (retrieval quota is tight).
-    memory_semaphore = asyncio.Semaphore(3) if agent_type == "google" else None
-    session_semaphore: asyncio.Semaphore | None = None
-    if agent_type == "aws":
-        from memory_gym.client import get_agent_config
+    # AWS/mem0/foundry_local: semaphore on entire session.
+    from memory_gym.client import get_agent_config
 
-        aws_cfg = get_agent_config("aws")
-        session_semaphore = asyncio.Semaphore(aws_cfg.get("max_concurrent_sessions", 5))
+    agent_cfg = (
+        get_agent_config(agent_type) if agent_type in ("google", "aws", "mem0", "mem0_graph", "foundry_local") else {}
+    )
+    memory_semaphore = (
+        asyncio.Semaphore(agent_cfg.get("max_concurrent_build_context", 3)) if agent_type == "google" else None
+    )
+    session_semaphore: asyncio.Semaphore | None = None
+    if agent_type in ("aws", "mem0", "mem0_graph", "foundry_local"):
+        session_semaphore = asyncio.Semaphore(agent_cfg.get("max_concurrent_sessions", 10))
 
     eval_configs: list[tuple[Path, dict, str]] = []
     tasks = []
@@ -238,7 +252,9 @@ async def run_all_sessions(
                     "task_version": resolved_version,
                     "num_runs": num_runs,
                     "max_agent_turns": max_agent_turns,
+                    "memory_token_budget": memory_token_budget,
                     "timestamp": datetime.now().isoformat(),
+                    "prompt_versions": _get_prompt_versions(),
                 },
                 session_dir.name,
             )
@@ -255,6 +271,7 @@ async def run_all_sessions(
             foundry_config,
             memory_semaphore,
             sentinel_dir,
+            memory_token_budget,
         )
 
         if session_semaphore is not None:
@@ -320,7 +337,24 @@ def main():
         action="store_true",
         help="Reuse existing memory stores if sentinel is valid. Skips cleanup so stores persist.",
     )
+    parser.add_argument(
+        "--memory-token-budget",
+        type=int,
+        default=None,
+        help="Max tokens of retrieved memories per retrieval call. If set, truncates retrieved facts to this budget.",
+    )
+    parser.add_argument(
+        "--outputs-dir",
+        type=str,
+        default=None,
+        help="Override outputs directory (default: outputs/). E.g., outputs.v0.4/",
+    )
     args = parser.parse_args()
+
+    if args.outputs_dir:
+        import memory_gym.utils as _utils
+
+        _utils.OUTPUTS_DIR = Path(args.outputs_dir)
 
     sentinel_dir = Path(".memory_sentinels") if args.reuse_stores else None
     if sentinel_dir is not None:
@@ -345,6 +379,7 @@ def main():
                 args.task_version,
                 args.eval_run,
                 sentinel_dir,
+                args.memory_token_budget,
             )
         )
     else:
@@ -390,6 +425,7 @@ def main():
                 eval_run_dir,
                 args.num_runs,
                 sentinel_dir=sentinel_dir,
+                memory_token_budget=args.memory_token_budget,
             )
         )
 
@@ -398,7 +434,9 @@ def main():
             "task_version": resolved_task_version,
             "num_runs": args.num_runs,
             "max_agent_turns": args.max_agent_turns,
+            "memory_token_budget": args.memory_token_budget,
             "timestamp": datetime.now().isoformat(),
+            "prompt_versions": _get_prompt_versions(),
         }
         if build_context_seconds is not None:
             config["build_context_seconds"] = build_context_seconds

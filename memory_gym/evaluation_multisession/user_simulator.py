@@ -2,8 +2,11 @@
 Multi-Session User Simulator.
 
 The user simulator acts as a realistic user during evaluation dialogues.
-It generates its own opening message and drives the full conversation,
-testing all required preferences through natural interaction.
+It generates a conversation plan (via a dedicated planner LLM call), then
+drives evaluation turns where it evaluates recall and writes probing messages.
+State management (covered/uncovered, next-preference selection, termination)
+is handled by the dialogue runner — the simulator focuses on evaluation and
+natural message writing.
 """
 
 import re
@@ -17,15 +20,10 @@ from memory_gym.schemas import EvaluationTaskSpec
 class MultiSessionUserSimulator:
     """Simulates a user in evaluation dialogues.
 
-    The user simulator:
-    - Generates its own opening message (no pre-generated prompt)
-    - Acts naturally based on persona and preferences
-    - Knows its current preferences (from required_preferences)
-    - Corrects the agent when recommendations don't match preferences
-    - Does NOT know which preferences are "stale" - it just knows what it wants now
-
-    This creates realistic dialogue where the user's corrections emerge
-    naturally from preference mismatches, not from explicit testing.
+    Three-phase interface driven by the dialogue runner:
+    1. generate_plan() — one-shot planner LLM call (topic groups, testing order, bridges)
+    2. generate_opening() — first user message probing for the first preference
+    3. respond() — per-turn: evaluate current pref, write message probing for next pref
     """
 
     def __init__(
@@ -33,47 +31,74 @@ class MultiSessionUserSimulator:
         evaluation_task: EvaluationTaskSpec,
         client: LLMClient | PooledLLMClient | None = None,
     ):
-        """Initialize user simulator for a specific evaluation task.
-
-        Args:
-            evaluation_task: The evaluation task spec containing persona and preferences
-            client: LLM client for generation. If None, creates a new one.
-        """
         self.task = evaluation_task
         self.client = client or PooledLLMClient()
-
-        # Extract preferences from rubric.required_preferences
-        # These are dicts with {id, fact, supersedes?: ...}
-        # User only needs to know their current preferences (ignores supersedes)
         self.required_preferences = evaluation_task.rubric.required_preferences
+        self._persona_summary = evaluation_task.persona
 
-        # Build system prompt once
-        self._system_prompt = self._build_system_prompt()
+        # Formatted preference list for the planner
+        self._prefs_formatted = "\n".join(f"- {p['id']}: {p['fact']}" for p in self.required_preferences)
 
-    def _build_system_prompt(self) -> str:
-        """Build the system prompt for the user simulator."""
-        prefs_formatted = "\n".join(f"- {p['id']}: {p['fact']}" for p in self.required_preferences)
-
-        return render_prompt(
-            "user_simulator/user_simulator_system",
-            persona_summary=self.task.persona,
-            required_preferences=prefs_formatted,
-        )
-
-    def get_initial_message(self) -> tuple[str, str | None, str | None]:
-        """Generate the initial user message to start the dialogue.
-
-        Makes an LLM call using the system prompt plus an instruction to
-        generate a natural opening message. Different each evaluation run.
+    def generate_plan(self) -> str:
+        """Generate a conversation plan via the planner LLM.
 
         Returns:
-            Tuple of (opening_message, scratchpad_or_none, plan_or_none)
+            Raw plan text (TOPIC GROUPS, TESTING ORDER, BRIDGES, PROBE STRATEGIES).
         """
+        system_prompt = render_prompt(
+            "user_simulator/user_simulator_plan_system",
+            persona_summary=self._persona_summary,
+            required_preferences=self._prefs_formatted,
+        )
+
         messages = [
-            {"role": "system", "content": self._system_prompt},
+            {"role": "system", "content": system_prompt},
             {
                 "role": "user",
-                "content": "Generate your opening message to the AI assistant. Remember to include your scratchpad.",
+                "content": "Generate the conversation plan now. Output ONLY the plan in the specified format.",
+            },
+        ]
+
+        response = self.client.complete_chat(
+            messages=messages,
+            max_tokens=CONFIG["max_tokens"]["user_simulator"],
+        )
+
+        return response.strip()
+
+    def generate_opening(
+        self,
+        plan_text: str,
+        first_pref: dict,
+    ) -> tuple[str, str | None]:
+        """Generate the opening user message.
+
+        Args:
+            plan_text: The conversation plan from generate_plan()
+            first_pref: The first preference to probe for (dict with id, fact)
+
+        Returns:
+            Tuple of (opening_message, scratchpad_or_none)
+        """
+        system_prompt = render_prompt(
+            "user_simulator/user_simulator_system",
+            persona_summary=self._persona_summary,
+            current_preference="N/A (first turn — no agent reply yet)",
+            next_preference=f"{first_pref['id']}: {first_pref['fact']}",
+            remaining_count=len(self.required_preferences),
+            plan=plan_text,
+        )
+
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {
+                "role": "user",
+                "content": (
+                    "Generate your opening message to the AI assistant. "
+                    "This is your first message — there is no agent reply to evaluate yet. "
+                    "Write a natural opening that probes for the preference indicated. "
+                    "Remember to include your scratchpad."
+                ),
             },
         ]
 
@@ -84,35 +109,49 @@ class MultiSessionUserSimulator:
 
         raw_response = response.strip()
         clean_response, scratchpad = self._extract_scratchpad(raw_response)
-        plan = self._extract_plan(raw_response)
-        return clean_response, scratchpad, plan
+        return clean_response, scratchpad
 
     def respond(
         self,
-        conversation_history: list[dict[str, str]],
-        conversation_with_scratchpads: list[dict[str, str | None]] | None = None,
+        conversation_with_scratchpads: list[dict],
+        current_pref: dict | None,
+        next_pref: dict | None,
+        plan_text: str,
     ) -> tuple[str, str | None]:
-        """Generate user response to the latest agent message.
+        """Generate a user response for the current turn.
 
         Args:
-            conversation_history: Clean conversation so far (without scratchpads)
-            conversation_with_scratchpads: Conversation with scratchpad data on user turns.
-                If provided, user simulator sees its own prior scratchpads for state continuity.
+            conversation_with_scratchpads: Full conversation with scratchpad data on user turns.
+            current_pref: The preference to EVALUATE (tested last turn). None if nothing to evaluate.
+            next_pref: The preference to PROBE FOR next. None if this is the last evaluation turn.
+            plan_text: The conversation plan.
 
         Returns:
             Tuple of (user_response, scratchpad_or_none)
-            - user_response: Clean response to add to conversation
-            - scratchpad: Raw scratchpad content for debugging, or None if not present
         """
-        history_for_prompt = conversation_with_scratchpads if conversation_with_scratchpads else conversation_history
-        conv_text = self._format_conversation_as_string(history_for_prompt)
+        current_pref_text = (
+            f"{current_pref['id']}: {current_pref['fact']}" if current_pref else "N/A"
+        )
+        next_pref_text = (
+            f"{next_pref['id']}: {next_pref['fact']}" if next_pref else "none"
+        )
+
+        system_prompt = render_prompt(
+            "user_simulator/user_simulator_system",
+            persona_summary=self._persona_summary,
+            current_preference=current_pref_text,
+            next_preference=next_pref_text,
+            plan=plan_text,
+        )
+
+        conv_text = self._format_conversation_as_string(conversation_with_scratchpads)
         user_prompt = render_prompt(
             "user_simulator/user_simulator_user",
             conversation=conv_text,
         )
 
         messages = [
-            {"role": "system", "content": self._system_prompt},
+            {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ]
 
@@ -139,33 +178,20 @@ class MultiSessionUserSimulator:
         if match:
             scratchpad = match.group(1).strip()
             clean = re.sub(r"<scratchpad>.*?</scratchpad>\s*", "", response, flags=re.DOTALL)
-            clean = re.sub(r"<plan>.*?</plan>\s*", "", clean, flags=re.DOTALL)
             return clean.strip(), scratchpad
 
         # Unclosed <scratchpad> tag means content filter truncated mid-generation
         if re.search(r"<scratchpad>", response):
             raise ContentFilterError("Content filter truncated response: unclosed <scratchpad> tag")
 
-        clean = re.sub(r"<plan>.*?</plan>\s*", "", response, flags=re.DOTALL)
-        return clean.strip(), None
-
-    def _extract_plan(self, response: str) -> str | None:
-        """Extract the <plan> block from a response.
-
-        Returns:
-            Plan content or None if no plan block found.
-        """
-        match = re.search(r"<plan>(.*?)</plan>", response, flags=re.DOTALL)
-        if match:
-            return match.group(1).strip()
-        return None
+        return response.strip(), None
 
     def _format_conversation_as_string(self, history: Sequence[Mapping[str, str | None]]) -> str:
         """Format conversation history as labeled string for the prompt.
 
         If user turns contain a 'scratchpad' key, it is included so the model
-        can see its own prior reasoning (COVERED/UNCOVERED state).
-        The 'plan' key on the first user turn is also included.
+        can see its own prior reasoning (verdicts). The 'plan' key on the first
+        user turn is also included.
         """
         lines = []
         for turn in history:

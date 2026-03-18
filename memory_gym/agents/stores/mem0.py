@@ -8,6 +8,7 @@ vector storage and Azure OpenAI for LLM/embedding operations.
 import os
 import shutil
 from pathlib import Path
+from unittest.mock import patch
 
 from mem0 import Memory
 
@@ -41,10 +42,14 @@ class Mem0MemoryStore(SentinelMixin):
         # Discover Azure OpenAI endpoints
         endpoint, chat_deployment, emb_endpoint, emb_deployment, api_version = resolve_azure_openai_config()
 
-        db_path = f".qdrant/{session_dir.name}"
+        self.db_path = f".qdrant/{session_dir.name}"
+        self.user_id = user_id
+        self.num_memories = num_memories if num_memories is not None else _mem0_cfg["num_memories"]
+        self._sentinel_dir = sentinel_dir
+        self._session_name = session_name
 
-        # Build mem0 config — omitting api_key triggers DefaultAzureCredential
-        config = {
+        # Store config for lazy Memory initialization
+        self._mem0_config = {
             "llm": {
                 "provider": "azure_openai",
                 "config": {
@@ -72,22 +77,38 @@ class Mem0MemoryStore(SentinelMixin):
                 "provider": "qdrant",
                 "config": {
                     "collection_name": "mem0_memories",
-                    "path": db_path,
+                    "path": self.db_path,
                 },
             },
-            "history_db_path": os.path.join(os.path.dirname(db_path), "mem0_history.db"),
+            "history_db_path": os.path.join(self.db_path, "mem0_history.db"),
         }
+        self._history_db_path = self._mem0_config["history_db_path"]
+        self._memory: Memory | None = None
 
-        # Ensure parent directory exists for Qdrant and history DB
-        os.makedirs(os.path.dirname(db_path), exist_ok=True)
+    def _init_memory(self) -> Memory:
+        """Create (or recreate) the mem0 Memory object.
 
-        self._memory = Memory.from_config(config)
-        self.user_id = user_id
-        self.db_path = db_path
-        self._history_db_path = config["history_db_path"]
-        self.num_memories = num_memories if num_memories is not None else _mem0_cfg["num_memories"]
-        self._sentinel_dir = sentinel_dir
-        self._session_name = session_name
+        Patches out mem0's telemetry vector store creation to avoid concurrent
+        sessions fighting over the shared ``~/.mem0/migrations_qdrant/.lock``.
+        """
+        os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
+
+        # mem0 creates a shared Qdrant instance at ~/.mem0/migrations_qdrant/
+        # for telemetry. Its exclusive file lock prevents concurrency.
+        from mem0.utils.factory import VectorStoreFactory
+
+        _real_create = VectorStoreFactory.create
+
+        @staticmethod
+        def _patched_create(provider, config):
+            if getattr(config, "collection_name", None) == "mem0migrations":
+                return None
+            return _real_create(provider, config)
+
+        with patch.object(VectorStoreFactory, "create", _patched_create), \
+             patch("mem0.memory.main.capture_event"):
+            self._memory = Memory.from_config(self._mem0_config)
+        return self._memory
 
     # ------------------------------------------------------------------
     # MemoryStore protocol
@@ -101,14 +122,18 @@ class Mem0MemoryStore(SentinelMixin):
         sentinel = self._read_sentinel()
         if sentinel and sentinel["sessions_ingested"] == len(multisession_data.sessions):
             if os.path.isdir(self.db_path):
+                self._init_memory()
                 print(f"Reusing existing mem0 store at {self.db_path} (sentinel valid)")
                 return
         self._delete_sentinel()
 
-        # Delete stale store before populating
+        # Delete stale store BEFORE creating Memory object
         if os.path.exists(self.db_path):
             shutil.rmtree(self.db_path)
             print(f"Removed stale mem0 store at {self.db_path}")
+
+        # Now create Memory with a clean directory
+        self._init_memory()
 
         for session in multisession_data.sessions:
             if not session.conversation:
@@ -123,16 +148,20 @@ class Mem0MemoryStore(SentinelMixin):
 
     def retrieve(self, query: str) -> list[str]:
         """Search mem0 memories and return fact strings."""
+        if self._memory is None:
+            return []
         results = self._memory.search(query, user_id=self.user_id, limit=self.num_memories)
         return [r["memory"] for r in results.get("results", [])]
 
     def cleanup(self) -> None:
         """Delete all mem0 memories for this user and remove local store."""
         self._delete_sentinel()
-        try:
-            self._memory.delete_all(user_id=self.user_id)
-        except Exception:
-            pass  # Best-effort cleanup
+        if self._memory is not None:
+            try:
+                self._memory.delete_all(user_id=self.user_id)
+            except Exception:
+                pass  # Best-effort cleanup
+        self._memory = None
         if os.path.exists(self.db_path):
             shutil.rmtree(self.db_path)
         if os.path.exists(self._history_db_path):

@@ -50,12 +50,12 @@ class MemoryAgent:
         facts = self._store.retrieve(query)
         return [{"fact": f} for f in facts]
 
-    def respond(self, conversation: list[dict[str, str]]) -> tuple[str, list[dict]]:
+    def respond(self, conversation: list[dict[str, str]], memory_token_budget: int | None = None) -> tuple[str, list[dict]]:
         """Run the tool-calling loop with memory search."""
         if self._llm_client is None:
             raise ValueError("LLM client not initialised. Call build_context first.")
         return respond_with_memory_search(
-            self._llm_client, "agents/agent_system_memory", conversation, self._search_memories
+            self._llm_client, "agents/agent_system_memory", conversation, self._search_memories, memory_token_budget
         )
 
     def reset_conversation(self) -> None:

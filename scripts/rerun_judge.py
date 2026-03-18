@@ -98,11 +98,10 @@ def _rejudge_file(eval_path: Path, judge: MultiSessionJudge) -> dict | None:
 
     required_prefs_json = json.dumps(required_preferences, indent=2, ensure_ascii=False)
     transcript_json = json.dumps(conversation, indent=2, ensure_ascii=False)
-    num_required = len(required_preferences)
 
     # Call preference judge
     pref_result = judge._call_preference_judge(
-        required_prefs_json, transcript_json, num_required, simulator_verdicts_json
+        required_prefs_json, transcript_json, simulator_verdicts_json
     )
 
     # Calculate new scores

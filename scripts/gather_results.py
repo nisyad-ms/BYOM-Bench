@@ -1,5 +1,13 @@
 #!/usr/bin/env python
-"""Gather all evaluation results into an Excel file with detail and summary sheets."""
+"""Gather all evaluation results into an Excel file with detail and summary sheets.
+
+Metrics:
+- preference_recall: (recalled - stale) / total  (from preference_score)
+- stale_rate: stale_count / evolved_count per task
+- task_completion: 1 if preference_score == 1.0, else 0
+
+Summary uses macro-averaging: runs → task → session → overall.
+"""
 
 import argparse
 import json
@@ -12,10 +20,23 @@ from openpyxl import Workbook
 
 from memory_gym.utils import (
     EVAL_PATTERN,
-    get_all_session_dirs,
+    SESSION_DIR_PATTERN,
     get_eval_run_dir,
     get_latest_eval_run_dir,
 )
+
+
+def _compute_stale_rate(pref_scoring: dict) -> float | None:
+    """Compute stale_rate = stale_count / evolved_count from preference scoring data.
+
+    Returns None if there are no evolved preferences (avoids division by zero).
+    """
+    verdicts = pref_scoring.get("preference_verdicts", pref_scoring.get("first_mention_trace")) or []
+    evolved_count = sum(1 for v in verdicts if v.get("type") == "evolved")
+    if evolved_count == 0:
+        return None
+    stale_count = pref_scoring.get("stale_count", 0)
+    return stale_count / evolved_count
 
 
 def main():
@@ -25,12 +46,19 @@ def main():
         type=str,
         help="Optional eval timestamp (e.g., 2026-02-09_143022). If not provided, use latest eval run per session.",
     )
+    parser.add_argument(
+        "--outputs-dir",
+        type=str,
+        required=True,
+        help="Outputs directory containing session folders (e.g., outputs/ or outputs.v0.4/).",
+    )
     args = parser.parse_args()
 
-    rows = []
+    rows: list[dict] = []
     eval_run_dirs: list[Path] = []
 
-    session_dirs = get_all_session_dirs()
+    outputs_path = Path(args.outputs_dir)
+    session_dirs = sorted(d for d in outputs_path.iterdir() if d.is_dir() and SESSION_DIR_PATTERN.match(d.name))
     for session_dir in sorted(session_dirs):
         if args.eval_run:
             eval_run_dir = get_eval_run_dir(session_dir, args.eval_run)
@@ -43,14 +71,6 @@ def main():
 
         eval_run_dirs.append(eval_run_dir)
         eval_run_name = eval_run_dir.name
-
-        # Load build_context_seconds from run_config.json if available
-        run_config_path = eval_run_dir / "run_config.json"
-        build_context_seconds = ""
-        if run_config_path.exists():
-            with open(run_config_path, "r", encoding="utf-8") as f:
-                run_config = json.load(f)
-            build_context_seconds = run_config.get("build_context_seconds", "")
 
         for eval_file in sorted(eval_run_dir.glob("eval_*.json")):
             match = EVAL_PATTERN.match(eval_file.name)
@@ -65,8 +85,11 @@ def main():
                 data = json.load(f)
 
             scores = data.get("scores", {})
-            pref = data.get("preference_scoring", {})
-            eff = data.get("efficiency_scoring", {})
+            pref_scoring = data.get("preference_scoring", {})
+
+            preference_score = scores.get("preference_score", 0.0)
+            stale_rate = _compute_stale_rate(pref_scoring)
+            task_completion = 1 if preference_score == 1.0 else 0
 
             rows.append(
                 {
@@ -75,18 +98,9 @@ def main():
                     "task": task_num,
                     "agent": agent,
                     "run": run_id,
-                    "preference_score": scores.get("preference_score", ""),
-                    "efficiency_score": scores.get("efficiency_score", ""),
-                    "eval_seconds": scores.get("eval_seconds", ""),
-                    "build_context_seconds": build_context_seconds,
-                    "recalled_count": pref.get("recalled_count", pref.get("proactive_count", "")),
-                    "stale_count": pref.get("stale_count", ""),
-                    "required_preferences": len(pref.get("preference_verdicts", pref.get("first_mention_trace", []))),
-                    "total_turns": eff.get("total_turns", ""),
-                    "productive_turns": eff.get("productive_turns", ""),
-                    "generic_turns": eff.get("generic_turns", eff.get("clarifying_turns", "")),
-                    "correction_turns": eff.get("correction_turns", ""),
-                    "ignored_turns": eff.get("ignored_turns", ""),
+                    "preference_score": preference_score,
+                    "stale_rate": stale_rate if stale_rate is not None else "",
+                    "task_completion": task_completion,
                 }
             )
 
@@ -96,63 +110,71 @@ def main():
 
     wb = Workbook()
 
+    # --- Detail sheet ---
     ws1 = wb.active
+    assert ws1 is not None
     ws1.title = "results"
     fieldnames = list(rows[0].keys())
     ws1.append(fieldnames)
     for row in rows:
         ws1.append([row[f] for f in fieldnames])
 
-    scores_by_key: dict[tuple[str, str, str], dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
+    # --- Summary sheet: macro-averaged metrics per agent ---
+    # Step 1: group rows by (agent, session, task) → list of run-level values
+    run_data: dict[str, dict[str, dict[str, list[dict]]]] = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
     for row in rows:
-        key = (row["session"], row["eval_run"], row["task"])
-        scores_by_key[key][row["agent"]].append(float(row["preference_score"]))
+        run_data[row["agent"]][row["session"]][row["task"]].append(row)
 
-    ws2 = wb.create_sheet("summary_preference")
-    ws2.append(["session", "eval_run", "task", "context", "foundry", "foundry_tool", "google", "aws", "nocontext"])
-    for (session, eval_run, task), agents in sorted(scores_by_key.items()):
-        ws2.append(
-            [
-                session,
-                eval_run,
-                task,
-                round(sum(agents.get("context", [0])) / max(len(agents.get("context", [0])), 1), 2),
-                round(sum(agents.get("foundry", [0])) / max(len(agents.get("foundry", [0])), 1), 2),
-                round(sum(agents.get("foundry_tool", [0])) / max(len(agents.get("foundry_tool", [0])), 1), 2),
-                round(sum(agents.get("google", [0])) / max(len(agents.get("google", [0])), 1), 2),
-                round(sum(agents.get("aws", [0])) / max(len(agents.get("aws", [0])), 1), 2),
-                round(sum(agents.get("nocontext", [0])) / max(len(agents.get("nocontext", [0])), 1), 2),
-            ]
-        )
+    # Step 2: macro-average: runs → task mean → session mean → overall mean
+    ws2 = wb.create_sheet("summary")
+    ws2.append(["agent", "preference_recall", "stale_rate", "task_completion", "n_sessions"])
 
-    eff_by_key: dict[tuple[str, str, str], dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
-    for row in rows:
-        key = (row["session"], row["eval_run"], row["task"])
-        if row["efficiency_score"] != "":
-            eff_by_key[key][row["agent"]].append(float(row["efficiency_score"]))
+    for agent in sorted(run_data.keys()):
+        session_pref_scores: list[float] = []
+        session_stale_rates: list[float] = []
+        session_completions: list[float] = []
 
-    ws3 = wb.create_sheet("summary_efficiency")
-    ws3.append(["session", "eval_run", "task", "context", "foundry", "foundry_tool", "google", "aws", "nocontext"])
-    for (session, eval_run, task), agents in sorted(eff_by_key.items()):
-        ws3.append(
-            [
-                session,
-                eval_run,
-                task,
-                round(sum(agents.get("context", [0])) / max(len(agents.get("context", [0])), 1), 2),
-                round(sum(agents.get("foundry", [0])) / max(len(agents.get("foundry", [0])), 1), 2),
-                round(sum(agents.get("foundry_tool", [0])) / max(len(agents.get("foundry_tool", [0])), 1), 2),
-                round(sum(agents.get("google", [0])) / max(len(agents.get("google", [0])), 1), 2),
-                round(sum(agents.get("aws", [0])) / max(len(agents.get("aws", [0])), 1), 2),
-                round(sum(agents.get("nocontext", [0])) / max(len(agents.get("nocontext", [0])), 1), 2),
-            ]
-        )
+        for session in run_data[agent]:
+            task_pref_scores: list[float] = []
+            task_stale_rates: list[float] = []
+            task_completions: list[float] = []
+
+            for task in run_data[agent][session]:
+                runs = run_data[agent][session][task]
+
+                # Average runs within a task
+                run_prefs = [r["preference_score"] for r in runs if r["preference_score"] != ""]
+                if run_prefs:
+                    task_pref_scores.append(sum(run_prefs) / len(run_prefs))
+
+                run_stales = [r["stale_rate"] for r in runs if r["stale_rate"] != ""]
+                if run_stales:
+                    task_stale_rates.append(sum(run_stales) / len(run_stales))
+
+                run_completions = [r["task_completion"] for r in runs]
+                task_completions.append(sum(run_completions) / len(run_completions))
+
+            # Average tasks within a session
+            if task_pref_scores:
+                session_pref_scores.append(sum(task_pref_scores) / len(task_pref_scores))
+            if task_stale_rates:
+                session_stale_rates.append(sum(task_stale_rates) / len(task_stale_rates))
+            if task_completions:
+                session_completions.append(sum(task_completions) / len(task_completions))
+
+        # Average sessions → overall
+        n_sessions = len(run_data[agent])
+        avg_pref = round(sum(session_pref_scores) / len(session_pref_scores), 4) if session_pref_scores else ""
+        avg_stale = round(sum(session_stale_rates) / len(session_stale_rates), 4) if session_stale_rates else ""
+        avg_comp = round(sum(session_completions) / len(session_completions), 4) if session_completions else ""
+
+        ws2.append([agent, avg_pref, avg_stale, avg_comp, n_sessions])
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
-    combined_output = Path("outputs") / f"results_{timestamp}.xlsx"
+    combined_output = outputs_path / f"results_{timestamp}.xlsx"
     wb.save(combined_output)
     print(f"Saved to {combined_output}")
-    print(f"Wrote {len(rows)} results from {len(eval_run_dirs)} session(s) (3 sheets)")
+    print(f"Wrote {len(rows)} results from {len(eval_run_dirs)} session(s) (2 sheets: results, summary)")
 
 
 if __name__ == "__main__":
