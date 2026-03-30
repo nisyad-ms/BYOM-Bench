@@ -1,4 +1,4 @@
-# MemoryGym Pipeline Overview
+# BYOM-Bench Pipeline Overview
 
 End-to-end synthetic benchmark for evaluating agentic memory in LLMs.
 
@@ -6,7 +6,7 @@ End-to-end synthetic benchmark for evaluating agentic memory in LLMs.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                          MemoryGym Pipeline                                 │
+│                          BYOM-Bench Pipeline                                 │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
 │  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐      │
@@ -26,7 +26,7 @@ End-to-end synthetic benchmark for evaluating agentic memory in LLMs.
 
 ## Stage 1: Data Generation
 
-**Module:** `memory_gym/data_generators/multisession.py`
+**Module:** `byom_bench/data_generators/multisession.py`
 
 Generates multi-session conversation data with evolving preferences.
 
@@ -95,7 +95,7 @@ Output: sessions.json
 
 ## Stage 2: Task Generation
 
-**Module:** `memory_gym/task_generators/evaluation_task.py`
+**Module:** `byom_bench/task_generators/evaluation_task.py`
 
 Creates evaluation tasks that require proactive preference application.
 
@@ -167,7 +167,7 @@ Output: task_XX.json
 
 ## Stage 3: Evaluation
 
-**Module:** `memory_gym/evaluation_multisession/`
+**Module:** `byom_bench/evaluation_multisession/`
 
 Runs agent dialogue and scores with LLM judges.
 
@@ -278,15 +278,15 @@ efficiency_score = max(0, (agent_turns - 0.5×clarifying - corrections) / agent_
 
 | File | Purpose |
 |------|---------|
-| `memory_gym/schemas.py` | All data models (MultiSessionOutput, EvaluationTask, etc.) |
-| `memory_gym/client.py` | Azure OpenAI client with retry logic |
-| `memory_gym/data_generators/multisession.py` | Stage 1: MultiSessionGenerator |
-| `memory_gym/task_generators/evaluation_task.py` | Stage 2: EvaluationTaskGenerator |
-| `memory_gym/evaluation_multisession/runner.py` | Stage 3: Evaluation orchestration |
-| `memory_gym/evaluation_multisession/judge.py` | Preference + efficiency judges |
-| `memory_gym/evaluation_multisession/user_simulator.py` | Simulated user for dialogue |
-| `memory_gym/agents/base.py` | ContextAwareAgent, NoContextAgent |
-| `memory_gym/agents/foundry_agent.py` | FoundryMemoryAgent (Azure AI Foundry) |
+| `byom_bench/schemas.py` | All data models (MultiSessionOutput, EvaluationTask, etc.) |
+| `byom_bench/client.py` | Azure OpenAI client with retry logic |
+| `byom_bench/data_generators/multisession.py` | Stage 1: MultiSessionGenerator |
+| `byom_bench/task_generators/evaluation_task.py` | Stage 2: EvaluationTaskGenerator |
+| `byom_bench/evaluation_multisession/runner.py` | Stage 3: Evaluation orchestration |
+| `byom_bench/evaluation_multisession/judge.py` | Preference + efficiency judges |
+| `byom_bench/evaluation_multisession/user_simulator.py` | Simulated user for dialogue |
+| `byom_bench/agents/base.py` | ContextAwareAgent, NoContextAgent |
+| `byom_bench/agents/foundry_agent.py` | FoundryMemoryAgent (Azure AI Foundry) |
 
 ---
 

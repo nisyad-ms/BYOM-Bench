@@ -21,9 +21,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from memory_gym.agents.stores import get_available_agent_types
-from memory_gym.prompts import _load_prompt_config
-from memory_gym.utils import (
+from byom_bench.agents.stores import get_available_agent_types
+from byom_bench.prompts import _load_prompt_config
+from byom_bench.utils import (
     create_eval_run_dir,
     extract_task_num,
     get_all_session_dirs,
@@ -54,11 +54,11 @@ def _create_memory_agent(
     Returns None for baseline agents (context / nocontext) — those are
     created inside the runner.
     """
-    from memory_gym.agents import MemoryAgent
+    from byom_bench.agents import MemoryAgent
 
     # Special case: foundry needs endpoint config from multi-endpoint discovery
     if agent_type == "foundry":
-        from memory_gym.agents import FoundryMemoryStore
+        from byom_bench.agents import FoundryMemoryStore
 
         endpoint, chat_model, emb_model = foundry_config or (None, None, None)
         store = FoundryMemoryStore(
@@ -70,7 +70,7 @@ def _create_memory_agent(
         return MemoryAgent(store)
 
     # Generic: look up store class from registry
-    from memory_gym.agents.stores import get_store_class
+    from byom_bench.agents.stores import get_store_class
 
     store_cls = get_store_class(agent_type)
     if store_cls is not None:
@@ -94,8 +94,8 @@ async def run_session_evals(
     sentinel_dir: Path | None = None,
     memory_token_budget: int | None = None,
 ):
-    from memory_gym.evaluation_multisession import run_evaluations_parallel
-    from memory_gym.schemas import EvaluationTaskSpec, MultiSessionOutput
+    from byom_bench.evaluation_multisession import run_evaluations_parallel
+    from byom_bench.schemas import EvaluationTaskSpec, MultiSessionOutput
 
     session_file = get_session_path(session_dir)
 
@@ -197,24 +197,24 @@ async def run_all_sessions(
 ):
     foundry_configs: list[tuple[str, str, str]] = []
     if agent_type == "foundry":
-        from memory_gym.agents import get_foundry_configs
+        from byom_bench.agents import get_foundry_configs
 
         foundry_configs = get_foundry_configs()
         print(f"Foundry configs: {len(foundry_configs)} (endpoint, chat, embedding) triples")
 
     # Limit concurrency to avoid cloud API rate/quota limits.
     # Google: semaphore on build_context only (retrieval quota is generous).
-    # AWS/mem0/foundry_local: semaphore on entire session.
-    from memory_gym.client import get_agent_config
+    # AWS/mem0: semaphore on entire session.
+    from byom_bench.client import get_agent_config
 
     agent_cfg = (
-        get_agent_config(agent_type) if agent_type in ("google", "aws", "mem0", "mem0_graph", "foundry_local") else {}
+        get_agent_config(agent_type) if agent_type in ("google", "aws", "mem0", "mem0_graph") else {}
     )
     memory_semaphore = (
         asyncio.Semaphore(agent_cfg.get("max_concurrent_build_context", 3)) if agent_type == "google" else None
     )
     session_semaphore: asyncio.Semaphore | None = None
-    if agent_type in ("aws", "mem0", "mem0_graph", "foundry_local"):
+    if agent_type in ("aws", "mem0", "mem0_graph"):
         session_semaphore = asyncio.Semaphore(agent_cfg.get("max_concurrent_sessions", 10))
 
     eval_configs: list[tuple[Path, dict, str]] = []
@@ -346,13 +346,13 @@ def main():
     parser.add_argument(
         "--outputs-dir",
         type=str,
-        default=None,
-        help="Override outputs directory (default: outputs/). E.g., outputs.v0.4/",
+        required=True,
+        help="Outputs directory (e.g., outputs/). E.g., outputs.v0.4/",
     )
     args = parser.parse_args()
 
     if args.outputs_dir:
-        import memory_gym.utils as _utils
+        import byom_bench.utils as _utils
 
         _utils.OUTPUTS_DIR = Path(args.outputs_dir)
 

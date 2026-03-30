@@ -1,4 +1,4 @@
-# MemoryGym
+# BYOM-Bench
 
 A benchmark for evaluating LLM personalization through multi-session conversations with evolving user preferences.
 
@@ -6,7 +6,7 @@ For a minimal setup guide, see [QUICK_START.md](QUICK_START.md).
 
 ## Overview
 
-MemoryGym measures how well AI agents remember and proactively use user preferences across multiple conversation sessions. Preferences evolve over time due to life events, testing whether agents can:
+BYOM-Bench measures how well AI agents remember and proactively use user preferences across multiple conversation sessions. Preferences evolve over time due to life events, testing whether agents can:
 
 - **Recall and apply current preferences** proactively without being asked
 - **Avoid using stale/superseded preferences** that have been replaced
@@ -14,12 +14,12 @@ MemoryGym measures how well AI agents remember and proactively use user preferen
 
 ### How Evaluation Works
 
-Unlike simple Q&A benchmarks, MemoryGym evaluates agents through **multi-turn task completion**. At evaluation time, the agent is given a multi-turn task that requires proactively applying multiple user preferences to complete successfully. A simulated user interacts with the agent, and evaluation metrics are calculated based on the entire conversation—measuring whether the agent applied preferences before being asked, avoided stale preferences, and completed the task efficiently.
+Unlike simple Q&A benchmarks, BYOM-Bench evaluates agents through **multi-turn task completion**. At evaluation time, the agent is given a multi-turn task that requires proactively applying multiple user preferences to complete successfully. A simulated user interacts with the agent, and evaluation metrics are calculated based on the entire conversation—measuring whether the agent applied preferences before being asked, avoided stale preferences, and completed the task efficiently.
 
 ## Pipeline Architecture
 
 ```
-│                          MemoryGym Pipeline                                │
+│                          BYOM-Bench Pipeline                                │
 ├────────────────────────────────────────────────────────────────────────────┤
 │                                                                            │
 │  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐      │
@@ -42,8 +42,8 @@ For a detailed explanation of the pipeline, see [docs/pipeline_overview.md](docs
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/memory_gym.git
-cd memory_gym
+git clone https://github.com/your-org/byom_bench.git
+cd byom_bench
 
 # Install with uv (recommended)
 uv sync
@@ -114,7 +114,7 @@ Generates multi-session conversation data with evolving preferences. A **session
 This is the most time-consuming step of the pipeline. For quick testing, use the default `--sessions 2` which generates 2 sessions and takes a few minutes.
 
 ```bash
-uv run python scripts/test_data_generation.py
+uv run python scripts/test_data_generation.py --outputs-dir <dir>
 ```
 
 | Flag | Default | Description |
@@ -130,7 +130,7 @@ Output: `outputs/<timestamp>/sessions.json` (one folder per persona)
 Creates evaluation tasks from the generated session data.
 
 ```bash
-uv run python scripts/test_task_generation.py
+uv run python scripts/test_task_generation.py --outputs-dir <dir>
 ```
 
 | Flag | Default | Description |
@@ -146,13 +146,13 @@ Output: `outputs/<timestamp>/tasks/<version>/task_XX.json`
 Runs agent dialogue and scoring on generated tasks.
 
 ```bash
-uv run python scripts/test_evaluation.py --session <name> --agent context
+uv run python scripts/test_evaluation.py --outputs-dir <dir> --session <name> --agent context
 ```
 
 | Flag | Default | Description |
 |------|---------|-------------|
 | `--session NAME` | *(required)* | `"all"` or a session name — the `<timestamp>` folder created by Stage 1 (one per persona) |
-| `--agent TYPE` | `context` | Agent type: `context`, `nocontext`, `foundry`, `foundry_local`, `google`, `aws`, `mem0`, `zep`, `hindsight` |
+| `--agent TYPE` | `context` | Agent type: `context`, `nocontext`, `foundry`, `google`, `aws`, `mem0`, `zep`, `hindsight` |
 | `--task TASKS` | `all` | `"all"` or comma-separated task numbers (e.g., `01,02,03`) |
 | `--task-version VERSION` | latest | Task version (e.g., `v1`) |
 | `--num-runs N` | `1` | Number of evaluation runs per task |
@@ -166,7 +166,7 @@ Output: `outputs/<timestamp>/evaluations/<eval_timestamp>/eval_XX_<agent>.json`
 Aggregates evaluation results into an Excel file.
 
 ```bash
-uv run python scripts/gather_results.py
+uv run python scripts/gather_results.py --outputs-dir <dir>
 ```
 
 | Flag | Default | Description |
@@ -179,17 +179,17 @@ Output: `outputs/results_<timestamp>.xlsx`
 
 ```bash
 # 1. Generate session data (1 random persona, 10 sessions)
-uv run python scripts/test_data_generation.py --sessions 10
+uv run python scripts/test_data_generation.py --outputs-dir <dir> --sessions 10
 
 # 2. Generate evaluation tasks
-uv run python scripts/test_task_generation.py --count 3
+uv run python scripts/test_task_generation.py --outputs-dir <dir> --count 3
 
 # 3. Run evaluations
-uv run python scripts/test_evaluation.py --session all --agent context --task-version v1
-uv run python scripts/test_evaluation.py --session all --agent foundry_local --task-version v1
+uv run python scripts/test_evaluation.py --outputs-dir <dir> --session all --agent context --task-version v1
+uv run python scripts/test_evaluation.py --outputs-dir <dir> --session all --agent foundry --task-version v1
 
 # 4. Gather results
-uv run python scripts/gather_results.py
+uv run python scripts/gather_results.py --outputs-dir <dir>
 ```
 
 ## Evaluation Metrics
@@ -229,10 +229,8 @@ Turn classifications (evaluated using the user's next message as look-ahead):
 │   ├── test_data_generation.py     # Stage 1 entry point
 │   ├── test_task_generation.py     # Stage 2 entry point
 │   ├── test_evaluation.py          # Stage 3 entry point
-│   ├── gather_results.py           # Result aggregation
-│   ├── rerun_judge.py              # Re-score existing evaluations
-│   └── quality_check.py            # Audit evaluation quality
-├── memory_gym/                     # Main package
+│   └── gather_results.py           # Result aggregation
+├── byom_bench/                     # Main package
 │   ├── agents/                     # Agent implementations
 │   │   └── stores/                 # Memory store backends
 │   ├── client.py                   # Azure OpenAI client (Responses API + tenacity retry)
@@ -268,7 +266,6 @@ Turn classifications (evaluated using the user's next message as look-ahead):
 | **context** | Full ground-truth preference list provided (upper bound) | core |
 | **nocontext** | No past context provided (lower bound) | core |
 | **foundry** | Azure AI Foundry memory store | core |
-| **foundry_local** | Local LanceDB replicating Foundry pipeline | core |
 | **google** | Google Vertex AI Agent Engine memory | core |
 | **aws** | AWS Bedrock AgentCore memory | core |
 | **mem0** | Mem0 open-source memory layer | `.[mem0]` |
@@ -285,10 +282,16 @@ For the latest benchmark results, see [RESULTS.md](RESULTS.md).
 # Install dev dependencies
 uv sync --all-extras
 
+# Set up pre-commit hooks (required — runs gitleaks on every commit)
+pre-commit install
+
 # Linting
 uv run ruff check .
 uv run ruff format .
 
 # Type checking
 uv run pyright
+
+# Tests
+uv run pytest tests/
 ```

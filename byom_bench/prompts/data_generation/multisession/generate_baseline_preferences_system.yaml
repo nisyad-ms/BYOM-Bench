@@ -1,0 +1,179 @@
+name: Generate Baseline Preferences — System
+description: System prompt for generating baseline preferences from an expanded persona's life facts.
+used_by: byom_bench/data_generators/multisession.py::_expand_persona
+
+template: |
+  You are an expert at generating behavioral preferences for a user persona in an AI benchmark.
+  This persona will experience life events that dramatically change their preferences.
+  An AI agent must recall and apply the UPDATED preferences in conversation.
+  Therefore, preferences must be actionable, naturally mentionable in dialogue, and plausibly changeable by life events.
+
+  **CRITICAL: All examples in this prompt (inline and end-to-end) are STRICTLY for inspiration — they illustrate format, reasoning, and quality standards ONLY. Do NOT simply reuse - Be creative and original. Every detail you generate must be wholly your own invention, tailored to the specific persona.**
+
+  ## What is a preference?
+
+  - A preference is a **specific behavioral choice that a personal AI agent should remember and act on**.
+  - Life facts describe what's true about a person's life (provided in the input persona below). Preferences describe HOW they choose to
+  navigate those facts — the concrete habits, routines, and non-negotiables that reflect their personal style within their circumstances.
+
+  Example — fact vs. preference:
+  - Fact: "Recovering from ACL surgery, cleared to return to sport in 3 months"
+    Echo (BAD): "Goes to physical therapy twice a month" — restates the fact at a different granularity
+    Preference (GOOD): "Only does rehab exercises at home with resistance bands — refuses to use gym machines" — a specific choice about HOW they navigate the recovery
+
+  - Fact: "Has a demanding job with long hours"
+    Echo (BAD): "Works long hours at the office" — restates the fact
+    Preference (GOOD): "Blocks Friday afternoons for deep work — no meetings or emails allowed" - a specific choice about how they manage their workweek
+
+  - Fact: "45-minute commute by train each way"
+    Echo (BAD): "Commutes by train daily" — restates the fact
+    Preference (GOOD): "Listens to audiobooks during commute — never music or podcasts" - a specific choice about how they navigate their commute
+
+  ## Your Task
+
+  Generate EXACTLY 5 preferences for each of the 5 domains below (25 total).
+
+  ### Domains
+
+  - **work_habits**: How they work, manage time, communicate, handle workload and learning
+  - **health_body**: Diet, exercise, sleep, medical routines, physical choices
+  - **social_relationships**: How they maintain relationships, communicate, socialize, handle family obligations
+  - **leisure_hobbies**: How they spend free time — hobbies, interests, entertainment, travel, weekends, vacations
+  - **daily_routines**: Recurring patterns that cut across domains: morning/evening habits, errands, spending, digital habits
+
+  ### Steps
+
+  For each domain, follow these steps:
+  1. Review the persona's life facts — which facts are relevant to this domain?
+  2. For each relevant fact, generate a preference by asking: this person lives with this fact every day — what specific behavioral choice do they make that isn't already stated in the fact? The fact sets the context; the preference captures a concrete habit, routine, or rule they follow within that context.
+     Example: Fact "goes to the gym 3-4 times a week with her roommate" → Preference "Only does team or class-based workouts — never exercises alone" (the fact says she goes to the gym; the preference reveals HOW she chooses to work out).
+  3. Fill remaining slots (up to 5) with freestanding preferences — behavioral choices that don't trace back to any specific life fact but feel authentic to this person's character. Some domains like leisure_hobbies may have no relevant life facts, so all 5 preferences will be freestanding.
+  5. For each preference, verify before including:
+     - **Actionable?** Could an AI agent use this to give better advice or recommendations? If not, discard and generate another.
+       BAD: "Arrives 15 minutes early to everything" — an agent can't really act on this
+       GOOD: "Never orders takeout on weeknights, always cooks at home" — an agent can suggest recipes and meal plans
+     - **Evolvable?** Could a realistic life event change or replace this preference? If not, discard and generate another.
+       BAD: "Uses mechanical keyboard" — too trivial; no life event meaningfully changes this
+       GOOD: "Eats steak twice a week" — health diagnosis or new partner could change this
+     - **Contrastive?** Where possible, state what they DO and what they NEVER do in the same preference.
+       This creates a clear test: the agent must recommend the right behavior and avoid the wrong one.
+       GOOD: "Cooks elaborate dinners from scratch every night — never orders takeout"
+       GOOD: "Only does team or class-based workouts — never exercises alone"
+       GOOD: "Listens to audiobooks during commute — never music or podcasts"
+       Not every preference needs a negation, but aim for at least half.
+
+  ### Content safety
+
+  The generated text will be processed by AI systems with content filters. To avoid false positives:
+  - For child-related preferences, use age-appropriate activity language (e.g., "reads to kids at bedtime", "takes son to the park every Saturday") — avoid intimate-sounding vocabulary like "cuddling", "bath time", "co-sleeping".
+  - For family caregiving preferences, focus on logistics (driving to appointments, coordinating schedules) rather than intimate personal care.
+  - Avoid preferences involving adult siblings or relatives sharing living space.
+
+  ## End to End Example
+
+  Input:
+  Base: A college student studying biology
+  Demographics: 20 year old female in Boston, MA
+
+  Work & Education:
+    - Junior at Boston University, Biology major, pre-med track
+    - Part-time lab assistant for her organic chemistry professor (10 hrs/week)
+    - Planning to apply to medical schools next year; currently studying for the MCAT
+    - Struggling with organic chemistry this semester; at risk of needing to repeat it
+
+  Health & Wellness:
+    - Played competitive soccer in high school; still plays pickup games on weekends
+    - Generally healthy; goes to the gym 3-4 times a week with her roommate
+    - Chronically sleep-deprived during finals; otherwise averages 7 hours
+    - Mild seasonal allergies that worsen in spring
+
+  Family & Relationships:
+    - Lives in off-campus apartment with two roommates from freshman year
+    - Single; ended a two-year relationship last semester
+    - Parents in Connecticut; calls twice a week, visits monthly
+    - Younger brother is a high school senior currently applying to colleges
+
+  ### Reasoning
+
+  work_habits (2 from facts, 3 freestanding):
+  - "Struggling with organic chemistry" → HOW does she get help? → "Attends every professor office hour rather than emailing questions"
+  - "Studying for the MCAT" → HOW does she structure prep? → "Reserves library study rooms 2 days in advance for MCAT prep blocks"
+  - Freestanding: "Studies in complete silence only — even instrumental music is distracting"
+  - Freestanding: "Works independently on projects; avoids group work when possible"
+  - Freestanding: "Buys new physical textbooks only — needs to annotate her own copies"
+
+  health_body (2 from facts, 3 freestanding):
+  - "Goes to the gym 3-4 times a week with her roommate" → HOW does she work out? → "Only does team or class-based workouts — never exercises alone"
+  - "Chronically sleep-deprived during finals" → HOW does she manage it? → "Tracks sleep nightly and reviews weekly patterns"
+  - Freestanding: "Eats strictly vegetarian — won't touch meat or fish for ethical reasons"
+  - Freestanding: "Skips breakfast entirely; first meal is always lunch"
+  - Freestanding: "Meal preps on Sundays to avoid unhealthy choices during busy weeks"
+
+  social_relationships (2 from facts, 3 freestanding):
+  - "Calls parents twice a week" → HOW does she call? → "Always video-calls parents rather than voice — says it doesn't count otherwise"
+  - "Lab assistant" + "lives with roommates" → HOW does she mix work and home? → "Hosts weekly study sessions for her lab group at her apartment"
+  - Freestanding: "Texts rather than calls — even for important conversations, never picks up the phone"
+  - Freestanding: "Plans hangouts with friends at least a week in advance — never spontaneous"
+  - Freestanding: "Attends small gatherings only (5 people or fewer); skips large parties"
+
+  leisure_hobbies (0 from facts, 5 freestanding):
+  - No life facts directly relevant to this domain, so all 5 are freestanding choices.
+  - "Goes hiking every weekend the weather permits — never stays indoors on Saturdays"
+  - "Watches new movie releases in theaters only — never streams films at home"
+  - "Reads physical books exclusively; won't use e-readers"
+  - "Posts to her science Instagram account every week without fail"
+  - "Visits new neighborhoods in the city on Saturday afternoons"
+
+  daily_routines (0 from facts, 5 freestanding):
+  - Freestanding: "Journals by hand every night before bed — never uses a notes app"
+  - "Checks email only twice a day — never during study sessions"
+  - Freestanding: "Buys groceries only at the farmers market — never shops at supermarkets"
+  - "Plans the coming week every Sunday night before sleep"
+  - "Always walks to campus regardless of weather — never takes the T for short trips"
+
+  ### Output
+
+  {{
+    "baseline_preferences": {{
+      "work_habits": [
+        "Studies in complete silence only — even instrumental music is distracting",
+        "Works independently on projects; avoids group work when possible",
+        "Attends every professor office hour rather than emailing questions",
+        "Buys new physical textbooks only — needs to annotate her own copies",
+        "Reserves library study rooms 2 days in advance for MCAT prep blocks"
+      ],
+      "health_body": [
+        "Eats strictly vegetarian — won't touch meat or fish for ethical reasons",
+        "Skips breakfast entirely; first meal is always lunch",
+        "Only does team or class-based workouts — never exercises alone",
+        "Meal preps on Sundays to avoid unhealthy choices during busy weeks",
+        "Tracks sleep nightly and reviews weekly patterns"
+      ],
+      "social_relationships": [
+        "Texts rather than calls — even for important conversations, never picks up the phone",
+        "Plans hangouts with friends at least a week in advance — never spontaneous",
+        "Attends small gatherings only (5 people or fewer); skips large parties",
+        "Always video-calls parents rather than voice — says it doesn't count otherwise",
+        "Hosts weekly study sessions for her lab group at her apartment"
+      ],
+      "leisure_hobbies": [
+        "Goes hiking every weekend the weather permits — never stays indoors on Saturdays",
+        "Watches new movie releases in theaters only — never streams films at home",
+        "Reads physical books exclusively; won't use e-readers",
+        "Posts to her science Instagram account every week without fail",
+        "Visits new neighborhoods in the city on Saturday afternoons"
+      ],
+      "daily_routines": [
+        "Journals by hand every night before bed — never uses a notes app",
+        "Checks email only twice a day — never during study sessions",
+        "Buys groceries only at the farmers market — never shops at supermarkets",
+        "Plans the coming week every Sunday night before sleep",
+        "Always walks to campus regardless of weather — never takes the T for short trips"
+      ]
+    }}
+  }}
+
+  CRITICAL:
+  - Output ONLY valid JSON matching the structure above
+  - EXACTLY 5 preferences per domain, 25 total
+  - Every preference must pass all quality checks above

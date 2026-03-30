@@ -18,7 +18,7 @@ from pathlib import Path
 
 from openpyxl import Workbook
 
-from memory_gym.utils import (
+from byom_bench.utils import (
     EVAL_PATTERN,
     SESSION_DIR_PATTERN,
     get_eval_run_dir,

@@ -14,7 +14,7 @@ import sys
 import time
 from pathlib import Path
 
-from memory_gym.utils import (
+from byom_bench.utils import (
     get_next_task_num,
     get_next_task_version,
     get_session_dir,
@@ -25,7 +25,7 @@ from memory_gym.utils import (
 
 def generate_tasks(data, session_dir: Path, version: str, start_task_num: int, count: int):
     """Generate tasks — pure random selection, no LLM calls."""
-    from memory_gym.task_generators import generate_evaluation_tasks
+    from byom_bench.task_generators import generate_evaluation_tasks
 
     tasks = generate_evaluation_tasks(data, num_tasks=count)
 
@@ -48,7 +48,16 @@ def main():
     parser.add_argument(
         "--version", type=str, default=None, help="Task version (e.g., v2). If not provided, auto-increments."
     )
+    parser.add_argument(
+        "--outputs-dir",
+        type=str,
+        required=True,
+        help="Outputs directory (e.g., outputs/).",
+    )
     args = parser.parse_args()
+
+    import byom_bench.utils as _utils
+    _utils.OUTPUTS_DIR = Path(args.outputs_dir)
 
     session_dir = get_session_dir(args.session)
     if session_dir is None:
@@ -65,7 +74,7 @@ def main():
         print(f"Session file not found: {session_file}")
         sys.exit(1)
 
-    from memory_gym.schemas import MultiSessionOutput
+    from byom_bench.schemas import MultiSessionOutput
 
     with open(session_file, "r", encoding="utf-8") as f:
         raw_data = json.load(f)

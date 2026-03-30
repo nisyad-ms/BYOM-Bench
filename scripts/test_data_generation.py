@@ -15,7 +15,7 @@ import random
 import time
 from pathlib import Path
 
-from memory_gym.utils import create_session_dir, get_session_path
+from byom_bench.utils import create_session_dir, get_session_path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 BASE_PERSONAS_FILE = DATA_DIR / "base_personas.json"
@@ -65,7 +65,7 @@ def resolve_personas(persona_arg: str | None) -> list[str]:
 
 def run_one(persona: str, num_sessions: int) -> Path:
     """Generate multi-session data for a single persona. Returns session dir."""
-    from memory_gym.data_generators import MultiSessionGenerator
+    from byom_bench.data_generators import MultiSessionGenerator
 
     session_dir = create_session_dir()
     output_path = get_session_path(session_dir)
@@ -98,7 +98,16 @@ def main():
         default=None,
         help="Use first N personas from the resolved list. Only valid with all/domain.",
     )
+    parser.add_argument(
+        "--outputs-dir",
+        type=str,
+        required=True,
+        help="Outputs directory (e.g., outputs/).",
+    )
     args = parser.parse_args()
+
+    import byom_bench.utils as _utils
+    _utils.OUTPUTS_DIR = Path(args.outputs_dir)
 
     personas = resolve_personas(args.persona)
 

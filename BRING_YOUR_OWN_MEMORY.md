@@ -1,10 +1,10 @@
 # Bring Your Own Memory Store
 
-This guide explains how to add a custom memory backend to MemoryGym. All you need is a class that implements three methods: `populate`, `retrieve`, and `cleanup`.
+This guide explains how to add a custom memory backend to BYOM-Bench. All you need is a class that implements three methods: `populate`, `retrieve`, and `cleanup`.
 
 ## The MemoryStore Protocol
 
-Your store must satisfy the `MemoryStore` protocol defined in `memory_gym/agents/stores/protocol.py`:
+Your store must satisfy the `MemoryStore` protocol defined in `byom_bench/agents/stores/protocol.py`:
 
 ```python
 class MemoryStore(Protocol):
@@ -40,9 +40,9 @@ During evaluation:
 > **Note:** This example is for understanding the protocol only. It won't be autodiscovered by `--agent` because it lacks `_sentinel_agent_type`. See the [full example](#full-example-with-config-and-sentinels) below for a store that plugs into the evaluation harness automatically.
 
 ```python
-# memory_gym/agents/stores/my_store.py
+# byom_bench/agents/stores/my_store.py
 
-from memory_gym.schemas import MultiSessionOutput
+from byom_bench.schemas import MultiSessionOutput
 
 
 class MyMemoryStore:
@@ -68,8 +68,8 @@ class MyMemoryStore:
 Use it:
 
 ```python
-from memory_gym.agents import MemoryAgent
-from memory_gym.agents.stores.my_store import MyMemoryStore
+from byom_bench.agents import MemoryAgent
+from byom_bench.agents.stores.my_store import MyMemoryStore
 
 store = MyMemoryStore()
 agent = MemoryAgent(store)
@@ -84,19 +84,19 @@ A sentinel is a small JSON file that records how many sessions have been ingeste
 
 Sentinel files are written to `.memory_sentinels/` (created automatically when `--reuse-stores` is passed). The filename follows the pattern `{session_name}_{agent_type}.json`, e.g. `.memory_sentinels/2026-02-02_1414_mem0.json`. When `--reuse-stores` is not passed, `sentinel_dir` is `None` and no sentinel files are written — the store rebuilds every run.
 
-For a production store that supports `--reuse-stores`, follow this pattern. The autodiscovery registry automatically scans for classes ending in `MemoryStore` that have a `_sentinel_agent_type` class variable — your store will appear in `--agent` choices and smoke tests without any manual wiring. See `mem0.py` or `foundry_local.py` for real implementations.
+For a production store that supports `--reuse-stores`, follow this pattern. The autodiscovery registry automatically scans for classes ending in `MemoryStore` that have a `_sentinel_agent_type` class variable — your store will appear in `--agent` choices and smoke tests without any manual wiring. See `mem0.py` or `aws.py` for real implementations.
 
 ### 1. Create the store
 
 ```python
-# memory_gym/agents/stores/my_store.py
+# byom_bench/agents/stores/my_store.py
 
 import os
 import shutil
 from pathlib import Path
 
-from memory_gym.client import get_agent_config
-from memory_gym.schemas import MultiSessionOutput
+from byom_bench.client import get_agent_config
+from byom_bench.schemas import MultiSessionOutput
 
 from ._sentinel import SentinelMixin
 
@@ -196,7 +196,6 @@ When you wrap your store in `MemoryAgent`, you get for free:
 
 | Store | File | Backend | Good reference for |
 |-------|------|---------|--------------------|
-| `FoundryLocalMemoryStore` | `stores/foundry_local.py` | LanceDB | Local DB + sentinel pattern |
 | `Mem0MemoryStore` | `stores/mem0.py` | Qdrant + mem0 | Third-party library integration |
 | `Mem0GraphMemoryStore` | `stores/mem0_graph.py` | Qdrant + Kùzu + mem0 | Vector + graph hybrid retrieval |
 | `AWSMemoryStore` | `stores/aws.py` | Bedrock AgentCore | Cloud API with polling and retry |

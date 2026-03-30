@@ -1,9 +1,0 @@
-name: Generate Baseline Preferences — User (v3)
-description: User prompt — just the expanded persona input. All instructions are in the system prompt.
-used_by: memory_gym/data_generators/multisession.py::_expand_persona
-variables:
-  - persona: The full expanded persona description (life facts formatted as text)
-
-template: |
-  PERSONA:
-  {persona}
