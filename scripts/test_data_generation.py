@@ -3,8 +3,6 @@
 
 Usage:
     python test_data_generation.py                                    # 1 random persona
-    python test_data_generation.py --persona test                     # All from base_personas_test.json
-    python test_data_generation.py --persona test --num 2             # First 2 from test set
     python test_data_generation.py --persona all                      # All from base_personas.json
     python test_data_generation.py --persona all --num 10             # First 10 across all domains
     python test_data_generation.py --persona "software development"   # All from that domain
@@ -21,28 +19,12 @@ from memory_gym.utils import create_session_dir, get_session_path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 BASE_PERSONAS_FILE = DATA_DIR / "base_personas.json"
-TEST_PERSONAS_FILE = DATA_DIR / "base_personas_test.json"
-SINGLE_PERSONAS_FILE = DATA_DIR / "base_personas_single.json"
 
 
 def _load_base_personas() -> dict[str, list[str]]:
     if not BASE_PERSONAS_FILE.exists():
         raise FileNotFoundError(f"Base personas file not found: {BASE_PERSONAS_FILE}")
     with open(BASE_PERSONAS_FILE, encoding="utf-8") as f:
-        return json.load(f)
-
-
-def _load_test_personas() -> list[str]:
-    if not TEST_PERSONAS_FILE.exists():
-        raise FileNotFoundError(f"Test personas file not found: {TEST_PERSONAS_FILE}")
-    with open(TEST_PERSONAS_FILE, encoding="utf-8") as f:
-        return json.load(f)
-
-
-def _load_single_personas() -> list[str]:
-    if not SINGLE_PERSONAS_FILE.exists():
-        raise FileNotFoundError(f"Single personas file not found: {SINGLE_PERSONAS_FILE}")
-    with open(SINGLE_PERSONAS_FILE, encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -56,18 +38,6 @@ def resolve_personas(persona_arg: str | None) -> list[str]:
     Returns a list with one or more personas. If persona_arg is None,
     returns a single random persona from base_personas.json.
     """
-    if persona_arg == "test":
-        personas = _load_test_personas()
-        if not personas:
-            raise ValueError("No personas found in base_personas_test.json")
-        return personas
-
-    if persona_arg == "single":
-        personas = _load_single_personas()
-        if not personas:
-            raise ValueError("No personas found in base_personas_single.json")
-        return personas
-
     data = _load_base_personas()
 
     if persona_arg is None:
@@ -89,7 +59,7 @@ def resolve_personas(persona_arg: str | None) -> list[str]:
         return personas
 
     raise ValueError(
-        f"Unknown persona value: '{persona_arg}'. Use 'single', 'test', 'all', or a domain name: {list(data.keys())}"
+        f"Unknown persona value: '{persona_arg}'. Use 'all' or a domain name: {list(data.keys())}"
     )
 
 
@@ -120,13 +90,13 @@ def main():
         "--persona",
         type=str,
         default=None,
-        help="'single', 'test', 'all', or a domain name. Default: 1 random persona.",
+        help="'all' or a domain name. Default: 1 random persona.",
     )
     parser.add_argument(
         "--num",
         type=int,
         default=None,
-        help="Use first N personas from the resolved list. Only valid with test/all/domain.",
+        help="Use first N personas from the resolved list. Only valid with all/domain.",
     )
     args = parser.parse_args()
 

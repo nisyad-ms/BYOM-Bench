@@ -92,13 +92,7 @@ All scripts are in `scripts/`. Run from the repo root.
 
 ### Base Personas
 
-Before running the pipeline, you need a `data/` directory at the repo root with persona files (gitignored):
-
-- `data/base_personas.json` — Full persona set, keyed by domain
-- `data/base_personas_test.json` — Small test set for quick runs
-- `data/base_personas_single.json` — Minimal set (3 personas) for quick end-to-end testing
-
-Format — a JSON object mapping domain names to arrays of persona descriptions:
+The repo includes `data/base_personas.json` — a JSON object mapping domain names to arrays of persona descriptions:
 
 ```json
 {
@@ -108,7 +102,7 @@ Format — a JSON object mapping domain names to arrays of persona descriptions:
   ],
   "finance and accounting": [
     "A 32-year-old mid-career accountant at a regional firm specializing in nonprofits",
-    "A freelance financial consultant with clients across multiple industries",
+    "A freelance financial consultant with clients across multiple industries"
   ]
 }
 ```
@@ -126,7 +120,7 @@ uv run python scripts/test_data_generation.py
 | Flag | Default | Description |
 |------|---------|-------------|
 | `--sessions N` | `2` | Number of sessions to generate per persona |
-| `--persona VALUE` | 1 random | `"single"`, `"test"`, `"all"`, or a domain name. If not set, picks 1 random persona from `base_personas.json`. |
+| `--persona VALUE` | 1 random | `"all"` or a domain name (e.g., `"software development"`). If not set, picks 1 random persona. |
 | `--num N` | all | Use first N personas from the resolved list. Only valid with `--persona`. |
 
 Output: `outputs/<timestamp>/sessions.json` (one folder per persona)
@@ -235,9 +229,12 @@ Turn classifications (evaluated using the user's next message as look-ahead):
 │   ├── test_data_generation.py     # Stage 1 entry point
 │   ├── test_task_generation.py     # Stage 2 entry point
 │   ├── test_evaluation.py          # Stage 3 entry point
-│   └── gather_results.py           # Result aggregation
+│   ├── gather_results.py           # Result aggregation
+│   ├── rerun_judge.py              # Re-score existing evaluations
+│   └── quality_check.py            # Audit evaluation quality
 ├── memory_gym/                     # Main package
 │   ├── agents/                     # Agent implementations
+│   │   └── stores/                 # Memory store backends
 │   ├── client.py                   # Azure OpenAI client (Responses API + tenacity retry)
 │   ├── data_generators/            # Stage 1: Data generation
 │   ├── evaluation_multisession/    # Stage 3: Evaluation (judge, runner, user simulator)
@@ -251,7 +248,10 @@ Turn classifications (evaluated using the user's next message as look-ahead):
 │   ├── llm.yaml                    # Shared LLM defaults
 │   ├── pipeline.yaml               # Data/task generation defaults
 │   └── prompts.yaml                # Prompt version mappings
-├── data/                           # Base personas (gitignored, see above)
+├── data/                           # Base personas and domain list
+│   ├── base_personas.json          # Persona definitions keyed by domain
+│   ├── domains.txt                 # Domain list
+│   └── generate_personas.py        # Persona generation script
 ├── docs/                           # Pipeline documentation
 ├── outputs/                        # Generated outputs (gitignored)
 │   └── <timestamp>/                # One per persona
