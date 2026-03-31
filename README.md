@@ -176,7 +176,7 @@ uv run python scripts/gather_results.py --outputs-dir <dir>
 
 Measures proactive preference recall:
 
-$$\text{preference\_recall} = \max\left(0, \frac{\text{proactive} - \text{stale}}{\text{total\_required}}\right)$$
+$$\text{preference recall} = \max\left(0, \frac{\text{proactive} - \text{stale}}{\text{total required}}\right)$$
 
 - **PROACTIVE**: Agent mentioned/applied preference before the user did (+1)
 - **IGNORED**: User mentioned the preference first (no contribution)
@@ -186,7 +186,7 @@ $$\text{preference\_recall} = \max\left(0, \frac{\text{proactive} - \text{stale}
 
 Measures how often the agent uses outdated preferences that have been superseded by newer ones:
 
-$$\text{stale\_recall\_rate} = \frac{\text{stale\_count}}{\text{evolved\_preference\_count}}$$
+$$\text{stale recall rate} = \frac{\text{stale count}}{\text{evolved preference count}}$$
 
 A lower rate is better. Only evolved preferences (those that replaced an older version) are considered.
 
