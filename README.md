@@ -16,28 +16,6 @@ BYOM-Bench measures how well AI agents remember and proactively use user prefere
 
 Unlike simple Q&A benchmarks, BYOM-Bench evaluates agents through **multi-turn task completion**. At evaluation time, the agent is given a multi-turn task that requires proactively applying multiple user preferences to complete successfully. A simulated user interacts with the agent, and evaluation metrics are calculated based on the entire conversation—measuring whether the agent applied preferences before being asked, avoided stale preferences, and completed the task efficiently.
 
-## Pipeline Architecture
-
-```
-│                          BYOM-Bench Pipeline                                │
-├────────────────────────────────────────────────────────────────────────────┤
-│                                                                            │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐      │
-│  │ 1. DATA GEN      │ →  │ 2. TASK GEN      │ →  │ 3. EVALUATION    │      │
-│  │                  │    │                  │    │                  │      │
-│  │ • Expand persona │    │ • Select prefs   │    │ • Run dialogue   │      │
-│  │ • Life events    │    │ • Create event   │    │ • Judge prefs    │      │
-│  │ • Preferences    │    │ • User prompt    │    │ • Judge turns    │      │
-│  │ • Conversations  │    │                  │    │ • Compute scores │      │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘      │
-│         ↓                        ↓                       ↓                 │
-│   sessions.json            task_XX.json          eval_XX_agent.json        │
-│                                                                            │
-└────────────────────────────────────────────────────────────────────────────┘
-```
-
-For a detailed explanation of the pipeline, see [docs/pipeline_overview.md](docs/pipeline_overview.md).
-
 ## Installation
 
 ```bash
@@ -194,33 +172,27 @@ uv run python scripts/gather_results.py --outputs-dir <dir>
 
 ## Evaluation Metrics
 
-### Preference Score
+### Preference Recall
 
 Measures proactive preference recall:
 
-$$\text{preference\\_score} = \max\left(0, \frac{\text{proactive} - \text{stale}}{\text{total\\_required}}\right)$$
+$$\text{preference\_recall} = \max\left(0, \frac{\text{proactive} - \text{stale}}{\text{total\_required}}\right)$$
 
 - **PROACTIVE**: Agent mentioned/applied preference before the user did (+1)
 - **IGNORED**: User mentioned the preference first (no contribution)
 - **STALE**: Agent used an outdated/superseded preference (-1)
 
-### Efficiency Score
+### Stale Recall Rate
 
-Measures conversation efficiency:
+Measures how often the agent uses outdated preferences that have been superseded by newer ones:
 
-$$\text{penalty} = 0.5 \times \text{generic} + 0.5 \times \text{ignored} + 1.0 \times \text{correction}$$
+$$\text{stale\_recall\_rate} = \frac{\text{stale\_count}}{\text{evolved\_preference\_count}}$$
 
-$$\text{efficiency\\_score} = \max\left(0, \frac{\text{agent\\_turns} - \text{penalty}}{\text{agent\\_turns}}\right)$$
+A lower rate is better. Only evolved preferences (those that replaced an older version) are considered.
 
-If any **REPEATED_CORRECTION** occurs, the efficiency score is automatically **0.0**.
+### Task Completion
 
-Turn classifications (evaluated using the user's next message as look-ahead):
-
-- **PRODUCTIVE**: Agent applied a specific required preference and user accepted (no penalty)
-- **GENERIC**: Helpful but unpersonalized advice, equally appropriate for any user (-0.5)
-- **IGNORED**: Agent omitted a preference, user had to reveal or remind (-0.5)
-- **CORRECTION**: Agent made a wrong suggestion that contradicts a preference (-1.0)
-- **REPEATED_CORRECTION**: Agent violated the same preference again after being corrected (instant 0.0)
+Binary metric: **1** if `preference_recall == 1.0` (all preferences recalled proactively with no stale usage), **0** otherwise.
 
 ## Project Structure
 
