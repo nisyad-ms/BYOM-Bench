@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_60749404",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_034",
+        "fact": "Temporarily avoids bouldering altogether due to wrist fracture — no gym climbing until cleared by doctor",
+        "supersedes": {
+          "id": "pref_031",
+          "fact": "Started bouldering solo or joins open climbing groups at the gym — former climbing partner is less available since moving away"
+        }
+      },
+      {
+        "id": "pref_027",
+        "fact": "No longer reserves Thursday mornings exclusively for UX practice — regularly attends core product team meetings during this time as required by the startup",
+        "supersedes": {
+          "id": "pref_005",
+          "fact": "Blocks Thursday mornings for online UX practice — never books client meetings during this slot"
+        }
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks email only twice daily at set times — never responds outside these windows"
+      },
+      {
+        "id": "pref_055",
+        "fact": "Reserves a dedicated workspace in the apartment to maintain focus and minimize distractions during overlapping remote work hours with her partner"
+      },
+      {
+        "id": "pref_049",
+        "fact": "Blocks calendar for team standup and daily check-in meetings every morning — never schedules personal tasks during this time slot"
+      },
+      {
+        "id": "pref_015",
+        "fact": "Visits parents in Boulder for Sunday family dinners but leaves before 8pm to prep for the workweek — never stays overnight"
+      }
+    ]
+  },
+  "persona": "A 24-year-old mobile app developer freelancing full-time"
+}

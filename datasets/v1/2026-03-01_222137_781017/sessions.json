@@ -1,0 +1,1593 @@
+{
+  "persona": "A mid-career accountant at a regional firm specializing in nonprofit organizations",
+  "persona_id": "persona_20260301_223405",
+  "expanded_persona": {
+    "base_persona": "A mid-career accountant at a regional firm specializing in nonprofit organizations",
+    "age": 38,
+    "gender": "female",
+    "location": "Portland, OR",
+    "work_education": [
+      "Senior accountant at Northwest Ledger, a regional accounting firm focused on nonprofit clients",
+      "Recently completed her CPA recertification, now pursuing a certificate in nonprofit financial management",
+      "Supervises a team of three junior accountants, splitting time between client audits and internal training",
+      "Frequently attends evening networking events hosted by local charities and nonprofits",
+      "Just took on responsibility for the firm's largest nonprofit client, increasing workload by 20%"
+    ],
+    "health_wellness": [
+      "Struggles with lower back pain from long hours at her desk; attends weekly physical therapy",
+      "Makes an effort to walk her dog every morning for exercise, but rarely gets to the gym",
+      "Recently started meal prepping vegetarian lunches after cholesterol concerns at last checkup",
+      "Tends to work late during audit season, leading to inconsistent sleep patterns"
+    ],
+    "family_relationships": [
+      "Lives with her spouse, a middle school art teacher, and their 10-year-old daughter",
+      "Responsible for school pick-up and drop-off three days a week due to spouse’s fluctuating work schedule",
+      "Her father, recently widowed, moved into a nearby apartment; she visits him every weekend",
+      "Close-knit group of friends from college, but social gatherings are less frequent due to busy schedules"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Blocks Friday mornings for uninterrupted review work — never schedules meetings or calls before noon on Fridays",
+        "Delegates routine data entry to junior accountants; only personally handles complex reconciliations",
+        "Prepares detailed written guidance for her team — avoids impromptu verbal instructions",
+        "Attends at least one evening networking event each month, but never on audit deadlines week",
+        "Reviews nonprofit financial guidelines monthly to stay current — never relies solely on prior experience for new client issues"
+      ],
+      "health_body": [
+        "Stands and stretches for five minutes every hour at her desk — never sits for more than two hours straight",
+        "Only meal preps vegetarian lunches for workdays; avoids buying lunch from nearby cafes",
+        "Walks her dog every morning regardless of weather — never uses a dog walking service",
+        "Does physical therapy exercises at home every other night, not just at weekly sessions",
+        "Limits caffeine to one cup of coffee per day — never drinks coffee after 2pm to avoid sleep disruption"
+      ],
+      "social_relationships": [
+        "Does video calls with her college friends every other Sunday evening instead of group texts",
+        "Always organizes her father’s grocery shopping and errands on Saturday visits — never delegates them to delivery services",
+        "Prioritizes family dinner together every weeknight — never schedules work or social activities during that time",
+        "Prefers shorter, one-on-one catch ups with friends over large group gatherings",
+        "Uses a shared digital calendar with her spouse for all family activities — never relies on verbal reminders"
+      ],
+      "leisure_hobbies": [
+        "Reserves Sunday afternoons for reading historical fiction — never schedules chores or work during this time",
+        "Plans one nature day trip per month with her daughter — never repeats the same hiking trail twice in a season",
+        "Attends local art gallery openings with her spouse quarterly — never misses the annual Portland Open Studios tour",
+        "Only knits small accessories, like hats or scarves — never tackles large projects like sweaters",
+        "Listens exclusively to true crime podcasts during solo errands — never music or other genres"
+      ],
+      "daily_routines": [
+        "Prepares the next day’s outfits for the family each evening — never leaves it until morning",
+        "Reviews and updates her to-do list nightly before bed — never relies on memory alone",
+        "Shops for groceries early Saturday mornings to avoid crowds — never goes on weekday evenings",
+        "Shuts down all work devices and emails by 8pm — never brings her laptop into the bedroom",
+        "Pays all bills online on the first of each month — never waits for paper statements or mails checks"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The firm’s managing partner announced she will be leading a mandatory six-month mentorship program for all senior accountants, requiring her to dedicate 5 hours per week to training sessions and one-on-one coaching for junior staff from multiple departments.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_028",
+            "fact": "Schedules one-on-one check-ins with junior accountants from other departments every week, beyond her regular team",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Sets aside Sunday evenings for mentorship session planning — blocks this time from family and leisure activities",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Blocks Friday mornings for uninterrupted review work — never schedules meetings or calls before noon on Fridays"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Blocks Friday mornings for mentorship sessions and junior staff coaching — now schedules review work in afternoons or other weekdays",
+              "domain": "work_habits"
+            },
+            "reason": "The mandatory mentorship program requires regular training for junior staff, and her previously uninterrupted Friday mornings are now needed for scheduled mentorship sessions and coaching, displacing her review block."
+          },
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Prepares detailed written guidance for her team — avoids impromptu verbal instructions"
+            },
+            "to": {
+              "id": "pref_027",
+              "fact": "Conducts live interactive training sessions, supplementing written guidance, as part of mentorship responsibilities",
+              "domain": "work_habits"
+            },
+            "reason": "Leading a mentorship program requires her to deliver live, interactive coaching and training sessions for junior accountants across departments, not just written instructions."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My firm rolled out a mandatory mentorship program for all senior accountants this week. I’ve been tapped to lead it—six months, 5 hours a week. It's a big shift, and honestly, I’m trying to figure out how to make room for this without everything else unraveling. Do you have tips for balancing a new coaching load alongside client work and family?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a major responsibility on top of an already full plate. First off, congrats—they wouldn’t ask you unless they trusted your leadership. One thing that can help is mapping out the new time demands as clearly as you can: Which hours are now firmly booked, and which will stay flexible? Can you repurpose any of your current calendar blocks, or are you looking to fit this in around everything else?"
+        },
+        {
+          "role": "user",
+          "content": "I used to block Friday mornings for review work, strictly no meetings before noon. That was my one uninterrupted slot every week. But now, mentorship sessions and junior staff coaching fill that Friday morning block, so my deep review work needs to move to afternoons or other weekdays. It's going to be a challenge—my concentration is always best early in the day."
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you—moving focus work to the afternoon isn’t ideal, especially in audit season. With Friday mornings now reserved for mentorship, could you swap a couple weekday mornings to reclaim uninterrupted client review time? Or is that schedule too locked already? How much control do you have over those new mentorship sessions—are they fixed every week, or can your input shape the timing?"
+        },
+        {
+          "role": "user",
+          "content": "Unfortunately, the sessions have to be Fridays for the firm—it’s consistent across all departments. My team can cover some routine work, but the client reconciliations I handle don’t shift easily. I’ll try rearranging other mornings, but I might need to get comfortable focusing in the afternoons, at least for the next six months. Another thing: coaching isn’t just my team now. I have to schedule one-on-one check-ins weekly with junior accountants from three other departments. That’s new for me."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot of new faces and obligations. Given you’re juggling both group mentorship and individual check-ins, have you considered batching all the one-on-ones together on a specific day or block, rather than spreading them out? Sometimes minimizing context switches helps with energy. Does your firm have tools for tracking progress or feedback across departments, or will you need to create your own system?"
+        },
+        {
+          "role": "user",
+          "content": "There’s a shared dashboard, but it’s pretty basic—mostly for logging attendance. I’m planning to set up my own tracking for feedback and development goals, since I like having detailed guidance for my mentees. Also, my previous style was mostly written instructions, but the mentorship program expects live, interactive training sessions as part of the process. It’ll be a shift from my usual approach."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment—live training requires different prep and energy than written guidance alone. Would it help to supplement the real-time sessions with short written recaps or templates afterward? That way, mentees can reference them later, and you’ll keep elements of your preferred structure. How comfortable are you with the tech side—hosting interactive sessions, screen sharing, breakout rooms?"
+        },
+        {
+          "role": "user",
+          "content": "I’m fine with the tech—Zoom and Teams are familiar. It’s more about managing my bandwidth. I’ve started blocking Sunday evenings to plan mentorship sessions, which cuts into my usual time for family and leisure, but it’s the only way I stay organized. I don’t want to scramble during the week."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart way to get ahead, but I imagine Sunday evenings were valuable personal or family time. Are there any routines you’ve had to drop or reschedule because of this new planning block? Also, are you finding it hard to disconnect from work when you’re prepping mentorship materials, or are you able to compartmentalize pretty well?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve had to carve out Sunday evenings exclusively for mentorship prep now, so those hours are no longer available for family dinners, catch-ups with friends, or leisure reading. I’m pretty strict about shutting down work devices by 8pm, but the extra prep means less downtime before bed. I’m still figuring out how best to wind down after planning so my sleep isn’t too erratic."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot of change in your weekly rhythm. Maybe there’s a way to ritualize the end of your Sunday prepping—like a short walk or a wind-down routine—to signal the work is done and help shift into personal mode. Would you like help brainstorming strategies for keeping those boundaries clear, or advice on supporting your family and team through these new demands?"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her firm's largest nonprofit client underwent an unexpected leadership change and requested a full mid-year audit, requiring her to prepare, coordinate, and present detailed interim reports within a compressed six-week timeline.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_032",
+            "fact": "Skips evening networking events entirely during the six-week interim audit period, even if no client deadlines fall that week",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_033",
+            "fact": "Postpones family weeknight dinners to weekends during audit crunch, relying on quick meals or individual schedules",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_029",
+              "fact": "Sets aside Sunday evenings for mentorship session planning — blocks this time from family and leisure activities"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Uses Sunday evenings exclusively for drafting interim audit reports and prepping for client presentations — mentorship planning deferred to weekdays after client work hours",
+              "domain": "daily_routines"
+            },
+            "reason": "The client’s urgent mid-year audit and compressed reporting deadline requires intensive evening prep, displacing mentorship planning to other times. Audit work is prioritized for Sunday evenings until audit concludes."
+          },
+          {
+            "from": {
+              "id": "pref_024",
+              "fact": "Shuts down all work devices and emails by 8pm — never brings her laptop into the bedroom"
+            },
+            "to": {
+              "id": "pref_031",
+              "fact": "Keeps her work devices and email open until 10pm during intensive audit weeks — sometimes works from her bedroom for late-night client revisions",
+              "domain": "daily_routines"
+            },
+            "reason": "The compressed six-week audit deadline requires occasional late-night report revisions and client correspondence, making her old cutoff impractical during this period."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My firm's biggest nonprofit client just had a leadership shakeup. They've asked for a full mid-year audit, and I've got six weeks to prep, coordinate, and present detailed reports. I'm already feeling the crunch. I need help figuring out how to keep my process tight and not let everything else fall apart—especially since my team relies on me for written guidance. Any tips for juggling the extra workload without burning out or losing sight of my routines?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a huge ask, especially with the compressed timeline. Having written guidance for your junior accountants is a smart move—delegation will really be key. Have you mapped out which tasks in the interim audit you can assign, and which ones you'll need to handle yourself? Also, how are you protecting your review and prep blocks—has your Friday morning no-meeting policy stayed intact under the new demands?"
+        },
+        {
+          "role": "user",
+          "content": "Friday mornings are still sacred for review—I've kept them meeting-free, but the audit work is bleeding into every other part of my schedule. I used to do mentorship session planning on Sunday evenings, but I'll be using that time exclusively for drafting audit reports and prepping presentations until this audit is done. Mentorship stuff will have to shift to weekday evenings after client work."
+        },
+        {
+          "role": "assistant",
+          "content": "Shifting mentorship planning to weekdays makes sense with this kind of pressure. Since your Sundays are now dedicated to audit prep, how are you keeping your internal training and team guidance work from slipping—do you have a system for fitting those in during the week, or will it be more ad hoc for now?"
+        },
+        {
+          "role": "user",
+          "content": "I'll probably squeeze internal tasks into weekday evenings, right after client work hours. It's not ideal, but it's the only time that makes sense with the new deadline. I'm worried about losing momentum with my team, though, since evenings are usually family time."
+        },
+        {
+          "role": "assistant",
+          "content": "With those weekday evenings carved out for mentorship and training, it's understandable that family routines will feel pressure. Have you considered batch-prepping guidance for your team—maybe drafting several weeks' worth at once—so you can minimize context-switching? And on the family side, is there any way to protect your dinner routine, or do you need to adjust that temporarily?"
+        },
+        {
+          "role": "user",
+          "content": "Dinner routines are out for now. We’re postponing weeknight family dinners to weekends during the audit crunch—everyone’s just grabbing quick meals or eating on individual schedules. It’s not ideal, but it’s temporary and honestly, it frees up some time for work."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like the practical move with so much on your plate. As for your audit prep late into evenings—are you sticking to your usual shutdown policy for work devices, or has that shifted too? It’s easy for late-night work to impact sleep, so I’m wondering how you’re managing that."
+        },
+        {
+          "role": "user",
+          "content": "I’ve had to change my usual cutoff. I keep my work devices and email open until 10pm during audit weeks, and sometimes I work from my bedroom for late-night client revisions. I know it’s not great for sleep, but the client has a lot of urgent feedback and this is the only way to keep up."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift from your usual boundaries, but it makes sense given the circumstances. Are there any other routines you’ve had to move or drop, especially social or networking events, to make room for the extra workload?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I’m skipping evening networking events entirely during this six-week audit period, even if there aren’t deadlines that week. I just don’t have the bandwidth, and any spare time is going into audit prep or catching up with family."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s understandable—the audit is demanding enough on its own. On weekends, are you still able to maintain your Saturday errands and visits with your dad, or have those shifted as well with the compressed schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, Saturday errands and visits with my dad are still intact—I’ve kept those as a non-negotiable, even with the audit crunch. It’s one of the few pieces of my routine I haven’t changed."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad you’re able to maintain those family priorities. So to recap your new audit crunch realities: Sunday evenings are for audit prep instead of mentorship planning, weekday evenings are for internal training, shutdown time is pushed to 10pm with occasional work in the bedroom, weeknight family dinners are postponed to weekends, and you’re skipping networking events entirely. Anything else that’s shifted, or do you feel you’ve captured the major adjustments?"
+        },
+        {
+          "role": "user",
+          "content": "That pretty much covers it for now. I wanted to make sure my main routine changes and priorities are clear so I can stay focused—and so my assistant notes match reality. Thanks for helping me map it out."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—mapping out those changes is the foundation for staying organized under pressure. If you need accountability tips, productivity systems, or help navigating client communication, just let me know. Good luck with the audit, and remember: these shifts are temporary! Let me know if you need support as things evolve."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her father experienced a minor stroke, prompting his doctor to require that he have daily in-person support for at least the next two months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_036",
+            "fact": "Schedules a daily check-in visit with her father every evening after work, never missing two consecutive days",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_037",
+            "fact": "Prepares simple, reheatable dinners for her father in advance three times a week, adjusting meal options for his post-stroke dietary needs",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Walks her dog every morning regardless of weather — never uses a dog walking service"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Relies on a dog walking service for weekday morning walks — only walks her dog herself on weekends or when her schedule allows",
+              "domain": "health_body"
+            },
+            "reason": "Her father's stroke means she must provide daily in-person support for him, reducing her morning availability for personal routines like dog walking."
+          },
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Always organizes her father’s grocery shopping and errands on Saturday visits — never delegates them to delivery services"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Now arranges her father's groceries and errands via delivery services throughout the week, supplementing with short evening visits as needed",
+              "domain": "social_relationships"
+            },
+            "reason": "She must provide daily in-person support to her father, making it impractical to handle all errands in a single long Saturday visit—delivery helps meet increased needs."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My dad had a mild stroke last week, so the doctor wants him to have someone check in daily for at least the next two months. I’m suddenly scrambling to figure out how to balance work, family, and his new needs. Can you help me brainstorm a realistic routine or tools for keeping everything organized?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm so sorry about your dad—that must be a lot to juggle on top of everything else. When you think of 'daily check-ins,' do you mean spending physical time with him every day, or could some of those be virtual? And are you looking for help with scheduling, meal prep, errands, or just prioritizing what matters most?"
+        },
+        {
+          "role": "user",
+          "content": "The doctor specified that it has to be in-person, so I’ve started visiting him every evening after work. I don’t want to miss more than one day in a row, since he’s still a bit unsteady. I definitely need help keeping track of my schedule and figuring out where I can streamline."
+        },
+        {
+          "role": "assistant",
+          "content": "Regular evening visits are a big commitment—especially with your workload and family. Would adjusting your work calendar or team duties help free up evening time? And how are your existing routines affected, like your usual family dinner or other evening activities?"
+        },
+        {
+          "role": "user",
+          "content": "I’m keeping family dinner as a must, but I usually head to Dad’s right afterward. We’ve put all the new routines on our shared calendar so everyone knows the plan, but the trickiest change has been mornings. I used to walk our dog every morning, but now I’m handling Dad’s meds and morning check-in tasks, so I started using a dog walking service on weekdays. I only walk the dog myself on weekends or if my schedule frees up."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—delegating the weekday walks is smart, even if it’s a shift from your usual routine. Are there other tasks you’re considering outsourcing, like meals or errands, to free up more time or energy for supporting your dad and family?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, errands for Dad need to happen more frequently now instead of just on Saturdays. I’ve started using grocery delivery and errand services for him during the week; then if he needs something extra, I stop by in the evenings. I used to do all his groceries in person during our Saturday visits, but that’s just not practical anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re doing a good job adapting. For meal prep, are you planning to cook for your dad, too? If so, maybe batch prepping simple, reheatable dinners could save time—especially if his dietary needs changed post-stroke. How are you handling that part?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I now prep three dinners a week for him in advance—usually easy-to-reheat options that fit his new dietary requirements. It’s not every night, but it keeps things manageable for both of us. I could use help finding more recipes or routines for that, since I’m not used to cooking lower-sodium meals."
+        },
+        {
+          "role": "assistant",
+          "content": "I can help find simple, heart-healthy recipes that work well for batch prep and reheating. Would you prefer vegetarian options, or meals with lean proteins? Let me know if there are specific ingredients he needs to avoid, and I’ll suggest a few ideas and meal-planning tools that can streamline both your own and his weekly menus."
+        },
+        {
+          "role": "user",
+          "content": "He needs to cut back on sodium and saturated fat, but not go full vegetarian. Lean chicken, beans, and lots of veggies are good. I’d appreciate suggestions for meals with minimal prep, since time is tight."
+        },
+        {
+          "role": "assistant",
+          "content": "Great, I’ll compile some low-sodium, low-saturated fat meal ideas—think sheet pan chicken and veggies, bean-based soups, and simple stir-fries. I can also recommend apps that help you track both your family and your dad’s meal plans, so you can coordinate shopping lists or delivery orders efficiently. Is there anything else about your new routine that you’re struggling to streamline?"
+        },
+        {
+          "role": "user",
+          "content": "I think the biggest challenge is keeping my own routines intact as much as possible—like fitting in physical therapy exercises, meal prepping for myself, and staying ahead at work. The extra visits and prep for Dad eat into my evenings, so I’m trying to stay realistic about what I can manage without running myself ragged."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s wise—self-care is critical right now. Building routines for yourself amid new demands could include blocking off short windows for exercise, using meal prep apps, and automating errands as much as possible. If setting reminders or creating checklists helps you stay on track, I can suggest tools that sync with your shared calendar to minimize mental load. Would you like help with those, or is there one area you want to focus on first?"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After weeks of increasing discomfort, her physical therapist diagnosed her with a herniated disc, prescribing a strict regimen of daily stretches, alternating heat and ice therapy, and temporarily prohibiting all vigorous activity including dog walks longer than 15 minutes.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_041",
+            "fact": "Alternates heat and ice therapy for her back daily before and after work — never skips a session even on weekends",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_042",
+            "fact": "Uses a lumbar support cushion and avoids meetings requiring all-day sitting; requests standing or walk-and-talk meetings when possible",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Stands and stretches for five minutes every hour at her desk — never sits for more than two hours straight"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Stands and performs prescribed gentle stretching and heat/ice therapy at designated intervals — avoids routine hourly stretches and limits desk time to 30-minute blocks until cleared for normal activity",
+              "domain": "health_body"
+            },
+            "reason": "The herniated disc diagnosis and strict physical therapy regimen require specific stretches and alternate heat/ice therapy, while routine desk stretches or prolonged standing may worsen her condition."
+          },
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Does physical therapy exercises at home every other night, not just at weekly sessions"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Follows a prescribed regimented set of daily gentle stretches and rehab activities at home, with no variation or skipping days until further notice",
+              "domain": "health_body"
+            },
+            "reason": "Her physical therapist now prescribes a strict daily regimen for herniated disc recovery, replacing her casual every-other-night approach."
+          },
+          {
+            "from": {
+              "id": "pref_034",
+              "fact": "Relies on a dog walking service for weekday morning walks — only walks her dog herself on weekends or when her schedule allows"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Only walks her dog for up to 15 minutes per day, regardless of weekday or weekend; dog walking service handles any additional exercise for her dog until cleared by therapist",
+              "domain": "health_body"
+            },
+            "reason": "Her physical therapist prohibits vigorous activity, including longer dog walks. This limits her direct walking time and requires more reliance on the walking service."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, curveball: my physical therapist just diagnosed me with a herniated disc after weeks of worsening back pain. I’m still wrapping my head around it, but I’ve got a strict daily regimen of stretches, heat and ice therapy, and I can’t do anything vigorous — even my dog walks are capped at 15 minutes. I’m worried how this is going to affect my workdays and routines. Any advice for adapting, especially at the office?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds tough — it’s great you’re prioritizing rehab, but I can see how it would disrupt your usual flow. For office adaptations, many people benefit from adjustable workstations or dedicated break schedules. Do you have flexibility with your desk setup, meeting formats, or calendar blocks? Would something like shorter desk intervals or remote check-ins help?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve actually started limiting my desk time to 30-minute blocks max. My therapist said hourly stretches aren’t enough, and standard desk stretches could make it worse. Instead, I’m following her prescribed gentle stretches plus heat/ice at set intervals, even during work hours. I’m thinking about requesting to switch as many meetings as possible to standing or short walk-and-talks… if they aren’t all-day sit downs, I think I can manage. What do you think?"
+        },
+        {
+          "role": "assistant",
+          "content": "Those changes make a lot of sense, especially since standing for prolonged periods might not be safe either. Switching meetings to walking or short standing sessions could help, and many companies provide lumbar support cushions for desk chairs to ease back strain. Is your office setup ergonomic enough for your needs now, or would additional supports be beneficial?"
+        },
+        {
+          "role": "user",
+          "content": "I actually bought a lumbar cushion this weekend — it's helped a little, but I definitely still have to avoid any meetings that require sitting all day. The more flexibility, the better. At least my team is used to written guidance and async instructions, so that’s a plus! It’s challenging keeping up with my usual review blocks though. Any thoughts on staying productive with more frequent breaks and therapy sessions carved out?"
+        },
+        {
+          "role": "assistant",
+          "content": "Leveraging your team's independence sounds key here. Maybe delegate more routine tasks and focus on the most complex reviews during your best windows. Have you tried splitting your review work into several micro-blocks across the day, or moving some tasks to times when your therapy is finished and you feel freshest? Also, is your calendar already set up to protect these intervals, or could we rework it to help?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, splitting tasks is the only way right now. Luckily, I already block Friday mornings for solo review work, but I’ve had to add extra calendar holds for my heat/ice therapy before and after work — I don’t skip a single session, even on weekends. That means I have to be realistic about what I can accomplish each day. I’m also sticking to the exact stretches my therapist prescribed, no more improvising or skipping days. It’s strict, but necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "That structure is smart — and might actually make your routines even more intentional. Are there any client responsibilities that require adjustment, or is your team able to handle things like urgent audits, giving you space for recovery? For family routines, are you finding any particular pinch points with your new limitations, or have things smoothed out with the help of your spouse?"
+        },
+        {
+          "role": "user",
+          "content": "Family’s been helpful, but there are definite pinch points. Morning dog walks used to be my exercise and daily routine (rain or shine), but now I can only do 15 minutes at most, and our dog walking service takes care of the rest until I’m cleared. That’s a big shift for me — I never used to let anyone else handle weekday walks. Plus, sticking to the prescribed stretches and rehab at home has forced me to drop my old every-other-night PT routine; now it’s daily and non-negotiable."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you've really reshaped your physical activity, both at work and home. Having the dog walking service fill in is a good adaptation, even if it feels odd at first. For meal prepping or evening routines, is your energy level consistent, or have you needed to tweak those areas as well to fit around your recovery schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Meals and evening routines are mostly holding steady — vegetarian lunches are lower effort, and family dinners remain sacred. The bigger change is that I alternate heat and ice therapy for my back daily now, both before and after work. That’s become a fixed part of my day: I never skip a session, even on weekends. But I have had to drop my old habit of routine stretches every hour at my desk—now it’s only the therapist’s prescribed movements at specific times, and definitely no standing for more than a few minutes unless advised."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a clear, disciplined approach—hopefully it shortens your recovery as well. Are there any concerns about maintaining your professional development or training duties during this window? For example, shifting to more written or remote interactions to reduce the physical strain?"
+        },
+        {
+          "role": "user",
+          "content": "Thankfully, I’ve always preferred written guidance and avoid impromptu verbal instructions, so I’m sticking to that. I’ll be avoiding sit-down training sessions for now and requesting remote options, plus keeping meetings short. As long as I keep my desk blocks brief and supplement with my cushion and therapy, I think I can maintain most of my work and learning goals. It’s just a very different pace."
+        },
+        {
+          "role": "assistant",
+          "content": "Adapting your workflow and routines like this can actually highlight areas for improvement long-term, even post-recovery. If new challenges come up—especially around workload, family obligations, or continued pain—just let me know. I’m happy to help brainstorm solutions as your situation evolves."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her spouse was selected for a summer teaching fellowship in Seattle, requiring him to temporarily relocate for eight weeks and leaving her solely responsible for all household routines and childcare during his absence.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Schedules all daughter-related appointments and activities at least one week ahead to avoid last-minute conflicts while solo parenting",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Limits evening social gatherings during spouse's absence, preferring at-home leisure time with daughter",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Uses a shared digital calendar with her spouse for all family activities — never relies on verbal reminders"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Relies solely on her own digital calendar to track family routines and childcare — suspends use of the shared calendar while spouse is away",
+              "domain": "social_relationships"
+            },
+            "reason": "With her spouse temporarily relocated to Seattle for eight weeks, the shared calendar is unnecessary and potentially confusing, as she is fully responsible for all household and childcare scheduling."
+          },
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Prioritizes family dinner together every weeknight — never schedules work or social activities during that time"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Prioritizes weeknight dinners with her daughter only — work or social activities may overlap, but avoids missing more than two dinners per week",
+              "domain": "social_relationships"
+            },
+            "reason": "With her spouse away, she can no longer have full-family weeknight dinners; her focus shifts to maintaining this ritual with her daughter, but constraints from solo parenting may lead to occasional overlap with work or other responsibilities."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_018",
+            "fact": "Attends local art gallery openings with her spouse quarterly — never misses the annual Portland Open Studios tour",
+            "domain": "leisure_hobbies",
+            "reason": "Her spouse's absence makes these joint gallery visits impossible during the summer fellowship; the circumstance ceases to exist for the duration."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My spouse just left for his summer teaching fellowship in Seattle, so it's just me and our daughter for the next eight weeks. I already feel stretched between work, school routines, and my father's weekend errands. I need help figuring out how to keep things from slipping, especially when audit season is peaking. Any ideas for organizing household and childcare routines so I don't end up double-booked or scrambling last minute?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big transition—the solo juggle can get overwhelming fast, especially with audit deadlines. Have you adjusted your family scheduling methods, like your digital calendar, or are you sticking to the usual shared setup with your spouse?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve suspended the shared family calendar for now—since I’m handling everything, I switched to using just my own digital calendar for all routines and childcare tracking. It’s cleaner, but setting up overlapping reminders is tricky when so much falls on me. Any tips for managing appointments—especially school drop-offs and pickups—so nothing is missed when my schedule gets chaotic?"
+        },
+        {
+          "role": "assistant",
+          "content": "Switching to a solo calendar makes sense for clarity, though I see how reminders could get tangled with work commitments. Have you tried batching school and activity appointments, maybe setting them a standing spot on your calendar each week? Are most of your daughter’s activities booked well in advance, or do you often get requests last minute?"
+        },
+        {
+          "role": "user",
+          "content": "I actually started scheduling all my daughter-related appointments and activities at least a week ahead. That way I minimize last-minute scrambling, which has always been my downfall. For weekend errands with my father, I stick to my usual routine, but evenings are a challenge—between audits and solo parenting, I sometimes have to overlap work and dinner. It’s tough to keep our usual weeknight dinner routine."
+        },
+        {
+          "role": "assistant",
+          "content": "Planning a week out is a great move; gives you more room to react when work flares. On dinner—are you still protecting that time for family, or has your pattern changed now that it’s just you and your daughter? Is it realistic to stick to weeknight dinners without overlap, or do you need to allow for some flex?"
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely more flexible now. I’m prioritizing weeknight dinners with just my daughter, but with audit work and solo parenting I can’t always avoid overlap. My goal is to miss no more than two dinners a week—even if I work late occasionally, I want to keep the ritual going for her sake."
+        },
+        {
+          "role": "assistant",
+          "content": "Sticking to most dinners is a solid anchor for your daughter, even if perfect consistency isn’t possible. Have you made any other changes? For example, you often attended nonprofit networking events or gallery openings with your spouse—are those still happening, or are you shifting your social plans during this solo stretch?"
+        },
+        {
+          "role": "user",
+          "content": "I’m limiting evening social gatherings now, preferring at-home leisure time with my daughter. Gallery visits with my spouse are on hold for the summer—since he’s away, there’s no way to keep up our quarterly tradition. Hopefully we’ll resume in the fall. For now, evenings are mostly spent reading, prepping for the next day, or doing something low-key with my daughter."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a sensible adjustment—social events are tough to juggle during solo parenting, and traditions can wait until you’re both back. Do you need help with structure for at-home leisure, or are you comfortable finding balance there? Anything else you’re struggling with—meal planning, physical therapy, or keeping up with your own routines?"
+        },
+        {
+          "role": "user",
+          "content": "Most routines are holding up, but the big challenge is keeping everything smooth for my daughter while handling work spikes. I’m meal prepping vegetarian lunches as usual, and standing/stretching to manage my back—those are non-negotiable. The main thing is avoiding last-minute overlaps, so anything that helps me keep school, errands, and work in clear lanes would be great."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re already scheduling a week ahead for your daughter, which is excellent. Maybe try color-coding calendar blocks: one for your daughter’s activities, one for work, one for family/errands. That visual separation can make double-booking more obvious. You could also use time-blocking templates—set certain afternoons solely reserved for school activities, leaving audit work to evenings, and strictly protect Saturday mornings for your father’s errands. Would that fit your current approach?"
+        },
+        {
+          "role": "user",
+          "content": "I think color-coding could really help—I’m used to batching work review blocks, but haven’t done that with family tasks. I already keep Saturday mornings for my father’s errands and grocery runs, so that’s stable. Afternoons for school routines work as long as I remember to check the calendar nightly—which I do. The main adjustment was dropping joint gallery evenings with my spouse, and shifting all scheduling onto my own calendar for clarity."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Shifting scheduling ownership and pausing certain traditions are smart adaptations. If color-coding and time-blocking make things clearer, you’ll likely catch conflicts early and carve out downtime as needed. Can I help set up template blocks or suggest flexible at-home evening routines for you and your daughter during these next eight weeks?"
+        },
+        {
+          "role": "user",
+          "content": "Template blocks would be useful—especially for busy audit weeks. And any ideas for simple, engaging evening routines with my daughter would be great, since we’ll be home more. Thanks for helping me rework all this—it’s a lot, but I think I’m getting a handle on it."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re managing a lot, and your proactive changes are laying a solid foundation. For template blocks, start with fixed slots for school pickups, errands, meals, and set a ‘no work’ zone for at-home time with your daughter. For evening routines: collaborative meal prep, themed reading nights, board games or mini craft projects can keep things fun without much prep. If you need templates or activity lists, just let me know—I’m here to support you."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After a routine cholesterol check, her doctor prescribed medication for high LDL levels and advised her to avoid all fried and processed foods, requiring major changes in her meal prepping and family dinner menus.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_049",
+            "fact": "Plans weeknight family dinners around heart-healthy, non-fried, minimally processed recipes — introduces new plant-based dishes and avoids serving traditional comfort foods unless approved by her doctor",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Carefully reads nutrition labels for all grocery items, rejecting foods with added trans fats or overly processed ingredients",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Only meal preps vegetarian lunches for workdays; avoids buying lunch from nearby cafes"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Preps strictly low-cholesterol, non-fried, unprocessed vegetarian lunches for workdays — excludes all fried and processed foods, and avoids café options to ensure compliance",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor's prescription for cholesterol medication comes with a directive to avoid all fried and processed foods. This requires her to overhaul her vegetarian meal prep to focus only on dishes that align with these new, stricter health requirements."
+          },
+          {
+            "from": {
+              "id": "pref_037",
+              "fact": "Prepares simple, reheatable dinners for her father in advance three times a week, adjusting meal options for his post-stroke dietary needs"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Prepares only low-cholesterol, non-fried, unprocessed dinners for her father in advance, aligning meal prep for both their health needs",
+              "domain": "daily_routines"
+            },
+            "reason": "The doctor's advice to avoid all fried and processed foods for her own cholesterol means she will likely synchronize family and her father’s meals to streamline prep and ensure consistency with her new health regime."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Just got my cholesterol results back and it's official — my doctor put me on medication and gave me pretty strict orders to avoid all fried and processed foods. I knew it was coming, but it's still a lot to digest. I'm trying to figure out how to completely overhaul my meal prepping for work and dinner at home. Can you help me brainstorm some realistic vegetarian meal ideas that actually fit these new rules? I'm especially worried about keeping weekday lunches interesting and easy to prep."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, that sounds like a big adjustment. Let’s get specific: for vegetarian lunches, are there ingredients you already love, or ones you want to avoid besides fried and processed foods? And are you prepping for just yourself, or for family too?"
+        },
+        {
+          "role": "user",
+          "content": "Right now it's primarily just lunches for me — I’ve always been strict about prepping vegetarian meals for workdays and never buying from nearby cafes, but I’ll need to go further now. Everything has to be low-cholesterol, zero fried, and nothing processed. That means even those veggie burgers or frozen falafels I used sometimes are out. The prep has to be simple, since I’m squeezed for time. Salads get boring fast, and I need things that actually keep me full through audit crunch days."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for clarifying! So salads aren’t your favorite standby, and it sounds like frozen veggie entrees are disqualified now. What about hearty grain bowls with brown rice or quinoa, roasted veggies (no oil or minimal), and a plant-based protein like lentils or chickpeas? You can add flavor with fresh herbs and lemon instead of processed dressings. Would that work for you, or do you want more variety?"
+        },
+        {
+          "role": "user",
+          "content": "I like the idea, but I’ll need to stick to even stricter prep — I’m reading all nutrition labels now, and anything with added trans fats or overly processed ingredients gets rejected. I’m also prepping all family dinners around heart-healthy, non-fried, minimally processed recipes now, and introducing new plant-based dishes for everyone. My daughter likes lentils, so that’s a plus, but my spouse isn’t a fan of quinoa. Oh, and I actually have to keep meals simple enough that I can batch prep for my father too—he moved nearby after my mom passed, and I’m handling his dinners three times a week, so I need the recipes to work for him as well."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot to juggle! So you’re prepping for yourself, your family, and your father, all with overlapping but strict dietary needs. If quinoa isn’t popular, what about whole wheat pasta, barley, or even sweet potatoes as a base? You could do a Mediterranean-style bowl: roasted chickpeas (light olive oil if allowed), tomatoes, cucumbers, parsley, and whole wheat pita. For your father, do you have to make any additional adjustments for his health, or will these heart-healthy meals fit the bill for him too?"
+        },
+        {
+          "role": "user",
+          "content": "Great question — I used to adjust for his post-stroke dietary needs but now, after my own new cholesterol restrictions, I’m prepping only low-cholesterol, non-fried, unprocessed dinners for him in advance. I figured synchronizing the meal prep would save time and keep things consistent. So I need lunch and dinner recipes that work for him and us, preferably plant-based, and nothing that requires complicated or high-fat sauces. I also avoid traditional comfort foods unless my doctor gives the green light; my daughter is still adjusting to that one!"
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move on streamlining meal prep for everyone. Since you’re avoiding high-fat sauces and classic comfort foods, have you tried plant-based curries made with a tomato base instead of coconut milk? Or soups like lentil or minestrone — loaded with veggies, beans, and herbs, but no processed ingredients or fried elements. They reheat well, can be seasoned to taste, and work for batch prepping. Would those fit into your rotation, or do you want to steer away from soups and stews?"
+        },
+        {
+          "role": "user",
+          "content": "Soups work pretty well for batch prep, so I’d be open to adding those. I just need to make sure the seasoning is flavorful enough—you’re right about using herbs and lemon, since creamy or salty store-bought soups are off-limits now. My main challenge is keeping things interesting through the week since I’m prepping strictly low-cholesterol, non-fried, unprocessed vegetarian lunches for workdays—basically nothing fried or processed can even cross my grocery list, and I’m careful with labels so I don’t slip up. If you have any creative plant-based lunches that check all those boxes, I’d really appreciate some fresh ideas."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve got a solid plan in place already! Here are a few lunch ideas you might like:\n\n1. Chickpea salad wraps: chickpeas, celery, carrots, diced apples, and fresh dill, wrapped in whole wheat tortillas. \n2. Roasted vegetable and barley salad: roast broccoli, carrots, and mushrooms (minimal oil), toss with cooked barley and a lemon-tahini dressing made from scratch (no processed components).\n3. Stuffed bell peppers: fill with lentils, tomatoes, spinach, and brown rice; bake and store for easy reheating.\n4. Sweet potato and black bean bowl: steamed sweet potatoes, black beans, spinach, and avocado—season with smoked paprika and lime juice.\n5. Homemade minestrone soup: beans, carrots, celery, onion, garlic, diced tomatoes, and spinach.\n\nEach can be batched, keeps well, and avoids processed foods. Do any of those jump out at you, or would you like help customizing for your daughter or your father?"
+        },
+        {
+          "role": "user",
+          "content": "These are really helpful! I think the chickpea salad wraps and stuffed peppers could work well for my daughter and father, too. The lemon-tahini dressing is a clever idea if I make it from scratch—store-bought ones always sneak in weird oils or additives, so those are out. I’ll need to run some options past my spouse since he’s pretty particular about texture, but if I’m careful with the labels and stay plant-based, I think we’ll be able to make it work. Thanks for helping me think through this—feels less overwhelming with a real plan."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "She was promoted to Director of Nonprofit Services, a new role overseeing the entire nonprofit client portfolio at Northwest Ledger, which requires her to transition out of day-to-day client work and focus on high-level business development, firm strategy, and external partnership meetings.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Attends afternoon meetings and partnership briefings with nonprofit sector leaders at least twice a month — avoids scheduling during school pick-up hours.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Blocks Tuesday and Thursday mornings for uninterrupted strategy planning — never schedules client-focused work or team trainings during these blocks.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Reviews industry news and nonprofit sector updates over breakfast each weekday to inform business development and partnership decisions.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Delegates routine data entry to junior accountants; only personally handles complex reconciliations"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Delegates all client-related accounting tasks, including complex reconciliations, to her team; focuses solely on business development, strategy, and external partnerships.",
+              "domain": "work_habits"
+            },
+            "reason": "Her promotion to Director of Nonprofit Services requires her to step away from day-to-day client work in favor of firm-wide responsibilities, meaning she no longer personally handles even complex reconciliations."
+          },
+          {
+            "from": {
+              "id": "pref_028",
+              "fact": "Schedules one-on-one check-ins with junior accountants from other departments every week, beyond her regular team"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Schedules one-on-one check-ins with department leads and senior staff monthly, no longer meeting regularly with junior accountants outside her direct reports.",
+              "domain": "work_habits"
+            },
+            "reason": "Her role shift to firm-wide oversight requires direct communication with senior staff and department leads; individual meetings with junior accountants are now impractical and outside her new focus."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_030",
+            "fact": "Uses Sunday evenings exclusively for drafting interim audit reports and prepping for client presentations — mentorship planning deferred to weekdays after client work hours",
+            "domain": "daily_routines",
+            "reason": "Her new role removes responsibility for interim audit report drafting and client presentations; Sunday evenings are no longer used for client report prep."
+          },
+          {
+            "id": "pref_032",
+            "fact": "Skips evening networking events entirely during the six-week interim audit period, even if no client deadlines fall that week",
+            "domain": "work_habits",
+            "reason": "She no longer participates directly in interim audits; this preference is obsolete in her new director role."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So — I’ve officially stepped into Director of Nonprofit Services as of last week. It’s exciting, but honestly, jumping straight into strategic meetings and partnership calls is a sharp turn from client audits and hands-on work. I could use some help building a routine that keeps me on top of business development, but still leaves room for my family and health stuff. Where do I even start?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That’s a big leap. New director roles usually mean your calendar gets pretty packed, fast. Do you have control over when those meetings happen, or is the schedule mostly dictated by external partners? And how are you currently tracking your priorities — digital tools, planner, sticky notes?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks! There’s a lot more external scheduling now — I set the agenda for strategy blocks, but partnership briefings and sector leader meetings have to fit their calendars, so I’m juggling. I still use my digital calendar for family and work, and update my to-do list every night. One thing: I’m trying to protect Tuesday and Thursday mornings for strategy planning, so nothing client-focused or team training during those blocks. Otherwise, my days can get pretty scattered."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call on the protected mornings. Those focused blocks will help keep strategic projects moving. When partnership meetings pop up, how do you handle conflicts with family routines, like school pick-up? Have you set boundaries for those times yet?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I have to avoid scheduling those briefings during school pick-up hours — that’s non-negotiable for me. My spouse’s schedule is still unpredictable, so those family commitments are a moving target. Afternoons are the best fit for external meetings, as long as they don’t bump against pick-up."
+        },
+        {
+          "role": "assistant",
+          "content": "Balancing external demands with family time is a constant challenge. Sounds like you’re navigating it with clear boundaries. Given your new role, are you still involved in any regular client work, or are you able to fully delegate now?"
+        },
+        {
+          "role": "user",
+          "content": "That’s one major shift — I now delegate all client-related accounting tasks, including complex reconciliations. I’m focused solely on business development, strategy, and external partnerships. It’s weird not to be hands-on, but I know it’s necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change, but it frees you up to steer the direction of the firm. How does that affect your interaction with your team? Still checking in with your junior accountants regularly, or has that shifted to senior staff now?"
+        },
+        {
+          "role": "user",
+          "content": "That’s another adjustment — I only do one-on-one check-ins with department leads and senior staff monthly. I don’t meet with junior accountants outside my direct reports anymore. It’s more practical now that I’m overseeing the whole nonprofit portfolio."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. Connecting with senior staff will keep you informed without getting lost in day-to-day details. Are there any new habits or routines you’re building into your mornings or evenings to support your director responsibilities and industry focus?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely — I’ve started reviewing industry news and nonprofit sector updates over breakfast each weekday. It helps inform business development and partnership decisions, and keeps me sharp for afternoon briefings."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart. Building sector knowledge into your mornings is a strong foundation for high-level work. Out of curiosity, does your Sunday evening routine still look the same? Are you still prepping audit reports and client presentations, or has that responsibility gone now?"
+        },
+        {
+          "role": "user",
+          "content": "No, that’s changed — I dropped Sunday evening audit report prep and client presentation planning completely. With the new role, I don’t handle interim audits or presentations anymore, so Sundays are free from client work."
+        },
+        {
+          "role": "assistant",
+          "content": "That should help reclaim some personal time. Speaking of evenings, are you still skipping networking events during interim audit periods, or has that policy evolved with your director-level workload?"
+        },
+        {
+          "role": "user",
+          "content": "Good question — I actually dropped that habit too. I’m no longer directly involved in interim audits, so skipping events during audit periods is irrelevant now. My focus is on building external partnerships rather than audit deadlines."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid shift toward a true leadership role. With these changes, do you feel like your weekly structure supports both your professional responsibilities and family priorities, or is there still friction you want to address?"
+        },
+        {
+          "role": "user",
+          "content": "It’s coming together, but I’m still working out some kinks with energy and focus— especially managing strategy planning and industry research in between family commitments. But knowing my boundaries and routines are set helps. Thanks for helping me talk it through!"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Northwest Ledger introduced a firm-wide hybrid work policy requiring all directors, including her, to be onsite three days a week for cross-departmental collaboration, eliminating her previous flexibility to work remotely during audit-heavy periods.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Prepares all family members’ next-day lunches and snacks the night before in anticipation of early commutes and limited kitchen time on in-office days.",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_058",
+            "fact": "Chooses to carpool with a colleague on in-office days to avoid parking stress and use the commuting time for decompressing or peer support.",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_031",
+              "fact": "Keeps her work devices and email open until 10pm during intensive audit weeks — sometimes works from her bedroom for late-night client revisions"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Leaves all work devices at the office on in-office days and avoids work emails after her commute home — does not perform client work from her bedroom on required office days.",
+              "domain": "daily_routines"
+            },
+            "reason": "With a firm policy requiring directors onsite three days a week, she can't bring her office equipment home as freely and disconnects from work after her commute to preserve work-life boundaries. Working from her bedroom is no longer feasible on mandatory onsite days."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Northwest Ledger rolled out the new hybrid policy last week — all directors have to be onsite three days now. It’s pretty disruptive, especially since we’re mid-audit for our biggest nonprofit client. I used to just stack as many work-from-home days as needed when things got busy, but that flexibility’s gone. Any ideas for staying organized — and sane — with these office days now fixed?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge shift, especially with audit season and a big new client on your plate. With less flexibility, routines become even more important. Are you able to plan in advance which office days you’ll be onsite, or is it a set schedule for all directors? Also, what does your typical work-from-home setup look like — anything you want to replicate on office days?"
+        },
+        {
+          "role": "user",
+          "content": "Right now, we can pick our three days, but they have to be consecutive for team collaboration. I liked working late at home during audits, especially in my bedroom — laptop, extra monitor, coffee. But since I can’t bring devices home as freely, I’ve started leaving all work stuff at the office on onsite days and avoiding emails after my commute home. It’s a hard stop, otherwise the boundaries blur too quickly."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart — physically leaving work behind helps reinforce the boundary. Not having your email or devices at home means evenings are actually yours. With a set block of in-office days, prepping for those is key. Have your mornings changed with earlier commutes or less kitchen time? Any new routines to ease the transition for you and your family?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely — the earlier starts are tricky. Now I prep all lunches and snacks for the whole family the night before, since mornings are too rushed on office days. It's not just my daughter’s school lunch—I pack everyone’s, including mine, since I don’t buy lunch near the office anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach and takes some morning stress off your plate. Packing vegetarian lunches in advance also fits your health goals. Do you drive in, or commute another way? Office parking in Portland can be tough, so any new strategies there?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, parking was a headache — especially with everyone back onsite. I started carpooling with a colleague on those days. It’s nice not worrying about parking, and I use that time to decompress or chat about work stuff. Honestly, having someone to talk to in the morning helps with the transition."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great—carpooling adds social support and makes the commute less stressful. Now that you’ve got this new structure, is anything else feeling strained? For example, fitting in physical therapy exercises or keeping family routines intact?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, meal prepping plus carpooling have helped a lot on office days. PT is squeezed in, but I stick to it at home every other night. Family dinner still happens—never schedule work then. The biggest change has really been learning not to bring my work home. I used to have my laptop with me late into the night during audit-heavy weeks (sometimes working from the bedroom), but now, once I’m home from the office, that’s it. I don’t touch any client work until I’m back onsite or logged in from my home office on remote days."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s impressive discipline, especially in audit season. Setting that physical and mental separation is crucial. As you adjust, how are your team and family handling it? Any friction or unexpected benefits from these new boundaries?"
+        },
+        {
+          "role": "user",
+          "content": "The team’s adapting—they like clear written guidance, and I still block out Friday mornings for review. My spouse appreciates the predictable evenings. The only thing I sometimes miss is sneaking in late-night client revisions when everything was at my fingertips, but I needed to stop working from my bedroom anyway. I feel more present at home now."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve made thoughtful adjustments—and prioritized both work and family. If you ever hit a bottleneck with audit workloads, we can brainstorm new ways to manage deadlines or delegate. Want help setting up reminders for meal prep or tracking carpool arrangements?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks, I think I’ve got the logistics pretty dialed in for now. I use a shared digital calendar for all family stuff, including carpool days, so nothing slips. But if you have suggestions for staying on top of nonprofit compliance changes without getting overwhelmed, I’m all ears."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her doctor diagnosed her with sleep apnea after a sleep study, prescribing nightly use of a CPAP machine and advising her to adhere to regular sleep schedules to manage fatigue and prevent health complications.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_060",
+            "fact": "Shuts off all screens and electronic devices at least 45 minutes before bedtime to aid sleep quality and CPAP adjustment.",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_061",
+            "fact": "Begins CPAP machine setup and bedroom wind-down routine at exactly the same time each night, allowing no more than 20 minutes of variation, to maintain sleep schedule consistency.",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_022",
+              "fact": "Reviews and updates her to-do list nightly before bed — never relies on memory alone"
+            },
+            "to": {
+              "id": "pref_059",
+              "fact": "Completes to-do list review and planning immediately after dinner, not just before bed, to allow enough wind-down time before CPAP use and support a consistent earlier bedtime.",
+              "domain": "daily_routines"
+            },
+            "reason": "Managing sleep apnea with a CPAP machine and adhering to a regular sleep schedule requires an earlier, set bedtime routine. To avoid stimulating tasks before bed, she reschedules her nightly to-do list and planning to earlier in the evening and allows herself a proper wind-down period."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I got my sleep study results and now I've officially been diagnosed with sleep apnea. My doctor just set me up with a CPAP, and I have to stick to a regular sleep schedule, which is not exactly my specialty. I'm kind of worried about the CPAP routine messing up my evenings—not to mention adjusting to that mask. Any practical advice for actually making this sustainable? Especially since work is all over the place during audit season."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a huge adjustment, especially with the audit rush and family obligations on top. Building a consistent bedtime can be tough, but having a strict wind-down routine can help with CPAP compliance. Do you already have a set sequence for evenings, or is it more variable depending on work and family?"
+        },
+        {
+          "role": "user",
+          "content": "It's been pretty variable, honestly. Usually, I'd review my to-do list and prep for the next workday right before bed, which worked for mental closure—not great for winding down, though. I think I need to shift that earlier. Otherwise, I won't have enough time to relax before dealing with the CPAP setup and getting to sleep at the same time every night."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes a lot of sense. Moving your planning routine earlier could make the transition less stressful and allow for a proper wind-down. Maybe right after dinner? That way, you get the mental closure but leave enough buffer before bedtime. How does your family factor in—are weeknight dinners together still working for you, or are you needing to adjust those too?"
+        },
+        {
+          "role": "user",
+          "content": "Weeknight dinners together are non-negotiable. I always prioritize that, no matter what—it's our little anchor. But I think I'll start reviewing my to-do list and planning immediately after dinner rather than right before bed. That should give me some calm in the evening for adjusting to my new CPAP routine."
+        },
+        {
+          "role": "assistant",
+          "content": "Great, anchoring it right after dinner seems like a good middle ground. As you figure out your wind-down, do you already have rules about screens or devices before bed? Or is that something you might need to tweak for better sleep quality, especially now?"
+        },
+        {
+          "role": "user",
+          "content": "I'm realizing I'll need to get stricter here. My doctor emphasized cutting out screens well before bedtime, both to help with sleep and to make CPAP adjustment smoother. So I'm planning to shut down all screens and electronic devices at least 45 minutes before bed—no laptop, phone, or TV after that point."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move, and the extra tech-free time will probably help your sleep as much as the CPAP itself. Are you planning to set up the CPAP and start your bedroom wind-down at a fixed time every night, or will it depend on the day’s schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely fixed! The doctor was pretty clear—consistency is just as important as the machine itself. I'm going to begin the CPAP setup and start my wind-down routine at exactly the same time every night, with no more than a 20-minute variation. Otherwise, the sleep schedule gets thrown off."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s the right approach for building a new habit, especially with sleep apnea. To keep that consistency, have you had any trouble fitting in your evening routines—like family time, prepping for work, or your personal hobbies—or is this shift mostly impacting your post-dinner routine?"
+        },
+        {
+          "role": "user",
+          "content": "So far, nothing is impacting family dinners or Sunday afternoon reading; those stay protected. The main shift is moving my work planning up earlier, so I have a buffer for winding down and starting CPAP at a set time. If anything, it’s made me even more intentional about not letting screens creep back in late at night."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re making solid adjustments. For audit season, you could use reminders right after dinner for your to-do reviews, so you don’t forget in the chaos. Let me know if you’d like tips on structuring the evening routine—for instance, soothing offline activities or prepping the bedroom for CPAP use."
+        },
+        {
+          "role": "user",
+          "content": "Actually, I could use some ideas for offline wind-down activities. Screens are easy, but cutting them out leaves a little gap. I read Sundays, but I don’t want to mix that up with other nights. Any suggestions?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Since you want to keep your Sunday reading routine intact, you might try gentle stretches, journaling, or low-key crafts like knitting—since you like small projects. Or simply prepping the next day’s clothing for the family, if you’re not already doing that earlier. The key is something calming and screen-free."
+        },
+        {
+          "role": "user",
+          "content": "I already prep outfits for everyone each evening, so that's handled. Small knitting projects could work—just hats or scarves, nothing too ambitious. Journaling sounds doable too. Thanks for the ideas!"
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to help! Sounds like you’ve got a solid plan for evenings that’ll support your new sleep schedule and CPAP. Let me know if you need more tips as you fine-tune your routine or face audit season crunch. Good luck with the adjustment—feel free to reach out anytime."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her daughter's elementary school extended after-school program was unexpectedly discontinued, requiring daily pickup by 3:00pm for the foreseeable future.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_063",
+            "fact": "Blocks her calendar every weekday from 2:30pm–4pm exclusively for school pickup and commute, declining all work and social commitments during this time.",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_064",
+            "fact": "Prefers quick, weeknight dinners (30 minutes or less) to accommodate the early school pickup and homework time, no longer experimenting with new recipes or elaborate meals on weekdays.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_053",
+              "fact": "Attends afternoon meetings and partnership briefings with nonprofit sector leaders at least twice a month — avoids scheduling during school pick-up hours."
+            },
+            "to": {
+              "id": "pref_062",
+              "fact": "No longer attends afternoon meetings or partnership briefings in person; participates virtually or reschedules all such events to mornings to comply with daily 3pm school pickup.",
+              "domain": "work_habits"
+            },
+            "reason": "Her daughter's after-school program was discontinued, requiring daily pickup at 3pm. She must avoid all obligations in the afternoon and shift meetings to mornings or virtual formats."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use your help figuring out a juggling act. My daughter's after-school program just got discontinued—literally with a week's notice—so now I'm on daily pickup at 3pm. Everything's kind of up in the air, especially with work. What adjustments would you recommend for managing the calendar and not dropping the ball with my team or clients?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big change, especially at short notice. With your client load and team responsibilities, blocking off the pickup window is important. Have you started marking afternoons as unavailable or shifting meetings yet? What part of your workday feels most at risk — client calls, team check-ins, or review time?"
+        },
+        {
+          "role": "user",
+          "content": "I started blocking my calendar every weekday from 2:30pm to 4pm for school pickup and commute, so I don't accidentally book anything. I used to attend partnership briefings and sector meetings in the afternoon, but that's not an option now—I’m only able to join those virtually or move them to mornings. I worry clients might feel less connected."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move on calendar blocks—that helps prevent overlap. For client connection, could you schedule dedicated morning check-ins or send updates via email before lunch? Also, since you're supervising junior accountants, could you delegate more afternoon communication, or does that leave too much responsibility with them?"
+        },
+        {
+          "role": "user",
+          "content": "I already delegate most routine stuff—data entry, quick check-ins—to my juniors. But complex reconciliations and big client decisions still need me. Moving calls to mornings works, but my review work gets squeezed, especially Fridays when I block for uninterrupted focus. I guess mornings are going to get crowded now."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like prioritizing morning bandwidth will be key. Is there flexibility to batch similar tasks—like grouping all client briefings early in the week? Or could you shift any review work to late afternoons after pickup if you have evening energy, or is that dinner/homework time?"
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely dinner and homework time after pickup; I don’t plan work or social stuff during family evenings. With the earlier school pickup, I’m sticking to quick weeknight dinners—no experimenting with elaborate recipes anymore, just 30 minutes or less to get everyone fed and then homework done."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, especially with less buffer time in the afternoon. For meals, maybe you can batch-prep a few vegetarian dinners on Sundays so weeknights stay simple. Would a recurring virtual team huddle in the morning help streamline communications, or would that overload the start of your day?"
+        },
+        {
+          "role": "user",
+          "content": "Sunday afternoon is my reading time, so I don’t use that for chores or meal prep. But prepping some basics Saturday morning could work—I usually grocery shop then anyway. And I like the idea of a short virtual team check-in; as long as it’s not on Fridays, my review block stays sacred. I’ll adjust things and see how it goes."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect—leveraging Saturday for prep can free up weeknights. And protecting your Friday review block ensures you can stay sharp on complex reconciliations. With afternoons carved out for pickup and commute, your new schedule should help you stay present for family while keeping client and team needs covered. Need help with quick vegetarian dinner ideas, or is your meal prep routine good for now?"
+        },
+        {
+          "role": "user",
+          "content": "My meal prep routine is solid, thanks. It’s really just about keeping everything on track and making sure those midday shifts don’t overwhelm my mornings. I appreciate your help—this was a good reality check, and I think I have a plan for managing the school pickup change now."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_004",
+        "fact": "Attends at least one evening networking event each month, but never on audit deadlines week",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Reviews nonprofit financial guidelines monthly to stay current — never relies solely on prior experience for new client issues",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Limits caffeine to one cup of coffee per day — never drinks coffee after 2pm to avoid sleep disruption",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_011",
+        "fact": "Does video calls with her college friends every other Sunday evening instead of group texts",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Prefers shorter, one-on-one catch ups with friends over large group gatherings",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Reserves Sunday afternoons for reading historical fiction — never schedules chores or work during this time",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Plans one nature day trip per month with her daughter — never repeats the same hiking trail twice in a season",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Only knits small accessories, like hats or scarves — never tackles large projects like sweaters",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Listens exclusively to true crime podcasts during solo errands — never music or other genres",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Prepares the next day’s outfits for the family each evening — never leaves it until morning",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Shops for groceries early Saturday mornings to avoid crowds — never goes on weekday evenings",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Pays all bills online on the first of each month — never waits for paper statements or mails checks",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Blocks Friday mornings for mentorship sessions and junior staff coaching — now schedules review work in afternoons or other weekdays",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Conducts live interactive training sessions, supplementing written guidance, as part of mentorship responsibilities",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_033",
+        "fact": "Postpones family weeknight dinners to weekends during audit crunch, relying on quick meals or individual schedules",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_035",
+        "fact": "Now arranges her father's groceries and errands via delivery services throughout the week, supplementing with short evening visits as needed",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Schedules a daily check-in visit with her father every evening after work, never missing two consecutive days",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_038",
+        "fact": "Stands and performs prescribed gentle stretching and heat/ice therapy at designated intervals — avoids routine hourly stretches and limits desk time to 30-minute blocks until cleared for normal activity",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Follows a prescribed regimented set of daily gentle stretches and rehab activities at home, with no variation or skipping days until further notice",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_040",
+        "fact": "Only walks her dog for up to 15 minutes per day, regardless of weekday or weekend; dog walking service handles any additional exercise for her dog until cleared by therapist",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_041",
+        "fact": "Alternates heat and ice therapy for her back daily before and after work — never skips a session even on weekends",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_042",
+        "fact": "Uses a lumbar support cushion and avoids meetings requiring all-day sitting; requests standing or walk-and-talk meetings when possible",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_043",
+        "fact": "Relies solely on her own digital calendar to track family routines and childcare — suspends use of the shared calendar while spouse is away",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_044",
+        "fact": "Prioritizes weeknight dinners with her daughter only — work or social activities may overlap, but avoids missing more than two dinners per week",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_045",
+        "fact": "Schedules all daughter-related appointments and activities at least one week ahead to avoid last-minute conflicts while solo parenting",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_046",
+        "fact": "Limits evening social gatherings during spouse's absence, preferring at-home leisure time with daughter",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_047",
+        "fact": "Preps strictly low-cholesterol, non-fried, unprocessed vegetarian lunches for workdays — excludes all fried and processed foods, and avoids café options to ensure compliance",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_048",
+        "fact": "Prepares only low-cholesterol, non-fried, unprocessed dinners for her father in advance, aligning meal prep for both their health needs",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_049",
+        "fact": "Plans weeknight family dinners around heart-healthy, non-fried, minimally processed recipes — introduces new plant-based dishes and avoids serving traditional comfort foods unless approved by her doctor",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_050",
+        "fact": "Carefully reads nutrition labels for all grocery items, rejecting foods with added trans fats or overly processed ingredients",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_051",
+        "fact": "Delegates all client-related accounting tasks, including complex reconciliations, to her team; focuses solely on business development, strategy, and external partnerships.",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_052",
+        "fact": "Schedules one-on-one check-ins with department leads and senior staff monthly, no longer meeting regularly with junior accountants outside her direct reports.",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_054",
+        "fact": "Blocks Tuesday and Thursday mornings for uninterrupted strategy planning — never schedules client-focused work or team trainings during these blocks.",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_055",
+        "fact": "Reviews industry news and nonprofit sector updates over breakfast each weekday to inform business development and partnership decisions.",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_056",
+        "fact": "Leaves all work devices at the office on in-office days and avoids work emails after her commute home — does not perform client work from her bedroom on required office days.",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_057",
+        "fact": "Prepares all family members’ next-day lunches and snacks the night before in anticipation of early commutes and limited kitchen time on in-office days.",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_058",
+        "fact": "Chooses to carpool with a colleague on in-office days to avoid parking stress and use the commuting time for decompressing or peer support.",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_059",
+        "fact": "Completes to-do list review and planning immediately after dinner, not just before bed, to allow enough wind-down time before CPAP use and support a consistent earlier bedtime.",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_060",
+        "fact": "Shuts off all screens and electronic devices at least 45 minutes before bedtime to aid sleep quality and CPAP adjustment.",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_061",
+        "fact": "Begins CPAP machine setup and bedroom wind-down routine at exactly the same time each night, allowing no more than 20 minutes of variation, to maintain sleep schedule consistency.",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_062",
+        "fact": "No longer attends afternoon meetings or partnership briefings in person; participates virtually or reschedules all such events to mornings to comply with daily 3pm school pickup.",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_063",
+        "fact": "Blocks her calendar every weekday from 2:30pm–4pm exclusively for school pickup and commute, declining all work and social commitments during this time.",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_064",
+        "fact": "Prefers quick, weeknight dinners (30 minutes or less) to accommodate the early school pickup and homework time, no longer experimenting with new recipes or elaborate meals on weekdays.",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Blocks Friday mornings for uninterrupted review work — never schedules meetings or calls before noon on Fridays",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "The mandatory mentorship program requires regular training for junior staff, and her previously uninterrupted Friday mornings are now needed for scheduled mentorship sessions and coaching, displacing her review block."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Delegates routine data entry to junior accountants; only personally handles complex reconciliations",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_051",
+        "reason": "Her promotion to Director of Nonprofit Services requires her to step away from day-to-day client work in favor of firm-wide responsibilities, meaning she no longer personally handles even complex reconciliations."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Prepares detailed written guidance for her team — avoids impromptu verbal instructions",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_027",
+        "reason": "Leading a mentorship program requires her to deliver live, interactive coaching and training sessions for junior accountants across departments, not just written instructions."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Stands and stretches for five minutes every hour at her desk — never sits for more than two hours straight",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_038",
+        "reason": "The herniated disc diagnosis and strict physical therapy regimen require specific stretches and alternate heat/ice therapy, while routine desk stretches or prolonged standing may worsen her condition."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Only meal preps vegetarian lunches for workdays; avoids buying lunch from nearby cafes",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_047",
+        "reason": "Her doctor's prescription for cholesterol medication comes with a directive to avoid all fried and processed foods. This requires her to overhaul her vegetarian meal prep to focus only on dishes that align with these new, stricter health requirements."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Walks her dog every morning regardless of weather — never uses a dog walking service",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_034",
+        "reason": "Her father's stroke means she must provide daily in-person support for him, reducing her morning availability for personal routines like dog walking."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Does physical therapy exercises at home every other night, not just at weekly sessions",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_039",
+        "reason": "Her physical therapist now prescribes a strict daily regimen for herniated disc recovery, replacing her casual every-other-night approach."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Always organizes her father’s grocery shopping and errands on Saturday visits — never delegates them to delivery services",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_035",
+        "reason": "She must provide daily in-person support to her father, making it impractical to handle all errands in a single long Saturday visit—delivery helps meet increased needs."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Prioritizes family dinner together every weeknight — never schedules work or social activities during that time",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_044",
+        "reason": "With her spouse away, she can no longer have full-family weeknight dinners; her focus shifts to maintaining this ritual with her daughter, but constraints from solo parenting may lead to occasional overlap with work or other responsibilities."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Uses a shared digital calendar with her spouse for all family activities — never relies on verbal reminders",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_043",
+        "reason": "With her spouse temporarily relocated to Seattle for eight weeks, the shared calendar is unnecessary and potentially confusing, as she is fully responsible for all household and childcare scheduling."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Attends local art gallery openings with her spouse quarterly — never misses the annual Portland Open Studios tour",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "Her spouse's absence makes these joint gallery visits impossible during the summer fellowship; the circumstance ceases to exist for the duration."
+      },
+      {
+        "id": "pref_022",
+        "fact": "Reviews and updates her to-do list nightly before bed — never relies on memory alone",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_059",
+        "reason": "Managing sleep apnea with a CPAP machine and adhering to a regular sleep schedule requires an earlier, set bedtime routine. To avoid stimulating tasks before bed, she reschedules her nightly to-do list and planning to earlier in the evening and allows herself a proper wind-down period."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Shuts down all work devices and emails by 8pm — never brings her laptop into the bedroom",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_031",
+        "reason": "The compressed six-week audit deadline requires occasional late-night report revisions and client correspondence, making her old cutoff impractical during this period."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Schedules one-on-one check-ins with junior accountants from other departments every week, beyond her regular team",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_052",
+        "reason": "Her role shift to firm-wide oversight requires direct communication with senior staff and department leads; individual meetings with junior accountants are now impractical and outside her new focus."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Sets aside Sunday evenings for mentorship session planning — blocks this time from family and leisure activities",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "The client’s urgent mid-year audit and compressed reporting deadline requires intensive evening prep, displacing mentorship planning to other times. Audit work is prioritized for Sunday evenings until audit concludes."
+      },
+      {
+        "id": "pref_030",
+        "fact": "Uses Sunday evenings exclusively for drafting interim audit reports and prepping for client presentations — mentorship planning deferred to weekdays after client work hours",
+        "domain": "daily_routines",
+        "created_at_session": 1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "Her new role removes responsibility for interim audit report drafting and client presentations; Sunday evenings are no longer used for client report prep."
+      },
+      {
+        "id": "pref_031",
+        "fact": "Keeps her work devices and email open until 10pm during intensive audit weeks — sometimes works from her bedroom for late-night client revisions",
+        "domain": "daily_routines",
+        "created_at_session": 1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_056",
+        "reason": "With a firm policy requiring directors onsite three days a week, she can't bring her office equipment home as freely and disconnects from work after her commute to preserve work-life boundaries. Working from her bedroom is no longer feasible on mandatory onsite days."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Skips evening networking events entirely during the six-week interim audit period, even if no client deadlines fall that week",
+        "domain": "work_habits",
+        "created_at_session": 1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "She no longer participates directly in interim audits; this preference is obsolete in her new director role."
+      },
+      {
+        "id": "pref_034",
+        "fact": "Relies on a dog walking service for weekday morning walks — only walks her dog herself on weekends or when her schedule allows",
+        "domain": "health_body",
+        "created_at_session": 2,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_040",
+        "reason": "Her physical therapist prohibits vigorous activity, including longer dog walks. This limits her direct walking time and requires more reliance on the walking service."
+      },
+      {
+        "id": "pref_037",
+        "fact": "Prepares simple, reheatable dinners for her father in advance three times a week, adjusting meal options for his post-stroke dietary needs",
+        "domain": "daily_routines",
+        "created_at_session": 2,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_048",
+        "reason": "The doctor's advice to avoid all fried and processed foods for her own cholesterol means she will likely synchronize family and her father’s meals to streamline prep and ensure consistency with her new health regime."
+      },
+      {
+        "id": "pref_053",
+        "fact": "Attends afternoon meetings and partnership briefings with nonprofit sector leaders at least twice a month — avoids scheduling during school pick-up hours.",
+        "domain": "work_habits",
+        "created_at_session": 6,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_062",
+        "reason": "Her daughter's after-school program was discontinued, requiring daily pickup at 3pm. She must avoid all obligations in the afternoon and shift meetings to mornings or virtual formats."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:34:05.287469"
+}

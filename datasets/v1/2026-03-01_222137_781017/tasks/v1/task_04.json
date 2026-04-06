@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_1d54ef70",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_040",
+        "fact": "Only walks her dog for up to 15 minutes per day, regardless of weekday or weekend; dog walking service handles any additional exercise for her dog until cleared by therapist",
+        "supersedes": {
+          "id": "pref_034",
+          "fact": "Relies on a dog walking service for weekday morning walks — only walks her dog herself on weekends or when her schedule allows"
+        }
+      },
+      {
+        "id": "pref_052",
+        "fact": "Schedules one-on-one check-ins with department leads and senior staff monthly, no longer meeting regularly with junior accountants outside her direct reports.",
+        "supersedes": {
+          "id": "pref_028",
+          "fact": "Schedules one-on-one check-ins with junior accountants from other departments every week, beyond her regular team"
+        }
+      },
+      {
+        "id": "pref_005",
+        "fact": "Reviews nonprofit financial guidelines monthly to stay current — never relies solely on prior experience for new client issues"
+      },
+      {
+        "id": "pref_020",
+        "fact": "Listens exclusively to true crime podcasts during solo errands — never music or other genres"
+      },
+      {
+        "id": "pref_016",
+        "fact": "Reserves Sunday afternoons for reading historical fiction — never schedules chores or work during this time"
+      },
+      {
+        "id": "pref_017",
+        "fact": "Plans one nature day trip per month with her daughter — never repeats the same hiking trail twice in a season"
+      }
+    ]
+  },
+  "persona": "A mid-career accountant at a regional firm specializing in nonprofit organizations"
+}

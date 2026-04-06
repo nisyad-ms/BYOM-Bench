@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_d528d09a",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_056",
+        "fact": "Starts every workday with a cup of herbal tea while reviewing her task list — strictly avoids coffee and caffeinated beverages",
+        "supersedes": {
+          "id": "pref_021",
+          "fact": "Starts every workday with a hand-brewed cup of coffee while reviewing her task list — never uses a pod machine"
+        }
+      },
+      {
+        "id": "pref_026",
+        "fact": "Now books collaborative meetings and brainstorming sessions in the morning with the cross-functional team — prefers meetings earlier in the day to align on project goals",
+        "supersedes": {
+          "id": "pref_001",
+          "fact": "Schedules focus blocks for complex coding tasks in the morning — never books meetings before noon if avoidable"
+        }
+      },
+      {
+        "id": "pref_050",
+        "fact": "Prefers in-person networking during conferences, taking initiative to approach potential partners at workshops and social events instead of waiting for introductions through colleagues."
+      },
+      {
+        "id": "pref_044",
+        "fact": "Prepares easy-to-carry vegetarian lunches for office days — avoids meal prep requiring heating or elaborate assembly at work"
+      },
+      {
+        "id": "pref_055",
+        "fact": "Requests help from her boyfriend or orders ready-to-eat vegetarian meals due to difficulty prepping food with one hand"
+      },
+      {
+        "id": "pref_058",
+        "fact": "Performs a brief calming yoga or gentle stretching routine before bed instead of any strenuous evening activity, as prescribed by her sleep specialist to support better sleep with sleep apnea."
+      }
+    ]
+  },
+  "persona": "A junior web developer at a nonprofit organization"
+}

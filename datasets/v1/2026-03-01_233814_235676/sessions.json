@@ -1,0 +1,1447 @@
+{
+  "persona": "An entry-level support agent at a regional telecommunications provider",
+  "persona_id": "persona_20260301_234616",
+  "expanded_persona": {
+    "base_persona": "An entry-level support agent at a regional telecommunications provider",
+    "age": 24,
+    "gender": "female",
+    "location": "Portland, OR",
+    "work_education": [
+      "Started in customer support at Northwest Telecom six months ago; first full-time job after graduation",
+      "Handles 35-50 inbound calls daily, mostly troubleshooting internet outages and billing issues",
+      "Trying to meet strict monthly performance targets for call resolution time and customer satisfaction",
+      "Takes weekly online training modules on new products and soft skills, hoping for eligibility for a shift lead role next year"
+    ],
+    "health_wellness": [
+      "Migraines triggered by prolonged screen time; manages with medication and frequent breaks",
+      "Recently started a yoga class at a local studio to reduce stress and improve back pain from desk work",
+      "Eats lunch at work cafeteria most days; struggles to cook healthy meals at home due to fatigue",
+      "Typically gets 6 hours of sleep per night, disrupted during weeks with overtime shifts"
+    ],
+    "family_relationships": [
+      "Shares a two-bedroom rented apartment with her older sister, who works night shifts as a nurse",
+      "Mother lives 30 miles away; she visits on alternate weekends and assists with errands",
+      "Has a boyfriend in a long-distance relationship (he lives in Seattle), they video chat every evening",
+      "Regularly helps babysit her niece (age 3) when sister’s childcare falls through"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Takes a five-minute screen break after every ten customer calls — never skips for urgent cases",
+        "Always uses scripted troubleshooting steps first before improvising solutions",
+        "Completes online training modules on Sunday evenings rather than squeezed in during work breaks",
+        "Prefers chat-based internal communication with colleagues; avoids phone unless necessary",
+        "Reviews her call resolution statistics every Friday afternoon to plan improvements for the following week"
+      ],
+      "health_body": [
+        "Never eats fried foods at the work cafeteria — opts for salads or grain bowls instead",
+        "Attends the yoga class twice weekly without fail — never lets overtime shift interruptions excuse missing a session",
+        "Limits screen exposure at home by setting devices to night mode after 8pm",
+        "Uses blackout curtains in her bedroom to maximize sleep quality; refuses to use sleep apps for tracking",
+        "Carries migraine medication in her work bag at all times and takes it at first sign of symptoms — never waits for a full attack"
+      ],
+      "social_relationships": [
+        "Schedules video chats with her boyfriend for 10pm sharp every night; never reschedules for social events",
+        "Only visits her mother on alternate weekends — never drops by unannounced during weekdays",
+        "Texts her sister during the day about household matters rather than talking in person due to different schedules",
+        "Refuses to let babysitting duties overlap with work calls; only cares for her niece during off-hours",
+        "Always organizes family errands in advance — never does spontaneous trips when helping her mother"
+      ],
+      "leisure_hobbies": [
+        "Spends Saturday mornings reading new fantasy novels at a local café — never reads at home",
+        "Explores Portland’s hiking trails every second weekend, rain or shine",
+        "Plans movie nights with friends at indie theaters — avoids blockbuster multiplexes",
+        "Prefers puzzle games for stress relief after work — never plays competitive online games",
+        "Takes part in monthly pottery workshops — avoids solitary crafting at home"
+      ],
+      "daily_routines": [
+        "Prepares her outfit and lunch the night before work — never rushes morning preparations",
+        "Checks her personal email only once a day after work; never during working hours",
+        "Runs errands for her apartment and family exclusively on Sundays — never slots them into weekdays",
+        "Sets an alarm for a short post-work nap before evening activities, especially during overtime weeks",
+        "Disables work notifications on her phone from 9pm to 7am — never answers after-hours queries"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her older sister accepted a temporary 3-month travel nurse assignment out of state, leaving her solely responsible for managing the apartment and frequently caring for her niece during evening hours.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Prepares kid-friendly dinners and healthy snacks in advance for her niece whenever she expects evening babysitting",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Keeps her niece entertained with educational tablet apps during busy housework periods",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Maintains a shared digital calendar with her sister to update childcare arrangements and apartment maintenance tasks remotely",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Texts her sister during the day about household matters rather than talking in person due to different schedules"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Handles all household matters solo—no daily coordination with her sister over text since her sister is out of state",
+              "domain": "social_relationships"
+            },
+            "reason": "With her sister away on a travel nurse assignment for three months, there's no one to coordinate household matters with. She must manage everything herself, eliminating the previous texting routine."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_014",
+            "fact": "Refuses to let babysitting duties overlap with work calls; only cares for her niece during off-hours",
+            "domain": "social_relationships",
+            "reason": "With her sister gone and frequent evening childcare responsibilities, the line between work and babysitting may blur, especially if emergencies arise. The previous strict division of duties is no longer sustainable."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help. My older sister just took a travel nurse job out of state for the next three months, which means I’m stuck managing our apartment solo and taking care of my niece most evenings. I’m worried about keeping everything afloat—between work, household stuff, and her childcare. Do you have any strategies for organizing new routines, so I don’t get overwhelmed?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot all at once! Balancing full-time work with solo apartment management and extra childcare is tough. Are you looking for advice mostly around scheduling, ways to streamline chores, or handling childcare? Or maybe all of the above?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, all of the above—but I think scheduling is the biggest problem. I’m used to texting my sister during the day about apartment stuff, but now I have to handle everything myself. There’s no one to check in with about chores, maintenance, or bills. I feel like I’m forgetting things half the time."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s definitely an adjustment when managing everything solo! Would a digital checklist or shared calendar help? Even if your sister’s away, you could update her about apartment tasks remotely. If you’d prefer to keep things just for yourself, there are simple apps for reminders and recurring chores—would you want me to suggest some?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, my sister and I set up a shared digital calendar before she left, so I update it when anything comes up for the apartment or childcare. It’s working okay, but still feels weird not texting her anymore. I guess this way she’s in the loop for when she decides to drop in remotely, but the responsibility’s all on me now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move with the calendar! Having everything organized and visible for both of you can help, even if you aren’t coordinating daily. Are there particular household tasks that are slipping through, or is it mostly just trying to keep track of everything on top of work?"
+        },
+        {
+          "role": "user",
+          "content": "It’s mostly remembering routine stuff, since I’m juggling work and my niece most evenings now. I used to never overlap babysitting with work calls—always kept those boundaries—but now some nights I’m filling in while urgent issues come up at Northwest Telecom. There’s no way around it when nobody else is around for childcare."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—sometimes the distinction between work and childcare just isn’t possible when you’re the only one available. Have you worked out any ways to keep your niece entertained if you need to handle work emergencies during those nights?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I keep her busy with educational tablet apps if I need to do laundry, answer late emails, or take a work call after-hours. It’s not ideal, but it lets me focus when I absolutely have to split my attention."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a practical solution in these circumstances. Do you have a routine for prepping meals and snacks for your niece, especially since evenings are busier now? Sometimes advance prep can cut down on stress and give you a bit more buffer."
+        },
+        {
+          "role": "user",
+          "content": "Definitely. I started making kid-friendly dinners and healthy snacks in advance whenever I expect to babysit. Otherwise, it’s impossible juggling cooking and keeping her entertained after a long day."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great habit! Meal prepping ahead not only makes evenings smoother but also means you don’t have to scramble with last-minute decisions. Are there any other routines or strategies you’re finding helpful for this new setup—or anything still feeling particularly overwhelming?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the scheduling and meal prep are helping. The digital calendar keeps things straight for apartment stuff and childcare. Having educational apps and meals ready makes babysitting during work overlap manageable. I just have to get used to handling household matters solo—no daily coordination with my sister anymore, and more responsibility on me."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re adapting really well, even with so many changes. If you ever want tips for streamlining chores, managing stress, or finding new ways to integrate your routines, just ask. And if work and babysitting clash on urgent nights, don’t be too hard on yourself—it’s temporary, and you’re covering a lot on your own."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her boyfriend accepted a job offer in Portland and moved into the city, transitioning their relationship from long-distance to in-person.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Prepares weeknight dinners together with her boyfriend at home, prioritizing quick, healthy recipes over takeout",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Reserves Friday evenings for joint leisure activities with her boyfriend — no longer plans solo outings on Fridays",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Schedules video chats with her boyfriend for 10pm sharp every night; never reschedules for social events"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Spends weekday evenings in person with her boyfriend in Portland — no scheduled video chats anymore",
+              "domain": "social_relationships"
+            },
+            "reason": "Now that her boyfriend has moved to Portland, their relationship has transitioned from long-distance to in-person. The habit of scheduling nightly video chats is no longer needed; instead, they spend evenings together directly."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_029",
+            "fact": "Maintains a shared digital calendar with her sister to update childcare arrangements and apartment maintenance tasks remotely",
+            "domain": "social_relationships",
+            "reason": "With her boyfriend now living locally and likely sharing household responsibilities, the focus shifts from coordinating with her sister (who works nights and is often unavailable during the day) to making new routines with her boyfriend. The remote calendar coordination with her sister is no longer the central organizing tool."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey! So big news: my boyfriend officially moved to Portland and started his new job here last week. We’ve been long-distance for almost two years, so actually having him around in person feels wild. But honestly, I’m kind of struggling to figure out what our weekday routine looks like now that I don’t have the same evening rhythm. I used to have everything scheduled, even video calls at a set time. Any tips for adjusting habits when your daily structure suddenly shifts this much?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a huge shift! It’s exciting, but totally normal to feel a bit out of sync at first. When routines change, it helps to anchor your days with a few predictable habits—especially during weekdays. Are there any parts of your old routine you want to keep, or do you think you’ll want to build something new together now that you have evenings in person?"
+        },
+        {
+          "role": "user",
+          "content": "I think building something new makes sense. We’re spending weekday evenings together now, so the whole video chat at 10pm sharp isn’t needed anymore. Actually, I haven’t opened FaceTime since he got here—it’s kind of weird not having that scheduled anchor! But I’m realizing my old habits were all built around being alone most nights. Now I have someone in the house, and it’s throwing me off, especially with dinner and relaxation time."
+        },
+        {
+          "role": "assistant",
+          "content": "That transition from solo evenings to sharing the space can definitely require some adjustment. For dinner, do you want to keep eating separately, or are you interested in making it a shared thing? Some couples find it helpful to start with a flexible dinner plan—maybe cooking together a couple nights a week or setting a specific night for takeout, so there’s still some structure. How have you been handling meals so far?"
+        },
+        {
+          "role": "user",
+          "content": "We’ve started prepping weeknight dinners together at home, actually. We both want to avoid takeout as much as possible and just stick to quick, healthy recipes so it doesn’t get overwhelming after work. I used to rely on cafeteria lunches and honestly threw together whatever I could manage at night, but it’s nicer to plan a meal with him. It’s only been a week but so far it makes evenings less chaotic—even if we’re both tired."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a great start, and prepping dinner together is a positive anchor. Quick and healthy recipes are smart—especially on busy days. Do you have a go-to meal or are you still experimenting? If you need ideas, there are lots of meal planning apps or simple recipe sites that focus on balanced dinners. Also, for evening relaxation, have you found any activities you both enjoy, or are you still figuring that out?"
+        },
+        {
+          "role": "user",
+          "content": "We’re still figuring it out! Right now we just hang out, but I do want us to have something intentional on Fridays. I used to go out solo after work—like indie movie nights or meeting friends. Now I’m reserving Friday evenings for joint activities with him instead, so no more solo outings those days. Otherwise, we just keep it pretty chill: maybe a puzzle game or watching a show together."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great way to mark the end of the week—having a dedicated time for something fun together. Are you thinking regular movie nights, or do you want to try new places and activities around Portland? Changing up Friday plans can help keep the routine fresh, especially as you find new favorites as a couple. Are there any new hobbies or places you’re interested in checking out?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely want to mix things up—maybe explore local hikes together since I used to go every other weekend, or catch a live show sometimes. I was also thinking about pottery or some of the artsy workshops we have here. I need to keep stress relief in mind though, since my job is pretty intense and screen-heavy. Also, it’s funny—before, I managed a shared digital calendar with my sister to stay updated on household stuff and childcare, since she works nights and was rarely home. That’s not as central anymore, since my boyfriend and I are making new routines and handling most tasks directly."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—having someone else in the house changes how you coordinate. It’s great you’re finding new rhythms and managing chores together. If you still need to stay synced for things like apartment maintenance, you might consider a shared physical planner or whiteboard for quick notes (less screen time, too). And staying mindful of stress relief is wise; yoga or outdoor activities can balance things out. Is there anything specific about your new routines you feel stuck on, or are you just looking for general structure ideas?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly general ideas! I’d love some suggestions for balancing personal time and couple time—especially since my job means I get drained after long days troubleshooting with customers and doing trainings. Now that weeknights aren’t solo, I want to avoid falling into routines that just burn me out more. We’re prepping dinner, relaxing together, and handling the shared chores, but I want to make sure we both still have space to do our own thing when needed."
+        },
+        {
+          "role": "assistant",
+          "content": "Great question—it’s important to carve out space for yourself, even when sharing more time. You might try setting aside a specific hour each evening for solo activities: reading at a café, a quick yoga session, or just personal downtime. Communicate openly about needing that recharging window—most couples find it helps. For joint evenings, you can plan ‘together nights’ versus ‘parallel nights’ where you’re in the same space but doing different things. Does that approach fit your style, or do you prefer a more defined shared schedule?"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Northwest Telecom launches a new bundled internet product; as a result, all support agents are required to complete three evening in-person training sessions over the next month, replacing the usual online modules.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Prepares dinner earlier on in-person training nights to avoid eating late after returning home",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Reschedules Sunday evening leisure reading at the café to Saturday evening when in-person training conflicts arise",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Completes online training modules on Sunday evenings rather than squeezed in during work breaks"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Attends mandatory in-person training sessions on weekday evenings as scheduled; no longer completes training modules online at home",
+              "domain": "work_habits"
+            },
+            "reason": "The launch of the new bundled product requires all support agents to attend three evening in-person trainings over the next month, replacing the usual online modules. She can no longer complete training at home on Sunday evenings."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Northwest Telecom just launched this big new bundled internet package, so now all agents—including me—have to do these evening in-person training sessions for the next month. It's the first time we can't do the modules online at home. I'm already struggling to fit everything in after work—any advice for managing the disruption without letting my routines totally collapse?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big change—especially since in-person sessions eat into your evenings. Are the trainings scheduled on set days, or is it flexible? How are your evenings normally structured around work, family, and downtime?"
+        },
+        {
+          "role": "user",
+          "content": "They're assigned on weekday evenings, usually starting around 6. My evenings are pretty tight: I usually prep my lunch and outfit for work the night before, take a post-work nap if I've had overtime, and I do online training modules on Sundays—I guess that's off for now. Plus, I video chat with my boyfriend in Seattle every night at 10pm sharp, so I can't let things run late. Dinners are kind of rushed as it is, but I hate eating late. Any way to not wind up exhausted and eating at weird hours after training?"
+        },
+        {
+          "role": "assistant",
+          "content": "With those fixed evening commitments—especially the video chat and meal timings—it sounds like prepping dinner before the training could help. Maybe you could batch-cook something ahead, or do simple meals, so you're not stuck making food when you get home. Would something like meal prepping or pre-planning dinner earlier work for you? Or do you already do something similar?"
+        },
+        {
+          "role": "user",
+          "content": "Actually that's a good idea. I just started prepping dinner earlier on training nights, otherwise I'd be eating way too late after I get home. Meal prepping is new for me—usually I'm too wiped after work, but these in-person sessions really forced that change. It helps, but the whole Sunday evening routine is thrown off. I used to read fantasy novels at the café Sunday evening like clockwork—now it's a training night for three weeks. Not ideal."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad prepping dinner is making evenings easier! For your Sunday reading—have you thought about shifting that café time to another day? Maybe Saturday? It could help you keep some self-care even with trainings crowding your Sundays. Do weekend changes like that fit your schedule, or would you need to rearrange other activities?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I started rescheduling my Sunday evening café reading to Saturday evenings when there's a training. I really need that quiet time, so I can't let work stuff eat it up entirely. The rest of my weekend is mostly hiking, errands, and family visits, but Saturday evenings are usually free if I plan ahead. I think that solves my leisure crisis for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—protecting your café reading time by moving it is smart. Since your usual Sunday online training modules are off the schedule now, are you getting everything from the in-person sessions or missing the flexibility of at-home modules? Has this affected how you plan your week or focus on your personal goals, like shift lead eligibility?"
+        },
+        {
+          "role": "user",
+          "content": "I definitely miss the flexibility of doing online modules Sunday evenings at home—it used to be my chill routine after errands. Now I just attend the mandated in-person sessions as scheduled, no more modules online at home. It's not as easy with my migraines since I can't take screen breaks, but I'm sticking to the new plan. The sessions should cover what I need for shift lead eligibility, and at least they're only for this product launch window."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—the move to evening in-person sessions is a big shift from your previous Sunday routine. Sounds like you’re adapting by rearranging dinner and leisure time, and staying on track with career goals despite the disruption. If you need suggestions for migraine management or balancing breaks before and after training nights, let me know. Anything else you’re finding tough about the schedule right now?"
+        },
+        {
+          "role": "user",
+          "content": "Not really, I think that covers it. The biggest challenge was losing my Sunday routines, but moving café reading to Saturday and prepping dinner earlier has solved most of it. I’m just keeping fingers crossed I don’t get too burnt out—thanks for helping me brainstorm!"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome! It sounds like you’ve got solid systems to adapt—even with the changes. If you need more ideas for managing stress or maintaining routines during future launches, just ask. Good luck with the trainings and your shift lead goals!"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After several weeks of worsening back pain from desk work, her doctor prescribes a mandatory physical therapy program and recommends temporarily reducing yoga classes to prevent strain.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Follows her prescribed physical therapy exercises at home every evening — prioritizing this over other fitness routines during recovery",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Attends the yoga class twice weekly without fail — never lets overtime shift interruptions excuse missing a session"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Temporarily suspends yoga class attendance during physical therapy treatment, as advised by her doctor, and avoids any yoga practice to prevent additional strain",
+              "domain": "health_body"
+            },
+            "reason": "Her physician has prescribed a mandatory physical therapy regimen and explicitly recommended reducing (and for now, eliminating) yoga classes to avoid exacerbating her back pain."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I wanted some help reorganizing my routines—my doctor just put me on mandatory physical therapy for my back pain and told me to hold off on yoga for now. I’m used to those yoga classes as a stress outlet, so I’m feeling a bit lost. What tips do you have for sticking to recovery while keeping my stress manageable?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear your back pain’s gotten worse! Good for you for prioritizing recovery. One key is anchoring your new routine—have you found a set time each day for your physical therapy exercises, or is it still flexible? For stress relief, would you be open to quieter activities like stretching, meditation, or even reading during your recovery phase?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve actually started doing my PT exercises at home every evening, ahead of dinner. I’m prioritizing them over anything else fitness-wise right now, just to make sure I stick with the plan. For stress relief: meditation is okay, but I miss movement. Also, my weekend hiking routine is still on, but I’m careful not to overdo it."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart approach—dedicated evening PT sessions help build consistency. If outdoor walks and hikes aren’t aggravating your back, keeping those low-impact outings could be great for stress. How about gentle stretching that fits your PT guidelines, or chair yoga? Would your therapist approve lighter movements, or is yoga specifically off-limits until you're cleared?"
+        },
+        {
+          "role": "user",
+          "content": "Yoga’s specifically off-limits right now, not just at the studio but also at home—my doctor was really clear about avoiding yoga altogether until I’m further along in PT. I’ve dropped that habit cold for now. Stretching within PT guidelines is fine, but I’m following their instructions closely."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it, thanks for clarifying. Dropping yoga, even temporarily, must feel weird after building it into your week. Sounds like PT is your main movement routine for now. What about non-physical stress relief? Do you have any hobbies or ways to decompress after work—reading, puzzles, maybe spending time with family—that you can lean into during this phase?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I spend Saturday mornings reading fantasy novels at a local café—that’s non-negotiable, and actually helps a lot with stress. I also play puzzle games after work, and have monthly pottery workshops. I just need something active to fill the yoga gap, but I’ll have to wait. For now, PT exercises come first every evening—nothing else fitness-related until my therapist says it’s okay."
+        },
+        {
+          "role": "assistant",
+          "content": "Those routines sound like they're helping you maintain balance, especially while physical activity options are limited. Since you're following PT every evening, have you found it hard to adjust your schedule around it, or is it fitting in pretty well? If you ever need suggestions for new low-impact hobbies or mental relaxation ideas, let me know!"
+        },
+        {
+          "role": "user",
+          "content": "It’s actually working out so far—I prep my outfit and lunch the night before work, so evenings are pretty free for PT. As long as I stick to my schedule, it doesn’t interfere too much. Once I finish PT, I’ll revisit yoga, but right now I’m just focusing on recovery."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re handling the transition really thoughtfully. Prioritizing PT and adjusting your habits will pay off, even if it feels restrictive. If you want help tracking progress, brainstorming new routines, or managing the stress that comes with change, just ask. Wishing you a speedy recovery—and hope you’re back to yoga soon!"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received notice that her work schedule will shift to alternating weeks of early morning (7am-3pm) and late evening (3pm-11pm) shifts, as Northwest Telecom reorganizes staffing for expanded customer support hours.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Uses blackout curtains not only for nighttime but also for daytime sleep during early-morning shift weeks to improve rest",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Schedules video calls with her boyfriend later in the evening on early shifts and right after work on late shifts, adapting their routine to alternating schedules",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Prepares her outfit and lunch the night before work — never rushes morning preparations"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Prepares outfit and lunch in the afternoon for upcoming late shifts, but returns to morning preparations before early shifts — no longer a single, fixed routine",
+              "domain": "daily_routines"
+            },
+            "reason": "Alternating early and late shifts disrupt her previous consistent bedtime and wake/prepare schedule. She now needs to adapt preparations based on shift type instead of always prepping the night before."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_024",
+            "fact": "Sets an alarm for a short post-work nap before evening activities, especially during overtime weeks",
+            "domain": "daily_routines",
+            "reason": "Her shift times now alternate between early mornings and late evenings, eliminating the consistent 'post-work' window for napping before evening plans — her sleep/wake/napping rhythm will vary greatly between weeks, making this routine unworkable."
+          },
+          {
+            "id": "pref_025",
+            "fact": "Disables work notifications on her phone from 9pm to 7am — never answers after-hours queries",
+            "domain": "daily_routines",
+            "reason": "With late evening shifts that last until 11pm, disabling notifications from 9pm onward is no longer possible, as she must remain responsive for work. The old notification blackout period is no longer aligned with her work schedule."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so Northwest Telecom just told me I have to switch between early morning (7am-3pm) and late evening (3pm-11pm) shifts on alternating weeks. I’m honestly kind of overwhelmed. I’ve always had a consistent prepping and sleeping routine, but that’s out the window now. What’s the best way to manage these back-and-forth shifts so I don’t totally fry my brain or mess up my energy?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that’s a tough change—especially when you had stable routines locked in. A big part is adapting sleep and prep habits to each shift type. Have you tried splitting your routines, like prepping differently depending on whether you have a morning or evening shift? Or are you still sticking to your old night-before workflow?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I had to change that. I used to always prep my outfit and lunch the night before, so mornings were slow and chill. Now for late shifts, I do my prep in the afternoon before work. But for early shifts, I’m back to doing everything in the morning. I can’t keep it consistent anymore, but that’s what works so far."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—as flexible as possible! What about sleep? Alternating between sleeping at night and trying to catch up during the day can be brutal, especially since you mentioned migraines. Are you able to rest during daytime on early shift weeks, or is noise/light making it hard?"
+        },
+        {
+          "role": "user",
+          "content": "Daytime sleep is tricky, but I use blackout curtains now, not just at night but also after morning shifts, so I can actually get some rest. It’s helped with sleep quality a lot—migraine triggers are slightly better, but I’m still figuring it out."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart solution! Blackout curtains can be a lifesaver for shift workers. Are you finding it possible to keep up with your evening routines, like video calls with your boyfriend? Is there a constant time you’re sticking to, or are you adjusting those to fit the shift?"
+        },
+        {
+          "role": "user",
+          "content": "I actually had to adapt video chats with him too. On early shifts, I do them later at night, after sleeping a bit or right before bed. But on late shifts, we talk right after work. We basically change our call time depending on which shift I’m on, no more 10pm sharp every night."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad you’re finding ways to keep that connection, even if your routine isn’t locked anymore! How about naps? That post-work nap used to be a regular thing for you, right? Is that still doable with these alternating schedules?"
+        },
+        {
+          "role": "user",
+          "content": "No, I actually dropped the whole post-work nap idea. There's no consistent slot for it anymore—the shift changes mess with my sleep and evening patterns so much. I just try to get decent rest whenever I can, and fit my evening activities around the shifts."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—you have to flow with the new rhythm. One more thing: your old blackout period for work notifications ran from 9pm to 7am. With late shifts ending at 11pm, are you still able to set notification limits, or did that have to evolve too?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I had to drop that too. I can’t disable notifications from 9pm onward anymore—late shifts mean I need to stay responsive right up to 11pm. The old blackout isn’t possible, so I just silence things after my shift ends now."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it. So to recap, you’re prepping differently for each shift, using blackout curtains for both nighttime and daytime sleep, adjusting your video call routine, dropping your usual nap and notification blackout windows. That’s a lot to keep track of! Is there anything else you’re worried about with these new shift cycles—like meal timing, exercise, or managing call stats?"
+        },
+        {
+          "role": "user",
+          "content": "Meal timing is honestly the next challenge—I haven’t figured out how to keep it healthy on late shifts, but I’m still sticking with yoga twice a week no matter what. Call stats and training modules I review at the same times, just juggling a little more. Appreciate you helping me think it all through."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing great adapting—most people need weeks or months to lock down new routines. If you need ideas for meals that work on late shifts, or ways to track your call stats outside of normal hours, just let me know. And if the changes start feeling too overwhelming, maybe give yourself a few weeks to settle in before making any more big adjustments."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her mother is scheduled for minor surgery and asks her to assist with post-operative care and errands at home for the next several weeks.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Brings home-cooked, easy-to-digest meals to her mother during weekday visits, researching recipes suited for post-operative recovery",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Blocks off early evenings for her mother's care, temporarily pausing nonessential social invitations and personal leisure outings after work",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Only visits her mother on alternate weekends — never drops by unannounced during weekdays"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Visits her mother multiple times a week for post-operative care and errands, prioritizing her recovery needs over her previous weekend-only visits",
+              "domain": "social_relationships"
+            },
+            "reason": "Her mother's surgery requires ongoing assistance, making weekday visits necessary for post-op care and household support. The previous restriction of only visiting on alternate weekends is no longer feasible."
+          },
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Always organizes family errands in advance — never does spontaneous trips when helping her mother"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Handles family errands for her mother both spontaneously and by appointment, accommodating urgent post-surgery requests that can't be planned in advance",
+              "domain": "social_relationships"
+            },
+            "reason": "Post-surgery, her mother's needs may be unpredictable (e.g., prescription refills or issues with mobility). Strictly planned errands are no longer realistic; she must respond flexibly."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_023",
+            "fact": "Runs errands for her apartment and family exclusively on Sundays — never slots them into weekdays",
+            "domain": "daily_routines",
+            "reason": "Her mother's post-operative care requires her to run errands throughout the week, making the Sunday-only constraint obsolete."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey! I could use some advice. My mom’s having minor surgery tomorrow, and she asked me to help with her recovery — errands, meals, that sort of thing. It’ll be a few weeks of extra support. I’m not sure how to balance this with my telecom job and existing routines. Where should I start?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big responsibility—hope her procedure goes smoothly. Balancing work and caregiving can get pretty intense. Are you anticipating needing time off work, or is this mostly after-hours support? Knowing your work schedule and flexibility could help prioritize what to shift first."
+        },
+        {
+          "role": "user",
+          "content": "My shifts are staying the same, so most of the help will be after work. But I can’t just do alternate weekends like before—she’ll need me on weekdays. I already told my sister I’ll take early evenings to handle post-op care and errands. Social stuff is on pause for a bit, except my usual video chats."
+        },
+        {
+          "role": "assistant",
+          "content": "Blocking evenings makes sense and should help keep things manageable. You mentioned errands—are these things you can plan in advance, or will you need to handle urgent requests too? It might affect how you schedule breaks or prepare for unexpected tasks."
+        },
+        {
+          "role": "user",
+          "content": "Definitely both. Normally, I organize family errands ahead of time, but now I’m flexible—prescription runs, grocery trips, whatever comes up after her surgery. Sometimes I leave work with a list, other times it’s spontaneous if she needs something."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it, so more unpredictable errands. That means you’ll probably need a system to track requests and set boundaries if something overlaps with work. How about meals? Are you bringing food from the cafeteria or prepping at home for her recovery?"
+        },
+        {
+          "role": "user",
+          "content": "I’m researching easy-to-digest home-cooked recipes so I can bring meals during weekday visits. Cafeteria food is fine for me, but I want to make sure her diet supports recovery. I’ll probably prep in batches and deliver before my evening shift at her place."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move—home-cooked meals can definitely help her bounce back. If you’re batch-prepping, you might want to pick a couple recipes suited for post-op nutrition and rotate them. Are you worried about fitting meal prep into your schedule with work and yoga classes?"
+        },
+        {
+          "role": "user",
+          "content": "A little, but I’m firm about not missing yoga—it’s my stress relief, and my back needs it from all the desk time. I just have to shift leisure outings for now, so pottery nights and movie plans are temporarily off. I’m blocking early evenings for Mom until she’s better."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a healthy boundary. You might want to use your five-minute screen breaks and Friday stat reviews to plot out what errands could fit between calls or just after work. Oh, and for running errands—didn’t you used to do those only on Sundays?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that’s out the window. I dropped the Sunday-only rule because her recovery needs are urgent. Now I handle errands throughout the week, depending on how she’s feeling."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for clarifying! Sounds like your whole routine’s temporarily oriented around her recovery. Would it help to build a shared calendar with your sister to sync up who’s covering what each day? That way you could guarantee you’re not overcommitting, especially since your sister works nights."
+        },
+        {
+          "role": "user",
+          "content": "We actually just started texting each other daily about household stuff—helps manage surprise changes since we rarely see each other in person now. I can handle my niece when needed, but only after my work calls finish, so it doesn’t overlap with Mom’s care."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid plan. As you adjust, don’t forget to protect your rest—even if it means shorter naps or stricter device rules at home. If you want recipe suggestions or tools to track errands/requests, just let me know. Anything else you’re struggling to fit in with all these changes?"
+        },
+        {
+          "role": "user",
+          "content": "I think I just need help finding recovery-friendly recipes for Mom. Something I can prep in advance, bring on weeknights, and that’ll keep well. If you have suggestions or a resource roundup, I’d appreciate it!"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! I’ll find some great options—think hearty vegetable soups, poached chicken with rice, gentle grain bowls, and light casseroles. I can point you to cookbooks or websites with easy batch recipes for post-op nutrition. Let me know if Mom has any dietary restrictions or preferences, and I’ll tailor the list."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Northwest Telecom introduces a mandatory performance improvement plan for agents who fall below monthly resolution targets; she is placed on the plan and required to attend weekly coaching sessions with her manager.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Prioritizes resolving customer issues within call time limits over thorough troubleshooting, due to increased manager oversight and performance plan requirements",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Reviews her call resolution statistics every Friday afternoon to plan improvements for the following week"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Attends weekly coaching sessions with her manager on Fridays to review call resolution statistics and plan targeted improvements, replacing her solo review routine",
+              "domain": "work_habits"
+            },
+            "reason": "Being placed on a mandatory performance improvement plan means she is now required to review her stats with her manager in weekly coaching sessions rather than doing it independently; her review process becomes manager-led."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey — things are a bit stressful right now. Northwest Telecom just put me on a performance improvement plan because my call resolution stats missed the target last month. Now I have weekly coaching sessions with my manager every Friday. I’m feeling pretty anxious about it. I need ideas for staying on top of these new requirements without totally burning out — especially since my migraines have been worse lately. Any suggestions?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry you’re having a tough time — it sounds like a lot of pressure, especially with your health in the mix. Weekly coaching can feel relentless, but it might offer some practical feedback, too. Has your schedule or daily workflow changed since starting the improvement plan? For example, are you finding it harder to take regular screen breaks or manage call volume?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, my workflow did change a bit. I used to review my call resolution stats solo every Friday afternoon so I could plan improvement strategies myself. Now that’s replaced by the manager-led coaching sessions. It feels weird not to have that independent review—my manager brings her own targets and expects me to adjust my process every week. I’m still taking screen breaks after ten calls, though. But I’m struggling with balancing the call time limits and actually troubleshooting properly."
+        },
+        {
+          "role": "assistant",
+          "content": "That loss of independent review is tough — sometimes you need your own space to reflect. If the coaching sessions are now mandatory, could you ask your manager if you can prep some notes or questions beforehand? That way you bring your own insight to the session, not just react to her feedback. On balancing call time limits and troubleshooting: Are you feeling pressure to just solve issues quickly rather than thoroughly now?"
+        },
+        {
+          "role": "user",
+          "content": "Exactly. Since I’m on this plan, resolving issues within the call time limit is now my top priority. That wasn’t how I operated before — I used to go step-by-step through the troubleshooting scripts until the customer was totally satisfied. But now, if the customer’s issue can be resolved quickly, I focus on that even if it means skipping some detailed checks. I know it isn’t ideal, but with increased manager oversight, that’s the expectation."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift from being thorough to prioritizing speed. It might help to create quick-reference notes for common issues, so you don’t have to improvise as much — just stick to the most effective steps. Have you noticed any pushback from customers when you speed up calls or skip some checks, or has it mainly worked?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve had mixed results. Some customers appreciate the fast resolution, but others get frustrated if their issue isn’t fully addressed, especially when I skip the usual script. It’s awkward, and honestly, I wish I could go back to my old routine. But the weekly coaching focuses heavily on call time, so I don’t really have a choice at the moment."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense — manager expectations can really limit your flexibility. For now, it might help to gently explain to those customers why you’re focusing on core fixes, maybe offer to follow up by email if there’s anything lingering. How are you managing the stress from this new setup, especially with migraines worsening? Are you able to keep up with your yoga classes and take breaks as needed?"
+        },
+        {
+          "role": "user",
+          "content": "Yoga’s actually helped, so I haven’t let overtime or stress keep me from going to my twice-weekly classes. And I’m strict about screen breaks, since skipping them is just asking for a full migraine attack. But I’ll try prepping notes for coaching and maybe draft some quick-response scripts for the most common issues, so I can keep call times low. Thanks for the advice — it helps to talk it through."
+        },
+        {
+          "role": "assistant",
+          "content": "I’m glad yoga and breaks are keeping things manageable. Prepping for coaching and making quick-response scripts sound like good strategies. If you ever want to practice handling common calls or role-play a coaching session, let me know — we can work through it. You’re doing what you can under tough circumstances, and it’ll pay off. Let me know if you need more help or just want to vent."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed severe stomach issues after repeated cafeteria lunches; her doctor diagnoses her with IBS and instructs her to follow a strict elimination diet and avoid cafeteria meals for the next several months.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_048",
+            "fact": "Relies on prepping elimination diet-compliant lunches and snacks at home every evening for workdays, adjusting recipes weekly per doctor's guidance",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_049",
+            "fact": "Uses a dedicated food journal app nightly to track symptoms and flag potential IBS triggers from meals",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Never eats fried foods at the work cafeteria — opts for salads or grain bowls instead"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Avoids all work cafeteria meals entirely — exclusively brings lunch from home due to IBS dietary restrictions",
+              "domain": "health_body"
+            },
+            "reason": "Her IBS diagnosis and doctor’s orders require her to follow a strict elimination diet, making all cafeteria options off-limits (not just fried foods, salads, or grain bowls). She must bring her own lunch every day."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so I just got diagnosed with IBS after months of stomach issues, apparently triggered by work cafeteria food. My doctor says I need to start an elimination diet and avoid all cafeteria meals for a while—which means no more salads or grain bowls either. I’m honestly overwhelmed. Do you have tips for managing work lunches and snacks without spending ages in the kitchen every night?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds tough, but it's good you finally have some clarity about what's causing your discomfort. For work lunches, prepping a couple of basic proteins and veggies in bulk can make things easier. Have you tried meal prepping on weekends, or do you prefer prepping each night instead?"
+        },
+        {
+          "role": "user",
+          "content": "I actually prep my lunch and outfit nightly, just part of my routine before bed. Meal prepping everything in advance might help, but my doctor keeps tweaking the allowed foods every week, so batch cooking feels risky—what I prep Sunday might not work by the time Friday comes around. Any ideas for easy evening recipes that I can adapt as my elimination list changes?"
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense, since your allowed foods are shifting. Flexible recipes are your friend—things like mix-and-match grain bowls (using safe grains), or sheet-pan roasted veggies and proteins, where you swap ingredients as needed. Do you have access to basic kitchen tools at home—like a microwave or toaster oven—to make prep quicker?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, we've got a microwave and toaster oven. I just need recipes that don't take forever and aren't too spicy or complex. I have to log everything in a food journal app now, so I want to avoid accidental triggers. I started tracking symptoms nightly—my doctor checks the logs during appointments—and it really helps, but it adds to my evening routine. So, quick, bland meals I can swap ingredients in are ideal!"
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—so minimizing complexity is key, especially with symptom tracking on top of prepping. Stir-fries with safe veggies and protein cooked in the toaster oven, plain rice or oats with allowed toppings, or baked sweet potatoes work well and can be customized for your diet. Would it help to map out a small list of go-to meal templates that you can rotate based on weekly restrictions?"
+        },
+        {
+          "role": "user",
+          "content": "That actually sounds helpful. A meal template list would cut down on guesswork when I’m tired from work—especially those days I hit overtime and only get a post-work nap before yoga or video chatting with my boyfriend. Since cafeteria lunches are totally off-limits now—not even salads or grain bowls—I have to rely 100% on what I prep at home. Maybe I could make a checklist for my fridge?"
+        },
+        {
+          "role": "assistant",
+          "content": "A fridge checklist can be really useful, especially if you're making adjustments weekly. You can write down safe foods, recipes, and even note symptoms if you find particular meals that work especially well for you. Would you like some sample templates or app recommendations for meal planning and food tracking, alongside your current food journal?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, that would help! I mostly use my doctor’s recommended app for food journaling, but extra planning tools would make dinner and lunch prep easier. I think the biggest shift is only bringing lunch from home—no fried foods, salads, or grain bowls from work anymore. Instead, I’m prepping elimination diet-compliant meals and snacks every night, adjusting recipes as my doctor gives new advice. I have to track everything—just another step, but it's making a difference."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot of change, but you’re handling it really thoughtfully. I’ll send you some meal template ideas and simple tracking apps that complement your current journal. Let me know if you want recipes for specific ingredients—just list what’s allowed this week and I can suggest a few quick lunch options."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After experiencing multiple episodes of intense migraine attacks during late evening work shifts, her neurologist prescribes a new preventive medication and recommends limiting screen exposure to four hours per shift.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Schedules all voluntary overtime on days with only morning or early afternoon shifts, never during late evening hours, to ensure she doesn't exceed her neurologist's screen time limit",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Switches from reading e-books to listening to audiobooks or podcasts during leisure time at home to minimize additional screen exposure in the evenings",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Takes a five-minute screen break after every ten customer calls — never skips for urgent cases"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Limits screen-based work to four hours per shift; switches to non-screen administrative tasks or takes longer breaks once this threshold is reached, even if urgent calls are queued",
+              "domain": "work_habits"
+            },
+            "reason": "Her neurologist's new recommendation forces her to strictly enforce a hard cap of four hours per shift for screen exposure. Taking five-minute breaks is insufficient—she must shift to non-screen tasks entirely or leave her station once the limit is hit, regardless of case urgency."
+          },
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Carries migraine medication in her work bag at all times and takes it at first sign of symptoms — never waits for a full attack"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Uses preventive migraine medication daily as prescribed and monitors for side effects; only uses acute medication for breakthrough symptoms, not routinely at first sign",
+              "domain": "health_body"
+            },
+            "reason": "Her new prescription shifts migraine management from reactive (take meds at first sign of trouble) to preventive (daily use to stop migraines before they start), changing when and how she administers acute medication."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so I just got back from my neurologist — turns out I need to start a daily preventive medication for migraines and strictly keep screen exposure to four hours per shift. This is kind of messing with how I handle my work, especially since support is so screen-heavy. Any advice for managing that, and not falling behind on call resolutions or training?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's definitely a big adjustment. Four hours is a pretty strict limit, especially in customer support. Are you able to break up your shift with some less screen-dependent tasks, like paperwork or prepping materials, or do all your tasks require computer time? Also, how's the new medication working so far—any side effects?"
+        },
+        {
+          "role": "user",
+          "content": "Most stuff is screen-based, but there are some admin jobs I can switch to once I hit four hours. I used to just take short breaks every ten calls, even if urgent cases came up, but now I have to fully step away—no more squeezing in extra calls if I go over the limit. Honestly, I haven’t noticed any major medication side effects yet, but I’m watching for them. It’s just weird not taking my acute meds for every twinge anymore—I’m supposed to save those for breakthrough attacks only."
+        },
+        {
+          "role": "assistant",
+          "content": "Switching to full preventive meds must be a big shift! Are you concerned about hitting your monthly performance targets now that you can't handle urgent calls past your screen cap? Maybe your supervisor can reassign late cases if you communicate your limits early each shift. For training modules, have you been able to keep your usual Sunday evening routine, or do those require more screen time than you're comfortable with?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’m worried about targets since I have to strictly cut off screen work at four hours, even if there’s a backlog. I'm planning to talk to my lead about shifting my voluntary overtime to mornings and early afternoons only—I can't do late evening support anymore. As for training, I still do them Sunday evenings, but I spread them out with breaks now so I don’t blow past my new limit."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—avoiding late shifts should help prevent extra screen time and keep migraines at bay. Good call on splitting up the training, too. Are you finding it tough to wind down after evening work, now that you can’t use screens? Or did you have non-screen leisure habits already?"
+        },
+        {
+          "role": "user",
+          "content": "Harder, honestly. I used to read e-books at home, but now I’ve switched to audiobooks and podcasts in the evenings so I’m not triggering migraines with more screen time. I’m glad the local library has a good audiobook selection. But sometimes I miss flipping through fantasy novels at home!"
+        },
+        {
+          "role": "assistant",
+          "content": "The switch to audio is smart—even if losing the physical book experience is a pain. Do you find podcasts help you relax as much as reading did? And have you been able to keep up your yoga classes and hiking routines, or has the new migraine management changed anything there?"
+        },
+        {
+          "role": "user",
+          "content": "Podcasts and audiobooks are pretty good for winding down, but nothing beats Saturday mornings at the café with a real book—luckily that doesn’t count against my screen cap. Yoga and hiking are still on track, since they don’t involve screens at all, so no changes there. The main thing is just juggling the work limits since I have to shift to paperwork or step away once I hit four hours of screen time, no matter what’s stacked up."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re keeping a healthy balance despite the shift. If paperwork gets tedious, maybe you can suggest rotating non-screen tasks among your team, so one person isn’t stuck with all of it. For days when you have to step away mid-shift, have your teammates been supportive, or is there anything you wish Northwest Telecom would do differently to help?"
+        },
+        {
+          "role": "user",
+          "content": "Team is pretty understanding so far, but I think management needs clearer guidelines for task reassignment when someone’s at their screen cap. Also, it’d be helpful if they let me know which days have more morning or afternoon overtime available, so I can plan ahead and stick to my neurologist’s limits. I’m really just trying to keep from falling behind on stats, since I want to move up to shift lead next year."
+        },
+        {
+          "role": "assistant",
+          "content": "Your approach sounds well thought-out. Maybe you could document your new workflow and share it with your supervisor—it could help others facing similar health issues down the line. Would you like help drafting an email or setting up a quick presentation to communicate your new limits and how you’ll handle call resolution?"
+        },
+        {
+          "role": "user",
+          "content": "That’d be great, actually! An email template would help. I want to make sure it’s clear I’m scheduling overtime only on morning or early afternoon shifts—never late evenings—and that I switch to non-screen admin tasks after four hours, even if urgent calls are queued. And I’m following the new medication plan, just monitoring for side effects and only using acute meds for breakthrough symptoms, so they know why I stopped popping them at the first sign."
+        },
+        {
+          "role": "assistant",
+          "content": "I’ll put together a draft that explains your screen cap, your approach to overtime, and your shift to preventive migraine management. You can tweak it for your lead or HR if needed. Anything else you want to make sure is covered—like your switch to audiobooks and podcasts at home, or is that mostly personal?"
+        },
+        {
+          "role": "user",
+          "content": "Just work stuff for now. I’m managing home adjustments on my own, so as long as the email clarifies my work boundaries and health updates, that’s fine. Thanks for being so thorough!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her niece’s daycare closes permanently with only a week's notice, requiring her and her sister to coordinate and provide extensive daily childcare at their apartment until alternate arrangements can be found.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_056",
+            "fact": "Schedules daily message check-ins and quick planning meetings with her sister to coordinate childcare, errands, and apartment logistics each morning",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_057",
+            "fact": "Sets up a rotating childcare calendar with her sister, ensuring that each has dedicated work and rest periods per day while covering niece supervision shifts",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_027",
+              "fact": "Prepares kid-friendly dinners and healthy snacks in advance for her niece whenever she expects evening babysitting"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Prepares kid-friendly meals and snacks daily due to full-time childcare needs; now focuses on batch-cooking and flexible meal options for her niece throughout the week",
+              "domain": "daily_routines"
+            },
+            "reason": "Since her niece will now be at their apartment every day, meal prep is no longer limited to occasional evenings—she must cook for her niece daily, often in advance and with greater volume and variety."
+          },
+          {
+            "from": {
+              "id": "pref_028",
+              "fact": "Keeps her niece entertained with educational tablet apps during busy housework periods"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Engages her niece with a mix of hands-on activities (art, building toys) and minimal screen time throughout the day to avoid tablet overuse during full-time childcare",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "With her niece present all day, relying on tablet apps alone risks excessive screen exposure; she now balances digital activities with frequent hands-on play to manage the extended schedule."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_026",
+            "fact": "Handles all household matters solo—no daily coordination with her sister over text since her sister is out of state",
+            "domain": "social_relationships",
+            "reason": "Her sister is now present and coordinating daily childcare duties; household management is no longer solo and requires active collaboration."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I need some help. My niece's daycare just closed — like, permanently, and with almost no notice. My sister and I are scrambling to cover full-time childcare at our apartment until we find something else, but it's a lot. I'm trying to figure out how to keep my work routine halfway normal while juggling my niece during the day. Any tips for keeping things sane? Childcare calendar, meal planning, whatever would help."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really stressful, especially with so little warning. With your regular support shifts and your sister's nursing hours, a shared calendar for coverage sounds smart. Do you two already have set times for who's on childcare duty, or is it day-by-day improvising?"
+        },
+        {
+          "role": "user",
+          "content": "We've started a rotating schedule — each morning, we message and do a quick planning meeting so we know who's covering, when. It gives us each some dedicated work and rest periods, even if the blocks are short. I can't handle full-day supervision with my work calls, so splitting shifts helps."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a solid approach. Having a brief check-in to coordinate each morning probably makes all the difference. How does that impact your usual household routines — are you both managing apartment stuff together now, or is it mostly whoever has bandwidth?"
+        },
+        {
+          "role": "user",
+          "content": "We're actively coordinating now, texting about chores and errands. Before, I handled everything solo since my sister was mostly out due to her night shifts. That's definitely changed — now it’s all about teamwork, planning every day."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like communication is key. On the meal front, are you prepping for your niece daily or still just for occasional evenings? You mentioned meal planning — does batch cooking help manage the extra demand?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, batch cooking is basically survival mode now. I used to just make kid-friendly dinners and snacks when I was babysitting evenings, but with her here every day, I have to prep meals and snacks in advance, often in bigger batches and with more variety. Flexible options help me juggle work and her needs."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. Having meals ready saves time and stress. What about keeping your niece entertained — do you lean on tablet apps often, or have you had to rethink activities now that she's at your apartment all day?"
+        },
+        {
+          "role": "user",
+          "content": "Full-time childcare makes screen reliance tricky — I used to use tablet apps while doing chores, but now I'm really trying to balance that with hands-on activities like art and building toys. I don't want her stuck on a device the whole day, so we're rotating more tactile play and minimal screen time."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a healthy adjustment. Do you find it challenging to come up with enough hands-on activities, or is she pretty easy to engage? If you need quick ideas for creative play, I can help brainstorm some."
+        },
+        {
+          "role": "user",
+          "content": "She’s good at getting into arts and crafts, blocks, even simple cooking projects like arranging snack plates. Sometimes she gets bored if we repeat things too often, but so far, mixing it up keeps her happy. I just have to be careful not to bring work calls into the mix — never let babysitting overlap with work."
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely wise to keep work and babysitting separate — boundaries are crucial. If you want to try snack plate themes or quick rotational activities, I can send you some lists to streamline variety and prep. Would that help?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, a cheat sheet of easy rotating activities or snack ideas would be awesome. Anything quick to prep and kid-friendly. We have to plan everything now since spontaneous errands are out — it’s all structured."
+        },
+        {
+          "role": "assistant",
+          "content": "I’ll send you a list! Batchable snack options: mini veggie wraps, cheese cubes, fruit skewers, homemade muffins, and yogurt bowls. For activities: playdough, sticker collages, magnetic tiles, water coloring, or basic scavenger hunts. Keeping things simple and switching them up each day makes managing childcare and work easier."
+        },
+        {
+          "role": "user",
+          "content": "Those are perfect. The structure helps keep things manageable — especially since we have to plan daily, not just wing it. Thanks — this is exactly what I needed while we figure out longer-term daycare."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Always uses scripted troubleshooting steps first before improvising solutions",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Prefers chat-based internal communication with colleagues; avoids phone unless necessary",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Limits screen exposure at home by setting devices to night mode after 8pm",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Uses blackout curtains in her bedroom to maximize sleep quality; refuses to use sleep apps for tracking",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Spends Saturday mornings reading new fantasy novels at a local café — never reads at home",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Explores Portland’s hiking trails every second weekend, rain or shine",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Plans movie nights with friends at indie theaters — avoids blockbuster multiplexes",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Prefers puzzle games for stress relief after work — never plays competitive online games",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Takes part in monthly pottery workshops — avoids solitary crafting at home",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks her personal email only once a day after work; never during working hours",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Spends weekday evenings in person with her boyfriend in Portland — no scheduled video chats anymore",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Prepares weeknight dinners together with her boyfriend at home, prioritizing quick, healthy recipes over takeout",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Reserves Friday evenings for joint leisure activities with her boyfriend — no longer plans solo outings on Fridays",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Attends mandatory in-person training sessions on weekday evenings as scheduled; no longer completes training modules online at home",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Prepares dinner earlier on in-person training nights to avoid eating late after returning home",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Reschedules Sunday evening leisure reading at the café to Saturday evening when in-person training conflicts arise",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Temporarily suspends yoga class attendance during physical therapy treatment, as advised by her doctor, and avoids any yoga practice to prevent additional strain",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Follows her prescribed physical therapy exercises at home every evening — prioritizing this over other fitness routines during recovery",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Prepares outfit and lunch in the afternoon for upcoming late shifts, but returns to morning preparations before early shifts — no longer a single, fixed routine",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Uses blackout curtains not only for nighttime but also for daytime sleep during early-morning shift weeks to improve rest",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Schedules video calls with her boyfriend later in the evening on early shifts and right after work on late shifts, adapting their routine to alternating schedules",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Visits her mother multiple times a week for post-operative care and errands, prioritizing her recovery needs over her previous weekend-only visits",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Handles family errands for her mother both spontaneously and by appointment, accommodating urgent post-surgery requests that can't be planned in advance",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Brings home-cooked, easy-to-digest meals to her mother during weekday visits, researching recipes suited for post-operative recovery",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Blocks off early evenings for her mother's care, temporarily pausing nonessential social invitations and personal leisure outings after work",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Attends weekly coaching sessions with her manager on Fridays to review call resolution statistics and plan targeted improvements, replacing her solo review routine",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Prioritizes resolving customer issues within call time limits over thorough troubleshooting, due to increased manager oversight and performance plan requirements",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Avoids all work cafeteria meals entirely — exclusively brings lunch from home due to IBS dietary restrictions",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Relies on prepping elimination diet-compliant lunches and snacks at home every evening for workdays, adjusting recipes weekly per doctor's guidance",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Uses a dedicated food journal app nightly to track symptoms and flag potential IBS triggers from meals",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Limits screen-based work to four hours per shift; switches to non-screen administrative tasks or takes longer breaks once this threshold is reached, even if urgent calls are queued",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_051",
+        "fact": "Uses preventive migraine medication daily as prescribed and monitors for side effects; only uses acute medication for breakthrough symptoms, not routinely at first sign",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Schedules all voluntary overtime on days with only morning or early afternoon shifts, never during late evening hours, to ensure she doesn't exceed her neurologist's screen time limit",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Switches from reading e-books to listening to audiobooks or podcasts during leisure time at home to minimize additional screen exposure in the evenings",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Prepares kid-friendly meals and snacks daily due to full-time childcare needs; now focuses on batch-cooking and flexible meal options for her niece throughout the week",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_055",
+        "fact": "Engages her niece with a mix of hands-on activities (art, building toys) and minimal screen time throughout the day to avoid tablet overuse during full-time childcare",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Schedules daily message check-ins and quick planning meetings with her sister to coordinate childcare, errands, and apartment logistics each morning",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Sets up a rotating childcare calendar with her sister, ensuring that each has dedicated work and rest periods per day while covering niece supervision shifts",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Takes a five-minute screen break after every ten customer calls — never skips for urgent cases",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_050",
+        "reason": "Her neurologist's new recommendation forces her to strictly enforce a hard cap of four hours per shift for screen exposure. Taking five-minute breaks is insufficient—she must shift to non-screen tasks entirely or leave her station once the limit is hit, regardless of case urgency."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Completes online training modules on Sunday evenings rather than squeezed in during work breaks",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "The launch of the new bundled product requires all support agents to attend three evening in-person trainings over the next month, replacing the usual online modules. She can no longer complete training at home on Sunday evenings."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Reviews her call resolution statistics every Friday afternoon to plan improvements for the following week",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "Being placed on a mandatory performance improvement plan means she is now required to review her stats with her manager in weekly coaching sessions rather than doing it independently; her review process becomes manager-led."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Never eats fried foods at the work cafeteria — opts for salads or grain bowls instead",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_047",
+        "reason": "Her IBS diagnosis and doctor’s orders require her to follow a strict elimination diet, making all cafeteria options off-limits (not just fried foods, salads, or grain bowls). She must bring her own lunch every day."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Attends the yoga class twice weekly without fail — never lets overtime shift interruptions excuse missing a session",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "Her physician has prescribed a mandatory physical therapy regimen and explicitly recommended reducing (and for now, eliminating) yoga classes to avoid exacerbating her back pain."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Carries migraine medication in her work bag at all times and takes it at first sign of symptoms — never waits for a full attack",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_051",
+        "reason": "Her new prescription shifts migraine management from reactive (take meds at first sign of trouble) to preventive (daily use to stop migraines before they start), changing when and how she administers acute medication."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Schedules video chats with her boyfriend for 10pm sharp every night; never reschedules for social events",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "Now that her boyfriend has moved to Portland, their relationship has transitioned from long-distance to in-person. The habit of scheduling nightly video chats is no longer needed; instead, they spend evenings together directly."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Only visits her mother on alternate weekends — never drops by unannounced during weekdays",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "Her mother's surgery requires ongoing assistance, making weekday visits necessary for post-op care and household support. The previous restriction of only visiting on alternate weekends is no longer feasible."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Texts her sister during the day about household matters rather than talking in person due to different schedules",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "With her sister away on a travel nurse assignment for three months, there's no one to coordinate household matters with. She must manage everything herself, eliminating the previous texting routine."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Refuses to let babysitting duties overlap with work calls; only cares for her niece during off-hours",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": null,
+        "reason": "With her sister gone and frequent evening childcare responsibilities, the line between work and babysitting may blur, especially if emergencies arise. The previous strict division of duties is no longer sustainable."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Always organizes family errands in advance — never does spontaneous trips when helping her mother",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "Post-surgery, her mother's needs may be unpredictable (e.g., prescription refills or issues with mobility). Strictly planned errands are no longer realistic; she must respond flexibly."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Prepares her outfit and lunch the night before work — never rushes morning preparations",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "Alternating early and late shifts disrupt her previous consistent bedtime and wake/prepare schedule. She now needs to adapt preparations based on shift type instead of always prepping the night before."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Runs errands for her apartment and family exclusively on Sundays — never slots them into weekdays",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "Her mother's post-operative care requires her to run errands throughout the week, making the Sunday-only constraint obsolete."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Sets an alarm for a short post-work nap before evening activities, especially during overtime weeks",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "Her shift times now alternate between early mornings and late evenings, eliminating the consistent 'post-work' window for napping before evening plans — her sleep/wake/napping rhythm will vary greatly between weeks, making this routine unworkable."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Disables work notifications on her phone from 9pm to 7am — never answers after-hours queries",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "With late evening shifts that last until 11pm, disabling notifications from 9pm onward is no longer possible, as she must remain responsive for work. The old notification blackout period is no longer aligned with her work schedule."
+      },
+      {
+        "id": "pref_026",
+        "fact": "Handles all household matters solo—no daily coordination with her sister over text since her sister is out of state",
+        "domain": "social_relationships",
+        "created_at_session": 0,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "Her sister is now present and coordinating daily childcare duties; household management is no longer solo and requires active collaboration."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Prepares kid-friendly dinners and healthy snacks in advance for her niece whenever she expects evening babysitting",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_054",
+        "reason": "Since her niece will now be at their apartment every day, meal prep is no longer limited to occasional evenings—she must cook for her niece daily, often in advance and with greater volume and variety."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Keeps her niece entertained with educational tablet apps during busy housework periods",
+        "domain": "leisure_hobbies",
+        "created_at_session": 0,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "With her niece present all day, relying on tablet apps alone risks excessive screen exposure; she now balances digital activities with frequent hands-on play to manage the extended schedule."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Maintains a shared digital calendar with her sister to update childcare arrangements and apartment maintenance tasks remotely",
+        "domain": "social_relationships",
+        "created_at_session": 0,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "With her boyfriend now living locally and likely sharing household responsibilities, the focus shifts from coordinating with her sister (who works nights and is often unavailable during the day) to making new routines with her boyfriend. The remote calendar coordination with her sister is no longer the central organizing tool."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T23:46:16.936588"
+}

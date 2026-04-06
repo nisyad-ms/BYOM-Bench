@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_a0e4e386",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_032",
+        "fact": "Shops for groceries multiple times per week as needed, prioritizing fresh items to support his mother's dietary and medication needs rather than maintaining a fixed schedule",
+        "supersedes": {
+          "id": "pref_022",
+          "fact": "Shops for groceries only on Wednesday evenings, never weekends"
+        }
+      },
+      {
+        "id": "pref_043",
+        "fact": "Pauses cycling blog updates and instead posts about his recovery progress and local physiotherapy experiences for the next 8 weeks",
+        "supersedes": {
+          "id": "pref_017",
+          "fact": "Maintains a personal blog documenting cycling routes — posts at least twice per month"
+        }
+      },
+      {
+        "id": "pref_012",
+        "fact": "Only communicates with his mother via in-person visits or phone calls — never uses text messages for important discussions"
+      },
+      {
+        "id": "pref_002",
+        "fact": "Uses shared digital task boards to track issue progress with junior staff; never relies on email threads for coordination"
+      },
+      {
+        "id": "pref_037",
+        "fact": "Now reviews and revises his mentoring materials to ensure clarity for non-native English speakers — avoids using idiomatic language or regionally-specific terms in all team documentation."
+      },
+      {
+        "id": "pref_041",
+        "fact": "Documents nightly CPAP usage and sleep patterns in a dedicated digital health log — never skips entries even on weekends"
+      }
+    ]
+  },
+  "persona": "A bilingual helpdesk specialist assisting clients in both French and English"
+}

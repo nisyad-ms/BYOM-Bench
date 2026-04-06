@@ -1,0 +1,105 @@
+name: User Simulator Conversation Planner (v1e2)
+description: >
+  Iteration 3 of experiment. Relaxes v1e's "zero details" rule: probes may
+  reference the BROAD TOPIC AREA but must not include specific distinguishing
+  details (times, names, tools, constraints, frequencies).
+used_by: ream_bench/evaluation_multisession/user_simulator.py::MultiSessionUserSimulator
+variables:
+  - persona_summary: Brief summary of the persona
+  - required_preferences: 'Bullet list of "id: fact" entries'
+
+template: |
+  You are planning a conversation between a user and an AI assistant. The user
+  wants to test whether the assistant remembers specific preferences from past
+  conversations — without revealing them.
+
+  ## About the user
+  {persona_summary}
+
+  ## Preferences to test
+  {required_preferences}
+
+  ## Your task
+
+  Plan a natural conversation flow that creates opportunities to test each
+  preference. The plan will guide a separate conversation model, so be specific
+  and actionable.
+
+  ### Step 1 — Group preferences by topic affinity
+
+  Cluster preferences that could naturally come up in the same conversation
+  topic. For example, "vegetarian diet" and "prefers local restaurants" both fit
+  under dining. "Avoids flying" and "prefers boutique hotels" both fit under
+  travel. A preference can only belong to one group.
+
+  ### Step 2 — Order the groups
+
+  Decide which topic to start with and how to move between topics. Think about
+  what a real person would bring up first and what flows naturally from there.
+
+  ### Step 3 — Order preferences within each group
+
+  Within a topic cluster, lead with the one that sets up the broadest context
+  so the others can follow naturally.
+
+  ### Step 4 — Plan topic bridges
+
+  For each transition between groups, write a natural 1-sentence segue a real
+  person might use. The bridge should feel like a genuine change of subject, not
+  a forced pivot.
+
+  ### Step 5 — Write probe strategies
+
+  For EACH preference, write a 1-sentence description of how the user could
+  naturally bring up the topic and create an opportunity for the assistant to
+  demonstrate recall — WITHOUT revealing the preference itself.
+
+  **Probe anti-leakage rules:**
+
+  1. The probe may reference the BROAD TOPIC AREA (e.g., "sleep", "exercise",
+     "work schedule", "cooking", "volunteering") to give the agent a natural
+     opening to demonstrate recall.
+
+  2. The probe must NOT include specific distinguishing details from the
+     preference: no specific names, times, frequencies, tools, locations,
+     constraints, dietary terms, or behavioral specifics.
+
+  3. Apply this test: read the probe, then imagine an assistant with NO memory
+     of this user. Could that assistant give a response that matches the
+     preference just by answering the question literally? If yes, the probe is
+     too targeted — broaden it.
+
+  **Examples:**
+  - Preference: "Skips caffeine during exam weeks to prevent migraines"
+    BAD: "Any beverage alternatives that won't make headaches worse?" ← reveals caffeine + headaches
+    GOOD: "I've got exams coming up and want to stay sharp — any wellness tips?"
+  - Preference: "Checks ingredient lists for iron content in vegan lunches"
+    BAD: "How can I tell if vegan options cover things like iron?" ← reveals vegan + iron
+    GOOD: "I've been thinking about whether my lunches are nutritious enough — any advice?"
+  - Preference: "Blocks Friday afternoons for cross-team planning"
+    BAD: "How should I optimize Friday afternoons for leadership sessions?" ← reveals Friday + cross-team
+    GOOD: "I'm trying to restructure my weekly schedule — any thoughts on time blocking?"
+
+  ## Output format
+
+  Output ONLY the plan in this exact format (no other text):
+
+  ```
+  TOPIC GROUPS:
+  - Group 1 "[topic label]": [pref_id, pref_id, ...]
+  - Group 2 "[topic label]": [pref_id, ...]
+  - ...
+
+  TESTING ORDER: [pref_id, pref_id, pref_id, ...]
+
+  OPENING TOPIC: [topic label] — [1 sentence on how to open the conversation]
+
+  BRIDGES:
+  - [topic A] → [topic B]: [1-sentence natural transition]
+  - ...
+
+  PROBE STRATEGIES:
+  - pref_id: [1-sentence probe approach]
+  - pref_id: [1-sentence probe approach]
+  - ...
+  ```

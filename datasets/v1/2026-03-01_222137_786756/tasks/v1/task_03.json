@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_1bd0e30f",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_042",
+        "fact": "Temporarily avoids running altogether—replaces weekend morning runs with doctor-prescribed physical therapy exercises at home",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Runs only on weekend mornings and strictly on flat neighborhood routes—avoids hilly parks to protect her knees"
+        }
+      },
+      {
+        "id": "pref_046",
+        "fact": "Now delivers joint training sessions for both legacy and merger partner staff, often in large-group formats, to accelerate standardized process onboarding and ensure consistent adoption.",
+        "supersedes": {
+          "id": "pref_002",
+          "fact": "Schedules training sessions for program managers only in small groups—refuses to do large all-staff meetings"
+        }
+      },
+      {
+        "id": "pref_038",
+        "fact": "Prefers brief evening family time at home after caretaking visits—prioritizes decompressing with her partner and son, avoids additional social plans"
+      },
+      {
+        "id": "pref_024",
+        "fact": "Takes a 10-minute walk after dinner every evening—never brings her phone along"
+      },
+      {
+        "id": "pref_030",
+        "fact": "Prepares quick weekday dinners using meal prep strategies—rarely cooks elaborate evening meals during school weeks"
+      },
+      {
+        "id": "pref_044",
+        "fact": "Reads health and recovery articles on joint care during her physical therapy rest intervals—prefers expert blogs over general wellness content"
+      }
+    ]
+  },
+  "persona": "A finance manager at a nonprofit organization with limited technical resources"
+}

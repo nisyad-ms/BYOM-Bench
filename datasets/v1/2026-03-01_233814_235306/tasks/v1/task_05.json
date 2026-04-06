@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_c6e56f49",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_047",
+        "fact": "Pauses hands-on onboarding for new hires, shifting all training documentation to written guides and FAQs until the crisis response concludes — onboarding support is limited to urgent security protocols only",
+        "supersedes": {
+          "id": "pref_002",
+          "fact": "Requires every new hire to complete hands-on troubleshooting scenarios during onboarding — never relies solely on written training materials"
+        }
+      },
+      {
+        "id": "pref_028",
+        "fact": "Alternates between ticket triage and backend server monitoring during mornings — can no longer focus exclusively on ticket triage before noon, multitasks as required by new role demands",
+        "supersedes": {
+          "id": "pref_001",
+          "fact": "Handles morning ticket triage in strict priority order and refuses to multitask during triage — never lets non-urgent tickets distract her before noon"
+        }
+      },
+      {
+        "id": "pref_046",
+        "fact": "Watches daytime TV or streams shows during downtime for distraction and rest, temporarily relaxing her usual evening-only streaming rule"
+      },
+      {
+        "id": "pref_030",
+        "fact": "Consults systems admin team for troubleshooting complex server issues before escalating—now prioritizes collaborative problem-solving over solo investigation"
+      },
+      {
+        "id": "pref_035",
+        "fact": "Schedules monthly neurologist follow-up visits as a non-negotiable self-care activity; never allows work or family obligations to interfere with these appointments"
+      },
+      {
+        "id": "pref_007",
+        "fact": "Uses blue-light glasses whenever working on a computer — never accesses screens without them"
+      }
+    ]
+  },
+  "persona": "A mid-career helpdesk technician working in a university IT department"
+}

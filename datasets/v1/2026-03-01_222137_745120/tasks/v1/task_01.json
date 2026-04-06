@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_776de56e",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_051",
+        "fact": "Plays guitar for at least 20 minutes every Saturday morning, but pauses if his kids need help or breakfast on weekends when wife is at work — no longer keeps this time strictly uninterrupted",
+        "supersedes": {
+          "id": "pref_016",
+          "fact": "Plays guitar for at least 30 minutes every Saturday morning — never schedules work during this time"
+        }
+      },
+      {
+        "id": "pref_029",
+        "fact": "Suspends CrossFit classes entirely due to physician's recommendation — now attends low-impact mobility or stretching sessions instead when sleep exceeds 6 hours",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Attends CrossFit classes only when his sleep exceeds 6 hours the night before; skips morning workouts after late-night on-call shifts"
+        }
+      },
+      {
+        "id": "pref_046",
+        "fact": "Logs daily blood glucose readings into the same digital health tracking app as his blood pressure, reviewing both metrics together each morning after breakfast"
+      },
+      {
+        "id": "pref_011",
+        "fact": "Handles school drop-offs for his kids only on Tuesdays and Thursdays — never swaps days unless there's a family emergency"
+      },
+      {
+        "id": "pref_007",
+        "fact": "Logs blood pressure readings into a tracking app after breakfast every day — refuses paper logs"
+      },
+      {
+        "id": "pref_027",
+        "fact": "Prioritizes starting bedtime routine by 10:15pm to allow full setup and adjustment to the CPAP mask every night"
+      }
+    ]
+  },
+  "persona": "A senior DevOps engineer managing cloud infrastructure for a healthcare company"
+}

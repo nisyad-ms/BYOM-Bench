@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_3d3abfc7",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_049",
+        "fact": "Preps her cat’s medication and subcutaneous fluids immediately after breakfast and before dinner — routine now includes two distinct caregiving sessions each day",
+        "supersedes": {
+          "id": "pref_022",
+          "fact": "Preps her cat’s medication immediately after breakfast — never before"
+        }
+      },
+      {
+        "id": "pref_046",
+        "fact": "Blocks all work-related notifications on her phone after 8pm—no exceptions, including deployment emergencies—to comply with strict sleep routine for managing sleep apnea",
+        "supersedes": {
+          "id": "pref_023",
+          "fact": "Restricts all work-related notifications on her phone after 8pm, except for deployment emergencies"
+        }
+      },
+      {
+        "id": "pref_025",
+        "fact": "Shops for groceries exclusively at neighborhood co-ops — never uses large supermarkets or delivery apps"
+      },
+      {
+        "id": "pref_008",
+        "fact": "Uses meal delivery only during high-stress sprints — otherwise insists on cooking fresh at home"
+      },
+      {
+        "id": "pref_048",
+        "fact": "Sets an alarm for 8:45pm as a hard cutoff for all screen use—including television and mobile devices—transitioning directly to offline relaxation to prepare for CPAP use"
+      },
+      {
+        "id": "pref_053",
+        "fact": "Maintains a dedicated weekly one-on-one check-in with every backend team lead to provide individual support and monitor cross-team progress."
+      }
+    ]
+  },
+  "persona": "A mid-career backend developer at a fintech startup"
+}

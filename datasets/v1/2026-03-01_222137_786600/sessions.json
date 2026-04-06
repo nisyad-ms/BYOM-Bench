@@ -1,0 +1,1483 @@
+{
+  "persona": "A mid-level business analyst at a multinational retail corporation",
+  "persona_id": "persona_20260301_223622",
+  "expanded_persona": {
+    "base_persona": "A mid-level business analyst at a multinational retail corporation",
+    "age": 34,
+    "gender": "female",
+    "location": "Chicago, IL",
+    "work_education": [
+      "Business analyst at Target’s corporate offices in downtown Chicago; six years into her career",
+      "Lead on a project to optimize inventory tracking across Midwest stores; coordinates with teams in multiple time zones",
+      "Recently completed a professional certification in data analytics; hoping for a promotion to senior analyst within the year",
+      "Balances routine data reporting with troubleshooting urgent supply chain disruptions",
+      "Often participates in cross-functional meetings with merchandising, logistics, and IT departments"
+    ],
+    "health_wellness": [
+      "Mild asthma; manages symptoms but needs to avoid strenuous outdoor activities during peak pollen days",
+      "Makes time for weekly yoga classes at a neighborhood studio for stress relief",
+      "Has been struggling with insomnia for several months, uses guided meditation apps nightly",
+      "Eats mostly takeout lunches during the workweek, but cooks for herself on weekends as a hobby"
+    ],
+    "family_relationships": [
+      "Lives alone in a rented condo on the outskirts of Chicago, enjoys quiet evenings at home",
+      "Divorced two years ago; keeps in touch with her ex via occasional texts about shared friends",
+      "Older sister lives nearby; they share Sunday brunch tradition and support each other during family emergencies",
+      "Regularly video calls her parents in Seattle, especially since her father’s minor heart surgery last winter",
+      "Cares for her aging cat, Luna, who needs daily medication for a thyroid condition"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Shuts off Slack and email notifications during focused data analysis — only checks messages between tasks",
+        "Schedules cross-functional meetings before noon whenever possible — avoids late afternoons due to time zone misalignments",
+        "Drafts daily troubleshooting checklists for urgent supply chain issues — never relies on memory alone",
+        "Shares weekly project updates through visual dashboards rather than lengthy written reports",
+        "Prefers one-on-one follow-ups with team members rather than group recap emails"
+      ],
+      "health_body": [
+        "Always attends yoga in-person at her neighborhood studio — never streams online classes at home",
+        "Uses guided meditation apps for insomnia every night — never skips, even when tired",
+        "Avoids all outdoor exercise on high pollen days — chooses indoor activities exclusively during allergy season",
+        "Cooks from scratch every weekend — never orders takeout on Saturdays or Sundays",
+        "Brings a refillable water bottle everywhere — avoids bottled or sweetened drinks"
+      ],
+      "social_relationships": [
+        "Video calls her parents every Sunday — never misses a week unless traveling",
+        "Text-chats with her ex only about mutual friends — never discusses personal matters",
+        "Hosts Sunday brunch with her older sister at her condo — never eats out for this tradition",
+        "Regularly declines large group events, choosing intimate gatherings of four or fewer",
+        "Schedules all social plans at least two days in advance — never agrees to last-minute meetups"
+      ],
+      "leisure_hobbies": [
+        "Experiments with new vegetarian recipes each weekend — never repeats the same dish in a single month",
+        "Volunteers monthly at the local animal shelter — prefers helping cats over other animals",
+        "Reads mystery novels before bed — never reads business or self-help books for leisure",
+        "Attends local theater performances quarterly — avoids big-budget musicals, chooses small productions",
+        "Explores new Chicago neighborhoods on foot each month — never uses guided city tours"
+      ],
+      "daily_routines": [
+        "Prepares Luna’s thyroid medication first thing every morning — never skips or delays",
+        "Disables work email notifications after 7pm — never checks work communications overnight",
+        "Meal preps healthy breakfasts on Sundays for the week — never eats breakfast out on weekdays",
+        "Composes a handwritten daily gratitude note each night before sleep — never uses digital journaling apps",
+        "Shops only at local farmer’s markets for groceries on Saturdays — never buys fresh produce at big chain stores"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her older sister announced she is expecting her first child and asked for help preparing for the baby’s arrival, including touring daycares and organizing weekly support visits.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Schedules weekly support visits to her sister’s home to help with baby preparations — prioritizes these over other weekend social invitations",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Researches and tours local daycares with her sister on weekday evenings — blocks out those slots for family support instead of other activities",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Hosts Sunday brunch with her older sister at her condo — never eats out for this tradition"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Rotates Sunday brunch locations with her older sister, often bringing meals or groceries to her sister’s home instead of hosting at her own condo every week",
+              "domain": "social_relationships"
+            },
+            "reason": "Her sister's pregnancy and upcoming baby-related responsibilities mean her sister may have less energy to travel, so she’s now flexible about the brunch location to support her sister and share the hosting burden."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news — my sister just told me she's pregnant! She's asked me to help with everything: prepping her apartment, finding daycares, even routine support as the due date gets closer. My weekends are going to look very different. I could use advice on structuring my time, balancing work, and being useful without burning out."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations to you both! That's a big shift, and it's great your sister has you for support. Since you have a lot coming up, it might help to set boundaries around your weekend and after-work commitments. Are you planning to shift your typical Sunday brunches or weekend routines to spend more time at her place, or will you continue hosting?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, we're changing up our brunch tradition — instead of always hosting at my condo, I'll start bringing meals or groceries to her home some Sundays. It makes more sense since traveling might get harder for her. So, my weekend anchor is now flexible, but I still want to balance supporting her and having downtime myself."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a thoughtful adjustment, and bringing food or groceries is a real help. For balancing, have you thought about blocking off specific support slots for your sister? That way, you could plan your own downtime and hobbies around them, rather than being constantly on call."
+        },
+        {
+          "role": "user",
+          "content": "Yes — we're setting up weekly support visits at her apartment for baby planning. I’ll prioritize those over other social plans, at least for now. I still want to keep my cooking and cat shelter volunteering on weekends, but might need to shift some hobbies around."
+        },
+        {
+          "role": "assistant",
+          "content": "Weekly visits sound like a solid structure, and prioritizing family is wise given everything coming up. For your volunteering and cooking, could you move one of those activities to a different time, or make them less frequent if needed? Are you holding those support visits at a fixed day/time, or flexible depending on her needs?"
+        },
+        {
+          "role": "user",
+          "content": "We’re aiming for Sunday afternoons for support visits, then brunch either before or after at her place. I’ll keep experimenting with new vegetarian recipes — maybe even batch cook to bring to her. Volunteering is still monthly at the cat shelter, so it’s manageable. I’m mostly worried about scheduling weekday daycare tours, since my evenings are usually packed or reserved for yoga classes."
+        },
+        {
+          "role": "assistant",
+          "content": "Great that you can keep your favorite activities. For daycare tours, could you set aside certain weekday evenings just for that purpose? Maybe block out 1–2 nights a week in advance, so you stay ahead and avoid conflicts with yoga or other plans. Will your work schedule allow for that, or is your flexibility limited?"
+        },
+        {
+          "role": "user",
+          "content": "I can block some weekday evenings for daycare tours — I’ll commit to that with her, probably Tuesday and Thursday slots, so everything else can fit around it. It means less spontaneous after-work stuff and fewer group outings, but that’s fine for now. Thanks for prompting me to think ahead; reshuffling habits is definitely needed."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a great plan. Pre-scheduling those evenings will help you keep control of your calendar, and your sister will appreciate the reliability. As you go, you can always adjust if her energy levels change or if needs evolve. Remember to reserve time for your own rest and hobbies, too—want help tracking all these new commitments, or do you already have a system to keep things organized?"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received a formal offer to lead a cross-country expansion project for Target’s inventory systems, requiring frequent travel between Chicago and West Coast offices for the next nine months.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Prefers exploring new West Coast neighborhoods on foot during downtime on business trips — avoids tourist-heavy locations in favor of local spots",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Schedules all flights and hotels to allow for at least one free evening per trip to decompress alone",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Always attends yoga in-person at her neighborhood studio — never streams online classes at home"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Joins online yoga classes from hotel rooms or home while traveling — rarely attends her neighborhood studio in person during business trips",
+              "domain": "health_body"
+            },
+            "reason": "The frequent business travel between Chicago and West Coast offices makes it impossible to consistently attend in-person studio classes; she adapts by joining live-streamed sessions from wherever she is."
+          },
+          {
+            "from": {
+              "id": "pref_026",
+              "fact": "Rotates Sunday brunch locations with her older sister, often bringing meals or groceries to her sister’s home instead of hosting at her own condo every week"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Joins Sunday brunch with her sister via video call during travel weeks — only attends in-person when in Chicago",
+              "domain": "social_relationships"
+            },
+            "reason": "With frequent travel for the cross-country project, she can't always be physically present; to maintain the tradition, she participates virtually when on the road."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_020",
+            "fact": "Explores new Chicago neighborhoods on foot each month — never uses guided city tours",
+            "domain": "leisure_hobbies",
+            "reason": "Frequent long-distance work travel leaves little time in Chicago to continue her monthly local neighborhood strolls; the routine is no longer feasible."
+          },
+          {
+            "id": "pref_028",
+            "fact": "Researches and tours local daycares with her sister on weekday evenings — blocks out those slots for family support instead of other activities",
+            "domain": "daily_routines",
+            "reason": "The cross-country travel schedule means she can't reliably be present for in-person daycare tours with her sister on weeknights."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news — Target just offered me the lead role for a cross-country expansion project. I’ll be traveling constantly between here and the West Coast for nine months. I’m excited but pretty overwhelmed, honestly. Can you help me figure out how to structure my weeks so I don’t burn out or lose track of essentials?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That sounds like a big step forward but definitely a major shift. Are there pieces of your weekly routine you're most worried about losing, or should we start by mapping out your new travel and work schedule first?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s start with travel logistics. I’m going to be in a new city almost every week, so I’d like to keep at least one free evening on each trip to decompress alone. How would you recommend I block my calendar for that, given all the time zone juggling?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really smart boundary. You could make your free evening a recurring appointment in your calendar — maybe mark it as 'busy' to prevent meeting requests. Do you know which day tends to be less chaotic, or do you want to leave it flexible depending on your hotel schedule?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll probably keep it flexible since itineraries change, but I want to make sure no one schedules team dinners or late follow-ups that overlap. I’m planning to tell my leads I need one quiet evening per trip, so it’ll be explicit. Any tips for actually sticking to it when a VP asks you to join a big dinner?"
+        },
+        {
+          "role": "assistant",
+          "content": "Good plan on communicating up front. When leadership pushes for participation, try offering to join for a breakfast or lunch instead. Evening recharge time is important, especially for sustained travel. If you're worried about being seen as less committed, you can frame it as needing energy to handle early meetings or urgent issues the next day. Is this boundary mostly for mental reset or do you need to factor in other routines, like sleep or health management?"
+        },
+        {
+          "role": "user",
+          "content": "Both, actually. I have mild asthma so I don’t want to risk outdoor activities in unfamiliar, high-pollen places. And I’ve been dealing with insomnia for months — meditation helps, but my yoga routine is going to take a hit. I used to attend my neighborhood studio every week, but that’s not realistic with this travel. I think I’ll need online yoga classes from hotel rooms or at home until the project wraps up."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great adaptation. Plenty of studios offer live-streamed classes now, so you can stick to your favorite teachers or explore new ones on the road. Are there other routines you’re worried about disrupting — maybe meal prep or social traditions?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely brunch with my sister. We used to rotate hosting at my condo or her place every Sunday, but now I’ll be traveling some weekends. We decided to join Sunday brunch via video call when I’m away, and only do it in person if I’m home in Chicago."
+        },
+        {
+          "role": "assistant",
+          "content": "I love that solution — keeping the tradition alive, even virtually, makes a difference. What about exploring Chicago neighborhoods on weekends, or other local routines? Is that still doable, or will travel take over?"
+        },
+        {
+          "role": "user",
+          "content": "That one's actually out, at least for now. I used to walk a new Chicago neighborhood every month, but with all the long-distance flights I just don’t have the time. Instead, I’ve started exploring new West Coast neighborhoods on foot during downtime, always avoiding tourist-heavy spots and focusing on local joints."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s such an authentic way to get to know new cities. Are you planning to keep up your other hobby routines, like cooking on weekends or volunteering — or will those pause too?"
+        },
+        {
+          "role": "user",
+          "content": "Cooking from scratch on weekends is staying, but only when I’m actually home. I’ll also keep volunteering at the local animal shelter when possible, though my schedule is less predictable. I’ve dropped helping my sister tour daycares on weekday evenings — can’t reliably be in Chicago for that anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense, and it sounds like you’re adjusting thoughtfully. Is there anything else about your daily routines you want to protect? For example, managing Luna’s medication or keeping up family calls?"
+        },
+        {
+          "role": "user",
+          "content": "Managing Luna’s meds comes first no matter what. And Sunday video calls with my parents in Seattle are non-negotiable, even if I’m in a hotel. The travel is going to be intense, so holding onto these touchstones makes a difference."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve clearly thought this through. Would it help to build a master checklist for each trip — capturing work, wellness, and family routines so nothing falls through the cracks? That way, as plans shift, you can still anchor yourself in what matters most."
+        },
+        {
+          "role": "user",
+          "content": "I like that idea. I already run daily troubleshooting checklists for supply chain issues — turns out adapting them for personal routines would be useful on the road. Thanks for helping me untangle all this. It feels doable now."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her elderly cat Luna was diagnosed with kidney failure, and the veterinarian recommended a new intensive care routine including daily subcutaneous fluids and more frequent medication schedules.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Declines evening social invitations and limits late-night activities to ensure she’s home for Luna’s evening medication and fluid treatments",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Keeps a detailed daily log (paper or digital) to track Luna’s fluid administration, medication doses, and symptoms — never relies on memory or informal notes",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Prepares Luna’s thyroid medication first thing every morning — never skips or delays"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Manages Luna’s intensive kidney care first thing every morning, prioritizing subcutaneous fluids and multiple medications on a strict schedule — medication prep now takes longer and includes evening treatments",
+              "domain": "daily_routines"
+            },
+            "reason": "Luna's new kidney diagnosis and required intensive routine mean the daily care is now more involved, with additional tasks and scheduling burdens, fundamentally changing how medication and health routines are handled."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could really use your help. Luna, my elderly cat, was just diagnosed with kidney failure. The vet says she needs daily subcutaneous fluids along with a stricter medication schedule, starting right away. I’m kind of overwhelmed figuring out how to adjust my routine, especially around work and staying organized. Any tips for managing this kind of intensive pet care?"
+        },
+        {
+          "role": "assistant",
+          "content": "I’m so sorry to hear about Luna’s diagnosis—that’s a lot to take on suddenly. Keeping up with a strict schedule for meds and fluids can be challenging, especially with your busy workdays. Are you mostly on your own for her care, or does anyone else help out? Also, do you have experience with giving subcutaneous fluids, or is this totally new for you?"
+        },
+        {
+          "role": "user",
+          "content": "It’s just me, so all the care falls on my shoulders. I’ve never given fluids before, but the vet walked me through it and I practiced once there. The hardest part is making sure I do it right, and remember the timing for all her meds now. Mornings are slower since prep takes longer, and I have to do evening meds and fluids too. I used to just do her thyroid med before work, but now that routine’s expanded a lot."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment. Establishing a routine is vital. Would a written checklist or digital reminders help with tracking what needs to be done when—especially with multiple treatments a day? And does the new schedule affect your evenings, or are you able to fit everything in before heading out after work?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, evenings are now pretty much dedicated to Luna. I’ve started declining any late-night social plans, just so I’m home for her evening fluids and medications. I used to be flexible if something fun came up, but that’s not an option right now unless I can guarantee I’m home on time."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—that’s a tough tradeoff, but Luna’s care comes first. With so much to track, do you find it easier to log her treatments and symptoms in a notebook, or do you prefer a digital tool? The vet probably wants you to monitor her reactions closely."
+        },
+        {
+          "role": "user",
+          "content": "I keep a detailed daily log now—it’s basically mandatory at this point with all the fluid doses, meds, and any signs of issues. I never rely on memory or informal notes for this stuff. Sometimes I use paper, other times I type it out in a doc, depending on how hectic things feel."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really smart, and it’ll help your vet keep track too. Have you had any trouble integrating the more involved care routine with your work schedule—for example, do you need to shift morning meetings to give yourself extra time, or do you feel you have enough flexibility?"
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely a tighter squeeze now in the mornings, since prepping fluids and meds takes longer. I may need to shift more meetings before noon, or set a buffer at the start of the day. I’ve always turned off work notifications while focusing on Luna anyway, but now it’s even more essential—her health comes first before any emails."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid strategy. Maybe you could set recurring calendar blocks for Luna’s treatments, so your team knows you’re unavailable during those times? If you need, I can suggest some scheduling tools or templates for tracking both Luna’s care and your work priorities side by side."
+        },
+        {
+          "role": "user",
+          "content": "Calendar blocks could work—I’ll try adding those so the team knows not to bother me during the morning and evening windows. Thanks for offering templates; a sample daily log would actually be helpful, especially for tracking symptoms alongside fluid and med times. If you have one, I’d appreciate it."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—I can draft a sample log template for you to track Luna’s daily care and symptoms. It’ll have columns for fluids administered, medication details, timing, and any observations. You can use it on paper or digitally, whichever feels easiest. Would you like anything in particular added, such as space for appetite, mood changes, or other health signals?"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After weeks of worsening insomnia, her doctor diagnosed her with obstructive sleep apnea and prescribed nightly use of a CPAP machine, requiring a new bedtime routine and regular follow-up appointments.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Blocks out an extra 30 minutes each night for CPAP therapy setup and wind-down — does not schedule any calls, messages, or chores after 9pm",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_038",
+            "fact": "Maintains a CPAP usage and sleep quality journal, recording hours of use and any discomfort nightly for her doctor’s follow-ups",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Uses guided meditation apps for insomnia every night — never skips, even when tired"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Performs CPAP setup routine and machine checks nightly before bed — uses guided meditation apps only if time allows after equipment setup",
+              "domain": "health_body"
+            },
+            "reason": "With the new diagnosis of obstructive sleep apnea and nightly CPAP requirement, her bedtime routine prioritizes CPAP setup and acclimatization. Meditation is now secondary and sometimes skipped to ensure proper device use and compliance."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I finally got answers about my sleep problems—turns out I have obstructive sleep apnea. My doctor just set me up with a CPAP machine that I have to use nightly. I'm honestly overwhelmed by how much this changes my evenings. Can you help me figure out how to build a new bedtime routine so I can actually stick to this?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm glad you have a diagnosis, even though that's a big adjustment. Starting CPAP therapy can definitely shake up your usual routine. What does your current evening rhythm look like—anything you want to keep, or stuff you're worried about fitting in with the new setup?"
+        },
+        {
+          "role": "user",
+          "content": "I used to rely on guided meditation every night to help my insomnia. Now, getting the CPAP ready and checking everything seems like it takes forever, and sometimes I skip the meditation just to get into bed faster. My doctor stressed that I shouldn't rush the setup. Any ideas on how I can streamline the process or add back some wind-down time?"
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. CPAP setup can feel tedious but it's important for your health. Maybe creating a checklist for the equipment setup could make it feel more like your old ritual? And if you want to keep meditation, could you move it earlier or use a shorter session to fit after setup?"
+        },
+        {
+          "role": "user",
+          "content": "A checklist is smart—it fits right in with how I approach other routine tasks at work. Since starting CPAP, I've switched to doing the machine setup routine first, then meditation only if there's time left. Sometimes I just skip it now, which I'd never do before. I guess my priority has completely shifted to getting the device right."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a positive shift—you’re focusing on what’s most crucial for your health. If writing the checklist helps, maybe you could keep it somewhere visible in your bedroom so it becomes part of your nightly wind-down. Do you have any other evening commitments that compete with that CPAP time, or is bedtime mostly free?"
+        },
+        {
+          "role": "user",
+          "content": "I've started blocking an extra half hour every night just for CPAP setup and winding down. I actually don’t schedule calls, messages, or chores after 9pm anymore. It’s the only way I can avoid distractions and be sure I get it done."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid boundary! Setting time aside exclusively for your CPAP routine should help make the adjustment smoother. Has it helped you actually feel more rested, or are you still getting used to the equipment itself?"
+        },
+        {
+          "role": "user",
+          "content": "It’s still early days—I’m getting used to the sensation, and some nights I feel awkward or uncomfortable. Because of that, I’ve started keeping a sleep journal to track my CPAP usage and any issues. My doctor wants regular data for follow-ups."
+        },
+        {
+          "role": "assistant",
+          "content": "Great approach—tracking your experience gives your doctor actionable info and can help you notice patterns. Are you journaling digitally or writing it out? Do you want advice about what to track in your entries?"
+        },
+        {
+          "role": "user",
+          "content": "I’m just jotting down hours of use, comfort level, and any disruptions right before bed. It’s hand-written, since I already do a nightly gratitude note on paper—journaling apps don’t really work for me. But if there are other metrics I should add, I’m open to suggestions."
+        },
+        {
+          "role": "assistant",
+          "content": "Hand-written is nice and keeps it personal. Beyond hours and comfort, you could record how you feel upon waking (energy, mood), and note if there’s anything unusual—like mask leaks or waking up during the night. You might also want to track overall sleep quality or any changes in your insomnia symptoms over time."
+        },
+        {
+          "role": "user",
+          "content": "That’s helpful. I’ll add morning energy and any mask issues. The insomnia hasn’t vanished entirely, but I’m hopeful. It’s strange to not use my meditation app every day now—I prioritized it for months, but CPAP has to come first. Thanks for helping me rework my routine."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re adapting really thoughtfully. Building a new routine around health needs isn’t easy, but you’re already doing important things. If you want more resources or support (like CPAP user tips or ideas to make the routine feel less clinical), just ask!"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed a severe allergic reaction during peak pollen season, leading her doctor to prescribe a corticosteroid inhaler and instruct her to avoid all in-person group exercise classes—including her neighborhood yoga studio—until symptoms stabilize.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Checks local pollen and air quality alerts twice daily—morning and evening—to track potential symptom triggers and adjust routines accordingly",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Uses corticosteroid inhaler before any physical activity at home as part of her new symptom management routine",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_029",
+              "fact": "Joins online yoga classes from hotel rooms or home while traveling — rarely attends her neighborhood studio in person during business trips"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Participates only in solo yoga sessions at home, following recorded videos or apps — avoids all in-person and live-streamed group classes due to doctor’s instructions",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor specifically advised against all in-person group exercise classes—including the neighborhood studio and any live-streamed group sessions—until symptoms stabilize. She now practices yoga alone, using recorded materials for guidance."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_008",
+            "fact": "Avoids all outdoor exercise on high pollen days — chooses indoor activities exclusively during allergy season",
+            "domain": "health_body",
+            "reason": "Due to the severe allergic episode, she must now avoid all group exercise settings (indoor or outdoor), not just outdoor activities on high pollen days. The shift to doctor-mandated restriction supersedes the previous pollen-based rule."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could really use some help adjusting my routine. I had a pretty bad allergic reaction last week — ended up at urgent care, and my doctor put me on a corticosteroid inhaler. She told me to stay away from all in-person group exercise for now, including my usual yoga studio. Any tips for staying active and managing stress without my usual class?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really tough. I know how much yoga helps with stress, so having to step away from group sessions is a big shift. Are there any at-home routines or video guides you’ve tried before, or is solo practice totally new for you?"
+        },
+        {
+          "role": "user",
+          "content": "It’s pretty new, actually. I’ve always gone to my neighborhood studio for in-person classes—never streamed them at home, and the doctor said I should avoid any kind of live-streamed group classes, too. I’m cleared to do solo yoga sessions at home with recorded videos or apps, though. Just feels like a big departure from my usual habits, so I’m unsure where to start."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—the experience is definitely different when it’s solo. Since you’re allowed recorded sessions, do you have any favorite styles from your studio that you want to recreate at home? I can help you find some reputable video programs or apps that match your preferences."
+        },
+        {
+          "role": "user",
+          "content": "I usually go for restorative or gentle flow classes, partly because of my asthma. Now, I also have to use the corticosteroid inhaler before any physical activity at home—it’s part of my new symptom management routine. So nothing too strenuous. If you know of recorded routines geared toward people with respiratory issues, that’d be ideal."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—restorative and gentle flows are great choices, especially considering your asthma and the new inhaler protocol. I can recommend a few well-reviewed apps and YouTube channels with gentle, low-impact routines tailored for respiratory health. Would you prefer routines under 30 minutes, or do you want longer sessions to more closely mimic your studio experience?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s start with 30 minutes or less; with the inhaler, I want to ease in and make sure my symptoms are stable. Also, my doctor advised I check local pollen and air quality alerts twice daily, morning and evening, so I factor that into my routine now. Might help if the app lets me plan based on indoor air quality, too."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart adjustment. Some apps do let you set reminders or log environmental factors, which can help you sync your practice with air quality and pollen levels. If you want, I can prioritize tools with those features. Do you want routines you can follow without any props, or are you open to getting equipment for your home practice?"
+        },
+        {
+          "role": "user",
+          "content": "I actually have a mat and a couple blocks at home already, so equipment isn’t a big barrier. I’m realizing how much this changes my routine—I used to go to the studio every week like clockwork, and only skipped for business trips. Now, even indoor group exercise is out for the foreseeable future. Honestly, before this, I’d just avoid outdoor activities during allergy season, but now my doctor says no group sessions at all, indoors or out."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for clarifying—so group exercise is off the table completely, regardless of setting. Solo yoga at home looks like your best option, and you’re monitoring pollen and air quality closely. In that case, I’ll focus on solo, recorded gentle flow routines with environmental tracking features. Is there anything else you want to fold into your new self-care plan, like meditation or breathwork, or mainly yoga for now?"
+        },
+        {
+          "role": "user",
+          "content": "Yoga is the priority, but meditation’s still part of my nightly routine for insomnia, so anything with a guided relaxation component would be a plus. I write a gratitude note every night before bed too, so structure helps. I appreciate routines that start or finish with mindfulness, even if it’s just a few minutes of calm breathing."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds good. I’ll look for programs that include short guided meditations at the beginning or end of the session and gentle breathing exercises. There are several apps and YouTube playlists designed for stress relief and respiratory-friendly yoga, so I’ll compile options that incorporate these features. Anything else in your routine that needs tweaking due to the allergy flare-up?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the biggest change is how regimented I’ve had to become. I check pollen and AQI each morning and evening, use my inhaler before any movement, and only do solo yoga sessions—no studio, no live streams, nothing group-based. The rest of my routines are holding up okay, but this shift has been major. Thanks for helping me sort through it."
+        },
+        {
+          "role": "assistant",
+          "content": "Of course—it’s a big transition, but you’re taking all the right steps. I’ll send you a shortlist of gentle, asthma-friendly yoga routines and apps that prioritize solo practice and environmental awareness, with mindfulness integrated. If you need tips for tracking your inhaler use or syncing your yoga sessions with air quality readings, just let me know. Anything else you want help with while you’re adjusting?"
+        },
+        {
+          "role": "user",
+          "content": "I think that covers the major shifts. Just having a plan for solo yoga and symptom management makes me feel more grounded. If you have any book recommendations for relaxing evening reads that aren’t business-related—maybe mystery novels—I’d welcome those too."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Mystery novels are a great way to unwind. I’ll include a few recommendations with your yoga resources. Let me know if you want advice on other aspects of your routine as you settle into this new phase. Take care, and I’m here whenever you need support."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Target’s Chicago corporate office announced a mandatory return-to-office policy requiring all business analysts to work onsite five days a week, ending the current hybrid work option.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Commutes by train each weekday morning and prefers listening to business analytics podcasts during her commute — avoids social media browsing",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Eats lunch with coworkers in the office lounge most weekdays — rarely orders solo takeout anymore",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_039",
+              "fact": "Participates only in solo yoga sessions at home, following recorded videos or apps — avoids all in-person and live-streamed group classes due to doctor’s instructions"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Attends in-person yoga classes at her neighborhood studio weekly, as she no longer avoids all group classes since her routine now requires her to be onsite downtown five days a week",
+              "domain": "health_body"
+            },
+            "reason": "The mandatory return-to-office means her proximity to the studio and regular schedule allow her to resume in-person yoga sessions. Doctor’s restrictions have relaxed as her symptoms are stable and commuting increases her need for group-based stress relief."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_032",
+            "fact": "Schedules all flights and hotels to allow for at least one free evening per trip to decompress alone",
+            "domain": "daily_routines",
+            "reason": "With the return-to-office eliminating business travel, she no longer needs to schedule accommodations or travel routines that include decompression evenings."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Target just announced they're ending the hybrid arrangement—so starting next week, I'm back in the downtown office every weekday. I haven't commuted full-time since before 2020. I'm honestly a little anxious about switching up my workflow and routines. Any advice for staying productive and keeping my sanity with the return-to-office?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a huge shift, especially after years of hybrid flexibility! For productivity, keeping your deep work protected is helpful—can you still carve out focused times for data analysis? And for sanity, building transition rituals before or after work can help. What parts of your existing routine are you most concerned about disrupting?"
+        },
+        {
+          "role": "user",
+          "content": "I'm mostly worried about losing those stretches of quiet time to work on my dashboards and troubleshooting checklists. At home, I could shut off Slack and email without anyone interrupting. Now with everyone onsite, I expect a lot more drop-bys and distractions. And I'm dreading the commute—I used to hate staring at my phone during train rides."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, office drop-ins can eat into focused work. You might need to get creative with signaling 'do not disturb' times—even onsite. Have you tried blocking calendar slots for deep analysis, or using headphones as a visual cue? For commuting, maybe you could listen to audio content you actually enjoy instead of mindless scrolling—do you have any favorite podcasts or topics?"
+        },
+        {
+          "role": "user",
+          "content": "Headphones will be key! As for podcasts, I've started queuing up business analytics shows for my train commute—it's more engaging than social media, and feels productive. That's actually a new habit since the announcement. On focus: I still plan to check messages only between tasks, not constantly, even at the office. Hopefully my coworkers understand."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a great new commute ritual. And keeping your messaging boundaries is smart—even if you're physically present, async check-ins help preserve focus. Have you shared your communication style with your team, so they know not to expect instant replies during deep work periods? Or are you planning to handle it informally?"
+        },
+        {
+          "role": "user",
+          "content": "Good question. I've mentioned it during project standups, but I might need to remind people once we're all in person. It helps that I schedule most cross-functional meetings before noon; afternoons tend to get messy with different time zones. Oh, another thing shifting is lunch—I used to order solo takeout almost every day, but lately I've been eating with coworkers in the lounge. It’s surprisingly less lonely."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a positive adjustment! Social lunch breaks can be a nice buffer, especially after a long morning of meetings. Do you find these office lunches helpful for networking, or mostly just a welcome routine change? And since your days are more structured, have your after-work routines shifted too?"
+        },
+        {
+          "role": "user",
+          "content": "They're mostly just a routine change, but getting to know people better helps with troubleshooting supply chain issues—sometimes quick conversations clarify things faster than Slack threads. After work, I'm actually returning to in-person yoga at my neighborhood studio. I used to avoid all group classes because of asthma, plus doctor's orders, but now with five days onsite, I'm cleared and the studio’s nearby. Having a set class helps me decompress."
+        },
+        {
+          "role": "assistant",
+          "content": "That's fantastic! If your asthma symptoms are stable, in-person yoga can offer both stress relief and social connection. Do you find group classes more motivating than solo practice at home, or is location convenience the main driver?"
+        },
+        {
+          "role": "user",
+          "content": "It's definitely a mix—being in the space feels calming, and it's more motivating than following a recorded video at home. Plus, since my doctor relaxed restrictions and I'm commuting downtown anyway, it’s much easier to stick to a weekly class now. The only thing I dropped is business travel—no more scheduling flights or hotels to allow a free evening to decompress. The return-to-office eliminated all those trips."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—business travel does require its own set of routines. With it off your plate, maybe your evening decompression moves to post-yoga, or even quiet time with Luna at home. Are there any weekend routines you’re leaning on to create some balance for yourself?"
+        },
+        {
+          "role": "user",
+          "content": "Weekend cooking is still key for me—I experiment with new vegetarian recipes every Saturday or Sunday, never repeat the same dish in a month. I keep my brunch tradition with my sister and meal prep breakfasts on Sundays. Farmer’s market shopping, volunteering at the shelter, gratitude notes—all still intact. Now with office obligations, I value those routines even more."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you're thoughtfully adapting, keeping what works and letting go of what doesn't fit your new schedule. If you need help tracking new habits or adjusting workflows—like optimizing your daily checklist for onsite troubleshooting—I'm happy to help. Anything else you're wondering about balancing, or planning for this next phase?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I'm thinking about ways to keep Luna’s medication routine smooth despite getting home later, and curious how best to keep my meditation app habit going on nights when my energy is low. But overall, I think I'm in a good place, just need to tweak things as the weeks go."
+        },
+        {
+          "role": "assistant",
+          "content": "Consistency is key: prepping Luna’s meds first thing in the morning as you already do, and perhaps setting a meditation reminder before your gratitude note at night to anchor your routine. If you ever want tips for making your evening unwind more efficient—or want new podcast suggestions for your train commute—let me know!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Target's Midwest inventory tracking project, which she has been leading, experienced a major system failure during a multi-state rollout, resulting in urgent reassignment of responsibilities and the need for her to coordinate an emergency cross-department task force.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Checks in daily with each department on the emergency task force via brief stand-up calls, prioritizing clear nightly progress updates over written reports",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Skips her weekend scratch-cooking hobby and orders takeout for convenience during crisis periods, to free time for emergency project work",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Shuts off Slack and email notifications during focused data analysis — only checks messages between tasks"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Keeps Slack and email notifications on at all times during work hours — prioritizes instant response and real-time coordination over focused solo analysis",
+              "domain": "work_habits"
+            },
+            "reason": "The emergency task force and ongoing system failure demand her immediate availability for rapid fire troubleshooting and coordination. She cannot afford uninterrupted analysis blocks or delayed message-checking while tasked with crisis response."
+          },
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Schedules cross-functional meetings before noon whenever possible — avoids late afternoons due to time zone misalignments"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Schedules cross-functional meetings at any available time, including late afternoons and evenings, as dictated by emergency priorities — time zone concerns are temporarily ignored",
+              "domain": "work_habits"
+            },
+            "reason": "Due to the urgent inventory system failure and frantic pace of response, meeting at optimal times is now impossible — coordination happens whenever people can join, regardless of previous scheduling preferences."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, our Midwest inventory rollout at Target turned into a total disaster last night. I was up until 2am dealing with system failures across three states. Now I've been tasked to coordinate an emergency cross-department team, and honestly, I've never handled something quite this intense. I could use your help figuring out how to stay on top of all the real-time troubleshooting and communication, and not let things slip through the cracks."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds incredibly stressful! When everything’s urgent and unpredictable, it’s easy to get overwhelmed by constant alerts and shifting priorities. Are you still able to carve out focused blocks for analysis, or have you had to switch up your usual routine to accommodate the rapid-fire coordination?"
+        },
+        {
+          "role": "user",
+          "content": "Focused analysis blocks are out the window right now. I used to shut off Slack and email notifications during those times, but with this crisis, I have to keep everything on and respond instantly—anything less and I could miss something critical. I’m barely working solo at all; it’s full-on real-time troubleshooting."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge shift. Real-time response keeps you informed but can be mentally exhausting long-term. For the cross-department team, are you managing a regular meeting cadence, or just ad hoc calls as issues pop up? Finding a predictable rhythm might help anchor the chaos, even if it’s unconventional hours."
+        },
+        {
+          "role": "user",
+          "content": "I used to schedule cross-functional meetings before noon to avoid time zone hassles, but now, I just book them whenever people can join — even late afternoons and into the evening if needed. The usual scheduling logic is out; emergency priorities rule everything. I’m doing daily stand-up calls with each department, and pushing for clear progress updates every night instead of written reports."
+        },
+        {
+          "role": "assistant",
+          "content": "Daily stand-ups and clear nightly updates make a lot of sense for a task force in crisis mode. Are you keeping any personal routines going to help manage stress, or has your schedule changed so much that you’ve had to let some things slide temporarily?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, my usual routines have taken a hit—especially my weekend cooking hobby. Normally, I'd cook from scratch every Saturday and Sunday as a way to unwind, but right now I've been skipping that and just ordering whatever takeout is fastest, so I can free up time for project work. It’s not ideal, but it’s necessary for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s totally understandable given the demands of the situation. When things settle down, you’ll have space for your cooking hobby again. For now, would you like suggestions on healthy takeout options that can help keep your energy up, or quick strategies to streamline your workflow for the nightly progress updates?"
+        },
+        {
+          "role": "user",
+          "content": "Healthy takeout suggestions would be great—especially vegetarian options since my meals are normally plant-based. And if you have tips for keeping these nightly update calls brief but effective, I’m all ears. I need to balance being thorough with not burning out the team."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! For vegetarian takeout in Chicago, a few reliable options are Native Foods, Crisp, and Falafel on Wheels. These have solid veggie choices and quick service. For update calls, try a two-minute round-robin: each member shares their key progress and one blocker, then you close with next actions and gratitude for their effort. Keeps things brisk but everyone feels heard."
+        },
+        {
+          "role": "user",
+          "content": "Those takeout places sound perfect—I’ll check them out tonight. I like the round-robin idea; I’ll try leading with gratitude, too. One thing I’m finding is, if updates are written, they get ignored; but if we talk, everyone stays engaged. This new approach is definitely more time-consuming, but the real-time clarity is worth it."
+        },
+        {
+          "role": "assistant",
+          "content": "Very true—live calls foster accountability and connection, especially under stress. If you find team members are overwhelmed, you could rotate who shares first each night to spread the spotlight and energy. Also, if you need to track quick actions, a shared dashboard can help everyone visualize next steps at a glance."
+        },
+        {
+          "role": "user",
+          "content": "I agree—a visual dashboard is still my go-to for weekly project updates, even now. It’s fast for everyone to digest. I’ll start rotating who opens the call, good idea. Thanks for the help—you’ve honestly helped me map out a plan for surviving this stretch."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to support you! Crisis periods are tough, but your leadership and flexibility are making a real impact. If you ever need to brainstorm ways to reclaim your routines or manage team morale, let me know. Take care and remember to carve out small moments for yourself when you can."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her parents in Seattle informed her that her father's heart condition has worsened, and they have decided to temporarily relocate to Chicago for ongoing medical treatment and will be staying with her until his recovery.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_051",
+            "fact": "Coordinates daily schedules around her father's medical appointments and recovery needs — blocks family time, errands, and caregiving tasks before work as needed",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_052",
+            "fact": "Researches local medical resources and heart health support groups for caregivers, preferring recommendations from her father's cardiologist",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Video calls her parents every Sunday — never misses a week unless traveling"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Spends daily in-person time with her parents at home and only video calls extended family in Seattle when needed",
+              "domain": "social_relationships"
+            },
+            "reason": "Her parents are now living with her in Chicago for her father's medical treatment, making weekly video calls unnecessary and shifting the relationship to frequent in-person interactions."
+          },
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Cooks from scratch every weekend — never orders takeout on Saturdays or Sundays"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Adjusts weekend cooking routines to accommodate her parents’ dietary needs and medical restrictions, often preparing special low-sodium or heart-healthy meals; occasionally orders takeout if fatigue or medical appointments disrupt plans",
+              "domain": "health_body"
+            },
+            "reason": "Her father's health situation and parents' presence mean she must adapt cooking routines for medical diets and family needs, sometimes foregoing scratch-cooking or allowing exceptions for convenience."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_014",
+            "fact": "Regularly declines large group events, choosing intimate gatherings of four or fewer",
+            "domain": "social_relationships",
+            "reason": "With her parents living at her condo and frequent home care obligations, she is not currently able to host or attend even small in-person gatherings outside the family. Maintaining privacy and calm for her father's recovery takes precedence over social preferences."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My parents just moved in with me from Seattle—they’ll be here for at least a few months while my dad has treatment at Northwestern. I’m suddenly juggling way more at home, and trying to figure out how to keep work projects on track without letting caregiving tasks overwhelm me. Could you help me brainstorm ways to organize my schedule, especially around medical appointments and family time?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big transition for everyone. It sounds like you’ll need more flexible blocks in your calendar, and ways to adapt on days when his appointments run long. Do you already have a routine for tracking your parents’ medical needs, or is this something new for you?"
+        },
+        {
+          "role": "user",
+          "content": "It’s very new. I’m just starting to coordinate daily around my dad’s medical appointments—sometimes I have to rearrange errands or block family time before work, depending on what’s scheduled. I used to stick to pretty fixed mornings for myself, but now I’m syncing everything to the hospital’s schedule."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. Would it help to create a shared calendar for medical appointments and family tasks? That way you and your parents can visualize the plan and adjust together. Are there any tools you prefer, like Google Calendar, or physical planners?"
+        },
+        {
+          "role": "user",
+          "content": "We set up a color-coded Google Calendar, since they’re comfortable with it. I use recurring reminders for Luna’s meds, meal prep, and work blocks. Is there a way to automate daily checklists or reminders for other caregiving tasks—especially if appointment times change last-minute?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, you could use task apps like Todoist or Microsoft To Do for flexible checklists. Both sync with Google Calendar so you can link tasks to specific days or times. Would you want to share the checklist with your parents, or keep it just for yourself?"
+        },
+        {
+          "role": "user",
+          "content": "Just for me, at least for now. I’m also starting to research local medical resources and support groups for caregivers—ideally ones recommended by my dad’s cardiologist. Any suggestions on how to find trusted options?"
+        },
+        {
+          "role": "assistant",
+          "content": "A good starting point is the hospital’s social worker or outpatient coordinator; they usually have vetted lists. You can ask your dad’s cardiologist directly for recommendations on heart health support groups in Chicago, or caregiver-specific programs. Have you reached out to them yet, or is that still on your list?"
+        },
+        {
+          "role": "user",
+          "content": "I emailed the hospital’s patient liaison but haven’t heard back. I want to prioritize options they’ve actually recommended, rather than random groups I find online. For now, I’m keeping extended family updated by video call—my parents and I don’t need those weekly calls anymore since they’re here with me every day."
+        },
+        {
+          "role": "assistant",
+          "content": "Keeping in-person updates sounds much easier now. With your parents at home, how has that changed your weekend routine, especially around cooking? Are you still able to prep meals as before, or have you had to adapt?"
+        },
+        {
+          "role": "user",
+          "content": "I definitely had to adapt. I’m making low-sodium, heart-healthy meals for my dad and adjusting recipes for my mom’s preferences. Sometimes, if my dad has extra appointments or I just get too tired, I’ll order takeout instead. I used to cook from scratch every weekend—never ordered in—but now I allow exceptions if needed."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s completely reasonable. Have you found any go-to spots for healthy takeout, or would you like recommendations for places with good heart-friendly options? Also, do you still get time to experiment with vegetarian recipes, or is family nutrition taking priority?"
+        },
+        {
+          "role": "user",
+          "content": "Family nutrition definitely comes first now. I’m still trying to incorporate vegetarian dishes, but it’s more about accommodating medical needs. Also, I haven’t hosted or attended any in-person gatherings lately—privacy and calm at home are more important while my dad recovers. I used to decline big groups and favor small ones, but now I can’t do even low-key meetups outside the family."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s understandable—stability at home is key while you’re supporting your parents. Maybe after things settle, you can revisit those small social gatherings. If you need any ideas to maintain connections virtually or find brief moments of respite, just let me know."
+        },
+        {
+          "role": "user",
+          "content": "Thanks. Right now, everything is centered around their needs and schedules. I appreciate the help—these suggestions make it feel more manageable."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "During a routine physical, her doctor identified elevated blood pressure readings over multiple visits and initiated a prescription antihypertensive regimen, along with strict recommendations for daily home monitoring and dietary sodium restrictions.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_054",
+            "fact": "Performs daily morning and evening blood pressure checks at home and logs all readings manually in a dedicated health journal — never skips a check, even on busy days",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Reads nutrition labels on all packaged foods and grocery items, choosing only products labeled 'low sodium,' and avoids restaurant foods unless sodium content is explicitly listed",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_048",
+              "fact": "Skips her weekend scratch-cooking hobby and orders takeout for convenience during crisis periods, to free time for emergency project work"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Eliminates takeout on weekends entirely and prepares strictly low-sodium homemade meals to manage her blood pressure — scratch-cooking is now focused on heart-healthy recipes, never convenience food",
+              "domain": "health_body"
+            },
+            "reason": "Newly diagnosed hypertension and prescribed sodium restriction require her to avoid high-sodium takeout and prioritize home-cooked, carefully controlled meals even during stressful periods. Convenience is no longer an acceptable trade-off due to her health risks."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I had a bit of a curveball at my annual physical last week — my doctor flagged consistently high blood pressure, so now I’m starting antihypertensive meds and have a pile of home monitoring instructions. On top of that, she’s insisting on strict sodium restrictions. I’m a little overwhelmed. Any tips for making the dietary shift without totally losing my weekends to meal prep?"
+        },
+        {
+          "role": "assistant",
+          "content": "That must feel like a big adjustment, especially with your schedule. Starting with sodium restrictions, have you done much label reading before? Sometimes starting with a few go-to low-sodium recipes can help streamline the process, but I'd want to make sure that fits your style. How do you usually approach weekend cooking—batch cook, experiment, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "I actually like to experiment, so my weekends are usually for scratch-cooking new vegetarian recipes. But now, I can't do my old fallback of ordering takeout if a recipe fails or I get swamped with work. No more takeout on weekends at all—I have to prep strictly low-sodium meals, even if I'm crunched for time. Convenience isn't an option anymore, which honestly stings."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, and it's a tough switch—especially when work eats into your weekends. Luckily, there are a lot of flavorful heart-healthy vegetarian options that keep sodium low. How comfortable are you with using herbs, citrus, or vinegars to boost flavor? And do you have a shortlist of meals you'd want to adapt first, or should we start fresh?"
+        },
+        {
+          "role": "user",
+          "content": "I love working with fresh herbs and spices, and I'm big on citrus—so that part makes sense. I'm going to need ideas that are easy to batch and reheat, though. Also, my doctor said I have to check my blood pressure every morning and evening at home, and log all the readings manually in a health journal. No skipping checks, even on busy days."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a lot to juggle—having a twice-daily log on top of everything else could be stressful. Do you already have a routine for mornings and evenings, or do we need to find a consistent slot for your BP checks and meal prep? And regarding food, are you open to suggestions for low-sodium vegetarian stews, grain bowls, or sheet pan dinners?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I'm pretty set on my morning routines—first thing is always Luna’s thyroid meds, so now I just tack the blood pressure check right after. Evenings, I can fit it in before my gratitude note and meditation apps. But meals are trickier; I have to read nutrition labels for everything now and only buy products labeled 'low sodium.' Even when eating out, I avoid anything without a sodium listing."
+        },
+        {
+          "role": "assistant",
+          "content": "That's very thorough! For groceries, how comfortable are you with cooking mostly from raw ingredients? Many packaged vegetarian foods sneak in hidden sodium. And I could help you make a checklist for farmer’s market hauls—sometimes vendors will provide nutrition info, or you can ask about sodium in breads, cheeses, or other items. Would a printable ingredient guide for low-sodium produce and pantry staples help streamline your shopping?"
+        },
+        {
+          "role": "user",
+          "content": "That would definitely help—since I shop almost exclusively at the farmer’s market on Saturdays. I ignore big chains for produce, but now I need to be extra picky about anything packaged. A guide sounds perfect, especially so I don’t waste time asking every vendor. And having handheld checklists works for me—I already use daily troubleshooting lists at work."
+        },
+        {
+          "role": "assistant",
+          "content": "Great, I'll draft you a farmer's market checklist focused on low-sodium produce and product questions. For recipes, I can suggest a few heart-healthy vegetarian batch meals using fresh ingredients and minimal packaged items. Would you like printable versions for reference during prep, or do you prefer digital notes?"
+        },
+        {
+          "role": "user",
+          "content": "Printable is best—you can’t beat a physical checklist. Between that and the new health journal for logging BP, I’m basically going analog in my kitchen. Thanks for understanding. I think I’ve got the BP checks and meal plan constraints covered, but if you have ideas for making the twice-daily routines feel less stressful, I’m all ears."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you're already leaning into your strengths—structured routines and organization. One idea: pairing BP checks with something positive, like listening to calming music or prepping your favorite herbal tea, can turn that moment into a pause instead of another task. Do you have a preferred morning or evening relaxation ritual that could help anchor your new rhythm?"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her ex-husband reached out unexpectedly, sharing that he is moving to Chicago for a new job and is hoping to reconnect in person to catch up and discuss mutual connections in the city.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Carefully plans any in-person meetings with her ex at neutral public locations — avoids private or emotionally loaded settings such as homes or favorite former date spots.",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Text-chats with her ex only about mutual friends — never discusses personal matters"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Meets her ex in person for occasional, friendly catch-ups to discuss mutual connections; text chats remain limited to coordination or logistical topics — personal matters and emotions are still off-limits in all communication.",
+              "domain": "social_relationships"
+            },
+            "reason": "Her ex-husband’s move to Chicago and request for in-person reconnection shifts their interaction from strictly digital (texting) to occasional real-world meetups focused on shared social circles. This introduces a new behavioral channel while retaining boundaries around personal discussion."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my ex-husband texted me out of the blue yesterday — he's moving to Chicago for work and wants to meet up soon to catch up, mostly about mutual friends and what's going on socially here. I've never seriously considered in-person catch-ups before, so I'm a little unsure how to handle this. Can you help me figure out how to navigate this? What should I be thinking about?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s definitely a shift. It makes sense to feel uncertain, especially if you haven’t moved from digital-only interaction before. Do you have any initial concerns or boundaries you want to set for in-person meetups? For example: location, duration, or topics that feel off-limits?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, boundaries are definitely important — I really don’t want to get into personal stuff or anything emotionally loaded. I don’t mind catching up occasionally, as long as it’s just about our mutual connections and shared friends. But I’d rather keep any conversations strictly friendly and surface-level. Logistically, I also want to avoid anywhere that’s a private space or that feels like a 'date.' Would public, neutral spots work as a meeting place?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, neutral public locations are a great choice. Cafés, casual restaurants, or even quieter parts of a public park (especially indoors for your asthma) would help keep things comfortable and low-pressure. Are there any places you have in mind, or any you want to avoid specifically because they might carry emotional history for you?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely avoiding old favorites or anything tied to our past dating life. I don’t want to pick either of our homes, or any spot that might have sentimental vibes. A café I haven’t been to before, or maybe a casual lunch spot, sounds ideal. I’m also thinking about keeping these catch-ups rare, like maybe once a quarter, not frequent. And only planning them around mutual friend info or social updates — nothing more."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a healthy structure. Do you prefer to schedule these meetups well in advance, or would you be okay with more spontaneous planning? Also, do you want to communicate by text only for logistical coordination, and keep everything else for the face-to-face catch-ups?"
+        },
+        {
+          "role": "user",
+          "content": "For me, everything needs to be scheduled at least a few days out — I absolutely don’t do last-minute meetups, with anyone. For logistics, texting is fine just to confirm time and place, but not for chit-chat. Basically, text is for coordination only. The actual catch-up should be in person, but still limited to mutual connections or updates about friends, not personal matters or feelings. That hasn't really changed, except now it's just happening face-to-face and not exclusively by text."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense — so it’s still surface-level, strictly logistical by text, but now you’re open to occasional, friendly in-person check-ins focused on mutual networks. Would it help to prep a list of topics or updates to bring with you, so the conversation stays in your comfort zone? Also, since you prefer new locations, I can help you find some neutral cafés or lunch spots in your area if you’d like."
+        },
+        {
+          "role": "user",
+          "content": "A topic list is actually a solid idea — just jotting down which mutual connections I want to update or ask about, maybe even some local events coming up that we’re both connected to. And yes, if you could suggest a couple cafés near downtown or in the West Loop that aren’t in my regular rotation, that’d be helpful. I want to keep things deliberately neutral and avoid any places that might feel loaded or familiar."
+        },
+        {
+          "role": "assistant",
+          "content": "Great. I’ll pull a list of low-key cafés in West Loop and downtown—ones that have good space for conversation but aren’t known as romantic venues or tied to your typical social haunts. Would you prefer a spot that’s accessible by public transit, since you work downtown, or are you okay with driving?"
+        },
+        {
+          "role": "user",
+          "content": "Public transit is definitely easier for me since I’m downtown most weekdays. I’d like to avoid anywhere that’s too busy or loud—I want a place that’s casual, but not chaotic. Also, I think I might keep first meetups limited to daytime lunch or coffee, just to reinforce boundaries. Not dinners, definitely not drinks. This doesn’t need to feel special—just practical and straightforward."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart call—daytime, casual, transit-accessible, and not tied to romantic connotations. Based on your preferences, I’ll suggest a shortlist of cafés and lunch spots in West Loop and downtown Chicago, accessible by CTA, and with a mellow atmosphere. If any of them are too packed on weekdays, I can provide alternates. Do you want to draft a calendar invite template too, to make scheduling easy and set the tone for coordination?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, a calendar invite template would help—it’ll signal the professional, friendly nature and help me avoid any ambiguity. Just something straightforward: location, time, and a quick note about 'catching up on mutual connections.' I’ll use that, and keep everything clear. Thanks for helping me sort through this! The shift to in-person catch-ups is new for me, but having this structure makes it less intimidating."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_003",
+        "fact": "Drafts daily troubleshooting checklists for urgent supply chain issues — never relies on memory alone",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Shares weekly project updates through visual dashboards rather than lengthy written reports",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Prefers one-on-one follow-ups with team members rather than group recap emails",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Brings a refillable water bottle everywhere — avoids bottled or sweetened drinks",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Schedules all social plans at least two days in advance — never agrees to last-minute meetups",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Experiments with new vegetarian recipes each weekend — never repeats the same dish in a single month",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Volunteers monthly at the local animal shelter — prefers helping cats over other animals",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Reads mystery novels before bed — never reads business or self-help books for leisure",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Attends local theater performances quarterly — avoids big-budget musicals, chooses small productions",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Disables work email notifications after 7pm — never checks work communications overnight",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Meal preps healthy breakfasts on Sundays for the week — never eats breakfast out on weekdays",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Composes a handwritten daily gratitude note each night before sleep — never uses digital journaling apps",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Shops only at local farmer’s markets for groceries on Saturdays — never buys fresh produce at big chain stores",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_027",
+        "fact": "Schedules weekly support visits to her sister’s home to help with baby preparations — prioritizes these over other weekend social invitations",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "Joins Sunday brunch with her sister via video call during travel weeks — only attends in-person when in Chicago",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Prefers exploring new West Coast neighborhoods on foot during downtime on business trips — avoids tourist-heavy locations in favor of local spots",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Manages Luna’s intensive kidney care first thing every morning, prioritizing subcutaneous fluids and multiple medications on a strict schedule — medication prep now takes longer and includes evening treatments",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Declines evening social invitations and limits late-night activities to ensure she’s home for Luna’s evening medication and fluid treatments",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Keeps a detailed daily log (paper or digital) to track Luna’s fluid administration, medication doses, and symptoms — never relies on memory or informal notes",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Performs CPAP setup routine and machine checks nightly before bed — uses guided meditation apps only if time allows after equipment setup",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Blocks out an extra 30 minutes each night for CPAP therapy setup and wind-down — does not schedule any calls, messages, or chores after 9pm",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Maintains a CPAP usage and sleep quality journal, recording hours of use and any discomfort nightly for her doctor’s follow-ups",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_040",
+        "fact": "Checks local pollen and air quality alerts twice daily—morning and evening—to track potential symptom triggers and adjust routines accordingly",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Uses corticosteroid inhaler before any physical activity at home as part of her new symptom management routine",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Attends in-person yoga classes at her neighborhood studio weekly, as she no longer avoids all group classes since her routine now requires her to be onsite downtown five days a week",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Commutes by train each weekday morning and prefers listening to business analytics podcasts during her commute — avoids social media browsing",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Eats lunch with coworkers in the office lounge most weekdays — rarely orders solo takeout anymore",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Keeps Slack and email notifications on at all times during work hours — prioritizes instant response and real-time coordination over focused solo analysis",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Schedules cross-functional meetings at any available time, including late afternoons and evenings, as dictated by emergency priorities — time zone concerns are temporarily ignored",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Checks in daily with each department on the emergency task force via brief stand-up calls, prioritizing clear nightly progress updates over written reports",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Spends daily in-person time with her parents at home and only video calls extended family in Seattle when needed",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Adjusts weekend cooking routines to accommodate her parents’ dietary needs and medical restrictions, often preparing special low-sodium or heart-healthy meals; occasionally orders takeout if fatigue or medical appointments disrupt plans",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Coordinates daily schedules around her father's medical appointments and recovery needs — blocks family time, errands, and caregiving tasks before work as needed",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Researches local medical resources and heart health support groups for caregivers, preferring recommendations from her father's cardiologist",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Eliminates takeout on weekends entirely and prepares strictly low-sodium homemade meals to manage her blood pressure — scratch-cooking is now focused on heart-healthy recipes, never convenience food",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Performs daily morning and evening blood pressure checks at home and logs all readings manually in a dedicated health journal — never skips a check, even on busy days",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Reads nutrition labels on all packaged foods and grocery items, choosing only products labeled 'low sodium,' and avoids restaurant foods unless sodium content is explicitly listed",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Meets her ex in person for occasional, friendly catch-ups to discuss mutual connections; text chats remain limited to coordination or logistical topics — personal matters and emotions are still off-limits in all communication.",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Carefully plans any in-person meetings with her ex at neutral public locations — avoids private or emotionally loaded settings such as homes or favorite former date spots.",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Shuts off Slack and email notifications during focused data analysis — only checks messages between tasks",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "The emergency task force and ongoing system failure demand her immediate availability for rapid fire troubleshooting and coordination. She cannot afford uninterrupted analysis blocks or delayed message-checking while tasked with crisis response."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Schedules cross-functional meetings before noon whenever possible — avoids late afternoons due to time zone misalignments",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "Due to the urgent inventory system failure and frantic pace of response, meeting at optimal times is now impossible — coordination happens whenever people can join, regardless of previous scheduling preferences."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Always attends yoga in-person at her neighborhood studio — never streams online classes at home",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "The frequent business travel between Chicago and West Coast offices makes it impossible to consistently attend in-person studio classes; she adapts by joining live-streamed sessions from wherever she is."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Uses guided meditation apps for insomnia every night — never skips, even when tired",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "With the new diagnosis of obstructive sleep apnea and nightly CPAP requirement, her bedtime routine prioritizes CPAP setup and acclimatization. Meditation is now secondary and sometimes skipped to ensure proper device use and compliance."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Avoids all outdoor exercise on high pollen days — chooses indoor activities exclusively during allergy season",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "Due to the severe allergic episode, she must now avoid all group exercise settings (indoor or outdoor), not just outdoor activities on high pollen days. The shift to doctor-mandated restriction supersedes the previous pollen-based rule."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Cooks from scratch every weekend — never orders takeout on Saturdays or Sundays",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_050",
+        "reason": "Her father's health situation and parents' presence mean she must adapt cooking routines for medical diets and family needs, sometimes foregoing scratch-cooking or allowing exceptions for convenience."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Video calls her parents every Sunday — never misses a week unless traveling",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "Her parents are now living with her in Chicago for her father's medical treatment, making weekly video calls unnecessary and shifting the relationship to frequent in-person interactions."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Text-chats with her ex only about mutual friends — never discusses personal matters",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "Her ex-husband’s move to Chicago and request for in-person reconnection shifts their interaction from strictly digital (texting) to occasional real-world meetups focused on shared social circles. This introduces a new behavioral channel while retaining boundaries around personal discussion."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Hosts Sunday brunch with her older sister at her condo — never eats out for this tradition",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Her sister's pregnancy and upcoming baby-related responsibilities mean her sister may have less energy to travel, so she’s now flexible about the brunch location to support her sister and share the hosting burden."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Regularly declines large group events, choosing intimate gatherings of four or fewer",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "With her parents living at her condo and frequent home care obligations, she is not currently able to host or attend even small in-person gatherings outside the family. Maintaining privacy and calm for her father's recovery takes precedence over social preferences."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Explores new Chicago neighborhoods on foot each month — never uses guided city tours",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "Frequent long-distance work travel leaves little time in Chicago to continue her monthly local neighborhood strolls; the routine is no longer feasible."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Prepares Luna’s thyroid medication first thing every morning — never skips or delays",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "Luna's new kidney diagnosis and required intensive routine mean the daily care is now more involved, with additional tasks and scheduling burdens, fundamentally changing how medication and health routines are handled."
+      },
+      {
+        "id": "pref_026",
+        "fact": "Rotates Sunday brunch locations with her older sister, often bringing meals or groceries to her sister’s home instead of hosting at her own condo every week",
+        "domain": "social_relationships",
+        "created_at_session": 0,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "With frequent travel for the cross-country project, she can't always be physically present; to maintain the tradition, she participates virtually when on the road."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Researches and tours local daycares with her sister on weekday evenings — blocks out those slots for family support instead of other activities",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "The cross-country travel schedule means she can't reliably be present for in-person daycare tours with her sister on weeknights."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Joins online yoga classes from hotel rooms or home while traveling — rarely attends her neighborhood studio in person during business trips",
+        "domain": "health_body",
+        "created_at_session": 1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "Her doctor specifically advised against all in-person group exercise classes—including the neighborhood studio and any live-streamed group sessions—until symptoms stabilize. She now practices yoga alone, using recorded materials for guidance."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Schedules all flights and hotels to allow for at least one free evening per trip to decompress alone",
+        "domain": "daily_routines",
+        "created_at_session": 1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "With the return-to-office eliminating business travel, she no longer needs to schedule accommodations or travel routines that include decompression evenings."
+      },
+      {
+        "id": "pref_039",
+        "fact": "Participates only in solo yoga sessions at home, following recorded videos or apps — avoids all in-person and live-streamed group classes due to doctor’s instructions",
+        "domain": "health_body",
+        "created_at_session": 4,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "The mandatory return-to-office means her proximity to the studio and regular schedule allow her to resume in-person yoga sessions. Doctor’s restrictions have relaxed as her symptoms are stable and commuting increases her need for group-based stress relief."
+      },
+      {
+        "id": "pref_048",
+        "fact": "Skips her weekend scratch-cooking hobby and orders takeout for convenience during crisis periods, to free time for emergency project work",
+        "domain": "health_body",
+        "created_at_session": 6,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_053",
+        "reason": "Newly diagnosed hypertension and prescribed sodium restriction require her to avoid high-sodium takeout and prioritize home-cooked, carefully controlled meals even during stressful periods. Convenience is no longer an acceptable trade-off due to her health risks."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:36:22.384632"
+}

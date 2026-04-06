@@ -1,0 +1,1433 @@
+{
+  "persona": "A law student specializing in intellectual property law",
+  "persona_id": "persona_20260301_223434",
+  "expanded_persona": {
+    "base_persona": "A law student specializing in intellectual property law",
+    "age": 26,
+    "gender": "female",
+    "location": "Chicago, IL",
+    "work_education": [
+      "Second-year JD student at Northwestern University, focusing on intellectual property and patent law",
+      "Externs 12 hours/week at a boutique IP firm downtown, assisting with trademark filings and patent research",
+      "Recently elected president of the school's Intellectual Property Law Society, organizing monthly speaker events",
+      "Preparing for a summer clerkship at a major tech company’s legal department",
+      "Juggling clinic responsibilities and a demanding legal writing seminar"
+    ],
+    "health_wellness": [
+      "Has mild carpal tunnel from intensive laptop use; manages with ergonomic aids and physical therapy",
+      "Occasionally suffers from migraines triggered by stress and late nights",
+      "Meal preps Sundays to maintain a mostly plant-based diet; sometimes skips meals when deadlines loom",
+      "Practices yoga at a local studio twice a week to decompress",
+      "Struggles with insomnia during exam periods, relies on melatonin"
+    ],
+    "family_relationships": [
+      "Lives alone in a one-bedroom apartment, shares building with several other law students",
+      "Engaged; fiancé is an engineer working long hours at a startup, they coordinate schedules for weekly date nights",
+      "Close with her younger sister, an undergraduate at University of Illinois – frequent texting, visits during holidays",
+      "Parents reside in Milwaukee; she drives up for family gatherings every couple of months",
+      "Occasionally helps care for her aging grandmother when visiting her hometown"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Takes handwritten notes during lectures and meetings—avoids typing to minimize carpal tunnel flare-ups",
+        "Only schedules patent research tasks in the morning when focus is highest—never attempts detailed legal work late at night",
+        "Responds to emails in batch twice a day—never keeps notifications on during study hours",
+        "Prefers quiet library spaces for studying—never works in coffee shops or communal study rooms",
+        "Organizes monthly speaker events at least four weeks in advance—never leaves event planning to last minute"
+      ],
+      "health_body": [
+        "Uses ergonomic keyboard and mouse exclusively—never works on her laptop’s built-in trackpad",
+        "Does yoga at a local studio every Wednesday and Saturday—won’t substitute with at-home sessions",
+        "Preps plant-based lunches for weekdays—never eats out for lunch during school days",
+        "Takes melatonin only during exam periods—avoids sleep medication otherwise",
+        "Keeps migraine prevention snacks (almonds, bananas) at her desk—never consumes caffeinated beverages during stressful weeks"
+      ],
+      "social_relationships": [
+        "Plans weekly date nights with her fiancé and adjusts all other evening commitments around them—never cancels unless unavoidable",
+        "Texts her younger sister every morning before class—never lets a day pass without checking in",
+        "Schedules phone calls with her parents for Sunday evenings—never spontaneous calls",
+        "Joins building group dinners only if they’re under six people—avoids large gatherings with unfamiliar neighbors",
+        "Visits her grandmother with her sister when in Milwaukee—never goes alone"
+      ],
+      "leisure_hobbies": [
+        "Attends live theater performances in Chicago monthly—never streams shows at home",
+        "Explores new city neighborhoods every other Saturday—never repeats the same outing consecutively",
+        "Solves crossword puzzles daily to unwind—never plays mobile games",
+        "Reads a legal thriller novel every month—never listens to audiobooks",
+        "Joins weekend art museum tours with friends—never visits museums solo"
+      ],
+      "daily_routines": [
+        "Reviews tomorrow’s calendar and schedules before bed every night—never goes to sleep without planning",
+        "Shops for groceries only on Sunday mornings—never orders delivery or shops late weekday evenings",
+        "Keeps her phone on do-not-disturb mode during study blocks—never takes unscheduled calls",
+        "Starts mornings with a ten-minute meditation—never skips it even on busy days",
+        "Checks news headlines only once each morning—never follows breaking news throughout the day"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her fiancé was offered a significant promotion at his startup, requiring frequent travel out of Chicago and unpredictable work hours for the next year.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Schedules short video calls with her fiancé during his business trips to maintain connection—prefers frequent brief check-ins over long weekly conversations",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Plans weekly date nights with her fiancé and adjusts all other evening commitments around them—never cancels unless unavoidable"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Adapts to spontaneous meet-ups or virtual date nights with her fiancé due to his unpredictable travel and work schedule—no longer has a consistent weekly date night routine",
+              "domain": "social_relationships"
+            },
+            "reason": "Her fiancé's promotion now requires frequent travel and unpredictable hours, making it impossible to maintain a fixed weekly date night. She now prefers to coordinate on short notice or make use of virtual connection as circumstances allow."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my fiancé just got offered this huge promotion at his startup—exciting, but also a bit daunting! He'll be traveling a lot more and his hours are all over the place now. We've always kept a pretty strict weekly date night, but that's basically out the window. I'm trying to figure out how to stay connected with him amidst the chaos—any advice on routines or ideas for when schedules are unpredictable?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations to your fiancé—that's a major milestone! But I hear you, unpredictable schedules can really impact relationship routines. Since regular weekly date nights aren’t possible, do you prefer switching to a more spontaneous planning style, or would you rather try setting up something virtual for consistency?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I've started adapting to more spontaneous meet-ups or virtual date nights. The old routine isn’t feasible anymore—sometimes he’s out of town last-minute or working super late. So I’ll text him and if he’s free, we just hop on a call, or grab dinner if he’s in town. No more guaranteeing Thursday nights like before."
+        },
+        {
+          "role": "assistant",
+          "content": "That kind of flexibility makes sense given his new reality. For virtual date nights, have you found anything that actually feels ‘special’ rather than just another video call? Or are you leaning toward more frequent, brief check-ins throughout the week to stay connected?"
+        },
+        {
+          "role": "user",
+          "content": "More frequent, brief check-ins seem to work best right now. Instead of long weekly conversations, we schedule short video calls during his business trips—just to catch up, send a meme, or talk about our days. It feels less pressured since neither of us can commit to big chunks of time."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart adjustment—keeping it light and frequent can help with feeling connected, especially with travel involved. Do you have any favorite apps or rituals for these shorter calls? Would you like suggestions for ways to make the brief video chats feel more engaging, or do you prefer keeping them low-key?"
+        },
+        {
+          "role": "user",
+          "content": "We keep it really low-key so far—FaceTime, sometimes just a voice call if one of us is driving or between meetings. I wouldn’t mind some ideas for adding fun touches, though, as long as they don’t require a lot of coordination. Any suggestions?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! You could try syncing up with a quick ‘virtual toast,’ sharing a favorite snack or drink during the chat, or maybe picking a themed prompt—like sharing something that made you laugh that day. If you’re ever in a hotel or different city, sharing a little video tour can be fun. Would those fit your spontaneous style, or are there certain times of day you find it easier to connect?"
+        },
+        {
+          "role": "user",
+          "content": "That sounds doable! We like the idea of spontaneous little moments—especially a ‘virtual toast.’ I’ll mention the themed prompts too. Times vary: morning or late evening depending on his schedule and my study blocks. I batch email replies and never keep notifications on during study, so I just text him when I have a window and we coordinate from there."
+        },
+        {
+          "role": "assistant",
+          "content": "That works well for managing your focus. If mornings or late evenings are open, maybe you could establish a loose ‘check-in window’—not an obligation, just a mutual reminder for those spontaneous calls. If schedules allow, could you even occasionally sync up for a crossword puzzle together or share a yoga stretch virtually, since those are part of your wind-down routine?"
+        },
+        {
+          "role": "user",
+          "content": "We actually did a crossword together once when he was in New York—he’s not as into them as I am, but it was fun. Yoga’s trickier; I only do classes at my studio, never at home, but I’d love to try sending him a quick challenge or stretch to do on his own during trips. That way we can share experiences without forcing rigid schedules."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great way to keep shared experiences alive, even with flexibility. If you’re interested, I can suggest some simple plant-based snacks or recipes you could both try making separately and chat about—the kind of easy eating challenge that suits your meal-prep habits. Or, if you want, I could help brainstorm ways to incorporate more micro-rituals into your long-distance routine?"
+        },
+        {
+          "role": "user",
+          "content": "Plant-based snacks could be fun! We both like food and it’s something we can try during short calls. Micro-rituals sound good too—just nothing that needs a lot of planning since we’re both slammed right now. Thanks, these ideas really help. I didn’t expect to feel so thrown by this schedule change, but adapting feels more doable now."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received an invitation to co-author a research paper with a renowned IP law professor, requiring a semester-long commitment to weekly meetings and intensive legal analysis outside of her existing coursework and clerkship.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Blocks off Monday evenings exclusively for research meetings and preparation—never schedules social or leisure activities at this time",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Uses digital note-taking tools for research collaboration, despite previous preference for handwritten notes, to sync with co-author and manage feedback efficiently",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_019",
+              "fact": "Reads a legal thriller novel every month—never listens to audiobooks"
+            },
+            "to": {
+              "id": "pref_028",
+              "fact": "Listens to legal-themed audiobooks during commutes and downtime—rarely finishes physical novels due to schedule overload",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The semester-long research project with a renowned professor has added demanding weekly meetings and intensive legal analysis to her existing academic and professional schedule, leaving her with much less time for leisure reading. She now prefers audiobooks to maximize learning and enjoyment during brief periods such as commutes."
+          },
+          {
+            "from": {
+              "id": "pref_017",
+              "fact": "Explores new city neighborhoods every other Saturday—never repeats the same outing consecutively"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Stays in her own neighborhood on weekends for rest and convenience—rarely goes on exploratory outings due to increased academic workload",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The new research commitment severely limits her free time. Instead of venturing out to new neighborhoods every other Saturday, she now prefers restful or familiar local activities to conserve energy for the week's demands."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "The craziest thing just happened—I got invited to co-author a research paper with Professor Feldman, and honestly, I’m freaking out a little. It’s a semester-long project, weekly meetings, plus tons of legal analysis. I’m already juggling coursework, clinic, and prepping for my summer clerkship. What’s the best way to carve out time for this without burning out?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s an incredible opportunity—congrats! It sounds intense though. When you look at your weekly calendar, do you notice any pockets of time that consistently go unused, or is every day maxed out? Sometimes people block recurring time for big projects like this—have you tried that before?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually what I’m considering. I’m thinking of blocking off Monday evenings for research meetings and prep—no social or leisure stuff at that time anymore, just paper work. Otherwise it’ll get squeezed out. Does that make sense, or should I try to spread the work out more?"
+        },
+        {
+          "role": "assistant",
+          "content": "Monday evening sounds strategic, especially since it’s early in the week and you’ll probably be freshest. Concentrating your research work in one block can help you hit a deep focus zone. Do you have a routine for shifting into 'research mode' quickly, or does it take a while to transition after clinic or classes?"
+        },
+        {
+          "role": "user",
+          "content": "Transitioning is tricky, honestly. I used to rely on handwritten notes to kickstart my focus, but Professor Feldman prefers everything digital for collaboration and syncing feedback. So I’ve switched to digital note-taking tools for this project, even though it’s not my usual style. I kind of miss pen and paper, but it’s necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—I can see why it feels off. Are you finding any digital tools that replicate your usual note system, or is it completely different? Sometimes stylus-based apps capture the handwritten vibe, but syncing is much easier with typed notes."
+        },
+        {
+          "role": "user",
+          "content": "I tried stylus apps, but we need to comment and edit together, so I caved and went full-on Google Docs. It’s not as ergonomic for me, but at least my wrists are okay since I use my external keyboard and mouse. On another note, my weekends have changed too. I used to explore new neighborhoods every other Saturday, but I’m just staying in my own area now and resting. No more adventure days—just recharging locally."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—sometimes minimizing commute and novelty helps you recover. Are you finding rest in familiar routines, or is it more about catching up on sleep and errands? Any local activities you lean into for decompressing?"
+        },
+        {
+          "role": "user",
+          "content": "It’s honestly just about convenience lately. I stick to my usual yoga studio and the neighborhood bakery, maybe a walk at the park. I save exploratory outings for another semester when things calm down. Leisure reading has shifted too—I rarely get through physical novels now, so I started listening to legal-themed audiobooks during commutes and downtime. It’s the only way I can squeeze in any real reading."
+        },
+        {
+          "role": "assistant",
+          "content": "Audiobooks are a great adaptation—they turn idle time into something enjoyable. Any favorites so far, or ones on your list for next month? Since you’re focused on IP, do you lean toward legal thrillers, or more practical analysis?"
+        },
+        {
+          "role": "user",
+          "content": "I’m halfway through 'The Patent Race'—a legal thriller about tech disputes. I mix those with podcasts on IP case law, just for variety. Physical novels are pretty much parked for now, between my new research schedule and commuting."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s impressive—you’re using every bit of free time efficiently. Do research meetings on Mondays take place in person or over video? If you need help optimizing your digital workflow or decompressing routines, let me know."
+        },
+        {
+          "role": "user",
+          "content": "They’re mostly over video, but we do have a few in-person sessions planned. My new workflow is all about batching tasks and syncing feedback quickly, or else things pile up. Thanks for your help! I think I just needed to talk it out and adjust to all these changes."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her aging grandmother suffered a minor stroke and will require increased support and regular in-person visits from family members during recovery.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Regularly brings home-cooked plant-based snacks and easy meals to her grandmother during visits, ensuring dietary needs and comfort are met",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_034",
+            "fact": "Keeps her Saturday afternoons free for Milwaukee trips and family care, re-prioritizing leisure and study plans to accommodate increased caregiving duties",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Visits her grandmother with her sister when in Milwaukee—never goes alone"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Visits her grandmother solo or with family members as needed—comfortable making trips without her sister to ensure more consistent support during recovery",
+              "domain": "social_relationships"
+            },
+            "reason": "Her grandmother's stroke requires increased support and frequent in-person visits. Waiting until her sister is available for each visit is impractical; she needs to be able to visit alone to help with caregiving."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, my grandma had a minor stroke last week. She’s stable now but will need more help over the next few months. I’m trying to figure out how to balance law school, externship, and giving her the support she needs. Any ideas for reorganizing my schedule so I can make frequent visits without totally derailing everything else?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry to hear about your grandmother. It sounds like you’re juggling a lot. To start, how often are you thinking about visiting her, and do you need to be there at specific times? Understanding the frequency and flexibility might help us identify the best way to slot this into your existing routine."
+        },
+        {
+          "role": "user",
+          "content": "She’s in Milwaukee, so visits need to be planned — it’s about a 90-minute drive. My sister and I usually go together for family stuff, but waiting for her schedule won’t work now. I’ll need to go solo sometimes or coordinate with other family members. I want to visit at least once a week, maybe more if I can swing it. Saturdays seem most feasible, but I’m open to ideas."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Setting aside Saturday for visits could give you consistency and help your grandmother rely on your support. Are there commitments on Saturdays you’d need to move or pause, like leisure activities or study sessions? Or could you shift those to another time?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I used to keep Saturday afternoons flexible for exploring city neighborhoods or art museum tours with friends, but those will need to take a back seat for now. I’ll prioritize the Milwaukee trips and caregiving, then shift leisure stuff to other weekends or mornings. If needed, I’ll also adjust my study plans so Saturday afternoons are always open."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful approach. For study blocks, maybe you could prep or review extra material during your quiet weekday library sessions so the weekend is freer. Are there ways you could maximize productivity while you’re on campus to make those Milwaukee trips less stressful?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. I’m sticking to morning patent research tasks and batching emails as usual, but I’ll try to make my Saturday study load lighter. Another thing: whenever I visit, I want to bring my grandma easy, plant-based snacks and meals I prep at home. That way, she’s covered and I’m sticking to my own dietary preferences when I’m at her place."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s both thoughtful and practical. You could prep extra portions on Sundays when you’re meal planning, maybe things that freeze well and are easy to reheat for her. Would you need suggestions for recipes or ways to streamline that part of your routine?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, recipe suggestions would help. I’m looking for plant-based snacks and simple meals I can batch-cook, portion, and transport easily. I want to make this a regular thing so Grandma isn’t reliant on store-bought options, which aren’t great for her."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Some ideas: chickpea salad, lentil soup, baked sweet potato wedges, roasted veggies with quinoa, and homemade energy bars with oats and nut butter. All of these are portable and hold up well. Would you like more options, or tips on packaging for the drive?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a good start, thanks. Packaging tips would help since the drive is long and I sometimes stay a few hours. Also, I’ll need to get comfortable visiting alone or with whichever family member is available. I don’t want to wait every time for my sister’s schedule to align, like I’ve done in the past."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call. That flexibility will help ensure your grandmother gets consistent care. For food transport, insulated lunch bags, glass containers for reheating, and ice packs are useful, especially with soups or anything that could spoil. Pre-portioned containers also make everything easier when you arrive."
+        },
+        {
+          "role": "user",
+          "content": "Perfect. I’ll stock up on containers this weekend. Any last advice for managing all this without letting school stuff slide? I already review my schedule nightly and keep my phone on do-not-disturb during study blocks, but this is a new level of juggling."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like your habits around nightly planning and focused study blocks are solid. Maybe layering in recurring Saturday reminders and prepping a checklist for caregiving tasks will help keep things organized. As your grandma’s needs change, you’ll want to reevaluate how often visits happen and who can join. If you ever need help mapping out your week, just let me know."
+        },
+        {
+          "role": "user",
+          "content": "Thanks, that’s helpful. I feel better having a plan. I know things will shift, but keeping Saturday afternoons free and prepping meals for Grandma should make this manageable."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Selected by her law school to represent Northwestern at the national Intellectual Property Law Moot Court competition, requiring extensive case preparation, team practices several evenings a week, and travel to New York City for a weeklong tournament in the middle of the semester.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_036",
+            "fact": "Prefers team-based study and preparation sessions during evenings—prioritizes collaborative work over solo study for moot court cases",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_037",
+            "fact": "Brings healthy snacks and migraine prevention supplies when traveling for tournaments—prioritizes wellness support on the road",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Does yoga at a local studio every Wednesday and Saturday—won’t substitute with at-home sessions"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Switches to short at-home yoga sessions or stretches on weekdays—studio visits become occasional due to evening moot court practices and travel",
+              "domain": "health_body"
+            },
+            "reason": "The intensive moot court prep schedule, with evening practices and travel, disrupts her ability to reliably attend studio sessions every Wednesday and Saturday. She adapts by doing at-home yoga routines to maintain wellness."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_030",
+            "fact": "Blocks off Monday evenings exclusively for research meetings and preparation—never schedules social or leisure activities at this time",
+            "domain": "work_habits",
+            "reason": "With moot court practices scheduled several evenings a week (including Mondays), her exclusive block for research and preparation is no longer possible. Moot court team prep supersedes her previous Monday schedule."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Pretty wild week—I found out Northwestern selected me for the national IP Law Moot Court. It’s exciting, but my calendar just exploded with evening practices and NYC travel in the middle of the semester. I need help structuring my routine so I don’t totally burn out. Any strategies for balancing prep, clinic, and wellness?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That’s a huge honor, though I completely understand the stress. For balancing heavy prep and wellness, have you considered anchoring some non-negotiable self-care blocks throughout the week? What parts of your previous routine feel most disrupted right now?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, my yoga studio sessions are the first casualty. With evening moot court practices and travel coming up, making it to Wednesday and Saturday classes isn’t realistic. I’ve started doing short stretches and at-home yoga routines, but I worry I’ll lose the decompressing effect of the studio. Any way to make at-home sessions feel more restorative?"
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—studio settings really help separate work from wellness. Maybe you could recreate some of that atmosphere at home? Soft lighting, calming playlists, and blocking your phone could signal ‘reset time.’ Would setting a standing time for at-home sessions help preserve consistency?"
+        },
+        {
+          "role": "user",
+          "content": "A scheduled time definitely helps. I’ve been fitting in stretches after practice, just to wind down and avoid skipping entirely. It’s not as satisfying, but it’s better than nothing. I also have to be mindful with my carpal tunnel—so I stick to gentle wrist-friendly flows now. That said, my evenings are mostly eaten up by moot court team sessions. Solo study has taken a back seat; we’re prepping cases together. Any advice for optimizing team-based prep when everyone’s packed schedule overlaps?"
+        },
+        {
+          "role": "assistant",
+          "content": "Team-based prep can be powerful, especially with complex cases. Syncing everyone’s schedules is always tricky—are your practices set in stone each week, or do they move around? You might use shared docs to track prep progress or set clear roles in each session so everyone gets the most from time together. Are you finding collaboration energizing, or is it adding more stress?"
+        },
+        {
+          "role": "user",
+          "content": "It’s energizing and actually relieving—I prefer working through the cases together over solo sessions, especially for moot court. We lock in practice times a week ahead, but people juggle externships and clinics, so flexibility is key. I had to drop my Monday evening research-only block, though; now it’s moot court practice. No more exclusive research time—I merge prep with the team. Any tips for keeping focus in those group sessions, especially with everyone multitasking?"
+        },
+        {
+          "role": "assistant",
+          "content": "Since your Monday block is gone, you could try short, focused prep sprints at the beginning of each session—everyone commits to an individual task for 15–20 minutes before group discussion. That way, you get concentrated legal research and then synthesize together. Would your team be open to experimenting with that approach?"
+        },
+        {
+          "role": "user",
+          "content": "I think they’d go for it—we’re all trying to make the most of limited time. Another thing: with the NYC tournament approaching, I have to plan for wellness on the road. Travel triggers my migraines, and I need to keep healthy snacks and prevention supplies handy. Any recommendations for managing wellness during trips without derailing the schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Travel can definitely throw routines off, especially with migraines in the mix. Packing easy, nutritious snacks (like almonds, bananas), a water bottle, and ergonomic supports can help. When traveling, can you set aside 10–15 minutes after arrival for stretches or meditation—even just in your hotel room? Would having a checklist for your wellness supplies help ensure you don’t forget anything?"
+        },
+        {
+          "role": "user",
+          "content": "I actually started assembling a migraine kit for my travel bag, plus healthy snacks for quick breaks between rounds. A checklist is a good idea—I get scattered when I pack under stress. I also plan to carve out little pockets for stretching after long travel days, even if it’s just in the hotel. This helps me stay functional for practices and the tournament itself."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid plan! Setting reminders for wellness check-ins will reinforce the routine, and your proactive approach should pay off during the competition. If you ever need quick ideas for hotel-friendly yoga stretches or healthy snacks, I can help. Anything else about your evolving schedule or prep that you want to troubleshoot?"
+        },
+        {
+          "role": "user",
+          "content": "That covers most of it! The biggest shift is swapping out my regular studio yoga for at-home sessions, focusing on collaborative evening prep with the moot court team, and keeping wellness kits ready for travel. Let’s revisit planning strategies once the NYC tournament is underway—I’ll likely need a new routine after that."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—once the tournament wraps up, we can review what worked and find ways to rebuild your preferred routines. Best of luck representing Northwestern! Let me know if you need more targeted strategies as the prep ramps up."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The major tech company where she planned her summer clerkship unexpectedly rescinded its internship program for law students due to cost restructuring, leaving her without a confirmed summer position and requiring immediate search for alternative clerkship or internship opportunities.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Checks legal job boards and professional networks every morning—prioritizes internship search over leisure browsing until a new summer position is secured",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Prefers short-notice coffee chats or calls with alumni and professional contacts—actively seeks networking opportunities due to lack of internship placement",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Organizes monthly speaker events at least four weeks in advance—never leaves event planning to last minute"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Has begun organizing speaker events on shorter notice and with greater flexibility—prefers adaptable planning over strict advance scheduling due to unstable summer commitments",
+              "domain": "work_habits"
+            },
+            "reason": "With the tech company's internship suddenly canceled, her summer schedule is unpredictable and she must prioritize rapid response in case new internships or clerkships come through last minute. This makes the old rigid advance planning infeasible and pushes her to embrace last-minute organization for events."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So… curveball: The tech company just canceled their summer legal intern program. Apparently, cost cuts. I’m scrambling for clerkship or IP internship options now, and my whole summer is wide open and pretty uncertain. I need help figuring out how to pivot—especially with networking and job search. Where would you start if you were me?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that’s a tough break—especially after you had everything lined up. First, you’re not alone; a lot of law students end up shifting gears fast. I’d suggest starting with your school’s career office—they sometimes know about late-breaking openings or short-term externships. Are you already reaching out to your professional network? Or do you want to brainstorm cold outreach strategies?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve been using my school's job board and LinkedIn pretty heavily, checking both every morning. But I haven't been as proactive about networking with alumni until now. I’m prioritizing that instead of my usual leisure stuff, and I’m open to short-notice coffee chats or calls if they help me make connections—this is a big shift for me. Any advice for approaching people when I feel like I’m behind the curve?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s actually a perfect approach—most people expect some urgency in these situations. If you’re open to short notice, mention that in your outreach (“happy to connect whenever best for you, even this week”). Alumni are usually sympathetic. Are you customizing your emails, or using a standard template? Also: are you actively telling your firm, professors, and speaker event guests about your search? Sometimes indirect contacts open surprising doors."
+        },
+        {
+          "role": "user",
+          "content": "I’m tailoring my emails—quick intros, mentioning the Northwestern IP Law Society connection where relevant. I used to plan all our speaker events at least a month out, but now I’m organizing them on shorter notice and with more flexibility, in case I need to juggle job interviews or accept a last-minute offer. I actually told this week’s guest I might need to reschedule if something comes up. It feels weird not to have things locked down. Should I be more open about my situation, or keep it low-key?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s totally reasonable to admit you’re actively searching—people understand that summer plans can change. Being direct shows flexibility and professionalism, especially in event planning. No need to overshare, just let them know there might be scheduling shifts. On the outreach front: have you thought about using your clinic and externship supervisors as references or for networking introductions? Sometimes even a quick phone call or email from them moves things faster."
+        },
+        {
+          "role": "user",
+          "content": "Yes—I emailed my clinic supervisor last night, and she's introduced me to someone at a smaller IP firm. I’m also reaching out to attorneys I met through the externship, asking if they know of any openings or short-term projects. Since I have to be nimble now, I started prioritizing quick, direct connections instead of leisurely browsing opportunities. And I’ve been making time to check job boards every morning, right after my meditation and before reading news headlines. That works for me."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good system—having a set time keeps the search efficient. Sounds like you’re adapting fast on the networking side, which is key right now. Since you’re making room for short-notice chats and flexible event scheduling, maybe try keeping a running list of contacts and conversation outcomes, so you can follow up and track leads efficiently. Would keeping a digital tracker or handwritten log help, given your carpal tunnel issues?"
+        },
+        {
+          "role": "user",
+          "content": "I switched to a handwritten tracker for this—easier on my wrists, and keeps me focused during meetings. I was worried adapting would mean letting go of my advance planning habit, but honestly, the unpredictability is forcing me to stay lighter on my feet. Thanks for helping me talk through all this."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome—I think your flexible planning mindset will be helpful as leads emerge. Remember, adapting quickly and being open about your situation isn’t a weakness; it’s actually a competitive advantage. If you need help drafting outreach emails, prepping for coffee chats, or following up with professional contacts, just ask. You’re doing the right things for this unexpected situation!"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger sister decided to take a gap semester from University of Illinois due to burnout and moved temporarily to Chicago, asking to stay with her for several months while making plans to reorient her studies and career goals.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Co-plans weeknight home meals with her sister, usually preparing or eating together instead of eating solo or on the run",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Prioritizes quiet evenings at home to support her sister’s recuperation—declines most non-essential evening outings or social offers",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Texts her younger sister every morning before class—never lets a day pass without checking in"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Spends in-person time daily supporting her sister at home—no longer relies on morning texts for connection",
+              "domain": "social_relationships"
+            },
+            "reason": "With her sister now living with her in Chicago due to the gap semester, daily check-ins via text are unnecessary. Their relationship shifts to in-person support and interactions as they share a household."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, things have been a bit upside-down this week. My sister decided to take a gap semester due to burnout and moved in with me for a few months. It's a big change—I'm trying to support her without losing my own routines. Any ideas for keeping balance, especially with all my law school demands and externship?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a lot to navigate! Supporting her while managing your own schedule and wellbeing is definitely a balancing act. Are there particular routines you’re most worried about losing, or is it more about the general strain on your bandwidth and time?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it's both. Previously, my mornings were protected for meditation and prepping for the day, and I'd just text her to check in. Now, since we're under one roof, the dynamic is different—it’s more about daily in-person support than morning texts. I still want to keep my meditation habit, though."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—having her there shifts the form of connection. Keeping your morning meditation is smart for grounding yourself as you start the day. How have your evenings changed? Are you having to rearrange study or downtime to spend time with her?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. We're co-planning our weekday meals now and usually prep or eat dinner together. Before, I'd mostly eat solo or grab something quick on deadline nights. It's been nice, but I want to make sure it stays manageable so I don't fall behind on work or clinic responsibilities."
+        },
+        {
+          "role": "assistant",
+          "content": "Meal prep together could actually be a stabilizing ritual for both of you—it keeps you connected and ensures you get balanced meals. Since you're co-planning, do you find that your plant-based lunch routine is extending into dinners, or are you having to compromise some of your dietary habits?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly sticking to plant-based dinners, too. She’s on board, and it helps keep things simple. I do worry about evenings, though—I used to go out for quiet library study or small museum tours with friends, but lately I've prioritized staying home to support her. Declining most non-essential evening outings feels right for now, but it's a shift."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a healthy adjustment. Quiet evenings at home might help her recuperate, and it probably gives you needed downtime too. Are you finding it difficult to set those boundaries with friends and social invites, or has everyone been understanding since your sister moved in?"
+        },
+        {
+          "role": "user",
+          "content": "People have mostly gotten it, though I’ve had to explain I’m not up for non-essential outings. I used to check in with my sister daily by text, but that's redundant now—we connect face-to-face every day. Prioritizing in-person support is just natural now. I think the biggest thing is finding ways we can both unwind, like cooking together, without letting stress pile up."
+        },
+        {
+          "role": "assistant",
+          "content": "Great that it’s a smooth transition, even if some habits have changed. Cooking together as a shared unwind time is smart—maybe you could experiment with new recipes or culinary themes together as a way to bring some playful energy to routines. Would you like suggestions for plant-based dinners that are easy yet interesting?"
+        },
+        {
+          "role": "user",
+          "content": "That would be helpful! We’re both keen on variety, so something beyond basic stir-fries or salads would be ideal. I want to keep things low effort on busy nights, though. Also, any tips for carving out a little personal time, now that quiet evenings have become our joint recovery space?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—I can recommend some plant-based recipes that are quick but more creative, like lentil tacos, chickpea curry bowls, or sheet-pan roasted veggies with tahini sauce. For personal time, maybe you could alternate evenings where one of you handles dinner prep while the other has a short solo decompress ritual—like your crossword puzzle or reading. Does that fit your new routine?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, actually—I still do my daily crossword to unwind, and we both appreciate having even a half-hour to ourselves. Alternating dinner duties on especially busy nights might be a good way to ensure each of us gets that personal space. It sounds doable, thanks for the idea."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad that works! Balancing support and self-care is key, especially with all your obligations. If you'd like, I can help you batch meal planning ideas for next week or suggest ways to structure evening routines so you and your sister both get the recovery you need. Let me know if you want deeper strategies for calendar management or household coordination."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed severe insomnia following weeks of late-night moot court prep and increased family responsibilities; her physician prescribed a strict sleep regimen and temporarily prohibited use of melatonin or screens after 8pm.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Reads print books with soft lighting or practices guided breathing routines after 8pm to wind down—never uses screens for evening relaxation per her prescribed sleep regimen",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_047",
+            "fact": "Maintains a strict lights-out time of 10:30pm and logs her sleep patterns nightly in a paper journal as part of her physician-prescribed regimen",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Takes melatonin only during exam periods—avoids sleep medication otherwise"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Strictly avoids melatonin or other sleep aids—even during high-stress periods—due to physician’s orders regarding insomnia treatment",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor has prohibited melatonin (and likely all sleep medications) as part of a medical sleep regimen to address her severe insomnia. This supersedes her past exception during exam periods."
+          },
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Reviews tomorrow’s calendar and schedules before bed every night—never goes to sleep without planning"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Reviews her calendar and schedules immediately after dinner—completes all planning before her 8pm screen curfew",
+              "domain": "daily_routines"
+            },
+            "reason": "Her physician has banned screen use after 8pm. She can no longer review digital calendars at bedtime, and must shift her planning routine to an earlier, screen-permitted time."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I’m coming off a pretty rough few weeks—between moot court prep running way too late and helping out my grandmother more, my sleep is shot. My doctor just diagnosed severe insomnia and gave me a ridiculously strict regimen: no melatonin, no screens after 8pm, lights out at 10:30 on the dot. Honestly, I feel super lost about how to even wind down or manage my evenings without my old habits. Any ideas? I need something to actually help—legal-writing deadlines are still coming up, so stress isn’t going anywhere."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds challenging, especially with law school workloads piling up. Since screens are off the table after 8pm and melatonin is out, are you open to relaxation routines like guided breathing or meditation? Or would you prefer something more engaging, like reading print books? Also—how strict is your doctor about light levels in the evening? Soft lighting can make a big difference if you’re reading or journaling, but I don’t want to suggest anything that’d conflict with your physician’s plan."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’m strictly avoiding melatonin and all sleep meds—my physician was pretty emphatic about no exceptions, even during exam periods. I did use melatonin just for exam weeks before, but that’s off the table now. As for lighting, I switched to soft bedside lamps for evenings, so that’s fine. Print books are okay, and my doctor wants me to journal about sleep patterns on paper—no screens there either. I’m running out of ideas for relaxing after eight, though. My usual routine was quick calendar reviews and catching up on legal news before bed."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s helpful context. If you can’t review your calendar before bed anymore, maybe you could shift that planning to right after dinner? That way, you handle scheduling while screens are still allowed, and leave evenings for winding down. For relaxation, have you tried guided breathing routines or short evening yoga stretches off-screen? Since you already do yoga and meditation, you might be able to adapt those for your new wind-down slot."
+        },
+        {
+          "role": "user",
+          "content": "Good call on calendar planning. I’ve actually started reviewing my schedule immediately after dinner—used to do it right before bed every night, but now my doctor’s screen curfew means I have to finish any digital tasks before 8pm. As for yoga, I only do classes at my studio Wednesdays and Saturdays—my instructor doesn’t recommend substituting with at-home sessions. Breathing routines are doable, though. I’m trying out some mindfulness ones, but it’s hard not having screens for music or guidance."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense on the yoga—since you stick to studio classes, maybe you could try written breathing guides or even a simple routine from memory. For evening relaxation, reading print novels is a solid choice, especially with soft lighting. And journaling about your sleep could double as a way to decompress at the end of the day. Are you tracking anything specific in your sleep journal, or just jotting down how you feel?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly I log when I go lights out—10:30pm is non-negotiable now—plus any sleep interruptions or how long it takes to fall asleep. It’s all paper-based, as per my doctor’s orders. I’ll add in some notes on mood and energy if it seems relevant. You’re right that journaling helps me wind down, actually—it’s already starting to calm my brain a bit before bed. But evenings still feel empty without late-night calendar reviews or screen time."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s tough to adjust when your whole routine changes. Filling that gap might take experimentation. Since you enjoy reading, maybe you could pick a monthly legal thriller to work through in your evening slot. Or solve a crossword on paper for a cognitive unwind. If communal activities appeal, you could try chatting with your neighbors before 8pm, then transition to solo winding-down practices. Would any of those help you reclaim some evening structure?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a good mix. Legal thrillers are already part of my monthly unwind, so leaning on print books makes sense now. Paper crosswords sound promising—I usually do them on my phone, but I’ll grab a book instead for after eight. My evenings are pretty solo since I live in a one-bedroom and avoid big building gatherings. For now, I’ll focus on reading and journaling under soft lights, and maybe add more breathing routines. Thanks—this feels more doable than it did yesterday."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear it! It sounds like you’ve already found ways to adapt your habits to fit the new regimen. Keep experimenting with relaxation strategies—over time, your sleep journal may show which ones help most. Sticking to that strict lights-out and curfew will support recovery. If you want to explore more print-only activities or non-screen relaxation ideas, let me know. Good luck juggling your law school workload and new sleep routine!"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced a sudden, debilitating carpal tunnel flare-up during finals week, resulting in acute pain and numbness in her dominant hand; her physician ordered immediate cessation of all handwriting and laptop use for at least two weeks and referred her to a hand specialist.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Prefers attending classes and meetings virtually or requesting recorded sessions to minimize transit and daily physical strain on her hand during recovery period",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Opted for meal delivery or pre-packed, easy-to-open plant-based meals instead of home meal prep during injury flare-up to avoid hand-intensive kitchen tasks",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_052",
+            "fact": "Uses guided meditation and ambient audio relaxation apps controlled by voice command in place of yoga or physical de-stress routines while hand mobility is restricted",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Takes handwritten notes during lectures and meetings—avoids typing to minimize carpal tunnel flare-ups"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Dictates notes using voice-to-text and audio recording tools during lectures and meetings—avoids all handwriting and typing to comply with medical restrictions",
+              "domain": "work_habits"
+            },
+            "reason": "The physician-mandated total cessation of handwriting and laptop use for at least two weeks renders her previous workaround—handwritten notes—infeasible. She must switch to audio-based and voice-to-text solutions exclusively."
+          },
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Uses ergonomic keyboard and mouse exclusively—never works on her laptop’s built-in trackpad"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Temporarily avoids all use of keyboards, mice, and input devices—completes academic or professional tasks only via voice command, dictation, or accessibility software for injury recovery",
+              "domain": "health_body"
+            },
+            "reason": "Strict medical instructions forbid use of all hand-operated devices, even ergonomically optimized ones, to prevent further damage during acute recovery—she must use hands-free accessibility or dictation tools exclusively."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I need your help problem-solving. I had a pretty severe carpal tunnel flare-up this week—right in the middle of finals, of course. My physician ordered me to stop using my hand for any handwriting or typing, at least for the next two weeks. I'm feeling completely thrown—how am I supposed to keep up with clinic work and classes, let alone run our IP Law Society stuff?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds incredibly tough, especially with everything you have on your plate right now. Are there any tools or approaches the school has offered for accommodations? Or would you prefer brainstorming ways to adapt your usual workflow given the restrictions?"
+        },
+        {
+          "role": "user",
+          "content": "I reached out to Student Affairs this morning—they suggested accessibility software and voice-to-text apps, but I'm not sure how to make that actually work for note-taking during lectures and meetings. I usually rely on handwritten notes to minimize pain, but obviously that's not an option now. Do you know anyone who's made the switch to audio or dictation tools for law school?"
+        },
+        {
+          "role": "assistant",
+          "content": "I know some students who have used audio recordings to supplement their notes, but it's definitely a big shift. For law lectures and meetings, speech-to-text apps like Otter or built-in dictation tools might help, especially if you can annotate by voice. Are you comfortable dictating in class, or would you prefer recording and transcribing afterwards?"
+        },
+        {
+          "role": "user",
+          "content": "I think I'll have to dictate notes live during lectures and meetings for now—my old workaround was handwriting, but that's strictly off the table. It's weird, but it's the only way to comply with what the doctor ordered. I guess I’ll supplement with audio recordings and maybe ask for permission from professors. Any tips for making dictated notes manageable for legal research and prep?"
+        },
+        {
+          "role": "assistant",
+          "content": "A good approach is to mark timestamps or create voice cues—like saying 'topic change' or 'case citation' as you record. That can help later when reviewing the audio or transcripts. Some dictation software also tags keywords for easy searching. Would you want suggestions for specific tools, or guidance on structuring your spoken notes so they're clearer for legal tasks?"
+        },
+        {
+          "role": "user",
+          "content": "Structuring spoken notes would be really helpful, especially since I can’t use my keyboard or mouse at all—no trackpad, nothing. All my academic and professional tasks need to be hands-free for now. I’m a little worried about patent research since I always schedule it in the mornings when my focus is best, but it’s very detail-heavy. Can I work through databases using voice commands effectively?"
+        },
+        {
+          "role": "assistant",
+          "content": "Patent research is definitely tricky hands-free, but many databases offer basic voice navigation or compatibility with accessibility software. You could use tools like Dragon NaturallySpeaking or Microsoft’s voice controls to open documents, search, and annotate. You might need some setup help from the IT department. Would you like me to draft an email template for contacting them, or scope out which platforms have the most robust voice features?"
+        },
+        {
+          "role": "user",
+          "content": "Drafting an email would be great. I’ll also ask my firm supervisor if they can shift my research assignments to things that are manageable with dictation or reviewing audio. On a related note, I usually prep plant-based lunches on Sundays, but chopping and cooking is impossible right now. Any suggestions for meal options that are quick, healthy, and don’t require much hand use?"
+        },
+        {
+          "role": "assistant",
+          "content": "Since meal prep isn’t feasible, would meal delivery work for you? There are several plant-based services in Chicago that offer pre-packed, easy-to-open options—some even cater to dietary needs. Alternatively, grocery stores have salads, wraps, and snacks ready to go. Do you have any favorite delivery service, or would you like recommendations?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve opted for meal delivery and grabbing pre-packed meals from the fridge for now—it’s not as satisfying as Sunday cooking, but it’s the only way to avoid extra strain. If you have recommendations for local plant-based delivery options, send them my way. Also, yoga’s off the table until my hand improves. I miss that outlet—are there good guided meditation apps that work solely via voice command?"
+        },
+        {
+          "role": "assistant",
+          "content": "There are several guided meditation apps with robust voice control—Headspace and Calm both support voice assistants, and Insight Timer has ambient audio routines you can start hands-free. You can set reminders and launch meditations without needing to touch your device. Would you like tips for customizing the sessions, or links to specialty routines designed for stress and pain management?"
+        },
+        {
+          "role": "user",
+          "content": "Customizing routines for stress and pain management would be great. I’m leaning on audio relaxation while I recover since yoga isn’t an option, and I want something that doesn’t require any hand movement. By the way, I’m requesting recorded sessions and joining everything virtually where possible—minimizing transit is really important right now. Can you help me draft a message to professors explaining my situation and requesting accommodation?"
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely—I can draft a concise, professional message explaining your medical restriction, asking for access to class recordings and the option to attend virtually during your recovery. Would you prefer to mention your IP Law Society role for context, or just keep it focused on your student needs?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s keep it focused on student needs for now. Thanks for offering! One last thing: Is it reasonable to ask the IP Law Society committee to take on event logistics? Normally I plan our speaker series a month out, but I can’t do hands-on work right now and managing communications by voice feels slow. How do I delegate effectively when I can’t step in on the usual tasks?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s absolutely reasonable to delegate—especially given your medical situation. You can outline clear roles and deadlines, maybe use collaborative tools that integrate with voice commands to track progress. Sending a voice memo or recording can set expectations and explain your limitations right now. Would you like help drafting those delegation messages, or advice on prioritizing which tasks to hand off?"
+        },
+        {
+          "role": "user",
+          "content": "Drafting delegation messages would be perfect. And prioritizing would help—since I’m doing everything hands-free, I need to be strategic. Thanks for talking this through; I felt lost at first but this makes new routines feel possible."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her parents unexpectedly announced their intention to retire early and relocate from Milwaukee to Chicago, seeking her input on neighborhoods and asking for help with their house-hunting and moving logistics over the next several months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_054",
+            "fact": "Frequently researches Chicago neighborhoods, school ratings, and accessibility for retirees during her downtime—prioritizes supporting her parents’ relocation needs over personal leisure browsing",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Prefers co-planning weekend errands and occasional apartment tours with her parents to facilitate their transition, blending family time with practical support",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Schedules phone calls with her parents for Sunday evenings—never spontaneous calls"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Regularly communicates with her parents throughout the week about their move—prefers flexible, spontaneous check-ins over rigid Sunday calls",
+              "domain": "social_relationships"
+            },
+            "reason": "With her parents relocating to Chicago and frequently needing her input on neighborhoods and moving logistics, she can no longer restrict communication to prescheduled Sunday calls. She now prefers flexibility to respond to their evolving needs."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_034",
+            "fact": "Keeps her Saturday afternoons free for Milwaukee trips and family care, re-prioritizing leisure and study plans to accommodate increased caregiving duties",
+            "domain": "daily_routines",
+            "reason": "Her parents are relocating from Milwaukee to Chicago, so regular Milwaukee trips for family care are no longer required. The underlying circumstance (family living in Milwaukee) has changed."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my parents surprised me yesterday—they’re retiring early and moving to Chicago! They want me to help with picking neighborhoods and figuring out logistics for their move. Obviously I want to be supportive, but I’m juggling school, externship, and my clinic. What’s a realistic way to help without derailing my own routine? Any organizing tips?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that’s a big transition—for them and for you! It’s great you’re able to support them, but your own schedule is tough. Are they looking for frequent input or mostly big picture guidance? For logistics, what parts do they want help with—research, coordinating tours, paperwork, or hands-on stuff like packing?"
+        },
+        {
+          "role": "user",
+          "content": "It’s turning into frequent input, actually. I used to only talk to them Sunday evenings, but now we’ve got texts and calls flying back and forth as they send listings or ask about commute times. I can’t keep it to scheduled calls—it’s more spontaneous now. I need a way to fit these check-ins in without overwhelming myself."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big change to your routine. Since calls and texts are coming throughout the week, maybe batch responses a couple times a day—sort of like your email habit? Or would you rather respond in real-time to keep things moving? Also, would it help to share a Google doc or Trello board so everyone can see notes in one place, instead of everything coming to you directly?"
+        },
+        {
+          "role": "user",
+          "content": "I like batching, but right now their moving questions aren’t predictable. Sometimes they find a listing and want immediate thoughts, so flexible responses are working better, even if it’s less structured. The Trello idea could help, so I’m not re-explaining the same things. And lately, I’ve spent my downtime looking up Chicago neighborhood guides, school ratings (not for them, just for context), and accessibility stuff for retirees—it’s taken over my usual browsing habits. I wonder how to balance helping them with not losing my own decompression time but still keeping them supported."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really generous—researching all these details on their behalf! If downtime is getting crowded with move support, maybe set clear boundaries on which evenings or blocks you devote to family stuff versus personal decompressing. You could even co-plan errands or tours to combine time with them and logistical progress. Do they want you to join apartment or condo tours, or are they okay if you just prep info and let them see places themselves?"
+        },
+        {
+          "role": "user",
+          "content": "They do want me involved in apartment tours, at least for the shortlist. Before, I kept Saturdays free for Milwaukee trips and family care, but that’s out now—their move means I don’t need to go back to Milwaukee as often. Instead, I’m blending family support into local errands and weekend activities. Sometimes we’ll combine supermarket runs with neighborhood walks or pop into open houses together. It helps, but shifts my routine."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good adjustment—co-planning errands with them so you’re not purely adding extra commitments. Losing those Milwaukee trips probably frees up some travel time, but adds new local tasks. Did you have any static blocks that need reshuffling now, or is your calendar fairly adaptable for these joint errands and tours?"
+        },
+        {
+          "role": "user",
+          "content": "I’m mostly adjusting by picking weekends where I can go with them for apartment tours and errands, and using downtime during the week for research. Of course, exam crunch and deadlines still take priority, but I’m finding ways to squeeze family support into my routine. I just want to avoid burnout—so splitting tasks across the week, and blending some errands, feels sustainable right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like you’re finding a balanced strategy—prioritizing urgent schoolwork, but using flexible downtime and weekends to support your parents. If errands and tours feel manageable, and you’re able to decompress otherwise, you’re probably on the right track. Would you like help setting up a shared document or checklist so everyone can track progress, or do you prefer to keep things informal for now?"
+        },
+        {
+          "role": "user",
+          "content": "A shared checklist or Google doc could actually be really helpful, especially for keeping track of neighborhoods we’ve researched and places we’ve toured. That way, I can update things in batches and they won’t need to text for every little detail. I appreciate the suggestion! This move is definitely shifting my downtime routines, but at least we’re doing it together."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear the collaboration feels positive! Let me know if you want help structuring the document—listing neighborhood options, accessibility notes, realtor contacts, and checklists for upcoming tours and tasks. And if you need routines for decompressing amid all this, we can brainstorm together. Just say the word!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received a diagnosis of iron deficiency anemia after routine bloodwork prompted by persistent fatigue and frequent headaches; her doctor prescribed daily iron supplements and dietary modifications, advising increased intake of iron-rich foods.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Sets daily reminders to take iron supplements with lunch—never skips more than one dose per week, tracks adherence in her planner as advised by doctor",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_058",
+            "fact": "Reviews ingredient labels for iron content and prioritizes new grocery purchases based on doctor-recommended fortified or iron-rich foods",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_059",
+            "fact": "Limits coffee and tea within two hours of eating to maximize iron absorption, per new medical guidance",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Preps plant-based lunches for weekdays—never eats out for lunch during school days"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Preps iron-rich vegetarian lunches for weekdays, including eggs, legumes, and leafy greens—occasionally supplements with iron-fortified snacks to meet medical requirements",
+              "domain": "health_body"
+            },
+            "reason": "Her iron deficiency anemia diagnosis and doctor’s directive require her to include more iron-rich foods in her diet, which means expanding beyond her usual plant-based lunch prep to regularly incorporate known iron sources (such as eggs or fortified foods), even if these weren't routine components before."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I got the official diagnosis for iron deficiency anemia this morning—explains the fatigue and headaches lately, but it feels like yet another thing to juggle with school and externship. My doctor wants me on iron supplements and to rework my diet pretty thoroughly. Can you help me figure out how to fit all this in without throwing off my entire routine?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, that's a lot to take on, but it can be manageable. With the iron supplements, are you aiming for a consistent time each day or is it flexible? Also, are there specific foods your doctor recommended you add, or is it just the general \"eat more iron\"? Let’s start by seeing how much you can adjust your current meal prep and medication routine without disrupting other habits."
+        },
+        {
+          "role": "user",
+          "content": "She suggested taking the supplement with lunch, since I already do meal prep. I’ve started setting daily reminders to actually take it, because I know if I don’t track it, I’ll forget especially with everything going on. She also told me to look for iron-fortified foods, plus add eggs, legumes, and leafy greens. I used to stick strictly to plant-based lunch prep during the week, but now I need to expand that a bit."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move with the reminders and tracking. For meal prep, adding legumes and leafy greens is pretty straightforward, and eggs can be worked in for extra iron. Are you open to batch prepping some iron-fortified snacks—like certain granolas or nutrition bars—so you have quick options? And for ingredient shopping, would reviewing labels for iron content fit easily into your Sunday grocery routine, or is time tight?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, reviewing labels is something I’ve started doing actually—doctor was pretty clear about checking iron content. I’ll prioritize iron-rich and fortified foods when shopping, even if it means switching up my usual brands. It’s not that much extra work during my Sunday morning grocery runs, but it does make me rethink some staple items. As for snacks, I’m open if they’re vegetarian and don’t have weird additives."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. To maximize absorption, are you pairing iron-rich foods with vitamin C sources? And are there any beverages you need to adjust—for instance, limiting coffee or tea around meals—as those can impact iron uptake? Sometimes a light citrus dressing or fresh fruit with lunch helps. Would that work with your prep style, or do you prefer more simple menus?"
+        },
+        {
+          "role": "user",
+          "content": "I do need to limit coffee and tea within two hours of meals now—that was part of the medical guidance. I’m used to having herbal tea at lunch, but now I’ll push it to later in the afternoon. Adding a side of fruit like oranges or strawberries is doable, and probably brings up my iron absorption a bit. My menus are usually simple, but I can make small tweaks."
+        },
+        {
+          "role": "assistant",
+          "content": "Those tweaks sound solid. Just to make sure: tracking supplement adherence fits with your planner routine, right? And you’re comfortable with occasionally supplementing meals if needed to hit your iron targets? If you notice missed doses or meals, what’s your fallback—do you double up later, or just move on?"
+        },
+        {
+          "role": "user",
+          "content": "I track supplement adherence in my planner now—doctor said that’s important. My rule is not to skip more than one dose a week, so if I do miss, I don’t double up, just keep going. And if meals fall short, I’ll supplement with iron-fortified snacks. That’s new for me, since I never used to supplement unless I really needed to, but doctor’s orders. It’s a bit of an adjustment, but I think I can handle it."
+        },
+        {
+          "role": "assistant",
+          "content": "Great, you seem to have a practical system in place. Since you’re adjusting your plant-based habits, how are you keeping the meal prep stress low? Want help brainstorming vegetarian lunch combos rich in iron, or tips for streamlining shopping and reminders? Anything else impacting your energy levels we should tackle while you’re adjusting?"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Only schedules patent research tasks in the morning when focus is highest—never attempts detailed legal work late at night",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_003",
+        "fact": "Responds to emails in batch twice a day—never keeps notifications on during study hours",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Prefers quiet library spaces for studying—never works in coffee shops or communal study rooms",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Keeps migraine prevention snacks (almonds, bananas) at her desk—never consumes caffeinated beverages during stressful weeks",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Joins building group dinners only if they’re under six people—avoids large gatherings with unfamiliar neighbors",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Attends live theater performances in Chicago monthly—never streams shows at home",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Solves crossword puzzles daily to unwind—never plays mobile games",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Joins weekend art museum tours with friends—never visits museums solo",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Shops for groceries only on Sunday mornings—never orders delivery or shops late weekday evenings",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Keeps her phone on do-not-disturb mode during study blocks—never takes unscheduled calls",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Starts mornings with a ten-minute meditation—never skips it even on busy days",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Checks news headlines only once each morning—never follows breaking news throughout the day",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Adapts to spontaneous meet-ups or virtual date nights with her fiancé due to his unpredictable travel and work schedule—no longer has a consistent weekly date night routine",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Schedules short video calls with her fiancé during his business trips to maintain connection—prefers frequent brief check-ins over long weekly conversations",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Listens to legal-themed audiobooks during commutes and downtime—rarely finishes physical novels due to schedule overload",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_029",
+        "fact": "Stays in her own neighborhood on weekends for rest and convenience—rarely goes on exploratory outings due to increased academic workload",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Uses digital note-taking tools for research collaboration, despite previous preference for handwritten notes, to sync with co-author and manage feedback efficiently",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Visits her grandmother solo or with family members as needed—comfortable making trips without her sister to ensure more consistent support during recovery",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Regularly brings home-cooked plant-based snacks and easy meals to her grandmother during visits, ensuring dietary needs and comfort are met",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Switches to short at-home yoga sessions or stretches on weekdays—studio visits become occasional due to evening moot court practices and travel",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Prefers team-based study and preparation sessions during evenings—prioritizes collaborative work over solo study for moot court cases",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Brings healthy snacks and migraine prevention supplies when traveling for tournaments—prioritizes wellness support on the road",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Has begun organizing speaker events on shorter notice and with greater flexibility—prefers adaptable planning over strict advance scheduling due to unstable summer commitments",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Checks legal job boards and professional networks every morning—prioritizes internship search over leisure browsing until a new summer position is secured",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Prefers short-notice coffee chats or calls with alumni and professional contacts—actively seeks networking opportunities due to lack of internship placement",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Spends in-person time daily supporting her sister at home—no longer relies on morning texts for connection",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Co-plans weeknight home meals with her sister, usually preparing or eating together instead of eating solo or on the run",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Prioritizes quiet evenings at home to support her sister’s recuperation—declines most non-essential evening outings or social offers",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Strictly avoids melatonin or other sleep aids—even during high-stress periods—due to physician’s orders regarding insomnia treatment",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Reviews her calendar and schedules immediately after dinner—completes all planning before her 8pm screen curfew",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Reads print books with soft lighting or practices guided breathing routines after 8pm to wind down—never uses screens for evening relaxation per her prescribed sleep regimen",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Maintains a strict lights-out time of 10:30pm and logs her sleep patterns nightly in a paper journal as part of her physician-prescribed regimen",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Dictates notes using voice-to-text and audio recording tools during lectures and meetings—avoids all handwriting and typing to comply with medical restrictions",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Temporarily avoids all use of keyboards, mice, and input devices—completes academic or professional tasks only via voice command, dictation, or accessibility software for injury recovery",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Prefers attending classes and meetings virtually or requesting recorded sessions to minimize transit and daily physical strain on her hand during recovery period",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Opted for meal delivery or pre-packed, easy-to-open plant-based meals instead of home meal prep during injury flare-up to avoid hand-intensive kitchen tasks",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Uses guided meditation and ambient audio relaxation apps controlled by voice command in place of yoga or physical de-stress routines while hand mobility is restricted",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Regularly communicates with her parents throughout the week about their move—prefers flexible, spontaneous check-ins over rigid Sunday calls",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Frequently researches Chicago neighborhoods, school ratings, and accessibility for retirees during her downtime—prioritizes supporting her parents’ relocation needs over personal leisure browsing",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Prefers co-planning weekend errands and occasional apartment tours with her parents to facilitate their transition, blending family time with practical support",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Preps iron-rich vegetarian lunches for weekdays, including eggs, legumes, and leafy greens—occasionally supplements with iron-fortified snacks to meet medical requirements",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Sets daily reminders to take iron supplements with lunch—never skips more than one dose per week, tracks adherence in her planner as advised by doctor",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Reviews ingredient labels for iron content and prioritizes new grocery purchases based on doctor-recommended fortified or iron-rich foods",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_059",
+        "fact": "Limits coffee and tea within two hours of eating to maximize iron absorption, per new medical guidance",
+        "domain": "health_body",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Takes handwritten notes during lectures and meetings—avoids typing to minimize carpal tunnel flare-ups",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_048",
+        "reason": "The physician-mandated total cessation of handwriting and laptop use for at least two weeks renders her previous workaround—handwritten notes—infeasible. She must switch to audio-based and voice-to-text solutions exclusively."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Organizes monthly speaker events at least four weeks in advance—never leaves event planning to last minute",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "With the tech company's internship suddenly canceled, her summer schedule is unpredictable and she must prioritize rapid response in case new internships or clerkships come through last minute. This makes the old rigid advance planning infeasible and pushes her to embrace last-minute organization for events."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Uses ergonomic keyboard and mouse exclusively—never works on her laptop’s built-in trackpad",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "Strict medical instructions forbid use of all hand-operated devices, even ergonomically optimized ones, to prevent further damage during acute recovery—she must use hands-free accessibility or dictation tools exclusively."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Does yoga at a local studio every Wednesday and Saturday—won’t substitute with at-home sessions",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "The intensive moot court prep schedule, with evening practices and travel, disrupts her ability to reliably attend studio sessions every Wednesday and Saturday. She adapts by doing at-home yoga routines to maintain wellness."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Preps plant-based lunches for weekdays—never eats out for lunch during school days",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "Her iron deficiency anemia diagnosis and doctor’s directive require her to include more iron-rich foods in her diet, which means expanding beyond her usual plant-based lunch prep to regularly incorporate known iron sources (such as eggs or fortified foods), even if these weren't routine components before."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Takes melatonin only during exam periods—avoids sleep medication otherwise",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_044",
+        "reason": "Her doctor has prohibited melatonin (and likely all sleep medications) as part of a medical sleep regimen to address her severe insomnia. This supersedes her past exception during exam periods."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Plans weekly date nights with her fiancé and adjusts all other evening commitments around them—never cancels unless unavoidable",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Her fiancé's promotion now requires frequent travel and unpredictable hours, making it impossible to maintain a fixed weekly date night. She now prefers to coordinate on short notice or make use of virtual connection as circumstances allow."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Texts her younger sister every morning before class—never lets a day pass without checking in",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "With her sister now living with her in Chicago due to the gap semester, daily check-ins via text are unnecessary. Their relationship shifts to in-person support and interactions as they share a household."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Schedules phone calls with her parents for Sunday evenings—never spontaneous calls",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_053",
+        "reason": "With her parents relocating to Chicago and frequently needing her input on neighborhoods and moving logistics, she can no longer restrict communication to prescheduled Sunday calls. She now prefers flexibility to respond to their evolving needs."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Visits her grandmother with her sister when in Milwaukee—never goes alone",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "Her grandmother's stroke requires increased support and frequent in-person visits. Waiting until her sister is available for each visit is impractical; she needs to be able to visit alone to help with caregiving."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Explores new city neighborhoods every other Saturday—never repeats the same outing consecutively",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "The new research commitment severely limits her free time. Instead of venturing out to new neighborhoods every other Saturday, she now prefers restful or familiar local activities to conserve energy for the week's demands."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Reads a legal thriller novel every month—never listens to audiobooks",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_028",
+        "reason": "The semester-long research project with a renowned professor has added demanding weekly meetings and intensive legal analysis to her existing academic and professional schedule, leaving her with much less time for leisure reading. She now prefers audiobooks to maximize learning and enjoyment during brief periods such as commutes."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Reviews tomorrow’s calendar and schedules before bed every night—never goes to sleep without planning",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "Her physician has banned screen use after 8pm. She can no longer review digital calendars at bedtime, and must shift her planning routine to an earlier, screen-permitted time."
+      },
+      {
+        "id": "pref_030",
+        "fact": "Blocks off Monday evenings exclusively for research meetings and preparation—never schedules social or leisure activities at this time",
+        "domain": "work_habits",
+        "created_at_session": 1,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "With moot court practices scheduled several evenings a week (including Mondays), her exclusive block for research and preparation is no longer possible. Moot court team prep supersedes her previous Monday schedule."
+      },
+      {
+        "id": "pref_034",
+        "fact": "Keeps her Saturday afternoons free for Milwaukee trips and family care, re-prioritizing leisure and study plans to accommodate increased caregiving duties",
+        "domain": "daily_routines",
+        "created_at_session": 2,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "Her parents are relocating from Milwaukee to Chicago, so regular Milwaukee trips for family care are no longer required. The underlying circumstance (family living in Milwaukee) has changed."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:34:34.849889"
+}

@@ -1,0 +1,1451 @@
+{
+  "persona": "A mid-level sales manager at a multinational pharmaceutical company",
+  "persona_id": "persona_20260301_234905",
+  "expanded_persona": {
+    "base_persona": "A mid-level sales manager at a multinational pharmaceutical company",
+    "age": 39,
+    "gender": "male",
+    "location": "Chicago, IL",
+    "work_education": [
+      "Sales Manager overseeing a team of 8 representatives covering Midwest hospital accounts",
+      "Recently tasked with launching a new diabetes drug in his region, requiring extra travel and client education events",
+      "Balancing pressure to meet quarterly sales targets amidst declining market share for one legacy product",
+      "Attends monthly leadership training seminars as part of company's talent development program",
+      "Considering pursuing an MBA part-time to open up future promotion opportunities"
+    ],
+    "health_wellness": [
+      "Has mild hypertension, managed with medication and doctor visits every 3 months",
+      "Travels frequently for work, often struggles to maintain healthy meals on the road",
+      "Usually runs 2-3 times per week but has been battling plantar fasciitis, limiting activity",
+      "Sleep quality varies — sometimes stays up late preparing sales presentations",
+      "Uses meditation apps to help manage work stress"
+    ],
+    "family_relationships": [
+      "Married for 12 years; wife is a freelance graphic designer who works from home",
+      "Two children (ages 7 and 10); actively involved in their soccer teams as a weekend coach",
+      "Lives in suburban home; mother-in-law recently moved in after hip surgery, requiring occasional assistance with errands",
+      "Keeps in touch with his brother in Seattle via weekly video calls",
+      "Family maintains Sunday dinners as a tradition, even when traveling"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Blocks out mornings for team check-ins and client emails—never schedules internal meetings before noon",
+        "Prepares detailed talking points for every client education event—never improvises presentations on the spot",
+        "Delegates administrative tasks to senior reps so he can focus on high-stakes client visits",
+        "Completes all leadership training assignments immediately after each seminar—never lets them pile up for later",
+        "Only considers MBA programs with flexible evening or weekend classes—never interested in fully online options"
+      ],
+      "health_body": [
+        "Books hotel rooms with fitness centers on work trips—never relies on outdoor running due to plantar fasciitis",
+        "Pre-orders healthy meals for travel days—never eats fast food at airports",
+        "Monitors blood pressure with a home device twice weekly—never skips quarterly doctor visits",
+        "Uses guided meditation apps for stress—never tries in-person yoga classes",
+        "Prioritizes sleep before big presentations—never stays up the night before, even if it means less prep"
+      ],
+      "social_relationships": [
+        "Coaches both kids’ soccer teams every weekend—never misses games unless traveling for work",
+        "Organizes family Sunday dinners—never lets restaurant reservations replace home-cooked meals",
+        "Always checks in on his mother-in-law each evening—never delegates her care to someone else",
+        "Schedules weekly video calls with his brother at the same time—never cancels without warning",
+        "Communicates with his wife about work conflicts daily—never leaves her out of travel planning"
+      ],
+      "leisure_hobbies": [
+        "Plans family outings at local parks every Saturday—never schedules work events on these afternoons",
+        "Watches soccer matches with his kids—never watches alone or skips their favorite team’s games",
+        "Reads business biographies for career inspiration—never picks up fiction novels",
+        "Sets aside time for creative hobbies like woodworking during vacation—never brings office work on holiday",
+        "Explores new Chicago neighborhoods with his wife—never repeats the same weekend itinerary twice in a row"
+      ],
+      "daily_routines": [
+        "Starts each weekday by reviewing his calendar and setting priorities—never checks email before this ritual",
+        "Prepares breakfast for the family every morning—never relies on grab-and-go options",
+        "Shops for groceries in person each Saturday—never uses delivery services",
+        "Limits phone use during family dinner and evening hours—never answers work calls after 7pm",
+        "Charges devices overnight outside the bedroom—never keeps phones or laptops by his bedside"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His wife's main freelance client offered her a full-time remote position with benefits, significantly increasing her weekly workload and shifting more after-school responsibilities to him.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_028",
+            "fact": "Helps the kids with homework and school projects every weekday afternoon—this used to be primarily his wife's role",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Coordinates after-school pick-up and dinner planning on weekdays—never delegated these to outside help",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_022",
+              "fact": "Prepares breakfast for the family every morning—never relies on grab-and-go options"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Prepares quick, grab-and-go breakfasts for the kids on weekdays—only cooks full breakfasts on weekends",
+              "domain": "daily_routines"
+            },
+            "reason": "With his wife's workload increasing due to her new full-time remote job, he now needs to handle more after-school and morning routines, leaving less time for elaborate breakfast preparation during the week."
+          },
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Plans family outings at local parks every Saturday—never schedules work events on these afternoons"
+            },
+            "to": {
+              "id": "pref_027",
+              "fact": "Schedules home-based family activities on Saturdays—parks are now less feasible due to increased after-school responsibilities and his wife’s workload",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "His wife's increased workload reduces her weekend flexibility, causing him to handle more childcare and opt for easier, home-based Saturday activities rather than park outings."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big change in our household this week — my wife's main freelance client offered her a full-time remote job, and she accepted. It's a great move for her, benefits and all, but her workload has shot up. I've had to pick up a lot more after-school stuff and morning routines. I'm trying to keep things running smoothly but it's a juggle. Any ideas for streamlining weekday mornings? I used to cook breakfast every day, but that's not really possible now."
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats to your wife on the new role! That's definitely a big shift for your family. For weekday mornings, have you considered prepping grab-and-go breakfasts ahead of time? Things like overnight oats, yogurt parfaits, or breakfast wraps can be made the night before and eaten quickly. Do the kids like any particular options, or are they flexible?"
+        },
+        {
+          "role": "user",
+          "content": "I've started prepping quick breakfasts for the kids, like fruit, yogurt, and granola bars. I only cook full breakfasts on weekends now, when I have more time. It keeps mornings less chaotic, but everyone's still adjusting. The real bottleneck is after-school — I used to rely on my wife for homework and projects, but now that's mostly falling to me. Any suggestions for juggling that with my work calls?"
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to switch to grab-and-go on busy weekdays. For homework and school projects, could you set up a regular after-school routine for the kids? For instance, a station in the kitchen or living room where they start homework while you're finishing emails, then you check their progress before dinner. Would a set schedule help, or does your work timing vary?"
+        },
+        {
+          "role": "user",
+          "content": "A set schedule might help. My afternoons are a bit unpredictable thanks to client calls, but I usually log off by 5. I've started helping the kids with homework and projects every weekday, which is new for me. Coordination is tough, especially with my wife's calls happening in the background. How can I simplify dinner planning now that I'm handling pickups and meals during the week?"
+        },
+        {
+          "role": "assistant",
+          "content": "With you handling pickups and meals, it might help to plan a week’s worth of easy dinners in advance, maybe on Sunday. You could set up a rotation: quick one-pan meals, slow cooker recipes, or batch cooking that leaves leftovers for lunches. Are you looking for recipes that the kids can help with, or just things that minimize effort on your end?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly things that minimize effort — I’m coordinating after-school pick-up and dinner planning now. I never delegate these to outside help, so it’s on me. I could use quick recipes or a meal plan template. Also, our Saturdays used to be park outings, but it’s harder now with more weekday responsibilities and my wife’s workload. Any ideas for easier home-based activities?"
+        },
+        {
+          "role": "assistant",
+          "content": "If parks aren’t as feasible, home-based activities could include game nights, cooking projects, or movie marathons. Since you’re coaching soccer on weekends, maybe indoor skills drills or mini tournaments at home could be fun. Would you prefer calm activities, or things that keep everyone moving?"
+        },
+        {
+          "role": "user",
+          "content": "Calm activities are actually better right now—keeping things simple at home is ideal until we all settle into this new routine. Thanks for the ideas. It’s a big adjustment, but I think we’re finding a groove."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Accepted into a selective part-time MBA program at Northwestern, requiring two evenings per week on campus in addition to ongoing work travel and responsibilities.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Schedules two dedicated study blocks each week after work on non-class nights—never leaves MBA assignments for weekends due to family commitments",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Uses campus shuttle and public transit for evening MBA classes—avoids driving to reduce stress after long workdays",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Organizes family Sunday dinners—never lets restaurant reservations replace home-cooked meals"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Alternates between home-cooked and restaurant Sunday dinners—relies on restaurant reservations when MBA class assignments pile up or after an especially busy week",
+              "domain": "social_relationships"
+            },
+            "reason": "With two evenings per week on campus for MBA classes and ongoing work travel, his available time and energy to organize and cook large family meals every Sunday will be reduced; occasionally, he will need to opt for restaurants to maintain the tradition without the burden of cooking."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_005",
+            "fact": "Only considers MBA programs with flexible evening or weekend classes—never interested in fully online options",
+            "domain": "work_habits",
+            "reason": "He has now chosen and enrolled in an MBA program; this selection criterion is no longer relevant as a personal preference guiding future behaviors."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got accepted into Northwestern's part-time MBA — I'll be on campus two evenings a week, on top of everything else. Excited, but honestly, my head's spinning. Balancing work, the kids, travel, and now classes... Do you have tips for keeping routines intact, and making sure nothing falls through the cracks? Especially family stuff."
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats on the MBA acceptance — that's a big achievement! It’s definitely a lot to juggle. The key with new time demands is ruthless prioritization and strong scheduling. Are there any family routines you really want to preserve, even as your schedule gets packed? For example, some clients swear by designated meal times or weekend rituals."
+        },
+        {
+          "role": "user",
+          "content": "Sunday dinners have always been our anchor, but I’m worried about keeping that up. My wife, kids, and even my mother-in-law rely on the tradition — but with two night classes weekly, work travel, and assignments, sometimes I just won’t have the time or energy to cook. I think we’ll need to alternate between home-cooked and restaurant dinners, just so the tradition isn’t dropped entirely when things get hectic."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart adaptation — maintaining the ritual, even if it looks different some weeks, is what matters most. You could make a list of favorite nearby restaurants, so decisions are quick when you need to reserve. For weeks when you do cook, maybe batch prep parts on Saturday, or involve the kids in simple tasks to lighten your load. Does that fit with your weekend routine, or is Saturday already booked?"
+        },
+        {
+          "role": "user",
+          "content": "Saturday afternoons are strictly reserved for family outings at local parks — no work events allowed. But honestly, I can't afford to give up the grocery run on Saturday, because delivery just doesn't work for me. So, maybe I’ll shop earlier in the day, prep what I can before we head out, and keep restaurant options as a backup for Sundays when assignments pile up."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds practical — it lets you preserve both your Saturday park tradition and Sunday dinners. For assignments, have you mapped out study blocks yet? It’s tempting to leave homework for weekends, but your family time is important, so structured weekday slots might help."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’m planning to schedule two dedicated study blocks after work each week, but only on non-class nights. That way, I never have to touch MBA assignments during the weekend, since coaching soccer and family outings take priority. Weekends are off-limits for schoolwork."
+        },
+        {
+          "role": "assistant",
+          "content": "Great move! Weekday study blocks create a predictable rhythm, so your family can count on your attention weekends. On class nights, how are you getting to campus? Chicago traffic can be stress-inducing after a long day."
+        },
+        {
+          "role": "user",
+          "content": "I definitely won’t drive. I plan to use the campus shuttle and public transit for evening classes — less stressful after a full workday, and gives me a bit of downtime to decompress. Plus, parking near Northwestern is notoriously bad."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart choice — commuting by transit frees you up to catch up on reading or prep on the go, and avoids the headache of parking. With these new routines, are you dropping any old habits now that you’re committed to the MBA program? For instance, how did you decide on the program format?"
+        },
+        {
+          "role": "user",
+          "content": "I used to only consider programs with flexible evening or weekend classes — never fully online options. Now that I’ve chosen and enrolled at Northwestern, that selection criterion isn’t relevant anymore. So, that filter is gone; I’m living the reality, not weighing options."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense! Now your focus is on how to sustain everything day-to-day. You’ve got smart adaptations for meals, study time, and transit. Would you like help organizing a weekly calendar template, or tips for juggling work responsibilities and MBA demands?"
+        },
+        {
+          "role": "user",
+          "content": "A weekly calendar template could help—especially if it keeps my work responsibilities, study blocks, family routines, and personal downtime visible. I’m aiming to stay proactive, not reactive, as things ramp up."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His plantar fasciitis worsened following increased work travel, and his doctor recommended suspending all running and weight-bearing exercise for three months to prevent further injury.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Completes daily upper-body stretching and doctor-approved chair-based workouts to stay active during injury recovery—avoids any exercise that involves standing or impact",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Watches his kids’ soccer games from the sidelines and gives strategic advice—does not participate in drills or on-field demonstrations during recovery",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Books hotel rooms with fitness centers on work trips—never relies on outdoor running due to plantar fasciitis"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Requests hotel rooms with pools or stationary bikes—completely avoids any treadmill or gym equipment requiring weight-bearing exercise",
+              "domain": "health_body"
+            },
+            "reason": "His doctor has explicitly banned all running and weight-bearing exercise for three months due to worsening plantar fasciitis. He must now avoid even gym treadmills or rowing machines, forcing him to exclusively seek out non-impact options like pools or stationary bikes."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_011",
+            "fact": "Coaches both kids’ soccer teams every weekend—never misses games unless traveling for work",
+            "domain": "social_relationships",
+            "reason": "He is medically restricted from all weight-bearing exercise and cannot physically participate in field coaching during the recovery period, making his standard coaching role temporarily impossible."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I just got back from my doctor — turns out my plantar fasciitis has gotten worse with all the extra work travel lately. He put me on a strict \"no running, no weight-bearing exercise\" plan for at least three months. I'm a bit stuck on how to stay active, especially since I have a lot more hotel nights coming up for this new diabetes drug launch. Got any ideas for staying on top of my health without making it worse?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's tough, but it's good you're taking recovery seriously. For hotel stays, is there any type of facility you prefer or know works for you? Some hotels have pools or recumbent bikes, which are easier on the feet—have those been options for you before?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I'm actually starting to request rooms at hotels with pools or stationary bikes now. I have to avoid even treadmills or rowing machines, since those count as weight-bearing. It's a shift—used to always look for fitness centers, but now I can't use most of that equipment."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move making those requests ahead of time. Pools can really help—gentle movement and low impact. Would you be interested in guided aqua workouts, or do you prefer something like cycling on a stationary bike when you're traveling?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, aqua workouts sound good for variety, but I might lean toward stationary bikes to keep things simple and predictable with my schedule. At home, I've started doing daily upper-body stretches and chair-based exercises that my doctor approved. Definitely sticking to no standing workouts for a while."
+        },
+        {
+          "role": "assistant",
+          "content": "Chair-based routines are a great way to maintain strength and flexibility while you recover. Do you want recommendations for apps or online workout videos tailored for upper-body or chair exercises? Or does your doctor already have you set up with specific routines?"
+        },
+        {
+          "role": "user",
+          "content": "The doc gave me a basic set, but I'd be open to some video suggestions. It just gets monotonous. Also, this has thrown off my usual weekend routine with the kids—I coach their soccer teams, but now I have to watch from the sidelines, just give strategic advice. No more running drills or demoing plays for a bit."
+        },
+        {
+          "role": "assistant",
+          "content": "That must be tough—coaching is so hands-on. But your experience still gives the team a lot, even from the sidelines. Are there ways you can stay engaged? Like, analyzing game footage with them or focusing more on tactical discussions during practices?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I've started bringing a tablet to games, helping the kids review their plays afterward. It keeps me connected, even if I can't be on the field. I have to admit, it feels weird not to be as involved physically—I used to never miss a game or skip drills unless I was out of town."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you're making the most of the situation—and your kids probably appreciate your effort. How about your own recovery—are you finding effective ways to manage stress, given all these changes and more travel on top of everything?"
+        },
+        {
+          "role": "user",
+          "content": "Meditation apps still help, and sticking to my routine as best I can. For activity, I just have to avoid anything involving impact or standing until I'm cleared. So it's chair workouts, pool time, and upper-body stretches. One bright spot is that I can focus more on the strategic aspects of coaching and work, rather than physical demos."
+        },
+        {
+          "role": "assistant",
+          "content": "That perspective shift could actually benefit your leadership style—with both your team at work and the kids. If you want, I can help you find a few chair-based workout videos or suggest ways to keep your coaching interactive from the sidelines. Want to prioritize finding more workout variety or optimizing your sideline role with the soccer teams?"
+        },
+        {
+          "role": "user",
+          "content": "Let's start with workout variety—I know what to do with the soccer team for now, but staying motivated on the exercise front is a challenge. Thanks for the help so far, this adjustment is bigger than expected."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "During a routine quarterly checkup, his doctor identifies a concerning rise in blood pressure and prescribes stricter medication, recommending he reduce sodium intake and track diet more closely to avoid escalation.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Logs every meal and snack in a dietary tracking app daily to monitor sodium and improve accountability",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_038",
+            "fact": "Reads nutrition labels meticulously before purchasing any groceries—now avoids packaged foods high in sodium",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Pre-orders healthy meals for travel days—never eats fast food at airports"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Closely tracks sodium intake during work travel, choosing only low-sodium meal options—even avoids many previously healthy pre-orders if sodium content is too high",
+              "domain": "health_body"
+            },
+            "reason": "The doctor's stricter advice and prescription require him to pay special attention to sodium, meaning he must scrutinize meal choices further instead of relying on his previous healthy selections. Some options he previously considered 'healthy' may now be off-limits due to their sodium content."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got back from my quarterly checkup, and my doctor wasn't happy. My blood pressure's up despite medication — he's putting me on stricter meds and says I have to get serious about sodium, track everything I eat, and basically overhaul my travel food routine. So I'm a bit stressed. I'm traveling more with this diabetes drug launch, and healthy options aren't always straightforward. Any strategies for managing nutrition on the road without derailing my schedule or ending up hungry?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds tough, especially with the increased travel and client events. Managing sodium can be tricky since even \"healthy\" options aren't always low in salt. Have you had a chance to look into meal delivery services or specific hotel restaurants that offer customizable, low-sodium meals? Or are you mostly relying on pre-ordering meals like before?"
+        },
+        {
+          "role": "user",
+          "content": "I used to pre-order meals I thought were healthy, but after reviewing their nutrition info, a lot of them are loaded with sodium. Now I basically check sodium content before picking anything — I've even had to skip some go-to options. Are there resources for finding genuinely low-sodium travel meals, or apps for airport dining choices that filter by sodium?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart approach — sodium sneaks in everywhere, especially in packaged or restaurant meals. There are some apps that let you filter by nutritional content; 'HealthyOut' is one, and 'Eat This Much' lets you set sodium limits. For airports, you might have to look up restaurant menus in advance and choose places where you can customize. Are you keeping a food diary or tracking app to monitor your intake, or just checking labels and menus on the fly?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, my doctor suggested logging everything, so I've been tracking meals and snacks in a dietary app daily. It's tedious but helpful. Now I double-check every label or menu before buying anything—I've become one of those people who studies sodium numbers before a grocery purchase, and I avoid anything packaged with high sodium. It's definitely made shopping slower. Do you have tips for meal prepping, or quick low-sodium recipes that travel well?"
+        },
+        {
+          "role": "assistant",
+          "content": "Meal prepping is one of the best ways to control sodium, since you pick all the ingredients. Some easy options: sliced veggies, unsalted nuts, grilled chicken with lemon and herbs, and salads with homemade vinaigrettes. For travel, wraps using whole wheat tortillas (check they’re low sodium), plus fresh fruit for snacks. Do you have access to a kitchen on trips, or mostly stuck with hotel rooms and limited appliances?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly hotel rooms—no kitchen, but I always book places with a fitness center so I can rehab my foot. I bring a small cooler, so I can pack from home. Problem is, I'm pressed for time before travel, and sometimes my mornings are booked with team check-ins. Any advice for prepping quick, portable, genuinely low-sodium breakfasts that won't take forever?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a challenge with your busy mornings. A few quick breakfast ideas: overnight oats (using unsweetened milk and minimal added salt), hard-boiled eggs with fresh pepper instead of salt, unsalted peanut butter on whole grain bread, Greek yogurt with berries. All can be prepped the night before. Since you prep breakfast for your family every morning, maybe batch cooking on weekends would help so you have grab-and-go options for everyone?"
+        },
+        {
+          "role": "user",
+          "content": "Good ideas. I do make breakfast daily for the family—it's non-negotiable. Batch prepping on Saturdays could fit since I shop in person and have some time. But I need to keep breakfast sodium super low for myself, so I'll skip salted peanut butter and packaged bread brands that aren't low-salt. I guess more homemade granola or unsalted nuts for me. One thing—now that I'm tracking everything, do you have advice for keeping sodium low during client education lunches? Caterers usually send menus, but it's hard to find options that aren't sodium-heavy."
+        },
+        {
+          "role": "assistant",
+          "content": "Client lunches are tricky. If you get menus in advance, focus on entrees like grilled chicken/fish and request sauces or dressings on the side. Ask caterers for \"heart-healthy\" or low-sodium options—many have accommodations now. You might bring your own salad dressing or skip bread rolls, since those add a lot of sodium. For the dietary app, it helps to log menu items ahead so you know what to choose day-of. Does your team also have diet restrictions, or are you coordinating only for yourself?"
+        },
+        {
+          "role": "user",
+          "content": "For now, it's just me. I delegate admin tasks to senior reps so I can focus on high-stakes client visits, so at least I don't have to coordinate everyone's food too. My main shift is tracking sodium in every meal and avoiding packaged foods—even those I used to consider healthy. Before this, I'd just pre-order something labeled 'healthy' and not worry about sodium, but now that's out. Anyway, thanks for the practical suggestions; I've had to overhaul my approach."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad the ideas help. Overhauling a routine isn't easy, but you’re doing all the right things: tracking meals, scrutinizing labels, prioritizing fresh over packaged. As you adjust, feel free to come back for new recipes or travel meal planning. And if you find any favorite low-sodium snacks or local Chicago spots that help, I’d love to hear about them for future recommendations!"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His brother in Seattle announced plans to relocate to Chicago within three months, seeking to be closer to family and intending to stay temporarily with them upon arrival while searching for permanent housing.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Regularly coordinates shared family dinners or outings to integrate his brother into local routines during his stay",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Temporarily forgoes solitary reading time in shared spaces to accommodate his brother’s need for quiet during job searching or remote work hours",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Schedules weekly video calls with his brother at the same time—never cancels without warning"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Prioritizes regular in-person meetups with his brother each week—video calls are reserved only for unavoidable absences",
+              "domain": "social_relationships"
+            },
+            "reason": "His brother's relocation to Chicago makes video calls unnecessary as the default. He will now naturally prefer and prioritize weekly in-person meetings while his brother stays with them and after, shifting from virtual to face-to-face connection."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My brother just told me he's moving to Chicago — he's planning to stay with us for a few months while he gets settled and looks for a place. It's exciting, but honestly I'm feeling a bit overwhelmed about how to fit everything in. Between work, the kids, my mother-in-law recovering, and my regular routines, I'm not sure how to juggle another adult in the house. Do you have advice for keeping things organized with a suddenly bigger household?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big transition, but a positive one. With more people in the house, routines will definitely shift. Are you most concerned about scheduling, privacy, or the logistics — like meals and space? Sometimes adjusting daily rituals, and getting everyone’s input on shared needs, helps ease those changes."
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it's a mix. I want to help my brother feel integrated and not just like a guest, but we've got a lot of moving parts. My wife works from home, and my brother will likely be job-hunting or working remotely for a bit, so daytime space might get tricky. Evenings are our family time, and we always do Sunday dinners, so I'd like to figure out how to fold him into those routines without disrupting what already works."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. It could help to plan some shared activities, like Sunday dinners or weekend outings, so your brother quickly feels included. For daytime space, maybe setting up zones (like a ‘quiet’ spot for him during work hours) would help. Have you talked to your family about what routines are non-negotiable, and which ones can flex?"
+        },
+        {
+          "role": "user",
+          "content": "We talked last night. We're pretty protective of our evening routines — dinner together, keeping phones away, and helping my mother-in-law with her errands. I imagine I'll need to start coordinating family dinners and outings more deliberately, so my brother can get a sense of what Chicago is like and feel connected. That probably means more shared planning, which I'm okay with. I just want to make sure we're not defaulting to takeout or restaurants instead of our usual home-cooked meals."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like your Sunday dinners and home-cooked meals are important traditions for you. Maybe you could ask your brother if he wants to help cook or bring a favorite recipe, so you maintain those rituals and add something new. For outings, setting up a recurring ‘family day’ could help him explore the city and bond with everyone. Are there particular local spots or experiences you’d like to share with him first?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. I usually do Saturday outings with the kids in local parks, and my wife and I love exploring different neighborhoods. I'll probably start coordinating a few shared dinners or outings each week — part to help him get settled, part to keep everyone together and make sure he feels included, since he'll be hoping to meet some new people and find his footing here."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great approach — making your usual outings more inclusive and intentional. You could consider a weekly planning session where everyone suggests activities, and your brother can join in on neighborhood explorations. With job searching, he’ll likely appreciate both the support and introduction to local life. Are there routines or personal time you might need to adjust for his presence?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a good question. I normally do solitary reading in the living room after the kids are in bed, but my brother will probably need a quiet space during the day for job applications or remote work. I’m ok with temporarily shifting my reading time or using another room so he can focus, especially while he’s getting set up. It’s only for a while."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s considerate, and it’ll help him settle in faster. Would adjusting your evening routines impact your ability to unwind, or do you have other ways to decompress? Are there any other habits you’re considering changing while he’s staying with you?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I’m most used to structured routines, so I’ll probably be fine as long as I plan ahead. One thing that's definitely shifting: I used to default to weekly video calls with my brother, but with him in the house — and later, living nearby — that's unnecessary. I'll prioritize in-person meetups each week, reserving video chats only for travel or if someone is sick."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a nice evolution — regular in-person meetups sound much more valuable now. As your brother transitions out of your home, you could maintain the weekly rhythm and continue coordinating family dinners or outings so the connection stays strong. Is there anything else you’d like help planning — maybe space management, meal prep, or scheduling family time?"
+        },
+        {
+          "role": "user",
+          "content": "I think meal planning will need a little tweaking, especially as we try to keep home-cooked meals while integrating my brother. But honestly, the biggest adjustment is the shift from video calls to face-to-face weekly meetups. Between family outings and dinners, coordinating schedules will take some effort, but it'll be worth it. Thanks — your suggestions actually help me see a workable approach."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His company implements a mandatory policy requiring all sales managers to be on-site at the downtown Chicago office three days per week, eliminating his long-standing remote work flexibility for administrative days.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_044",
+            "fact": "Eats lunch at the office cafeteria on on-site days—now avoids packing homemade lunches or eating out except with clients",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_045",
+            "fact": "Joins informal after-work happy hours with colleagues on office days—never participated in these before the mandatory on-site policy",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Delegates administrative tasks to senior reps so he can focus on high-stakes client visits"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Handles key administrative tasks himself at the Chicago office on-site days—delegates only when pressed for time during travel weeks",
+              "domain": "work_habits"
+            },
+            "reason": "The new mandatory on-site policy means he must spend three days per week at the office, where certain administrative tasks (e.g., compliance paperwork, CRM updates) require his physical presence or cannot be delegated. He will now take direct responsibility for these, only delegating when office days overlap with unavoidable travel."
+          },
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Starts each weekday by reviewing his calendar and setting priorities—never checks email before this ritual"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Begins office days by reviewing calendar at his desk, but checks emails first on the train commute for urgent issues",
+              "domain": "daily_routines"
+            },
+            "reason": "Commuting into downtown eliminates his previous at-home ritual; he now spends part of his commute checking client/team email for time-sensitive matters before arriving, adapting his morning routine for office days."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_028",
+            "fact": "Helps the kids with homework and school projects every weekday afternoon—this used to be primarily his wife's role",
+            "domain": "daily_routines",
+            "reason": "With three mandatory days spent onsite and longer commutes, he will not reliably be home after school to assist with homework; this responsibility reverts to being mainly his wife’s role or shared with other family members as his evening availability declines."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my company just rolled out a mandatory three-day on-site policy for all sales managers. No more remote admin days — I'm commuting into downtown every week now. Honestly, it's messing with a lot of my routines and time at home. I'm trying to figure out how to keep my workflow efficient and not let the new setup derail my client work or family stuff. Got any advice on adjusting to the office schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift! Having to commute and restructure your days can definitely throw things off. Are there particular parts of your workflow that feel the most disrupted? Is it the admin side, client meetings, or the balance with family time?"
+        },
+        {
+          "role": "user",
+          "content": "Admin work is the main headache right now. I used to delegate a big chunk of compliance paperwork and CRM updates to senior reps, but some tasks now require my physical presence. On on-site days, I’m handling those myself, unless I’m stuck traveling and pressed for time. So my delegation strategy has changed — it’s eating into my high-stakes client prep and forcing me to be a lot more hands-on when I’m in the office."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense — some tasks just can’t be delegated when you need to be on-site. Have you tried batch-processing admin work on office days? Maybe blocking a chunk of time for paperwork and CRM updates, so you can still carve out space for client prep before meetings or events?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ve started batching the administrative stuff right after I arrive, since it’s required at the office. But commuting changed my morning rhythm — I used to review my calendar before touching emails, but now I check urgent emails on the train so nothing blows up before I get to my desk. So my old routine is pretty much out the window on those days."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart — using your commute to triage email and transitioning your calendar review to the office. Do you find that helps you feel more prepared, or does it just add stress early in the day? Would a quick checklist or reminder system help streamline your office morning?"
+        },
+        {
+          "role": "user",
+          "content": "Doing email on the train is helpful for urgent issues, but I still need some way to reset when I get to my desk. I might try a checklist so I don’t forget key priorities in the shuffle. Another new thing is eating lunch in the office cafeteria on the on-site days — I don’t bother bringing meals from home or eating out unless it’s a client lunch. Wasn't my habit before, but now it makes sense with the routine and saves hassle."
+        },
+        {
+          "role": "assistant",
+          "content": "Switching up lunch spots can definitely simplify things, and office cafeterias often have decent options. Are you finding it easy to stick to healthy meals there? You mentioned before that you pre-order healthy meals for travel — maybe you could look into the cafeteria menu and pick go-to options for each week."
+        },
+        {
+          "role": "user",
+          "content": "So far, healthy options aren’t terrible in the cafeteria — lots of salad and grilled items. On office days, I just grab lunch there and plan my travel meal orders separately. One thing I didn’t expect: I’ve started joining after-work happy hours with colleagues on office days. I never did those before, but it’s helping me stay connected with the sales manager group now that we’re all back in person."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great way to build team rapport and decompress a bit. Are you enjoying those happy hours, or is it more about keeping up with the group? Do they help with networking or sharing best practices around the new diabetes drug launch?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s a bit of both — some fun, some work-related venting and advice swapping. Makes the office days less isolating. The main downside is that with three days on-site and commute time, I’m rarely home in the afternoons anymore. I used to help the kids with homework most weekdays, but now my wife and sometimes her mom or other family picks up that role. I miss it, but my evening time just isn’t as reliable with the new schedule."
+        },
+        {
+          "role": "assistant",
+          "content": "That must be tough to adjust to, especially since you liked being involved with homework. Do you have other touchpoints with the kids during the week, or is it mainly weekends and family dinner time now? Maybe you could shift your involvement to mornings or find a way to check in after your commute?"
+        },
+        {
+          "role": "user",
+          "content": "I try to stay engaged by coaching their soccer teams on weekends and sticking to family Sunday dinners. Homework help just doesn’t fit the weekday schedule anymore, so I focus on starting the day with breakfast together and follow up in the evenings when possible. The office shift really reshuffled my home routines, but I think I’ve surfaced all the major changes. Any final thoughts on making the office days smoother or safeguarding client work from admin overload?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great job adapting so far — balancing family and a busier office schedule isn’t easy. For office days, consider pre-planning your admin tasks each week into batch blocks, using recurring checklists, and safeguarding specific chunks for client prep. Maybe set up a standing reminder for travel weeks, so you delegate only what can't be handled remotely. Staying plugged in at happy hours is also helping your internal network. And keeping family rituals intact is a big win. Let me know if you want tips on checklist templates or optimizing your calendar for the new flow!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After experiencing severe headaches during a work trip, he is hospitalized and diagnosed with sleep apnea, requiring him to use a CPAP machine nightly and adhere to a regulated sleep schedule.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_048",
+            "fact": "Logs CPAP machine usage and sleep quality daily in a health app—never skips tracking even on travel nights",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_049",
+            "fact": "Avoids late-night screen use and email; powers down devices at least 30 minutes before bedtime to support CPAP adherence and regulated sleep",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_025",
+              "fact": "Charges devices overnight outside the bedroom—never keeps phones or laptops by his bedside"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Keeps his phone by the bedside in sleep mode for CPAP-related alerts—no longer charges all devices outside the bedroom overnight",
+              "domain": "daily_routines"
+            },
+            "reason": "He now needs to monitor his CPAP machine nightly; many CPAP devices sync with apps or alert via phone if issues arise (e.g. mask disconnection or apnea events). This requires keeping his phone near the bed while sleeping."
+          },
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Prioritizes sleep before big presentations—never stays up the night before, even if it means less prep"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Adheres to a regulated bedtime every night without exception—no longer flexes sleep schedule for presentations or prep; CPAP use strictly scheduled regardless of critical work events",
+              "domain": "health_body"
+            },
+            "reason": "Sleep apnea diagnosis and CPAP requirement mean he can no longer vary his sleep routine. Even for high-pressure work events, sticking to a strict, regulated bedtime is medically necessary."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could really use some help. I was hospitalized last week after some brutal headaches, and it turns out I have sleep apnea. Now I've got a CPAP machine and doctor's orders to stick to a regulated sleep schedule—no more late nights. This is seriously throwing off my work routine, especially with all the travel and these client education events. Any ideas for not letting my productivity crater while making sleep the priority?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough adjustment, but prioritizing sleep is definitely going to help long-term. Let’s start with your nightly routine—are there specific challenges with the CPAP, or is it mostly about fitting in your work around a strict bedtime? What does your evening look like these days?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the biggest change is that I’m locked into a regulated bedtime every night—no flexibility, even if I have something big the next day. With my CPAP, I have to stick to the schedule regardless of presentations or prep. It’s hard because I used to squeeze in extra run-throughs the night before, but now I just can’t. I need to find some way to get ready earlier without sacrificing the sleep."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. It sounds like frontloading your prep is going to be key—maybe blocking out time earlier in the day for presentation rehearsals, so you’re not tempted to compromise on sleep. Do you use any tools or strategies already for prepping talking points or tracking deadlines?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I always prepare detailed talking points for client events and never improvise, so now I’m pushing more of that prep into late afternoons. I’ve had to cut off screen time too—doctor recommended powering down devices at least half an hour before bed to help with sleep quality and CPAP adherence. So no more late-night email checks. I’m realizing I need a better system for managing last-minute client requests since I won’t see them after 8pm."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach—setting an evening cutoff should give you better rest. For managing late client requests, maybe you could set up an automated email response outside your cutoff hours, letting clients know when you’ll respond. Or, if urgent queries are rare, designate a team member to cover after-hours, so nothing falls through the cracks. Would either of those work for your style, given your preference for detailed prep?"
+        },
+        {
+          "role": "user",
+          "content": "I usually delegate admin tasks to my senior reps, so asking one to monitor urgent stuff after 8pm could work. I’d just need to communicate that clearly to clients. By the way, another adjustment—I now log CPAP usage and sleep quality daily in a health app. I can’t skip tracking, even on travel nights, which means keeping my phone by the bedside in sleep mode so I get CPAP alerts if there’s a disconnect. It used to be I’d charge devices outside the bedroom, but that’s out the window."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big shift! Keeping your phone bedside for CPAP alerts is practical, and sleep mode should minimize disruptions. If you're tracking sleep daily, have you noticed any patterns yet—maybe certain environments or travel days where sleep is harder to manage? Also, do you have a go-to way to ensure the hotel setup works for your new routine?"
+        },
+        {
+          "role": "user",
+          "content": "So far, I’m sticking with hotels that have quiet rooms and easy access to power outlets for the CPAP, but I do need to double-check for those when booking now. Sleep’s definitely harder on travel days—I'm powering down all devices at least 30 minutes before bedtime so I can stick to the regulated schedule and avoid any late-night screen distractions. It’s helped, even if I miss some late emails. I probably need to set stricter boundaries about when I’m reachable."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call—your sleep health should come first. Maybe you can communicate set hours for responding to work communications and, for late emergencies, rely on your senior rep to alert you only if it’s truly urgent. Are you finding that powering down devices earlier is impacting your overall stress or helping with winding down at night?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, yes—it’s been helping a lot with stress and winding down. The meditation app is still part of my routine, but now I do it before shutting everything off. CPAP adherence is priority one, so I can't risk deviating from the evening ritual. Even with travel, I log into the health app and power down on time. Sleep is non-negotiable now, even if I feel underprepared for a big day."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re building some strong habits given the circumstances, and your approach should help maintain both productivity and health. If you ever need a workflow for prepping presentations earlier or coordinating with your reps on after-hours coverage, let me know—I can help draft a protocol or suggest digital tools. Anything else new you’ve found yourself adjusting in response to the diagnosis?"
+        },
+        {
+          "role": "user",
+          "content": "That's actually most of it. The biggest changes have been strict bedtime, no exceptions, nightly CPAP with logs—even on travel—and keeping my phone by my bedside for machine alerts. I don't skip tracking my sleep, and powering down devices half an hour before bed is now part of my routine. Still figuring out work boundaries, but it's progress. Thanks for the help—I’ll let you know if I need more tools or structure."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His 10-year-old child was diagnosed with Type 1 diabetes, requiring immediate changes to the family's daily routines, meal planning, and school coordination to manage insulin and glucose monitoring.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Logs the 10-year-old’s blood glucose levels, insulin doses, and meals in a shared family tracking app each day—coordinates with his wife and school nurse to ensure complete records",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Hosts monthly information and peer support sessions for other parents at the local school—never attended before the diagnosis, but now participates to exchange diabetes management strategies",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_026",
+              "fact": "Prepares quick, grab-and-go breakfasts for the kids on weekdays—only cooks full breakfasts on weekends"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Prepares carbohydrate-counted, diabetes-friendly breakfasts each morning for the kids—avoids generic grab-and-go options unless they are specifically suitable for glucose control",
+              "domain": "daily_routines"
+            },
+            "reason": "With a child newly diagnosed with Type 1 diabetes, meal planning for breakfast must be precise, focusing on carbohydrate count and diabetes management rather than generic grab-and-go efficiency."
+          },
+          {
+            "from": {
+              "id": "pref_029",
+              "fact": "Coordinates after-school pick-up and dinner planning on weekdays—never delegated these to outside help"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Coordinates after-school pick-up and ensures diabetes management supplies and snacks are always packed; dinner planning now prioritizes balanced, diabetes-friendly meals, even if it occasionally involves outside assistance for meal prep or pick-up during emergencies",
+              "domain": "daily_routines"
+            },
+            "reason": "Diabetes care introduces new responsibilities, such as packing insulin and glucose snacks for school and after-school activities, while meal planning must focus on nutritional balance and glucose control. Sometimes, external help is unavoidable if diabetes management requires added flexibility."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help. My 10-year-old was just diagnosed with Type 1 diabetes last week, so the whole family routine is kind of upside down. I've been spending mornings reading up on carb counts and insulin, and coordinating with the school nurse for the first time. Any tips on how to streamline meal planning and keep track of all the daily numbers without getting overwhelmed?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm sorry to hear about your child's diagnosis—that's a big adjustment for any family. You're already on the right path by focusing on meal planning and working with the school. One trick is to create a shared calendar or checklist for glucose checks, insulin dosages, and meals. Have you found any apps or tools that help, or are you still using paper for now?"
+        },
+        {
+          "role": "user",
+          "content": "We're using a family tracking app. I log my child's blood glucose levels, insulin doses, and their meals each day. My wife and I coordinate with the school nurse, who's also updating the app. It's helpful, but all the updates make mornings a bit chaotic. I need to figure out breakfast routines where the carb count is spot-on. Any quick, kid-friendly breakfast ideas?"
+        },
+        {
+          "role": "assistant",
+          "content": "That shared app sounds like a lifesaver, even if it adds some complexity. For breakfasts, diabetic-friendly options might include scrambled eggs with veggies, Greek yogurt with measured berries, whole grain toast with nut butter, or oatmeal with specific portion sizes. Would your kid enjoy any of those? Or do you need suggestions for foods you can prep ahead of time?"
+        },
+        {
+          "role": "user",
+          "content": "Those could work. I actually can't rely on the old grab-and-go stuff anymore unless it's specifically diabetes-appropriate. I have to prepare carbohydrate-counted, diabetes-friendly breakfasts each morning. I used to just hand them a granola bar or toast if we were running late, but now I need to know exactly how much and what's in it. Anything I can set up for fast mornings, but still keep the carb count precise?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, there are some good options for prepping individualized breakfasts. You could pre-pack small containers with measured amounts of Greek yogurt and berries, boil eggs and keep them in the fridge, or make mini frittatas with veggies that are easy to count carbs for. Even prepping whole grain toast and precise servings of nut butter in advance can save time. Do you need to coordinate breakfast for your other child as well, or is it mainly focused on your 10-year-old now?"
+        },
+        {
+          "role": "user",
+          "content": "Both kids, ideally. The younger sibling wants what the older one has, so I'm just making everything diabetes-friendly now to keep things simple, even if it slows me down. Another tricky part is after-school pickups and soccer practices. I always handled pick-up and dinner, but now I have to pack diabetes management supplies and snacks for both — insulin, glucose tabs, carb-balanced snacks. Sometimes I’ve asked my wife or even a neighbor for help when work emergencies hit, which I hadn’t done before."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—the logistics definitely get more complicated. Having a go-bag with essentials ready for after-school and soccer helps, and prepping balanced dinners in advance could ease last-minute stress. Since you've started involving your wife and neighbor occasionally, have you made a checklist or routine for others to follow when they step in, so nothing gets missed?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, we have a shared checklist on the app, so whoever’s doing pick-up can see it right on their phone. That helps catch the essentials. Dinner’s harder, though. I still want to handle planning, but I’ve had to outsource meal prep a few times to family or even delivery services, just to keep things balanced and diabetes-safe. I used to never get outside help, but it's just not possible now with all the tracking and emergencies."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re adapting well. Choosing diabetes-safe options while balancing convenience is tough, but your use of checklists and outsourcing during emergencies is smart. Have you found any meal services or local restaurants offering diabetes-friendly options, or are you mostly coordinating those yourself?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly just coordinating myself for now — I don’t want to rely on others too often, but sometimes it’s necessary. One thing I’ve started is hosting monthly information and peer support sessions for other parents at the school. Never attended before the diagnosis, but now it helps to trade strategies and just talk through what works for meals, emergencies, and routines."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s fantastic—you’re not just adapting for your family, but building community support as well. These peer sessions can really help everyone feel less alone and get practical ideas. Is there anything you wish you could streamline further—like coordinating with school staff, tracking supplies, or even managing work travel with your new routines?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s the coordination that’s most exhausting. Having a central app helps, but keeping everyone looped in is a constant effort. Travel hasn’t clashed with care yet, but I expect more challenges there soon. For now, it’s daily routines and meal planning that take up most headspace. Thanks for talking it through — just hearing some ideas helps."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing an impressive job managing everything, especially with the big changes. Leaning into checklists, prepping meals, and building a support network are all strong strategies. If you want, I can help you refine routines, identify new meal ideas, or troubleshoot travel logistics when the need comes up. Just let me know."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His mother-in-law fell at home and fractured her wrist, resulting in her needing more extensive in-home assistance and rehabilitation for the next several months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_055",
+            "fact": "Schedules daily reminders for his mother-in-law’s physical therapy exercises and tracks progress in a shared family app to ensure adherence and recovery milestones are met",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_056",
+            "fact": "Limits weekend coaching involvement with his kids’ soccer teams to accommodate mother-in-law’s appointments and rehabilitation sessions—now sometimes skips matches to oversee her care",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Always checks in on his mother-in-law each evening—never delegates her care to someone else"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Coordinates more extensive evening care and rehabilitation support for his mother-in-law, frequently enlisting his wife, hired aides, or therapists—no longer insists on personally handling all assistance himself",
+              "domain": "social_relationships"
+            },
+            "reason": "His mother-in-law's increased need for rehabilitation and in-home support after her wrist fracture will require more time, specialized care, and physical assistance than he can provide alone, especially on busy work travel weeks. He must share and coordinate responsibilities with others."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help figuring things out. My mother-in-law took a spill at home last week—fractured her wrist, and now she needs a lot more support, including rehab for the next few months. Balancing the new diabetes drug rollout at work and her care has been rough. Any advice on how to keep my work and home routines steady without letting either side slip?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really challenging—there’s a lot on your plate. For your work routine, do you already use any tools or strategies to block out focused time so things don’t get too reactive? And on the home side, are you handling your mother-in-law’s care mostly alone, or is there a team you can share the load with?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’m actually figuring out a way to coordinate her care more, especially in the evenings. I can’t do everything myself anymore. My wife and I are working with hired aides and therapists since some rehab is beyond what we can handle solo. On busy weeks with travel, delegating has been necessary, even though I used to manage it all myself."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, and it’s smart to bring in professional support. Are you managing her therapy schedule and recovery tracking yourself, or are there ways to automate or share that responsibility too—like using reminders or a shared digital checklist?"
+        },
+        {
+          "role": "user",
+          "content": "I started scheduling daily reminders for her physical therapy exercises and set up a family tracking app so we all stay on top of her progress and milestones. If I can keep everyone coordinated, it makes her recovery routine smoother and reduces stress for all of us."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great approach—using the app can lighten your mental load and keep communication tight across the family. Have you had to adjust your own weekend commitments, like coaching your kids’ soccer teams or family outings, to fit in her appointments and rehab sessions?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. I’ve had to limit my involvement as a soccer coach lately—sometimes I skip matches or hand off coaching duties to another parent just to oversee her care or be available for rehab sessions. It’s temporary, but it means my weekends are less predictable."
+        },
+        {
+          "role": "assistant",
+          "content": "Balancing all these shifting responsibilities is tough. How are you managing stress and downtime for yourself in this period—especially with work ramping up and family roles changing?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s been a juggling act. I’m still leaning on meditation apps to manage stress, and I try to keep to my usual routines wherever possible, like planning family dinners and prioritizing sleep before big presentations. But I’ve had to accept more flexibility, especially with caregiving and personal commitments."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re adapting well and setting smart boundaries. Would you like suggestions for optimizing your calendar or help with finding more support resources for your mother-in-law’s rehab? Or is there a specific area where the transition feels most overwhelming?"
+        },
+        {
+          "role": "user",
+          "content": "I think scheduling is the big thing. Coordinating everyone’s commitments, making sure my mother-in-law’s exercises get done, and keeping work from spilling into family time. Any recommendations for tools or techniques to make this process smoother?"
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely. You can use shared calendar apps (like Google Calendar with multiple users) to block off therapy slots, set automated reminders for exercises, and clearly mark your own work events to avoid overlap. For task tracking, apps like Todoist or Trello let you share checklists for ongoing rehab steps. Would integrating those with your family’s current app ecosystem work, or do you prefer something centralized?"
+        },
+        {
+          "role": "user",
+          "content": "We’re already using Google Calendar together, so integrating rehab reminders there makes sense. I like the idea of a consolidated checklist app too—will check what fits alongside our family tracking app. Thanks, this helps clarify where to focus. If anything else comes up, I’ll reach out."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His pharmaceutical company reorganized its Midwest sales territories, reducing his region and reallocating several key hospital accounts to other managers, which decreased his client portfolio and forced him to take on new accounts outside his previous specialty.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_058",
+            "fact": "Prioritizes building relationships with internal medical affairs and product specialists to quickly learn about new therapeutic areas—actively books regular collaboration calls with these teams",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_059",
+            "fact": "Seeks out peer-to-peer mentoring calls with colleagues managing similar new accounts after a territory change, rather than relying solely on self-study",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Blocks out mornings for team check-ins and client emails—never schedules internal meetings before noon"
+            },
+            "to": {
+              "id": "pref_057",
+              "fact": "Now schedules internal meetings in the mornings as needed—client email and team check-ins are fit around new account calls and onboarding duties",
+              "domain": "work_habits"
+            },
+            "reason": "With a reduced, reshuffled client portfolio and unfamiliar accounts added outside his original specialty, he needs to coordinate more frequently with internal departments for onboarding, background, and support, sometimes requiring morning meetings and planning calls. His old routine of rigidly reserving mornings is no longer feasible or effective."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_042",
+            "fact": "Handles key administrative tasks himself at the Chicago office on-site days—delegates only when pressed for time during travel weeks",
+            "domain": "work_habits",
+            "reason": "The new territory reorganization substantially shrinks his client load in Chicago, replacing it with new accounts outside his traditional regional base. He no longer has fixed Chicago office days, as travel and onboarding for new territories take priority, making the previous pattern of handling admin tasks on-site irrelevant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my company's just finished reorganizing our Midwest territories. I lost several of my biggest hospital accounts and picked up some new ones in areas I barely know. I'm honestly overwhelmed — I thought I had client routines dialed in, but now there's so much onboarding and unfamiliar territory work. Do you have strategies for ramping up quickly with these kinds of account shifts, especially when some therapeutic areas are outside my expertise?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a tough spot — account shifts can really throw off established routines, especially when you’re moving outside your specialty. One big thing is leveraging internal resources. Have you connected with your company’s medical affairs team or product specialists for those drugs you’re new to? Building relationships there can help you cover knowledge gaps much faster than solo research. Are you mostly working alone on onboarding, or is there structured support?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve actually started booking regular calls with medical affairs and product experts — I realized I need their insight to get up to speed on these new diseases. I used to rely more on prepping presentations myself, but this time I’m prioritizing those internal relationships. I’m also reaching out to other sales managers who got similar new accounts after the reshuffle — peer mentoring calls help more than just reading materials. Still feels like a crash course, though."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart — peer mentoring and tapping into internal expertise are both efficient ways to level up fast. Sometimes companies have tools or templates for onboarding new accounts or specialties to reduce reinventing the wheel. Are you finding those helpful, or are you more reliant on calls and conversations right now? Also, has this shift affected where or how you schedule your work blocks? Sometimes meeting loads change when you’re onboarding new accounts."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I had to rethink my mornings. I used to block out all mornings for team check-ins and client email, never scheduled internal meetings before noon — but now with onboarding and background calls, those old boundaries aren’t workable. I’ve started scheduling internal meetings in the mornings as needed and fit team check-ins and client emails around new account calls or training sessions. It’s less predictable but seems necessary given all the new support I need."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense — flexibility often becomes key when onboarding just-in-time. With less predictable mornings, how are you managing your admin workload? Some people delegate more, but others take on more personally after a portfolio shift. Are you able to stick to your old office days for handling tasks, or has that been affected too?"
+        },
+        {
+          "role": "user",
+          "content": "Good question. Actually, with the new region setup and fewer Chicago accounts, I don’t have fixed office days anymore. Travel and onboarding for these new territories are taking priority, so my old habit of handling admin tasks on-site in Chicago doesn’t apply — I only delegate admin now if I’m pressed for time during travel weeks. Otherwise, I try to get things done as I move between meetings or calls."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for clarifying how your admin routine has changed. It sounds like you’re adapting quickly but managing a lot. Would you want to discuss tools for tracking onboarding progress across accounts, or ways to streamline background research? Or do you feel the internal and peer-to-peer calls are giving you what you need?"
+        },
+        {
+          "role": "user",
+          "content": "At the moment, those calls are my main lifeline. If you have recommendations for simple ways to track what I’ve learned or need to follow-up on — preferably something I can use from my phone between meetings — that’d be helpful. I can’t let important details slip through the cracks with so many new accounts."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. For dynamic onboarding, I’d recommend something like Trello or Microsoft To Do — both are easy to update on your phone, and you can create boards or lists for each account. You can note key topics from internal calls, track follow-ups, and add links to relevant resources. Would either of those fit your workflow, or do you need something that also integrates with your company’s calendaring or CRM tools?"
+        },
+        {
+          "role": "user",
+          "content": "I use Outlook for calendaring and CRM for client records, but a lightweight board like Trello could be good for tracking onboarding topics and follow-ups. I’ll give it a try. Appreciate you highlighting how I can use internal resources and peer mentoring for the specialty ramp-up — I hadn’t taken such an active approach before the territory change. The flexibility in scheduling and routines is new for me, but I’m adjusting. Thanks, this is helpful."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Prepares detailed talking points for every client education event—never improvises presentations on the spot",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Completes all leadership training assignments immediately after each seminar—never lets them pile up for later",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Monitors blood pressure with a home device twice weekly—never skips quarterly doctor visits",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Uses guided meditation apps for stress—never tries in-person yoga classes",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Communicates with his wife about work conflicts daily—never leaves her out of travel planning",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Watches soccer matches with his kids—never watches alone or skips their favorite team’s games",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Reads business biographies for career inspiration—never picks up fiction novels",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Sets aside time for creative hobbies like woodworking during vacation—never brings office work on holiday",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Explores new Chicago neighborhoods with his wife—never repeats the same weekend itinerary twice in a row",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Shops for groceries in person each Saturday—never uses delivery services",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Limits phone use during family dinner and evening hours—never answers work calls after 7pm",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_027",
+        "fact": "Schedules home-based family activities on Saturdays—parks are now less feasible due to increased after-school responsibilities and his wife’s workload",
+        "domain": "leisure_hobbies",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "Alternates between home-cooked and restaurant Sunday dinners—relies on restaurant reservations when MBA class assignments pile up or after an especially busy week",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Schedules two dedicated study blocks each week after work on non-class nights—never leaves MBA assignments for weekends due to family commitments",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Uses campus shuttle and public transit for evening MBA classes—avoids driving to reduce stress after long workdays",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Requests hotel rooms with pools or stationary bikes—completely avoids any treadmill or gym equipment requiring weight-bearing exercise",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Completes daily upper-body stretching and doctor-approved chair-based workouts to stay active during injury recovery—avoids any exercise that involves standing or impact",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Watches his kids’ soccer games from the sidelines and gives strategic advice—does not participate in drills or on-field demonstrations during recovery",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Closely tracks sodium intake during work travel, choosing only low-sodium meal options—even avoids many previously healthy pre-orders if sodium content is too high",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Logs every meal and snack in a dietary tracking app daily to monitor sodium and improve accountability",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Reads nutrition labels meticulously before purchasing any groceries—now avoids packaged foods high in sodium",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Prioritizes regular in-person meetups with his brother each week—video calls are reserved only for unavoidable absences",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Regularly coordinates shared family dinners or outings to integrate his brother into local routines during his stay",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Temporarily forgoes solitary reading time in shared spaces to accommodate his brother’s need for quiet during job searching or remote work hours",
+        "domain": "leisure_hobbies",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_043",
+        "fact": "Begins office days by reviewing calendar at his desk, but checks emails first on the train commute for urgent issues",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Eats lunch at the office cafeteria on on-site days—now avoids packing homemade lunches or eating out except with clients",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Joins informal after-work happy hours with colleagues on office days—never participated in these before the mandatory on-site policy",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Keeps his phone by the bedside in sleep mode for CPAP-related alerts—no longer charges all devices outside the bedroom overnight",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Adheres to a regulated bedtime every night without exception—no longer flexes sleep schedule for presentations or prep; CPAP use strictly scheduled regardless of critical work events",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Logs CPAP machine usage and sleep quality daily in a health app—never skips tracking even on travel nights",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Avoids late-night screen use and email; powers down devices at least 30 minutes before bedtime to support CPAP adherence and regulated sleep",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_050",
+        "fact": "Prepares carbohydrate-counted, diabetes-friendly breakfasts each morning for the kids—avoids generic grab-and-go options unless they are specifically suitable for glucose control",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Coordinates after-school pick-up and ensures diabetes management supplies and snacks are always packed; dinner planning now prioritizes balanced, diabetes-friendly meals, even if it occasionally involves outside assistance for meal prep or pick-up during emergencies",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Logs the 10-year-old’s blood glucose levels, insulin doses, and meals in a shared family tracking app each day—coordinates with his wife and school nurse to ensure complete records",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Hosts monthly information and peer support sessions for other parents at the local school—never attended before the diagnosis, but now participates to exchange diabetes management strategies",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_054",
+        "fact": "Coordinates more extensive evening care and rehabilitation support for his mother-in-law, frequently enlisting his wife, hired aides, or therapists—no longer insists on personally handling all assistance himself",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Schedules daily reminders for his mother-in-law’s physical therapy exercises and tracks progress in a shared family app to ensure adherence and recovery milestones are met",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Limits weekend coaching involvement with his kids’ soccer teams to accommodate mother-in-law’s appointments and rehabilitation sessions—now sometimes skips matches to oversee her care",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_057",
+        "fact": "Now schedules internal meetings in the mornings as needed—client email and team check-ins are fit around new account calls and onboarding duties",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Prioritizes building relationships with internal medical affairs and product specialists to quickly learn about new therapeutic areas—actively books regular collaboration calls with these teams",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_059",
+        "fact": "Seeks out peer-to-peer mentoring calls with colleagues managing similar new accounts after a territory change, rather than relying solely on self-study",
+        "domain": "work_habits",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Blocks out mornings for team check-ins and client emails—never schedules internal meetings before noon",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_057",
+        "reason": "With a reduced, reshuffled client portfolio and unfamiliar accounts added outside his original specialty, he needs to coordinate more frequently with internal departments for onboarding, background, and support, sometimes requiring morning meetings and planning calls. His old routine of rigidly reserving mornings is no longer feasible or effective."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Delegates administrative tasks to senior reps so he can focus on high-stakes client visits",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "The new mandatory on-site policy means he must spend three days per week at the office, where certain administrative tasks (e.g., compliance paperwork, CRM updates) require his physical presence or cannot be delegated. He will now take direct responsibility for these, only delegating when office days overlap with unavoidable travel."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Only considers MBA programs with flexible evening or weekend classes—never interested in fully online options",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "He has now chosen and enrolled in an MBA program; this selection criterion is no longer relevant as a personal preference guiding future behaviors."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Books hotel rooms with fitness centers on work trips—never relies on outdoor running due to plantar fasciitis",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "His doctor has explicitly banned all running and weight-bearing exercise for three months due to worsening plantar fasciitis. He must now avoid even gym treadmills or rowing machines, forcing him to exclusively seek out non-impact options like pools or stationary bikes."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Pre-orders healthy meals for travel days—never eats fast food at airports",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "The doctor's stricter advice and prescription require him to pay special attention to sodium, meaning he must scrutinize meal choices further instead of relying on his previous healthy selections. Some options he previously considered 'healthy' may now be off-limits due to their sodium content."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Prioritizes sleep before big presentations—never stays up the night before, even if it means less prep",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_047",
+        "reason": "Sleep apnea diagnosis and CPAP requirement mean he can no longer vary his sleep routine. Even for high-pressure work events, sticking to a strict, regulated bedtime is medically necessary."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Coaches both kids’ soccer teams every weekend—never misses games unless traveling for work",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "He is medically restricted from all weight-bearing exercise and cannot physically participate in field coaching during the recovery period, making his standard coaching role temporarily impossible."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Organizes family Sunday dinners—never lets restaurant reservations replace home-cooked meals",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "With two evenings per week on campus for MBA classes and ongoing work travel, his available time and energy to organize and cook large family meals every Sunday will be reduced; occasionally, he will need to opt for restaurants to maintain the tradition without the burden of cooking."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Always checks in on his mother-in-law each evening—never delegates her care to someone else",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_054",
+        "reason": "His mother-in-law's increased need for rehabilitation and in-home support after her wrist fracture will require more time, specialized care, and physical assistance than he can provide alone, especially on busy work travel weeks. He must share and coordinate responsibilities with others."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Schedules weekly video calls with his brother at the same time—never cancels without warning",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "His brother's relocation to Chicago makes video calls unnecessary as the default. He will now naturally prefer and prioritize weekly in-person meetings while his brother stays with them and after, shifting from virtual to face-to-face connection."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Plans family outings at local parks every Saturday—never schedules work events on these afternoons",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_027",
+        "reason": "His wife's increased workload reduces her weekend flexibility, causing him to handle more childcare and opt for easier, home-based Saturday activities rather than park outings."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts each weekday by reviewing his calendar and setting priorities—never checks email before this ritual",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_043",
+        "reason": "Commuting into downtown eliminates his previous at-home ritual; he now spends part of his commute checking client/team email for time-sensitive matters before arriving, adapting his morning routine for office days."
+      },
+      {
+        "id": "pref_022",
+        "fact": "Prepares breakfast for the family every morning—never relies on grab-and-go options",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "With his wife's workload increasing due to her new full-time remote job, he now needs to handle more after-school and morning routines, leaving less time for elaborate breakfast preparation during the week."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Charges devices overnight outside the bedroom—never keeps phones or laptops by his bedside",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "He now needs to monitor his CPAP machine nightly; many CPAP devices sync with apps or alert via phone if issues arise (e.g. mask disconnection or apnea events). This requires keeping his phone near the bed while sleeping."
+      },
+      {
+        "id": "pref_026",
+        "fact": "Prepares quick, grab-and-go breakfasts for the kids on weekdays—only cooks full breakfasts on weekends",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_050",
+        "reason": "With a child newly diagnosed with Type 1 diabetes, meal planning for breakfast must be precise, focusing on carbohydrate count and diabetes management rather than generic grab-and-go efficiency."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Helps the kids with homework and school projects every weekday afternoon—this used to be primarily his wife's role",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "With three mandatory days spent onsite and longer commutes, he will not reliably be home after school to assist with homework; this responsibility reverts to being mainly his wife’s role or shared with other family members as his evening availability declines."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Coordinates after-school pick-up and dinner planning on weekdays—never delegated these to outside help",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_051",
+        "reason": "Diabetes care introduces new responsibilities, such as packing insulin and glucose snacks for school and after-school activities, while meal planning must focus on nutritional balance and glucose control. Sometimes, external help is unavoidable if diabetes management requires added flexibility."
+      },
+      {
+        "id": "pref_042",
+        "fact": "Handles key administrative tasks himself at the Chicago office on-site days—delegates only when pressed for time during travel weeks",
+        "domain": "work_habits",
+        "created_at_session": 5,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "The new territory reorganization substantially shrinks his client load in Chicago, replacing it with new accounts outside his traditional regional base. He no longer has fixed Chicago office days, as travel and onboarding for new territories take priority, making the previous pattern of handling admin tasks on-site irrelevant."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T23:49:05.171091"
+}

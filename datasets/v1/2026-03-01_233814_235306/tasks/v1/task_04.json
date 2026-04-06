@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_83465e52",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_034",
+        "fact": "Takes a screen break every 30 minutes, regardless of workload, as required by her neurologist with the new migraine medication",
+        "supersedes": {
+          "id": "pref_006",
+          "fact": "Takes a screen break every 45 minutes as non-negotiable — refuses to skip, even during ticket surges"
+        }
+      },
+      {
+        "id": "pref_040",
+        "fact": "Schedules daily joint activities with her son on weeknights, structuring her Security+ study sessions around his needs as a full-time cohabitant instead of prioritizing evening study blocks during split custody weeks",
+        "supersedes": {
+          "id": "pref_037",
+          "fact": "Limits joint activities with her son during split custody weeks to weekends and one weekday evening, allowing extra evening hours for Security+ study when required by certification deadlines"
+        }
+      },
+      {
+        "id": "pref_049",
+        "fact": "Prefers responding to all user and colleague queries via encrypted chat and emergency phone calls during the cyber incident, suspending routine email and ticket replies except for mandatory logging."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Only communicates complex troubleshooting steps via video calls or screen shares — avoids long email instructions when remote"
+      },
+      {
+        "id": "pref_032",
+        "fact": "Schedules regular video calls with her partner during his fieldwork, maintaining connection despite physical distance"
+      },
+      {
+        "id": "pref_008",
+        "fact": "Meal preps all weekday lunches and snacks, never eats at campus cafes or orders takeout during the workweek"
+      }
+    ]
+  },
+  "persona": "A mid-career helpdesk technician working in a university IT department"
+}

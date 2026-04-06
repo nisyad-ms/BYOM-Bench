@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_74eecd3b",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_059",
+        "fact": "Follows a physician-prescribed fixed bedtime routine starting at 10:00pm, including CPAP setup and winding down with no screens — strictly adheres even during heavy work periods, replacing previous alarm cue with a health-driven protocol.",
+        "supersedes": {
+          "id": "pref_009",
+          "fact": "Sets a nightly phone alarm for 10:45pm as a wind-down reminder — refuses to work later even when a project deadline looms"
+        }
+      },
+      {
+        "id": "pref_060",
+        "fact": "Records nightly CPAP usage stats, sleep quality, and related symptoms in her health tracking app daily as required for apnea monitoring — now prioritizes detailed sleep insight over general weekly summaries.",
+        "supersedes": {
+          "id": "pref_010",
+          "fact": "Records sleep and nutrition patterns in a health tracking app weekly — never tracks exercise in that app"
+        }
+      },
+      {
+        "id": "pref_028",
+        "fact": "Prefers using Zoom or Google Meet for all team communication with the startup — only uses Slack for minor async check-ins"
+      },
+      {
+        "id": "pref_062",
+        "fact": "Now wears a comfortable, adjustable sleep mask and optimizes bedroom airflow every night to facilitate CPAP comfort and adherence."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Batch grocery shops every Saturday morning — never shops after work or mid-week"
+      },
+      {
+        "id": "pref_041",
+        "fact": "Attends women in tech meetups virtually during conference prep — no longer goes in person while focused on presentation and travel commitments"
+      }
+    ]
+  },
+  "persona": "A 24-year-old mobile app developer freelancing full-time"
+}

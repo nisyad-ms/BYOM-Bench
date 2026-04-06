@@ -1,6 +1,6 @@
 """Tests for evaluation runner helper functions (pure, no mocking needed)."""
 
-from byom_bench.evaluation_multisession.runner import (
+from ream_bench.evaluation_multisession.runner import (
     _extract_proactive_recalls,
     _extract_verdict,
     _parse_plan_testing_order,

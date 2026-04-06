@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_7730c16d",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_050",
+        "fact": "Prioritizes iron-rich plant-based meals (e.g., lentils, tofu, spinach); now occasionally includes carefully selected vegetarian options (such as eggs or dairy) to meet iron needs, regardless of full vegan status.",
+        "supersedes": {
+          "id": "pref_007",
+          "fact": "Only cooks plant-based meals at home; avoids eating out unless vegan options are guaranteed"
+        }
+      },
+      {
+        "id": "pref_035",
+        "fact": "Co-leads weekly in-person team meetings for project collaboration, supplementing video calls as needed; no longer avoids face-to-face group discussions",
+        "supersedes": {
+          "id": "pref_004",
+          "fact": "Collaborates only through scheduled video calls — avoids long email threads for project discussions"
+        }
+      },
+      {
+        "id": "pref_003",
+        "fact": "Records her lab section lectures for undergrads, but never reuses past material; updates slides every quarter"
+      },
+      {
+        "id": "pref_033",
+        "fact": "Uses her prescribed inhaler daily, integrates medication reminders into her health app routine; never skips inhaler use while pollen levels are elevated"
+      },
+      {
+        "id": "pref_052",
+        "fact": "Adds daily reminders for iron supplement intake in her German health app; never skips or delays the supplement routine."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Keeps an air purifier running in her apartment — never opens windows during high-pollen days"
+      }
+    ]
+  },
+  "persona": "An international PhD candidate in environmental science"
+}

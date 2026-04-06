@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_d4b47eed",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_051",
+        "fact": "Prepares iron-rich meals (including select animal proteins and leafy greens) for the family each week — occasionally cooks meat at home as medically required, but continues to prioritize plant-based dishes overall",
+        "supersedes": {
+          "id": "pref_007",
+          "fact": "Prepares vegetarian family meals for the entire week on Sundays — never cooks meat at home"
+        }
+      },
+      {
+        "id": "pref_043",
+        "fact": "Drafts project updates in advance but may send key communications after hours on quarterly leadership meeting days, while maintaining no after-4pm email outside these occasions",
+        "supersedes": {
+          "id": "pref_003",
+          "fact": "Batch-writes project updates before lunch — never sends emails after 4pm"
+        }
+      },
+      {
+        "id": "pref_045",
+        "fact": "Prepares the kids in advance for changes to evening routines on leadership meeting weeks by reviewing adjustments during Sunday family calendar checks"
+      },
+      {
+        "id": "pref_031",
+        "fact": "Researches and adapts the home environment for mobility support, incorporating accessible furniture and routines for her father's care"
+      },
+      {
+        "id": "pref_013",
+        "fact": "Coordinates shared calendars with ex-husband monthly — never confirms plans last-minute"
+      },
+      {
+        "id": "pref_025",
+        "fact": "Reviews the upcoming family calendar with the kids each Sunday afternoon — never lets the week start unplanned"
+      }
+    ]
+  },
+  "persona": "A single parent planning annual vacations for their two children"
+}

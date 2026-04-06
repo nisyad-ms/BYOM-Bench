@@ -21,9 +21,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from byom_bench.agents.stores import get_available_agent_types
-from byom_bench.prompts import _load_prompt_config
-from byom_bench.utils import (
+from ream_bench.agents.stores import get_available_agent_types
+from ream_bench.prompts import _load_prompt_config
+from ream_bench.utils import (
     create_eval_run_dir,
     extract_task_num,
     get_all_session_dirs,
@@ -54,11 +54,11 @@ def _create_memory_agent(
     Returns None for baseline agents (context / nocontext) — those are
     created inside the runner.
     """
-    from byom_bench.agents import MemoryAgent
+    from ream_bench.agents import MemoryAgent
 
     # Special case: foundry needs endpoint config from multi-endpoint discovery
     if agent_type == "foundry":
-        from byom_bench.agents import FoundryMemoryStore
+        from ream_bench.agents import FoundryMemoryStore
 
         endpoint, chat_model, emb_model = foundry_config or (None, None, None)
         store = FoundryMemoryStore(
@@ -70,7 +70,7 @@ def _create_memory_agent(
         return MemoryAgent(store)
 
     # Generic: look up store class from registry
-    from byom_bench.agents.stores import get_store_class
+    from ream_bench.agents.stores import get_store_class
 
     store_cls = get_store_class(agent_type)
     if store_cls is not None:
@@ -94,8 +94,8 @@ async def run_session_evals(
     sentinel_dir: Path | None = None,
     memory_token_budget: int | None = None,
 ):
-    from byom_bench.evaluation_multisession import run_evaluations_parallel
-    from byom_bench.schemas import EvaluationTaskSpec, MultiSessionOutput
+    from ream_bench.evaluation_multisession import run_evaluations_parallel
+    from ream_bench.schemas import EvaluationTaskSpec, MultiSessionOutput
 
     session_file = get_session_path(session_dir)
 
@@ -197,7 +197,7 @@ async def run_all_sessions(
 ):
     foundry_configs: list[tuple[str, str, str]] = []
     if agent_type == "foundry":
-        from byom_bench.agents import get_foundry_configs
+        from ream_bench.agents import get_foundry_configs
 
         foundry_configs = get_foundry_configs()
         print(f"Foundry configs: {len(foundry_configs)} (endpoint, chat, embedding) triples")
@@ -205,7 +205,7 @@ async def run_all_sessions(
     # Limit concurrency to avoid cloud API rate/quota limits.
     # Google: semaphore on build_context only (retrieval quota is generous).
     # AWS/mem0: semaphore on entire session.
-    from byom_bench.client import get_agent_config
+    from ream_bench.client import get_agent_config
 
     agent_cfg = (
         get_agent_config(agent_type) if agent_type in ("google", "aws", "mem0", "mem0_graph") else {}
@@ -352,7 +352,7 @@ def main():
     args = parser.parse_args()
 
     if args.outputs_dir:
-        import byom_bench.utils as _utils
+        import ream_bench.utils as _utils
 
         _utils.OUTPUTS_DIR = Path(args.outputs_dir)
 

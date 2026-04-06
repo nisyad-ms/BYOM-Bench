@@ -1,0 +1,1402 @@
+{
+  "persona": "A 28-year-old marketing manager at a multinational corporation",
+  "persona_id": "persona_20260301_224235",
+  "expanded_persona": {
+    "base_persona": "A 28-year-old marketing manager at a multinational corporation",
+    "age": 28,
+    "gender": "male",
+    "location": "Chicago, IL",
+    "work_education": [
+      "Marketing manager at Procter & Gamble, overseeing US launch campaigns for a skincare brand",
+      "Manages a team of 5 junior marketers; weekly reports and tight deadlines are routine",
+      "Currently enrolled in an evening MBA program at Northwestern to prepare for a future leadership role",
+      "Frequent business travel (2-3 days/month) to New York and LA for product launches and industry conferences",
+      "Recently received a positive performance review but struggles to balance expanding workload and MBA coursework"
+    ],
+    "health_wellness": [
+      "Trains at an indoor climbing gym 3 times a week; aiming to compete in amateur climbing competitions this summer",
+      "Developed mild acid reflux over the past year due to irregular eating habits and high-stress days",
+      "Usually sleeps 6 hours/night, but sleep suffers during major campaign launches",
+      "Has been trying intermittent fasting since January, but finds it difficult on travel days"
+    ],
+    "family_relationships": [
+      "Lives alone in a downtown apartment; enjoys hosting friends for game nights once a month",
+      "In a long-distance relationship with partner in Austin, TX; visits quarterly, daily video chats",
+      "Parents are retired and live in Detroit; he coordinates weekly family check-ins via phone",
+      "Younger sister recently moved to Chicago; meets her for brunch every other Sunday"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Blocks early mornings for uninterrupted campaign planning — never schedules meetings before 10am",
+        "Reviews team project status in person every Monday; never relies on Slack updates for critical tasks",
+        "Drafts weekly reports himself and only delegates data collection — refuses to outsource narrative writing",
+        "Sets aside Wednesday evenings for MBA coursework; never double-books business obligations after 6pm on those days",
+        "Prepares travel itineraries exclusively in Google Calendar — avoids paper planners and email threads"
+      ],
+      "health_body": [
+        "Eats dinner no later than 7pm on weekdays; avoids late-night snacks to manage acid reflux",
+        "Trains only on climbing walls and bouldering routes — never uses cardio machines or weights at the gym",
+        "Fasts until noon most days but always has breakfast on travel days; won't skip breakfast before flights",
+        "Limits coffee to one cup before noon — never drinks caffeinated beverages after lunchtime to protect sleep",
+        "Tracks sleep quality with a wearable device and restricts screen time 30 minutes before bed"
+      ],
+      "social_relationships": [
+        "Hosts game nights at home monthly and never attends bar crawls or large parties",
+        "Only video-chats with his partner at designated times — won't take calls during work hours or meetings",
+        "Schedules family check-ins every Saturday morning — never skips unless traveling for business",
+        "Meets his sister for brunch on alternate Sundays and avoids last-minute requests for family gatherings",
+        "Sends personal thank-you messages to junior team members who exceed goals — never recognizes achievements during company-wide calls"
+      ],
+      "leisure_hobbies": [
+        "Explores new Chicago restaurants every Friday night — never repeats the same venue in a month",
+        "Goes to climbing competitions as a spectator when not competing — never watches climbing online",
+        "Plays strategy board games exclusively at home — avoids online multiplayer games",
+        "Takes short weekend trips within Illinois every quarter; never books international vacations",
+        "Attends film festivals for independent movies — skips blockbuster premieres"
+      ],
+      "daily_routines": [
+        "Meal preps lunch for the work week every Sunday — never orders midday food delivery",
+        "Tracks daily steps with a smartwatch and aims for 8,000 minimum — avoids taking rideshares within downtown",
+        "Responds to personal emails only after dinner — never checks private inbox during work hours",
+        "Starts every morning with a cold shower and 10 minutes of stretching — never skips even on travel days",
+        "Schedules grocery runs for Thursday evenings and never shops on weekends"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Sustained a rotator cuff strain during an indoor climbing session, resulting in a physician's order to stop all climbing and upper body training for at least eight weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Avoids all activities involving arm strain — chooses walking-focused or stationary bike workouts exclusively during recovery period",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Watches climbing documentaries and livestreams online to stay connected to the sport during injury recovery",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Trains only on climbing walls and bouldering routes — never uses cardio machines or weights at the gym"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Trains exclusively on stationary bikes and lower-body cardio at the gym — strictly avoids climbing walls, bouldering routes, and all upper body training during recovery",
+              "domain": "health_body"
+            },
+            "reason": "Due to the rotator cuff strain and explicit physician's orders, he cannot continue climbing or do upper body training and must switch to alternative lower-impact cardio for fitness."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_017",
+            "fact": "Goes to climbing competitions as a spectator when not competing — never watches climbing online",
+            "domain": "leisure_hobbies",
+            "reason": "Attending climbing competitions in person will trigger regret and likely worsen recovery adherence, and his temporary inability to participate or interact with the climbing community means he is deliberately stepping back from in-person events; this preference no longer applies in the recovery context."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, I’ve been officially benched from climbing for at least two months. Rotator cuff strain. Doctor’s orders: zero climbing and no upper body work at all. I’m honestly at a loss for how to keep my head on straight. I rely on climbing for stress relief, especially with the pace at work and the MBA load right now. Can you help me figure out a new routine that doesn’t make me lose my mind?"
+        },
+        {
+          "role": "assistant",
+          "content": "I’m really sorry to hear about your injury—that’s a tough break, especially with everything on your plate. I can definitely help you brainstorm some ways to stay active and support your mental health during recovery. Have you talked with your doctor or a physical therapist about what types of activities you *can* do, or do you need help figuring out some options?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, my physician specifically said no climbing, no weights, nothing that even indirectly loads the shoulder. The only gym stuff I’m allowed to do is stationary bikes or lower-body cardio. So walking, cycling, stuff like that. I used to avoid cardio machines like the plague, but this is my life for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, but it’s great you have some approved movement options. Stationary bikes and walking can both help keep your energy up and take the edge off stress. Would it help to set up a dedicated schedule for cardio, or do you want to keep things flexible until you get a feel for what you like? Also—how are you planning to keep up with your climbing community? Sometimes downtime is harder when you feel cut off from people."
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I’m taking a break from seeing people at the gym or going to comps in person for a bit. It’s too frustrating to watch from the sidelines right now. Instead, I’ve actually started watching climbing documentaries and livestreams at home—keeps me connected, and I can nerd out on technique breakdowns without the FOMO. Never thought I’d be a virtual spectator, but here we are."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a smart way to stay connected to your passion while helping recovery. Are you finding it motivating or does it bum you out? If you want, I can suggest some inspiring climbing films or livestreams to add to your rotation. Also, how are you handling downtime and stress since you can’t train the way you’re used to? Any hobbies or activities you’re leaning on more?"
+        },
+        {
+          "role": "user",
+          "content": "It’s a mix—I do miss being there, but the documentaries help. I also switched my gym routine; now it’s all lower-body cardio and lots of walks around the city. I strictly avoid any activities involving arm strain, per my doc. For stress relief, I’m leaning into film festivals and new independent movies more, plus I still host the monthly game night. But the evenings feel longer without climbing."
+        },
+        {
+          "role": "assistant",
+          "content": "Trying new films and keeping up with game nights is a great use of your extra time, even if it’s not quite the same adrenaline hit. For those open evenings, have you experimented with mindfulness apps, podcasts, or picking up something like gentle stretching (within the limits of your PT advice)? If you ever want suggestions for low-impact city walks or events around Chicago, I’m happy to help. And are you managing your acid reflux okay, now that your eating and exercise times are shifting a bit?"
+        },
+        {
+          "role": "user",
+          "content": "The reflux is actually a little easier to manage when I’m not pushing late evenings at the climbing gym. I keep my dinner before 7 pm and avoid snacking, so that routine’s staying. Still, I miss the active outlet. I guess it’s about making the most of the recovery period—finding balance until I’m cleared to get back on the wall."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach—sticking to what does work while you heal. If you want, I can help you put together a sample cardio and walking schedule, or gather some events and new movie recommendations for the next few weeks. Anything else about your current routine that feels like it needs to change, or are there pain points I can help problem-solve?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the main adjustment is getting comfortable with stationary bikes and walking as my main workouts—it’s strange after years of nothing but climbing. I appreciate the movie recs, but I’ll mostly need help keeping my mindset positive while stuck in this holding pattern. Thanks for talking this out."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome. Injury recovery can really test your patience and routine, but you’re making smart adjustments. I’ll be here to support with ideas, accountability, or just to listen if the frustration spikes. If you ever want to swap up your routine, reflect on what’s working, or need a little nudge to stay positive, let me know. Any time you need a fresh plan or even a new documentary title, I’m here."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His partner in Austin accepted a job offer in Chicago and will be relocating within the next month, ending their long-distance relationship and prompting them to move in together.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Sets aside one evening each week specifically for alone time — avoids making joint plans with his partner or friends that night to maintain personal space after moving in together",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Now prefers trying new restaurants and food experiences as a couple on Friday nights, prioritizing venues with shared plates or tasting menus",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Only video-chats with his partner at designated times — won't take calls during work hours or meetings"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Chats and spends time with his partner in-person most weekdays after work, rarely schedules video calls now that they cohabitate",
+              "domain": "social_relationships"
+            },
+            "reason": "With his partner relocating to Chicago and moving in together, daily video chats are no longer the core way they connect. In-person time becomes the primary route for daily connection, making regular video calls obsolete except when apart."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, big life update: my partner just accepted a job in Chicago and they'll be moving in with me in a few weeks! It’s exciting, but also I’m realizing I’ll need to rethink a lot of my routines. I want moving in together to go smoothly, but I also don’t want to totally lose my solo time and habits. Any advice on how to balance this big transition—especially with my work, MBA, and climbing schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations—that’s a huge change! It’s great you’re being proactive about routines and balance. When couples first start living together, carving out intentional solo time can really help. Do you already have any boundaries set up around personal time versus time spent together, or is that something you’re still figuring out?"
+        },
+        {
+          "role": "user",
+          "content": "I’m definitely still figuring it out. One thing I’m pretty set on is having one evening a week just for myself—no joint plans, not even with friends. I need that buffer especially with all the work and MBA stuff, just to decompress and keep perspective. Otherwise, we’d probably end up doing everything together by default."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great boundary—having a dedicated solo night is a smart move, especially during a transition like this. How do you want to approach making time together intentional too? Would things like a regular date night or shared activity help, or do you prefer a more flexible approach?"
+        },
+        {
+          "role": "user",
+          "content": "I think we’re both pretty structured, so something regular would actually help. For instance, I used to try a new restaurant every Friday, but now I’m thinking we’ll do that together—and lean into spots with tasting menus or shared plates to make it more of an experience for both of us."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a fun weekly tradition, and it’s a great way to explore the city together. As for your day-to-day time together, are you planning to overlap evenings most days after work or will you still need to slot video calls into your routines, especially with your busy schedule?"
+        },
+        {
+          "role": "user",
+          "content": "No more daily video calls, thankfully! Now that we’ll both be in Chicago and living together, it’ll be mostly in-person after work on weekdays. Video chats will only be for when one of us is traveling or out of town. That was our main way to connect before, but it feels a lot less necessary now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’ll be a big shift from the long-distance dynamic, and in-person time after work can feel much more relaxed compared to scheduled video chats. Speaking of evenings, with your MBA work and climbing training already in the mix, do you anticipate needing to adjust what nights you dedicate to each, or do you plan to keep your existing structure?"
+        },
+        {
+          "role": "user",
+          "content": "I’d like to keep my Wednesday evening MBA block and climbing sessions separate, since they anchor my week and keep me on track. I think as long as my partner knows which nights are already spoken for, the rest can be more flexible. I just want to make sure habits and space for both of us are clear from the start."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—transparency up front about scheduled commitments will help avoid miscommunications. For Fridays, since you’re prioritizing new, shared food experiences, have you thought about how you’ll choose restaurants together? Also, any ground rules for how you’ll share household responsibilities, or are you playing that by ear?"
+        },
+        {
+          "role": "user",
+          "content": "We’re going to alternate who picks the spot each week, but always make it a new place so neither of us settles into a rut. As for chores, we haven’t nailed down a system, but I already batch meal prep for work lunches on Sundays and handle groceries Thursday nights, so routines like that will probably stay—just need to clarify who’s doing what for dinners and other day-to-day stuff."
+        },
+        {
+          "role": "assistant",
+          "content": "Alternating restaurant picks is a solid idea and keeps things fresh. Maintaining your existing routines like meal prep and grocery runs will anchor your week, and filling in dinner and shared chores together can be a conversation as you settle in. Since you now have solo nights, couple nights, and some set routines, you’re well on your way to a sustainable new rhythm. Anything you’re particularly worried might fall through the cracks, or areas you want a backup plan for?"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Promoted to Associate Brand Director after leading a high-profile skincare campaign, doubling his number of direct reports and adding responsibility for international launches requiring regular early-morning video calls with teams in Europe and Asia.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Prepares a rotating set of quick breakfast options for early video call days — prioritizes protein smoothies and overnight oats over hot meals",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Schedules one-on-one video check-ins with direct reports in Asia and Europe every month, instead of informal drop-bys",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Blocks early mornings for uninterrupted campaign planning — never schedules meetings before 10am"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Schedules early-morning video calls with European and Asian teams several times per week — no longer protects all mornings for solo campaign planning",
+              "domain": "work_habits"
+            },
+            "reason": "As Associate Brand Director responsible for international launches, he is now required to align with colleagues in distant time zones, necessitating regular early-morning calls and making it impossible to block all mornings for solo work."
+          },
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Drafts weekly reports himself and only delegates data collection — refuses to outsource narrative writing"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Delegates both data collection and narrative drafting for regular team reports, reviewing only the final version before submission",
+              "domain": "work_habits"
+            },
+            "reason": "With the promotion and doubling of direct reports, his scope of responsibility and admin load increased. He no longer has the bandwidth to personally write all narrative sections and must now delegate more fully to his team."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So—I just got promoted to Associate Brand Director. I’m responsible for international launches now, which means a lot more direct reports, and I’m taking early-morning calls with teams in Europe and Asia multiple days a week. My routine is pretty much out the window and I'm feeling stretched. Do you have any advice for managing the new workload, especially with time zones all over the place?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations, that’s a huge step! Balancing global teams and an expanded scope is no small feat. Since your mornings are now full of calls, how are you structuring your core work hours for tasks that require deep focus, like campaign planning or review? Are you finding any parts of your old routine still work, or have you had to completely overhaul things?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I used to block all my early mornings for deep solo campaign planning. But with these international calls, that's not possible anymore—at least three mornings a week, I'm on Zoom at 7am or 8am. I've tried shifting my focus work to the afternoon, but with my US team, it's a challenge with their schedules too. I'm basically squeezing campaign planning in wherever I can now."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds tough—especially losing that dedicated time. Would it help to formalize a couple of late-morning or early-afternoon blocks each week for focus work, even if it means declining some meeting requests? Alternatively, could you delegate more team communications so you get breathing room, or is that difficult with the new direct reports?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I'm definitely having to delegate more than before. I used to insist on drafting my weekly reports personally—the narrative sections especially—but now, between doubling my team and all the international coordination, I’ve started having team members draft everything, not just collect the data. I just review the final versions before sending them out. It’s a big change but it’s the only way I can keep up."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to delegate writing at this scale. Reviewing final versions keeps quality up, and it can help develop your team’s communication skills as well. On that note, are you still connecting with people mainly through drop-by chats and in-person reviews, or have you shifted to more structured one-on-ones given the international aspect?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely shifted! For my international reports, I set up monthly one-on-one video check-ins now instead of informal drop-bys, since it's not like I can just swing by their desk anymore. Scheduling is tricky but it's better for alignment. For my US team, I still try to do status checks in person on Mondays, but that's the exception now."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a good adaptation—structured one-on-ones build trust and ensure nothing falls through the cracks, especially with remote teams. With the added workload and these early calls, how’s your energy in the mornings? Are you sticking to your usual breakfast and training routine, or have you had to adjust there too?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that’s another area I had to adjust. On early call days, I need something quick, so I started prepping a rotation of protein smoothies and overnight oats in advance—no more leisurely hot breakfasts if I want to be alert for 7am! It actually works out; they're easy on my acid reflux and keep me full through the calls. I still train at the climbing gym in the evenings, but mornings are just too packed now."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move prepping breakfast options in advance—smoothies and overnight oats are great for early busy days, and protein helps with focus too. Sounds like you’re managing the transition proactively. Anything else you’re finding challenging as you settle into the new role? Maybe with work-life balance or the MBA coursework?"
+        },
+        {
+          "role": "user",
+          "content": "Work-life balance is an ongoing battle; MBA nights are still non-negotiable, but the extra admin and early meetings are draining. I’m also figuring out how to keep my US team engaged while spending so much energy on international launches. But for now, tweaking my morning routine, delegating more, and set video check-ins are keeping me afloat."
+        },
+        {
+          "role": "assistant",
+          "content": "Your adaptations sound on point—delegation and new routines are key as responsibility grows. As you get more comfortable with the new schedule, you might find more opportunities to optimize. Let me know if you want to brainstorm ways to keep your local team engaged or streamline cross-time-zone communications. Congrats again on the promotion—it’s impressive how you’re navigating the shift!"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His retired parents decided to spend the summer in Chicago, moving into a nearby apartment and requesting more frequent in-person family dinners and outings.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Prefers hosting or attending family dinners on weeknights, prioritizing home-cooked meals and group outings over solo evenings, while his parents are in Chicago for summer",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Schedules family check-ins every Saturday morning — never skips unless traveling for business"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Attends in-person family dinners and outings with parents weekly during their summer in Chicago — replaces regular Saturday morning phone check-ins with shared activities",
+              "domain": "social_relationships"
+            },
+            "reason": "With his parents living nearby for the summer and specifically requesting more in-person time, family connection has shifted from remote check-ins to regular in-person dinners and outings."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_014",
+            "fact": "Meets his sister for brunch on alternate Sundays and avoids last-minute requests for family gatherings",
+            "domain": "social_relationships",
+            "reason": "Now that his parents are in Chicago and the entire family is coordinating more frequent in-person gatherings, the separate every-other-Sunday brunch routine with his sister doesn't consistently apply—family gatherings include his sister by default, often replacing their specific brunch routine."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Wild update: my retired parents just moved to Chicago for the summer—like two blocks from my place. They want to do family dinners every week and are hoping I'll join them for other outings too. It's a huge change from the Saturday check-ins I was used to, and I'm not sure how to juggle more in-person time with my job, MBA workload, and, honestly, my sanity. Any advice for fitting this into an already maxed-out routine?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift! Weekly in-person dinners are a different energy than a Saturday phone call—especially when you're used to structured routines. Let’s break it down: Do you have a fixed night during the week that’s more flexible, or is your week already fully booked between work and your MBA? And for the outings, are your parents thinking laid-back neighborhood stuff or day trips and events?"
+        },
+        {
+          "role": "user",
+          "content": "So far they’re aiming for weeknight dinners—it actually lines up pretty well, since I usually meal prep for myself on Sundays, but now I’m doing some group meals instead. They prefer home-cooked food and sometimes suggest trying a new place nearby. They also want to do things like hit the lakefront or catch shows in the park, mostly local stuff. The biggest challenge is squeezing it in without giving up my Wednesday evening MBA work block or overloading weekends, which I need to keep as open as possible."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call protecting your Wednesday evenings for coursework! Maybe you can pick a consistent weeknight for family dinners—like Monday or Thursday—so everyone can plan around it. You could rotate hosting or keep it at their place so you’re not always on the hook for prep. For outings, if you keep them to weeknights too, it leaves your weekends freer. Does that help, or do they sometimes want to be spontaneous?"
+        },
+        {
+          "role": "user",
+          "content": "They’re definitely hoping for a predictable schedule. I suggested Thursday for family dinners, which still lets me stick to my prep-and-training routines the rest of the week. My parents would love if I joined them more than once per week, but if I do that, something else has to go—especially since I’m still traveling a couple days a month for work launches. For the record, while they're here, I’m prioritizing family dinners and outings during the week over solo evenings at home."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid boundary—committing to weekly group time, but not overscheduling yourself. Since you’re focusing on weekday family dinners and outings, it might help to set expectations: let your parents know that you need particular nights for climbing training and MBA work, but that Thursdays (for example) are dedicated just to them. For your travel weeks, would you move the dinner or just skip it those times?"
+        },
+        {
+          "role": "user",
+          "content": "If I’m traveling, I’d just skip the dinner for that week and catch up the following one. My parents understand I need to travel for launches. With these new family dinners, I dropped my routine brunches with my sister—she’s always included in the dinners now since we coordinate as a group. We’re not doing the every-other-Sunday thing anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That streamlines things! Family time is basically ‘all together’ now, so no need for separate sibling brunches. As for meal prep, since you’re doing more group meals, could you split the cooking load with your parents and sister, or rotate hosting? That way, you’re not falling behind on your own routines, and it might actually give you more balance."
+        },
+        {
+          "role": "user",
+          "content": "Exactly. We started rotating hosting—last week was at my parents’ place, this week’s on me. Home-cooked works best for managing my reflux anyway, though sometimes we’ll try a local spot if it fits everyone’s schedule. It’s a shift, but it’s working, especially knowing the group routine covers both family and sibling time."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve adjusted your routine thoughtfully—core personal blocks for training and MBA work, one dedicated family night, and keeping weekends relatively open. By merging sibling and parent time, it’s less fragmented. If you need to renegotiate later in the summer as work picks up or MBA deadlines crunch, you’ll have a strong baseline to work from. Anything else you’re finding tricky about the new setup, or is it mostly just execution?"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Diagnosed with moderate obstructive sleep apnea after his wearable device flagged persistent sleep disturbances, leading his doctor to prescribe nightly CPAP therapy.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Prefers sleeping on his side rather than back to enhance CPAP effectiveness and minimize mask leakage — avoids napping in recliners or with head propped upright",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Declines late-evening social invitations during the workweek to allow a consistent bedtime routine and uninterrupted CPAP use",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Tracks sleep quality with a wearable device and restricts screen time 30 minutes before bed"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Prioritizes consistent nightly use of CPAP device and habitually runs device-cleaning routines before bed; continues to restrict screen time 30 minutes before sleep and tracks CPAP data via wearable integration",
+              "domain": "health_body"
+            },
+            "reason": "The diagnosis of moderate sleep apnea and prescription of nightly CPAP therapy fundamentally changes his nightly sleep regimen. CPAP use becomes the cornerstone of his bedtime routine, requiring device cleaning and data tracking in addition to previous habits."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so I was just diagnosed with moderate obstructive sleep apnea. My doc started me on CPAP last week after my sleep tracker showed patterns I couldn't explain. It's a huge shift to my nightly routine, and honestly, I'm worried how I can keep my work and grad school running smoothly with this added layer—especially since my sleep is the foundation for both. Do you have strategies for integrating CPAP therapy into a packed schedule like mine?"
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for sharing that—and I'm glad you got some answers, even though it's a big adjustment. It makes sense that routine change would be top of mind. A lot of people find the first few weeks with CPAP tricky, especially when juggling demanding responsibilities. Have you noticed any parts of your existing evening routine that seem to conflict with CPAP setup, or is it mostly just feeling like 'one more thing' before bed?"
+        },
+        {
+          "role": "user",
+          "content": "It's definitely felt like an extra step—more mental than anything. I’ve always been strict about limiting screen time 30 minutes before sleep and tracked my sleep with a wearable, but now my focus is making CPAP setup and especially cleaning part of my nightly habits. I’m also syncing CPAP data with my wearable, so at least tracking hasn’t become more of a burden. Actually, prepping and sanitizing the device takes longer than I expected. Have you heard any tricks to make that less of a hassle?"
+        },
+        {
+          "role": "assistant",
+          "content": "You're ahead of the curve—some people struggle to keep up with data tracking and hygiene, so integrating it early is great. For cleaning, some streamline by setting up a mini cleaning station right by their nightstand with quick-dry wipes for daily cleaning and a weekly deeper clean on weekends. Would fitting a 5-minute wipe-down into your pre-bed wind-down work, or is the timing already tight with classwork and reporting?"
+        },
+        {
+          "role": "user",
+          "content": "I think that could help. I’ve actually moved my deeper cleaning to right before dinner instead of risking a late-night jam. That way, by the time I start my pre-bed routine—cold shower, stretching, device setup—it’s not all bunched together. I’m also making a point to go to bed at the same time now and decline late-evening social invites during the workweek. Before this, I’d sometimes say yes to dinner or a late movie with friends, but losing sleep isn’t an option anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart adjustment. Prioritizing consistent sleep can feel isolating at first, but most friends and coworkers will understand if you explain why. When you do host or attend social events, are weekends better, or are you shifting your routine there too for CPAP?"
+        },
+        {
+          "role": "user",
+          "content": "Weekends are easier to keep flexible, so I’ll still host game night once a month, but otherwise, I stick to my routine. What I’ve noticed is that sleeping on my side actually helps a ton—less mask leaking and better sleep, so I’m making a conscious effort there. Reclining on the couch or napping upright aren’t on the table anymore since they mess with the fit."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really effective insight. Side-sleeping can reduce both leaks and apnea events for a lot of people; some even use special pillows to help them stay in position. Are you thinking of adding any side-sleeping tools to your setup, or has a regular pillow been enough?"
+        },
+        {
+          "role": "user",
+          "content": "So far, a firm pillow is enough, and I just adjust my head right before strapping on the mask, but I might invest in a CPAP pillow if the mask shifting becomes a problem. I’m still adapting here. One thing I want to avoid is slipping back into old habits—like occasionally napping in my living room recliner after a long workday. I used to do that to unwind, but now I just power through until bedtime so the therapy is uninterrupted."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid plan—consistency is everything with CPAP. Skipping random naps upright will help your therapy be more effective, and winding down in your regular routine should eventually make sleep come more easily. If you run into mask comfort issues, don’t hesitate to try other styles—sometimes a swap makes all the difference. Is there anything coming up (like travel or a campaign launch) that you’re worried could disrupt your new patterns?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, travel will be the next hurdle. I’m used to quick overnight business trips, and now I’ll need to bring the CPAP along. At least I already eat breakfast on travel days (can’t fast before flights!), but keeping my evening routine for setup and cleaning will be more challenging in hotels. I think planning that out will be crucial."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Planning ahead—like bringing a travel-friendly extension cord, portable cleaning supplies, or even a travel CPAP if your insurer covers one—makes a big difference. Let’s map out a travel checklist for you so nothing gets missed in the chaos of conference days. You’re handling a lot, but your proactive adjustments are already setting you up well. Anything else about your daily routine you’re considering tweaking as you get more comfortable with CPAP?"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received an urgent request from corporate headquarters to lead a cross-functional task force on crisis management for a major supply chain disruption affecting multiple product lines, requiring immediate reprioritization of his ongoing MBA coursework and team responsibilities.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Temporarily delegates routine team coaching and monthly team social activities to his senior direct report in order to dedicate focus to the crisis task force",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Uses a crisis management digital dashboard to coordinate all cross-functional communications and track real-time updates, suspending his usual reliance on email chains for task tracking",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Sets aside Wednesday evenings for MBA coursework; never double-books business obligations after 6pm on those days"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "No longer protects Wednesday evenings for MBA coursework — willingly schedules urgent business meetings or crisis-related work after 6pm as needed, prioritizing the task force above regular study time until the crisis subsides",
+              "domain": "work_habits"
+            },
+            "reason": "The urgent, high-priority nature of leading the supply chain crisis task force means he must be available for business obligations during his formerly protected study blocks, at least temporarily. He can no longer guarantee MBA study is the top priority on Wednesday evenings."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some tactical help. Corporate just dropped this urgent crisis management project on my plate — supply chain issues are hitting a bunch of our brands, and I've been asked to lead the new task force. It's kind of upended my entire week-to-week. Between travel, my MBA classes, and my team, I’m already stretched. Honestly, how do I keep from burning out before we even start to solve this mess?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds intense! It’s no small thing to get tapped as the lead for something that high-stakes. In situations like this, it’s critical to ruthlessly prioritize. Are there any routine responsibilities you can delegate temporarily, or do you feel like everything still needs your direct attention?"
+        },
+        {
+          "role": "user",
+          "content": "For now, I’ve handed off my regular team coaching and the monthly team socials to my senior report. I need as much focus as possible on crisis work, at least until the dust settles. I haven’t offloaded much else yet, but I’m open to suggestions. My nights are vanishing between urgent calls and coordinating people who aren’t even in my department."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move on the delegation front — that frees up a lot of mental space. Since your evenings are now swamped with task force coordination, do you still have dedicated time for your MBA coursework? Or has that shifted as well?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, so the Wednesday evening study block is basically gone for now. If there's a crisis meeting or follow-up work, it takes precedence. I honestly never thought I'd be okay double-booking MBA time, but this is different — the task force has to come first until things stabilize."
+        },
+        {
+          "role": "assistant",
+          "content": "Totally understandable. It’s about adapting in the short term until things normalize. For managing communication across the task force, are you sticking with your usual tools, or have you changed up how you’re tracking all the moving pieces during the crisis?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve switched to using a crisis management dashboard to coordinate everything. Emails just don’t cut it this time — I need real-time updates and a centralized view of what’s actually happening across all functions. My inbox is overflowing but I barely look at it for crisis stuff now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — dashboards are a game changer for fast-moving crises. Is it helping with clarity and reducing back-and-forth, or do you still feel like you're fielding redundant questions from stakeholders?"
+        },
+        {
+          "role": "user",
+          "content": "It helps, but there are still a few people who can't leave email behind. I'm nudging them gently. Honestly, my biggest struggle is not letting everything else slide — MBA, my own health, even keeping up with family. Any advice for not dropping the ball on the rest of life?"
+        },
+        {
+          "role": "assistant",
+          "content": "It's a real challenge when everything converges at once. For your MBA, could you scale back participation briefly — maybe check with your professors about lighter weeks, or coordinate with classmates for shared notes? For health, even small rituals matter — are you still able to squeeze in your climbing sessions, or has that been hit by all the night meetings?"
+        },
+        {
+          "role": "user",
+          "content": "I'm still clinging to my climbing sessions — they're non-negotiable, at least for now. That’s my sanity anchor. MBA I’ll probably have to coordinate with classmates more. Thanks for the nudge. Anything else you’d add for not letting life feel like it’s spiraling when work explodes like this?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re already doing a lot right. A couple ideas: anchor your few unbreakable personal routines, and communicate to everyone (at work and home) when you are and aren’t available. Also, be explicit about how long this 'crisis mode' is expected to last, so it doesn’t become your new normal. If you need to reschedule family check-ins or let friends know game night is off for a month, that’s okay — you’ll get back to it. Want to talk through a template for team or personal check-ins to set expectations?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, that would help. Especially for the team — I want them to feel supported even while I’m less present. Let's rough something out."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced a severe bout of acid reflux during a business trip in New York, leading his physician to prescribe a strict elimination diet and schedule multiple follow-up appointments to monitor digestive health.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Prepares all meals at home according to the elimination diet plan and strictly avoids dining out, takeout, or restaurant food during the recovery period",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Logs every meal and symptom in a dedicated app for physician monitoring — never skips daily tracking",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Fasts until noon most days but always has breakfast on travel days; won't skip breakfast before flights"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "No longer practices intermittent fasting; now eats small, physician-approved meals at regular intervals, including breakfast every day regardless of travel or schedule",
+              "domain": "health_body"
+            },
+            "reason": "The physician-prescribed elimination diet requires regular, gentle meals to prevent severe acid reflux. Intermittent fasting and skipping breakfast are contraindicated, so he must follow a more consistent eating schedule."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_016",
+            "fact": "Explores new Chicago restaurants every Friday night — never repeats the same venue in a month",
+            "domain": "leisure_hobbies",
+            "reason": "The elimination diet restricts him from eating out or experimenting with new venues, as many restaurant foods are off-limits; his routine restaurant exploration is temporarily impossible."
+          },
+          {
+            "id": "pref_031",
+            "fact": "Now prefers trying new restaurants and food experiences as a couple on Friday nights, prioritizing venues with shared plates or tasting menus",
+            "domain": "leisure_hobbies",
+            "reason": "Due to strict dietary limitations, he cannot safely try new restaurants or participate in shared/tasting menu experiences; this preference is incompatible with current health guidelines."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, quick reality check needed. I just got back from New York for a campaign launch, but ended up in urgent care one night with crazy acid reflux — way worse than usual. My doctor has me on a strict elimination diet now, plus I need to do follow-ups. My routine is in pieces. I’m juggling new meal rules, work deadlines, and MBA projects. Any tips for getting on top of this? Especially with meals — I'm struggling."
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that sounds rough — having your travel routine upended and adding health restrictions at the same time is a lot. Let’s focus on meal planning. How strict is the elimination diet? Are there specific foods you have to avoid, or is it more about meal timing and quantity? Knowing those details would help me suggest strategies for fitting meal prep and regular eating into your schedule."
+        },
+        {
+          "role": "user",
+          "content": "It’s pretty strict: I have to cut out spicy food, caffeine, citrus, dairy, greasy stuff — basically a lot. Plus, my doctor wants me on regularly spaced, small meals, no more intermittent fasting. I’m supposed to eat breakfast every day and prep everything at home. Eating out is a no-go for now, which is making even lunch meetings tricky. I used to fast until noon unless I was traveling, so this is a total reversal."
+        },
+        {
+          "role": "assistant",
+          "content": "Switching from intermittent fasting and being on the move to a set meal schedule is a big shift. Since you’re prepping every meal at home, do you have a cooking routine that works, or is that something you’re trying to figure out? Also, meal timing: your mornings were usually meeting-free for heads-down work. Do you have room to add prepping and having breakfast without crowding out your usual planning block?"
+        },
+        {
+          "role": "user",
+          "content": "My current Sunday meal prep helps for lunch, but now I need to do breakfast and possibly new dinner options too since I can’t grab something out on busy nights. I have to keep everything very basic and prep ahead as much as possible. Breakfast is the weirdest part. I always skipped it, except pre-flight, so now eating first thing and sticking to bland, small portions is an adjustment. I still block early mornings for campaign planning and stretching, so I’m edging breakfast in before 10am but not loving it yet."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you have a solid foundation with Sunday meal prep — maybe you could leverage that for breakfast as well. Options like overnight oats with non-dairy milk or portioned egg muffins (if eggs are allowed) might work. Could making bulk breakfast items in advance fit into your Sunday prep, or do you prefer making things fresh in the morning? Also, for work dinners or late meetings, how are you handling eating if you can't order in or eat late?"
+        },
+        {
+          "role": "user",
+          "content": "Meal prepping bulk breakfasts could work, as long as the ingredients are on my safe list. I need to avoid eggs for now too, but I can do oatmeal, certain fruit, and maybe some plain chicken or turkey for protein snacks. For dinners, I’m sticking to an early mealtime — no later than 7 — and eating before any late meetings. Absolutely no delivery or eating out. It’s tough when I have after-hours work, but my doctor was firm. I’m also logging every meal and symptom in an app the clinic uses — it’s non-negotiable."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a disciplined approach — the meal and symptom logging will help keep everything on track for your follow-ups, though I can see how it adds another layer. For your meal prep, maybe batch baking plain chicken and roasting safe veggies could fill out both breakfast protein needs and quick dinners. On nights when you're running up against evening MBA work or meetings, a set of grab-and-go safe snacks might help you avoid pushing dinner too late. How does the no-dining-out rule affect your social routines? I remember you liked trying new restaurants on Fridays and brunch with your sister."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's the other casualty. I dropped the Friday night restaurant thing, at least until my reflux is under control. Honestly, it sucks — exploring new spots was my way to unwind. Brunch with my sister was usually at a café, but we’re switching to home-cooked meals at my place for now. No takeout, no tasting menus, nothing unpredictable. I’m not thrilled about cutting that out, but I don’t want to risk another ER visit."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — health has to come first. If you and your sister enjoy the company as much as the food, maybe you could make the home brunch into a new tradition, even experimenting with elimination-friendly dishes together. For the Friday unwind, is there a way to create a 'new experience' feel at home? Rotating safe recipes, cooking with friends, or themed dinners that don’t require new ingredients? It could keep things interesting while you recover."
+        },
+        {
+          "role": "user",
+          "content": "That’s a good idea. I’m open to rotating recipes or hosting low-key game nights along with homemade food. I’m just stricter about ingredients — it’s more work, but doable. The hardest part is planning literally every bite, plus daily logging for my doctor. If you have suggestions for tracking fatigue or symptoms alongside meal logs, I’d take them. I keep up with step tracking and sleep data, but this is the first time my eating itself is center-stage."
+        },
+        {
+          "role": "assistant",
+          "content": "Since you’re already diligent with your wearable for sleep and steps, maybe you can integrate meal and symptom tracking into your evening wind-down — enter your data right after dinner, so it isn’t a chore before bed. Some apps let you log energy or fatigue levels with meals, not just symptoms; if yours doesn’t, maybe a quick daily note in your calendar or a synced journaling app could help spot patterns. Would batching logs together this way make it less overwhelming?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, batching after dinner could help. I have to log every meal as I prep it, but I’ll add a fatigue or focus note in the evening. That fits with my routine — I always handle personal emails after dinner anyway and try not to use screens too late. It's plenty, but I think I can manage as long as I keep everything structured. Cutting out the restaurant stuff is hardest, but hopefully it’s temporary."
+        },
+        {
+          "role": "assistant",
+          "content": "If your routines are built around structure already, these adjustments are a big shift but not out of your reach. When you’re ready to reintroduce more variety or restaurants, you’ll have a great baseline for what works. In the meantime, if you want to refresh your home cooking routine or need new recipe ideas that fit the elimination plan, just let me know — I can help with curation, shopping lists, or meal planning tools. You’re adapting impressively given everything that’s changed."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His sister announced her engagement and asked him to help coordinate family gatherings and host planning meetings for the upcoming wedding in Chicago.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_048",
+            "fact": "Schedules and facilitates family group planning meetings at least biweekly at his apartment during the wedding preparation phase — coordinates logistics and refreshments for each session",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_049",
+            "fact": "Prioritizes regular communications and agenda tracking for family wedding planning via shared online documents — no longer relies solely on spontaneous phone check-ins or informal chats",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Hosts game nights at home monthly and never attends bar crawls or large parties"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Hosts frequent family planning meetings and gatherings at home — temporarily prioritizes family events over personal game nights for the wedding season; continues to avoid bar crawls and large parties",
+              "domain": "social_relationships"
+            },
+            "reason": "His sister's engagement and request to coordinate family gatherings and planning meetings means his hosting focus shifts from leisure group game nights to family-oriented events, especially as planning intensifies in the lead-up to the wedding."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news: my sister just got engaged this weekend and she asked me to be her main point person for family gatherings and planning meetings, since the wedding will be in Chicago. I’m already managing her engagement brunch next Sunday. With work and my MBA, it feels a little daunting — organization isn’t the problem, it’s fitting everything in. Can you help me think through how to keep things on track without letting one area completely swamp the others?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations to your sister — and to you on taking the lead! That’s a big responsibility. It sounds like time management is your main concern, not the logistics themselves. Are there any routines or personal events that you’re considering shifting, at least temporarily, to make room for these family gatherings? Or are you hoping to layer them in as new obligations on top of your existing habits?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, my usual monthly game nights with friends are getting bumped for now, since I’ll need my apartment for these family planning meetings and gatherings. I want things to go smoothly for my sister, so I’m prioritizing her stuff — even if that means holding off on bigger social things with friends until the wedding is over. I’m still not doing bar crawls or huge parties though, that’s just not me."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful sacrifice, and focusing on smaller, intentional family gatherings fits your style. Are you planning to make these meetings a regular thing, or just as-needed? Setting a cadence (weekly or biweekly) could help you and your family anticipate the extra commitments and keep them from creeping into your MBA or campaign deadlines."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ve started scheduling biweekly planning meetings at my place. I coordinate the logistics and refreshments each time — basically treating it like a project kickoff at work. That structure helps, but it’s definitely another recurring block on my calendar."
+        },
+        {
+          "role": "assistant",
+          "content": "Turning family planning into a recurring, well-run meeting is smart, and handling the logistics yourself gives you control over your schedule and environment. Do you use any particular tools or systems to keep everyone aligned between meetings? With a lot of moving parts (and potentially opinionated relatives), something like a shared agenda or checklist might help minimize spontaneous calls and off-cycle requests."
+        },
+        {
+          "role": "user",
+          "content": "You’re spot on — I set up shared Google Docs for agenda tracking and regular communication. That way everyone comments or adds tasks through the doc, and we’re less reliant on random phone check-ins, which I can’t manage with my work schedule. It’s a little more formal than how my family usually operates, but it makes my life a lot easier."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great system, especially with your workload — shared docs keep communication centralized and transparent. For the meetings themselves, do you foresee any scheduling conflicts with your standing obligations (like MBA coursework, travel, or those early-morning work blocks), or do you have enough flexibility to keep everything balanced?"
+        },
+        {
+          "role": "user",
+          "content": "I’m making sure I don’t double-book over MBA nights or early morning planning blocks for work — those are non-negotiable. For the wedding season, though, I’m rearranging some of my regular leisure stuff to fit these family events in as my main hosting role. It’s a lot, but with the cadence, agenda tracking, and scheduling out refreshments, it should be manageable as long as I keep everything organized."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve found a sustainable way to handle the added responsibility. Centralizing communication, creating biweekly planning sessions, and shifting your social calendar for now should help avoid overwhelm. If the balance ever starts slipping or meetings start bleeding into essential work or MBA time, we can revisit your setup — but you’re off to a strong start. Would you like ideas for streamlining the prep for these gatherings, or support keeping your wellness routines steady while all this is happening?"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Northwestern informed him that his MBA program's evening class schedule will be shifted to in-person sessions twice a week due to curriculum updates, replacing previous hybrid options and requiring attendance on campus after work hours for the next two semesters.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_051",
+            "fact": "Commutes directly from work to Northwestern campus twice weekly for evening MBA classes — prefers quick, portable dinners and avoids restaurant sit-downs or lengthy meals on those nights",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_052",
+            "fact": "Uses campus library study spaces for MBA coursework immediately following evening classes, instead of working at home",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_025",
+              "fact": "Schedules grocery runs for Thursday evenings and never shops on weekends"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Shifts grocery runs to Saturday afternoons — no longer shops mid-week due to evening MBA classes",
+              "domain": "daily_routines"
+            },
+            "reason": "The curriculum change mandates in-person MBA classes on campus two evenings a week after work, making Thursday evenings unavailable for grocery shopping. Weekend shopping is now necessary."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_030",
+            "fact": "Sets aside one evening each week specifically for alone time — avoids making joint plans with his partner or friends that night to maintain personal space after moving in together",
+            "domain": "daily_routines",
+            "reason": "With two MBA class evenings required on campus, his schedule no longer reliably includes a free evening for solo time — alone time cannot be reserved in the same weekly manner."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, Northwestern just threw a curveball — starting this month, my MBA program is shifting to in-person classes two evenings a week. No more hybrid. I'm wrapping my head around commutes and calendar chaos. Do you have any strategies for keeping weeknights manageable when two are basically blocked for school now?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a hard shift! In-person evenings can eat up a lot of time between transit and class itself. First thought: how are you managing meals those nights? Are you able to eat before class, or is it a challenge fitting dinner in with your work schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, dinner is now a whole thing. I go straight from the office to campus, so I can't do any proper sit-down meals those nights. I've had to switch to grabbing quick, portable dinners so I can eat on the go before class starts — definitely no time for restaurants or anything that takes too long. If you've got ideas for low-maintenance, reflux-friendly meals I can pack or pick up, let me know."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Given your acid reflux, anything spicy or heavy is probably out. Options could be whole grain wraps with lean protein, grain-based salads, or overnight oats if you want something cold and filling. Bento box-style dinners with veggies and chicken might travel well, too. Are you prepping these in advance, or would you rather rely on good local grab-and-go and just keep it simple?"
+        },
+        {
+          "role": "user",
+          "content": "Some prep, but mostly pickup — I just shifted my grocery shopping to weekends because there’s no way I can run errands mid-week now. Used to do Thursday evenings, but with class that's out of the question. So, Saturday afternoons are my new grocery window. That means I bulk prep what I can on Sunday, but I do need some grab-and-go options for those class nights."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense that evenings are off limits now. For quick grab-and-go, have you considered assembling snack boxes—boiled eggs, roasted veggies, slices of turkey breast, things like that? It can keep you out of the takeout trap, which isn't always reflux-friendly. Does your campus have good spots for healthy takeaway if you're really in a pinch?"
+        },
+        {
+          "role": "user",
+          "content": "There's a café near the library with decent salads and wraps, so that's my backup. Honestly, since I stick around the campus library to get my coursework done after class, I sometimes just bring a packed meal and eat there. Working in the library right after class has actually helped — I used to try working at home, but I get distracted."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart call to stay on campus—you'd get more focused study time without home distractions. On that note, has the update affected any of your previous routines, like weekly solo downtime or family check-ins? Or is it mostly the evening logistics and errands taking the hit?"
+        },
+        {
+          "role": "user",
+          "content": "Evenings in general feel compressed now. I actually had a routine where one evening was just for myself — no partner calls, no social plans. But with classes two nights a week, I can’t reserve a solo evening reliably anymore. I still check in with family on weekends, but personal downtime has dropped off."
+        },
+        {
+          "role": "assistant",
+          "content": "Losing that carved-out solo night must be tough, especially with such a packed schedule. Maybe you can find micro-moments for yourself—like fifteen minutes before class, or quick meditation sessions before bed. Let me know if you want ideas on fitting those in without adding to your plate. Anything else in your routine you're troubleshooting?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the biggest things are making sure I don’t skip meals with the new timing and figuring out portable food that fits my reflux rules. The rest is just adapting as I go — but thanks, this already helps me think through what’s realistic."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad it helps! For easy, reflux-friendly options that pack well: try rice bowls with lean protein, plain greek yogurt with seeds, or veggie-and-hummus snack boxes. Sticking to your prep routine on Sundays and keeping staples on hand will take the pressure off. Any time you want recipe ideas or help scheduling around your new class nights, just reach out."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received an offer to join a global innovation fellowship in Switzerland for six months representing Procter & Gamble, requiring a temporary relocation and a formal leave of absence from his MBA program at Northwestern.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_054",
+            "fact": "Prefers exploring local Swiss cuisine at neighborhood cafes every weekend, avoiding American-style restaurants while living abroad",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Schedules weekly video calls with his partner and family to stay connected during his temporary relocation",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_056",
+            "fact": "Starts each weekday with a brisk walk along Lake Geneva instead of Chicago's downtown loop, enjoying scenic mornings before work",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_052",
+              "fact": "Uses campus library study spaces for MBA coursework immediately following evening classes, instead of working at home"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "No longer uses campus library study spaces for MBA coursework — MBA studies are suspended during Switzerland fellowship, and there are no regular academic work sessions",
+              "domain": "work_habits"
+            },
+            "reason": "The Switzerland relocation requires a formal leave of absence from his MBA program. He cannot access Northwestern facilities or maintain library-based study routines while abroad and temporarily suspends academic work."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_051",
+            "fact": "Commutes directly from work to Northwestern campus twice weekly for evening MBA classes — prefers quick, portable dinners and avoids restaurant sit-downs or lengthy meals on those nights",
+            "domain": "daily_routines",
+            "reason": "MBA program is on formal leave; evening classes and associated commutes no longer occur while in Switzerland, so this preference is irrelevant."
+          },
+          {
+            "id": "pref_049",
+            "fact": "Prioritizes regular communications and agenda tracking for family wedding planning via shared online documents — no longer relies solely on spontaneous phone check-ins or informal chats",
+            "domain": "daily_routines",
+            "reason": "Wedding planning phase has ended and the Switzerland fellowship creates both temporal and geographic separation, making active logistics coordination for family events unnecessary."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news: I just accepted an offer for a global innovation fellowship in Switzerland! I'll be representing P&G there for six months, starting late April. I'm excited but honestly a little anxious about uprooting my routine and living abroad for that long. I’d appreciate your advice on how to keep organized and grounded during a temporary relocation like this."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That’s an amazing opportunity. I can imagine it’ll shake up your routines, especially with your usual work, fitness, and study habits. What parts of your routine do you most want to preserve or adapt while you’re in Switzerland? Are you bringing any anchors from home, or looking to reinvent things?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks! A mix, honestly. I want to hold onto some structure—like my morning routine—but I know a lot will change. For example, I'll be starting my weekdays with a brisk walk along Lake Geneva instead of my usual Chicago loop walks. I think the scenery will help make the transition easier."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds incredible. Lake Geneva walks will definitely set a positive tone for your days. Since you’ll be away from your usual work environment and support systems, have you thought about how you’ll keep in touch with family and your partner? Do you have a plan in mind for check-ins or staying connected?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that was a big one for me. I’m setting up scheduled weekly video calls with both my partner and my family. The time zones will take some getting used to, but I want to be intentional about keeping those connections strong while I’m abroad."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—having set calls helps with both routine and maintaining close relationships. Has this switch affected your MBA coursework? I know you were balancing classes with work before all this. Are you planning to keep studying remotely, or will you pause your studies during your fellowship?"
+        },
+        {
+          "role": "user",
+          "content": "I had to take a formal leave of absence from my MBA program, so my academic work is completely on hold while I’m in Switzerland. That means I’m not using the Northwestern campus library anymore for evening study sessions, and honestly, I’m not keeping any regular academic work sessions during this period."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—it’s probably a relief to focus only on your work and experience abroad for now. Without those classes on your schedule, are you thinking about how to fill those evenings, or are you more looking to leave them open and flexible? Any hobbies or local experiences you’re hoping to lean into?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely want to make the most of the weekends, at least! I’m planning to explore local Swiss cuisine at neighborhood cafes—I want to avoid American-style restaurants and really get a sense of the place. Evenings during the week I’ll probably keep flexible, maybe walk or just decompress after work."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great way to immerse yourself and unwind. Do you plan to keep up your meal prep and other routines from Chicago while you’re there, or is that something you’re open to letting go for a bit?"
+        },
+        {
+          "role": "user",
+          "content": "I might still meal prep lunches for work, but I’m a lot less strict about it when it comes to dinners, especially since I want to try out local spots on weekends. Also, since I don’t have my old MBA night class schedule, I dropped the habit of quick portable dinners before class or avoiding sit-down meals on those nights—no need for that anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That shift sounds freeing. With those academic and meal routines relaxing, you’ll have more bandwidth for spontaneous evening plans. Has this change also affected any family project planning or logistics you used to coordinate? Just curious if those responsibilities shifted too."
+        },
+        {
+          "role": "user",
+          "content": "Actually, yes! I used to coordinate wedding planning for my family using shared docs and regular agendas, but that phase is behind us, and with me abroad for six months, all those detailed event logistics are off my plate—I don’t need to handle that level of coordination anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve streamlined things to focus on what matters most during your fellowship: strong relationships, local experiences, and a sustainable daily routine. Is there any area you feel unsure about—work transitions, adapting to the language or culture, or something else I can help brainstorm with you?"
+        },
+        {
+          "role": "user",
+          "content": "Language is definitely on my mind, but I think the most pressing unknown is how I’ll structure my workday—especially managing my marketing team remotely while also getting up to speed with a new group in Switzerland. I’d love your thoughts on best practices for leadership and cross-continent collaboration."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Reviews team project status in person every Monday; never relies on Slack updates for critical tasks",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Prepares travel itineraries exclusively in Google Calendar — avoids paper planners and email threads",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Eats dinner no later than 7pm on weekdays; avoids late-night snacks to manage acid reflux",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Limits coffee to one cup before noon — never drinks caffeinated beverages after lunchtime to protect sleep",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Sends personal thank-you messages to junior team members who exceed goals — never recognizes achievements during company-wide calls",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Plays strategy board games exclusively at home — avoids online multiplayer games",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Takes short weekend trips within Illinois every quarter; never books international vacations",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Attends film festivals for independent movies — skips blockbuster premieres",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Meal preps lunch for the work week every Sunday — never orders midday food delivery",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Tracks daily steps with a smartwatch and aims for 8,000 minimum — avoids taking rideshares within downtown",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Responds to personal emails only after dinner — never checks private inbox during work hours",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Starts every morning with a cold shower and 10 minutes of stretching — never skips even on travel days",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Trains exclusively on stationary bikes and lower-body cardio at the gym — strictly avoids climbing walls, bouldering routes, and all upper body training during recovery",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Avoids all activities involving arm strain — chooses walking-focused or stationary bike workouts exclusively during recovery period",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Watches climbing documentaries and livestreams online to stay connected to the sport during injury recovery",
+        "domain": "leisure_hobbies",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Chats and spends time with his partner in-person most weekdays after work, rarely schedules video calls now that they cohabitate",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Schedules early-morning video calls with European and Asian teams several times per week — no longer protects all mornings for solo campaign planning",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Delegates both data collection and narrative drafting for regular team reports, reviewing only the final version before submission",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Prepares a rotating set of quick breakfast options for early video call days — prioritizes protein smoothies and overnight oats over hot meals",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Schedules one-on-one video check-ins with direct reports in Asia and Europe every month, instead of informal drop-bys",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Attends in-person family dinners and outings with parents weekly during their summer in Chicago — replaces regular Saturday morning phone check-ins with shared activities",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Prefers hosting or attending family dinners on weeknights, prioritizing home-cooked meals and group outings over solo evenings, while his parents are in Chicago for summer",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Prioritizes consistent nightly use of CPAP device and habitually runs device-cleaning routines before bed; continues to restrict screen time 30 minutes before sleep and tracks CPAP data via wearable integration",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Prefers sleeping on his side rather than back to enhance CPAP effectiveness and minimize mask leakage — avoids napping in recliners or with head propped upright",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Declines late-evening social invitations during the workweek to allow a consistent bedtime routine and uninterrupted CPAP use",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "No longer protects Wednesday evenings for MBA coursework — willingly schedules urgent business meetings or crisis-related work after 6pm as needed, prioritizing the task force above regular study time until the crisis subsides",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Temporarily delegates routine team coaching and monthly team social activities to his senior direct report in order to dedicate focus to the crisis task force",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Uses a crisis management digital dashboard to coordinate all cross-functional communications and track real-time updates, suspending his usual reliance on email chains for task tracking",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "No longer practices intermittent fasting; now eats small, physician-approved meals at regular intervals, including breakfast every day regardless of travel or schedule",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Prepares all meals at home according to the elimination diet plan and strictly avoids dining out, takeout, or restaurant food during the recovery period",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Logs every meal and symptom in a dedicated app for physician monitoring — never skips daily tracking",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Hosts frequent family planning meetings and gatherings at home — temporarily prioritizes family events over personal game nights for the wedding season; continues to avoid bar crawls and large parties",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Schedules and facilitates family group planning meetings at least biweekly at his apartment during the wedding preparation phase — coordinates logistics and refreshments for each session",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Shifts grocery runs to Saturday afternoons — no longer shops mid-week due to evening MBA classes",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "No longer uses campus library study spaces for MBA coursework — MBA studies are suspended during Switzerland fellowship, and there are no regular academic work sessions",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_054",
+        "fact": "Prefers exploring local Swiss cuisine at neighborhood cafes every weekend, avoiding American-style restaurants while living abroad",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_055",
+        "fact": "Schedules weekly video calls with his partner and family to stay connected during his temporary relocation",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Starts each weekday with a brisk walk along Lake Geneva instead of Chicago's downtown loop, enjoying scenic mornings before work",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Blocks early mornings for uninterrupted campaign planning — never schedules meetings before 10am",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "As Associate Brand Director responsible for international launches, he is now required to align with colleagues in distant time zones, necessitating regular early-morning calls and making it impossible to block all mornings for solo work."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Drafts weekly reports himself and only delegates data collection — refuses to outsource narrative writing",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "With the promotion and doubling of direct reports, his scope of responsibility and admin load increased. He no longer has the bandwidth to personally write all narrative sections and must now delegate more fully to his team."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Sets aside Wednesday evenings for MBA coursework; never double-books business obligations after 6pm on those days",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "The urgent, high-priority nature of leading the supply chain crisis task force means he must be available for business obligations during his formerly protected study blocks, at least temporarily. He can no longer guarantee MBA study is the top priority on Wednesday evenings."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Trains only on climbing walls and bouldering routes — never uses cardio machines or weights at the gym",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Due to the rotator cuff strain and explicit physician's orders, he cannot continue climbing or do upper body training and must switch to alternative lower-impact cardio for fitness."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Fasts until noon most days but always has breakfast on travel days; won't skip breakfast before flights",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_044",
+        "reason": "The physician-prescribed elimination diet requires regular, gentle meals to prevent severe acid reflux. Intermittent fasting and skipping breakfast are contraindicated, so he must follow a more consistent eating schedule."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Tracks sleep quality with a wearable device and restricts screen time 30 minutes before bed",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "The diagnosis of moderate sleep apnea and prescription of nightly CPAP therapy fundamentally changes his nightly sleep regimen. CPAP use becomes the cornerstone of his bedtime routine, requiring device cleaning and data tracking in addition to previous habits."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Hosts game nights at home monthly and never attends bar crawls or large parties",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_047",
+        "reason": "His sister's engagement and request to coordinate family gatherings and planning meetings means his hosting focus shifts from leisure group game nights to family-oriented events, especially as planning intensifies in the lead-up to the wedding."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Only video-chats with his partner at designated times — won't take calls during work hours or meetings",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "With his partner relocating to Chicago and moving in together, daily video chats are no longer the core way they connect. In-person time becomes the primary route for daily connection, making regular video calls obsolete except when apart."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Schedules family check-ins every Saturday morning — never skips unless traveling for business",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "With his parents living nearby for the summer and specifically requesting more in-person time, family connection has shifted from remote check-ins to regular in-person dinners and outings."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Meets his sister for brunch on alternate Sundays and avoids last-minute requests for family gatherings",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "Now that his parents are in Chicago and the entire family is coordinating more frequent in-person gatherings, the separate every-other-Sunday brunch routine with his sister doesn't consistently apply—family gatherings include his sister by default, often replacing their specific brunch routine."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Explores new Chicago restaurants every Friday night — never repeats the same venue in a month",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "The elimination diet restricts him from eating out or experimenting with new venues, as many restaurant foods are off-limits; his routine restaurant exploration is temporarily impossible."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Goes to climbing competitions as a spectator when not competing — never watches climbing online",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": null,
+        "reason": "Attending climbing competitions in person will trigger regret and likely worsen recovery adherence, and his temporary inability to participate or interact with the climbing community means he is deliberately stepping back from in-person events; this preference no longer applies in the recovery context."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Schedules grocery runs for Thursday evenings and never shops on weekends",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_050",
+        "reason": "The curriculum change mandates in-person MBA classes on campus two evenings a week after work, making Thursday evenings unavailable for grocery shopping. Weekend shopping is now necessary."
+      },
+      {
+        "id": "pref_030",
+        "fact": "Sets aside one evening each week specifically for alone time — avoids making joint plans with his partner or friends that night to maintain personal space after moving in together",
+        "domain": "daily_routines",
+        "created_at_session": 1,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "With two MBA class evenings required on campus, his schedule no longer reliably includes a free evening for solo time — alone time cannot be reserved in the same weekly manner."
+      },
+      {
+        "id": "pref_031",
+        "fact": "Now prefers trying new restaurants and food experiences as a couple on Friday nights, prioritizing venues with shared plates or tasting menus",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "Due to strict dietary limitations, he cannot safely try new restaurants or participate in shared/tasting menu experiences; this preference is incompatible with current health guidelines."
+      },
+      {
+        "id": "pref_049",
+        "fact": "Prioritizes regular communications and agenda tracking for family wedding planning via shared online documents — no longer relies solely on spontaneous phone check-ins or informal chats",
+        "domain": "daily_routines",
+        "created_at_session": 7,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "Wedding planning phase has ended and the Switzerland fellowship creates both temporal and geographic separation, making active logistics coordination for family events unnecessary."
+      },
+      {
+        "id": "pref_051",
+        "fact": "Commutes directly from work to Northwestern campus twice weekly for evening MBA classes — prefers quick, portable dinners and avoids restaurant sit-downs or lengthy meals on those nights",
+        "domain": "daily_routines",
+        "created_at_session": 8,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "MBA program is on formal leave; evening classes and associated commutes no longer occur while in Switzerland, so this preference is irrelevant."
+      },
+      {
+        "id": "pref_052",
+        "fact": "Uses campus library study spaces for MBA coursework immediately following evening classes, instead of working at home",
+        "domain": "work_habits",
+        "created_at_session": 8,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_053",
+        "reason": "The Switzerland relocation requires a formal leave of absence from his MBA program. He cannot access Northwestern facilities or maintain library-based study routines while abroad and temporarily suspends academic work."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:42:35.627035"
+}

@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_d8525c54",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_046",
+        "fact": "Prepares exclusively gluten-free lunches each week — avoids all foods containing gluten during support shifts, including fast food and previous meal prep staples",
+        "supersedes": {
+          "id": "pref_007",
+          "fact": "Sticks to meal-prepped lunches on weekdays — never grabs fast food during support shifts"
+        }
+      },
+      {
+        "id": "pref_041",
+        "fact": "Shortens or occasionally skips hourly screen breaks when admin audits and customer logs must be completed after-hours — prioritizes compliance with new post-shift security protocols over break routine",
+        "supersedes": {
+          "id": "pref_005",
+          "fact": "Takes a 10-minute screen break every hour, regardless of workload — refuses to skip breaks even for urgent customer issues"
+        }
+      },
+      {
+        "id": "pref_054",
+        "fact": "Prefers brief catch-up phone calls with her brother once a month, focused on family updates rather than caregiving logistics"
+      },
+      {
+        "id": "pref_014",
+        "fact": "Organizes the monthly family Zoom calls herself, sending the calendar invites — never delegates to someone else"
+      },
+      {
+        "id": "pref_043",
+        "fact": "Schedules 20 minutes each evening exclusively for post-shift admin compliance (audit logs) before closing out her work laptop; avoids family and leisure interruptions during this window"
+      },
+      {
+        "id": "pref_016",
+        "fact": "Walks her dog daily in the local park between support shifts — never skips regardless of weather"
+      }
+    ]
+  },
+  "persona": "A remote customer service representative for a subscription-based software startup"
+}

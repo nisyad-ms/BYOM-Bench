@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_7e13bea8",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_044",
+        "fact": "Strictly avoids melatonin or other sleep aids—even during high-stress periods—due to physician’s orders regarding insomnia treatment",
+        "supersedes": {
+          "id": "pref_009",
+          "fact": "Takes melatonin only during exam periods—avoids sleep medication otherwise"
+        }
+      },
+      {
+        "id": "pref_038",
+        "fact": "Has begun organizing speaker events on shorter notice and with greater flexibility—prefers adaptable planning over strict advance scheduling due to unstable summer commitments",
+        "supersedes": {
+          "id": "pref_005",
+          "fact": "Organizes monthly speaker events at least four weeks in advance—never leaves event planning to last minute"
+        }
+      },
+      {
+        "id": "pref_014",
+        "fact": "Joins building group dinners only if they’re under six people—avoids large gatherings with unfamiliar neighbors"
+      },
+      {
+        "id": "pref_002",
+        "fact": "Only schedules patent research tasks in the morning when focus is highest—never attempts detailed legal work late at night"
+      },
+      {
+        "id": "pref_033",
+        "fact": "Regularly brings home-cooked plant-based snacks and easy meals to her grandmother during visits, ensuring dietary needs and comfort are met"
+      },
+      {
+        "id": "pref_058",
+        "fact": "Reviews ingredient labels for iron content and prioritizes new grocery purchases based on doctor-recommended fortified or iron-rich foods"
+      }
+    ]
+  },
+  "persona": "A law student specializing in intellectual property law"
+}

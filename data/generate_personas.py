@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Generate base personas for BYOM-Bench.
+"""Generate base personas for REAM-Bench.
 
 Reads domains and weights from domains.txt, then uses an LLM to generate
 personas of people who would realistically use AI assistants in those domains.
@@ -14,10 +14,10 @@ import json
 import sys
 from pathlib import Path
 
-# Add project root to path so we can import byom_bench
+# Add project root to path so we can import ream_bench
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from byom_bench.client import LLMClient
+from ream_bench.client import LLMClient
 
 DATA_DIR = Path(__file__).resolve().parent
 DOMAINS_FILE = DATA_DIR / "domains.txt"
@@ -111,7 +111,7 @@ Output exactly {count} personas, one per line. No numbering, no bullets, no blan
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate base personas for BYOM-Bench")
+    parser = argparse.ArgumentParser(description="Generate base personas for REAM-Bench")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="Output file path")
     parser.add_argument("--domain", type=str, default=None, help="Regenerate only this domain (must match a name in domains.txt)")
     args = parser.parse_args()

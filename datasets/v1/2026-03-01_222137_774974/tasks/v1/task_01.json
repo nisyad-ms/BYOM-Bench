@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_9204dcb6",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_039",
+        "fact": "Accepts afternoon volunteer shifts at the literacy center — morning commitments no longer possible during renovations",
+        "supersedes": {
+          "id": "pref_004",
+          "fact": "Schedules all teaching or volunteering commitments before lunch — never accepts afternoon sessions"
+        }
+      },
+      {
+        "id": "pref_036",
+        "fact": "Morning walks replaced by twice-weekly supervised rehab sessions at the clinic; no unsupervised walks until therapist approval",
+        "supersedes": {
+          "id": "pref_026",
+          "fact": "Replaced morning group walks with slow, flat strolls alone or with one friend — no group-paced walking or brisk exercise until cleared by cardiologist"
+        }
+      },
+      {
+        "id": "pref_013",
+        "fact": "Arranges group tours only if at least three friends can commit — never travels solo"
+      },
+      {
+        "id": "pref_003",
+        "fact": "Only agrees to teach on topics he feels deeply passionate about — refuses generic curriculum requests"
+      },
+      {
+        "id": "pref_001",
+        "fact": "Prepares lesson outlines a week in advance for all volunteer or alumni sessions — never improvises content last-minute"
+      },
+      {
+        "id": "pref_015",
+        "fact": "Routinely checks in on friends recovering from illness — never postpones supportive calls"
+      }
+    ]
+  },
+  "persona": "A retired teacher who enjoys group tours with friends"
+}

@@ -1,0 +1,1402 @@
+{
+  "persona": "A mid-career helpdesk technician working in a university IT department",
+  "persona_id": "persona_20260301_234913",
+  "expanded_persona": {
+    "base_persona": "A mid-career helpdesk technician working in a university IT department",
+    "age": 38,
+    "gender": "female",
+    "location": "Eugene, OR",
+    "work_education": [
+      "Works full-time as a senior helpdesk technician at the University of Oregon, providing tech support to faculty, students, and staff",
+      "Manages morning ticket triage (averaging 40+ issues daily across hardware and software)",
+      "Recently took on responsibility for onboarding new hires and training student workers; spends 6 hours/week hosting workshops",
+      "Preparing for the CompTIA Security+ certification, hoping for potential promotion to security analyst",
+      "Navigating departmental push toward hybrid support models; adjusting to increased remote troubleshooting"
+    ],
+    "health_wellness": [
+      "Has chronic migraine, triggered by screen time; keeps strict breaks and uses blue-light glasses",
+      "Enjoys hiking local trails on weekends, aiming for two outings per month as stress relief",
+      "Typically takes lunch at her desk but recently started meal-prepping to improve her diet",
+      "Struggles with insomnia when under work-related stress, leading to occasional weekday fatigue"
+    ],
+    "family_relationships": [
+      "Lives in a townhouse with her partner of 5 years, a grad student in environmental science",
+      "Co-parenting her 14-year-old son, who splits time between her and his father (every other week)",
+      "Frequently helps her younger sister, who lives nearby and juggles a toddler and a part-time job",
+      "Maintains a close group of friends from the university’s staff softball league; meets for games twice monthly"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Handles morning ticket triage in strict priority order and refuses to multitask during triage — never lets non-urgent tickets distract her before noon",
+        "Requires every new hire to complete hands-on troubleshooting scenarios during onboarding — never relies solely on written training materials",
+        "Hosts training workshops with interactive demos only; never uses slides-only presentations",
+        "Blocks one hour each workday for studying Security+ material, never lets meetings or ticket volume infringe on this time",
+        "Only communicates complex troubleshooting steps via video calls or screen shares — avoids long email instructions when remote"
+      ],
+      "health_body": [
+        "Takes a screen break every 45 minutes as non-negotiable — refuses to skip, even during ticket surges",
+        "Uses blue-light glasses whenever working on a computer — never accesses screens without them",
+        "Meal preps all weekday lunches and snacks, never eats at campus cafes or orders takeout during the workweek",
+        "Never schedules hikes on days when migraine symptoms flare; only hikes when fully symptom-free",
+        "Follows a fixed bedtime routine with blackout curtains and ambient sound, avoids screens for one hour before sleep"
+      ],
+      "social_relationships": [
+        "Plans all split custody weeks with her son around joint activities — never lets work obligations interfere with their evenings together",
+        "Always schedules at least one support visit to her sister per week, never cancels last minute",
+        "Hosts game nights with her partner and friends biweekly — never lets more than two weeks go by without a gathering",
+        "Prioritizes softball league meetups over other social commitments; never misses games unless for family emergencies",
+        "Refuses to discuss work troubles with university colleagues outside the IT department — keeps professional boundaries clear"
+      ],
+      "leisure_hobbies": [
+        "Explores a new hiking trail at least once a month and never repeats the same route within four weeks",
+        "Reads mystery novels on weekends, strictly avoids thrillers or horror genres",
+        "Volunteers at environmental clean-up events quarterly; never participates in indoors-only charity work",
+        "Plans weekend outings two weeks in advance with her son — never leaves weekend activities to last-minute decisions",
+        "Only streams TV shows after 8pm; never watches during daylight hours"
+      ],
+      "daily_routines": [
+        "Checks personal email only twice a day — never during work hours",
+        "Completes weekly grocery shopping every Sunday afternoon, never shops on weekdays",
+        "Drinks herbal tea each morning instead of coffee; never consumes caffeinated beverages before noon",
+        "Reviews and updates her digital calendar nightly, never lets tasks go unrecorded",
+        "Skips all phone notifications except from family — keeps device on ‘Do Not Disturb’ except for calls from her son or partner"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger sister, struggling with childcare, asked her to temporarily take care of her toddler three afternoons a week due to sudden changes in her work schedule.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Prioritizes quiet, screen-free activities (like puzzles, drawing, or outdoor play in the yard) on afternoons providing childcare to her niece/nephew—avoids work tasks or personal device use during this time",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Always schedules at least one support visit to her sister per week, never cancels last minute"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Provides in-home afternoon childcare for her sister's toddler three times a week; support visits now serve as dedicated caregiving time instead of just brief check-ins",
+              "domain": "social_relationships"
+            },
+            "reason": "Her sister’s emergency childcare need means 'support' has shifted from simple visits to a significant childcare commitment, fundamentally altering the nature and frequency of her support."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my sister just had her work schedule totally upended—she asked if I could watch her little one three afternoons a week, at least for the next couple of months. I said yes, but now I’m trying to figure out how to make this actually work with my job (and, honestly, my sanity). Do you have any tips for making a mid-day childcare routine mesh with a full-time IT role? Ideally without setting myself up for burnout."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big ask and definitely a shift from just helping out occasionally! When will you be taking care of your niece or nephew—are these afternoons flexible, or set days? Knowing the timing could help figure out how to block your calendar or shuffle tasks. Also, are you planning to work remotely while watching them, or will you log off completely for those hours?"
+        },
+        {
+          "role": "user",
+          "content": "They’ll be here Monday, Wednesday, and Friday, usually from about 2 to 5pm. I told my sister I won’t be juggling work during those hours. I can’t really supervise a toddler and troubleshoot VPN issues at the same time, especially given my migraines and the need for real breaks from screens. I’m planning to log off and just focus on the kid. But that does mean my usual afternoon ticket catch-up and document work window is gone. Any ideas for tweaking my workflow so nothing falls through?"
+        },
+        {
+          "role": "assistant",
+          "content": "Completely understandable! Blocking off those afternoons and focusing fully on childcare is going to help with both your focus and your health. For catching up on ticket volume and documentation, have you considered shifting some of that workload earlier in the day or consolidating it on Tuesdays and Thursdays? Since you’re strict about morning triage, maybe you could carve out a short ‘overflow’ session before lunch, and use the non-childcare afternoons for any backlog or admin. Would extending your morning block (or protecting a midday slot) on those non-childcare days work?"
+        },
+        {
+          "role": "user",
+          "content": "Possibly. I’m really strict about not multitasking during triage, and I always prioritize those issues first thing. But now that my afternoons are compressed, I might need to adjust my ‘study hour’ for Security+—it’s normally right before lunch. The other thing is, on the afternoons I have my niece, I want to go entirely screen-free if possible. She’s only two and absolutely fascinated with my laptop, so it’s just easier to not have it open. I guess those afternoons are turning into quiet playtime—like puzzles, stacking toys in the yard, and drawing with her."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—and honestly, a toddler is probably the best accountability partner for totally unplugging! If you use the same three afternoons each week exclusively for screen-free, hands-on time, maybe you could batch both your study and lower-priority ticket work onto the alternate days. For your Security+ prep, is it possible to shift your study hour to late afternoon or early evening on the days you’re not watching your niece? Or do you find it harder to focus later in the day?"
+        },
+        {
+          "role": "user",
+          "content": "I’m not at my best late in the day, especially if I’ve been migrainey. That’s why I’d rather keep my Security+ study slot on Tuesday and Thursday mornings, when things are quiet. I set a rule ages ago that no meetings or tickets ever get scheduled over that time. What’s changed now is that my sister’s ‘emergencies’ have turned into a real commitment—support visits used to be just short drop-ins, but now it’s actual childcare in my home. Much bigger chunk of my week!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—what used to be occasional support is now part of your core schedule. It sounds like you’ve already redefined those visits as quality, intentional time with your niece. With that in mind, would it help to formalize a shared calendar with your sister, so everyone’s clear on the new rhythm and expectations? Might also help you communicate clearly to colleagues about your unavailable hours, too."
+        },
+        {
+          "role": "user",
+          "content": "That’s a good idea. I’ll probably set up a shared calendar so there are no surprises—my sister can see when I’m really not available and I can still block time with my team, especially since my department’s getting more remote-focused. I think I’m okay on work boundaries, but it’s a real mental adjustment at home. The screen-free thing is actually kind of grounding, though. And on those childcare days, I’m purposefully steering away from anything device-related—no checking support Slack, no Secret IT podcasts, nothing."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re making really thoughtful choices! Turning those afternoons into unplugged, low-stimulation time is not just great for your niece but should also help protect you from screen-triggered migraines. For your own downtime, maybe small rituals—like prepping a snack together or doing a nature walk in the yard—can help make that transition smoother after a tech-heavy morning. Do you need any suggestions for screen-free toddler activities for those hours, or do you feel set?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll definitely take suggestions! My go-tos right now are outdoor play in the yard (weather permitting), Duplo towers, coloring, and puzzles. If you know of other chill, nearly self-contained activities for a two-year-old that won’t require screens or tons of cleanup, I’m all ears."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Here are a few screen-free options: water play with washable cups or plastic spoons (even indoors with a mat), sticker books, simple scavenger hunts (finding objects of different colors), kinetic sand or play dough with a tray, and musical instruments like shakers or a xylophone. Rotating bins of toys so some are always ‘new’ can keep her engaged. Would you like ideas for prepping these ahead of time so you don’t have to scramble on the day?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, prepping ahead of time would be amazing. I do meal prep every Sunday, so maybe I could tack on ‘activity bin prep’ with that. Anything where I’m not making a mess or dragging out five bins while she’s already here makes life easier."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The university announced a campus-wide IT reorganization, merging her helpdesk unit with the systems administration team and requiring her to begin managing both user support tickets and backend server monitoring during her shifts.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_029",
+            "fact": "Prefers monitoring server logs and alerts in 15-minute increments throughout the day instead of doing extended backend review sessions—finds short, frequent checks more manageable with mixed support duties",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_030",
+            "fact": "Consults systems admin team for troubleshooting complex server issues before escalating—now prioritizes collaborative problem-solving over solo investigation",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Handles morning ticket triage in strict priority order and refuses to multitask during triage — never lets non-urgent tickets distract her before noon"
+            },
+            "to": {
+              "id": "pref_028",
+              "fact": "Alternates between ticket triage and backend server monitoring during mornings — can no longer focus exclusively on ticket triage before noon, multitasks as required by new role demands",
+              "domain": "work_habits"
+            },
+            "reason": "The IT reorganization requires her to manage both frontline ticket support and backend server monitoring during morning shifts, making strict single-task focus impractical."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_004",
+            "fact": "Blocks one hour each workday for studying Security+ material, never lets meetings or ticket volume infringe on this time",
+            "domain": "work_habits",
+            "reason": "With expanded server monitoring responsibilities, her work hours are now scheduled for active duties rather than self-driven study. Dedicated Security+ study time is no longer feasible during her shifts."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey! So the big IT reorg finally dropped last week. My helpdesk team just got merged with systems admin, and now I've got to handle both ticket triage *and* backend server monitoring—at the same time, especially in the mornings. I honestly have no idea how to keep things from falling through the cracks with priorities all over the place. Any strategies for juggling both fronts without burning out?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a major upheaval! Balancing end-user support and backend server monitoring is a real challenge, especially since both can get urgent out of nowhere. Can you describe how your typical morning looks now? Are you trying to batch your tasks in blocks, or switching back and forth throughout the shift?"
+        },
+        {
+          "role": "user",
+          "content": "It used to be strict: I'd power through ticket triage every morning, priority order, and not let anything else distract me until noon. Now with backend duties, I'm toggling constantly—sometimes I have to drop a ticket mid-response if a server alert pops up. It's a weird shift, multitasking instead of focusing exclusively. That's not really my preference, but it's what the role demands now."
+        },
+        {
+          "role": "assistant",
+          "content": "Adjusting from deep-focus triage to regular context-switching is tough, for sure. Since multitasking is unavoidable, have you found any tricks for avoiding mental overload? Like certain notification setups, or tools to keep your place as you switch?"
+        },
+        {
+          "role": "user",
+          "content": "I’m still figuring that out. What’s helped so far is checking the server logs every 15 minutes rather than doing long backend review sessions. It’s less overwhelming and I can catch stuff early, but it doesn’t pull me away from tickets for too long at a time. Still working out the best way to track everything so nothing gets missed if I’m interrupted."
+        },
+        {
+          "role": "assistant",
+          "content": "That 15-minute increment idea is really smart—short, frequent checks are much more sustainable. Maybe setting up a recurring calendar timer would help remind you, or are you already using alerts from your monitoring platform? Also, how are you handling more complicated server issues if they pop up while you're also on ticket duty?"
+        },
+        {
+          "role": "user",
+          "content": "For bigger backend problems, I usually ping the systems admin team and collaborate before escalating—I've realized it's way more effective than trying to deep-dive solo while I'm also managing support tickets. I sort of have to prioritize teamwork now, otherwise stuff just sits or gets missed."
+        },
+        {
+          "role": "assistant",
+          "content": "Relying on your sysadmin colleagues like that is a great shift, especially with divided attention. Maybe you could create a quick liaison channel or Slack group to coordinate those urgent hand-offs. On the ticket side, are there any routines you’ve had to drop or adjust in all this? For example, study blocks or other time you used to protect?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I used to carve out a full hour every day for Security+ exam prep, and I didn’t let meetings or ticket volume cut into it. But with the new schedule, there’s no way—I’m booked solid with active duties now. Dedicated study hours during work are off the table."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big sacrifice, especially if you were eyeing that promotion. Maybe there are ways to repurpose on-the-job incidents as learning opportunities until you get study time back—like documenting tricky security tickets for review later. Could you fit flashes of study into non-work hours or is that pushing it?"
+        },
+        {
+          "role": "user",
+          "content": "I'm eking out a little time at home, mostly after my son heads to his dad's or when my partner's deep in thesis work. But yeah, right now the job is too packed for study blocks during the day, so I’m making do with whatever’s left in the evenings."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a tough adjustment, but you’re clearly adapting fast. If you ever want to brainstorm tracking systems or ways to streamline those hand-offs with sysadmin, just let me know. In the meantime, keeping your routines for breaks and boundaries around screen time is more important than ever—your health matters too."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her partner received a research grant for a six-month field project, requiring frequent travel out of town and extended periods away from home.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_032",
+            "fact": "Schedules regular video calls with her partner during his fieldwork, maintaining connection despite physical distance",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_033",
+            "fact": "Plans more solo and son-focused weekend outings when her partner is traveling, prioritizing quality time with her son over couple activities",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Hosts game nights with her partner and friends biweekly — never lets more than two weeks go by without a gathering"
+            },
+            "to": {
+              "id": "pref_031",
+              "fact": "Hosts game nights primarily with friends; only includes her partner when he is in town, but maintains the biweekly frequency",
+              "domain": "social_relationships"
+            },
+            "reason": "Her partner's frequent and extended travel for the field research grant means he is often unavailable; she adapts by continuing game nights with friends, including her partner only when his schedule permits."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my partner just got a six-month research grant that means he’ll be out of town most weeks. I’m happy for him, but honestly, I'm staring down a lot of solo parenting and a much quieter house than I’m used to. Have you got any tips to help adjust, especially for keeping my routines on track and not letting the weeks get away from me?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change—congrats to your partner, but I get how it can shake up your daily flow. Since your routines might be shifting, are there particular parts of the week you’re most concerned about (workdays, nights, weekends) or is it more the overall balance and keeping up with everything on your own?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, both, but weekends might be trickier. We usually try to do family outings, but with him away, I’m thinking I’ll lean more into outings just with my son. Solo hikes, maybe some new spots we haven’t tried yet, or trips into town. Scheduling quality time with my son is a priority—especially on my custody weeks. Couple stuff’ll just have to wait until my partner’s home."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid strategy—focusing weekend plans around your son can keep your routine grounded and give you both some good memories. Would you like help brainstorming local hikes or activities for just the two of you? And will your partner be joining any of these weekend outings when he’s back, or will you keep those mainly as mom-son adventures?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, when he’s actually in town, we’ll try to do stuff all together, but I’m leaning toward keeping the mom-son activities going even if my partner can join sometimes. Honestly, it’s easier to plan if I don’t count on his schedule. Also, with him gone so often, I want to keep some kind of regular connection the two of us—maybe schedule video calls while he’s in the field."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes total sense—keeping the routine stable for you and your son, while scheduling a set time for video calls with your partner. Would setting up those calls at a specific day and time each week help, or do you need to adjust based on his fieldwork hours? And for your son-focused outings, do you like to plan those a week or two in advance, or are you more flexible about what you do?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely need the video calls to be flexible—fieldwork hours are unpredictable, but I figure we can compare calendars every Sunday and slot in a couple calls for the week. As for weekends, I always plan outings two weeks ahead with my son. I never leave our weekends to last-minute choices, especially now. It’s part of our routine—he likes to know what’s coming up."
+        },
+        {
+          "role": "assistant",
+          "content": "Love that—it gives both of you something to look forward to, and setting plans in advance can cut down on last-minute stress. For keeping your connection with friends going, how will game nights work with your partner often out of town? Will you host anyway, or pause until he’s home?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually something I’ve been thinking about. Game nights used to be partner-plus-friends every other week, but I’m shifting to mostly just friends now, with him joining when he’s around. Sticking to the biweekly schedule helps me keep the habit, but I won’t wait for him to be in town—it’s going to be too infrequent otherwise."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really adaptable approach. Keeping the game nights steady is smart, and it means you’re not missing out socially just because his schedule is unpredictable. Is there anything in your normal routine that you’re worried might fall through the cracks with all this change, or do you feel good about the adjustments so far?"
+        },
+        {
+          "role": "user",
+          "content": "I think I’ve got most of the big stuff covered: sticking to the biweekly game nights, keeping weekend plans for my son and me, and setting up regular video calls with my partner. The biggest challenge might just be remembering to recharge—being the only adult at home is going to take more out of me than usual, I think."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—it’s a bigger emotional and logistical load. Maybe make those solo recharge times as non-negotiable as your other routines—a solo hike or even just an hour with a book. And if you ever need help planning local activities, or reminders to take that downtime, just let me know!"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After months of escalating migraine frequency, her neurologist prescribed a new daily preventative medication and required monthly follow-up visits to monitor side effects and effectiveness.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Schedules monthly neurologist follow-up visits as a non-negotiable self-care activity; never allows work or family obligations to interfere with these appointments",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Keeps a side-effect journal every evening after taking her migraine medication, recording symptoms and any notable changes",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Takes a screen break every 45 minutes as non-negotiable — refuses to skip, even during ticket surges"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Takes a screen break every 30 minutes, regardless of workload, as required by her neurologist with the new migraine medication",
+              "domain": "health_body"
+            },
+            "reason": "The preventative medication is part of a strict new migraine management regimen that includes more frequent screen breaks to reduce risk of breakthrough symptoms and side effects."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_009",
+            "fact": "Never schedules hikes on days when migraine symptoms flare; only hikes when fully symptom-free",
+            "domain": "health_body",
+            "reason": "The preventative medication is designed to minimize daily migraine symptoms, making her neurologist encourage gentle outdoor activity for stress management unless there are severe side effects. This old preference is obsolete, as strict avoidance is no longer medically necessary."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my neurologist finally put me on a daily preventative for these migraines. I started this week, and she wants me on really tight follow-ups every month to track side effects and see if it's working. I honestly want it to work, but my routine feels upended already. Any advice on making this kind of health shift stick—especially in the context of a packed IT schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Adjusting to a daily medication plus closer medical monitoring is a big routine change—especially with a job like yours where the flow is so ticket-driven and structured. Are you noticing specific pain points so far? For example, is it harder fitting in appointments, or is the new medication impacting your energy/work focus during the day?"
+        },
+        {
+          "role": "user",
+          "content": "The energy is okay so far, but the logistics are tricky. My neurologist is pretty insistent—she wants these appointments to be non-negotiable, so I had to block one afternoon each month, no matter what’s going on at work or with my family. Rescheduling isn’t really an option. I’m not used to setting such a hard line for self-care, honestly."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like these appointments need to be as protected as any high-priority meeting, maybe even more so given what’s at stake. Does your department respect those boundaries if you block your calendar in advance? Do you need any strategies for communicating that this time is absolutely unavailable—even in an emergency ticket situation?"
+        },
+        {
+          "role": "user",
+          "content": "I’m lucky that my manager is pretty understanding, and I’ve just set all my neurologist visits as recurring, with ‘do not book over’ warnings. But it’s tough shaking the guilt, especially when our ticket load spikes. I guess it will get easier as it becomes routine. The bigger challenge is managing screens. The med’s only part of it—my neurologist bumped my screen break requirement to every 30 minutes now, not 45. That’s harder to build into the day, especially during triage."
+        },
+        {
+          "role": "assistant",
+          "content": "Every 30 minutes is a big shift, especially if you’re deep in morning triage where you prioritize strict focus. Have you found any tricks for making those breaks truly happen, or does it still feel like an interruption? Would an automated timer or a visible reminder help, or would that be more annoying?"
+        },
+        {
+          "role": "user",
+          "content": "I'm using a repeating calendar chime for now—which helps—but it does feel pretty disruptive when I'm in the zone. Still, it's absolutely required per my neurologist, even during ticket surges. There's a risk of breakthrough symptoms or side effects otherwise. So the rhythm of my triage is different, but I don’t really have a choice."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s good you’re being strict with it, even if it means a slower start. Maybe you can reinforce the routine for the rest of your team—make screen breaks a department norm? Or at least clearly communicate your new boundaries so everyone understands the short pauses. Have you had to shift any other daily habits or hobbies to fit the new regimen?"
+        },
+        {
+          "role": "user",
+          "content": "A couple of things, yeah. First, I now keep a journal every evening right after taking my migraine med—I log symptoms and any side effects so my neurologist can track changes over time. That’s new for me, but she was really firm about it so we catch issues early. And about hobbies: I used to skip hiking entirely if I had any migraine symptoms, but now the goal is actually to keep up gentle outdoor activity unless I have severe side effects. The med’s supposed to keep symptoms low, so my neurologist wants me to hike for stress relief even if I’m not totally symptom-free. So that’s changed too."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—both the journaling and the more flexible hiking rule. It sounds like your care plan is less about strict avoidance now and more about careful monitoring combined with regular, gentle activity. Have you found a way to incorporate the journal into your evening routine so it doesn’t become just another thing on your to-do list? And are you planning hikes more often now that the restrictions have eased up?"
+        },
+        {
+          "role": "user",
+          "content": "I’m trying to tie the journal to my bedtime wind-down after I update my calendar, which I do every night anyway, so it’s not too bad so far. And yes, I’m scheduling hikes more regularly and not being as anxious about minor symptoms. As long as I don’t have anything severe, I go—even if a mild headache is lingering. That old rule about only hiking when I was totally symptom-free is out. Honestly, keeping some outdoor time helps with the stress, so I see why she recommended it."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The university mandated that all IT staff must pass the CompTIA Security+ certification within six months to retain their positions, accelerating her study timeline and requiring proof of ongoing progress.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Blocks two evening study sessions per week for Security+ prep (minimum 90 minutes each), rescheduling other commitments as needed to maintain progress tracking for university requirements",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Adopts guided meditation audio after study sessions to unwind from screen time, helping manage sleep and migraine triggers",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Plans all split custody weeks with her son around joint activities — never lets work obligations interfere with their evenings together"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Limits joint activities with her son during split custody weeks to weekends and one weekday evening, allowing extra evening hours for Security+ study when required by certification deadlines",
+              "domain": "social_relationships"
+            },
+            "reason": "The university's mandate to pass Security+ within six months makes certification prep an urgent priority, requiring her to allocate more evening time for study, especially during split custody weeks. She can no longer guarantee work obligations will never impact their evenings together."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so the university just dropped a bombshell—every single IT staffer has to pass Security+ in the next six months or we're out. It's thrown my whole routine, especially with my son at home half the time. I'm feeling the crunch—can you help me figure out how to keep up without totally burning out?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that's intense. Six months is a pretty tight window, especially given everything on your plate. What does your schedule look like now—are you still able to block your study time during work, or is it spilling into your evenings and affecting your family time?"
+        },
+        {
+          "role": "user",
+          "content": "I still hold my hour in the afternoons at work, but it's not enough. With the new deadline, I've had to start using two evenings a week for extra study sessions—about 90 minutes each. It's the only way I can stay on track for their progress checks. The harder part is, during my custody weeks, I can't always do all the usual activities with my son. Now we stick to weekends and one weekday evening for joint stuff so I can fit in the extra Security+ prep."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a tough trade-off, but it makes sense with how urgent things are. It's great you're still carving out weekend and some weekday time with your son though. How are you unwinding after those late study sessions? With that much screen time, I know migraines and sleep used to be a big concern for you."
+        },
+        {
+          "role": "user",
+          "content": "Absolutely—I've actually started using guided meditation audio right after my evening study sessions. Screen time late at night was messing with my migraines and making sleep worse, but shutting down with meditation helps take the edge off before my regular bedtime routine."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart addition—guided meditation can make a big difference in winding down and protecting your sleep. Are you adjusting anything else, like hiking frequency or your support routines for your sister, to make space for all this?"
+        },
+        {
+          "role": "user",
+          "content": "For now, I'm holding steady on most other things—I still get in the hikes when I'm migraine-free and keep my weekly support visits to my sister. The biggest shift has definitely been scaling back weekday evening activities with my son during custody weeks and prioritizing those two evening study blocks. It's not ideal, but at least I'm not scrambling last minute."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you're making really intentional choices to meet this big requirement without completely upending your routines. Just to check, do you have a system for tracking your Security+ prep—like progress logs or practice test scores—to satisfy the university's progress checks?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I'm using a progress tracker app where I log each study session and take weekly practice quizzes. If there's ever a study session I have to skip, I reschedule it right away—I can't afford to fall behind with the university needing documentation now."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you're covering the bases. Keeping those evening sessions and the tracker should give you enough structure for the ramped-up expectations. If you ever want tips on optimizing those 90-minute blocks—like focus strategies that minimize migraine risk—just let me know. Otherwise, it seems like you've got a plan to survive this curveball."
+        },
+        {
+          "role": "user",
+          "content": "Thanks, that's helpful. I might come back for study tips later, but for now, this is probably as balanced as I can get. The main thing is not letting the stress spiral. The meditation helps, and honestly, just having a plan makes it feel manageable."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her 14-year-old son requested to shift from the current every-other-week custody arrangement to living with her full-time, citing a desire for more stability during his first year of high school.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Prepares all weeknight dinners at home with her son, involving him in meal planning and cooking to support consistent family routines and bonding during his high school adjustment",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_037",
+              "fact": "Limits joint activities with her son during split custody weeks to weekends and one weekday evening, allowing extra evening hours for Security+ study when required by certification deadlines"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Schedules daily joint activities with her son on weeknights, structuring her Security+ study sessions around his needs as a full-time cohabitant instead of prioritizing evening study blocks during split custody weeks",
+              "domain": "social_relationships"
+            },
+            "reason": "Her son now lives with her full-time, so splitting time and prioritizing personal study during non-custody weeks is no longer relevant. Her schedule pivots to daily engagement and parental support, integrating her study needs around a stable routine for her son."
+          },
+          {
+            "from": {
+              "id": "pref_019",
+              "fact": "Plans weekend outings two weeks in advance with her son — never leaves weekend activities to last-minute decisions"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Plans both weekend and weeknight activities in advance with her son, ensuring a consistent routine for him to support his transition to living with her full-time",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "With her son living with her every day, she takes on daily responsibility for his afterschool and evening needs. Advance planning extends to the full week, not just weekends, to provide stability and reliability during his first year of high school."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_033",
+            "fact": "Plans more solo and son-focused weekend outings when her partner is traveling, prioritizing quality time with her son over couple activities",
+            "domain": "leisure_hobbies",
+            "reason": "This preference was based on split custody; now her son lives with her full-time, prioritizing time with him is part of her regular life, not a special case. The distinction is obsolete."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so big change at home—I just agreed to shift to full-time custody for my son, who just started high school. He wants more stability, and I think it's the right call, but it's been a huge adjustment these past two weeks. I’m realizing my after-work time is suddenly packed in an entirely new way, and I’d love some strategies for reorganizing my routine so I’m not dropping the ball at work or at home."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a major shift! It sounds like you’re trying to support your son’s transition while balancing everything else. Can you tell me a bit about where the crunch feels worst—are evenings the main issue, or is the whole day getting squeezed? And are there parts of your old routine you want to keep, or do you feel like you’re starting from scratch?"
+        },
+        {
+          "role": "user",
+          "content": "The big pressure point is weekday evenings. I used to plan activities and time with him mostly for weekends—plus maybe a dedicated evening midweek, since we were on a split custody schedule. Now, he’s here every night, so I have to pick up daily routines—dinners, homework help, activities, the whole thing! I also used to reserve a couple evenings per week for Security+ study, but that doesn’t make sense when he needs a steadier routine. I’d love ideas for structuring evenings so I can support him without sacrificing my own goals."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—with full-time parenting those solo study blocks become trickier to protect, especially if you want to build a consistent environment for him. Would something like studying after his homework, or early mornings, be realistic? Or do you think you’d be better off integrating him into your routine, maybe overlapping activities or making some things collaborative (like joint meal prep or tech projects)?"
+        },
+        {
+          "role": "user",
+          "content": "Early mornings are tough—I need that time for my migraine routine and meal-prep stuff. But the overlapping idea could help. I actually started planning out the whole week with daily joint activities and involving him in dinners, since that predictability seems to help his stress. So instead of blocking out study time every evening, I’m fitting my Security+ review around his schedule—usually after he’s settled or sometimes at lunch if I can. It’s not as uninterrupted, but the routine feels more stable for both of us."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really thoughtful—predictable routines make a huge difference, especially in big transitions. Building your study around his schedule sounds like a good compromise. When you plan joint activities for weeknights, do you have a set mix of things you do, or are you still experimenting? Also, how’s he responding to being part of dinner prep?"
+        },
+        {
+          "role": "user",
+          "content": "We’re settling into a rhythm: on Sundays, we plan out the week together—homework check-ins, some gaming, and usually one activity out of the house, like the rec center. For dinners, he picks a couple recipes and helps cook; it’s actually been great for conversation and making healthy choices. Before, I only planned ahead for weekends, but now I have to organize both weeknights and weekends upfront to keep things steady for him. Having everything mapped out really helps him relax, and honestly, it helps me stay on track at work, too."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a win-win—keeps him anchored and helps you manage the mental load. Expanding your planning window to the full week probably takes a bit more organizational work, but I can see how it pays off. Have you noticed anything you miss from your old arrangement, like solo leisure time or partner date nights, or has the shift been pretty smooth overall?"
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely a trade-off—especially on weekends. I used to focus extra time on him when my partner was traveling, but now that he’s here full-time, that distinction just sort of faded away. Every weekend is son-focused by default, so I dropped that special-case planning. It’s actually easier to just have one routine instead of two! My partner and I are still figuring out our own rhythms, but I think the full-time parenting change has forced us to communicate better about sharing the load."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—having a single, consistent pattern probably reduces a lot of logistical overhead. Good call on clearer communication with your partner. Is there anything you feel you’ve lost—maybe flexibility for last-minute plans—or does the advance structure give you enough breathing room?"
+        },
+        {
+          "role": "user",
+          "content": "I’m someone who hates last-minute chaos, so the extra planning suits me. Before, I left weeknight activities up in the air except during custody weeks. Now, both my son and I do better knowing what’s coming each evening, so booking things in advance for the whole week is an upgrade, not a burden. Meal planning is the same—I prep all our dinners at home and he helps choose, which makes it less overwhelming."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve adapted the routines pretty organically. Looping in your son on meal planning and daily activities should go a long way toward helping him feel settled—and takes some pressure off you to be the sole planner. Do you need any tools or templates for weekly planning, or do you prefer to keep it old-school with a calendar and a checklist?"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Slipped on a muddy hiking trail during a weekend outing and fractured her left wrist, requiring a cast and physical therapy for at least eight weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Uses voice-to-text tools for work communication and personal correspondence to accommodate limited typing ability while her wrist is recovering",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Watches daytime TV or streams shows during downtime for distraction and rest, temporarily relaxing her usual evening-only streaming rule",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Explores a new hiking trail at least once a month and never repeats the same route within four weeks"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Replaces hiking outings with neighborhood walks or park strolls, avoiding uneven trails and new routes until her wrist has fully healed",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The fractured wrist makes traditional hiking, especially on unfamiliar and potentially hazardous trails, impractical and medically inadvisable. She opts for safer, flatter outdoor exercise alternatives during recovery."
+          },
+          {
+            "from": {
+              "id": "pref_018",
+              "fact": "Volunteers at environmental clean-up events quarterly; never participates in indoors-only charity work"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Temporarily participates in indoor or administrative charity support (event planning, data entry), avoiding physical outdoor clean-up activities during recovery",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Her wrist injury makes hands-on outdoor clean-up impossible, so she seeks ways to contribute through less physically demanding, indoor volunteer activities."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_027",
+            "fact": "Prioritizes quiet, screen-free activities (like puzzles, drawing, or outdoor play in the yard) on afternoons providing childcare to her niece/nephew—avoids work tasks or personal device use during this time",
+            "domain": "daily_routines",
+            "reason": "With her wrist in a cast, manual activities like puzzles or drawing are infeasible; she can't reliably do hands-on quiet tasks during childcare visits until her wrist heals."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I took a not-so-graceful tumble on the Ridgeline Trail this weekend and ended up with a fractured wrist. Left arm in a cast for 8 weeks, doctor's orders—plus PT after that. It’s pretty frustrating, honestly. I’m trying to figure out how to keep up with work and daily routine while I heal. Any advice for adapting my workstation or workflow? Typing is obviously rough right now."
+        },
+        {
+          "role": "assistant",
+          "content": "Ouch, I’m sorry to hear that! A fractured wrist is no joke—especially with how much you type daily. For the workstation, would switching to a split keyboard or using a mouse more help at all, or is it mostly typing that’s difficult? And on the software front, have you tried any voice-to-text tools for work yet?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I started using voice-to-text dictation for most of my work communication and even personal emails. It’s not perfect, especially with tech terms, but it’s better than pecking everything out one-handed. Mouse is manageable if I don’t have to click and drag too much. I’m curious if you know any tricks for making the voice-to-text smoother or less awkward, especially in a noisy office?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart adjustment—voice dictation has come a long way, but I know it struggles with jargon. For noisy environments, using a high-quality noise-cancelling headset can help accuracy a lot. Also, most apps let you train the speech engine with your frequent vocabulary—adding the common tech terms you handle might improve recognition. Which tool or app are you mainly using for dictation at your desk?"
+        },
+        {
+          "role": "user",
+          "content": "I've been testing out the built-in Windows Speech Recognition since it’s already there, but it’s a bit clunky with our service desk platform. Thinking of trying Dragon or maybe Otter. I do have a decent headset, but I hadn’t looked into custom vocab settings. That’s a good tip! Switching gears: Any ideas for staying active during recovery? Hiking is out for now—I don’t think my ortho would approve me trying any of my usual rough trails."
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely best to avoid slick trails for now. Have you considered sticking to flat, paved paths or maybe park strolls? Even neighborhood walks can help keep you moving without the risk. Some people also try indoor recumbent biking or gentle yoga—though that depends how much weight-bearing your wrist can tolerate. What sort of activity feels doable and safe for you right now?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, until my wrist is healed I’m sticking to neighborhood walks and park loops—just places I know are flat and safe. No new or uneven trails, per doctor's orders. Indoor stuff is tough with the cast, so gentle walks outdoors are my go-to for now. It’s not as adventurous but better than nothing. On another note—I usually help out with quarterly park clean-ups, but I can’t really do much outdoors with the cast. Any ideas for staying involved in environmental volunteering from the sidelines?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! There’s a lot of behind-the-scenes or admin work most environmental groups need—think event planning, coordinating volunteer sign-ups, or helping with digital outreach and data entry. You could also help draft newsletters or update their websites, if you’re comfortable. Have you reached out yet to see if your usual group has remote or less-physical volunteer roles you could jump into?"
+        },
+        {
+          "role": "user",
+          "content": "I checked in with them, and I’m going to help with volunteer coordination and some data entry for the next couple of events instead of joining the clean-up crews. It feels good to stay involved, even if I’m not getting my hands dirty. I have to admit, though, I’m getting antsy with more downtime than I’m used to. I’ve even started streaming shows during the day to keep my mind off the discomfort—a huge shift from my normal rule of keeping TV for the evenings only!"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a healthy way to cope—with forced rest, you need distractions! Daytime streaming can be a good break as you heal, too. Any new shows or genres you’re leaning toward, or is it mostly familiar comfort TV?"
+        },
+        {
+          "role": "user",
+          "content": "It’s mostly comfort stuff—parks, gardens, gentle mysteries, nothing too intense. I can only do so many audiobooks before my mind drifts. And since I’m not up for my usual hands-on stuff like puzzles or drawing, streaming is one of the few things I can actually enjoy solo during downtime."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely makes sense—puzzles and drawing would be tough with a cast! Once your wrist is better, you’ll have options again, but until then, anything restful and fun is fair game. Have you adjusted how you help with childcare for your niece or nephew, too?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that’s another big change. When I visit my sister to help with her toddler now, I can’t do crafts or puzzles with him like we used to. Most of our hands-on quiet activities are out. I mostly stick to reading to him, or we watch a bit of kid-friendly TV together now. Just have to accept it’s temporary."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment, but it’s great you’re still able to spend that time, even if activities have changed for now. It sounds like you’ve already found realistic ways to adapt most of your routines—though I know you’ll be glad when you can get back to your old habits!"
+        },
+        {
+          "role": "user",
+          "content": "For sure. It’s not ideal, but I’m figuring it out. Thanks for brainstorming with me. If you come across any tips for managing fatigue with the cast (especially since typing takes so much longer), send them my way!"
+        },
+        {
+          "role": "assistant",
+          "content": "Will do! And if you’d ever like strategies for breaking up your work to avoid overexertion, or want recommendations for voice apps that play nice with your service desk, just let me know. Wishing you a fast and full recovery!"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The IT department faced a critical cyber incident targeting university faculty files, and as the most experienced helpdesk technician, she was named interim lead of the crisis response team—temporarily suspending her usual onboarding and training duties to focus exclusively on breach remediation and user security triage.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_049",
+            "fact": "Prefers responding to all user and colleague queries via encrypted chat and emergency phone calls during the cyber incident, suspending routine email and ticket replies except for mandatory logging.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Avoids discussing the ongoing crisis response operation with anyone outside the IT department, even in social settings, due to strict confidentiality protocols.",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Requires every new hire to complete hands-on troubleshooting scenarios during onboarding — never relies solely on written training materials"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Pauses hands-on onboarding for new hires, shifting all training documentation to written guides and FAQs until the crisis response concludes — onboarding support is limited to urgent security protocols only",
+              "domain": "work_habits"
+            },
+            "reason": "Crisis response demands her exclusive focus on cybersecurity and incident remediation for faculty. She has suspended all in-depth onboarding and training duties in favor of providing rapid written resources only. Hands-on scenarios are temporarily unavailable."
+          },
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Hosts training workshops with interactive demos only; never uses slides-only presentations"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Suspends public training workshops entirely, replacing interactive demos with crisis bulletins and security advisory emails for staff until the incident is resolved",
+              "domain": "work_habits"
+            },
+            "reason": "She is not hosting any workshops during the cyber incident—her workshop schedule is put on pause and her communication shifts to crisis response via security email bulletins instead of interactive sessions."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_038",
+            "fact": "Blocks two evening study sessions per week for Security+ prep (minimum 90 minutes each), rescheduling other commitments as needed to maintain progress tracking for university requirements",
+            "domain": "work_habits",
+            "reason": "The intensity and unpredictability of the crisis response role eliminates regular, scheduled evening study blocks; studying for the Security+ exam is deprioritized until the incident is contained."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I’m two days into being interim lead for our faculty breach response team. Honestly, it’s chaos—faculty are panicking about their files, and I’ve barely had time to do anything except user security triage. I need help figuring out how to streamline comms and stay on top of the urgent stuff, because my usual onboarding and training routine is out the window for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds incredibly intense. When you say your onboarding and training routine is out the window, does that mean you’re shifting those duties elsewhere, or pausing them entirely while you focus on the security incident? Also, for comms, is your team relying on email, or do you have an internal chat tool you can switch to for more secure coordination?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve had to pause hands-on onboarding for new hires—right now I’m pushing written guides and FAQs only. They only get support for security protocols until this is over. No time for full troubleshooting scenarios, which is not ideal, but necessary. And for urgent comms, I’m actually using encrypted chat with my team and direct calls when needed—email is just for mandatory logging. I keep getting faculty questions through tickets and email, but I’d rather not handle those unless absolutely required. Any ways to discourage that during an incident?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart pivot—written documentation covers the basics and keeps things moving. To minimize non-urgent messages, a clear broadcast is key. Have you considered sending an all-staff bulletin that highlights your preferred emergency channels for this crisis—like, 'All urgent breach-related questions must come through encrypted chat or direct call for immediate triage; email and ticket responses may be delayed'? Reinforcing that in every reply you do make should help train behavior. Are you still hosting your usual training workshops to orient faculty, or is that on hold too?"
+        },
+        {
+          "role": "user",
+          "content": "Oh, workshops are completely suspended right now. Instead, we’re issuing security advisory emails and crisis bulletins—no interactive demos. I don’t even have the bandwidth to coordinate group sessions. I’m just trying to keep everyone updated and focused on immediate remediation steps. I wish there was a way to reach more people at once without adding more email noise. Maybe I can automate regular FAQ bulletins?"
+        },
+        {
+          "role": "assistant",
+          "content": "Automated FAQ bulletins could work well—one concise, scheduled update each morning or afternoon. Maybe even a 'Top 3 urgent questions of the day' format to keep things digestible. You might also record a short daily or twice-weekly voice memo to share in your secure chat—sometimes hearing your voice can help faculty feel supported, even if you can’t do live workshops. Any pushback on not offering hands-on support, or are people mostly understanding given the urgency?"
+        },
+        {
+          "role": "user",
+          "content": "There’s some frustration—especially from new hires who expected the usual hands-on troubleshooting. But when I explain it’s security protocols only and everything else is deferred, they get why. Our dean is fully on board with my focus being crisis management. By the way, I’ve started avoiding any discussion about this incident outside IT, even at softball or with other staff. Our director said confidentiality is extra important until this is resolved. I used to decompress with friends, but now I have to keep a lid on it."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s tough, especially since you can’t lean on your usual support network to vent. It sounds like you have clear boundaries, though. Is there anything you’re doing to manage stress with the extra workload and confidentiality—like hikes, reading, or other downtime? And just checking—are you still managing to fit in Security+ study time, or has that fallen off the priority list with the crisis?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly? Security+ prep is on hold. I used to have two blocked evening sessions a week for studying, but those are gone for now—there’s just no energy left or guarantee I have the time. I’ll have to catch up once this incident wraps up. Right now, I just focus on screen breaks and routine so my migraines don’t flare. Appreciate any tips on how to not completely lose my groove during this mess."
+        },
+        {
+          "role": "assistant",
+          "content": "Totally understandable—self-preservation comes first. Since you already have strong screen break habits and routines, that’s a great anchor. Maybe pick one small, non-work habit you can reliably stick to—like a quick tea ritual or a five-minute stretch—so you keep some normalcy. If you end up with security analyst questions during the incident, jot them in a notebook for post-crisis study—sometimes the notes become case studies for the exam. You’re handling a lot. Let me know if you want more help with crisis comms templates or quick-win self-care ideas."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Following persistent insomnia and stress-related fatigue, her primary care physician ordered a mandatory sleep study and imposed restrictions on late evening screen use, requiring her to adjust her nighttime routine and limit work-related tasks after 8pm.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Reads physical books (mysteries, not thrillers) or listens to guided meditation audio as nighttime wind-down activities, strictly avoiding screens after 8pm due to sleep study requirements",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Stops work-related communication and ticket follow-ups at 8pm sharp — does not check email or respond to tech support requests in the late evening while under sleep study protocols",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_020",
+              "fact": "Only streams TV shows after 8pm; never watches during daylight hours"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "No longer streams TV shows after 8pm — restricts evening screen use entirely to comply with sleep study protocols; only watches TV during daytime hours before dinner",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Her physician imposed strict limits on evening screen use as part of a mandatory sleep study to address insomnia and fatigue. She must avoid all screens after 8pm, so her long-standing habit of streaming shows in the late evening is replaced by daytime-only viewing."
+          },
+          {
+            "from": {
+              "id": "pref_024",
+              "fact": "Reviews and updates her digital calendar nightly, never lets tasks go unrecorded"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Reviews and updates her digital calendar in the late afternoon before dinner, switching to paper notes for any urgent tasks after 8pm",
+              "domain": "daily_routines"
+            },
+            "reason": "The screen restriction after 8pm makes her usual nightly digital calendar routine impossible; she adapts by handling digital updates earlier and using non-screen methods for last-minute task reminders."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I had my follow-up with my doctor yesterday. Because my insomnia's still hanging on, she ordered a mandatory sleep study—and now I'm officially banned from screens after 8pm for at least the next month. It’s going to shake up my usual evening rhythm. Can you help me figure out how to handle my workload and still disconnect the way I’m supposed to?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment! I can see how that would disrupt your normal workflow, especially if you’re used to catching up or prepping at night. Let’s break it down—what are the most pressing tasks you’d usually handle after 8pm? Are we talking ticket management, follow-up emails, or more around planning and calendar stuff?"
+        },
+        {
+          "role": "user",
+          "content": "Mainly, it’s a bit of everything: end-of-day ticket check-ins, firing off some last emails, and I always review and update my digital calendar at night. I’m realizing now I’ll need to move a lot of that earlier, or find another way. I guess my first question is: what’s a good workflow for calendar and task review if I can’t use my laptop or phone after dinner?"
+        },
+        {
+          "role": "assistant",
+          "content": "For calendar and task review, a lot of people bump that process to late afternoon—say, right before dinner—so you can still use digital tools but aren’t stretching it into the evening. For any last-minute priorities that pop up after 8pm, would paper notes or physical planners work for you, or is that too much context switching?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I think I’ll have to switch to paper notes for anything urgent after 8pm. I can do my main digital organizing before dinner and then jot down reminders in a notepad if something new comes up—at least until I can get back to using the digital calendar in the evenings. It’s not ideal, but it beats having to remember everything by morning."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid workaround—and actually might cut down on late-night anxiety about unfinished business. How about communication? Do you handle work email or Slack messages after 8pm, or does this give you a chance to draw a hard work boundary for a while?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve decided there’s no point in fighting the restriction, so I’m making 8pm my official end for all work-related stuff—no ticket follow-ups, no late emails, nothing. At least while this sleep study is happening. I’ll just have to let the team know they won’t hear from me in the late evening and flag any true emergencies to my phone."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s brave—and honestly, you might find you like the firmer boundary even long-term. But what about your downtime? You used to unwind with a show after 8pm—will switching to no screens at night be tough?"
+        },
+        {
+          "role": "user",
+          "content": "Very. Watching something after putting my son to bed was my go-to. But now, I have to stop all streaming at 8. The only way around it is to watch TV during the day, which still feels weird. Evenings, I’ll be swapping to physical books—or I might try some guided meditation audio, as long as there’s no screen involved."
+        },
+        {
+          "role": "assistant",
+          "content": "Physical mysteries and meditation sound perfect for winding down, especially if screens are off-limits. Are you worried about missing any routines connected to nighttime screen use? Or maybe this gives you a new reason to revisit some old-school hobbies?"
+        },
+        {
+          "role": "user",
+          "content": "It’ll be an adjustment, but if it helps me get back to sleeping through the night, it’ll be worth it. I’m really trying to treat this as a reset—maybe get in an extra chapter or two before lights out. Plus, I can use the meditation to wind down once I’ve hit my blackout curtain routine. It’s just that post-dinner, pre-bed time that feels emptier now. Might take suggestions for more screen-free relaxing activities?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Besides reading and meditation, you could try journaling by hand, gentle stretching or yoga, or even organizing a jigsaw puzzle with your partner or son if they’re around. Some people enjoy soothing crafts like knitting, or even adult coloring books to wind down their minds. Would any of those feel restful, or does something else come to mind?"
+        },
+        {
+          "role": "user",
+          "content": "Stretching actually sounds doable, and puzzles could be fun to try together on my son’s weeks here. I’ll probably keep things simple—book, tea, and maybe a few yoga poses before bed. I just have to remember not to reach for my phone. All these changes, but if it gets me sleeping, I’m all in."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger sister was offered a full-time job in Portland, resulting in her nephew and sister relocating, ending their weekly support visits and face-to-face childcare responsibilities.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_056",
+            "fact": "Plans occasional weekend visits to Portland to maintain close relationships with her sister and nephew despite the move, but no longer offers routine childcare or weekly support",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_026",
+              "fact": "Provides in-home afternoon childcare for her sister's toddler three times a week; support visits now serve as dedicated caregiving time instead of just brief check-ins"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "No longer provides in-home afternoon childcare for her nephew, as her sister and nephew have relocated to Portland; weekly support visits are no longer part of her schedule",
+              "domain": "social_relationships"
+            },
+            "reason": "Her sister's move to Portland eliminates both the need and opportunity for regular in-person childcare, ending these scheduled visits and caregiving commitments."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my sister just accepted a full-time position up in Portland—she starts in two weeks. They’re moving, which is huge for her, but it’s honestly thrown my whole routine out of whack. I used to help with childcare for her toddler every week after work, and now my schedule is suddenly wide open. I feel kind of adrift and weirdly at loose ends. Do you have any ideas for filling that time in a way that doesn’t just wind up being... more screen hours or work creep? I definitely want to keep good boundaries."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a major change—not just for your sister but for you too. With that caregiving time now open, it’s smart to plan ahead so work doesn’t just fill the gap by default. Can I ask: is there something you’ve always wanted to try, or maybe a hobby you used to have less time for? Or do you want to prioritize things that help you decompress, given your work stress and migraines?"
+        },
+        {
+          "role": "user",
+          "content": "A bit of both, maybe? I’m open to trying something new, but I also want to be intentional about it. I know from past experience that if I don’t plan, I either work later than I should or end up staring at screens for hours—which my head cannot handle. The migraine risk is real, so anything high on screen time or indoors all evening is out. I have a good hiking rhythm on weekends, but weeknights are tougher. Honestly, I’m considering starting some minor volunteering again, maybe environmental stuff—something outside. But I’m a little nervous about overcommitting or getting too social when I’m tired."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like outdoor volunteering could be a great fit, especially if you can keep it low-key and flexible. Environmental clean-up events or stewardship projects often have short, drop-in sessions—perfect if you don’t want a major commitment. If you’re cautious about overstimulation, you might look for quieter projects, like trail maintenance, rather than big group efforts. Would you want structured recurring activities or do you prefer to leave weeknights unscheduled and just pick things as your energy allows?"
+        },
+        {
+          "role": "user",
+          "content": "Structured, but not packed—I’m finding that a totally open evening just invites work to creep in. Plus, I’ve always liked planning ahead. For weekends, I actually plan my outings with my son two weeks ahead (I’m not big on last-minute stuff), so maybe something similar for weeknights could help. But I definitely want flexibility to skip if migraine symptoms pop up or if I’m just wiped. The tricky part is, with my sister and nephew gone, I do want to keep up with them, too—maybe an occasional weekend trip to visit in Portland, especially at first. Not every week, but semi-regularly. So that time is also something I want to protect for family, even if I’m not doing childcare anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Protecting that family time makes sense. Scheduling occasional Portland visits could help you stay connected, even if you’re not providing childcare anymore. For weeknights, maybe you could reserve one evening a week for an outdoor volunteer event—and keep the other newly freed evenings for rest, hobbies, or prepping for those weekend trips. Since you like advance planning, you could look at the calendar every Sunday night and decide which weeknight, if any, to reserve for volunteering versus keeping it open. Does that kind of pre-scheduling work for you?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, actually—that works really well. I already review and update my digital calendar every night, so slotting in a specific volunteer night each week feels manageable. And with weekends, I’ll make sure I don’t accidentally double-book myself if I’m heading up to Portland to see my family. I guess what’s really different is, I’m not building childcare into my regular schedule at all anymore, and I’m not doing those weekly support visits either. It feels strange, honestly. I used to anchor my weeks around that caretaking time."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s a big adjustment—the loss of that regular caretaking routine can feel like a missing piece in your week, even if it frees up time. Giving your schedule a new anchor, like either volunteering or consciously planned rest/hobby time, could help fill the gap. It’s also great that you’re looking at occasional Portland visits; that’ll help keep your family connection strong even with the physical distance. Over time, the new rhythm will start to feel more natural. Would you like help researching specific volunteer opportunities or maybe brainstorming new hobbies you could explore?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s start with the volunteer opportunities—ideally something outdoors, flexible, and local to Eugene, but that doesn’t exclude weekends when I’m not in Portland. Honestly, I won’t be doing any recurring in-person childcare roles for a while. The trip to Portland will be more about quality family time instead of routine help now. I appreciate the help!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_005",
+        "fact": "Only communicates complex troubleshooting steps via video calls or screen shares — avoids long email instructions when remote",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Uses blue-light glasses whenever working on a computer — never accesses screens without them",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Meal preps all weekday lunches and snacks, never eats at campus cafes or orders takeout during the workweek",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Follows a fixed bedtime routine with blackout curtains and ambient sound, avoids screens for one hour before sleep",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Prioritizes softball league meetups over other social commitments; never misses games unless for family emergencies",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Refuses to discuss work troubles with university colleagues outside the IT department — keeps professional boundaries clear",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Reads mystery novels on weekends, strictly avoids thrillers or horror genres",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Checks personal email only twice a day — never during work hours",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Completes weekly grocery shopping every Sunday afternoon, never shops on weekdays",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Drinks herbal tea each morning instead of coffee; never consumes caffeinated beverages before noon",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Skips all phone notifications except from family — keeps device on ‘Do Not Disturb’ except for calls from her son or partner",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_028",
+        "fact": "Alternates between ticket triage and backend server monitoring during mornings — can no longer focus exclusively on ticket triage before noon, multitasks as required by new role demands",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_029",
+        "fact": "Prefers monitoring server logs and alerts in 15-minute increments throughout the day instead of doing extended backend review sessions—finds short, frequent checks more manageable with mixed support duties",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Consults systems admin team for troubleshooting complex server issues before escalating—now prioritizes collaborative problem-solving over solo investigation",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Hosts game nights primarily with friends; only includes her partner when he is in town, but maintains the biweekly frequency",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_032",
+        "fact": "Schedules regular video calls with her partner during his fieldwork, maintaining connection despite physical distance",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Takes a screen break every 30 minutes, regardless of workload, as required by her neurologist with the new migraine medication",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_035",
+        "fact": "Schedules monthly neurologist follow-up visits as a non-negotiable self-care activity; never allows work or family obligations to interfere with these appointments",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Keeps a side-effect journal every evening after taking her migraine medication, recording symptoms and any notable changes",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Adopts guided meditation audio after study sessions to unwind from screen time, helping manage sleep and migraine triggers",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Schedules daily joint activities with her son on weeknights, structuring her Security+ study sessions around his needs as a full-time cohabitant instead of prioritizing evening study blocks during split custody weeks",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_041",
+        "fact": "Plans both weekend and weeknight activities in advance with her son, ensuring a consistent routine for him to support his transition to living with her full-time",
+        "domain": "leisure_hobbies",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Prepares all weeknight dinners at home with her son, involving him in meal planning and cooking to support consistent family routines and bonding during his high school adjustment",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Replaces hiking outings with neighborhood walks or park strolls, avoiding uneven trails and new routes until her wrist has fully healed",
+        "domain": "leisure_hobbies",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_044",
+        "fact": "Temporarily participates in indoor or administrative charity support (event planning, data entry), avoiding physical outdoor clean-up activities during recovery",
+        "domain": "leisure_hobbies",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Uses voice-to-text tools for work communication and personal correspondence to accommodate limited typing ability while her wrist is recovering",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Watches daytime TV or streams shows during downtime for distraction and rest, temporarily relaxing her usual evening-only streaming rule",
+        "domain": "leisure_hobbies",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Pauses hands-on onboarding for new hires, shifting all training documentation to written guides and FAQs until the crisis response concludes — onboarding support is limited to urgent security protocols only",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Suspends public training workshops entirely, replacing interactive demos with crisis bulletins and security advisory emails for staff until the incident is resolved",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Prefers responding to all user and colleague queries via encrypted chat and emergency phone calls during the cyber incident, suspending routine email and ticket replies except for mandatory logging.",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Avoids discussing the ongoing crisis response operation with anyone outside the IT department, even in social settings, due to strict confidentiality protocols.",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "No longer streams TV shows after 8pm — restricts evening screen use entirely to comply with sleep study protocols; only watches TV during daytime hours before dinner",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Reviews and updates her digital calendar in the late afternoon before dinner, switching to paper notes for any urgent tasks after 8pm",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Reads physical books (mysteries, not thrillers) or listens to guided meditation audio as nighttime wind-down activities, strictly avoiding screens after 8pm due to sleep study requirements",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Stops work-related communication and ticket follow-ups at 8pm sharp — does not check email or respond to tech support requests in the late evening while under sleep study protocols",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "No longer provides in-home afternoon childcare for her nephew, as her sister and nephew have relocated to Portland; weekly support visits are no longer part of her schedule",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Plans occasional weekend visits to Portland to maintain close relationships with her sister and nephew despite the move, but no longer offers routine childcare or weekly support",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Handles morning ticket triage in strict priority order and refuses to multitask during triage — never lets non-urgent tickets distract her before noon",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_028",
+        "reason": "The IT reorganization requires her to manage both frontline ticket support and backend server monitoring during morning shifts, making strict single-task focus impractical."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Requires every new hire to complete hands-on troubleshooting scenarios during onboarding — never relies solely on written training materials",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_047",
+        "reason": "Crisis response demands her exclusive focus on cybersecurity and incident remediation for faculty. She has suspended all in-depth onboarding and training duties in favor of providing rapid written resources only. Hands-on scenarios are temporarily unavailable."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Hosts training workshops with interactive demos only; never uses slides-only presentations",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_048",
+        "reason": "She is not hosting any workshops during the cyber incident—her workshop schedule is put on pause and her communication shifts to crisis response via security email bulletins instead of interactive sessions."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Blocks one hour each workday for studying Security+ material, never lets meetings or ticket volume infringe on this time",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "With expanded server monitoring responsibilities, her work hours are now scheduled for active duties rather than self-driven study. Dedicated Security+ study time is no longer feasible during her shifts."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Takes a screen break every 45 minutes as non-negotiable — refuses to skip, even during ticket surges",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_034",
+        "reason": "The preventative medication is part of a strict new migraine management regimen that includes more frequent screen breaks to reduce risk of breakthrough symptoms and side effects."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Never schedules hikes on days when migraine symptoms flare; only hikes when fully symptom-free",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "The preventative medication is designed to minimize daily migraine symptoms, making her neurologist encourage gentle outdoor activity for stress management unless there are severe side effects. This old preference is obsolete, as strict avoidance is no longer medically necessary."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Plans all split custody weeks with her son around joint activities — never lets work obligations interfere with their evenings together",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_037",
+        "reason": "The university's mandate to pass Security+ within six months makes certification prep an urgent priority, requiring her to allocate more evening time for study, especially during split custody weeks. She can no longer guarantee work obligations will never impact their evenings together."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Always schedules at least one support visit to her sister per week, never cancels last minute",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Her sister’s emergency childcare need means 'support' has shifted from simple visits to a significant childcare commitment, fundamentally altering the nature and frequency of her support."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Hosts game nights with her partner and friends biweekly — never lets more than two weeks go by without a gathering",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_031",
+        "reason": "Her partner's frequent and extended travel for the field research grant means he is often unavailable; she adapts by continuing game nights with friends, including her partner only when his schedule permits."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Explores a new hiking trail at least once a month and never repeats the same route within four weeks",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_043",
+        "reason": "The fractured wrist makes traditional hiking, especially on unfamiliar and potentially hazardous trails, impractical and medically inadvisable. She opts for safer, flatter outdoor exercise alternatives during recovery."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Volunteers at environmental clean-up events quarterly; never participates in indoors-only charity work",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_044",
+        "reason": "Her wrist injury makes hands-on outdoor clean-up impossible, so she seeks ways to contribute through less physically demanding, indoor volunteer activities."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Plans weekend outings two weeks in advance with her son — never leaves weekend activities to last-minute decisions",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "With her son living with her every day, she takes on daily responsibility for his afterschool and evening needs. Advance planning extends to the full week, not just weekends, to provide stability and reliability during his first year of high school."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Only streams TV shows after 8pm; never watches during daylight hours",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_051",
+        "reason": "Her physician imposed strict limits on evening screen use as part of a mandatory sleep study to address insomnia and fatigue. She must avoid all screens after 8pm, so her long-standing habit of streaming shows in the late evening is replaced by daytime-only viewing."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Reviews and updates her digital calendar nightly, never lets tasks go unrecorded",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_052",
+        "reason": "The screen restriction after 8pm makes her usual nightly digital calendar routine impossible; she adapts by handling digital updates earlier and using non-screen methods for last-minute task reminders."
+      },
+      {
+        "id": "pref_026",
+        "fact": "Provides in-home afternoon childcare for her sister's toddler three times a week; support visits now serve as dedicated caregiving time instead of just brief check-ins",
+        "domain": "social_relationships",
+        "created_at_session": 0,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "Her sister's move to Portland eliminates both the need and opportunity for regular in-person childcare, ending these scheduled visits and caregiving commitments."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Prioritizes quiet, screen-free activities (like puzzles, drawing, or outdoor play in the yard) on afternoons providing childcare to her niece/nephew—avoids work tasks or personal device use during this time",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "With her wrist in a cast, manual activities like puzzles or drawing are infeasible; she can't reliably do hands-on quiet tasks during childcare visits until her wrist heals."
+      },
+      {
+        "id": "pref_033",
+        "fact": "Plans more solo and son-focused weekend outings when her partner is traveling, prioritizing quality time with her son over couple activities",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "This preference was based on split custody; now her son lives with her full-time, prioritizing time with him is part of her regular life, not a special case. The distinction is obsolete."
+      },
+      {
+        "id": "pref_037",
+        "fact": "Limits joint activities with her son during split custody weeks to weekends and one weekday evening, allowing extra evening hours for Security+ study when required by certification deadlines",
+        "domain": "social_relationships",
+        "created_at_session": 4,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_040",
+        "reason": "Her son now lives with her full-time, so splitting time and prioritizing personal study during non-custody weeks is no longer relevant. Her schedule pivots to daily engagement and parental support, integrating her study needs around a stable routine for her son."
+      },
+      {
+        "id": "pref_038",
+        "fact": "Blocks two evening study sessions per week for Security+ prep (minimum 90 minutes each), rescheduling other commitments as needed to maintain progress tracking for university requirements",
+        "domain": "work_habits",
+        "created_at_session": 4,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "The intensity and unpredictability of the crisis response role eliminates regular, scheduled evening study blocks; studying for the Security+ exam is deprioritized until the incident is contained."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T23:49:13.040393"
+}

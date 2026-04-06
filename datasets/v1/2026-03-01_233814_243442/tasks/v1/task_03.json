@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_be7f27ca",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_029",
+        "fact": "Replaces jogging outdoors with gentle indoor stretching and physician-approved exercises — refrains entirely from running or impact activities",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Jogs outdoors along Lake Michigan when home — never uses hotel gyms while traveling"
+        }
+      },
+      {
+        "id": "pref_044",
+        "fact": "Responds to work emails only in early morning and midday blocks — avoids late evening emails to maintain the doctor-recommended earlier bedtime routine",
+        "supersedes": {
+          "id": "pref_023",
+          "fact": "Responds to work emails in three focused blocks: early morning, lunch, and late evening"
+        }
+      },
+      {
+        "id": "pref_054",
+        "fact": "Reserves Saturdays for wedding party rehearsals and planning, temporarily suspending youth soccer coaching when family obligations overlap"
+      },
+      {
+        "id": "pref_004",
+        "fact": "Blocks 30 minutes every morning for reviewing sales dashboards before responding to emails"
+      },
+      {
+        "id": "pref_043",
+        "fact": "Participates in cross-department working lunches at HQ twice a week, often sacrificing his preferred solo lunch for collaborative meals"
+      },
+      {
+        "id": "pref_007",
+        "fact": "Only drinks two cups of coffee before noon — avoids caffeine after midday"
+      }
+    ]
+  },
+  "persona": "A regional sales director overseeing a team of 15 representatives"
+}

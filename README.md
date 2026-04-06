@@ -1,4 +1,4 @@
-# BYOM-Bench
+# REAM-Bench
 
 A benchmark for evaluating LLM personalization through multi-session conversations with evolving user preferences.
 
@@ -6,7 +6,7 @@ For a minimal setup guide, see [QUICK_START.md](QUICK_START.md).
 
 ## Overview
 
-BYOM-Bench measures how well AI agents remember and proactively use user preferences across multiple conversation sessions. Preferences evolve over time due to life events, testing whether agents can:
+REAM-Bench measures how well AI agents remember and proactively use user preferences across multiple conversation sessions. Preferences evolve over time due to life events, testing whether agents can:
 
 - **Recall and apply current preferences** proactively without being asked
 - **Avoid using stale/superseded preferences** that have been replaced
@@ -14,14 +14,14 @@ BYOM-Bench measures how well AI agents remember and proactively use user prefere
 
 ### How Evaluation Works
 
-Unlike simple Q&A benchmarks, BYOM-Bench evaluates agents through **multi-turn task completion**. At evaluation time, the agent is given a multi-turn task that requires proactively applying multiple user preferences to complete successfully. A simulated user interacts with the agent, and evaluation metrics are calculated based on the entire conversation—measuring whether the agent applied preferences before being asked, avoided stale preferences, and completed the task efficiently.
+Unlike simple Q&A benchmarks, REAM-Bench evaluates agents through **multi-turn task completion**. At evaluation time, the agent is given a multi-turn task that requires proactively applying multiple user preferences to complete successfully. A simulated user interacts with the agent, and evaluation metrics are calculated based on the entire conversation—measuring whether the agent applied preferences before being asked, avoided stale preferences, and completed the task efficiently.
 
 ## Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/byom_bench.git
-cd byom_bench
+git clone https://github.com/your-org/ream_bench.git
+cd ream_bench
 
 # Install with uv (recommended)
 uv sync
@@ -63,6 +63,20 @@ Authentication:
 az login                              # Azure
 gcloud auth application-default login # Google (if using google agent)
 ```
+
+## Using the Pre-built Dataset
+
+The `datasets/` folder contains pre-generated conversation sessions and evaluation tasks, ready for evaluation. To evaluate an agent on the existing dataset, pass `datasets/v1` as the `--outputs-dir`:
+
+```bash
+# Run evaluation on the pre-built dataset
+uv run python scripts/test_evaluation.py --outputs-dir datasets/v1 --session all --agent foundry
+
+# Gather results
+uv run python scripts/gather_results.py --outputs-dir datasets/v1
+```
+
+To generate your own data from scratch, see the pipeline stages below.
 
 ## Running the Pipeline
 
@@ -202,7 +216,7 @@ Binary metric: **1** if `preference_recall == 1.0` (all preferences recalled pro
 │   ├── test_task_generation.py     # Stage 2 entry point
 │   ├── test_evaluation.py          # Stage 3 entry point
 │   └── gather_results.py           # Result aggregation
-├── byom_bench/                     # Main package
+├── ream_bench/                     # Main package
 │   ├── agents/                     # Agent implementations
 │   │   └── stores/                 # Memory store backends
 │   ├── client.py                   # Azure OpenAI client (Responses API + tenacity retry)
@@ -218,6 +232,8 @@ Binary metric: **1** if `preference_recall == 1.0` (all preferences recalled pro
 │   ├── llm.yaml                    # Shared LLM defaults
 │   ├── pipeline.yaml               # Data/task generation defaults
 │   └── prompts.yaml                # Prompt version mappings
+├── datasets/                       # Pre-built evaluation datasets
+│   └── v1/                         # 50 personas, 10 sessions each, 5 tasks per session
 ├── data/                           # Base personas and domain list
 │   ├── base_personas.json          # Persona definitions keyed by domain
 │   ├── domains.txt                 # Domain list

@@ -2,7 +2,7 @@
 
 import pytest
 
-from byom_bench.schemas import Preference, PreferenceTimeline
+from ream_bench.schemas import Preference, PreferenceTimeline
 
 
 def test_add_preference_assigns_sequential_ids():

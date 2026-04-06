@@ -1,0 +1,1329 @@
+{
+  "persona": "A senior DevOps engineer managing cloud infrastructure for a healthcare company",
+  "persona_id": "persona_20260301_224006",
+  "expanded_persona": {
+    "base_persona": "A senior DevOps engineer managing cloud infrastructure for a healthcare company",
+    "age": 38,
+    "gender": "male",
+    "location": "Austin, TX",
+    "work_education": [
+      "Serves as lead DevOps engineer at a mid-sized healthcare analytics firm (400 employees)",
+      "Manages a team of 4, overseeing AWS-based HIPAA-compliant infrastructure supporting patient data platforms",
+      "Recently tasked with coordinating rollout of a new automated CI/CD pipeline to reduce deployment times",
+      "Handles frequent on-call rotations; responsible for incident response during major outages",
+      "Mentoring a junior engineer who is struggling to adapt to automation tools"
+    ],
+    "health_wellness": [
+      "Has mild hypertension; monitors blood pressure daily and takes prescribed medication",
+      "Recently started a low-sodium diet at wife's suggestion; cooking more at home",
+      "Works out at a local CrossFit gym 3 mornings a week but occasionally skips due to late-night on-call duties",
+      "Usually sleeps 6 hours/night, but sleep quality suffers during system upgrades or emergencies",
+      "Undergoing therapy for work-related stress after a high-profile outage last quarter"
+    ],
+    "family_relationships": [
+      "Married for nine years; wife is a physical therapist with a variable schedule",
+      "Father of two – a seven-year-old daughter and a four-year-old son; handles school drop-off twice a week",
+      "Lives in a suburban home; parents reside in Dallas and visit every couple months",
+      "Regularly video chats with younger brother in Seattle who recently became a father",
+      "Occasionally assists elderly neighbor with small tech issues and errands"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Blocks off early mornings for high-priority incident triage — never schedules meetings before 10am",
+        "Delegates routine server maintenance to team members — only handles escalations personally",
+        "Prefers asynchronous communication for updates — avoids phone calls unless dealing with outages",
+        "Reviews every CI/CD pull request in detail before approving — never auto-approves based on tests alone",
+        "Schedules weekly check-ins with the junior engineer, always pairing them on hands-on automation tasks rather than giving written assignments"
+      ],
+      "health_body": [
+        "Prepares all weekday dinners at home to maintain low-sodium intake — never eats out Monday through Friday",
+        "Logs blood pressure readings into a tracking app after breakfast every day — refuses paper logs",
+        "Attends CrossFit classes only when his sleep exceeds 6 hours the night before; skips morning workouts after late-night on-call shifts",
+        "Strictly avoids packaged snacks and deli meats due to sodium content — opts for fresh fruit and nuts",
+        "Completes a short mindfulness meditation after stressful work incidents — never skips this routine even for urgent meetings"
+      ],
+      "social_relationships": [
+        "Handles school drop-offs for his kids only on Tuesdays and Thursdays — never swaps days unless there's a family emergency",
+        "Schedules all family video chats with his brother after 8pm CST to accommodate both families' routines",
+        "Plans monthly game nights with his wife — never lets work obligations interfere with these evenings",
+        "Assists his elderly neighbor with tech issues in person — refuses remote troubleshooting for clarity",
+        "Prefers text message check-ins with parents rather than phone calls — only calls during their visits"
+      ],
+      "leisure_hobbies": [
+        "Plays guitar for at least 30 minutes every Saturday morning — never schedules work during this time",
+        "Takes the kids to local parks every Sunday afternoon, regardless of weather — skips only for illness",
+        "Only reads nonfiction books about technology and healthcare — never chooses fiction or fantasy",
+        "Relaxed bike rides through the neighborhood twice a week — never cycles on main roads",
+        "Collects vintage computer hardware but only shops in-person at Austin tech fairs; avoids online auctions"
+      ],
+      "daily_routines": [
+        "Reviews his daily task list in Trello every morning before checking emails — never starts with inbox",
+        "Sets slack status to 'Do Not Disturb' during family dinners — won’t respond to work messages",
+        "Pays bills online every Saturday morning — never misses this routine even during vacations",
+        "Runs dishwashers and laundry only after 9pm to avoid interrupting family time",
+        "Keeps his phone charging overnight in the home office — never brings devices into the bedroom"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Diagnosed with moderate sleep apnea after his wife noticed loud snoring and disrupted breathing; doctor prescribes nightly use of a CPAP machine.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Prioritizes starting bedtime routine by 10:15pm to allow full setup and adjustment to the CPAP mask every night",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Regularly synchronizes CPAP sleep reports with his doctor, reviewing trends at least once per week",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_025",
+              "fact": "Keeps his phone charging overnight in the home office — never brings devices into the bedroom"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Brings his phone into the bedroom at night to monitor CPAP device app and sleep data as required by his doctor",
+              "domain": "daily_routines"
+            },
+            "reason": "With prescribed nightly CPAP treatment, his doctor requests he monitor device performance and sleep metrics through a companion app. He now keeps his phone in the bedroom at night to check CPAP data, contradicting his old no-devices rule."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I got diagnosed with moderate sleep apnea last week. My wife had been worried about my snoring and these weird pauses in my breathing at night—and yeah, turns out she was right. The doctor wants me using a CPAP every night now. I’m realizing this is going to impact my whole evening routine and, honestly, I’m not sure how to fit the extra steps in without wrecking my chance at decent sleep. Do you have suggestions for adjusting my routine, especially with on-call nights and everything?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment—good on you for jumping in early and taking it seriously. For fitting the CPAP into your evenings, it can help to define a specific wind-down window before bed. Are there things in your current routine that you could shift earlier or batch together to free up time? What’s your usual sequence leading up to sleep right now?"
+        },
+        {
+          "role": "user",
+          "content": "I’m typically in the home office prepping my next day’s Trello tasks, then running dishes or laundry around 9, maybe a bit of reading, then I’d just head up and crash. Thing is, I used to keep my phone in the office overnight—no devices in the bedroom rule—but the CPAP app requires me to track metrics, so now I’m charging my phone in the bedroom so I can check on the device or sync with my doctor like he wants. That kinda messes with my old tech boundary."
+        },
+        {
+          "role": "assistant",
+          "content": "Right, I can see how needing your phone to monitor the CPAP data would break that habit. Since your phone has to be bedside now, have you set up Do Not Disturb or filtered notifications for overnights, so work alerts or other distractions won’t interrupt your sleep? Or is there a risk you’ll end up checking Slack or emails since the device is right there?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I definitely set my phone to Do Not Disturb—no way do I want to see work pings at midnight. The main thing is just using the CPAP app, making sure the therapy sessions are logged, and being able to check if anything goes off with the mask. I’ve started syncing the sleep reports with my doctor and reviewing them once a week, so it’s not just the initial setup, it’s ongoing. It honestly feels like a whole new task list."
+        },
+        {
+          "role": "assistant",
+          "content": "Weekly reviews sound thorough—staying on top of the data probably helps catch issues fast. How much extra time does the nightly CPAP setup and data check add? If you don’t already, would setting a firm start for your bedtime routine help, so you’re not rushed or tempted to skip steps on tough nights (like after an on-call shift)?"
+        },
+        {
+          "role": "user",
+          "content": "Exactly. I had to move up my wind-down—now I start the bedtime routine by 10:15pm so there’s enough time to set up the CPAP and get the mask adjusted before lights out. Otherwise, I was either skipping key steps or not sleeping enough. Sometimes on tough on-call nights I just get in bed later, but starting earlier makes it more predictable most nights."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid adjustment—building in a buffer for new routines can really reduce stress. Besides the sleep tracking and earlier routine, have you noticed anything else shifting? For instance, workouts or how you manage incident response when you’re sleep-deprived?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I’ve kept my CrossFit rule: only go if I get over 6 hours of sleep, which is finally more doable with the CPAP. If I have a late-night incident, I skip and focus on recovery. My doctor says the sleep quality should keep improving. The routine is still a work in progress—but the device, the earlier wind-down, and monitoring with my phone in the room are the big changes I’m working around now."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re adapting systematically. Would it help to create a checklist in Trello for your evening wind-down, including the CPAP steps, syncing data, and whatever troubleshooting you do? That way, on high-stress days, you don’t have to think through the sequence each night. And when routines settle in, you can iterate as you get more comfortable."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Started experiencing frequent shoulder pain during CrossFit sessions; MRI reveals a minor rotator cuff tear, leading physician to recommend suspending all overhead lifts and modifying workouts for the next several months.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Uses guided stretching apps approved by his physical therapist for morning mobility routines in place of CrossFit classes",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Logs shoulder pain intensity and mobility progress daily into a dedicated rehab tracking journal",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Attends CrossFit classes only when his sleep exceeds 6 hours the night before; skips morning workouts after late-night on-call shifts"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Suspends CrossFit classes entirely due to physician's recommendation — now attends low-impact mobility or stretching sessions instead when sleep exceeds 6 hours",
+              "domain": "health_body"
+            },
+            "reason": "The rotator cuff tear diagnosis and MRI results led his physician to advise suspending all overhead lifts and modify workouts for several months. CrossFit, being high-impact and overhead-lift intensive, is no longer allowed. He replaces it with low-impact mobility or stretching sessions as permitted."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, I got my MRI results back and it turns out I've got a minor rotator cuff tear in my left shoulder. My doctor says no CrossFit or overhead lifts for at least a few months, which is... a big shift for me. I'm trying to figure out how to stay active (and sane) while sticking to the restrictions. Any ideas on how to modify my workout routine without risking further injury?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm sorry to hear about the shoulder tear—that's tough, especially if CrossFit has been your go-to. Since overhead lifts are off the table, would you be open to adopting some lower-impact routines, like mobility or stretching? A lot of my users have had success with yoga, pilates, or guided physical therapy exercises after injuries. Are you already working with your physical therapist and do they have any recommended movements or apps?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I talked with my wife (who's a PT) and my doctor set me up with some mobility-focused routines. I'm not doing CrossFit at all anymore, actually. Instead, I've been attending low-impact stretching sessions, but only on mornings when I get enough sleep. I still can't really handle anything strenuous, especially after on-call nights."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—sleep is key for recovery. And it sounds like you’re being selective about when you do those stretching sessions. Which stretching routines are you following in the mornings? If you’d like, I can suggest some guided stretching or mobility apps that align with your PT’s advice, or help you set up a schedule to track your progress."
+        },
+        {
+          "role": "user",
+          "content": "Actually, I’m already using a couple of stretching apps, but only the ones my PT has approved. She’s pretty strict about which routines won't aggravate my shoulder, so I just stick to her list. What I’m struggling with is how to keep myself motivated since the routines feel repetitive and I miss the CrossFit community."
+        },
+        {
+          "role": "assistant",
+          "content": "Totally understandable. Losing that motivating environment—and the variety—is hard. Would structured progress tracking help keep you engaged? For example, some folks like to log not just their completed sessions, but specific pain levels, improvements in mobility, or other milestones. Or, if it’s safe, maybe you could join an online support group for people recovering from similar injuries. Do you already track your shoulder recovery progress in any way?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I'm logging my shoulder pain intensity and mobility progress every day in a rehab journal now. It helps, actually—I can see little gains and it's a habit I've stuck with better than I expected. I just wish it felt a little less isolating, you know?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great that you’re tracking your progress—seeing those improvements can be really encouraging over time. For the community aspect, are there virtual versions of your CrossFit group or other fitness communities you could check in with—even just for accountability and support, without participating in the workouts? Or maybe your PT has clients with similar restrictions who connect for group sessions. Would adding a social element help, as long as it fits your recovery plan?"
+        },
+        {
+          "role": "user",
+          "content": "I might ask around about the online check-ins—my gym runs a group chat that I used to mostly mute, but maybe I should join in more now, even if it’s just to cheer people on. For now, though, I think I mostly need ideas to keep these mobility sessions interesting and maybe some resources for learning more about rotator cuff recovery. Any recommendations?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! To keep your mobility routines fresh, you could try alternating different guided sessions each week or even short mindfulness or breathing exercises to pair with stretching. Some rehab-specific apps let you 'level up' or unlock new exercises as you progress (provided your PT agrees they’re safe for you). For learning more about rotator cuff recovery, the American Academy of Orthopaedic Surgeons website has some solid, evidence-based resources. Would you like me to compile a few app suggestions and reading links for you?"
+        },
+        {
+          "role": "user",
+          "content": "That'd be great—just make sure the apps are reputable and focused on low-impact or PT-approved movements. And thanks for being thoughtful about this. It’s a weird adjustment, but I think I’ll get the hang of it."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The healthcare analytics firm was acquired by a larger national company, resulting in a major reorganization; the DevOps team is now required to integrate their AWS infrastructure with newly inherited systems from the acquiring company and adopt new compliance protocols.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Now prefers joint documentation sprints with inherited DevOps team members over solo documentation, to ensure seamless integration of disparate infrastructure practices",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Blocks off early mornings for high-priority incident triage — never schedules meetings before 10am"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Now accepts interdepartmental integration meetings as early as 8:30am to coordinate with new teams in the merged organization — incident triage is shifted to later in the morning as needed",
+              "domain": "work_habits"
+            },
+            "reason": "The acquisition and resulting integration requirements mean that cross-team meetings with the acquiring company's IT staff often need to be scheduled in their available time blocks, sometimes before 10am. Early mornings are no longer reserved exclusively for incident triage."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_004",
+            "fact": "Reviews every CI/CD pull request in detail before approving — never auto-approves based on tests alone",
+            "domain": "work_habits",
+            "reason": "CI/CD pipeline review is now undertaken by a centralized DevOps compliance team due to the new company-wide protocols, making his manual review redundant and outside his new scope of responsibility."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, our company just got bought out by a national healthcare group. Massive reorg—now we have to integrate our AWS setup with their stuff, sort out new compliance protocols, and work with people I barely know. It's only been a week but my routine's already been blown up by these early cross-team meetings. I need help figuring out how I can adapt without burning out, especially since I used to protect my mornings for incident triage."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds intense—the uncertainty and all those new processes can really throw you off. Early meetings with unfamiliar teams on top of retooling infrastructure is a lot to manage. Are you finding it hard to fit in your usual triage work, or is there flexibility to shift other routines around? What parts of your day are getting squeezed the worst?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, so all these integration syncs with the incoming DevOps folks are getting booked for 8:30am or 9 now. Our old incident triage block is just…gone. Triage has been bumped to later in the morning, but that means I’m not getting that focused start to the day I relied on, which is frustrating. I don’t really see a way around it with everybody’s calendars, though."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. With meetings that early, it’s tough to get uninterrupted time for high-focus work. Would having triage after those meetings actually help you now, since integration issues can pop up during the syncs? Or does it feel like you lose momentum for the rest of your day? I can suggest a few approaches for reclaiming focus blocks or integrating new team routines—what’s most important right now, maintaining system reliability, or alignment with the new teams?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, alignment’s priority one right now—or at least that’s what leadership wants. We’ve started running joint documentation sprints with the acquired DevOps folks instead of solo documentation, just to get everyone on the same page and iron out the mismatches in infrastructure practices. It’s more time-consuming up front, but probably saves headaches later. Still, fitting all this in is tough, especially with the compliance changes looming."
+        },
+        {
+          "role": "assistant",
+          "content": "Joint sprints are a good way to break down silos and spot gaps early, though I hear you on the time investment. How are you finding the actual collaboration—are people open, or is everyone kind of guarded about their ways of doing things? With the compliance updates pending, is there a clear owner for documentation standards, or are you collectively inventing those as you go?"
+        },
+        {
+          "role": "user",
+          "content": "There’s a definite mix. Some folks are pretty open, but a handful are pretty set in their ways. No clear owner yet—so everyone’s kind of feeling out what documentation will look like. That reminds me, the way we handled CI/CD pull requests has totally changed, too. I used to review every PR in detail myself, but now approvals are all handled by a centralized compliance team. I don’t touch the pipeline reviews anymore. It’s honestly freeing, but it also makes me worry about missing something critical."
+        },
+        {
+          "role": "assistant",
+          "content": "Relinquishing that review step must be a change, especially since you’ve been hands-on with every pipeline detail. It’s great the centralized team takes ownership, but I can see why you’d be concerned—less visibility on issues that could impact reliability. Would something like periodic check-ins or shadowing a few reviews with the compliance team help you keep a pulse on what’s getting approved and flag any worrying patterns?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that might actually ease my mind a bit. If I could ask to join their review sessions every so often, I’d at least feel plugged in rather than totally in the dark. Plus, with these new team sprints, maybe I could push for more shared ownership around documentation standards, instead of just waiting for someone to appoint a lead."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid plan. Sitting in on reviews, even as an observer, sounds like a low-friction way to stay involved and build trust with the centralized team. And proactively suggesting a standardized doc template for your joint sprints could help nudge the group toward better collaboration and consistency. Is there anything about your old routines you wish you could salvage, or are you open to overhauling your day now?"
+        },
+        {
+          "role": "user",
+          "content": "At this point, I think I have to overhaul my schedule, at least till things settle. I miss having uninterrupted triage first thing, but with integration the bigger priority, I’ll take the early meetings and joint sprints as the new normal—at least it means we’re not all stumbling around separately. The big thing is just making sure all these safeguards aren’t slipping through the cracks during the transition."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s a smart perspective to focus on what you can control while things are shifting. Keeping communication open, stepping in where you can add stability, and shaping the new documentation practices will do a lot to preserve quality. Let me know if you want help planning integration checklists, or setting up feedback loops to quickly spot and address compliance gaps—you don’t have to shoulder this on your own."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The senior DevOps engineer's role was formally expanded to include management of a second team—focused on migrating legacy systems—doubling his direct reports and requiring additional cross-team coordination meetings each week.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_036",
+            "fact": "Participates in mandatory cross-team standup meetings every Monday and Wednesday morning to synchronize migration progress — never skips these regardless of ongoing outages",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Delegates routine server maintenance to team members — only handles escalations personally"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Delegates both routine server maintenance and legacy migration tasks to direct reports, only personally overseeing major cross-team incidents or critical migrations",
+              "domain": "work_habits"
+            },
+            "reason": "His newly expanded role doubles his direct reports and adds responsibility for overseeing legacy migration. He now has to delegate not just maintenance but also migration-related tasks, further reserving hands-on involvement for high-stakes or highly complex cases."
+          },
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Schedules weekly check-ins with the junior engineer, always pairing them on hands-on automation tasks rather than giving written assignments"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Schedules biweekly check-ins with junior engineers across both teams, alternating between hands-on automation tasks and written migration assignments to address broader team needs",
+              "domain": "work_habits"
+            },
+            "reason": "With more direct reports and responsibility for legacy migration, he has to rotate mentoring efforts and now incorporates written assignments relevant to migration projects, not just automation pairing."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Today made things official — I'm not just leading DevOps anymore, I've got the legacy migration team on my plate too. So now I'm managing eight direct reports, split between keeping the ship running and moving all our old systems to AWS. I need help figuring out how to balance hands-on work versus delegation, especially since I can't be everywhere at once. Any strategies for managing double the people and context switching less?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats on the expansion — that's a big jump! Doubling your direct reports will definitely stretch your attention. Given your deep technical background, it can be tough to step back and let others own pieces. In my experience, you need to deliberately structure when you’re hands-on and when you delegate. Do you have clarity right now on what work absolutely needs you, versus what can be handed off to your teams?"
+        },
+        {
+          "role": "user",
+          "content": "That's what I'm trying to figure out. Up until now, I was only personally handling incident escalations and reviewing CI/CD stuff, but everything else I delegated. Now, with the migration team, I'm moving towards also delegating most legacy migration tasks. I really only want to step in for major cross-team incidents or when a critical migration is at risk. But sometimes I worry something will slip if I’m not reviewing everything myself."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a smart adjustment—by reserving your hands-on time for the critical moments, you’re scaling your impact. To help with that underlying worry, your teams need reliable reporting and escalation paths. Are your direct reports all comfortable surfacing blockers, or do you think some might hesitate without your close involvement?"
+        },
+        {
+          "role": "user",
+          "content": "That's hit or miss. The DevOps folks are used to my style, but the migration team is used to a lot more top-down guidance. Also, my approach to mentoring has changed: I used to have a weekly one-on-one with just the junior engineer, pairing up on automation, but now I’m scheduling biweekly check-ins with each of the juniors on both teams. Sometimes it’s a hands-on session, and others I give them written migration tasks to work through. That way I’m covering more ground but with less direct time."
+        },
+        {
+          "role": "assistant",
+          "content": "Switching to biweekly meetings and mixing hands-on work with written assignments should help your juniors become more autonomous, and it lets you scale up your support. How are they responding to the increased variety in assignments so far? Any resistance, or does the migration work seem to motivate them?"
+        },
+        {
+          "role": "user",
+          "content": "Too early to tell — a couple seem energized, the one struggling with automation looks a bit overwhelmed by the migration documentation. I’m hoping alternating between tasks will help, but I’ll have to adjust if it doesn’t. One thing that’s tighter is my meeting load: I now have to participate in mandatory cross-team standups every Monday and Wednesday morning to keep migration progress synced. I don’t ever skip these, even if there’s an outage brewing."
+        },
+        {
+          "role": "assistant",
+          "content": "Those regular standups should help with visibility and alignment, but I can see how they might interrupt your old routine. Are you able to keep your early-morning high-priority triage blocks, or have standups started to encroach on that time? And are you still blocking off meetings before 10am, or has that shifted?"
+        },
+        {
+          "role": "user",
+          "content": "I’m hanging onto the early-morning triage window everywhere I can, but Mondays and Wednesdays are off-limits now—those standups are a must. Otherwise, I still block meetings until after 10 if possible."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re adapting your schedule without letting the most important routines drop. For your direct reports, maybe put a process in place where blockers must be posted by a certain time before those standups, so there’s time to triage before the sync. Would that fit with how your teams work?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, that might help ensure nothing gets lost between teams. I’ll suggest that next meeting. It’s going to take some time for everyone to settle in, but I hope this structure helps me not get stretched too thin."
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely—setting expectations and clear reporting processes should keep you from becoming a bottleneck as your role grows. Let me know if you want templates or sample agendas for the standups, or advice on tracking progress across both teams efficiently."
+        },
+        {
+          "role": "user",
+          "content": "Templates for standup notes would be great, especially anything that calls out blockers and dependencies succinctly. That’ll help with context switching less. And thanks—just talking it through puts me a little more at ease."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome! I’ll send over a couple template options you can adapt, with sections for team updates, blockers, cross-team dependencies, and clear action items. That should help channel information so you spend less time digging for context. Let me know how they work and if you want help customizing for your teams."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His wife's elderly mother suffers a fall in her home and requires temporary live-in assistance for recovery; his mother-in-law moves into their household for the next several months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Prefers family-style dinners with everyone at the table, including his mother-in-law, to encourage conversation and support her recovery",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Prioritizes child drop-offs if his wife needs to accompany her mother during medical appointments or rehabilitation sessions; flexible with schedule through the recovery period",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Plans monthly game nights with his wife — never lets work obligations interfere with these evenings"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Suspends monthly game nights with his wife while mother-in-law is recovering — opts for quieter evenings involving the whole family instead",
+              "domain": "social_relationships"
+            },
+            "reason": "With his mother-in-law temporarily living in their home to recover, his wife is focused on caregiving and supporting her mother's needs. Their usual private game nights are put on hold, and evenings now revolve around caregiving and inclusive family activities."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, could use some help thinking through juggling our new routine. My wife's mom had a nasty fall last week and she's staying with us for a while to recover. It's the right call, but the house dynamics have totally changed overnight. I’m trying to keep my work quality up, support my wife, and make sure the kids aren’t lost in the shuffle. Can you help me troubleshoot some practical changes so nothing falls through the cracks?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, that sounds like a lot to balance — both at home and work. Where are you feeling the biggest pinch right now: scheduling, actual workload, or just finding time for yourself and the family?"
+        },
+        {
+          "role": "user",
+          "content": "Scheduling is definitely the messiest. My wife's taking her mom to a bunch of appointments and PT, which means sometimes I have to jump in on school drop-offs instead of just Tuesdays and Thursdays. The kids are understanding so far but it’s more last-minute than they’re used to. Any suggestions for keeping things predictable for them, or at least making the swaps less chaotic?"
+        },
+        {
+          "role": "assistant",
+          "content": "Adjusting kid routines on the fly can be tricky. Given your usual drop-off routine, would blocking out potential 'backup' mornings on your calendar help you feel more prepared? Maybe sharing a simple visual schedule for the week with the kids could ease their transition, so they know in advance who’s handling what. Do you have flexibility with your work start time if you need to cover more school runs?"
+        },
+        {
+          "role": "user",
+          "content": "Some flexibility, yeah — my team knows mornings are for triage, so as long as nothing’s burning down I can shift meetings. Blocking the option on my calendar is smart, and giving the kids a heads-up helps, but honestly sometimes my wife doesn’t get the appointment schedule until the last minute. I guess I need to stay flexible and just prioritize drop-offs whenever she needs to take her mom — at least until her recovery is smoother."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Sounds like you’re taking on drop-offs whenever your wife’s focused on her mom. Would adding quick morning check-ins as part of your routine with the kids help give them stability — like talking through the day's plan during breakfast, so even if things shift you’re all on the same page?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that could work. Breakfast is usually when I log my BP readings anyway, so we’re all at the table. We might make that the anchor so the kids feel like there’s predictability even if the rest flexes. Honestly, the other thing that shifted is dinnertime. Used to be just us or occasionally a friend, but now every evening’s about including my mother-in-law and supporting her recovery. It’s not the same as before — we’re doing family-style meals, making it a collective reset."
+        },
+        {
+          "role": "assistant",
+          "content": "Including your mother-in-law sounds like a supportive move — and making dinners more inclusive could really strengthen everyone’s connection during this adjustment. Are you finding it hard to coordinate meals for everyone, given dietary needs and schedules? And are you still finding space for downtime with your wife?"
+        },
+        {
+          "role": "user",
+          "content": "Dinner coordination’s definitely more involved — making sure the meals are low-sodium for me, easy to chew for her, and not too bland for the kids is a constant juggling act. But honestly, the real shift is evenings. Before, my wife and I always had a monthly game night, just us, no work allowed. That’s on hold for now. She’s pretty focused on caring for her mom in the evenings, and we’re opting for quieter family time instead, board games with the kids or TV all together. I miss the alone time, but this feels right under the circumstances."
+        },
+        {
+          "role": "assistant",
+          "content": "Pausing your monthly game night makes sense if your wife’s focus is on caregiving — and it’s thoughtful to shift toward activities everyone can enjoy together. When things settle a bit, you might find new pockets of alone time or a way to bring personal routines back. For now, reserving quieter evenings with the family and your mother-in-law sounds supportive for all. Any other routines you’re struggling to hold onto or adapt to this new setup?"
+        },
+        {
+          "role": "user",
+          "content": "No, I think those are the big ones. Just needed to talk through where to bend versus hold the line. Putting dedicated time for the kids in the morning, staying flexible about drop-offs, and making dinner a full-family thing will help stabilize things for a while. And game night can return when things calm down — I’ll survive."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid plan. It’s clear you’re prioritizing what matters most right now — supporting your wife, your kids, and your mother-in-law, while maintaining stability where you can. Let me know if you want any tactical tips, like meal planning for everyone’s needs, or delegation ideas at work if your bandwidth’s getting stretched. Otherwise, sounds like you’re navigating this with a lot of thought and compassion."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His younger brother in Seattle accepts a new job requiring extensive travel, leading to his brother's spouse requesting more frequent video calls so their children can stay connected to family during his absences.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_041",
+            "fact": "Prioritizes facilitating group video calls with his kids and nieces when his brother is traveling, ensuring both families participate together at least once per week",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Schedules all family video chats with his brother after 8pm CST to accommodate both families' routines"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Schedules more frequent video chats with his brother's family, including daytime sessions on weekends to help his nieces stay connected while their father travels",
+              "domain": "social_relationships"
+            },
+            "reason": "His brother's new job involves extensive travel, and the brother's spouse requests more frequent and flexible video chats to maintain the connection for the children during his absences. This directly changes his previous rigid scheduling preference, expanding to additional time slots and frequency."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my brother in Seattle just accepted a new job that’s going to have him flying all over the country some weeks—his wife asked if we could set up more frequent video calls, especially for the kids. I want to help, but I’m not sure how to fit it in. Any advice for making this work without burning out or derailing our family routines?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big transition for both families. Making video calls more regular can be a great anchor for the kids, but I get being protective of your time. What’s your current schedule for family calls—do you have set times, or is it more ad hoc right now? And how flexible do you feel about weekends versus weeknights?"
+        },
+        {
+          "role": "user",
+          "content": "We used to just set one up after 8pm CST, maybe every other Sunday, so the cousins could chat right before bed. But with my brother traveling, his wife really needs more support, so we’re trying to add daytime sessions on weekends too. I’m prioritizing family calls with all the kids—making sure we do at least one as a group every week, even if my brother’s out of town. It means shifting some of my more rigid weekend routines."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a meaningful adjustment—especially including everyone even when your brother’s traveling. Are you running into conflicts with any of your usual weekend routines, like time at the park with your kids or your Saturday morning guitar session?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, a little. Saturday mornings are guitar time for me—that’s non-negotiable, work-wise, but I’m open to moving the group call to late morning or afternoons. Sundays I still take the kids to a park no matter the weather, but I can coordinate with my sister-in-law for a call before or after, as long as it's not too late in the day so it doesn’t mess with dinner or evening wind-down."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve already identified some protected times, which is great. For the group calls, maybe you could set up a recurring calendar invite for a late Saturday morning once your guitar time wraps, or early Sunday before you leave for the park. Would your brother’s wife be able to join reliably at those times with their kids?"
+        },
+        {
+          "role": "user",
+          "content": "I think so—she said mid-morning works best for them, especially on weekends when she’s solo-parenting. We may need to be a little flexible if my brother’s in another time zone, but as long as the cousins stay connected, that’s her main concern. I just want to make sure this doesn’t start cutting into the family routines I use to decompress after tough weeks, especially since work’s still stressful and I need that downtime."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, maintaining your family routines is important for your own wellbeing, especially after those stressful on-call weeks. Since you’re adding this group video call priority, maybe treat it like a recurring family activity rather than an extra task—combine it with something low-key, maybe snacks with your kids right after guitar, or use the video call as a gentle lead-in to your Sunday park outing. Do you want a workflow for scheduling these calls and sending reminders, or would that add more friction than help?"
+        },
+        {
+          "role": "user",
+          "content": "A shared calendar invite would probably help, as long as I get reminders far enough ahead to prep the kids. I don’t want to deal with last-minute coordination. Could you recommend a good way to set up a recurring call with flexible timing for weekends—something that lets my sister-in-law tweak the actual hour if needed but keeps it on our radar?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. I’d suggest using a shared family calendar—Google Calendar works well since you can create a recurring weekend event, invite both households, and attach a video call link (like Google Meet or Zoom). Leave the start time a little open, maybe scheduling it as 'video call between 10-11am,' and let your sister-in-law propose the specific time each week if needed. You and she can sync before the weekend to finalize the hour, but everyone gets a default notification. Would you like a template for the invite or suggestions for prepping the kids, especially if your routine changes week to week?"
+        },
+        {
+          "role": "user",
+          "content": "A template for the invite would be great. For the kids, I usually just give them a heads-up at breakfast, but if you have tips for keeping them engaged—especially my four-year-old, who only lasts about fifteen minutes on calls—that’d help, too."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After a routine checkup, his doctor discovers elevated cholesterol levels and orders a stricter diet plan, including mandatory weekly nutritionist sessions and regular blood tests.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Attends mandatory weekly nutritionist sessions every Thursday afternoon and prepares a printed meal log for review — never misses an appointment or log submission",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Completes fasting blood tests every Monday morning at a designated clinic before starting the workday — never delays or reschedules unless medically excused",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Prepares all weekday dinners at home to maintain low-sodium intake — never eats out Monday through Friday"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Strictly follows doctor-prescribed meal plans for all weekday dinners, including specific cholesterol-lowering recipes and portions — never deviates, even for family requests or special occasions",
+              "domain": "health_body"
+            },
+            "reason": "With the discovery of elevated cholesterol, his doctor orders a more restrictive diet that goes beyond just low-sodium. He must now follow highly specific meal plans provided by the nutritionist, not simply his own home-cooked meals, and cannot make exceptions for typical family requests."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_009",
+            "fact": "Strictly avoids packaged snacks and deli meats due to sodium content — opts for fresh fruit and nuts",
+            "domain": "health_body",
+            "reason": "His dietary restrictions are now broader, encompassing cholesterol levels rather than just sodium. The old preference is now superseded by stricter doctor and nutritionist guidance covering many more foods, so the specific focus on sodium is no longer meaningful."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help reorganizing my week. At my checkup last Friday, my doctor found my cholesterol's way up. Now I'm on this strict new diet, and every Monday I have to do a fasting blood test before work. They also assigned me weekly nutritionist sessions. It's a lot. I'm already juggling work fires, mentoring a new guy, and all the family stuff. Any strategies for actually sticking to this?"
+        },
+        {
+          "role": "assistant",
+          "content": "That does sound like a packed schedule, especially with the new medical stuff layered in. Hitting a fasting blood test before work on Mondays could disrupt your usual routines—how are you managing your morning tasks now? Have you found good windows for prepping or logging meals, given the new nutrition focus?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, Mondays are tough now. I have to be at the clinic super early before my team’s regular incident triage hours. I’ve started reviewing Trello task lists from the waiting room on my phone, but it’s not ideal. Then I go straight into the workday. The meal prep is even trickier—I’m following these doctor-prescribed meal plans for dinner, down to exact portions and recipes. No more improvising in the kitchen, even if my wife or kids ask for something different. That part’s been an adjustment for everyone."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s dedication—sticking strictly to meal plans like that isn’t easy, especially with family requests. Do you have any routines to streamline weekday dinners, like prepping components in advance or batch cooking? Or do the meal plans require everything made fresh each night?"
+        },
+        {
+          "role": "user",
+          "content": "So far, everything has to be made fresh—no shortcuts. The nutritionist wants a detailed meal log, and I have to bring a printed copy to my session every Thursday afternoon. I block that time on my calendar, but it means losing my usual Thursday work focus block. At least I can prep the log after the kids go to bed, but honestly, the paperwork takes longer than I expected."
+        },
+        {
+          "role": "assistant",
+          "content": "Weekly printed meal logs—got it. Having to shift your Thursday focus block is a pain, but at least you’re not left scrambling last minute. Have you set up any digital reminders or workflows to help you prepare and print the log? And for meal tracking, are you using an app or doing it all manually?"
+        },
+        {
+          "role": "user",
+          "content": "Right now, I use an app to log everything, but the nutritionist insists on printed logs for review. I export and print them Wednesday night so nothing slips through on Thursday. Speaking of food, I used to just avoid packaged snacks or deli meats for sodium—now that’s out the window. The nutrition plan covers cholesterol, so a ton of foods I used to rely on, even some nuts, are off-limits. I can’t just stick to my old habits anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s definitely a broader restriction. With the stricter list, are there any particular snacks or ingredients you miss most? If you want, I can help brainstorm some doctor-approved alternatives that won’t break the meal plan."
+        },
+        {
+          "role": "user",
+          "content": "It’s mostly cheese, honestly, and those mixed nut packs I used to grab for meetings. Fruit by itself is getting old, but I have to stick to whatever the plan says—no exceptions. The worst is when there’s a birthday in the office or my daughter asks for pizza and I can’t have a bite. Still, no chance I’d risk going off plan, even for family nights or special occasions—the doctor was really clear."
+        },
+        {
+          "role": "assistant",
+          "content": "Staying strict really shows your commitment, especially with those sorts of temptations around. If you want to make fruit more appealing, maybe we can look up some nutritionist-approved fruit-based snacks or swaps. Also, have you noticed this new routine affecting meal times, energy for workouts, or your sleep schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Meal times are about the same, but the nutrition log and Thursday appointments mean less downtime midweek. Workouts are fine as long as I get enough sleep—still the same CrossFit routine when I can swing it. My sleep’s not great during upgrade weeks, but nothing new there. The hardest adjustment is fitting everything around these new medical requirements—I can’t skip or reschedule the blood tests or nutritionist sessions unless I’m actually sick, so they’re fixed points."
+        },
+        {
+          "role": "assistant",
+          "content": "Those are pretty firm anchors in your week. If you haven’t already, I’d suggest blocking the blood test and nutritionist windows in all your calendars, and maybe letting your team know those are untouchable. For busy weeks, setting up auto-reminders might help, and you could create templated meal logs to save some time. Want help drafting those or integrating them into your workflow?"
+        },
+        {
+          "role": "user",
+          "content": "Templated logs could definitely help. I’m already getting a lot of questions from the junior engineer about availability, so explicit calendar blocks make sense. At this point, I just have to build the rest of my week around those medical appointments and the meal routine. Thanks for helping me think through how all these new pieces fit in."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced a sudden drop in energy and focus during afternoon work hours; subsequent medical evaluation confirms onset of Type 2 diabetes, requiring daily glucose monitoring and adjustments to diet and physical activity routines.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Logs daily blood glucose readings into the same digital health tracking app as his blood pressure, reviewing both metrics together each morning after breakfast",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_047",
+            "fact": "Prepares and packs diabetes-friendly snacks for afternoon work hours, refusing communal office treats and vending machine options regardless of the occasion",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_030",
+              "fact": "Uses guided stretching apps approved by his physical therapist for morning mobility routines in place of CrossFit classes"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Replaces morning stretching app routines with daily physician-approved brisk walks, prioritizing consistent low-impact cardiovascular exercise to support diabetes management over prior mobility focus",
+              "domain": "health_body"
+            },
+            "reason": "The diagnosis of type 2 diabetes shifts exercise focus from rehab-motivated flexibility toward daily low-impact cardiovascular activity as a cornerstone of diabetes management per medical advice. His morning routine now centers on brisk walks instead of stretching-only sessions."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I just found out I have type 2 diabetes. Honestly, it explains the afternoon energy crashes I’ve been having, but it’s a lot to process. I’m trying to wrap my head around how to adjust my workday so I don’t bottom out after lunch or during those long on-call stretches. Where would you start?"
+        },
+        {
+          "role": "assistant",
+          "content": "I’m sorry to hear about the diagnosis—it’s definitely an adjustment, but you’ve managed tough changes before. Are you looking more for help with energy management during the day, or changes to your routines like meals and activity? Sometimes a mix of small tweaks in both areas can make a big difference."
+        },
+        {
+          "role": "user",
+          "content": "Both, really. The afternoons have been rough—my focus crashes just when I need to be on top of things for incident response or code reviews. My doctor told me I need better glucose control and suggested I pay more attention to meals and snacks, so I’m open to any ideas for keeping my blood sugar—and attention—stable after lunch."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. For a lot of people, having healthy snacks on hand can help avoid those crashes—especially in the afternoon when it’s easy to grab something quick from the vending machine. Do you usually bring your own snacks or just go with what’s available in the office?"
+        },
+        {
+          "role": "user",
+          "content": "I was grabbing whatever was around before—nuts, protein bars, sometimes fruit from the office, but also chips if I was in a hurry. Now, I’m sticking to snacks I pack myself—stuff that’s diabetes-friendly with a good protein-fiber balance. I’ve started bringing them in every day and fully ignoring the communal treats, even during birthdays, which is actually tougher than I expected."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid move—controlling what you eat makes it a lot easier to keep your glucose steady. Any favorites for the snacks you’re packing? Or are you still experimenting?"
+        },
+        {
+          "role": "user",
+          "content": "So far, Greek yogurt cups, homemade trail mixes without added salt, and fresh veggies with hummus are working well. I prep them in the evenings and just grab-and-go. It helps, but I also started logging both my glucose and my blood pressure every morning after breakfast in the same app. Reviewing both metrics together is keeping me accountable."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really organized approach. Having all your health data in one spot makes it easier to spot patterns too. Are you finding it helps you catch when you might need to adjust what you’re eating or how active you are?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually. It was my morning numbers that clued me in that something was off, even before the official diagnosis. Now, seeing both together right after breakfast makes me think more carefully about how the rest of the day will go—especially if I know a deployment is coming and I’ll be up late."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really proactive. Let’s talk activity for a second—are you still fitting in CrossFit in the mornings, or has your routine changed since the diagnosis?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually a big change. I’ve put CrossFit on hold for now, plus the guided stretching apps my wife recommended for mobility. My doctor is really emphasizing daily, low-impact cardio, so I’m doing brisk walks every morning instead—rain or shine. The focus is more on consistency and less intensity, just a steady pace for at least 30 minutes. It’s different, but it fits what I need."
+        },
+        {
+          "role": "assistant",
+          "content": "Switching to brisk walks is smart, especially for blood sugar management and long-term consistency. Do you notice any difference in your energy or stress levels, compared to your old routine?"
+        },
+        {
+          "role": "user",
+          "content": "It’s less of an adrenaline rush than CrossFit, but I feel much steadier by midday. And I’m not as wiped out after late-night calls. It’s also simple to track, which helps. I’m sticking to physician-approved plans now rather than just pushing myself because I used to."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re building a routine that supports both your health and the realities of your work schedule. Do you want ideas for more snacks, ways to plan your day around checking glucose, or help with anything else related to balancing this with your workload?"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The company implements a strict return-to-office policy mandating all managers, including him, to work onsite four days a week instead of remotely; his core DevOps and legacy migration teams must also comply.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_049",
+            "fact": "Commutes to the downtown office by car every morning, timing departure to avoid peak traffic; listens to short podcasts during the drive instead of reading news at home",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Brings pre-packed diabetes-friendly snacks and lunch from home to the office each day, refusing cafeteria or vending machine options during work hours",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Prefers asynchronous communication for updates — avoids phone calls unless dealing with outages"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Prefers in-person discussions for project updates and team coordination at the office — avoids email and messaging except for urgent outages or after-hours incidents",
+              "domain": "work_habits"
+            },
+            "reason": "The return-to-office mandate requires him and his team to be onsite four days a week and collaborate face-to-face. With everyone present, asynchronous channels are deprioritized in favor of hallway or meeting room conversations, especially for updates and coordination."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So we just got hit with a strict return-to-office mandate for all managers—four days a week onsite, and my whole DevOps and legacy migration teams have to comply starting this week. I've been WFH since the pandemic started and honestly structured a lot around that flexibility. It's been a rough adjustment. Got any practical advice for keeping routines and still running a productive team now that everyone's stuck in the office most of the week?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, especially after years of remote-first habits. There’s the commute time, office distractions, and a lot less control over your environment. Are you finding it harder to stick to your own health routines, or is it more a team coordination challenge right now? Let’s figure out which part to tackle first."
+        },
+        {
+          "role": "user",
+          "content": "Honestly, both. The commute eats up time I used to use for things like reviewing my Trello board or making a proper breakfast. And team-wise—it’s weird, but I’m not getting as much from Slack and email, since people expect face time now, so my update flow is messed up. What’s the smartest way to switch from async to mostly in-person updates without losing stuff?"
+        },
+        {
+          "role": "assistant",
+          "content": "Switching from async tools to in-person means you’ll need new rhythms. Some teams do daily standups or mid-day huddles to keep everyone on the same page, and follow it up with summary notes. Do you want to build more structure into the day—like scheduled check-ins—or keep it as informal as possible with quick hallway chats and post-it notes?"
+        },
+        {
+          "role": "user",
+          "content": "I've started leaning into the in-person thing—prefer just grabbing folks for direct conversations and I ask my team to do the same for updates, especially for coordination. Email and messages now feel… extra or slow unless there's an outage or after-hours problem. I’m just a little worried we’ll drop things if I stop documenting. How do you make sure nothing falls through the cracks with in-person first, especially for tracking CI/CD rollout tasks?"
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. You could set up a physical task board or a visible whiteboard in a team space—that way, post-in-person chats, you or your team can jot down action items right there. Then maybe scan or snap a photo for digital backup at the end of the day. Would that help, or do you prefer sticking with Trello for central tracking and just updating it after longer in-person sessions?"
+        },
+        {
+          "role": "user",
+          "content": "Trello’s still my anchor for daily task lists—I review it every morning, but now usually after I get to the office instead of home. That’s partly because my mornings are different. With the drive downtown, I time my departure to miss peak traffic and listen to short podcasts in the car, so I’m not reading news or doing work at home before leaving anymore. It’s an adjustment, but at least the podcasts help keep me sane on the road."
+        },
+        {
+          "role": "assistant",
+          "content": "Changing up that routine always takes energy. Have you found any podcasts that really click for you, or are you still figuring out what holds your interest during your commute? Also, how are you handling meals and snacks now that you’re in the office so much—just using the cafeteria, or bringing things from home?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not going anywhere near the cafeteria or vending machines—been packing diabetes-friendly snacks and my own lunch every day. Don’t want to mess up my sodium or blood sugar levels, plus there’s just no good low-sodium options at work. I keep my own stuff in the office fridge, and that’s non-negotiable."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s definitely the smart call, especially with your health priorities. Do you have a routine for prepping your snacks and lunches, or is it more ad hoc? And has being around your team in person changed how you mentor your junior engineer—are you pairing up live more often now?"
+        },
+        {
+          "role": "user",
+          "content": "I batch prep everything Sunday night, portion it out, and keep it consistent. And yeah, the in-person switch actually helps with mentoring; now I just pull my junior aside for hands-on sessions when something comes up. Less back-and-forth in chat, more problem-solving together at the whiteboard or in the lab, which is an upside."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re adapting well and finding some positives in the new setup. If you want, I can help brainstorm ways to keep the team organized so nothing falls off, or tips for anchoring your wellness routines around your new commute and office schedule. Which would you like to dig into next?"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His wife's physical therapy clinic announces a new weekend shift rotation for staff, requiring her to work two Sundays a month, which means he becomes solely responsible for managing the kids, meals, and household chores on those weekends.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Prepares quick kid-friendly lunches and snacks on solo Sundays, prioritizing simple recipes over elaborate meals to balance childcare and chores",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Schedules family movie afternoons at home on Sundays when wife is working, choosing children’s films to maintain relaxed together time",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Plays guitar for at least 30 minutes every Saturday morning — never schedules work during this time"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Plays guitar for at least 20 minutes every Saturday morning, but pauses if his kids need help or breakfast on weekends when wife is at work — no longer keeps this time strictly uninterrupted",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "His wife's new Sunday work shifts mean he must manage all child and household duties alone on those weekends. He may play guitar as a stress-relief hobby, but has to be available for the kids, making uninterrupted sessions impossible on affected weekends."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_017",
+            "fact": "Takes the kids to local parks every Sunday afternoon, regardless of weather — skips only for illness",
+            "domain": "leisure_hobbies",
+            "reason": "With his wife's new weekend shift, he must manage household chores, meal prep, and solo childcare. On working Sundays, park outings are often skipped or substituted for home activities due to logistic constraints and the increased workload. The previous unwavering park routine is no longer feasible."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey—I could use some help reworking my weekends. My wife's clinic just switched their schedule and now she's on rotation every other Sunday, so I'll be solo with the kids, meals, and general chaos those weekends. I can't just copy-paste the old routine—there’s less bandwidth. Any suggestions for keeping both the kids and myself sane (and ideally not eating takeout all day)?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a major change—sounds like you're juggling a lot. For starters: do you have any meal prep routines or quick go-to lunch plans for the kids, or are you starting from scratch? Sometimes prepping a couple things on Saturday can make Sunday smoother, but curious what you've tried so far."
+        },
+        {
+          "role": "user",
+          "content": "I’m rethinking lunches specifically. I used to do more elaborate stuff, but now if my wife’s at work Sunday, I just need simple wins—think grilled cheese, fruit, yogurt, or pita pizzas. I’m stuck on snack solutions though. Any ideas that are fast but not just crackers or deli meat? Gotta keep sodium down too."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—keeping it simple makes sense, especially flying solo. For snacks, low-sodium options like fresh fruit, homemade trail mix (unsalted nuts and some raisins), Greek yogurt, or veggie sticks with hummus could work. Apple slices with nut butter are usually popular too. Would the kids help assemble snacks? Sometimes getting them involved buys you a few extra minutes too."
+        },
+        {
+          "role": "user",
+          "content": "I can probably get the older one to help, but the four-year-old mostly just… eats the ingredients. Still, prepping ahead and letting them 'help' sounds doable. The real challenge is the afternoons. I used to take both kids to the park every Sunday after lunch, rain or shine—that was our rule, but with everything else to manage and the house to keep from descending into chaos, I may have to drop that tradition on solo Sundays. I'm worried about too much screen time if we just stay home. Thoughts?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's an understandable adjustment—solo parenting makes those outings a lot harder. If the park is out of reach some weeks, could you set up a home version of family time instead? Maybe a themed craft or board game session, or even a movie afternoon. It keeps things low-key but still structured so you get some quality time without adding stress."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’m thinking family movie afternoons could fill that gap. Letting the kids help pick (from the universe of G-rated options) and making some air-popped popcorn. That way I can decompress a bit too instead of running around chasing everyone out the door. It’s not the park, but it’s something we’d all enjoy and I can manage—especially after handling lunch, cleanup, and probably a heap of laundry."
+        },
+        {
+          "role": "assistant",
+          "content": "That actually sounds like a great replacement—cozy, simple, and a chance for everyone to recharge. For you, is there anything from your usual weekend routine you’re hoping to keep no matter what? Sometimes holding onto one personal thing helps anchor even a chaotic day."
+        },
+        {
+          "role": "user",
+          "content": "Usually Saturday mornings I’d play guitar for a solid half hour, but now on solo weekends I can squeeze in maybe 20 minutes if the kids are set up with breakfast (and I have to be ready to pause if they need anything). It’s more interrupted, but I still want that time to play, even if it’s broken up. It helps reset my head before the day kicks off."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—it’s valuable to keep at least a slice of your own routine. Even a brief or interrupted session is better than none. One more thing: are the kids old enough to help with any chores or cleanup on those extra-busy Sundays? Folding laundry, setting the table, that sort of thing—not perfect, but it might take a bit off your plate and keep them occupied."
+        },
+        {
+          "role": "user",
+          "content": "They can, with heavy supervision! My daughter’s actually decent at folding towels and setting up snack trays. It’s not efficient, but it’s something. And if it means we can avoid eating packaged stuff or me scrambling every five minutes, I’ll take it. Thanks for the ideas—shifting from ambitious plans to simpler routines is the only way this’ll work on those Sundays."
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely—success on solo-parent weekends is about being realistic, not perfect. Quick meals, collaborative snacks, home-based family time, and relaxed expectations sound like a solid plan. Let me know how it goes or if you need more ideas for low-lift activities and menus. You’ve got this!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_007",
+        "fact": "Logs blood pressure readings into a tracking app after breakfast every day — refuses paper logs",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Completes a short mindfulness meditation after stressful work incidents — never skips this routine even for urgent meetings",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_011",
+        "fact": "Handles school drop-offs for his kids only on Tuesdays and Thursdays — never swaps days unless there's a family emergency",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Assists his elderly neighbor with tech issues in person — refuses remote troubleshooting for clarity",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Prefers text message check-ins with parents rather than phone calls — only calls during their visits",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Only reads nonfiction books about technology and healthcare — never chooses fiction or fantasy",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Relaxed bike rides through the neighborhood twice a week — never cycles on main roads",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Collects vintage computer hardware but only shops in-person at Austin tech fairs; avoids online auctions",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Reviews his daily task list in Trello every morning before checking emails — never starts with inbox",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Sets slack status to 'Do Not Disturb' during family dinners — won’t respond to work messages",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Pays bills online every Saturday morning — never misses this routine even during vacations",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Runs dishwashers and laundry only after 9pm to avoid interrupting family time",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Brings his phone into the bedroom at night to monitor CPAP device app and sleep data as required by his doctor",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Prioritizes starting bedtime routine by 10:15pm to allow full setup and adjustment to the CPAP mask every night",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Regularly synchronizes CPAP sleep reports with his doctor, reviewing trends at least once per week",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Suspends CrossFit classes entirely due to physician's recommendation — now attends low-impact mobility or stretching sessions instead when sleep exceeds 6 hours",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Logs shoulder pain intensity and mobility progress daily into a dedicated rehab tracking journal",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Now accepts interdepartmental integration meetings as early as 8:30am to coordinate with new teams in the merged organization — incident triage is shifted to later in the morning as needed",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Now prefers joint documentation sprints with inherited DevOps team members over solo documentation, to ensure seamless integration of disparate infrastructure practices",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Delegates both routine server maintenance and legacy migration tasks to direct reports, only personally overseeing major cross-team incidents or critical migrations",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_035",
+        "fact": "Schedules biweekly check-ins with junior engineers across both teams, alternating between hands-on automation tasks and written migration assignments to address broader team needs",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Participates in mandatory cross-team standup meetings every Monday and Wednesday morning to synchronize migration progress — never skips these regardless of ongoing outages",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Suspends monthly game nights with his wife while mother-in-law is recovering — opts for quieter evenings involving the whole family instead",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_038",
+        "fact": "Prefers family-style dinners with everyone at the table, including his mother-in-law, to encourage conversation and support her recovery",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Prioritizes child drop-offs if his wife needs to accompany her mother during medical appointments or rehabilitation sessions; flexible with schedule through the recovery period",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Schedules more frequent video chats with his brother's family, including daytime sessions on weekends to help his nieces stay connected while their father travels",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_041",
+        "fact": "Prioritizes facilitating group video calls with his kids and nieces when his brother is traveling, ensuring both families participate together at least once per week",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Strictly follows doctor-prescribed meal plans for all weekday dinners, including specific cholesterol-lowering recipes and portions — never deviates, even for family requests or special occasions",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_043",
+        "fact": "Attends mandatory weekly nutritionist sessions every Thursday afternoon and prepares a printed meal log for review — never misses an appointment or log submission",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_044",
+        "fact": "Completes fasting blood tests every Monday morning at a designated clinic before starting the workday — never delays or reschedules unless medically excused",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Replaces morning stretching app routines with daily physician-approved brisk walks, prioritizing consistent low-impact cardiovascular exercise to support diabetes management over prior mobility focus",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_046",
+        "fact": "Logs daily blood glucose readings into the same digital health tracking app as his blood pressure, reviewing both metrics together each morning after breakfast",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_047",
+        "fact": "Prepares and packs diabetes-friendly snacks for afternoon work hours, refusing communal office treats and vending machine options regardless of the occasion",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Prefers in-person discussions for project updates and team coordination at the office — avoids email and messaging except for urgent outages or after-hours incidents",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_049",
+        "fact": "Commutes to the downtown office by car every morning, timing departure to avoid peak traffic; listens to short podcasts during the drive instead of reading news at home",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_050",
+        "fact": "Brings pre-packed diabetes-friendly snacks and lunch from home to the office each day, refusing cafeteria or vending machine options during work hours",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_051",
+        "fact": "Plays guitar for at least 20 minutes every Saturday morning, but pauses if his kids need help or breakfast on weekends when wife is at work — no longer keeps this time strictly uninterrupted",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_052",
+        "fact": "Prepares quick kid-friendly lunches and snacks on solo Sundays, prioritizing simple recipes over elaborate meals to balance childcare and chores",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_053",
+        "fact": "Schedules family movie afternoons at home on Sundays when wife is working, choosing children’s films to maintain relaxed together time",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Blocks off early mornings for high-priority incident triage — never schedules meetings before 10am",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "The acquisition and resulting integration requirements mean that cross-team meetings with the acquiring company's IT staff often need to be scheduled in their available time blocks, sometimes before 10am. Early mornings are no longer reserved exclusively for incident triage."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Delegates routine server maintenance to team members — only handles escalations personally",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_034",
+        "reason": "His newly expanded role doubles his direct reports and adds responsibility for overseeing legacy migration. He now has to delegate not just maintenance but also migration-related tasks, further reserving hands-on involvement for high-stakes or highly complex cases."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Prefers asynchronous communication for updates — avoids phone calls unless dealing with outages",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_048",
+        "reason": "The return-to-office mandate requires him and his team to be onsite four days a week and collaborate face-to-face. With everyone present, asynchronous channels are deprioritized in favor of hallway or meeting room conversations, especially for updates and coordination."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Reviews every CI/CD pull request in detail before approving — never auto-approves based on tests alone",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "CI/CD pipeline review is now undertaken by a centralized DevOps compliance team due to the new company-wide protocols, making his manual review redundant and outside his new scope of responsibility."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Schedules weekly check-ins with the junior engineer, always pairing them on hands-on automation tasks rather than giving written assignments",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "With more direct reports and responsibility for legacy migration, he has to rotate mentoring efforts and now incorporates written assignments relevant to migration projects, not just automation pairing."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Prepares all weekday dinners at home to maintain low-sodium intake — never eats out Monday through Friday",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_042",
+        "reason": "With the discovery of elevated cholesterol, his doctor orders a more restrictive diet that goes beyond just low-sodium. He must now follow highly specific meal plans provided by the nutritionist, not simply his own home-cooked meals, and cannot make exceptions for typical family requests."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Attends CrossFit classes only when his sleep exceeds 6 hours the night before; skips morning workouts after late-night on-call shifts",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "The rotator cuff tear diagnosis and MRI results led his physician to advise suspending all overhead lifts and modify workouts for several months. CrossFit, being high-impact and overhead-lift intensive, is no longer allowed. He replaces it with low-impact mobility or stretching sessions as permitted."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Strictly avoids packaged snacks and deli meats due to sodium content — opts for fresh fruit and nuts",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "His dietary restrictions are now broader, encompassing cholesterol levels rather than just sodium. The old preference is now superseded by stricter doctor and nutritionist guidance covering many more foods, so the specific focus on sodium is no longer meaningful."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Schedules all family video chats with his brother after 8pm CST to accommodate both families' routines",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_040",
+        "reason": "His brother's new job involves extensive travel, and the brother's spouse requests more frequent and flexible video chats to maintain the connection for the children during his absences. This directly changes his previous rigid scheduling preference, expanding to additional time slots and frequency."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Plans monthly game nights with his wife — never lets work obligations interfere with these evenings",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_037",
+        "reason": "With his mother-in-law temporarily living in their home to recover, his wife is focused on caregiving and supporting her mother's needs. Their usual private game nights are put on hold, and evenings now revolve around caregiving and inclusive family activities."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Plays guitar for at least 30 minutes every Saturday morning — never schedules work during this time",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_051",
+        "reason": "His wife's new Sunday work shifts mean he must manage all child and household duties alone on those weekends. He may play guitar as a stress-relief hobby, but has to be available for the kids, making uninterrupted sessions impossible on affected weekends."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Takes the kids to local parks every Sunday afternoon, regardless of weather — skips only for illness",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "With his wife's new weekend shift, he must manage household chores, meal prep, and solo childcare. On working Sundays, park outings are often skipped or substituted for home activities due to logistic constraints and the increased workload. The previous unwavering park routine is no longer feasible."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Keeps his phone charging overnight in the home office — never brings devices into the bedroom",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "With prescribed nightly CPAP treatment, his doctor requests he monitor device performance and sleep metrics through a companion app. He now keeps his phone in the bedroom at night to check CPAP data, contradicting his old no-devices rule."
+      },
+      {
+        "id": "pref_030",
+        "fact": "Uses guided stretching apps approved by his physical therapist for morning mobility routines in place of CrossFit classes",
+        "domain": "health_body",
+        "created_at_session": 1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_045",
+        "reason": "The diagnosis of type 2 diabetes shifts exercise focus from rehab-motivated flexibility toward daily low-impact cardiovascular activity as a cornerstone of diabetes management per medical advice. His morning routine now centers on brisk walks instead of stretching-only sessions."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:40:06.032665"
+}

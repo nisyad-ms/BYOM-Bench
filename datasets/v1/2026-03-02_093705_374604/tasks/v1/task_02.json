@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_73313095",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_026",
+        "fact": "Takes prescribed daily medication for tension headaches per doctor's orders and only uses pain relief patches for breakthrough pain",
+        "supersedes": {
+          "id": "pref_010",
+          "fact": "Keeps pain relief patches in her desk drawer and applies one for headaches instead of taking medication whenever possible"
+        }
+      },
+      {
+        "id": "pref_027",
+        "fact": "Practices guided meditation nightly without using a screen, switching to audio-only or offline prompts per doctor's recommendation to reduce evening screen time",
+        "supersedes": {
+          "id": "pref_007",
+          "fact": "Practices guided meditation nightly using her favorite app—never skips it, even when tired"
+        }
+      },
+      {
+        "id": "pref_016",
+        "fact": "Books tickets for concerts and live music events at least once a month—never attends sporting events"
+      },
+      {
+        "id": "pref_006",
+        "fact": "Brings dairy-free snacks to the office—never touches anything from the shared fridge unless she checks the label"
+      },
+      {
+        "id": "pref_009",
+        "fact": "Sets a reminder to drink a glass of water before every client call—never relies on coffee alone for hydration"
+      },
+      {
+        "id": "pref_033",
+        "fact": "Completes assigned physical therapy exercises at home each morning before work, following the therapist’s instructions"
+      }
+    ]
+  },
+  "persona": "A 28-year-old account executive at a fast-growing SaaS startup"
+}

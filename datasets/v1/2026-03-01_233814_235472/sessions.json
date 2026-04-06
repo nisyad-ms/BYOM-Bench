@@ -1,0 +1,1381 @@
+{
+  "persona": "A remote customer service representative for a subscription-based software startup",
+  "persona_id": "persona_20260301_234558",
+  "expanded_persona": {
+    "base_persona": "A remote customer service representative for a subscription-based software startup",
+    "age": 32,
+    "gender": "female",
+    "location": "Denver, CO",
+    "work_education": [
+      "Handles customer email and chat support for a SaaS startup specializing in project management tools; works full-time from home",
+      "Recently promoted to team lead, now mentors three newer reps and coordinates daily shift schedules",
+      "Juggles peak support hours between 8am and 4pm, often adjusts schedule to accommodate West Coast customers",
+      "Actively involved in weekly virtual training sessions to address new product feature rollouts and troubleshooting techniques"
+    ],
+    "health_wellness": [
+      "Suffers from occasional migraines, likely triggered by prolonged screen time; manages with medication and scheduled screen breaks",
+      "Participates in weekly virtual yoga classes with friends to counteract sedentary work",
+      "Started meal prepping on Sundays to improve diet after noticing weight gain over the past year",
+      "Has mild insomnia, tries to keep regular bedtime but occasionally disrupted by late customer queries or urgent tickets"
+    ],
+    "family_relationships": [
+      "Lives with her partner and their dog in a rented townhouse; partner works evenings as a bartender",
+      "Recently began caring for her aging mother, who moved to Denver and needs help with transportation to medical appointments",
+      "Occasional tension with her younger brother over sharing caregiving duties for their mother",
+      "Stays connected with her extended family via monthly Zoom calls, since most live out of state"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Schedules all mentoring sessions with junior reps outside of peak customer hours — never during 8am-4pm support shifts",
+        "Keeps Slack status updated to reflect availability; never leaves it ambiguous during overlapping East/West Coast support windows",
+        "Reviews customer feedback logs weekly and shares actionable takeaways in Monday team standups — never waits for management to prompt",
+        "Tracks daily productivity with a personal spreadsheet — never relies solely on company metrics dashboards",
+        "Takes a 10-minute screen break every hour, regardless of workload — refuses to skip breaks even for urgent customer issues"
+      ],
+      "health_body": [
+        "Uses blue-light blocking glasses for all screen work — never works without them due to migraine risk",
+        "Sticks to meal-prepped lunches on weekdays — never grabs fast food during support shifts",
+        "Joins virtual yoga every Wednesday at 6pm without fail — never reschedules for other commitments",
+        "Sets a bedtime alarm every night to manage insomnia — avoids caffeine after 2pm",
+        "Maintains a migraine diary, logging triggers and symptoms — never ignores patterns in headache onset"
+      ],
+      "social_relationships": [
+        "Coordinates rides and appointments for her mother every Sunday for the coming week — never lets last-minute plans disrupt work",
+        "Texts her partner throughout the evening shift to stay connected — never relies only on calls",
+        "Aims for biweekly check-ins with her brother about caregiving — never lets disagreements fester without a conversation",
+        "Organizes the monthly family Zoom calls herself, sending the calendar invites — never delegates to someone else",
+        "Hosts occasional weekend brunch for her mother and brother — never includes extended family to keep gatherings low-key"
+      ],
+      "leisure_hobbies": [
+        "Walks her dog daily in the local park between support shifts — never skips regardless of weather",
+        "Reads mystery novels on her Kindle every Saturday afternoon — never chooses audiobooks",
+        "Enjoys virtual painting classes with friends once a month — never attends in-person art workshops",
+        "Plans short weekend hikes in the Rockies with her partner — never visits crowded tourist spots",
+        "Watches indie comedy specials online after work — avoids reality TV and mainstream blockbusters"
+      ],
+      "daily_routines": [
+        "Reviews her personal to-do list first thing every morning — never opens company email until after breakfast",
+        "Preps coffee the night before so mornings stay smooth — never buys coffee out during weekdays",
+        "Limits social media to 15 minutes before bed — never checks feeds during work hours",
+        "Walks the dog as the last activity before winding down at night — never lets her partner take evening walks alone",
+        "Runs grocery errands only on Fridays after work — never shops on weekends to avoid crowds"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The SaaS startup announced a company-wide transition to a hybrid work model, requiring all team leads to work onsite at the Denver coworking office three days a week starting next month.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Always arrives at the coworking office by 7:30am to reserve a window desk — dislikes sitting at interior shared tables",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Commutes via city bus on in-office days, listens to podcasts rather than music or audiobooks during the ride",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_018",
+              "fact": "Enjoys virtual painting classes with friends once a month — never attends in-person art workshops"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Joined an in-person painting group at the coworking office with colleagues — never participates in virtual art classes anymore",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The hybrid model requires spending three days per week onsite, creating opportunities and invitations for in-person coworker social events. She replaced virtual painting with an in-person group for social connection and peer interaction in the office environment."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My company just announced the new hybrid model—starting next month, all team leads have to work onsite three days a week at the Denver coworking space. I've been fully remote for years, so I'm trying to figure out how to restructure my routines. I want help thinking through the commute, meal planning, and how to keep my migraines under control given more screen time away from home. Thoughts?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, especially after remote routines. For commuting, will you be driving, or do you have another option for getting to the coworking office? On meal planning, sticking to prepping at home is ideal—are you planning to bring your own meals or grab food nearby? For migraines, you might need to adapt your screen break schedule; do you know if you can take regular short breaks in the office?"
+        },
+        {
+          "role": "user",
+          "content": "I don't drive—I’ll be using the city bus for those office days. My plan is to stick with my usual meal-prepped lunches, definitely not grabbing fast food even if coworkers invite me. On the bus, I figured out podcasts are the best for me—music and audiobooks don’t really help, but podcasts keep me engaged without zoning out. As for breaks, I absolutely need to take my 10-minute screen break every hour, even at the office. My migraine triggers don’t care about context!"
+        },
+        {
+          "role": "assistant",
+          "content": "Podcasts during your commute sound like a great way to transition between home and office. Glad you found something that works. If you’re meal-prepping, maybe invest in a good lunch container so it stays fresh, since the commute can add some time. Will you have access to a fridge in the coworking office for your lunches? And on screen breaks, have you scoped out the coworking setup—like, is there a quiet corner or lounge for your hourly breaks?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, the office has decent fridge space for lunches, so that's covered. I did a walkthrough recently and realized the window desks are way better for breaks—they feel less claustrophobic and the natural light helps with migraine prevention. So I make sure to arrive onsite by 7:30am to snag a window desk. I dislike sitting at the interior tables; they're crowded and too dim for my liking."
+        },
+        {
+          "role": "assistant",
+          "content": "Arriving early to reserve a window desk makes a lot of sense, especially for lighting and comfort. That could double as a quiet start to the workday, too. Are you adjusting your morning routine to get out the door earlier, or will that impact things like walking your dog or prepping coffee? Also, have you talked with your junior reps about the new onsite schedule—for mentoring, will you still do those outside peak support hours?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I prep my coffee the night before, so mornings are smooth even with the earlier start. Dog walks stay as bookends to my day—I’ll walk him before heading out and again in the evening. As for mentoring sessions, I still keep those outside peak hours, whether I’m onsite or remote. I’m also making sure my Slack status reflects which days I’ll be in the office versus at home so my team isn’t confused."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart moves! Keeping routines stable helps with big transitions. It sounds like your workflow is pretty dialed in. On the social front, do you anticipate joining any in-person activities at the office, or will you keep up with virtual events like your usual painting class?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention that—I actually joined an in-person painting group at the coworking office with my colleagues. With the hybrid model, there are more coworker social events, and I’ve dropped the virtual art classes altogether. The in-person group is a nice way to build connections now that I’ll actually see people face-to-face. So no more Zoom painting nights for me."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great adjustment—new setting, new community. Building coworker relationships can really help ease the transition to hybrid work. Is there anything else about your daily routine or health that you want to troubleshoot before this change starts?"
+        },
+        {
+          "role": "user",
+          "content": "I think those were the main adjustments. If anything, I'm just conscious about sticking to my screen break schedule, keeping my lunch plans on track, and claiming my window desk early. The bus commute seems manageable with podcasts, and swapping virtual for in-person painting has actually made me look forward to office days. Plus, I’ll keep logging migraine triggers and symptoms as always."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve thought this through and made proactive changes. If you need suggestions for migraine-friendly snacks, tips on managing in-office distractions, or podcast recommendations for your bus ride, just let me know. You’re setting yourself up for a smooth transition—let me know how it goes after your first week!"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her doctor diagnosed her with moderate carpal tunnel syndrome following weeks of increasing wrist pain during support shifts, prescribing daily wrist exercises and limiting continuous typing to blocks of no more than 30 minutes.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Completes prescribed wrist exercises at her desk every morning and afternoon — never skips even on weekends",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Limits customer chat responses to 30-minute intervals, takes a mandated typing break between blocks — refuses requests for extended chat coverage",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_017",
+              "fact": "Reads mystery novels on her Kindle every Saturday afternoon — never chooses audiobooks"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Switched to mystery audiobooks every Saturday afternoon — avoids e-ink reading to reduce wrist strain",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The carpal tunnel diagnosis and doctor's recommendation to minimize typing and repetitive hand movements led her to avoid e-readers, which require holding and swiping. She now prefers audiobooks that require no hand strain."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_004",
+            "fact": "Tracks daily productivity with a personal spreadsheet — never relies solely on company metrics dashboards",
+            "domain": "work_habits",
+            "reason": "Carpal tunnel diagnosis means she must minimize extraneous typing. Maintaining an extra spreadsheet for personal productivity tracking adds repetitive wrist motion, so she no longer uses the personal spreadsheet and instead relies on existing company dashboards."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I wanted to check in about work routines after a curveball — my doctor just diagnosed me with moderate carpal tunnel. I've been having wrist pain for weeks, and now I have to limit typing and stick to wrist exercises daily. Any ideas for managing support shifts and mentoring without falling behind?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm sorry to hear about your diagnosis! That definitely changes how you work, especially with chat support and typing. Have you mapped out how often you can do uninterrupted typing during your shifts, or is it still feeling out of control right now?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I have to cut chat responses into 30-minute blocks max. Then I have to take a mandated typing break — doctor's orders. It's awkward if coverage gets busy, but I'm not budging on that rule for anyone. It means I can't take extended chat stretches even if someone asks."
+        },
+        {
+          "role": "assistant",
+          "content": "That's smart to set a firm boundary. Are you finding it tricky to keep up with urgent tickets or requests? Would it help to automate some responses, or do you already have templates that minimize typing?"
+        },
+        {
+          "role": "user",
+          "content": "Templates help, but there's still a lot of manual back-and-forth, especially with new reps needing coaching. I started scheduling mentoring outside peak hours ages ago, so that part's less stressful. But now I'm working wrist exercises at my desk every morning and afternoon — and I'm not skipping them, even on weekends."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a strong routine — consistency is key with PT exercises. Is there anything in your workflow that you wish was less typing-intensive? For example, how are you tracking productivity these days?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you ask — I used to log everything in a personal spreadsheet, but that's gone now. Too much extra typing for my hands. I'm just relying on company dashboards for tracking, even though they're less granular. It's not ideal, but my own sheet was making things worse."
+        },
+        {
+          "role": "assistant",
+          "content": "Great call to drop the spreadsheet — your health comes first. On the mentoring side, could you experiment with quick video or voice check-ins with new reps, instead of typing out feedback? Or does that mess with your preferred style?"
+        },
+        {
+          "role": "user",
+          "content": "I actually like the idea. I've started shifting more team chats to short Slack huddles or async Loom videos, since holding devices or typing isn't ideal. Speaking of that, even my mystery novel routine changed — Saturdays used to be Kindle time, but I switched to audiobooks so I'm not holding an e-reader and swiping. I avoid anything that strains my wrist now."
+        },
+        {
+          "role": "assistant",
+          "content": "Nice pivot! Audiobooks are a great way to keep up with reading, no hand strain needed. Has anything else in your daily routine shifted since the diagnosis, or are the rest of your habits pretty much unchanged?"
+        },
+        {
+          "role": "user",
+          "content": "Most things are stable — walks with my dog, yoga, meal prep, and screen breaks all still happen. But I really doubled down on those desk wrist exercises, and now I time my customer chats strictly to 30-minute increments. I won't take extended chat coverage, so I have to plan around that."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a balanced approach — protecting your wrist health without letting support quality slip. Have you considered any software tools for voice-to-text or dictation to further reduce typing? Or does that not fit with the company’s systems?"
+        },
+        {
+          "role": "user",
+          "content": "I’m looking into voice options, but security and customer privacy rules make it tricky. For now, templates, huddles, and audiobooks are my main adaptations. Any other ideas for optimizing my workflow that won’t add hand strain?"
+        },
+        {
+          "role": "assistant",
+          "content": "Since you already use templates and huddles, maybe you could batch review feedback or prep mentoring notes using voice memos, then quickly summarize during your typing blocks. Also, reminders for wrist exercises can double as prompts for chat breaks, keeping those intervals aligned. Anything else you’d like help rethinking?"
+        },
+        {
+          "role": "user",
+          "content": "I think you covered most of it. The main thing is sticking to the new boundaries and habits, especially not skipping exercises or going over typing limits even if it gets hectic. If I find new tools that work for support or mentoring, I'll loop you in. Thanks for helping me map this out!"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After weeks of worsening insomnia, she underwent a sleep study at her doctor's recommendation and was formally diagnosed with obstructive sleep apnea, requiring nightly use of a CPAP machine.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Checks CPAP machine data every morning and logs usage and mask fit in a dedicated health app — never skips daily review",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_034",
+            "fact": "Watches short, low-stimulation nature videos for 10 minutes before bed as a wind-down routine to improve sleep quality with CPAP",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Sets a bedtime alarm every night to manage insomnia — avoids caffeine after 2pm"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Adheres to a strict CPAP routine nightly for sleep apnea — no longer uses a bedtime alarm, relies on device alerts instead",
+              "domain": "health_body"
+            },
+            "reason": "The sleep apnea diagnosis and mandatory CPAP use fundamentally shift her evening routine: CPAP compliance takes priority for sleep health and device alerts now regulate her bedtime, rendering her manual alarm unnecessary."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I got my official sleep apnea diagnosis last week—after that sleep study, my doctor now has me using a CPAP machine every night. Honestly, it's been... an adjustment. I miss my old bedtime routine. The mask and hoses are not exactly cozy, and I feel like my evenings are on a timer now. Do you have any tips for integrating this into my schedule without feeling like everything is dictated by the machine?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big shift—I can imagine how disruptive it must feel to suddenly have your bedtime dictated by equipment. With so much of your day already scheduled for work and caregiving, are you finding any flexibility at all in the new routine, or do the CPAP requirements leave you stuck with a strict schedule?"
+        },
+        {
+          "role": "user",
+          "content": "I definitely have less flexibility now. I used to set a bedtime alarm to help manage my insomnia, but I don't do that anymore—the CPAP device actually has alerts and reminders built in. So, I'm just following its prompts instead of using my own alarm. It's weird relying on tech to tell me when to wind down but I want to be compliant for my health."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, especially since CPAP compliance is so important for sleep quality. Do you find the device helps with winding down, or does it just feel like another thing to track? Is there anything from your old routine you wish you could keep alongside the new alerts?"
+        },
+        {
+          "role": "user",
+          "content": "It definitely feels like one more thing to track, actually. I've tried to make it less clinical by creating a new wind-down ritual: lately, I've been watching short nature videos for about 10 minutes before bed. They're calming and low-stimulation, which helps me settle in before the mask goes on. I can't risk anything too exciting that messes with my sleep onset anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart adaptation—nature videos are a great idea for a gentle wind-down. Are you tracking any data from your CPAP, or does your doctor just check it at follow-ups? Some people find reviewing numbers in the morning helps them stay consistent, but it can also feel stressful depending on personality."
+        },
+        {
+          "role": "user",
+          "content": "I'm kind of obsessive about it now—I actually review the CPAP usage and mask fit data every morning and log everything in a dedicated health tracker app. I never skip the daily review, partly because I'm worried about missing issues like leaks that could make my sleep quality worse. It's one more thing to fit in after I'm up but I figure it's worth the effort."
+        },
+        {
+          "role": "assistant",
+          "content": "I agree—being proactive about device fit and usage can make a real difference, especially since consistency matters. How is the new evening routine affecting your ability to relax, given your work schedule and caregiving duties? Are the device alerts disruptive, or have you managed to carve out some calm for yourself before starting the CPAP wind-down?"
+        },
+        {
+          "role": "user",
+          "content": "I've managed to carve out enough calm, thankfully. The device alerts actually help me stick to a routine, so I don't let late customer queries or urgent tickets interfere like I used to. It's forced me to draw a firmer boundary for sleep health. The only downside is that I no longer use my old bedtime alarm, and it took me a few nights to adjust to the CPAP schedule as the new 'last call' for winding down."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you've established a routine that supports your health, even if it's more structured than before. If you ever need ideas for making your wind-down time more enjoyable—or solutions for troubleshooting mask fit and comfort—let me know. In the meantime, your dedication to both the daily review and gradual adjustment to the new alerts is commendable. Is there anything specific you'd like help with in optimizing your schedule or making evenings feel less rushed?"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her mother's mobility declined after a recent fall, prompting doctors to recommend in-home physical therapy and increased supervision; her mother now needs daily assistance with basic activities and cannot attend appointments alone.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_036",
+            "fact": "Schedules daily check-ins with physical therapy aides for her mother — never skips even on busy workdays",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_037",
+            "fact": "Arranges her work breaks to coincide with her mother's medication and meal needs, foregoing rigid personal break routines",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Hosts occasional weekend brunch for her mother and brother — never includes extended family to keep gatherings low-key"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Hosts weekend brunches at her townhouse exclusively for her mother due to her mother's increased need for daily supervision; brunches with brother are now infrequent and only when he can assist",
+              "domain": "social_relationships"
+            },
+            "reason": "Her mother's mobility decline and requirement for daily assistance means brunches focus solely on her mother, who cannot easily attend group gatherings or social events. The brother now attends only as part of caregiving support, not for routine socializing."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_011",
+            "fact": "Coordinates rides and appointments for her mother every Sunday for the coming week — never lets last-minute plans disrupt work",
+            "domain": "social_relationships",
+            "reason": "Her mother can no longer attend appointments independently or rely primarily on rides; now requires daily home care and physical therapy. Weekly appointment planning is no longer relevant — assistance and scheduling must happen continually."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help reorganizing my daily routine. My mom took a pretty bad fall a couple weeks ago and her doctors say she needs in-home physical therapy and daily supervision now. She's struggling with basic stuff like meals, meds, and getting around, so I have to be on standby all the time. Any advice on keeping my work stuff under control without dropping the ball on her care?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm so sorry to hear about your mom. That's a lot to juggle, especially with a full-time remote job. Have you already started adjusting your schedule, or are you still figuring out what works? Are there any specific points in your day where you feel most stretched?"
+        },
+        {
+          "role": "user",
+          "content": "I've tried moving some work breaks to line up with her medication and meal times, but it's definitely not the same as my old routine. I used to take my 10-minute screen breaks every hour on the dot, super consistently, but now I'm making them flexible to fit her needs—sometimes it's a longer break, sometimes I have to skip or squeeze it in later."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—having to sync breaks with her schedule probably means a lot less predictability for you. Do you feel those changes are affecting your migraine management, or are you able to keep up with your diary and blue-light glasses habits? And on the work side, is your team aware you might be less available during traditional break windows?"
+        },
+        {
+          "role": "user",
+          "content": "Migraines are a little trickier now, but I haven't let go of my glasses or the diary—I just rely more on logging what triggered an episode. I keep my Slack status extra clear so the team knows if I'm unavailable for caregiving. I haven't had any issues so far, but supervising junior reps is more unpredictable lately. Also, I've started scheduling daily check-ins with the physical therapy aides who come for my mom, even if it's during peak support hours, because I can't really skip those. That's new for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Putting those daily check-ins in place is a solid move, even if it overlaps with your support shifts sometimes. It sounds like you're prioritizing your mom's care as you should. For your team lead duties, how are you handling mentoring sessions—are you still keeping them outside peak hours, or has that shifted as well?"
+        },
+        {
+          "role": "user",
+          "content": "I still do mentoring outside peak hours, mostly early mornings or late afternoons when things are quieter, so that hasn't changed too much. What's really shifted are weekends—used to host brunch for my mom and brother, just to keep things low-key and connected. Now, brunch is mostly just for my mom, since she can't handle group gatherings and needs help. My brother only joins if he's helping with care, so it's not really a social thing anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big adjustment and probably less relaxing on weekends. Have you found ways to make those solo brunches feel special for your mom, or is it mostly functional now? And with your brother coming less often, do you two still coordinate on caregiving, or has that gotten harder?"
+        },
+        {
+          "role": "user",
+          "content": "It's more functional than special, but I try to make her favorite foods and set up the table nicely. Coordination with my brother is a little strained lately—he's not as available now, so check-ins are less consistent. I used to plan all my mom's rides and appointments on Sundays, but that's actually not relevant anymore since she can't travel by herself and needs care every single day. That routine is just gone."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s definitely a major shift—losing that Sunday planning routine must make things feel less in control. Do you have any tools or systems helping you keep track of daily appointments and aide schedules, or is it all in your head right now?"
+        },
+        {
+          "role": "user",
+          "content": "I've started using my own project management tool for her care tasks—ironic, I know. It helps track the aide visits, medications, meals, and any PT notes. Otherwise, I'd lose track fast. I'm just improvising as we go."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s actually a great use of your work tools—if it gives you a sense of order, that’s perfect. Is there anything you wish you could automate or offload, either at work or home, to make things run more smoothly? Or is it mainly just about having reminders and checklists right now?"
+        },
+        {
+          "role": "user",
+          "content": "Reminders and checklists are essential. Automation would be nice, especially for logging aide visits or confirming medication times, but for now manual entry works. I'm not ready to delegate—this hands-on phase feels necessary until things stabilize."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s completely understandable. If things ever become more predictable, you could look into scheduling apps or automations, but being hands-on seems wise given her current needs. Let me know if you want suggestions for low-effort ways to make brunch or daily care feel a bit more comforting for both of you."
+        },
+        {
+          "role": "user",
+          "content": "Thanks, I might take you up on that. For now, having these new routines is helping, even if they're not perfect. Appreciate your help working through it—I needed someone to bounce ideas off."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her startup launched a new product line and assigned her as the lead trainer for onboarding new remote hires, requiring her to develop curriculum materials and host multiple live training webinars each month outside of her usual support hours.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Creates detailed training slides and tutorial videos for new hires every month, prioritizing clarity and accessibility — avoids generic templates and reuses only company-branded assets",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Blocks one Sunday each month for uninterrupted curriculum revisions — does not accept social invitations on those days to focus on material updates",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Schedules all mentoring sessions with junior reps outside of peak customer hours — never during 8am-4pm support shifts"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Schedules mentoring sessions and training webinars flexibly, often during evening or weekend blocks to accommodate onboarding requirements — peak customer hours are now occasionally used for live trainings when mandated by company launch timeline",
+              "domain": "work_habits"
+            },
+            "reason": "Her new role as lead trainer necessitates hosting multiple live onboarding webinars and developing training materials, which sometimes overlap with peak support hours. The strict avoidance of mentoring/training during 8am-4pm is no longer sustainable."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_027",
+            "fact": "Always arrives at the coworking office by 7:30am to reserve a window desk — dislikes sitting at interior shared tables",
+            "domain": "work_habits",
+            "reason": "Her expanded trainer role and new product launch demands now require primarily remote onboarding and curriculum development, drastically reducing office attendance. Arriving early to secure a window desk is no longer a relevant routine."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey! So my company just launched a new product line, and I've been tapped to lead the onboarding training. I'm supposed to develop curriculum materials and host live webinars for all the new remote hires. It's exciting, but honestly a lot to juggle on top of my usual customer support stuff. Any advice for managing the extra workload and keeping up with my personal routines?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats on the expanded role – that sounds pretty intense! Balancing curriculum development with live webinars and regular support could definitely stretch your bandwidth. What's been the hardest part so far: finding time for content creation, keeping up with the live training schedule, or just carving out uninterrupted focus blocks?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it's both scheduling the webinars and making the materials. The company pushed the launch really fast, so sometimes trainings end up overlapping with peak support hours. I used to always avoid mentoring during 8am-4pm, but now I have to be more flexible—even run sessions during those times if something's urgent for onboarding. It messes with my old work flow a bit."
+        },
+        {
+          "role": "assistant",
+          "content": "That shift must be tricky, especially since you used to protect those peak hours for support. Are you able to delegate any customer chats when webinars overlap, or are you mostly handling both yourself? And are there particular days that are easier for juggling trainings versus support?"
+        },
+        {
+          "role": "user",
+          "content": "I try to hand off customer chats to my team if possible, but sometimes I have to cover both, which isn't ideal. As for days, it's a bit chaotic—depends on the onboarding needs. To keep things organized, I've started creating detailed training slides and tutorial videos each month, and I put a lot of effort into clarity and accessibility. I won't use generic templates or just reuse old materials; I stick to company-branded assets to keep it professional."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense – custom materials are way more engaging for new hires, though it’s certainly extra work. How do you go about creating those assets? Do you batch the video recordings or spread them out across the month? And do you get feedback from the junior reps or the new hires themselves on what’s working?"
+        },
+        {
+          "role": "user",
+          "content": "I usually batch the slides and videos toward the middle of the month so they're ready for upcoming onboarding cycles. I get feedback from new hires after their first week, and I review logs from junior reps for suggestions, too. Now that I'm managing more materials, I've started blocking off one Sunday a month strictly for curriculum revisions—no social invitations, just uninterrupted updates. That helps me stay ahead, even if it's not the most relaxing way to spend a Sunday."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart solution – a dedicated revision day can make a big difference. Do you ever get pushback from friends or family about setting aside that Sunday each month, or have they adapted to the new routine? And how are you handling work-life balance with all these new blocks and demands?"
+        },
+        {
+          "role": "user",
+          "content": "There’s some pushback, mostly from family—my brother doesn’t always get why I can’t host brunch like I used to for him and Mom on those Sundays. But I try to be clear upfront so it doesn’t disrupt plans. Oh, and something I realized: I totally dropped my old coworking office routine. I used to arrive by 7:30am to grab a window desk, but now with remote onboarding and curriculum work, going in isn’t relevant anymore. All my training prep is at home."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, especially with everything shifting online for onboarding. Not commuting probably saves you some time and energy, but it’s always an adjustment losing that morning anchor. Are there any routines from your old office days you miss or have tried to recreate at home? And do you have a preferred spot for your remote work—maybe by a window like before?"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Following a major data breach at the startup, new company policy now mandates daily end-of-shift security audits and detailed customer interaction logs, significantly increasing required after-hours admin work for all team leads.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Meticulously double-checks customer data entries and log details as part of daily end-of-shift security audits — never leaves audit tasks for the next day",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Schedules 20 minutes each evening exclusively for post-shift admin compliance (audit logs) before closing out her work laptop; avoids family and leisure interruptions during this window",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Takes a 10-minute screen break every hour, regardless of workload — refuses to skip breaks even for urgent customer issues"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Shortens or occasionally skips hourly screen breaks when admin audits and customer logs must be completed after-hours — prioritizes compliance with new post-shift security protocols over break routine",
+              "domain": "work_habits"
+            },
+            "reason": "Due to new company policy requiring end-of-shift security audits and customer interaction logs after support hours, she must often finish admin tasks late, making it impossible to maintain her previous non-negotiable hourly screen break schedule."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey — I wanted some input. After the big breach last week, our company’s requiring daily security audits and detailed logs after every shift. It’s added a ton of admin at the end of the day. I’m struggling to manage the extra workload, and I’m worried my support team will burn out too. Any advice for keeping up without letting everything else slide?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds exhausting, especially layered onto customer support’s usual high-volume pace. Are you mainly feeling the crunch in terms of time management, or is the new process itself confusing? Sometimes adjusting routine or carving out a set block for admin work helps—have you tried scheduling those tasks separately from your regular support hours yet?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I had to carve out a specific window for the audits. Now, I schedule about 20 minutes every evening just for the compliance logs before I close out the laptop. I make sure it’s strictly admin time—no family or leisure interruptions. It’s the only way I can double-check everything thoroughly and not let details slip."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really smart—setting a boundary and making that time sacred probably helps reduce errors. Are you finding that double-checking customer data and log details is something you can reliably finish in that window, or do tasks tend to spill over? If so, maybe there’s a way to streamline part of the process or delegate some log checking to your junior reps, so it’s not all on you."
+        },
+        {
+          "role": "user",
+          "content": "I don’t actually let log tasks spill over anymore. I’m meticulous about finishing the entries and audit checks before the end of the day. Never leave anything for the next morning—the new policy makes that non-negotiable. Delegating would be nice, but right now leads are strictly responsible for final review. So I have to fit it in myself."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. It’s tough when responsibilities shift but delegation isn’t possible yet. I imagine this shrinks your downtime and screen breaks—how are you managing with the extra admin right after what must be a long day already? Any symptoms or fatigue you’ve noticed since you started, especially with migraines?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s a real change. I used to be strict about my hourly 10-minute breaks, no matter what—especially because of my migraines. But lately, I’ve had to shorten or sometimes skip breaks entirely if I need to finish after-hours audits. Compliance takes priority now, even over my old routine."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough compromise, but understandable given the stakes. Since you’re on the screen longer, maybe reinforcing your other migraine management strategies—like blue-light glasses, or logging symptoms—will help offset lost breaks a bit. Are you still able to maintain your usual wellness routines, like yoga or dog walks, despite the extra workload?"
+        },
+        {
+          "role": "user",
+          "content": "I’m squeezing those in where I can. Dog walks are non-negotiable, but virtual yoga is occasionally tough when admin runs late. I’m trying to push myself not to skip, though. The main switch has been protecting that post-support admin window—if I don’t, something always interrupts and I regret it later. I just needed help brainstorming ways to lighten the cognitive overload, since I can’t cut those tasks."
+        },
+        {
+          "role": "assistant",
+          "content": "Given all the constraints, maybe batching similar tasks right after support shifts could help—especially if you’re already in ‘detail mode’ for audits. Also, templates for log entries might reduce cognitive effort, even if you still have to check everything yourself. Would automating some repetitive parts of the audit (where possible) be an option, or does the new policy require manual review for everything?"
+        },
+        {
+          "role": "user",
+          "content": "Manual review is required, unfortunately. Templates help a bit, though. My team’s working on better tagging customer queries so the logs are clearer up front—makes my checks quicker. I’ll keep refining the process, and maybe see if the company offers more flexibility in the future. Thanks for the suggestions."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad I could help brainstorm. Sounds like you’re adapting quickly despite a tough situation. If you need any support with workflow templates or want to debrief on what works as your team tries new strategies, just reach out—I’m always happy to bounce ideas."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her migraines intensified significantly, leading her neurologist to prescribe a strict regimen of medication and mandatory screen downtime, including extended breaks and limited digital activity in the evenings for the next three months.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Listens to instrumental music or nature soundscapes for at least 30 minutes each evening as a non-digital unwind substitute and migraine calming strategy — strictly avoids screens during this time.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_020",
+              "fact": "Watches indie comedy specials online after work — avoids reality TV and mainstream blockbusters"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Avoids all after-work streaming and online video — spends post-shift evenings on screen-free ambient activities like listening to music or doing crafts to comply with migraine restrictions",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Her intensified migraines and neurologist's requirement for strict digital downtime, especially in the evenings, mean that watching any online video content after work is now off-limits. She replaces this habit with offline, screen-free activities."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_023",
+            "fact": "Limits social media to 15 minutes before bed — never checks feeds during work hours",
+            "domain": "daily_routines",
+            "reason": "Neurologist-imposed digital curfew strictly bans all evening screen activity for three months; even brief bedtime social media is no longer allowed."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so things just got real with my migraines. Saw my neurologist after a brutal week and now I'm on a strict medication and screen restriction regimen for three months. Extended screen breaks during the day, and absolutely no screens in the evening after work. I'm trying to figure out how to actually stick to this without wrecking my routines. Can you help me brainstorm some ways to switch up my evenings?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, that sounds tough but necessary. It's smart to get ahead of it and build new routines. Can you tell me more about what you usually do to unwind after your workday? Are there any habits you don't want to lose?"
+        },
+        {
+          "role": "user",
+          "content": "Well, I used to watch indie comedy specials online most nights as my go-to relaxation, but that's totally off-limits now. My neurologist was really clear—no after-work streaming, no YouTube, nothing. I can't use my phone or laptop in the evenings at all. So I'm trying to replace that with offline stuff, like crafting or maybe music, but I'm not sure what'll stick."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—so anything screen-based is out. Crafting is a great idea; do you have any supplies or projects you already like, or would you be starting something new? And for music, instrumental or ambient sounds can be soothing and migraine-friendly. Would you want help finding playlists, or do you prefer something physical, like vinyl or CDs, to stay off devices?"
+        },
+        {
+          "role": "user",
+          "content": "I usually listen to Spotify on my phone, but now I can't use it after work. I'm thinking of setting up a little Bluetooth speaker and just running some instrumental music or nature soundscapes from my laptop—in the background while I do other things. But I'll have to set it before 4pm, since screens are banned in the evening. The neurologist said at least 30 minutes of screen-free music as a migraine calming strategy."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—setting everything up while screens are allowed, then transitioning to speaker-only mode. Instrumental and nature soundscapes are perfect for that. Maybe you can make a 'calming' playlist ahead of time for easy access? Would doing something hands-on, like drawing or knitting, fit into your unwind time too, or is that too much for the evenings?"
+        },
+        {
+          "role": "user",
+          "content": "I actually like doing simple crafts—sometimes painting, sometimes just coloring or working with clay. Those work well since they don't involve screens and help me decompress. I also want to keep the evenings ambient and low-key, so nothing too complicated that needs a tutorial or video instruction."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! Hands-on crafts pair nicely with calming music. And since you’re prepping playlists and materials during your screen-allowed hours, you won’t need tutorials at night. Does this new routine affect any other evening habits? For example, did you wind down using social media, or is that something you already avoided?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually—I used to scroll social media for 15 minutes before bed, just as a last wind-down, but that's off the table now. No phone, no feeds, not even quick texts. Neurologist said digital curfew is strict, so I can't do that anymore. I have to shift all my evening winding down to offline, ambient things."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change! But it sounds like you’re adapting well, and honestly, screen-free evenings can be a good thing in the long run. Is there anything else about your daily routine this impacts, or are most changes just on the evening side? If you want, I can help brainstorm more screen-free wind-down activities beyond music and crafts."
+        },
+        {
+          "role": "user",
+          "content": "No, mostly evening stuff—the daytime routine is still manageable, since I already do hourly screen breaks and wear blue-light glasses for work. The real shift is ditching the streaming and social scrolling. I'm kind of surprised at how much habit change it forces, but the music and crafts combo is helping so far."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad those are working for you. If you want to layer in more, maybe journaling, reading physical books, or gentle stretching can help round out your evenings—anything that’s quiet and screen-free. Are there any activities you’ve tried and didn’t like, or anything you’re curious to explore as part of this new routine?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not much for journaling, but stretching sounds good—might even add some yoga moves since I already do virtual yoga once a week with friends. I'll just do it on my own in the evenings. And I love physical books, especially mysteries, so I might actually swap my Saturday Kindle reading for evening paperback time instead."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great adaptation—physical books and yoga are both migraine-friendly ways to unwind. It seems like you’re building a solid, screen-free evening foundation. Let me know if you need ideas for craft projects, book recommendations, or music playlists. Anything else come to mind that you want help planning for this digital downtime?"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After experiencing persistent digestive discomfort and fatigue, her primary care physician ordered a full panel of tests, resulting in a confirmed diagnosis of gluten sensitivity requiring an immediate switch to a gluten-free diet.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Reads gluten ingredient lists and allergen warnings on all grocery purchases every Friday — refuses store brands without clear gluten-free labeling",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Joins a Denver-based gluten-free cooking group online for recipe sharing and community support — avoids general diet forums to focus on medically safe options",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Sticks to meal-prepped lunches on weekdays — never grabs fast food during support shifts"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Prepares exclusively gluten-free lunches each week — avoids all foods containing gluten during support shifts, including fast food and previous meal prep staples",
+              "domain": "health_body"
+            },
+            "reason": "Her diagnosis of gluten sensitivity requires an immediate and strict dietary change. Previous meal prep routines likely included foods now off-limits, so she must switch to gluten-free meal prep and eliminate any prior non-gluten-free staples, as well as fast food."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I just got my test results back: it's official, I have gluten sensitivity and my doctor wants me on a strict gluten-free diet starting immediately. I've had mild stomach issues for ages but this is a whole new level of disruption. Honestly, I'm feeling overwhelmed. Can you help me figure out how to adjust my weekday lunches and keep my meal prep routine manageable?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big shift, especially if you relied on meal prepping for lunch during support shifts. Do you have any favorite meals or staples you usually prep that will need to change? Or are you looking for entirely new gluten-free recipes to build a routine around?"
+        },
+        {
+          "role": "user",
+          "content": "Most of my usual meal prep relied on things like sandwich wraps, grain bowls, and the occasional pasta – so basically, half my recipes are out now. I need to start prepping exclusively gluten-free lunches and skip all fast food, since it's too risky during my work shifts. I want to avoid anything with hidden gluten, but I have no clue where to start."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, that's wise. There are plenty of naturally gluten-free grains and proteins you can try, like rice, quinoa, beans, roasted veggies, and grilled chicken or salmon. For wraps, you could look into lettuce wraps or gluten-free tortillas. Would you like suggestions for easy gluten-free lunch recipes, or tips on meal prepping safely?"
+        },
+        {
+          "role": "user",
+          "content": "Easy gluten-free recipes would help, but I think I also need guidance on the shopping side. I usually do grocery runs Fridays after work, and I'll need to start reading ingredient lists and allergen warnings for everything now. I've decided I won't buy any store brands unless they're labeled gluten-free, just to be safe."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — some store brands don't clearly indicate allergens, which can be risky. You might find it helpful to stick to brands with certified gluten-free labeling, and avoid anything ambiguous. Would you like an app or resource that helps scan labels and flag hidden gluten ingredients during your grocery runs?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, an app for scanning would be nice. I also don’t want to waste time on generic diet forums, since I’m only interested in gluten-free options that are safe for medical reasons. So I joined a Denver-based gluten-free cooking group online for recipe sharing and community support. That’s a better fit than general nutrition advice."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart move — local groups are often up-to-date on the best brands and recipes that work in your area. I can recommend apps like 'Gluten Free Scanner,' which can quickly check ingredients while you shop. And since you meal prep every Sunday, would it help if I suggested a few batch-cooking recipes from gluten-free community sites or your local group that align with your work schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. I need weekday lunches that are filling but won’t trigger anything, and that I can prep in bulk Sunday evening. Also, since I’m adjusting to this diet, I decided to avoid all my previous staples even if they're tempting, and stick to strict gluten-free options during my support shifts. I don't want to risk feeling sick, especially during peak hours when I'm busy mentoring and handling customer tickets."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood — that’s a very practical approach. I’ll focus on batch recipes using certified gluten-free ingredients. Things like quinoa salad with roasted vegetables, chicken and rice stir-fry, or chickpea stew that you can portion for the week. Would you like links to trusted gluten-free recipe sites, or should I prioritize recommendations that use local Denver ingredients, since you’re part of that cooking group?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s go with recipes from sources already vetted by gluten-free communities, especially if they line up with what people locally are using. I just want to be sure I don’t end up with anything questionable in my lunch routine. Thanks — this actually feels a bit more manageable now."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her partner accepted a new management position at a restaurant with longer and more variable evening hours, making him unavailable for weekday caregiving and household responsibilities.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Schedules her mother’s weekday medical transports and errands exclusively after work hours, since her partner can no longer substitute or share in weekday caregiving.",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Periodically eats dinner solo on weeknights and prefers to prep quick, single-serving meals due to partner’s late, irregular shifts.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_019",
+              "fact": "Plans short weekend hikes in the Rockies with her partner — never visits crowded tourist spots"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Plans solo or dog-accompanied nature walks in local parks on weekends — partner no longer joins due to unpredictable and extended restaurant hours",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Her partner’s new management position means longer, variable evening and weekend hours, making joint hiking outings impractical. She shifts to solo outdoor activities or walks with her dog closer to home instead."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_024",
+            "fact": "Walks the dog as the last activity before winding down at night — never lets her partner take evening walks alone",
+            "domain": "daily_routines",
+            "reason": "Her partner is no longer available for weekday evening walks due to late, unpredictable work shifts, eliminating the situation where he would walk the dog alone in the evenings."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I'm trying to adapt since my partner just took a new management job at his restaurant—which means way longer and totally unpredictable evening hours. He used to help with things during the week, especially for my mom, and now it's all landing on me. I'm not sure how to keep support work steady and still get everything else done. Any ideas for juggling this new routine?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a lot of extra responsibility, especially with such variable evenings. Are you finding some parts of the schedule harder to manage now—like balancing work with your mom’s needs, or fitting in self-care with household duties?"
+        },
+        {
+          "role": "user",
+          "content": "The biggest issue is with my mom’s appointments and errands; my partner can’t help at all during the week anymore. I’ve started scheduling everything for her strictly after my work hours, so I can avoid disrupting support shifts. It's just added a layer of planning—especially since I have to manage all the rides myself now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—separating work time from caregiving so they don’t clash. Are you using any tools to track your mom’s schedule or coordinate with your brother, or is it just on your calendar?"
+        },
+        {
+          "role": "user",
+          "content": "I mainly use my personal calendar. I still coordinate with my brother, but I have to do more since my partner can't tag-team weekday duties. I prep Sunday evening to map out all her transports for the week, but things crop up last minute—I’m trying to limit stress by keeping everything post-4pm."
+        },
+        {
+          "role": "assistant",
+          "content": "Having a cut-off like that makes sense. Do you find it makes your evenings hectic, or are you able to carve out downtime? With your partner working late, do you get more solo time now?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely more solo evenings. I’ve started prepping quick, single-serving dinners since I end up eating alone most weeknights. It's been an adjustment—before, we’d cook together, but now I just want something fast after work and errands."
+        },
+        {
+          "role": "assistant",
+          "content": "Quick meals are a good strategy when you’re flying solo and busy! Have you tweaked your evening routine at all to wind down, or kept it pretty much the same since the shift? I know you used to walk your dog after dinner together—does that still happen?"
+        },
+        {
+          "role": "user",
+          "content": "Walking the dog is still a must, but my partner isn’t around for evening walks anymore. I just take the dog on my own now, usually after errands or dinner. We don’t really have the scenario where he’d take the dog alone—not with these new hours."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—that’s a change for sure. Are you doing anything new on weekends, or have those routines shifted too? You used to hike in the Rockies with your partner, but it sounds like his schedule complicates planning."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, our weekend hikes are basically out. It's not possible to plan with his unpredictable hours. Instead, I’m doing solo nature walks in local parks or just taking the dog along. It’s easier to fit in and doesn’t require the bigger time block we needed for the Rockies hikes."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid pivot—getting outdoors, even closer to home, can be a good reset. Are you finding those solo walks fulfilling, or are you missing the old hiking routine? Anything else you’re adjusting around the shift?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I do miss those bigger hikes, but the solo walks work for now—especially since they’re less crowded and flexible. The main thing is trying to keep the rest of my routines steady despite all the changes in the evenings. Still sticking to yoga and meal prep, but weeknights are definitely more unpredictable."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s impressive—maintaining routines gives you some stability amid change. If you ever want meal tips for solo dinners or ideas to streamline caregiving planning, just let me know. And maybe some suggestions for making those park walks more engaging, if that appeals?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, suggestions are welcome. I’ve got the meal prep streamlined but new walk ideas would be useful since it’s now just me and the dog most weekends. Thanks for helping me think through this—I feel a bit less overwhelmed just talking it out."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to help! Maybe try varying routes, bringing a mystery novel for a reading break on a bench, or using apps to track your walks for motivation. If managing solo dinners or caregiving feels tricky, I can share templates to simplify planning. Just reach out anytime you need support!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger brother announced he is relocating out of state for a new job opportunity, leaving her as the sole family member providing daily care and transportation support for their mother in Denver.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Sets recurring calendar alerts for all her mother's specialist appointments, medication refills, and insurance paperwork — never relies on memory or informal reminders anymore",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Prefers brief catch-up phone calls with her brother once a month, focused on family updates rather than caregiving logistics",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Aims for biweekly check-ins with her brother about caregiving — never lets disagreements fester without a conversation"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "No longer schedules biweekly caregiving check-ins with her brother — now manages all care coordination and decisions for her mother herself",
+              "domain": "social_relationships"
+            },
+            "reason": "Her brother's relocation out of state means he can no longer participate in regular caregiving, so she must make caregiving decisions and coordinate all care herself; routine check-ins are obsolete."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_036",
+            "fact": "Schedules daily check-ins with physical therapy aides for her mother — never skips even on busy workdays",
+            "domain": "social_relationships",
+            "reason": "With her brother moving away, daily check-ins with aides are now a permanent caregiving task she manages alone, not a shared family routine. Her brother's occasional assistance is now completely unavailable, making the preference about sharing or alternating check-ins no longer relevant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My brother just told me he's relocating out of state for a new job, so now I'll be the only one caring for Mom day-to-day here in Denver. Honestly I'm pretty overwhelmed, especially around managing her appointments and all the logistics now that it's just me. Do you have any ideas for tools or routines to help keep track of everything and avoid last-minute chaos?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a heavy transition—it's a lot to suddenly manage solo. For appointment tracking, would a shared calendar (like Google Calendar) help? You could set up recurring reminders for the key events and tasks. Do you think something digital would suit your workflow, or do you prefer paper planners?"
+        },
+        {
+          "role": "user",
+          "content": "Digital definitely works for me—I've already set up recurring calendar alerts for all her specialist visits, medication refills, and even insurance paperwork. I realized I can't rely on memory or sticky notes anymore. But I feel like there's more I'm missing... Are there ways to automate some of the other routines, so things don't slip through even on the busy days?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a great start with the recurring alerts. For automating routines, maybe you could use task management apps like Todoist or Trello, which let you set repeating tasks and checklists. Since you already use digital tools for work, would integrating personal caregiving tasks with your work productivity setup be helpful, or do you need to keep them strictly separate?"
+        },
+        {
+          "role": "user",
+          "content": "I keep all caregiving separate from my work tools since everything gets so busy during peak support hours. But for Mom's care, I've actually taken over daily check-ins with her physical therapy aides—my brother used to alternate days, but now it's totally on me. So I've started scheduling them in the morning and making sure I never skip, even if my inbox is overflowing."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid approach to ensure consistency, and it's impressive you manage those check-ins daily despite the workload. Do you find your current time slots work, or are you considering shifting them to outside your support shift to avoid overlap? Also, how are you handling communication with your brother now—do you still loop him in on caregiving updates, or is it just occasional catch-ups?"
+        },
+        {
+          "role": "user",
+          "content": "I stopped scheduling biweekly caregiving check-ins with my brother—that was our old system. With him out of state, I'm managing all care decisions and coordination myself now. We just do brief catch-up phone calls once a month focused on family updates, not logistics. I realized trying to loop him in on the day-to-day just doesn't work anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense, shifting to solo care coordination and keeping your brother in the loop only for general updates. For managing everything yourself, would you want suggestions on template checklists for specialist visits or insurance tasks? And are there any particular moments (like prescription renewals or medical transport) where things feel most stressful or liable to slip?"
+        },
+        {
+          "role": "user",
+          "content": "Prescription renewals and insurance paperwork are the worst—they come up at the most annoying times. That's why I added recurring alerts for them specifically! If you have any templates for organizing medical records or prepping for appointments, I'd love to see those. Oh, and I don't rely on casual reminders anymore—all of it's scheduled, so nothing gets missed."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, I can share appointment prep templates and medical records checklists so you have structured guides. Since you're already using recurring alerts and don't rely on informal reminders, I'll focus on digital templates you can integrate with your calendar. Would you prefer Google Docs, Notion, or something else for storing these checklists?"
+        },
+        {
+          "role": "user",
+          "content": "Google Docs works best for me—I can share links if needed and update from anywhere. That keeps things centralized, and I don't need another app. Thanks for helping me map this out; I was worried I'd be scrambling, but locking down the routines and templates helps. Plus, I really need everything formalized now that my brother's not here."
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! I'll put together some Google Docs templates for appointment prep, med tracking, and insurance tasks. With your routines and digital organization, you'll stay on top of things—even as the sole caregiver. Let me know if you want to add any custom checklist sections specific to your mom's needs, or if there's another aspect you'd like tips for."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Keeps Slack status updated to reflect availability; never leaves it ambiguous during overlapping East/West Coast support windows",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_003",
+        "fact": "Reviews customer feedback logs weekly and shares actionable takeaways in Monday team standups — never waits for management to prompt",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Uses blue-light blocking glasses for all screen work — never works without them due to migraine risk",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Joins virtual yoga every Wednesday at 6pm without fail — never reschedules for other commitments",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Maintains a migraine diary, logging triggers and symptoms — never ignores patterns in headache onset",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Texts her partner throughout the evening shift to stay connected — never relies only on calls",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Organizes the monthly family Zoom calls herself, sending the calendar invites — never delegates to someone else",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Walks her dog daily in the local park between support shifts — never skips regardless of weather",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Reviews her personal to-do list first thing every morning — never opens company email until after breakfast",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Preps coffee the night before so mornings stay smooth — never buys coffee out during weekdays",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Runs grocery errands only on Fridays after work — never shops on weekends to avoid crowds",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Joined an in-person painting group at the coworking office with colleagues — never participates in virtual art classes anymore",
+        "domain": "leisure_hobbies",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Commutes via city bus on in-office days, listens to podcasts rather than music or audiobooks during the ride",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Switched to mystery audiobooks every Saturday afternoon — avoids e-ink reading to reduce wrist strain",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Completes prescribed wrist exercises at her desk every morning and afternoon — never skips even on weekends",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Limits customer chat responses to 30-minute intervals, takes a mandated typing break between blocks — refuses requests for extended chat coverage",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Adheres to a strict CPAP routine nightly for sleep apnea — no longer uses a bedtime alarm, relies on device alerts instead",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Checks CPAP machine data every morning and logs usage and mask fit in a dedicated health app — never skips daily review",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Watches short, low-stimulation nature videos for 10 minutes before bed as a wind-down routine to improve sleep quality with CPAP",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Hosts weekend brunches at her townhouse exclusively for her mother due to her mother's increased need for daily supervision; brunches with brother are now infrequent and only when he can assist",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Arranges her work breaks to coincide with her mother's medication and meal needs, foregoing rigid personal break routines",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Schedules mentoring sessions and training webinars flexibly, often during evening or weekend blocks to accommodate onboarding requirements — peak customer hours are now occasionally used for live trainings when mandated by company launch timeline",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Creates detailed training slides and tutorial videos for new hires every month, prioritizing clarity and accessibility — avoids generic templates and reuses only company-branded assets",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Blocks one Sunday each month for uninterrupted curriculum revisions — does not accept social invitations on those days to focus on material updates",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Shortens or occasionally skips hourly screen breaks when admin audits and customer logs must be completed after-hours — prioritizes compliance with new post-shift security protocols over break routine",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Meticulously double-checks customer data entries and log details as part of daily end-of-shift security audits — never leaves audit tasks for the next day",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Schedules 20 minutes each evening exclusively for post-shift admin compliance (audit logs) before closing out her work laptop; avoids family and leisure interruptions during this window",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Avoids all after-work streaming and online video — spends post-shift evenings on screen-free ambient activities like listening to music or doing crafts to comply with migraine restrictions",
+        "domain": "leisure_hobbies",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Listens to instrumental music or nature soundscapes for at least 30 minutes each evening as a non-digital unwind substitute and migraine calming strategy — strictly avoids screens during this time.",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Prepares exclusively gluten-free lunches each week — avoids all foods containing gluten during support shifts, including fast food and previous meal prep staples",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_047",
+        "fact": "Reads gluten ingredient lists and allergen warnings on all grocery purchases every Friday — refuses store brands without clear gluten-free labeling",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Joins a Denver-based gluten-free cooking group online for recipe sharing and community support — avoids general diet forums to focus on medically safe options",
+        "domain": "leisure_hobbies",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Plans solo or dog-accompanied nature walks in local parks on weekends — partner no longer joins due to unpredictable and extended restaurant hours",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_050",
+        "fact": "Schedules her mother’s weekday medical transports and errands exclusively after work hours, since her partner can no longer substitute or share in weekday caregiving.",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_051",
+        "fact": "Periodically eats dinner solo on weeknights and prefers to prep quick, single-serving meals due to partner’s late, irregular shifts.",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "No longer schedules biweekly caregiving check-ins with her brother — now manages all care coordination and decisions for her mother herself",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_053",
+        "fact": "Sets recurring calendar alerts for all her mother's specialist appointments, medication refills, and insurance paperwork — never relies on memory or informal reminders anymore",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_054",
+        "fact": "Prefers brief catch-up phone calls with her brother once a month, focused on family updates rather than caregiving logistics",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Schedules all mentoring sessions with junior reps outside of peak customer hours — never during 8am-4pm support shifts",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "Her new role as lead trainer necessitates hosting multiple live onboarding webinars and developing training materials, which sometimes overlap with peak support hours. The strict avoidance of mentoring/training during 8am-4pm is no longer sustainable."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Tracks daily productivity with a personal spreadsheet — never relies solely on company metrics dashboards",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "Carpal tunnel diagnosis means she must minimize extraneous typing. Maintaining an extra spreadsheet for personal productivity tracking adds repetitive wrist motion, so she no longer uses the personal spreadsheet and instead relies on existing company dashboards."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Takes a 10-minute screen break every hour, regardless of workload — refuses to skip breaks even for urgent customer issues",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "Due to new company policy requiring end-of-shift security audits and customer interaction logs after support hours, she must often finish admin tasks late, making it impossible to maintain her previous non-negotiable hourly screen break schedule."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Sticks to meal-prepped lunches on weekdays — never grabs fast food during support shifts",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_046",
+        "reason": "Her diagnosis of gluten sensitivity requires an immediate and strict dietary change. Previous meal prep routines likely included foods now off-limits, so she must switch to gluten-free meal prep and eliminate any prior non-gluten-free staples, as well as fast food."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Sets a bedtime alarm every night to manage insomnia — avoids caffeine after 2pm",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "The sleep apnea diagnosis and mandatory CPAP use fundamentally shift her evening routine: CPAP compliance takes priority for sleep health and device alerts now regulate her bedtime, rendering her manual alarm unnecessary."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Coordinates rides and appointments for her mother every Sunday for the coming week — never lets last-minute plans disrupt work",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "Her mother can no longer attend appointments independently or rely primarily on rides; now requires daily home care and physical therapy. Weekly appointment planning is no longer relevant — assistance and scheduling must happen continually."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Aims for biweekly check-ins with her brother about caregiving — never lets disagreements fester without a conversation",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_052",
+        "reason": "Her brother's relocation out of state means he can no longer participate in regular caregiving, so she must make caregiving decisions and coordinate all care herself; routine check-ins are obsolete."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Hosts occasional weekend brunch for her mother and brother — never includes extended family to keep gatherings low-key",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "Her mother's mobility decline and requirement for daily assistance means brunches focus solely on her mother, who cannot easily attend group gatherings or social events. The brother now attends only as part of caregiving support, not for routine socializing."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Reads mystery novels on her Kindle every Saturday afternoon — never chooses audiobooks",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "The carpal tunnel diagnosis and doctor's recommendation to minimize typing and repetitive hand movements led her to avoid e-readers, which require holding and swiping. She now prefers audiobooks that require no hand strain."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Enjoys virtual painting classes with friends once a month — never attends in-person art workshops",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "The hybrid model requires spending three days per week onsite, creating opportunities and invitations for in-person coworker social events. She replaced virtual painting with an in-person group for social connection and peer interaction in the office environment."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Plans short weekend hikes in the Rockies with her partner — never visits crowded tourist spots",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_049",
+        "reason": "Her partner’s new management position means longer, variable evening and weekend hours, making joint hiking outings impractical. She shifts to solo outdoor activities or walks with her dog closer to home instead."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Watches indie comedy specials online after work — avoids reality TV and mainstream blockbusters",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_044",
+        "reason": "Her intensified migraines and neurologist's requirement for strict digital downtime, especially in the evenings, mean that watching any online video content after work is now off-limits. She replaces this habit with offline, screen-free activities."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Limits social media to 15 minutes before bed — never checks feeds during work hours",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "Neurologist-imposed digital curfew strictly bans all evening screen activity for three months; even brief bedtime social media is no longer allowed."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Walks the dog as the last activity before winding down at night — never lets her partner take evening walks alone",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "Her partner is no longer available for weekday evening walks due to late, unpredictable work shifts, eliminating the situation where he would walk the dog alone in the evenings."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Always arrives at the coworking office by 7:30am to reserve a window desk — dislikes sitting at interior shared tables",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "Her expanded trainer role and new product launch demands now require primarily remote onboarding and curriculum development, drastically reducing office attendance. Arriving early to secure a window desk is no longer a relevant routine."
+      },
+      {
+        "id": "pref_036",
+        "fact": "Schedules daily check-ins with physical therapy aides for her mother — never skips even on busy workdays",
+        "domain": "social_relationships",
+        "created_at_session": 3,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "With her brother moving away, daily check-ins with aides are now a permanent caregiving task she manages alone, not a shared family routine. Her brother's occasional assistance is now completely unavailable, making the preference about sharing or alternating check-ins no longer relevant."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T23:45:58.249948"
+}

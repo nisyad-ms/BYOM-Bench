@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_c5275167",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_046",
+        "fact": "Strictly avoids dairy and fried foods both at home and when dining out, selecting only heart-healthy pescatarian and vegetarian meals regardless of social setting",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Chooses pescatarian protein options at home but only eats vegetarian when dining out with friends"
+        }
+      },
+      {
+        "id": "pref_051",
+        "fact": "Uses a short, guided mindfulness or breathing session at her desk to decompress after meetings — avoids walks due to mobility restrictions during recovery",
+        "supersedes": {
+          "id": "pref_028",
+          "fact": "Uses an afternoon walk after project meetings to decompress and reset focus before returning to analytical tasks"
+        }
+      },
+      {
+        "id": "pref_034",
+        "fact": "Performs physician-recommended wrist and forearm physical therapy exercises daily after work, as part of her evening routine"
+      },
+      {
+        "id": "pref_049",
+        "fact": "Follows dedicated online support groups for women managing high cholesterol and shares progress weekly, seeking accountability and community advice"
+      },
+      {
+        "id": "pref_021",
+        "fact": "Prepacks healthy lunches every night to save time in the morning — never buys lunch during the workweek"
+      },
+      {
+        "id": "pref_002",
+        "fact": "Keeps Slack notifications muted except during post-lunch hours — refuses to check messages continuously"
+      }
+    ]
+  },
+  "persona": "A recent MBA graduate specializing in business intelligence and analytics"
+}

@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_1b1b0275",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_040",
+        "fact": "Eats breakfast earlier in the morning, prioritizing iron-rich foods and vitamin C sources — avoids coffee and black tea at breakfast to maximize iron absorption",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Eats breakfast only after 11am — never starts with coffee, always makes herbal tea first"
+        }
+      },
+      {
+        "id": "pref_034",
+        "fact": "Limits all digital sketching sessions to a maximum of 30 minutes, alternating with mandated shoulder stretching breaks and wearing braces as needed, even if projects are urgent",
+        "supersedes": {
+          "id": "pref_006",
+          "fact": "Wears a wrist brace for any digital sketching session over 30 minutes — never pushes through discomfort"
+        }
+      },
+      {
+        "id": "pref_009",
+        "fact": "Never works through scheduled yoga class times, even under deadline pressure"
+      },
+      {
+        "id": "pref_022",
+        "fact": "Shops for groceries at the Saturday farmers market — avoids supermarkets unless necessary"
+      },
+      {
+        "id": "pref_045",
+        "fact": "Prepares Willow’s daily medication and prescription food each morning before starting any work or personal routine"
+      },
+      {
+        "id": "pref_013",
+        "fact": "Always sends a physical card for family birthdays, never just a text message"
+      }
+    ]
+  },
+  "persona": "A freelance graphic designer who sells custom prints online"
+}

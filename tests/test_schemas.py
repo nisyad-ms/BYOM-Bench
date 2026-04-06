@@ -1,6 +1,6 @@
 """Tests for schema round-trips and serialization."""
 
-from byom_bench.schemas import (
+from ream_bench.schemas import (
     EvaluationRubric,
     EvaluationTaskSpec,
     ExpandedPersona,

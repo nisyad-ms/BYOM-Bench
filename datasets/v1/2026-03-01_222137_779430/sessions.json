@@ -1,0 +1,1345 @@
+{
+  "persona": "A mid-career nonprofit director managing grant agreements and partnerships",
+  "persona_id": "persona_20260301_224130",
+  "expanded_persona": {
+    "base_persona": "A mid-career nonprofit director managing grant agreements and partnerships",
+    "age": 42,
+    "gender": "male",
+    "location": "Denver, CO",
+    "work_education": [
+      "Executive Director at a mid-sized environmental nonprofit (staff of 22), responsible for overseeing $3M in annual grant funding",
+      "Leads partnership negotiations with regional government agencies and philanthropic foundations",
+      "Currently managing three major multi-year grant renewals, with looming deadlines causing increased pressure",
+      "Begins each week with a staff all-hands meeting and spends Thursdays visiting project sites",
+      "Recently completed a professional development certificate program in nonprofit financial management"
+    ],
+    "health_wellness": [
+      "Battling mild hypertension; under doctor's advice to track blood pressure and reduce salt intake",
+      "Practices mindfulness meditation daily before work to manage stress",
+      "Enjoys cycling on weekends, usually covering 15-20 miles on local trails",
+      "Has difficulty sleeping during high-stakes grant negotiation periods",
+      "Switched to a mostly plant-based diet two years ago after his father’s heart attack"
+    ],
+    "family_relationships": [
+      "Married to a high school art teacher; spouse’s schedule gives them different summer routines",
+      "Father to twin 10-year-old daughters; coaches their recreational soccer team in the spring",
+      "Elderly mother lives alone in Boulder—checks in by phone daily, visits every other weekend",
+      "Very close with a group of college friends who host annual camping trips together"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Blocks off Mondays for strategic planning after all-hands meetings—never schedules external calls until the afternoon",
+        "Insists on face-to-face meetings for major partnership negotiations—avoids lengthy email threads for sensitive topics",
+        "Reviews every grant renewal application personally before submission—never delegates final approval to staff",
+        "Only attends professional development events with actionable takeaways—avoids generic networking mixers",
+        "Visits at least one project site every Thursday—never reschedules these site visits except for emergencies"
+      ],
+      "health_body": [
+        "Prepares plant-based lunches at home daily—never eats fast food on workdays",
+        "Uses an at-home blood pressure monitor every morning—logs readings in a dedicated health app",
+        "Practices mindfulness meditation for 15 minutes each morning before leaving for work—never skips sessions, even when running late",
+        "Chooses local cycling trails with gradual elevation—avoids steep mountain routes to keep physical activity safe",
+        "Uses salt-free seasoning blends when cooking at home—never adds table salt to food"
+      ],
+      "social_relationships": [
+        "Schedules weekly phone check-ins with his mother—never relies on texting alone to stay in touch",
+        "Hosts family dinner every Sunday evening—never allows work obligations to interfere with this tradition",
+        "Organizes post-game team treats for his daughters' soccer team—never misses a single game during the spring season",
+        "Sets summer date nights with his spouse when their routines diverge—never cancels unless absolutely necessary",
+        "Initiates group chats with college friends to plan the annual camping trip—never lets someone else handle logistics"
+      ],
+      "leisure_hobbies": [
+        "Goes cycling with at least one friend on Saturday mornings—never rides alone unless schedules clash",
+        "Attends at least one outdoor concert or festival every summer—never chooses indoor events if there's a choice",
+        "Maintains a birdwatching journal for local park visits—never logs sightings online or with apps",
+        "Reads environmental non-fiction books on weeknights—never chooses fiction for evening reading",
+        "Plans monthly day trips to Colorado state parks with family—never repeats the same park back-to-back"
+      ],
+      "daily_routines": [
+        "Begins each day by preparing coffee and reading headlines—never checks work email before breakfast",
+        "Does all grocery shopping at the neighborhood co-op on Saturdays—never shops at national chains",
+        "Limits personal screen time to under one hour after 8pm—never brings devices into the bedroom",
+        "Reviews next day’s calendar each evening before bed—never makes last-minute changes after lights out",
+        "Preps daughters’ soccer gear the night before practice—never leaves packing for the morning"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His elderly mother slipped on her porch in Boulder and fractured her hip, resulting in a hospital stay and medical team recommendation that she temporarily move in with him and his family for support during recovery.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Prepares evening herbal tea for his mother and joins her for quiet conversation as part of her recovery routine",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Adjusts household meal planning to accommodate low-mobility-friendly, heart-healthy options for his mother",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Schedules weekly phone check-ins with his mother—never relies on texting alone to stay in touch"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Checks in with his mother in person daily while she lives with him—no scheduled phone calls during her recovery",
+              "domain": "social_relationships"
+            },
+            "reason": "His mother is temporarily moving into his home for recovery, so daily in-person check-ins naturally replace the weekly phone calls."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_022",
+            "fact": "Does all grocery shopping at the neighborhood co-op on Saturdays—never shops at national chains",
+            "domain": "daily_routines",
+            "reason": "His mother's recovery requires flexibility in meal planning and dietary needs, leading to more frequent, possibly urgent shopping that may not suit the fixed co-op schedule or hours."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my mom fractured her hip last week—she slipped on her porch in Boulder in the snow, and she's in the hospital for a few more days. The medical team is pretty clear she can't live alone while she's recovering, so she'll be moving in with us for a while. Honestly, I've been scrambling to figure out how we're going to adapt our routines, especially with work and the girls' activities. I need help thinking through household logistics—and anything I should keep in mind about supporting her recovery without totally burning out."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry to hear about your mom's accident. Balancing work, family, and added caregiving is no small thing. To start, have you discussed any guidelines with her care team? For example, do they have recommendations about mobility at home, dietary needs, or daily routines you should structure? And from your end, what parts of your current schedule feel most at risk of breaking down—mornings, evenings, or another point in the day?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks. Her care team wants her to avoid stairs and stick with a walker for now, so we're converting our guest room into an accessible space for her—makes mornings more complicated, but it's manageable. The evenings worry me more; she's used to being independent. I've started joining her for herbal tea and quiet conversation to give her some company without overstimulation, but it's new to our routine. The logistics of meals is another thing—my plant-based cooking is heart-healthy, but she finds it bland, and she can't really help in the kitchen while she's laid up. Any tips for meal planning in situations like this?"
+        },
+        {
+          "role": "assistant",
+          "content": "It's thoughtful that you prioritize her company in the evenings—tea and conversation sound both supportive and grounding. On meals: you're on the right track with heart-healthy options, especially given your own dietary habits. Would she be open to some plant-based comfort foods with bold flavors or inviting her to help select recipes, even if she can't prep the meals herself? Things like lentil shepherd’s pie, stuffed bell peppers, or seasoning-rich soups might appeal. If she's finding your current dishes bland, could you experiment with new herbs, spices, or salt-free blends to shake up the flavor profile while sticking to her and your nutrition goals?"
+        },
+        {
+          "role": "user",
+          "content": "I've started adjusting my recipe approach—definitely testing out more seasoning blends! Having her pick recipes is a great idea. Flexibility is going to be important because our routine is less predictable now; I used to do all my grocery shopping at the neighborhood co-op every Saturday, but I've had to drop that. Sometimes I need to run out for ingredients more often, even if it means hitting a national chain, which I've always tried to avoid. Just not realistic right now. Does that sort of change in routine ever become the new normal, or do people usually find a way back to their old habits?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s totally normal for routines to shift during caregiving stretches like this—you’re making adaptations out of necessity, not just convenience. Many people find some things bounce back when life stabilizes, but other habits remain if they turn out to make life easier. For now, giving yourself permission to shop where and when you need to is a kindness. Out of curiosity, how has this affected the way you handle your usual check-ins with your mom? Are you still scheduling phone calls, or is your in-person presence replacing a lot of the old rhythms?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, the phone calls have pretty much stopped. I used to check in with her by phone every afternoon, but now we see each other at home every day. In-person has naturally replaced it for the time being. I do want to keep her engaged, so evening tea together is becoming our thing. She’s enjoying it—and honestly, I think it gives both of us a bit of structure while she’s here."
+        },
+        {
+          "role": "assistant",
+          "content": "That transition from phone to in-person support seems like a valuable shift, and it’s great you’re both finding comfort in a new evening ritual. As her mobility improves, will you want to adjust the way you balance caregiving with the rest of your family’s activities—for example, involving your daughters or finding ways for her to stay social outside the immediate household? And are you getting enough downtime yourself amid all of this, especially given your work demands and commitment to your daughters’ routines?"
+        },
+        {
+          "role": "user",
+          "content": "Good questions. The girls are helping out where they can—bringing her books, letting her watch practice videos from soccer—which she loves. Once she’s more mobile, we’ll explore short outings, but for now, it’s easier to focus on quiet time together. I’m adjusting our meal planning too, since she needs low-mobility-friendly options and still has to watch her sodium. So we're all eating things like hearty stews, easy-to-chew roasted veggies, and softer whole grains, just with extra focus on flavor and accessibility. As for my own downtime, it’s tight with the added caregiving, but the evening tea helps, and I’ll try to keep some cycling on weekends for stress relief."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re clearly being proactive and making meaningful adjustments for her comfort and your own well-being. Hearty, accessible meals with robust flavors are a smart pivot, and keeping your cycling routine in some form is important for resilience under stress. If the load ever feels unmanageable, would you consider extra help—like a visiting aide or meal service—even temporarily? Sometimes leaning on community resources makes it possible to keep the most meaningful parts of your family life and self-care intact."
+        },
+        {
+          "role": "user",
+          "content": "That’s a good point—I haven’t lined up outside help yet, but I’m not ruling it out if things get more complicated or grant deadlines pile up. For now, having clear routines—tea with my mom in the evenings, flexible meals, and girls’ involvement—makes it feel manageable despite all the moving pieces. Thanks for helping me think this through."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His spouse was offered a summer sabbatical opportunity in Europe to participate in an art residency, requiring her to be away from home for two months while school is out.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Organizes weekly family movie nights with his daughters while spouse is abroad, creating a new shared tradition for quality time",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Prepares all weekday dinners solo for his daughters—never relies on takeout while spouse is away",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Sets summer date nights with his spouse when their routines diverge—never cancels unless absolutely necessary"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Suspends summer date nights with his spouse due to her extended sabbatical in Europe—maintains regular video calls instead",
+              "domain": "social_relationships"
+            },
+            "reason": "His spouse will be away for two months in Europe, making in-person date nights impossible; the preference shifts to maintaining connection through video calls instead."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news over here—my wife was just offered a summer art residency in France. She’ll be gone two full months while school’s out. I want to make sure things stay stable at home with the girls, and obviously work isn’t slowing down just because she’s away. I’m already realizing our usual summer date nights are off the table. Any tips on keeping family time meaningful and not just defaulting to survival mode?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge change for the summer—exciting for her, but definitely a juggling act for you. You mentioned your summer date nights are off—would you still try for regular video calls with her to stay connected? And as for family time, do you and your daughters already have routines you want to keep, or would you like some new ideas to anchor the weeks?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I think we’ll try for video calls with her a couple nights a week to catch up and share stories. The girls love seeing her no matter where she is. As for routines—with school out and more evenings free, I’m thinking about starting a weekly family movie night, just us three. I’d love suggestions for making that more than just screen time—something we can look forward to together."
+        },
+        {
+          "role": "assistant",
+          "content": "Weekly movie nights are a great tradition, especially as something special while your wife’s away. To make it more engaging, maybe you could add themes—like everyone votes on a genre, or you rotate who picks each week and that person introduces the movie and shares why. You could also make it interactive: movie bingo or fun snacks you prepare as a team. Does that kind of thing fit your style, or would something more low-key work better?"
+        },
+        {
+          "role": "user",
+          "content": "I like the idea of themes and rotating picks—my daughters are at the age where they love making decisions. We’ll probably keep snacks homemade since I’m handling all the weekday dinners solo for now. I’ve promised myself no takeout while my wife’s gone, so I’m looking for simple, healthy recipes the kids can help with. Do you have resources for plant-based meals that are kid-friendly but not massive time sinks?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—I can share some collections of quick, plant-based meals that are fun for kids to prep. Think build-your-own taco nights (using beans, veggies, and avocado), stir-fries they can help chop for, or homemade veggie pizzas with whole wheat pita. Would you like recipes for a week at a time, or prefer a bigger set to mix and match? Also, would you like me to include ideas specifically for your movie nights?"
+        },
+        {
+          "role": "user",
+          "content": "A weekly batch of recipes would be perfect—less overwhelming. And sure, throw in some snack or treat ideas for movie nights, as long as they stay plant-based. I’m trying to keep the girls involved in making dinner, which is easier than getting them to help with cleaning up afterward! Also, since I’m home solo with them on weeknights, I’m hoping to keep up with my own wellness routines. Any thoughts on how to manage that without burning out?"
+        },
+        {
+          "role": "assistant",
+          "content": "Keeping your own routines going will be key—especially with the added solo-parenting load. Since you already do mindfulness meditation in the mornings, could you keep that slot as protected time, or shift it to the evening if needed? For your cycling or any fitness, maybe the girls can join you for shorter rides or weekend walks, so you’re not sacrificing your whole routine. And don’t forget to ask your support network for backup when you need it. Do you have family or friends nearby who could help if something at work runs late?"
+        },
+        {
+          "role": "user",
+          "content": "Luckily, my mom’s in Boulder and can come help in a pinch, though I don’t want to overuse that. Most weekends I’ll try to keep the family cycling day or park trips, but on weeknights it’s just me—so efficient recipes are a must, and all hands on deck. The video calls with my wife are already scheduled, and the movie night tradition is locked in. I think suspending our date nights was the right call for now; we’ll pick them up when she’s back. For these next two months, the focus is on holding things together at home and making it a positive summer for the girls."
+        },
+        {
+          "role": "assistant",
+          "content": "You have a solid plan—anchoring with movie nights, healthy dinners, and keeping your support system in reach. If you ever need to switch things up or are looking for new meal or activity ideas mid-summer, just ask. And if you want tips on making the most of those video calls with your wife—like sharing highlights or having the girls join sometimes—I’m happy to help brainstorm. You’re navigating a big shift thoughtfully, and the girls will remember these weeks. Let me know what specific support you want next, whether it’s recipes, activity lists, or just encouragement!"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The board of directors announced that a major multi-year grant renewal he was managing did not secure funding, resulting in an unexpected shortfall in the nonprofit’s annual budget and necessitating immediate reassessment of staffing and program commitments.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Spends late afternoons drafting staff update memos and personally communicating difficult budget news—avoids delegating these sensitive conversations during the funding crisis",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_034",
+            "fact": "Prefers taking solitary evening walks for stress relief during the grant crisis, temporarily pausing weekend group cycling with friends",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Visits at least one project site every Thursday—never reschedules these site visits except for emergencies"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Suspends regular Thursday site visits in order to prioritize on-site crisis management, grant strategy sessions, and urgent internal meetings after the budget shortfall",
+              "domain": "work_habits"
+            },
+            "reason": "The sudden loss of major funding forces him to immediately reassess internal priorities and staffing, making consistent project site visits untenable and directing his attention toward organizational crisis management and internal coordination."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, it happened—the board just let me know we didn’t secure the biggest grant renewal I was managing. It’s a big shortfall, and I have to reassess our programs and staffing basically overnight. My head’s spinning and I need to figure out the best way to communicate this to my team, keep morale up, and also just get through this week with my sanity intact. Can we brainstorm crisis communication strategies and maybe quick stress management resets too? I didn’t sleep a wink last night."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry you’re having to deal with this—losing major funding is a huge blow, especially when everything depends on those renewals. Let’s start with your team: given the shock and upcoming decisions, are you leaning toward a written announcement, an in-person meeting, or a combination? As for getting through this yourself—do you have any quick rituals or routines that normally help you reset when stress spikes?"
+        },
+        {
+          "role": "user",
+          "content": "I can’t bring myself to delegate this: I’m drafting the staff update memos myself and plan to talk to folks one-on-one for the hardest conversations. My leadership style leans direct and personal, especially for bad news—would rather not rely on managers to carry this, at least in the initial days. As for stress, cycling with friends is usually my go-to, but I’ve paused our Saturday rides for now. Lately I end the day with a long solo walk instead—just helps clear my head before I dive into another problem-solving session."
+        },
+        {
+          "role": "assistant",
+          "content": "That personal approach is definitely the right call in a situation this sensitive—it shows your staff you’re in it with them. Since you’re communicating updates yourself, consider setting expectations about how information will flow (e.g., regular memos, open hours for questions, etc.), so no one feels left in the dark.\n\nOn the stress side: taking solitary walks sounds restorative, especially if group socializing feels exhausting right now. Is that something new for you? If so, how’s it working compared to your usual cycling routine?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely new—I used to rely on those group rides for exercise and connection, but right now I just don’t have the bandwidth. Walking alone in the evenings helps me decompress when I’m overloaded; I put on music or a podcast, sometimes just walk in silence. I’ll get back to riding with friends eventually, but for now pausing group plans is saving me. And about meetings: I've suspended my usual Thursday project site visits—I need to be on-site at HQ for crisis management and internal grant strategy sessions instead. I hate breaking that routine, but I can’t justify leaving right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes perfect sense—your presence at HQ is much more valuable while the future of your programs and teams are up in the air. Site visits can resume once things stabilize. Would it help to bring a bit of field perspective to HQ with you, maybe by having quick check-ins with project leads so you still get a pulse on what’s happening on the ground? Or is it better to focus all energy internally for the moment?\n\nAlso, those evening walks sound grounding. Are you finding they help with sleep at all, or is your mind still racing when you try to wind down?"
+        },
+        {
+          "role": "user",
+          "content": "They calm me down, but sleep is still a struggle—no miracle cure there. I’m considering doing a set “shutdown” routine at night, maybe with reading or a meditation app. As for field updates, I like the idea—I’ll invite project leads to brief me at the start of our crisis meetings instead. But yeah, all my bandwidth right now is internal: urgent scenario planning, staff support, redrafting budgets… I’ve started spending late afternoons putting those staff updates together and taking calls. I just need to keep steering the ship for the next few weeks."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s a lot to carry, but you’re balancing transparency with empathy, which is crucial for trust. Keeping communication frequent (but not overwhelming) will help settle anxieties, even when the answers aren’t all positive.\n\nFor your night routine, you might try what some leaders do: pick a simple mindfulness exercise or non-work reading—set a boundary that once you finish, that’s it for work until morning. Since you’re already practicing daily meditation, maybe a brief gratitude reflection before bed could help shift your focus. What usually helps you feel most grounded before sleep during stressful periods?"
+        },
+        {
+          "role": "user",
+          "content": "My best bet is limiting screens and reviewing my calendar the evening before—anything too stimulating, like news or work, spirals me back into problem-solving mode. I’ll add the gratitude reflection before bed; that’s a good suggestion. On nights when the anxiety spikes, sometimes that solo walk is the only thing that helps me transition out of crisis mode, so I’m going to stick to that for now, too. Thanks for the ideas. If you come across specific crisis communication templates or nonprofit budget triage checklists, send them my way—I could use all the help I can get the next few weeks."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, I’ll pull together a few trusted templates and actionable checklists that are specific to nonprofits weathering grant losses and share them with you. If you want, I can also suggest some wording for your staff memos or help draft FAQs for internal use—just let me know what would take pressure off you most right now. You’re navigating this with much more thoughtfulness than most. Let’s keep checking in as the situation evolves—you shouldn’t have to shoulder it all alone."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "During a routine checkup, his doctor identified atrial fibrillation, recommending immediate initiation of a new medication regimen and restricting high-intensity cycling or solo long rides until further cardiac evaluation.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Uses a wearable heart rate monitor continuously throughout the day to track cardiac health and medication effects—reviews trends each evening before bed",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Chooses local cycling trails with gradual elevation—avoids steep mountain routes to keep physical activity safe"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Pauses all high-intensity or solo cycling until cleared by cardiologist—opts for gentle walks or accompanied strolls instead",
+              "domain": "health_body"
+            },
+            "reason": "The diagnosis of atrial fibrillation and new cardiac restrictions make even mild solo cycling risky until further evaluation, fundamentally changing his approach to exercise and recreation."
+          },
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Goes cycling with at least one friend on Saturday mornings—never rides alone unless schedules clash"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Initiates low-intensity walks with friends on Saturday mornings instead of group cycling—cycling is suspended due to cardiac restrictions",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "His cardiologist has restricted all high-intensity and solo long rides, making group cycling impossible for now; he now maintains the social routine through walks."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, things have changed pretty quickly—my cardiologist picked up atrial fibrillation at my annual checkup last week. I’m still wrapping my head around it, to be honest. I’ve been told to pause cycling—no solo rides or anything intense—until they run more tests and see how the new medication works. Exercise was my main stress reliever, so now my whole routine feels up in the air. Any sense of how people in leadership manage the anxiety when their coping mechanisms get pulled out from under them?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough adjustment—I can imagine losing your main outlet for stress can throw everything off. It’s so common for routines, especially movement-based ones, to be that anchor, and a medical shift can feel destabilizing. When you think about other ways you’ve managed stress in the past—before cycling was your go-to—what’s worked for you? And would you like ideas for new routines, or is it more about re-grounding yourself until you get further guidance from your doctor?"
+        },
+        {
+          "role": "user",
+          "content": "What’s actually helped a little is being strict about my morning meditation—I haven’t skipped a single day, even now. But I do miss the social part of my Saturday cycling loop with friends. I thought about inviting them for low-key walks instead, since I’m cleared for that with company. Doesn’t scratch the same itch, but it keeps that rhythm. I guess that’s one shift: walks with friends on Saturdays instead of cycling, at least for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart pivot—keeping the social aspect and the weekly ritual, just changing the activity. Maintaining connection with friends is a huge buffer against stress. If walks are approved by your doctor, could you also turn them into a way to decompress—maybe picking scenic routes or combining them with another hobby, like birdwatching? Or is it better for you just to focus on conversation for now?"
+        },
+        {
+          "role": "user",
+          "content": "I like the idea of choosing parks with decent birding. That’s actually how I log my downtime—old-school, in a notebook. But I do want to keep things really low-key. I also used to ride alone sometimes during the week, but that’s paused now. Doctor said no solo outings of any kind, whether it’s moderate or otherwise, so all my outdoor time is either with family or a friend."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—safety comes first, and shifting to group or family walks can fill some of that outdoor gap. How's the transition to less intense activity treating you physically and mentally so far? Are you feeling restless, or are the walks enough to keep you balanced while you wait for your next evaluation?"
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely not the same physically—I can feel I’m not getting the same kind of release, and it’s been tough to get my heart rate up at all. But right now, gentle and accompanied is the only option. My main adjustment is more about monitoring—my doctor actually asked me to wear a heart rate monitor all day, and review the trends each night before bed. That’s new for me, but I’m listening."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—continuous tracking can feel like both a reassurance and a reminder of the new reality. Since you’re reviewing the data nightly, do you want any tools or tips to make logging and spotting trends easier, or do you have an app that’s working well for you already? Also, how does this new health focus mesh with the demands of your work, especially during grant cycles?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve been logging everything in both my health app and a private doc—just keeping it simple for now. I do have to get better about not checking work email before breakfast, though, especially during grant renewal season when the stakes are high. The health stuff is a new layer, but I’m trying to keep my routines: meditation, then coffee, headlines, and only then the work emails. I guess I’m treating this phase as a reset to reinforce good habits."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a wise approach—routine and ritual can be powerful anchors, especially when so much feels in flux. Keeping that protected time before diving into work is critical, and the self-monitoring you’re doing fits right into a structured start and end to your day. If you find stress ramping up, especially with deadlines, would you consider experimenting with guided breathing or mindfulness in the evenings as well? Or does that time belong to your family routines?"
+        },
+        {
+          "role": "user",
+          "content": "Evenings are usually for family, and prepping for the next day. I review my next day’s calendar after dinner, and like to be offline as much as possible after 8. It’d be hard to add something extra without crowding that out. But honestly, I am grateful my doctor caught this now, even if it throws my weekends for a loop. I’ll probably reach out for ideas when I get more specifics post-cardiology. For now, swapping solo rides for walks with friends, and wearing that heart monitor round the clock—is the new normal."
+        },
+        {
+          "role": "assistant",
+          "content": "Your adaptability and discipline are clear in how you’re responding—anchoring creative new routines around safety and social connection, and embracing both the medical guidance and your own boundaries. I’ll be here when you need new ideas or resources. And if you run into friction—work-life balance, motivation to stay active, or even just habits that help you relax without high intensity—just let me know. I hope your next checkup brings good news and a little more freedom soon."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The nonprofit’s largest government funder notified him of a new reporting compliance program, requiring all project site visits to be accompanied by digital documentation and real-time location check-ins for grant auditing purposes.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Uses a mobile device to take real-time photos and location check-ins during every Thursday project site visit, prioritizing compliance over personal note-taking",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Reviews all digital site visit records immediately after visits to ensure audit readiness and correct documentation",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_018",
+              "fact": "Maintains a birdwatching journal for local park visits—never logs sightings online or with apps"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Logs bird sightings using a mobile app during project site visits, complying with digital documentation for funding audits",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The new funder compliance program requires digital documentation and real-time location tracking for all site visits; he can no longer rely solely on a handwritten birdwatching journal during these trips, and must use an app."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, this just landed: our main government funder rolled out a new reporting compliance program. Starting this week, every single Thursday project site visit has to include digital documentation—photos, real-time location check-ins, the works. No more just jotting down notes or snapping a few pics for the file. I get why they're doing it, but honestly, it feels disruptive. I'm worried it's going to slow down my site routines and make things more stressful. Do you have any strategies for making this feel less burdensome?"
+        },
+        {
+          "role": "assistant",
+          "content": "That is a major shift—especially when you’ve built a consistent on-the-ground routine. Digital check-ins might streamline auditing, but I can see how it interrupts your usual workflow. When you're out at sites, do you carry your phone or a tablet, or are you more old-school with a field notebook? Some people find batching documentation right after the visit reduces distraction, but with real-time requirements, you may need to adapt. Any sense of what part feels most intrusive—the photos, location tracking, or juggling devices?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it's the combination. I’ve always carried my phone just for emergencies and reference photos, but most of my actual site notes—including bird sightings—went straight into a paper journal. That’s out now. I’ll need to start logging observations—at least the ones tied to projects—using an app, so they’re digitally timestamped with location. Compliance comes first, but I’ll miss the old-school approach."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change, especially for someone who appreciates the analog side of fieldwork. Shifting your birdwatching or project notes into a mobile app could help fulfill compliance and streamline your process—though it’s understandably less personal. Are you leaning towards adapting a general note-taking app, or are you looking for something more specialized for environmental monitoring or birding? I can help recommend solutions tailored to either need."
+        },
+        {
+          "role": "user",
+          "content": "For these Thursday visits, I think I have to go all-in on the compliance angle—even if that means using a dedicated birding app with GPS and photo upload. I guess the silver lining is it'll keep everything in one place for audits. I’ll still use my paper journal for personal outings, but Thursdays are digital now. I’d welcome any tips for streamlining the process—especially with the photo and location steps."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Most birding and environmental monitoring apps can batch-upload records with location metadata, so you might only need a few taps per sighting or observation. It helps to set up your checklist and location pins in advance before you start the visit. For photos, shooting directly within the app (vs. your camera roll) often ensures proper timestamps and GPS data for audit trails. Would running through a quick checklist or digital prep before leaving for the site help you feel more in control, or would you rather handle everything in real-time as you move around?"
+        },
+        {
+          "role": "user",
+          "content": "A pre-visit checklist actually sounds useful, especially with the documentation steps now compulsory. I'll add device readiness, app logins, and syncing checklists to my Thursday prep. Also, I find it helpful to review all the digital records immediately after each site visit—making sure everything’s uploaded, labeled, and audit-ready before I drive off. It's hassle upfront, but it beats scrambling during an audit."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great discipline to build in—reviewing and ensuring everything is squared away before leaving the site cuts down on post-hoc panic and gives you peace of mind. Since your documentation is now digital, maybe you could create a standard post-visit review checklist too, so nothing falls through the cracks. That could even double as a coaching tool for any staff who might have to step in eventually. Out of curiosity, how has moving your documentation into a mobile format affected your other Thursday habits—does it change how you balance site engagement versus administrative compliance?"
+        },
+        {
+          "role": "user",
+          "content": "It does shift my focus a bit. I have to make using a mobile device during site visits my top priority for compliance, even if it means less time immediately soaking in the environment or jotting personal notes. It’s not ideal from a naturalist’s perspective, but it keeps our funding safe. I just wish the requirements hadn’t come down so suddenly! For now, I’m making documentation and location check-ins non-negotiable on Thursdays, then reviewing everything before heading back to the office."
+        },
+        {
+          "role": "assistant",
+          "content": "Making those steps non-negotiable is the right call, even if it means adjusting your rhythm. Over time you might find some ways to regain a sense of connection with the work, despite the extra administrative layer. If you ever want to compare tools or template your process for staff, just let me know. And if you need help smoothing out this new routine further, I’m here—it's all about finding the best balance between compliance and meaningful engagement with the sites. Does this all feel manageable with your Thursday schedule, or do you anticipate needing to make bigger workflow changes?"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced a sudden episode of chest pain while cycling with a friend on a Saturday morning, resulting in an ER visit and a scheduled cardiac stress test with cardiology follow-up ordered by the attending physician.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Logs all chest pain or unusual symptoms in a dedicated section of his health app immediately after each episode—never delays documentation until the end of the day",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Keeps emergency contact numbers clearly posted in common household areas for family awareness during his cardiac evaluation period",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_034",
+              "fact": "Prefers taking solitary evening walks for stress relief during the grant crisis, temporarily pausing weekend group cycling with friends"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Integrates brief, low-intensity family or accompanied walks throughout the week—avoids solitary exercise until cleared by his cardiologist",
+              "domain": "health_body"
+            },
+            "reason": "Following the episode of chest pain and pending cardiac evaluation, solitary walks (especially as a stress coping mechanism) are replaced with safer, accompanied walks during recovery, prioritizing support and minimizing risk."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, last Saturday during my usual morning ride, I had a sudden episode of chest pain—enough that my friend called 911 and I ended up in the ER. I got discharged later that day, but now I've got a cardiac stress test lined up and a bunch of follow-up appointments. It's pretty shaken up my routine. The immediate question: how do I balance grant deadlines, partnership meetings, and taking care of myself until I get the all-clear? I’m already behind and the thought of letting things slip is keeping me up at night."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really alarming—I'm glad your friend was there and that you're getting it checked out right away. Balancing health scares with a high-pressure workload isn't easy, especially with looming deadlines. To make sure nothing slips without overextending yourself, would you want to brainstorm ways to triage upcoming grant tasks with your team? Or are you looking more for day-to-day strategies for managing workload while making space for rest and recovery?"
+        },
+        {
+          "role": "user",
+          "content": "Some of both, probably. I need to keep the grant renewals moving—non-negotiable—but my doctor says I need to cut back on stress and physical exertion until the workup is finished. Normally, I’d decompress with a solo walk or jump on a Saturday trail ride to clear my head. Can’t do those for now; my wife and the cardiologist both warned me off any solitary exercise until further notice. For now, I’ve switched to short, low-key walks with family or someone with me, just to be safe. So I do need ideas for stress relief that actually fit this new, somewhat supervised existence."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a wise move—having someone with you definitely adds a safety net. For stress relief, since solo outings are on pause, maybe you could try guided group meditation at home, read in the park with your family, or even structured breathing breaks after tense meetings. For your workload, would it help to reprioritize your daily calendar to insert more buffer time between calls—maybe shifting a few to afternoons to avoid back-to-backs? Or do you already have some protected blocks?"
+        },
+        {
+          "role": "user",
+          "content": "I’m pretty strict about blocking off Monday mornings after all-hands for strategic stuff—no calls or external meetings until the afternoon—but the rest of the week is starting to bleed together. The challenge is that I always do Thursday project site visits in person. I’d rather not skip those if possible, though I may need someone with me this month just in case anything happens. Also, I’ve started logging every little symptom or chest pain immediately in a dedicated section of my health app, so I don’t forget details before the cardiologist appointments."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart to keep that symptom log—having detailed info makes the follow-ups so much more productive. For the site visits, could you pair up with a colleague or even bring a family member with you temporarily? That might reassure both you and your care team. To avoid calendar bloat, maybe you could delegate prep work for those meetings or shorten the visits slightly, so you’re not overcommitting physically. Would your staff be able to step in on logistics or even accompany you for the time being?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I could definitely bring one of my program managers along for site visits—at least until I’m in the clear. Actually, the whole family is a lot more tuned in now. We put up a posted sheet with emergency contacts in the kitchen and by the front door so everyone knows exactly who to call if something happens at home. Small thing, but it helps everyone feel a bit less anxious."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s not a small thing at all—it’s smart planning, and I bet it reassures your daughters too. Given all the changes, are there other routines you want to adjust temporarily? For instance, is your mindfulness meditation still part of your daily flow, or are you reworking that as well? Sometimes letting yourself have a little flexibility—rather than clinging to every old habit—makes the adjustment smoother."
+        },
+        {
+          "role": "user",
+          "content": "Meditation is non-negotiable; I still do 15 minutes every morning, no matter what. Honestly, it’s been one of the only constants that helps with the anxiety. I just have to swap the walking or riding for family strolls, and keep everything on the gentler side. No solo “head-clearing” routes in the evenings until the cardiologist gives the okay. It’s an adjustment for sure."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes total sense—and prioritizing safe, supported activities is the right call for now. For everything else, it seems like you’ve been pretty proactive adapting routines. If you need more strategies—like turning delegation into a short-term system, or ways to loop your team in on your health pause while maintaining privacy—just let me know. And if you want to vent about the ‘new normal,’ I’m here for that too."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His twin daughters' soccer league announced a shift to weekday evening practices and games for the upcoming season, requiring more frequent in-person attendance and schedule coordination with his spouse and mother, who both have limited availability at those times.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Holds a weekly Sunday evening planning session with his spouse to coordinate upcoming soccer carpools, childcare, and weeknight logistics for their daughters’ league commitments",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Relies on a shared digital family calendar to update game/practice schedules and assign pick-up duties for weeknight soccer events",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Organizes post-game team treats for his daughters' soccer team—never misses a single game during the spring season"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Coordinates team treats for his daughters' soccer team primarily on weekends, but now alternates game attendance with his spouse or mother and occasionally misses weekday games due to schedule conflicts",
+              "domain": "social_relationships"
+            },
+            "reason": "The league's move to weekday evening practices and games makes it impossible for him to attend every game, as his work commitments and the limited availability of his spouse and mother create unavoidable conflicts. He must adapt by sharing attendance and sometimes missing games."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, our daughters' soccer league just dropped a bombshell—they're shifting all practices and games to weekday evenings this spring. It's throwing our family logistics into chaos. I was wondering if you had any tips on how to keep things running smoothly when there's suddenly extra stuff mid-week and our schedules barely overlap."
+        },
+        {
+          "role": "assistant",
+          "content": "That kind of schedule shake-up can really add pressure, especially midweek. What's been the biggest pain point so far—figuring out carpools, meal timing, sharing attendance, or just making sure nothing falls through the cracks?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, all of it. Up to now, I managed post-game team treats and never missed a weekend game. Now it's not possible—work obligations and my wife's teaching schedule just clash with some of these weeknight games. My mom tries to help, but evenings aren't great for her, either. We're having to split up attendance and, for the first time, I'm going to miss a game here and there."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a tough adjustment—especially when you've made it a priority to be there for every game until now. Are you and your wife dividing up who covers which games, or are you trying to coordinate with your mom as well? Sometimes a shared family calendar or recurring planning session can help keep everyone aligned."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's exactly what we're doing. We've actually started holding a weekly Sunday evening planning session—just my wife and I—where we go over the soccer schedule, coordinate carpools, and assign who picks up the girls for each midweek event. We include my mom when we can, but her availability is spotty."
+        },
+        {
+          "role": "assistant",
+          "content": "A dedicated planning session sounds like a great move, and getting ahead of the week together can take a lot off your mind. Are you keeping track of the schedule and assignments on paper, or using something digital to make updates easier if things change last-minute?"
+        },
+        {
+          "role": "user",
+          "content": "We switched to a shared digital family calendar—it was overdue, honestly. Now everything's in one place: practices, games, who’s driving, even reminders for team treats. It’s been helpful with all the moving pieces."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really organized—having visibility for everyone on one platform makes a world of difference. Regarding team treats, are you still able to manage that for every game, or is that also shifting with the new schedule?"
+        },
+        {
+          "role": "user",
+          "content": "I used to handle treats after every game, but now I'm focusing on weekends and coordinating with the other parents for weeknight games. We alternate, and sometimes my wife or mom covers for me. I still do what I can, but I can't guarantee I'll be at every game now."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to divide and delegate given the circumstances. You’re still supporting the team, just in a more flexible way. How are you feeling about stepping back a little—has it brought any guilt, or is the new system easing your mind as you settle in?"
+        },
+        {
+          "role": "user",
+          "content": "There’s a little guilt—I've always prioritized being there—, but I know it's out of my control. The Sunday planning and calendar system help. I'm focusing on presence when I am there, and making sure everything's lined up so the girls never feel left in the lurch."
+        },
+        {
+          "role": "assistant",
+          "content": "That presence when you are there matters a lot, and showing your daughters how to adapt to changes is modeling resilience for them. Is there anything with your own schedule—site visits, Monday planning blocks, or your cycling on weekends—that’s been hardest to keep consistent with these new logistics?"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "A long-time senior staff member resigned unexpectedly to take a job with the city’s Department of Natural Resources, leaving a gap in leadership for two ongoing grant-funded projects and requiring immediate reassignment of responsibilities among the remaining team.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_048",
+            "fact": "Prioritizes one-on-one check-ins with remaining project leads every Thursday in the office—ensures direct handoff and support for re-assigned responsibilities after leadership changes",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_049",
+            "fact": "Institutes a temporary open-door policy for all staff during business hours to address morale and questions stemming from the sudden staff departure",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Blocks off Mondays for strategic planning after all-hands meetings—never schedules external calls until the afternoon"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Blocks off Mondays for urgent internal reassignments and team briefings following staff departures—schedules strategic planning sessions irregularly, after gap coverage needs are addressed",
+              "domain": "work_habits"
+            },
+            "reason": "The unexpected resignation of a senior staff member has created an immediate need to reorganize team responsibilities and ensure project continuity. Mondays, previously reserved for long-range strategic planning, must now be dedicated to urgent personnel meetings, crisis briefings, and reorganizational tasks."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_039",
+            "fact": "Uses a mobile device to take real-time photos and location check-ins during every Thursday project site visit, prioritizing compliance over personal note-taking",
+            "domain": "work_habits",
+            "reason": "He is no longer conducting regular Thursday project site visits due to suspended schedules and increased office demands following both a prior budget shortfall and now a key staff resignation. The underlying routine this preference depends upon no longer exists."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "One of my senior staff resigned out of the blue last Friday — she's joining the city's Department of Natural Resources. The timing is tough, since she was leading two of our biggest grant-funded projects and renewal deadlines are coming up fast. I've already had to start reassigning responsibilities just to keep things moving. I’m worried about continuity, but I also don’t want morale to tank. Can you help me think about an immediate action plan and how to keep the rest of the team from burning out?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough situation, especially with major renewals on the horizon. The team’s likely feeling the loss, but also the pressure to pick up extra work. For immediate action, I’d suggest a rapid assessment of who can cover which responsibilities, paired with very transparent communication about the transition. How have you handled reassignments so far, and do you have regular check-ins in place with project leads?"
+        },
+        {
+          "role": "user",
+          "content": "Right now I’m making Mondays about gap assessment and urgent reorg meetings, rather than strategic planning. The priority is shoring up leadership on those two projects, then briefing the rest of the staff so they know what’s expected each week. Strategic planning is pretty much on the back burner until I get coverage in place. And I’m scheduling 1:1s every Thursday with the remaining project leads—making sure their handoffs are smooth for the near future."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re focusing on stability first, which makes sense. Switching your Monday routine from long-term planning to immediate internal coordination should help everyone adapt quickly. With those Thursday check-ins, are you meeting in person for more in-depth handoffs or keeping them short and tactical? Also, are you noticing any questions or anxiety from the wider team yet, or is it mostly centered on those directly affected by reassignments?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely in person, at least for the next month or two. These projects are too complex to handle via email or chat. As for the rest of the staff, there’s a lot of uncertainty—some people have come by my office just to talk things through or voice concerns. Morale isn’t low exactly, but you can tell everyone’s tense and worried about extra workload. I’ve actually said my door is open for any questions during business hours, just to give people a channel."
+        },
+        {
+          "role": "assistant",
+          "content": "That open-door approach is great for transparency and accessibility, especially during uncertain times. It encourages team members to share concerns early rather than letting worries fester. Do you have a plan to manage the additional demands on your own time and energy? Balancing personal support with leadership tasks can be draining—especially when there’s also a looming grant workload."
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely been a stretch. Site visits on Thursdays are off the table for now, since I need to stay in the office while everything shakes out. I’m trying to clear space for both 1:1s and impromptu staff conversations, but it means most of my compliance and field work is paused. I just don’t want to miss anything urgent at headquarters during the transition."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense that you’ve paused regular site visits—it’s tough to split focus during a transition like this. With your hands full on internal coverage and morale, how are you handling your own stress and routines outside of work? Maintaining your health and stability sets a strong example for your team, even in a crisis."
+        },
+        {
+          "role": "user",
+          "content": "I’m still trying. If anything, I’m doubling down on my morning meditation to keep stress manageable. I prep lunches at home like always, and block Sundays off for family no matter what. It’s just the workday that’s in flux—so, any advice on avoiding burnout while so much is in motion? Especially once the adrenaline wears off?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prioritizing those routines outside work is key—that consistency will help you weather this period. For inside the office, it can help to set explicit expectations about temporary changes: communicate to your team that some routines (like site visits) are paused for a reason, and that both you and the organization are in a holding pattern for everyone’s well-being. Rotating responsibilities and encouraging breaks, even brief ones, can sustain energy. Would it help to involve a trusted staff member as a point person for morale check-ins, or do you prefer to keep that role yourself for now?"
+        },
+        {
+          "role": "user",
+          "content": "For now, I want to be the point person—at least until things stabilize. Once the new structure settles in, I’ll think about delegating. Thanks for helping me sort through this. Just talking it out is useful! Let’s touch base again once I see how things look in two weeks."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "A key philanthropic foundation partner scheduled their annual site evaluation with only two weeks’ notice, stipulating that the nonprofit’s executive leadership must personally present project outcomes and justify funding renewal in front of their review committee during the visit.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Conducts daily dry-run presentations to key project staff for two weeks prior to funder evaluation—never rehearses solo for high-stakes external reviews",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Prepares detailed outcome summary slide decks for funder visits, ensuring every metric is cross-checked with team leads ahead of external presentations",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Avoids scheduling any non-essential external calls or meetings during the funder evaluation preparation period",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_032",
+              "fact": "Suspends regular Thursday site visits in order to prioritize on-site crisis management, grant strategy sessions, and urgent internal meetings after the budget shortfall"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Resumes Thursday site visits, but only for funder-required presentations and evaluations—other site visits remain suspended due to internal priorities",
+              "domain": "work_habits"
+            },
+            "reason": "The foundation's site evaluation requires the executive leader's presence for specific project presentations. He must temporarily restart Thursday site visits, but only for externally mandated events, not for routine monitoring."
+          },
+          {
+            "from": {
+              "id": "pref_049",
+              "fact": "Institutes a temporary open-door policy for all staff during business hours to address morale and questions stemming from the sudden staff departure"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Limits open-door policy to scheduled mornings only for the next two weeks, reserving afternoons for preparation and rehearsal of the funder site evaluation presentation",
+              "domain": "work_habits"
+            },
+            "reason": "The urgent need to prepare and rehearse for the foundation’s site visit means uninterrupted afternoons are required. He restricts staff access to mornings to ensure focused leadership preparations."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, things just got thrown into overdrive. One of our core foundation partners is coming for their annual site evaluation—with barely two weeks’ notice. This time, they’ve insisted executive leadership present outcomes and justify our renewal—in person, in front of their committee. No delegation. I could use help building a prep and rehearsal schedule that protects enough time for actual content work. Any suggestions?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot of pressure condensed into a pretty tight window. Since you’re required to do these presentations yourself, the calendar must be brutal already. Do you want to devote blocks each day to preparation, or group your rehearsal into fewer but longer sessions? And do you have other routine site visits or leadership duties you’ll need to reshuffle to make this work?"
+        },
+        {
+          "role": "user",
+          "content": "Normally I’d be out at project sites every Thursday without fail, but I paused most of those after our budget hit last quarter—just too many urgent meetings and strategy sessions inside the building. With this evaluation, though, I’ll have to get out there again… but only for the foundation’s required presentations, not the typical site monitoring I used to do each week. At least that keeps some of Thursday freed up."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—you’re limiting your onsite time to just what the foundation requires, not your usual rotation. For these Thursday presentations, do you handle all the prep solo or collaborate with project leads? And will your mornings still be available for internal team check-ins, or do you need to lock those down as well?"
+        },
+        {
+          "role": "user",
+          "content": "I’m actually switching things up there too. I used to hold an open-door policy for my team all day when morale needed the boost, but this time I need afternoons totally protected. So, I’m restricting those to scheduled mornings only for the next two weeks—no drop-ins past noon. It’s the only way I’ll get focused rehearsal time for these reviews."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart call—protecting your afternoons for deep work and rehearsal will probably help lower your prep stress. About the rehearsals: do you prefer running through the presentation yourself, or is it more effective when you practice in front of other team members? I know some folks swear by solo practice, others absolutely want an audience."
+        },
+        {
+          "role": "user",
+          "content": "For something this high-stakes, I never rehearse solo. I’m actually doing dry-run presentations daily for the next two weeks, always with key project staff present. Helps catch anything I’d miss on my own and keeps everyone aligned."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach—the collective eyes always catch more than any one person, and it gives your leads a sense of ownership, too. For the content itself, will you have to build new visuals or reporting tools to satisfy the committee? Anything you’re changing this time around to strengthen your case?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. I’m prepping a detailed outcome summary slide deck for the funder’s visit. Every metric gets cross-checked with the team leads ahead of time so we don’t get caught flat-footed. Basically tightening every bolt so the evaluation goes smoothly."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re making this evaluation bulletproof. Are you still handling calls and smaller partner meetings during the run-up, or are you shifting your schedule to minimize outside distractions? Sometimes even a couple extra hours a week, reclaimed from non-essentials, makes a difference for focus."
+        },
+        {
+          "role": "user",
+          "content": "I’m avoiding all non-essential external calls and meetings until the site evaluation’s done. It’s the only way to keep the afternoon time protected and preparation intact. Anything that isn’t mission-critical right now is being rescheduled."
+        },
+        {
+          "role": "assistant",
+          "content": "Great prioritization—funneling your energy into what matters most right now should relieve some pressure. Would you like a draft two-week calendar template for combining your rehearsal blocks, outcome reviews, and travel logistics? Or would concrete time management tips (like delegation, batching, automations) be more useful?"
+        },
+        {
+          "role": "user",
+          "content": "A basic calendar template would actually be useful, as long as it can accommodate the daily group rehearsals, team metric checks, and Thursday site visit prep. I’ve already got most delegation decisions set, but seeing the week at a glance could help. Thanks—this is the most organized I’ve felt since that email landed."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Following the cardiac stress test, his cardiologist diagnosed him with sleep apnea and prescribed nightly use of a CPAP machine, along with strict guidelines for maintaining regular sleep hours to support overall heart health.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Adheres to a strict nightly schedule: CPAP machine setup, lights out at exactly 10pm, and no variability in bedtime, regardless of work or family events",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_058",
+            "fact": "Logs CPAP usage and nightly sleep quality in his health app first thing in the morning—never skips tracking, even on weekends",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Limits personal screen time to under one hour after 8pm—never brings devices into the bedroom"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Strictly prohibits any device use after 8pm and keeps all electronics fully outside the bedroom—now uses a CPAP machine and follows a rigid wind-down routine for sleep hygiene",
+              "domain": "daily_routines"
+            },
+            "reason": "The CPAP prescription and sleep apnea diagnosis require consistent, undisturbed sleep, making it critical to eliminate all screen disruptions and maintain electronics-free bedroom routines beyond previous limits."
+          },
+          {
+            "from": {
+              "id": "pref_024",
+              "fact": "Reviews next day’s calendar each evening before bed—never makes last-minute changes after lights out"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Reviews next day’s calendar immediately after dinner—no evening planning or pre-bed review allowed, per doctor's recommendation for a consistent, device-free sleep routine",
+              "domain": "daily_routines"
+            },
+            "reason": "Maintaining regular sleep hours now requires a device-free, wind-down period before bed; shifting calendar review to earlier evening eliminates late-night mental stimulation."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, I had my follow-up with the cardiologist after the stress test, and it turns out I have sleep apnea. Honestly, it was a surprise—I just thought I was stressed with grant deadlines. Now I'm on nightly CPAP, and my doctor is pushing a super strict sleep schedule. I need help figuring out how to actually make this routine fit—especially since my evenings can get hectic with the girls and work bleeding over. Any tips for building a rock-solid, non-negotiable wind-down routine?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big adjustment, especially on top of your work and family load. The CPAP and new sleep rules are non-trivial changes—so you’re smart to focus on the routine rather than just willpower. Can you tell me what your current evenings look like, maybe after dinner? Are there activities or patterns already in place that you need to work around, or is it usually up in the air based on what’s going on with work or the kids?"
+        },
+        {
+          "role": "user",
+          "content": "We've always had a Sunday family dinner that's sacred, but weeknights can be chaos. The twins have homework, sometimes soccer gear to prep, and my wife is often grading late. Until now, I used to wind down with the evening news headlines and then review my calendar and any last-minute work stuff before bed. But with the sleep apnea diagnosis, my doctor's adamant—no devices anywhere near bedtime. So I've had to cut out screens completely after 8pm, and actually move all electronics out of the bedroom. No exceptions. Even my calendar review got pushed earlier, right after dinner. It's a pretty radical change for me."
+        },
+        {
+          "role": "assistant",
+          "content": "That's some serious discipline, especially with no evening screens at all. Moving the calendar review earlier makes sense for winding down, though I can imagine it feels strange not doing it right before bed. With devices out by 8pm, what are you finding yourself doing in that time between, say, 8 and lights out? Is it reading, family catch-up, or just keeping things as quiet as possible?"
+        },
+        {
+          "role": "user",
+          "content": "Right now it's still a work in progress. Before, I’d sometimes read environmental non-fiction before bed (paper books, not e-books), but even that has to be wrapped up earlier since my wind-down needs to be absolutely routine now. After 8, I basically help get the girls ready for the next day, maybe chat with my wife, then go through CPAP setup religiously. Doctor wants lights out exactly at 10pm—no flexibility for work or social stuff. The idea is to keep the whole evening predictable, so my body actually cues in for sleep. Not my usual style, but I'm committed."
+        },
+        {
+          "role": "assistant",
+          "content": "Predictability really is key with sleep routines, especially tied to something like CPAP therapy. Having a fixed time for setup and lights out will help reinforce your body’s rhythm. Do you log your CPAP usage or how you slept? If so, when do you fit that in—first thing in the morning, or do you review it with your other health tracking?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ve added it to my health app routine. Every morning right after I do my blood pressure, I log my CPAP usage and a quick note on sleep quality—never skip it, weekends included. The accountability helps remind me why I’m sticking to all these rigid changes."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a solid approach—stacking your tracking routines like that gives you great consistency. It also helps with seeing patterns if anything needs adjusting. Since your evenings are now device- and work-free, is there anything about your old p.m. routines that you miss, or that you think is worth adapting to fit this new system? Maybe some analog activity, relaxation technique, or family ritual that could make the transition feel less abrupt?"
+        },
+        {
+          "role": "user",
+          "content": "The toughest parts are losing that sense of control from not double-checking my next day's meetings at night, and not being able to decompress with a documentary or headlines in bed. But replacing those with analog things—like prepping the girls’ soccer gear, reading with my wife on the couch, or even just 10 minutes of quiet stretching—seems to work. I can't say it feels 'normal' yet, but if it gets me better sleep and helps my heart, I’ll stick to it."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re making all the right moves—transitioning from digital to analog wind-down, shifting your planning window earlier, and making your evening routine predictable. Over time, your body (and likely your whole family!) will get used to it. If you want, we can brainstorm some variations on those screen-free activities, or ways to make the transition a little easier for everyone. Or do you feel like you’re set for now, and just need some time to get used to the new normal?"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Insists on face-to-face meetings for major partnership negotiations—avoids lengthy email threads for sensitive topics",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_003",
+        "fact": "Reviews every grant renewal application personally before submission—never delegates final approval to staff",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Only attends professional development events with actionable takeaways—avoids generic networking mixers",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Prepares plant-based lunches at home daily—never eats fast food on workdays",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Uses an at-home blood pressure monitor every morning—logs readings in a dedicated health app",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Practices mindfulness meditation for 15 minutes each morning before leaving for work—never skips sessions, even when running late",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Uses salt-free seasoning blends when cooking at home—never adds table salt to food",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Hosts family dinner every Sunday evening—never allows work obligations to interfere with this tradition",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Initiates group chats with college friends to plan the annual camping trip—never lets someone else handle logistics",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Attends at least one outdoor concert or festival every summer—never chooses indoor events if there's a choice",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Reads environmental non-fiction books on weeknights—never chooses fiction for evening reading",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Plans monthly day trips to Colorado state parks with family—never repeats the same park back-to-back",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Begins each day by preparing coffee and reading headlines—never checks work email before breakfast",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Preps daughters’ soccer gear the night before practice—never leaves packing for the morning",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Checks in with his mother in person daily while she lives with him—no scheduled phone calls during her recovery",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Prepares evening herbal tea for his mother and joins her for quiet conversation as part of her recovery routine",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Adjusts household meal planning to accommodate low-mobility-friendly, heart-healthy options for his mother",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Suspends summer date nights with his spouse due to her extended sabbatical in Europe—maintains regular video calls instead",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Organizes weekly family movie nights with his daughters while spouse is abroad, creating a new shared tradition for quality time",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Prepares all weekday dinners solo for his daughters—never relies on takeout while spouse is away",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Spends late afternoons drafting staff update memos and personally communicating difficult budget news—avoids delegating these sensitive conversations during the funding crisis",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Pauses all high-intensity or solo cycling until cleared by cardiologist—opts for gentle walks or accompanied strolls instead",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Initiates low-intensity walks with friends on Saturday mornings instead of group cycling—cycling is suspended due to cardiac restrictions",
+        "domain": "leisure_hobbies",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Uses a wearable heart rate monitor continuously throughout the day to track cardiac health and medication effects—reviews trends each evening before bed",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Logs bird sightings using a mobile app during project site visits, complying with digital documentation for funding audits",
+        "domain": "leisure_hobbies",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Reviews all digital site visit records immediately after visits to ensure audit readiness and correct documentation",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Integrates brief, low-intensity family or accompanied walks throughout the week—avoids solitary exercise until cleared by his cardiologist",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Logs all chest pain or unusual symptoms in a dedicated section of his health app immediately after each episode—never delays documentation until the end of the day",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Keeps emergency contact numbers clearly posted in common household areas for family awareness during his cardiac evaluation period",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Coordinates team treats for his daughters' soccer team primarily on weekends, but now alternates game attendance with his spouse or mother and occasionally misses weekday games due to schedule conflicts",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Holds a weekly Sunday evening planning session with his spouse to coordinate upcoming soccer carpools, childcare, and weeknight logistics for their daughters’ league commitments",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Relies on a shared digital family calendar to update game/practice schedules and assign pick-up duties for weeknight soccer events",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Blocks off Mondays for urgent internal reassignments and team briefings following staff departures—schedules strategic planning sessions irregularly, after gap coverage needs are addressed",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Prioritizes one-on-one check-ins with remaining project leads every Thursday in the office—ensures direct handoff and support for re-assigned responsibilities after leadership changes",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Resumes Thursday site visits, but only for funder-required presentations and evaluations—other site visits remain suspended due to internal priorities",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_051",
+        "fact": "Limits open-door policy to scheduled mornings only for the next two weeks, reserving afternoons for preparation and rehearsal of the funder site evaluation presentation",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Conducts daily dry-run presentations to key project staff for two weeks prior to funder evaluation—never rehearses solo for high-stakes external reviews",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Prepares detailed outcome summary slide decks for funder visits, ensuring every metric is cross-checked with team leads ahead of external presentations",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Avoids scheduling any non-essential external calls or meetings during the funder evaluation preparation period",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Strictly prohibits any device use after 8pm and keeps all electronics fully outside the bedroom—now uses a CPAP machine and follows a rigid wind-down routine for sleep hygiene",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Reviews next day’s calendar immediately after dinner—no evening planning or pre-bed review allowed, per doctor's recommendation for a consistent, device-free sleep routine",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Adheres to a strict nightly schedule: CPAP machine setup, lights out at exactly 10pm, and no variability in bedtime, regardless of work or family events",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Logs CPAP usage and nightly sleep quality in his health app first thing in the morning—never skips tracking, even on weekends",
+        "domain": "health_body",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Blocks off Mondays for strategic planning after all-hands meetings—never schedules external calls until the afternoon",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_047",
+        "reason": "The unexpected resignation of a senior staff member has created an immediate need to reorganize team responsibilities and ensure project continuity. Mondays, previously reserved for long-range strategic planning, must now be dedicated to urgent personnel meetings, crisis briefings, and reorganizational tasks."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Visits at least one project site every Thursday—never reschedules these site visits except for emergencies",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "The sudden loss of major funding forces him to immediately reassess internal priorities and staffing, making consistent project site visits untenable and directing his attention toward organizational crisis management and internal coordination."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Chooses local cycling trails with gradual elevation—avoids steep mountain routes to keep physical activity safe",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "The diagnosis of atrial fibrillation and new cardiac restrictions make even mild solo cycling risky until further evaluation, fundamentally changing his approach to exercise and recreation."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Schedules weekly phone check-ins with his mother—never relies on texting alone to stay in touch",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "His mother is temporarily moving into his home for recovery, so daily in-person check-ins naturally replace the weekly phone calls."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Organizes post-game team treats for his daughters' soccer team—never misses a single game during the spring season",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_044",
+        "reason": "The league's move to weekday evening practices and games makes it impossible for him to attend every game, as his work commitments and the limited availability of his spouse and mother create unavoidable conflicts. He must adapt by sharing attendance and sometimes missing games."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Sets summer date nights with his spouse when their routines diverge—never cancels unless absolutely necessary",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "His spouse will be away for two months in Europe, making in-person date nights impossible; the preference shifts to maintaining connection through video calls instead."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Goes cycling with at least one friend on Saturday mornings—never rides alone unless schedules clash",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "His cardiologist has restricted all high-intensity and solo long rides, making group cycling impossible for now; he now maintains the social routine through walks."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Maintains a birdwatching journal for local park visits—never logs sightings online or with apps",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "The new funder compliance program requires digital documentation and real-time location tracking for all site visits; he can no longer rely solely on a handwritten birdwatching journal during these trips, and must use an app."
+      },
+      {
+        "id": "pref_022",
+        "fact": "Does all grocery shopping at the neighborhood co-op on Saturdays—never shops at national chains",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": null,
+        "reason": "His mother's recovery requires flexibility in meal planning and dietary needs, leading to more frequent, possibly urgent shopping that may not suit the fixed co-op schedule or hours."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Limits personal screen time to under one hour after 8pm—never brings devices into the bedroom",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "The CPAP prescription and sleep apnea diagnosis require consistent, undisturbed sleep, making it critical to eliminate all screen disruptions and maintain electronics-free bedroom routines beyond previous limits."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Reviews next day’s calendar each evening before bed—never makes last-minute changes after lights out",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "Maintaining regular sleep hours now requires a device-free, wind-down period before bed; shifting calendar review to earlier evening eliminates late-night mental stimulation."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Suspends regular Thursday site visits in order to prioritize on-site crisis management, grant strategy sessions, and urgent internal meetings after the budget shortfall",
+        "domain": "work_habits",
+        "created_at_session": 2,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_050",
+        "reason": "The foundation's site evaluation requires the executive leader's presence for specific project presentations. He must temporarily restart Thursday site visits, but only for externally mandated events, not for routine monitoring."
+      },
+      {
+        "id": "pref_034",
+        "fact": "Prefers taking solitary evening walks for stress relief during the grant crisis, temporarily pausing weekend group cycling with friends",
+        "domain": "health_body",
+        "created_at_session": 2,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "Following the episode of chest pain and pending cardiac evaluation, solitary walks (especially as a stress coping mechanism) are replaced with safer, accompanied walks during recovery, prioritizing support and minimizing risk."
+      },
+      {
+        "id": "pref_039",
+        "fact": "Uses a mobile device to take real-time photos and location check-ins during every Thursday project site visit, prioritizing compliance over personal note-taking",
+        "domain": "work_habits",
+        "created_at_session": 4,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "He is no longer conducting regular Thursday project site visits due to suspended schedules and increased office demands following both a prior budget shortfall and now a key staff resignation. The underlying routine this preference depends upon no longer exists."
+      },
+      {
+        "id": "pref_049",
+        "fact": "Institutes a temporary open-door policy for all staff during business hours to address morale and questions stemming from the sudden staff departure",
+        "domain": "work_habits",
+        "created_at_session": 7,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_051",
+        "reason": "The urgent need to prepare and rehearse for the foundation’s site visit means uninterrupted afternoons are required. He restricts staff access to mornings to ensure focused leadership preparations."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:41:30.398084"
+}

@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_0a2de262",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_047",
+        "fact": "Takes public transit to campus exclusively — cycling and walking are prohibited due to her wrist fracture and physical therapy restrictions, regardless of weather or other conditions",
+        "supersedes": {
+          "id": "pref_040",
+          "fact": "Alternates between cycling and walking to campus each morning to increase aerobic exercise while reducing exertion on days with migraine or high blood pressure symptoms — public transit is now avoided unless severely unwell or weather is dangerous"
+        }
+      },
+      {
+        "id": "pref_043",
+        "fact": "Relies on a mix of quick pre-made meals and batch cooking on alternate weeknights; Sunday meal prep is now skipped due to family relocation needs",
+        "supersedes": {
+          "id": "pref_021",
+          "fact": "Meal preps lunches and dinners every Sunday night for the week — never buys pre-made meals"
+        }
+      },
+      {
+        "id": "pref_014",
+        "fact": "Communicates primarily through WhatsApp — never uses email for family matters"
+      },
+      {
+        "id": "pref_023",
+        "fact": "Reviews her color-coded planner each night before sleep to update deadlines and commitments"
+      },
+      {
+        "id": "pref_004",
+        "fact": "Replies to student emails in batches twice a day; avoids instant responses to preserve focus"
+      },
+      {
+        "id": "pref_036",
+        "fact": "Blocks early mornings for field specimen collection to comply with new daytime-only research protocols — avoids midday due to sun exposure and migraine risk"
+      }
+    ]
+  },
+  "persona": "A first-generation college student pursuing a master's in biology"
+}

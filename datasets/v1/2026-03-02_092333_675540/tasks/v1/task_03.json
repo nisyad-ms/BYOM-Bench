@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_dc96be92",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_041",
+        "fact": "Blocks two hours each morning for uninterrupted project governance tasks, including compliance documentation and oversight, but allows short meetings with clinical or legal leads as required",
+        "supersedes": {
+          "id": "pref_003",
+          "fact": "Blocks two hours each morning for uninterrupted model development work — no meetings or calls allowed"
+        }
+      },
+      {
+        "id": "pref_045",
+        "fact": "Uses office-provided ergonomic chairs and occasionally takes standing breaks, but no longer relies on a standing desk as the office setup does not provide one by default",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Uses a standing desk for half of his work hours — never works a full day sitting"
+        }
+      },
+      {
+        "id": "pref_058",
+        "fact": "Blocks all non-essential meetings and postpones personal appointments for four weeks to ensure focused onboarding and protocol integration for the research pilot"
+      },
+      {
+        "id": "pref_002",
+        "fact": "Replies to urgent work messages immediately, but delays non-critical emails until the end of the workday"
+      },
+      {
+        "id": "pref_029",
+        "fact": "Uses voice-to-text or dictation tools for work communications and notes instead of typing whenever possible"
+      },
+      {
+        "id": "pref_034",
+        "fact": "Prioritizes offline relaxation activities (listening to music, gentle walks, or eyes-closed meditation) during migraine flare-ups instead of digital entertainment"
+      }
+    ]
+  },
+  "persona": "A 28-year-old data scientist working remotely for a healthcare startup"
+}

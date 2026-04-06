@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_2e0a9e10",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_037",
+        "fact": "Suspends monthly game nights with his wife while mother-in-law is recovering — opts for quieter evenings involving the whole family instead",
+        "supersedes": {
+          "id": "pref_013",
+          "fact": "Plans monthly game nights with his wife — never lets work obligations interfere with these evenings"
+        }
+      },
+      {
+        "id": "pref_034",
+        "fact": "Delegates both routine server maintenance and legacy migration tasks to direct reports, only personally overseeing major cross-team incidents or critical migrations",
+        "supersedes": {
+          "id": "pref_002",
+          "fact": "Delegates routine server maintenance to team members — only handles escalations personally"
+        }
+      },
+      {
+        "id": "pref_015",
+        "fact": "Prefers text message check-ins with parents rather than phone calls — only calls during their visits"
+      },
+      {
+        "id": "pref_044",
+        "fact": "Completes fasting blood tests every Monday morning at a designated clinic before starting the workday — never delays or reschedules unless medically excused"
+      },
+      {
+        "id": "pref_036",
+        "fact": "Participates in mandatory cross-team standup meetings every Monday and Wednesday morning to synchronize migration progress — never skips these regardless of ongoing outages"
+      },
+      {
+        "id": "pref_024",
+        "fact": "Runs dishwashers and laundry only after 9pm to avoid interrupting family time"
+      }
+    ]
+  },
+  "persona": "A senior DevOps engineer managing cloud infrastructure for a healthcare company"
+}

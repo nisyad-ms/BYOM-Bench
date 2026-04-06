@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_d4cba43d",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_051",
+        "fact": "Delegates all client-related accounting tasks, including complex reconciliations, to her team; focuses solely on business development, strategy, and external partnerships.",
+        "supersedes": {
+          "id": "pref_002",
+          "fact": "Delegates routine data entry to junior accountants; only personally handles complex reconciliations"
+        }
+      },
+      {
+        "id": "pref_044",
+        "fact": "Prioritizes weeknight dinners with her daughter only — work or social activities may overlap, but avoids missing more than two dinners per week",
+        "supersedes": {
+          "id": "pref_013",
+          "fact": "Prioritizes family dinner together every weeknight — never schedules work or social activities during that time"
+        }
+      },
+      {
+        "id": "pref_004",
+        "fact": "Attends at least one evening networking event each month, but never on audit deadlines week"
+      },
+      {
+        "id": "pref_055",
+        "fact": "Reviews industry news and nonprofit sector updates over breakfast each weekday to inform business development and partnership decisions."
+      },
+      {
+        "id": "pref_050",
+        "fact": "Carefully reads nutrition labels for all grocery items, rejecting foods with added trans fats or overly processed ingredients"
+      },
+      {
+        "id": "pref_036",
+        "fact": "Schedules a daily check-in visit with her father every evening after work, never missing two consecutive days"
+      }
+    ]
+  },
+  "persona": "A mid-career accountant at a regional firm specializing in nonprofit organizations"
+}

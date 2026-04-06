@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_e46d88cd",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_042",
+        "fact": "Schedules sales team meetings at varied hours, including afternoons and evenings as needed, to accommodate new colleagues in wider global time zones — no longer restricts meetings to before 1pm",
+        "supersedes": {
+          "id": "pref_001",
+          "fact": "Schedules all sales team meetings before noon to accommodate different time zones — never allows meetings to run past 1pm"
+        }
+      },
+      {
+        "id": "pref_035",
+        "fact": "Temporarily spends quiet Saturday mornings at home resting or reading, avoiding park walks until cleared by her doctor",
+        "supersedes": {
+          "id": "pref_010",
+          "fact": "Reserves Saturday mornings exclusively for long walks in the park — never schedules errands or work during this time"
+        }
+      },
+      {
+        "id": "pref_047",
+        "fact": "Takes a 5-minute break away from the computer every 30 minutes during desk work to comply with her carpal tunnel regimen"
+      },
+      {
+        "id": "pref_008",
+        "fact": "Prepares homemade lunches Monday through Thursday — orders takeout only on Fridays"
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks work emails only between 8am and 6pm — never responds after hours unless it’s payroll related"
+      },
+      {
+        "id": "pref_037",
+        "fact": "Prefers listening to calming music or audiobooks while resting at home during her back recovery, instead of leisure activities that require physical movement"
+      }
+    ]
+  },
+  "persona": "A 28-year-old office administrator supporting a remote sales team"
+}

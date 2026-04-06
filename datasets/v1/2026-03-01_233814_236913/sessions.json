@@ -1,0 +1,1438 @@
+{
+  "persona": "A small business owner managing payroll for five employees",
+  "persona_id": "persona_20260301_235050",
+  "expanded_persona": {
+    "base_persona": "A small business owner managing payroll for five employees",
+    "age": 44,
+    "gender": "male",
+    "location": "Madison, WI",
+    "work_education": [
+      "Owns and operates a local coffee shop downtown, open seven days a week",
+      "Handles payroll and scheduling personally for his five employees; spends several hours every Monday reconciling hours and preparing paychecks",
+      "Recently transitioning to a digital point-of-sale and payroll system, learning new software while maintaining old manual processes",
+      "Frequent issues with late deliveries from suppliers, causing unpredictable inventory management",
+      "Considering hiring a manager to free up time for marketing the business, which has seen flat growth for two years"
+    ],
+    "health_wellness": [
+      "Diagnosed with mild hypertension last year; monitors blood pressure daily at home",
+      "Recently started walking 2 miles each morning before opening the shop, but struggles to maintain the routine during busy weeks",
+      "Often skips lunch due to busy midday shifts, leading to afternoon fatigue",
+      "Sleeps about 6 hours per night; sometimes interrupted by worry about finances and staffing",
+      "Enjoys weekend hikes when the shop is less busy, weather permitting"
+    ],
+    "family_relationships": [
+      "Lives with his wife and two teenage sons (ages 15 and 17)",
+      "Wife works full-time as a high school math teacher with evening grading responsibilities",
+      "Sons frequently help out at the shop during school breaks, sharing some duties like dishwashing and customer service",
+      "Parents live in town and occasionally drop by for coffee; he visits them every Sunday",
+      "Family plans annual summer camping trips, but scheduling around the shop remains a challenge"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Reviews inventory levels every evening after closing — never waits until morning deliveries arrive",
+        "Handles payroll and scheduling personally; refuses to delegate these tasks to employees",
+        "Learns new software by watching tutorial videos in early mornings — never attends external training sessions",
+        "Responds to supplier issues by calling directly; never relies solely on email communication for urgent matters",
+        "Blocks Mondays for financial paperwork; never schedules staff meetings or marketing activities that day"
+      ],
+      "health_body": [
+        "Monitors blood pressure daily after his morning walk; never skips recording—even on weekends",
+        "Eating lunch is limited to homemade sandwiches prepared before opening — never orders from nearby restaurants",
+        "Only walks outside for exercise; avoids indoor gyms entirely",
+        "Goes on weekend hikes each Saturday unless weather is poor — never substitutes with indoor activities",
+        "Sets a hard cutoff for caffeine after 3pm—never drinks coffee in the evening to improve sleep"
+      ],
+      "social_relationships": [
+        "Only discusses shop business with family during scheduled Sunday dinners; avoids mixing shop talk during weekday meals",
+        "Texts sons for quick updates about chores at the shop; rarely calls unless urgent",
+        "Visits his parents every Sunday afternoon — never skips unless sick",
+        "Schedules family activities at least two weeks in advance—never spontaneous outings",
+        "Helps wife with grading math papers on Thursday evenings, making it a shared routine"
+      ],
+      "leisure_hobbies": [
+        "Reads local history books at the coffee shop during slow afternoons—never uses e-books",
+        "Tries a new hiking trail every month if time allows—avoids repeating routes often",
+        "Plans annual camping trips four months in advance—never books last-minute",
+        "Attends local music events quarterly—avoids large concerts outside Madison",
+        "Brews experimental coffee recipes on Sundays during off-peak hours—never during busy weekday mornings"
+      ],
+      "daily_routines": [
+        "Starts each morning with a two-mile walk before opening shop—never sleeps in on business days",
+        "Checks emails and messages only before opening; never during customer rush periods",
+        "Batch shops for groceries and supplies every Wednesday evening—never shops daily",
+        "Prepares the next day’s to-do list every night before bed—never leaves tasks unplanned",
+        "Limits phone usage after 8pm to reduce stress and improve sleep—never brings work screens to the bedroom"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced an episode of elevated blood pressure and dizziness while working the midday shift, prompting a visit to the urgent care clinic where the doctor prescribed medication and advised stricter management of daily stress and diet.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_028",
+            "fact": "Practices daily 15-minute mindfulness or breathing exercises during afternoon breaks at the shop to reduce stress, as recommended by his doctor",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Avoids eating salty snacks and baked goods from his own shop during shifts—keeps unsalted nuts and fruit at the counter instead",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Eating lunch is limited to homemade sandwiches prepared before opening — never orders from nearby restaurants"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Eats a heart-healthy lunch with vegetables and lean protein, prepared at home or chosen from the healthiest nearby options — no longer limits to sandwiches and will order if it meets dietary needs",
+              "domain": "health_body"
+            },
+            "reason": "After the episode and doctor’s prescription, he must manage blood pressure through diet. Restricting lunch to pre-made sandwiches, which may not be heart-healthy or nutritionally balanced, no longer fits his needs; he’s now open to healthier choices even if it means ordering out."
+          },
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Starts each morning with a two-mile walk before opening shop—never sleeps in on business days"
+            },
+            "to": {
+              "id": "pref_027",
+              "fact": "Slows down mornings as needed; some days opts for a brief stretching routine or meditation instead of a walk per doctor’s orders—prioritizes stress management over rigid exercise routines",
+              "domain": "daily_routines"
+            },
+            "reason": "His health incident and doctor’s advice to manage stress require a less rigid approach: on especially stressful or fatigued mornings, he may substitute walking with relaxation, breaking from his strict commitment."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, yesterday was rough — had a dizzy spell during the midday shift and my blood pressure was way up. Ended up at urgent care. Doc put me on meds and basically said to get serious about stress and food. I'm just trying to wrap my head around how I'm supposed to manage things in the shop while following all this new advice. Can you help brainstorm ways to keep the business running but not run myself into the ground?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm glad you got checked out and are taking this seriously. Balancing health with running the shop is tough, especially when you're hands-on. What did your doctor suggest around stress specifically? Was it mainly about your workload, or more about routines and relaxation?"
+        },
+        {
+          "role": "user",
+          "content": "A bit of both. He was pretty clear: cut back on stress, add more relaxation. Said if mornings feel hectic, I can swap the two-mile walk for stretching or meditation instead. I used to force myself out for that walk every business day, but now, if I'm wiped or pressed for time, I pause and do breathing or light stretching instead. Trying to be less rigid about it."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — flexibility is key, especially with health concerns. Have you found any particular routines or practices that help in the mornings, or are you still experimenting with different relaxation techniques?"
+        },
+        {
+          "role": "user",
+          "content": "Still figuring it out. I tried guided breathing audio today, just 10 minutes, before prepping for opening. Was calmer and my BP was lower than yesterday. I also keep a regular walk when I'm up for it, but breaking the strict routine actually feels less stressful."
+        },
+        {
+          "role": "assistant",
+          "content": "Great call on the guided breathing. Have you thought about building in set times for stress relief during your workday itself? Even a 10–15 minute break in the afternoon can help reset your mind if the lunch rush gets intense."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's another thing that changed. Doctor recommended daily mindfulness or breathing during afternoon breaks at the shop. I've started taking 15 minutes every afternoon for that — headphones on, door closed if possible. It's not perfect, but a few days in I feel a bit less wired by closing time."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds promising. If you can keep those breaks consistent, it should help with the intensity of the midday shift. Speaking of midday, what about meals? You were usually packing sandwiches for lunch; is that still working, or are you changing things after the doctor's advice?"
+        },
+        {
+          "role": "user",
+          "content": "Nope, that's changed too. Doctor said to be stricter with sodium and balance, so sandwiches aren't cutting it anymore. Now I'm aiming for heart-healthy lunches — lots more veggies, lean protein. Sometimes I prep at home, but if I'm slammed, I'll order from nearby places as long as they have healthy options. I no longer limit myself to just the sandwiches I made before opening."
+        },
+        {
+          "role": "assistant",
+          "content": "That adjustment makes sense. Do you have go-to spots nearby for healthy meals, or are you still exploring? And are you planning to batch prep at home, or just decide day-to-day based on workload?"
+        },
+        {
+          "role": "user",
+          "content": "Still exploring. There's a salad spot nearby that's pretty good, and I grab grilled chicken with veggies from them sometimes. I still prefer prepping at home, but if I can't, I look for the best menu options close by. I actually stocked up on unsalted nuts and fruit for the counter too, since I was snacking on salty stuff and baked goods from my shop during shifts. Trying to avoid shop snacks now."
+        },
+        {
+          "role": "assistant",
+          "content": "Stocking healthier snacks is a smart move. If you’re keeping nuts and fruit handy, that’ll help curb cravings during busy periods — and helps set a good example for the team. Any changes to how you manage the midday shift itself, or do you still handle scheduling and payroll personally?"
+        },
+        {
+          "role": "user",
+          "content": "No change there — I still handle payroll and scheduling myself. Monday is blocked for paperwork like before. But shifting lunch and adding afternoon mindfulness breaks are making me rethink how strict I need to be about routines. Especially after that health scare, some flexibility is easier to justify."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re building in more adaptability, which is key for long-term health. Have you considered delegating any operational tasks, or hiring a manager to take some of the load off during midday, so you can prioritize your health without worrying about coverage?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve thought about it, especially as things get busier and with marketing needing more attention. Haven’t decided yet, but these new health routines definitely make the idea more appealing. For now, I’m just trying to nail down a balance between what I can do myself and how to fit in all the new habits."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great approach — incremental changes will help you figure out what works. If you want, I can help you draft a plan for heart-healthy meal options, or ways to schedule breaks that fit with your busy shifts. Anything specific you’d like to focus on next?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s start with meal planning. If you could help me make a flexible weekly lunch plan — home-prepped and backup healthy options I can order from nearby — that’d be huge. I want to stick to it, so I’m not tempted by anything in the bakery case."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "One of his five employees unexpectedly gave two weeks’ notice to pursue a new job out of state, requiring immediate adjustments to payroll, scheduling, and coverage for weekday shifts.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Texts staff group daily to coordinate last-minute shift coverage, rather than waiting for weekly schedule updates",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Invites sons to help cover weekday shifts after school for the next two weeks, rather than only during school breaks",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Handles payroll and scheduling personally; refuses to delegate these tasks to employees"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Begins delegating some scheduling duties to trustworthy employees to cover shifts; retains payroll responsibilities personally",
+              "domain": "work_habits"
+            },
+            "reason": "The urgency of covering weekday shifts after losing an employee forces him to delegate scheduling for the first time. Handling everything alone is no longer feasible with extra coverage needed on short notice."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "One of my baristas just gave two weeks' notice out of nowhere—they’re moving out of state for a new job. I’ve got to adjust payroll, coverage, and scheduling ASAP, since the weekday shifts are going to be short-handed. What’s the best way to handle this scramble? I’m used to managing everything myself, but this time feels overwhelming."
+        },
+        {
+          "role": "assistant",
+          "content": "That's tough timing! When coverage gets suddenly tight, it usually helps to break things down: immediate shift coverage, onboarding anyone new or temp, and keeping payroll accurate. Are you considering bringing in someone extra, or just redistributing hours among your current staff?"
+        },
+        {
+          "role": "user",
+          "content": "I haven’t hired anyone new yet—might need to, depending on how the next two weeks go. For now, I’m asking my sons to help cover weekday shifts after school. Usually they only work during school breaks, but I don’t have much choice at the moment."
+        },
+        {
+          "role": "assistant",
+          "content": "Having your sons step in sounds practical given the short notice. Will you need to tweak their responsibilities, or just have them fill in for the barista leaving? And how are your regular employees responding—are any of them able to take on extra shifts?"
+        },
+        {
+          "role": "user",
+          "content": "So far, two employees have volunteered for extra coverage, which helps. The issue is juggling last-minute changes—my usual routine was to set schedules weekly and stick to them. Now I’m texting the staff group every day for updates and shift swaps. It’s more chaotic, but I can’t wait for the regular schedule right now."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to go day-by-day if things are fluid. Sometimes a shared digital scheduling tool can help, but since you're texting already, you might want to keep using what works. Are you still managing all the shift adjustments personally, or have you considered delegating some of the scheduling to your more experienced staff?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually a big shift for me—I used to refuse to delegate anything around scheduling. But this week, I started asking one of my trustworthy employees to handle some shift swaps and coverage coordination. I still keep payroll for myself, but letting go of the scheduling, even partly, is new territory for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Delegating can really lighten the load, especially when things get hectic. Since you’re still handling payroll, are you tracking everyone’s extra hours manually, or letting your software do most of the work now?"
+        },
+        {
+          "role": "user",
+          "content": "I’m doubling up for now—tracking hours manually and also trying to learn the payroll software. It’s not seamless yet, but I want to make sure things are accurate with all the changes."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds smart. With the added complexity, maybe build in a nightly check to review what your delegated scheduler sends in, just so you can catch any mistakes before payroll runs. Are there any backup plans in case someone can’t make a shift at the last minute?"
+        },
+        {
+          "role": "user",
+          "content": "For now, backup means calling or texting the group directly—I don’t trust just email for urgent stuff. If a slot can’t be covered, I’ll pitch in myself or ask my sons, but I hope it doesn’t come to that often."
+        },
+        {
+          "role": "assistant",
+          "content": "Quick texting sounds right for immediate needs. If this scramble keeps up, you might want to outline a contingency plan—maybe a short list of people you can call on short notice. How are you balancing all this with your health routines and family time? This kind of week can easily throw everything off."
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely stressful. I’m still keeping my morning walks and tracking blood pressure, but lunch is more rushed, and I’m worried about fatigue creeping in. I set a cutoff for phone stuff after 8pm to try and keep a handle on stress, but between daily texts for scheduling and the extra coverage, evenings feel busy."
+        },
+        {
+          "role": "assistant",
+          "content": "With all the adjustments, you’re doing well to preserve your routines. Hopefully delegating scheduling will gradually give you more breathing room. If you do end up hiring someone new, would you want them to take over more management duties, or stick strictly to shift coverage?"
+        },
+        {
+          "role": "user",
+          "content": "Ideally, if I find the right fit, I’d like them to eventually handle more managing—scheduling, inventory, and even some marketing. But for now, just covering shifts is the priority. Thanks, this helps—just talking it through puts things in perspective."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received results from a routine blood test showing elevated cholesterol; doctor recommended adopting a heart-healthy diet with less processed meats and more vegetables, and scheduled a follow-up appointment in three months.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Researches heart-healthy recipes online every Sunday evening and prepares a grocery list for the week based on doctor-approved guidelines",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Joins a local nutrition-focused Facebook group to exchange tips and meal ideas for cholesterol management",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_029",
+              "fact": "Avoids eating salty snacks and baked goods from his own shop during shifts—keeps unsalted nuts and fruit at the counter instead"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Extends avoidance to all processed meats and cheese snacks from the shop during shifts; keeps raw veggies, unsalted nuts, and fruit at the counter instead",
+              "domain": "health_body"
+            },
+            "reason": "With newly elevated cholesterol and doctor’s recommendation for a heart-healthy diet, he now must avoid processed meats and cheese in addition to salty snacks and baked goods. He substitutes those with more vegetables, unsalted nuts, and fruit at hand during his shop shifts."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got my blood test results back — cholesterol is up, and my doctor says I need to overhaul my diet. That means cutting out processed meats and being a lot more strict with snacks at the shop. The follow-up is in three months, so I'm trying to get ahead. Honestly, between running the coffee shop, prepping payroll, and family stuff, sticking to this is going to be tough. Can you help me figure out how to start? I can’t afford to overcomplicate things."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change, especially with your shop schedule. I’m glad you’re looking to get ahead of it though. When you think about overhauling your diet, what’s your biggest challenge: finding time to prep healthier foods, knowing what foods to eat, or keeping it realistic during work shifts?"
+        },
+        {
+          "role": "user",
+          "content": "The biggest issue is probably during work shifts. I used to grab whatever was handy — sometimes a ham croissant or a cheese muffin. I had already cut back on salty snacks, but now I need to extend that to all processed meats and cheese snacks from the shop during shifts. So I keep raw veggies, unsalted nuts, and fruit at the counter instead, but it gets repetitive fast. Any ideas for quick, heart-healthy grab-and-go foods that won’t get boring?"
+        },
+        {
+          "role": "assistant",
+          "content": "Good job setting up veggies, nuts, and fruit to reach for. For variety, maybe you could prep mini containers of hummus or guacamole for dipping veggies, or try sliced bell peppers, snap peas, or cherry tomatoes. Roasted chickpeas (homemade, unsalted) can be a crunchy alternative. Would you be open to making a vegetable wrap or homemade granola bars for the week?"
+        },
+        {
+          "role": "user",
+          "content": "Vegetable wraps sound promising — as long as there’s no processed meat or cheese inside. I could throw in some roasted peppers and spinach, maybe avocado. I do batch shop for groceries on Wednesday nights, so I could add those ingredients to my list. I already started researching heart-healthy recipes online every Sunday evening — I make a shopping list based on whatever my doctor says is good. That routine’s new, but it helps keep me organized."
+        },
+        {
+          "role": "assistant",
+          "content": "Great move! Using Sunday evenings to plan and research keeps you ahead. There are plenty of heart-healthy recipes featuring beans, lentils, or grilled tofu for wraps and salads. Have you tried any new recipes yet, or do you want suggestions to add to your list for this week?"
+        },
+        {
+          "role": "user",
+          "content": "I haven’t tried anything with tofu yet — I’m a little skeptical, honestly, but beans and lentils are doable. Last week I made a chickpea salad I found online; it was decent, but my family wasn’t sold. I’m still scanning recipes in a few places. I actually joined a local nutrition-focused Facebook group for cholesterol tips and meal ideas, so I’ve been getting some interesting suggestions there. It’s helpful to hear what others in Madison are making."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—local groups give you options you’ll actually find in area groceries, plus you get real feedback. If you’re hesitant about tofu and your family isn’t crazy about beans, maybe focus on roasted veggie trays, grain salads, or heart-healthy soups for now. The Facebook group should help you find recipes that are both practical and tasty for the Midwest. Let me know if you want ideas for easy ways to add veggies to your meals—or if you find any group favorites worth sharing."
+        },
+        {
+          "role": "user",
+          "content": "I’ll circle back if I find a real winner. For now, I’m rotating roasted veggies and grain salads, like you suggested, and keeping plenty of fruit around. Sunday planning, Wednesday evening shopping, and avoiding all processed meats and cheese snacks during shifts are my new routine. Thanks for helping me sort through this without making it more overwhelming."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve got a manageable plan: Sunday evening recipe research, batch shopping Wednesdays, and a snack setup that keeps your shop shifts healthier. If you hit a wall with meal variety or need heart-healthy recipe inspiration, feel free to ask. Looks like you’re already making smart moves—keep going, and let me know how things feel after a couple weeks!"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His wife’s school district announced a new extended math tutoring program requiring her to supervise on campus until 6pm three evenings a week, significantly reducing her availability for family dinners and shared routines at home.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Prepares simple hot dinners on tutoring evenings, ensuring the meal is ready for his wife and sons when they return home late",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_038",
+            "fact": "Schedules Sunday family meals as the main weekly sit-down dinner, making it a non-negotiable gathering in light of reduced weekday overlap",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Helps wife with grading math papers on Thursday evenings, making it a shared routine"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Spends Thursday evenings having solo downtime at home or catching up on business planning while his wife is busy with after-school tutoring duties",
+              "domain": "social_relationships"
+            },
+            "reason": "With his wife now required to supervise tutoring until 6pm three evenings a week, their Thursday grading ritual is no longer possible and is replaced with solo or business-focused activities during that time."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, things just got a bit more complicated on the home front — my wife’s school district rolled out this extended math tutoring program, and now she has to stay at work until 6pm three times a week. It’s messing up our usual routines; we barely see each other on those evenings. I need ideas for keeping family dinners and downtime, but also for reshuffling my own habits. Any suggestions?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment! When those routines get shaken up, it can feel like everything’s up in the air. Have you thought about shifting dinner to a later time, so you can still gather together, or maybe moving your bigger sit-down meal to the weekend? And on the personal front, is there anything specific you’re missing most — solo time, shared grading evenings, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, the Thursday grading evenings are basically out now since she’ll be at school late. I’m mostly just on my own those nights, which is new. Trying to figure out if I should use that for downtime or catch up on business stuff — haven’t decided yet. Dinner-wise, the boys are around, but everyone’s eating at different times. If you’ve got ideas for keeping the family meal at least once a week, I’m listening."
+        },
+        {
+          "role": "assistant",
+          "content": "Losing that grading ritual must feel strange, especially if it was a shared anchor. For Thursday nights, maybe alternate between solo downtime and a bit of business planning? That could help balance rest and productivity. As for keeping the family meal, anchoring a main sit-down dinner on Sundays could work well. You could make it a non-negotiable weekly tradition, especially since weekday overlap gets trickier. Would that fit your schedules?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, Sunday dinners are probably my best bet at this point. I’m going to make them the big weekly meal — block it off for everyone, no excuses. It’s the only time we’re all home and not rushing. Any advice on prepping dinners for those tutoring evenings? The boys and I still need to eat, and I want to have something hot and simple for my wife when she comes in late."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a great plan — Sunday family meals as the anchor can create a reliable touchpoint, and everyone can look forward to it. For tutoring evenings, batch cooking simple hot dinners ahead of time could keep things easy yet comforting. Maybe chili, soups, casseroles, or sheet-pan meals that reheat well. That way, your wife can have a hot meal waiting, and the boys can grab servings as needed. Could you fit meal prep into your Wednesday grocery run, or would that stretch things too much?"
+        },
+        {
+          "role": "user",
+          "content": "My Wednesday grocery and supply run is pretty locked in, so prepping for tutoring nights shouldn’t be too hard — as long as it’s simple. I’m just aiming for meals I can start before the shop opens, so there’s no scramble after work. I’ve always preferred homemade anyway, so that stays on track. Now that I’ve lost those Thursday grading nights, I’m debating using the time for business catch-up; the solo evenings could be productive if I don’t overdo it. Any tips for balancing downtime and work, so I don’t burn out?"
+        },
+        {
+          "role": "assistant",
+          "content": "Good call — keeping meal prep low-stress and starting early means it’s less disruptive. For balancing Thursday evenings, maybe set a boundary: spend the first hour catching up on business planning, then transition to true downtime (like reading or listening to music). That separation can help keep you from feeling like you're always working. You mentioned solo downtime—do you already have a favorite way to wind down, or are you looking for new ideas?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I usually read local history books at the shop during slow afternoons, but Thursday evenings at home might be a good time to dig deeper, uninterrupted. I might throw in a hike or experiment with coffee blends if the mood strikes (weekends are still best for hiking though). I’ll keep your suggestion in mind—one block for business, one block for relaxing."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a good mix — combining productive catch-up and personal downtime can help keep your energy steady. Since you’re making Sunday dinners your weekly anchor, and prepping simple hot meals for tutoring evenings, any other family routines getting squeezed by your wife’s new schedule that you wish you could preserve or replace?"
+        },
+        {
+          "role": "user",
+          "content": "I think most of our other routines are holding up; the biggest change was losing our Thursday ritual. I’m adapting and just making Thursdays my time, either solo or for work. Honestly, scheduling is the main headache—all our activities are planned at least two weeks ahead now, and Sunday is now the only real sit-down dinner. The rest is just trying to keep things steady for the boys while my wife juggles school and tutoring."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve responded thoughtfully with new routines and priorities, especially around family meals and your own downtime. If you ever want to brainstorm ways to make Thursday evenings more restorative or explore new activities (solo or with your sons), just ask. Otherwise, feel free to reach out as new challenges pop up!"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received notice from his landlord that the coffee shop's rent will increase by 20% starting next quarter, requiring a major review of the business’s expenses, pricing strategy, and long-term lease options.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Regularly price-checks local competitors' menus each month and revises shop pricing when necessary to offset rising fixed costs driven by rent increases.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Consults with his accountant before making any new lease commitments or major expense changes—a step he previously handled solo.",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Blocks Mondays for financial paperwork; never schedules staff meetings or marketing activities that day"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Dedicates Mondays to in-depth business analysis and expense reviews, reallocating routine financial paperwork to shorter sessions throughout the week as needed; now occasionally schedules urgent marketing strategy calls on Mondays if related to cost increases.",
+              "domain": "work_habits"
+            },
+            "reason": "The rent hike and major cost pressures require deeper, recurring business reviews and flexibility to respond to urgent revenue initiatives. Keeping Mondays sacred for only routine paperwork is no longer practical."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so I just got a notice from my landlord — they're raising the shop's rent by 20% starting next quarter. It's a pretty big hit, and I need to figure out how to handle this. I'm reviewing expenses and looking at everything from pricing to possibly renegotiating the lease. Where should I start?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ouch, that's a significant increase. It's definitely wise to tackle it from several angles. When you review expenses, do you already have an organized system, or would it help to map out categories first? Also, on pricing — have you adjusted your menu much over the past year, or is it due for a refresh?"
+        },
+        {
+          "role": "user",
+          "content": "I've done some minor price tweaks here and there, but nothing systematic. Now I'm thinking I should actually check what other shops downtown are charging—maybe monthly—and adjust ours if needed to keep up with rent and other costs. Does that seem worthwhile, or is it overkill?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart approach, especially with costs on the rise. Monthly competitor price checks can help you stay responsive. You'll want a clear method for how you decide to adjust your prices after each check — do you usually handle that solo, or involve your accountant, especially given the stakes now?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, until now I've made all those decisions myself. But with the rent increase, I'm planning to consult with my accountant before making any big changes, like new lease terms or expense revisions. I think it makes sense to get another perspective this time."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a great move — accountants often see patterns we might miss. Will you also have them review your expense categories, or just focus on lease and pricing decisions? Sometimes their insight on cost control can point out inefficiencies, especially for recurring items like supplies."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I think I'll have them review everything, not just lease and pricing. I used to dedicate Mondays solely to routine financial paperwork and never scheduled meetings or strategy calls, but now I'm shifting gears. Mondays are going to be for deep business analysis and expense reviews, and I'll even squeeze in urgent marketing meetings if they're linked to handling these higher costs."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a smart adaptation to your new reality. Will spreading routine paperwork across the week help keep Mondays more focused, or do you anticipate some overlap? And do you plan on any new marketing tactics, or just revising current strategies?"
+        },
+        {
+          "role": "user",
+          "content": "Spreading the paperwork means Mondays can go deeper into analysis without getting bogged down. I'll still handle routine stuff throughout the week as needed. As for marketing, if urgent issues come up from the rent hike—like needing a quick promo to offset costs—I'll fit those into Mondays now, even though I never used to. Flexibility is key."
+        },
+        {
+          "role": "assistant",
+          "content": "That flexibility will definitely help. For your expense review, are there patterns with supply costs or delivery timing that complicate things? You mentioned unpredictable inventory; will that be part of your deeper review on Mondays?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. Supplier delays and inventory unpredictability are big pieces. I'll be factoring those in more seriously, maybe negotiating new terms or rethinking delivery schedules. I'll tackle those issues head-on during Monday reviews from here on out."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid plan. In terms of pricing, would you like help setting up a spreadsheet or using software to track competitor pricing trends? And for your accountant consult, do you have a regular meeting scheduled or will you reach out as needed?"
+        },
+        {
+          "role": "user",
+          "content": "A competitor pricing spreadsheet would be helpful. I think I’ll set reminders to do it monthly so I can stay proactive about adjustments. As for the accountant, I’ll probably reach out as needed for big decisions—like lease commitments or major expense shifts—but might consider more frequent check-ins if things get messy."
+        },
+        {
+          "role": "assistant",
+          "content": "Great approach. I can help you outline the spreadsheet and set up calendar reminders. For the accountant, maybe draft a summary of your monthly review findings to streamline those consults. Anything else on your mind regarding the rent hike? Staffing, new offerings, or operational changes?"
+        },
+        {
+          "role": "user",
+          "content": "I might need to look at staffing, but first I'm going to review pricing, expenses, and lease options with the accountant. Once I wrap my head around those, I'll see if operational changes make sense. Thanks for helping me talk this through—having these new routines and checks should make it less overwhelming."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His 17-year-old son decided to get a part-time job at a local bookstore after school and on weekends, reducing his availability to help out at the coffee shop or join in regular family activities.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Shifts weekend family activities to Sunday evenings to maximize time with all family members, as Saturday and Sunday daytime are now split by his older son's bookstore shifts.",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_032",
+              "fact": "Invites sons to help cover weekday shifts after school for the next two weeks, rather than only during school breaks"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Now relies primarily on his younger son to help at the shop when possible; does not expect his older son to cover regular shifts since he works at the bookstore",
+              "domain": "social_relationships"
+            },
+            "reason": "With his 17-year-old son starting a part-time job at the bookstore, he is no longer available to reliably help out at the coffee shop after school and on weekends. This shifts in-shop support expectations and places the burden more on his younger son or other employees."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, a curveball this week — my older son landed a part-time job at the bookstore downtown. He starts next week, so his schedule is mostly after school and weekends. I'm trying to figure out how to adjust the coffee shop staffing, plus our family routine. Can you help me think through a few options for covering shifts and keeping weekends family-friendly?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations to him! That does sound like a big shift for everyone. How much did you rely on him for weekday or weekend coverage at the shop before, and do you need to fill in those gaps right away? Are you thinking about reorganizing existing staff, or hiring someone new?"
+        },
+        {
+          "role": "user",
+          "content": "He used to cover after-school shifts a couple times a week and both Saturday and Sunday mornings. Now he'll only be around for the occasional weekday evening, maybe not at all weekends. I'm not expecting him to help with shop shifts regularly due to his bookstore hours. I’ll probably lean more on my younger son after school, unless he gets too stretched. Otherwise, I’d need another part-timer. Any advice for balancing it without putting too much on my younger kid?"
+        },
+        {
+          "role": "assistant",
+          "content": "Good call not overloading your younger son. With just five employees, coverage gaps can hit hard. Would any of your staff be interested in picking up extra hours? Or would you prefer to post for a new part-timer to avoid burning folks out? Also, are there particular shifts—like weekend mornings—that are hardest to fill?"
+        },
+        {
+          "role": "user",
+          "content": "Weekend mornings will be tricky for sure—that’s when the old routine falls apart. My junior barista already does some weekday afternoons but doesn’t want more weekends. I could ask one of the dishwashers to move up to counter duty if they’re interested, or advertise for a new hire. I’ve always liked handling scheduling myself, but it’s tempting to bring in a manager and free up my Mondays a bit. What’s the best way to minimize disruption to payroll and scheduling with these changes?"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re juggling a lot between digital upgrades and shifting staff. If you’re willing to experiment with promoting internally, cross-training your dishwasher for counter work could help. To minimize payroll disruptions, you can set up preset templates in your new system for recurring shifts, but keep your manual review as backup while you’re learning. Bringing in a manager does add a new payroll line, but it could save you hours. Do you feel comfortable training someone on your current processes, or would that be a big hurdle?"
+        },
+        {
+          "role": "user",
+          "content": "I prefer handling payroll and scheduling myself, so I’m not ready to delegate just yet. But I can set up templates in the software, and stick to manual reconciliation for now. Internal promotions are appealing; I know everyone can rely on each other that way. I’ll try cross-training first and only consider hiring if needed. The bigger challenge is weekends—now with my older son at the bookstore, our family can’t do hikes together on Saturdays like before. Any thoughts on keeping Sunday as family time even with his new work schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough shift—weekend traditions are hard to adjust. Would it be possible to shift your regular family activities to Sunday evenings, after your son finishes at the bookstore? That might keep everyone together, even if Saturday daytime is split. Or, if Sunday lunch isn’t feasible, maybe an evening meal or a shared game night could work. What’s your outlook on that sort of schedule change?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention it—I actually decided to move our family activities to Sunday evenings for now, since Saturday and Sunday daytime are going to be split. It'll help us maximize family time after my eldest finishes his bookstore shift. It’s not ideal, but everyone agreed to try it out. Anything to help make the new routine smoother? Especially with dinners or downtime after busy shop hours?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a thoughtful solution! Since Sunday evenings are becoming your new family anchor, you could batch prep dinner or make it a potluck to spread out work. Maybe set up recurring reminders for everyone about the shift—helps make it a habit rather than just squeezing it in. If you tend to get fatigued after Sunday shop hours, you might want to standardize an earlier closing time or arrange for another employee to wrap up so you have energy for family time. Would either approach suit your schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Closing earlier on Sundays is tricky with the usual weekend crowd, but I could ask employees to cover cleanup those nights. I’ve always prepped dinner ahead—sandwiches or something simple—and we keep shop talk for Sunday dinners. I’ll try setting a reminder so everyone knows to expect that routine on Sunday evenings now. Thanks, this actually helps. I think with these tweaks, we can adjust without too much stress."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His aging father was diagnosed with early-stage Parkinson's disease, prompting the family to coordinate increased visits and support for his parents' daily routines and appointments.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Shares calendar access and weekly appointment reminders with his wife and sons to coordinate parental care — never allows medical visits to go unscheduled or double-booked.",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Prepares meals for his parents at least once a week, adapting recipes to accommodate his father's dietary restrictions for Parkinson's management.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Visits his parents every Sunday afternoon — never skips unless sick"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Visits his parents multiple times each week, coordinating schedules and errands with his wife and sons — no longer limits visits to Sunday afternoons only",
+              "domain": "social_relationships"
+            },
+            "reason": "His father's diagnosis with early-stage Parkinson's and need for increased support prompted the family to coordinate more frequent visits and help with everyday routines, making regular weekday visits necessary."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My dad was just diagnosed with early-stage Parkinson’s. We’re all trying to step up support—I'm now visiting them several times a week instead of just Sundays. Coordinating around the coffee shop is tricky, especially with my wife and sons picking up more errands. Do you have suggestions for making these new family routines run smoothly without losing track of the shop’s needs?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm sorry to hear about your dad’s diagnosis. It sounds like you’re balancing a lot more now. With your visits increasing, have you already set up any shared calendars or reminders with your family? Sometimes coordinating schedules digitally can help keep things organized and avoid overlaps. How are you currently managing appointments and shop tasks so they don’t conflict?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, we did start sharing a calendar and setting up weekly appointment reminders. That way, none of us accidentally double-book medical visits or errands. But it does mean I need to block off time unexpectedly—sometimes right in the middle of my usual financial paperwork Mondays or evening inventory checks. Any ideas for juggling the shop’s operational routines when family needs pop up suddenly?"
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move on the shared calendar—it definitely helps when everyone is involved. For shop routines, would splitting up inventory reviews and financial paperwork into smaller sessions work, so you're not dependent on big blocks of time? Alternatively, is there any part of those tasks your sons could help prep, like gathering timecards or organizing vendor receipts, during their breaks?"
+        },
+        {
+          "role": "user",
+          "content": "I still handle payroll and scheduling myself—haven’t delegated those yet. But my sons help with prepping for inventory and dishwashing after school, which frees me up for errand runs. It’s the unexpected time crunch that’s tough. By the way, I’m also preparing weekly meals for my parents now, adapting recipes since my dad has new dietary restrictions because of the Parkinson’s. That’s an extra layer to coordinate. Any meal planning tips for balancing these added responsibilities?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great that you’re adapting recipes for your dad. For meal planning, batching meal prep can help—make larger portions once a week and portion them out for several days. You could also pick recipes that overlap with your own lunches, so you’re not making separate dishes. Are there specific dietary restrictions you’re working around, or certain ingredients you need to avoid?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly low-sodium and plenty of fresh veggies—trying to avoid anything highly processed. I make sandwiches for lunch for myself before opening, so I adjusted some recipes to share with my parents. I also coordinate with my wife and sons using shared grocery lists now, since timing errands is more complicated. The calendar really helps with keeping appointments and meal drop-offs from clashing with the shop schedule."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you're making efficient use of the shared lists and calendar! Given that, have you found any apps or systems particularly useful for managing both shop and family errands, or are you sticking to the same methods you use for shop inventory and supplies (batch shopping Wednesday evenings, etc.)?"
+        },
+        {
+          "role": "user",
+          "content": "I stick with batch grocery shopping—never daily trips. Now the list includes items for my parents, and I coordinate with my wife and sons on Wednesdays. That keeps our family errands from overwhelming the shop schedule. The biggest change is visiting my parents multiple times a week instead of limiting it to Sundays; we organize around their routines, and everyone has access to appointments and reminders so nothing goes unscheduled."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big adjustment, but it sounds like you're integrating the new routines into your existing structure well. Incorporating meal prep, coordinating errands, and using digital reminders—all solid strategies. If you ever need template checklists or calendar setups for managing both family and business routines, let me know. Anything else you'd like help refining in your workflow?"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "A local food distribution co-op named his shop as the official partner for their new downtown delivery program, granting access to fresher ingredients and featured supplier discounts but requiring exclusive weekly inventory reviews and digital order tracking integrated with their platform.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_049",
+            "fact": "Participates in the co-op’s weekly inventory review Zoom calls every Monday afternoon, prioritizing these over other administrative tasks",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Experiments with new menu items monthly using featured fresh ingredients provided at co-op discount — avoids old supplier surplus deals",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Batch shops for groceries and supplies every Wednesday evening—never shops daily"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Conducts weekly digital inventory and orders exclusively through the co-op’s online platform as required, fully replacing in-person batch shopping for shop supplies; now makes supplemental personal grocery trips separately",
+              "domain": "daily_routines"
+            },
+            "reason": "Becoming the co-op's official partner means exclusive weekly inventory reviews and integrated digital order tracking are mandatory. In-person batch shopping for shop supplies is replaced by scheduled, co-op-mandated digital processes."
+          },
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Responds to supplier issues by calling directly; never relies solely on email communication for urgent matters"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Uses the co-op's integrated digital portal for all supplier issues and communications — calls are reserved only for non-platform emergencies; no longer contacts suppliers directly by phone for routine matters",
+              "domain": "work_habits"
+            },
+            "reason": "The co-op partnership centralizes all shop-supplier communication within its platform, requiring digital tracking and structured workflow; direct phone calls for routine issues are now discouraged or even contractually prohibited."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, big shift for the shop this week. The local food co-op picked us as their official partner downtown and now I'm getting fresher ingredients plus some discounts—but it's all digital now, and they expect weekly inventory reviews on their platform. I'm honestly a little overwhelmed integrating their order tracking and scheduling these new reviews. Any advice on streamlining this without messing up payroll Monday or losing my grip on inventory?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like both a huge opportunity and a major adjustment! The digital part can be tricky if you’re used to manual tracking. How are you currently handling inventory and orders—are you still doing your Wednesday batch shopping or has the new co-op system changed that routine?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's actually the first thing that changed. Now the weekly digital inventory and ordering through the co-op's platform is mandatory. I no longer do in-person batch shopping for shop supplies on Wednesdays. I only shop for personal groceries now, separately. It's a different rhythm—part of me misses the old process, but at least it cuts out some driving."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great you’re finding some upside! Digital ordering does save time in some ways, but losing hands-on control can feel weird. Are there any hiccups so far using the co-op’s platform—like issues with supplier communication or urgent needs?"
+        },
+        {
+          "role": "user",
+          "content": "That’s the thing—I used to just call suppliers directly for anything urgent, especially when deliveries were late. Now, the co-op requires all shop-supplier communications through their digital portal. Calls are only for emergencies that aren’t platform-based. Feels odd not phoning—I actually caught myself dialing before remembering!"
+        },
+        {
+          "role": "assistant",
+          "content": "I can see how that’d take some getting used to. Platform-based communication has its benefits, but sometimes personal contact is quicker. Does the portal offer real-time updates, or do you still spend time checking on deliveries and inventory after closing?"
+        },
+        {
+          "role": "user",
+          "content": "Still checking inventory every evening after closing—but now it's all digital, which helps me spot trends in supplier issues. And every Monday afternoon, I join the co-op’s weekly inventory review Zoom call. It’s become a top priority. I block off that time for these reviews, even before I get to payroll paperwork. Mondays are getting crowded."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like your Mondays are even busier than before! Since the co-op review is now a big part of your admin routine, maybe shifting some payroll prep earlier in the day or weekend could help relieve Monday's pressure. Would that fit with your current flow, or do you prefer a consistent block for finances?"
+        },
+        {
+          "role": "user",
+          "content": "I always block Mondays for financial paperwork and handle payroll myself. It keeps things consistent—even with the new Zoom calls, I won’t shift it. But I’m open to tweaking smaller tasks, like prepping paperwork Sunday night if it lightens the Monday load. Just not the actual payroll processing—I don’t delegate that."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense; consistency is key for payroll. With your sons helping during breaks, is there anything in the digital inventory or order tracking they could handle—or is that too much for them? Or maybe there's something else you could delegate to free up a bit more of your bandwidth?"
+        },
+        {
+          "role": "user",
+          "content": "Inventory and order tracking is a must-do personally—the co-op requires the official partner to review and enter everything digitally, without delegating. But with the fresh ingredients from the co-op, I’m actually starting to experiment with new menu items each month. I do that during quieter weeks now, using their featured discount products. It’s a nice change from relying on old supplier surplus deals."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds exciting! Monthly menu experimentation could help attract new customers and shake up your flat growth trend, too. Are you getting customer feedback on the new items? And since you’re focusing on fresh co-op ingredients, are there any old processes or deals you’ve dropped entirely?"
+        },
+        {
+          "role": "user",
+          "content": "Exactly—I avoid the old supplier surplus deals altogether now. The co-op only features fresh goods, so I stick to their discounts. I do get customer feedback—mostly regulars are noticing the improved taste. It’s a boost. The workflow is new, but the ingredients make it worthwhile."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear the quality is getting noticed! It sounds like you’ve completely redesigned your supply workflow and menu development in the last week. Since your routine is so tied to the shop’s operations, do you feel like the new digital system is ultimately giving you more flexibility, or has it made things tighter?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s tighter, but more predictable inventory-wise. I spend less time running around town. The digital reviews and calls keep me disciplined. Once I settle into the rhythm, it might even free up some creative space—just need to get comfortable with all these screens! Thanks for helping me think it through."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced chest pain and shortness of breath while carrying heavy inventory boxes into the shop early one morning, leading to an emergency room visit where doctors ordered follow-up cardiac testing and imposed strict limits on heavy lifting until further evaluation.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Requests family and staff assistance for all heavy lifting tasks in the shop; absolutely avoids carrying boxes or supplies himself while under doctor’s restrictions",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Follows a daily log of chest symptoms and fatigue as instructed for cardiac monitoring—keeps the notebook at the counter and updates immediately if he notices changes",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Only walks outside for exercise; avoids indoor gyms entirely"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Prioritizes gentle indoor mobility exercises, such as yoga or stretching, as primary physical activity per doctor’s orders—temporarily avoids outdoor walks until further cardiac evaluation",
+              "domain": "health_body"
+            },
+            "reason": "After the ER visit and strict limits on heavy lifting and exertion, outdoor walks—especially in unpredictable Wisconsin weather—pose unnecessary cardiovascular risk until cleared. He must now substitute mild, controlled indoor activities, even though he previously avoided indoor exercise."
+          },
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Goes on weekend hikes each Saturday unless weather is poor — never substitutes with indoor activities"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Discontinues weekend hikes and replaces them with light indoor exercise or rest per doctor’s restrictions; will reconsider outdoor treks only with medical approval",
+              "domain": "health_body"
+            },
+            "reason": "Doctors have prohibited heavy lifting and likely any strenuous exertion—including hiking—pending cardiac testing. He can no longer continue his regular hiking habit and must find safe alternatives indoors or focus on rest."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_017",
+            "fact": "Tries a new hiking trail every month if time allows—avoids repeating routes often",
+            "domain": "leisure_hobbies",
+            "reason": "Seeking out new hiking trails is not possible under strict cardiac restrictions that prohibit strenuous activity and outdoor excursions for now; this behavior is irrelevant during his recovery period."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, things took a turn. I had some pretty alarming chest pain and shortness of breath earlier this week while hauling inventory boxes into the shop. Ended up in the ER, and now the doctors want me off all heavy lifting and any strenuous activity until they finish cardiac testing. I still need to keep the shop running, but I'm stuck figuring out what I can and can't do. Any ideas for keeping operations smooth without breaking doctor's orders?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds scary—and kudos for following through with the doctor's orders. Keeping the shop running is a big ask, but the first thing is delegating any physical tasks, especially those involving heavy lifting. Are your staff or family able to help cover those duties? And in terms of staying active, have you considered gentler forms of movement, like stretching or yoga?"
+        },
+        {
+          "role": "user",
+          "content": "Delegating is definitely an adjustment. I'm strictly asking my sons and staff to handle any heavy lifting—boxes, coffee shipments, supplies—while I’m under these restrictions. I keep getting reminded I can’t carry anything myself, even if it feels silly. As for exercise, the usual isn’t an option. I always walked two miles outdoors every morning, but now I’m supposed to prioritize gentle indoor stuff—mostly stretching or basic yoga, nothing strenuous. Honestly never thought I’d be doing yoga in the living room."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s a big shift, but it sounds like you’re taking the guidelines seriously, which will help with recovery. How is your staff adapting to the new setup, and do you have enough hands to pick up the slack? Would hiring a part-time helper or manager make sense, even temporarily?"
+        },
+        {
+          "role": "user",
+          "content": "The staff has been good about pitching in. My sons help after school, and I’m coaching everyone to lift safely. I’ve always handled all scheduling and payroll myself, so bringing on a manager is something I’m considering. Right now, the biggest challenge is retraining myself not to just step in and move things. Also, had to totally stop my Saturday hikes—which was non-negotiable for me before. Swapping them for light stretching or rest on weekends; hiking’s off the table until my cardiologist clears it."
+        },
+        {
+          "role": "assistant",
+          "content": "Giving up hiking must be tough, but sticking to indoor alternatives is wise until you get the all-clear. For managing stress and monitoring your health, have you changed how you track things day-to-day? With these new symptoms and restrictions, are you keeping any records or logs for your doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I started a daily log right at the counter—tracking any chest symptoms, fatigue, etc.—just like they told me to. If I notice anything unusual, I jot it down immediately. It’s a new habit, but useful for both me and the docs. Still monitoring my blood pressure after indoor stretching, sticking to routines as much as possible."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s excellent—a symptom log will give your doctors valuable info and help you spot patterns. As for keeping routines and managing fatigue, have you thought about substituting any other outdoor activities with indoor ones—like local history book reading, or experimenting with new coffee recipes in the shop during off-peak hours? That might help anchor your weekends while you’re resting."
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention it—I still read local history books at the shop during slow afternoons, and Sunday mornings I’ve started brewing experimental coffee recipes since I can’t go hiking. I used to try a new hiking trail every month, but that's completely dropped now—no sense planning routes I can't use. So I guess the big trade-off is finding indoor activities that won’t spike my symptoms or fatigue."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes perfect sense. While you’re in recovery, focusing on low-impact hobbies and delegating anything strenuous is the safest approach. Would you like tips for adding more gentle mobility routines, or ideas for keeping the staff engaged as you adjust your role? Or is your main priority right now just making sure the shop runs smoothly while you stay within your medical boundaries?"
+        },
+        {
+          "role": "user",
+          "content": "Priority is definitely keeping the shop running and making sure family and staff know what tasks are off-limits for me. Gentle routines are helpful too—maybe some guidance for keeping daily mobility without overdoing it would be good. For now, anything strenuous or risky is out, including my monthly hiking exploration habit, which honestly I miss, but I know it’s necessary. Thanks for helping me rethink how to approach this."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His 15-year-old son was invited to join a regional youth soccer team, which requires frequent evening practices and weekend tournaments in neighboring cities for the next six months, resulting in a significant shift to the family's schedule and transportation needs.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Regularly coordinates long-distance soccer tournament transportation logistics with other parents via group chats, handling ridesharing and planning at least two weeks in advance",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_058",
+            "fact": "Reserves weekend mornings for driving to out-of-town soccer games or practices, treating these as non-negotiable commitments and adjusting shop hours as needed",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_042",
+              "fact": "Now relies primarily on his younger son to help at the shop when possible; does not expect his older son to cover regular shifts since he works at the bookstore"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "No longer expects his younger son to help at the shop during evenings or most weekends for the next six months; relies on employees for those shifts due to his son's frequent soccer practices and tournaments",
+              "domain": "social_relationships"
+            },
+            "reason": "The 15-year-old son's regional soccer team commitments mean he will be unavailable during evenings and weekends—the primary times the father previously counted on his help at the shop. This shifts reliance away from family to regular staff."
+          },
+          {
+            "from": {
+              "id": "pref_043",
+              "fact": "Shifts weekend family activities to Sunday evenings to maximize time with all family members, as Saturday and Sunday daytime are now split by his older son's bookstore shifts."
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Suspends regular Sunday evening family activities for the next six months, focusing instead on flexible weeknight gatherings when the younger son is available between soccer practices and tournaments.",
+              "domain": "social_relationships"
+            },
+            "reason": "The son's soccer schedule conflicts with the established Sunday evening family time, making it impractical. The family must now adapt and plan gatherings during less predictable windows when everyone is present."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my younger son just made the regional soccer team. It’s great for him, but it’s throwing our schedule upside down—practices most evenings, tournaments all weekend, sometimes out of town. I’m trying to figure out how to keep the shop staffed and stay on top of everything. Any suggestions for managing these new scheduling headaches?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations to your son! That’s a big milestone for him—though with all those practices and travel, I can see how it’s adding complexity. Have you already started shifting work schedules at the shop or are you considering changing your staffing approach for evenings and weekends?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ve had to stop counting on him for evening or weekend shifts. He used to cover those times whenever I needed extra hands, but now I’m relying on my regular employees. I’m scrambling a bit, since I can’t just call him last minute anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, especially since you probably can’t predict which weekends he’ll be free anymore. Are your current employees able to pick up those extra shifts reliably, or are you considering hiring someone new to fill the gap?"
+        },
+        {
+          "role": "user",
+          "content": "They’ve stepped up a bit, but coverage can get thin, especially when someone calls out. I’ve started thinking about hiring a manager—someone who can handle some shifts and help with marketing, since I need more hours back. But I’ve never handed scheduling or payroll off, so I’m not sure how much to delegate."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s tough to hand off those core responsibilities, but a good manager could free you up for growth and support. Would you be open to having a manager handle staffing logistics, as long as you keep payroll and scheduling control? Or would you prefer to keep most of the management decisions yourself?"
+        },
+        {
+          "role": "user",
+          "content": "I’d really prefer to keep payroll and scheduling myself—I’ve always done it, and it helps me stay on top of things. What I’d want is someone who can cover shifts, deal with inventory, and help with staff training, but not handle the sensitive financial stuff."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good division of roles—it keeps your hands on what matters most while letting a manager handle day-to-day operations. With your son unavailable most evenings and weekends, keeping flexible coverage is key. Are you adjusting shop hours on weekends to account for tournament travel, or are you keeping hours steady and relying more on employees?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I’ve started reserving weekend mornings just for driving out to games and practices—those are non-negotiable now. I have to adjust the shop hours some weekends, depending on the tournament schedule. I try to get coverage, but if not, I’ll open a bit later or close early."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s understandable—those commitments can’t be missed, and it’s great you’re prioritizing them. How are you handling the transportation logistics for the tournaments, especially when they’re out of town? Have you coordinated ridesharing with other parents, or is it usually just your family driving?"
+        },
+        {
+          "role": "user",
+          "content": "I’m managing transportation through group chats with other parents now. We coordinate rides at least two weeks ahead so everyone knows who’s driving. It’s helped keep things organized, especially since I need to plan around the shop schedule."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move—group coordination helps spread the load and avoids last-minute chaos. Has all this changed your usual family routines? For example, have you had to shift your Sunday evening family activities to work around soccer practices and tournaments?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, big time. We’ve suspended our regular Sunday evening activities for the next six months. Instead, we’re just doing flexible weeknight gatherings when my son isn’t practicing or traveling. It’s not ideal, but the only way to get everyone together."
+        },
+        {
+          "role": "assistant",
+          "content": "Adapting to those shifting windows must be challenging, but it sounds like you’re making it work as well as you can. Would you like help with meal planning or finding ways to maximize family time during those unpredictable evenings?"
+        },
+        {
+          "role": "user",
+          "content": "That would help. Weeknight dinners are sporadic, and often someone’s rushing off or coming home late. Any ideas for keeping family connected when schedules rarely line up?"
+        },
+        {
+          "role": "assistant",
+          "content": "You could try prepping simple meals everyone can grab as they arrive, or set a short window for all to check in—even 15 minutes together can go a long way. Maybe a shared activity, like reviewing your son’s soccer highlights after practice, could add touchpoints when everyone’s home. Want more suggestions, or should we focus on staff scheduling solutions next?"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Reviews inventory levels every evening after closing — never waits until morning deliveries arrive",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_003",
+        "fact": "Learns new software by watching tutorial videos in early mornings — never attends external training sessions",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Monitors blood pressure daily after his morning walk; never skips recording—even on weekends",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Sets a hard cutoff for caffeine after 3pm—never drinks coffee in the evening to improve sleep",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_011",
+        "fact": "Only discusses shop business with family during scheduled Sunday dinners; avoids mixing shop talk during weekday meals",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Texts sons for quick updates about chores at the shop; rarely calls unless urgent",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Schedules family activities at least two weeks in advance—never spontaneous outings",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Reads local history books at the coffee shop during slow afternoons—never uses e-books",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Plans annual camping trips four months in advance—never books last-minute",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Attends local music events quarterly—avoids large concerts outside Madison",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Brews experimental coffee recipes on Sundays during off-peak hours—never during busy weekday mornings",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks emails and messages only before opening; never during customer rush periods",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Prepares the next day’s to-do list every night before bed—never leaves tasks unplanned",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Limits phone usage after 8pm to reduce stress and improve sleep—never brings work screens to the bedroom",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Eats a heart-healthy lunch with vegetables and lean protein, prepared at home or chosen from the healthiest nearby options — no longer limits to sandwiches and will order if it meets dietary needs",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Slows down mornings as needed; some days opts for a brief stretching routine or meditation instead of a walk per doctor’s orders—prioritizes stress management over rigid exercise routines",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Practices daily 15-minute mindfulness or breathing exercises during afternoon breaks at the shop to reduce stress, as recommended by his doctor",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "Begins delegating some scheduling duties to trustworthy employees to cover shifts; retains payroll responsibilities personally",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Texts staff group daily to coordinate last-minute shift coverage, rather than waiting for weekly schedule updates",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Extends avoidance to all processed meats and cheese snacks from the shop during shifts; keeps raw veggies, unsalted nuts, and fruit at the counter instead",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Researches heart-healthy recipes online every Sunday evening and prepares a grocery list for the week based on doctor-approved guidelines",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Joins a local nutrition-focused Facebook group to exchange tips and meal ideas for cholesterol management",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Spends Thursday evenings having solo downtime at home or catching up on business planning while his wife is busy with after-school tutoring duties",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Prepares simple hot dinners on tutoring evenings, ensuring the meal is ready for his wife and sons when they return home late",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Schedules Sunday family meals as the main weekly sit-down dinner, making it a non-negotiable gathering in light of reduced weekday overlap",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Dedicates Mondays to in-depth business analysis and expense reviews, reallocating routine financial paperwork to shorter sessions throughout the week as needed; now occasionally schedules urgent marketing strategy calls on Mondays if related to cost increases.",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Regularly price-checks local competitors' menus each month and revises shop pricing when necessary to offset rising fixed costs driven by rent increases.",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Consults with his accountant before making any new lease commitments or major expense changes—a step he previously handled solo.",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_044",
+        "fact": "Visits his parents multiple times each week, coordinating schedules and errands with his wife and sons — no longer limits visits to Sunday afternoons only",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Shares calendar access and weekly appointment reminders with his wife and sons to coordinate parental care — never allows medical visits to go unscheduled or double-booked.",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Prepares meals for his parents at least once a week, adapting recipes to accommodate his father's dietary restrictions for Parkinson's management.",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Conducts weekly digital inventory and orders exclusively through the co-op’s online platform as required, fully replacing in-person batch shopping for shop supplies; now makes supplemental personal grocery trips separately",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Uses the co-op's integrated digital portal for all supplier issues and communications — calls are reserved only for non-platform emergencies; no longer contacts suppliers directly by phone for routine matters",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Participates in the co-op’s weekly inventory review Zoom calls every Monday afternoon, prioritizing these over other administrative tasks",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Experiments with new menu items monthly using featured fresh ingredients provided at co-op discount — avoids old supplier surplus deals",
+        "domain": "leisure_hobbies",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Prioritizes gentle indoor mobility exercises, such as yoga or stretching, as primary physical activity per doctor’s orders—temporarily avoids outdoor walks until further cardiac evaluation",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Discontinues weekend hikes and replaces them with light indoor exercise or rest per doctor’s restrictions; will reconsider outdoor treks only with medical approval",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Requests family and staff assistance for all heavy lifting tasks in the shop; absolutely avoids carrying boxes or supplies himself while under doctor’s restrictions",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Follows a daily log of chest symptoms and fatigue as instructed for cardiac monitoring—keeps the notebook at the counter and updates immediately if he notices changes",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "No longer expects his younger son to help at the shop during evenings or most weekends for the next six months; relies on employees for those shifts due to his son's frequent soccer practices and tournaments",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Suspends regular Sunday evening family activities for the next six months, focusing instead on flexible weeknight gatherings when the younger son is available between soccer practices and tournaments.",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Regularly coordinates long-distance soccer tournament transportation logistics with other parents via group chats, handling ridesharing and planning at least two weeks in advance",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Reserves weekend mornings for driving to out-of-town soccer games or practices, treating these as non-negotiable commitments and adjusting shop hours as needed",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Handles payroll and scheduling personally; refuses to delegate these tasks to employees",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "The urgency of covering weekday shifts after losing an employee forces him to delegate scheduling for the first time. Handling everything alone is no longer feasible with extra coverage needed on short notice."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Responds to supplier issues by calling directly; never relies solely on email communication for urgent matters",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_048",
+        "reason": "The co-op partnership centralizes all shop-supplier communication within its platform, requiring digital tracking and structured workflow; direct phone calls for routine issues are now discouraged or even contractually prohibited."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Blocks Mondays for financial paperwork; never schedules staff meetings or marketing activities that day",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "The rent hike and major cost pressures require deeper, recurring business reviews and flexibility to respond to urgent revenue initiatives. Keeping Mondays sacred for only routine paperwork is no longer practical."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Eating lunch is limited to homemade sandwiches prepared before opening — never orders from nearby restaurants",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "After the episode and doctor’s prescription, he must manage blood pressure through diet. Restricting lunch to pre-made sandwiches, which may not be heart-healthy or nutritionally balanced, no longer fits his needs; he’s now open to healthier choices even if it means ordering out."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Only walks outside for exercise; avoids indoor gyms entirely",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_051",
+        "reason": "After the ER visit and strict limits on heavy lifting and exertion, outdoor walks—especially in unpredictable Wisconsin weather—pose unnecessary cardiovascular risk until cleared. He must now substitute mild, controlled indoor activities, even though he previously avoided indoor exercise."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Goes on weekend hikes each Saturday unless weather is poor — never substitutes with indoor activities",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_052",
+        "reason": "Doctors have prohibited heavy lifting and likely any strenuous exertion—including hiking—pending cardiac testing. He can no longer continue his regular hiking habit and must find safe alternatives indoors or focus on rest."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Visits his parents every Sunday afternoon — never skips unless sick",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_044",
+        "reason": "His father's diagnosis with early-stage Parkinson's and need for increased support prompted the family to coordinate more frequent visits and help with everyday routines, making regular weekday visits necessary."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Helps wife with grading math papers on Thursday evenings, making it a shared routine",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "With his wife now required to supervise tutoring until 6pm three evenings a week, their Thursday grading ritual is no longer possible and is replaced with solo or business-focused activities during that time."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Tries a new hiking trail every month if time allows—avoids repeating routes often",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "Seeking out new hiking trails is not possible under strict cardiac restrictions that prohibit strenuous activity and outdoor excursions for now; this behavior is irrelevant during his recovery period."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts each morning with a two-mile walk before opening shop—never sleeps in on business days",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_027",
+        "reason": "His health incident and doctor’s advice to manage stress require a less rigid approach: on especially stressful or fatigued mornings, he may substitute walking with relaxation, breaking from his strict commitment."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Batch shops for groceries and supplies every Wednesday evening—never shops daily",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_047",
+        "reason": "Becoming the co-op's official partner means exclusive weekly inventory reviews and integrated digital order tracking are mandatory. In-person batch shopping for shop supplies is replaced by scheduled, co-op-mandated digital processes."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Avoids eating salty snacks and baked goods from his own shop during shifts—keeps unsalted nuts and fruit at the counter instead",
+        "domain": "health_body",
+        "created_at_session": 0,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "With newly elevated cholesterol and doctor’s recommendation for a heart-healthy diet, he now must avoid processed meats and cheese in addition to salty snacks and baked goods. He substitutes those with more vegetables, unsalted nuts, and fruit at hand during his shop shifts."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Invites sons to help cover weekday shifts after school for the next two weeks, rather than only during school breaks",
+        "domain": "social_relationships",
+        "created_at_session": 1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "With his 17-year-old son starting a part-time job at the bookstore, he is no longer available to reliably help out at the coffee shop after school and on weekends. This shifts in-shop support expectations and places the burden more on his younger son or other employees."
+      },
+      {
+        "id": "pref_042",
+        "fact": "Now relies primarily on his younger son to help at the shop when possible; does not expect his older son to cover regular shifts since he works at the bookstore",
+        "domain": "social_relationships",
+        "created_at_session": 5,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "The 15-year-old son's regional soccer team commitments mean he will be unavailable during evenings and weekends—the primary times the father previously counted on his help at the shop. This shifts reliance away from family to regular staff."
+      },
+      {
+        "id": "pref_043",
+        "fact": "Shifts weekend family activities to Sunday evenings to maximize time with all family members, as Saturday and Sunday daytime are now split by his older son's bookstore shifts.",
+        "domain": "social_relationships",
+        "created_at_session": 5,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "The son's soccer schedule conflicts with the established Sunday evening family time, making it impractical. The family must now adapt and plan gatherings during less predictable windows when everyone is present."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T23:50:50.651632"
+}

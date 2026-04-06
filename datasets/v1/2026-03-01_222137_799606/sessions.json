@@ -1,0 +1,1461 @@
+{
+  "persona": "A retired teacher supplementing income by reselling vintage books online",
+  "persona_id": "persona_20260301_223727",
+  "expanded_persona": {
+    "base_persona": "A retired teacher supplementing income by reselling vintage books online",
+    "age": 67,
+    "gender": "male",
+    "location": "Portland, OR",
+    "work_education": [
+      "Retired high school English teacher after 35 years at Portland Public Schools",
+      "Runs a small online store (eBay and Etsy) specializing in rare and vintage books; spends 15-20 hours a week sourcing, listing, and shipping orders",
+      "Actively attends estate sales and library auctions in the Portland area weekly to find inventory",
+      "Occasionally volunteers at a local literacy nonprofit, leading Saturday reading sessions"
+    ],
+    "health_wellness": [
+      "Managing mild arthritis in knees; uses a cane for longer walks",
+      "Takes daily morning walks (about 30 minutes) around his neighborhood for exercise",
+      "Recently switched to a plant-based diet after borderline cholesterol reading",
+      "Enjoys gardening, which he uses as stress relief"
+    ],
+    "family_relationships": [
+      "Lives with his wife of 42 years, a retired librarian",
+      "Has two adult daughters; one lives nearby, visiting for Sunday dinners",
+      "Grandson (age 9) stays over once a month for sleepovers",
+      "Keeps in touch weekly with a childhood friend through phone calls, often discussing books and new finds"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Photographs every book himself for listings — never uses stock images from the internet",
+        "Processes all online orders before 10am — never leaves shipping tasks for the afternoon",
+        "Handwrites a thank-you note with each order — never includes generic printed cards",
+        "Sources new inventory from estate sales and library auctions only — never buys from thrift stores",
+        "Answers buyer messages within 12 hours, even on weekends — never lets correspondence lapse overnight"
+      ],
+      "health_body": [
+        "Eats fully plant-based at home — never prepares meat or dairy for himself",
+        "Starts every day with a 30-minute neighborhood walk — never skips unless the weather is extreme",
+        "Avoids kneeling in the garden — only works in raised beds or uses long-handled tools for comfort",
+        "Takes medication for arthritis at the same time each morning — never forgets or varies the routine",
+        "Prepares herbal tea with breakfast daily — never drinks coffee since switching diets"
+      ],
+      "social_relationships": [
+        "Hosts his daughter and family for Sunday dinners every week — never misses unless they're out of town",
+        "Reads aloud with his grandson at every sleepover — never lets him just play video games during those visits",
+        "Calls his childhood friend every Wednesday evening — never texts or emails instead",
+        "Plays Scrabble with his wife on Friday nights — never watches TV during their time together",
+        "Regularly recommends books to former students through social media — never uses group chats for personal updates"
+      ],
+      "leisure_hobbies": [
+        "Visits Portland's independent bookstores every Saturday morning — never orders personal books online",
+        "Maintains a detailed garden journal that he updates weekly — never records notes digitally",
+        "Plans short nature getaways with his wife twice a year — never travels to large cities for vacations",
+        "Restores damaged vintage books as a hobby — never resells items needing major repairs",
+        "Attends poetry readings at the local library monthly — never participates in virtual events"
+      ],
+      "daily_routines": [
+        "Shops for groceries twice a week at the neighborhood co-op — never shops at large supermarket chains",
+        "Checks weather and reads the local newspaper online before starting any tasks in the morning",
+        "Prepares dinner with his wife every evening — never eats separately or skips family meals",
+        "Limits computer time after 8pm and avoids screens entirely an hour before bed",
+        "Organizes his workspace and reviews pending orders every Sunday evening"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Slipped on wet leaves during his morning neighborhood walk and fractured his wrist, requiring a cast and instructions from his doctor to limit use for at least six weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_028",
+            "fact": "Uses voice dictation apps to keep track of garden observations and order notes while his wrist is healing",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Accepts help from his wife for packing and shipping book orders during recovery",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Photographs every book himself for listings — never uses stock images from the internet"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Relies on stock images or his wife's photos for book listings — avoids personal photography due to limited wrist function",
+              "domain": "work_habits"
+            },
+            "reason": "His fractured wrist prevents him from safely handling books and cameras for personal photography, so he must delegate or switch to stock images during recovery."
+          },
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Starts every day with a 30-minute neighborhood walk — never skips unless the weather is extreme"
+            },
+            "to": {
+              "id": "pref_027",
+              "fact": "Temporarily skips morning walks due to wrist fracture — substitutes gentle indoor stretching instead",
+              "domain": "health_body"
+            },
+            "reason": "His doctor's instructions to limit wrist use and avoid falls mean outdoor walks pose too much risk during recovery; he replaces this habit with indoor exercise."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_017",
+            "fact": "Maintains a detailed garden journal that he updates weekly — never records notes digitally",
+            "domain": "leisure_hobbies",
+            "reason": "With his dominant wrist fractured, he cannot handwrite in his physical journal and cannot update it in the usual way. He may resume after healing, but for now, this preference is not actionable."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, a bit of an adventure this morning—I slipped on some wet leaves during my walk and fractured my wrist. It's in a cast for at least six weeks. Right now, I'm trying to figure out how to keep up with my book shop and routine while basically working one-handed. Any tips for adapting, especially for listing and shipping books?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry to hear about your wrist! That sounds frustrating, especially since handling books involves so much manual work. For listing, have you considered voice dictation for description and notes? And packing—maybe some temporary help so you don't have to strain yourself?"
+        },
+        {
+          "role": "user",
+          "content": "Voice dictation might be a good idea. I've never tried it seriously for order notes or my garden observations, but handwriting isn't an option right now. My wife has started helping me pack and ship orders—I don't want to rely on her for everything, but it's the only way to keep up for now."
+        },
+        {
+          "role": "assistant",
+          "content": "It's great your wife can lend a hand for packing—sometimes accepting help just makes sense during recovery. For photos on listings, do you think you'd be able to keep photographing each book yourself, or would it make sense to use stock images or have your wife take a few shots?"
+        },
+        {
+          "role": "user",
+          "content": "Normally I'm pretty strict about photographing each book myself, but right now, that's not realistic. Handling the camera is awkward, and I can't safely position books with one hand. I've started using stock images for common titles and, when I need something specific, my wife snaps the pictures. Definitely a departure for me."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—it's a practical adjustment, even though it probably feels odd. How about sourcing new inventory? Would you still be able to attend estate sales and library auctions, or does the wrist make it risky to carry boxes and books?"
+        },
+        {
+          "role": "user",
+          "content": "I'm planning to keep sourcing at estate sales and library auctions—I just need to stick to lighter loads and let my wife handle anything heavy. Still avoiding thrift stores. The bigger shift is my morning routine: I used to start every day with a 30-minute neighborhood walk, but the risk of another slip is too high right now. I'm substituting gentle indoor stretching instead."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart call, especially with a cast. Indoor stretching should keep you moving without the fall risk. Are there any other routines that have been affected—maybe your gardening or journaling? Anything you need to work around?"
+        },
+        {
+          "role": "user",
+          "content": "Gardening is on pause for now, except light tasks with long-handled tools. The biggest change is my garden journal: I usually update it weekly by hand, but that's off the table with the cast. I'm using voice memo apps for observations, which honestly feels strange after decades of paper journals."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big shift, but at least the voice memos let you keep tracking things until you're healed. Would you like recommendations for dictation apps that work well for these kinds of notes, or tips on organizing digital entries so they’re easy to reference later?"
+        },
+        {
+          "role": "user",
+          "content": "That would be helpful! I've started with the basic notes app on my phone, but something that can sync to my computer and recognize plant names would be ideal. Also, do you know if there's a simple way to tag audio notes for fast searching? I want to keep up the routine as much as possible until I can resume handwriting."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "A local library announced it will be closing permanently and auctioning its entire rare books collection, opening up access to unique inventory that was previously unavailable to private resellers.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Prioritizes attending library auction preview days and sales over estate sales when rare book inventory is available",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Actively researches provenance and history of newly acquired library auction books before listing them for sale",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_020",
+              "fact": "Attends poetry readings at the local library monthly — never participates in virtual events"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Browses special rare book auction events at the library monthly — attends in-person auctions instead of poetry readings",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The local library is closing and shifting from poetry readings to rare book auctions; the monthly event he attended is replaced by rare book sales, aligning with his vintage book interests."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Did you see the news about the Albina library closing? I'm honestly stunned—they're auctioning off their entire rare books collection next week. As someone who relies on estate sales and library auctions for inventory, this is a pretty big shift. I want to make the most of this opportunity, but I'm not sure how to approach the preview days or what to prioritize. Any suggestions for strategizing around these kinds of library auctions?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a significant event—Albina had a reputation for some unique titles, especially in Pacific Northwest history. For auction preview days, I'd recommend making a list of genres and specific authors you know sell well on your store beforehand. Try to arrive early to assess the condition and rarity firsthand. Are you mainly looking to expand your usual inventory, or hoping for a few standout finds that could be featured in your listings?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, this is the first time I've shifted my attention from estate sales to library auctions—I'm prioritizing these preview days and auction sales over my regular estate haunts right now, at least while the rare inventory is available. My wife's already helping me compile our wishlist, but I feel I need to get better at quickly evaluating provenance and spotting items with history. Any resources or tactics for that?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great call on prioritizing the library auctions, especially given the quality of what's likely to be on offer. For provenance, I'd recommend checking for library stamps, bookplates, and any catalog records that might accompany the auction items. Sometimes libraries include historical notes or accession details that help tell the story. Bringing a loupe and a small flashlight can help you inspect bindings and inscriptions. Have you researched local collections or consulted online databases to prep for identifying especially rare editions?"
+        },
+        {
+          "role": "user",
+          "content": "I've started researching the provenance and history of books from library auctions more actively before listing them for sale—I'm leaning toward including brief notes about each book's history in my online store descriptions now. I haven't been relying much on digital databases yet, but I'm open to learning if there's a good local resource. The challenge is sorting details quickly, since library auction preview windows are tight. Any tips for rapid, reliable research on the spot?"
+        },
+        {
+          "role": "assistant",
+          "content": "Including notes about provenance will really set your listings apart. You could try downloading reference apps like ABAA or WorldCat for quick checks on your phone, and Portland State's library has a digital archive of regional history—sometimes useful for verifying signatures or rare editions. When previewing, snap photos of title pages and unique marks, then research as soon as you get home. Would you consider bringing a checklist of your research priorities to streamline sorting on-site?"
+        },
+        {
+          "role": "user",
+          "content": "A checklist actually sounds manageable—especially if I focus on first editions, signed copies, and Pacific Northwest authors. I've always photographed every book myself for my listings, never using stock images, so preview days give me a chance for quality photos up front. I'm also thinking about shifting my Saturday routine: now that poetry readings at the library are gone, I plan to browse these rare book auction events monthly instead. It's a different kind of thrill, but fits my vintage book interests well."
+        },
+        {
+          "role": "assistant",
+          "content": "That adjustment to your Saturday routine makes sense, especially with so much new inventory coming in. Swapping poetry readings for auction events is a great way to connect with fellow collectors, too. Are you planning to integrate any of the auction finds into your garden journal or family reading nights, or strictly keeping new acquisitions for resale?"
+        },
+        {
+          "role": "user",
+          "content": "I'll probably keep most of the auction finds for resale—unless something with special sentimental value turns up. I've made it a habit to actively research, document, and highlight the provenance for those items before listing them, so that's a new step in the workflow. It feels like a good blend of scholarship and entrepreneurship. Thanks for helping me think this through—I'll put together a priorities list and see what the auction yields."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Diagnosed with moderate hearing loss during an annual checkup and fitted with hearing aids, with advice from his audiologist to avoid loud environments and to attend follow-up appointments for adjustments.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Avoids attending events or sales in crowded or noisy venues — prefers quieter estate sales and book events",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Schedules all follow-up audiology appointments promptly and tracks hearing aid adjustments as a routine health task",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Reads aloud with his grandson at every sleepover — never lets him just play video games during those visits"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Shares silent reading time with his grandson at every sleepover — avoids reading aloud due to difficulty hearing and following along accurately",
+              "domain": "social_relationships"
+            },
+            "reason": "With moderate hearing loss and hearing aids, reading aloud (especially with a young child's lower voice and varying pace) has become difficult for him to follow accurately, and causes frustration for both; he adapts by having shared silent reading sessions instead."
+          },
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Calls his childhood friend every Wednesday evening — never texts or emails instead"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Video calls his childhood friend every Wednesday evening — avoids traditional voice calls due to trouble understanding speech over the phone with hearing aids",
+              "domain": "social_relationships"
+            },
+            "reason": "The hearing loss and subsequent need for hearing aids make it much harder for him to understand phone audio; with video calls, he can use lip-reading and visual cues to help follow the conversation."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Had my checkup last week, and it turns out I've got moderate hearing loss. They've fitted me with hearing aids, and I'm supposed to avoid noisy places now. I know this is fairly common, but it's a big adjustment, especially around sourcing and daily routines. I was hoping for some help figuring out how I can manage my book business smoothly without feeling overwhelmed."
+        },
+        {
+          "role": "assistant",
+          "content": "I can imagine that's quite an adjustment, especially since reselling vintage books involves a lot of sourcing and interaction. Are there particular aspects of your business that feel especially challenging since your diagnosis, or is it more the overall routine?"
+        },
+        {
+          "role": "user",
+          "content": "The biggest immediate challenge is sourcing. I used to go to every estate sale and library auction I could find, but now I need to avoid the more crowded, noisy venues. I went to a big auction last weekend and it was pretty stressful with all the chatter and background noise—it made the hearing aids buzz. I think I'll have to stick to smaller, quieter sales, which means fewer options. Any ideas for how to adjust, or maybe find sales that aren't packed?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a good move for your hearing health. Maybe you could reach out to some estate sale organizers ahead of time and ask about expected crowd size or if they offer quiet preview periods. Smaller library or community-run auctions are often less chaotic than popular estate sales. Have you tried coordinating with other sellers to split up visits or share tips about quieter events?"
+        },
+        {
+          "role": "user",
+          "content": "I haven't teamed up with anyone yet, but I do have a few acquaintances from my regular circuit. I could check in with them and maybe compare notes on quieter sales. I already keep an eye out for library auctions, since they're usually more manageable. I guess I need to be more strategic—but that's probably better for my knees anyway! Also, I'm now scheduling all my follow-up audiology appointments as soon as they tell me, and tracking any hearing aid tweaks as part of my regular health routine. It helps me stay on top of things."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you're building a really organized approach to health alongside your work, which is wise. Since you're tracking hearing aid adjustments, maybe you could also add sales or event details to that routine—recording which are comfortable or which cause issues, so you can plan ahead. On the sourcing front, do you ever utilize email alerts or social media groups about upcoming estate sales with a focus on quieter venues, or are you strictly word-of-mouth and library postings?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly word-of-mouth and library listings, since social media groups can get a little overwhelming. I do check my neighborhood's online board for local estate sales, but I try not to sign up for email alerts because my inbox gets too crowded. Now more than ever, I'm making sure the events I attend are quieter—it's a hard line. I'm also prioritizing keeping up with audiology follow-ups, since I want the hearing aids in top shape for long days out sourcing or shipping."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—minimizing digital distractions while staying focused on quieter spaces. Besides sourcing, has the hearing loss affected any other routines, like communicating with buyers or your social circles? I'm happy to brainstorm ways to adjust if those areas have become more challenging."
+        },
+        {
+          "role": "user",
+          "content": "It's definitely changed how I connect with people, especially my childhood friend. We used to do a phone call every Wednesday, but I can't follow audio on a regular phone anymore—too hard to understand with the hearing aids and no visual cues. We switched to video calls, so now I rely more on lip-reading and seeing his expressions to follow the conversation. It works surprisingly well, though I miss the simplicity of our old calls."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart adaptation—video calls do help bridge the audio gap. Are you finding video calls work for other relationships, or is it just with your friend for now? Any changes in family routines or with your buyers—like replying to messages, or handling in-person meetups?"
+        },
+        {
+          "role": "user",
+          "content": "Family life hasn’t changed much, but reading with my grandson has. We had a tradition of reading aloud together during his sleepovers, but lately it’s felt frustrating for both of us—his voice is soft and paced unevenly, and I just can’t keep up with the hearing aids. So now, we do silent reading side-by-side and then discuss the stories afterwards. He actually likes choosing his own book, and I enjoy seeing what catches his interest. It’s a shift, but it works."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a meaningful adaptation—and encouraging his independence probably builds his confidence too. For buyers, do you anticipate any changes in handling questions or shipping, or is your existing system—replying within 12 hours, handwriting notes, and processing orders in the morning—still working smoothly?"
+        },
+        {
+          "role": "user",
+          "content": "No major issues there—my routine hasn’t changed for the online shop. I still reply to buyer messages within 12 hours, process everything before 10am, and send handwritten thank-you notes. In-person meetups are rare, and I’m even more selective now, making sure any interaction happens in quiet spaces if at all. Mostly, I’m focused on keeping business tasks early in the day and avoiding anything that might stretch my hearing aids in loud settings."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you've adapted thoughtfully to your new reality, weaving health and work routines together. Keeping events quiet, adjusting family traditions, and tracking your hearing aid maintenance seem to work well for you. If any new issues pop up—whether sourcing, shipping, or connecting—let me know and we can brainstorm more ways to support your routines."
+        },
+        {
+          "role": "user",
+          "content": "Will do. Thanks for helping me sort through these changes. If you spot quieter estate sales or library events in Portland, let me know—I’m always on the hunt for good inventory that won’t leave me overwhelmed."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, I'll keep an eye out and let you know. If you ever want tips on keeping your hearing aid routine organized, or ways to make your silent reading sessions even more engaging, just ask. Wishing you quieter sales and good health!"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His daughter and her family, who live nearby, announced they are relocating out of state for his son-in-law’s new job offer in Seattle.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Schedules monthly video calls with his daughter’s family on Sundays to keep the family tradition alive despite distance",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Plans to visit Seattle for extended stays twice a year, coordinating travel with his wife's schedule to maximize time with his grandson",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Hosts his daughter and family for Sunday dinners every week — never misses unless they're out of town"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Hosts Sunday dinners with his wife only — rarely includes extended family due to their relocation out of state",
+              "domain": "social_relationships"
+            },
+            "reason": "With his daughter's family moving to Seattle, weekly in-person Sunday dinners are no longer possible. This ritual must shift to dinners with just his wife, except for rare occasions when family visits."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, my daughter just told us they're moving up to Seattle for her husband's new job. They won't be just down the road anymore, which means our Sunday dinners are about to change. I'm honestly a bit at a loss—it's been a ritual for years. How do you think I should approach keeping that sense of connection, given the distance?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big transition, especially after having your family nearby for so long. Maintaining those routines and connections can be tricky when geography changes. Have you considered scheduling regular video calls or setting up a recurring virtual Sunday dinner? Sometimes rituals can adapt to technology, even if it’s not quite the same."
+        },
+        {
+          "role": "user",
+          "content": "Actually, I'm thinking about monthly video calls on Sundays—sort of a way to keep the tradition going, even if we're not around the same table. Weekly feels a bit much, but if we commit to once a month, it might stick. I'm not sure how to make those feel special though, any ideas?"
+        },
+        {
+          "role": "assistant",
+          "content": "Monthly sounds very doable and sustainable. To make video calls feel more like a shared ritual, maybe you could cook the same meal and eat together on camera, or start each call with a favorite activity—could you read to your grandson like you used to during sleepovers, or perhaps play a remote game? Sometimes maintaining a unique element helps anchor the tradition."
+        },
+        {
+          "role": "user",
+          "content": "Reading aloud has always been our thing during his sleepovers. I could definitely keep that going virtually—maybe I can mail him a copy of whatever book I'm reading so he can follow along. That makes the video call feel more intentional, not just a check-in. Plus, I'm planning to coordinate longer visits to Seattle—twice a year, ideally, so my wife and I can spend extra time with our grandson. We'll need to work around her schedule, but it's a priority for us."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a wonderful approach—making the time together, virtual or in person, feel meaningful. Mailing the book ahead is clever, and planning extended visits will give you in-person connection to balance the distance. For the longer trips, have you set any routines around travel or duration, or are you still figuring out what works for both of you?"
+        },
+        {
+          "role": "user",
+          "content": "We're still figuring it out, and need to coordinate with my wife's schedule. She has commitments with the library, but we want to maximize our visits, maybe stay for a week at a time. That way, we can really be present—not just pop in for a day or two. It'll mean shifting some routines at home, especially around my vintage book business, but that's manageable. Any travel or scheduling tips for balancing home commitments with extended stays like this?"
+        },
+        {
+          "role": "assistant",
+          "content": "Planning ahead definitely helps, especially when you’re balancing your business and home routines. You might consider batching your online store tasks before leaving—photographing and listing inventory ahead of time, pausing order shipment for a set window, or posting a note about delayed shipping on your shops. For scheduling, maybe align your visits with local events in Seattle or your grandson’s school breaks to make the most of your time. Would that fit with how you prefer to run your store and family life?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I always process my orders by 10am—never in the afternoon—and handle every listing myself, including the photos, so batching makes sense before a trip. I also handwrite thank you notes for each order, so I'll need to prep some in advance if I'm away. I never leave correspondence overnight, so I might bring my laptop for checking buyer messages, but limit responses to mornings. I’ll coordinate trips with my grandson’s school breaks so we get more quality time. The store is important, but these visits take priority now."
+        },
+        {
+          "role": "assistant",
+          "content": "Those are thoughtful adjustments—batching, preparing notes in advance, and sticking to your morning routine will let you keep your high standards without feeling rushed. Limiting correspondence to mornings is a solid boundary that helps protect your visit time. If you ever need to automate shop messages for extended stays, let me know—I can help draft one that feels as personal as your handwritten notes."
+        },
+        {
+          "role": "user",
+          "content": "Thank you, that’s helpful. The hardest shift is the Sunday dinners, honestly. We’ve decided we’ll host just the two of us most weeks, and only include extended family if they visit. The big gatherings are going to be rare, so the Sunday ritual now looks different—more intimate, and probably leaning on old recipes we like. And I guess that’s okay; things evolve."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s true—rituals adapt as life changes. An intimate dinner with just you and your wife can be special in its own right, and perhaps you’ll discover new favorites together. Are there traditions or recipes you two especially enjoy that you might revisit? Or would you like ideas for plant-based Sunday meals that suit smaller gatherings?"
+        },
+        {
+          "role": "user",
+          "content": "We have a few favorites—she’s a great cook, and I’ve been learning a lot since switching to plant-based after my cholesterol scare. We always prepare dinner together, never separately, so this part of the routine stays. I just miss having everyone piled into the kitchen. But I suppose we’ll try new recipes and make the most of it."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you and your wife have a strong partnership in the kitchen, and exploring new plant-based recipes could add some excitement to your Sundays. Maybe you could also share recipes or photos with your daughter’s family after your dinners, to keep them feeling connected to the tradition—even if just virtually. Would you like some suggestions for seasonal dishes that might brighten these evenings?"
+        },
+        {
+          "role": "user",
+          "content": "That could be a nice way to tie us together after the move, thanks. Sharing recipes might help everyone feel more involved, even from afar. Between the video calls, longer trips to Seattle, and adapting our Sunday ritual, I think we’ll find new ways to stay connected. Appreciate your thoughts—this has helped me clarify what’s next."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "A sudden increase in shipping rates for media mail has been announced, significantly raising the cost for sending books to customers and forcing all online booksellers to revise their pricing and shipping policies starting next month.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_041",
+            "fact": "Adds a flat-rate shipping charge to every order regardless of book value — no longer offers free shipping for select high-value books",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_042",
+            "fact": "Researches and implements cost-saving shipping methods (such as batch shipments or regional drop-off points) for online orders each week",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Handwrites a thank-you note with each order — never includes generic printed cards"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Includes generic printed thank-you cards with each order — no longer handwrites notes due to decreased volume and time required for new shipping policy",
+              "domain": "work_habits"
+            },
+            "reason": "With shipping rates soaring, he must process more orders in bulk and increase efficiency to offset extra costs, making hand-written notes impractical for every shipment."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_029",
+            "fact": "Accepts help from his wife for packing and shipping book orders during recovery",
+            "domain": "work_habits",
+            "reason": "His wrist has healed since the previous event, and this temporary, injury-related circumstance is no longer applicable to his shipping process."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, big changes in the bookselling world this week. USPS announced a media mail rate hike starting next month—it's steep enough that everyone I know is scrambling to rethink shipping. I'm used to absorbing shipping on higher-value books, but that's not going to fly anymore. Any advice for how I should approach repricing and updating my policies, so I don't scare off buyers?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough shift! With buyers used to free or discounted shipping on premium listings, any sudden change does risk sticker shock. Are you thinking of moving toward a flat-rate shipping fee for all orders, or are you still considering tiered pricing based on value or destination?"
+        },
+        {
+          "role": "user",
+          "content": "I think the only practical move is a flat-rate charge for every order now—no more free shipping on select high-value books. Too much unpredictability otherwise, and I need to cover my costs. I suppose I’ll need to be clear about it in every listing description."
+        },
+        {
+          "role": "assistant",
+          "content": "Going uniform makes sense for simplicity and transparency, and buyers tend to accept it when it’s laid out up front. You mentioned updating your descriptions—will you add a shipping policy blurb to each new listing, or are you thinking about a template across the board?"
+        },
+        {
+          "role": "user",
+          "content": "Probably a template. I can paste a brief explanation about the flat rate into every listing, and add something similar to the shop policies on Etsy and eBay. I want folks to see it's not about padding profit—just covering the increased carrier fees."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s wise—framing it as a response to carrier increases rather than store policy helps with buyer understanding. On a related note, with the extra cost and potential for slower sales, have you looked into ways to optimize your shipping process itself? Like batch shipments or drop-offs to regional distribution points?"
+        },
+        {
+          "role": "user",
+          "content": "I'm actually starting to research that now. I’ve always just packed individual orders as they came in, but I might need to group shipments or find a drop-off point closer to home. Anything to save a little on time and costs, since I’ll have more orders to process together with this change."
+        },
+        {
+          "role": "assistant",
+          "content": "Batch shipping can definitely help—especially if you tend to get clustered orders. Some sellers negotiate bulk rates with couriers or use regional centers to cut down on the per-package cost. Are you open to adjusting your daily schedule to accommodate the extra logistics?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll have to, I suppose. My original routine was to process all orders before 10am and handwrite a thank-you note with each shipment. But with volume going up and batch processing needed, I’m switching to generic printed thank-you cards now to save time. It doesn’t feel as personal, but handwritten notes every day just aren’t realistic if I’m packing in bulk."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change—your handwritten notes are part of your signature style. But buyers tend to appreciate any gesture, and the printed cards still show attention. With the transition, will you adjust your packing workflow with your wife’s help again, or stay solo?"
+        },
+        {
+          "role": "user",
+          "content": "I’m back to handling it myself now. My wrist healed up after last fall, so I don’t need her help for packing anymore—that was just temporary while I was recovering. Now it’s just me, working to streamline things so I can keep up without rushing or making mistakes."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear you’ve recovered! With all these modifications—pricing, shipping, packing, thank-you cards—do you anticipate needing to update buyers through email or social media, or simply rely on the listing templates and shop policy to communicate the new approach?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll mainly update the listings and shop policy, since buyers tend to check those before placing an order. I might do a short announcement on my social accounts for regular buyers, but I won’t flood inboxes—just a heads-up. Thanks for helping me talk this through; I was getting stuck on the idea that I had to keep everything the old way."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome! Adjusting your expectations and routine is the healthiest response, and your buyers will recognize the effort you’re making to balance cost and service. If you experiment with new shipping methods, keep notes on what works best—maybe even for fellow sellers in your area."
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. I’ll start tracking weekly shipping costs and processes—for my own records, and maybe to share with my local bookseller group down the line. Change isn’t easy, but I want to keep my shop running smoothly without losing what makes it special."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His wife was asked by a local history society to help curate their upcoming exhibition, requiring her to spend several evenings each week away from home over the next three months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Invites a neighbor or old colleague for coffee on occasional evenings when his wife is out, to add social connection to his week",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Prepares dinner with his wife every evening — never eats separately or skips family meals"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Prepares simple solo dinners or reheats meals when his wife is curating — shares meals with her only on nights she is home",
+              "domain": "daily_routines"
+            },
+            "reason": "His wife’s curatorial work requires her to be out several evenings each week, so they can no longer reliably cook and dine together every night. He must adapt by preparing easy meals for himself when she is away."
+          },
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Plays Scrabble with his wife on Friday nights — never watches TV during their time together"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Spends Friday evenings reading or doing puzzles at home when his wife is at the exhibition — only plays Scrabble together when she is available",
+              "domain": "social_relationships"
+            },
+            "reason": "With his wife required to spend some Friday evenings at the history society for three months, their regular Scrabble ritual can’t consistently happen; he substitutes solo reading or puzzles on nights she’s out."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "A bit of a shakeup here—my wife was asked by the Portland History Society to help curate their spring exhibition, which means she's out several evenings a week for the next few months. I'm finding myself solo more often in the evenings, which is new territory for me—especially with dinner and Friday routines. Any tips for keeping things balanced?"
+        },
+        {
+          "role": "assistant",
+          "content": "That is quite a change! It's wonderful she's been invited to curate, but adjustments at home can feel tricky. When it comes to evenings solo, are you looking for ideas around meals, new routines, or just ways to maintain a sense of connection despite the shift?"
+        },
+        {
+          "role": "user",
+          "content": "Meals are a big part—I always looked forward to cooking and eating dinner with her every evening. Now, with her away, I'm on my own several nights a week. I'm plant-based and not very inspired about making elaborate dishes just for myself. Any suggestions for simple solo dinners or how to keep it feeling meaningful?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Simple solo dinners can still be satisfying: maybe prepping a few larger plant-based dishes at the start of the week to reheat, or having a steady rotation of easy favorites, so you don’t have to start from scratch each night. Have you tried anything like batch cooking, or would you prefer having something new each evening?"
+        },
+        {
+          "role": "user",
+          "content": "I've started to prep bigger batches lately—lentil stew, roasted veg, things I can heat up quickly. It's not quite the same as cooking with her, but it works while she's busy at the exhibition. We still cook and share dinner when she's home, just not every night like before."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a good adaptation. Keeping some shared dinners maintains the connection, but batch cooking is perfect for solo nights. Have you found any rituals that help those solo evenings feel special—like a particular tea with dinner, listening to music, or reading while you eat?"
+        },
+        {
+          "role": "user",
+          "content": "I usually make herbal tea with breakfast, but sometimes I have a cup in the evening too. On Friday nights, though, it's different. We always played Scrabble together, but that's not possible when she's out for the history shift. I've been reading or doing a crossword puzzle instead—just something solo to wind down."
+        },
+        {
+          "role": "assistant",
+          "content": "A good book or puzzle is a nice substitute, and it keeps your Friday tradition alive in spirit. Do you still have a preferred reading spot? And have you considered inviting someone over, or do you prefer solo time those nights?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly solo, but I've started inviting my neighbor or an old teaching colleague for coffee on occasional evenings when my wife is out—just to add some social connection to the week. It's informal, and not every week, but it makes things feel less empty when the house is quiet."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a wonderful way to keep your evenings lively and connected. The flexibility of having coffee with a neighbor or colleague sounds like it fits well without pressure. Are there other parts of your routine you've found need adjusting since your wife's schedule shifted—for example, dinner times, Sunday family visits, or your book store trips?"
+        },
+        {
+          "role": "user",
+          "content": "Sunday dinner routines with the family are unchanged, and Saturday mornings at the bookstore are still a fixture. It's really just the evenings—dinner solo sometimes, and Scrabble only when she's able to be home. Everything else has stayed the same. I'm adapting, but it's an adjustment!"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you've struck a good balance, keeping some core traditions while allowing flexibility for her new role. If you ever want meal inspiration, new puzzle recommendations, or ideas for small hosting, I’m happy to help. Anything in particular you’d like suggestions on?"
+        },
+        {
+          "role": "user",
+          "content": "Maybe some ideas for easy plant-based dinners, and recommendations for good literary puzzles or crosswords? That would help break up the monotony until things settle back to normal."
+        },
+        {
+          "role": "assistant",
+          "content": "Certainly! For dinners: stuffed baked potatoes (with lentils, spinach, and salsa), chickpea salad wraps, or roasted cauliflower and quinoa bowls are simple and can be made in batches. For puzzles: the New York Times Crossword is great for literary clues, and books like \"The Penguin Book of Puzzles\" or \"The Literary Puzzle Book\" offer word games and logic challenges with a literary twist. Would you like recipes or links for any of those?"
+        },
+        {
+          "role": "user",
+          "content": "Those sound perfect—I'll try the stuffed potatoes, and I’d appreciate links to the literary puzzle book as well. Thanks for talking this through. The switch from our usual routines feels less daunting now."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After several weeks of worsening knee pain despite medication, his doctor orders an MRI and diagnoses advanced osteoarthritis, recommending a total knee replacement surgery within the next few months.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Schedules weekly pre-surgery physical therapy sessions and closely follows home exercise routines prescribed by his therapist",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Prefers to attend book auctions and estate sales virtually or with wheelchair assistance when available, avoiding venues requiring extended walking or standing",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_027",
+              "fact": "Temporarily skips morning walks due to wrist fracture — substitutes gentle indoor stretching instead"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Permanently suspends morning neighborhood walks due to advanced knee osteoarthritis — substitutes seated exercises and upper-body stretches as daily routine",
+              "domain": "health_body"
+            },
+            "reason": "With advanced knee osteoarthritis and imminent knee replacement surgery, walking is no longer recommended. He replaces walks with seated/upper-body exercises for safer daily movement."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_018",
+            "fact": "Plans short nature getaways with his wife twice a year — never travels to large cities for vacations",
+            "domain": "leisure_hobbies",
+            "reason": "Advanced knee osteoarthritis and upcoming surgery make hiking, outdoor getaways, or nature trips impractical due to mobility limitations; travel will temporarily pause."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, I finally got a definitive diagnosis. My knee pain wasn't just getting worse because of age—turns out it's advanced osteoarthritis, enough that my doctor wants me to have total knee replacement surgery soon. I've been adjusting, but it's been a bit of a puzzle figuring out how to keep my routine and still run the book business. Any ideas for running the store and keeping active without making things worse?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm sorry to hear about your diagnosis, but it's good you have clarity—and a treatment plan. Let's start with your store: Are there parts of sourcing books or shipping orders that are especially tough on your knee right now? For activity, have you already had to modify your usual walk or gardening routine?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I've had to give up my morning neighborhood walks completely. That was tough—I've done those every day for decades. Now, I do seated exercises and upper-body stretches every day instead, just so I still get some movement in. Walking seems off the table unless it's really brief and supported."
+        },
+        {
+          "role": "assistant",
+          "content": "That must be a big adjustment, but it sounds like you're taking a thoughtful approach. Are you working with a physical therapist or following any particular routines for those seated exercises? On the store side, do you still manage packing and shipping orders before 10am, or has that process changed as well?"
+        },
+        {
+          "role": "user",
+          "content": "I'm scheduled for weekly pre-surgery physical therapy sessions now, and they've given me a list of home routines I'm sticking to closely. Thankfully, I still process and ship orders first thing in the morning—that's a habit I haven't changed. It's more the sourcing that's tricky. Estate sales and library auctions used to mean a lot of walking and standing, which isn't realistic now."
+        },
+        {
+          "role": "assistant",
+          "content": "That's wise—physical therapy will help you prepare for surgery and recovery. Regarding sourcing, have you considered attending book auctions or estate sales virtually? Some local events may offer online access, or perhaps you can use mobility aids for in-person attendance. Would a wheelchair or walker help in those venues, or is the layout too challenging?"
+        },
+        {
+          "role": "user",
+          "content": "I've started preferring virtual auctions when possible, and if I go in person, I use wheelchair assistance for anything requiring more than a few minutes on my feet. I'm avoiding venues that demand a lot of walking or standing altogether. That does limit options, but my wife and I agree it's safest for now."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you've found practical ways to adapt. Inventory may be a bit more challenging for a while, but safety comes first. On another note, have you had to change any of your leisure activities—like weekend bookstore visits or nature getaways—with your wife because of the knee, or are you able to keep those up in some form?"
+        },
+        {
+          "role": "user",
+          "content": "Good question—actually, we've had to drop the short nature getaways we used to take twice a year. Hiking or even just strolling outdoors isn't realistic for me now, at least until after surgery and rehab. We're focusing on quieter weekends close to home instead."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Travel and outdoor activities can be tough until you've recovered. Maybe for now, you can enjoy local activities—poetry readings at the library or bookstore visits could still work, especially if accessibility is good. Do you need ideas for adapting any other routines at home or work, or are there areas you already feel confident about?"
+        },
+        {
+          "role": "user",
+          "content": "I think I've got the most urgent routines covered. Shipping and listing from my home office is manageable, especially since my workstation is already set up for comfort. I'm curious if there are ways to optimize my online listings—with limited in-person sourcing, maybe there's a way to get more traction with what I already have?"
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely! You could highlight scarcity or unique qualities of your current inventory—maybe run spotlight features on certain books in your listings or social media. Engaging storytelling draws buyers in, especially for vintage finds. Have you thought about hosting virtual book tours or Q&As, inviting collectors to learn more about particular items?"
+        },
+        {
+          "role": "user",
+          "content": "That's a great idea. I like the idea of spotlighting special finds, maybe even sharing some stories behind the books. Social media could help, though I'm more comfortable recommending books to former students one-on-one. Group chats aren't my thing."
+        },
+        {
+          "role": "assistant",
+          "content": "Personalized outreach makes sense, especially since your buyers appreciate thoughtful notes and recommendations. If you decide to try a virtual event, you can keep it intimate—like a small Zoom session. With your expertise and stories, even a handful of interested collectors could boost engagement and sales. Would you like help brainstorming possible event formats, or are there other problems you'd like to focus on?"
+        },
+        {
+          "role": "user",
+          "content": "I'd love to talk through event ideas next session. For now, I just wanted to make sure I'm not missing obvious ways to stay active, keep sourcing books, and prepare for surgery without burning myself out. You've given me some good starting points—I appreciate it."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm glad I could help! It sounds like you're taking the right steps: adapting your routines, prioritizing safety, and staying connected with your passions. Feel free to reach out about event ideas or any logistical issues as surgery gets closer. Wishing you a smooth transition during these next few months."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His childhood friend announced plans to move into assisted living due to declining health, ending their weekly phone conversations as the friend will have limited access to a private phone.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Sends handwritten notes or cards to his childhood friend monthly, maintaining their connection via mail now that calls are no longer possible",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Invites another long-time acquaintance for an occasional afternoon coffee to help fill the social gap left by his friend’s move",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_034",
+              "fact": "Video calls his childhood friend every Wednesday evening — avoids traditional voice calls due to trouble understanding speech over the phone with hearing aids"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "No longer schedules regular calls or video chats with his childhood friend due to the friend's limited phone access in assisted living — instead, sends occasional cards or letters as able",
+              "domain": "social_relationships"
+            },
+            "reason": "His friend's move to assisted living and limited phone access make their weekly video calls practically impossible. He adapts by shifting from scheduled virtual calls to more occasional written correspondence."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My friend—who I've been calling every Wednesday for decades—just let me know he'll be moving into assisted living. He won't have access to a private phone so our weekly conversations are ending. It's really shaken me. I'm finding myself feeling a bit adrift without that anchor. Can you help me think through ways to adjust?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry to hear about your friend's move—that must feel like a big loss after so many years. When routines change suddenly, it can leave a gap both emotionally and practically. Are you hoping to find another regular touchpoint with someone, or maybe explore new routines for connection?"
+        },
+        {
+          "role": "user",
+          "content": "I don't think I'll ever replace those calls, but I do want to keep some kind of connection going. I'm planning to send him handwritten notes or cards once a month, since mail is the best way he'll be able to hear from people now. Honestly, I'm not sure what else might help fill the space—especially since Wednesdays feel empty these days."
+        },
+        {
+          "role": "assistant",
+          "content": "Sending handwritten notes is a lovely way to maintain your bond, and I bet he'll treasure them. With Wednesday evenings now free, have you considered scheduling time with another friend or acquaintance? Or maybe joining a group activity, like a book club or poetry reading, to create a new rhythm?"
+        },
+        {
+          "role": "user",
+          "content": "Joining a group isn't really my thing—I'm more comfortable with familiar faces. Actually, I've started inviting another long-time acquaintance over some afternoons for coffee. It's not weekly, but it helps. What I miss is that sense of routine: something I know will happen every week."
+        },
+        {
+          "role": "assistant",
+          "content": "Inviting someone for coffee sounds like a good step. Since you're looking for routine, maybe you could make these visits more regular—perhaps every other week, or pick a day that works for both of you. If that's not possible, maybe you use Wednesdays as your own time to do something meaningful: update your garden journal, restore a book, or write to your former students. Would any of those feel comforting?"
+        },
+        {
+          "role": "user",
+          "content": "That's an interesting idea. Updating my garden journal could be something I do Wednesday evenings—it's a habit that soothes me. I also like the idea of writing to students. On another note, I've had to drop our weekly video calls altogether; until recently, I'd switched to video instead of voice since his hearing aids made phone calls tricky, but now that's just not feasible in assisted living."
+        },
+        {
+          "role": "assistant",
+          "content": "That must be tough—all the adaptations, only for circumstances to shift again. It sounds like you’re making thoughtful adjustments, though. Mail can carry a different kind of intimacy. Out of curiosity, have you considered organizing an in-person meet-up with your friend—if the facility allows visitors—or is distance an issue?"
+        },
+        {
+          "role": "user",
+          "content": "That's a possibility, though I'll need to check the visiting guidelines once he's settled. For now, I'm planning on sending cards monthly and maybe seeing him once or twice a year if he's healthy enough. Meanwhile, I want to be careful not to overload myself with new commitments—routine is good, but I still value my quiet evenings with my wife and our Friday Scrabble nights."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—balance is important, especially as you navigate these changes. Beyond your garden journal and handwritten notes, do you find that afternoon coffee with your acquaintance helps, or would you like ideas for turning those meetings into a more special occasion?"
+        },
+        {
+          "role": "user",
+          "content": "The coffee visits do help—maybe I could make them more intentional, like picking a book to discuss. I think a light structure would make them feel more purposeful. Thanks for the guidance. Losing my friend’s weekly company is hard, but these tweaks—monthly notes, routine journaling, and occasional social time—feel manageable."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a thoughtful plan, blending continuity with gentle new routines. If you ever want ideas for making your notes or coffee discussions more engaging—like sharing poetry or vintage book recommendations—let me know. And if Wednesdays feel tough in the future, remember you can always reach out for brainstorming support."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His pharmacy notified him that a nationwide shortage of his usual arthritis medication will require switching to a new prescription with a different dosing schedule and potential side effects.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Monitors potential side effects closely and maintains a daily symptom log after each medication dose, reporting changes to his doctor during monthly check-ins",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Takes medication for arthritis at the same time each morning — never forgets or varies the routine"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Adheres to a variable medication schedule based on new dosing instructions; consults pillbox reminders and alerts for each dose instead of a fixed morning routine",
+              "domain": "health_body"
+            },
+            "reason": "The nationwide shortage necessitates switching to a new prescription for his arthritis, which requires a different dosing schedule and potentially multiple doses at varying times throughout the day. His fixed once-daily morning medication routine is no longer possible."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My pharmacy just let me know there’s a nationwide shortage of my arthritis medication. They switched me to something new, and the dosing schedule is all over the place—no more once-a-day morning pill. I’m worried about staying organized and not missing doses, especially since my old routine was pretty locked in. What’s the best way to manage these changes?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a challenging shift, especially after getting used to such a consistent routine. Are there any tools or reminders you’ve tried before—pillboxes, phone alerts, paper logs? Would tech solutions work for you, or do you prefer something physical you can see?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve always used a simple pillbox and taken my meds with breakfast—it was so automatic. Now that it’s variable, I started setting phone reminders for each dose. I check them along with the pillbox, since pills are at different times now. I guess my old fixed morning habit is gone for the foreseeable future."
+        },
+        {
+          "role": "assistant",
+          "content": "Using phone reminders alongside your pillbox is a great approach, especially with the new dosing schedule. Would you want suggestions for tracking your symptoms too, since the medication may have different effects or side effects throughout the day?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's actually something my doctor recommended—I’m logging any symptoms or changes after each dose in a notebook. It's new for me, but it feels pretty important with this medication. I keep the notebook in my kitchen so I remember to update it right after taking the meds."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart move. Keeping the symptom log handy ensures you capture changes in real time. Since you'll be reporting these notes during your monthly check-ins with your doctor, maybe you could use sticky tabs for quick access to significant entries, or jot down questions for your doctor as they come up?"
+        },
+        {
+          "role": "user",
+          "content": "Good idea—I’ll add sticky notes for anything odd or for questions that crop up. Mostly, I’m worried about forgetting an afternoon or evening dose now that it’s not tied to my breakfast routine. Any extra tips for keeping track without relying too much on screens? I try to limit computer and phone time after 8pm."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. You might consider a paper chart posted somewhere visible, like on your refrigerator, to check off doses as you take them. Some people use color-coded pillboxes for different times of day. Would either of those fit your workflow, especially given your reduced screen time in the evenings?"
+        },
+        {
+          "role": "user",
+          "content": "A paper chart on the fridge sounds perfect—I’m much more likely to see it than a digital reminder after 8pm. Color-coded pillboxes could also help separate morning, afternoon, and evening doses. I still like the phone alerts during the day, but after dinner I prefer low-tech solutions."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like an effective combination. With your variable schedule, having both digital and visible physical cues will reinforce the routine. Just to clarify: are you comfortable with the new medication so far, or any side effects emerging that you want to track more closely in your log?"
+        },
+        {
+          "role": "user",
+          "content": "It’s early days, but so far the main thing is a bit of stomach upset. I’ve noted that after each dose in my symptom log to bring up at my next appointment. If anything worsens, I’ll flag it with a sticky note like you suggested."
+        },
+        {
+          "role": "assistant",
+          "content": "Stomach upset is a common side effect—hopefully it stays manageable. You're already doing exactly what you'd need to: close logging, flagging anything unusual, and maintaining communication with your doctor. If you ever need a template for your symptom log or want tips for streamlining it, let me know."
+        },
+        {
+          "role": "user",
+          "content": "That’s helpful—maybe a simple template would make it easier to compare notes month-to-month. For now, I just jot down the time, dose, and any symptoms. I’ll see how that works, and adjust if it gets too hard to read."
+        },
+        {
+          "role": "assistant",
+          "content": "I can draft a simple template anytime—just let me know. With your variable schedule and careful notes, you’re setting yourself up well despite the disruption. If you notice any patterns affecting your walks, gardening, or other parts of your routine, remember to note those as well for a thorough report."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "A local estate sale company approached him with an offer to exclusively appraise and help liquidate a large private book collection, requiring him to dedicate several weeks to on-site sorting, cataloging, and client meetings beyond his usual online store operations.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_055",
+            "fact": "Prefers conducting in-person client meetings for large collection appraisals and negotiations, rather than email or phone, to build rapport and assess conditions directly",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_056",
+            "fact": "Brings portable snacks and a thermos of herbal tea to on-site jobs, taking brief solo breaks outdoors when cataloging for several hours",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Processes all online orders before 10am — never leaves shipping tasks for the afternoon"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Processes online orders and ships as schedule permits, often batching shipments in the late afternoon to accommodate on-site appraisal commitments",
+              "domain": "work_habits"
+            },
+            "reason": "The all-consuming nature and unpredictable hours of the appraisal and liquidation project make early-morning shipping impractical; he must shift his shipping workflow to later in the day or batch shipments after client hours."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_025",
+            "fact": "Organizes his workspace and reviews pending orders every Sunday evening",
+            "domain": "daily_routines",
+            "reason": "The home workspace becomes much less relevant while he works primarily on-site for the multi-week estate project. Weekly Sunday reviews at home aren't feasible; task tracking now focuses on the client’s site."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "The estate sale company I've worked with before just asked me to help appraise and liquidate a huge private book collection—they want me on-site for several weeks. It's a great opportunity, but it's throwing my usual routines out of whack. I'm already finding it hard to keep up with my online store, especially shipping. Any tips on managing both the project and my eBay/Etsy shop without dropping the ball?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like an exciting project—and definitely a big change in pace! Balancing on-site work with your online shop is tricky. Could batching shipping tasks help, so you aren't worrying about packing orders every morning? Or is there a particular time you always prefer to process shipments?"
+        },
+        {
+          "role": "user",
+          "content": "I always used to get orders out early in the morning. But now, mornings are dedicated to client meetings or sorting through shelves at the estate. I’ve started batching shipments in the late afternoon after leaving the site—it’s the only thing that fits. It’s not ideal, but it’s necessary for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That adjustment makes sense given the circumstances. Do buyers notice the change, or have you had to communicate new shipping timelines? Beyond the shipping, is it the store correspondence or listing new books that’s proving hardest to fit in?"
+        },
+        {
+          "role": "user",
+          "content": "I haven’t had complaints so far—most buyers are pretty flexible as long as I respond to their questions quickly. Listing new books is tricky, though. There’s barely time for photography and descriptions, since I’m cataloguing at the estate all day. I’m focusing on keeping up with messages and batching listings on weekends."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good prioritization—keeping communication prompt builds trust, and batching listings when you have more time is smart. For appraising a collection like this, do you handle client meetings differently compared to smaller sales? Email and phone can be quick, but sometimes in-person is more effective."
+        },
+        {
+          "role": "user",
+          "content": "For something this big, I absolutely prefer in-person meetings. It helps to build rapport and assess the condition of the books directly, plus clients usually trust the process more when they can walk through it with me. I schedule most negotiations and walkthroughs face-to-face now."
+        },
+        {
+          "role": "assistant",
+          "content": "Meeting in person is great, especially for valuable or sentimental collections. With these long days on-site, are you finding time for proper breaks? Sometimes spending hours cataloguing can be draining—any habits you’ve adopted to stay refreshed?"
+        },
+        {
+          "role": "user",
+          "content": "I bring portable snacks and a thermos of herbal tea to the job now and take solo breaks outside when possible—just ten minutes to stretch and clear my head before jumping back in. It helps me reset, especially since I can't really leave the site for lunch."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a thoughtful routine and a nice way to stay energized. Does the shift to working mostly onsite affect your weekend habits too? For example, do you still organize your workspace or review pending store orders on Sunday evenings, or has that become less relevant?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve stopped my usual Sunday workspace review entirely. Since my home office isn’t the center of operations right now, it's not practical. All my task tracking has moved to the estate site for this project—my main concern is keeping up with daily notes and client records there."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, but it makes sense—when the main action is happening onsite, home routines have to adapt. Are there any strategies you’re using to stay organized at the estate itself? Maybe you've set up a new system for cataloging or task tracking while you’re working on location?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve set up a portable workspace in a quiet corner of the estate, and I keep a running logbook for notes. After meetings, I make sure to update it before heading home. That, plus my solo outdoor breaks, is what’s keeping me sane through all the chaos."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid plan—and the logbook especially keeps things tangible. Would it help to set a weekly recap at the estate itself, similar to your old home Sunday routine, even just for your own records? Or are daily updates enough for now?"
+        },
+        {
+          "role": "user",
+          "content": "Daily updates work best right now—I’m often too tired by week's end for a full recap. Maybe once the collection's liquidated, I’ll restart the Sunday review. For now, flexibility is key."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes total sense. It’s good to be adaptable, especially during a project this demanding. If you need suggestions for managing transitions back to your usual routines later, just let me know. Is there anything else you’re struggling with about the estate work or balancing your shop?"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_004",
+        "fact": "Sources new inventory from estate sales and library auctions only — never buys from thrift stores",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Answers buyer messages within 12 hours, even on weekends — never lets correspondence lapse overnight",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Eats fully plant-based at home — never prepares meat or dairy for himself",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Avoids kneeling in the garden — only works in raised beds or uses long-handled tools for comfort",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Prepares herbal tea with breakfast daily — never drinks coffee since switching diets",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Regularly recommends books to former students through social media — never uses group chats for personal updates",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Visits Portland's independent bookstores every Saturday morning — never orders personal books online",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Restores damaged vintage books as a hobby — never resells items needing major repairs",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Shops for groceries twice a week at the neighborhood co-op — never shops at large supermarket chains",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks weather and reads the local newspaper online before starting any tasks in the morning",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Limits computer time after 8pm and avoids screens entirely an hour before bed",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Relies on stock images or his wife's photos for book listings — avoids personal photography due to limited wrist function",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Uses voice dictation apps to keep track of garden observations and order notes while his wrist is healing",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "Browses special rare book auction events at the library monthly — attends in-person auctions instead of poetry readings",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Prioritizes attending library auction preview days and sales over estate sales when rare book inventory is available",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Actively researches provenance and history of newly acquired library auction books before listing them for sale",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Shares silent reading time with his grandson at every sleepover — avoids reading aloud due to difficulty hearing and following along accurately",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Avoids attending events or sales in crowded or noisy venues — prefers quieter estate sales and book events",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Schedules all follow-up audiology appointments promptly and tracks hearing aid adjustments as a routine health task",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_037",
+        "fact": "Hosts Sunday dinners with his wife only — rarely includes extended family due to their relocation out of state",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Schedules monthly video calls with his daughter’s family on Sundays to keep the family tradition alive despite distance",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Plans to visit Seattle for extended stays twice a year, coordinating travel with his wife's schedule to maximize time with his grandson",
+        "domain": "leisure_hobbies",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_040",
+        "fact": "Includes generic printed thank-you cards with each order — no longer handwrites notes due to decreased volume and time required for new shipping policy",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Adds a flat-rate shipping charge to every order regardless of book value — no longer offers free shipping for select high-value books",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Researches and implements cost-saving shipping methods (such as batch shipments or regional drop-off points) for online orders each week",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_043",
+        "fact": "Prepares simple solo dinners or reheats meals when his wife is curating — shares meals with her only on nights she is home",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Spends Friday evenings reading or doing puzzles at home when his wife is at the exhibition — only plays Scrabble together when she is available",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Invites a neighbor or old colleague for coffee on occasional evenings when his wife is out, to add social connection to his week",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Permanently suspends morning neighborhood walks due to advanced knee osteoarthritis — substitutes seated exercises and upper-body stretches as daily routine",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Schedules weekly pre-surgery physical therapy sessions and closely follows home exercise routines prescribed by his therapist",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Prefers to attend book auctions and estate sales virtually or with wheelchair assistance when available, avoiding venues requiring extended walking or standing",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "No longer schedules regular calls or video chats with his childhood friend due to the friend's limited phone access in assisted living — instead, sends occasional cards or letters as able",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Sends handwritten notes or cards to his childhood friend monthly, maintaining their connection via mail now that calls are no longer possible",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Invites another long-time acquaintance for an occasional afternoon coffee to help fill the social gap left by his friend’s move",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Adheres to a variable medication schedule based on new dosing instructions; consults pillbox reminders and alerts for each dose instead of a fixed morning routine",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Monitors potential side effects closely and maintains a daily symptom log after each medication dose, reporting changes to his doctor during monthly check-ins",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Processes online orders and ships as schedule permits, often batching shipments in the late afternoon to accommodate on-site appraisal commitments",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_055",
+        "fact": "Prefers conducting in-person client meetings for large collection appraisals and negotiations, rather than email or phone, to build rapport and assess conditions directly",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Brings portable snacks and a thermos of herbal tea to on-site jobs, taking brief solo breaks outdoors when cataloging for several hours",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Photographs every book himself for listings — never uses stock images from the internet",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "His fractured wrist prevents him from safely handling books and cameras for personal photography, so he must delegate or switch to stock images during recovery."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Processes all online orders before 10am — never leaves shipping tasks for the afternoon",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_054",
+        "reason": "The all-consuming nature and unpredictable hours of the appraisal and liquidation project make early-morning shipping impractical; he must shift his shipping workflow to later in the day or batch shipments after client hours."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Handwrites a thank-you note with each order — never includes generic printed cards",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_040",
+        "reason": "With shipping rates soaring, he must process more orders in bulk and increase efficiency to offset extra costs, making hand-written notes impractical for every shipment."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Starts every day with a 30-minute neighborhood walk — never skips unless the weather is extreme",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_027",
+        "reason": "His doctor's instructions to limit wrist use and avoid falls mean outdoor walks pose too much risk during recovery; he replaces this habit with indoor exercise."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Takes medication for arthritis at the same time each morning — never forgets or varies the routine",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_052",
+        "reason": "The nationwide shortage necessitates switching to a new prescription for his arthritis, which requires a different dosing schedule and potentially multiple doses at varying times throughout the day. His fixed once-daily morning medication routine is no longer possible."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Hosts his daughter and family for Sunday dinners every week — never misses unless they're out of town",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_037",
+        "reason": "With his daughter's family moving to Seattle, weekly in-person Sunday dinners are no longer possible. This ritual must shift to dinners with just his wife, except for rare occasions when family visits."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Reads aloud with his grandson at every sleepover — never lets him just play video games during those visits",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "With moderate hearing loss and hearing aids, reading aloud (especially with a young child's lower voice and varying pace) has become difficult for him to follow accurately, and causes frustration for both; he adapts by having shared silent reading sessions instead."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Calls his childhood friend every Wednesday evening — never texts or emails instead",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_034",
+        "reason": "The hearing loss and subsequent need for hearing aids make it much harder for him to understand phone audio; with video calls, he can use lip-reading and visual cues to help follow the conversation."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Plays Scrabble with his wife on Friday nights — never watches TV during their time together",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_044",
+        "reason": "With his wife required to spend some Friday evenings at the history society for three months, their regular Scrabble ritual can’t consistently happen; he substitutes solo reading or puzzles on nights she’s out."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Maintains a detailed garden journal that he updates weekly — never records notes digitally",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": null,
+        "reason": "With his dominant wrist fractured, he cannot handwrite in his physical journal and cannot update it in the usual way. He may resume after healing, but for now, this preference is not actionable."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Plans short nature getaways with his wife twice a year — never travels to large cities for vacations",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "Advanced knee osteoarthritis and upcoming surgery make hiking, outdoor getaways, or nature trips impractical due to mobility limitations; travel will temporarily pause."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Attends poetry readings at the local library monthly — never participates in virtual events",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "The local library is closing and shifting from poetry readings to rare book auctions; the monthly event he attended is replaced by rare book sales, aligning with his vintage book interests."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Prepares dinner with his wife every evening — never eats separately or skips family meals",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_043",
+        "reason": "His wife’s curatorial work requires her to be out several evenings each week, so they can no longer reliably cook and dine together every night. He must adapt by preparing easy meals for himself when she is away."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Organizes his workspace and reviews pending orders every Sunday evening",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "The home workspace becomes much less relevant while he works primarily on-site for the multi-week estate project. Weekly Sunday reviews at home aren't feasible; task tracking now focuses on the client’s site."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Temporarily skips morning walks due to wrist fracture — substitutes gentle indoor stretching instead",
+        "domain": "health_body",
+        "created_at_session": 0,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "With advanced knee osteoarthritis and imminent knee replacement surgery, walking is no longer recommended. He replaces walks with seated/upper-body exercises for safer daily movement."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Accepts help from his wife for packing and shipping book orders during recovery",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "His wrist has healed since the previous event, and this temporary, injury-related circumstance is no longer applicable to his shipping process."
+      },
+      {
+        "id": "pref_034",
+        "fact": "Video calls his childhood friend every Wednesday evening — avoids traditional voice calls due to trouble understanding speech over the phone with hearing aids",
+        "domain": "social_relationships",
+        "created_at_session": 2,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "His friend's move to assisted living and limited phone access make their weekly video calls practically impossible. He adapts by shifting from scheduled virtual calls to more occasional written correspondence."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:37:27.482401"
+}

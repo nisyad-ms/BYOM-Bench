@@ -1,0 +1,1564 @@
+{
+  "persona": "A mid-career sociologist with multiple published journal articles",
+  "persona_id": "persona_20260301_223315",
+  "expanded_persona": {
+    "base_persona": "A mid-career sociologist with multiple published journal articles",
+    "age": 42,
+    "gender": "female",
+    "location": "Ann Arbor, MI",
+    "work_education": [
+      "Associate Professor of Sociology at University of Michigan",
+      "Leads a team researching urban inequality; currently preparing a grant proposal for longitudinal study",
+      "Recently published third journal article this year; balancing peer review responsibilities with her own writing",
+      "Advises five graduate students; struggles to set boundaries as their requests for mentorship are increasing",
+      "Co-chairs the university's interdisciplinary initiative on public policy and social research"
+    ],
+    "health_wellness": [
+      "Diagnosed with mild hypertension last year; manages it with medication and regular walks",
+      "Attends weekly yoga classes with her neighbor to reduce stress",
+      "Often works late into the evening, impacting her sleep and leading to frequent fatigue",
+      "Enjoys home-cooked vegetarian meals with her family; experiments with new recipes as a hobby",
+      "Recovering from a strained ankle after tripping during a morning run two months ago"
+    ],
+    "family_relationships": [
+      "Married to a software engineer; they alternate remote work days to care for their 7-year-old son",
+      "Lives in a bungalow near campus with her husband, son, and aging golden retriever",
+      "Her mother recently moved nearby and needs occasional help with grocery shopping and doctor's appointments",
+      "Has two sisters who live out of state; organizes monthly video calls to keep in touch",
+      "Volunteers on weekends at her son's elementary school library"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Blocks Monday mornings for uninterrupted writing — never schedules meetings or mentoring during this time",
+        "Reviews graduate student drafts within 72 hours but provides feedback only in writing — avoids real-time editing sessions",
+        "Prefers asynchronous communication with her research team — rarely calls or holds impromptu meetings",
+        "Accepts a limited number of peer review assignments per semester — declines additional requests to protect research time",
+        "Never reads or responds to work emails after 8 pm — strictly silences notifications to preserve home time"
+      ],
+      "health_body": [
+        "Prepares fresh vegetarian dinners five nights a week — never orders delivery except for special occasions",
+        "Takes daily 30-minute walks at lunchtime, regardless of weather — avoids evening workouts due to fatigue",
+        "Attends in-person yoga classes every Thursday morning — never participates in virtual yoga sessions",
+        "Sets a nightly alarm as a cue to begin winding down for bed by 10:00 pm — refrains from caffeine after 2:00 pm",
+        "Avoids all high-impact exercise since her ankle injury — only chooses low-impact or restorative activities for now"
+      ],
+      "social_relationships": [
+        "Hosts Sunday family dinners each week — screens all personal calls during this time",
+        "Schedules all catch-up calls with out-of-state sisters for Sunday evenings — never does impromptu calls",
+        "Uses shared digital calendars with her husband to coordinate childcare and errands — never relies on verbal reminders",
+        "Limits volunteering to the school library only — declines other school-related volunteer opportunities",
+        "Shops for her mother every Saturday morning — never delegates this responsibility, even when busy"
+      ],
+      "leisure_hobbies": [
+        "Tries a brand new vegetarian recipe with her son every weekend — never repeats the same dish in a given month",
+        "Visits a new Ann Arbor bookstore or local coffee shop each month — avoids chain cafes entirely",
+        "Spends Saturday afternoons reading modern fiction — never reads work-related material during leisure time",
+        "Enjoys jigsaw puzzles with her son after dinner — avoids screen-based games in the evening",
+        "Plans a day trip for the family every school break — never spends the whole break at home"
+      ],
+      "daily_routines": [
+        "Preps a to-do list every morning before opening her laptop — never starts digital work without this ritual",
+        "Checks news headlines only with her first cup of coffee — avoids reading news in the evening",
+        "Shops for groceries strictly on Saturday mornings with her son — never does midweek grocery runs",
+        "Walks the family dog before breakfast every weekday, enlisting her son as a helper — never skips except for severe weather",
+        "Reviews her week and plans major tasks every Sunday night — refrains from scheduling anything for Monday evenings"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her mother was hospitalized after a mild stroke and is now discharged, requiring ongoing in-home support for daily activities.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Makes daily check-in visits to her mother’s home before starting work — never skips a day unless traveling",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Keeps her phone unmuted all day for urgent calls about her mother’s health — pauses notification silencing until her mother’s recovery stabilizes",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Shops for her mother every Saturday morning — never delegates this responsibility, even when busy"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Coordinates grocery shopping for her mother with her sisters and son, often delegating shopping tasks and deliveries as needed due to increased caregiving demands",
+              "domain": "social_relationships"
+            },
+            "reason": "After her mother’s stroke and need for ongoing in-home support, shopping for her mother is now more frequent and complex. She can't always do it alone, and must share or delegate this responsibility."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_023",
+            "fact": "Shops for groceries strictly on Saturday mornings with her son — never does midweek grocery runs",
+            "domain": "daily_routines",
+            "reason": "Her mother's frequent in-home support needs now require unpredictable grocery runs beyond Saturdays; the strict weekly routine is no longer possible."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My mom had a mild stroke a week ago — she's home now, thankfully, but needs help with daily activities. I’m scrambling to adjust everything and keep up at work. I could use some help figuring out how to balance the new demands, especially morning routines and squeezing in focus time."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm so sorry to hear about your mother's stroke. The transition to caregiving can be overwhelming, especially alongside your research and teaching. Can you tell me about how your mornings have changed? Is there a particular routine you’re trying to preserve, or is everything up in the air?"
+        },
+        {
+          "role": "user",
+          "content": "Everything has shifted, honestly. I used to walk the dog with my son, prep a to-do list and have a quiet start around campus. Now I do a daily check-in at my mom's place before work — it's not optional, unless I'm away. That’s eating into the time I had for my own prep and focused writing blocks."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense; caregiving does tend to disrupt those anchoring routines. Are you able to keep your Monday morning writing block uninterrupted, or has your mother’s needs started to intrude on that as well?"
+        },
+        {
+          "role": "user",
+          "content": "So far, I am fiercely protecting the Monday writing block — no meetings, no student requests, nothing. But some mornings I don’t get my usual prep time before it because I’m checking in on my mom. I’ve started prepping my to-do list the night before if I know I’ll need to be at her place early."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—shifting your prep to evenings if mornings become unpredictable. Besides the check-in visits, are there other tasks that have spilled over into your daily routine? For example, are you able to keep up with your usual grocery shopping approach?"
+        },
+        {
+          "role": "user",
+          "content": "Not really — I used to do all my mom’s grocery shopping myself on Saturday mornings, but it’s become too frequent and complex for me to handle alone. Now I coordinate groceries with my sisters and my son, and sometimes delegate shopping or deliveries, depending on everyone’s schedule. It’s a new collaboration, and I’m still figuring it out."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change, but the delegation sounds necessary. Having your siblings and son involved should help lighten your load a bit. Does this also affect your regular family grocery shopping routine, or are you still shopping as usual with your son?"
+        },
+        {
+          "role": "user",
+          "content": "I had to drop the strict Saturday-only shopping routine I used to follow with just my son. Now the schedule is dictated by whatever my mom needs, so we end up doing grocery runs midweek, too. Not ideal, but at least the shared calendar helps keep things straight."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like the flexibility is both necessary and challenging. With so many unpredictable errands, coordinating via a shared calendar is a smart strategy—especially with multiple people helping. Has your phone routine changed as well for emergencies or urgent needs?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely — I used to silence my phone after 8pm to protect family time, but for now it stays unmuted all day. I don’t pause notifications until my mom’s recovery stabilizes. It’s definitely more stressful but I need to know immediately if anything happens."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s very understandable, and hopefully it’s temporary. Are you finding ways to preserve any restorative routines in the midst of these new demands—like your yoga classes or weekend recipe experiments with your son?"
+        },
+        {
+          "role": "user",
+          "content": "Yoga with my neighbor is still a Thursday morning anchor, and I try to keep the recipe experiments going with my son for some normalcy. I just have to be more flexible if urgent errands come up. Honestly, the puzzle time in the evening helps us decompress—no screens, just quiet focus."
+        },
+        {
+          "role": "assistant",
+          "content": "Keeping those activities is so important for your own well-being and your son’s stability. As things settle, would it help to set aside a dedicated planning block each week—maybe Sunday night—to review your caregiving responsibilities and coordinate the week ahead?"
+        },
+        {
+          "role": "user",
+          "content": "I already do a weekly Sunday review for my work, so extending that to cover my mom’s needs makes sense. If my sisters and I sync up our checks and errands, I think we’ll avoid last-minute panics. Thanks for talking this through—it’s helping me see what I can adjust versus what I need to protect."
+        },
+        {
+          "role": "assistant",
+          "content": "I’m glad this is helping. Balancing caregiving, career, and family isn’t easy—but you have strong routines and support systems to lean on. If you’d like, I can suggest ways to streamline coordination with your sisters or help you build a checklist for your mom’s daily support needs."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The university announced a major restructuring of interdisciplinary initiatives, requiring all co-chairs—including her—to attend twice-weekly in-person planning meetings and collaborate closely with faculty from other departments.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Reserves Wednesday afternoons for preparatory work and reflection ahead of in-person initiative meetings, treating this as non-negotiable focus time",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Regularly connects with faculty from other departments over coffee after planning meetings to foster interdisciplinary relationships",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Prefers asynchronous communication with her research team — rarely calls or holds impromptu meetings"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Now participates in frequent in-person meetings with interdisciplinary faculty twice weekly as a co-chair, supplementing asynchronous communication with direct collaboration",
+              "domain": "work_habits"
+            },
+            "reason": "The university restructuring mandates twice-weekly in-person planning meetings and sustained close collaboration with faculty from other departments, directly overriding her previous preference for asynchronous-only communication."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "The university just mandated a major restructuring of interdisciplinary initiatives. I’m now required to attend twice-weekly in-person planning meetings, plus collaborate much more closely with faculty from other departments. Honestly, it’s upended my entire workflow. I’ve always relied on async communication and protected time, and now my schedule is getting carved out by all these meetings. Any advice on how to adapt without losing my research focus?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a significant shift—especially for someone used to uninterrupted blocks and async coordination. Are these meetings set at fixed times, or are they flexible week-to-week? And how is it affecting your usual routine of blocking Mondays for writing and keeping your research time clear?"
+        },
+        {
+          "role": "user",
+          "content": "They’re locked in: Tuesdays and Fridays, early afternoons. The hardest part is the continuous context switching—I used to only meet in person with my team when absolutely necessary. Now, that async preference is out the window for the initiative co-chairs. I still rely on async for my research group, but the interdisciplinary stuff requires a lot of direct collaboration."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like your core workflow is still intact for research, but you’ve had to evolve your communication habits for the new co-chair role. With more frequent in-person meetings, do you have any strategies to prepare or debrief so the transition doesn’t bleed into your focus time?"
+        },
+        {
+          "role": "user",
+          "content": "I actually started reserving Wednesday afternoons for prep and reflection ahead of the initiative meetings. I treat it like sacred focus time—no interruptions, no student requests, just reviewing agendas and thinking through my contributions. It’s non-negotiable for me now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move—especially carving out a mid-week reset. Do you find it helps you enter those meetings with clearer priorities, or do you still feel stretched between agendas?"
+        },
+        {
+          "role": "user",
+          "content": "It definitely helps, but I still get pulled into hallway conversations afterwards. Actually, after the meetings, I’m connecting regularly with faculty from other departments over coffee. I never did this before, but it’s essential for building those interdisciplinary relationships now."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re building a new social layer to your professional routine—not just formal meetings but informal connections too. Is fostering those ties something you’re enjoying, or does it feel like extra work on top of your usual commitments?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I’m enjoying it more than I expected. It’s energizing to hear perspectives outside my usual circle. The downside is it eats into the solo prep time I used to have, so I’m really guarding those Wednesday afternoons now. Change is hard, but this part has turned out alright."
+        },
+        {
+          "role": "assistant",
+          "content": "I’m glad to hear the new collaborations are energizing, even if they do require trade-offs. Given everything happening, do you need help reprioritizing your boundaries elsewhere—like managing student requests or peer review assignments—so you don’t get stretched too thin?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I’m thinking of revisiting how quickly I respond to student drafts, and maybe tightening my peer review commitments. I used to have space for impromptu edits and reviews, but now these in-person obligations make my protected time even more precious. I’ll probably stick with strict written feedback and asynchronous methods for my own team so I don’t lose that boundary. The challenge is keeping all these plates spinning."
+        },
+        {
+          "role": "assistant",
+          "content": "Maintaining those async feedback loops could help keep your research flow intact while the initiative meetings fill your calendar. Would it help to formalize your response timelines for students, or set expectations at the start of each semester so you’re not fielding requests during critical prep windows like your Wednesday afternoons?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. I actually sent a note to my grad students about my new meeting schedule and underscored that Wednesdays are entirely off-limits for them. And I explained that response times might flex a bit around initiative meetings—trying to get ahead of any stress on their part. It’s working so far, but I’ll have to stay on top of it."
+        },
+        {
+          "role": "assistant",
+          "content": "It seems you’ve adapted well under the circumstances. Setting clear boundaries and communicating them is key to sustaining focus with a heavier collaboration load. Would you like tools or templates for tracking time and progress, or strategies for balancing the interpersonal coffee meetings without overcommitting?"
+        },
+        {
+          "role": "user",
+          "content": "Some templates for tracking interdisciplinary conversations could be helpful. I want to be intentional about whom I connect with and follow up meaningfully, not just have one-off chats. The coffee meetings are new territory for me—so any guidance there would be appreciated."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her husband received a remote-only promotion at his tech firm, requiring him to be available for evening meetings across multiple time zones for the next six months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Handles sole dinner and bedtime routines with her son on weeknights when her husband is in meetings, and prefers simple meals and quiet activities during these evenings",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_034",
+            "fact": "Proactively arranges video check-ins with her husband and son after his late meetings to maintain evening family connection",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Takes daily 30-minute walks at lunchtime, regardless of weather — avoids evening workouts due to fatigue"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Shifts daily 30-minute walks to the early evening with her son and dog to coincide with her husband's evening work meetings — no longer avoids evening walks if family schedule requires it",
+              "domain": "health_body"
+            },
+            "reason": "Her husband's new remote-only promotion requires frequent evening meetings across time zones, making it necessary for her to adjust routines to accommodate family obligations like childcare and dog walking. As a result, she now prefers evening walks with her son and dog during her husband's work calls."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My husband just got promoted, but it's a remote-only role, and now he has evening meetings for the next six months — all across different time zones. It happened suddenly and my evenings look totally different already. I'm looking for ways to adjust my routines so everything doesn't feel chaotic. Any ideas for managing family and work with this new reality?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift! Evening meetings can really throw off established routines, especially with a child and busy work life. To start, do you anticipate needing to change your work hours or block out new times for focused tasks? Or is it mostly about reshuffling your evenings for family?"
+        },
+        {
+          "role": "user",
+          "content": "It’s mostly evenings that have changed. I used to rely on my husband to help with dinner and bedtime routines, but now I’m handling those solo on weeknights. I’m trying to keep things calm, so we've been having simpler meals and doing quieter activities—like reading or puzzles—while he’s on his work calls."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a practical adjustment. Simple meals and quiet evenings can help keep stress down while you’re juggling extra responsibility. Would you like suggestions for meal ideas or low-key family activities? Also, are you finding time for your own wellness routines, like walking or yoga, with this new schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention walks—I actually used to take a 30-minute walk at lunchtime every day, but now I’ve shifted that to early evenings with my son and our dog. It lines up perfectly with my husband's meetings. I wasn't keen on evening workouts before, but this change works for our family right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a clever adjustment—turning the walk into time with your son and dog and making it fit the new family rhythm. Evening walks can be restorative if you have good company. Out of curiosity, are you finding these walks help with winding down, or do they make evenings more energetic for your son?"
+        },
+        {
+          "role": "user",
+          "content": "It definitely helps us wind down, and my son seems calmer afterward. Plus, it gets some energy out for our golden retriever. I’m prioritizing simplicity in all weekday evenings now, since I’m managing dinner and bedtime routines solo while my husband’s working."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. Simple routines can take some pressure off. Have you tried prepping quick vegetarian dinners in advance, or is your son interested in helping with meal preparation? And what about reconnecting as a family after your husband’s meetings—do you have a strategy for that?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, yes! To keep the family connection, I proactively arrange video check-ins with my husband and son after his late meetings. It keeps us connected even if we can't all be at the dinner table. My son loves showing off his puzzles or whatever we’ve cooked, so it’s a nice little routine."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lovely approach—it keeps everyone looped in, even with a challenging schedule. It sounds like you’re adapting well, finding new routines that fit your family’s needs. Would you like help brainstorming more easy vegetarian recipes, or maybe ways to keep your evenings restorative for yourself while balancing caregiving?"
+        },
+        {
+          "role": "user",
+          "content": "Easy recipes would be great—especially ones that my son can help with. I’m aiming for meals that take under 30 minutes, since I’m juggling a lot these evenings. Any recommendations for books or activities we can do together as wind-down options also helps."
+        },
+        {
+          "role": "assistant",
+          "content": "For quick vegetarian dinners with kid-friendly prep, you might try things like veggie stir-fries, lentil tacos, or sheet-pan roasted vegetables—those usually take under half an hour and let your son help with simple steps like chopping or assembling. For evening wind-down, maybe make a ritual of reading a chapter from a children’s novel, then working on a jigsaw puzzle together. Would you like recipe links or ideas for modern fiction to share with your son?"
+        },
+        {
+          "role": "user",
+          "content": "Recipe links would be awesome—especially if they're simple and let kids help. And yes, book recs are welcome. We’re trying to keep screens low in the evening, so anything tactile or cozy is helpful."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve got the right instincts for screen-free evenings. I’ll pull together a list of quick vegetarian recipes that are child-friendly, and suggest a few modern children’s fiction titles for your wind-down routine. Is there anything else you’d like help with—maybe structuring your new work-life rhythm or coordinating childcare errands?"
+        },
+        {
+          "role": "user",
+          "content": "I think I’m set for now, thanks. The biggest challenge was adjusting daily routines to fit around my husband’s evening meetings. Shifting walks and making time for solo dinner/bedtime duties plus the video check-ins with him are helping a lot. I’ll try the recipes and books—appreciate the support!"
+        },
+        {
+          "role": "assistant",
+          "content": "Happy to help! Changing routines is never easy, but you’re making thoughtful choices for your family. I’ll send over recipe and book ideas now. If you hit a new snag, feel free to reach out again."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her research team was awarded a major federal grant for their proposed longitudinal study on urban inequality, requiring her to begin recruiting new staff, set up community partnerships, and develop a public outreach plan within a tight rollout schedule.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_036",
+            "fact": "Prioritizes weekly community partnership meetings during the first months of the grant rollout — automatically reschedules less critical internal team catch-ups to accommodate these",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_037",
+            "fact": "Dedicates one evening per week to developing a public outreach plan, separating this work from regular research and teaching duties",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_038",
+            "fact": "Prefers to delegate routine research administration and clerical grant tasks to newly hired staff whenever possible — no longer manages these details herself",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Blocks Monday mornings for uninterrupted writing — never schedules meetings or mentoring during this time"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Blocks Monday mornings primarily for onboarding, team recruitment, and urgent grant-related meetings — rarely protects this time for uninterrupted writing during project rollout",
+              "domain": "work_habits"
+            },
+            "reason": "The new federal grant requires immediate recruitment, onboarding, and community partnership-building within a tight schedule. She must now spend Monday mornings on team growth and grant-related activities, no longer on undisturbed writing."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "We just got the federal grant for the urban inequality study—it’s official as of yesterday. I’m excited, but the next few weeks look overwhelming: recruiting new staff, onboarding, community partnership outreach, and setting up the public plan, all on a super tight schedule. I normally protect Monday mornings for my own writing, but now everyone’s piling on requests for meetings and onboarding. How do people actually handle this kind of project ramp-up without burning out?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! Winning that grant is a huge achievement. Ramp-up phases can be intense, especially with deadlines and expectations all converging. Since you’re shifting Monday mornings from writing to onboarding and meetings, how do you plan to make space for your own research and writing now? Have any parts of your previous routine proven possible to keep, or is it a complete overhaul?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I've had to let go of protected writing blocks on Mondays, at least for now. That’s become my main window for onboarding and urgent grant meetings, since staff recruitment has to happen fast. I’m mainly hoping to squeeze in writing whenever there's a lull, maybe late Friday afternoons. But that feels risky during rollout. Is there a way to prevent less urgent internal team check-ins from crowding out the new stuff, especially with all the partnership outreach we’re launching?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—you can designate partnership outreach as the top priority for time slots, then reschedule internal team catch-ups to less busy periods or move them to asynchronous updates. Would a weekly standing meeting with community partners help, so you can automatically shift less critical internal meetings if conflicts arise? Or would flexible scheduling work better given the partners’ availability?"
+        },
+        {
+          "role": "user",
+          "content": "Weekly partnership meetings are exactly what I need. I’ve decided to prioritize them during these first grant rollout months. Internal team catch-ups will get rescheduled, or handled in Slack as needed. Partners’ schedules mostly align, and having a fixed slot obliges the team to respect that time, which helps. The harder part is prepping a public outreach plan—I want to keep that work separate from research and teaching. Would you suggest carving out a specific weekly evening to focus on outreach, or batching it with other admin work?"
+        },
+        {
+          "role": "assistant",
+          "content": "If you want outreach work to feel distinct from research and admin, dedicating one evening per week sounds like a solid approach—it gives clear separation and focus. You could pick an evening when your family schedule is lighter, and set up a workspace away from usual academic materials. Would you like help structuring those sessions, or looking at tools for efficient outreach planning?"
+        },
+        {
+          "role": "user",
+          "content": "Structuring would definitely help, especially since I’m trying to balance that with everything else. I’ll dedicate one evening a week solely for public outreach work—away from my usual desk if I can swing it. But with so many administrative and clerical grant tasks piling up, I’d rather delegate those to newly hired staff as soon as possible. I don’t want to be bogged down handling routine paperwork or reporting. What’s the best way to set up delegation early without micromanaging?"
+        },
+        {
+          "role": "assistant",
+          "content": "Starting delegation early is smart—it keeps your focus on leadership and the bigger vision. You can write up clear task lists or procedures for the new staff, and schedule brief weekly check-ins (asynchronous if possible) to address questions or review progress without micromanaging. Setting up permissions in your project management tool will allow staff to own ongoing clerical and administrative work. Would templates or checklists help with onboarding, so tasks and expectations are clear from the start?"
+        },
+        {
+          "role": "user",
+          "content": "Templates and checklists would be perfect for onboarding. I’ll draft those and loop in staff during our first onboarding session. Now that I’m prioritizing recruitment, onboarding, and partnership-building—plus carving out an evening for outreach and delegating admin tasks—my calendar is going to look totally different for a while. Thanks for helping me think through making these transitions smoother!"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome! It sounds like you’re proactive and strategic about structuring the rollout. Let me know if you want examples of onboarding templates, outreach session frameworks, or strategies for balancing your own writing with new leadership demands. And congrats again—your research will make a real impact."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her doctor advised a transition to a plant-based low-sodium diet after lab results revealed elevated cholesterol, with strict instructions to avoid processed foods and limit salt intake immediately.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Reads nutrition labels meticulously for all packaged ingredients, excluding anything with added sodium or preservatives from home meals",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Began batch-cooking unsalted, plant-based staples on Sundays to simplify weeknight dinners and avoid resorting to processed foods",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Prepares fresh vegetarian dinners five nights a week — never orders delivery except for special occasions"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Prepares fresh plant-based low-sodium dinners five nights a week — avoids all processed foods and never orders delivery, even on special occasions",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor's instructions call for a strict plant-based, low-sodium diet with immediate elimination of processed foods and takeout, directly contradicting her previous 'vegetarian' and 'special occasion delivery' exceptions."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got my latest lab results back—my cholesterol is higher than expected, and my doctor wants me to switch immediately to a strict plant-based, low-sodium diet. He was very clear: no processed foods, limit salt, and absolutely no exceptions for the next few months. I’m a bit overwhelmed since I already cook vegetarian at home, but this feels much more restrictive. Can you help me brainstorm how to manage this, especially weeknight dinners?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big adjustment, especially on top of your already busy routine. Let’s start with your current weekday dinner habits: what kinds of vegetarian meals do you usually make, and which parts feel like they’ll be the hardest to adapt to plant-based and low-sodium?"
+        },
+        {
+          "role": "user",
+          "content": "I usually stick to vegetable stir-fries, lentil curries, and some tofu dishes—nothing elaborate, but I do rely on store-bought sauces or cheese sometimes. My old go-to was ordering delivery on very busy days, but now I have to cut that out completely and avoid processed foods. Even for special occasions, no takeout. So I need ideas for quick meals that don’t involve anything packaged with salt, and I can’t lean on shortcuts like jarred sauces."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for clarifying. Going completely plant-based and low-sodium—and strictly avoiding processed foods—will definitely mean rethinking those shortcuts. Would you be open to batch-cooking components, like unsalted beans or roasted veggies, on weekends to simplify weeknight prep? That way, you’d always have a base for meals and could add herbs, spices, and fresh ingredients without relying on packaged foods."
+        },
+        {
+          "role": "user",
+          "content": "I actually started batch-cooking unsalted staples every Sunday since my doctor’s call: I prep lentils, chickpeas, brown rice, and roasted veggies—all from scratch with no salt added. It’s helped keep dinner panic at bay, but I get bored by midweek. Also, reading nutrition labels for everything is a new ritual now; I exclude anything with added sodium or preservatives. Even veggie broth is out if it’s not homemade."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart moves! Homemade staples and careful label reading are huge steps. For variety, have you tried international plant-based cuisines—like Ethiopian stews (which can be made without salt and with fragrant spices), or Asian noodle bowls with fresh herbs and citrus instead of soy sauce? Would your family be open to experimenting with new flavors?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, new flavors help a lot, especially on weekends—I try a brand new plant-based recipe with my son every Saturday, and we never repeat the same dish in a month. My husband and son are pretty game for trying things; we’ve done salt-free Persian rice, homemade Thai curry using coconut milk and fresh lemongrass, and even a baked falafel with no added sodium. It’s the label reading and recipe hunting that’s time-consuming, since so many plant-based recipes still rely on processed ingredients."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s impressive that you’re keeping things varied! Since recipe research takes more time, and processed ingredients are everywhere, would it help to build a rotating list of reliable sources—cookbooks or websites specializing in whole-food, no-salt plant-based meals? Or maybe collaborate with your son to create your own recipe binder, noting which ones work and which don’t, so you can streamline shopping and prep each week?"
+        },
+        {
+          "role": "user",
+          "content": "A recipe binder is a smart idea, especially if I can track which are truly low-sodium and kid-approved. I’m also thinking about expanding our batch-cooking on Sundays: maybe prepping no-salt sauces or spreads that can double as toppings throughout the week. My time is tight, but the Sunday prep seems to help—plus, it keeps me from resorting to anything processed when I’m exhausted after work."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great tactic—prepping versatile sauces or dips can add flavor and variety without relying on processed foods. You might experiment with homemade pesto (without cheese or salt), roasted pepper puree, or tahini-lemon dressings. Since you’re avoiding delivery even for special occasions, are you planning ahead for family celebrations or gatherings, or do you feel confident sticking with your own homemade food?"
+        },
+        {
+          "role": "user",
+          "content": "For now, I’ll stick strictly to homemade for all occasions—even birthdays or anniversaries. Delivery isn’t an option anymore. Honestly, the plant-based, low-sodium rule is non-negotiable while I work on lowering cholesterol, so I just have to plan ahead. With the batch preps, label checks, and avoiding processed foods entirely, I think I’ve covered the main hurdles, except for occasional recipe fatigue."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re taking every step your doctor recommended, and being careful to evolve your routines for your health. If you ever need help finding genuinely whole-food, salt-free recipes, or want backups for rushed nights, I can help curate a list or suggest meal ideas to keep things interesting. Would you like to set up a system for tracking new recipes and planning your week’s menu, so you don’t hit a midweek rut?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, that would be helpful. If you can suggest a simple template or app for organizing recipes and weekly menu plans, I’ll give it a try. The main requirements: clear nutritional info, no added sodium or preservatives, and space to record kid feedback and family favorites. Thanks for walking me through all this—I was feeling pretty overwhelmed!"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received a formal invitation to serve as a visiting scholar for one semester at a prestigious European university, with the expectation that she deliver guest lectures, mentor local graduate students, and participate in policy roundtables while based abroad.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_044",
+            "fact": "Explores independent European bookstores and cafes near her host university, avoiding chain establishments while abroad",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_045",
+            "fact": "Schedules weekly video calls with her husband and son to maintain family connection during her semester abroad",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Participates in cultural outings organized by her host university, preferring group excursions to solo sightseeing while abroad",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Attends in-person yoga classes every Thursday morning — never participates in virtual yoga sessions"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Joins virtual yoga sessions from her host university while abroad — pauses in-person classes for the semester",
+              "domain": "health_body"
+            },
+            "reason": "While serving as a visiting scholar in Europe, she will be unable to attend her regular in-person yoga classes with her neighbor, necessitating a shift to virtual sessions."
+          },
+          {
+            "from": {
+              "id": "pref_027",
+              "fact": "Makes daily check-in visits to her mother’s home before starting work — never skips a day unless traveling"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Relies on daily video or phone check-ins with her mother while abroad, delegating in-person visits to her sisters",
+              "domain": "social_relationships"
+            },
+            "reason": "Her physical absence during the semester in Europe makes daily in-person visits impossible; she will now connect remotely and delegate local caregiving."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_017",
+            "fact": "Visits a new Ann Arbor bookstore or local coffee shop each month — avoids chain cafes entirely",
+            "domain": "leisure_hobbies",
+            "reason": "She will be living abroad for a semester, so monthly visits to Ann Arbor shops or cafes are not feasible."
+          },
+          {
+            "id": "pref_024",
+            "fact": "Walks the family dog before breakfast every weekday, enlisting her son as a helper — never skips except for severe weather",
+            "domain": "daily_routines",
+            "reason": "Her absence abroad means she cannot perform morning dog walks in Ann Arbor; the routine becomes irrelevant for her."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I wanted to check in about something big — I was just formally invited to spend a semester as a visiting scholar at a university in Europe, starting this fall. It’s an amazing opportunity, but I’m already overwhelmed trying to figure out how to manage my routines, family connection, and ongoing responsibilities here. Could we brainstorm ways to stay organized and grounded, both professionally and personally, during this transition?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That’s a huge milestone — and it sounds like there’s a lot to juggle. Let’s start with your routines: are there particular daily rituals or habits you’re worried about disrupting while you’re abroad? For example, morning schedule, exercise, or how you structure your work blocks?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, my yoga routine is the first thing that comes to mind. I’ve always gone to in-person classes on Thursday mornings with my neighbor, but that probably won’t be possible in Europe. I know virtual sessions are an option, but I haven’t tried them before — any advice on making that shift feel less awkward?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s common to feel hesitant about switching to virtual yoga, especially if you’re used to group classes. Many universities abroad offer memberships or virtual fitness programs for visiting scholars: have you looked into what your host school provides? Setting up a regular time each week for virtual classes could help anchor the routine. Do you prefer solo practice or classes with others, even virtually?"
+        },
+        {
+          "role": "user",
+          "content": "I do prefer that group feeling, so I’d rather join scheduled online sessions than practice alone. I’m planning to pause my in-person classes here for the semester, and join virtual groups through the host university instead. Hopefully I'll still get some community out of it, even if it isn’t the same as my regular Thursday mornings."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a good compromise. You might even find a new sense of community with local faculty or other visiting scholars joining virtual classes. Are there other routines at home you’re worried about maintaining — perhaps with your family or caregiving for your mother?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually a big concern. I’ve always made daily in-person check-ins at my mother’s house before starting work, but while I’m abroad I’ll need to switch to daily video or phone check-ins. My sisters will handle the local visits while I’m gone, but I want to make sure my mom still feels supported. Any ideas for keeping those remote check-ins meaningful?"
+        },
+        {
+          "role": "assistant",
+          "content": "Switching to remote support is a big adjustment. Scheduling regular video calls with a predictable structure (maybe a morning coffee chat), and involving your sisters so your mother gets updates from everyone, could help. Do you plan to coordinate these check-ins, or let them happen more spontaneously?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely scheduled — my whole family thrives on routines. I’ll stick with daily calls, probably short and focused, and I’ll make sure my sisters have a shared calendar for their in-person visits. It won’t be quite the same, but at least everyone knows what’s happening."
+        },
+        {
+          "role": "assistant",
+          "content": "That level of coordination will help your mom feel cared for, even if your presence is remote. How about family connection with your husband and son? Will you be scheduling regular video calls with them as well, or something else to keep those bonds strong?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, weekly video calls are a must for us while I’m gone. We already use digital calendars to coordinate everything, so that’ll help. I want those calls to feel like quality time — maybe even cook a new recipe together virtually during the weekends, since that’s become our thing lately."
+        },
+        {
+          "role": "assistant",
+          "content": "Great idea — cooking together virtually could be a fun way to feel connected. Are there local routines or hobbies you’ll miss from Ann Arbor, or plan to replace while abroad? For example, your bookstore or coffee shop visits?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I usually visit a new Ann Arbor bookstore or café each month, but that won’t work while I’m in Europe. Instead, I’m looking forward to exploring independent European bookstores and cafes near the host university — definitely no chain establishments, I want to find local gems. I’ll need to research what’s nearby before I go."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s the perfect way to immerse yourself in the local culture. Have you looked into any cultural excursions organized by the host university? Many have outings for visiting scholars to museums, historical sites, or city walks."
+        },
+        {
+          "role": "user",
+          "content": "Yes, I’ve seen those on their website and plan to join. I actually like group excursions over solo sightseeing when traveling — it’s more social and less intimidating. Hopefully I’ll meet some fellow scholars and staff on those outings."
+        },
+        {
+          "role": "assistant",
+          "content": "Group excursions can be a great way to build community quickly. Are there any routines you’ll need to drop for now, besides dog walks or Ann Arbor café visits? For example, will you still keep your regular volunteering or any other local obligations?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll need to pause morning dog walks with my son — that’s just not possible while I’m abroad. Volunteering at my son’s school library will also be on hold for the semester, since I can only do that in person. I’ll focus on the new routines abroad for now, and pick up local ones when I’m back."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you have a solid plan for adapting most routines and maintaining connections. If you’d like, I can help create a tailored checklist or weekly planner for these new habits, or share tips for staying organized while adjusting to life in Europe?"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her sister in California announced plans to temporarily relocate to Ann Arbor for six months to support their mother's recovery, moving in with her family and sharing caregiving responsibilities.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_049",
+            "fact": "Designates at least two shared family evenings per week for collaborative caregiving and meal prep with her sister and mother, integrating her sister's participation as a new routine",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Reserves a dedicated workspace in her home for her sister, ensuring quiet hours during weekday afternoons so both can focus on remote work responsibilities",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Schedules all catch-up calls with out-of-state sisters for Sunday evenings — never does impromptu calls"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Plans frequent in-person conversations and activities with her sister in Ann Arbor, replacing scheduled Sunday evening catch-up calls while sharing caregiving duties",
+              "domain": "social_relationships"
+            },
+            "reason": "With her sister now living locally for six months and actively involved in caregiving, maintaining the old ritual of scheduled Sunday evening calls is unnecessary. Their interactions shift to spontaneous and regular in-person contact."
+          },
+          {
+            "from": {
+              "id": "pref_028",
+              "fact": "Keeps her phone unmuted all day for urgent calls about her mother’s health — pauses notification silencing until her mother’s recovery stabilizes"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Returns to silencing phone notifications in the evening, trusting her sister to handle urgent calls regarding their mother's health while she's home",
+              "domain": "daily_routines"
+            },
+            "reason": "Her sister's presence and shared caregiving means the urgency for instant response lessens; she can once again silence notifications outside caregiving hours, relying on her sister as primary point of contact."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So... big family news! My sister in California just announced she'll be moving in with us for the next six months. She's coming to help support our mom's recovery, which honestly feels like both a relief and a logistical puzzle. Now that we’re sharing caregiving, I could use some help reworking our daily routines and home setup to keep things manageable for everyone — and still carve out space for work and downtime. Where do I start?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a significant change! Having your sister nearby, especially for a longer stretch, will definitely shift your daily dynamics. To begin, can you tell me where you anticipate the biggest challenges — is it dividing caregiving tasks, maintaining your work blocks, managing family time, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it's a bit of everything: work, caregiving, and home life all collide now. We both work remotely some days and need quiet space, but I’m worried the house will feel cramped — and my existing routines (like my Monday writing block and strict evening boundaries) are non-negotiable for sanity. On the caregiving front, we want to be collaborative, but I don’t want to fall into managing everything myself out of habit. Any suggestions on how to physically and mentally carve out individual time for both of us without making her feel unwelcome?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s smart to prioritize both workspace and personal boundaries from the start. Could you set up a dedicated area for your sister, so you each have your own spot for focused work? For personal time, maybe you schedule rotating solo blocks — where one takes caregiving and the other has uninterrupted downtime. How do you typically signal your work hours to your family already, and what would feel comfortable for your sister?"
+        },
+        {
+          "role": "user",
+          "content": "I actually already have a designated home office, but I just realized my sister will need her own workspace. I’m thinking to clear out the guest room, set up a desk, and—crucially—reserve weekday afternoons as quiet hours so both of us can focus on remote work. That way, we're not tiptoeing around each other or competing for space. It should help preserve my Monday morning writing block, too."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid plan — having separate workspaces and agreed-upon quiet hours creates a clear structure. Will you add these new quiet hours to your shared digital calendar with your husband, so everyone’s aware of them? Do you anticipate needing to adjust any family routines, like dinner or childcare, to fit your sister’s work schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, good point — I’ll update our shared calendar so everyone’s synced, and I’ll also add a note for at least two family evenings a week where my sister, my mom, and I collaborate on meal prep and caregiving. It’s new for us, but I think it’ll bring structure and shared responsibility without everything falling to me by default."
+        },
+        {
+          "role": "assistant",
+          "content": "That collaborative approach will likely make caregiving less stressful and help your sister settle in. For those shared evenings, do you want to rotate who leads meal prep or keep it flexible? And are you planning to change your weekend routines, like family dinners or recipe experiments with your son, now that your sister’s in the mix?"
+        },
+        {
+          "role": "user",
+          "content": "We’ll keep the Sunday family dinners as they are, but add my sister and mom to the mix for those two shared evenings. For recipe experiments with my son, I want to keep them as our solo activity for now — it’s precious bonding time and helps my son feel unstressed by all the changes. One thing I am dropping: our scheduled Sunday night video calls with my sisters. Since my California sister will be living here temporarily and we’ll have frequent, spontaneous in-person conversations, we just don’t need those catch-up calls anymore. It's a good shift, actually!"
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — in-person connection will naturally take the place of scheduled video calls. It’s helpful to maintain routines that protect your individual relationships, especially for your son. Are there other boundaries you want to reassert, like phone notification silencing, now that your sister is available for urgent caregiving?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, actually. I’ve decided to return to silencing phone notifications in the evening. With my sister there as primary point of contact and more hands on deck for mom's needs, I can trust her to handle urgent calls after hours. That's been a big stress reliever — I hadn’t realized how on edge I was before, waiting for possible emergencies."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great — reestablishing your evening boundaries will support your own rest and recovery. Are there any aspects of the new setup you’re unsure about, or would like advice on — like managing shared responsibilities, communication, or potential friction points?"
+        },
+        {
+          "role": "user",
+          "content": "My biggest concern is balancing everyone’s work, volunteering, and caregiving schedules so we don’t accidentally step on each other’s time. I want to avoid the situation where I handle more childcare or errands just because I’m physically present. Maybe a weekly check-in, using our digital calendar, could help us review and adjust? I’d be curious about best practices for coordinating multi-adult households — especially when responsibilities shift."
+        },
+        {
+          "role": "assistant",
+          "content": "Weekly check-ins are an excellent strategy, especially if you use the calendar to track who’s covering caregiving, errands, and downtime. You could set up color-coded blocks for each person’s commitments and shared tasks. Rotating responsibilities—so no one gets defaulted into a caretaker role—helps maintain fairness. If any conflicts arise, encourage open discussion at your check-ins rather than letting frustrations build up. Would you like templates or app suggestions to make this easier?"
+        },
+        {
+          "role": "user",
+          "content": "A template would be helpful. We already use Google Calendar, so something we can layer on there would be great for tracking shared caregiving, meal prep, and remote work blocks. Thanks for all the input — I think I’m finally getting a sense of how to structure this transition so everyone feels supported."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome! I’ll draft a simple Google Calendar template and include sample color-coded categories for caregiving shifts, meal prep, work blocks, and downtime. This should keep responsibilities clear and prevent accidental overload. If anything needs tweaking as you try it out, just let me know. Good luck with the new family routine — you’ve set a thoughtful foundation for everyone involved."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her son's elementary school announced a shift to a four-day in-person schedule, requiring parents to coordinate at-home supervision every Friday for the rest of the academic year.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Blocks Friday mornings from university meetings and office hours, reserving this time exclusively for at-home supervision and activities with her son",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Schedules collaborative planning sessions with her husband each Thursday evening to coordinate logistics for Friday at-home childcare and work arrangements",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_033",
+              "fact": "Handles sole dinner and bedtime routines with her son on weeknights when her husband is in meetings, and prefers simple meals and quiet activities during these evenings"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Handles sole dinner and daytime supervision for her son on Fridays, preferring simple meals and quiet activities throughout the day due to the lack of school and her husband's varying work schedule",
+              "domain": "daily_routines"
+            },
+            "reason": "With the elementary school moving to a four-day in-person schedule, she will now need to manage at-home supervision of her son every Friday—an additional responsibility beyond evenings, requiring adjustments to her routine and preferences on Fridays."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my son's school just moved to a four-day in-person schedule—Fridays are now fully at-home. We're scrambling a bit to figure out how to cover his care and keep work moving. I need strategies for making this shift smoother, both for childcare and my workflow. Any ideas for structuring Fridays?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big transition—it sounds like Fridays will require some careful planning. Are you able to shift your work schedule at all on Fridays? For example, trading office hours or meetings for blocks dedicated to supervising your son? Or is the university expecting you to stay available those days?"
+        },
+        {
+          "role": "user",
+          "content": "I've decided to block Friday mornings from university meetings and office hours, reserving that time for at-home supervision and activities. I notified my department and research team—hopefully they'll respect it. Afternoons are trickier since my husband and I both have unpredictable work schedules, and he sometimes has client calls. How might we organize these logistics without dropping the ball?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great that you’ve protected your Friday mornings—it sets a clear precedent. For the afternoons, would a shared digital calendar help you and your husband track who’s covering childcare hour by hour, or do you already use something for scheduling? And perhaps a weekly planning session could help anticipate conflicts before they arise."
+        },
+        {
+          "role": "user",
+          "content": "We do use a shared calendar for errands and childcare, but with the new Friday setup, we've started doing collaborative planning sessions on Thursday evenings. That way, we can review schedules and anticipate who needs to be on call for work and who can supervise our son. I’m hoping this routine will prevent last-minute scrambling. But I’d like guidance on structuring activities for my son when he’s home all day. What works for a 7-year-old with only one parent around?"
+        },
+        {
+          "role": "assistant",
+          "content": "That Thursday night routine sounds really helpful for proactive planning. On Fridays with just one parent, low-key activities tend to work best. Perhaps a rotating schedule: some independent play, quiet reading, simple crafts, and involvement in meal prep. Do you prefer keeping him busy throughout the day, or favor longer, quieter stretches to help balance your own workload and supervision?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I prefer simple meals and quiet activities all day on Fridays—especially since my husband’s schedule often leaves me solo for long stretches. It’s similar to how I used to handle evenings, but now daytime supervision is part of my routine. I don’t want to rely on screens, so puzzles, reading, and helping with cooking seem like a good fit. Any advice for keeping it fresh week to week?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—variety helps keep things engaging without screens. Maybe you could set a theme for each Friday, like 'nature day' (indoor plant care, drawing, a local walk) or 'book day' (library visit, making bookmarks, reading favorite stories). Also, since you like experimenting with vegetarian cooking, could you involve him in prepping a new recipe each week? Kids often enjoy hands-on cooking and it creates a shared routine."
+        },
+        {
+          "role": "user",
+          "content": "That’s a great suggestion. We already try a brand new vegetarian recipe every weekend, but adapting it for Fridays might work—especially if he’s invested in picking the dish. I want to keep these activities restorative so I don’t end Fridays feeling drained. With these new routines, do you see any gaps or potential friction points I should anticipate, especially regarding my own work responsibilities?"
+        },
+        {
+          "role": "assistant",
+          "content": "The main friction points might be any leftover work obligations that creep into your protected Friday time and the challenge of balancing supervision with productivity. Since you’ve blocked Friday mornings, maybe you should also set clear boundaries for colleagues and students about your Friday availability—like specifying response times or using autoresponders. For afternoons, can you batch low-focus tasks that tolerate interruptions—email sorting, light reading—so you can be present if your son needs attention?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, boundaries are critical. I’ve already set up an autoresponder for Fridays to clarify my availability, and I plan to review student drafts and team messages only in writing and asynchronously. I’ll batch less demanding tasks for the afternoons, since I can’t guarantee focus. And those collaborative Thursday planning sessions with my husband will continue as a checkpoint to ensure our coverage is clear. Overall, I think that covers the new needs. Thanks for helping me think through this—Friday feels much less daunting now."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "During her weekly yoga class, she experienced sudden dizziness and palpitations, prompting her instructor to call for medical assistance; follow-up tests at the hospital confirmed atrial fibrillation, requiring immediate medication and ongoing cardiology appointments.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_056",
+            "fact": "Schedules frequent short rest periods during the workday and at home to minimize fatigue and heart palpitations, never committing to back-to-back obligations",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_057",
+            "fact": "Brings a portable heart rate monitor and medication to work, checking vitals before and after meetings to proactively manage atrial fibrillation symptoms",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Avoids all high-impact exercise since her ankle injury — only chooses low-impact or restorative activities for now"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Ceases all group fitness classes—including yoga—temporarily and practices only gentle, doctor-approved restorative stretches at home until cleared by her cardiologist",
+              "domain": "health_body"
+            },
+            "reason": "The diagnosis of atrial fibrillation and recent symptom episode during yoga mean she must now fully avoid even low-impact group classes like yoga due to safety concerns and medical advice, shifting exclusively to gentle home routines until cleared."
+          },
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Sets a nightly alarm as a cue to begin winding down for bed by 10:00 pm — refrains from caffeine after 2:00 pm"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Sets a nightly alarm to begin winding down for bed by 9:00 pm — strictly avoids all caffeine, even in the morning, as required by cardiologist",
+              "domain": "health_body"
+            },
+            "reason": "Her atrial fibrillation diagnosis and physician’s instructions require more sleep and elimination of stimulants to manage arrhythmia risk; thus, she now begins winding down earlier and excludes all caffeine."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_042",
+            "fact": "Joins virtual yoga sessions from her host university while abroad — pauses in-person classes for the semester",
+            "domain": "health_body",
+            "reason": "She is no longer abroad and, due to atrial fibrillation, cannot participate in any yoga (virtual or in-person) until cleared by her cardiologist; the context for this preference has fully changed."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I'm reaching out because things just got a lot more complicated health-wise. Last Thursday during my usual yoga class, I suddenly felt dizzy and my heart was racing—ended up with an ambulance trip and, after hospital testing, an atrial fibrillation diagnosis. My doctors have put me on meds and I need ongoing cardiology follow-up. I’m struggling to rethink my routines and workload—my usual strategies aren’t fitting this new reality. Any ideas for safely adapting my work schedule and family routines while I get used to this?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm so sorry to hear about your recent health scare—it sounds unsettling, especially with everything you already balance. Atrial fibrillation does require a reset on energy and stress management. Are there specific parts of your workday or home life where you’re noticing the biggest friction since you started medication and regular cardiology visits? For example, are your mornings or evenings feeling different?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s the whole day. The medication has made me pretty fatigued and my doctors emphasized I need more sleep and less stress. Mornings are especially tough—I’m skipping caffeine entirely per their advice, and they want me winding down earlier now. I'm supposed to start prepping for bed by 9 instead of 10. This makes evenings with my family feel rushed and I haven’t figured out how to adapt the rest so I don’t lose that time."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like sleep and energy management need to take center stage. Have you tried reworking your evening routine so family time starts a bit earlier, or maybe shifting some activities to weekends? Since you’re off caffeine (even mornings), you might find it easier to avoid late-night energy spikes, but the adjustment period is real. Would moving your evening puzzle time with your son up help preserve that connection without pushing your bedtime too late?"
+        },
+        {
+          "role": "user",
+          "content": "It's a good suggestion. We’ve moved our jigsaw time up a bit, so now it’s right after dinner. I still prep my to-do list in the morning like always, but without coffee—it feels weird, but manageable so far. The bigger issue is my workdays. I can't do back-to-back meetings or obligations anymore; I have to schedule short rest periods throughout the day since even mental fatigue triggers the palpitations."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s an important adaptation—short, frequent rest breaks can make a big difference. To manage this, you might consider re-blocking your calendar with buffer time between meetings, especially for research team check-ins or advising grad students. Since you prefer async communication, could you lean further into that—perhaps shifting all feedback and team updates to written format so you control the pace and schedule around your rest periods?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I plan to keep everything as asynchronous as possible. Team calls and real-time meetings just aren’t realistic now, and my students have generally adapted well to written-only feedback. I’m also bringing a heart rate monitor to work and checking my vitals before and after any meeting, and keeping medication on hand in case symptoms flare up. Not exactly what I envisioned for this semester, but it’s necessary for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s incredibly proactive. Monitoring your vitals throughout the day gives you a sense of control and early warning. Does your department know about your new needs? Sometimes letting colleagues know you’ll be stepping out periodically or not available for impromptu meetings can help set expectations. Are there particular research or mentoring tasks you’d like help figuring out how to pace or delegate?"
+        },
+        {
+          "role": "user",
+          "content": "I’m letting my team and students know—everyone’s been patient so far. What I really need help with is my physical activity routine. Before this, I avoided high-impact workouts since my ankle injury, but I always kept yoga for stress relief and stuck with in-person classes on Thursdays. Now doctors say I have to stop all group fitness—including yoga—at least temporarily. I can only do gentle, restorative stretches at home as they approve them. So I dropped all virtual and in-person yoga for now. I haven’t figured out a satisfying replacement yet."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, especially if yoga was a key stress outlet. While group classes are on pause, maybe you could build a home routine—gentle, doctor-approved stretches, possibly some breathing exercises. Are there any restorative movements or mindfulness activities you already enjoy doing solo? If you’re missing the sense of community, perhaps connecting with the instructor or classmates in a non-physical way could help during recovery."
+        },
+        {
+          "role": "user",
+          "content": "It’s tough, but I’m focusing on what my cardiologist suggests for now. No group fitness, no yoga (not even virtual—I used to do those while abroad, but now I can’t participate in any). Just gentle stretches at home, sometimes with my son since he likes to join in. Community connection isn’t a priority right now—I’m mostly interested in safer alternatives that don’t risk palpitations or dizziness."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—safety comes first. Gentle stretching with your son sounds like a sweet adaptation. Would it help to explore a few routines together, perhaps ones that focus on flexibility and relaxation, and get approval from your cardiologist for each? If mental calm is important, simple breath-work can sometimes be restorative without straining the heart."
+        },
+        {
+          "role": "user",
+          "content": "Yes, we tried a couple gentle stretches this weekend and I’ll get my cardiologist's input before adding more. The breath-work suggestion is good—I’m cautious, but open to it. By the way, just to clarify, since my diagnosis I’m not doing any virtual yoga sessions anymore, even those I used to join from the university while abroad; those are off the table until I've been cleared."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for clarifying—I'll avoid suggesting any group or virtual fitness for now. Switching gears, are there any aspects of your home or work routine you’re still struggling to adapt? For example, balancing grocery runs or volunteering at your son's school?"
+        },
+        {
+          "role": "user",
+          "content": "I’m doing okay on those. I still take my son grocery shopping Saturday mornings—never midweek, and I’ve kept to just volunteering at the school library since it fits my energy. I don’t commit to anything back-to-back anymore, not even errands. The hardest adjustment has been losing yoga as social time with my neighbor, but I’m prioritizing my health for now."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re making thoughtful adjustments, even if some are hard. In the absence of your usual yoga outings, you might schedule brief, low-key check-ins with your neighbor—maybe over tea or a puzzle with your son—so you still feel connected. If you need help identifying doctor-approved restorative routines or organizing your work calendar around rest periods, let me know—I can help you build templates or find vetted resources."
+        },
+        {
+          "role": "user",
+          "content": "That’s helpful, thank you. I may need a new calendar template to block rest periods and check my vitals more consistently on teaching days—I’ll reach out if I need specifics. For now, I’m sticking to slow mornings, no caffeine, only home-based gentle movement, and never overlapping commitments. I appreciate the support as I figure this out."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Prescribed a wearable heart monitor to be worn continuously for two weeks to track irregularities in her heart rhythm, with restrictions on vigorous activity and travel until results are reviewed.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_060",
+            "fact": "Carefully chooses only loose, comfortable clothing that accommodates electrode placement and avoids high-neck or tight tops while wearing the heart monitor",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_061",
+            "fact": "Schedules all necessary showers and hair washes for the evenings, using disposable cleansing wipes in the mornings to comply with monitor water exposure restrictions",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_032",
+              "fact": "Shifts daily 30-minute walks to the early evening with her son and dog to coincide with her husband's evening work meetings — no longer avoids evening walks if family schedule requires it"
+            },
+            "to": {
+              "id": "pref_058",
+              "fact": "Pauses all daily walks and outdoor family strolls, substituting with slow indoor movement and gentle activities, strictly avoiding outdoor walks on doctor's orders while wearing the heart monitor",
+              "domain": "health_body"
+            },
+            "reason": "The physician's restrictions with the wearable heart monitor explicitly ban even moderate outdoor walks, requiring her to halt the former routine and replace it with only gentle, doctor-approved indoor activities until heart rhythm tracking is complete."
+          },
+          {
+            "from": {
+              "id": "pref_020",
+              "fact": "Plans a day trip for the family every school break — never spends the whole break at home"
+            },
+            "to": {
+              "id": "pref_059",
+              "fact": "Suspends family day trips during school breaks, opting instead for at-home activities and virtual experiences due to medical restrictions on travel while the heart monitor is in use",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The instructions to refrain from travel (even short trips) while being monitored mean she can no longer plan or take family outings during this period; instead, she must choose home-based or virtual alternatives."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I'm officially sporting a heart monitor — doctor's orders after some weird palpitations, just to be extra cautious. It's going to be two weeks strapped to this thing, no vigorous activity, no travel, and honestly I'm already feeling boxed in. My routines are pretty woven into family life, so I'm not sure how to keep everyone from going stir crazy. Have any ideas for adjusting daily habits so I don't feel trapped?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds challenging — especially since it sounds like you’re normally quite active with your family. When your routines are disrupted, especially for medical reasons, it’s easy to feel stuck. Would you like ideas specifically for movement, or are you looking for ways to create new shared routines with your family during this monitoring period?"
+        },
+        {
+          "role": "user",
+          "content": "Maybe both? Movement used to mean daily walks with my son and our dog, but the cardiologist explicitly banned even moderate outdoor strolls until we get results. We're all a bit out of sorts without that anchor, so I'm looking for gentle indoor alternatives — plus ways to keep my son occupied in the evenings since walks were our reset after dinner."
+        },
+        {
+          "role": "assistant",
+          "content": "Replacing outdoor walks with indoor activity is a smart approach given your restrictions. Gentle stretching routines, light yoga, or even indoor scavenger hunts could be fun and low-impact. Are you comfortable doing slow-paced movement indoors? And does your son enjoy activities like puzzles or games that can double as quality time?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, slow indoor movement is fine, as long as it's doctor-approved. We're actually big on jigsaw puzzles after dinner — screen-free, calming for both of us. I think I’ll need more ideas like that since our dog is restless without her morning walks, and my son misses the active routine."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great you already have a puzzle tradition — maybe expanding that with board games or building projects could help. For the dog, would short play sessions indoors be possible? Also, have you considered gentle, creative indoor activities that involve everyone, like setting up a mini indoor garden or crafts?"
+        },
+        {
+          "role": "user",
+          "content": "Indoor fetch with the dog is doable, especially since she’s getting older and doesn’t mind a slower pace. Crafts would work, too, except I’ll need to be mindful of what I wear — I’m only choosing loose, comfortable clothes these days so the monitor electrodes don’t get irritated or tangled with high-neck or tight tops. Keeping things simple on the wardrobe front."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes perfect sense. Craft projects can get messy, but you can opt for easier, low-mess options. For your son, maybe things like origami or watercolor pencils could offer some variety. Since wardrobe and comfort are more important now, gentle movement sessions — like basic stretching or guided breathing — might also fit well into your evenings."
+        },
+        {
+          "role": "user",
+          "content": "Stretching and breathing exercises sound manageable, if we keep it slow. I do have to adjust my shower routine, though. Water exposure is restricted with the heart monitor, so I'm scheduling hair washes for evenings only, and using disposable wipes in the morning instead. It’s tedious, but better than risking a malfunction."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s definitely an extra layer to coordinate. Planning shower and cleansing routines around the monitor and your family’s schedule sounds smart. Are there specific times in the evening that work best for these, given your son’s bedtime or your wind-down ritual?"
+        },
+        {
+          "role": "user",
+          "content": "Evenings after family dinner are easiest — once my son is occupied with a book or puzzle, I can squeeze in a shower before my own wind-down. I’ve already started prepping for bed earlier; the fatigue is real lately, so I’m sticking to my nightly alarm for winding down but shifting some routines to fit the new constraints."
+        },
+        {
+          "role": "assistant",
+          "content": "Adjusting your routines shows real flexibility. You mentioned feeling boxed in; do you typically travel or plan outings during this period? If so, are you finding ways to substitute at-home activities or virtual experiences in place of those?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. Normally, I plan at least one day trip for the family every school break — we rarely spend the whole time at home. But with the heart monitor, I've suspended all trips and we're shifting to at-home activities and virtual adventures, like online museum tours or themed movie nights. It’s not quite the same, but safer given the travel restriction."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful way to balance safety with engagement. Virtual experiences and themed nights can add novelty and help everyone feel connected. Is there a particular activity that’s worked well so far, or are you still experimenting?"
+        },
+        {
+          "role": "user",
+          "content": "We tried a virtual aquarium tour that was a hit, and I’m planning a family cooking night with a new vegetarian recipe this weekend. It keeps the energy up, even if we have to stay put. Thanks for helping me rethink the routines — I appreciate having options for movement, clothes, cleaning, and family time that fit the monitor’s restrictions."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome — you’ve made thoughtful adjustments, and it sounds like your family is adapting alongside you. If you ever need fresh ideas or want to check in on ways to keep routines engaging, just let me know. Wishing you a smooth two weeks and clear results!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Reviews graduate student drafts within 72 hours but provides feedback only in writing — avoids real-time editing sessions",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Accepts a limited number of peer review assignments per semester — declines additional requests to protect research time",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Never reads or responds to work emails after 8 pm — strictly silences notifications to preserve home time",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_011",
+        "fact": "Hosts Sunday family dinners each week — screens all personal calls during this time",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Uses shared digital calendars with her husband to coordinate childcare and errands — never relies on verbal reminders",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Limits volunteering to the school library only — declines other school-related volunteer opportunities",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Tries a brand new vegetarian recipe with her son every weekend — never repeats the same dish in a given month",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Spends Saturday afternoons reading modern fiction — never reads work-related material during leisure time",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Enjoys jigsaw puzzles with her son after dinner — avoids screen-based games in the evening",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Preps a to-do list every morning before opening her laptop — never starts digital work without this ritual",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks news headlines only with her first cup of coffee — avoids reading news in the evening",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Reviews her week and plans major tasks every Sunday night — refrains from scheduling anything for Monday evenings",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Coordinates grocery shopping for her mother with her sisters and son, often delegating shopping tasks and deliveries as needed due to increased caregiving demands",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Now participates in frequent in-person meetings with interdisciplinary faculty twice weekly as a co-chair, supplementing asynchronous communication with direct collaboration",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Reserves Wednesday afternoons for preparatory work and reflection ahead of in-person initiative meetings, treating this as non-negotiable focus time",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Regularly connects with faculty from other departments over coffee after planning meetings to foster interdisciplinary relationships",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_034",
+        "fact": "Proactively arranges video check-ins with her husband and son after his late meetings to maintain evening family connection",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Blocks Monday mornings primarily for onboarding, team recruitment, and urgent grant-related meetings — rarely protects this time for uninterrupted writing during project rollout",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Prioritizes weekly community partnership meetings during the first months of the grant rollout — automatically reschedules less critical internal team catch-ups to accommodate these",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Dedicates one evening per week to developing a public outreach plan, separating this work from regular research and teaching duties",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Prefers to delegate routine research administration and clerical grant tasks to newly hired staff whenever possible — no longer manages these details herself",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Prepares fresh plant-based low-sodium dinners five nights a week — avoids all processed foods and never orders delivery, even on special occasions",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Reads nutrition labels meticulously for all packaged ingredients, excluding anything with added sodium or preservatives from home meals",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Began batch-cooking unsalted, plant-based staples on Sundays to simplify weeknight dinners and avoid resorting to processed foods",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_043",
+        "fact": "Relies on daily video or phone check-ins with her mother while abroad, delegating in-person visits to her sisters",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Explores independent European bookstores and cafes near her host university, avoiding chain establishments while abroad",
+        "domain": "leisure_hobbies",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Schedules weekly video calls with her husband and son to maintain family connection during her semester abroad",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Participates in cultural outings organized by her host university, preferring group excursions to solo sightseeing while abroad",
+        "domain": "leisure_hobbies",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_047",
+        "fact": "Plans frequent in-person conversations and activities with her sister in Ann Arbor, replacing scheduled Sunday evening catch-up calls while sharing caregiving duties",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Returns to silencing phone notifications in the evening, trusting her sister to handle urgent calls regarding their mother's health while she's home",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Designates at least two shared family evenings per week for collaborative caregiving and meal prep with her sister and mother, integrating her sister's participation as a new routine",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_050",
+        "fact": "Reserves a dedicated workspace in her home for her sister, ensuring quiet hours during weekday afternoons so both can focus on remote work responsibilities",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_051",
+        "fact": "Handles sole dinner and daytime supervision for her son on Fridays, preferring simple meals and quiet activities throughout the day due to the lack of school and her husband's varying work schedule",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Blocks Friday mornings from university meetings and office hours, reserving this time exclusively for at-home supervision and activities with her son",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Schedules collaborative planning sessions with her husband each Thursday evening to coordinate logistics for Friday at-home childcare and work arrangements",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_054",
+        "fact": "Ceases all group fitness classes—including yoga—temporarily and practices only gentle, doctor-approved restorative stretches at home until cleared by her cardiologist",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Sets a nightly alarm to begin winding down for bed by 9:00 pm — strictly avoids all caffeine, even in the morning, as required by cardiologist",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Schedules frequent short rest periods during the workday and at home to minimize fatigue and heart palpitations, never committing to back-to-back obligations",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_057",
+        "fact": "Brings a portable heart rate monitor and medication to work, checking vitals before and after meetings to proactively manage atrial fibrillation symptoms",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_058",
+        "fact": "Pauses all daily walks and outdoor family strolls, substituting with slow indoor movement and gentle activities, strictly avoiding outdoor walks on doctor's orders while wearing the heart monitor",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_059",
+        "fact": "Suspends family day trips during school breaks, opting instead for at-home activities and virtual experiences due to medical restrictions on travel while the heart monitor is in use",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_060",
+        "fact": "Carefully chooses only loose, comfortable clothing that accommodates electrode placement and avoids high-neck or tight tops while wearing the heart monitor",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_061",
+        "fact": "Schedules all necessary showers and hair washes for the evenings, using disposable cleansing wipes in the mornings to comply with monitor water exposure restrictions",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Blocks Monday mornings for uninterrupted writing — never schedules meetings or mentoring during this time",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "The new federal grant requires immediate recruitment, onboarding, and community partnership-building within a tight schedule. She must now spend Monday mornings on team growth and grant-related activities, no longer on undisturbed writing."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Prefers asynchronous communication with her research team — rarely calls or holds impromptu meetings",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "The university restructuring mandates twice-weekly in-person planning meetings and sustained close collaboration with faculty from other departments, directly overriding her previous preference for asynchronous-only communication."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Prepares fresh vegetarian dinners five nights a week — never orders delivery except for special occasions",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "Her doctor's instructions call for a strict plant-based, low-sodium diet with immediate elimination of processed foods and takeout, directly contradicting her previous 'vegetarian' and 'special occasion delivery' exceptions."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Takes daily 30-minute walks at lunchtime, regardless of weather — avoids evening workouts due to fatigue",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "Her husband's new remote-only promotion requires frequent evening meetings across time zones, making it necessary for her to adjust routines to accommodate family obligations like childcare and dog walking. As a result, she now prefers evening walks with her son and dog during her husband's work calls."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Attends in-person yoga classes every Thursday morning — never participates in virtual yoga sessions",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "While serving as a visiting scholar in Europe, she will be unable to attend her regular in-person yoga classes with her neighbor, necessitating a shift to virtual sessions."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Sets a nightly alarm as a cue to begin winding down for bed by 10:00 pm — refrains from caffeine after 2:00 pm",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_055",
+        "reason": "Her atrial fibrillation diagnosis and physician’s instructions require more sleep and elimination of stimulants to manage arrhythmia risk; thus, she now begins winding down earlier and excludes all caffeine."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Avoids all high-impact exercise since her ankle injury — only chooses low-impact or restorative activities for now",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_054",
+        "reason": "The diagnosis of atrial fibrillation and recent symptom episode during yoga mean she must now fully avoid even low-impact group classes like yoga due to safety concerns and medical advice, shifting exclusively to gentle home routines until cleared."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Schedules all catch-up calls with out-of-state sisters for Sunday evenings — never does impromptu calls",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_047",
+        "reason": "With her sister now living locally for six months and actively involved in caregiving, maintaining the old ritual of scheduled Sunday evening calls is unnecessary. Their interactions shift to spontaneous and regular in-person contact."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Shops for her mother every Saturday morning — never delegates this responsibility, even when busy",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "After her mother’s stroke and need for ongoing in-home support, shopping for her mother is now more frequent and complex. She can't always do it alone, and must share or delegate this responsibility."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Visits a new Ann Arbor bookstore or local coffee shop each month — avoids chain cafes entirely",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "She will be living abroad for a semester, so monthly visits to Ann Arbor shops or cafes are not feasible."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Plans a day trip for the family every school break — never spends the whole break at home",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_059",
+        "reason": "The instructions to refrain from travel (even short trips) while being monitored mean she can no longer plan or take family outings during this period; instead, she must choose home-based or virtual alternatives."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Shops for groceries strictly on Saturday mornings with her son — never does midweek grocery runs",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": null,
+        "reason": "Her mother's frequent in-home support needs now require unpredictable grocery runs beyond Saturdays; the strict weekly routine is no longer possible."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Walks the family dog before breakfast every weekday, enlisting her son as a helper — never skips except for severe weather",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "Her absence abroad means she cannot perform morning dog walks in Ann Arbor; the routine becomes irrelevant for her."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Makes daily check-in visits to her mother’s home before starting work — never skips a day unless traveling",
+        "domain": "social_relationships",
+        "created_at_session": 0,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_043",
+        "reason": "Her physical absence during the semester in Europe makes daily in-person visits impossible; she will now connect remotely and delegate local caregiving."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Keeps her phone unmuted all day for urgent calls about her mother’s health — pauses notification silencing until her mother’s recovery stabilizes",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_048",
+        "reason": "Her sister's presence and shared caregiving means the urgency for instant response lessens; she can once again silence notifications outside caregiving hours, relying on her sister as primary point of contact."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Shifts daily 30-minute walks to the early evening with her son and dog to coincide with her husband's evening work meetings — no longer avoids evening walks if family schedule requires it",
+        "domain": "health_body",
+        "created_at_session": 2,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_058",
+        "reason": "The physician's restrictions with the wearable heart monitor explicitly ban even moderate outdoor walks, requiring her to halt the former routine and replace it with only gentle, doctor-approved indoor activities until heart rhythm tracking is complete."
+      },
+      {
+        "id": "pref_033",
+        "fact": "Handles sole dinner and bedtime routines with her son on weeknights when her husband is in meetings, and prefers simple meals and quiet activities during these evenings",
+        "domain": "daily_routines",
+        "created_at_session": 2,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_051",
+        "reason": "With the elementary school moving to a four-day in-person schedule, she will now need to manage at-home supervision of her son every Friday—an additional responsibility beyond evenings, requiring adjustments to her routine and preferences on Fridays."
+      },
+      {
+        "id": "pref_042",
+        "fact": "Joins virtual yoga sessions from her host university while abroad — pauses in-person classes for the semester",
+        "domain": "health_body",
+        "created_at_session": 5,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "She is no longer abroad and, due to atrial fibrillation, cannot participate in any yoga (virtual or in-person) until cleared by her cardiologist; the context for this preference has fully changed."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:33:15.242874"
+}

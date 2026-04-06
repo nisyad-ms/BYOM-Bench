@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_907dc5fa",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_026",
+        "fact": "Schedules all team meetings according to the new company’s proprietary platform defaults, which require meetings to be between 9am and 5pm PST — no longer strictly early afternoon",
+        "supersedes": {
+          "id": "pref_001",
+          "fact": "Schedules all team meetings in early afternoon — never before 10am or after 4pm due to time zone differences"
+        }
+      },
+      {
+        "id": "pref_048",
+        "fact": "Switches to hosting virtual game nights with friends while living at his sister's house as primary caregiver; avoids in-person meetups for the duration",
+        "supersedes": {
+          "id": "pref_012",
+          "fact": "Hosts monthly game nights with college friends in Seattle — always in-person, never virtual"
+        }
+      },
+      {
+        "id": "pref_050",
+        "fact": "Schedules all work and personal activities around the twins’ nap and meal times, avoiding any appointments or calls during these periods"
+      },
+      {
+        "id": "pref_042",
+        "fact": "Schedules weekly collaborative review sessions with both legal and clinical leads to audit model documentation and regulatory compliance checkpoints"
+      },
+      {
+        "id": "pref_046",
+        "fact": "Commutes to the downtown office by light rail three mornings a week, using commute time to catch up on industry podcasts instead of audio journaling or music"
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks work emails after breakfast, but avoids personal email inbox until after lunch"
+      }
+    ]
+  },
+  "persona": "A 28-year-old data scientist working remotely for a healthcare startup"
+}

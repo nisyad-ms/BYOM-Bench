@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_f63b4d86",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_050",
+        "fact": "Adjusts weekend cooking routines to accommodate her parents’ dietary needs and medical restrictions, often preparing special low-sodium or heart-healthy meals; occasionally orders takeout if fatigue or medical appointments disrupt plans",
+        "supersedes": {
+          "id": "pref_009",
+          "fact": "Cooks from scratch every weekend — never orders takeout on Saturdays or Sundays"
+        }
+      },
+      {
+        "id": "pref_046",
+        "fact": "Schedules cross-functional meetings at any available time, including late afternoons and evenings, as dictated by emergency priorities — time zone concerns are temporarily ignored",
+        "supersedes": {
+          "id": "pref_002",
+          "fact": "Schedules cross-functional meetings before noon whenever possible — avoids late afternoons due to time zone misalignments"
+        }
+      },
+      {
+        "id": "pref_015",
+        "fact": "Schedules all social plans at least two days in advance — never agrees to last-minute meetups"
+      },
+      {
+        "id": "pref_043",
+        "fact": "Commutes by train each weekday morning and prefers listening to business analytics podcasts during her commute — avoids social media browsing"
+      },
+      {
+        "id": "pref_005",
+        "fact": "Prefers one-on-one follow-ups with team members rather than group recap emails"
+      },
+      {
+        "id": "pref_057",
+        "fact": "Carefully plans any in-person meetings with her ex at neutral public locations — avoids private or emotionally loaded settings such as homes or favorite former date spots."
+      }
+    ]
+  },
+  "persona": "A mid-level business analyst at a multinational retail corporation"
+}

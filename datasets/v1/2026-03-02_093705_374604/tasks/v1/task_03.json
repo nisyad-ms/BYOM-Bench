@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_93326d2f",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_029",
+        "fact": "Relies on the office cafeteria or nearby lunch spots for weekday meals—no longer pre-schedules meal delivery for lunch",
+        "supersedes": {
+          "id": "pref_023",
+          "fact": "Pre-schedules meal delivery for weekdays to ensure lunch is available—never orders takeout on impulse"
+        }
+      },
+      {
+        "id": "pref_032",
+        "fact": "Attends physical therapy sessions after work on weekday evenings—does not schedule pilates or fitness classes",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Schedules pilates classes during weekday evenings only—never goes on weekends to keep Saturdays and Sundays free"
+        }
+      },
+      {
+        "id": "pref_055",
+        "fact": "Plans and prepares home-cooked meals each evening during her parents' stay, actively involving them in meal prep—pauses weekly outing dinners with coworkers for these two weeks"
+      },
+      {
+        "id": "pref_050",
+        "fact": "Maintains a shared digital document tracking her grandmother’s care updates, medications, and family visit calendar—never relies on ad hoc texting or informal notes"
+      },
+      {
+        "id": "pref_018",
+        "fact": "Keeps a list of local art galleries to visit and aims to see a new one each quarter—never goes to large museums"
+      },
+      {
+        "id": "pref_011",
+        "fact": "Invites her two close coworkers for after-work dinners at least once a week—never mixes work and personal topics during these outings"
+      }
+    ]
+  },
+  "persona": "A 28-year-old account executive at a fast-growing SaaS startup"
+}

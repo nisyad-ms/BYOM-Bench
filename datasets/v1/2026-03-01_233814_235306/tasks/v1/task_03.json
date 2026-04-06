@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_a10eae87",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_043",
+        "fact": "Replaces hiking outings with neighborhood walks or park strolls, avoiding uneven trails and new routes until her wrist has fully healed",
+        "supersedes": {
+          "id": "pref_016",
+          "fact": "Explores a new hiking trail at least once a month and never repeats the same route within four weeks"
+        }
+      },
+      {
+        "id": "pref_048",
+        "fact": "Suspends public training workshops entirely, replacing interactive demos with crisis bulletins and security advisory emails for staff until the incident is resolved",
+        "supersedes": {
+          "id": "pref_003",
+          "fact": "Hosts training workshops with interactive demos only; never uses slides-only presentations"
+        }
+      },
+      {
+        "id": "pref_042",
+        "fact": "Prepares all weeknight dinners at home with her son, involving him in meal planning and cooking to support consistent family routines and bonding during his high school adjustment"
+      },
+      {
+        "id": "pref_056",
+        "fact": "Plans occasional weekend visits to Portland to maintain close relationships with her sister and nephew despite the move, but no longer offers routine childcare or weekly support"
+      },
+      {
+        "id": "pref_029",
+        "fact": "Prefers monitoring server logs and alerts in 15-minute increments throughout the day instead of doing extended backend review sessions—finds short, frequent checks more manageable with mixed support duties"
+      },
+      {
+        "id": "pref_054",
+        "fact": "Stops work-related communication and ticket follow-ups at 8pm sharp — does not check email or respond to tech support requests in the late evening while under sleep study protocols"
+      }
+    ]
+  },
+  "persona": "A mid-career helpdesk technician working in a university IT department"
+}

@@ -1,0 +1,1513 @@
+{
+  "persona": "A 28-year-old office administrator supporting a remote sales team",
+  "persona_id": "persona_20260301_223603",
+  "expanded_persona": {
+    "base_persona": "A 28-year-old office administrator supporting a remote sales team",
+    "age": 28,
+    "gender": "female",
+    "location": "Denver, CO",
+    "work_education": [
+      "Works as the sole office administrator for a mid-sized software company with a fully remote sales department",
+      "Manages daily scheduling, travel arrangements, and onboarding logistics for 18 remote sales reps",
+      "Recently started leading weekly video check-ins to help connect isolated team members; experimenting with new virtual collaboration tools",
+      "Occasionally fills in for HR tasks, including payroll and benefits troubleshooting",
+      "Considering enrolling in an evening online course for business administration to strengthen her resume"
+    ],
+    "health_wellness": [
+      "Generally healthy; struggles to stay active during busy work weeks due to long office hours",
+      "Has mild lower back pain from extended periods at her desk; recently started physical therapy once a week",
+      "Prepares lunch at home most days but relies on takeout when work gets hectic",
+      "Sleeps about 6-7 hours per night; sometimes has insomnia before major work deadlines"
+    ],
+    "family_relationships": [
+      "Lives alone in a one-bedroom apartment downtown",
+      "Close with her older sister, who lives nearby and visits weekly for dinner",
+      "Dating someone long-distance for six months; they video chat most evenings",
+      "Maintains regular contact with parents in Minnesota via Sunday calls",
+      "Responsible for caring for her elderly cat, who requires daily medication"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Schedules all sales team meetings before noon to accommodate different time zones — never allows meetings to run past 1pm",
+        "Uses only video calls for check-ins — avoids phone calls to foster stronger team connections",
+        "Drafts travel itineraries at least three days in advance — never arranges travel last-minute",
+        "Handles HR and payroll issues after regular hours to minimize distraction during her main workflow",
+        "Prefers experimenting with new project management tools — never sticks with a single platform for more than six months"
+      ],
+      "health_body": [
+        "Sets hourly reminders to stretch at her desk — never goes more than two hours without movement",
+        "Completes physical therapy exercises daily at home, even on weekends — never skips due to busy workdays",
+        "Prepares homemade lunches Monday through Thursday — orders takeout only on Fridays",
+        "Avoids caffeine after 3pm to help with insomnia before deadlines — sticks to herbal tea in the evening",
+        "Reserves Saturday mornings exclusively for long walks in the park — never schedules errands or work during this time"
+      ],
+      "social_relationships": [
+        "Hosts weekly dinners for her sister every Wednesday — never moves the date without advance notice",
+        "Video chats with her long-distance partner nightly for at least 30 minutes — avoids texting for emotional check-ins",
+        "Makes Sunday morning calls to her parents without fail — never skips even if traveling",
+        "Shares cat care updates and cute photos daily with her sister — refuses to let anyone else administer the medication",
+        "Organizes group chats for the sales team but never participates in large professional networking events"
+      ],
+      "leisure_hobbies": [
+        "Reads mystery novels for an hour each night before bed — never watches TV in the evenings",
+        "Takes weekend baking classes in person — avoids virtual hobby groups",
+        "Plans short local hikes twice a month — won’t drive more than an hour for outdoor activities",
+        "Explores new coffee shops every Sunday afternoon — prefers independent cafes over chains",
+        "Keeps a scrapbook of travel destinations she manages for sales reps — never documents her own trips"
+      ],
+      "daily_routines": [
+        "Prepares the cat’s medication every morning before breakfast — never alters the timing",
+        "Checks work emails only between 8am and 6pm — never responds after hours unless it’s payroll related",
+        "Meal preps on Sunday evenings for the upcoming week — never skips even if ordering takeout later",
+        "Cleans the apartment every Saturday afternoon — refuses to hire cleaning services",
+        "Sets out clothes the night before workdays — never chooses outfits in the morning"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her physical therapist diagnosed her with moderate disc degeneration in her lower back and recommended she transition to a standing desk at work, limiting sitting to no more than two hours at a time.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Logs daily standing and sitting intervals in an app as part of physical therapy tracking — avoids manual journaling or paper logs",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Sets hourly reminders to stretch at her desk — never goes more than two hours without movement"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Uses a standing desk at work and alternates between standing and sitting throughout the day — avoids sitting more than two hours total on any workday",
+              "domain": "health_body"
+            },
+            "reason": "The physical therapist’s recommendation and her diagnosis require a specific behavioral shift: instead of just stretching during long bouts of sitting, she must now actively limit total sitting time and work primarily from a standing desk."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My physical therapist just diagnosed me with moderate disc degeneration. Apparently, sitting all day is out — she wants me to switch to a standing desk and keep my sitting at two hours max. I honestly have no clue how to pull this off without disrupting everything at work. Any ideas for how to transition smoothly?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big adjustment, but it can definitely be managed! Have you had the chance to try a standing desk yet, or is this something you’ll need to suggest to your company for the first time? Are you mostly working at the office or do you sometimes work remotely?"
+        },
+        {
+          "role": "user",
+          "content": "I’m in the office every day, so I’ll need to get approval for the equipment. I’m a little worried about the logistics — I manage travel, onboarding, HR stuff, and all the remote sales team routines, so I need my workstation set up for multitasking. I guess the main concern is making sure I can easily switch between standing and sitting, because she specified I need to alternate, not just stand all day."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re right, alternating is key for back health. There are adjustable desks that let you quickly move between standing and sitting, and anti-fatigue mats help during longer standing sessions. Would you want to set up a schedule for switching positions, or prefer to remain flexible based on how you feel?"
+        },
+        {
+          "role": "user",
+          "content": "I need a pretty structured routine. Before this, I used to set hourly reminders to stretch at my desk so I wouldn’t go more than two hours without moving, but the therapist wants a stricter limit — not just moving, but really limiting my total sitting to two hours a day. So I’ll probably need to track the intervals closely."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a significant shift from just stretching periodically to strictly limiting sitting time. Do you already use any apps to track your activity, or would you need to find something new for logging your standing and sitting intervals?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, the therapist wants me tracking intervals digitally—she gave me a few app suggestions that sync with her portal. I’m definitely not going to manually journal or use paper logs. I started logging today and was surprised how fast sitting time adds up, even when standing most of the day."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good call — digital logging is way easier! Since your workflow sounds so packed, maybe you could automate reminders to switch modes using the app, and sync the reports for your PT. Are there particular tasks that require you to sit, or could you do everything at the standing desk?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly, only payroll or HR troubleshooting really requires sitting — I usually tackle those after hours, so I can keep them within the two-hour window. For everything else, I can adapt to a standing desk. But it’ll definitely change how I manage some routines, like prepping travel itineraries and running onboarding meetings."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you have a good plan to keep sitting tasks clustered and use the standing desk for all your main workflow. How are you planning to adjust your meeting schedules or check-ins for the team, given you’ll mostly be standing? Will you need to tweak the way you run video calls or manage onboarding?"
+        },
+        {
+          "role": "user",
+          "content": "I run all team meetings as video calls before noon anyway for time zones, so those should be fine standing. Onboarding is usually a mix of paperwork and screen sharing, so I’ll just set up the standing desk so everything’s accessible. The main tweak will be making sure I don’t lose track of interval swapping while multitasking."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Having everything arranged ergonomically will help, and pairing your interval tracking app with scheduled reminders should prevent accidental over-sitting. Is there anything you’re worried about losing in your workflow — like convenience, focus, or interaction with the team?"
+        },
+        {
+          "role": "user",
+          "content": "I’m mostly worried about slipping up and sitting longer than I’m supposed to. I’m so used to sitting through tasks without thinking — it’s going to take time to build the habit. And I’ll need to make sure the standing desk works for video calls so the background looks professional; my boss is picky about that."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s totally valid. Maybe you could experiment with desk placement or add a backdrop for the video calls so you’re confident about your professional environment. As for keeping the habit, maybe linking your app reminders with small physical cues — like keeping your chair out of reach when not needed — could help reinforce it."
+        },
+        {
+          "role": "user",
+          "content": "That’s actually helpful! I hadn’t thought about a backdrop or moving the chair. I’ll try those. The digital reminders are working so far — I just need to keep logging intervals daily for physical therapy tracking. Thanks for helping me think this through!"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her long-distance partner was offered a job in Denver and decided to relocate, moving in with her temporarily while searching for their own place.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_029",
+            "fact": "Shares meal preparation responsibilities with her partner for weekday dinners — prefers collaborative cooking over solo meals",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_030",
+            "fact": "Includes her partner in Saturday morning park walks when possible, prioritizing shared activities",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Video chats with her long-distance partner nightly for at least 30 minutes — avoids texting for emotional check-ins"
+            },
+            "to": {
+              "id": "pref_028",
+              "fact": "Spends quality evening time in person with her partner most nights — video chats only when one of them is away",
+              "domain": "social_relationships"
+            },
+            "reason": "Her partner has relocated to Denver and moved in temporarily, so nightly video chats are no longer needed and emotional check-ins happen in person."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my partner just accepted a job here in Denver and moved in with me—temporarily, at least while they hunt for their own place. It's exciting, but wow, suddenly having someone else in the apartment is a real adjustment. I want to figure out how to balance routines and keep the workflow smooth, especially since my weeks are already packed. Any suggestions for finding a new rhythm when your living situation changes overnight?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats! That’s a huge transition and definitely exciting. It can be tricky to integrate someone into your daily routine, especially when you’re juggling a busy job and personal responsibilities. Are there particular parts of your routine you’re worried might get disrupted, or is the main concern just fitting everything in alongside your partner?"
+        },
+        {
+          "role": "user",
+          "content": "It's definitely both. Mornings are pretty structured—cat meds, breakfast, setting up for work. Evenings used to be my downtime after handling everything for the sales team, but now I want to make sure I’m carving out quality time with my partner too. Before, we were doing nightly video chats without fail, but it feels weird to just sit separately now. How do people transition emotional check-ins from remote to in-person?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great question. Emotional check-ins can feel very different in person: there’s less formality, but also a risk of routines slipping. Some couples set aside a specific window each day where they chat about their day or anything on their mind, creating intentional time to connect. Have you experimented with a similar approach since your partner moved in, or is it still feeling ad hoc?"
+        },
+        {
+          "role": "user",
+          "content": "We've actually been doing more face-to-face catch-up after dinner most nights, and it feels natural—definitely better than keeping up the old video call habit unless one of us is away. But with dinners, I’ve been used to just prepping solo at home. Now, we’ve started cooking together during the week, which I really enjoy. It's less stressful and kind of fun. I guess I'm learning I prefer collaborative dinners over eating alone now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s awesome! Collaborative meal prep can be such a bonding activity. Do you both enjoy cooking, or do you split tasks based on skill? If you’re both into experimenting, you might try themed dinner nights or new recipes you wouldn’t have chosen solo. Has it changed how you plan your weekly meals or shopping?"
+        },
+        {
+          "role": "user",
+          "content": "We split things pretty evenly—sometimes one of us leads, sometimes we just tag-team. I still do my Sunday meal prep for lunches, but dinner planning is more joint. We’ve even started a shared doc for recipe ideas. My only challenge is keeping up the food routine without getting tempted to order takeout more often now that there’s two appetites! Weekday dinners together are working so far."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart balance—keeping solo lunch prep while collaborating on dinners. The shared recipe doc is a great idea; that could make shopping easier, too. Have weekends shifted much? You mentioned your Saturday morning park walks before—do you plan to keep those or include your partner?"
+        },
+        {
+          "role": "user",
+          "content": "I definitely want to keep my Saturday morning walks—they’re my reset time. But lately my partner sometimes joins, and I actually like having them along. If they’re free, I prioritize including them, so it’s become more of a shared activity when possible. It’s still off-limits for errands or work, though!"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a nice compromise. Shared activities can strengthen your relationship, but keeping certain routines protected is just as important for recharging. How’s your evening wind-down working now—are you still sticking to your hour of reading before bed, or has that changed with your partner there?"
+        },
+        {
+          "role": "user",
+          "content": "I’m still reading mystery novels most nights—it's my non-negotiable wind-down. My partner respects that and sometimes reads alongside me, which works out well. TV in the evenings is still a no-go for me!"
+        },
+        {
+          "role": "assistant",
+          "content": "Great that you’re able to preserve your reading routine while also sharing quiet time. How about the logistics side—has it been challenging with sharing the apartment, like storage or workspace, or is it fairly smooth?"
+        },
+        {
+          "role": "user",
+          "content": "It’s been pretty smooth so far. My partner mostly works in coffee shops during the day so we don’t crowd the apartment, and evenings are relaxed. If anything, figuring out who gets the shower first on busy mornings is the big adjustment!"
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve made a solid start with routines and space management. Any particular aspect you want help planning or troubleshooting—maybe ways to stay organized as things settle, or finding time for self-care alongside shared activities?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I think we’re off to a good start. The biggest adjustment was shifting from nightly video chats to spending most evenings together in person—it’s funny how the rhythm changes but feels natural now. I really appreciate the collaborative dinners and shared Saturday walks, so I’ll build more around that. If challenges pop up, I’ll reach out. Thanks!"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The company implemented a strict return-to-office mandate requiring all Denver-based staff, including her, to work onsite five days a week to support a new in-person client engagement initiative.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_032",
+            "fact": "Commutes by light rail each weekday morning — uses the time for reading or podcast listening rather than driving or walking.",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_033",
+            "fact": "Brings prepared lunches to eat in the office lounge Monday through Thursday — prefers not to eat at her desk.",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Uses only video calls for check-ins — avoids phone calls to foster stronger team connections"
+            },
+            "to": {
+              "id": "pref_031",
+              "fact": "Prefers in-person check-ins with Denver-based colleagues, reserving video calls solely for the remote sales team",
+              "domain": "work_habits"
+            },
+            "reason": "The return-to-office mandate creates regular opportunities for face-to-face meetings with local staff. This shifts her check-in preference from exclusively virtual to primarily in-person for colleagues on site."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my company dropped a return-to-office mandate on all Denver staff last week. Starting this month, I have to be onsite five days a week — after years of mostly remote workflow. It's been... a lot to adjust to already. I know you're good with routine tweaks — any ideas for staying organized and sane now that I'm technically back in a daily office?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a major shift, especially after getting used to remote! First priority is usually anchoring new routines — commute, workspace, and breaks — since they can disrupt everything. Have you already tweaked your morning or evening routines, or are you just going with the flow for now?"
+        },
+        {
+          "role": "user",
+          "content": "I've started commuting by light rail each morning. It’s actually kind of relaxing, since I get about 30 minutes where I’m not behind the wheel — helps with my back too. I haven’t figured out how to use that time yet, but driving was stressful and I’d rather decompress. Any suggestions for productive ways to spend that commute?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—public transit opens up new options! Some folks read (physical books or e-readers), listen to podcasts, or even use the time for meditation apps if you want a reset before work. Since you mentioned decompressing, are you leaning more toward entertainment or something work-related during that commute?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely not work-related! I want to keep it separate so I don’t start thinking about emails too early. Honestly, reading is appealing—I usually read mystery novels before bed, but this could be a nice bonus. Do you have tips for carrying books around, or should I switch to an e-reader for convenience?"
+        },
+        {
+          "role": "assistant",
+          "content": "Good call on keeping it work-free. E-readers are a game-changer for commutes—lighter, tons of storage, and quick bookmarking. If you like paperbacks, maybe carry smaller ones and keep a backpack or tote to avoid lugging a heavy bag. Do you think your backpack leaves enough room for lunch and book, or would swapping to an e-reader help with logistics?"
+        },
+        {
+          "role": "user",
+          "content": "I actually bring prepared lunches most days now and eat in the office lounge, not at my desk. So my bag is pretty packed! That makes the e-reader look attractive—I can slip it in without worrying about space for containers and cat meds. I used to just eat at my desk most days, but sharing space with others has changed that."
+        },
+        {
+          "role": "assistant",
+          "content": "Sharing lunch in the lounge is a great way to build office connections, too. Glad you’ve got that system working! On connecting with team members—have your check-in routines with colleagues shifted now that you’re seeing people onsite? Still video calls, or have you started in-person?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's changed a bit. I prefer in-person check-ins with Denver-based colleagues now, and reserve video calls for just the remote sales team. It feels more natural to chat face-to-face when we’re sharing space. I’m trying to balance both since the sales reps are still fully remote."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—nothing beats in-person for quick trust-building, especially with local staff. How are you finding this mix? Any hiccups transitioning between live meetings and virtual ones in the same day?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s been smoother than I expected. Scheduling all the in-person meetings before noon helps keep time zones straight for the remote team, and I’m sticking with video for them. The challenge is not letting the afternoons get clogged — I used to avoid phone calls altogether, but now I just focus on face-to-face or video, depending on who’s around."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart approach. Keeping mornings for meetings manages energy—and helps transition back to focused admin work in the afternoon. Since you’re adjusting routines, how are you handling lunch prep, given the change in scenery and schedule?"
+        },
+        {
+          "role": "user",
+          "content": "It’s actually easier than I thought! I make lunches Sunday nights and bring them in Monday through Thursday, then treat myself to takeout on Fridays. I really prefer not to eat at my desk anymore, since the office lounge is nice and gives me a real break. Commuting also makes it simpler—less temptation to stop for food in the morning."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid routine—and a good reward for Friday. Since you’re not driving, it probably makes carrying lunch (and anything else for the day) more manageable, especially with a good bag. Anything else you’ve had to rethink for your daily workflow, like timing cat care or prepping for physical therapy?"
+        },
+        {
+          "role": "user",
+          "content": "Not really—I still prep my cat’s meds every morning before breakfast, and my Saturday long walks are untouched since errands don’t get scheduled then. If anything, structuring my commute and lunch makes everything else click into place a bit better. Thanks for walking me through some tweaks!"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her doctor prescribed a two-week course of muscle relaxants and mandated that she temporarily pause all physical therapy, exercise routines, and walking activities due to a flare-up of her lower back pain.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Prefers listening to calming music or audiobooks while resting at home during her back recovery, instead of leisure activities that require physical movement",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_038",
+            "fact": "Schedules medication reminders for muscle relaxants through her phone to ensure no missed doses during her treatment period",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Completes physical therapy exercises daily at home, even on weekends — never skips due to busy workdays"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Temporarily avoids all physical therapy exercises at home, following doctor’s orders, until cleared to resume after her course of medication",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor explicitly requires her to pause all exercise routines, including her daily at-home PT, due to her current back injury treatment."
+          },
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Reserves Saturday mornings exclusively for long walks in the park — never schedules errands or work during this time"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Temporarily spends quiet Saturday mornings at home resting or reading, avoiding park walks until cleared by her doctor",
+              "domain": "health_body"
+            },
+            "reason": "Her walking activities must be paused due to the back flare-up and medication, so she cannot do her usual Saturday park walks."
+          },
+          {
+            "from": {
+              "id": "pref_018",
+              "fact": "Plans short local hikes twice a month — won’t drive more than an hour for outdoor activities"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Pauses all hiking and outdoor activity planning while restricted from exercise or walking for her back injury",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The doctor’s orders prohibit any hiking or walking for at least two weeks, so her hiking planning is suspended."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I went to my doctor about my back pain this week, and they've put me on muscle relaxants for two weeks. I'm not allowed any PT, exercise, or walks until the meds are done and I get cleared. It's pretty frustrating—not sure how to adjust my routine. How can I keep from getting completely restless when I'm not supposed to move much?"
+        },
+        {
+          "role": "assistant",
+          "content": "That does sound tough—especially if you’re used to staying active. Are you looking for ways to pass the time at home, or hoping for alternatives to your usual movement routines? Would you prefer mostly relaxing activities, or things that help you stay mentally engaged?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly I want something to do during the times I’d usually be out walking or doing PT. Saturday mornings especially—normally I go to the park, but now I have to just stay home and rest. Reading is good, but I definitely get antsy just sitting around."
+        },
+        {
+          "role": "assistant",
+          "content": "Would audiobooks or podcasts help on Saturday mornings? Sometimes having something to listen to feels less passive than only reading. You could also try gentle meditation apps or calming music, if that fits your mood. Or maybe pick up a new genre of novel? Are you interested in trying those?"
+        },
+        {
+          "role": "user",
+          "content": "I've actually started listening to calming music and audiobooks while I rest—it's way easier on my back than sitting upright to read for hours. I just need to avoid anything that makes me want to get up and move. Mysteries are still my evening thing, but I like the change of pace during the day."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart switch—music and audiobooks can be surprisingly cozy for recovery. Are there specific artists or audiobook narrators you’ve enjoyed lately? And for your usual hikes and park walks, are you pausing all outdoor activity plans for now, or hoping to substitute something low-impact?"
+        },
+        {
+          "role": "user",
+          "content": "For now I’m pausing everything outdoors. Normally I plan local hikes twice a month and I never skip my Saturday park walks, but with my doctor’s orders, no walks, hikes, or even PT until after these two weeks. I just don't want to risk making things worse."
+        },
+        {
+          "role": "assistant",
+          "content": "Completely understandable—better to heal fully before jumping back in. Are you looking for new routines to fill those weekend gaps, or just ways to make the home time feel less monotonous while you recover?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly filling those gaps. I used to start every weekend with a long walk or hike, but now I spend quiet Saturday mornings at home—just resting or reading, and trying not to get too bored. Any suggestions for activities that don't require movement but still feel satisfying?"
+        },
+        {
+          "role": "assistant",
+          "content": "Have you tried gentle puzzles, creative journaling, or virtual museum tours? Those can be absorbing without stressing your back. Or maybe start an at-home mini project—like organizing travel photos or upcycling something? Do any of those appeal to you?"
+        },
+        {
+          "role": "user",
+          "content": "I like the idea of organizing photos! I actually keep a scrapbook of travel destinations I manage for the sales reps. I never document my own trips, but catching up on work-related ones could keep me occupied without much movement."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a perfect fit while you recover. You could even listen to music or an audiobook while scrapbooking, combining both. By the way—since you’re on muscle relaxants, are you comfortable managing the medication schedule? Would a digital reminder help?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’m all over that. I set medication reminders on my phone for every dose—don’t want to risk missing anything during this treatment. It’s actually made things a bit easier since I don’t have to keep track manually."
+        },
+        {
+          "role": "assistant",
+          "content": "Great! Digital reminders take away some of the mental load, so you can focus on rest. Do you need suggestions for healthy snacks or easy meal options, since ordering out might be tempting during recovery? Or is your meal routine still mostly the same?"
+        },
+        {
+          "role": "user",
+          "content": "Meal prep is still happening, but I’m keeping it extra simple—lots of things I can make ahead. Takeout is just for Fridays like usual. The main thing is not being able to do my daily PT exercises at home—that’s always been non-negotiable, but now I have to skip them completely, per doctor’s orders."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—that’s a big shift for you. Once your treatment is over and you’re cleared, easing back into PT will probably feel great. For now, focus on restful activities and mental engagement. If you’d like, I can suggest some relaxing podcasts, audiobooks, or creative projects for your down time—just let me know your preferences!"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her elderly cat’s health declined rapidly, requiring emergency veterinary surgery and post-op home care involving multiple daily medications and mobility assistance.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Declines social invitations and reschedules leisure activities to remain home and monitor her cat’s post-op recovery, prioritizing caregiving over previous routines.",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Researches and joins online forums for owners of pets with medical needs to seek advice on home recovery and caregiving tips.",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Prepares the cat’s medication every morning before breakfast — never alters the timing"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Administers complex medication regimen and mobility assistance throughout the day for her cat, adjusting her schedule to accommodate multiple treatments at varying times.",
+              "domain": "daily_routines"
+            },
+            "reason": "Her cat’s emergency surgery and intensive recovery needs now require administering multiple medications and aiding mobility several times daily, no longer limited to a single fixed routine in the morning."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help. My elderly cat had emergency surgery last weekend—she’s home now, but needs way more care than before. I’m having to juggle her meds and mobility help multiple times a day, and my usual routines are kind of up in the air. Any ideas for balancing all this with my job?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds overwhelming—I’m sorry you’re dealing with so much right now. Since her care is unpredictable and time-intensive, have you tried rearranging your work blocks or shifting meeting times to accommodate the new routine? Are there any tasks you can delegate or pause while recovery is ongoing?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ve started shifting things around. Normally I’d give her medication early in the morning every day before breakfast, but now it’s a complex mix at different times and sometimes mobility support is needed on short notice. I’ve told the sales team my hours are more flexible for a while, but it’s tricky—especially with onboarding and scheduling."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense that your morning routine would need to change. Given your evolving caregiving schedule, maybe using calendar alerts for medication times and short work blocks between those tasks could help. Are you able to block off your calendar for caregiving windows so colleagues respect your focus? Or does the unpredictability make that too rigid?"
+        },
+        {
+          "role": "user",
+          "content": "I tried blocking out time, but since meds and mobility help can vary based on how she’s feeling, it’s not always predictable. I’ve also started declining most social invitations and paused my usual leisure activities—like my baking class and Sunday coffee shop explorations—because I need to be home monitoring her, at least during recovery."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment, but prioritizing her recovery makes sense. Have you found ways to decompress at home while you’re keeping an eye on her? Maybe reading or connecting with friends virtually—anything to help balance the isolation? And do you need resources for at-home pet recovery, or have your vet’s instructions been clear enough?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely more reading in the evenings now. For cat care, the vet was helpful, but I actually started joining some online forums for owners of pets with medical needs. It’s been useful getting practical advice for things like how to safely support her movement or set up a medication tracker. I’m spending a lot of time researching, so any recommendations or tools would be welcome."
+        },
+        {
+          "role": "assistant",
+          "content": "Online pet forums are a great idea—collective experience can be invaluable. For medication tracking, have you tried apps designed for chronic medication schedules or shared digital checklists? Some pet owners use simple tools like Google Sheets, while others prefer specialized apps like Pet First Aid or Medisafe for reminders. Do you want suggestions for community forums, or organizational tools to streamline care?"
+        },
+        {
+          "role": "user",
+          "content": "I’d love suggestions for both. Right now I’m using a notebook for her meds and exercise log, but I worry I’ll miss something. And I only found one big Reddit forum—maybe there are smaller, more focused communities for cats recovering from surgery?"
+        },
+        {
+          "role": "assistant",
+          "content": "For smaller support groups: try Facebook groups like 'Senior Cats Support' or 'Post-Op Cat Recovery'. The Catster forums also have dedicated threads for medical issues. For tracking: Medisafe is popular for complex med schedules and can alert you on your phone, plus Google Keep is helpful for checklists and photo logs to share with your vet. Would you prefer digital tools that integrate with your phone, or something web-based you can access from your computer at work?"
+        },
+        {
+          "role": "user",
+          "content": "Phone integration would definitely help—I’m bouncing between work tasks and her care all day, so getting reminders directly is key. I’ll check out those Facebook groups too, thank you. Honestly, adapting to this new routine has been tough, but having at least a few digital tools and online community options will make things more manageable."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to help! Medisafe syncs across devices, and you can share updates with others if you need backup. If you ever want to automate more—like creating recurring reminders for diverse meds or mobility exercises—apps like Todoist let you add custom scheduling rules. Keep engaging with support communities too; sharing your challenges and successes can help with both practical advice and emotional support."
+        },
+        {
+          "role": "user",
+          "content": "Will do. For now, my priorities are keeping my cat comfortable and safe, and keeping my work just steady enough. I appreciate the tips and places to start, and I’ll spend some downtime this week setting these up. Thanks for understanding the situation—I feel less alone already."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her company acquired a smaller tech startup, and she was assigned additional responsibilities coordinating the onboarding and integration of 12 new remote employees from diverse time zones, with immediate effect.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Prefers organizing onboarding sessions in small groups instead of all-at-once webinars to foster deeper connections among new remote hires",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Blocks portions of her late evening schedule twice a week to troubleshoot onboarding issues for international team members outside standard hours",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Schedules all sales team meetings before noon to accommodate different time zones — never allows meetings to run past 1pm"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Schedules sales team meetings at varied hours, including afternoons and evenings as needed, to accommodate new colleagues in wider global time zones — no longer restricts meetings to before 1pm",
+              "domain": "work_habits"
+            },
+            "reason": "The sudden onboarding of 12 new remote employees across diverse time zones means strict morning-only meetings are no longer feasible; she must now arrange meetings flexibly, sometimes late in the day or evening to ensure all team members can attend."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_015",
+            "fact": "Organizes group chats for the sales team but never participates in large professional networking events",
+            "domain": "social_relationships",
+            "reason": "The expansion of her responsibilities to coordinate new remote staff means she must now help facilitate broader virtual onboarding forums, including some larger networking-style events for team integration, making her prior avoidance of large events irrelevant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So things at work just got a lot more complicated. Our company acquired a smaller tech startup last week, and I was put in charge of onboarding their 12 remote employees. They're from all over—Asia, Europe, Canada, you name it. It’s been hectic. Can you help me brainstorm better ways to handle onboarding logistics across so many time zones? I keep getting emails at all hours."
+        },
+        {
+          "role": "assistant",
+          "content": "That definitely sounds like a big jump in complexity! Managing onboarding for remote employees across multiple continents is no small feat. Are you expected to bring everyone together for onboarding sessions, or is it more about individual training? And how are you currently handling scheduling with your existing sales team—do you already have time zone tools you like?"
+        },
+        {
+          "role": "user",
+          "content": "I normally insist all sales meetings are done before noon so no one has to join late—but I had to drop that rule. Now I’m scheduling meetings at random hours, sometimes even in the evening, to fit everyone. It’s not ideal, but there’s really no way around it with this many new folks in different regions."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—accommodating global time zones usually means giving up strict time boundaries. Have you found any scheduling tools that help visualize everyone’s availability? Or do you still work mainly from your usual calendar software?"
+        },
+        {
+          "role": "user",
+          "content": "I've been testing a few time zone plugins on Outlook, but they’re clunky. Another thing: I don’t want to do huge webinars for onboarding. Instead, I’m breaking sessions into smaller groups so the new hires can actually get to know each other. It takes longer but seems to help them connect."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a strong move. Smaller groups are usually much more effective for building real connections and letting newcomers participate. Are you matching people based on region, role, or just randomly mixing? And if it's time-consuming, do you have support, or is it all on your shoulders?"
+        },
+        {
+          "role": "user",
+          "content": "It's all on me so far—I’m matching groups by role, but mixing in people from different countries so they can share perspectives. Honestly, the toughest part is troubleshooting issues for our international folks. I’ve started blocking time in my evenings twice a week just to deal with onboarding stuff for the ones outside normal hours. Otherwise, questions pile up overnight."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart, even if it stretches your routine! Setting dedicated evening blocks means you aren’t constantly getting sidetracked. Are you worried about burnout, given how much your schedule has shifted? Have you had to adjust anything in your personal routines because of these new demands?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. I’m a little tired from late-night troubleshooting, but the regular daytime work is still manageable. The bigger shift is my involvement in bigger onboarding forums and virtual networking events. I used to avoid those—I only ran team group chats—but now, with the new hires, I’ve had to host onboarding webinars and even a few larger virtual meet-and-greets. There’s no way around it anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big social adjustment! Hosting larger networking-style events is totally different than informal group chats. How are you feeling about that change—are you starting to like it, or is it just another necessary part of the job?"
+        },
+        {
+          "role": "user",
+          "content": "I wouldn’t say I like it yet, but I see the value—especially for people who’ve never worked fully remote before. It helps them recognize faces and connect. I’m hoping the small group sessions keep things more personal, but I’ll probably have to keep organizing the big events for a while. Is there a way to manage the stress from these new demands, maybe some advice on keeping things organized?"
+        },
+        {
+          "role": "assistant",
+          "content": "Organization is key, especially with such a big influx and shifting schedules. Some people find it helpful to make a clear onboarding checklist for each new hire and update it digitally—ideally in a platform where everyone can track progress. Maybe combine that with your small-group approach, so new hires see their milestones and have a clear schedule. Also, you could delegate certain parts of onboarding to tenured reps or even buddy up newcomers. Would that fit your culture, or do you prefer to keep onboarding centralized?"
+        },
+        {
+          "role": "user",
+          "content": "I prefer centralized onboarding for now, just because the processes are changing so much and I want to ensure consistency. But a digital checklist makes sense—maybe I’ll set one up in Notion or Trello and share it with the groups. Delegating can come later, once the dust settles. Thanks, this gives me a few concrete steps to try."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad I could help! Let me know if you want tips on setting up your checklist, or ways to automate reminders for onboarding stages. And as your routine continues to evolve, it’s always worth checking in on personal boundaries—those evening troubleshooting blocks can be helpful, but also draining. If you need to talk through work-life balance strategies, I’m here."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her doctor identified early signs of carpal tunnel syndrome in her right hand during a routine exam, and ordered her to begin wearing a wrist brace during all computer work and avoid typing for more than 30 minutes at a stretch.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Uses voice-to-text and speech recognition software for all significant work communication, minimizing keyboard use except for brief tasks",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_047",
+            "fact": "Takes a 5-minute break away from the computer every 30 minutes during desk work to comply with her carpal tunnel regimen",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Reads mystery novels for an hour each night before bed — never watches TV in the evenings"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Listens to audiobook versions of mystery novels in the evenings instead of physically reading print or ebooks — avoids holding a book or device for prolonged periods",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Her carpal tunnel diagnosis means she must avoid holding books or e-readers and reduce repetitive hand motions like page turning. Audiobooks allow her to continue her nightly mystery habit without straining her wrist."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my doctor officially diagnosed early signs of carpal tunnel in my right hand last week. I'm supposed to wear a wrist brace for all computer work, and stop typing after 30 minutes. Given my job, that's a big ask! I need help finding ways to keep up with scheduling, onboarding, and all my communication without making this worse. Where do I even start?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough adjustment, especially with how much your role relies on the computer. Have you tried any voice or speech recognition tools before? They can really cut down on the need for typing – some platforms let you handle emails, scheduling, and messaging hands-free. Or, is there any flexibility to delegate heavier typing tasks?"
+        },
+        {
+          "role": "user",
+          "content": "I hadn’t used voice-to-text much before, but I started experimenting with it for work emails and group chat messages this week. It’s not perfect, but it definitely helps. The main issue is that the sales reps rely on pretty detailed onboarding instructions—and I used to type out step-by-step guides. Now I’m trying to record audio instructions when possible. Delegation isn’t really an option, since I’m the only admin."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—being the sole admin means it all lands on you. Recording audio walkthroughs is a smart workaround, especially for onboarding. Would it help to pair those with short visual guides or pre-made templates for common tasks, so you don’t have to customize everything each time? Also, how are you managing your workload with the new 30-minute typing limit?"
+        },
+        {
+          "role": "user",
+          "content": "I set a timer to take a 5-minute break away from my desk every half hour—doctor’s orders. It feels weird, but I’m sticking with it. I actually tried batch processing shorter tasks and then stepping away, but sometimes it’s tricky to pause in the middle of a busy Monday. The hardest part is payroll days when there’s a lot to double-check."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really disciplined approach. Would scheduling those longer, high-focus tasks (like payroll) in dedicated blocks with built-in break reminders work? Maybe use tools that enforce mandatory pauses or even lock your screen after 30 minutes, just to keep you honest. How’s the wrist brace working for you so far, and is it affecting anything else in your routines?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the wrist brace isn’t too bad—it actually makes me more aware of posture. But it impacts personal stuff more than work. For example: I usually read mystery novels every night before bed, but physically holding a book or e-reader started aggravating my wrist. So now I’m listening to mystery audiobooks instead—I still get my nightly fix, just hands-free."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid adaptation! Audiobooks are a great way to stick with your routine without risk. Have you found any narrators or platforms you like? And does switching to audio change the experience for you at all? Also, with the new brace and the frequent breaks, are you finding it tougher to keep up with your other wellness habits, like meal prep or physical therapy?"
+        },
+        {
+          "role": "user",
+          "content": "It’s actually been easier to stick to PT since I’m up more often—I just squeeze in stretches during my 5-minute breaks. Meal prep hasn’t changed; I still do it Sunday nights like always. But I have to pay more attention to ergonomics. Also, I’m using voice recognition software for almost all work communication now, not just emails. Typing is strictly for quick tasks."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great—so your breaks are doubling as micro PT sessions. And switching to voice for most work comms is smart given your constraints. Are there any workflows you’re struggling to adapt, or tools you wish existed to make things smoother for both you and your remote sales reps?"
+        },
+        {
+          "role": "user",
+          "content": "I’d love a way to automate travel itineraries with more voice input—right now I still have to click around and type details for each rep’s trip. And virtual onboarding feels clunky if the platform isn’t accessible for voice commands. Overall, moving away from print and touch-based input is awkward, but I’m adjusting. I’m open to suggestions for anything that’ll streamline this without pushing me back to typing more."
+        },
+        {
+          "role": "assistant",
+          "content": "There are some travel management tools that integrate with smart assistants and let you add details by voice—might be worth exploring integrations with Google Assistant or Alexa for that. For onboarding, you could try video walkthroughs or interactive checklists with templates that can be triggered via voice. Are there any parts of your workflow where repeated hand motions or device handling are still unavoidable, despite your adjustments?"
+        },
+        {
+          "role": "user",
+          "content": "The only thing I can’t really automate is updating some older HR software—it’s not voice-friendly. I try to only use it after hours, when I’m less rushed and can pace myself, but it’s tedious. Everything else is mostly manageable, except my cat’s medication routine—still have to do that by hand every morning, but I don’t mind since it’s quick and gentle."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve really streamlined a lot already. For the older HR software, maybe you could request an upgrade next quarter, or try using external dictation tools to at least prep entries before copying them in. And caring for your cat is probably on the short list of tasks worth the hand effort! If you need any help exploring accessibility solutions for stubborn platforms, just let me know."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Accepted an offer to enroll in a selective online business administration certificate program that requires evening live classes twice a week and completion of a team capstone project with classmates from different states.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Prefers collaborating with online classmates using shared workspaces and group chat tools — avoids voice meetings unless required for capstone project milestones",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Spends late evenings after class winding down with short, calming activities such as light stretching or aromatherapy instead of screen time, to reduce insomnia from increased evening computer use",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_052",
+            "fact": "Sets automated silent 'Do Not Disturb' blocks on her phone during live online classes and project team meetings — never takes non-emergency calls or texts during these sessions",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_028",
+              "fact": "Spends quality evening time in person with her partner most nights — video chats only when one of them is away"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Now spends most weekday evenings in live online business classes or class project meetings; video chats with her partner briefly after class when possible, in-person time limited to weekends.",
+              "domain": "social_relationships"
+            },
+            "reason": "Enrollment in a demanding evening online program occupying two nights a week and requiring evening capstone team meetings means she cannot reliably prioritize in-person evenings with her partner. Most evenings will now be spent in class or collaborating virtually, relegating partner time to weekends or short late-night check-ins."
+          },
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Hosts weekly dinners for her sister every Wednesday — never moves the date without advance notice"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Alternates weekly Wednesday dinners with her sister to Thursdays or occasional weekend lunches to accommodate live online classes on class nights; flexible scheduling replaces fixed tradition.",
+              "domain": "social_relationships"
+            },
+            "reason": "Her new online class schedule with required attendance twice a week creates unavoidable conflicts with the traditional, fixed Wednesday night meals. She needs the freedom to reschedule these dinners based on her class calendar."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big update: I accepted an offer for this pretty selective online business administration program—starts next week, live evening classes twice a week, plus a team capstone. I’m excited but also nervous. My evenings are suddenly booked and I have to juggle class meetings with work and everything else. Any advice for staying organized as I shift to this new routine?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations, that’s a huge step! Balancing demanding coursework with your job and personal life won’t be easy, but there are ways to make it work. Are you planning to use the same scheduling tools you rely on at work for tracking your classes and project meetings, or would you prefer something separate just for school?"
+        },
+        {
+          "role": "user",
+          "content": "I’m thinking about keeping school and work separate—I get distracted if they blur together. For project work, classmates want to use group chat tools and shared workspaces, which honestly fits my style. I don’t love voice calls unless there’s a good reason, so I’m planning to push for keeping most collaboration async unless we have capstone deadlines."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds smart. Async collaboration tools can keep everyone aligned without eating into your limited evening hours. For live classes, do you plan to block out everything else during those times? Sometimes multitasking can sneak in, especially when meetings run late."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’m setting up silent ‘Do Not Disturb’ blocks on my phone for all live classes and project meetings. No calls or texts unless there’s an emergency—that’s non-negotiable. I need to focus fully or it’s not worth it. I already told my close family and my sales reps about those blackout windows."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid boundary. With evenings tied up, how are you handling downtime and sleep? More screen time late at night can definitely mess with insomnia if you’re not careful."
+        },
+        {
+          "role": "user",
+          "content": "That’s been a concern. After class, I avoid jumping back onto screens—I do short calming activities like stretching or aromatherapy, just to wind down. If I don’t, I’ll be wired and not sleep. My mystery novel routine is shifting to later and shorter reads after I decompress."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a healthy adjustment. I know you used to spend weeknight evenings video chatting with your partner—how are you navigating that now with classes and capstone work?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, that’s changed completely. I’m spending most weekday evenings on classes or virtual project meetings, and I only fit in brief video chats with my partner after class when possible. In-person time’s really just weekends now. We’re both a little bummed, but it’s temporary. It’s the only way to make this work."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to prioritize the certificate, especially when the program is short-term. How about your weekly dinners with your sister—is that routine still possible with class nights twice a week?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I’ve had to be more flexible. We alternate weekly dinners to Thursdays or go for weekend lunches, depending on my class schedule. It used to always be Wednesday, but that’s just not realistic anymore. She’s cool about it—says it’s fun to mix it up."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad your sister’s supportive! For your team capstone, have you figured out the best collaboration format? Are you planning to lead, or just participate?"
+        },
+        {
+          "role": "user",
+          "content": "I’m open to leading if the group’s game, but honestly, my preference is to do most collaborating via shared docs and chat—voice meetings only for major milestones. It keeps things efficient and fits my schedule best. Old habits from work, I guess!"
+        },
+        {
+          "role": "assistant",
+          "content": "That workflow sounds ideal for a distributed group. Are there any other routines you’ve had to modify, like your evenings with family or how you wind down after intense meetings?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly the evenings—with my partner, and with my sister’s dinners. Plus, I’m stricter about decompressing after class: no extra screen time, light stretches, and aromatherapy help me settle before bed. The ‘Do Not Disturb’ setup is new too. That’s about it!"
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve mapped out thoughtful adjustments for your new reality! Want to brainstorm strategies to optimize your class group’s workflow, or dig into anything else about your evening routines?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s focus on group workflow. Honestly, keeping things async and organized is my top concern right now—any tips for keeping distributed classmates engaged without resorting to endless team calls?"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her older sister announced she is expecting her first child and asked for regular support with doctor visits, nursery setup, and weekly check-ins throughout the pregnancy.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_054",
+            "fact": "Schedules recurring weekday appointments for her sister—doctor visits, nursery setup, and check-ins—prioritizing family support over previous social and hobby activities.",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Organizes shared shopping trips and nursery planning sessions with her sister, preferring joint tasks over solo leisure-oriented outings until the baby arrives.",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Shares cat care updates and cute photos daily with her sister — refuses to let anyone else administer the medication"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Regularly shares cat care updates—but now includes tips and resources for baby prep, shifting daily conversations to support both her sister's needs and her caregiving routines.",
+              "domain": "social_relationships"
+            },
+            "reason": "Her sister’s pregnancy and request for increased support means their daily interactions are no longer focused solely on cat care; she now actively incorporates baby-related advice and updates into their exchanges."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my sister just told me she's pregnant—and wants me to help regularly with doctor visits, nursery setup, and check-ins during her pregnancy. I definitely want to support her, but I'm already juggling a bunch between work and taking care of my cat. Can you help me figure out how to reorganize my weekly routine? I want to make sure I’m present for her but not totally burnt out."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations to your sister—and to you on becoming an aunt! That’s a big deal. It sounds like you're being asked to add a lot of recurring family commitments. How much flexibility do you have in your weekly schedule? Are there specific days or times when your sister needs the most support, or are you both still figuring that out?"
+        },
+        {
+          "role": "user",
+          "content": "We’re still working out the exact appointments, but she prefers weekday mornings for doctor visits since they’re quieter. I’ve started blocking my calendar for those. I used to plan solo hikes or coffee shop outings, but I’ll shift those to joint activities with her for now—like shopping trips for the nursery or doing planning sessions together. I feel like my leisure time is about to get redefined!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really thoughtful. Turning solo leisure into shared tasks can actually help preserve your downtime vibe, while supporting her. Do you want help making a new weekly calendar? Should we figure out which hobbies or routines to merge, postpone, or keep just for you?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, a calendar would help. My Saturdays used to be strictly long morning walks in the park with no errands, but now I plan to use that time for nursery shopping or setup with her. I’m okay with pausing purely solo outings until the baby’s here. I think the biggest thing is making sure I still get some quiet time and can keep up with my work, cat care, and meal prep."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it. So you'll dedicate Saturday mornings to joint tasks if needed, and your solo walks might take a backseat. For the rest of your week: would doctor visits and nursery planning mostly fit weekday mornings? Any current routines (like meal prep or cat medication) you’re worried about squeezing in?"
+        },
+        {
+          "role": "user",
+          "content": "Cat medication happens every morning before breakfast—non-negotiable. Meal prep is still Sunday evenings, and I can't skip that since it keeps my week on track. For work, I’ll schedule my sister’s appointments during times I’d usually have social or hobby activities, not during core work hours. And I’m prioritizing her support requests—family comes first right now."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—sounds like your work habits and caregiving routines need to be clearly separated from family support. Want to add actual recurring calendar blocks for your sister’s pregnancy-related activities, or keep it more flexible? Maybe experiment with color-coding, so you don’t overbook?"
+        },
+        {
+          "role": "user",
+          "content": "I’m already setting up recurring weekday appointments for my sister—doctor visits and nursery tasks go in the calendar as soon as we confirm them. Color-coding is smart, I hadn’t thought about that. Also, our weekly Wednesday dinner now includes more focused baby planning and check-ins—my old preference for solo leisure outings and mystery novel reading is sort of merging with ‘baby resource research’ these days!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift! Have your daily conversations with your sister changed as well? You used to chat about cat care—are those updates now mixed with baby tips and resource sharing? If so, we could structure your daily check-ins for both, to help balance the new focus."
+        },
+        {
+          "role": "user",
+          "content": "Exactly—our daily convos used to be almost entirely about my cat, but now they include tips for baby prep, nursery design ideas, and resources for prenatal care. I still share cat care updates, but now I actively mix in support for her pregnancy and shift our daily chats to cover both areas."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great evolution in your relationship. For the joint errands and nursery planning, will you need reminders or shared lists to help manage everything? Or do you prefer to handle it on the fly? And are there any non-family activities you want to protect, even temporarily?"
+        },
+        {
+          "role": "user",
+          "content": "I’d love checklist templates for nursery setup and doctor visits—those would help a lot. For now, I’m keeping things spontaneous, but I’ll probably need reminders once the baby arrival gets closer. And honestly, I’m okay putting most solo leisure on hiatus until it settles down—my priorities have definitely shifted."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. I'll create customizable checklists for nursery tasks and doctor visits, plus recurring calendar reminders for appointments and planning sessions. You can always reintroduce solo outings or hobbies when things stabilize. Anything else you'd like help organizing or planning as your support role expands?"
+        },
+        {
+          "role": "user",
+          "content": "I think that covers most of it. I’m just glad I can lean on tools for structure, since keeping everything in my head was overwhelming. Thanks for helping me map this out—it’s a relief to actually see the new routine shaping up."
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Supporting your sister through her pregnancy is a big responsibility, but it sounds like you’re managing the changes thoughtfully. Let me know if you need templates for baby resource research or want to revive any personal routines later—I'm here to help whenever you need."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed chronic tension headaches attributed to prolonged screen time and work stress; her neurologist prescribed daily light exposure breaks and a strict limit on screen use outside of work hours.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Takes three dedicated 10-minute outdoor light exposure breaks during workdays and immediately after work, regardless of weather, as prescribed therapy for tension headaches",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_058",
+            "fact": "Refuses all nonessential video calls or online social events on weeknights, prioritizing offline, low-stimulation activities for headache recovery",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_045",
+              "fact": "Listens to audiobook versions of mystery novels in the evenings instead of physically reading print or ebooks — avoids holding a book or device for prolonged periods"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Now avoids all evening audiobook listening in favor of non-screen, non-audio activities (like aromatherapy, gentle stretching, or journaling by hand) to minimize any extended media exposure due to prescribed screen/audio limits for tension headaches.",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Her neurologist has instructed strict limits on all screen use and media consumption outside of work hours, replacing audiobook-based wind-down routines with non-digital, media-free activities in the evenings."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_051",
+            "fact": "Spends late evenings after class winding down with short, calming activities such as light stretching or aromatherapy instead of screen time, to reduce insomnia from increased evening computer use",
+            "domain": "health_body",
+            "reason": "The tension headache diagnosis and neurologist’s restrictions mean her focus on offsetting insomnia from screen use is superseded by the need to strictly avoid all media and screens after hours, making her prior evening strategy redundant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I just saw my neurologist about worsening tension headaches, and she's had me change up my work and evening routine a lot. I'm really struggling to stick with the screen limits she recommended, especially since my job is all video calls and Slack during the day. Got any ideas on how to make this workable?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds tough, especially given your job relies on screens so much. Did your doctor set any specific guidelines or limits for outside of work hours? Or is it mainly about finding ways to offset all the work-day screen time?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, it's pretty strict. Outside of work, no screens or digital media at all. That includes audiobooks, which were honestly my favorite way to unwind in the evenings—so that's out. She told me to switch to things like journaling or stretching instead. It's kind of a huge shift after years of winding down with a mystery novel audiobook every night."
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, cutting out audiobooks and all screens after work is definitely a big change. How are you adjusting so far? Have you found any offline activities that help you relax, or is it still feeling like withdrawal from your usual routine?"
+        },
+        {
+          "role": "user",
+          "content": "It's definitely been an adjustment. I started journaling by hand most nights, and sometimes I'll just do some gentle stretching or aromatherapy—my neurologist said it helps to keep the evenings really low stimulation. But I'll admit, I miss the storytelling aspect of those audiobooks. Honestly, I haven't landed on one activity that feels as satisfying yet."
+        },
+        {
+          "role": "assistant",
+          "content": "Journaling and aromatherapy are great starts—sometimes the hardest part is that nothing quite replaces your old comfort activity. Would you want help brainstorming some more screen-free, low-stimulation ideas to try out? Or are you hoping to find ways to bring a bit of the narrative or mystery-book element back without breaking the media rules?"
+        },
+        {
+          "role": "user",
+          "content": "I think ideas for quiet, screen-free hobbies would be helpful. I'm open to things with a storytelling or creative angle, but they can't involve audio or screens. And I've had to drop the winding-down routine I used after late class evenings, where I did a quick stretch to help with insomnia from evening computer time—that's basically been replaced by the new, stricter limits now. So it's more about reducing all stimulation, not just offsetting work screen time."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—so it's no media at all after work, even as a sleep aid, and your new goal is just overall calm instead of reducing insomnia. How about things like creative writing (longhand), crossword puzzles, coloring books, or paper-based crafting? These can offer a hint of storytelling or mystery without screens or audio. Would any of those fit your vibe?"
+        },
+        {
+          "role": "user",
+          "content": "Crossword puzzles could work—I hadn't thought of that! Coloring books might be relaxing too. Creative writing appeals, but only on nights when I'm not wiped out from managing all those remote team logistics. Speaking of which, part of my headache treatment is taking three dedicated 10-minute outdoor light exposure breaks each day, even after work. I stick with those no matter the weather, since she said it's essential for recovery."
+        },
+        {
+          "role": "assistant",
+          "content": "Those outdoor breaks sound like a helpful reset—do you feel a difference yet, or is it still early days? Are you able to fit them in easily around your sales team schedule and all the admin duties, or do you find yourself having to block them on your calendar?"
+        },
+        {
+          "role": "user",
+          "content": "I block them like meetings now, otherwise I forget or get pulled into some urgent task. Honestly, having those walks outside has been the best part of the changes so far—they force me to step away. I do three a day: mid-morning, mid-afternoon, and right after work. I don't skip them anymore, regardless of how busy it gets."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a really positive adaptation. Sometimes those prescribed breaks end up being mini mindfulness moments. Are you finding it easier to decompress after work, now that you have the outdoors time and no evening screen use—or do you still feel tempted to check work emails or join online chats at night?"
+        },
+        {
+          "role": "user",
+          "content": "It's a mix. I genuinely avoid all online stuff in the evenings now, including nonessential video calls or virtual events with friends. It's not always easy—I'm used to group chats and check-ins—but I make exceptions only if something urgent comes up for payroll. Otherwise, I just focus on low stimulation offline things to help with headache recovery."
+        },
+        {
+          "role": "assistant",
+          "content": "That level of discipline is impressive, and it's great you're prioritizing your health. Would it help to put up a little 'off duty' signal for your friends and team during evenings, so they know you’re offline for recovery? Or do you already have boundaries set with them about your new limits?"
+        },
+        {
+          "role": "user",
+          "content": "I started warning my sales reps and family about the screen cut-off after 6pm, so everyone expects I'll be unreachable outside of urgent payroll issues. My friends know I won't join weeknight virtual hangouts anymore, which avoids temptation. It's strict, but definitely necessary—I'm treating this as non-negotiable for now."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve really created a solid structure around recovery. Given how much you manage during the day and the extra steps with your outdoor breaks, it's great you’re clear about boundaries. If you ever want to experiment with new offline, low-stimulation activities, I can help brainstorm options or find resources for creative ideas. Let me know anytime—your health comes first!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_003",
+        "fact": "Drafts travel itineraries at least three days in advance — never arranges travel last-minute",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Handles HR and payroll issues after regular hours to minimize distraction during her main workflow",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Prefers experimenting with new project management tools — never sticks with a single platform for more than six months",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Prepares homemade lunches Monday through Thursday — orders takeout only on Fridays",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Avoids caffeine after 3pm to help with insomnia before deadlines — sticks to herbal tea in the evening",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Makes Sunday morning calls to her parents without fail — never skips even if traveling",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Takes weekend baking classes in person — avoids virtual hobby groups",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Explores new coffee shops every Sunday afternoon — prefers independent cafes over chains",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Keeps a scrapbook of travel destinations she manages for sales reps — never documents her own trips",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks work emails only between 8am and 6pm — never responds after hours unless it’s payroll related",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Meal preps on Sunday evenings for the upcoming week — never skips even if ordering takeout later",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Cleans the apartment every Saturday afternoon — refuses to hire cleaning services",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Sets out clothes the night before workdays — never chooses outfits in the morning",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Uses a standing desk at work and alternates between standing and sitting throughout the day — avoids sitting more than two hours total on any workday",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Logs daily standing and sitting intervals in an app as part of physical therapy tracking — avoids manual journaling or paper logs",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Shares meal preparation responsibilities with her partner for weekday dinners — prefers collaborative cooking over solo meals",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Includes her partner in Saturday morning park walks when possible, prioritizing shared activities",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Prefers in-person check-ins with Denver-based colleagues, reserving video calls solely for the remote sales team",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_032",
+        "fact": "Commutes by light rail each weekday morning — uses the time for reading or podcast listening rather than driving or walking.",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Brings prepared lunches to eat in the office lounge Monday through Thursday — prefers not to eat at her desk.",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Temporarily avoids all physical therapy exercises at home, following doctor’s orders, until cleared to resume after her course of medication",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_035",
+        "fact": "Temporarily spends quiet Saturday mornings at home resting or reading, avoiding park walks until cleared by her doctor",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Pauses all hiking and outdoor activity planning while restricted from exercise or walking for her back injury",
+        "domain": "leisure_hobbies",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Prefers listening to calming music or audiobooks while resting at home during her back recovery, instead of leisure activities that require physical movement",
+        "domain": "leisure_hobbies",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Schedules medication reminders for muscle relaxants through her phone to ensure no missed doses during her treatment period",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Administers complex medication regimen and mobility assistance throughout the day for her cat, adjusting her schedule to accommodate multiple treatments at varying times.",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Declines social invitations and reschedules leisure activities to remain home and monitor her cat’s post-op recovery, prioritizing caregiving over previous routines.",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Researches and joins online forums for owners of pets with medical needs to seek advice on home recovery and caregiving tips.",
+        "domain": "leisure_hobbies",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Schedules sales team meetings at varied hours, including afternoons and evenings as needed, to accommodate new colleagues in wider global time zones — no longer restricts meetings to before 1pm",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Prefers organizing onboarding sessions in small groups instead of all-at-once webinars to foster deeper connections among new remote hires",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Blocks portions of her late evening schedule twice a week to troubleshoot onboarding issues for international team members outside standard hours",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Uses voice-to-text and speech recognition software for all significant work communication, minimizing keyboard use except for brief tasks",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Takes a 5-minute break away from the computer every 30 minutes during desk work to comply with her carpal tunnel regimen",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Now spends most weekday evenings in live online business classes or class project meetings; video chats with her partner briefly after class when possible, in-person time limited to weekends.",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Alternates weekly Wednesday dinners with her sister to Thursdays or occasional weekend lunches to accommodate live online classes on class nights; flexible scheduling replaces fixed tradition.",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Prefers collaborating with online classmates using shared workspaces and group chat tools — avoids voice meetings unless required for capstone project milestones",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Sets automated silent 'Do Not Disturb' blocks on her phone during live online classes and project team meetings — never takes non-emergency calls or texts during these sessions",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Regularly shares cat care updates—but now includes tips and resources for baby prep, shifting daily conversations to support both her sister's needs and her caregiving routines.",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Schedules recurring weekday appointments for her sister—doctor visits, nursery setup, and check-ins—prioritizing family support over previous social and hobby activities.",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Organizes shared shopping trips and nursery planning sessions with her sister, preferring joint tasks over solo leisure-oriented outings until the baby arrives.",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Now avoids all evening audiobook listening in favor of non-screen, non-audio activities (like aromatherapy, gentle stretching, or journaling by hand) to minimize any extended media exposure due to prescribed screen/audio limits for tension headaches.",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Takes three dedicated 10-minute outdoor light exposure breaks during workdays and immediately after work, regardless of weather, as prescribed therapy for tension headaches",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Refuses all nonessential video calls or online social events on weeknights, prioritizing offline, low-stimulation activities for headache recovery",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Schedules all sales team meetings before noon to accommodate different time zones — never allows meetings to run past 1pm",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "The sudden onboarding of 12 new remote employees across diverse time zones means strict morning-only meetings are no longer feasible; she must now arrange meetings flexibly, sometimes late in the day or evening to ensure all team members can attend."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Uses only video calls for check-ins — avoids phone calls to foster stronger team connections",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_031",
+        "reason": "The return-to-office mandate creates regular opportunities for face-to-face meetings with local staff. This shifts her check-in preference from exclusively virtual to primarily in-person for colleagues on site."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Sets hourly reminders to stretch at her desk — never goes more than two hours without movement",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "The physical therapist’s recommendation and her diagnosis require a specific behavioral shift: instead of just stretching during long bouts of sitting, she must now actively limit total sitting time and work primarily from a standing desk."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Completes physical therapy exercises daily at home, even on weekends — never skips due to busy workdays",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_034",
+        "reason": "Her doctor explicitly requires her to pause all exercise routines, including her daily at-home PT, due to her current back injury treatment."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Reserves Saturday mornings exclusively for long walks in the park — never schedules errands or work during this time",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "Her walking activities must be paused due to the back flare-up and medication, so she cannot do her usual Saturday park walks."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Hosts weekly dinners for her sister every Wednesday — never moves the date without advance notice",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "Her new online class schedule with required attendance twice a week creates unavoidable conflicts with the traditional, fixed Wednesday night meals. She needs the freedom to reschedule these dinners based on her class calendar."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Video chats with her long-distance partner nightly for at least 30 minutes — avoids texting for emotional check-ins",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_028",
+        "reason": "Her partner has relocated to Denver and moved in temporarily, so nightly video chats are no longer needed and emotional check-ins happen in person."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Shares cat care updates and cute photos daily with her sister — refuses to let anyone else administer the medication",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_053",
+        "reason": "Her sister’s pregnancy and request for increased support means their daily interactions are no longer focused solely on cat care; she now actively incorporates baby-related advice and updates into their exchanges."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Organizes group chats for the sales team but never participates in large professional networking events",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "The expansion of her responsibilities to coordinate new remote staff means she must now help facilitate broader virtual onboarding forums, including some larger networking-style events for team integration, making her prior avoidance of large events irrelevant."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Reads mystery novels for an hour each night before bed — never watches TV in the evenings",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "Her carpal tunnel diagnosis means she must avoid holding books or e-readers and reduce repetitive hand motions like page turning. Audiobooks allow her to continue her nightly mystery habit without straining her wrist."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Plans short local hikes twice a month — won’t drive more than an hour for outdoor activities",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "The doctor’s orders prohibit any hiking or walking for at least two weeks, so her hiking planning is suspended."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Prepares the cat’s medication every morning before breakfast — never alters the timing",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "Her cat’s emergency surgery and intensive recovery needs now require administering multiple medications and aiding mobility several times daily, no longer limited to a single fixed routine in the morning."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Spends quality evening time in person with her partner most nights — video chats only when one of them is away",
+        "domain": "social_relationships",
+        "created_at_session": 1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_048",
+        "reason": "Enrollment in a demanding evening online program occupying two nights a week and requiring evening capstone team meetings means she cannot reliably prioritize in-person evenings with her partner. Most evenings will now be spent in class or collaborating virtually, relegating partner time to weekends or short late-night check-ins."
+      },
+      {
+        "id": "pref_045",
+        "fact": "Listens to audiobook versions of mystery novels in the evenings instead of physically reading print or ebooks — avoids holding a book or device for prolonged periods",
+        "domain": "leisure_hobbies",
+        "created_at_session": 6,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "Her neurologist has instructed strict limits on all screen use and media consumption outside of work hours, replacing audiobook-based wind-down routines with non-digital, media-free activities in the evenings."
+      },
+      {
+        "id": "pref_051",
+        "fact": "Spends late evenings after class winding down with short, calming activities such as light stretching or aromatherapy instead of screen time, to reduce insomnia from increased evening computer use",
+        "domain": "health_body",
+        "created_at_session": 7,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "The tension headache diagnosis and neurologist’s restrictions mean her focus on offsetting insomnia from screen use is superseded by the need to strictly avoid all media and screens after hours, making her prior evening strategy redundant."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:36:03.264391"
+}

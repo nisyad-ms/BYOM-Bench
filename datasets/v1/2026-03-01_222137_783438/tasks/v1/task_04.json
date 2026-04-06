@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_b7c3cc8f",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_053",
+        "fact": "Attends supervised cardiac rehabilitation exercise sessions and regular health education classes at the medical center for three months — prioritizes these above physical therapy routines and store commitments",
+        "supersedes": {
+          "id": "pref_031",
+          "fact": "Schedules weekly physical therapy appointments and never skips, even during busy store periods"
+        }
+      },
+      {
+        "id": "pref_041",
+        "fact": "Sorts receipts and business paperwork for both jobs after dinner, alternating tasks between the grocery store and bookkeeping employer to avoid backlogs",
+        "supersedes": {
+          "id": "pref_024",
+          "fact": "Sorts receipts and business paperwork after dinner daily — never lets paperwork pile up past two days"
+        }
+      },
+      {
+        "id": "pref_023",
+        "fact": "Sets aside Saturday mornings for paying bills and transferring remittances — never postpones to the next week"
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks store security cameras from his phone every night before bed — never leaves them unwatched overnight"
+      },
+      {
+        "id": "pref_055",
+        "fact": "Attends health education classes at the medical center as part of cardiac rehab — never misses a session, even if store staffing is short"
+      },
+      {
+        "id": "pref_033",
+        "fact": "Brings a notebook to every medical appointment to log instructions and track symptoms — never relies on memory or verbal reminders alone"
+      }
+    ]
+  },
+  "persona": "An immigrant small business owner managing finances for a family-run grocery store"
+}

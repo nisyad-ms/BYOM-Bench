@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_d5255623",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_052",
+        "fact": "Coordinates and facilitates major project communications primarily through live video meetings with both internal teams and upper management, now prioritizing synchronous group discussion and follow-up over written Slack comms for visibility and alignment.",
+        "supersedes": {
+          "id": "pref_033",
+          "fact": "Coordinates feature launches in cross-department teams via structured standing meetings — no longer restricts updates to Slack threads only"
+        }
+      },
+      {
+        "id": "pref_042",
+        "fact": "Schedules deployments at variable times, including weekends and daytime hours, as mandated by the accelerated migration deadline and new infrastructure procedures",
+        "supersedes": {
+          "id": "pref_001",
+          "fact": "Schedules all deployments after 10pm but never on weekends to minimize disruption to her team"
+        }
+      },
+      {
+        "id": "pref_009",
+        "fact": "Follows a strict no-caffeine-after-2pm rule to manage insomnia"
+      },
+      {
+        "id": "pref_031",
+        "fact": "Favors daily walks with her partner for stress relief while avoiding all keyboard and screen-based leisure during her medical break"
+      },
+      {
+        "id": "pref_047",
+        "fact": "Uses a CPAP machine nightly as prescribed, never skipping regardless of stress level or project deadlines"
+      },
+      {
+        "id": "pref_015",
+        "fact": "Never mixes work socials with intimate friend gatherings — keeps colleague and friend circles separate"
+      }
+    ]
+  },
+  "persona": "A mid-career backend developer at a fintech startup"
+}

@@ -1,10 +1,10 @@
 # Bring Your Own Memory Store
 
-This guide explains how to add a custom memory backend to BYOM-Bench. All you need is a class that implements three methods: `populate`, `retrieve`, and `cleanup`.
+This guide explains how to add a custom memory backend to REAM-Bench. All you need is a class that implements three methods: `populate`, `retrieve`, and `cleanup`.
 
 ## The MemoryStore Protocol
 
-Your store must satisfy the `MemoryStore` protocol defined in `byom_bench/agents/stores/protocol.py`:
+Your store must satisfy the `MemoryStore` protocol defined in `ream_bench/agents/stores/protocol.py`:
 
 ```python
 class MemoryStore(Protocol):
@@ -40,9 +40,9 @@ During evaluation:
 > **Note:** This example is for understanding the protocol only. It won't be autodiscovered by `--agent` because it lacks `_sentinel_agent_type`. See the [full example](#full-example-with-config-and-sentinels) below for a store that plugs into the evaluation harness automatically.
 
 ```python
-# byom_bench/agents/stores/my_store.py
+# ream_bench/agents/stores/my_store.py
 
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.schemas import MultiSessionOutput
 
 
 class MyMemoryStore:
@@ -68,8 +68,8 @@ class MyMemoryStore:
 Use it:
 
 ```python
-from byom_bench.agents import MemoryAgent
-from byom_bench.agents.stores.my_store import MyMemoryStore
+from ream_bench.agents import MemoryAgent
+from ream_bench.agents.stores.my_store import MyMemoryStore
 
 store = MyMemoryStore()
 agent = MemoryAgent(store)
@@ -89,14 +89,14 @@ For a production store that supports `--reuse-stores`, follow this pattern. The 
 ### 1. Create the store
 
 ```python
-# byom_bench/agents/stores/my_store.py
+# ream_bench/agents/stores/my_store.py
 
 import os
 import shutil
 from pathlib import Path
 
-from byom_bench.client import get_agent_config
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.client import get_agent_config
+from ream_bench.schemas import MultiSessionOutput
 
 from ._sentinel import SentinelMixin
 
@@ -201,3 +201,11 @@ When you wrap your store in `MemoryAgent`, you get for free:
 | `AWSMemoryStore` | `stores/aws.py` | Bedrock AgentCore | Cloud API with polling and retry |
 | `ZepMemoryStore` | `stores/zep.py` | Graphiti + Kùzu | Graph-based knowledge extraction |
 | `HindsightMemoryStore` | `stores/hindsight.py` | Hindsight | Auto-detecting embedding dimensions |
+
+## Evaluating on the Pre-built Dataset
+
+To evaluate your custom store on the existing dataset, pass `datasets/v1` as the `--outputs-dir`:
+
+```bash
+uv run python scripts/test_evaluation.py --outputs-dir datasets/v1 --session all --agent my_store
+```

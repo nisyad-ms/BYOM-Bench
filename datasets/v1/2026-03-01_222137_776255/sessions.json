@@ -1,0 +1,1480 @@
+{
+  "persona": "A single parent planning annual vacations for their two children",
+  "persona_id": "persona_20260301_223428",
+  "expanded_persona": {
+    "base_persona": "A single parent planning annual vacations for their two children",
+    "age": 38,
+    "gender": "female",
+    "location": "Portland, OR",
+    "work_education": [
+      "Full-time project manager at a mid-sized architecture firm downtown; manages a team of four",
+      "Negotiates a hybrid schedule to be home on Mondays and Fridays for school drop-offs and pickups",
+      "Recently received a professional certification in sustainable building practices",
+      "Uses limited PTO, carefully plans vacations during school breaks to maximize family time"
+    ],
+    "health_wellness": [
+      "Generally healthy, but has persistent lower back pain from an old car accident; attends physical therapy weekly",
+      "Runs twice a week after the kids’ bedtime as her main form of exercise",
+      "Relies on meal prep on Sundays to maintain a mostly vegetarian diet for herself and the kids",
+      "Experiences occasional migraines, especially during high-stress project deadlines"
+    ],
+    "family_relationships": [
+      "Divorced five years ago; co-parenting arrangement with ex-husband, who has the children every other weekend",
+      "Two children: Max (11, enjoys science and soccer) and Ella (8, passionate about art and dance)",
+      "Lives in a townhouse close to her parents, who babysit after school on busy workdays",
+      "Vacation planning is a collaborative family tradition—her kids help choose destinations and pack",
+      "Keeps family routines carefully structured—Saturday game nights, Sunday park outings"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Reserves all meetings for in-office days — never schedules video calls when working from home",
+        "Declines overtime during school breaks — refuses to work evenings when kids are on vacation",
+        "Batch-writes project updates before lunch — never sends emails after 4pm",
+        "Takes short standing breaks every hour to manage back pain — never sits for more than 90 minutes continuously",
+        "Enrolls in one new certification course each year — never repeats courses already completed"
+      ],
+      "health_body": [
+        "Only runs outdoors in her neighborhood after putting the kids to bed — never uses a treadmill",
+        "Prepares vegetarian family meals for the entire week on Sundays — never cooks meat at home",
+        "Brings her own lumbar pillow everywhere — never relies on public chairs for back support",
+        "Avoids caffeine after 11am to reduce migraine risk — will never have coffee in the afternoon",
+        "Does daily 10-minute PT stretches each morning before waking the kids — never skips, even on weekends"
+      ],
+      "social_relationships": [
+        "Never cancels Saturday game nights — reschedules any conflicting events instead",
+        "Calls her parents for a quick evening check-in every day the kids are with her — never misses a day",
+        "Coordinates shared calendars with ex-husband monthly — never confirms plans last-minute",
+        "Lets each child pick the activity for their one-on-one weekend when siblings are with the other parent — never doubles up on joint outings",
+        "Hosts monthly potluck dinners for close friends and family at her townhouse — never goes more than six weeks without one"
+      ],
+      "leisure_hobbies": [
+        "Plans family vacations collaboratively with the kids — never books without their input",
+        "Visits new local museums or art installations every school break — never repeats visits in the same year",
+        "Schedules a solo afternoon hike on every child-free weekend — never invites company",
+        "Keeps an ongoing list of vacation destinations voted on seasonally by the kids — never chooses by herself",
+        "Books creative workshops (pottery, painting) for the whole family during holidays — never books theme parks or high-adrenaline activities"
+      ],
+      "daily_routines": [
+        "Preps school bags and lunches the night before — never leaves it for the morning rush",
+        "Silences work notifications after 5pm to focus on family — never checks email in the evenings",
+        "Completes online grocery shopping every Thursday night — never shops in person on weekends",
+        "Sets Sunday evenings for family movie night with homemade popcorn — never allows screens at the dinner table",
+        "Reviews the upcoming family calendar with the kids each Sunday afternoon — never lets the week start unplanned"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her ex-husband accepted a new job out of state, leading to a revised custody arrangement in which the children will now live with her full-time except for extended holiday visits.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Sets aside one evening each month for a private video call with her ex-husband and the kids to maintain ongoing connection and update on school milestones",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Establishes a weekly sibling activity rotation, where each child alternates choosing Saturday's game or outing for the family",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Lets each child pick the activity for their one-on-one weekend when siblings are with the other parent — never doubles up on joint outings"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Organizes joint sibling weekend activities since both children are with her every weekend — no longer schedules one-on-one outings tied to child-free weekends",
+              "domain": "social_relationships"
+            },
+            "reason": "With the new custody arrangement, the children no longer spend alternating weekends with their father. Both are now always with her, so the concept of one-on-one weekends is obsolete, replaced by sibling-focused weekends."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_018",
+            "fact": "Schedules a solo afternoon hike on every child-free weekend — never invites company",
+            "domain": "leisure_hobbies",
+            "reason": "She no longer has child-free weekends due to full-time custody. The underlying circumstance (weekends without children) is gone, so solo hikes tied to those weekends are no longer relevant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my ex just accepted a job in California and, as of this month, Max and Ella will be living with me full-time except for long school breaks. It's a big shift—weekends, routines, vacation planning, all of it. I want to keep the transition smooth for the kids, but honestly, I'm not sure how to organize our weekends now or keep things balanced. Any thoughts?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge change—for you and the kids. It sounds like your weekends are going to look pretty different from what you’re used to. When you say ‘balanced,’ do you mean making sure both Max and Ella get their own time and attention, or more about the activities and how you structure the days?"
+        },
+        {
+          "role": "user",
+          "content": "Kind of both. Before, each kid had their own one-on-one weekend with me when their sibling was with their dad, so I could tailor activities to their interests. Now that they’ll always be together, I need a new approach for weekends that doesn’t leave anyone feeling left out, but also isn’t overwhelming for me."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—the one-on-one rotation was probably helpful for making each child feel special. Maybe you could try an alternating system: let one child pick Saturday’s game or outing each week, so they each get a turn to choose but everyone joins in. Do you think that would work, or would you prefer a different kind of structure?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention that—a weekly sibling activity rotation is exactly what I was thinking. Starting this month, Max and Ella each get to choose Saturday’s family activity or game night, and it switches every week. It keeps things fair and simplifies planning since now our weekends are always sibling-focused, not one-on-one like before."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great system, and keeps both kids involved. For Sunday, you used to have solo hikes, right? Will you still find time for recharge or have you had to rework those routines without child-free weekends?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve had to drop the solo hikes, unfortunately. Those only worked when I had weekends alone, and with Max and Ella here full-time, that just isn’t possible anymore. Recharge time now looks more like occasional evenings after their bedtime or carving out short moments during the week."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid adjustment—evening downtime can go a long way. On another note, with the kids living with you full-time, how are you handling family connections with their dad? Any ideas to help them stay in touch or check in regularly?"
+        },
+        {
+          "role": "user",
+          "content": "We’re setting aside one evening a month for a private video call with my ex and the kids. It’s a chance for the three of them to catch up, talk about school and milestones, and keep things grounded despite the distance. I wanted to make sure the connection stays strong for the kids."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful way to maintain their relationship despite the move. Are there other routines you’re considering adjusting—like family vacations, calendar reviews, meal preps—or is it mainly weekend and connection changes?"
+        },
+        {
+          "role": "user",
+          "content": "Most of our routines will stay—I still batch prep meals on Sundays, school bags are packed the night before, and we run our Sunday calendar review as usual. The biggest changes are really around sibling-focused weekends, dropping solo hikes, and adding that monthly video call with their dad."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve thoughtfully reworked your routines to fit the new situation. If you ever want help brainstorming weekend activities for sibling pairs, creative family workshops, or keeping vacation plans collaborative, just let me know. Adjustments like these are big, but you’re setting up great foundations."
+        },
+        {
+          "role": "user",
+          "content": "Thanks! I’ll definitely need inspiration for sibling-friendly outings and creative weekends soon. I appreciate the help."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her elderly father was diagnosed with early-stage Parkinson's disease, prompting her parents to discuss moving in with her to better manage daily care and support.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Researches and adapts the home environment for mobility support, incorporating accessible furniture and routines for her father's care",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Schedules weekly family meetings including her parents and children to coordinate caregiving responsibilities and household needs",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Calls her parents for a quick evening check-in every day the kids are with her — never misses a day"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Spends in-person time with her parents every evening the kids are with her, as they now live together — no longer does daily check-in calls",
+              "domain": "social_relationships"
+            },
+            "reason": "With her parents moving in, daily evening phone calls are no longer necessary or relevant, as she will see them at home each day."
+          },
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Hosts monthly potluck dinners for close friends and family at her townhouse — never goes more than six weeks without one"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Hosts monthly potluck dinners focused on family and low-sensory environments to accommodate her father's new needs, often inviting fewer people to reduce stress",
+              "domain": "social_relationships"
+            },
+            "reason": "With her father newly diagnosed and living with her, she shifts potlucks to smaller, family-focused gatherings to provide a calmer, manageable space and support his well-being."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help figuring out family routines. My dad was just diagnosed with early-stage Parkinson’s, and my parents are moving in with me this week so I can help out more. I’m worried about balancing caregiving, parenting, and work without losing our usual structure. Where should I even start?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot to navigate at once—I’m glad your parents have you for support, but I can see how this might disrupt your routines. To help you keep structure: are there specific parts of your week that feel most at risk (like evenings, mornings, or weekends), or is it more the overall feeling of everything overlapping? Let’s tackle one area together."
+        },
+        {
+          "role": "user",
+          "content": "Evenings are definitely the biggest transition. I used to do a quick check-in call with my parents every night when the kids were with me, but now we’ll all be at home together. So I need to rethink that plus meal times, homework, and downtime—all in one house."
+        },
+        {
+          "role": "assistant",
+          "content": "So your evening check-ins will naturally turn into in-person time. For meals and homework, do you want to keep previous routines (like your Sunday meal prep and dedicated homework time), or are you aiming to integrate your parents into these routines more closely? And for downtime, are there ways to carve out some peaceful space for everyone?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll keep Sunday meal prep—it’s non-negotiable with work and the kids’ schedule. But I might want to involve my mom now and make it collaborative. As for downtime, my dad needs calmer environments, so I’ll shift our monthly potlucks to smaller, family-focused gatherings—fewer guests and more predictable sensory elements to help him out."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds thoughtful. Smaller gatherings will likely be easier for everyone, and teaming up on meal prep could be both practical and bonding. Are you considering any adaptations at home for your dad’s mobility or comfort, or is that something you’d like ideas about?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I’ve started researching accessible furniture and routines for mobility support—things like grab bars, walker-friendly paths, and a chair lift. I’m open to more suggestions! Also, I’m trying to figure out how to keep our family calendar visible and coordinated now that there are more people, more appointments, and more care tasks."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move on the accessibility front—ahead of the curve! For calendar coordination, a big shared wall calendar (color-coded for each person) is helpful, paired with weekly family meetings to review everyone’s needs and plans. Would regular Sunday afternoon meetings fit your current routine, or would another time work better with your parents in the mix?"
+        },
+        {
+          "role": "user",
+          "content": "Sunday afternoons work—actually, I want to expand our usual weekly calendar review to include my parents and the kids so we can assign caregiving responsibilities and household tasks together. We’ll need to keep it predictable and manageable for my dad, so I’ll block it as a standing routine every week. I think that’ll help everyone adjust."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great approach—having everyone involved will make transitions smoother and ensure responsibilities are shared. Are there particular routines or activities you want to preserve for Max and Ella so they still feel special—like your Saturday game nights or Sunday park outings?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. Saturday game nights are sacred, so I’ll reschedule anything that conflicts—even with my parents here, I want the kids to have that unaffected. I’m also planning to keep our Sunday park outings and family movie nights, just with more flexibility for my dad’s stamina. The idea is to preserve what’s familiar while gently adapting."
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent—those anchors will help the kids feel stable amid the changes. Would you like assistance planning accessible park outings or adapting activities for both your dad’s needs and Ella’s love of dance, Max’s science interests? Or more help managing work boundaries with the expanded family?"
+        },
+        {
+          "role": "user",
+          "content": "Both might be useful, but I’ll start with home modifications and routines. I don’t want to overwhelm my dad or compromise my kids’ activities, so anything that strikes that balance is great. And as we settle in, I’ll also need tools for managing new caregiving tasks, especially tracking medications and appointments. Maybe something digital but easy to use?"
+        },
+        {
+          "role": "assistant",
+          "content": "For home routines, consider setting up spaces where your dad can participate but take breaks as needed—a comfy chair in the kitchen during meal prep, quiet corners for downtime, and simple labels for new routines. Digitally, apps like Cozi or Google Calendar can handle appointments, but there are dedicated caregiving tools (like CareZone or Medisafe) for tracking meds and needs with built-in reminders. Would you like a few app recommendations tailored to family sharing?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, please! And thanks—that all feels manageable. Just to recap, now that my parents are moving in, I’ve stopped the nightly check-in calls (since we’ll be together in person), and my potlucks are evolving into smaller, family-centered events. I’m proactively researching home accessibility and planning weekly family meetings with everyone to coordinate tasks. I’ll need digital solutions for meds and schedules, and modifications that work for both generations. Any other tips for first-week adjustments?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re handling this thoughtfully! For the first week, have open conversations so your dad feels empowered, not just managed. Give everyone space to settle, and accept that routines may need a few tweaks. Start small with modifications—prioritize essentials, then layer in as you learn what works. I’ll send you digital tool suggestions and a checklist for accessible home changes. Let me know how it goes, and I’m here if you need ongoing support for balancing caregiving with work and parenting."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her firm was awarded a major sustainable school project in Seattle, and she was asked to lead the project, requiring her to travel monthly for multi-day site visits and coordinate remotely with a new out-of-state construction team.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Creates detailed travel packing checklists for each Seattle site visit, prioritizing items to manage back pain, remote work, and kids' needs when away",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Schedules a mid-week video catch-up with her children during monthly Seattle trips to maintain connection and update them on work progress",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Reserves all meetings for in-office days — never schedules video calls when working from home"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Schedules video calls on both in-office and remote days, and during Seattle monthly site travel, coordinates meetings virtually from hotels or coworking spaces.",
+              "domain": "work_habits"
+            },
+            "reason": "Leading the Seattle project requires frequent remote coordination with an out-of-state construction team and travel, making strict in-office meeting-only scheduling impossible."
+          },
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Only runs outdoors in her neighborhood after putting the kids to bed — never uses a treadmill"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Runs indoors using hotel treadmills during Seattle site visits, maintaining her routine even while traveling, and only runs outdoors when at home.",
+              "domain": "health_body"
+            },
+            "reason": "Monthly site travel to Seattle introduces circumstances—hotel stays, unfamiliar neighborhoods, and unpredictable schedules—where running outdoors isn't always safe or feasible; she adapts by using treadmills."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My firm was just awarded a big sustainable school project in Seattle, and I've been asked to lead it. It's exciting, but it means I'll need to travel up there every month for a few days at a time, all while coordinating with a new team that's totally remote. I've always been really careful about syncing work, kids, and health routines, but this is going to shake things up. I'm trying to figure out how to get ahead of it—maybe you could help me think through how to keep things running smoothly at home while juggling the site visits and remote meetings?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on the project lead—that's a big achievement and speaks highly of your expertise. Balancing family, regular travel, and remote work is definitely a challenge, especially with structured routines. To start, how do you usually handle team meetings and coordination—do you prefer specific days, or has that changed since you'll be doing more remote work and travel?"
+        },
+        {
+          "role": "user",
+          "content": "I used to only schedule meetings on my in-office days. But that's already changing—I'm setting up video calls from home now, and will need to do a lot more virtual coordination from hotels or coworking spaces in Seattle. There's no way I'll be able to stick to just in-office days for meetings anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big shift, but it makes sense given the project scope and geographic spread. For remote meetings, do you anticipate needing to participate in calls outside of your usual working hours, or are you planning to keep your email and calendar boundaries as tight as possible?"
+        },
+        {
+          "role": "user",
+          "content": "I'm still protecting my calendar—no emails after 4pm, and work notifications go silent by 5pm, even if I'm traveling. I batch my project updates before lunch so I can stay ahead, especially when juggling both offices. The main change is just being more flexible about where I take calls."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds wise. Flexibility in location, but not in boundaries, will help manage stress. Speaking of routines, how are you thinking about your physical therapy and running while you're in Seattle? Will you be able to stick to your usual outdoor neighborhood runs?"
+        },
+        {
+          "role": "user",
+          "content": "When I'm home, it's always outdoor runs after the kids are in bed. But while traveling, I can't always count on safe neighborhoods or enough daylight, so I've decided I'll use hotel treadmills in Seattle to stay consistent. It's not ideal, but it's better than losing the habit entirely."
+        },
+        {
+          "role": "assistant",
+          "content": "Good adaptation! Treadmills aren't the same as outdoor runs, but they do keep the habit going—especially important with your back concerns. Are there any other routines you're putting in place for travel? For example, meal prep or managing back pain on the road?"
+        },
+        {
+          "role": "user",
+          "content": "I've actually started creating detailed packing checklists for each Seattle trip. Top of the list are things to help with back pain—my lumbar pillow, resistance bands for stretches, and snacks for my migraines. I also add anything I need for remote work, plus reminders for things the kids might need while I'm away, since I'm still managing logistics from afar."
+        },
+        {
+          "role": "assistant",
+          "content": "That level of organization definitely helps reduce travel stress. Speaking of your kids—how are you planning to keep in touch with Max and Ella during your site visits? Is there a routine for staying connected while you're away?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I'm scheduling a mid-week video catch-up with them for every Seattle trip. I want to check in, hear about school, and keep them in the loop on my work so they're not left out. I'll also update them on progress at the Seattle project, since we usually talk about work as a family."
+        },
+        {
+          "role": "assistant",
+          "content": "I love that approach—it maintains their involvement and helps them feel connected even when you're away. Do you anticipate any difficulties fitting these video calls into your travel schedule, or do you have specific times in mind to anchor those catch-ups?"
+        },
+        {
+          "role": "user",
+          "content": "I think the hardest part will be juggling time zones and meeting overload, but I'll anchor the calls early evening so I can catch them after their homework but before their bedtime routines. If things get hectic, I'll prioritize the video chat and move any less urgent work to earlier in the day."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you've thought through the main hurdles. Would it help to create a shared travel calendar for your family—so Max, Ella, and your parents all know exactly when you're traveling and when you'll be available for video check-ins?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. That'll be part of our Sunday family calendar review—I want everyone clear on the schedule. Between the packing checklists and the new routines for remote meetings, hotel treadmill runs, and video calls with the kids, I think I've got the main pieces covered. Thanks for helping me talk it through!"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Let me know if you want help making those checklists digital—or setting reminders for packing, PT stretches, or family video meetings. You've found thoughtful ways to adapt and keep your family connected, even as your responsibilities grow."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Max's soccer team advanced to regional playoffs, introducing weekend travel commitments that require coordination with family schedules and increased reliance on grandparents for childcare during games.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Arranges for her parents to babysit Ella during Max's out-of-town soccer tournament weekends — never leaves Ella with non-family sitters for overnight stays",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Creates detailed travel itineraries for regional soccer weekends, including accommodations, meals, and backup plans for handling both children during games",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Never cancels Saturday game nights — reschedules any conflicting events instead"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Pauses Saturday game nights during regional soccer playoff weekends — prioritizes Max's games and reschedules game night for non-travel weekends only",
+              "domain": "social_relationships"
+            },
+            "reason": "With regional soccer playoffs introducing travel, Saturday evenings are often occupied with tournaments or related team activities, making it impossible to guarantee a game night. Game nights now flex around soccer commitments."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So Max's soccer team made regionals—pretty exciting, but it means we're committed to weekend travel for the next couple months. I'm scrambling to figure out how to juggle the logistics with work, Ella, and keeping our routines together. Any ideas for keeping everyone sane? Especially since some games are Saturday evenings, which messes with our usual game nights."
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, congrats to Max! That must be a big deal for him—and your whole family. Weekend travel definitely complicates things. Let’s break it down: are you looking for help with time management, keeping Ella engaged during these trips, or backup plans for family routines like game night? Or all of the above?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, all of the above. First off, game nights are kind of on pause for now since a lot of matches fall on Saturday evenings. I usually reschedule around conflicts, but sometimes we just can't fit them in with travel. So I’m thinking we flex game night to whenever we’re home—maybe Sundays or non-tournament weekends. What do you think?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid plan. Creating a flexible game night tradition could actually give everyone something to look forward to after the tournaments. Would the kids be up for helping you pick alternate dates? Maybe reviewing your travel schedule together each week helps keep them involved and still excited about game night—even if it’s not always Saturday."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, they like having input, so we’ll keep reviewing the calendar with them on Sundays—just like usual. Now, the big issue is Ella. She hates missing her art classes and dance sessions, but coming to Max’s games isn’t always fun for her—and I don’t want her bored or exhausted from sitting through long tournaments. I need backup for those weekends, especially when the games are out of town. I’ve started arranging for my parents to babysit Ella for overnights when we travel. I won’t leave her with anyone else for overnight stays."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great boundary, especially since Ella’s comfortable with her grandparents. Could your parents maybe help her keep up with art and dance activities at their place when you’re gone, so she isn’t missing out? And for shorter travel, any way she could join just for the day, then head back before it gets late?"
+        },
+        {
+          "role": "user",
+          "content": "We could try having her do art projects with my mom during those weekends—Ella loves that, and it keeps her feeling connected. For day trips, if we’re not too far from Portland, I can drop her with my parents, but once we’re driving a couple hours or more, it just works better for her to stay with them the whole weekend. I never use outside sitters for overnights, just family."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—sounds like you’ve got a clear plan for Ella. Shifting gears: with all the travel, are you planning out meals and accommodations ahead of time, or winging it? Family travel, especially with back-to-back games, can get tricky—having backup plans for both kids might help."
+        },
+        {
+          "role": "user",
+          "content": "Definitely planning ahead—I've started making detailed travel itineraries for these regional weekends. I outline where we're staying, where we'll eat (I always look for vegetarian-friendly options), and what to do if we need to handle a last-minute snafu, like Ella getting antsy at the hotel or Max needing downtime after games. I try to cover all the bases for both of them."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move. That level of detail helps you enjoy the trip instead of just managing it. Do you share the itinerary with Max and Ella before the weekend? Sometimes knowing the plan—and having backup options for food, activities, or downtime—helps kids feel less stressed too."
+        },
+        {
+          "role": "user",
+          "content": "For sure. We go over the itinerary on Sunday afternoons, so they know what to expect. Max likes seeing the travel schedule (he's big into science, so logistics fascinate him), and Ella loves picking which art supplies she brings for downtime. Having backup plans is key, since I want both kids comfortable—and me not scrambling if plans shift last-minute."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really thoughtful. Is anything in your work schedule shifting to accommodate this new routine? Or have you found ways to keep your hybrid arrangement steady even with the travel demands?"
+        },
+        {
+          "role": "user",
+          "content": "Work is mostly steady—I'm sticking to in-office days for meetings, and batch-writing updates before lunch. I make sure I'm offline after 5pm so I can prep travel and focus on family. The bigger adjustment is just using more PTO for these weekends, and coordinating with my ex-husband so we're both clear on who covers what."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like the family collaboration is helping smooth things out, even with the added complexity. As you're juggling all these moving parts, is there anything specific you need help planning—like new ways to keep Ella engaged, streamlining travel packing, or tips for managing your own back pain during longer drives?"
+        },
+        {
+          "role": "user",
+          "content": "Packing is mostly under control—we’ve got checklists, and Ella and Max help pick what goes. What I could use are more suggestions for vegetarian meal options on the road. Also, if you have ideas for easy backup activities Ella can take to her grandparents, that'd be great. And yeah, any tips for managing lower back pain during travel would help, since longer drives can be rough."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "A company-wide policy change eliminates hybrid schedules, requiring all project managers—including her—to work full-time in the office starting next month.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_041",
+            "fact": "Schedules after-school care or extended grandparent babysitting two days a week to cover her now-mandatory late office returns — no more self-managed school pickups on Mondays or Fridays.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_033",
+              "fact": "Schedules video calls on both in-office and remote days, and during Seattle monthly site travel, coordinates meetings virtually from hotels or coworking spaces."
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Schedules all video calls and meetings exclusively from the office or designated on-site conference rooms — no remote work coordination except during travel.",
+              "domain": "work_habits"
+            },
+            "reason": "With hybrid schedules eliminated, she no longer has the option of remote work days. All collaboration and meetings (unless traveling) must be coordinated from the office."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_028",
+            "fact": "Establishes a weekly sibling activity rotation, where each child alternates choosing Saturday's game or outing for the family",
+            "domain": "daily_routines",
+            "reason": "The strict office schedule means she will often not be home in time for elaborate Saturday rotations or family outings, especially with no flexible work-from-home start/end. The structured rotation becomes impossible to uphold consistently."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I just got hit with some tough news at work – my company is ending hybrid schedules, so starting next month I have to be in the office full-time. No more remote days. I’m feeling pretty overwhelmed about how to keep our routines going, especially school pickups and family time. Any advice on adjusting?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big change, especially when you’ve built your routine around the flexibility. Is there any wiggle room about hours, or are you expected to stay for the full workday every day? What feels like the biggest pain point right now – logistics, time with your kids, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "Unfortunately, it's a strict 8-to-5 office schedule. I'm most worried about the afternoon – I used to pick up Max and Ella after school at least twice a week, especially Mondays and Fridays. Now I’ll need after-school care or more help from my parents, since I won’t be home until later. That’s an immediate concern."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great that your parents are nearby and already help out. Would they be able to manage extra pickups, or do you think you’ll need to look at external after-school options for some days? If you want, I can help you outline a care schedule that balances your parents’ availability and external solutions."
+        },
+        {
+          "role": "user",
+          "content": "My parents can cover two days a week, maybe more if needed. I guess I’ll need to book extended babysitting for the other afternoons, at least until I get home. So the days where I managed pickups myself are pretty much gone now. Any tips on communicating this shift to the kids and making the transition easier for them?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment for them. Since you’ve always involved Max and Ella in routines and planning, maybe start by explaining why things are changing, then give them some input on how their afternoons look – maybe picking activities they do with grandparents or a sitter. You could also anchor the evening with a family routine to keep connection strong, even if pickups change."
+        },
+        {
+          "role": "user",
+          "content": "Anchoring evenings is smart. We still have our Saturday game nights and Sunday park outings, so I want to keep those. But I used to rotate which child chose our Saturday activity each week – that’s not really feasible anymore. With the work schedule, I’ll barely be home in time for anything elaborate, and the rotation isn’t consistent."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s tough when traditions you worked hard to build start feeling unmanageable. Maybe simplify Saturday evenings so you all play a favorite game together, instead of rotating who picks? Or switch to monthly rotations, to make the change more manageable and keep everyone involved."
+        },
+        {
+          "role": "user",
+          "content": "Monthly rotations could work, but honestly, we’ll probably just stick to a set game night and let the kids alternate simple choices when it fits. The sibling rotation for activities was special, but it’s not logistically realistic anymore with my new hours. I’ll miss it, but something had to give."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re handling the changes thoughtfully. For after-school care, should I help you map out a weekly schedule to share with your parents and sitters? And do you want tips on keeping vacation planning collaborative, despite the new work setup?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, a weekly care map would help – I need something clear that my parents and babysitter can reference. On the vacation front, I definitely still want it to be collaborative, but I need to adjust how we plan. With no remote days, all meetings and calls for trip coordination need to happen from the office, or maybe during site travel if I’m away. It’s a change from how I used to do it from home on Mondays and Fridays."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it – so for family vacation planning, we should build the process around office hours or your travel days, with any calls or discussions happening from designated spaces. I can help you draft a calendar so you know when you can coordinate. Would it help if I suggested tools for keeping everyone looped in, like a shared digital poll for destination voting?"
+        },
+        {
+          "role": "user",
+          "content": "That’d be useful! Digital polls are a good idea. Just need to make sure anything we schedule is during office breaks or travel, since home-office coordination is off the table. I’m also thinking of carving out Sunday afternoons to review the family calendar and upcoming childcare with the kids – something routine to help us all stay organized."
+        },
+        {
+          "role": "assistant",
+          "content": "That Sunday review is a great anchor. Do you need help building templates for childcare schedules, calendar reviews, and vacation polls? And should I factor in things like early evening routines for your kids when suggesting ways to maximize family connection, given your new arrival times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, please – templates would be great. And suggestions for early evening routines are welcome. My new work reality means I need extra structure around care and connection, but I still want to protect the parts of our weekly rhythm that matter most."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "She is offered a promotion to Director of Project Management, expanding her responsibilities to include overseeing two additional project teams and requiring evening attendance at quarterly leadership meetings.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_044",
+            "fact": "Attends quarterly evening leadership meetings in-person as part of director duties — arranges for grandparent childcare on these evenings instead of being home for bedtime routines",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_045",
+            "fact": "Prepares the kids in advance for changes to evening routines on leadership meeting weeks by reviewing adjustments during Sunday family calendar checks",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_022",
+              "fact": "Silences work notifications after 5pm to focus on family — never checks email in the evenings"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Silences work notifications after quarterly evening leadership meetings — checks email only when required for official meetings, otherwise avoids evening work communication",
+              "domain": "daily_routines"
+            },
+            "reason": "The new director role requires attendance and communication during evening quarterly leadership meetings, making complete avoidance of evening work contact no longer feasible on those nights."
+          },
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Batch-writes project updates before lunch — never sends emails after 4pm"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Drafts project updates in advance but may send key communications after hours on quarterly leadership meeting days, while maintaining no after-4pm email outside these occasions",
+              "domain": "work_habits"
+            },
+            "reason": "The promotion brings new responsibilities that sometimes necessitate sending evening communications following leadership meetings; the old 'never after 4pm' rule cannot always be maintained."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I was officially offered the promotion to Director this week, which is exciting but also a little overwhelming. I knew more responsibility was coming, but now I'll be overseeing two extra teams and there's a requirement for evening leadership meetings every quarter. I'm worried about the impact on family routines and my usual boundaries. Do you have any strategies for maintaining structure at home when my evenings will shift like this?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on the promotion! That’s a huge achievement, though I can understand feeling overwhelmed. When your schedule changes periodically, like with quarterly evening meetings, it can help to plan family routines around those anchor points. Have you already flagged which nights will need adjustments, or is this still up in the air?"
+        },
+        {
+          "role": "user",
+          "content": "The meeting dates are set in advance, so I can plan for those evenings. One issue is I've always been home for bedtime routines, but now I'll need to arrange child care for the kids during those leadership meetings. My parents are willing to step in on those nights, but it's definitely going to disrupt our usual flow."
+        },
+        {
+          "role": "assistant",
+          "content": "Having your parents available is a big help. It might make the transition easier for the kids if they know those evenings are special grandparent nights. Are you planning to prep the kids for this new routine, or keep it flexible as things arise?"
+        },
+        {
+          "role": "user",
+          "content": "I'm planning to prepare the kids in advance. During our Sunday calendar review, I'll walk them through any adjustments to bedtime or evening routines for leadership meeting weeks. That way, Max and Ella won't be surprised, and we can talk through anything they're worried about before those weeks start."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful approach—setting expectations ahead of time goes a long way. How are you thinking about your work boundaries around these meetings? I know you used to silence work notifications after 5pm to focus on family, but does this change with the new director role?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's evolving. I'll still silence notifications, but I have to stay connected after those quarterly meetings just in case follow-up communication is needed. So, I'll check email only when it's officially required for those evenings, but otherwise, I still avoid evening work communication."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a sensible balance—limiting evening contact to only what’s needed for official meetings. Are you sticking with your no after-4pm email rule, or does the director role require some flexibility there too?"
+        },
+        {
+          "role": "user",
+          "content": "I'm adjusting that policy as well. I’ll draft project updates in advance, but on the nights of quarterly leadership meetings I may need to send key communications after hours. Outside those occasions, though, I still keep the no emails after 4pm rule."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart to keep the exception contained to those specific nights. With the expanded teams, you might find there’s more after-hours demand, but keeping a clear boundary most of the time should help. Are there other routines you’ve had to change, or are most still working for your family's structure?"
+        },
+        {
+          "role": "user",
+          "content": "So far, most routines are holding. The main changes are arranging grandparent childcare for leadership meetings and prepping the kids in advance for those evenings. Aside from that, we’re keeping everything else as consistent as possible."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve found ways to adjust without disrupting your core family rituals. If you ever want ideas for making grandparent evenings extra special—or ways to help Max and Ella feel involved in the shift—let me know. Congrats again on the promotion, and good luck settling into the new director role!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her persistent lower back pain worsened significantly, leading her doctor to recommend restricting all running and high-impact activities, with a shift to non-weight-bearing exercise like swimming or yoga for the next several months.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Books local pool or yoga studio time at least twice a week, coordinating sessions with babysitting or grandparent support during her former running windows.",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_034",
+              "fact": "Runs indoors using hotel treadmills during Seattle site visits, maintaining her routine even while traveling, and only runs outdoors when at home."
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Replaces all running, whether at home or traveling, with daily swimming or gentle yoga, avoiding any high-impact or weight-bearing exercise.",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor's new directive prohibits all running and high-impact exercise due to a significant worsening of her lower back injury. She must switch to swimming or yoga for the duration of her recovery, regardless of travel or location."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my back pain has gotten a lot worse lately — turns out the doctor wants me to completely stop running and any high-impact workouts for now. It's pretty disappointing since running was about the only time I got to decompress after the kids went to bed. I'm supposed to switch to swimming or gentle yoga, at least for the next few months. Any tips for building a new routine on top of everything else? I need something realistic that still fits around the kids, school pickups, and work deadlines."
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear about your back — that must be tough, especially since running was your main stress reliever. Both swimming and yoga are great for core strength and low-impact recovery, but I know scheduling can get complicated. Are there any nearby pools or yoga studios that offer convenient hours? Would you prefer structured classes or solo sessions, given your family and work schedule?"
+        },
+        {
+          "role": "user",
+          "content": "I've scoped out a couple local pools and yoga places. Most offer slots in the evening, which could work if I get my parents to babysit, but I used to just run after the kids were in bed — no logistics needed. I’m thinking of booking studio time twice a week and making the switch permanent for now, just to keep it consistent. The trick is coordinating with babysitting, since I can’t just head out whenever."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid plan — having the sessions scheduled ahead of time might actually help you stay on track. If you coordinate with your parents for babysitting during your usual workout windows, you could lock in those evenings for self-care. Have you talked with them yet about the new routine, or about your need for a little more support during this recovery phase?"
+        },
+        {
+          "role": "user",
+          "content": "I have, luckily. My parents already help out most weekdays after school, so they're open to covering my old running windows since I’ll just be swapping for pool or yoga. I’ll try to stick to two sessions per week, maybe more if it helps my back. Honestly, I'm a bit worried about missing the outdoor time — I only ran outside in my neighborhood before, never on treadmills, even during travel. But with the doctor's orders, running anywhere is out."
+        },
+        {
+          "role": "assistant",
+          "content": "Outdoor time is important, especially with your busy schedule. Perhaps after your pool or yoga sessions, you could add a short, gentle walk if your doctor permits it — just for fresh air, without any impact. As for booking, have you tried setting up recurring reservations at the same times weekly, so everyone knows the schedule? That might help prevent last-minute juggling. And out of curiosity, how flexible are the pool or studio slots when you travel for work?"
+        },
+        {
+          "role": "user",
+          "content": "I used to maintain the routine during Seattle site visits by running indoors on hotel treadmills, but that's off the table now. So, no running at all, whether at home or traveling — I'll be replacing those workouts with swimming or yoga, even on the road. I just need to see which hotels have decent pools or if nearby studios have drop-in classes. If nothing fits, I might just stretch in my room, so I don’t stress my back."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart backup plan — bringing your PT stretches on the road will help with consistency. Most hotels have pools, but checking ahead will let you plan around your travel days. Some yoga studios let you book a single class with short notice, especially for visitors. Would you like help finding hotel pools or studio options near your usual business destinations? Or resources for gentle yoga routines to try in your hotel room?"
+        },
+        {
+          "role": "user",
+          "content": "That would be really helpful. If you could find a couple hotel pool options near downtown Seattle, plus any yoga studios with evening or late-night drop-ins, that’d cover most of my work travel days. For home, I think I’ll stick to booking local pool or studio time twice a week, coordinated with babysitting. If things go well, maybe I'll add a third swim or yoga session, but two is realistic right now. Thanks!"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, I'll put together a shortlist for Seattle hotel pools and nearby yoga studios with flexible evening classes. At home, your new routine sounds practical — booking sessions ahead and lining up babysitting should keep things manageable. If you ever need recommendations for kid-friendly yoga or gentle stretching routines (in case Max or Ella want to join in), just let me know. Would you also like a quick-run sheet for how to handle rescheduling if your work or family calendar shifts?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, a sheet like that would be useful — with all our family calendar reviews and my work deadlines, shifting routines happens often! So to summarize: no running anywhere now, even when traveling; instead, I'm booking pool or yoga time at least twice a week, coordinating sessions with my parents or other babysitting support in my former workout windows. I'm leaning on structured booking this time around, since I can't just head out impromptu anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Great summary — structured booking and proactive coordination will help make your transition smoother. I'll draft that rescheduling sheet and send along the Seattle options. Let me know if you want me to track your preferred pool and studio times as part of your routine so you can update or switch quickly when needed."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The architecture firm's parent company undergoes a merger, resulting in a full organizational restructure—her managerial team is split across new departments, and she is assigned to oversee a cross-office project based in San Francisco, necessitating weekly coordination with team members and consultants in multiple time zones.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_049",
+            "fact": "Blocks Friday family routines from work interruptions, refusing to schedule non-urgent meetings or client calls on Fridays to safeguard dedicated recovery and bonding time after a week of cross-office demands.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Plans Sunday evening 'travel prep' sessions with the kids, involving them in organizing schedules and troubleshooting any changes caused by her increased cross-office work commitments.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_040",
+              "fact": "Schedules all video calls and meetings exclusively from the office or designated on-site conference rooms — no remote work coordination except during travel."
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Coordinates video calls and cross-office project meetings from both home and office throughout the week, regularly joining early mornings or late-afternoon sessions to accommodate multiple time zones — no longer restricts work meetings to in-office hours or locations.",
+              "domain": "work_habits"
+            },
+            "reason": "With the merger restructuring her role to lead a cross-office San Francisco project and manage a split team, she must collaborate outside the typical office schedule. Strictly in-office-only meetings are no longer practical due to mixed time zones and the need for flexible availability."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big change at work—the architecture firm merged, so now my team got split up and I’m managing a cross-office project with a group in San Francisco. Suddenly, there are early-morning calls and late-afternoon meetings, and I’m juggling with folks in different time zones. I’m honestly overwhelmed. Any ideas on keeping my family routines and not letting the work chaos eat into everything?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that’s a huge transition. Cross-office scheduling is tough, especially with time zone differences. To protect your family routines, have you found any days or times you can set aside as fully off-limits to work, or is the calendar being invaded everywhere?"
+        },
+        {
+          "role": "user",
+          "content": "I actually made Fridays a strict no-work zone for anything non-urgent—no calls, no meetings, not even client emails. After a week of 7am or 4pm work sessions, I really need Fridays for recovery and family time. I used to only join work meetings in-office, but now that’s impossible. I take calls from home if needed, even early or late."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like the right approach for maintaining boundaries—good call on protecting Fridays. It makes sense that you had to shift your meeting policy now that the coordination is so complicated. Have your kids noticed the changes to your work schedule yet? Any stress popping up with family routines in the evenings?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, they definitely noticed—the kids had questions when the video calls started happening at home. We had to move some routines around so I could join the SF team calls when needed, but I make sure the work doesn’t touch Friday afternoons or game night on Saturdays. I’m starting this new Sunday evening 'travel prep' check-in with the kids so we go over upcoming weeks and rearrange things proactively if my calls or project travel mess with our schedule."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really helpful practice—getting the kids involved in troubleshooting and planning together. It gives them a sense of control and helps ease the stress of shifting routines. Are you finding the Sunday prep sessions helpful for reducing surprises, or is there still a lot of last-minute scrambling because of work?"
+        },
+        {
+          "role": "user",
+          "content": "So far, the Sunday travel prep sessions have helped give us a heads up for the week's changes, especially if I have to fly to San Francisco or shift drop-off duties. It’s not perfect—sometimes meetings get moved and we have to improvise—but having a set time to review the calendar as a family helps. We already did Sunday movie nights, so this is just tacked on before popcorn."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great you’re anchoring both fun and planning on Sundays—it keeps the week from starting unplanned. Since you’re managing so many moving parts, have you thought about automating anything else, like grocery shopping or meal prep, to free up mental space? Or does your current routine mostly work?"
+        },
+        {
+          "role": "user",
+          "content": "I actually already do online grocery shopping every Thursday night and meal prep on Sundays. Those habits have stuck even with the new chaotic schedule. The biggest adjustment was letting work meetings spill into home hours, which I never did before, because the cross-office stuff just doesn’t fit the old boundaries anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s impressive—those routines really help anchor the week. Adapting to flexible work scheduling must be tough, but it sounds like you’ve set clear guardrails for what gets compromised and what stays sacred. Is there anything you want help streamlining that’s still feeling rough—packing for travel, calendar reminders, or carving out time for yourself?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, travel packing is not too hard because I involve Max and Ella using our Sunday prep session—everyone helps and double-checks the schedule changes caused by work travel. The real pain is keeping family rituals unbroken while fielding the new demands, especially with the old policy of only scheduling meetings in-office totally out the window now. I try to block out Friday routines no matter what, but sometimes the SF team wants follow-up Friday afternoon. I push back unless it’s genuinely urgent."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s awesome you advocate for your boundaries and involve the kids in adjusting logistics—that’s a recipe for resilience. By flexing your meeting times and location, you’re still showing the team you’re available, but you’re also making sure family priorities stay central. Let me know if you want suggestions for specific collaboration tools, calendar hacks, or help with communicating your boundaries to colleagues. Otherwise, congrats on surviving this roller-coaster transition so far!"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Following a routine blood test at her annual checkup, she is diagnosed with iron-deficiency anemia and prescribed daily iron supplements, along with strict dietary adjustments to increase iron-rich foods and regularly monitor her levels.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Limits foods and beverages that inhibit iron absorption (such as coffee, tea, and high-fiber foods) during meals, instead pairs iron-rich dishes with vitamin C sources to boost absorption.",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Sets medication reminders for daily iron supplements and weekly iron level tracking, using phone alerts and a pill organizer to ensure strict adherence.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Prepares vegetarian family meals for the entire week on Sundays — never cooks meat at home"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Prepares iron-rich meals (including select animal proteins and leafy greens) for the family each week — occasionally cooks meat at home as medically required, but continues to prioritize plant-based dishes overall",
+              "domain": "health_body"
+            },
+            "reason": "The diagnosis of iron-deficiency anemia and dietary guidance to increase iron intake requires her to add certain animal proteins (like lean red meat or fish) to family meals. Strict 'never cooks meat' is no longer sustainable for her health."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so I had my annual checkup last week and just found out I have iron-deficiency anemia. My doctor put me on daily iron supplements and wants strict changes to my diet. I'm a little overwhelmed trying to figure out how this fits into our routines—especially with meal prep for the kids and keeping things mostly plant-based. Any advice on how to tackle this without disrupting everything?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big adjustment, especially since you’ve built so much structure around your family's routines and meals. To start, have you discussed with Max and Ella that you'll need to add more iron-rich foods to meals? Are you aiming to keep things vegetarian, or are you open to incorporating some animal proteins as part of the new regimen?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, we talked about it last night. I actually have to start including some animal proteins—lean red meat or fish—at least a couple times a week. My doctor said it's important for absorption, but I'm still planning to prioritize plant-based dishes wherever possible. Sunday meal prep is going to look different and it'll take some convincing with the kids, but the science angle helps with Max."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move tapping into Max’s interest in science! Introducing new foods can definitely be smoother with some context. With meal prep, you might try iron-rich vegetarian options like lentils, tofu, beans—paired with vitamin C sources for better absorption. When you do cook meat, maybe make it an occasional part of the meal, so the family still sees plenty of familiar dishes. Would you like some recipe suggestions, or are you set on the ingredients and just need help organizing?"
+        },
+        {
+          "role": "user",
+          "content": "Recipe ideas would be helpful! The doctor also mentioned needing to limit foods and drinks that block iron absorption—so I can't have coffee or tea with meals anymore, and have to be cautious with high-fiber stuff during dinner. I'm going to try pairing iron-rich dishes with things like bell peppers or citrus, but it feels like a lot to juggle."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Balancing all the dietary details can be tricky, especially since meal prep is such a cornerstone for your week. Would a guide for pairing iron-rich ingredients with vitamin C sources help? Also, when do you usually have your coffee or tea—do you want tips for alternatives at meals so you don’t feel like you’re missing out?"
+        },
+        {
+          "role": "user",
+          "content": "That would be great. I already avoid caffeine after 11am to help with migraines, but now I’ll need to make sure coffee and tea don’t happen alongside meals—probably shifting them to an hour before or after. I can swap in herbal options or just stick with water at dinner, but the kids might want something fun too. And I have to be deliberate about fiber-heavy foods, so maybe I keep those for breakfast or lunch. A pairing guide would make meal planning easier."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach—having dedicated times for coffee and including herbal alternatives can keep routines intact. I’ll put together a quick guide for meal pairings: iron-rich options (both plant and animal sources) with vitamin C-rich veggies and fruits, plus suggestions for kid-friendly drinks. Would you like a printable list for your meal prep Sundays, or something digital to update as you add new recipes?"
+        },
+        {
+          "role": "user",
+          "content": "Digital works best—I update our recipe list seasonally so the kids can vote on new destinations for vacation or new dishes. Oh, and since my supplement schedule is strict now, I set daily medication reminders on my phone and started a pill organizer. I also have weekly alerts to track my iron levels, so nothing slips through the cracks."
+        },
+        {
+          "role": "assistant",
+          "content": "Great to hear you’ve set reminders and a pill organizer; that’s crucial with iron supplements. If you want, I can help build a meal planner that syncs with those alerts and helps flag iron-rich meals and their timing. Are there any specific challenges you foresee—like juggling your hybrid work schedule or prepping school lunches—that might affect how you stick to this new regimen?"
+        },
+        {
+          "role": "user",
+          "content": "Lunches will be the tricky part since I always prep them the night before to avoid morning chaos. Also, I need to keep an eye on Max’s soccer schedule and Ella’s after-school art classes—sometimes family dinners get rushed. Ideally, the planner would remind me which meals to pair together and flag any absorption issues. And if we do meat, I’ll need that to be flagged so it’s only as medically required, not every day."
+        },
+        {
+          "role": "assistant",
+          "content": "I can customize the planner to fit your existing structure—school lunch prep, activity schedules, and all. It could prompt you on pairing, offer reminders to avoid fiber-heavy or caffeinated drinks at dinner, and note when meat is included versus plant-based. Would you like text notifications for upcoming meal needs, or would a shared digital calendar work best for the kids to stay involved?"
+        },
+        {
+          "role": "user",
+          "content": "A shared digital calendar would be perfect. The kids are used to reviewing the family schedule on Sundays, so they’ll appreciate being looped in. This way, Max can suggest soccer-fueling meals, and Ella can choose art-night dinners. Thanks—this actually feels a lot more manageable now."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear it! I’ll draft the calendar layout and pairing guide so you can easily integrate it into your Sunday planning. If you ever need additional recipes or ideas for creative iron-rich meals and drinks, just ask—there’s plenty out there to keep things varied and kid-friendly."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "She suffers a sudden, severe migraine while driving her children home from a weekend outing, resulting in a minor car accident and an ER visit; her physician imposes a mandatory period of no driving or solo childcare until neurologist clearance is obtained.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_055",
+            "fact": "Schedules all childcare and school pickups through her parents or ex-husband; refuses to make plans that rely on her solo driving or transport until medically cleared.",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_056",
+            "fact": "Joins supervised family walks in neighborhood parks on weekends instead of driving to distant outings; avoids any activities requiring personal transportation.",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_057",
+            "fact": "Participates in virtual collaborative vacation planning sessions with her kids and ex-husband, using video calls and shared documents since in-person trips or errands are restricted.",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_047",
+              "fact": "Books local pool or yoga studio time at least twice a week, coordinating sessions with babysitting or grandparent support during her former running windows."
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Suspends all solo pool and yoga studio visits until neurologist clearance is obtained; participates only in supervised group classes or guided home sessions with another adult present.",
+              "domain": "health_body"
+            },
+            "reason": "Her physician imposed a no solo childcare or driving rule after the accident, meaning she cannot attend activities outside the home without direct supervision. Exercise can only occur in a group or with another adult present."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_035",
+            "fact": "Creates detailed travel packing checklists for each Seattle site visit, prioritizing items to manage back pain, remote work, and kids' needs when away",
+            "domain": "daily_routines",
+            "reason": "She is temporarily prohibited from driving or taking her children on Seattle site visits due to medical restrictions. Travel planning for these work trips with the kids is not relevant until she regains clearance."
+          },
+          {
+            "id": "pref_039",
+            "fact": "Creates detailed travel itineraries for regional soccer weekends, including accommodations, meals, and backup plans for handling both children during games",
+            "domain": "daily_routines",
+            "reason": "She cannot travel with or supervise her kids during soccer weekends while under medical restriction; planning solo-parent itineraries is not possible until she is cleared for solo childcare again."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Wow, so... I had a pretty scary migraine while driving the kids home last Sunday. Ended up in the ER after a minor accident—thankfully nobody was seriously hurt, but the doctor says I can't drive or do solo childcare until a neurologist clears me. I'm honestly overwhelmed. Do you have any tips for handling routines (especially school drop-off and pickups) when I can't get behind the wheel or be alone with my kids?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds incredibly tough—I'm glad everyone is okay, but I can see why this is so disruptive. For the school routines, do you have family or your ex who could help with transport and pickups? Or is there a school bus option nearby?"
+        },
+        {
+          "role": "user",
+          "content": "I've started scheduling all the pickups and drop-offs through my parents or my ex. Our school bus is only for middle school, so I have to rely on them for Ella. I refuse to make any plans that involve me driving the kids anywhere—at least until the neurologist says I'm safe. It's weird not having control, but it's the only way for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a responsible approach. Not having control must be hard, but relying on your support system seems essential. How are you approaching weekend outings or activities during this time? Will you still have family events, just closer to home?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I'm joining supervised family walks at neighborhood parks on weekends instead of outings that would require driving. We're skipping anything that needs personal transport—so no museums further out or visits to my brother's place for now. It's a change, but at least it gets us outside together with another adult present."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—keeping activities local and supervised is the safest choice right now. What about exercise? I remember you preferred running late in the evenings after the kids' bedtime—will you continue that or do you need alternatives?"
+        },
+        {
+          "role": "user",
+          "content": "I've had to suspend all solo pool and yoga studio visits until I'm cleared—my doctor was adamant about no unsupervised activities outside home. If I do exercise, it's only in supervised group classes or guided sessions at home with another adult. So my solo evening runs are on hold, unfortunately."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for clarifying—safety has to come first, even if it's disappointing to lose those routines. With your exercise, perhaps you could try virtual group yoga or stretching sessions with friends or family? That way you're not alone, but you still get some movement. Would your parents be interested in joining?"
+        },
+        {
+          "role": "user",
+          "content": "Possibly! My mom actually likes yoga, so guided home sessions are probably doable if she's here. I might try some family stretching routines, too, and maybe virtual classes if we can coordinate. I just have to make sure I'm never alone with the kids during any exercise, as per doctor's orders."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a great adjustment. With your vacation planning routine—since you can't take the kids on trips for now, how are you keeping the tradition going? Anything you're doing to involve them and keep the excitement up while stuck at home?"
+        },
+        {
+          "role": "user",
+          "content": "We're doing virtual collaborative vacation planning sessions now. The kids and I—and sometimes my ex-husband—hop on video calls and use shared docs to brainstorm trips. Since I can't do in-person errands or travel right now, this is helping us stay connected and plan ahead for when I'm cleared. It's not the same as packing together, but it works."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a creative solution—it keeps the collaborative spirit alive, even if you can't physically travel. Have you had to pause planning any work-related trips or soccer weekends with the kids right now?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I've dropped all detailed travel packing checklists for Seattle site visits—I can't drive or take the kids on these trips at all until things change. Same goes for regional soccer weekends: I used to create detailed itineraries for handling both kids, but now that's not possible. I'm not planning any solo-parent trips or outings with them until I'm medically cleared for solo childcare."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to put that on pause. You have enough to manage as it is, and it's better to focus on what you can safely do. Is there anything in your routines you'd like help adapting—like meal prep, school bag organization, or family game nights—now that your mobility's limited?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, meal prep and school bag routines haven't changed much, since I can still do them at home. Game nights and Sunday park outings are just more local and supervised now, but we keep those going. The biggest thing has been logistics—getting all my support people on shared calendars so nothing slips through the cracks when I can't do it myself."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call—robust shared calendars are key, especially with extra coordination. If you ever need tips on streamlining family scheduling or making virtual planning more engaging for the kids, let me know. You're coping admirably with a tough situation."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Declines overtime during school breaks — refuses to work evenings when kids are on vacation",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Takes short standing breaks every hour to manage back pain — never sits for more than 90 minutes continuously",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Enrolls in one new certification course each year — never repeats courses already completed",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Brings her own lumbar pillow everywhere — never relies on public chairs for back support",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Avoids caffeine after 11am to reduce migraine risk — will never have coffee in the afternoon",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Does daily 10-minute PT stretches each morning before waking the kids — never skips, even on weekends",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Coordinates shared calendars with ex-husband monthly — never confirms plans last-minute",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Plans family vacations collaboratively with the kids — never books without their input",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Visits new local museums or art installations every school break — never repeats visits in the same year",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Keeps an ongoing list of vacation destinations voted on seasonally by the kids — never chooses by herself",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Books creative workshops (pottery, painting) for the whole family during holidays — never books theme parks or high-adrenaline activities",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Preps school bags and lunches the night before — never leaves it for the morning rush",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Completes online grocery shopping every Thursday night — never shops in person on weekends",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Sets Sunday evenings for family movie night with homemade popcorn — never allows screens at the dinner table",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Reviews the upcoming family calendar with the kids each Sunday afternoon — never lets the week start unplanned",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Organizes joint sibling weekend activities since both children are with her every weekend — no longer schedules one-on-one outings tied to child-free weekends",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Sets aside one evening each month for a private video call with her ex-husband and the kids to maintain ongoing connection and update on school milestones",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Spends in-person time with her parents every evening the kids are with her, as they now live together — no longer does daily check-in calls",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Hosts monthly potluck dinners focused on family and low-sensory environments to accommodate her father's new needs, often inviting fewer people to reduce stress",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Researches and adapts the home environment for mobility support, incorporating accessible furniture and routines for her father's care",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Schedules weekly family meetings including her parents and children to coordinate caregiving responsibilities and household needs",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_036",
+        "fact": "Schedules a mid-week video catch-up with her children during monthly Seattle trips to maintain connection and update them on work progress",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_037",
+        "fact": "Pauses Saturday game nights during regional soccer playoff weekends — prioritizes Max's games and reschedules game night for non-travel weekends only",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Arranges for her parents to babysit Ella during Max's out-of-town soccer tournament weekends — never leaves Ella with non-family sitters for overnight stays",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_041",
+        "fact": "Schedules after-school care or extended grandparent babysitting two days a week to cover her now-mandatory late office returns — no more self-managed school pickups on Mondays or Fridays.",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Silences work notifications after quarterly evening leadership meetings — checks email only when required for official meetings, otherwise avoids evening work communication",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Drafts project updates in advance but may send key communications after hours on quarterly leadership meeting days, while maintaining no after-4pm email outside these occasions",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Attends quarterly evening leadership meetings in-person as part of director duties — arranges for grandparent childcare on these evenings instead of being home for bedtime routines",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Prepares the kids in advance for changes to evening routines on leadership meeting weeks by reviewing adjustments during Sunday family calendar checks",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Replaces all running, whether at home or traveling, with daily swimming or gentle yoga, avoiding any high-impact or weight-bearing exercise.",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Coordinates video calls and cross-office project meetings from both home and office throughout the week, regularly joining early mornings or late-afternoon sessions to accommodate multiple time zones — no longer restricts work meetings to in-office hours or locations.",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Blocks Friday family routines from work interruptions, refusing to schedule non-urgent meetings or client calls on Fridays to safeguard dedicated recovery and bonding time after a week of cross-office demands.",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Plans Sunday evening 'travel prep' sessions with the kids, involving them in organizing schedules and troubleshooting any changes caused by her increased cross-office work commitments.",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Prepares iron-rich meals (including select animal proteins and leafy greens) for the family each week — occasionally cooks meat at home as medically required, but continues to prioritize plant-based dishes overall",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Limits foods and beverages that inhibit iron absorption (such as coffee, tea, and high-fiber foods) during meals, instead pairs iron-rich dishes with vitamin C sources to boost absorption.",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Sets medication reminders for daily iron supplements and weekly iron level tracking, using phone alerts and a pill organizer to ensure strict adherence.",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Suspends all solo pool and yoga studio visits until neurologist clearance is obtained; participates only in supervised group classes or guided home sessions with another adult present.",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_055",
+        "fact": "Schedules all childcare and school pickups through her parents or ex-husband; refuses to make plans that rely on her solo driving or transport until medically cleared.",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Joins supervised family walks in neighborhood parks on weekends instead of driving to distant outings; avoids any activities requiring personal transportation.",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Participates in virtual collaborative vacation planning sessions with her kids and ex-husband, using video calls and shared documents since in-person trips or errands are restricted.",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Reserves all meetings for in-office days — never schedules video calls when working from home",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "Leading the Seattle project requires frequent remote coordination with an out-of-state construction team and travel, making strict in-office meeting-only scheduling impossible."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Batch-writes project updates before lunch — never sends emails after 4pm",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_043",
+        "reason": "The promotion brings new responsibilities that sometimes necessitate sending evening communications following leadership meetings; the old 'never after 4pm' rule cannot always be maintained."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Only runs outdoors in her neighborhood after putting the kids to bed — never uses a treadmill",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_034",
+        "reason": "Monthly site travel to Seattle introduces circumstances—hotel stays, unfamiliar neighborhoods, and unpredictable schedules—where running outdoors isn't always safe or feasible; she adapts by using treadmills."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Prepares vegetarian family meals for the entire week on Sundays — never cooks meat at home",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_051",
+        "reason": "The diagnosis of iron-deficiency anemia and dietary guidance to increase iron intake requires her to add certain animal proteins (like lean red meat or fish) to family meals. Strict 'never cooks meat' is no longer sustainable for her health."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Never cancels Saturday game nights — reschedules any conflicting events instead",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_037",
+        "reason": "With regional soccer playoffs introducing travel, Saturday evenings are often occupied with tournaments or related team activities, making it impossible to guarantee a game night. Game nights now flex around soccer commitments."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Calls her parents for a quick evening check-in every day the kids are with her — never misses a day",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "With her parents moving in, daily evening phone calls are no longer necessary or relevant, as she will see them at home each day."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Lets each child pick the activity for their one-on-one weekend when siblings are with the other parent — never doubles up on joint outings",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "With the new custody arrangement, the children no longer spend alternating weekends with their father. Both are now always with her, so the concept of one-on-one weekends is obsolete, replaced by sibling-focused weekends."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Hosts monthly potluck dinners for close friends and family at her townhouse — never goes more than six weeks without one",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "With her father newly diagnosed and living with her, she shifts potlucks to smaller, family-focused gatherings to provide a calmer, manageable space and support his well-being."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Schedules a solo afternoon hike on every child-free weekend — never invites company",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": null,
+        "reason": "She no longer has child-free weekends due to full-time custody. The underlying circumstance (weekends without children) is gone, so solo hikes tied to those weekends are no longer relevant."
+      },
+      {
+        "id": "pref_022",
+        "fact": "Silences work notifications after 5pm to focus on family — never checks email in the evenings",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "The new director role requires attendance and communication during evening quarterly leadership meetings, making complete avoidance of evening work contact no longer feasible on those nights."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Establishes a weekly sibling activity rotation, where each child alternates choosing Saturday's game or outing for the family",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "The strict office schedule means she will often not be home in time for elaborate Saturday rotations or family outings, especially with no flexible work-from-home start/end. The structured rotation becomes impossible to uphold consistently."
+      },
+      {
+        "id": "pref_033",
+        "fact": "Schedules video calls on both in-office and remote days, and during Seattle monthly site travel, coordinates meetings virtually from hotels or coworking spaces.",
+        "domain": "work_habits",
+        "created_at_session": 2,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_040",
+        "reason": "With hybrid schedules eliminated, she no longer has the option of remote work days. All collaboration and meetings (unless traveling) must be coordinated from the office."
+      },
+      {
+        "id": "pref_034",
+        "fact": "Runs indoors using hotel treadmills during Seattle site visits, maintaining her routine even while traveling, and only runs outdoors when at home.",
+        "domain": "health_body",
+        "created_at_session": 2,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "Her doctor's new directive prohibits all running and high-impact exercise due to a significant worsening of her lower back injury. She must switch to swimming or yoga for the duration of her recovery, regardless of travel or location."
+      },
+      {
+        "id": "pref_035",
+        "fact": "Creates detailed travel packing checklists for each Seattle site visit, prioritizing items to manage back pain, remote work, and kids' needs when away",
+        "domain": "daily_routines",
+        "created_at_session": 2,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "She is temporarily prohibited from driving or taking her children on Seattle site visits due to medical restrictions. Travel planning for these work trips with the kids is not relevant until she regains clearance."
+      },
+      {
+        "id": "pref_039",
+        "fact": "Creates detailed travel itineraries for regional soccer weekends, including accommodations, meals, and backup plans for handling both children during games",
+        "domain": "daily_routines",
+        "created_at_session": 3,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "She cannot travel with or supervise her kids during soccer weekends while under medical restriction; planning solo-parent itineraries is not possible until she is cleared for solo childcare again."
+      },
+      {
+        "id": "pref_040",
+        "fact": "Schedules all video calls and meetings exclusively from the office or designated on-site conference rooms — no remote work coordination except during travel.",
+        "domain": "work_habits",
+        "created_at_session": 4,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_048",
+        "reason": "With the merger restructuring her role to lead a cross-office San Francisco project and manage a split team, she must collaborate outside the typical office schedule. Strictly in-office-only meetings are no longer practical due to mixed time zones and the need for flexible availability."
+      },
+      {
+        "id": "pref_047",
+        "fact": "Books local pool or yoga studio time at least twice a week, coordinating sessions with babysitting or grandparent support during her former running windows.",
+        "domain": "health_body",
+        "created_at_session": 6,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_054",
+        "reason": "Her physician imposed a no solo childcare or driving rule after the accident, meaning she cannot attend activities outside the home without direct supervision. Exercise can only occur in a group or with another adult present."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:34:28.044126"
+}

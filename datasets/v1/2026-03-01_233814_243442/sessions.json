@@ -1,0 +1,1496 @@
+{
+  "persona": "A regional sales director overseeing a team of 15 representatives",
+  "persona_id": "persona_20260301_235056",
+  "expanded_persona": {
+    "base_persona": "A regional sales director overseeing a team of 15 representatives",
+    "age": 42,
+    "gender": "male",
+    "location": "Chicago, IL",
+    "work_education": [
+      "Regional Sales Director for a mid-sized medical device company, responsible for sales in the Midwest",
+      "Oversees a team of 15 sales reps spread across five states; spends two days a week on video calls for coaching and strategy",
+      "Just finished rolling out a new customer relationship management software; managing resistance and extra training",
+      "Quarterly sales targets recently increased by 20% due to a new product launch; high pressure for the next quarter",
+      "Regularly travels (1-2 trips/month) for conferences and to visit key clients with top-performing reps"
+    ],
+    "health_wellness": [
+      "Struggles with chronic lower back pain from spending years on the road; attends physical therapy weekly",
+      "Usually skips breakfast and relies on coffee; recently started a nutrition plan after blood pressure concerns at last checkup",
+      "Averages 6 hours of sleep due to late-night work emails and early meetings",
+      "Attempts to jog three mornings a week along Lake Michigan, though travel often disrupts routine",
+      "No diagnosed mental health conditions but reports feeling “burned out” during peak sales period"
+    ],
+    "family_relationships": [
+      "Married 12 years; wife works full-time as a high school guidance counselor",
+      "Has two children (ages 9 and 12); coaches weekends youth soccer for the younger",
+      "Lives in a suburban house outside Chicago; aging mother moved in last year, requiring occasional assistance with medical appointments",
+      "Family dinners possible only 2-3 times a week due to work travel and events",
+      "Keeps in touch with his brother in Seattle via monthly video calls, often discussing their respective careers"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Schedules team video coaching sessions strictly on Tuesdays and Thursdays — avoids meetings on Mondays and Fridays",
+        "Delivers feedback only in one-on-one calls — never gives performance critiques during group sessions",
+        "Requires sales reps to submit weekly CRM reports by Sunday night — never accepts late submissions",
+        "Blocks 30 minutes every morning for reviewing sales dashboards before responding to emails",
+        "Refuses to answer work texts after 8pm — only responds to urgent emails flagged by senior leadership"
+      ],
+      "health_body": [
+        "Eats a protein-rich lunch every day as part of his new nutrition plan — never skips lunch any longer",
+        "Only drinks two cups of coffee before noon — avoids caffeine after midday",
+        "Jogs outdoors along Lake Michigan when home — never uses hotel gyms while traveling",
+        "Does physical therapy exercises nightly before bed — skips them only when traveling overnight",
+        "Uses a standing desk in his home office — never sits for more than 30 minutes at a stretch"
+      ],
+      "social_relationships": [
+        "Hosts family dinner every Sunday — never schedules work events that conflict with this ritual",
+        "Calls his brother in Seattle monthly for personal updates — avoids discussing work unless his brother brings it up",
+        "Attends his younger child's soccer games every Saturday — never misses unless traveling for work",
+        "Arranges medical appointments for his mother exclusively on weekday mornings — avoids afternoons when possible",
+        "Schedules regular date nights with his wife every other Friday — never cancels except for emergencies"
+      ],
+      "leisure_hobbies": [
+        "Coaches youth soccer on weekends — never participates in adult leagues himself",
+        "Plans one hiking trip each quarter with his kids — never vacations in cities during school breaks",
+        "Reads business biographies during flights — avoids watching movies or playing games while traveling",
+        "Gardens with his children on Sunday afternoons — never outsources yardwork",
+        "Prefers exploring new coffee shops in downtown Chicago during spare time — avoids chain cafes"
+      ],
+      "daily_routines": [
+        "Starts every day by reviewing his calendar over coffee — never checks news headlines first",
+        "Preps healthy school lunches for his kids every weekday morning — never packs pre-made meals",
+        "Responds to work emails in three focused blocks: early morning, lunch, and late evening",
+        "Keeps personal and work phone numbers strictly separated — never mixes contacts between phones",
+        "Completes household errands only on Saturday mornings — avoids shopping or running errands on Sundays"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His wife's school district restructures its counseling department, resulting in her new assignment to an evening schedule with rotating late shifts several days a week.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Supervises homework and dinner solo on evenings when his wife works late — implements a screen-free hour for the kids during that time",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Plans quick, low-prep dinners for the family on his wife's late-shift days — prefers recipes kids can help with",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Schedules regular date nights with his wife every other Friday — never cancels except for emergencies"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Reschedules date nights to Saturday evenings when his wife has Friday shifts — may skip them if both have late weekend events",
+              "domain": "social_relationships"
+            },
+            "reason": "His wife's new evening schedule includes rotating late shifts on Fridays, making regular Friday date nights unreliable. To maintain their routine, he adapts by moving date nights to Saturdays when she is available, acknowledging occasional skips due to overlapping late weekend events."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, could use some advice. My wife's school district just assigned her to a bunch of evening shifts, so some weeks she's home really late. It's throwing our household routine for a loop. I'm ending up solo for dinner and homework with the kids a few nights now—which wasn't the case before. Any tips for keeping those nights manageable without just defaulting to pizza and TV?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough shift—especially since routines are what keep things humming with busy schedules. When you’re solo, do you have time for prep or are you juggling work calls too? And what’s the vibe: are the kids pretty independent, or do they need some structure on those nights?"
+        },
+        {
+          "role": "user",
+          "content": "Usually I’m off work by the time it starts, so it’s more about the energy and keeping things orderly. The kids are ok—my daughter’s independent with homework, my son needs help. We used to do those Friday date nights with my wife, but might have to shift that now. And honestly, I’d prefer not to just hand them tablets after dinner—even though it’s tempting."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—so Friday nights, which were date nights, are no longer a sure thing. It’s smart to think about alternatives. As for keeping things screen-free, you might try a family activity post-dinner—even simple stuff like a card game or a short walk. For dinner itself, any staples you all enjoy putting together, or is everyone picky?"
+        },
+        {
+          "role": "user",
+          "content": "We have a few go-tos, but when my wife works late, I lean toward quick dinners—stuff the kids can help prep, like tacos or sandwich nights. Nothing fancy, but keeps everyone busy and fed. As for date nights, we’re thinking Saturday evenings when my wife isn’t on shift, though sometimes one of us has a late weekend event. Just the reality now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—moving date nights to Saturdays to adjust for her shifts. Sounds like you’ve found a good rhythm with easy, kid-involved dinners. Have you tried setting up a routine for those evenings? Like, after homework and dinner, an hour dedicated to something together before winding down? Might help reinforce the no-screens goal without it feeling like a punishment."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually I’ve started implementing a screen-free hour when I’m solo with the kids. After dinner, we do something together—board games, reading, whatever works. It’s helped, though some nights it’s a struggle at first. Homework gets done, then we shift into the activity. It’s part of their routine now on mom’s late days."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach. With screen-free time built in and kid-friendly meal prep, you’re already ahead of most. Would you like suggestions for more meal ideas, or activities for those evenings? I also have tricks for keeping energy up after a draining work day if you ever need them."
+        },
+        {
+          "role": "user",
+          "content": "Meal ideas would be great—especially low-prep options, since planning gets tricky on those nights. We’ve been rotating tacos, scrambled eggs, and DIY flatbreads. Open to anything the kids can help with; keeps them engaged and gets dinner done faster."
+        },
+        {
+          "role": "assistant",
+          "content": "Sure thing. Other options you might like: build-your-own-burrito bowls, sheet pan chicken and veggies, mini pita pizzas where the kids add toppings, or simple stir-fry with frozen veggies and pre-cooked protein. All are fast and interactive. And if you ever need more activity ideas for screen-free hour, let me know."
+        },
+        {
+          "role": "user",
+          "content": "Sheet pan meals sound promising. I’ll ask the kids about pita pizzas too—that could be fun. Appreciate the help. Biggest shift has really been juggling solo evenings and shifting our old Friday rituals. But adapting, I guess."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—adapting is the name of the game with new schedules. You’re keeping key routines intact, just reshaping them for the current reality. If things evolve further and you need more strategies, I’m here to brainstorm. Good luck this week!"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Chronic lower back pain intensified unexpectedly, leading to a referral for an MRI and doctor's orders to avoid jogging and travel for at least six weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Schedules all meetings and work activities virtually to accommodate movement restrictions; avoids all in-person office or client visits until cleared by his doctor",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Allocates 30 minutes daily for gentle back care routines, including doctor-recommended stretches and heat therapy",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Jogs outdoors along Lake Michigan when home — never uses hotel gyms while traveling"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Replaces jogging outdoors with gentle indoor stretching and physician-approved exercises — refrains entirely from running or impact activities",
+              "domain": "health_body"
+            },
+            "reason": "Doctor's orders to avoid jogging due to intensified back pain and pending MRI require him to stop all running and high-impact activities. He must switch to safe, low-impact movement at home during recovery."
+          },
+          {
+            "from": {
+              "id": "pref_018",
+              "fact": "Reads business biographies during flights — avoids watching movies or playing games while traveling"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Reads business biographies and industry magazines at home during recovery — avoids travel media habits as he's not flying",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The temporary ban on travel (including flights) removes his typical in-transit reading routine. He adapts by allocating dedicated time at home for this reading habit."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_013",
+            "fact": "Attends his younger child's soccer games every Saturday — never misses unless traveling for work",
+            "domain": "social_relationships",
+            "reason": "With travel suspended due to his health, the circumstance under which he would miss soccer games (work trips) is not currently possible; this absence contingency no longer applies."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my back pain got way worse last week. Saw my doctor, and he wants me off my feet, no travel and NO jogging for at least six weeks—MRI scheduled next week. Honestly, I'm scrambling with how to manage work and family routines now that I'm stuck at home and can't do any real exercise. Got any advice on keeping things running smoothly while adapting to all this?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a tough break—especially with everything you juggle. Let's focus on what can be maintained or adapted. For work, are you planning to shift all meetings online, or are there standing obligations that need in-person presence? And for exercise, are there movements you've been cleared to do, or is it strictly rest?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, my doctor's pretty firm—no travel, no office visits, and definitely no client meetings in person. Everything's virtual until he gives the green light. As for exercise, I've been told to stick to gentle indoor stretches and anything he specifically approves. So I'm out for all running or high-impact stuff."
+        },
+        {
+          "role": "assistant",
+          "content": "Switching fully virtual will definitely change the dynamic with your team. Have you set up your home office for longer stretches—standing desk, ergonomic chair, that sort of thing? And for movement, do you have a routine for those gentle stretches yet, or need help building something that fits?"
+        },
+        {
+          "role": "user",
+          "content": "I do have a standing desk, and I'm pretty disciplined about not sitting too long. I'm starting to slot in 30 minutes a day for back care—doctor-recommended stretches and some heat therapy. It's pretty new though, so I'm still figuring out how to make it consistent."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach. Maybe pairing your back care routine with another daily habit could help with consistency—like after your morning dashboard review, or before evening emails. Is your schedule flexible enough for that, or are meetings likely to interrupt?"
+        },
+        {
+          "role": "user",
+          "content": "I'm keeping my usual practice of reviewing dashboards before emails, so there's a slot there. Meetings are virtual and still on Tuesdays and Thursdays, no change there. I think plugging the stretches in before late evening emails could work."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds good. Since your travel is paused, are there any in-person family or personal routines that will change? For example, how are you handling the kids’ activities or your usual weekend plans?"
+        },
+        {
+          "role": "user",
+          "content": "Well, with travel off, I won’t miss any of my younger kid’s Saturday soccer games—which used to happen only if I was on a trip. That’s not a concern right now, so that contingency’s dropped. I’ll be around for both coaching and spectating."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a silver lining, for sure! How about your reading or leisure habits—did you have routines tied to travel that might need adjusting now you’re home more?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I used to read business biographies during flights since I didn't watch movies or play games. Now, I'm finding time to read those and industry magazines at home during recovery instead. It's not quite the same, but I've set aside some blocks for it."
+        },
+        {
+          "role": "assistant",
+          "content": "Great adaptation. If you’d like, I can suggest ways to build those reading sessions into your daily rhythm, especially given your movement restrictions and extra time at home. Anything else feeling disrupted that hasn’t come up yet?"
+        },
+        {
+          "role": "user",
+          "content": "One thing: I'm having trouble staying focused with everything virtual now. I keep getting pulled into back-to-back meetings and the CRM rollout is still rough—extra training sessions, more resistance than I expected. Any thoughts on keeping my team engaged remotely, especially with the pressure from the new sales targets?"
+        },
+        {
+          "role": "assistant",
+          "content": "Remote engagement is tricky, especially amid big software transitions and target jumps. You might reinforce regular one-on-one coaching calls and add quick check-ins for motivation, rather than group feedback. Have you considered more structured virtual training or peer-led problem-solving sessions? That often helps turn resistance into buy-in."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, sticking with one-on-ones for feedback has helped. I avoid critiques in group meetings—makes people defensive. Maybe I can try some peer sharing for CRM tips; virtual workshops led by top performers might help. Thanks, these ideas are useful. Anything else I should keep in mind during this stretch?"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re covering your bases—pivoting routines, anchoring family time, and adapting work strategies. Just remember to prioritize your own recovery as much as you can! Since all your meetings and activities are virtual for now, you might schedule extra ‘white space’ between calls for back care or quick resets. Let me know if you'd like concrete scheduling templates or tools to help structure this phase."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Leadership announces a merger with an East Coast medical device firm; as part of restructuring, he is assigned to oversee sales in both Midwest and Northeast regions, expanding his team to 26 reps with new travel requirements and integration responsibilities.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Schedules integration check-in calls with Northeast sales reps every Monday morning — never substitutes these with email updates",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Maintains a travel journal documenting impressions from new Northeast cities — avoids posting updates to social media",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_031",
+              "fact": "Schedules all meetings and work activities virtually to accommodate movement restrictions; avoids all in-person office or client visits until cleared by his doctor"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Schedules frequent in-person meetings and client visits across Midwest and Northeast, balancing with virtual sessions for broader team management",
+              "domain": "work_habits"
+            },
+            "reason": "With merger-driven expansion and return to travel requirements in both regions, his recovery period is over and the business expects more face-to-face engagement for integration and team-building. The former all-virtual approach no longer fits his new responsibilities."
+          },
+          {
+            "from": {
+              "id": "pref_030",
+              "fact": "Reads business biographies and industry magazines at home during recovery — avoids travel media habits as he's not flying"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Reads business biographies and industry magazines exclusively on flights or in hotel lounges during work trips — rarely makes time for business reading at home now",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Expanded travel for the merged regions reinstates his old habit of business reading during flights and hotel downtime. The home-based recovery reading routine ceases with the return to frequent travel."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_019",
+            "fact": "Gardens with his children on Sunday afternoons — never outsources yardwork",
+            "domain": "leisure_hobbies",
+            "reason": "Greater travel frequency and integration duties mean Sunday afternoons are often spent on the road or preparing for the work week, so the circumstance for consistent gardening is lost for now."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So the merger finally happened. Leadership just told me I'll be overseeing both Midwest and Northeast sales teams—a total of 26 reps now. Travel's picking up again, integration calls with new folks, and a lot more pressure. I need help figuring out how to juggle these extra demands without burning out or dropping the ball with my existing team."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge shift—doubling your team and expanding to more states is no small feat. When it comes to keeping both regions aligned, are you leaning toward more virtual team check-ins, or does your company expect a lot of face-to-face meetings now?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, my all-virtual approach is out the window. The company expects more in-person meetings and client visits, especially during this integration phase. I’m trying to balance those with virtual sessions for larger team management across both regions, but in-person’s back for sure."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—mergers usually mean lots of travel and hands-on integration. Have you found a rhythm for splitting your time between face-to-face visits and remote coaching, or is it still a work in progress? Also, are there particular routines or habits you’re worried about losing with all this travel?"
+        },
+        {
+          "role": "user",
+          "content": "Still figuring out the split. One change—I now schedule integration check-in calls with the Northeast reps every Monday morning. Those are strictly mandatory, and I never substitute them with email updates. It’s a new habit since the merger; keeps everyone on the same page. As for routines, I’m definitely worried about losing my Sunday gardening time with my kids. Greater travel means I’m often away or prepping for the week, so that’s pretty much dropped for now."
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you—that weekend downtime is important, but big transitions usually crowd it out. With Monday morning integration calls now locked in, have you blocked out time for Midwest team check-ins, or do you handle those differently?"
+        },
+        {
+          "role": "user",
+          "content": "I keep Midwest check-ins to Tuesday and Thursday video calls—they’re still on the schedule, and never moved to Mondays or Fridays. Performance feedback stays one-on-one. Sundays are now reserved for family dinner; no work events cross into that."
+        },
+        {
+          "role": "assistant",
+          "content": "Sticking to your established rhythms will definitely help maintain sanity. With travel ramping back up, how are you approaching your downtime? Are you able to carve out moments to decompress while on the road, or is it all business all the time?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, travel is all business, but I did revive an old habit—I read business biographies and industry magazines exclusively on flights or in hotel lounges now. When I was at home during recovery, I read at home, but I rarely do that anymore. Also, I started keeping a travel journal about impressions from new Northeast cities. I avoid posting updates to social media; it’s private, just for reflection."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach—business reading on the go can help make the most of otherwise idle time, and journaling gives space to process the change without public pressure. For travel, are you able to maintain your health routines, like jogging or physical therapy, or are those getting squeezed out?"
+        },
+        {
+          "role": "user",
+          "content": "Jogging outdoors along Lake Michigan is still my preference when I’m home—I never use hotel gyms while traveling. I try to stick to my nutrition plan and PT exercises nightly if I'm not overnighting somewhere. Travel makes it tricky, but I keep at it."
+        },
+        {
+          "role": "assistant",
+          "content": "Impressive commitment, given your schedule. With the expanded responsibilities and less home time, are there any routines you’d like to reclaim or new ones you’re hoping to establish to keep stress in check?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I’d love to bring back Sunday afternoon gardening with my kids, but it’s not realistic right now. Maybe once things settle down. For now, I’m just focusing on keeping family dinners and attending my younger son’s soccer games when I’m home. The travel journal helps, too—it’s a new routine that gives me some perspective amid the chaos."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a thoughtful balance. If the integration demands ease up, you might find space for gardening again. Until then, keeping the family dinner ritual and staying consistent with journals and health habits should help anchor you. Do you need help setting boundaries with your expanded team or are you comfortable managing those expectations?"
+        },
+        {
+          "role": "user",
+          "content": "I’m pretty clear about boundaries—feedback stays one-on-one, CRM reports are always due Sunday night, and no work texts after 8pm. The new stuff is the integration check-ins Mondays and the travel journal. Thanks for helping me talk this through—I think I just needed to confirm I’ve got a plan for this bigger role."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His aging mother's health declines following a minor stroke, requiring daily supervision and assistance with medication, meals, and mobility around the house.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Prepares his mother's medication and breakfast every morning before work — prioritizes this over personal routines such as responding to emails early",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Coordinates a daily caregiving schedule with his wife and children, assigning specific tasks to ensure his mother is never left unattended during work hours",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_025",
+              "fact": "Completes household errands only on Saturday mornings — avoids shopping or running errands on Sundays"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Spreads household errands across multiple weekday evenings and weekends, depending on family caregiving needs — no longer restricts errands to Saturday mornings",
+              "domain": "daily_routines"
+            },
+            "reason": "His mother's need for daily supervision and mobility assistance makes his weekends less predictable. It's no longer possible to strictly reserve Saturday mornings for errands; he must fit these tasks around shifting caregiving and medical responsibilities."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_014",
+            "fact": "Arranges medical appointments for his mother exclusively on weekday mornings — avoids afternoons when possible",
+            "domain": "social_relationships",
+            "reason": "His mother now requires daily supervision and assistance for both medical needs and daily living tasks; restricting appointments to weekday mornings is no longer feasible with frequent, possibly urgent care needs and greater scheduling flexibility required."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, could use some advice. My mom had a minor stroke last week—she’s recovering, but now needs daily help around the house. I’m trying to figure out how to keep my work and family routines from falling apart. Where would you start if you suddenly had to add caregiving to an already packed schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "I’m really sorry to hear about your mom. That’s a big shift. Adding caregiving can be overwhelming, especially with your job and family. The first step is typically to get clarity on what tasks or blocks of time are most unpredictable with her new needs. Are there certain routines or commitments you’re worried about disrupting most—is it mornings, evenings, travel, or specific work blocks?"
+        },
+        {
+          "role": "user",
+          "content": "Mornings are definitely harder—I’m prepping her medication and breakfast now before anything else. That pretty much takes priority over my usual habits, like checking email early or reviewing sales dashboards. My wife and kids are also pitching in, but we had to create a daily schedule to make sure my mom isn’t alone while I’m working. I just want to keep some structure, but I’m not sure how to fit everything."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense that mornings are more crowded now. Starting the day with caregiving probably shifts your personal routines. It’s good you’re coordinating a daily schedule with your family—that delegation helps avoid burnout. Has this affected your usual blocks for work focus, like your morning dashboard reviews or how you handle emails? Or are those just later now?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, dashboard reviews are definitely pushed back. I still try to block time in the morning, but now emails and work stuff wait until after my mom’s settled. I’ll admit, responding to work early isn’t realistic for me anymore. Some days I barely get a look at the numbers before lunch."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough adjustment but necessary under the circumstances. As you look to maintain structure, are there routines that have stayed stable—like your team coaching sessions, sales report reviews, or your physical therapy habits? Or are those also needing to shift with the new caregiving demands?"
+        },
+        {
+          "role": "user",
+          "content": "Team sessions are holding up—I haven’t moved those. Physical therapy exercises are mostly sticking except nights I’m away or super wiped out. What’s really changed is household errands. I used to do all grocery shopping, pharmacy runs, and chores Saturday mornings, but now weekends are unpredictable. I run errands whenever I can—weekdays, evenings, even Sundays if needed. That old routine’s out the window."
+        },
+        {
+          "role": "assistant",
+          "content": "Totally understandable—when caregiving needs can pop up anytime, having a fixed errand window is tough. Spreading errands across weekdays and weekends gives more flexibility. Have you considered automating or outsourcing anything—like pharmacy delivery or grocery pickup—to reduce that time, or do you prefer handling those yourself?"
+        },
+        {
+          "role": "user",
+          "content": "Good question. I actually like running errands myself—it gives me a mental break outside the house, so I’m not looking to outsource. I’m just adjusting when they happen. The other wrinkle is medical appointments for my mom. I used to book them only weekday mornings, but now that’s not realistic. We need to work with whatever time slots are available, even afternoons, since her needs have gotten more urgent."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—rigid scheduling won’t work with unpredictable health changes. Is the family schedule you set up flexible enough to cover sudden appointments or changes, or have you run into moments where no one’s available for your mom?"
+        },
+        {
+          "role": "user",
+          "content": "We’re making it as flexible as possible. We lay out each week together, assigning who’s responsible for check-ins, meals, and watching her during my work calls. If a last-minute appointment comes up, we draft someone or rearrange work if possible. It’s not perfect, but so far, she’s always had someone with her."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like your coordination is strong and everyone’s pitching in. As you balance work, caregiving, and your own health, are there routines you want to protect—maybe your jogging or family dinners? Or is the focus mainly on keeping things afloat right now?"
+        },
+        {
+          "role": "user",
+          "content": "Jogging is hit-or-miss these days but I try not to give that up completely. Still aiming for family dinner Sundays, unless there’s a medical emergency. Right now, just keeping each piece somewhat functional feels like a win. But if you have tips for making the new routines stick without losing my mind, I’m all ears."
+        },
+        {
+          "role": "assistant",
+          "content": "With so many moving parts, even small wins count. One helpful thing: keep a shared calendar and checklist for caregiving duties so everyone sees and can swap tasks as needed. Consider setting aside even 10 minutes daily to step outside alone—whether for errands, a jog, or simply fresh air. And build in regular check-ins with your wife and kids to adjust the schedule before things fall through. Would that work for you, or do you already have those tools in place?"
+        },
+        {
+          "role": "user",
+          "content": "We started a family caregiving calendar in Google—everyone has access so we can trade tasks or jump in when someone’s swamped. Scheduling check-ins is a good idea; right now, we discuss things informally but maybe a weekly recap would help. The solo outside time is tougher some days but makes a difference when I get it. Thanks—these suggestions actually fit our new reality."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Company introduces a hybrid work mandate requiring all regional directors, including him, to be onsite at the Chicago headquarters three days a week for cross-departmental collaboration, ending his previous remote work flexibility.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Commutes to Chicago headquarters by commuter rail on onsite days — prefers listening to industry podcasts rather than answering emails during the ride",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Participates in cross-department working lunches at HQ twice a week, often sacrificing his preferred solo lunch for collaborative meals",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Schedules team video coaching sessions strictly on Tuesdays and Thursdays — avoids meetings on Mondays and Fridays"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Holds team video coaching sessions only on remote workdays — conducts in-person team meetings at headquarters on required onsite days, no longer restricting to Tuesdays/Thursdays",
+              "domain": "work_habits"
+            },
+            "reason": "The hybrid work mandate compels him to be in the office three days weekly, disrupting his old virtual-first, day-specific meeting pattern. He now organizes virtual coaching only when remote and leverages in-person days for team collaboration."
+          },
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Uses a standing desk in his home office — never sits for more than 30 minutes at a stretch"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Alternates between sitting and standing workstations at headquarters but must remain seated during most in-person meetings — at home still uses standing desk exclusively",
+              "domain": "health_body"
+            },
+            "reason": "Spending three days a week at the office removes continuous access to his home standing desk and introduces long seated meetings, forcing a compromise in his work posture routine."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I guess it's official—starting this week, I've got to haul myself into the Chicago HQ three days a week. Not thrilled, and it's throwing off both my workflow and my coaching habits. In the past, I could set my week up for video calls remotely and keep a solid routine at home. Any ideas on how to keep my coaching effective now that I can't stick to my old Tuesday/Thursday video session schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, especially after being used to a flexible remote setup. For coaching, one angle is to split your approach: hold virtual sessions on your remote days, then use your time onsite for in-person team meetings or group workshops. Are you able to define which days you're remote versus onsite, or is HQ scheduling pretty rigid?"
+        },
+        {
+          "role": "user",
+          "content": "It’s set by the company: three mandatory onsite days, but I still get two remote days. So I’ve started holding team video coaching on remote days only, and using the office days for in-person meetings—no more hard Tuesday/Thursday rule. It’s forced me to rethink how I deliver feedback, since I used to avoid group critiques and kept everything to one-on-ones online. Now I’m trying to make the most of face time in HQ, but group dynamics are way different."
+        },
+        {
+          "role": "assistant",
+          "content": "Good move—leveraging virtual coaching for deeper one-on-ones, and in-person for broader team discussions. The group dynamic can definitely make feedback trickier. Are you finding it easier or harder to track progress with the CRM, now that some data is discussed live versus virtually?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, tracking CRM updates is tougher. I used to review dashboards first thing each morning at my home standing desk, break it all down before responding to emails. Now, at HQ, I’m stuck alternating between sitting and standing stations, and I have to sit through most meetings. At home, I still use the standing desk exclusively, but I miss having full control over my posture during the workday."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds frustrating, especially with your back issues. Have you asked if you could get a standing desk for your HQ office, or is it not an option? And does the in-office setup affect your physical therapy or evening routine at all?"
+        },
+        {
+          "role": "user",
+          "content": "Standing desks are limited in HQ—rotating stations at best, and most meetings require sitting. It hasn’t affected my PT routine at home, but my days are just more rigid, so I’m a bit sore on office days. Another thing: my commute’s changed—I rail into the city now. I don't work during the ride; I prefer industry podcasts rather than answering emails. It’s my only decompression before the office chaos."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart to protect that commute time—it’s easy to let email take over but podcasts keep you in the know without the stress. Does the shift to commuting eat into your morning routine, or have you found a way to prep kids’ lunches and review your calendar before heading out?"
+        },
+        {
+          "role": "user",
+          "content": "It’s tighter, but I still manage to prep healthy lunches for my kids and review my calendar over coffee before I leave. The morning ritual holds, but I don’t check news headlines first, just stick to my own priorities. The commute’s a new block in my schedule, so I’m adjusting. Another big change—I now take part in cross-department working lunches at HQ twice a week. I used to enjoy solo, protein-rich lunches, but sometimes I have to sacrifice that for collaboration."
+        },
+        {
+          "role": "assistant",
+          "content": "I can see how working lunches might be useful for interdepartmental visibility, but it's a trade-off for personal downtime. Are you able to balance nutrition on those days, or do you worry you'll slide back to old habits with all the social meals?"
+        },
+        {
+          "role": "user",
+          "content": "I stick to my nutrition plan as best I can—even with working lunches, I opt for protein-rich menu items. But honestly, I miss solo lunches where I could decompress or get back on track. Collaborative meals are helpful for relationships, just not ideal for focus or my new plan. That’s the gist: forced in-office collaboration twice a week, plus everything else I’ve had to adapt."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve made every reasonable adjustment given the new mandate. Given all these changes—from shifting coaching sessions, to new commuting habits, alternating workstations, and collaborative lunches—is there anything that’s still feeling unsustainable or out of sync for you?"
+        },
+        {
+          "role": "user",
+          "content": "The biggest challenge has been maintaining my old work habits and health routines. The travel and hybrid schedule push my limits, but I've figured out how to fit most of it in. I’m monitoring how these new office meals and increased sitting time affect my back and energy. If things worsen, I might push for more ergonomic solutions or rearrange some meetings, but for now, I'm adapting."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid plan—staying vigilant and advocating for your well-being as things progress. If you need help tracking habits or want suggestions for ergonomic tools, let me know. Otherwise, sounds like you’re on top of the adaptation game, despite all the disruptions. Let me know if anything else comes up or if you need to troubleshoot further down the line."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Diagnosed with mild sleep apnea after a sleep study prompted by persistent fatigue and elevated blood pressure; doctor prescribes nightly use of a CPAP machine and recommends a strict, earlier bedtime routine.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Uses a CPAP machine nightly as prescribed — never travels without it, even for short work trips",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Establishes a wind-down routine every night: sets phone aside by 9pm, avoids screens, and reads fiction for 20 minutes before bedtime",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Responds to work emails in three focused blocks: early morning, lunch, and late evening"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Responds to work emails only in early morning and midday blocks — avoids late evening emails to maintain the doctor-recommended earlier bedtime routine",
+              "domain": "daily_routines"
+            },
+            "reason": "The sleep apnea diagnosis and doctor's guidance to implement a strict, earlier bedtime mean he must eliminate late evening work email sessions to prioritize sleep hygiene."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So—big change on the health front. I finally did a sleep study after my wife kept mentioning I was snoring and because my blood pressure's been a mess. Turns out I have mild sleep apnea. Doctor’s got me using a CPAP every night and put me on an earlier bedtime routine. Honestly, I feel pretty lost fitting all this in with work and family. Got any advice on how to juggle this? Especially with my schedule and coaching travel."
+        },
+        {
+          "role": "assistant",
+          "content": "That's quite an adjustment, but good on you for following through with the study. Sleep apnea can really disrupt energy levels, so the focus on better sleep is important. Can you walk me through what your evenings look like now? Are there specific routines you're struggling to maintain, or is it mainly the timing?"
+        },
+        {
+          "role": "user",
+          "content": "Evenings are rough. Before, I would knock out a round of work emails after the kids went down, usually around 9 or later. Now, I'm supposed to wind down earlier—doctor said screens off by 9pm. I started setting my phone aside and reading fiction for 20 minutes before bed, just to shut my brain off, but that means my last email window is gone. Not sure how I’m going to stay caught up with my reps given the earlier cutoff."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, especially since late evening used to be part of your workflow. For staying connected with your team, maybe you could move your email blocks to earlier in the day? Would it be possible to use your lunch hour for batch responses, or is that usually spoken for?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’m already using mornings and midday for emails now. Lunch is still my protein break—part of the nutrition plan for my blood pressure. I had to drop the late evening block entirely to keep up with the bedtime routine. Swapping things around has helped, but it means more urgent issues get pushed to the next day sometimes. Can’t say I love that, but I need to stick to this earlier wind-down if I want any improvement on the sleep front."
+        },
+        {
+          "role": "assistant",
+          "content": "Adjusting priorities is definitely a challenge, but your health has to come first. Do your reps know about the new boundaries? You could let them know to flag anything urgent earlier in the day, so it doesn’t get missed overnight. Are there other parts of your evening routine that’ve changed since adding the CPAP or the strict bedtime?"
+        },
+        {
+          "role": "user",
+          "content": "So, CPAP is non-negotiable now—doctor stressed I can't miss nights. I actually travel a lot for work, but I’m bringing it everywhere, even for short trips. I used to just bring my pillow, but my carry-on ritual has changed. And no screens after 9pm—even when away from home. I try to read something light, not work-related, before bed, just to stick to the routine. It’s weird, but I’m getting used to it."
+        },
+        {
+          "role": "assistant",
+          "content": "Bringing the CPAP on every trip will help keep things consistent. Fiction at night sounds like a good wind-down, especially with your day being so packed. If sticking to the bedtime is working, are you noticing any changes yet—more energy, better focus—or is it too early to tell?"
+        },
+        {
+          "role": "user",
+          "content": "Hard to tell so far. I’m only a week in, so I still feel tired, but my wife says the snoring’s way better. Haven’t managed to squeeze in extra sleep hours—work and soccer coaching still cut into the evenings. But reading before bed does help me relax. The bigger challenge is just not slipping back into old habits if there’s a crisis or big deadline. I’m committed to keeping screens off after 9pm, though—even flagged emails from senior leadership aren’t getting a response until morning unless it’s a true emergency."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve got solid boundaries in place, and it’s good that family notices a difference already. You’re prioritizing well. For emergencies, maybe you can set up a system for your team and leadership that clarifies what qualifies as top-priority after hours. That way, you’re not tempted to react to everything. Anything else about your routine that feels out of sync since the diagnosis?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the hardest change is just restructuring my evenings. Cutting out late email blocks and screens means I’m missing some things, but I’m not willing to compromise on the bedtime and wind-down now. The CPAP’s coming wherever I go—no travel exceptions. So far, maintaining the routine has been doable, though it took some explaining to my wife and kids. Thanks for talking this through—I just needed to bounce ideas and make sure I’m not overdoing the adjustments."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re making smart changes given the circumstances, and it’s totally normal for routines to feel awkward at first. If you stick with these boundaries, your body should adjust and you’ll likely feel the benefits over time. If you need help juggling travel or team workflows, let me know—I’m happy to help you fine-tune things as you go. Let me know how it goes!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Due to underperformance in Midwest sales, the executive team reduces his discretionary budget for team incentives and client entertainment by 40%, restricting his ability to offer bonuses and host events for his sales reps.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_048",
+            "fact": "Chooses handwritten recognition notes or public praise on team calls as his primary method for acknowledging high performance, replacing monetary incentives and hosted dinners",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_033",
+              "fact": "Schedules frequent in-person meetings and client visits across Midwest and Northeast, balancing with virtual sessions for broader team management"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Minimizes in-person client entertainment and team events — prioritizes virtual check-ins and targeted 1:1 meetings due to stringent discretionary budget limits",
+              "domain": "work_habits"
+            },
+            "reason": "The 40% cut to his discretionary budget strictly limits travel and spending on team incentives and hospitality. He must shift his management style away from broad in-person gatherings and reduce physical visits, focusing instead on virtual engagement and essential in-person meetings."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, the exec team officially cut my discretionary budget by nearly half this week—thanks to underperformance in Midwest sales. Now I'm scrambling to figure out how to motivate the reps without client dinners or bonus incentives. I need some fresh ideas for team engagement, preferably virtual. Got anything that actually works?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough shift, especially when rewards and face-to-face time are a big part of building momentum. Have you experimented with virtual recognition or contest formats for the team? Things like spot awards during calls, peer shout-outs, or gamified leaderboard tracking can sometimes carry weight even without the usual incentives."
+        },
+        {
+          "role": "user",
+          "content": "I've tried gamifying sales dashboards, but it's not really catching on—my team tends to respond best to tangible rewards or experiences. Before, I’d schedule in-person events and client dinners to celebrate wins, but that's basically off the table now. I’m moving toward more virtual check-ins and targeted 1:1 meetings since the budget limits make broad gatherings impossible. Are there ways to foster connection without the old incentives?"
+        },
+        {
+          "role": "assistant",
+          "content": "One way to build connection is through public praise—calling out achievements during team calls or sharing quick success stories in your weekly updates. Have you considered recognition methods that feel personal, like handwritten notes mailed to reps who've hit a milestone or made a big client push? Sometimes these gestures stand out more than group incentives and cost very little. Would your team appreciate that kind of approach?"
+        },
+        {
+          "role": "user",
+          "content": "That’s funny you mention handwritten notes—I actually started doing that two weeks ago for my top performers and it’s gotten a better response than I expected. I make a point to recognize them during our Thursday team calls too. It’s a big shift for me from relying on monetary incentives and hosted dinners, but it seems to resonate. Still, I worry it’s not enough to drive real performance boosts. Any other low-cost but meaningful tactics?"
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear the handwritten notes are working—those can really stick with people. You could add layers of informal, peer-driven recognition: set aside five minutes at the start of team calls for reps to shout out each other’s wins, big or small. Another option is ‘best practice’ spotlights, inviting reps to share what’s working for them in short segments. They get visibility and feel invested, even without a financial reward. Would either of those fit your new routine?"
+        },
+        {
+          "role": "user",
+          "content": "Both ideas could work—especially since I need to minimize costly in-person entertainment and team events. I’m prioritizing virtual engagement and only scheduling essential in-person meetings going forward. Used to fly in the Midwest and Northeast for broader team gatherings, but now it’s just targeted, and the rest happens online. The team’s pretty spread out, so regular peer spotlights could help keep them connected."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—moving to virtual formats can actually help level the playing field for a scattered team, since everyone gets the same ‘seat at the table.’ Do you foresee any resistance from reps who are used to those in-person perks? If so, how are you preparing to navigate that change in expectations?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely some resistance—especially from the folks who thrived on the social side of group events. I’ve been transparent about the budget cut and why we’re shifting to virtual engagement, but it’s tough for those who were motivated by dinner celebrations or extra bonuses. That's why I’m putting more effort into personalized recognition, and letting everyone know that high performance is acknowledged even if it looks different now."
+        },
+        {
+          "role": "assistant",
+          "content": "Transparency goes a long way. Since you’re focusing on tailored praise and essential meetings, it helps to remind the team that the new structure is temporary and might evolve. Would you be open to occasional virtual social hours or check-ins—just for connection, not sales talk? Sometimes even a half-hour each month can keep morale steady."
+        },
+        {
+          "role": "user",
+          "content": "I could try a social hour, though it’ll have to be virtual. No more frequent in-person gatherings, even for casual connection—it just doesn’t fit the budget constraints anymore. I’ll prioritize a monthly virtual hangout, keep it informal. Thanks for helping me pivot—this is all pretty new territory."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re adapting well given the circumstances, and your openness to new approaches will show the team it’s not just about budgets—it’s about commitment. Let me know how the virtual hangouts go, and if you need more ideas for keeping engagement high, just reach out!"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The company rolls out a new initiative requiring all Regional Sales Directors to participate in weekly cross-region strategy workshops every Monday morning, with mandatory leadership training sessions focused on merger integration for the next four months.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Actively participates in weekly leadership training sessions for merger integration — reviews all assigned materials on Sunday evenings to prepare for each Monday workshop",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Starts each Monday earlier than usual to accommodate pre-workshop preparation, forgoing his typical 30-minute dashboard review in favor of briefing on integration topics",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_035",
+              "fact": "Schedules integration check-in calls with Northeast sales reps every Monday morning — never substitutes these with email updates"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Now participates in mandatory cross-region strategy workshops every Monday morning — reschedules Northeast check-in calls to Wednesdays and supplements with as-needed asynchronous updates",
+              "domain": "work_habits"
+            },
+            "reason": "The new cross-region strategy workshops on Monday mornings directly conflict with his standing Northeast check-in calls. To comply with the corporate mandate, he must shift his regular team check-ins to a new time slot and use asynchronous updates to fill gaps."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So our company just added these Monday morning cross-region strategy workshops for all Regional Sales Directors, plus weekly leadership training on merger integration. I'm barely wrapping my head around the logistics—my usual coaching rhythm is getting blown up. I could really use some ideas on how to keep my team connected and productive when my Monday calendar is jammed now."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a heavy new layer—especially on top of your regular workflow. How much of your team routine happened on Mondays before this change? Are there specific touchpoints you’re worried about losing, or is it the general weekly momentum?"
+        },
+        {
+          "role": "user",
+          "content": "Mondays used to be my slot for Northeast check-in calls—never substituted those with email updates. But now the workshops overlap completely. I’ve had to move those calls to Wednesday mornings and supplement with as-needed asynchronous updates. I’m worried people might drift or miss context without that early-week touchpoint."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s tricky—midweek changes the tone, and async updates don’t always land with the same impact. Are you seeing any drop-off in engagement since moving the check-ins, or is it too early to tell? Maybe there’s a way to reinforce clarity with a shared dashboard or summary?"
+        },
+        {
+          "role": "user",
+          "content": "It's early, but a couple reps have already flagged confusion about priorities—especially with the new CRM software still in rollout and the 20% sales target bump. I used to start Mondays with a quiet 30-minute dashboard review for my own clarity, but now I start the day earlier and prep integration materials for those workshops instead. My reviews get pushed off. If I try to squeeze them in, I'm scrambling before the meeting."
+        },
+        {
+          "role": "assistant",
+          "content": "So your usual Monday review window is gone, and your week starts with merger materials? Have you thought about carving out another dashboard review slot—maybe Wednesday right before the Northeast call, as a warm-up? Or batch analytics review on Sunday night along with any integration prep?"
+        },
+        {
+          "role": "user",
+          "content": "Sunday evenings are now reserved for reviewing all the assigned materials for the merger integration training. If I added dashboards there, I’d be up late and might miss prepping healthy lunches for the kids Monday morning. Wednesday might work, though. I could do a quick dashboard check right before my coaching call, since that’s the new slot."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid pivot—combining dashboard review with the new Wednesday coaching window. It keeps your hands on the numbers and makes the call more actionable. Are you able to give your usual one-on-one feedback in these new slots, or does the group dynamic change? Also, has anything in your Sunday routine shifted with the merger integration workload?"
+        },
+        {
+          "role": "user",
+          "content": "I still keep feedback one-on-one—never do critiques during group calls. As for Sundays, dinner is still family-only, no work events allowed. But after that I dive right into integration materials now. It’s the only way to prep for those workshops, since Monday starts earlier than before and I can’t do my normal dashboard review over coffee."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—sounds like you’re managing overlapping demands pretty carefully. With everything condensed into Sunday evening and Monday morning, how’s your energy holding up at the start of the week? Anything you wish you could shift or automate to create breathing space?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the earlier Monday start throws me off. I’m used to a slower ramp, reviewing my calendar and dashboards with coffee. Now it’s straight into integration briefing. I haven’t found much to automate—just rescheduling Northeast calls and leaning on async for status updates. If you have tips on maintaining clarity for my reps between these bits, I'd take them."
+        },
+        {
+          "role": "assistant",
+          "content": "Given the rhythm shift, it might help to create a recurring weekly summary—either Friday before sign-off or Sunday afternoon—to highlight changing priorities and prep your reps for the coming week. Since you’re doing merger materials Sunday evening, the summary could drop earlier, freeing Monday for workshop prep. Would your team respond well to a brief video or bullet-point email?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, a concise Friday summary might work. Keeps Monday free for integration prep, and avoids interfering with Sunday dinner or my merger materials review. My team usually prefers bullet-point emails for clarity, so I’ll try that approach."
+        },
+        {
+          "role": "assistant",
+          "content": "Great plan. That gives your reps early clarity and preserves your Sunday and Monday routines. As things ramp up with the merger integration, keep an eye on team engagement mid-week, since the touchpoints have shifted. If you need to supplement with async check-ins or find ways to make Wednesday’s call more robust, let me know and we can brainstorm structure."
+        },
+        {
+          "role": "user",
+          "content": "Will do—thanks for the help! I think I have the new routines mapped out. If anything needs tweaking as we get deeper into the integration sessions, I’ll circle back."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His brother in Seattle announces his recent engagement and invites the entire family to serve as part of the wedding party, requiring significant travel, planning, and several family commitments over the coming months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Participates actively in family group chats and email threads to coordinate wedding-related travel, attire, and roles — gives priority to these over leisure communications until the wedding is complete",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Reserves Saturdays for wedding party rehearsals and planning, temporarily suspending youth soccer coaching when family obligations overlap",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Calls his brother in Seattle monthly for personal updates — avoids discussing work unless his brother brings it up"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Initiates weekly video calls with his brother in Seattle to coordinate wedding planning and family logistics — discussions now directly involve schedules, travel, and shared responsibilities",
+              "domain": "social_relationships"
+            },
+            "reason": "His brother's engagement and the family's role in the wedding party introduces new obligations requiring frequent contact. Calls move from casual monthly check-ins to regular, purpose-driven interactions involving logistical planning."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_036",
+            "fact": "Maintains a travel journal documenting impressions from new Northeast cities — avoids posting updates to social media",
+            "domain": "leisure_hobbies",
+            "reason": "His upcoming travel is not business-related and will focus on family events in Seattle, not Northeast cities; the context for his regional business travel journal no longer exists during this period."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, my brother in Seattle just got engaged and asked the whole family to be in the wedding party. It’s going to be a big deal, and I’m already starting to get emails and group chats with tasks to help plan the wedding—plus travel. I’m juggling work, family, and all this new wedding stuff. Can you help me figure out a reasonable way to stay ahead of all these commitments without dropping the ball anywhere?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on your brother’s engagement! Sounds like your plate just got a lot fuller. What’s the biggest challenge right now—coordinating the travel, keeping up with all the group communications, or fitting new planning obligations into your schedule?"
+        },
+        {
+          "role": "user",
+          "content": "At the moment, it’s the family logistics. There are weekly emails with tasks, and a group chat that’s going constantly about attire, flights, hotels, and rehearsal scheduling. I have a routine for work and family, but this is different—everyone wants fast responses, and I don’t want to be the bottleneck. I used to only call my brother about once a month, but now we’re on video calls every week hashing it all out. It’s purposeful, not just catching up."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s quite a shift—from casual check-ins to frequent, focused planning calls. Are you finding it hard to prioritize these wedding communications over other tasks, or have you made room by adjusting your typical routine?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ve started giving priority to anything wedding-related—emails and group chat messages—over things like catching up with friends or my usual leisure talks. It’s temporary, but that’s the reality until the wedding wraps up. I can’t afford to miss a deadline or hold things up, since my brother is really counting on me."
+        },
+        {
+          "role": "assistant",
+          "content": "Good plan to give wedding logistics priority for now. How are you fitting the weekly planning calls and active group chats into your work and family blocks? Are they cutting into specific routines, like your coaching sessions or family dinner?"
+        },
+        {
+          "role": "user",
+          "content": "So far, I’m keeping my Tuesday/Thursday coaching sessions intact. But Saturdays are getting tricky—I usually coach youth soccer for my youngest, but I’ve started reserving Saturdays for rehearsal events and planning sessions when family obligations overlap. I let the soccer league know I might have to miss some games this spring. Not ideal, but it’s necessary for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—temporarily adjusting your Saturday commitments for rehearsal and planning fits the wedding timeline. Are you also planning to document your Seattle trips for personal records, like you do with your Northeast business travels? Or is that something you’ll approach differently since this is a family-focused trip?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I’m not keeping my travel journal this time. I usually document impressions from new Northeast cities after business trips, but this travel isn’t work-related, and it’s going to be all about the wedding and family, not regional business notes. So I’ve dropped that habit for now—no journal, no updates to social media while I’m in Seattle."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—skipping the business travel journal makes sense given the family focus. To help stay organized, would you like suggestions for managing the group chats and email threads efficiently, or help with blocking out travel dates and rehearsals in your calendar?"
+        },
+        {
+          "role": "user",
+          "content": "The calendar part is most urgent—I need a system to avoid double-booking, since wedding rehearsals and planning calls are piling up. My weekdays are already packed, so Saturdays and evenings are in play. What’s a flexible way to block these out so I don’t miss a work or family obligation, or end up overcommitting?"
+        },
+        {
+          "role": "assistant",
+          "content": "One option is to color-code all wedding-related commitments in your calendar, marking the Saturday slots and weeknight planning calls distinctly. You could also set up recurring reminders for the weekly video calls with your brother and rehearsal events. Is your current calendar digital—like Google or Outlook—or do you prefer physical planners?"
+        },
+        {
+          "role": "user",
+          "content": "I use Google Calendar for everything. I’ve already started color-coding, but I think I need recurring event reminders for the weekly calls, given this new routine of planning with my brother. And for Saturday rehearsals, I’ll block off those times in advance—even if they conflict with my soccer coaching, so I remember to notify the team early."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach—recurring reminders and color-coded blocks will give you clarity. Have you set any ground rules with your family for managing everyone’s role and responsibilities? Sometimes a shared calendar or group task list can prevent confusion and last-minute changes."
+        },
+        {
+          "role": "user",
+          "content": "We’re working on a shared Google Sheet for travel, attire, and roles—everyone’s updating it weekly. With the group chat, I check it early morning or at lunch, right after responding to work emails. And I’m careful to keep the wedding and family comms separate from work, so nothing slips through the cracks."
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent strategy on keeping channels separate and checking at set times. Sounds like you’re adapting quickly and thoughtfully to the new demands. Let me know if you need templates for scheduling, or workflows for handling overlapping commitments as you get closer to the wedding."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After multiple follow-up appointments, his doctor diagnoses him with early-stage hypertension, prescribing daily medication and mandating consistent dietary tracking and moderation of salt and processed foods.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Logs every meal and snack in a mobile health app immediately after consumption — never relies on memory or handwritten journals",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_058",
+            "fact": "Reviews sodium content and ingredient lists for packaged foods before purchase — refuses to buy anything without clear nutrition information",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_020",
+              "fact": "Prefers exploring new coffee shops in downtown Chicago during spare time — avoids chain cafes"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Shifts coffee shop visits to tea-focused cafes in downtown Chicago during spare time — avoids coffee-heavy venues and chain cafes",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The hypertension diagnosis and medical advice to moderate caffeine intake means he must avoid frequent coffee consumption, especially outside of his controlled two-cup window. He now chooses tea-specific venues to avoid temptation and align with his new restrictions."
+          },
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Eats a protein-rich lunch every day as part of his new nutrition plan — never skips lunch any longer"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Eats a low-sodium, protein-rich lunch every day — goes out of his way to avoid processed meats, salty snacks, and high-sodium menu items",
+              "domain": "health_body"
+            },
+            "reason": "The hypertension diagnosis and dietary tracking mandate require stricter avoidance of sodium and processed foods. He now specifically screens lunch options for sodium levels, not just protein content."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, I finally got the official hypertension diagnosis last week. The doctor put me on daily meds, and now I’ve got to watch sodium, track what I eat, and basically overhaul lunchtime and the whole caffeine situation. It’s a lot, especially with the schedule. Any tips for keeping this manageable—especially on busy workdays?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment, and it sounds like your work and travel routines could complicate things. When it comes to meal tracking, are you already logging your meals somewhere, or is that a new process you’re looking to start?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I started using a mobile health app. I log every meal and snack right after I eat—it’s easier than relying on memory or trying to write things down later. But lunch is still tricky: half the time I’m choosing between the hospital café or sales rep recommendations, and the sodium content is a nightmare. How do people screen for sodium but still get enough protein?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart to log right away, especially with your travel and varied routine. For protein with low sodium, you might want to focus on grilled chicken, salmon, or tofu dishes—avoiding processed meats, sauces, and dressings. Are hospital or office cafés good at listing sodium content, or do you need to rely on packaged or labeled items?"
+        },
+        {
+          "role": "user",
+          "content": "I actually go out of my way now to check sodium on ingredient lists for anything packaged, and I refuse to buy stuff without clear nutrition info. At cafés, it’s tougher—sometimes they have nutrition panels, sometimes not. Processed meats and salty snacks are out entirely. I’m sticking to clean proteins and asking for everything plain whenever possible."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach—asking for plain foods and avoiding processed options will definitely help. Have you run into any issues finding reliable lunch spots when traveling, or does your usual routine let you prep meals ahead of time?"
+        },
+        {
+          "role": "user",
+          "content": "Lunch prep only works when I’m home—otherwise I have to improvise. It’s a challenge, especially since I was already on a protein-rich lunch plan, but now it’s got to be low sodium as well. I’m screening menus for both, which slows things down but helps. Honestly, the bigger headache has been the coffee situation: my doctor made it clear I need to moderate, so I stick strictly to two cups before noon, and I don’t let myself near a coffee machine after midday. The old habit of exploring new coffee shops in downtown Chicago is on pause."
+        },
+        {
+          "role": "assistant",
+          "content": "Cutting back caffeine is tough, especially with your work demands. Have you thought about shifting to tea or other lower-caffeine drinks, or finding cafés that focus more on tea options? That way you could still enjoy the experience without the extra coffee."
+        },
+        {
+          "role": "user",
+          "content": "That’s exactly what I’ve started doing—I now go to tea-focused cafés downtown instead of coffee-heavy places. I still avoid chain venues, but tea spots are less tempting with the caffeine and let me stick to the new restriction. So that solves the social side, but I have to be careful since some teas have more caffeine than you'd think."
+        },
+        {
+          "role": "assistant",
+          "content": "Great adjustment—tea cafés can be a good way to maintain the habit and social aspect, just with better choices. Checking caffeine levels in different teas makes sense given your limits. Any other routines or habits that you’ve had to change since diagnosis, or is the biggest focus meal logging and sodium screening right now?"
+        },
+        {
+          "role": "user",
+          "content": "Meal logging and sodium screening are my biggest new habits, and I don’t buy anything packaged unless I can review the nutrition info first. Lunch is always low-sodium and protein-rich now, never processed stuff or salty snacks. Coffee is strictly two cups before noon, and all afternoon café visits are at tea venues only. Those have been the biggest changes for me."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing a lot to adapt, and it seems you’ve developed a pretty robust system. Sticking to your meal logging, ingredient review, and carefully chosen lunch options should help keep your hypertension in check. Let me know if you need ideas for travel-friendly, low-sodium meals or more tea café suggestions in Chicago—happy to help with specifics!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Delivers feedback only in one-on-one calls — never gives performance critiques during group sessions",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_003",
+        "fact": "Requires sales reps to submit weekly CRM reports by Sunday night — never accepts late submissions",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Blocks 30 minutes every morning for reviewing sales dashboards before responding to emails",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Refuses to answer work texts after 8pm — only responds to urgent emails flagged by senior leadership",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Only drinks two cups of coffee before noon — avoids caffeine after midday",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Does physical therapy exercises nightly before bed — skips them only when traveling overnight",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_011",
+        "fact": "Hosts family dinner every Sunday — never schedules work events that conflict with this ritual",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Coaches youth soccer on weekends — never participates in adult leagues himself",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Plans one hiking trip each quarter with his kids — never vacations in cities during school breaks",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts every day by reviewing his calendar over coffee — never checks news headlines first",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Preps healthy school lunches for his kids every weekday morning — never packs pre-made meals",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Keeps personal and work phone numbers strictly separated — never mixes contacts between phones",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Reschedules date nights to Saturday evenings when his wife has Friday shifts — may skip them if both have late weekend events",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Supervises homework and dinner solo on evenings when his wife works late — implements a screen-free hour for the kids during that time",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Plans quick, low-prep dinners for the family on his wife's late-shift days — prefers recipes kids can help with",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Replaces jogging outdoors with gentle indoor stretching and physician-approved exercises — refrains entirely from running or impact activities",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Allocates 30 minutes daily for gentle back care routines, including doctor-recommended stretches and heat therapy",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_034",
+        "fact": "Reads business biographies and industry magazines exclusively on flights or in hotel lounges during work trips — rarely makes time for business reading at home now",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_037",
+        "fact": "Spreads household errands across multiple weekday evenings and weekends, depending on family caregiving needs — no longer restricts errands to Saturday mornings",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Prepares his mother's medication and breakfast every morning before work — prioritizes this over personal routines such as responding to emails early",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Coordinates a daily caregiving schedule with his wife and children, assigning specific tasks to ensure his mother is never left unattended during work hours",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_040",
+        "fact": "Holds team video coaching sessions only on remote workdays — conducts in-person team meetings at headquarters on required onsite days, no longer restricting to Tuesdays/Thursdays",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Alternates between sitting and standing workstations at headquarters but must remain seated during most in-person meetings — at home still uses standing desk exclusively",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Commutes to Chicago headquarters by commuter rail on onsite days — prefers listening to industry podcasts rather than answering emails during the ride",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_043",
+        "fact": "Participates in cross-department working lunches at HQ twice a week, often sacrificing his preferred solo lunch for collaborative meals",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_044",
+        "fact": "Responds to work emails only in early morning and midday blocks — avoids late evening emails to maintain the doctor-recommended earlier bedtime routine",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Uses a CPAP machine nightly as prescribed — never travels without it, even for short work trips",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Establishes a wind-down routine every night: sets phone aside by 9pm, avoids screens, and reads fiction for 20 minutes before bedtime",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_047",
+        "fact": "Minimizes in-person client entertainment and team events — prioritizes virtual check-ins and targeted 1:1 meetings due to stringent discretionary budget limits",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Chooses handwritten recognition notes or public praise on team calls as his primary method for acknowledging high performance, replacing monetary incentives and hosted dinners",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Now participates in mandatory cross-region strategy workshops every Monday morning — reschedules Northeast check-in calls to Wednesdays and supplements with as-needed asynchronous updates",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Actively participates in weekly leadership training sessions for merger integration — reviews all assigned materials on Sunday evenings to prepare for each Monday workshop",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Starts each Monday earlier than usual to accommodate pre-workshop preparation, forgoing his typical 30-minute dashboard review in favor of briefing on integration topics",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Initiates weekly video calls with his brother in Seattle to coordinate wedding planning and family logistics — discussions now directly involve schedules, travel, and shared responsibilities",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Participates actively in family group chats and email threads to coordinate wedding-related travel, attire, and roles — gives priority to these over leisure communications until the wedding is complete",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Reserves Saturdays for wedding party rehearsals and planning, temporarily suspending youth soccer coaching when family obligations overlap",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Shifts coffee shop visits to tea-focused cafes in downtown Chicago during spare time — avoids coffee-heavy venues and chain cafes",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Eats a low-sodium, protein-rich lunch every day — goes out of his way to avoid processed meats, salty snacks, and high-sodium menu items",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Logs every meal and snack in a mobile health app immediately after consumption — never relies on memory or handwritten journals",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Reviews sodium content and ingredient lists for packaged foods before purchase — refuses to buy anything without clear nutrition information",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Schedules team video coaching sessions strictly on Tuesdays and Thursdays — avoids meetings on Mondays and Fridays",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_040",
+        "reason": "The hybrid work mandate compels him to be in the office three days weekly, disrupting his old virtual-first, day-specific meeting pattern. He now organizes virtual coaching only when remote and leverages in-person days for team collaboration."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Eats a protein-rich lunch every day as part of his new nutrition plan — never skips lunch any longer",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "The hypertension diagnosis and dietary tracking mandate require stricter avoidance of sodium and processed foods. He now specifically screens lunch options for sodium levels, not just protein content."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Jogs outdoors along Lake Michigan when home — never uses hotel gyms while traveling",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "Doctor's orders to avoid jogging due to intensified back pain and pending MRI require him to stop all running and high-impact activities. He must switch to safe, low-impact movement at home during recovery."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Uses a standing desk in his home office — never sits for more than 30 minutes at a stretch",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_041",
+        "reason": "Spending three days a week at the office removes continuous access to his home standing desk and introduces long seated meetings, forcing a compromise in his work posture routine."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Calls his brother in Seattle monthly for personal updates — avoids discussing work unless his brother brings it up",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_052",
+        "reason": "His brother's engagement and the family's role in the wedding party introduces new obligations requiring frequent contact. Calls move from casual monthly check-ins to regular, purpose-driven interactions involving logistical planning."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Attends his younger child's soccer games every Saturday — never misses unless traveling for work",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "With travel suspended due to his health, the circumstance under which he would miss soccer games (work trips) is not currently possible; this absence contingency no longer applies."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Arranges medical appointments for his mother exclusively on weekday mornings — avoids afternoons when possible",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "His mother now requires daily supervision and assistance for both medical needs and daily living tasks; restricting appointments to weekday mornings is no longer feasible with frequent, possibly urgent care needs and greater scheduling flexibility required."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Schedules regular date nights with his wife every other Friday — never cancels except for emergencies",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "His wife's new evening schedule includes rotating late shifts on Fridays, making regular Friday date nights unreliable. To maintain their routine, he adapts by moving date nights to Saturdays when she is available, acknowledging occasional skips due to overlapping late weekend events."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Reads business biographies during flights — avoids watching movies or playing games while traveling",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "The temporary ban on travel (including flights) removes his typical in-transit reading routine. He adapts by allocating dedicated time at home for this reading habit."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Gardens with his children on Sunday afternoons — never outsources yardwork",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "Greater travel frequency and integration duties mean Sunday afternoons are often spent on the road or preparing for the work week, so the circumstance for consistent gardening is lost for now."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Prefers exploring new coffee shops in downtown Chicago during spare time — avoids chain cafes",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "The hypertension diagnosis and medical advice to moderate caffeine intake means he must avoid frequent coffee consumption, especially outside of his controlled two-cup window. He now chooses tea-specific venues to avoid temptation and align with his new restrictions."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Responds to work emails in three focused blocks: early morning, lunch, and late evening",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_044",
+        "reason": "The sleep apnea diagnosis and doctor's guidance to implement a strict, earlier bedtime mean he must eliminate late evening work email sessions to prioritize sleep hygiene."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Completes household errands only on Saturday mornings — avoids shopping or running errands on Sundays",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_037",
+        "reason": "His mother's need for daily supervision and mobility assistance makes his weekends less predictable. It's no longer possible to strictly reserve Saturday mornings for errands; he must fit these tasks around shifting caregiving and medical responsibilities."
+      },
+      {
+        "id": "pref_030",
+        "fact": "Reads business biographies and industry magazines at home during recovery — avoids travel media habits as he's not flying",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_034",
+        "reason": "Expanded travel for the merged regions reinstates his old habit of business reading during flights and hotel downtime. The home-based recovery reading routine ceases with the return to frequent travel."
+      },
+      {
+        "id": "pref_031",
+        "fact": "Schedules all meetings and work activities virtually to accommodate movement restrictions; avoids all in-person office or client visits until cleared by his doctor",
+        "domain": "work_habits",
+        "created_at_session": 1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "With merger-driven expansion and return to travel requirements in both regions, his recovery period is over and the business expects more face-to-face engagement for integration and team-building. The former all-virtual approach no longer fits his new responsibilities."
+      },
+      {
+        "id": "pref_033",
+        "fact": "Schedules frequent in-person meetings and client visits across Midwest and Northeast, balancing with virtual sessions for broader team management",
+        "domain": "work_habits",
+        "created_at_session": 2,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_047",
+        "reason": "The 40% cut to his discretionary budget strictly limits travel and spending on team incentives and hospitality. He must shift his management style away from broad in-person gatherings and reduce physical visits, focusing instead on virtual engagement and essential in-person meetings."
+      },
+      {
+        "id": "pref_035",
+        "fact": "Schedules integration check-in calls with Northeast sales reps every Monday morning — never substitutes these with email updates",
+        "domain": "work_habits",
+        "created_at_session": 2,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "The new cross-region strategy workshops on Monday mornings directly conflict with his standing Northeast check-in calls. To comply with the corporate mandate, he must shift his regular team check-ins to a new time slot and use asynchronous updates to fill gaps."
+      },
+      {
+        "id": "pref_036",
+        "fact": "Maintains a travel journal documenting impressions from new Northeast cities — avoids posting updates to social media",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "His upcoming travel is not business-related and will focus on family events in Seattle, not Northeast cities; the context for his regional business travel journal no longer exists during this period."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T23:50:56.237815"
+}

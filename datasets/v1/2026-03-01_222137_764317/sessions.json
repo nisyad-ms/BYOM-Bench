@@ -1,0 +1,1710 @@
+{
+  "persona": "A 45-year-old operations supervisor at a logistics firm",
+  "persona_id": "persona_20260301_223454",
+  "expanded_persona": {
+    "base_persona": "A 45-year-old operations supervisor at a logistics firm",
+    "age": 45,
+    "gender": "male",
+    "location": "Columbus, OH",
+    "work_education": [
+      "Works at a regional distribution center for a national logistics company, managing a team of 20 warehouse staff",
+      "Currently overseeing the rollout of a new inventory tracking system, which has led to frequent overtime and troubleshooting sessions",
+      "Has been with the company for 16 years; considering whether to pursue certification for supply chain management to prepare for potential advancement",
+      "Regularly attends early morning coordination calls with clients and drivers; shift hours fluctuate based on freight arrivals"
+    ],
+    "health_wellness": [
+      "Recently diagnosed with mild hypertension; advised to reduce sodium intake and exercise more",
+      "Finds it difficult to fit gym visits into his inconsistent work schedule, but tries to walk during lunch breaks",
+      "Has struggled with frequent headaches and fatigue since beginning overtime for the system transition",
+      "Sleeps six hours a night on average due to irregular work start times"
+    ],
+    "family_relationships": [
+      "Lives with his wife and two teenage children (ages 14 and 17) in a suburban neighborhood",
+      "Wife works full-time from home as a graphic designer; coordinates with her to balance school pickups and home responsibilities",
+      "Parents live nearby; he helps them with errands and yardwork on weekends",
+      "Oldest child is preparing for college applications, occasionally needs help with essays and visits to campus tours"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Schedules all team meetings before 8am or after 4pm — never during midday shift changes",
+        "Takes handwritten notes during troubleshooting sessions — never relies solely on digital logs",
+        "Handles client coordination calls from a private office whenever possible; avoids noisy open floor spaces",
+        "Always answers urgent inventory system issues personally before escalating to IT",
+        "Researches supply chain management best practices online every Sunday morning for professional growth"
+      ],
+      "health_body": [
+        "Packs a homemade low-sodium lunch every workday — never eats from the onsite vending machines",
+        "Goes for a brisk 20-minute walk during lunch breaks — avoids gym memberships due to unpredictable schedule",
+        "Always drinks water with meals — never soda or energy drinks since hypertension diagnosis",
+        "Uses a sleep tracking app nightly to monitor sleep quality — avoids late caffeine to help with headaches",
+        "Preps healthy snack containers (nuts, fruit) on Sundays to resist warehouse junk food during long shifts"
+      ],
+      "social_relationships": [
+        "Texts his wife before leaving work every evening to coordinate dinner and pickups — never leaves it to last minute",
+        "Blocks off Saturday mornings exclusively for helping his parents with errands — never schedules work during this time",
+        "Sets aside Sunday evenings to review college essays and applications with his oldest child — keeps this as a regular commitment",
+        "Calls one close friend every Friday after work to catch up — never cancels without rescheduling",
+        "Attends every school event at least once per semester for each child, even if it means shifting his work schedule"
+      ],
+      "leisure_hobbies": [
+        "Plays strategy board games with family every Thursday night — never misses unless an emergency arises",
+        "Goes fishing twice a month at a local reservoir with his brother — always wakes up before sunrise for these trips",
+        "Watches classic action movies with his son on weekend nights — avoids reality TV entirely",
+        "Works on model trains in the garage on rainy afternoons — never brings hobby projects into the main house",
+        "Books one weekend getaway each season for the family — never travels without at least three weeks’ advance planning"
+      ],
+      "daily_routines": [
+        "Sets up the kitchen coffee pot every night for automatic brewing — never buys coffee en route to work",
+        "Checks news and weather on his phone while making breakfast — avoids social media in the morning",
+        "Reviews next day’s work schedule and family calendar together with his wife every evening before bed",
+        "Does a 5-minute guided meditation in his car before entering work — never skips on high-stress days",
+        "Pays all household bills online on the first Saturday of each month — never waits until due dates"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The company announced a mandatory return to standard 9-to-5 shifts for all operations supervisors, eliminating flexible shift hours and requiring in-person attendance for daily coordination meetings.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_028",
+            "fact": "Arrives at the distribution center at 8:45am every weekday to prepare for daily in-person coordination meetings before shift begins",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Sets a daily reminder to lock work files and tidy his desk at 5pm sharp before leaving — never stays late under the new shift rules",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Goes for a brisk 20-minute walk during lunch breaks — avoids gym memberships due to unpredictable schedule"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Joins the company gym for 30-minute indoor workouts during lunch breaks — takes advantage of the consistent 9-to-5 schedule",
+              "domain": "health_body"
+            },
+            "reason": "With the new fixed 9-to-5 hours and reliable lunch break, he can now consistently use the onsite gym, changing his previous avoidance of gym memberships due to unpredictable shifts."
+          },
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Attends every school event at least once per semester for each child, even if it means shifting his work schedule"
+            },
+            "to": {
+              "id": "pref_027",
+              "fact": "Attends school events only if they are outside standard 9-to-5 work hours — unable to shift work schedule under new policy",
+              "domain": "social_relationships"
+            },
+            "reason": "The mandatory in-person 9-to-5 attendance policy removes his ability to shift work schedule for daytime school events, now restricting attendance to evenings or weekends."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, the company pulled the trigger on mandatory 9-to-5 for all ops supervisors. I'm officially on the standard grind now—no more flex hours. It's been a real adjustment. Any advice on managing routines without losing my mind in the process?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change, especially after years of shifting schedules. So far, what’s been the hardest part—work itself, family logistics, or health routines?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, family logistics. I used to shift my schedule for school events and pickups, but now I have to be at the center all day. My wife’s covering more during the day, but evenings get tricky. Also, I can only make school stuff if it’s after hours or on weekends now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, and it's tough not being able to flex for your kids' events. Maybe coordinating with your wife for evening events could help? For day-to-day, does having a fixed schedule help with anything, like routine planning or prepping meals?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, prepping meals is easier now. Lunch breaks are actually predictable. So I joined the company gym—figured I might as well use that 30-minute window midday for indoor workouts. Used to avoid gym memberships because my shifts were all over the place."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a great shift—consistent exercise can really help manage hypertension and energy levels. How have the workouts been so far? Are you adjusting anything else for your health with the new structure?"
+        },
+        {
+          "role": "user",
+          "content": "The indoor workouts are working out so far. Still keeping up with water and homemade lunches, but now I actually get to use the gym regularly. Another small change—I get in at 8:45 every morning so I'm ready for those daily in-person coordination meetings before the shift starts."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call on the early arrival—having prep time keeps things less hectic right before meetings. Are you finding the team adjusts well to this schedule, or has it changed the way you run your morning meetings?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, it's been smoother than I expected. Since everyone’s on the same hours, all-team meetings before shift change aren’t needed anymore. And I set a daily reminder at 5pm to lock up files and tidy my desk—never staying late now with the new rules."
+        },
+        {
+          "role": "assistant",
+          "content": "That sense of closure at the end of the day can really help separate work from home. Has that made evening routines with your family any easier, or are evenings still pretty packed?"
+        },
+        {
+          "role": "user",
+          "content": "Evenings are still busy, but at least I’m consistently home by 5:30 now. Makes it easier to coordinate dinner and review things like college applications with my oldest. But I definitely miss being able to sneak out midday for a school play or a quick errand run for my parents."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s tough losing those midday flexibility perks. Maybe you could shift some activities—like errands or school events—to evenings or weekends, if possible? For keeping sanity, sticking to leisure rituals can help; are you still able to manage board game nights or fishing trips?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, board game nights on Thursdays are still going strong—I just make sure nothing gets scheduled after work. Fishing's actually easier now since I can plan weekend trips without worrying about unpredictable shift changes. So there are some upsides."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good outlook—finding the upsides where you can! Since your lunch routine and post-work schedule are more stable, would you want tips on maximizing desk organization or time management? Or are you mostly focused on adjusting family logistics?"
+        },
+        {
+          "role": "user",
+          "content": "I think the logistics are under control for now. If you have any ideas for keeping energy up during the long afternoons in the warehouse, I’m all ears."
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely. Try incorporating healthy snacks—since you prep those on Sundays, maybe add more complex carbs or occasional protein for steady energy. Also, quick desk stretches, or even a 5-minute meditation in your car before heading inside, can help reset focus—especially during high-stress days."
+        },
+        {
+          "role": "user",
+          "content": "Meditation in the car is a staple for me, especially now when work feels more compressed. The snacks help too. Appreciate the ideas—this was helpful!"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His oldest child received admission to an out-of-state university, prompting the family to begin planning for a relocation and a departure from the household within a few months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Plans family video calls each week with his oldest child after their relocation — never lets two consecutive weeks pass without contact",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Begins organizing packing and travel checklists for the family's upcoming relocation weekends — dedicates Saturday afternoons for this",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Sets aside Sunday evenings to review college essays and applications with his oldest child — keeps this as a regular commitment"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Sets aside Sunday evenings for video calls with his oldest child at college — maintains routine for check-ins and support, no longer focused on essay review",
+              "domain": "social_relationships"
+            },
+            "reason": "With his oldest child moving out-of-state to attend university, in-person essay review is replaced by remote check-ins to maintain their connection."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_027",
+            "fact": "Attends school events only if they are outside standard 9-to-5 work hours — unable to shift work schedule under new policy",
+            "domain": "social_relationships",
+            "reason": "This preference was specifically tied to attending school events for his children. With his oldest now attending college out-of-state and soon leaving home, events for this child no longer occur in the local school context; only his younger child remains relevant for school events, so the preference needs redefining rather than persisting in its current form."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news—my oldest just got into an out-of-state university. We’re excited for him, but this kicks off a whole lot of planning around moving, college prep, and reworking some family routines. I’m trying to make sure we stay connected as he gets ready to leave. Any ideas on keeping our Sunday ritual going after he moves, plus ways to help organize everything without burning out?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That’s a huge milestone for your family and for your son. It sounds like your Sunday evenings for essay review and college prep are about to shift. Do you want to keep it as scheduled time together once he’s settled at university? For organizing, are you looking for packing checklists, travel planning support, or ways to delegate some moving tasks?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, the Sunday routine has always been key for us. Instead of essays, I’m thinking regular video calls to check in—you know, talk about his week, keep him grounded. I want that to stay a fixture, just shifting to remote. As for moving, I’m drowning already. Between work and my parents, weekends are getting tight. What’s a practical system for getting everyone prepped without chaos?"
+        },
+        {
+          "role": "assistant",
+          "content": "A weekly family video call is a great idea for maintaining connection, even after your son relocates. Want help setting up reminders or scheduling tools to keep those video calls consistent? For moving prep, many people find dedicating a set block of time each weekend helps—maybe Saturday afternoons for packing and checklist tasks. Would a shared digital checklist or calendar for responsibilities work for your family, or do you prefer something tactile like whiteboards or paper lists?"
+        },
+        {
+          "role": "user",
+          "content": "I’m leaning towards digital lists this time—everyone can access and edit, which is easier as schedules get hectic. I’m planning to dedicate Saturday afternoons for organizing packing and travel checklists, since Saturday mornings are always for helping my parents. I don’t want to let those routines slip, but I’ll need the rest of the weekend for moving prep. Any tools you’d recommend for keeping tasks tracked and avoiding overlap?"
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move keeping Saturday mornings untouched for your parents—that sounds non-negotiable. For shared lists, apps like Google Keep or Todoist are excellent for collaboration, and you can color-code by person or category. You could also try Trello for visual task boards. Would your family be comfortable checking in on these every week, or do you prefer setting up notifications to prompt people?"
+        },
+        {
+          "role": "user",
+          "content": "Notifications work—everyone’s already on their phones all the time. I’ll trial Google Keep since we’ve used it before for groceries. Oh, with the new setup, I’ll also plan weekly family video calls with my oldest after he relocates. I’m not letting more than two weeks go without contact, even during busy stretches. This worked when my brother moved, so I know it helps us stay close."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s an excellent boundary, and keeping regular contact will help everyone with the transition. For your younger child, will you still attend school events as often, or does your work schedule limit that more now? Also: want help drafting a packing checklist template for your son or the whole family?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll be honest, attending school events for my youngest is getting trickier. The company just enforced stricter daytime coverage, so I can only make events outside standard 9-to-5 hours. That means I can’t shift my work schedule like I used to for my oldest. For packing, a template would save me a lot of stress—can you make one for college move-in and a family relocation?"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—work constraints can really complicate those commitments, but it’s great you’re still prioritizing attendance when you can. For packing, I’ll create two templates: one tailored for your son’s college move-in (essentials, documents, comfort items) and one for your family’s broader relocation (shared items, staging, travel planning). Want both as Google Keep lists for easy sharing?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, Google Keep works best. We can all see them and check things off as we go. Thanks for helping me rethink these routines—I wasn’t sure how to structure things so we don’t lose track of each other with work, family, and the relocation all colliding at once."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad I could help. Transition periods are tough, but with set blocks and digital lists, you’ll be organized and stay connected. Let me know if you want reminders, checklist updates, or even ideas for balancing wellness amid the overtime and moving stress."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His wife's mother suffered a minor stroke and, after leaving the hospital, moved into their home temporarily to assist with her recovery and daily care.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Helps his wife prepare balanced meals and administer medication for her mother each evening — coordinates with his children to share caregiving duties",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Arranges quiet evening activities (reading, puzzles) for the household instead of TV or games, to accommodate his wife's mother's recovery needs",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Plays strategy board games with family every Thursday night — never misses unless an emergency arises"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Pauses Thursday night board games with family while wife's mother is recovering — prioritizes family caregiving and quieter evenings",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "With his wife's mother temporarily moving into their home for post-stroke recovery, Thursday nights now require more caregiving and lower stimulation, making family board game sessions impractical for the time being."
+          },
+          {
+            "from": {
+              "id": "pref_017",
+              "fact": "Goes fishing twice a month at a local reservoir with his brother — always wakes up before sunrise for these trips"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Suspends twice-monthly fishing trips with his brother until wife's mother recovers — avoids leaving home early mornings during caregiving period",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Care demands and need for household support mean he cannot commit to early morning fishing excursions while his wife's mother needs assistance."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_020",
+            "fact": "Books one weekend getaway each season for the family — never travels without at least three weeks’ advance planning",
+            "domain": "leisure_hobbies",
+            "reason": "The temporary presence of his wife's recovering mother makes overnight trips impossible — family travel is not feasible during this caregiving period, so seasonal getaways cannot be planned."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, things have been hectic lately. My wife's mom had a minor stroke a couple weeks ago and she's now staying with us as she recovers. We're trying to balance helping her out, the kids, and the usual work mess. I feel like all our evening routines are changing. Do you have tips for keeping the house calm but still connected with everyone?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a lot to juggle. Having a parent recovering at home definitely changes the everyday rhythm. When you say evening routines have changed, what’s shifted most for your family? Are there activities you had to pause or new ones you’re picking up to accommodate her needs?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, we had to pause our Thursday night board games for now. Her mom needs quieter evenings, so we’ve switched to things like reading or doing puzzles together after dinner. The kids are adjusting, but I don’t want everyone retreating to their phones or rooms."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move—books and puzzles can be great for keeping things calm but still engaging. Would the kids get into board games that are more cooperative or gentle, or is the focus mainly on quiet for her mom right now? And how are you coordinating dinner and caregiving in the evenings?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly quiet right now; her mom gets tired easily and stimulation can be too much. We all help prepare dinner—my wife and I handle the main meals, and I’ve started managing her medication each evening too. I try to loop the kids in, so they’re part of caring for their grandma and don’t feel so sidelined."
+        },
+        {
+          "role": "assistant",
+          "content": "Including everyone is a great way to build connection, even when routines shift. If meal prep is now a group effort, maybe you can rotate who chooses or helps with the evening activity—giving each family member a small role could add a sense of ownership. Is there any part of your day that’s gotten trickier, like finding downtime for yourself or balancing new responsibilities with old ones?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, finding downtime is tough. I used to go fishing with my brother twice a month early mornings, but that’s suspended for now—I can’t leave my wife alone with her mom, especially at dawn. And we dropped our seasonal weekend getaways; overnight trips are impossible until her mom recovers."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—those breaks help recharge, but caregiving comes first right now. Maybe you could look for smaller ways to decompress, like a solo walk after dinner or spending a few quiet minutes working on your model trains if the weather keeps you indoors. Are there other routines or habits you’ve had to adjust, or anything you want help reconfiguring?"
+        },
+        {
+          "role": "user",
+          "content": "We’re adapting little things, like keeping evenings quieter. I’m also more involved in planning meals to make sure they’re balanced for her mom’s recovery, since sodium is a concern. I coordinate with the kids for caregiving, and we try to keep evenings tech-light. Is there a better way to manage all that without feeling overwhelmed?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re already doing a lot right—shared caregiving, meal planning, and screen-free evenings. Maybe setting up a simple schedule for tasks could help: a weekly chart for who’s prepping meals, helping with medication, or choosing an evening activity. It’ll take some pressure off and ensure everyone stays involved. Would you find a shared calendar or checklist useful, or does your family prefer a looser approach?"
+        },
+        {
+          "role": "user",
+          "content": "We use a family calendar for pickups and work schedules, but haven’t formalized caregiving tasks yet. That might help—I’ll talk to everyone about a weekly chart. So, we’ve paused board games, fishing, and getaways, but I want to avoid losing all our traditions. If you have quiet activity ideas or ways to keep the mood positive, I’m open."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—staying connected matters, even if routines are on pause. Maybe consider audio books, story-sharing, or gentle crafts like drawing or coloring that everyone can try together. You could also keep a gratitude journal as a family, sharing one positive moment from each day. Would your wife’s mom enjoy joining in, even in a small way?"
+        },
+        {
+          "role": "user",
+          "content": "She likes reading, so audio books could work if she gets tired. Crafts are good too—she’s always been into crosswords and knitting. The kids could join her with coloring or puzzles. Family journal sounds nice; I’ll bring it up at dinner."
+        },
+        {
+          "role": "assistant",
+          "content": "Great—those activities should help keep evenings meaningful and calm. If you want, I can suggest more puzzle or craft ideas for different ages, or offer meal planning support tailored for recovery. Let me know if you need help organizing your caregiving schedule or want resources on managing stress during a demanding period."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Accepted into a company-sponsored program for supply chain management certification, requiring twice-weekly evening classes and completion of a capstone project over the next six months.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Completes certification assignments from the company program during lunch breaks at work, replacing gym time or leisure reading",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Leaves the distribution center early twice a week to attend evening certification classes, delegating late shift responsibilities to a trusted deputy",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Schedules Saturday afternoon family time around certification project work, limiting outings and social plans during the next six months",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Researches supply chain management best practices online every Sunday morning for professional growth"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Completes assigned certification readings and coursework online every Sunday morning, replacing casual research with formal study obligations",
+              "domain": "work_habits"
+            },
+            "reason": "Now enrolled in a company-sponsored certification program, his Sunday mornings for professional growth shift from informal research to studying assigned material for the coursework and capstone, as formal requirements take priority."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_026",
+            "fact": "Joins the company gym for 30-minute indoor workouts during lunch breaks — takes advantage of the consistent 9-to-5 schedule",
+            "domain": "health_body",
+            "reason": "Certification evening classes twice a week and capstone work means lunch breaks will be spent preparing or recovering for classes and overtime. His schedule is now more unpredictable and demanding, making regular gym visits impractical."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big change this month—I got accepted into our company's supply chain management certification program. Classes start next week, and it's a lot. Two evenings a week, assignments, plus a capstone project. Honestly, I'm a bit overwhelmed. Any ideas on how I can keep up with work, family, and my health while adding this workload?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on the acceptance! That's a big step. Balancing work, family, and studying is tough, but doable with some careful planning. Have you mapped out your week yet or identified which routines might need adjusting to fit in the classes and assignments?"
+        },
+        {
+          "role": "user",
+          "content": "I've started sketching it out. The toughest part is evenings—I'll need to leave the center early twice a week for class, which means handing off late-shift stuff to my deputy. I normally handle any urgent inventory issues myself, so delegating makes me nervous."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, especially since you pride yourself on resolving urgent issues personally. Do you trust your deputy to handle them, or will you need to create new escalation guidelines for those evenings?"
+        },
+        {
+          "role": "user",
+          "content": "I'm training my deputy to cover more, but on those class nights I'll have to let go a bit. The real challenge is squeezing in time for certification assignments. Before, I researched supply chain best practices online every Sunday morning for professional growth, but that's going to shift—now I need to use Sunday mornings for assigned readings and coursework."
+        },
+        {
+          "role": "assistant",
+          "content": "Switching from casual research to formal study sounds like a heavier lift. Will you keep your Sunday routine otherwise, or will the project work spill over into other parts of the weekend too?"
+        },
+        {
+          "role": "user",
+          "content": "I think Sunday mornings will be mostly coursework now, but I'm also planning to work on the capstone project Saturday afternoons. That's usually family time, so we'll have to limit outings and social stuff for the next six months."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you're wrestling with a lot of competing priorities. Have you figured out where to fit in assignment work during the week, outside Sunday and Saturday afternoons?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's another adjustment. I used to go for a brisk walk during lunch, but now I'm planning to use my lunch breaks for certification assignments. Gym or leisure reading just isn't practical with all this going on."
+        },
+        {
+          "role": "assistant",
+          "content": "Giving up your lunchtime walk is a sacrifice—especially given your hypertension. Any way you can sneak in short movement breaks elsewhere, or maybe build physical activity into your weekend routine when the project allows?"
+        },
+        {
+          "role": "user",
+          "content": "I'll try to squeeze in some movement on weekends, but weekday lunch breaks are going to be for coursework now. Also, I had considered joining the company gym for 30-minute indoor workouts since my schedule was stabilizing, but with classes and extra project work, regular gym visits aren't happening after all."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—you've got a lot on your plate. Would you like to brainstorm strategies for staying on top of your health, or focus on managing family commitments with the new class schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Let's start with health. If I'm losing the gym and lunchtime walks, maybe there's a way to prep for quick movement breaks at home in the evenings or even in between classes. Any ideas that don't require gym equipment or special gear?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Simple home routines work well—bodyweight exercises like squats, lunges, and wall push-ups can be done in a few minutes. You might also try quick stretching sessions before classes or after dinner, just to keep your circulation up. Would it work to set reminders for a 10-minute activity block on class nights?"
+        },
+        {
+          "role": "user",
+          "content": "That could help—I think short activity blocks between coursework and family time are doable. I already set reminders for other routines on my phone, so adding one for movement makes sense. Thanks. Now, about family... Any advice on keeping connection strong with limited Saturday and Sunday time?"
+        },
+        {
+          "role": "assistant",
+          "content": "It's tough when weekend family time is squeezed. Consider setting regular evening rituals, like board game night on Thursday or movie night with your son. Even small, consistent moments can offset missed outings. Would your family be open to shifting some activities to weeknights or making project work a shared experience?"
+        },
+        {
+          "role": "user",
+          "content": "We've always done board game night on Thursdays and movie nights on weekends. I want to protect those as much as possible, even with the new demands. Maybe if I carve out Saturday mornings for parents as usual, then focus on family after project work, we can keep the balance. Thanks for helping me think through it."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed chronic migraines, with a neurologist prescribing new medication and recommending he temporarily restrict screen time and avoid intense troubleshooting sessions during flare-ups.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Avoids all screens and troubleshooting duties during migraine episodes, shifts to paperwork or in-person coordination tasks only",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Uses paper-based checklists for daily team oversight during migraine flare-ups, returns to digital tools once symptoms subside",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Spends migraine recovery evenings in a dim, quiet room, avoiding family movie nights or hobby projects involving screens or bright lights",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Always answers urgent inventory system issues personally before escalating to IT"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Delegates urgent inventory system issues to trusted deputies during migraine flare-ups, only steps in when screen time restriction is lifted",
+              "domain": "work_habits"
+            },
+            "reason": "With chronic migraines and a doctor requiring restricted screen time during flare-ups, he can no longer reliably answer urgent troubleshooting issues himself; he must now delegate these tasks to others until his symptoms abate."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_002",
+            "fact": "Takes handwritten notes during troubleshooting sessions — never relies solely on digital logs",
+            "domain": "work_habits",
+            "reason": "Troubleshooting sessions themselves are now temporarily limited or avoided during migraine flare-ups, per neurologist's recommendation; note-taking becomes largely irrelevant when such sessions are restricted."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so I've been dealing with these migraines almost nonstop the past couple weeks. The neurologist started me on new meds and wants me to strictly cut screen time—especially during flare-ups. I'm honestly overwhelmed because my team is mid-transition to the new inventory system, and urgent troubleshooting always lands on my plate. Any advice on how to keep things moving without risking my health?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really challenging, especially during a system rollout. If screens and intense troubleshooting are off-limits for now, is there someone on your team you trust to handle urgent issues when you're not able? Delegating those tasks might be necessary, at least temporarily. Are you comfortable stepping back from direct troubleshooting, or is that tough for you?"
+        },
+        {
+          "role": "user",
+          "content": "Normally, I'd answer every urgent inventory issue myself before looping in IT, but that's shifted. I'm having to delegate when a migraine hits, and only jump back in when the screen restriction lifts. It's definitely tough—I'm so used to handling things hands-on."
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you—that kind of transition, especially for someone who's used to being the go-to, can be tough. How is your team adjusting to the new flow? Have you set up any backup protocols or paper checklists to help them manage when you can't be involved directly?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, during flare-ups I avoid screens and troubleshooting altogether. I've started relying on paper-based checklists to keep daily team oversight going, and shift to in-person coordination only. Digital tools are just out until my symptoms ease up."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move. Paper checklists keep things tangible and let you stay engaged without screens. For in-person coordination, is your private office still workable during these episodes, or do you prefer meeting somewhere quieter? Have you noticed any triggers on-site that make the migraines worse?"
+        },
+        {
+          "role": "user",
+          "content": "I stick with my office for client calls if I can—it's quieter, but I do need to keep the lights dim. The biggest trigger is actually screen glare and noise, so avoiding troubleshooting sessions and sticking to paperwork helps. I used to take handwritten notes during troubleshooting, but since I’m not doing those during flare-ups, that habit’s basically dropped for now."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—if you're not troubleshooting, there's no need for detailed notes. It sounds like your recovery strategy leans toward minimizing stimulation. When you're at home recovering, do you keep your evenings low-key as well? Anything that's helped you wind down without aggravating symptoms?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely—on recovery nights, I spend evenings in a dim, quiet room away from screens. I skip family movie nights and any hobby projects with bright lights, like working on my model trains. Just focus on resting until things pass."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach. How’s your family adjusting—not joining movie nights or hobby time? Have you set up ways to still connect, or is everyone understanding that you'll be off the grid during migraine episodes?"
+        },
+        {
+          "role": "user",
+          "content": "It's an adjustment for sure. My wife gets it, and the kids are learning to handle things like dinner and college essay questions on migraine nights. They know I’m off screens and need quiet, so we’ve talked through it."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like strong communication on your end. For the work transition, would you find value in prepping more paper resources or quick-reference binders so your deputies have what they need during your downtime? Or is the checklist setup enough?"
+        },
+        {
+          "role": "user",
+          "content": "The checklist system’s working for now—simple and familiar. I probably will set up some reference binders if it looks like these episodes will continue, but I want to see how the next few weeks go."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Letting things settle before adding too much extra structure. If you need help brainstorming ways to streamline communication, or tips for low-tech delegation, let me know. You’re already making thoughtful adjustments—hopefully the new meds help stabilize things soon."
+        },
+        {
+          "role": "user",
+          "content": "Thanks—I appreciate it. A lot of this is trial and error, honestly, but having some backup options helps. If you have any quick tips for stress reduction at work without screens, I’m all ears."
+        },
+        {
+          "role": "assistant",
+          "content": "Sure thing. Since you’re avoiding screens, consider short guided breathing exercises—maybe in your office or even in the car before starting your day. Keeping meetings brief and focused can also lower stress. And if paperwork starts feeling monotonous, stepping outside for a walk (if weather permits) could be a nice reset without any screens involved."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Scheduled for a sleep study at a local clinic after continued fatigue and headaches prompted his primary care doctor to suspect undiagnosed sleep apnea; required to stay overnight for monitoring.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Keeps electronics (phone, tablet, TV) out of the bedroom after dinner on clinic's advice to prepare for more accurate sleep study results and reduce evening stimulation",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_047",
+            "fact": "Records detailed notes about fatigue and headache episodes in a paper journal each morning, as requested in the clinic's pre-study protocol",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Uses a sleep tracking app nightly to monitor sleep quality — avoids late caffeine to help with headaches"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Relies on overnight sleep clinic results and prescribed monitoring equipment to assess sleep quality — discontinues nightly sleep tracking app usage temporarily",
+              "domain": "health_body"
+            },
+            "reason": "With the sleep study underway and possible new recommendations or equipment coming from the clinic, he is instructed to discontinue consumer sleep apps and follow the clinic's monitoring protocols instead."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I finally had that overnight sleep study last night—the one my doctor ordered after all these headaches and fatigue kicked in. First time being away all night just for a test, which was... not exactly restful. They’re talking about possible sleep apnea. I’ll have to stick with their monitoring protocols for a while now. Any advice on keeping my work routine steady while I wait for results, especially since my energy is all over the place lately?"
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for sharing. That must have been a pretty unusual night, especially since your workdays already sound demanding. Are you finding the clinic’s instructions are affecting your morning routine, or mostly just bedtime? How’s your energy today compared to a typical workday after the overtime?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, the clinic’s instructions are already changing things. I’m supposed to keep electronics out of the bedroom after dinner—no phone, tablet, or TV at all—even though I used to check news or weather in bed. Makes winding down a little awkward, but I’m following it for now. My energy today is about the same: foggy until mid-morning, then a couple hours where I feel normal, and then the fatigue slips back in. I’m keeping notes in a paper journal about it every morning, as the clinic requested, but I’m not sure how helpful it is yet."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid commitment to the protocol—it’s tough to change routines after years. Keeping devices out of the bedroom is often recommended, but it’s a big shift. Is journaling working for you, or does it just feel like another thing to do? Have you found any tweaks that help with the evening wind-down in place of screens?"
+        },
+        {
+          "role": "user",
+          "content": "It’s weird, but the paper journaling helps a bit—I write down when I feel the worst, and it makes me pay more attention. For winding down, I’ve started prepping the coffee pot and reviewing the family calendar with my wife before bed, sometimes reading a print magazine just to relax. Not as easy as scrolling through headlines, but at least it doesn’t mess with my sleep study prep."
+        },
+        {
+          "role": "assistant",
+          "content": "You already have some strong nightly routines, so that sounds like a smart adjustment. Are you still using your sleep tracking app, or does the clinic prefer analog records now? And is your family also shifting routines to support you, or trying to keep things as normal as possible?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I had to drop the sleep tracking app completely—clinic wants me to rely only on their monitoring equipment and results, at least until we know more. They said commercial apps might confuse the feedback, so I’m sticking to their approach for now. My wife’s been supportive, keeping things quiet and electronics-free after dinner, and the kids are mostly on board. We still check the schedule together before bed—that part hasn’t changed."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—that’s a big switch, but it should give the clinic the clearest picture. Has dropping the app changed anything about how you notice your sleep quality day-to-day, or do you rely mostly on how you feel in the morning now?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s odd not having the app’s data to check every morning, but I’m just going by how I feel and what I record in the paper journal, especially the fatigue and headache patterns. They told me to stick with handwritten notes for now. Maybe I’ll get more clarity once the equipment and results are back. Until then, it’s just about keeping the regular routines without the digital crutch."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—it might be enlightening to compare your own observations with the clinic’s findings later. If you’re feeling the worst mid-day, is there any flexibility in your work schedule to rest briefly, or space out the harder troubleshooting sessions? Or does the distribution center workflow make that unrealistic?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I schedule all team meetings before 8am or after 4pm to avoid shift changes, but midday is always busy. Taking breaks isn’t easy. I do manage a brisk walk during lunch, even on headache days—that helps a bit. I can’t skip handling urgent inventory system issues, so I try to keep troubleshooting sessions as focused as possible and take handwritten notes to track what I miss if I’m foggy."
+        },
+        {
+          "role": "assistant",
+          "content": "That walk during lunch sounds like it’s a habit worth protecting, especially now. Since you’re tracking symptoms, have you noticed any patterns with food or hydration? Are you still packing the same snacks and low-sodium lunches, or has fatigue changed your eating routine at work?"
+        },
+        {
+          "role": "user",
+          "content": "Still sticking to homemade low-sodium lunches—haven’t risked the vending machines or anything with too much sodium since the hypertension diagnosis. I always drink water with meals, never soda or energy drinks. The only thing that’s changed is prepping extra healthy snacks on Sundays, as overtime means longer shifts and more temptation. It helps keep my energy up even when I’m tired from the study protocols."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s impressively disciplined. As you adapt to the study routine, is there anything you’re finding especially challenging—timing meals, family obligations, work demands—or is it mainly the sleep protocols causing disruption?"
+        },
+        {
+          "role": "user",
+          "content": "It’s mostly the sleep protocols. Keeping electronics out of the bedroom and dropping the sleep tracking app throws me off, but recording fatigue and headaches in the paper journal fits in okay. Family routines are intact. The hardest part is just not knowing if things will improve until the clinic has more data; meanwhile, I have to keep all the balls in the air at work."
+        },
+        {
+          "role": "assistant",
+          "content": "Waiting for answers can feel frustrating—especially when you’re balancing work and home. If you need ideas for managing energy dips or headaches, I can share some options that don’t interfere with the clinic’s protocols. Otherwise, sounds like you’re adapting well and keeping your routines strong, even as things change."
+        },
+        {
+          "role": "user",
+          "content": "I appreciate it. For now, I’ll stick with what the clinic says—keeping electronics out of the bedroom, relying on their equipment and my paper journal instead of the app, and maintaining my usual routines where possible. If I need to tweak things more, I’ll circle back. Thanks for talking this through."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His father was diagnosed with early-stage Parkinson's disease, prompting the need for regular medical appointments and increased weekend assistance with household tasks and transportation.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_049",
+            "fact": "Prepares a written log of his father's symptoms, medications, and appointments each weekend to streamline doctor visits and coordinate care with family members",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Shifts weekend meal routines to include low-sodium, soft-texture dishes when dining with his parents, to accommodate his father’s dietary changes",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Blocks off Saturday mornings exclusively for helping his parents with errands — never schedules work during this time"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Dedicates both Saturday mornings and afternoons to assisting his father with household tasks, transportation, and medical appointments, rescheduling all nonessential activities and minimizing work interruptions on weekends",
+              "domain": "social_relationships"
+            },
+            "reason": "With his father's early-stage Parkinson's diagnosis, routine errands have expanded to include regular medical appointments and increased physical assistance. His caregiving responsibilities now require much more personal involvement for both logistical and emotional support, taking up a greater portion of his weekends."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_032",
+            "fact": "Begins organizing packing and travel checklists for the family's upcoming relocation weekends — dedicates Saturday afternoons for this",
+            "domain": "daily_routines",
+            "reason": "The relocation weekends and travel-focused packing routines are no longer relevant—his weekends are now required at home and with his father due to new medical needs and regular appointments. There is no more actively planned family relocation at this time."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my dad was just diagnosed with early-stage Parkinson's a few weeks ago. It's been a big adjustment—suddenly a lot more hands-on with support and medical stuff, especially weekends. I want to make sure I stay on top of his appointments, meds, and symptoms, but coordinating all that alongside my work schedule has been tough. Any ideas for organizing the logistics side and making sure nothing slips through?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry to hear about your dad's diagnosis. That sounds like a lot to juggle, especially with your unpredictable work hours. For tracking everything, would creating a shared Google calendar for medical appointments and a running spreadsheet for medications and symptom notes work for you? Or do you prefer something more tactile, like a paper log or binder at home?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I lean towards handwritten logs. I'm already keeping a weekend notebook with his symptoms, med timings, and appointment notes. It's easier for me to flip through and update on the fly, and it helps with doctor visits since I can bring everything in one place. We've also started sharing care info with my mom and brother, so I might set up a digital backup, but paper is my main system right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—bringing a physical log to appointments can be really helpful, especially since doctors often ask detailed follow-ups. Maybe you could supplement it with a simple cloud doc, just for sharing updates among the family. Are you the main point of contact for medical appointments and transport, or do you split responsibilities with your brother?"
+        },
+        {
+          "role": "user",
+          "content": "I'm the primary for transports and household tasks these days. My weekends have shifted—I'm now dedicating both Saturday mornings and afternoons specifically to assisting my dad, including errands, cleaning, and his appointments. I've rescheduled all nonessential activities and try to block work interruptions as much as possible on Saturdays. My brother helps out occasionally, but I'm handling most of it right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big commitment, especially giving up both halves of your Saturdays. Are you finding it hard to balance the increased caregiving with your own rest and family needs? Have you had to drop any previous weekend routines or hobbies to make room for all these new responsibilities?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, definitely. For example, I used to organize packing and travel checklists for our family's relocation weekends on Saturday afternoons—those are gone now, since all my time is needed at home and for my dad. Any travel plans or weekend getaways are on hold. I'm trying to keep some family traditions alive in the evenings when possible, but weekends are really centered around caregiving lately."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—sounds like you’re prioritizing your dad's needs, and that's admirable. On the meal front, have you had to change what you make or bring when eating with your parents now? Dietary changes are common with Parkinson’s, and prepping meals in advance can make things easier."
+        },
+        {
+          "role": "user",
+          "content": "Absolutely, I've shifted our weekend meal routines. When dining with my parents, we stick to low-sodium, softer-texture dishes to accommodate my dad's needs—soups, casseroles, veggies he can handle easily. I've actually enjoyed figuring out new recipes, and it helps keep my own low-sodium diet in check. We prep everything together on Fridays for easy reheating after medical appointments."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great, both for practicality and for family connection. Do you keep a record of those meal adaptations, or recipe notes in your symptom log, or is it more informal? If keeping meal tracking helps coordinate with other caregivers, I can suggest some templates."
+        },
+        {
+          "role": "user",
+          "content": "Right now it's informal, but that's a good point. I might start adding a section to my written log for meal notes and any reactions my dad has to foods—we already track his symptoms, so it’s easy to expand. If you have simple template suggestions, I’d appreciate it."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! I can send over a printable template that splits each day by meal, with columns for dish, sodium content, texture notes, and any observed symptoms—should fit right in with your handwritten log. Would you like this set up as a weekly or daily sheet?"
+        },
+        {
+          "role": "user",
+          "content": "Weekly will work best—Saturdays are when I review everything, so keeping a running list to fill in during the week makes sense. Thanks, this should streamline things, especially with more medical appointments coming up."
+        },
+        {
+          "role": "assistant",
+          "content": "I’ll pull together a simple weekly meal and symptom tracker you can print and clip into your log. Let me know if you'd like space for medication changes or appointment notes, too. And if coordinating logistics ever gets overwhelming, I can help brainstorm ways to share more tasks with your brother or automate reminders for appointments."
+        },
+        {
+          "role": "user",
+          "content": "A section for appointment notes and medication changes would be useful, since that's part of our review every Saturday. I’ll reach out if we need extra support for delegation or reminders. For now, I just want to make sure I'm covering all the bases as things change. Thanks for the help."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The company announced a major leadership shakeup, reassigning him from managing the warehouse team to overseeing a new cross-departmental task force responsible for streamlining regional delivery operations, requiring frequent daytime meetings with senior management at the corporate office downtown.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Brings a notepad and digital tablet to every cross-department task force meeting at the corporate office — prefers hybrid note-taking for complex discussions",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Walks several blocks from parking garage to the corporate office each morning, using this time for brief stress-reduction breathing exercises",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_028",
+              "fact": "Arrives at the distribution center at 8:45am every weekday to prepare for daily in-person coordination meetings before shift begins"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Arrives at the corporate office downtown for frequent daytime cross-departmental meetings — no longer prepares for warehouse shift coordination",
+              "domain": "work_habits"
+            },
+            "reason": "The leadership shakeup means he is reassigned from the warehouse to a new cross-departmental task force stationed at the corporate office, requiring him to coordinate with senior management in office settings rather than prep for team meetings on the warehouse floor."
+          },
+          {
+            "from": {
+              "id": "pref_029",
+              "fact": "Sets a daily reminder to lock work files and tidy his desk at 5pm sharp before leaving — never stays late under the new shift rules"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Secures work materials and tidies meeting documents at variable times before leaving the corporate office, due to irregular meeting end times — no longer leaves precisely at 5pm",
+              "domain": "daily_routines"
+            },
+            "reason": "With his new role involving irregular meeting schedules at the corporate office and no fixed shift end time, he must adapt his end-of-day routine to conference room transitions and variable departures, rather than following a strict 5pm rule."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_001",
+            "fact": "Schedules all team meetings before 8am or after 4pm — never during midday shift changes",
+            "domain": "work_habits",
+            "reason": "He is no longer managing warehouse shift teams or handling shift changes; his new task force role centers around corporate daytime meetings, making this preference irrelevant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, big shake-up at work. They reassigned me from running the warehouse floor to this new cross-department task force downtown – now I’m stuck in meetings most of the day with senior management. I’m not used to all this office time, and my schedule is all over the place. Any ideas for keeping my routines stable with all these changes?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a pretty major shift! Going from warehouse operations to corporate meetings can definitely throw your routines for a loop. What parts of your routine feel most disrupted so far – mornings, end of day, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "Mornings, for sure. I used to get to the distribution center around 8:45, prep for the warehouse team huddle, but now I’m driving into downtown for these task force meetings. I actually park in a garage and walk a few blocks to the office, which is new. The walks help a bit, but I’m missing my old prep routine. Anything I should try to make that commute feel less rushed?"
+        },
+        {
+          "role": "assistant",
+          "content": "Walking a few blocks could be a good opportunity to decompress before the day starts – maybe layering in breathing exercises or even a short podcast. Are you mostly using the walk for physical movement, or is it more about mental reset?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly mental. I started doing brief breathing exercises on the walk to the office to keep my stress in check before the meetings—feels a bit different from prepping for coordinating shifts. I like the walk, actually, but I could use advice on settling in when I get to the office since I’m not prepping for team huddles anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart adaptation. At the office, maybe establishing a small pre-meeting ritual could help—like reviewing your agenda, or setting up your workspace before meetings start. Are your meeting times fairly predictable, or do they move around a lot?"
+        },
+        {
+          "role": "user",
+          "content": "They’re totally variable. I used to set a daily reminder to lock work files and tidy my desk at 5pm, then just leave, but now my meeting end times are all over the place. Sometimes I’m cleaning up documents before leaving at 3:30, other days it’s closer to 6. Any tips for managing that inconsistency? I don’t like feeling scrambled at the end of the day."
+        },
+        {
+          "role": "assistant",
+          "content": "Flexibility is tough, especially when you’re used to a fixed schedule. One idea: set up a mobile checklist for securing materials and prepping your meeting notes, so you can run through it whenever meetings wrap, regardless of time. Would digital reminders help, or do you prefer something analog?"
+        },
+        {
+          "role": "user",
+          "content": "I’m more of a hybrid guy now—I bring both a notepad and my tablet to every cross-department meeting. Digital’s good for syncing with the cloud, but I still like handwritten notes for complex discussions. I guess I need a process to keep both types of notes organized for these rotating meetings."
+        },
+        {
+          "role": "assistant",
+          "content": "Hybrid note-taking makes sense, especially with all the moving parts. Maybe after each meeting, allot a few minutes to capture handwritten insights in a digital format for easy reference later. How are you finding the new rhythm compared to coordinating warehouse teams—are there any habits you had to drop?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually. In my old role, I always scheduled team meetings either before 8am or after 4pm—never during shift changes. Now that I’m not managing the team or juggling shifts, that habit’s out the window. All the meetings are in the middle of the day, which took some getting used to."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment. Coordinating with senior management instead of warehouse crews must require a different approach, too. Have you noticed your day-to-day routines shifting outside of work—for example, with family or your household habits?"
+        },
+        {
+          "role": "user",
+          "content": "Some parts are the same—I still check news while making breakfast and do evening calendar reviews with my wife. But with the new role, I secure my work materials and tidy up at variable times, instead of the old 5pm sharp routine. That makes the end of day a bit unpredictable for family stuff, so we’re learning to adjust."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re adapting as things evolve. With the walk from the parking garage and the hybrid note-taking, you’re working new routines into the mix. Anything else about the task force role gives you trouble—like collaborating across departments, or keeping healthy with the errands between offices?"
+        },
+        {
+          "role": "user",
+          "content": "I think the biggest challenge is having a process that works no matter when the meeting ends, plus keeping my old health habits going with the new commute. But the walk every morning helps, and the notepad-tablet combo is doing the trick for now. I appreciate the ideas—just needed to think it through. If anything gets worse, I’ll ping you again."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to help! Switching environments and routines is tough, but you’re making solid adjustments. If you need more ideas on organizing hybrid notes or smoothing out evening transitions, let me know. Good luck with the task force—and don’t forget to keep those stress-reduction walks going each morning!"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The company partnered with an international logistics firm, resulting in a three-month onsite assignment abroad for him as part of a select operations leadership team sent to implement cross-border workflow protocols.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_058",
+            "fact": "Schedules weekly evening video calls with his wife and children to maintain family connection while abroad — prioritizes these even with a time zone difference",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_059",
+            "fact": "Explores local parks or historic neighborhoods by taking brisk walks after work to relieve stress and stay active during the assignment",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_060",
+            "fact": "Keeps a written travel journal to record work experiences and cultural observations during the three-month assignment, as a personal reflection habit",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Packs a homemade low-sodium lunch every workday — never eats from the onsite vending machines"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Seeks out low-sodium meal options from local cafes or canteens during the three-month abroad assignment — no longer able to bring homemade lunches for workdays",
+              "domain": "health_body"
+            },
+            "reason": "The overseas assignment prevents him from preparing lunch at home and packing it for work as usual; he now must rely on meal options available near his temporary workplace while maintaining his health requirement."
+          },
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Preps healthy snack containers (nuts, fruit) on Sundays to resist warehouse junk food during long shifts"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Purchases pre-packaged healthy snacks from local supermarkets or shops to avoid unfamiliar vending machine options abroad — no longer preps snacks at home on Sundays",
+              "domain": "health_body"
+            },
+            "reason": "With the three-month overseas posting, his routine of prepping Sunday snack containers at home is impossible; he must adapt by sourcing healthy snacks locally."
+          },
+          {
+            "from": {
+              "id": "pref_019",
+              "fact": "Works on model trains in the garage on rainy afternoons — never brings hobby projects into the main house"
+            },
+            "to": {
+              "id": "pref_057",
+              "fact": "Pursues portable model train design sketches or research in his hotel room during downtime abroad — cannot work on physical models left at home",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Traveling for three months overseas makes working on physical model trains in his home garage impossible; he replaces this with portable, travel-friendly aspects of the hobby."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_035",
+            "fact": "Helps his wife prepare balanced meals and administer medication for her mother each evening — coordinates with his children to share caregiving duties",
+            "domain": "social_relationships",
+            "reason": "He will be out of the country for three months and cannot physically assist with evening caregiving at home; these duties no longer apply during the assignment."
+          },
+          {
+            "id": "pref_048",
+            "fact": "Dedicates both Saturday mornings and afternoons to assisting his father with household tasks, transportation, and medical appointments, rescheduling all nonessential activities and minimizing work interruptions on weekends",
+            "domain": "social_relationships",
+            "reason": "During the three-month overseas assignment, he cannot provide in-person help to his father on weekends; local family responsibilities must be paused."
+          },
+          {
+            "id": "pref_049",
+            "fact": "Prepares a written log of his father's symptoms, medications, and appointments each weekend to streamline doctor visits and coordinate care with family members",
+            "domain": "social_relationships",
+            "reason": "He is unable to attend his father’s appointments or maintain in-person logs from abroad during the assignment."
+          },
+          {
+            "id": "pref_050",
+            "fact": "Shifts weekend meal routines to include low-sodium, soft-texture dishes when dining with his parents, to accommodate his father’s dietary changes",
+            "domain": "health_body",
+            "reason": "Since he will not be present for family meals during the overseas assignment, this meal routine does not apply."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I started my onsite abroad assignment this week. Looks like I'll be out here for three months, working with our new international partners to get cross-border workflow protocols up and running. Honestly, everything is upside down right now—including my routines. I know I'll need to adapt, especially around meals, exercise, and keeping in touch with family. Can you help me figure out how to set up some healthier habits and keep things as steady as possible?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, that's a big transition. Let's break it down—what's been most disruptive so far to your daily routines: meal planning, exercise, or connecting with your family back home?"
+        },
+        {
+          "role": "user",
+          "content": "Meal planning is definitely tricky. I used to pack a homemade low-sodium lunch every day for work, but with no kitchen at the office or hotel, that's not an option now. I’m trying to find local cafes or canteens that offer lower-sodium dishes, but the menus are unfamiliar and salt-heavy. Same goes for snacks—used to prep healthy containers of nuts and fruit on Sundays, but now I’m buying pre-packaged stuff from shops to avoid mystery snacks in vending machines."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move avoiding the vending machines. For meals, does your area have any healthier chain cafes, or is it mostly local options? Sometimes supermarkets have salad bars or grab-and-go sections with ingredient lists. For snacks, is it easy to find single-serve nuts or fruit packs nearby?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly local spots—cafes and bakeries, with occasional Asian or Mediterranean options. I’ve managed to find plain mixed nuts at a supermarket and some fruit cups, so that works for snacks. Just takes more effort than meal prepping on Sundays. It does mean I’m spending more time hunting for food before shifts, which adds stress. Exercise is another puzzle. Back home, I did lunch walks around the warehouse, but here, I’m squeezing in brisk walks after work to explore local parks or historic neighborhoods."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a great way to stay active and also get to know your surroundings! Have you found any particular routes or parks you enjoy yet? And are there any cultural differences that make it easier or harder to walk around after work hours?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually, there’s a riverside park about ten minutes from the hotel—pretty peaceful, and locals seem to walk there in the evenings. It feels safe, and getting outside helps knock off some of the stress. I can’t keep up my old habit of working on model trains in my garage during downtime—so I’ve started sketching designs and doing research in my hotel room. It’s not the same, but at least it keeps me connected to the hobby."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a creative adaptation! Digital sketching or journaling can even open up new ideas for your train hobby. Speaking of journaling, do you keep track of your work and cultural experiences while you're abroad? Sometimes it helps to have a record to look back on or share with your family."
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention it—I started a written travel journal for personal reflections, work experiences, and even little cultural observations. Helps process the day, especially when things get hectic. Keeps me grounded. Family connection is another big one: we now schedule weekly evening video calls, even with the time zone challenge, just to stay in sync on everything from college applications to dinner plans."
+        },
+        {
+          "role": "assistant",
+          "content": "That's fantastic for keeping everyone in the loop. Do you find the calls are enough, or are you looking for other ways to connect—like group chats or sharing photos from your explorations? And on the college application front, are you able to help your oldest with essays remotely?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly video calls for now—everyone’s schedules are busy, so we block it out on the calendar. I still review essays with my oldest on Sunday evenings, just online instead of in person. It’s working pretty well so far. One thing I can’t do anymore is help my wife with her mom’s medication or meal prep in the evenings. Also had to drop my usual Saturday routine of helping my parents with their errands; I can’t be in-person for that right now. Kind of tough, but my kids and wife are picking up some of the slack while I’m gone."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like your family is adapting as well, but I can imagine it feels strange not being able to help out like you used to. Have you set up any ways to coordinate from afar—like checking in about errands or medication reminders, or is it more hands-off during your assignment?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly hands-off; I’m out of the loop with weekend errands, coordinating care, or meal routines at home. Used to keep a written log for my dad’s appointments and symptoms each weekend, but that’s on pause while I’m away. I also stopped adjusting our weekend family meal routines for my dad’s dietary needs. I just try to check in by phone when possible, and leave the logistics to my wife and siblings until I’m back."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Sometimes you have to step back and trust others to manage. Is there anything else you're struggling with or want help adapting while you're abroad—whether it's stress management, sleep routine, or keeping up with supply chain best practices for your professional growth?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, stress management’s going okay—still doing a short guided meditation in my car or hotel room before work. Sleep is a challenge with jet lag and shift changes, but the sleep tracking app helps keep me honest. Sunday mornings, I still research supply chain topics online, just in a new time zone. I think covering meals, snacks, exercise, family connection, dropped caregiving routines, and hobby adaptation were the biggest changes. Thanks for helping me work through these."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re handling the transition with a lot of creativity and discipline. If you ever need meal ideas, ways to engage your hobby on the road, or tips for remote family support, just reach out. And when you’re home again, re-adjusting might require its own set of tweaks—but you’ll have a head start. Let me know what comes up!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After ongoing monitoring from the sleep study, he was officially diagnosed with moderate obstructive sleep apnea and issued a CPAP machine to use every night at home.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_063",
+            "fact": "Performs a detailed nightly CPAP setup routine before bed, including checking mask fit and humidifier water level — does not skip even when tired or running late",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_064",
+            "fact": "Avoids evening naps or reclining in a recliner after dinner to ensure sleep pressure and maximize CPAP effectiveness at bedtime",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_045",
+              "fact": "Relies on overnight sleep clinic results and prescribed monitoring equipment to assess sleep quality — discontinues nightly sleep tracking app usage temporarily"
+            },
+            "to": {
+              "id": "pref_061",
+              "fact": "Uses his CPAP machine every night at home and relies on nightly CPAP data downloads for ongoing sleep quality monitoring — no longer tracks sleep via the clinic’s equipment or general monitoring apps",
+              "domain": "health_body"
+            },
+            "reason": "With an official diagnosis of moderate obstructive sleep apnea, his sleep monitoring now centers on CPAP machine data, not on clinic hardware or consumer sleep tracking apps. The clinic’s study phase has ended, and CPAP compliance and results become the core of his nightly routine."
+          },
+          {
+            "from": {
+              "id": "pref_047",
+              "fact": "Records detailed notes about fatigue and headache episodes in a paper journal each morning, as requested in the clinic's pre-study protocol"
+            },
+            "to": {
+              "id": "pref_062",
+              "fact": "Enters fatigue and sleep quality ratings each morning into the CPAP app’s daily log for digital sharing with his clinician; has discontinued the paper journal now that the formal sleep study is over",
+              "domain": "health_body"
+            },
+            "reason": "The sleep study required paper journaling to capture symptoms for diagnosis. Now, ongoing CPAP management encourages digital self-reporting within the CPAP app for convenience and real-time sharing with his health provider."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_046",
+            "fact": "Keeps electronics (phone, tablet, TV) out of the bedroom after dinner on clinic's advice to prepare for more accurate sleep study results and reduce evening stimulation",
+            "domain": "health_body",
+            "reason": "This restriction was specifically for improving the accuracy of the overnight sleep study. With the study completed and a CPAP machine now in use for nightly treatment, there is no longer a medical requirement to keep all electronics out of the bedroom for diagnosis purposes."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I’m officially on CPAP now, after the sleep study. Moderate obstructive sleep apnea—they gave me the machine last week. It’s been a lot to adjust to, especially with my schedule all over the place. I’m finding it hard to keep my routine steady. Mainly I’m struggling with keeping all the new setup steps straight, and tracking how my sleep changes. Any practical tips for getting settled into this?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, and sleep apnea treatment can take some getting used to. It’s good you’re committed to working it into your schedule. Regarding the nightly routine and tracking, are you using the CPAP’s built-in monitoring or still relying on your previous sleep apps and paper journals for symptoms?"
+        },
+        {
+          "role": "user",
+          "content": "I stopped all that. The clinic said their study is done, so I don’t use their monitoring equipment, and I dropped the sleep app too. Now it’s all through the CPAP—the app downloads data each morning and I fill in fatigue and sleep quality right there. No more paper journal either, just digital logs for my provider."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, digitizing that routine should simplify sharing with your provider. For the setup itself, are you following a checklist each night, or just getting through the basics as best as possible? Sometimes a step-by-step list helps until the routine becomes second nature."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ve started a detailed nightly routine: check mask fit, fill the humidifier, make sure everything’s ready—no skipping, even if I’m beat or running late. It’s tedious but I don’t want to risk it not working right. That part’s going okay, but it’s the evenings I’m still trying to figure out."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re committed to consistency, which is important. When you mention evenings, is it about winding down? Are naps or downtime after dinner affecting your sleep, especially now with the CPAP?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I avoid napping or lying down after dinner now—for sleep pressure and to maximize CPAP effectiveness. I used to jump on the recliner after dinner, but now I keep myself upright and moving. It’s tough with my fatigue, but seems to help fall asleep once I get in bed."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good adjustment—evening naps can definitely interfere with nighttime sleep. Are you still keeping electronics out of the bedroom in the evening, like you did during the sleep study? Or has that changed since the diagnosis?"
+        },
+        {
+          "role": "user",
+          "content": "No, I don’t keep all electronics out anymore. That restriction was just for the study—now I can have my phone or tablet in the bedroom again. Feels more normal, since I sometimes review schedules or message my wife before bed."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad you’re able to relax that rule now. Do you notice the CPAP making a difference yet—less fatigue, fewer headaches? Or is it too early to tell?"
+        },
+        {
+          "role": "user",
+          "content": "Too early for big changes, but I’m getting used to it. Mornings are a little better. I’m hoping for fewer headaches as I get more consistent. The digital fatigue tracker is easier—I can just share that with my doc without extra steps."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s encouraging. If the mornings improve, hopefully headaches will subside as well. With the digital log, troubleshooting should be smoother too. Is integrating all this with your unpredictable shift schedule working out, or still rough?"
+        },
+        {
+          "role": "user",
+          "content": "Still rough, especially on early start days. I prep my CPAP gear before reviewing tomorrow’s schedule with my wife. Setting that up each night, no matter how tired, helps make sure I don’t forget anything. Having most of the routine on autopilot is making it manageable."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—tying the prep to your evening schedule review keeps it consistent. If you ever need ideas for faster setup or ways to streamline data tracking for your provider, let me know. Are there other adjustments you're considering now that the CPAP is central to your routine?"
+        },
+        {
+          "role": "user",
+          "content": "I might look into mask liners for comfort—sometimes the fit is tricky after a long shift. But otherwise, I think steady routines and sticking to the logs is my priority. Thanks for helping talk it through—just needed to reset my process around the new normal."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_003",
+        "fact": "Handles client coordination calls from a private office whenever possible; avoids noisy open floor spaces",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Always drinks water with meals — never soda or energy drinks since hypertension diagnosis",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_011",
+        "fact": "Texts his wife before leaving work every evening to coordinate dinner and pickups — never leaves it to last minute",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Calls one close friend every Friday after work to catch up — never cancels without rescheduling",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Watches classic action movies with his son on weekend nights — avoids reality TV entirely",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Sets up the kitchen coffee pot every night for automatic brewing — never buys coffee en route to work",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks news and weather on his phone while making breakfast — avoids social media in the morning",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Reviews next day’s work schedule and family calendar together with his wife every evening before bed",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Does a 5-minute guided meditation in his car before entering work — never skips on high-stress days",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Pays all household bills online on the first Saturday of each month — never waits until due dates",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Sets aside Sunday evenings for video calls with his oldest child at college — maintains routine for check-ins and support, no longer focused on essay review",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Plans family video calls each week with his oldest child after their relocation — never lets two consecutive weeks pass without contact",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Pauses Thursday night board games with family while wife's mother is recovering — prioritizes family caregiving and quieter evenings",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Suspends twice-monthly fishing trips with his brother until wife's mother recovers — avoids leaving home early mornings during caregiving period",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Arranges quiet evening activities (reading, puzzles) for the household instead of TV or games, to accommodate his wife's mother's recovery needs",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_037",
+        "fact": "Completes assigned certification readings and coursework online every Sunday morning, replacing casual research with formal study obligations",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Completes certification assignments from the company program during lunch breaks at work, replacing gym time or leisure reading",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Leaves the distribution center early twice a week to attend evening certification classes, delegating late shift responsibilities to a trusted deputy",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_040",
+        "fact": "Schedules Saturday afternoon family time around certification project work, limiting outings and social plans during the next six months",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_041",
+        "fact": "Delegates urgent inventory system issues to trusted deputies during migraine flare-ups, only steps in when screen time restriction is lifted",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Avoids all screens and troubleshooting duties during migraine episodes, shifts to paperwork or in-person coordination tasks only",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_043",
+        "fact": "Uses paper-based checklists for daily team oversight during migraine flare-ups, returns to digital tools once symptoms subside",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_044",
+        "fact": "Spends migraine recovery evenings in a dim, quiet room, avoiding family movie nights or hobby projects involving screens or bright lights",
+        "domain": "leisure_hobbies",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_051",
+        "fact": "Arrives at the corporate office downtown for frequent daytime cross-departmental meetings — no longer prepares for warehouse shift coordination",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Secures work materials and tidies meeting documents at variable times before leaving the corporate office, due to irregular meeting end times — no longer leaves precisely at 5pm",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Brings a notepad and digital tablet to every cross-department task force meeting at the corporate office — prefers hybrid note-taking for complex discussions",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_054",
+        "fact": "Walks several blocks from parking garage to the corporate office each morning, using this time for brief stress-reduction breathing exercises",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_055",
+        "fact": "Seeks out low-sodium meal options from local cafes or canteens during the three-month abroad assignment — no longer able to bring homemade lunches for workdays",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Purchases pre-packaged healthy snacks from local supermarkets or shops to avoid unfamiliar vending machine options abroad — no longer preps snacks at home on Sundays",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_057",
+        "fact": "Pursues portable model train design sketches or research in his hotel room during downtime abroad — cannot work on physical models left at home",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_058",
+        "fact": "Schedules weekly evening video calls with his wife and children to maintain family connection while abroad — prioritizes these even with a time zone difference",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_059",
+        "fact": "Explores local parks or historic neighborhoods by taking brisk walks after work to relieve stress and stay active during the assignment",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_060",
+        "fact": "Keeps a written travel journal to record work experiences and cultural observations during the three-month assignment, as a personal reflection habit",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_061",
+        "fact": "Uses his CPAP machine every night at home and relies on nightly CPAP data downloads for ongoing sleep quality monitoring — no longer tracks sleep via the clinic’s equipment or general monitoring apps",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_062",
+        "fact": "Enters fatigue and sleep quality ratings each morning into the CPAP app’s daily log for digital sharing with his clinician; has discontinued the paper journal now that the formal sleep study is over",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_063",
+        "fact": "Performs a detailed nightly CPAP setup routine before bed, including checking mask fit and humidifier water level — does not skip even when tired or running late",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_064",
+        "fact": "Avoids evening naps or reclining in a recliner after dinner to ensure sleep pressure and maximize CPAP effectiveness at bedtime",
+        "domain": "health_body",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Schedules all team meetings before 8am or after 4pm — never during midday shift changes",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "He is no longer managing warehouse shift teams or handling shift changes; his new task force role centers around corporate daytime meetings, making this preference irrelevant."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Takes handwritten notes during troubleshooting sessions — never relies solely on digital logs",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "Troubleshooting sessions themselves are now temporarily limited or avoided during migraine flare-ups, per neurologist's recommendation; note-taking becomes largely irrelevant when such sessions are restricted."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Always answers urgent inventory system issues personally before escalating to IT",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_041",
+        "reason": "With chronic migraines and a doctor requiring restricted screen time during flare-ups, he can no longer reliably answer urgent troubleshooting issues himself; he must now delegate these tasks to others until his symptoms abate."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Researches supply chain management best practices online every Sunday morning for professional growth",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_037",
+        "reason": "Now enrolled in a company-sponsored certification program, his Sunday mornings for professional growth shift from informal research to studying assigned material for the coursework and capstone, as formal requirements take priority."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Packs a homemade low-sodium lunch every workday — never eats from the onsite vending machines",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_055",
+        "reason": "The overseas assignment prevents him from preparing lunch at home and packing it for work as usual; he now must rely on meal options available near his temporary workplace while maintaining his health requirement."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Goes for a brisk 20-minute walk during lunch breaks — avoids gym memberships due to unpredictable schedule",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "With the new fixed 9-to-5 hours and reliable lunch break, he can now consistently use the onsite gym, changing his previous avoidance of gym memberships due to unpredictable shifts."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Uses a sleep tracking app nightly to monitor sleep quality — avoids late caffeine to help with headaches",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_045",
+        "reason": "With the sleep study underway and possible new recommendations or equipment coming from the clinic, he is instructed to discontinue consumer sleep apps and follow the clinic's monitoring protocols instead."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Preps healthy snack containers (nuts, fruit) on Sundays to resist warehouse junk food during long shifts",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_056",
+        "reason": "With the three-month overseas posting, his routine of prepping Sunday snack containers at home is impossible; he must adapt by sourcing healthy snacks locally."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Blocks off Saturday mornings exclusively for helping his parents with errands — never schedules work during this time",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_048",
+        "reason": "With his father's early-stage Parkinson's diagnosis, routine errands have expanded to include regular medical appointments and increased physical assistance. His caregiving responsibilities now require much more personal involvement for both logistical and emotional support, taking up a greater portion of his weekends."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Sets aside Sunday evenings to review college essays and applications with his oldest child — keeps this as a regular commitment",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "With his oldest child moving out-of-state to attend university, in-person essay review is replaced by remote check-ins to maintain their connection."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Attends every school event at least once per semester for each child, even if it means shifting his work schedule",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_027",
+        "reason": "The mandatory in-person 9-to-5 attendance policy removes his ability to shift work schedule for daytime school events, now restricting attendance to evenings or weekends."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Plays strategy board games with family every Thursday night — never misses unless an emergency arises",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "With his wife's mother temporarily moving into their home for post-stroke recovery, Thursday nights now require more caregiving and lower stimulation, making family board game sessions impractical for the time being."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Goes fishing twice a month at a local reservoir with his brother — always wakes up before sunrise for these trips",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_034",
+        "reason": "Care demands and need for household support mean he cannot commit to early morning fishing excursions while his wife's mother needs assistance."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Works on model trains in the garage on rainy afternoons — never brings hobby projects into the main house",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_057",
+        "reason": "Traveling for three months overseas makes working on physical model trains in his home garage impossible; he replaces this with portable, travel-friendly aspects of the hobby."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Books one weekend getaway each season for the family — never travels without at least three weeks’ advance planning",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "The temporary presence of his wife's recovering mother makes overnight trips impossible — family travel is not feasible during this caregiving period, so seasonal getaways cannot be planned."
+      },
+      {
+        "id": "pref_026",
+        "fact": "Joins the company gym for 30-minute indoor workouts during lunch breaks — takes advantage of the consistent 9-to-5 schedule",
+        "domain": "health_body",
+        "created_at_session": 0,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "Certification evening classes twice a week and capstone work means lunch breaks will be spent preparing or recovering for classes and overtime. His schedule is now more unpredictable and demanding, making regular gym visits impractical."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Attends school events only if they are outside standard 9-to-5 work hours — unable to shift work schedule under new policy",
+        "domain": "social_relationships",
+        "created_at_session": 0,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "This preference was specifically tied to attending school events for his children. With his oldest now attending college out-of-state and soon leaving home, events for this child no longer occur in the local school context; only his younger child remains relevant for school events, so the preference needs redefining rather than persisting in its current form."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Arrives at the distribution center at 8:45am every weekday to prepare for daily in-person coordination meetings before shift begins",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_051",
+        "reason": "The leadership shakeup means he is reassigned from the warehouse to a new cross-departmental task force stationed at the corporate office, requiring him to coordinate with senior management in office settings rather than prep for team meetings on the warehouse floor."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Sets a daily reminder to lock work files and tidy his desk at 5pm sharp before leaving — never stays late under the new shift rules",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_052",
+        "reason": "With his new role involving irregular meeting schedules at the corporate office and no fixed shift end time, he must adapt his end-of-day routine to conference room transitions and variable departures, rather than following a strict 5pm rule."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Begins organizing packing and travel checklists for the family's upcoming relocation weekends — dedicates Saturday afternoons for this",
+        "domain": "daily_routines",
+        "created_at_session": 1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "The relocation weekends and travel-focused packing routines are no longer relevant—his weekends are now required at home and with his father due to new medical needs and regular appointments. There is no more actively planned family relocation at this time."
+      },
+      {
+        "id": "pref_035",
+        "fact": "Helps his wife prepare balanced meals and administer medication for her mother each evening — coordinates with his children to share caregiving duties",
+        "domain": "social_relationships",
+        "created_at_session": 2,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "He will be out of the country for three months and cannot physically assist with evening caregiving at home; these duties no longer apply during the assignment."
+      },
+      {
+        "id": "pref_045",
+        "fact": "Relies on overnight sleep clinic results and prescribed monitoring equipment to assess sleep quality — discontinues nightly sleep tracking app usage temporarily",
+        "domain": "health_body",
+        "created_at_session": 5,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_061",
+        "reason": "With an official diagnosis of moderate obstructive sleep apnea, his sleep monitoring now centers on CPAP machine data, not on clinic hardware or consumer sleep tracking apps. The clinic’s study phase has ended, and CPAP compliance and results become the core of his nightly routine."
+      },
+      {
+        "id": "pref_046",
+        "fact": "Keeps electronics (phone, tablet, TV) out of the bedroom after dinner on clinic's advice to prepare for more accurate sleep study results and reduce evening stimulation",
+        "domain": "health_body",
+        "created_at_session": 5,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "This restriction was specifically for improving the accuracy of the overnight sleep study. With the study completed and a CPAP machine now in use for nightly treatment, there is no longer a medical requirement to keep all electronics out of the bedroom for diagnosis purposes."
+      },
+      {
+        "id": "pref_047",
+        "fact": "Records detailed notes about fatigue and headache episodes in a paper journal each morning, as requested in the clinic's pre-study protocol",
+        "domain": "health_body",
+        "created_at_session": 5,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_062",
+        "reason": "The sleep study required paper journaling to capture symptoms for diagnosis. Now, ongoing CPAP management encourages digital self-reporting within the CPAP app for convenience and real-time sharing with his health provider."
+      },
+      {
+        "id": "pref_048",
+        "fact": "Dedicates both Saturday mornings and afternoons to assisting his father with household tasks, transportation, and medical appointments, rescheduling all nonessential activities and minimizing work interruptions on weekends",
+        "domain": "social_relationships",
+        "created_at_session": 6,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "During the three-month overseas assignment, he cannot provide in-person help to his father on weekends; local family responsibilities must be paused."
+      },
+      {
+        "id": "pref_049",
+        "fact": "Prepares a written log of his father's symptoms, medications, and appointments each weekend to streamline doctor visits and coordinate care with family members",
+        "domain": "social_relationships",
+        "created_at_session": 6,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "He is unable to attend his father’s appointments or maintain in-person logs from abroad during the assignment."
+      },
+      {
+        "id": "pref_050",
+        "fact": "Shifts weekend meal routines to include low-sodium, soft-texture dishes when dining with his parents, to accommodate his father’s dietary changes",
+        "domain": "health_body",
+        "created_at_session": 6,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "Since he will not be present for family meals during the overseas assignment, this meal routine does not apply."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:34:54.915718"
+}

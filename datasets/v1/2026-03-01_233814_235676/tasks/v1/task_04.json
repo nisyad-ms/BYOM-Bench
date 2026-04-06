@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_c811a384",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_038",
+        "fact": "Prepares outfit and lunch in the afternoon for upcoming late shifts, but returns to morning preparations before early shifts — no longer a single, fixed routine",
+        "supersedes": {
+          "id": "pref_021",
+          "fact": "Prepares her outfit and lunch the night before work — never rushes morning preparations"
+        }
+      },
+      {
+        "id": "pref_045",
+        "fact": "Attends weekly coaching sessions with her manager on Fridays to review call resolution statistics and plan targeted improvements, replacing her solo review routine",
+        "supersedes": {
+          "id": "pref_005",
+          "fact": "Reviews her call resolution statistics every Friday afternoon to plan improvements for the following week"
+        }
+      },
+      {
+        "id": "pref_032",
+        "fact": "Reserves Friday evenings for joint leisure activities with her boyfriend — no longer plans solo outings on Fridays"
+      },
+      {
+        "id": "pref_056",
+        "fact": "Schedules daily message check-ins and quick planning meetings with her sister to coordinate childcare, errands, and apartment logistics each morning"
+      },
+      {
+        "id": "pref_017",
+        "fact": "Explores Portland’s hiking trails every second weekend, rain or shine"
+      },
+      {
+        "id": "pref_034",
+        "fact": "Prepares dinner earlier on in-person training nights to avoid eating late after returning home"
+      }
+    ]
+  },
+  "persona": "An entry-level support agent at a regional telecommunications provider"
+}

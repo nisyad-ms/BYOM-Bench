@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_6b59acfd",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_051",
+        "fact": "Now begins every morning with dietary iron supplement and gentle stretching — skips herbal tea if it interferes with iron absorption, and avoids coffee or calcium-rich beverages in the morning.",
+        "supersedes": {
+          "id": "pref_021",
+          "fact": "Begins every morning with 10 minutes of stretching and herbal tea — never coffee"
+        }
+      },
+      {
+        "id": "pref_054",
+        "fact": "Schedules DAAD progress reports strictly according to new supervisor's review cycle, always submits them at least one week before internal committee deadlines",
+        "supersedes": {
+          "id": "pref_026",
+          "fact": "Completes DAAD progress reports on a rolling basis, sometimes submitting close to the deadline due to unpredictable requirements"
+        }
+      },
+      {
+        "id": "pref_045",
+        "fact": "Actively searches for and shares mental health and campus support resources with her mentee — regularly recommends external counseling, peer groups, or relevant workshops based on her mentee’s needs"
+      },
+      {
+        "id": "pref_043",
+        "fact": "Schedules occasional shared online film screenings with her partner, selecting films that are accessible in both Singapore and Seattle and coordinating start times across time zones"
+      },
+      {
+        "id": "pref_012",
+        "fact": "Attends every Friday international student potluck, always brings a homemade vegan dish"
+      },
+      {
+        "id": "pref_006",
+        "fact": "Does yoga routines at home using German-language YouTube channels — never attends local group classes"
+      }
+    ]
+  },
+  "persona": "An international PhD candidate in environmental science"
+}

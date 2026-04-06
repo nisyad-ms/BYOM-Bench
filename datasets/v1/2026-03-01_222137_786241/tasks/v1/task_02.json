@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_20a46aef",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_049",
+        "fact": "Visits his mother daily after work and assists with meals, medication, and mobility — calls only if unable to visit in person that day",
+        "supersedes": {
+          "id": "pref_013",
+          "fact": "Calls his mother every Sunday evening even if also visiting earlier in the week; says it establishes continuity"
+        }
+      },
+      {
+        "id": "pref_034",
+        "fact": "Suspends the Thursday strategic planning block to remain available for urgent crisis management and constant incident updates, until the plant breach is resolved",
+        "supersedes": {
+          "id": "pref_003",
+          "fact": "Blocks two hours every Thursday morning for uninterrupted strategic planning — no calls, emails, or meetings allowed during this time"
+        }
+      },
+      {
+        "id": "pref_029",
+        "fact": "Schedules midweek family video calls from Frankfurt to stay connected during international trips."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Explores Columbus metro parks with family one Sunday afternoon per month — refuses to visit the same park twice in a season"
+      },
+      {
+        "id": "pref_032",
+        "fact": "Reviews nightly CPAP sleep quality statistics with his spouse weekly — uses the feedback to discuss health goals and adjust bedtime routines"
+      },
+      {
+        "id": "pref_040",
+        "fact": "Eats lunch in the staff cafeteria with line workers during factory rotation; declines executive dining room access for the duration"
+      }
+    ]
+  },
+  "persona": "An executive at a manufacturing firm overseeing digital transformation initiatives"
+}

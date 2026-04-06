@@ -1,0 +1,1522 @@
+{
+  "persona": "A junior web developer at a nonprofit organization",
+  "persona_id": "persona_20260302_093639",
+  "expanded_persona": {
+    "base_persona": "A junior web developer at a nonprofit organization",
+    "age": 26,
+    "gender": "female",
+    "location": "Seattle, WA",
+    "work_education": [
+      "Works full-time as a junior web developer at a nonprofit focused on environmental advocacy",
+      "Recently assigned as lead on updating the organization's main donation platform; deadline in two months",
+      "Attends weekly coding bootcamp sessions after work to earn a certification in React",
+      "Juggles bug fixes with building new features; often works closely with outreach and fundraising teams",
+      "Considering applying for internal promotion to mid-level developer in the next year"
+    ],
+    "health_wellness": [
+      "Diagnosed with mild anxiety; attends virtual therapy sessions biweekly",
+      "Mostly sedentary due to remote work setup but tries to take lunchtime walks with her dog",
+      "Recently switched to a vegetarian diet after watching a documentary recommended by colleagues",
+      "Frequently gets tension headaches during stressful project periods",
+      "Has trouble falling asleep; averages about 6 hours a night"
+    ],
+    "family_relationships": [
+      "Lives with her longtime boyfriend and their rescue terrier in a small apartment",
+      "Her boyfriend is a freelance graphic designer and often works late, so they see each other sporadically during workdays",
+      "Parents live nearby in Tacoma; visits every couple of months, especially for family birthdays",
+      "Has an older sister who recently had a baby; helps babysit on occasional weekends",
+      "Maintains a close-knit group of friends from college, organizing monthly board game nights"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Schedules focus blocks for complex coding tasks in the morning — never books meetings before noon if avoidable",
+        "Logs bug reports and feature requests in detail immediately after they arise — never leaves undocumented issues for later",
+        "Prefers video calls with outreach and fundraising teams to hashing things out over email",
+        "Completes all bootcamp assignments the same night as class — never lets coursework pile up to the weekend",
+        "Always submits pull requests for peer review, even for minor changes — won't merge unreviewed code"
+      ],
+      "health_body": [
+        "Takes a brisk 20-minute walk with her dog at lunch daily — never eats lunch at her desk",
+        "Sticks to a fully vegetarian diet at home — refuses to cook meat even for guests",
+        "Uses a heated neck wrap whenever headaches start — avoids taking pain medication unless absolutely necessary",
+        "Turns off screens 30 minutes before bed and listens to calming music to help fall asleep",
+        "Attends every virtual therapy session without rescheduling — considers these appointments non-negotiable"
+      ],
+      "social_relationships": [
+        "Organizes monthly board game nights at her apartment — never rotates hosting to other friends' places",
+        "Texts her parents every Sunday evening to check in — avoids long phone calls unless it's a special occasion",
+        "Babysits her niece on Saturday afternoons — never on weekday evenings",
+        "Makes dinner for her boyfriend twice a week, even if they eat at different times — never orders in on these nights",
+        "Initiates group chats for planning friend gatherings — never relies on others to coordinate"
+      ],
+      "leisure_hobbies": [
+        "Crochets small projects while listening to podcasts — never watches TV at the same time",
+        "Explores a new Seattle park or garden every other weekend — avoids crowded indoor attractions",
+        "Keeps a digital photo journal of her dog’s walks — never posts them publicly, just for personal memory",
+        "Experiments with vegetarian baking recipes one Sunday a month — never repeats the same recipe twice in a row",
+        "Plays narrative-driven indie games in short evening bursts — never engages in multiplayer online games"
+      ],
+      "daily_routines": [
+        "Starts every workday with a hand-brewed cup of coffee while reviewing her task list — never uses a pod machine",
+        "Checks email three times a day on a set schedule — avoids push notifications outside those windows",
+        "Preps all lunches for the week on Sunday night — never buys takeout for midday meals",
+        "Walks her dog first thing in the morning, rain or shine — never skips unless ill",
+        "Reads on her e-reader for 20 minutes before bed — never uses her phone for reading at night"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Her organization was awarded a major grant specifically for digital innovation, and she was invited to join a new cross-functional team tasked with developing a pilot project to increase online donor engagement over the next six months.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Adds a daily project update note to the cross-functional team workspace before logging off — avoids lengthy recap emails",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Sets aside one evening per week to research digital engagement trends and share findings with the team",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Schedules focus blocks for complex coding tasks in the morning — never books meetings before noon if avoidable"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Now books collaborative meetings and brainstorming sessions in the morning with the cross-functional team — prefers meetings earlier in the day to align on project goals",
+              "domain": "work_habits"
+            },
+            "reason": "Joining the new cross-functional team for the pilot project requires morning collaboration and brainstorming sessions to align on digital innovation strategies, replacing her solitary focus block habit."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, our nonprofit just landed a huge grant for digital innovation, and now I've been invited to join this new cross-functional pilot team. It's super exciting, but also a bit overwhelming—the goal is to increase online donor engagement in six months, and we're expected to collaborate a lot more. I know project management and team brainstorming aren't exactly my comfort zone. Any recommendations for organizing my workflow without losing my coding focus?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats—that’s an awesome opportunity! It’ll definitely mean more cross-team collaboration, which can be challenging when you’re used to working through problems solo. Do you have a sense yet of how the meetings and brainstorming will fit into your schedule, or are you building your workflow from scratch?"
+        },
+        {
+          "role": "user",
+          "content": "I used to reserve my mornings for solo focus blocks—deep coding, detailed bug reports, stuff like that. But with this new team, we’re expected to do collaborative sessions and goal-setting early in the day. So, I’m basically switching from working alone in the mornings to booking meetings with the whole group. It’s a big change, honestly."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a pretty substantial shift. Morning focus blocks are prime for deep work, but I’ve also seen teams benefit from early-day alignment sessions—the energy is higher, and everyone’s priorities are fresh. Are you finding these brainstorming meetings productive so far, or is the context switching hard?"
+        },
+        {
+          "role": "user",
+          "content": "The first few sessions were chaotic, but it’s getting better as we learn each other’s styles. I still miss having that uninterrupted time, though. One thing I'm trying is adding a daily project update note to the team's workspace before I log off. It's a way to capture progress quickly without writing long recap emails."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart! Keeping updates brief and centralized helps everyone stay in sync without adding extra admin work. Since you’re transitioning into a more collaborative routine, have you thought about ways to separate your coding tasks from the new research or engagement responsibilities, so you don't get stretched too thin?"
+        },
+        {
+          "role": "user",
+          "content": "I'm actually carving out one evening per week for digital engagement trends research. After dinner, I'll dig into articles or case studies and share highlights with the pilot team. It's helping me get up to speed, but I want to make sure I don’t overload myself and still have bandwidth for bootcamp assignments."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great approach! Dedicating a set time each week for industry research keeps things manageable, and it shows initiative to the new team. As far as balance, are there any routines you’ve had to drop or modify to make space for these new responsibilities, or are you still keeping your personal time intact?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, giving up my solo coding mornings has been the biggest adjustment. I also tend to push some personal projects to the weekend now, just to maintain a bit of breathing room. But with the new team habits—morning meetings, daily project notes, and weekly research—the workflow is starting to settle."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re proactively adapting to the new demands. Out of curiosity, do you ever struggle with project handoff or communicating updates to the outreach and fundraising folks, or does the daily project workspace format handle most of that?"
+        },
+        {
+          "role": "user",
+          "content": "So far, the daily project update is working really well. People check the workspace for quick recaps, which keeps things moving. I actually prefer it to email, since it’s less formal and doesn’t demand lengthy write-ups. If anything, it frees me up for actual work rather than repetitive communication."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s fantastic—having a streamlined update process can make a world of difference when juggling multiple responsibilities. If you need help structuring your weekly research summaries for the team or want to brainstorm digital engagement ideas, just let me know. And congrats again on being selected for the pilot group—it sounds like a great step forward!"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "After experiencing a severe tension headache and dizziness during a late-night coding session, her doctor ordered a mandatory two-week break from screens and all non-essential work to address stress-induced health symptoms.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Spends her usual evening screen time on jigsaw puzzles or sketching in a physical notebook to relax without digital devices",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Prefers listening to soothing, non-stimulating music via a speaker or radio instead of streaming playlists from her phone during the recovery period",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_025",
+              "fact": "Reads on her e-reader for 20 minutes before bed — never uses her phone for reading at night"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Reads physical books before bed — avoids all screens, including e-readers and phones, at night during doctor-mandated screen break",
+              "domain": "daily_routines"
+            },
+            "reason": "Her doctor has ordered a complete break from screens, including e-readers, for two weeks to address stress-induced health symptoms. She can only read physical books during this period."
+          },
+          {
+            "from": {
+              "id": "pref_020",
+              "fact": "Plays narrative-driven indie games in short evening bursts — never engages in multiplayer online games"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Pauses all video game play, including narrative indie games, during mandated screen-free recovery period — instead spends evenings on non-digital pastimes",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The doctor ordered a full two-week break from screens; all video gaming is suspended for now to avoid screen exposure."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_028",
+            "fact": "Sets aside one evening per week to research digital engagement trends and share findings with the team",
+            "domain": "work_habits",
+            "reason": "The weekly research activity depends entirely on screen use; with all non-essential work and screens banned for two weeks by her doctor, this routine cannot continue for now."
+          },
+          {
+            "id": "pref_004",
+            "fact": "Completes all bootcamp assignments the same night as class — never lets coursework pile up to the weekend",
+            "domain": "work_habits",
+            "reason": "All non-essential screen activities and coursework must pause due to her mandated screen break and work time-off for health reasons; bootcamp sessions and homework are on hold."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so I just got sidelined — my doctor ordered a full two-week break from screens after a really bad tension headache and dizzy spell late last night. No coding, no bootcamp, not even e-books. I'm honestly a little lost. How do you fill time and stay sane with zero tech? I need ideas for evenings especially."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds tough and abrupt, especially given how much your work and hobbies revolve around screens. For evenings, have you ever tried hands-on activities like puzzles, crafts, or journaling? They can be surprisingly immersive if you’re used to digital downtime. What kind of off-screen hobbies have you enjoyed in the past?"
+        },
+        {
+          "role": "user",
+          "content": "I usually play indie narrative games or read on my Kindle, so most of my wind-down stuff is on screens. Crocheting is screen-free and I like it, but I don’t want to do it every night. I started a jigsaw puzzle last night and found it pretty calming, and I’m doodling in a notebook instead of digital journaling right now. Anything else low-stimulation you recommend?"
+        },
+        {
+          "role": "assistant",
+          "content": "Doodling and puzzles are great choices—really good for zoning out without overstimulation. Have you tried listening to music or audiobooks on a speaker or radio rather than through your phone? Sometimes just having soothing background sounds can help, especially as you adjust. Also, physical books instead of your Kindle might help keep your old reading habit alive."
+        },
+        {
+          "role": "user",
+          "content": "Yes, I’m actually switching to physical books for bedtime now—the doctor’s orders are strict, so no screens at night at all, even e-readers. I dug out a couple paperbacks, but I’m out of practice. Audiobooks are apparently off-limits too if they’re streamed from my phone, so I’ve been sticking to the radio or CDs for music. I need some recommendations for fiction that feels cozy but isn’t too slow. Any favorites?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great that you found some paperbacks—those can feel like a treat when you’re used to digital. For cozy but engaging fiction, have you checked out 'The Bear and the Nightingale' by Katherine Arden, or 'The House in the Cerulean Sea' by TJ Klune? Both have warmth and momentum. Or if you want something shorter, classic mysteries like Agatha Christie tend to be brisk but comfortable reads."
+        },
+        {
+          "role": "user",
+          "content": "Thanks, that’s perfect—I actually have Cerulean Sea on my shelf but never started it. I’ll add that to my stack. And puzzles are definitely becoming my go-to since gaming is on pause for now, no matter how much I miss those story-driven evenings. I don’t want to spend every night crocheting, so I’ll rotate between jigsaw puzzles and sketching for a bit. Anything else small to fill the gaps?"
+        },
+        {
+          "role": "assistant",
+          "content": "Glad those alternatives appeal! You might also try simple board or card games with your boyfriend—or even solitaire if he’s busy. Cooking or baking new recipes (especially vegetarian ones) can be fun and screen-free if you have some free time and energy. Or, if you enjoy being outside, you could take longer evening walks with your dog to help unwind."
+        },
+        {
+          "role": "user",
+          "content": "Board games are a good idea—though my monthly group night usually depends on digital invites and tracking, so I’ll probably keep it low-key for the next couple weeks. Baking is appealing; I was actually planning to try a new vegetarian recipe this weekend anyway. I’ve been doing longer walks too, since my lunch break isn’t tied to a screen anymore. It’s helping with the tension headaches, especially since I’m avoiding pain meds if I can. Just curious—how do you usually recommend people track routines or mood without apps?"
+        },
+        {
+          "role": "assistant",
+          "content": "Without apps, many people use simple paper journals or planners. You can jot down how you feel each day, what activities you did, and any patterns you notice. Sketching or color-coding can help too if you prefer visual records. It’s low-tech but actually quite effective, especially for noticing small changes in mood or symptoms."
+        },
+        {
+          "role": "user",
+          "content": "That makes sense, and I could probably use my notebook for mood tracking while I’m sketching. I used to log everything digitally, but for these two weeks I’ll just keep it analog. Also, my bootcamp sessions are paused now—I normally do assignments after class, but absolutely no coursework or screen research for a while. Feels weird skipping it, but I suppose my health takes priority. Is there any prep I can do for work that won’t involve screens or digital materials?"
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely—health comes first, and taking a break will help you recover more fully. For prep, you could brainstorm features or outline workflows for the donation platform using pen and paper. Mapping user journeys or writing out bug reports manually can be valuable, and you’ll have fresh ideas to bring once you’re back online. If you want, you can also sketch wireframes or storyboard features for later review."
+        },
+        {
+          "role": "user",
+          "content": "That sounds like a good plan—I actually ordered some blank storyboarding pads. I can map out workflows for the platform update since leading that still feels overwhelming. And since I’m dropping both my weekly digital trend research and bootcamp coursework for now, I have free evenings to work through ideas in sketch form. Thanks for helping me rethink how to use this screen-free time!"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome! It sounds like you’re already finding creative ways to adapt. Sketching ideas and mapping workflows should give you a strong foundation once you’re able to get back to screens. Hang in there with the recovery—the downtime might actually spark some new inspiration. If you need more off-screen suggestions or cozy book recs, just ask."
+        },
+        {
+          "role": "user",
+          "content": "Will do! I’ll try a bit of everything and see what sticks. Thanks for the help—I’m feeling much less adrift about these next two weeks."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Her boyfriend received a lucrative contract with a design firm in Portland, requiring him to temporarily relocate for three months; she will be living alone with their dog during his absence.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Schedules regular video calls with her boyfriend in Portland, prioritizing evenings to stay connected while he's away",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Takes longer evening walks with her dog for companionship and stress relief when living alone",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Makes dinner for her boyfriend twice a week, even if they eat at different times — never orders in on these nights"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "No longer makes dinner for her boyfriend twice a week while he is in Portland; instead, focuses on solo dinners or meals with her dog as companion",
+              "domain": "social_relationships"
+            },
+            "reason": "Her boyfriend’s three-month relocation to Portland means he is not home; she cannot cook for him or coordinate dinner routines as before."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_011",
+            "fact": "Organizes monthly board game nights at her apartment — never rotates hosting to other friends' places",
+            "domain": "social_relationships",
+            "reason": "She prefers hosting at her apartment, but living alone for three months (with her boyfriend away) makes solo hosting more difficult logistically and emotionally; friends are likely to offer hosting, or gatherings may be postponed, removing this routine."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my boyfriend just got this big contract with a design firm in Portland and he'll be moving there for three months. It's only been a few days since he left and honestly, the apartment feels pretty empty. I already know it's going to mess with a bunch of my routines. Do you have tips for keeping things feeling \"normal\" when you're suddenly living solo for a while? Especially with work stuff ramping up, I don't want to lose my balance."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a huge adjustment! Managing routines solo, especially with work getting busy, is definitely tricky. When things shift like this, it can help to anchor yourself with a few daily rituals—ones that center you and your dog, maybe. Would you like help more on the home/self-care side, or are you worried your work routines will unravel the most?"
+        },
+        {
+          "role": "user",
+          "content": "It's a mix. Work is pretty intense right now; I'm lead on updating our donation platform and juggling bootcamp assignments in the evenings. But home feels… weird too, especially at night. I used to make dinner for both of us twice a week, even if we ate at different times. Now it’s just me and the dog for meals for a while, so I need ideas for solo dinner routines. Also, evenings are lonelier than expected."
+        },
+        {
+          "role": "assistant",
+          "content": "Transitioning from cooking for two to cooking for one can be a bit of a letdown, but it’s also a chance to experiment with new meals—maybe batch cook, or try fun vegetarian recipes since you’re solo. If evenings feel especially empty, could you plan a routine walk with your dog after dinner? Sometimes longer walks help process the day and break up quiet nights. Would keeping some kind of video call schedule with your boyfriend help too?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely yes on the longer evening walks! Our lunchtime ones are locked in, but I started taking him out in the evenings a bit more, just to keep myself moving and stave off the quiet. As for my boyfriend, we agreed to do regular video calls in the evening—after I finish bootcamp assignments—so we have something to look forward to. It’s new, but so far helps me stay connected. What about dealing with empty social calendar? Used to host board game nights each month with friends here, but hosting solo sounds stressful now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great—having scheduled video calls and longer walks are strong coping strategies! On the social side, it might be worth letting friends take the lead on hosting for a change, or even pausing the board game nights for a bit. You’re carrying a lot solo right now, so it’s okay to scale back. Or, could you shift the format—maybe smaller meetups, or rotate hosting to their places? Whatever feels less overwhelming."
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the idea of rotating hosting or even just skipping this month’s game night makes sense. I usually insist on hosting at my apartment, but with my boyfriend gone, it’s way more logistically and emotionally tough to do solo. My friends have already offered to host, so maybe I’ll let them take over for now. That’s definitely a change for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Allowing others to host is a healthy shift! It gives you a breather and keeps your social connections strong with less pressure. Maybe you can still attend, but just as a guest, which feels easier when you’re managing everything else. Do you need help brainstorming solo evening routines, or meal ideas to enjoy with your dog as company?"
+        },
+        {
+          "role": "user",
+          "content": "Solo evening routines would actually help. I have my bootcamp coursework most nights, but I don’t want to spend all evening on the computer. The walks with my dog help, but maybe something to wind down after that? Also, quick vegetarian meal ideas would be great—I’m trying to keep it easy since I don’t have anyone else to cook for now."
+        },
+        {
+          "role": "assistant",
+          "content": "For winding down, after your evening walk and bootcamp, you might try crochet projects paired with a podcast—that’s relaxing and doesn’t involve more screen time. Or maybe explore a new baking recipe once a week, since you’re solo and can experiment freely. For meals: veggie stir-fries, one-pot lentil stews, or grain bowls topped with roasted veggies are nutritious and fast, plus easy to scale for one. Would you like recipe recommendations? Also, creating a mini ritual—like sitting on the balcony with your dog—can help evenings feel less empty."
+        },
+        {
+          "role": "user",
+          "content": "I like the idea of crochet and podcasts—easy and really calms me down. And baking something new is a good Sunday project, just for myself. Roasted veggie bowls sound perfect for weeknights; I could batch the veggies and mix up toppings. Sitting with my dog after dinner is a nice touch, since he’s such good company. Let’s go with a few easy vegetarian bowl recipes and any calming evening ritual tips."
+        },
+        {
+          "role": "assistant",
+          "content": "Great choices! I’ll send a couple favorite veggie bowl recipes: one with quinoa, roasted brussels sprouts, chickpeas, and tahini drizzle; another with sweet potato, kale, avocado, and tofu. For calming rituals—try journaling about your day, playing soothing music while you prep dinner, or even light stretching with your dog nearby. Making these routines intentional often helps mark the end of the workday. Did you want suggestions for other ways to stay connected while he’s away, or are the regular video calls enough?"
+        },
+        {
+          "role": "user",
+          "content": "Video calls are good for now—sometimes we just check in, other times do dinner “together” while chatting. Keeping things casual helps. I might send him some photos from our walks, since I started keeping a digital photo journal for myself, and sharing a few could be nice."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a sweet idea—sharing walk photos makes him feel part of daily life, even from afar. You seem to be finding small ways to adapt, like evolving routines for solo dinners and longer walks. If anything feels overwhelming, remember to lean on friends or family for support. And let me know if you need meal plans, evening routine guides, or help flexing your schedule—happy to brainstorm anytime!"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Her sister was offered a new job that requires frequent travel, so she asked for help with regular weekday babysitting for her infant daughter for the next several months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Prepares simple batch vegetarian dinners in advance on Sundays to have ready for nights when babysitting her niece after work",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_038",
+            "fact": "Brings calm, screen-free activities (like crocheting or reading aloud) to occupy herself and soothe her niece during weekday babysitting sessions",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Babysits her niece on Saturday afternoons — never on weekday evenings"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Regularly babysits her niece on select weekday evenings after work — no longer restricts babysitting to weekends",
+              "domain": "social_relationships"
+            },
+            "reason": "Her sister’s new job requires frequent travel, so she agreed to provide recurring weekday babysitting for her infant niece. The timing can no longer be confined to just Saturday afternoons."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my sister just got a new job — she has to travel a lot, sometimes during the week. She asked if I could help babysit her daughter in the evenings after work, at least for the next few months. I'm worried about keeping up with work, coding bootcamp, plus my own health and routines. Can you help me figure out how to balance everything? Especially the weeknight babysitting part."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift — good of you to help your sister out. Balancing work, bootcamp, and new childcare duties can get overwhelming fast. Do you have a sense of which nights you’ll be babysitting, and how much advance notice you’ll usually get? That might help with planning. Also, what’s been most challenging so far: managing your work tasks, maintaining your bootcamp schedule, or keeping up with your personal routines?"
+        },
+        {
+          "role": "user",
+          "content": "It’ll mostly be Tuesday and Thursday evenings, plus the occasional extra night depending on her travel schedule, but she’ll try to give me a week’s notice. I always do bootcamp assignments the night of class, so that's not negotiable. The tricky part is weekday evenings — I never babysat on those before, only Saturday afternoons, so my routine feels off. I’m not sure how to handle dinner those nights, and I don’t want to just order takeout."
+        },
+        {
+          "role": "assistant",
+          "content": "Having set nights helps! For dinner, it may be worth prepping meals in advance so you’re not scrambling after work and while babysitting. Would batch-cooking simple vegetarian dishes on Sundays work for you? That way, you could just reheat something and focus on your niece. Or do you have a favorite quick recipe you rely on?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, prepping vegetarian meals ahead is actually what I started doing. On Sundays, I put together a few easy things — soups, casseroles, pasta salads — so I always have something ready when I come home and need to babysit. It makes weekday evenings way more manageable since I refuse to cook meat even for guests, and takeout isn’t my thing."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds perfect, and definitely aligns with your vegetarian approach. If you ever need fresh batch-cooking ideas, I can suggest some veggie-friendly dishes that freeze well or stay tasty for a few days. For babysitting, what activities do you usually do with your niece to keep her calm? Given the evening timing, you might want something soothing for both her and you."
+        },
+        {
+          "role": "user",
+          "content": "She’s still a baby, so evenings are mostly about winding her down. I bring crocheting projects or a book to read aloud — quiet, screen-free stuff that helps both of us relax. It’s important for me to avoid screens around her, and honestly it helps with my own headaches and sleep when I’m not staring at a laptop all evening."
+        },
+        {
+          "role": "assistant",
+          "content": "Screen-free activities are a great idea for winding down, and it’s awesome you’re able to combine your hobbies with babysitting. Crocheting is perfect since it’s portable and calming. On nights when you’re babysitting, does your boyfriend usually help with dinner or evening tasks, or is he working late? Just curious — sometimes sharing duties can lighten things when routines get busy."
+        },
+        {
+          "role": "user",
+          "content": "He’s often working late on freelance projects, so we don’t overlap much weekday evenings. I still make dinner for him twice a week, but those nights don’t always line up with babysitting. That’s another reason for prepping food ahead — I can make sure there’s something vegetarian for both of us, regardless of our schedules. Honestly, adjusting to weekday babysitting has been the biggest change. I used to only do Saturday afternoons, but now I’m regularly doing select weekday evenings instead."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for sharing how your schedule has changed. Making meals ahead and picking calm, screen-free activities seems like you’re adapting well. If you find yourself needing help managing energy, maybe you could carve out a 10-minute break for yourself — even just to sit with a cup of tea before your niece arrives. Or, bring your favorite book to read for a few minutes after she’s asleep to reinforce your own evening wind-down. Let me know if you want tips on batch meal recipes or soothing activity ideas — I can help brainstorm for your new routine."
+        },
+        {
+          "role": "user",
+          "content": "I like the idea of taking a mini-break before my niece gets there, especially since babysitting can be tiring after coding all day. If you have any suggestions for vegetarian meals that are good for prepping in batches, send them my way! Also, if you know any calming activities for babies that don’t involve screens, I’m open to ideas. I want to keep these evenings as stress-free as possible, for both of us."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! For batch vegetarian meals: vegetable lentil stew, chickpea curry with rice, roasted veggie pasta bakes, and tofu stir-fry are all good for prepping ahead. For calming no-screen baby activities: gentle lullabies, soft stacking toys, simple picture books, and even sensory play with safe household items (like scarves or soft fabrics) can be soothing. You could also crochet small items while your niece watches or feels the yarn — tactile textures are engaging for infants. Let me know which ideas sound most helpful and I can send recipes or activity guides."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Developed persistent insomnia severe enough that her doctor prescribed a short-term sleep medication alongside a referral to a sleep specialist for further evaluation.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Now keeps a strict nightly sleep log, tracking bedtime, medication intake, and awakenings as requested by her doctor ahead of her sleep specialist appointment",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Avoids caffeine after 2pm to minimize any interference with prescribed sleep medication and improve chances of restful sleep",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Turns off screens 30 minutes before bed and listens to calming music to help fall asleep"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Strictly takes prescribed sleep medication at bedtime as her main sleep aid; no longer relies on calming music or pre-bed routines",
+              "domain": "health_body"
+            },
+            "reason": "With the emergence of persistent clinical insomnia and doctor-prescribed medication, her bedtime behavior shifts out of necessity from music/routine-based wind-down to medical intervention as her principal means for falling asleep."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_032",
+            "fact": "Prefers listening to soothing, non-stimulating music via a speaker or radio instead of streaming playlists from her phone during the recovery period",
+            "domain": "health_body",
+            "reason": "The 'recovery period' mandating this specific music listening setup has ended; her bedtime and relaxation routines are now governed by sleep medication and impending sleep specialist care, making this situational preference obsolete."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I just had a pretty rough couple of weeks with barely any sleep. Ended up seeing my doctor, and now I've got a short-term prescription for sleep meds and a referral to a sleep specialist. It feels weird relying on medication, but I honestly wasn't functioning. I still have two months on this donation platform overhaul, plus bootcamp stuff. Any advice for not letting insomnia totally wreck my focus at work, especially since mornings are usually my coding zone?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really tough. It's smart that you're getting medical support, and it's good you're aware of how it affects your work. Since mornings are your deep-focus time, is the sleep issue mainly making you groggy or distractible, or do you feel the impact throughout the day? Also, any changes to how you plan your coding blocks or meetings because of this?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely groggier in the mornings now. I haven't shifted my focus blocks yet—still avoiding meetings before noon if I can—but I notice it's taking longer to get into 'flow' with complex tasks. It probably doesn't help that I can't use my old wind-down routine anymore: I have to take the sleep meds right at bedtime. My doctor said to skip the music and just focus on the medication schedule, so that's been an adjustment."
+        },
+        {
+          "role": "assistant",
+          "content": "Adjusting sleep routines can be hard, especially if you’re used to a particular wind-down process. Are you tracking how the meds affect your sleep and level of alertness during the day? Sometimes capturing that data can help spot patterns or improvement—even if it just makes discussions with your specialist more productive."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually, I started keeping a nightly sleep log. Just jotting down my bedtime, medication intake, and how many times I wake up. Doctor wanted that info for the specialist appointment. I'm not used to being this regimented—I always relied on routines and calming music before, but now it's all about documenting and following a strict schedule."
+        },
+        {
+          "role": "assistant",
+          "content": "That's really wise—even though it’s new, those records make it easier to see how different factors are playing out. With your mornings feeling off, have you tried moving any high-stakes coding to the afternoon, or maybe breaking tasks into shorter blocks? Or does the rest of your schedule make that tricky?"
+        },
+        {
+          "role": "user",
+          "content": "Afternoons are tough for focus because I usually have outreach and fundraising team calls, but maybe I could do smaller coding tasks then and reserve mornings for anything that requires deep concentration. I've also stopped drinking coffee after 2pm—I used to grab a second cup mid-afternoon, but the doctor warned it could mess with the meds and my sleep log."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great call—late caffeine can definitely interfere with sleep. It sounds like you’re serious about making adjustments. Since you’re logging everything and cutting caffeine, maybe you could experiment with task types during different parts of the day? For example, saving documentation or bug reporting for the afternoon, since those might require less ‘flow’, and keeping creative coding for morning blocks."
+        },
+        {
+          "role": "user",
+          "content": "That could work! I already document bugs right away anyway—never leave them for later. Maybe I could add quick code reviews to the afternoon as well, since I always submit peer review requests, even for minor changes. It feels like the extra structure is helping a bit with the anxiety, honestly."
+        },
+        {
+          "role": "assistant",
+          "content": "Structure can definitely help offset some of the unpredictability insomnia brings. If you’re feeling more comfortable with the strict meds routine at night, are you planning to return to music or other wind-down approaches eventually? Or is the specialist going to help with next steps there?"
+        },
+        {
+          "role": "user",
+          "content": "I actually dropped those for now. My recovery period with soothing speaker music ended when the insomnia got worse—I don't use any music or pre-bed routines at all right now. The plan is to rely strictly on medication for sleep until I see the specialist and get a new strategy."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for clarifying—that’s important context. Stability is key, and it makes sense to put routines on pause while focusing on what your doctor recommends. In terms of maintaining energy and focus, maybe making your lunch walk with your dog a little brisker or slightly earlier could help perk you up midday. Are there any other work or wellness routines you’ve felt pressured to change lately?"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Her manager announced that all junior developers, including her, are required to return to the office at least three days per week due to new cybersecurity protocols related to the recent grant-funded platform updates.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Commutes to the office three days a week via light rail — always listens to tech podcasts during transit instead of music or audiobooks",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Prepares easy-to-carry vegetarian lunches for office days — avoids meal prep requiring heating or elaborate assembly at work",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Takes a brisk 20-minute walk with her dog at lunch daily — never eats lunch at her desk"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Only takes lunchtime walks with her dog on remote workdays; eats lunch at her desk or cafeteria when in-office three days a week",
+              "domain": "health_body"
+            },
+            "reason": "Returning to the office three days per week means she can't walk her dog at lunch unless working remotely, so her habit is now split based on location."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_024",
+            "fact": "Walks her dog first thing in the morning, rain or shine — never skips unless ill",
+            "domain": "daily_routines",
+            "reason": "With new office commute and earlier start times, she is no longer able to consistently walk her dog every morning before work on in-office days. The daily routine is disrupted by the schedule change."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my manager just announced the new policy — all junior devs need to be in the office three days a week starting next Monday. It’s apparently tied to new cybersecurity protocols for the donation platform updates. I’m honestly stressed about how to adjust, especially since I’ve been remote for two years and have a bunch of personal routines built around it. I could use advice on how to adapt my daily workflow, and also keeping up with healthier habits now that my schedule is up in the air."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big transition! The new commute and office schedule will definitely shake things up. Are there specific routines you're most worried about losing, or parts of your workflow that feel harder to maintain with the office days? Let’s focus on what feels most urgent to tackle first."
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the first thing that comes to mind is my lunchtime walks with my dog. I used to take a brisk 20-minute walk every day at lunch, rain or shine, but now that's not possible if I'm in the office three days a week. I guess I’ll only be able to do those walks on remote days, and will probably just eat lunch at my desk or in the cafeteria when I’m onsite."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough adjustment. Those midday walks sound like they were a real anchor, both for getting some exercise and breaking up the workday. On office days, do you have access to any outdoor space nearby—like a courtyard or park—where you could step out for a few minutes? Or would you prefer to stick to a shorter indoor break and focus on efficient tasks during lunch?"
+        },
+        {
+          "role": "user",
+          "content": "The office is right by the light rail, so not much green space unless I go for a stroll around a busy city block. To be honest, I think shorter indoor breaks and efficient lunches are the way to go on office days. I have to prep vegetarian lunches that don’t need heating or elaborate assembly—something I can just carry along and eat quickly. I want to avoid messing with microwaves or anything complicated at work."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense! Quick, easy lunches are definitely best for office days, especially if you’re sticking to vegetarian options. Would you like ideas for recipes that are portable and don’t need reheating? And for city walks: if you ever need a short energizing break, even a few minutes of brisk walking indoors can be surprisingly helpful. Are you also planning to adjust your meal prepping schedule, or keep prepping for the whole week?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll still prep all my lunches on Sunday night—I don’t want to risk buying takeout just because I forgot something. But now, I have to make sure everything is ready-to-eat and fits in my bag. Oh, and commuting is a new wrinkle. I’m planning to take the light rail, so I’ll have about 40 minutes each way. I always listened to calming music before, but I’m thinking I’ll switch to tech podcasts during transit instead of music or audiobooks. Might as well make use of the commute to stay motivated for React bootcamp and the new project."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great approach! Tech podcasts can make the commute feel productive, and may even spark new ideas for work. If you’d like, I can recommend some React-focused or web development podcasts that are both educational and engaging. It sounds like you’ve already started reconsidering your routines—are there other habits that feel disrupted by the office return, or anything you’re worried about losing?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, unfortunately my morning routine with my dog is one casualty—I used to walk him first thing every morning, rain or shine, unless I was sick. With the new commute and earlier start times, there’s just not enough time to do that consistently on in-office days. I’ll still try to walk him on remote days, but for office days, I’ll have to rely on my boyfriend to cover mornings or just squeeze in some playtime later. That’s honestly kind of a bummer."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s tough when something steady like a morning walk has to change, especially since it sounds like it was important for both you and your dog. Maybe you can set up a little routine for after work on office days—some extra playtime or a walk in the evening to help decompress? I’m glad your boyfriend can help cover some mornings. As your schedule shifts, are there other routines you’re hoping to protect—like your bootcamp assignments or board game nights?"
+        },
+        {
+          "role": "user",
+          "content": "I’m definitely protecting bootcamp assignments—those get done the same night as class, no matter what. Board game nights are staying at my place, even if I’m tired after an office day, just for continuity. The trick is keeping my focus blocks for coding and calling fundraising teams at good times, since my mornings are now tighter on office days. But I think I can manage as long as I prep efficiently and plan ahead."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve already set clear priorities and boundaries, which is great! Planning ahead and efficient prepping really go a long way. If you want, I can help you brainstorm weekly schedules that optimize for focus in both home and office environments. Is there anything specific you need help adapting—like evolving your task review habits, peer review, or integrating your new routines with team collaboration?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks. I could use advice on my task review and peer review workflow—I don’t want to let bugs slip through just because my days are more fragmented. Also, any tips for keeping up healthy habits with the new split schedule would be appreciated."
+        },
+        {
+          "role": "assistant",
+          "content": "For task and peer review, sticking to dedicated time blocks—even shorter ones on busy days—will help. Maybe review or log bugs right after lunch, regardless of location, so it becomes a reliable midday checkpoint. As for healthy habits, since full walks aren’t always possible anymore, try micro-movement breaks or neck stretches during office hours, and reserve remote days for your full lunchtime dog walks to get outside. On office days, portable lunches, indoor walking, and tech podcasts make a solid trio for staying energized."
+        },
+        {
+          "role": "user",
+          "content": "Those are really helpful ideas. I like the idea of a midday bug review as a checkpoint. And making the most of remote days for longer walks with my dog. Adjusting my lunch prep has already made office days feel smoother. I think I just needed a bit of permission to split my habits, rather than force old routines into new constraints."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—splitting habits based on work location gives you flexibility and keeps routines sustainable. Change is always a little bumpy, but having adaptive rituals makes busy weeks easier to handle. If you want, I can help outline a detailed template for your office versus remote days, so it’s easier to track what works and refine as you go. Let me know if you want to dive deeper or need recommendations for portable vegetarian lunches or tech podcasts!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Her parents informed her that her mother needs hip replacement surgery next month, and they've asked her to help with post-surgery support and driving between Tacoma and medical appointments for several weeks.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Schedules and prioritizes Tacoma trips around her mother's medical appointments, planning her work and personal activities to minimize stress and maximize support during the recovery period",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_047",
+            "fact": "Brings her dog along on Tacoma visits whenever possible to provide comfort for her mother and herself during lengthy stays",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Keeps healthy on-the-go vegetarian snacks and meals ready for long driving days — avoids stopping for fast food or convenience store options while supporting her mother",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Texts her parents every Sunday evening to check in — avoids long phone calls unless it's a special occasion"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Calls her parents multiple times a week to coordinate post-surgery support and discuss her mother's recovery; texting becomes secondary during this period",
+              "domain": "social_relationships"
+            },
+            "reason": "Her mother's hip replacement surgery and the need for ongoing support and appointment coordination requires more frequent and direct communication than her previous texting-only habit."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_015",
+            "fact": "Initiates group chats for planning friend gatherings — never relies on others to coordinate",
+            "domain": "social_relationships",
+            "reason": "She will be spending more time supporting her mother in Tacoma and managing frequent drives for medical appointments, making it difficult to reliably initiate friend gathering planning; coordination may shift to friends or pause entirely during this period."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could really use your help. My parents just told me my mom needs a hip replacement next month, and they've asked if I can help out afterwards—driving her to appointments in Tacoma, helping her recover for a few weeks, all that. I'm trying to figure out how I can balance work, bootcamp, and all those drives without burning out. Where should I start?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot to take on all at once. I think the first step is mapping out her surgery and after-care schedule, so you can plan your work and bootcamp commitments around those. Do you already know the approximate dates and how often you'll need to be in Tacoma?"
+        },
+        {
+          "role": "user",
+          "content": "Her surgery is scheduled for the first week of April. After that, there'll be a couple weeks where she won't be able to drive, so I'm planning to spend more time in Tacoma for medical appointments and rehab sessions. I'll probably be down there multiple times a week, so I need to figure out how to shift my work and personal stuff around those trips. I want to prioritize the drives, but minimize stress too if possible."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. For work, maybe you could talk to your manager about blocking out chunks of time for Tacoma trips ahead of time. Are there any parts of your job that can be handled remotely while you're away? Or will you need to request time off for some appointments?"
+        },
+        {
+          "role": "user",
+          "content": "Luckily, my job is fully remote anyway, so I can work from my parents’ house between appointments if I need to. The tricky part is making sure I keep up with my coding bootcamp and the big donation platform project, since I’m lead on that right now. I think I’ll have to rework my usual focus blocks to fit around the drives—maybe moving them earlier or later depending on her appointments."
+        },
+        {
+          "role": "assistant",
+          "content": "Good plan. Would creating a shared calendar with your mom’s appointment times help you visualize how to reschedule your deep-focus coding blocks or bootcamp assignments? That way you can see where you’ll have gaps to get work done and set expectations with your teammates."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, a shared calendar would help. And I’ll need to be calling my parents much more often—probably several times a week instead of just texting them on Sundays. There’s just too much to coordinate now, recovery updates and all that, so texting isn’t going to cut it."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, phone calls are definitely better for real-time updates and problem-solving. Is there anyone else in your family who can help split some of the driving or caretaking, so you're not carrying it all yourself?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll be handling most of it, but my dad is around and my older sister said she can help on weekends. I’ll also bring my dog with me to Tacoma whenever possible—he’s been great for stress relief for both me and my mom. Longer stays are less lonely that way."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great idea. Bringing your dog will probably help your mom’s mood too. On the practical side, have you thought about meal strategy for those long driving days? Sometimes hospital waits and appointments can run long, so keeping energy up is important."
+        },
+        {
+          "role": "user",
+          "content": "Totally. I won’t rely on fast food—going to prep healthy vegetarian snacks and meals I can grab on the go. I want to avoid convenience store options, so I’ll do a Sunday meal prep for both me and my parents."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move. Meal prepping helps you stay energized without compromising your diet. One last thing—friend check-ins might be harder when you’re bouncing back and forth from Tacoma. Are you planning to let your college group handle coordination for game nights for a while, or pause gatherings?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I won’t be able to reliably initiate those group chats like I usually do. My friends offered to pick up the slack, or we might pause monthly board game nights until things settle for my family. I used to always coordinate, but now I’ll just step back a bit."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s completely okay. Your friends will understand—focus on what’s most important for now. Is there anything else about your routine you want help adapting, or does the plan feel workable so far?"
+        },
+        {
+          "role": "user",
+          "content": "I think that covers the major adjustments. Sharing a calendar, prepping meals, changing my communication with my parents and friends—all these will help me juggle the new routine. I’ll check in if I realize anything else crops up!"
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds good. If anything changes or you need new strategies, just reach out. I’m here to help you navigate the transition. Wishing your mom a smooth surgery and recovery—and some stress-free drives for you!"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "She was selected to represent her organization at a national nonprofit tech conference in Chicago, including leading a workshop on the donation platform overhaul and participating in networking sessions with potential partner organizations.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Prefers in-person networking during conferences, taking initiative to approach potential partners at workshops and social events instead of waiting for introductions through colleagues.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Chooses vegetarian meal options at conference events and workshops, politely declining meat-based dishes even during formal dinners or receptions.",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_052",
+            "fact": "Documents conference workshop tips and partnership leads in a dedicated travel notebook each evening rather than updating her usual digital workspace on the go.",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_022",
+              "fact": "Checks email three times a day on a set schedule — avoids push notifications outside those windows"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Checks and responds to emails and notifications in real-time throughout conference days to stay on top of urgent coordination for her workshop and networking events, rather than sticking to her usual set schedule.",
+              "domain": "daily_routines"
+            },
+            "reason": "Attending and leading at a national tech conference requires flexible, immediate communication to coordinate workshop logistics and respond to spontaneous networking or partner opportunities, making her rigid scheduled email habit impractical."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I just got picked to represent my nonprofit at this big national tech conference in Chicago—I'm actually leading a workshop on our donation platform overhaul, plus there's networking with potential partners. It's exciting but overwhelming. I know I'm going to be slammed with logistics, scheduling, and new faces. Do you have any strategies for balancing conference chaos with making the most of the networking and workshops?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats, that's a major step! Balancing the chaos is definitely tricky. For workshops, try prepping a simple checklist for your session so you can focus on the flow versus worrying about small details. As for networking, it's often better to set a goal—like meeting 3-5 new people each day and following up later. How are you planning to keep track of contacts or notes during the conference?"
+        },
+        {
+          "role": "user",
+          "content": "I actually started using a physical travel notebook just for this trip—it's easier to jot down workshop tips and partnership leads each evening. I don't want to rely on updating my digital workspace on the go; my laptop usually stays packed away during events. Any ideas for keeping my notes organized if I'm mostly using pen and paper for a few days?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart approach. With a dedicated notebook, I’d suggest splitting sections: one for workshop observations, another for partner contacts and follow-ups. Maybe keep a running \"next actions\" list so nothing slips until you're back at your desk. When you return, will you transfer things digitally afterward?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I'll import the details into my usual workspace once I'm home. For now, I want to focus on handwritten notes each night, so I don't get sidetracked by screens. Speaking of which—I'm worried my old email routine won't cut it here. I used to check emails only at set times, but with all this coordination, I've started responding in real-time through conference days. Feels weird, but necessary. Any tips for not getting totally distracted?"
+        },
+        {
+          "role": "assistant",
+          "content": "Real-time responsiveness can be a big adjustment! Maybe try batching replies during natural breaks, like when a session ends, to avoid being glued to your phone or inbox. For urgent coordination, you could set up message filters to only push high-priority emails or notifications. Are you finding it helps with workshop logistics?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely—being immediate with emails and notifications makes it easier to handle workshop changes and quick networking opportunities. It means I'm less rigid about my usual schedule, but in this context, it's the only way. I'll try your batching suggestion for less urgent stuff. On the networking front, I'm experimenting with going up to people directly at events, instead of waiting for colleagues to introduce me. It's intimidating, but seems to work best during conferences. Anything to make reaching out less awkward?"
+        },
+        {
+          "role": "assistant",
+          "content": "Taking initiative is great! One trick is to prepare a few \"starter\" questions or comments relevant to the event—you might ask about their work, their thoughts on the topic, or reference your session. Even a simple introduction: \"Hi, I'm leading the donation workshop, I'd love to hear about your platform\" works well. Have you found any approaches that feel comfortable for you so far?"
+        },
+        {
+          "role": "user",
+          "content": "I've had success starting conversations right after workshops, where there's already a shared topic. It was surprisingly easy—plus people are usually open to chatting about what just happened. Another detail: I’m sticking with vegetarian meal options at all conference events, even formal dinners and receptions. I politely decline meat dishes, which can be tricky in group settings, but it's important to me. Any polite wording for declining without awkwardness?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a considerate approach—most people will understand! You can simply say, \"Thanks, but I’m vegetarian—could I have a veggie option instead?\" or \"I really appreciate it, but I don’t eat meat.\" If you want to avoid being the focus, try mentioning it to the event staff up front so they’re prepared. Has the conference so far had good vegetarian choices?"
+        },
+        {
+          "role": "user",
+          "content": "It’s been decent—there’s usually at least one veggie entree. I just make sure to ask ahead if I have any doubts, and people are respectful. One more thing: at these in-person events, I really prefer networking face-to-face, taking the lead in approaching potential partners myself at workshops and socials rather than waiting for introductions. It's a shift from my usual style. Is there a way to maximize those in-person connections while managing all the activities?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—conferences are ideal for direct connections! Consider jotting down brief notes immediately after each chat in your notebook, so you don’t lose key details. When possible, suggest a follow-up, like coffee or exchanging contact info, while the conversation is fresh. If your schedule’s tight, maybe focus on quality over quantity—choose few meaningful interactions instead of lots of short ones. Would that fit with your usual pace?"
+        },
+        {
+          "role": "user",
+          "content": "That works well. I’ve already started documenting those chats in my notebook each evening, so details don’t slip by. And quality interactions feel more productive—I’d rather build a few strong potential partnerships than scatter my energy. Thanks for helping me think through these new routines!"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "While on her lunchtime walk, she tripped over an uneven sidewalk and fractured her wrist, requiring a cast for at least six weeks and limitations on typing and lifting.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_054",
+            "fact": "Now relies on dictation software and voice-to-text tools for documenting bugs and writing project notes instead of typing with both hands",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Requests help from her boyfriend or orders ready-to-eat vegetarian meals due to difficulty prepping food with one hand",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Crochets small projects while listening to podcasts — never watches TV at the same time"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Switched from crocheting to coloring or simple puzzle books while listening to podcasts — avoids all activities requiring two-handed dexterity until cast is removed",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "With her fractured wrist in a cast for six weeks, she can't physically crochet small projects, so she replaces this hobby with one-handed creative pastimes like coloring or puzzle books that require less manual dexterity."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_017",
+            "fact": "Explores a new Seattle park or garden every other weekend — avoids crowded indoor attractions",
+            "domain": "leisure_hobbies",
+            "reason": "Her wrist injury and cast limit mobility and make extended outdoor walks impractical; she cannot safely explore new parks and gardens during recovery."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I fractured my wrist on my lunchtime walk today—totally wiped out over a sidewalk crack. Got a cast for at least six weeks, so typing and lifting anything is tough now. I'm supposed to lead the donation platform update, but honestly, I'm not sure how to manage with this. Any tips for staying productive when I can't type much?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ouch, that sounds super frustrating, especially with the big project ahead! Since typing is limited, have you tried using dictation or voice-to-text tools for coding and note-taking? They might help with documentation and code comments. Also, are there particular tasks you’re worried about—like bug fixes or feature work—or is it more general?"
+        },
+        {
+          "role": "user",
+          "content": "I started playing around with some dictation software for bug reports and project notes—honestly, it’s helping for documentation more than code. For coding, I’m mostly doing reviews and some planning right now. The outreach team still wants video calls for feedback, which is fine, but I’m worried about not keeping pace with everyone else."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear dictation is helping with documentation! For code reviews and planning, you could try screen sharing and talking through changes with teammates—maybe delegate some hands-on coding for now? If you’re still coordinating with the outreach team, maybe you could also have them record feedback asynchronously, so you can review when it’s easiest for you. Does that fit your workflow, or is live interaction pretty much necessary?"
+        },
+        {
+          "role": "user",
+          "content": "Live calls with outreach and fundraising are kind of a must—email just doesn’t work for thrashing through requirements. But I’m adapting by asking a teammate to handle more of the implementation, at least for the trickier parts. What I really need help with is my routine at home—food prep is a nightmare with one hand. Any suggestions for vegetarian meals I can manage, or should I just switch to ordering in?"
+        },
+        {
+          "role": "assistant",
+          "content": "Meal prep with a cast sounds tricky! Are you open to ready-to-eat vegetarian meals, like meal kits or local delivery, just until your wrist heals? Or maybe your boyfriend could help prep ingredients, and you handle the easier parts? If you prefer homemade, simple dishes like salads, grain bowls, or wraps might be manageable one-handed. What’s been working (or not) so far?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve already started asking my boyfriend for help and ordering more ready-to-eat vegetarian options—chopping veggies with one hand is honestly impossible. I’m sticking to no cooking meat, but convenience is key right now. I used to prep all lunches for the week, but even that’s on pause unless he pitches in. Dinner is the same—I still want us to eat together, just relying more on packaged meals."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach—staying vegetarian but shifting to premade options while you recover. If you miss cooking, maybe try simple one-pot recipes or slow-cooker dishes where most of the work is hands-off? Also, are you adjusting other habits due to the wrist injury—like walking your dog or any hobbies?"
+        },
+        {
+          "role": "user",
+          "content": "Dog walks are still happening—just shorter and slower. As for hobbies, I usually crochet while listening to podcasts, but obviously that’s not happening with the cast. I’ve switched to coloring and puzzle books—anything I can do one-handed. I avoid anything needing two-handed dexterity until my wrist’s back to normal."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart adaptation! Coloring and puzzle books are great for creativity and focus. Are you finding them as relaxing as crocheting, or is there something missing? And what about your weekend routines—does the wrist affect getting out to parks and gardens?"
+        },
+        {
+          "role": "user",
+          "content": "Oh, definitely. Exploring new Seattle parks every other weekend is off the table for now. Extended walks just aren’t safe or comfortable with the cast. I’m staying in and keeping it low-key—no outdoor adventures until I can actually use both hands."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—safety comes first, and those long outings would be tough one-handed. Since you’re inside more, maybe try indoor activities like reading or indie games, or experiment with creative projects that work with one hand? If you want suggestions for vegetarian baking or other low-effort hobbies, I’m happy to help."
+        },
+        {
+          "role": "user",
+          "content": "Thanks! Baking with one hand is questionable but maybe I’ll try something extra simple on Sunday, or just stick with coloring for now. Reading and indie games still work—anything I can manage without using both hands. If you have any ideas for easy vegetarian snacks or puzzles, send them my way."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! For snacks, think pre-cut fruit, yogurt, cheese, or nut butter crackers—easy to grab without much prep. Puzzle-wise, one-handed logic puzzles or word searches are fun. You could also explore new podcasts during walks or coloring. Let me know if you want snack recipes or recommendations for puzzle books or apps!"
+        },
+        {
+          "role": "user",
+          "content": "Word searches sound perfect—I’ll check some out. And I’d love a couple vegetarian snack ideas that are basically zero prep. Podcasts I’ve been rotating, so I’m all set there. The main adjustment is making everything as easy as possible until the cast comes off."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re navigating this really thoughtfully. For snacks: hummus and veggie chips, string cheese, Greek yogurt cups, store-bought granola bars, or trail mix. Everything is grab-and-go and vegetarian. If you want simple recipes for later, I’m here. Let me know how it goes, and if you hit any more snags with work or home routines, I’m ready to help!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Her sleep specialist diagnosed her with sleep apnea and prescribed nightly use of a CPAP machine, along with an order to avoid caffeine and strenuous evening activities to improve sleep quality.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_058",
+            "fact": "Performs a brief calming yoga or gentle stretching routine before bed instead of any strenuous evening activity, as prescribed by her sleep specialist to support better sleep with sleep apnea.",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_059",
+            "fact": "Cleans and checks her CPAP mask nightly as part of her pre-bed routine to prevent discomfort and ensure machine effectiveness.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Starts every workday with a hand-brewed cup of coffee while reviewing her task list — never uses a pod machine"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Starts every workday with a cup of herbal tea while reviewing her task list — strictly avoids coffee and caffeinated beverages",
+              "domain": "daily_routines"
+            },
+            "reason": "Her sleep specialist mandated total avoidance of caffeine due to her new sleep apnea diagnosis, so she switched from hand-brewed coffee to caffeine-free tea in the morning."
+          },
+          {
+            "from": {
+              "id": "pref_039",
+              "fact": "Strictly takes prescribed sleep medication at bedtime as her main sleep aid; no longer relies on calming music or pre-bed routines"
+            },
+            "to": {
+              "id": "pref_057",
+              "fact": "Uses her prescribed CPAP machine nightly as her primary sleep intervention — no longer takes sleep medication unless specifically directed by her sleep specialist",
+              "domain": "health_body"
+            },
+            "reason": "Her treatment for diagnosed sleep apnea now centers on nightly CPAP machine use, which replaces sleep medication as her principal sleep aid unless doctors direct otherwise."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_041",
+            "fact": "Avoids caffeine after 2pm to minimize any interference with prescribed sleep medication and improve chances of restful sleep",
+            "domain": "health_body",
+            "reason": "Her new treatment plan for sleep apnea requires complete elimination of caffeine, not just in the afternoon. This old avoidance schedule is obsolete."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help. I was just diagnosed with sleep apnea last week, and my specialist has me on CPAP nightly, plus told me to cut out caffeine completely and avoid intense evening activity. It’s a pretty major shift for me, especially since I have a tight project deadline and my old routines were kind of built around coffee and late-night work sessions. Do you have any strategies for adjusting my daily schedule so I’m not dragging all day but still keeping up with everything?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big transition, especially when you’re balancing so much. Cutting out caffeine can definitely impact your energy, and the CPAP routine is a change too. What’s your current morning setup now—are you replacing the coffee with anything else to cue your workday, or experimenting with new breaks during the day to stay alert?"
+        },
+        {
+          "role": "user",
+          "content": "I actually swapped the coffee for a cup of herbal tea in the morning while I go over my task list, totally avoiding any caffeine. It’s just not the same, but I don’t want to risk aggravating the apnea. I also started prepping lunches a bit more carefully so I don’t get tempted to grab anything extra, since I’m aiming for better sleep anyway. The afternoons are rough, though—what helps with midday fatigue when you’re vegetarian and caffeine is banned?"
+        },
+        {
+          "role": "assistant",
+          "content": "Herbal tea is a solid replacement—even if it’s not quite coffee, the ritual can help. For afternoon slumps, energy-boosting snacks can make a difference—things high in protein or slow-release carbs. Maybe try hummus with veggies, or a handful of nuts? Also, since you’re already vegetarian, are you open to smoothies or adaptogenic herbs (all caffeine-free) for a little boost?"
+        },
+        {
+          "role": "user",
+          "content": "Smoothies work sometimes! I usually throw in spinach, banana, oat milk, and maybe chia seeds. Not sure about adaptogenic herbs yet—my focus is just staying consistent with the veggie lunches and eating away from my desk. Actually, my daily lunch walk with my dog is still non-negotiable. That helps clear my head. But evenings are tricky now. My doctor said no strenuous activity, so I’ve started doing a gentle yoga or stretching routine before bed, instead of anything intensive. Do you have sleep hygiene suggestions that fit with CPAP use?"
+        },
+        {
+          "role": "assistant",
+          "content": "Gentle yoga or stretching is perfect—it signals winding down and helps your body relax. As for CPAP hygiene, are you doing anything to keep the mask or equipment comfortable? And beyond that, sticking to a set pre-bed routine (keeping screens off, dim lighting, relaxing music) can reinforce sleep cues. Are you still using those strategies, or did any of them have to change because of the apnea diagnosis?"
+        },
+        {
+          "role": "user",
+          "content": "I do clean and check my CPAP mask every night—it’s part of my wind-down now, since any leak or dirt seems to mess with sleep quality. And I don’t really listen to much music right before bed anymore, since I’m focused on the CPAP and calming stretches. Also, I stopped taking sleep meds—I only use them now if my specialist says it’s okay, since CPAP is supposed to be my main support. So bedtime feels a lot different lately."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing all the right things. Making cleaning the CPAP part of your nightly routine is great for comfort and effectiveness. Switching away from sleep meds unless directed makes sense. Would you say the CPAP and new routine are working so far, or are you still having trouble falling asleep or staying asleep?"
+        },
+        {
+          "role": "user",
+          "content": "I still have trouble winding down some nights, but it’s gradually improving. Going completely caffeine-free was rougher than I expected—I used to just avoid caffeine after 2pm, but now it’s out entirely. Dropping coffee was tough but necessary. At least the calming yoga helps a bit, and the CPAP keeps me from waking up gasping like before. Any tips for boosting alertness in the mornings with this new setup?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve made a lot of effective changes already. For mornings, you might try light exposure as soon as you wake up—open the blinds, even step outside for a few minutes with your dog. Pairing your herbal tea with a short walk (even just around the block before work) could help signal your brain that it’s time to focus. If you ever want more breakfast ideas for vegetarian, caffeine-free mornings, I’d be happy to share!"
+        },
+        {
+          "role": "user",
+          "content": "That’s a good idea—I already walk my dog first thing, rain or shine, so maybe I’ll linger outside a bit longer. As for breakfast, I’m open to suggestions that are energizing but don’t involve caffeine. I’m really just trying to keep my new routine solid so I don’t slip back into old habits, especially since the apnea diagnosis has me rethinking a lot."
+        },
+        {
+          "role": "assistant",
+          "content": "Awesome! For energizing breakfasts, how about overnight oats with seeds and fruit, or a tofu scramble with veggies? Adding nut butter or avocado for some healthy fats can sustain you through morning coding focus blocks. It sounds like you’re committed to making this work—which is fantastic, especially with a project lead deadline looming. If you need help structuring your work calendar to support these new health routines, let me know."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Logs bug reports and feature requests in detail immediately after they arise — never leaves undocumented issues for later",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_003",
+        "fact": "Prefers video calls with outreach and fundraising teams to hashing things out over email",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Always submits pull requests for peer review, even for minor changes — won't merge unreviewed code",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Sticks to a fully vegetarian diet at home — refuses to cook meat even for guests",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Uses a heated neck wrap whenever headaches start — avoids taking pain medication unless absolutely necessary",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Attends every virtual therapy session without rescheduling — considers these appointments non-negotiable",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Keeps a digital photo journal of her dog’s walks — never posts them publicly, just for personal memory",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Experiments with vegetarian baking recipes one Sunday a month — never repeats the same recipe twice in a row",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Preps all lunches for the week on Sunday night — never buys takeout for midday meals",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Now books collaborative meetings and brainstorming sessions in the morning with the cross-functional team — prefers meetings earlier in the day to align on project goals",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Adds a daily project update note to the cross-functional team workspace before logging off — avoids lengthy recap emails",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Reads physical books before bed — avoids all screens, including e-readers and phones, at night during doctor-mandated screen break",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Pauses all video game play, including narrative indie games, during mandated screen-free recovery period — instead spends evenings on non-digital pastimes",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Spends her usual evening screen time on jigsaw puzzles or sketching in a physical notebook to relax without digital devices",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "No longer makes dinner for her boyfriend twice a week while he is in Portland; instead, focuses on solo dinners or meals with her dog as companion",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Schedules regular video calls with her boyfriend in Portland, prioritizing evenings to stay connected while he's away",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Takes longer evening walks with her dog for companionship and stress relief when living alone",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Regularly babysits her niece on select weekday evenings after work — no longer restricts babysitting to weekends",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Prepares simple batch vegetarian dinners in advance on Sundays to have ready for nights when babysitting her niece after work",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Brings calm, screen-free activities (like crocheting or reading aloud) to occupy herself and soothe her niece during weekday babysitting sessions",
+        "domain": "leisure_hobbies",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_040",
+        "fact": "Now keeps a strict nightly sleep log, tracking bedtime, medication intake, and awakenings as requested by her doctor ahead of her sleep specialist appointment",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Only takes lunchtime walks with her dog on remote workdays; eats lunch at her desk or cafeteria when in-office three days a week",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Commutes to the office three days a week via light rail — always listens to tech podcasts during transit instead of music or audiobooks",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Prepares easy-to-carry vegetarian lunches for office days — avoids meal prep requiring heating or elaborate assembly at work",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Calls her parents multiple times a week to coordinate post-surgery support and discuss her mother's recovery; texting becomes secondary during this period",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Schedules and prioritizes Tacoma trips around her mother's medical appointments, planning her work and personal activities to minimize stress and maximize support during the recovery period",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Brings her dog along on Tacoma visits whenever possible to provide comfort for her mother and herself during lengthy stays",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Keeps healthy on-the-go vegetarian snacks and meals ready for long driving days — avoids stopping for fast food or convenience store options while supporting her mother",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Checks and responds to emails and notifications in real-time throughout conference days to stay on top of urgent coordination for her workshop and networking events, rather than sticking to her usual set schedule.",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Prefers in-person networking during conferences, taking initiative to approach potential partners at workshops and social events instead of waiting for introductions through colleagues.",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Chooses vegetarian meal options at conference events and workshops, politely declining meat-based dishes even during formal dinners or receptions.",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Documents conference workshop tips and partnership leads in a dedicated travel notebook each evening rather than updating her usual digital workspace on the go.",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Switched from crocheting to coloring or simple puzzle books while listening to podcasts — avoids all activities requiring two-handed dexterity until cast is removed",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Now relies on dictation software and voice-to-text tools for documenting bugs and writing project notes instead of typing with both hands",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Requests help from her boyfriend or orders ready-to-eat vegetarian meals due to difficulty prepping food with one hand",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Starts every workday with a cup of herbal tea while reviewing her task list — strictly avoids coffee and caffeinated beverages",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Uses her prescribed CPAP machine nightly as her primary sleep intervention — no longer takes sleep medication unless specifically directed by her sleep specialist",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Performs a brief calming yoga or gentle stretching routine before bed instead of any strenuous evening activity, as prescribed by her sleep specialist to support better sleep with sleep apnea.",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_059",
+        "fact": "Cleans and checks her CPAP mask nightly as part of her pre-bed routine to prevent discomfort and ensure machine effectiveness.",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Schedules focus blocks for complex coding tasks in the morning — never books meetings before noon if avoidable",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Joining the new cross-functional team for the pilot project requires morning collaboration and brainstorming sessions to align on digital innovation strategies, replacing her solitary focus block habit."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Completes all bootcamp assignments the same night as class — never lets coursework pile up to the weekend",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "All non-essential screen activities and coursework must pause due to her mandated screen break and work time-off for health reasons; bootcamp sessions and homework are on hold."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Takes a brisk 20-minute walk with her dog at lunch daily — never eats lunch at her desk",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "Returning to the office three days per week means she can't walk her dog at lunch unless working remotely, so her habit is now split based on location."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Turns off screens 30 minutes before bed and listens to calming music to help fall asleep",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "With the emergence of persistent clinical insomnia and doctor-prescribed medication, her bedtime behavior shifts out of necessity from music/routine-based wind-down to medical intervention as her principal means for falling asleep."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Organizes monthly board game nights at her apartment — never rotates hosting to other friends' places",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "She prefers hosting at her apartment, but living alone for three months (with her boyfriend away) makes solo hosting more difficult logistically and emotionally; friends are likely to offer hosting, or gatherings may be postponed, removing this routine."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Texts her parents every Sunday evening to check in — avoids long phone calls unless it's a special occasion",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "Her mother's hip replacement surgery and the need for ongoing support and appointment coordination requires more frequent and direct communication than her previous texting-only habit."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Babysits her niece on Saturday afternoons — never on weekday evenings",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "Her sister’s new job requires frequent travel, so she agreed to provide recurring weekday babysitting for her infant niece. The timing can no longer be confined to just Saturday afternoons."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Makes dinner for her boyfriend twice a week, even if they eat at different times — never orders in on these nights",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "Her boyfriend’s three-month relocation to Portland means he is not home; she cannot cook for him or coordinate dinner routines as before."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Initiates group chats for planning friend gatherings — never relies on others to coordinate",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "She will be spending more time supporting her mother in Tacoma and managing frequent drives for medical appointments, making it difficult to reliably initiate friend gathering planning; coordination may shift to friends or pause entirely during this period."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Crochets small projects while listening to podcasts — never watches TV at the same time",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_053",
+        "reason": "With her fractured wrist in a cast for six weeks, she can't physically crochet small projects, so she replaces this hobby with one-handed creative pastimes like coloring or puzzle books that require less manual dexterity."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Explores a new Seattle park or garden every other weekend — avoids crowded indoor attractions",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "Her wrist injury and cast limit mobility and make extended outdoor walks impractical; she cannot safely explore new parks and gardens during recovery."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Plays narrative-driven indie games in short evening bursts — never engages in multiplayer online games",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "The doctor ordered a full two-week break from screens; all video gaming is suspended for now to avoid screen exposure."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts every workday with a hand-brewed cup of coffee while reviewing her task list — never uses a pod machine",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "Her sleep specialist mandated total avoidance of caffeine due to her new sleep apnea diagnosis, so she switched from hand-brewed coffee to caffeine-free tea in the morning."
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks email three times a day on a set schedule — avoids push notifications outside those windows",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "Attending and leading at a national tech conference requires flexible, immediate communication to coordinate workshop logistics and respond to spontaneous networking or partner opportunities, making her rigid scheduled email habit impractical."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Walks her dog first thing in the morning, rain or shine — never skips unless ill",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "With new office commute and earlier start times, she is no longer able to consistently walk her dog every morning before work on in-office days. The daily routine is disrupted by the schedule change."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Reads on her e-reader for 20 minutes before bed — never uses her phone for reading at night",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "Her doctor has ordered a complete break from screens, including e-readers, for two weeks to address stress-induced health symptoms. She can only read physical books during this period."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Sets aside one evening per week to research digital engagement trends and share findings with the team",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "The weekly research activity depends entirely on screen use; with all non-essential work and screens banned for two weeks by her doctor, this routine cannot continue for now."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Prefers listening to soothing, non-stimulating music via a speaker or radio instead of streaming playlists from her phone during the recovery period",
+        "domain": "health_body",
+        "created_at_session": 1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "The 'recovery period' mandating this specific music listening setup has ended; her bedtime and relaxation routines are now governed by sleep medication and impending sleep specialist care, making this situational preference obsolete."
+      },
+      {
+        "id": "pref_039",
+        "fact": "Strictly takes prescribed sleep medication at bedtime as her main sleep aid; no longer relies on calming music or pre-bed routines",
+        "domain": "health_body",
+        "created_at_session": 4,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_057",
+        "reason": "Her treatment for diagnosed sleep apnea now centers on nightly CPAP machine use, which replaces sleep medication as her principal sleep aid unless doctors direct otherwise."
+      },
+      {
+        "id": "pref_041",
+        "fact": "Avoids caffeine after 2pm to minimize any interference with prescribed sleep medication and improve chances of restful sleep",
+        "domain": "health_body",
+        "created_at_session": 4,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "Her new treatment plan for sleep apnea requires complete elimination of caffeine, not just in the afternoon. This old avoidance schedule is obsolete."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-02T09:36:39.764795"
+}

@@ -1,0 +1,1468 @@
+{
+  "persona": "An immigrant small business owner managing finances for a family-run grocery store",
+  "persona_id": "persona_20260301_223309",
+  "expanded_persona": {
+    "base_persona": "An immigrant small business owner managing finances for a family-run grocery store",
+    "age": 42,
+    "gender": "male",
+    "location": "Chicago, IL",
+    "work_education": [
+      "Owner and bookkeeper for a neighborhood grocery store, working 6 days a week (60+ hours)",
+      "Handles payroll, inventory, tax filings, and supplier negotiations for the family business",
+      "Recently negotiating with local banks for a small business loan to expand refrigerated storage",
+      "Attends evening classes once a week at a community college to improve his English and learn accounting software",
+      "Struggles with short-staffed periods when relatives travel or deal with illness"
+    ],
+    "health_wellness": [
+      "Mild hypertension diagnosed last year; advised to monitor salt intake and check blood pressure regularly",
+      "Rarely has time for exercise; mostly active during store work, but experiences occasional lower back pain from heavy lifting",
+      "Skips lunch most days, instead snacking quickly during business hours; dinner is a family affair at home",
+      "Sleep interrupted by worry about financial stability and competitive supermarkets opening nearby",
+      "Hasn't seen a primary care doctor in over a year due to lack of time"
+    ],
+    "family_relationships": [
+      "Lives in a two-bedroom apartment with his wife, two teenage children, and his wife's elderly mother",
+      "Wife helps run the store in the mornings; mother-in-law cares for the kids after school",
+      "Older child (16) occasionally assists at the store after hours, especially during busy holidays",
+      "Close-knit extended family; regularly hosts weekend dinners for cousins and neighbors",
+      "Remits money monthly to his parents and siblings in his home country, maintaining long-distance family ties"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Takes inventory by hand every evening before closing — never relies solely on digital records",
+        "Meets suppliers at the store early in the morning — never negotiates deals by phone or email",
+        "Reviews payroll and expenses on Sunday evenings after dinner — never leaves finance tasks for weekdays",
+        "Prefers to train new family members personally — never delegates onboarding to existing staff",
+        "Attends English and accounting classes in person — avoids online courses or remote learning whenever possible"
+      ],
+      "health_body": [
+        "Cooks low-sodium meals for dinner every night — avoids processed foods to manage blood pressure",
+        "Stretches his back for ten minutes every morning before leaving for the store — never skips even on busy days",
+        "Only snacks on fruit or unsalted nuts during work hours — never eats chips or salty snacks at the counter",
+        "Checks blood pressure at home every Friday morning — never waits for doctor's visits to monitor health",
+        "Walks to the store and back daily, regardless of weather — never drives unless transporting heavy stock"
+      ],
+      "social_relationships": [
+        "Calls parents overseas on Sunday mornings — never lets a month pass without connecting",
+        "Hosts extended family dinners every Saturday, always inviting at least one neighbor — never cancels except for emergencies",
+        "Never brings up financial worries around his children — discusses serious topics with his wife after the kids are in bed",
+        "Insists children study before helping at the store — never allows chores to interfere with school commitments",
+        "Uses WhatsApp to coordinate with distant relatives — never discusses family news through social media posts"
+      ],
+      "leisure_hobbies": [
+        "Plays cards with his wife and mother-in-law every Thursday after dinner — never watches TV alone in the evenings",
+        "Visits the local park with family every Sunday afternoon — never skips even during busy weeks",
+        "Watches soccer games with cousins at home — never goes to bars or public venues for matches",
+        "Shops at independent grocers and markets on his rare days off — never at big chain supermarkets",
+        "Reads news in his native language during quiet moments at the store — never reads English-language tabloids"
+      ],
+      "daily_routines": [
+        "Prepares strong coffee at home before sunrise — never buys coffee from cafes or chains",
+        "Checks store security cameras from his phone every night before bed — never leaves them unwatched overnight",
+        "Sets aside Saturday mornings for paying bills and transferring remittances — never postpones to the next week",
+        "Sorts receipts and business paperwork after dinner daily — never lets paperwork pile up past two days",
+        "Unplugs from all digital devices during family dinners — never brings his phone to the table"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received approval for a small business loan from the local bank after months of negotiation, allowing expansion of refrigerated storage at the family grocery store.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Schedules regular maintenance checks for newly installed refrigeration units every month — never allows equipment to go uninspected for more than four weeks",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Discusses business strategy and upcoming store changes with his wife and teenage children over dinner at least twice a week — encourages family input on expansion decisions",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Takes inventory by hand every evening before closing — never relies solely on digital records"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Uses new inventory software to track refrigerated stock and completes digital inventory checks before closing — only verifies unusual discrepancies by hand",
+              "domain": "work_habits"
+            },
+            "reason": "The expansion of refrigerated storage funded by the business loan requires more efficient inventory tracking. The new system and increased volume make relying exclusively on manual methods impractical, so he adapts to digital checks for refrigerated stock."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "The bank finally approved our small business loan this morning—after almost four months of paperwork. We're expanding the refrigerated storage at our grocery store soon. I'm feeling both relieved and overwhelmed. I need advice on managing this transition, especially with inventory and maintenance for the new refrigerators. Where should I start?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on securing the loan! That’s a major milestone for your family business. Expanding refrigerated storage can definitely boost sales and product variety, but it adds complexity, too. When it comes to inventory, are you planning to stick with your usual manual checks, or are you open to digital solutions to keep up with the increased volume?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, that's a big change for me. I’ve always taken inventory by hand every evening, but just yesterday I started learning new inventory software at my evening accounting class. With the expanded storage, I'm now tracking refrigerated stock digitally before closing and only double-checking odd discrepancies by hand. It's a shift for me, but necessary with more products."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s impressive—transitioning to digital inventory tracking will make things much smoother as your stock grows. Do you feel comfortable with the software you’re learning, or would you like suggestions for tools that are easy to set up and use for refrigerated goods?"
+        },
+        {
+          "role": "user",
+          "content": "I'm still getting used to it. The class covers basics, but real-life things come up—like labeling batches and tracking expiration dates. What matters most is making sure we don’t miss anything, especially with perishables. I want to set up a reliable routine, but I also worry about the new refrigeration units breaking down. Do you have advice for keeping them running smoothly?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Regular preventative maintenance is crucial for refrigeration units, especially as they age. Creating a monthly inspection schedule helps catch issues before they become costly problems. Do you already have someone in mind for these checks, or will you be doing them yourself?"
+        },
+        {
+          "role": "user",
+          "content": "For now, I’m scheduling regular maintenance checks every month—never letting the equipment go unchecked for more than four weeks. I plan to do basic inspections myself, but for technical stuff, I’ll call the service company the bank recommended. I want to avoid downtime at all costs, especially since my whole family depends on the store."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move. Keeping a log of maintenance dates and any repairs can help you track patterns and negotiate warranties or service contracts if needed. With your family involved, are you planning to train them in inventory and maintenance routines, or will you handle those tasks personally?"
+        },
+        {
+          "role": "user",
+          "content": "Normally, I train family members myself, but for the new refrigerated section, I’m also asking my wife and teenage kids for feedback. Twice a week at dinner, we discuss store changes and expansion plans—encouraging their input. It’s become part of our dinner routine, so everyone understands what needs to be done and can help solve problems."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s fantastic—family input can be invaluable, especially for a neighborhood business. Sharing updates and brainstorming together keeps everyone invested and aware of the store’s direction. Would you like tips for making those dinner conversations more productive, or are you happy with how they’re going?"
+        },
+        {
+          "role": "user",
+          "content": "So far, it’s working—we cover concerns and ideas, and everyone feels included. As for inventory software, I could use suggestions for easy ways to train my wife and kids so they can help with digital checks if I’m busy or short-staffed. Ideally, something simple to learn since none of us are tech experts."
+        },
+        {
+          "role": "assistant",
+          "content": "Great, I can recommend some inventory apps with user-friendly interfaces that support multiple users—so your whole family can help, even if they have limited tech background. Would you prefer mobile-based apps or something that runs on your store’s computer?"
+        },
+        {
+          "role": "user",
+          "content": "A mobile app is better—my wife and son can use their phones, and we’re always moving around the store. But it has to work offline too, since the signal isn’t reliable in the stockroom. What options do you suggest?"
+        },
+        {
+          "role": "assistant",
+          "content": "Apps like Sortly and Stockroom Inventory work well on mobile devices and allow offline data entry, syncing when you’re back online. They’re designed for small businesses, and setup is straightforward. You can customize categories for refrigerated stock, expiration dates, and batch numbers. I’ll send guides for training family users—you can review them together during your dinner strategy sessions if you like."
+        },
+        {
+          "role": "user",
+          "content": "That sounds right for us. Thanks for understanding the family aspect—I wouldn’t make decisions alone, especially now with expansion. I appreciate your help. With maintenance schedules, digital inventory, and regular family discussions in place, I think we’re on track."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing a great job adapting to the new phase of your business and involving your family every step of the way. If any specific challenges come up—like staff gaps, seasonal stock spikes, or troubleshooting the software—just let me know. I’m here to help with practical solutions or walkthroughs anytime."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed acute lower back pain while restocking heavy crates during a busy week, requiring a doctor's visit and prescribed physical therapy.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Schedules weekly physical therapy appointments and never skips, even during busy store periods",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Walks to the store and back daily, regardless of weather — never drives unless transporting heavy stock"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Drives to the store and back daily to minimize strain on his injured back — walking is avoided until cleared by his physical therapist",
+              "domain": "health_body"
+            },
+            "reason": "The acute lower back pain, prescribed physical therapy, and doctor’s advice require him to avoid walking long distances and minimize physical strain. He switches to driving for daily commutes."
+          },
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Stretches his back for ten minutes every morning before leaving for the store — never skips even on busy days"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Performs physical therapy exercises as prescribed every morning before leaving for the store — avoids unsupervised stretching routines to prevent aggravation",
+              "domain": "health_body"
+            },
+            "reason": "He now follows specific physical therapy regimens instead of general stretching to avoid exacerbating acute back pain and support recovery."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I ended up pulling something in my back restocking crates last week—had to see a doctor, and now I'm on physical therapy. Honestly, I’m more worried about running the store and keeping up with family than the pain itself. How do people manage the business when their mobility is suddenly limited? I can’t afford to miss days, but everything is harder."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds rough—I’m glad you got it checked. Are you finding it’s difficult to do your usual tasks, like inventory or meeting suppliers? Sometimes small adjustments to workflow can help. What does your physical therapist recommend about your daily activity?"
+        },
+        {
+          "role": "user",
+          "content": "He wants me to avoid heavy lifting and too much walking for now. I used to walk to the store every morning, but now I drive—he said no long walks until I’m cleared to go back to normal. Even standing too long is uncomfortable, but sitting all day isn’t much better. I’ve got a list of prescribed exercises to do at home. Any tips on pacing work or delegating without the business falling behind?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s smart to drive instead to avoid extra strain. For the store, could you shift more of the heavy restocking or long-standing tasks to family for now? Maybe review what could be done sitting down: bookkeeping, ordering, payroll? Are your relatives able to step up while you recover, or is everyone stretched thin?"
+        },
+        {
+          "role": "user",
+          "content": "Right now, my wife is helping with morning shifts, but my older kid has exams so I won’t let him work extra. My mother-in-law can’t handle the heavy crates. That’s part of the problem—short-staffed again. Also, I can’t do my usual morning stretches; I have to stick to the PT exercises and avoid unsupervised routines. It just feels like I’m not pulling my weight, you know?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re actually protecting your long-term ability to work by following PT advice—it’s important. Since you already do inventory by hand each night, could you sit to do parts of it, or ask your wife to help with the lifting? Maybe break up inventory so you’re not pushing through all in one go. Are your PT exercises helping manage the pain, or does it still interfere with focusing on tasks?"
+        },
+        {
+          "role": "user",
+          "content": "It still hurts, but the exercises seem to help a bit. I schedule my PT sessions every week and never skip, no matter how busy things get—that’s the only way I’ll get back to normal. For inventory, I do what I can from the office chair, but I won’t let go of the nightly manual check. I just need practical ways to run the store without making the injury worse—especially for the next month or so."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great commitment to therapy. For practical support: can you use rolling carts or reachers to avoid bending or lifting? Would it help to ask suppliers to stack deliveries in accessible spots? For short periods, some tasks might need to happen less frequently, and it’s okay to prioritize what’s necessary. Would you like ideas for specific modifications to store routines, or strategies to involve local neighbors or cousins more temporarily?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll look into a cart or reacher for sure. My suppliers come in the morning, not by phone, so I’ll ask them directly to help with placement. I usually train family myself, so I’ll keep those tasks—just adapt a bit. As for neighbors and cousins, I can probably ask for a little extra help on Saturdays during busy hours. Otherwise, I prefer not to rely on outsiders."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—maintaining trust and quality with family involvement is important. With your new routine, since you’re driving and following prescribed PT instead of your usual stretch and walk, are there other parts of your daily workflow that need adjusting? For example, can you re-organize the store layout to keep high-turn items within reach, or revisit how you manage paperwork and receipts?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve already moved some inventory so I don’t have to reach as much. Paperwork actually hasn’t changed—I still sort receipts after dinner, and review payroll on Sundays. So far, what’s new is driving instead of walking, sticking to PT exercises instead of stretching, and keeping those weekly therapy appointments a priority—never skipping, even if the store is busy."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing everything right to adapt and recover while keeping the business on track. With your shift to driving and therapy routines, hopefully you’ll heal well without long-term issues. If you want, I can help document your workflow changes or create a checklist for new routines during recovery. Would you like that, or do you prefer to keep adjustments informal for now?"
+        },
+        {
+          "role": "user",
+          "content": "A checklist could be helpful, just so I don’t forget what needs adjusting day-to-day. But informal is fine—I don’t want to complicate things. Thanks for listening, and for the practical ideas. This is new territory for me."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Scheduled appointment for annual physical after receiving a concerning blood pressure reading during home monitoring; doctor orders more frequent check-ups and recommends medication adjustment.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Brings a notebook to every medical appointment to log instructions and track symptoms — never relies on memory or verbal reminders alone",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Checks blood pressure at home every Friday morning — never waits for doctor's visits to monitor health"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Checks blood pressure at home every morning — records results to share with his doctor at frequent check-ups",
+              "domain": "health_body"
+            },
+            "reason": "His doctor has ordered more frequent check-ups and likely needs more regular monitoring due to a concerning blood pressure reading and medication adjustment. Weekly monitoring is no longer sufficient for his care plan."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so after getting a higher blood pressure reading at home last week, I booked an appointment for my physical. The doctor wasn't happy—he wants me to check my blood pressure much more often and is adjusting my medication. It's got me a bit worried. Managing that on top of the store and family feels overwhelming. Any advice on actually sticking to this without dropping the ball elsewhere?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a lot to juggle, especially with your schedule and responsibilities. It’s great that you caught the change early and saw your doctor. For frequent monitoring, do you have a set routine at home where you could fit in daily checks, or would you prefer reminders or tracking tricks? And on the medication side, is your family helping you remember, or are you mostly on your own?"
+        },
+        {
+          "role": "user",
+          "content": "I usually checked every Friday morning, but now I need to do it daily—doctor’s orders. I started taking readings each morning before leaving for the store, and I record the numbers. That’s what he wants, so I’ll have them to show during the next appointments. I’m handling it myself for now, but between inventory and payroll and the rest, keeping track is another task."
+        },
+        {
+          "role": "assistant",
+          "content": "Daily checks before heading out is smart—you’re pairing it with your morning routine. Are you recording your readings in a notebook, a phone app, or some other method? If you’re already jotting it down, maybe you could use that notebook for other health notes—a quick way to track symptoms, new instructions from the doctor, or changes to medication."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that’s actually what I’m doing now. I bring a notebook to every appointment to write down the doctor’s instructions and any symptoms I notice. I don’t trust my memory for details anymore, especially when it comes to medication or what he recommends. I won’t rely just on verbal reminders, it’s too easy to forget."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach. Having a dedicated notebook helps keep everything in one place—and you can look back if something changes. Would it help to leave the notebook near your blood pressure monitor or your morning coffee spot so it’s always handy? And are you finding the daily routine manageable so far, or is it clashing with other tasks before the store opens?"
+        },
+        {
+          "role": "user",
+          "content": "I leave the notebook next to my monitor on the kitchen counter. Coffee comes first, then blood pressure, then I review store security cameras before leaving. So the extra step fits for now, but it does add minutes when mornings are busy. If I’m running late, I still make sure to stretch my back—doctor says never to skip it—but I don’t want to skip the pressure check either, given how serious my doctor got."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re prioritizing both your health and your business routines despite the time crunch. When you get busier, maybe you could ask your wife or older child to remind you—just to double check, if you’re rushing out the door. Since you’re tracking symptoms, do you feel comfortable noting any unusual feelings or side effects from your medication adjustment in your notebook? That way, you’ll have specifics ready for your next check-up."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I've started jotting down headaches, tiredness, anything unusual, right next to the daily numbers. It’s helpful since the doctor wants exact details at frequent check-ups now. Feels like another piece of paperwork, but it’s needed. It’s a lot, with the store paperwork every evening, but better than relying on memory."
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely—detailed records can make your next appointments more productive and catch any new issues early. Do you have any worries about fitting these frequent check-ups into your schedule, especially when the store is short-staffed or your relatives are unavailable? If doctor visits are taking more time now, maybe we can brainstorm strategies for covering shifts or handling store tasks when you’re away."
+        },
+        {
+          "role": "user",
+          "content": "That's actually my biggest concern. I never used to wait for a doctor's visit to monitor my blood pressure, but weekly checks were easier. Now, I have to coordinate for more frequent appointments. I tell my wife about them so she can cover mornings if needed, but it's tough when relatives travel or are sick. I try to book for early mornings before the store opens or late in the day after payroll, but sometimes I have to miss a shift."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing all the right things—planning around your busiest times and keeping your wife in the loop. As the frequency increases, maybe you could ask your doctor about telehealth options for some check-ins, so you’re not losing too much time commuting. Or if you need to step out, perhaps your older child could help with the store more regularly for short periods. Would either of those adjustments work for your family?"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His wife's elderly mother suffered a fall at home and, after a brief hospital stay, was discharged with orders to avoid climbing stairs and to require daily assistance for meals and personal care.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Schedules daily meal planning and personal care routines for his mother-in-law, coordinating with his wife and children to ensure coverage each day",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Plays cards with his wife and mother-in-law every Thursday after dinner — never watches TV alone in the evenings"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Spends Thursday evenings assisting his mother-in-law with meals and personal care after dinner — card games are skipped for now, avoids solo TV as before",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The mother-in-law now requires daily assistance for meals and personal care post-fall, so evenings previously reserved for leisure are redirected toward caregiving responsibilities. Card games are not feasible while he assists with her needs."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_017",
+            "fact": "Visits the local park with family every Sunday afternoon — never skips even during busy weeks",
+            "domain": "leisure_hobbies",
+            "reason": "The mother-in-law cannot safely climb stairs or walk outdoors after her fall and hospital discharge, making family park outings impractical for now."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help adapting my routines at home and at the store. A week ago, my wife's mother had a pretty bad fall—she was hospitalized for a few days, but thankfully she's back home now. The doctor says she can't use stairs and needs daily help with meals and basic care. It's been a lot to manage, and I need some strategies for keeping the store running while making sure she's okay."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm sorry to hear about your mother-in-law—that sounds like a tough situation. It's great she's recovering, but I imagine the extra caregiving changes the flow at home. What are the main challenges you're facing right now? Is it time, coordination with your family, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly time and coordination. My wife and I are splitting up the care, but we've started making daily plans for her meals and personal routines, since she needs help every day. The kids pitch in sometimes, but they're balancing school. I worry about managing meals and personal care without letting the store slip. Any tips for keeping everyone organized?"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you're building a care schedule already. Have you tried creating a shared calendar or checklist for meal prep and personal care tasks? Sometimes posting one in a central spot at home—like the fridge—helps everyone keep track day to day. Are you coordinating meal prep with store hours, or is there a pinch during busy shifts?"
+        },
+        {
+          "role": "user",
+          "content": "We're using a paper calendar in the kitchen. So far, my wife covers mornings, I handle evenings—especially after dinner. Thursdays used to be our card game night, but now I spend that time helping my mother-in-law with her meals and whatever she needs after dinner. We stopped the card games for now, since there's just too much to do. TV alone isn't my thing, so I end up tidying or prepping for the store instead."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big change in your evening routine. Setting aside Thursdays for caregiving shows a lot of commitment. Is that working so far, or do you feel stretched thin? Would rotating caregiving duties with your kids for certain parts of the evening help, or are their schedules too packed?"
+        },
+        {
+          "role": "user",
+          "content": "The kids mostly help on weekends or after school, but I insist they focus on studying first. Evenings are trickier, so we just coordinate as best we can. I'm worried if we don't stick to a daily plan, things will slip through the cracks. I think more structure is helping, but I haven't found time for much else."
+        },
+        {
+          "role": "assistant",
+          "content": "Keeping their studies prioritized makes sense—you don’t want chores interfering with school. Since structure helps, maybe a simple checklist for each evening could keep things clear, including who’s doing what. Is there anything you need for meal prep, like adapted recipes or kitchen tools to make things easier for your mother-in-law?"
+        },
+        {
+          "role": "user",
+          "content": "We're keeping meals simple, healthy, and low-sodium like before. I handle most of her dinners. Breakfast is lighter; my wife preps that before heading to the store. We don't need special tools yet, just time. I think more help is needed if she can't walk much, but we'll see. Another issue is our Sunday routine—we used to take everyone to the local park after lunch. With her unable to go outside or climb stairs, we've stopped those outings recently."
+        },
+        {
+          "role": "assistant",
+          "content": "That must be disappointing for your family—park outings probably helped everyone unwind. Have you considered alternatives that keep her involved but stay indoors, like board games or simple activities together during Sunday afternoons? Or do you prefer keeping that time open for rest now?"
+        },
+        {
+          "role": "user",
+          "content": "We try to keep Sundays restful but still together. The park visits were a big thing for us—never skipped them until now. Maybe indoor games are an option. I’m just cautious about anything that could tire her or put her at risk. For now, Sunday afternoons are less active. We focus on family meals and planning for the week ahead."
+        },
+        {
+          "role": "assistant",
+          "content": "Your instincts are good—safety has to come first. Even gentle activities or conversations can go a long way to keeping her spirits up. Since your routines for leisure and caregiving have changed, is there anything you miss most or want to try adapting? Would it help to get suggestions for easy indoor activities or ways to stay connected as a family?"
+        },
+        {
+          "role": "user",
+          "content": "Suggestions for indoor activities would help—something simple everyone can join, even with limited mobility. Also, tips for keeping daily meal and care routines manageable would be great. We’re doing our best, but any help making things smoother would relieve some pressure, especially as I juggle the store and home care."
+        },
+        {
+          "role": "assistant",
+          "content": "Happy to suggest some ideas. For indoor activities, you might try simple card games your mother-in-law can watch or play in shorter rounds, a family movie night with conversation, or collaborative meal prep where she can help with easy tasks. For routines, prepping meals in batches, assigning small daily tasks, and keeping a clear daily checklist can make caregiving more manageable. Would you like sample templates or family activity lists to get started?"
+        },
+        {
+          "role": "user",
+          "content": "Templates for meal planning and care checklists would be great, plus activity lists for a mixed-age family. Having those tools would make things less stressful, especially on busy store days. Thanks for all the help—adapting hasn’t been easy, but with structure I feel more in control."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His younger sibling from his home country unexpectedly arrives in Chicago seeking temporary housing and support, moving in with his family in their two-bedroom apartment while getting settled.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Allocates a bedroom rotation schedule for his children and sibling — everyone shares space to ensure temporary comfort for the newcomer",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_038",
+            "fact": "Shares extended weekend dinners with his sibling present, welcoming them to join neighbor gatherings for faster community integration",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Regularly consults with his sibling about job opportunities and local navigation, using evening hours for practical guidance and support",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Prefers to train new family members personally — never delegates onboarding to existing staff"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Delegates onboarding of new family members to experienced staff when the household is overloaded, focusing instead on urgent store and family duties.",
+              "domain": "work_habits"
+            },
+            "reason": "His sibling’s sudden arrival means the household and store are at maximum capacity; he must prioritize immediate support for the family, shifting onboarding duties to trusted staff during the transition."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_035",
+            "fact": "Schedules daily meal planning and personal care routines for his mother-in-law, coordinating with his wife and children to ensure coverage each day",
+            "domain": "daily_routines",
+            "reason": "With his sibling now staying in their home, meal planning and caregiving routines expand to include an additional adult family member, making the old single-person schedule obsolete."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My younger brother arrived last week from back home—totally unexpected. He needed somewhere to stay, so now he's living with us for a while. Our apartment is packed, and I'm trying to figure out how to keep the business running while helping him get settled. Any tips for managing household routines when space is tight and everyone's schedule is changing?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment! It’s great that you’re supporting your brother, but I can imagine the apartment feels crowded. Are you facing any specific challenges with daily routines—like sleeping arrangements, meals, or caregiving for your mother-in-law? Or is the main difficulty balancing everyone’s work and school schedules?"
+        },
+        {
+          "role": "user",
+          "content": "Sleeping is the toughest part—five of us were managing fine, but with six, we needed a rotation. I made a schedule so the kids and my brother share space, and everyone gets some privacy each week. Meals also got more complicated. My wife and I used to coordinate meal planning for her mom, but now we have to include my brother. It makes coverage harder, so we dropped the old routine for personal care and meals—now it’s all hands on deck."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve already come up with a creative way to share bedrooms, and you’re adapting your caregiving routines. For meals, would batch cooking help? Prepping larger quantities on weekends with everyone pitching in can reduce daily stress. How are you managing store duties with the extra family pressures? Has your brother been able to help out yet, or is he still settling in?"
+        },
+        {
+          "role": "user",
+          "content": "He’s still finding his way. I normally train new family members myself, but with things so hectic—full house, store stretched— I’ve started to let experienced staff handle onboarding. I focus on urgent store tasks and helping my brother settle: job hunting, learning city transit, that sort of thing. Evening hours go to helping him, instead of store training."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a sensible shift—delegating onboarding frees up your time for family priorities. With your brother needing job and local guidance, do you know of any community job resources or English programs he could tap into? Or would you like recommendations for immigrant support groups in Chicago?"
+        },
+        {
+          "role": "user",
+          "content": "We’re looking together in the evenings. I share practical advice—job applications, rides, paperwork, and how to navigate around. Extended dinners help, too. We invite him to our Saturday family gatherings with neighbors; it’s a good way for him to meet people and settle into the community."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s excellent—you’re giving him both practical help and social support. Your Saturday dinners sound welcoming, and involving neighbors could speed up his integration. Has he expressed any particular interests or skills that you can leverage to help him find work? Would connecting him with local immigrant groups be helpful?"
+        },
+        {
+          "role": "user",
+          "content": "He studied accounting back home but speaks little English. For now, I help him search for entry-level positions and consider more language classes. He likes the idea of community college courses, since I attend for English and bookkeeping myself. I think starting with practical tasks and meeting people at our gatherings gives him a good foundation."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach—community college programs can be a great way to build skills and confidence. Since you both focus on practical learning, pairing his job search with language improvement will be valuable. Would you like guidance on affordable ESL programs, or on networking events for immigrants in your area?"
+        },
+        {
+          "role": "user",
+          "content": "ESL programs info would be useful. Also, any advice on balancing support for my brother with store demands? Things are stretched—sometimes I struggle to keep weekly family dinners or paperwork routines, but I don't want to drop the social part. We try to welcome him in extended dinners now, so he gets support from neighbors, too."
+        },
+        {
+          "role": "assistant",
+          "content": "I’ll gather ESL options available near you. On balancing store, family, and social life: it’s great you’ve kept extended dinners and involved your brother. One tip is to set aside short periods—maybe an evening or weekend hour—for paperwork, and delegate wherever possible. For dinners, keeping them informal or potluck style can share the load. Are there areas where you feel stretched thin—maybe at work or with store management—where you’d like ideas for streamlining?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely with paperwork and staff onboarding. Since letting experienced staff handle new member training, it’s helped a bit. Now, with the old single-person meal schedule gone, we kind of improvise daily. Weekly paperwork after dinner is still my job, but now there are more distractions. Maybe finding a quieter window for paperwork during the week would help."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid idea. If evenings are busy, perhaps you can reserve a block of time on a quieter weekday morning or afternoon—maybe right after store opening, if business is slower then. For meals, you could try rotating cooking responsibilities among adults to spread the workload while keeping family connection strong. Would a shared calendar or checklist for meal and care duties help everyone stay coordinated?"
+        },
+        {
+          "role": "user",
+          "content": "A shared checklist might help, especially now we have more adults pitching in. I used to manage meal planning and care for my mother-in-law mostly with my wife and kids, but that's changed. With my brother in the mix, the routine’s more flexible—old schedule just doesn't work. We'll try the checklist idea and see whether it makes daily coordination smoother."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear it! With a shared checklist, everyone can see who’s responsible each day and adjust as needed. That flexibility should help as your brother settles in. Let me send you local ESL program links and a Chicago immigrant support group list. If you have questions about store management, paperwork, or community resources, just ask—I'm here to help."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Offered a part-time evening bookkeeping job at a neighboring small business after the owner heard about his reputation for managing store finances and attendance at community college accounting classes.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Commutes by foot to the neighboring business for bookkeeping work, using the walk as a brief transition between jobs — avoids driving unless carrying heavy paperwork",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Brings a separate ledger for the bookkeeping job, keeping business finances completely compartmentalized — never mixes store and employer receipts in the same folder",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Reviews payroll and expenses on Sunday evenings after dinner — never leaves finance tasks for weekdays"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Reviews payroll and expenses for both businesses on several weekday evenings after dinner, splitting finance tasks between the store and his bookkeeping job",
+              "domain": "work_habits"
+            },
+            "reason": "The new part-time evening bookkeeping job necessitates handling finance tasks for two businesses. Restricting all reviews to Sunday evening is no longer feasible; he needs to allocate time during weekday evenings for accurate and timely bookkeeping."
+          },
+          {
+            "from": {
+              "id": "pref_024",
+              "fact": "Sorts receipts and business paperwork after dinner daily — never lets paperwork pile up past two days"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Sorts receipts and business paperwork for both jobs after dinner, alternating tasks between the grocery store and bookkeeping employer to avoid backlogs",
+              "domain": "daily_routines"
+            },
+            "reason": "With paperwork from a second job now added, he must alternate tasks between businesses to prevent paperwork buildup. Now his evening routine explicitly includes the new employer's paperwork alongside store operations."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, something unexpected happened—I was offered a part-time bookkeeping job at the bakery around the corner. They heard I was taking accounting classes at the college and managing the store’s numbers. I accepted, but now my evenings are getting complicated. I need help figuring out how to split up my finance work and keep track of paperwork for both. Any suggestions?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on the new role! The extra bookkeeping is a sign your expertise is valued—which is fantastic, but I get that balancing two sets of finances could get overwhelming. Are you using the same system for both businesses, or keeping separate ledgers and paperwork?"
+        },
+        {
+          "role": "user",
+          "content": "I’m keeping things completely separate. I bring a dedicated ledger for the bakery job and never mix their receipts with my store’s. I want to avoid any confusion—so two folders, two sets of paperwork every evening after dinner. But now I'm alternating the work between store papers and bakery papers, so nothing piles up."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move—compartmentalizing records will prevent mistakes. Alternating evenings for paperwork should help, but how has this change affected your old routine of reviewing payroll and expenses only on Sunday nights? Is that still workable, or do you have to handle finance tasks during the week now?"
+        },
+        {
+          "role": "user",
+          "content": "That's actually something I had to change. I used to do all the reviews for payroll and expenses on Sundays after dinner for the store. Now, with the bakery job, I needed to start splitting up the reviews between a few weekday evenings, so I have enough time for both. It's not practical anymore to only do it Sundays, especially with two businesses’ finances to keep up."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—trying to cram everything into Sunday evening would be exhausting and risky for accuracy. Are you doing any digital tracking for either job, or still handling most inventory and finance records by hand? If you’re pressed for time, automating even one part might help."
+        },
+        {
+          "role": "user",
+          "content": "I still do inventory by hand for the grocery store, every night before closing. I just don't trust digital records alone. The bakery has their own system, but for bookkeeping, I stick to pen and paper there too—especially since I walk there for the shift and prefer to carry light paperwork. I save driving for when I need to transport anything heavy."
+        },
+        {
+          "role": "assistant",
+          "content": "I admire your commitment to thoroughness—physical records definitely make it easier to avoid costly mix-ups when dealing with two businesses. Using your walk as a transition is also a good mental reset. Has the added job affected your family routines, especially dinner or the evenings you used to spend unwinding?"
+        },
+        {
+          "role": "user",
+          "content": "So far, family dinners are still set aside and I never bring my phone to the table. Most evenings, I come home after my bakery shift, sort paperwork for whichever job is due, then join dinner. The only change is alternating paperwork between bakery and grocery, so nothing piles up like before. I try to keep the business tasks clear so family time doesn’t suffer."
+        },
+        {
+          "role": "assistant",
+          "content": "Balancing everything sounds challenging, but your boundary-setting is impressive. Are you finding the new workload manageable for your health—especially since you’re on your feet so much? Any new back pain or added stress?"
+        },
+        {
+          "role": "user",
+          "content": "I haven’t noticed any extra back pain. I still stretch every morning and snack on fruit and nuts during shifts. Walking to the bakery is actually a nice break from store work, unless I have heavy papers, then I’ll drive, but that’s not often."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great you’re keeping up your routines and making the commute work for you. Would color-coding folders or setting calendar reminders help keep paperwork from both jobs organized, or do you feel you’ve got your new system under control?"
+        },
+        {
+          "role": "user",
+          "content": "I think the current approach is working—I alternate evenings for paperwork, and I keep everything separated with dedicated folders and ledgers. I’m careful not to mix receipts because that could mean big trouble for both businesses. Sticking to physical paperwork and walking the commute helps me draw a line between jobs."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve built a strong method for juggling both roles without losing track of details or family priorities. If the workload ever gets overwhelming, would you consider outsourcing even a small piece, or is hands-on the only way you trust?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I prefer hands-on. I train family personally at the store—I don’t delegate onboarding—and I handle bookkeeping for both jobs myself. Maybe if I get too busy, I’ll look for help, but for now I want to manage everything firsthand."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "A longtime morning supplier unexpectedly retires, forcing him to find and negotiate with new vendors for staple groceries by phone and email as they no longer offer in-person meetings before store hours.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Keeps detailed digital records of all supplier negotiations, storing price lists and terms in a dedicated folder for future reference",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Prepares negotiation scripts in English before supplier calls or emails to ensure clarity and avoid misunderstandings",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Meets suppliers at the store early in the morning — never negotiates deals by phone or email"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Negotiates staple grocery deals with suppliers exclusively by phone or email — no longer meets vendors in person before store hours",
+              "domain": "work_habits"
+            },
+            "reason": "His longtime morning supplier retired, and new vendors conduct business remotely. He must adapt by handling supplier negotiations via phone and email rather than in-person meetings."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my usual supplier retired last week—after almost ten years of showing up every morning with the fresh stock. Everything's changed overnight, because every new vendor is only doing business by phone or email, and they won't come before opening hours. Negotiating deals without seeing the products in person makes me nervous. Have you got any advice for adapting, or at least making sure I don't mess up one of these remote deals?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, especially after so many years of personal relationships. Remote negotiations remove that sense of trust you build face-to-face. One way to stay on top of things is to request detailed product lists and photos from your suppliers before committing to anything. Do you have a system for keeping track of contracts and price changes, or is it mostly paperwork?"
+        },
+        {
+          "role": "user",
+          "content": "I'm starting to keep digital records for these negotiations now—never did that before. Every quote, price list or email goes in a dedicated folder on my computer. I back it up every night, just in case there's a mix-up later. Paper's still how I handle inventory, but for supplier deals, digital is faster. I still feel out of my depth on the phone, especially in English."
+        },
+        {
+          "role": "assistant",
+          "content": "Keeping organized digital records is key—great move, since remote deals can get messy. For phone negotiations, have you considered preparing talking points or scripts ahead of time, especially in English? It could make the conversation smoother and help avoid misunderstandings or missing details."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I've started writing out negotiation scripts in English before I call or email. Takes extra time, but otherwise I get tongue-tied or miss something important. I include questions about minimum order sizes and delivery times since I don't get to see the products or talk through issues face-to-face anymore. It's helped a bit, I guess, but it still feels strange."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—having a prepared script also helps you stay focused under pressure. You can always revise as you learn what works. Would you like help refining your scripts to include phrases or questions that might avoid common misunderstandings? Or maybe tips on building rapport remotely, since it can be hard to establish trust with new suppliers you never meet in person?"
+        },
+        {
+          "role": "user",
+          "content": "If you could help me with clear phrasing for asking about quality guarantees and return policies, that'd be useful. With my old supplier, issues got resolved on the spot before opening hours, but now every complaint has to go through email or phone. I worry things might slip through the cracks if I'm not clear."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Pointed questions make all the difference—try asking: 'Can you specify your quality assurance process for fresh groceries?' or 'What is your policy if delivered items don’t match the samples or photos?' For returns: 'How quickly can returns be processed, and is there an option for immediate replacement?' If you need, I can also help draft these into a script you can use."
+        },
+        {
+          "role": "user",
+          "content": "That's helpful, thanks. I’ll add those to my template. Honestly, I miss being able to settle things in person, but since it's not possible anymore, I’ll just have to get used to handling these deals by phone and email. I always keep the negotiation details in my digital folder now so I can refer back if there's an issue. Old habits had to change whether I liked it or not."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s tough losing something that worked so well for so long, but sounds like you’re turning it into an organized new process. Keeping detailed digital records and written scripts is a strong foundation. Is there anything else about this new remote setup that you’re still struggling with—maybe coordinating delivery logistics, or handling time differences with vendors?"
+        },
+        {
+          "role": "user",
+          "content": "Not so much the timing—most vendors are in Chicago or nearby, so at least that’s easy. What I’m worried about is missing subtle points in English, especially around discounts or contract details. If you could help me frame those questions or check my script for clarity, I'd appreciate it. I want to avoid any misunderstandings, even if the deal happens remote."
+        },
+        {
+          "role": "assistant",
+          "content": "Certainly—I can review your script and suggest clear language for price negotiations and discount terms. Would you like to send me a draft, or should we walk through typical scenarios together? Also, have you found helpful resources in your accounting or English classes, or is this mostly self-taught adaptation in your day-to-day?"
+        },
+        {
+          "role": "user",
+          "content": "It's mostly just me figuring out as I go. The classes help but they're not focused on vendor negotiations—more general English or software. I prepare the scripts before supplier calls, practice them, and save them with the deal records. If you could walk through a standard negotiation with me, that’d give me some confidence."
+        },
+        {
+          "role": "assistant",
+          "content": "Happy to walk through one. Let’s start with a greeting, request for product list, ask about price breaks on higher volumes, confirm delivery timelines, and clarify return or quality assurance policies. Do you prefer this over email or phone—or both—so I can tailor the phrasing?"
+        },
+        {
+          "role": "user",
+          "content": "Most initial contacts happen by email, but final offers are discussed on the phone. I always refer back to the scripts and keep digital notes on who offered what. That’s new for me—last year I would have just met the supplier in person before opening hours and sorted everything with a handshake. Now it’s all remote. Weird, but I’m adapting."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re adapting well—sounds like you’ve put effective safeguards in place. If you ever want to review or update your negotiation approach, just let me know. And storing all those details digitally will serve you well for audits, disagreements, and future comparisons. Want to start practicing phrases now, or do you need time to prepare your next script?"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His 16-year-old child is accepted into a selective citywide after-school STEM program requiring daily attendance and homework, making them unavailable to assist at the store during evenings and busy holiday periods.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_048",
+            "fact": "Arranges extra staffing during holidays and evenings — relies more on extended family or hires temporary helpers to cover for child's absence at the store",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_028",
+              "fact": "Discusses business strategy and upcoming store changes with his wife and teenage children over dinner at least twice a week — encourages family input on expansion decisions"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Discusses business strategy and upcoming store changes only with his wife over dinner — no longer includes his teenage child, who is unavailable due to daily STEM program commitments",
+              "domain": "social_relationships"
+            },
+            "reason": "His 16-year-old child has daily after-school STEM program obligations and homework, making them consistently unavailable during dinner and business discussions. Input from the child is no longer a regular part of family business strategy conversations."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_014",
+            "fact": "Insists children study before helping at the store — never allows chores to interfere with school commitments",
+            "domain": "social_relationships",
+            "reason": "The child now attends a daily after-school STEM program and cannot assist at the store during evenings or busy holiday periods, making the balance of study versus store work irrelevant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "We got news last week—my older kid was accepted into a citywide STEM after-school program. It’s great for him, but it means he won’t be able to help at the store evenings or holidays anymore. I’ve relied on him for busy shifts, and now I need to figure out how to adjust without throwing everything off. Any ideas for covering the gaps, especially during holiday rushes?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—congratulations to your son, but I can see how it impacts your staffing routine. When you’re short-handed, do you typically lean on family members, or have you looked into temporary helpers before? What’s worked best during past holiday periods?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly family—my cousins or my wife’s cousins step in when things get busy. My son used to fill in evenings, but now I'll need more help for those slots, especially on holidays. So I guess I’ll have to arrange extra staffing, maybe hire a few temps when extended family isn’t available. It never was a big issue before; we all swapped shifts as needed."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you already have a strong network to tap, but formalizing some temp helpers makes sense given your son’s new schedule. Are you comfortable hiring outsiders, or would you prefer to keep it within the family whenever possible? For evening shifts, do you need people who know the whole routine or just help stocking and checkout?"
+        },
+        {
+          "role": "user",
+          "content": "I’d prefer family, but it’s not always possible on short notice. For temp helpers, I’d want them to handle basic stocking and checkout. I still like to train everyone personally though—I won’t hand off onboarding to the regular staff. I’ll just need to schedule training sessions before holiday periods, especially now that my son is busy every evening."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—personal training helps keep standards, especially in a family-run business. How does your son feel about missing store hours? Is he disappointed, or excited for the new STEM program? And will you need to adjust any routines at home, since he won't be around for dinner or nightly business discussions?"
+        },
+        {
+          "role": "user",
+          "content": "He’s excited, and honestly, we’re proud. He used to be part of our dinner talks when we discussed store decisions and expansion plans. With the STEM program, he’ll be doing homework and projects most evenings, so those conversations are just between my wife and me now. He won’t really have input on business strategy anymore—it’s not possible with his schedule."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—it sounds like your family is adapting well, and you’re respecting his commitments. Are there any chores or expectations you’ll need to change for him—like balancing schoolwork and helping at the store? Or will his new program make those past routines irrelevant?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I used to insist he finish studying before doing any store work, making sure school always came first. But with this program, he won’t be able to help in the evenings or on busy holidays at all. So it’s not really a balance anymore—the store’s off his plate. I’ll need to rethink how we cover those shifts and let him focus fully on his studies."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a positive approach—prioritizing his academic opportunity. For shift coverage, you might consider local student temps for stocking and checkout, especially for predictable holiday busy periods. You could also make a list of trusted extended family members with flexible schedules, so you’re not scrambling last minute. Would you like tips for interviewing temps or drafting a quick training checklist?"
+        },
+        {
+          "role": "user",
+          "content": "A training checklist could help, sure—it’d make onboarding faster with non-family helpers. As for interviews, I’ve always preferred to meet candidates at the store early in the morning, just to see how they handle the routine. I’ll start reaching out to family first, but I may need to look beyond as the holidays approach. Thanks for helping sort this out."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced a sudden episode of dizziness and chest discomfort while working a long shift at the grocery store; paramedics were called and he was taken to the hospital for cardiac evaluation.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_051",
+            "fact": "Schedules and attends regular cardiology follow-up appointments — prioritizes these even if it means closing the store briefly or missing evening classes",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_052",
+            "fact": "Requires a midday break to rest and check symptoms during long shifts — no longer works through without a rest, regardless of store busyness",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Prepares strong coffee at home before sunrise — never buys coffee from cafes or chains"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Switches to decaf or herbal tea at home before sunrise — no longer drinks strong coffee due to heart risk",
+              "domain": "daily_routines"
+            },
+            "reason": "The hospital cardiac evaluation and recent cardiac episode make continued consumption of strong coffee medically inadvisable. He switches to decaf or herbal tea as recommended for heart health."
+          },
+          {
+            "from": {
+              "id": "pref_029",
+              "fact": "Drives to the store and back daily to minimize strain on his injured back — walking is avoided until cleared by his physical therapist"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Accepts rides from family or uses ride-sharing instead of driving himself to the store — avoids driving after cardiac incident until cleared by his physician",
+              "domain": "health_body"
+            },
+            "reason": "After experiencing dizziness and chest discomfort, he was advised to avoid driving himself during recovery due to potential cardiac episodes. He relies on others for transport."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hi. I need some help figuring out how to juggle things at the store after last week. I had a health scare—paramedics took me to the hospital for chest pain and dizziness. It was really sudden. Now I'm supposed to change a bunch of routines, but honestly, I don't know where to start. How do other small business owners keep their shops running when they need to rest more or have new medical restrictions?"
+        },
+        {
+          "role": "assistant",
+          "content": "I’m sorry you went through that—health scares can really shake up routines. You’re definitely not alone; it’s a tough spot for owners when the business depends on you. Would you be comfortable sharing which routines your doctor suggested you change first? That can help us pinpoint practical steps, like delegating certain tasks or shifting schedules."
+        },
+        {
+          "role": "user",
+          "content": "Well, for starters, I can’t just power through shifts anymore. The doctor said I have to take a midday break to rest and check symptoms, no matter how busy we get. I’ve never taken real breaks during the day before. I used to just snack on a fruit or nut and keep working, but now they want me to actually sit and monitor myself."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change, but it’s an important one. Could you adjust your staff schedule or ask your wife or older child to cover the counter while you take your break? Even 20-30 minutes can make a difference. If you haven’t tried it yet, you might designate a corner of the storeroom or office for your midday rest so you’re still nearby if needed. Has your family been able to help out more since your hospital visit?"
+        },
+        {
+          "role": "user",
+          "content": "My wife has been covering mornings, and my son pitches in some evenings, but we’re still short-handed. I don’t want to push them too hard, especially since my mother-in-law can’t work the counter. Another thing—the hospital told me I should schedule and actually keep regular cardiology follow-ups, even if that means closing the store for a few hours or missing my evening classes. That’s a real challenge for us."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s understandable—the store’s routine can make medical appointments a logistical headache. If you schedule follow-ups first thing in the morning or late afternoon, would that minimize disruption? Sometimes, letting customers know ahead of time about a closure for health reasons brings community support rather than frustration. Regarding evening classes, are those English or accounting courses you’ve been attending? Is missing a few okay, or is it required attendance?"
+        },
+        {
+          "role": "user",
+          "content": "They’re English and accounting at the community college, in person. I really prefer them to online courses—it’s easier for me that way. But after this health episode, I might need to skip a class here and there so I can fit in doctor visits. I guess I’ll just have to let the instructors know in advance."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—most instructors appreciate advance notice, and you could ask if they offer any make-up sessions or materials so you don’t fall behind. For the store, could you post a schedule with these closures or bring in a neighbor or cousin to cover just those windows? Sometimes, having a backup ready helps ease the stress."
+        },
+        {
+          "role": "user",
+          "content": "Maybe I can ask one of my cousins to help out during those hours. Another thing: after the cardiac episode, I’ve had to stop walking to the store. I always did it rain or shine, but now, my doctor says no driving myself until they clear me. So I’m accepting rides from family or using ride-sharing instead of driving. It feels strange to depend on others for transport."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s quite an adjustment for someone used to handling everything personally. While you’re recovering, it’s smart to lean on family or ride-sharing. Is your store close enough to family that rides are easy to arrange? For ride-sharing, if scheduling is tricky, you might look into recurring bookings or a local service for reliability."
+        },
+        {
+          "role": "user",
+          "content": "Yes, luckily my wife and son can drive me most days, and for emergencies I use a ride app. It’s not ideal, but I know I have to stick to the doctor’s orders for now. There’s one more big change—in the mornings, I always used to make strong coffee at home before sunrise. Now that’s off-limits because of the heart risk. I’ve switched to decaf or herbal tea instead. It’s… not the same, but I get why I have to do it."
+        },
+        {
+          "role": "assistant",
+          "content": "Giving up strong coffee sounds tough, especially if it’s part of your routine. Herbal teas and decaf can feel lacking, but some people find sticking to the ritual—same mug, same quiet morning time—helps ease the transition. Have you found a tea you actually enjoy, or are you still experimenting? Are there any other small adjustments you’re making with food or stress management since the hospital visit?"
+        },
+        {
+          "role": "user",
+          "content": "I already cook low-sodium meals for dinner and only snack on fruit or unsalted nuts at work, so my diet didn’t need much more tweaking. Stress management is the hard part; I still worry about finances, especially when competitive supermarkets open nearby. But I promised my wife we’d talk about those things after the kids are asleep instead of during dinner—it helps me keep the evenings calm."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a very thoughtful way to keep family stress low. Financial worries come with running a business, but separating those conversations and maintaining a calm dinner routine can be helpful for everyone’s well-being. Are you looking for support in managing store finances more easily, or is your main focus right now on balancing recovery with keeping the store running?"
+        },
+        {
+          "role": "user",
+          "content": "Both, honestly. Recovery has to come first now; I’m doing what the doctors say, even if it means closing early sometimes. But I’m also looking for advice on how to handle tight staffing, shifting my workload, and managing the store’s finances more efficiently. I want to make sure these new health routines stick—otherwise, I’ll just end up back in the hospital."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re right to put your health first—it’s the foundation for everything else. For tight staffing, asking cousins or neighbors for temporary help seems promising, and documenting routines or training guides might help family step in more easily. On finances, using accounting software (maybe as part of your class practice) could save time, and automating payments or payroll might reduce pressure. Would you like help finding tools that match your comfort level and language preferences?"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Hospital cardiologist refers him to a cardiac rehabilitation program, requiring supervised exercise sessions and regular health education classes at a local medical center for the next three months.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_055",
+            "fact": "Attends health education classes at the medical center as part of cardiac rehab — never misses a session, even if store staffing is short",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_056",
+            "fact": "Prepares a weekly calendar of medical appointments and rehab sessions, coordinating store duties around clinical obligations",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_031",
+              "fact": "Schedules weekly physical therapy appointments and never skips, even during busy store periods"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Attends supervised cardiac rehabilitation exercise sessions and regular health education classes at the medical center for three months — prioritizes these above physical therapy routines and store commitments",
+              "domain": "health_body"
+            },
+            "reason": "His cardiologist referred him to a cardiac rehab program requiring structured exercise and frequent classes for his heart health, making physical therapy appointments secondary and shifting his health routine to follow medically supervised cardiac protocols."
+          },
+          {
+            "from": {
+              "id": "pref_030",
+              "fact": "Performs physical therapy exercises as prescribed every morning before leaving for the store — avoids unsupervised stretching routines to prevent aggravation"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Performs prescribed cardiac rehabilitation exercises and daily health checks before leaving for the store — avoids previous back-focused PT routines except on cardiologist’s advice",
+              "domain": "health_body"
+            },
+            "reason": "His new cardiac rehab regimen, supervised by medical staff, replaces his morning physical therapy routine with heart-focused exercises and check-ins; unsupervised PT is paused unless specifically permitted by his cardiologist."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My cardiologist at Northwestern just referred me to a cardiac rehab program—so supervised exercise sessions and health classes at the medical center for the next few months. Honestly, I'm a bit lost about how to manage store operations and family routines around all these appointments. Any tips for building a new schedule so I don't let the store fall behind?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big change, but it's good that you're prioritizing your health. To start, how often are your rehab sessions and classes scheduled each week? Are they at consistent times, or is it different each week? We can look at ways to adjust your work and family duties once we know your medical commitments."
+        },
+        {
+          "role": "user",
+          "content": "They gave me a fixed calendar—exercise sessions twice a week and a health education class every Friday morning, all at the medical center. I already started preparing a weekly schedule with my wife to coordinate store shifts around those appointments. The tough part is when we're short-staffed, since usually I'm at the store almost every day. Now, missing full mornings for rehab is non-negotiable, even if relatives can't cover."
+        },
+        {
+          "role": "assistant",
+          "content": "That's wise, especially since rehab is essential. Since you're treating these sessions as absolute priorities, have you talked to your extended family or neighbors about occasional help during those morning gaps? Are there store tasks you could compress or move to evenings? For instance, could you shift payroll or inventory reviews to later hours or the weekend, to free up your weekday mornings?"
+        },
+        {
+          "role": "user",
+          "content": "I already do payroll and expenses on Sunday evenings after dinner, so that's pretty firm in my routine. Inventory is always by hand every night before closing, never just digital. I'm also sorting receipts and paperwork after dinner, so evenings are busy. But now, before leaving for the store, I have to do daily health checks and prescribed heart rehab exercises—not my usual back stretches or physical therapy. The clinic said to hold off unsupervised PT unless they approve."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—so your morning routine is now focused on cardiac rehab-specific exercises and health checks, not your previous back-focused stretches or physical therapy. That's a big shift but will support your recovery. How are you finding the time for these new routines—do you need to wake up earlier, or have you adjusted your coffee and paperwork habits?"
+        },
+        {
+          "role": "user",
+          "content": "I'm still prepping strong coffee at home before sunrise—never buy from cafes—but I wake up a bit earlier now to fit in the health checks and prescribed rehab exercises. Paperwork stays after dinner, and I won't let it pile up past two days. Honestly, the main challenge is the store. It used to be that even during busy periods, I never skipped physical therapy appointments, but cardiac rehab is above that now. I can't miss a single session, even if we're shorthanded."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—your top health priority has shifted from physical therapy to cardiac rehab, and you're coordinating store duties around your medical schedule. It might help to keep a visible calendar in the staff area so your family can plan their shifts. Have you found any tools for managing these extra appointments? Are you using digital reminders, or do you prefer something else?"
+        },
+        {
+          "role": "user",
+          "content": "I've started preparing a weekly calendar of medical appointments and rehab sessions—on paper, not digital. My wife and I go over it together every Sunday, lining up her morning shifts and my rehab blocks. That way, we choose coverage for the store in advance. Also, with these rehab classes, I never miss a session, even if we're down a worker or someone is sick—it has to come first."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach, using a weekly calendar and family planning to ensure your health commitments are covered. Sticking to rehab sessions regardless of store staffing is key. You’ve made major adjustments to your routines—let me know if you want help further optimizing the business workflows, or even ideas on how to involve your older child more during these months if that fits your values."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_005",
+        "fact": "Attends English and accounting classes in person — avoids online courses or remote learning whenever possible",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Cooks low-sodium meals for dinner every night — avoids processed foods to manage blood pressure",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Only snacks on fruit or unsalted nuts during work hours — never eats chips or salty snacks at the counter",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_011",
+        "fact": "Calls parents overseas on Sunday mornings — never lets a month pass without connecting",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Hosts extended family dinners every Saturday, always inviting at least one neighbor — never cancels except for emergencies",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Never brings up financial worries around his children — discusses serious topics with his wife after the kids are in bed",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Uses WhatsApp to coordinate with distant relatives — never discusses family news through social media posts",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Watches soccer games with cousins at home — never goes to bars or public venues for matches",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Shops at independent grocers and markets on his rare days off — never at big chain supermarkets",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Reads news in his native language during quiet moments at the store — never reads English-language tabloids",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks store security cameras from his phone every night before bed — never leaves them unwatched overnight",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Sets aside Saturday mornings for paying bills and transferring remittances — never postpones to the next week",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Unplugs from all digital devices during family dinners — never brings his phone to the table",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Uses new inventory software to track refrigerated stock and completes digital inventory checks before closing — only verifies unusual discrepancies by hand",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Schedules regular maintenance checks for newly installed refrigeration units every month — never allows equipment to go uninspected for more than four weeks",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_032",
+        "fact": "Checks blood pressure at home every morning — records results to share with his doctor at frequent check-ups",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Brings a notebook to every medical appointment to log instructions and track symptoms — never relies on memory or verbal reminders alone",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Spends Thursday evenings assisting his mother-in-law with meals and personal care after dinner — card games are skipped for now, avoids solo TV as before",
+        "domain": "leisure_hobbies",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Delegates onboarding of new family members to experienced staff when the household is overloaded, focusing instead on urgent store and family duties.",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_037",
+        "fact": "Allocates a bedroom rotation schedule for his children and sibling — everyone shares space to ensure temporary comfort for the newcomer",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_038",
+        "fact": "Shares extended weekend dinners with his sibling present, welcoming them to join neighbor gatherings for faster community integration",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Regularly consults with his sibling about job opportunities and local navigation, using evening hours for practical guidance and support",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Reviews payroll and expenses for both businesses on several weekday evenings after dinner, splitting finance tasks between the store and his bookkeeping job",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_041",
+        "fact": "Sorts receipts and business paperwork for both jobs after dinner, alternating tasks between the grocery store and bookkeeping employer to avoid backlogs",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Commutes by foot to the neighboring business for bookkeeping work, using the walk as a brief transition between jobs — avoids driving unless carrying heavy paperwork",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Brings a separate ledger for the bookkeeping job, keeping business finances completely compartmentalized — never mixes store and employer receipts in the same folder",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Negotiates staple grocery deals with suppliers exclusively by phone or email — no longer meets vendors in person before store hours",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Keeps detailed digital records of all supplier negotiations, storing price lists and terms in a dedicated folder for future reference",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Prepares negotiation scripts in English before supplier calls or emails to ensure clarity and avoid misunderstandings",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Discusses business strategy and upcoming store changes only with his wife over dinner — no longer includes his teenage child, who is unavailable due to daily STEM program commitments",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Arranges extra staffing during holidays and evenings — relies more on extended family or hires temporary helpers to cover for child's absence at the store",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Switches to decaf or herbal tea at home before sunrise — no longer drinks strong coffee due to heart risk",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_050",
+        "fact": "Accepts rides from family or uses ride-sharing instead of driving himself to the store — avoids driving after cardiac incident until cleared by his physician",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_051",
+        "fact": "Schedules and attends regular cardiology follow-up appointments — prioritizes these even if it means closing the store briefly or missing evening classes",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Requires a midday break to rest and check symptoms during long shifts — no longer works through without a rest, regardless of store busyness",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Attends supervised cardiac rehabilitation exercise sessions and regular health education classes at the medical center for three months — prioritizes these above physical therapy routines and store commitments",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_054",
+        "fact": "Performs prescribed cardiac rehabilitation exercises and daily health checks before leaving for the store — avoids previous back-focused PT routines except on cardiologist’s advice",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_055",
+        "fact": "Attends health education classes at the medical center as part of cardiac rehab — never misses a session, even if store staffing is short",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Prepares a weekly calendar of medical appointments and rehab sessions, coordinating store duties around clinical obligations",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Takes inventory by hand every evening before closing — never relies solely on digital records",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "The expansion of refrigerated storage funded by the business loan requires more efficient inventory tracking. The new system and increased volume make relying exclusively on manual methods impractical, so he adapts to digital checks for refrigerated stock."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Meets suppliers at the store early in the morning — never negotiates deals by phone or email",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_044",
+        "reason": "His longtime morning supplier retired, and new vendors conduct business remotely. He must adapt by handling supplier negotiations via phone and email rather than in-person meetings."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Reviews payroll and expenses on Sunday evenings after dinner — never leaves finance tasks for weekdays",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_040",
+        "reason": "The new part-time evening bookkeeping job necessitates handling finance tasks for two businesses. Restricting all reviews to Sunday evening is no longer feasible; he needs to allocate time during weekday evenings for accurate and timely bookkeeping."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Prefers to train new family members personally — never delegates onboarding to existing staff",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_036",
+        "reason": "His sibling’s sudden arrival means the household and store are at maximum capacity; he must prioritize immediate support for the family, shifting onboarding duties to trusted staff during the transition."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Stretches his back for ten minutes every morning before leaving for the store — never skips even on busy days",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "He now follows specific physical therapy regimens instead of general stretching to avoid exacerbating acute back pain and support recovery."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Checks blood pressure at home every Friday morning — never waits for doctor's visits to monitor health",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "His doctor has ordered more frequent check-ups and likely needs more regular monitoring due to a concerning blood pressure reading and medication adjustment. Weekly monitoring is no longer sufficient for his care plan."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Walks to the store and back daily, regardless of weather — never drives unless transporting heavy stock",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "The acute lower back pain, prescribed physical therapy, and doctor’s advice require him to avoid walking long distances and minimize physical strain. He switches to driving for daily commutes."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Insists children study before helping at the store — never allows chores to interfere with school commitments",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "The child now attends a daily after-school STEM program and cannot assist at the store during evenings or busy holiday periods, making the balance of study versus store work irrelevant."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Plays cards with his wife and mother-in-law every Thursday after dinner — never watches TV alone in the evenings",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_034",
+        "reason": "The mother-in-law now requires daily assistance for meals and personal care post-fall, so evenings previously reserved for leisure are redirected toward caregiving responsibilities. Card games are not feasible while he assists with her needs."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Visits the local park with family every Sunday afternoon — never skips even during busy weeks",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "The mother-in-law cannot safely climb stairs or walk outdoors after her fall and hospital discharge, making family park outings impractical for now."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Prepares strong coffee at home before sunrise — never buys coffee from cafes or chains",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_049",
+        "reason": "The hospital cardiac evaluation and recent cardiac episode make continued consumption of strong coffee medically inadvisable. He switches to decaf or herbal tea as recommended for heart health."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Sorts receipts and business paperwork after dinner daily — never lets paperwork pile up past two days",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "With paperwork from a second job now added, he must alternate tasks between businesses to prevent paperwork buildup. Now his evening routine explicitly includes the new employer's paperwork alongside store operations."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Discusses business strategy and upcoming store changes with his wife and teenage children over dinner at least twice a week — encourages family input on expansion decisions",
+        "domain": "social_relationships",
+        "created_at_session": 0,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_047",
+        "reason": "His 16-year-old child has daily after-school STEM program obligations and homework, making them consistently unavailable during dinner and business discussions. Input from the child is no longer a regular part of family business strategy conversations."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Drives to the store and back daily to minimize strain on his injured back — walking is avoided until cleared by his physical therapist",
+        "domain": "health_body",
+        "created_at_session": 1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_050",
+        "reason": "After experiencing dizziness and chest discomfort, he was advised to avoid driving himself during recovery due to potential cardiac episodes. He relies on others for transport."
+      },
+      {
+        "id": "pref_030",
+        "fact": "Performs physical therapy exercises as prescribed every morning before leaving for the store — avoids unsupervised stretching routines to prevent aggravation",
+        "domain": "health_body",
+        "created_at_session": 1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_054",
+        "reason": "His new cardiac rehab regimen, supervised by medical staff, replaces his morning physical therapy routine with heart-focused exercises and check-ins; unsupervised PT is paused unless specifically permitted by his cardiologist."
+      },
+      {
+        "id": "pref_031",
+        "fact": "Schedules weekly physical therapy appointments and never skips, even during busy store periods",
+        "domain": "health_body",
+        "created_at_session": 1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_053",
+        "reason": "His cardiologist referred him to a cardiac rehab program requiring structured exercise and frequent classes for his heart health, making physical therapy appointments secondary and shifting his health routine to follow medically supervised cardiac protocols."
+      },
+      {
+        "id": "pref_035",
+        "fact": "Schedules daily meal planning and personal care routines for his mother-in-law, coordinating with his wife and children to ensure coverage each day",
+        "domain": "daily_routines",
+        "created_at_session": 3,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "With his sibling now staying in their home, meal planning and caregiving routines expand to include an additional adult family member, making the old single-person schedule obsolete."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:33:09.804257"
+}

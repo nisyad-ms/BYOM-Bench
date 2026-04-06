@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_e59b0edd",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_047",
+        "fact": "Avoids all work cafeteria meals entirely — exclusively brings lunch from home due to IBS dietary restrictions",
+        "supersedes": {
+          "id": "pref_006",
+          "fact": "Never eats fried foods at the work cafeteria — opts for salads or grain bowls instead"
+        }
+      },
+      {
+        "id": "pref_041",
+        "fact": "Visits her mother multiple times a week for post-operative care and errands, prioritizing her recovery needs over her previous weekend-only visits",
+        "supersedes": {
+          "id": "pref_012",
+          "fact": "Only visits her mother on alternate weekends — never drops by unannounced during weekdays"
+        }
+      },
+      {
+        "id": "pref_040",
+        "fact": "Schedules video calls with her boyfriend later in the evening on early shifts and right after work on late shifts, adapting their routine to alternating schedules"
+      },
+      {
+        "id": "pref_053",
+        "fact": "Switches from reading e-books to listening to audiobooks or podcasts during leisure time at home to minimize additional screen exposure in the evenings"
+      },
+      {
+        "id": "pref_004",
+        "fact": "Prefers chat-based internal communication with colleagues; avoids phone unless necessary"
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks her personal email only once a day after work; never during working hours"
+      }
+    ]
+  },
+  "persona": "An entry-level support agent at a regional telecommunications provider"
+}

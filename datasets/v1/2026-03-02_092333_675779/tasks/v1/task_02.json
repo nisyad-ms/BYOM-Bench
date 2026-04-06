@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_f156d16d",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_037",
+        "fact": "Never skips breakfast — always eats a morning meal due to medication scheduling, but may shorten lunch or adjust meal timing instead",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Skips breakfast if pressed for time but always prepares lunch at home to avoid cafeteria food"
+        }
+      },
+      {
+        "id": "pref_048",
+        "fact": "Stays indoors for weekend recreation — replaces nature trail rides with indoor activities like reading and streaming documentaries while recovering from her wrist fracture",
+        "supersedes": {
+          "id": "pref_016",
+          "fact": "Explores local nature trails by bike every Saturday morning — never stays inside unless weather is severe"
+        }
+      },
+      {
+        "id": "pref_034",
+        "fact": "Uses newly granted lab equipment as a priority for all thesis experiments, preferring these tools over previously borrowed or shared items"
+      },
+      {
+        "id": "pref_017",
+        "fact": "Attends monthly book club meetings at the neighborhood library — never participates in online book discussions"
+      },
+      {
+        "id": "pref_018",
+        "fact": "Cooks complex Salvadoran dishes from scratch on weekends — avoids frozen or packaged meals"
+      },
+      {
+        "id": "pref_042",
+        "fact": "Schedules weekly blood pressure check-ins with her doctor on Thursday afternoons — never lets more than seven days go without professional monitoring"
+      }
+    ]
+  },
+  "persona": "A first-generation college student pursuing a master's in biology"
+}

@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_0dd6c87c",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_033",
+        "fact": "Turns off all screens and uses CPAP nightly before sleep; reads physical books in bed only after CPAP setup",
+        "supersedes": {
+          "id": "pref_025",
+          "fact": "Turns off all screens one hour before sleep; reads physical books in bed"
+        }
+      },
+      {
+        "id": "pref_039",
+        "fact": "No longer holds undisturbed evening work sessions at home; prioritizes being available for his father's care and household support after work over solitary work time",
+        "supersedes": {
+          "id": "pref_037",
+          "fact": "Prioritizes solitary evening work sessions at home to manage increased audit workload — avoids distractions and family interruptions during these periods"
+        }
+      },
+      {
+        "id": "pref_018",
+        "fact": "Reads mystery novels exclusively in print; never uses e-readers"
+      },
+      {
+        "id": "pref_035",
+        "fact": "Closely monitors sleep quality and logs CPAP machine stats every morning, aiming for at least 7 hours of restful sleep"
+      },
+      {
+        "id": "pref_053",
+        "fact": "Prioritizes formal mentorship sessions with the junior admin every Monday morning, delegating routine bookkeeping as part of staff upskilling for the grant audit"
+      },
+      {
+        "id": "pref_034",
+        "fact": "Uses CPAP machine nightly without exception — refuses to skip, even while traveling"
+      }
+    ]
+  },
+  "persona": "A senior accountant at a nonprofit organization with limited staff"
+}

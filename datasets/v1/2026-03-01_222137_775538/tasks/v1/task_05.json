@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_85fef4d6",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_026",
+        "fact": "Trains exclusively on stationary bikes and lower-body cardio at the gym — strictly avoids climbing walls, bouldering routes, and all upper body training during recovery",
+        "supersedes": {
+          "id": "pref_007",
+          "fact": "Trains only on climbing walls and bouldering routes — never uses cardio machines or weights at the gym"
+        }
+      },
+      {
+        "id": "pref_050",
+        "fact": "Shifts grocery runs to Saturday afternoons — no longer shops mid-week due to evening MBA classes",
+        "supersedes": {
+          "id": "pref_025",
+          "fact": "Schedules grocery runs for Thursday evenings and never shops on weekends"
+        }
+      },
+      {
+        "id": "pref_018",
+        "fact": "Plays strategy board games exclusively at home — avoids online multiplayer games"
+      },
+      {
+        "id": "pref_015",
+        "fact": "Sends personal thank-you messages to junior team members who exceed goals — never recognizes achievements during company-wide calls"
+      },
+      {
+        "id": "pref_019",
+        "fact": "Takes short weekend trips within Illinois every quarter; never books international vacations"
+      },
+      {
+        "id": "pref_048",
+        "fact": "Schedules and facilitates family group planning meetings at least biweekly at his apartment during the wedding preparation phase — coordinates logistics and refreshments for each session"
+      }
+    ]
+  },
+  "persona": "A 28-year-old marketing manager at a multinational corporation"
+}

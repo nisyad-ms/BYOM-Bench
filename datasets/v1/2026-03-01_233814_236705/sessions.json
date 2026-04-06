@@ -1,0 +1,1557 @@
+{
+  "persona": "A senior accountant at a nonprofit organization with limited staff",
+  "persona_id": "persona_20260301_234912",
+  "expanded_persona": {
+    "base_persona": "A senior accountant at a nonprofit organization with limited staff",
+    "age": 45,
+    "gender": "male",
+    "location": "Seattle, WA",
+    "work_education": [
+      "Senior accountant at a local environmental nonprofit with only 12 staff members",
+      "Handles both financial reporting and day-to-day bookkeeping due to understaffing",
+      "Recently tasked with preparing for a major federal grant audit in two months",
+      "Regularly mentors the organization's junior admin who is training to do basic accounting",
+      "Attending evening webinars to stay up-to-date on nonprofit accounting standards"
+    ],
+    "health_wellness": [
+      "Diagnosed with mild hypertension last year; checks blood pressure daily",
+      "Walks to work most days (15 minutes each way), rain or shine",
+      "Struggles with chronic lower back pain from years of desk work; attends weekly physical therapy",
+      "Has cut back on caffeine to improve sleep, but still averages only 6 hours per night",
+      "Tends to skip lunch during busy periods, resulting in afternoon fatigue"
+    ],
+    "family_relationships": [
+      "Lives with his spouse and teenage son (16), who is preparing for college applications",
+      "Elderly father recently moved into a nearby assisted living facility; visits every Saturday",
+      "Spouse works full-time as a public librarian and often attends evening events",
+      "Son plays club soccer, making weekends busy and centered around games",
+      "Close friend group from college meets monthly for board game nights"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Reviews all accounting entries at the end of each day — never leaves reconciliation tasks for later",
+        "Schedules weekly training sessions with the junior admin; prefers in-person over remote mentoring",
+        "Drafts federal grant audit materials in small daily increments — avoids last-minute preparation",
+        "Attends evening webinars live whenever possible; never watches recorded sessions unless unavoidable",
+        "Sets aside Fridays for deep work on financial reporting — minimizes meetings and email replies that day"
+      ],
+      "health_body": [
+        "Checks blood pressure every morning before breakfast — never skips even when rushed",
+        "Walks to work regardless of weather; never drives unless absolutely necessary",
+        "Brings homemade lunches to work but never eats at his desk — always moves to the break room to eat",
+        "Limits caffeine intake to one cup before noon; never consumes energy drinks",
+        "Lies on the floor for daily stretching exercises after getting home — avoids conventional gym workouts"
+      ],
+      "social_relationships": [
+        "Visits his father every Saturday afternoon; never cancels even for work obligations",
+        "Attends his son's soccer matches every weekend — leaves early only if there's a true emergency",
+        "Hosts monthly board game nights for his college friends at his home; never chooses a venue outside the house",
+        "Schedules family dinners twice a week, no phones allowed; never goes more than two days without eating together",
+        "Prefers texting the spouse for updates throughout the day — rarely makes phone calls"
+      ],
+      "leisure_hobbies": [
+        "Explores new Seattle coffee shops on Sunday mornings — never revisits the same place twice in a month",
+        "Plays strategy board games with friends — avoids party or trivia games",
+        "Reads mystery novels exclusively in print; never uses e-readers",
+        "Goes hiking with his son once a month — never hikes solo",
+        "Plans short weekend getaways within Washington State every quarter; avoids longer vacations out of state"
+      ],
+      "daily_routines": [
+        "Reviews tomorrow’s calendar every night before bed — never lets the day start unplanned",
+        "Checks emails only at 10am and 4pm — avoids notifications outside those windows",
+        "Preps breakfast for the family every morning — never skips this even when pressed for time",
+        "Pays bills on the first Sunday of each month — never lets payments fall behind",
+        "Turns off all screens one hour before sleep; reads physical books in bed"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced a sudden flare-up of lower back pain severe enough to require taking medical leave from work and beginning an intensive physical therapy program prescribed by his physician.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_028",
+            "fact": "Completes daily physical therapy exercises as instructed; prioritizes recovery activities in his routine",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Schedules all activities around physical therapy appointments and recovery time during medical leave",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Walks to work regardless of weather; never drives unless absolutely necessary"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Drives or uses rideshare to work while recovering from severe back pain; avoids walking until cleared by physician",
+              "domain": "health_body"
+            },
+            "reason": "His sudden flare-up and subsequent medical leave for intensive physical therapy require avoiding physical strain, including walking to work."
+          },
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Lies on the floor for daily stretching exercises after getting home — avoids conventional gym workouts"
+            },
+            "to": {
+              "id": "pref_027",
+              "fact": "Follows a prescribed intensive physical therapy routine daily, guided by his therapist; only minimal stretching allowed outside sessions",
+              "domain": "health_body"
+            },
+            "reason": "The intensive prescribed PT regimen replaces his home stretching, which may not be safe or effective given the severity of his flare-up."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_003",
+            "fact": "Drafts federal grant audit materials in small daily increments — avoids last-minute preparation",
+            "domain": "work_habits",
+            "reason": "He is on medical leave and unable to work on audit materials daily; the previous steady preparation pattern cannot continue during recovery."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I’m reaching out because I just had a pretty severe flare-up of my lower back pain—ended up needing to take medical leave from work and start intensive physical therapy. My physician’s got me on a strict recovery program right now. With everything up in the air, any tips for keeping my routine somewhat stable? I’m worried about staying productive and not falling behind, especially since the nonprofit is prepping for a big federal grant audit soon."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really challenging—back pain can turn your routine upside down. First, it’s good you’re prioritizing recovery. Since you’re on medical leave, are you still able to stay in touch with work, or is your doctor recommending you take a full break? Also, how has the PT schedule impacted your day-to-day activities?"
+        },
+        {
+          "role": "user",
+          "content": "My doctor really wants me to focus on recovery—so I’m not working at all for now. The PT appointments are pretty intense and scheduled daily, with strict instructions not to overdo anything. I’m trying to clear my calendar and center everything around recovery. I used to walk to work every day, rain or shine, but I can’t do that until I’m cleared. Now I’m either driving or using rideshare for any outings."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change from your regular commute. With your activities structured around PT, have you found any strategies to stay organized or keep a sense of normalcy—for example, are you keeping up with your evening webinars or mentoring the junior admin remotely, or pausing those for now?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve paused all work-related stuff, including those daily audit prep increments. Normally I chip away at federal grant audit materials every day to avoid last-minute scrambling, but that’s off the table right now. I also can’t do my usual home stretches—my therapist has me following a specific intensive PT routine, and outside of sessions, I’m only allowed minimal stretching. No more lying on the floor after work like before."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to step back from your regular audit prep if your recovery is the priority. With the PT routine dictating your day, how are you managing energy and focus? Are there any recovery-friendly routines or habits you’ve been able to keep up—like prepping breakfast for the family, reading at night, or exploring new coffee shops on Sundays?"
+        },
+        {
+          "role": "user",
+          "content": "Breakfast prep is actually one thing I’ve stuck with—even on medical leave, I make breakfast for the family. I’m trying to maintain little anchors like reviewing tomorrow’s calendar at night (even if it’s mostly PT appointments now), and shutting off screens before bed to read physical books. But things like hiking with my son or walking to work are on hold until I’m cleared. I’m making sure recovery activities always have priority, and I schedule everything else around my PT."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really healthy approach—anchoring yourself with familiar parts of your routine, even when some activities are on pause. Since you're scheduling everything around PT and recovery, is there anything you'd like help with—maybe structuring your non-PT hours for rest, staying connected with family, or keeping up with hobbies in a way that works for your current limits?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, yes. I want to avoid slipping into total inactivity outside PT, but I need to be mindful of not pushing myself. Any suggestions for low-impact leisure activities I could do at home that keep my mind engaged but don’t aggravate my back? And tips for staying in touch with my son and spouse now that weekends aren’t as busy with soccer and outings?"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His teenage son was offered a spot on a travel soccer team that requires weekend tournaments in cities across the Pacific Northwest for the next nine months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Seeks out local cafes and breakfast spots in tournament cities on Sunday mornings; skips familiar chains",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Uses weekend road trips for tournament travel as family bonding time; prefers listening to mystery audiobooks in the car",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Attends his son's soccer matches every weekend — leaves early only if there's a true emergency"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Travels to out-of-town tournaments to watch his son's travel soccer games most weekends; rarely attends local matches anymore",
+              "domain": "social_relationships"
+            },
+            "reason": "His son joining a travel soccer team changes soccer from local matches to frequent out-of-city, weekend tournaments. He now travels as part of supporting his son, and local matches are mostly replaced by travel events."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_016",
+            "fact": "Explores new Seattle coffee shops on Sunday mornings — never revisits the same place twice in a month",
+            "domain": "leisure_hobbies",
+            "reason": "Frequent weekend travel for soccer tournaments means he is often not in Seattle on Sunday mornings; the pattern of local coffee shop exploration is no longer possible."
+          },
+          {
+            "id": "pref_020",
+            "fact": "Plans short weekend getaways within Washington State every quarter; avoids longer vacations out of state",
+            "domain": "leisure_hobbies",
+            "reason": "Weekend soccer tournaments across the Pacific Northwest fill his available weekends, leaving no opportunity for planned getaways or vacation-focused trips."
+          },
+          {
+            "id": "pref_019",
+            "fact": "Goes hiking with his son once a month — never hikes solo",
+            "domain": "leisure_hobbies",
+            "reason": "His son's schedule is now dominated by weekend travel and tournaments, making monthly hiking trips together impractical."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my son just accepted a spot on a travel soccer team. We got the news this week. It means nearly every weekend we'll be on the road for tournaments around the Pacific Northwest. I'm honestly trying to figure out how on earth I'm going to balance that with work, mentoring the junior admin, and making sure my dad still gets his Saturday visit. Any suggestions for adapting my routines to this new schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big shift—congrats to your son, though! Travel on weekends will definitely shake up your usual rhythms. Can you share which parts of your regular routine feel most at risk of falling through, or are you mostly worried about the work side of things?"
+        },
+        {
+          "role": "user",
+          "content": "Work-wise, Fridays have always been my deep-focus days for financial reporting. I don't check email much and keep meetings at bay. But now, I need to use Friday evenings prepping for travel—packing, reviewing tournament details, and figuring out logistics. What I'm really finding tricky is making time for our weekly junior admin training. I prefer in-person sessions, but I worry the travel schedule will interfere."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense that Friday evenings are now taken up by travel plans. With the junior admin, could you shift in-person training to earlier in the week or even consider short, focused sessions on video if travel makes it tough to meet face-to-face? Have you tried remote mentoring, or is that just not effective for your style?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, remote doesn't work nearly as well for me. I get more engagement—and fewer interruptions—when we're together in person. I've always scheduled those for Fridays because that's when I could guarantee no interruptions, but now I'll have to rethink. I might try moving training to Wednesday mornings instead, so it’s less likely to clash with travel. Another thing—the Saturday visit with my dad is non-negotiable, but I may have to shift it if we’re away. That’s something I never used to do."
+        },
+        {
+          "role": "assistant",
+          "content": "Good plan to move the admin training to Wednesday—midweek can be more predictable. For your dad, would doing a Sunday visit when you return from tournaments work, or could you try video calls with him if you're far away? It’s tough to maintain strict routines with all that travel, but a bit of flexibility could help. Out of curiosity, how’s your usual Sunday routine changing? You used to explore new coffee shops in Seattle—will you keep that up, or is travel changing that too?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention it—my Sunday coffee shop tradition is basically out the window now. I’m rarely in Seattle on Sunday mornings anymore, so instead, I've started seeking out local cafes in whichever city we're visiting for the tournament. I skip the big chains and try to find something unique. It turned into a mini tradition for us during our first travel weekend."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s actually a pretty fun way to turn travel into exploration. Do you make it a family ritual, or is it just you? And with all these road trips, have you found any activities that make the travel more enjoyable? Some folks listen to podcasts or audiobooks—does that fit your style?"
+        },
+        {
+          "role": "user",
+          "content": "We like to use the drive as family bonding time. I've started queuing up mystery audiobooks to play in the car. It's a nice way to relax and keeps everyone entertained. My son's even gotten into them, which surprised me. So yes, road trips are less stressful when we've got a good book queued."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s awesome, especially since mystery is your go-to genre. With weekends dominated by travel soccer now, are you still able to do your monthly hiking trips with your son, or has that taken a back seat?"
+        },
+        {
+          "role": "user",
+          "content": "No hiking this month—or probably any time soon. His weekends are booked solid with tournaments, so our monthly hikes are out. That’s one routine I’ve had to drop, unfortunately."
+        },
+        {
+          "role": "assistant",
+          "content": "Sports teams can definitely change family schedules. And I’m guessing quarter getaways within Washington are also tough now, with all your weekends tied up for soccer?"
+        },
+        {
+          "role": "user",
+          "content": "You’re right—we haven't been able to plan any weekend getaways lately, and I don't see that changing while the soccer season lasts. All our travel now is focused around tournaments, not leisure trips."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. It sounds like you’ve adapted by weaving small rituals—like finding new cafes and listening to audiobooks—into your travel routine, even while other traditions like hiking and weekend getaways are on pause. If you need help finding unique breakfast spots or audiobook recommendations in whichever tournament city you’re headed to, just let me know! Is there anything else you’d like help adjusting in your routines?"
+        },
+        {
+          "role": "user",
+          "content": "That’s about it for the major changes. I may need help managing work deadlines when we’re on the road more, but for now I’m figuring out how our new travel patterns work. Thanks for helping me talk it through."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Scheduled for a sleep study after repeated complaints of fatigue and poor sleep quality; doctor recommends using a CPAP machine nightly for newly diagnosed sleep apnea.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Uses CPAP machine nightly without exception — refuses to skip, even while traveling",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Closely monitors sleep quality and logs CPAP machine stats every morning, aiming for at least 7 hours of restful sleep",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_025",
+              "fact": "Turns off all screens one hour before sleep; reads physical books in bed"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Turns off all screens and uses CPAP nightly before sleep; reads physical books in bed only after CPAP setup",
+              "domain": "daily_routines"
+            },
+            "reason": "Now diagnosed with sleep apnea and instructed to use CPAP every night, he must incorporate equipment setup into his nightly routine. This disrupts the previous pattern of simply turning off screens and reading, now requiring attention to CPAP setup and use."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I wanted to ask about sleep routines. I just got diagnosed with sleep apnea, and they’ve scheduled me for a sleep study. The doctor says I should start using a CPAP machine every night ASAP, so that’s become a must. The problem is, I’ve always had a pretty set wind-down routine—screens off an hour before bed, reading a paperback in bed, that sort of thing. Now I have to work in the CPAP setup, and it feels like it’s throwing everything off. Any advice for making this less disruptive?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment, but it’s great you’re starting CPAP right away. Integrating new routines can feel awkward at first—especially when you’re used to something calming before bed. Do you find the process of setting up the CPAP particularly distracting, or is it mostly just the change in order? And are you looking to fit your reading in before or after the setup?"
+        },
+        {
+          "role": "user",
+          "content": "It’s mostly the change in order. I used to just turn off screens, brush my teeth, and go straight to reading in bed. Now I need to get the CPAP ready first, which adds a step and means I’m reading after I’ve got the mask on. Doesn’t feel as comfortable yet. I’m also logging the CPAP stats every morning since I’m supposed to keep track and aim for seven hours of quality sleep—something I haven’t managed in years."
+        },
+        {
+          "role": "assistant",
+          "content": "Logging stats is a solid move, and aiming for seven hours sounds like a good goal, especially if fatigue has been an issue. Maybe you could create a little checklist for your wind-down: screens off, CPAP setup, then reading as your reward? Sometimes just reframing the sequence helps make new steps feel less intrusive. How is the reading going with the mask on—do you think a pillow adjustment or switching book positions might help?"
+        },
+        {
+          "role": "user",
+          "content": "I’m experimenting with pillow positions, but honestly, it’s not ideal. I’ve never liked holding a book upright for long periods, and now there’s tubing to navigate. Still, I don’t want to compromise on reading—switching to e-readers is out of the question, I only use print. Might need to prop the book differently or just get used to it."
+        },
+        {
+          "role": "assistant",
+          "content": "Understandable—print books are harder to manage with extra hardware involved. If you have a lightweight book stand on your bedside table, you could try resting the book at an angle so your hands and the CPAP tubing don’t interfere as much. Or, perhaps a clip-on light to keep things visible without screens might help if you move around. Are you finding the CPAP machine itself distracting when falling asleep, or is it mostly the pre-bed routine that bothers you?"
+        },
+        {
+          "role": "user",
+          "content": "It’s more the disruption to routine than the machine noise; the CPAP is surprisingly quiet. I’m just determined to stick with it—no exceptions, even if I travel. Doctor emphasized consistency, so the mask is going on nightly, period. So I can’t skip the setup."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great attitude. Sticking to nightly use is key for getting the benefits, and consistency will help your body adjust too. Since you’ll be using it while traveling, maybe think about creating a portable checklist for hotel rooms or unfamiliar spaces—so setup is always second nature. As for routine, is there anything from your old wind-down that you feel you have to drop, or is it mainly adapting the sequence?"
+        },
+        {
+          "role": "user",
+          "content": "Really, I haven’t dropped anything—I still turn off screens before bed and do all my usual prep. The only evolution is now CPAP setup comes before I open my book, and I log my sleep stats in the morning along with my blood pressure. As for breakfast, still prepping for the family each morning—some things aren’t negotiable! Sleep’s just another data point now, along with BP, I guess."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s impressive, keeping all your routines going and seamlessly adding sleep tracking. It sounds like the main change is shifting your reading until after CPAP is set up, and integrating CPAP data into your health logs. Maintaining everything else should help smooth the transition. Since you’re aiming for seven hours of restful sleep, have you noticed any improvement yet, or are you just starting out?"
+        },
+        {
+          "role": "user",
+          "content": "It’s early days—only a few nights in, but I’m already seeing a bump in the CPAP stats, and the mornings feel a bit less groggy. The challenge is really making myself stick to the wind-down, no matter how tired I am. But I’ve committed: CPAP every night, no cheating, even on weekend getaways or if I’m staying somewhere new."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s the kind of dedication that really pays off long-term! If fatigue improves, you might even find your other routines easier to maintain. Would you like tips on optimizing your sleep environment for traveling with CPAP, or on tracking your sleep quality trends with your logs?"
+        },
+        {
+          "role": "user",
+          "content": "Probably both. Travel is tricky—I haven’t done an overnight outside Seattle yet with the CPAP, but I want to be prepared. Also, if you have advice on logging sleep data efficiently—something I can keep up daily without it taking much time—that’d be amazing."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The junior admin he mentors was promoted to a program coordinator role and left the accounting team, leaving him solely responsible for all financial tasks during peak audit preparation.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Prioritizes solitary evening work sessions at home to manage increased audit workload — avoids distractions and family interruptions during these periods",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Schedules weekly training sessions with the junior admin; prefers in-person over remote mentoring"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "No longer schedules weekly accounting training sessions with staff — focused solely on own workload during peak audit preparation",
+              "domain": "work_habits"
+            },
+            "reason": "The junior admin he mentored left the accounting team, so there is no remaining staff to train. Audit demands require full dedication to his own tasks."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, big change: our junior admin just got promoted to program coordinator and left the accounting team — which means I’m flying solo for all the audit prep. We’ve got a federal grant audit in two months. I could use some help figuring out how to keep things manageable and not let tasks slip through the cracks."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot of responsibility all landing at once, especially during peak audit season. Are you finding that your usual routines still work, or are you feeling the need to adjust how you’re approaching things? Any specific pain points cropping up yet?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve already had to rethink things. Normally, I’d split training time with the admin each week and walk them through basic accounting, but now there’s no one to train—so that’s off my schedule for now. It’s all on me, so I’m really focused on my own workload, especially with the audit looming."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense that mentoring would go on pause with the team so thin. Since you’re handling every piece yourself, are you prioritizing certain tasks differently or blocking out specific times to tackle the heavier stuff? How are you balancing that with your regular bookkeeping and reporting?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve tried breaking audit materials up into daily increments—just like before, but now I’m carving out solitary work sessions in the evenings at home to really focus. My family knows I can’t be interrupted during those, so it’s just me and the spreadsheets. It’s the only way I can keep from falling behind."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid approach: concentrated, distraction-free evening sessions. Are you able to keep up with your physical therapy and other routines despite the extra workload, or has that started slipping? Sometimes it’s easy to let health slide when work ramps up like this."
+        },
+        {
+          "role": "user",
+          "content": "Physical therapy still happens—my back won’t let me skip it. I stick to daily stretches after I get home, and so far I haven’t missed a morning blood pressure check. I’m just squeezing the audit prep into quieter parts of the day or after dinner, so family time is more scheduled now. Everyone gets it."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s good your family is supportive and you’re maintaining those routines. Given you’re solo, are there any tools or templates you’d find helpful for audit prep? Or maybe ways to streamline reconciliation tasks since you no longer have someone to double-check things?"
+        },
+        {
+          "role": "user",
+          "content": "I always review entries at the end of the day; that’s non-negotiable for me, even now. As for tools, maybe a checklist for grant-specific documentation would help. I’ve got most templates, but with just me, it’s easy to overlook things when switching between transaction-level work and big-picture reporting."
+        },
+        {
+          "role": "assistant",
+          "content": "A tailored grant audit checklist sounds like a smart move. I can help draft one based on federal requirements for nonprofits—would that be useful? And for your evening sessions, have you tried blocking them out in your digital calendar to help protect that quiet time? Sometimes visual reminders reinforce boundaries."
+        },
+        {
+          "role": "user",
+          "content": "Yes, a checklist would be great. I’ve started blocking those evening work sessions in my calendar so nobody—even family—accidentally books over them. I used to leave evenings mostly open for family or webinars, but now it’s much more focused on audit prep until this passes."
+        },
+        {
+          "role": "assistant",
+          "content": "That adjustment sounds wise, especially during this audit crunch. Would you like the checklist to cover documentation, reconciliation, and reporting tasks separately, or just focus on what’s required for grant compliance? Also, do you need tips for handling afternoon fatigue now that you’re working solo?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s structure the checklist by phase: documentation, reconciliation, and compliance reporting. And on fatigue—I’m still skipping lunch some days, which makes evenings harder. Not ideal, but sometimes I just lose track of time, especially without anyone to remind me."
+        },
+        {
+          "role": "assistant",
+          "content": "Strong phases for the checklist. For the fatigue issue, would blocking out a brief lunch slot in your calendar help remind you? Since you never eat at your desk, maybe a daily break in the actual break room—even just 20 minutes—could help recharge before those evening sessions start stacking up."
+        },
+        {
+          "role": "user",
+          "content": "I think that would help. With the admin gone, there’s nobody to prompt a break, so I’ll need a recurring reminder now. I’m committed to prepping lunches like before, just have to force myself out of my chair. Thanks for the suggestion—sometimes the basics are what get missed when things get busy."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—sustaining yourself is key, especially with the workload all on your shoulders. I’ll put together a phased checklist for the audit and suggest some calendar-based breaks. Let me know if you want templates for any particular grant documentation. And if you come up against any other frictions, just reach out."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His elderly father experienced a health emergency and, after hospital discharge, is now moving in with his family for ongoing care, requiring a new living arrangement at home.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Researches and implements accessible home modifications, such as bathroom handrails and wider pathways, to accommodate his father's mobility needs",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Joins local or online caregiver support communities to seek advice and emotional support about elder care responsibilities",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Visits his father every Saturday afternoon; never cancels even for work obligations"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Regularly spends time caring for his father at home throughout the week; no longer restricts interactions to Saturday visits",
+              "domain": "social_relationships"
+            },
+            "reason": "His father now lives in the family home and requires daily care, which eliminates the former fixed Saturday-only visit routine."
+          },
+          {
+            "from": {
+              "id": "pref_037",
+              "fact": "Prioritizes solitary evening work sessions at home to manage increased audit workload — avoids distractions and family interruptions during these periods"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "No longer holds undisturbed evening work sessions at home; prioritizes being available for his father's care and household support after work over solitary work time",
+              "domain": "work_habits"
+            },
+            "reason": "Providing ongoing care and support for his father in the evenings means his previous preference for distraction-free audit work at home cannot be maintained."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_032",
+            "fact": "Uses weekend road trips for tournament travel as family bonding time; prefers listening to mystery audiobooks in the car",
+            "domain": "daily_routines",
+            "reason": "Weekend travel for tournaments is now severely limited or impossible due to staying home to care for his father; the routine of family road trips no longer applies."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey there. So, my dad had a pretty serious health scare and he’s been discharged from the hospital, but he can’t go back to assisted living. He’s moving in with us now—actually today—and it’s turning our whole household upside down. I’m scrambling to figure out what changes we need around the house, and how I can juggle work and his care. Can you help me build a checklist and maybe point me to good resources for caregivers? I’ve never done this before."
+        },
+        {
+          "role": "assistant",
+          "content": "Of course—I’m glad you reached out. That’s a big adjustment and there’s a lot to cover. Let’s start with the home setup: do you know his mobility needs and what equipment (like walkers, wheelchairs, or bathroom safety rails) he uses? That’ll help prioritize modifications. For caregiving resources, there are online communities as well as local Seattle groups—do you prefer connecting online or in person? And can you share more about your daily schedule so I can tailor ideas for balancing work and care?"
+        },
+        {
+          "role": "user",
+          "content": "He mostly uses a walker but is getting weaker, so I’m thinking we need handrails in the bathroom and maybe clear out space in the hallways. Actually, I’ve started researching how to make the house more accessible—wider paths, grab bars, non-slip mats. Any practical guides you’d recommend? As for the support communities, online is probably easiest for me since I can check in late evenings or during lunch breaks."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re on the right track—accessibility guides from disability and senior care organizations (like AARP or the ADA) can be really helpful. I’d recommend starting with AARP’s HomeFit guide; it has practical suggestions for safety and accessibility. For online support groups, Family Caregiver Alliance and Reddit’s r/caregivers have active communities for advice and encouragement. Would you like sample posts or lists of what questions to ask there? Also, how are you coordinating your evening routines—are you still able to get some uninterrupted work time at home, or has that had to shift with your dad needing daily care?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, that’s a big change. I used to carve out quiet blocks in the evenings to get ahead on the audit prep and finish up work—no interruptions, just me and my laptop. But now, I’m more involved in helping my dad settle in and supporting the household, so focused alone-time in the evenings isn’t happening. I’ve dropped my undisturbed evening work sessions entirely. Any ideas for fitting audit prep into the day, without neglecting my dad?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough balancing act. Since evenings aren’t available, could you shift some deep work to earlier in the day? For example, blocking a couple hours on Friday for audit prep, when you minimize meetings and emails, or front-loading critical tasks so you’re not scrambling after hours. If you’re mentoring your junior admin, maybe delegate routine bookkeeping to free yourself for audit tasks during office hours. Would that help? Also, has your weekend schedule changed for family outings or your son’s soccer tournaments with your dad now home?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely—weekends are totally different now. We used to take road trips for my son’s soccer tournaments, and I always liked those car rides for family bonding and mystery audiobooks. But with my dad needing care at home, I’ve had to drop that ritual. We don’t hit the road much anymore; my wife takes our son to games and I stay with my father. It’s been tough to lose that routine."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a meaningful loss—I can imagine those trips were both practical and quality time. Is there a way to carve out new routines for bonding, even if they happen closer to home? Maybe short walks or board games with your son and dad, or listening to audiobooks together at home. Also, with your dad now living with you, are your interactions still focused around a single Saturday visit, or are you spending time with him throughout the week?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, the old Saturday-only visit routine doesn’t apply anymore. Now I’m spending time with my dad daily, checking in throughout the week and helping him adjust. It’s more regular and integrated into our lives. I’m trying to keep him involved in family routines—it’s a challenge, but I think it’s better for him than just seeing him once a week."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a positive shift, even if it’s demanding. If you’re looking for ways to share the care, you might involve your son in simple activities with your dad, or set up a regular family dinner where everyone connects. Would you like help planning activities that fit your dad’s abilities or suggestions for accessible household routines? Also, is your spouse able to help with managing your dad’s care, or are you mostly handling it solo during weekday evenings?"
+        },
+        {
+          "role": "user",
+          "content": "My spouse is super helpful, but with her job and evening library events, I’m primarily on duty after work and during evenings. I’ve signed up for a couple caregiver support communities—mostly online—to help with advice and emotional support. That’s new for me, but I think it’ll help. We’re still figuring out what household routines work, but any suggestions for simple, inclusive activities would be appreciated."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great that you’ve joined those support groups—they can be invaluable for both emotional and practical help. For inclusive activities, consider things like low-effort board games, sharing print mystery novels (even just reading aloud a chapter or discussing what you’re reading), or gentle walks in the neighborhood if your dad’s mobility allows. You could also involve him in prepping breakfast or simple tasks if he’s able. I can suggest step-by-step guides on accessibility improvements and tailored family activities if you’d like, or connect you to Seattle-specific resources for elder care and home modifications."
+        },
+        {
+          "role": "user",
+          "content": "Yes please, send some Seattle-specific resources and local organizations if you can. I’m already researching ADA-friendly home changes but always appreciate new ideas. Thanks for all the help—this is making the transition feel less overwhelming."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "While on his usual walk to work, he slipped on an icy sidewalk, fractured his ankle, and was placed in a walking boot with orders to avoid weight-bearing for six weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_044",
+            "fact": "Requests help from coworkers to deliver documents or supplies within the office rather than moving around himself during recovery",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_045",
+            "fact": "Schedules all physical therapy and follow-up appointments for late afternoon to minimize disruption to remote or in-office work",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_026",
+              "fact": "Drives or uses rideshare to work while recovering from severe back pain; avoids walking until cleared by physician"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Uses rideshare or accepts help from family/friends for all work commutes during ankle fracture recovery — strictly avoids walking or driving himself",
+              "domain": "health_body"
+            },
+            "reason": "Due to the fractured ankle and restriction on weight-bearing, not only is walking prohibited, but driving is also unadvised during the walking boot phase, so he must fully rely on others or rideshare services."
+          },
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Brings homemade lunches to work but never eats at his desk — always moves to the break room to eat"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Eats homemade lunches at his desk during recovery — avoids walking to the break room due to mobility restrictions",
+              "domain": "health_body"
+            },
+            "reason": "While in a walking boot and under orders to avoid weight-bearing, traversing office halls is risky or forbidden, so eating at his desk is necessary during recovery."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_031",
+            "fact": "Seeks out local cafes and breakfast spots in tournament cities on Sunday mornings; skips familiar chains",
+            "domain": "leisure_hobbies",
+            "reason": "He cannot travel to tournaments (or explore new cities) while immobilized with a fractured ankle and on doctor-ordered weight-bearing restrictions; this pattern cannot continue during recovery."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I slipped on some ice during my usual walk to work yesterday and fractured my ankle—doctor’s got me in a boot, no weight-bearing for six weeks. I'm already dreading how this'll mess with my schedule and routines. Any ideas for keeping things manageable while I’m immobilized? Especially at work, since we’re prepping for the federal audit."
+        },
+        {
+          "role": "assistant",
+          "content": "Ouch, I’m really sorry to hear about your ankle. That’s a tough time for your team, too. Let’s break this down—are you planning to work from home, or still heading into the office? And what parts of your workflow might be hardest to adapt to the mobility restriction?"
+        },
+        {
+          "role": "user",
+          "content": "The nonprofit’s too small for me to skip in-person entirely, so I’m still coming in most days. I can’t walk or drive myself, so I’ve started using rideshare and my son offered to drop me off when he’s free. Main issue is that I usually review documents and deliver reports myself—now that’s impossible, so I’ll need to rely on others more. Plus, not moving much makes my lower back ache even worse."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Having to rely on rideshare or family for commuting will definitely change your daily rhythm. For document delivery, would it help to assign a coworker as your 'runner' temporarily? Maybe the junior admin or someone else who can help ferry paperwork and supplies around for you until you're mobile again. And for your back, have you been able to keep up with PT or stretching routines at home?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, asking coworkers for help is probably my best bet—I’ll talk to the admin today about pitching in more. As for physical therapy, I’m going to schedule any sessions or follow-ups late afternoon, so work isn’t too disrupted. Stretching’s trickier with the boot, but I’m sticking to whatever my therapist approves, mostly lying on the floor after work."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move on scheduling PT later in the day and working with your therapist to adapt stretches. With the admin’s help, do you think you’ll need to adjust any other routines around the office—like where you eat lunch or how you handle meetings?"
+        },
+        {
+          "role": "user",
+          "content": "Normally, I bring my own lunch and eat in the break room, never at my desk—but now, going down the hall is risky, so I guess I’ll have to eat at my desk for now. As for meetings, I’ll keep them to one spot and ask folks to come to me, or do remote check-ins if needed."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a practical solution. Desk lunches aren’t ideal, but it keeps you safe. For meetings, maybe you could block a conference room close to your workspace if you need people to drop by, or stick with remote when possible. Anything else about your habits that feels like it’s getting disrupted? Maybe how you handle commuting on weekends, or family routines?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention weekends—I usually explore new Seattle coffee shops every Sunday, especially when we’re in tournament cities for my son’s soccer, but those outings are off the table while I’m stuck in the boot. I can’t travel or even get around town easily, so I’ll have to skip that for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough one—trying new coffee shops is a great way to recharge. Maybe you could bring the experience to you: ask your family or friends to surprise you with beans from places you haven’t tried, so you can sample them at home. Any other routines you’re missing or having to tweak? How about your board game nights or family visits?"
+        },
+        {
+          "role": "user",
+          "content": "Board games are safe—my friends come to my house anyway. And I’ll still visit my dad at assisted living, though I may need someone to drive me there. Really, it’s just the mobility stuff that’s changed. Oh, and email—I’m still only checking at 10am and 4pm, but I may need to let colleagues know I’m not as speedy moving physical documents. So, for the audit prep, should I organize files differently or set up a system so people can help me with paperwork?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great idea. For audit prep, it may help to create a checklist or tracker for documents and deadlines—then assign delivery and filing tasks to specific teammates. Color-coding or digital folders (shared drive) can help folks know what needs to move and when. If you need to mentor the admin on document handling, maybe schedule brief in-person sessions where they bring things to you, instead of you walking to them. Want help drafting the checklist or setting up a shared spreadsheet?"
+        },
+        {
+          "role": "user",
+          "content": "A shared spreadsheet sounds perfect—I can monitor progress and assign tasks without moving around. And yeah, I’ll shift all training with the admin to where I’m stationed. Thanks for helping me think this through. Anything else I should watch out for while managing work remotely and with limited mobility?"
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to help! Two things: First, keep communication super clear—let the team know what you can and can’t do physically, so expectations are realistic. Second, don’t hesitate to delegate—even if it feels odd. If audit deadlines are tight, you might want to front-load digital tasks you can do without walking. And definitely schedule breaks so you’re not glued to the desk all day: even short stand-ups (if approved by your doc) help circulation. Want a sample email to communicate your new workflow to the team?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, a sample email would help. I want everyone to know I’ll need help with deliveries, and that I’m eating lunch at my desk for now. Maybe mention I’ll be relying on rideshare and family for rides, scheduling PT late afternoons, and staying as present as possible for audit prep despite these changes."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, I’ll draft a sample email you can customize for your team. Here’s a suggestion:\n\nHi Team,\n\nDue to a recent ankle fracture, I’ll be working from my desk and strictly avoiding walking around the office for the next six weeks. All document deliveries and supply runs will need to be handled by coworkers—I’ll be coordinating this mainly through our shared audit prep spreadsheet. Lunch will be at my desk for now, and I’m relying on rideshare/family for commuting. Physical therapy and medical appointments will be in the late afternoon to minimize work disruption.\n\nThanks for your understanding, and I appreciate everyone’s help as we prepare for the federal audit.\n\nLet me know if you’d like to adjust it further!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His spouse receives an offer to participate in a prestigious librarian fellowship program out of state, requiring her to be away for several months with only occasional weekend visits home.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_048",
+            "fact": "Initiates nightly video calls with his spouse on weekdays to maintain connection while she is away",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_049",
+            "fact": "Assumes primary responsibility for household logistics, including laundry and cleaning, during spouse's absence",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Schedules family dinners twice a week, no phones allowed; never goes more than two days without eating together"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Schedules family dinners with his son twice a week; spouse joins only during occasional weekend visits and connects virtually on other nights",
+              "domain": "social_relationships"
+            },
+            "reason": "With his spouse away for several months on an out-of-state fellowship, it's no longer possible for her to be present at regular family dinners. He adapts by focusing on dinners with his son and facilitating virtual involvement from his spouse."
+          },
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Preps breakfast for the family every morning — never skips this even when pressed for time"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Preps breakfast for himself and his son every morning, relying on ready-made or simple options; spouse handles her own breakfast when visiting",
+              "domain": "daily_routines"
+            },
+            "reason": "With the spouse out of state and not around on most mornings, breakfast prep becomes limited to just himself and his son. Occasionally, when the spouse is home, she can participate, but it’s no longer a stable routine."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_015",
+            "fact": "Prefers texting the spouse for updates throughout the day — rarely makes phone calls",
+            "domain": "social_relationships",
+            "reason": "With the spouse away and only available intermittently, texting may not suffice; communication is likely to shift to video calls or more substantial check-ins given distance and schedule differences."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My wife just got accepted to a fellowship for librarianship—it’s a big deal for her, but means she’ll be out of state for a few months. I’ll be juggling things at home and work, and I'm a bit overwhelmed. Can you help me figure out how to keep our routines grounded, especially around family meals and staying connected?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats to your spouse—that’s quite an achievement! It sounds like a big shift, though. When it comes to family meals, do you have a set routine now, or do you need to rethink how often you and your son sit down together? And do you know what her availability for visits or calls will look like?"
+        },
+        {
+          "role": "user",
+          "content": "Normally, we'd have dinner as a family twice a week, no phones allowed—never went more than two days without eating together. With my wife away, we've adapted to dinners with just my son and me twice a week, and she joins virtually most nights or in person during occasional weekend visits. It isn't quite the same, but it's working so far."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful way to keep the routine going and include your wife as much as technology allows. For those virtual dinners, do you set up a video call every evening or just on certain nights? And is your son handling the change well, or does he need a little extra support adjusting?"
+        },
+        {
+          "role": "user",
+          "content": "We’ve started doing nightly video calls with my wife on weekdays, especially after dinner, to catch up and keep connected. My son’s taken it in stride—he’s busy with soccer and school but appreciates the regular calls. Weekends are a bit more chaotic since she sometimes visits, so we focus on in-person meals then."
+        },
+        {
+          "role": "assistant",
+          "content": "Nightly video calls are a strong anchor for connection. With your son’s schedule, sounds like you’ve got a good balance. How about mornings—did you have a shared breakfast routine, and has that changed with your wife away?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I used to prep breakfast for all of us every morning, even when pressed for time. Now, it's just me and my son most days and we stick to simple or ready-made options. When my wife’s home on weekends, she joins in, but breakfast with all three of us isn’t a daily thing anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—sometimes simplifying morning routines takes pressure off. Are there other household routines you’re having to adapt now that your wife’s gone? Anything you’d like help organizing or optimizing?"
+        },
+        {
+          "role": "user",
+          "content": "One new challenge is handling all the household logistics myself—laundry, cleaning, groceries. I’ve always shared those with my wife, but now the responsibility falls on me during the week. Any tips for keeping it manageable, especially with everything else on my plate?"
+        },
+        {
+          "role": "assistant",
+          "content": "Taking on all household tasks is a lot, especially atop work and parenting. Have you set up a schedule for chores, or are you winging it as needed? Sometimes batching tasks—like laundry or cleaning—on a designated evening or weekend slot helps cut down the mental load."
+        },
+        {
+          "role": "user",
+          "content": "I’m trialing a loose schedule but haven’t locked anything in yet. Sunday afternoons for laundry and a cleaning sweep seems to work since soccer matches are usually over by then. Otherwise, I try to do small things daily, but I might need a more structured approach."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds practical—having a block for bigger chores and quick daily check-ins can keep things from piling up. As you adjust, you might consider making a simple checklist for each day or week. That way, even with shifting work demands, you won’t forget key tasks."
+        },
+        {
+          "role": "user",
+          "content": "A checklist could help, especially since my work is getting hectic with the upcoming federal grant audit. Side note: I used to mostly text my wife for updates throughout the day, but with her schedule and the distance, now we rely more on calls or video since texting doesn’t cut it anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Switching to calls and video makes sense, especially with the time zone differences and busier schedules. Do you find the nightly connection helps with stress, or are you looking for other ways to wind down amid all the transitions?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the nightly calls are a big stress reliever. I still review tomorrow’s calendar before bed, and make time for print mysteries to unwind—it helps keep the day from feeling too chaotic. I think having those anchors, even if our routines aren’t exactly the same, is key."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—keeping your core habits intact where possible can make a difference. Between work, household duties, and connection rituals, you’re adapting well. If you need help organizing household tasks or managing time during the audit, just let me know!"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The nonprofit secures a large multi-year federal grant contingent on financial oversight improvements, and the board appoints him as interim Director of Finance to lead a rapid overhaul while continuing his accounting duties.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Maintains a bullet journal to track audit deadlines and delegate tasks — updates it every morning before email",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Prioritizes formal mentorship sessions with the junior admin every Monday morning, delegating routine bookkeeping as part of staff upskilling for the grant audit",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Sets aside Fridays for deep work on financial reporting — minimizes meetings and email replies that day"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Reserves Fridays for cross-department finance leadership meetings and strategic grant planning with senior staff — deep work sessions now scattered throughout the week as schedule allows",
+              "domain": "work_habits"
+            },
+            "reason": "As interim Director of Finance, he must now engage in strategic leadership meetings and grant oversight on Fridays — the previous uninterrupted personal deep work pattern is replaced by high-level collaborative sessions. His executive duties make scheduled deep work blocks rare and unpredictable."
+          },
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Attends evening webinars live whenever possible; never watches recorded sessions unless unavoidable"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Watches recorded accounting webinars late at night or early mornings — rarely able to attend live due to increased evening meetings and leadership obligations",
+              "domain": "work_habits"
+            },
+            "reason": "As interim Director of Finance, his evenings are now filled with extra meetings or urgent grant-related work, making it difficult to attend live events; self-paced, recorded sessions now fit his unpredictable schedule."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, big news—our nonprofit landed a multi-year federal grant. The catch is, the board made me interim Director of Finance, on top of my accounting duties, and I need to lead a rapid overhaul of our financial oversight before the audit hits. I'm honestly feeling swamped—never really been in this kind of strategic role. Could you help me figure out how to build some structure and keep audit prep from slipping into chaos?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on the grant—and the new role! That's a huge jump, especially with the audit looming. It sounds like your workload and responsibilities have expanded overnight. Are you able to carve out dedicated blocks for audit work, or are meetings and urgent tasks eating up most of your schedule now?"
+        },
+        {
+          "role": "user",
+          "content": "It’s tricky. I used to reserve Fridays for uninterrupted financial reporting—that was my deep work time. Now Fridays are packed with cross-department leadership meetings and grant planning sessions. My old rhythm is gone, and I have to squeeze deep work wherever I can throughout the week, usually when someone cancels last minute or I get up early."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds frustrating—a lot less predictability for focused work. Do you have any tools or systems that help you track tasks and deadlines in this new role? Sometimes a structured overview makes it easier to delegate and shift priorities."
+        },
+        {
+          "role": "user",
+          "content": "Actually, I started a bullet journal for the grant prep. Every morning before email, I update it with deadlines, meeting notes, and delegation tasks—it’s been the only way to keep the moving parts visible. The staff is pretty limited, so delegation means really tracking who’s got what."
+        },
+        {
+          "role": "assistant",
+          "content": "A bullet journal is a solid move, especially with overlapping responsibilities and a small team. Is delegation something you feel comfortable with, or has the new role pushed you to let go of tasks you’d normally handle yourself?"
+        },
+        {
+          "role": "user",
+          "content": "I’m definitely having to rethink that. To support the audit, I now prioritize formal mentorship sessions with our junior admin every Monday morning. I hand off routine bookkeeping tasks to her as part of training, so she’s learning and I can focus more on bigger-picture financial oversight. It’s an adjustment for both of us, but required for upskilling before the audit."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach for both immediate needs and future capacity. With Monday mornings dedicated to mentorship and new leadership meetings on Fridays, how are you fitting in ongoing learning—like keeping up with nonprofit accounting standards?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually changed too. I used to jump into evening webinars live whenever possible, but now my evenings are booked solid with meetings or urgent grant tasks. I mostly watch recorded webinars late at night or early mornings. Not ideal—I miss the chance to ask questions live—but it’s the only way I can squeeze them in."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s tough to lose that live interaction, but at least you’re still keeping up. Would it help to compile your questions from recorded sessions and follow up directly with the presenters or peers afterwards, so you get some interaction even if you’re watching on your own schedule?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a good suggestion—I might try emailing presenters post-session. Most of the material is relevant to this audit, so maybe it’s worth reaching out even if I can’t do it live. I’ve just needed more flexibility lately since my schedule is frankly unpredictable."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. Out of curiosity, with all these new demands, are you finding any time for personal routines—like health checks, family activities, or your usual breaks during busy days?"
+        },
+        {
+          "role": "user",
+          "content": "I’m sticking with my health routines pretty firmly—still checking my blood pressure every morning, walking to work, and stretching at night. Haven’t let work bleed into visiting my dad or attending my son’s soccer games either. But adjusting my work habits has been a real learning curve."
+        },
+        {
+          "role": "assistant",
+          "content": "Balancing those personal routines is huge, so I’m glad you’re holding onto them. With your evolving work habits, have you noticed any challenges to keeping your workload sustainable, or are there particular areas where you could use more process or support?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, keeping everything visible and accountable is the biggest challenge. The bullet journal helps, delegation is ramping up, but my deep work isn’t as steady as it was. I’m still learning how to lead strategically without letting operational stuff slip, and haven’t nailed down a reliable block for heads-down work yet. But this conversation helped me clarify some gaps—thanks."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to be helpful. As your role keeps evolving, feel free to reach out if you want to brainstorm ways to protect focus or streamline delegation further. Those new routines you’ve shared are a strong foundation, and you’re adapting fast under pressure."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His son's closest friend, whose family is moving unexpectedly out of state, temporarily moves in with them for the remainder of the school year so the boys can finish classes and soccer season together.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_055",
+            "fact": "Keeps refrigerator stocked with extra snacks and easy meals to accommodate the houseguest’s preferences and after-soccer hunger",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_056",
+            "fact": "Enforces a household rule that all electronics are put away during weekday evenings after dinner, to promote inclusivity and downtime for both boys",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_046",
+              "fact": "Schedules family dinners with his son twice a week; spouse joins only during occasional weekend visits and connects virtually on other nights"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Schedules family dinners for both boys twice a week; spouse joins only during occasional weekend visits and connects virtually on other nights",
+              "domain": "social_relationships"
+            },
+            "reason": "With his son's friend (a new household member) temporarily living with them, family dinners now include both boys. The preference shifts from one-on-one time with his son to intentionally making shared meals a group activity with the friend."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, big change here: my son's best friend has moved in with us—his family moved to Oregon very suddenly, and we're hosting him for the rest of the school year so both boys can finish classes and soccer together. It's only been a few days, but things feel a lot more... lively at home. I could use help figuring out how to keep everyone on track when my routine just got a lot more crowded—especially evenings, meals, and downtime."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a huge shift, but also really generous of you. Having two teenage boys in the house will definitely shake up the quiet! Let’s tackle your routine step by step. Are your evenings the main challenge—like coordinating meals, activities, or screen time? Or do you see changes affecting your mornings and weekends too?"
+        },
+        {
+          "role": "user",
+          "content": "Evenings are definitely trickier. Meals especially—I'm used to family dinners twice a week with my son, but now I'm making a point to include both boys. Our spouse still joins sometimes, usually virtually if her schedule lines up. Should I try for more group dinners, or keep it at two nights for sanity’s sake? Also, snacks disappear faster than I expected; I’m running out before the week is half over."
+        },
+        {
+          "role": "assistant",
+          "content": "Expanding those dinners to deliberately include both boys is a solid move, especially for stability. Two nights seems reasonable if that's what you can manage—quality over quantity! For snacks, might be worth stocking bulk items or prepping easy meals ahead. Would it help to get input from the houseguest about preferred snack options before your next grocery run?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I asked him what he likes, and he’s honestly pretty easy—it’s just the quantity! I’ve started keeping the refrigerator stocked with extra grab-and-go stuff and some frozen meals for late-night hunger, which is new for us. I’ll probably make it part of my weekend shopping routine. On screen time: I’ve set a new rule—no electronics after dinner during weekdays. I want downtime and some face-to-face bonding, especially since they won’t get another season together."
+        },
+        {
+          "role": "assistant",
+          "content": "Great call with the electronics rule. Teens might grumble, but those after-dinner hours are precious, given the circumstances. Would you want activities to help fill that window—like board games, or something low-key? Or is it enough just to encourage conversation and let them decompress?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly conversation and decompressing is what I have in mind, though we occasionally break out board games. I host monthly game nights with college friends anyway, so the boys get their share of strategy gaming on weekends. Day to day, I want them to unwind without screens, but nothing too prescribed. Honestly, it’s only been a few days, but it feels more inclusive already—I was surprised how natural it is for both to join in for dinner and chill time."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re finding a good balance—respecting their need for downtime, but also fostering connection. Keeping things unstructured lets them adjust too. Are any other routines being tested? Like, is breakfast or morning prep affected by the extra person, or are you keeping those habits steady?"
+        },
+        {
+          "role": "user",
+          "content": "Mornings are still consistent—I prep breakfast for everyone as usual, just with more scrambled eggs! But the fridge is emptier faster. Main changes are really evenings—dinner, snacks, and the electronic pause rule. The only thing I’m wrestling with is whether limiting phone/social time after dinner makes me the 'strict parent,' but for now it’s working."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re making thoughtful adjustments—setting boundaries while embracing the new energy. The electronics rule is actually pretty wise; it’ll help the boys stay present during a busy, transitional year. If resistance crops up later, maybe the boys themselves could suggest screen-free alternatives, keeping them invested. Need help brainstorming more snack recipes or ideas for simple, portable meals for their soccer nights?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually a good direction—I wouldn’t mind a few more easy meal ideas I can throw in the fridge, especially for late soccer nights. Otherwise, I think we’re settling in. Routines evolve, but group dinners, extra snacks, and the electronics rule are the big changes for now. Appreciate the talk, made me realize we’re already adapting better than I expected."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear it! Here are a few ideas for easy, teen-friendly meals: wraps with assorted fillings (turkey/veggie/hummus), pasta salads you can prep ahead, and baked quesadillas cut into portions. For snacks, yogurt cups, bagged trail mix, string cheese, and pre-cut veggies with dip are quick wins. If you need more recipes or want options to keep it healthy and filling, just ask. Let me know how things go with the new weekday evening routine as the school year progresses!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The organization unexpectedly receives notification of an IRS audit focused on the prior year's charitable donations and expenditures, with a request for detailed documentation and in-person interviews within 45 days.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_058",
+            "fact": "Prepares detailed audit binders and organizes supporting documents nightly at home, outside office hours, to ensure readiness for IRS interviews",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_059",
+            "fact": "Avoids scheduling or attending non-essential meetings (including board game nights) during audit window; declines invitations in favor of audit tasks",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_036",
+              "fact": "No longer schedules weekly accounting training sessions with staff — focused solely on own workload during peak audit preparation"
+            },
+            "to": {
+              "id": "pref_057",
+              "fact": "Suspends all mentorship and upskilling activities for junior admin; devotes all available work hours to IRS audit preparation until completion",
+              "domain": "work_habits"
+            },
+            "reason": "The IRS audit introduces urgent, high-risk demands requiring total focus on documentation and compliance tasks. Even the previously limited mentoring for junior admin during grant audit prep is now entirely set aside until after audit resolution."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "The nonprofit just got hit with an IRS audit—focused on last year’s donations and how we spent them. I found out this morning. They want interviews and tons of documentation within six weeks. I’m already prepping for the federal grant audit, so I’m scrambling here. What’s the best way to prioritize tasks and keep from burning out? Any strategies?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot to handle, especially on top of a federal grant audit. The deadlines and detail level for IRS audits are intense. First, do you have a list of the specific documentation they've requested, or is it a broad ask for all charitable donations and expenditures? Knowing exactly what they want can help segment the workload and avoid over-gathering."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, they sent a formal letter—it's pretty detailed. They want itemized reports for every donation over $250, receipts for program expenses, and supporting docs for fundraising events. Plus, they're scheduling in-person interviews with me and our exec director. I’ve started pulling transaction lists, but there's way more data than just grant stuff. Any tips for staying organized and prepping without dropping the ball?"
+        },
+        {
+          "role": "assistant",
+          "content": "Since you're dealing with both audits, keeping documentation for each separate will make things much easier. Have you considered setting up dedicated binders or digital folders for the IRS requests, so nothing gets mixed in with the grant audit prep? Also, carving out daily blocks just for audit work—maybe at home if your office is a constant interruption zone—can help you stay focused."
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention that—I actually started prepping detailed audit binders at home each night. The office gets noisy after hours, and I need uninterrupted time to organize receipts and backup docs. It’s eating into my evenings, though, so I’m not getting much downtime. I guess that’s just how it has to be during the audit window."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to use your evenings for prep if the office isn’t conducive, but sustained late-night work can take a toll. How has that affected your usual routines? Are you still finding time for physical therapy or family meals, or are those getting squeezed out?"
+        },
+        {
+          "role": "user",
+          "content": "I’m sticking to physical therapy and family dinners as best I can; I’ll never skip those if I can help it. But I’ve cut all non-essential activities—board game nights are on hold, even though my friends keep suggesting dates. No point in distractions until this is over. Also, I stopped mentoring the junior admin for now. Usually, I train him weekly, but all my work hours are going toward audit prep—no upskilling until the audit wraps."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough but necessary move. Mentoring and social breaks matter, but an IRS audit demands full attention. Have you communicated with your friends and junior admin about the change, or are you just quietly pausing everything? Sometimes a heads-up can reduce pressure or expectation."
+        },
+        {
+          "role": "user",
+          "content": "I let everyone know—my admin gets weekly check-ins, so I explained he’s on his own for a while; he’s understanding. Told my friends that audit work comes first, so no board game nights here until I have my evenings back. I even turned down a couple invitations and avoided scheduling anything other than audit tasks. Just keeping it straightforward so there’s no misunderstanding."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach—it prevents lingering guilt or misunderstandings. Now that you’re working almost exclusively on audits, have you found ways to keep your energy up and manage stress? It’s easy to skip meals or sleep when you’re deep in documentation. Anything that’s helped lately?"
+        },
+        {
+          "role": "user",
+          "content": "I’m still keeping a few basics intact—blood pressure checks, homemade lunch in the break room (when I don’t skip it), stretching in the evening. But I’ve started prepping audit materials nightly, even after dinner, so my leisure routines are nearly non-existent now. My main focus is just staying on top of the paperwork and being ready for the IRS interviews."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing well to protect those core habits, even with the added audit work. As you prep for interviews, would it help to practice responses or outline likely questions? IRS interviews can be high-pressure, but having talking points—even just loose summaries—can make a difference. Or do you prefer to go in with documentation and answer only what’s asked?"
+        },
+        {
+          "role": "user",
+          "content": "I usually go in well-prepared—binders organized, documentation reviewed, ready for whatever they throw at me. I’m not big on rehearsed answers, but I do make sure I know the numbers cold and can explain every line item if needed. I run through my calendar each night before bed and flag any gaps in documentation so I can fill them the next day."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid method—preparing materials and reviewing your calendar nightly will keep things from slipping. If you want to test your explanations, I can help with mock interview questions or review your document checklist. Otherwise, is there any specific audit procedure or reporting detail you’re worried about?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, it’s the documentation for some donations that concerns me. We had a few anonymous gifts last year, and I’m not sure if the IRS is okay with how we recorded those. Also wondering if they’ll scrutinize program expense allocations since the org is so small. A checklist or example set of questions for those scenarios would help."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—I’ll draft some mock questions specific to anonymous donations and expense allocation, along with an IRS-style checklist to review. Let me know if there are other tricky areas. With all your routines and work focused on the audit right now, it’s impressive you’re keeping up with family and wellness habits too."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Reviews all accounting entries at the end of each day — never leaves reconciliation tasks for later",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Checks blood pressure every morning before breakfast — never skips even when rushed",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Limits caffeine intake to one cup before noon; never consumes energy drinks",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Hosts monthly board game nights for his college friends at his home; never chooses a venue outside the house",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Plays strategy board games with friends — avoids party or trivia games",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Reads mystery novels exclusively in print; never uses e-readers",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Reviews tomorrow’s calendar every night before bed — never lets the day start unplanned",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks emails only at 10am and 4pm — avoids notifications outside those windows",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Pays bills on the first Sunday of each month — never lets payments fall behind",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_027",
+        "fact": "Follows a prescribed intensive physical therapy routine daily, guided by his therapist; only minimal stretching allowed outside sessions",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Completes daily physical therapy exercises as instructed; prioritizes recovery activities in his routine",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Schedules all activities around physical therapy appointments and recovery time during medical leave",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "Travels to out-of-town tournaments to watch his son's travel soccer games most weekends; rarely attends local matches anymore",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Turns off all screens and uses CPAP nightly before sleep; reads physical books in bed only after CPAP setup",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Uses CPAP machine nightly without exception — refuses to skip, even while traveling",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Closely monitors sleep quality and logs CPAP machine stats every morning, aiming for at least 7 hours of restful sleep",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_038",
+        "fact": "Regularly spends time caring for his father at home throughout the week; no longer restricts interactions to Saturday visits",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "No longer holds undisturbed evening work sessions at home; prioritizes being available for his father's care and household support after work over solitary work time",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Researches and implements accessible home modifications, such as bathroom handrails and wider pathways, to accommodate his father's mobility needs",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Joins local or online caregiver support communities to seek advice and emotional support about elder care responsibilities",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Uses rideshare or accepts help from family/friends for all work commutes during ankle fracture recovery — strictly avoids walking or driving himself",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Eats homemade lunches at his desk during recovery — avoids walking to the break room due to mobility restrictions",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Requests help from coworkers to deliver documents or supplies within the office rather than moving around himself during recovery",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Schedules all physical therapy and follow-up appointments for late afternoon to minimize disruption to remote or in-office work",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_047",
+        "fact": "Preps breakfast for himself and his son every morning, relying on ready-made or simple options; spouse handles her own breakfast when visiting",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Initiates nightly video calls with his spouse on weekdays to maintain connection while she is away",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Assumes primary responsibility for household logistics, including laundry and cleaning, during spouse's absence",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_050",
+        "fact": "Reserves Fridays for cross-department finance leadership meetings and strategic grant planning with senior staff — deep work sessions now scattered throughout the week as schedule allows",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Watches recorded accounting webinars late at night or early mornings — rarely able to attend live due to increased evening meetings and leadership obligations",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Maintains a bullet journal to track audit deadlines and delegate tasks — updates it every morning before email",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Prioritizes formal mentorship sessions with the junior admin every Monday morning, delegating routine bookkeeping as part of staff upskilling for the grant audit",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_054",
+        "fact": "Schedules family dinners for both boys twice a week; spouse joins only during occasional weekend visits and connects virtually on other nights",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Keeps refrigerator stocked with extra snacks and easy meals to accommodate the houseguest’s preferences and after-soccer hunger",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Enforces a household rule that all electronics are put away during weekday evenings after dinner, to promote inclusivity and downtime for both boys",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_057",
+        "fact": "Suspends all mentorship and upskilling activities for junior admin; devotes all available work hours to IRS audit preparation until completion",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Prepares detailed audit binders and organizes supporting documents nightly at home, outside office hours, to ensure readiness for IRS interviews",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_059",
+        "fact": "Avoids scheduling or attending non-essential meetings (including board game nights) during audit window; declines invitations in favor of audit tasks",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Schedules weekly training sessions with the junior admin; prefers in-person over remote mentoring",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "The junior admin he mentored left the accounting team, so there is no remaining staff to train. Audit demands require full dedication to his own tasks."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Drafts federal grant audit materials in small daily increments — avoids last-minute preparation",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": null,
+        "reason": "He is on medical leave and unable to work on audit materials daily; the previous steady preparation pattern cannot continue during recovery."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Attends evening webinars live whenever possible; never watches recorded sessions unless unavoidable",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_051",
+        "reason": "As interim Director of Finance, his evenings are now filled with extra meetings or urgent grant-related work, making it difficult to attend live events; self-paced, recorded sessions now fit his unpredictable schedule."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Sets aside Fridays for deep work on financial reporting — minimizes meetings and email replies that day",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_050",
+        "reason": "As interim Director of Finance, he must now engage in strategic leadership meetings and grant oversight on Fridays — the previous uninterrupted personal deep work pattern is replaced by high-level collaborative sessions. His executive duties make scheduled deep work blocks rare and unpredictable."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Walks to work regardless of weather; never drives unless absolutely necessary",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "His sudden flare-up and subsequent medical leave for intensive physical therapy require avoiding physical strain, including walking to work."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Brings homemade lunches to work but never eats at his desk — always moves to the break room to eat",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_043",
+        "reason": "While in a walking boot and under orders to avoid weight-bearing, traversing office halls is risky or forbidden, so eating at his desk is necessary during recovery."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Lies on the floor for daily stretching exercises after getting home — avoids conventional gym workouts",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_027",
+        "reason": "The intensive prescribed PT regimen replaces his home stretching, which may not be safe or effective given the severity of his flare-up."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Visits his father every Saturday afternoon; never cancels even for work obligations",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "His father now lives in the family home and requires daily care, which eliminates the former fixed Saturday-only visit routine."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Attends his son's soccer matches every weekend — leaves early only if there's a true emergency",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "His son joining a travel soccer team changes soccer from local matches to frequent out-of-city, weekend tournaments. He now travels as part of supporting his son, and local matches are mostly replaced by travel events."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Schedules family dinners twice a week, no phones allowed; never goes more than two days without eating together",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "With his spouse away for several months on an out-of-state fellowship, it's no longer possible for her to be present at regular family dinners. He adapts by focusing on dinners with his son and facilitating virtual involvement from his spouse."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Prefers texting the spouse for updates throughout the day — rarely makes phone calls",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "With the spouse away and only available intermittently, texting may not suffice; communication is likely to shift to video calls or more substantial check-ins given distance and schedule differences."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Explores new Seattle coffee shops on Sunday mornings — never revisits the same place twice in a month",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "Frequent weekend travel for soccer tournaments means he is often not in Seattle on Sunday mornings; the pattern of local coffee shop exploration is no longer possible."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Goes hiking with his son once a month — never hikes solo",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "His son's schedule is now dominated by weekend travel and tournaments, making monthly hiking trips together impractical."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Plans short weekend getaways within Washington State every quarter; avoids longer vacations out of state",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "Weekend soccer tournaments across the Pacific Northwest fill his available weekends, leaving no opportunity for planned getaways or vacation-focused trips."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Preps breakfast for the family every morning — never skips this even when pressed for time",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_047",
+        "reason": "With the spouse out of state and not around on most mornings, breakfast prep becomes limited to just himself and his son. Occasionally, when the spouse is home, she can participate, but it’s no longer a stable routine."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Turns off all screens one hour before sleep; reads physical books in bed",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "Now diagnosed with sleep apnea and instructed to use CPAP every night, he must incorporate equipment setup into his nightly routine. This disrupts the previous pattern of simply turning off screens and reading, now requiring attention to CPAP setup and use."
+      },
+      {
+        "id": "pref_026",
+        "fact": "Drives or uses rideshare to work while recovering from severe back pain; avoids walking until cleared by physician",
+        "domain": "health_body",
+        "created_at_session": 0,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "Due to the fractured ankle and restriction on weight-bearing, not only is walking prohibited, but driving is also unadvised during the walking boot phase, so he must fully rely on others or rideshare services."
+      },
+      {
+        "id": "pref_031",
+        "fact": "Seeks out local cafes and breakfast spots in tournament cities on Sunday mornings; skips familiar chains",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "He cannot travel to tournaments (or explore new cities) while immobilized with a fractured ankle and on doctor-ordered weight-bearing restrictions; this pattern cannot continue during recovery."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Uses weekend road trips for tournament travel as family bonding time; prefers listening to mystery audiobooks in the car",
+        "domain": "daily_routines",
+        "created_at_session": 1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "Weekend travel for tournaments is now severely limited or impossible due to staying home to care for his father; the routine of family road trips no longer applies."
+      },
+      {
+        "id": "pref_036",
+        "fact": "No longer schedules weekly accounting training sessions with staff — focused solely on own workload during peak audit preparation",
+        "domain": "work_habits",
+        "created_at_session": 3,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_057",
+        "reason": "The IRS audit introduces urgent, high-risk demands requiring total focus on documentation and compliance tasks. Even the previously limited mentoring for junior admin during grant audit prep is now entirely set aside until after audit resolution."
+      },
+      {
+        "id": "pref_037",
+        "fact": "Prioritizes solitary evening work sessions at home to manage increased audit workload — avoids distractions and family interruptions during these periods",
+        "domain": "work_habits",
+        "created_at_session": 3,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "Providing ongoing care and support for his father in the evenings means his previous preference for distraction-free audit work at home cannot be maintained."
+      },
+      {
+        "id": "pref_046",
+        "fact": "Schedules family dinners with his son twice a week; spouse joins only during occasional weekend visits and connects virtually on other nights",
+        "domain": "social_relationships",
+        "created_at_session": 6,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_054",
+        "reason": "With his son's friend (a new household member) temporarily living with them, family dinners now include both boys. The preference shifts from one-on-one time with his son to intentionally making shared meals a group activity with the friend."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T23:49:12.590778"
+}

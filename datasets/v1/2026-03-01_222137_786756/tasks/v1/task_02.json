@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_d4832923",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_055",
+        "fact": "Completely eliminates coffee (including decaf) and strictly avoids all caffeine sources—consumes only water and approved herbal teas throughout the day while medical testing continues",
+        "supersedes": {
+          "id": "pref_049",
+          "fact": "Strictly limits coffee to a single morning cup—switches to decaf or herbal tea for the rest of the day to comply with dietary instructions for blood pressure control"
+        }
+      },
+      {
+        "id": "pref_052",
+        "fact": "Now alternates weeknight school pickups with her partner, coordinating based on their son's math program schedule—never assumes full pickup responsibility alone during enrichment nights",
+        "supersedes": {
+          "id": "pref_029",
+          "fact": "Handles all school drop-offs and pickups on weekdays—never misses afternoon pickups unless her partner is available"
+        }
+      },
+      {
+        "id": "pref_025",
+        "fact": "Keeps her phone on silent at home from 7pm onward—never replies to work messages after that time"
+      },
+      {
+        "id": "pref_013",
+        "fact": "Keeps book club gatherings strictly to every other month—never reschedules to a different cadence"
+      },
+      {
+        "id": "pref_014",
+        "fact": "Texts her close friend group daily but prefers voice calls with her partner in the evenings"
+      },
+      {
+        "id": "pref_037",
+        "fact": "Checks in daily with assisted living staff by phone or text to monitor her mother's well-being—never waits for weekly updates or for staff to reach out first"
+      }
+    ]
+  },
+  "persona": "A finance manager at a nonprofit organization with limited technical resources"
+}

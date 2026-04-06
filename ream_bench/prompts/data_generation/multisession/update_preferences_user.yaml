@@ -1,0 +1,23 @@
+name: Update Preferences — User (v3)
+description: User prompt — persona, life event context, and current preference state. All instructions are in the system prompt.
+used_by: ream_bench/data_generators/multisession.py::_update_preferences
+variables:
+  - persona: The full expanded persona description (life facts and baseline preferences)
+  - current_event: The current life event being processed
+  - event_date: Date of the current event
+  - active_preferences: JSON list of currently active preferences
+  - evolution_history: JSON list showing all preference changes (evolutions and drops) so far
+
+template: |
+  PERSONA:
+  {persona}
+
+  CURRENT EVENT:
+  {current_event}
+  Date: {event_date}
+
+  ACTIVE PREFERENCES:
+  {active_preferences}
+
+  PREFERENCE CHANGE HISTORY:
+  {evolution_history}

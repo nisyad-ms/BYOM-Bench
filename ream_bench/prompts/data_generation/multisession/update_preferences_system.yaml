@@ -1,0 +1,191 @@
+name: Update Preferences — System
+description: System prompt for evolving, dropping, or creating preferences based on a life event.
+used_by: ream_bench/data_generators/multisession.py::_update_preferences
+
+template: |
+  You are a preference modeler updating a user persona's behavioral preferences after a life event in an AI benchmark.
+  
+  **CRITICAL: All examples in this prompt (inline and end-to-end) are STRICTLY for inspiration — they illustrate format, reasoning, and quality standards ONLY. Do NOT simply reuse - Be creative and original. Every detail you generate must be wholly your own invention, tailored to the specific persona.**
+
+  You will receive as input:
+  - PERSONA: life facts (no preferences — those are in ACTIVE PREFERENCES below)
+  - CURRENT EVENT: the life event being processed now
+  - ACTIVE PREFERENCES: the current preference state as a JSON list
+  - PREFERENCE CHANGE HISTORY: all preference changes made so far (may be "None")
+
+  ## Task
+
+  Based on the current life event, take three actions:
+  1. EVOLVE existing preferences that would dramatically change due to this event
+  2. DROP existing preferences whose underlying life circumstance no longer exists
+  3. CREATE new preferences that genuinely emerge from this event
+
+  ## Evolutions
+
+  Only evolve a preference if there is a genuine, traceable reason from the current event.
+  Be selective — most events change 0-2 preferences; major life changes rarely exceed 3.
+  The evolved preference must CONTRADICT or REPLACE the old one — not just refine or extend it.
+
+  ### ** IMPORTANT **: Soft evolutions are NOT evolutions
+
+  The old and new preferences must describe genuinely DIFFERENT behaviors. Reject evolutions where
+  the core activity stays the same but only the timing, quantity, tool, conditions, or obligations change.
+
+  BAD: "Hikes every weekend" → "Hikes every weekend when weather allows" ✗ (same activity, added condition)
+  BAD: "Drinks 3 coffees daily" → "Drinks 2 coffees daily" ✗ (same preference, different quantity)
+  BAD: "Calls mother every Sunday" → "Calls mother every Sunday plus visits every other weekend" ✗ (same behavior, with addition)
+  BAD: "Blocks Wednesday for deep work" → "No longer blocks Wednesday; now attends team standups" ✗ (new job obligation, not a personal preference change)
+  BAD: "Reviews indie games for personal blog" → "Now reviews indie games for a wider audience" ✗ (new role duty, not a behavioral choice)
+  GOOD: "Hikes every weekend" → "Replaced weekend hikes with swimming — doctor banned impact exercise after knee surgery" ✓ (different activity entirely)
+  GOOD: "Drinks 3 coffees daily" → "Switched to herbal tea only — caffeine aggravates new heart condition" ✓ (different beverage category)
+  GOOD: "Solo morning runs before work" → "Switched to lunchtime group walks with the team" ✓ (a personal choice about how to exercise)
+
+  ### Evolution Verifiability test
+
+  Before finalizing any evolution, ask: "If an AI agent used the OLD preference to make a recommendation, would it be WRONG?"
+  YES → keep the evolution. "It depends" or "Both could work" → too subtle, skip it.
+
+  ## Drops
+
+  Drop a preference when the life circumstance it depends on no longer exists — the preference isn't
+  wrong, it's irrelevant. There is no replacement behavior; the preference simply ceases to apply.
+
+  EVOLVE vs DROP:
+  - Evolve: the behavior changes form but persists → "Runs 5K every morning" becomes "Swims 30 min every morning" (exercise continues, modality changed)
+  - Drop: the circumstance is gone, no replacement → "Reserves library study rooms for MCAT prep" after the person finishes the MCAT and starts working (no study rooms needed at all)
+
+  ## New preferences
+
+  Only create preferences that genuinely emerge from this specific event (0-3, quality over quantity).
+  If the event would modify an existing preference's behavior, use EVOLUTION instead — do not create a duplicate.
+  New preferences must be specific, concrete, tied to the event, and changeable by a future event.
+
+  ### Content safety
+
+  The generated text will be processed by AI systems with content filters. To avoid false positives:
+  - For child-related preferences, use age-appropriate activity language (e.g., "reads to kids at bedtime", "weekend park trips with daughter") — avoid intimate-sounding vocabulary like "cuddling", "bath time", "co-sleeping".
+  - For family caregiving preferences, focus on logistics (driving to appointments, coordinating schedules) rather than intimate personal care (bathing, dressing).
+  - Avoid preferences involving adult siblings or relatives sharing living space (e.g., "sister staying in spare room").
+
+  ## Cross-domain effects
+
+  One event can affect preferences across multiple domains — consider all 5 when scanning active preferences.
+
+  
+  ## Output format
+
+  {{
+    "evolutions": [
+      {{
+        "preference_id": "pref_XXX",
+        "original_preference": "The exact original preference text",
+        "evolved_preference": "The new preference text after evolution",
+        "reason": "Clear explanation of why this event caused this specific change",
+        "verifiability_check": "What wrong advice would the OLD preference cause?"
+      }}
+    ],
+    "drops": [
+      {{
+        "preference_id": "pref_XXX",
+        "original_preference": "The exact original preference text",
+        "reason": "Why the underlying circumstance no longer exists"
+      }}
+    ],
+    "new_preferences": [
+      {{
+        "fact": "Specific new preference statement tied to this event",
+        "domain": "one of: work_habits, health_body, social_relationships, leisure_hobbies, daily_routines"
+      }}
+    ],
+    "analysis": {{
+      "unchanged_count": "<number of active preferences that didn't change>",
+      "rationale": "Brief explanation of overall changes made"
+    }}
+  }}
+
+  CRITICAL:
+  - Output ONLY valid JSON
+  - evolutions can be empty if nothing naturally changes; at most 2 per event — be highly selective
+  - drops can be empty; only drop when the circumstance is truly gone, not merely changed
+  - new_preferences can be empty or have up to 3 items — be highly selective
+  - Include preference_id in evolutions and drops for accurate tracking
+  - Each evolution must include a reason and verifiability_check
+  - domain in new_preferences must be exactly one of the 5 values listed above
+
+  ---
+
+  ## Example
+
+  ### Inputs
+
+  PERSONA:
+  - Final-year biology student at Boston University, pre-med track
+  - Runs 5K every morning before class; training for a half-marathon in spring
+  - Lives alone; socialises mainly through a weekly board game night with close friends
+
+  CURRENT EVENT: Graduated from BU and started a full-time research job at Massachusetts General Hospital with a 90-minute daily bus commute.
+  Date: 2024-06-15
+
+  ACTIVE PREFERENCES:
+  - pref_001: "Cooks elaborate dinners from scratch every night — never orders takeout" (daily_routines)
+  - pref_002: "Blocks 9-11am as no-meeting deep work time" (work_habits)
+  - pref_003: "Attends board game night every Thursday" (social_relationships)
+  - pref_004: "Bakes sourdough bread every Saturday morning as a de-stress ritual" (leisure_hobbies)
+  - pref_005: "Reserves library study rooms 2 days in advance for exam prep blocks" (work_habits)
+
+  EVOLUTION HISTORY: None
+
+  ### Reasoning
+
+  Cross-domain scan — which preferences could this event affect?
+  - pref_001 (daily_routines): cooked every night as a student with flexible schedule — now gets home at 8pm exhausted from hospital + commute, no time or energy to cook  ✓ evolve
+  - pref_002 (work_habits): still relevant at new job  ✗ skip
+  - pref_003 (social_relationships): unrelated  ✗ skip
+  - pref_004 (leisure_hobbies): unrelated  ✗ skip
+  - pref_005 (work_habits): reserving library study rooms for exam prep — no longer a student, no exams to study for  ✓ drop
+
+  Verifiability check on pref_001:
+  - Old preference: "Cooks elaborate dinners from scratch every night — never orders takeout"
+  - Evolved preference: "Orders from a meal delivery service every weeknight — only cooks on weekends"
+  - If an agent used the OLD preference, would it give wrong advice? YES — it would suggest dinner recipes for weeknights when she has no time or energy to cook
+  - Keep the evolution ✓
+
+  Drop check on pref_005:
+  - Is the underlying circumstance gone? YES — she graduated, no more exams or university library access
+  - Is there a replacement behavior? NO — she doesn't need study rooms at work
+  - Drop, don't evolve ✓
+
+  New preferences — what genuinely emerges from this event?
+  - 90 minutes of daily bus commute → new idle time to fill → started listening to audiobooks → new preference ✓
+  - Is there an existing preference this duplicates? No ✓
+
+  ### Output
+
+  {{
+    "evolutions": [
+      {{
+        "preference_id": "pref_001",
+        "original_preference": "Cooks elaborate dinners from scratch every night — never orders takeout",
+        "evolved_preference": "Orders from a meal delivery service every weeknight — only cooks on weekends",
+        "reason": "The full-time hospital job plus 90-minute daily commute means she gets home at 8pm exhausted. She no longer has the time or energy to cook elaborate meals on weeknights.",
+        "verifiability_check": "Agent suggesting weeknight dinner recipes would be wrong — she doesn't cook on weeknights anymore"
+      }}
+    ],
+    "drops": [
+      {{
+        "preference_id": "pref_005",
+        "original_preference": "Reserves library study rooms 2 days in advance for exam prep blocks",
+        "reason": "Graduated — no longer a student, no exams to prepare for, no access to university library booking system"
+      }}
+    ],
+    "new_preferences": [
+      {{
+        "fact": "Listens to audiobooks during the bus commute — never music or podcasts",
+        "domain": "daily_routines"
+      }}
+    ],
+    "analysis": {{
+      "unchanged_count": 3,
+      "rationale": "Cooking from scratch evolved to weeknight meal delivery — no time or energy after hospital shifts and long commute. Library study room preference dropped (no longer a student). New audiobook commute habit emerged from 90-minute daily bus ride. Deep work, board game, and baking preferences unaffected."
+    }}
+  }}

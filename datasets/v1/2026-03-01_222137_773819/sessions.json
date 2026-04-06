@@ -1,0 +1,1593 @@
+{
+  "persona": "A recent MBA graduate working in business development for a logistics firm",
+  "persona_id": "persona_20260301_223539",
+  "expanded_persona": {
+    "base_persona": "A recent MBA graduate working in business development for a logistics firm",
+    "age": 28,
+    "gender": "male",
+    "location": "Dallas, TX",
+    "work_education": [
+      "Graduated from SMU Cox School of Business with an MBA last May",
+      "Joined a mid-sized logistics company’s business development team; responsible for cultivating partnerships with regional freight operators",
+      "Works a mix of remote and in-office (3 days/week); tasked with supporting the rollout of a new digital freight-matching platform",
+      "Recently started leading client pitch meetings for the first time; finding public speaking challenging but improving",
+      "Attending networking events twice a month to grow industry connections as part of his annual performance goals"
+    ],
+    "health_wellness": [
+      "Generally healthy but gaining weight since leaving campus; trying to get back to regular gym sessions",
+      "Relies heavily on coffee—averages 3 cups/day since work started",
+      "Mild tension headaches during periods of high project stress",
+      "Recently started meal prepping on Sundays to avoid fast food lunches",
+      "Sleep schedule inconsistent, often staying up late to catch up on emails or prepare for early meetings"
+    ],
+    "family_relationships": [
+      "Lives alone in a rented apartment near downtown Dallas",
+      "In a long-distance relationship with his girlfriend who moved to Chicago for medical school",
+      "Close with his parents, who live in Houston; calls his mother every Sunday",
+      "Has a younger sister finishing her undergraduate degree in Austin; occasionally visits her on weekends",
+      "Participates in a monthly family Zoom call organized by his father"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Prefers to schedule all client pitch meetings before noon—never accepts afternoon slots unless unavoidable",
+        "Drafts partnership outreach emails in templates—never sends cold emails without customizing the opening paragraph",
+        "Switches to working from a quiet conference room for virtual presentations—never hosts high-stakes calls from home",
+        "Blocks the hour after in-office networking events for immediate follow-up notes—never delays outreach to new contacts overnight",
+        "Always reviews slide decks out loud the night before a big meeting—never relies only on silent reading for preparation"
+      ],
+      "health_body": [
+        "Preps all weekday lunches on Sunday—never grabs fast food during the week",
+        "Limits coffee to two cups before noon—never drinks caffeinated beverages after 2pm to avoid evening headaches",
+        "Books a personal training session every Friday morning to stay accountable—never skips workouts two weeks in a row",
+        "Wears blue-light blocking glasses after 9pm when using screens—never answers emails in bed to reduce sleep disruption",
+        "Logs daily steps with his fitness tracker—never lets weekday step count fall below 7,000"
+      ],
+      "social_relationships": [
+        "Video-calls his girlfriend every Thursday evening—never lets more than two days pass without at least texting",
+        "Calls his mother every Sunday afternoon at the same time—never misses unless traveling",
+        "Sends a morning check-in text to his sister on days he knows she has an exam—never posts family matters on social media",
+        "Follows up with three new contacts after each networking event—never connects on LinkedIn without a personalized note",
+        "Always joins the monthly family Zoom call with camera on—never multitasks during family calls"
+      ],
+      "leisure_hobbies": [
+        "Watches one live sports game (in person or on TV) every weekend—never misses a Dallas Mavericks home game on TV",
+        "Chooses hiking or outdoor walks in local parks over indoor activities on Sundays—never spends an entire weekend indoors",
+        "Reads business memoirs for leisure—never picks up fiction unless recommended by his girlfriend",
+        "Experiments with new barbecue recipes at home twice a month—never eats at the same restaurant more than once a month",
+        "Schedules at least one spontaneous city exploration day each month—never revisits the same neighborhood twice in a row"
+      ],
+      "daily_routines": [
+        "Starts each weekday with a 10-minute news briefing while making breakfast—never checks work email before eating",
+        "Plans the next day's top three priorities every night before bed—never leaves task lists open-ended",
+        "Shops for groceries only on Saturday mornings—never does midweek runs unless something is urgent",
+        "Sets his phone to Do Not Disturb from 10pm to 7am—never allows social notifications to interrupt sleep",
+        "Cleans his apartment Friday evenings to mark the transition to weekend—never leaves chores for Sunday nights"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His girlfriend in Chicago was matched to a summer clinical rotation in Dallas, so she plans to stay with him for three months instead of just visiting on weekends.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Plans and prepares homemade dinners together with his girlfriend at least four nights a week—intentionally avoids eating out except for special occasions during her stay",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Allocates Sunday afternoons for exploring new Dallas neighborhoods or attractions as a couple—chooses joint outings over solo city exploration during her visit",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Adjusts evening routines to minimize work-related tasks after 8pm, prioritizing shared downtime with his girlfriend",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Video-calls his girlfriend every Thursday evening—never lets more than two days pass without at least texting"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Spends most evenings in person with his girlfriend while she stays in Dallas—no longer relies on scheduled video calls or frequent texting to maintain connection",
+              "domain": "social_relationships"
+            },
+            "reason": "His girlfriend is now living with him for three months, making regular in-person time the new norm. The need for scheduled video calls and daily texting becomes obsolete."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news: my girlfriend landed a summer clinical rotation here in Dallas, so she'll be living with me for three months instead of just weekend visits. I'm excited, but it's a pretty big shift from our usual routine. I want to make sure I keep up with work and personal health, but also make the most of her being here. Any ideas on how to balance the new dynamic?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s awesome—sounds like a big transition, but a positive one! First off, are there any new routines or habits you both want to build together while she’s here? Sometimes sharing the same space opens up opportunities to make plans around meals or activities, which can help balance work and downtime."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's definitely something we're thinking about. We used to do a scheduled video call every Thursday—and text throughout the week—but obviously that's changed. We’re now spending most evenings together, so the scheduled calls and constant texting aren’t so necessary. I guess we need to figure out shared evening routines so I don’t end up doing work late and miss that time."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. Eliminating scheduled calls frees up evenings for in-person time, but if you’re used to catching up on work at night, it might take effort to set boundaries. Have you noticed what time you’re both generally wrapping up work? Maybe you could set a cutoff—say, no work after a certain hour—so you have guaranteed downtime together?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I’ve started to adjust a bit: I’m aiming to minimize work-related tasks after 8pm now, so evenings can be focused on relaxing together. It's still a work in progress—sometimes I slip and check emails, but I’m getting better at shutting things down before we eat dinner."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great boundary. Maybe having a ritual—like cooking dinner together—could also reinforce the transition away from work? Sharing that time can help you mentally disconnect from the office. Are you planning meals together, or still prepping solo on Sundays like usual?"
+        },
+        {
+          "role": "user",
+          "content": "We decided to prep and cook homemade dinners together at least four nights a week. I’m avoiding eating out except for special occasions during her stay—that way we’re more intentional about meal time and can stick to healthier habits. Sundays are our big meal prep day, but now she’s joining in on the planning and cooking."
+        },
+        {
+          "role": "assistant",
+          "content": "Nice! Joint meal prep can definitely make food routines more enjoyable. On the flip side, has this affected how you approach city exploring? You used to schedule solo outings to new neighborhoods once a month—are you planning to do those together now?"
+        },
+        {
+          "role": "user",
+          "content": "For sure. I actually shifted my Sunday city exploration habit to joint outings—Sunday afternoons are now dedicated to exploring Dallas neighborhoods or attractions as a couple. It’s been fun to check out places she hasn’t seen before and make it a shared adventure, rather than heading out solo."
+        },
+        {
+          "role": "assistant",
+          "content": "I love that! Shared exploration turns familiar routines into new experiences together. Are there any activities or events—besides city exploring—that you both want to prioritize? Like local sports games, outdoor walks, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "We’re keeping the Mavericks games in the mix—she’s gotten into basketball too. For weekends, we’re still aiming for hiking or outdoor walks, but more as a pair. Also, I’m sticking to barbecue experiments at home, just with her joining in the tasting and recipe suggestions. So the only real change is the solo focus to more couple-oriented plans."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a great balance between maintaining your personal interests and building shared routines. Have you noticed any changes in your daily routines, say mornings or task planning, now that you’re sharing the space? Or is that still pretty much your own domain?"
+        },
+        {
+          "role": "user",
+          "content": "Mornings are still mostly solo—I do my news briefing and breakfast before she heads out for the hospital. But evenings are definitely more structured now, with work cut off before dinner and more shared downtime. We’re making time for both productivity and connection, which feels like a good adjustment."
+        },
+        {
+          "role": "assistant",
+          "content": "It seems like you’ve made thoughtful shifts to routines—especially around prioritizing evening downtime and joint activities. If you ever find work spilling into personal time again, a visible cutoff (like a phone alarm or even a shared signal with your girlfriend) can help reinforce boundaries. Is there anything about health or wellness—like gym sessions or meal planning—that you want help optimizing with this new arrangement?"
+        },
+        {
+          "role": "user",
+          "content": "I think meal planning is good for now, since we're both invested and it keeps both of us accountable. Gym sessions might be the next thing—I want to keep my personal training Fridays but maybe add a couple joint workouts during the week. And since we’re both busy, making the most of downtime together feels more important than ever."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like a solid plan. For gym sessions, maybe you can align schedules for one or two weekday workouts together. And if Fridays are your time for training, keep that as an anchor. With the shared meals and city explorations, plus evenings set aside, you’re already creating structure that should help both of you feel connected and balanced. Let me know if you need help with joint workout programs or more ideas for Dallas outings!"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received news that his company is piloting a mandatory in-person client pitch protocol for major deals, requiring him to travel to partner offices across Texas twice a month rather than hosting virtual meetings from Dallas.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_032",
+            "fact": "Chooses to listen to business podcasts during intercity drives instead of music to stay mentally engaged while traveling solo",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_033",
+            "fact": "Arranges a post-pitch meal at a local restaurant with clients after major meetings to build rapport—never leaves immediately after concluding business",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Switches to working from a quiet conference room for virtual presentations—never hosts high-stakes calls from home"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Travels to partner offices for in-person pitch meetings—no longer hosts major presentations virtually from conference rooms or home",
+              "domain": "work_habits"
+            },
+            "reason": "Company's new protocol mandates that all major deal pitches take place in-person at client offices across Texas, making virtual presentations from conference rooms or home obsolete for these events."
+          },
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Prefers to schedule all client pitch meetings before noon—never accepts afternoon slots unless unavoidable"
+            },
+            "to": {
+              "id": "pref_031",
+              "fact": "Schedules client pitch meetings according to partner office availability, often accommodating afternoon slots due to travel constraints—no longer able to guarantee morning-only meetings",
+              "domain": "work_habits"
+            },
+            "reason": "Twice-monthly travel for in-person pitches means his schedule must align with partner office availability, often resulting in afternoon meetings after arriving onsite."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my company just rolled out this new protocol: for all major deals, we have to do client pitch meetings in person at their offices, so I'm about to start traveling all over Texas twice a month. I used to host pitches virtually—which let me control the environment and schedule them before noon. Now that's gone. Any tips for actually staying sharp for in-person meetings, especially when I might be driving hours and landing in the afternoon?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift! Losing that virtual control can definitely throw your routine off. When you transition from being remote to on-site, energy management and prep change a lot. How have you found traveling so far? Any routines around prep or recovery on the road, or is this all new?"
+        },
+        {
+          "role": "user",
+          "content": "It’s pretty new—I haven’t started the travel yet, but I’ll be on the road soon. Honestly the biggest thing is I used to block all pitch meetings before noon and review slide decks out loud the night before in a conference room. Now, I have to work around client office schedules, which means I'll have afternoon pitches whether I like it or not. My prep routine needs an overhaul."
+        },
+        {
+          "role": "assistant",
+          "content": "Yeah, prepping in a conference room and doing morning-only pitches sounded ideal. For afternoon meetings after a drive, managing energy is even more crucial. One strategy: plan for light activity or even a brisk walk near the client office when you arrive—gets circulation up, clears brain fog. Also, consider timing your caffeine so you're sharp for the meeting but not wired late. What’s your usual coffee routine on days you’re presenting?"
+        },
+        {
+          "role": "user",
+          "content": "On regular days, I cap coffee at two cups before noon—never after 2pm, since late caffeine gives me headaches and messes up sleep. But being on the road could tempt me to break that rule if I'm dragging in the afternoon. Maybe I just need to stick to my limit and find alternatives."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart call—consistency on caffeine will probably help keep your sleep steady, even with travel. If you feel sluggish after the drive, you could try hydration or a quick walk over coffee. On the prep side, could you shift your out-loud deck reviews to your hotel room or even use your car for rehearsal before going in? Or does that break the focus you get from a conference room?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I used to only do deck run-throughs in a quiet conference room—never from home or anything. But now, I won’t have that option, since all major pitches are in-person at client sites. So I’m just going to have to adapt, maybe practice in hotel rooms or wherever’s available. I guess my old rule is obsolete now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment, but practicing anywhere you can will become a new skill! Maybe experiment with rehearsal spots on the road—the car, the hotel, even local parks if the weather’s good. On a related note: driving long distances can eat up a lot of time. How do you keep your mind engaged, or do you just zone out with music?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention it—I actually plan to listen to business podcasts during intercity drives instead of music. Keeps me mentally engaged and helps me prep for industry conversations. I figure that’s more productive, especially on solo trips."
+        },
+        {
+          "role": "assistant",
+          "content": "Great strategy! Podcasts are useful for sharpening your thinking before client meetings. If you find a few favorites, you could rotate them based on the topic of your upcoming pitch. Also, since you’ll be finishing meetings on-site, any plans for what you do after wrapping up? Hit the road immediately, or leave some time to wind down?"
+        },
+        {
+          "role": "user",
+          "content": "I’m planning to start arranging a post-pitch meal at a local restaurant with clients after major meetings, instead of leaving right after. I think it'll help build rapport beyond the boardroom. So that’s a new piece of my routine—never just jet after business wraps."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a strong way to deepen relationships—shared meals can lead to candid conversation and future repeat business. Will you try regional spots each time, or stick to safe choices? And how are you planning follow-up after these in-person visits?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll definitely try regional spots—my rule is pretty much never eat at the same restaurant more than once a month. And after the meal, I’ll block time for immediate follow-ups, like I used to do after networking events. No delays, especially since I’ll want to keep momentum going with new partners."
+        },
+        {
+          "role": "assistant",
+          "content": "That consistency in quick follow-up will translate well to your new travel-heavy schedule. As you fine-tune this routine, let me know which parts of the travel days feel energizing and which are draining—I can help you map out recovery strategies or ways to optimize the workflow. Anything else you’re anticipating as a challenge?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, just that the schedule will be unpredictable—so I’ll need to be flexible with workouts and meal prep, which were pretty regimented. But I think the travel and new habits will force me to be more adaptable. Thanks for helping me think it through!"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Adapting quickly is a strength—and you already have good discipline with prep and follow-up. Let me know how the first few in-person pitches go, and if you want tips on balancing the travel with fitness and wellness, I’m here."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His father announced that he will be retiring in two months and is planning to spend more time in Dallas, including frequent stays at his apartment during visits.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Keeps guest bedding and toiletries ready at all times in his apartment for his father's frequent visits—never stores guest items out of immediate reach",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Schedules at least one dinner out each week with his father during visits—avoids repeating the same restaurant within a month when dining with family",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_025",
+              "fact": "Cleans his apartment Friday evenings to mark the transition to weekend—never leaves chores for Sunday nights"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Cleans his apartment on Saturday mornings or whenever his father is scheduled to visit—flexibly moving chores to ensure the space is ready for company",
+              "domain": "daily_routines"
+            },
+            "reason": "With his father planning frequent stays, cleaning is now driven by guest visits rather than a fixed Friday routine. He prioritizes preparing for family rather than strictly anchoring chores to Friday evenings."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My dad just told us he's retiring in two months and wants to spend more time in Dallas. He’s even planning to crash here a lot during visits. I never thought about having frequent guests. How do people keep their apartments guest-ready without going nuts about cleaning?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big shift—congrats to your dad, by the way! When guests are in and out regularly, it helps to have a few quick routines: a 30-minute refresh each week, keeping clutter to a minimum, and having essentials like extra towels always prepped. How strict are you about your current cleaning schedule?"
+        },
+        {
+          "role": "user",
+          "content": "I used to clean every Friday evening—kind of my ritual for kicking off the weekend. But with my dad's visits coming and going, I think I'll need to switch things up. Probably clean Saturday mornings or right before he arrives, depending on his plans. Flexibility seems key now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—anchoring your cleaning to guest timing rather than a fixed day is much less stressful. Besides cleaning, are you thinking about stocking up with guest bedding, towels, or toiletries so you’re not scrambling last-minute when he visits?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I actually grabbed some new sheets and basic toiletries last weekend so everything’s ready. They're in an easy spot—I won’t stash them away. My dad tends to arrive early and I’d rather not be hunting for things when he’s here."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move! Keeping guest items accessible avoids the scramble. As your dad settles into the Dallas routine, are you planning any regular activities together during his stays? Meals out, events, or just hanging at home?"
+        },
+        {
+          "role": "user",
+          "content": "We’re definitely trying to get dinner out once a week when he’s here. But I want to keep things fresh—no repeats at the same restaurant for at least a month if we’re together, so it feels special. Might need a system if he comes a lot."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful approach. Maybe keep a running list of Dallas spots you’ve tried together—could even build a mini log for new places. Would your dad prefer classic Texas barbecue, or is he up for cuisines you haven’t explored yet?"
+        },
+        {
+          "role": "user",
+          "content": "He’s pretty adventurous, honestly—barbecue, Tex-Mex, even Thai. I like experimenting with new recipes at home, but for dinners with him, I think variety is key. I just need to remember to rotate neighborhoods so we don’t get stuck in the same part of town."
+        },
+        {
+          "role": "assistant",
+          "content": "City exploration and cuisine rotation will keep things fresh. For your apartment, having those guest basics at the ready, plus flexible cleaning, should cover most bases. If you ever want suggestions for unique Dallas dinners or activities, I can help with that. Anything else you’re worried about as your dad starts visiting more often?"
+        },
+        {
+          "role": "user",
+          "content": "Not really—mainly just adjusting to this new routine. I do need to sync my calendar better so his stays don’t clash with late-night work stuff or pitch prep. Thanks for the tips. If you have a good restaurant tracker or guest checklist template, send them my way."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Assigned to lead a cross-functional team responsible for launching a new regional service, requiring weekly evening meetings with tech and operations staff and accelerated project deadlines outside his usual work schedule.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Attends weekly evening virtual meetings with cross-functional launch team—never schedules social activities on meeting nights",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Keeps dinner simple on meeting evenings, switching to quick reheated meals or healthy takeout to avoid skipping meals during long work sessions",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Sets aside Saturday mornings for project planning and catch-up tasks while launch deadlines are active—routinely works weekends for this phase",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_029",
+              "fact": "Adjusts evening routines to minimize work-related tasks after 8pm, prioritizing shared downtime with his girlfriend"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Allocates evenings for project-related meetings and urgent follow-ups; willingly shifts personal downtime to late night or weekends during launch phase",
+              "domain": "daily_routines"
+            },
+            "reason": "Leading a cross-functional launch team with weekly evening meetings and accelerated deadlines makes minimizing work tasks after 8pm impossible. His evening schedule is now dictated by project needs."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_027",
+            "fact": "Plans and prepares homemade dinners together with his girlfriend at least four nights a week—intentionally avoids eating out except for special occasions during her stay",
+            "domain": "daily_routines",
+            "reason": "This preference depended on his girlfriend living in Dallas. She is no longer staying with him, so weekday homemade couple dinners are not possible."
+          },
+          {
+            "id": "pref_028",
+            "fact": "Allocates Sunday afternoons for exploring new Dallas neighborhoods or attractions as a couple—chooses joint outings over solo city exploration during her visit",
+            "domain": "leisure_hobbies",
+            "reason": "Joint Sunday outings were tied to his girlfriend's stay in Dallas; with her gone, this preference is irrelevant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I just got assigned to lead this cross-functional launch team at work. It's for a new regional service, and it's already pretty intense — weekly evening virtual meetings, deadlines coming at me fast, people from ops and tech all needing things. I'm not used to having to work evenings like this. Any advice for staying sane and keeping up with the pace when my routine's blown up?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on the new assignment! That’s a big responsibility, and it’s normal for your routine to feel disrupted at first. When your schedule gets this intense — especially with evening commitments — keeping intentional boundaries can help. Can you share how your overall day structure has changed so far, or what’s proving hardest to manage?"
+        },
+        {
+          "role": "user",
+          "content": "Evenings are the hardest. I used to wind down and avoid work tasks after 8pm, but now I have to allocate evenings for meetings and urgent follow-ups. My downtime has shifted to late night or weekends, which isn’t ideal, but it’s kind of unavoidable during this launch phase. I’m worried about sleep and squeezing in time for my girlfriend and other stuff."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — with the project needs dictating your evenings, personal downtime often gets shuffled around. Are your evening meetings on specific nights, or does it bounce around? If you know in advance, maybe you could block off ‘recovery’ time afterwards or stack personal calls and leisure activities on lighter-days or weekends. How are you handling meals with these late work sessions?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, dinner’s become pretty bare-bones on meeting evenings. I keep it simple — quick reheated meal prepped ahead or grab healthy takeout — just so I don’t skip eating altogether during long sessions. It’s not ideal, but it beats crashing without dinner."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move — skipping meals during stressful phases just makes things worse. Prepped foods or healthy takeout keep things running without draining your energy. Have your weekend routines changed as well, now that the launch is full swing? Are you carving out any project catch-up time outside normal work hours?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I never used to work weekends outside emergency deadlines, but right now, I set aside Saturday mornings for project planning and catch-up. It’s routine while launch deadlines are active; otherwise I just fall behind. I’m trying to protect some personal time Saturday afternoons onward, though, so it’s not a total grind."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes a lot of sense. Dedicating Saturday mornings to focused work lets you clear the decks before enjoying the rest of the weekend. How is this affecting your time with your girlfriend or friends? Anything you’re missing from your old routines?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, joint routines with my girlfriend are gone for now. She moved to Chicago for med school, so the old habit where we’d cook dinner together most nights doesn’t even apply. I dropped that — now it’s just solo meals or virtual check-ins. Sunday outings were a couple thing too, so I don’t do those anymore, just occasional solo exploration if I have time."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change. Losing shared meals and Sunday outings with your girlfriend must be tough, especially with less downtime during the launch. How have you adapted those old habits — are you substituting anything in your solo routine, or finding ways to stay connected despite the distance?"
+        },
+        {
+          "role": "user",
+          "content": "I stick to our weekly video call Thursdays, but that’s it for now. With these evening meetings, I never schedule social stuff on those nights. We text daily, but anything longer waits for my lighter evenings or weekends. And for city outings, I do them solo sometimes, just not as often. If there’s a meeting night, social activities just aren’t possible."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a practical adjustment. Scheduling social time around your launch meetings ensures you can focus without distractions. Solo city outings on weekends could offer a mental break after all the project work, and your Thursday video calls help maintain connection with your girlfriend. Any particular strategies you’re using to balance everything, or is it mostly trial and error right now?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly trial and error honestly. I just try to stick to routines where I can — prepping quick dinners, working Saturday mornings for the project, and blocking evenings for meetings or catch-up. The solo stuff comes when there’s time. I think once the launch is done, I’ll revert back, but for now, this is working as well as it can."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re making thoughtful adjustments under tough circumstances. Keeping meal prep, structured weekend catch-up, and protected communication with your girlfriend means you’re maintaining key pillars, even if they look a bit different. When the launch eases up, you’ll have a solid baseline to rebuild your preferred routines. Let me know if you want ideas for streamlining any part or recharging after busy weeks."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Diagnosed with high cholesterol during an annual check-up; doctor prescribes daily medication and recommends eliminating red meat and fried foods from his diet immediately.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Reads nutrition labels for all new grocery purchases—never buys packaged foods without checking cholesterol content",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Takes prescribed cholesterol medication every morning with breakfast—never skips a dose, even when traveling",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_019",
+              "fact": "Experiments with new barbecue recipes at home twice a month—never eats at the same restaurant more than once a month"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Experiments with new plant-based recipes at home twice a month—no longer cooks or eats barbecue with red meat or fried foods",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Due to the high cholesterol diagnosis and the doctor's strict advice to eliminate red meat and fried foods, traditional barbecue recipes—typically heavy on smoked beef, pork, or fried sides—are medically inadvisable. He will now shift to trying plant-based or lean protein alternatives instead."
+          },
+          {
+            "from": {
+              "id": "pref_039",
+              "fact": "Keeps dinner simple on meeting evenings, switching to quick reheated meals or healthy takeout to avoid skipping meals during long work sessions"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Switches to heart-healthy dinners on meeting evenings—opts for reheated home-cooked meals, salads, or grilled fish, avoiding takeout unless it's clearly labeled cholesterol-friendly",
+              "domain": "daily_routines"
+            },
+            "reason": "His new heart health regimen means generic takeout (often fast or unhealthy) is now risky, especially at night. He will only choose meal options known to be low in cholesterol and saturated fat, favoring home-cooked or vetted healthy places."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I wanted some help around my weekly routine. I just had my annual check-up and—honestly, not the news I hoped for. My doctor found my cholesterol is pretty high, so I'm starting medication and need to overhaul what I'm eating. I could really use ideas on desk lunches, easy healthy dinners, and how to stick with this without getting bored. Any suggestions?"
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for sharing that—it’s tough to have to shift everything at once, but the upside is you’ll probably feel a lot better pretty quickly. For desk lunches, do you prefer prepping meals in advance or grabbing something fresh each day? And for dinners, is it more about speed or having something filling?"
+        },
+        {
+          "role": "user",
+          "content": "Advance prep for sure. I do meal prepping every Sunday, so quick grab-and-go is key during the week—I’ve ditched fast food lunches entirely over the past year, and don’t want to backslide. I used to keep dinner simple on meeting nights by reheating stuff or ordering healthy takeout, but now I have to be extra careful with what’s in it. Doctor says red meat and fried food are out, so I’m staring at a lot of chicken and fish right now."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call on meal prep—I can suggest some heart-healthy lunch options like grain bowls with veggies and grilled protein, or bean salads with tuna or salmon. For dinners, do you want recipes you can batch-cook for the week, or are you hoping for ideas that work after a late meeting? And, out of curiosity, are you checking each ingredient for cholesterol levels now, or just cutting out the big offenders?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, my doctor was pretty strict: now I read the nutrition label on anything new I buy. No more packaged stuff without checking cholesterol content—it's on my mind every time I hit the grocery store. For dinners, I like batch-cooking but want some variety. Having salad or grilled fish on hand helps with meetings, and I only get takeout if it’s marked as cholesterol-friendly. Honestly, it feels limiting, but I can’t risk slipping up."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart approach! If you’re open to it, you could rotate in some plant-based proteins—lentils, chickpeas, tofu—so you aren’t locked into just poultry and fish. Would experimenting with veggie-focused recipes help break up the monotony? I can send over some ideas for easy swaps, and there are apps to help spot hidden cholesterol when shopping."
+        },
+        {
+          "role": "user",
+          "content": "That actually makes sense—my old routine was testing new barbecue recipes every couple weeks, but I guess that's out now. Barbecue’s mostly a red meat thing, or loaded with fried sides. The plan is to switch to plant-based recipes at home twice a month, so suggestions for those would be awesome. I can't do smoked brisket or anything like that anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—I’ll shift gears to plant-based barbeque alternatives, like grilled portobello mushrooms or veggie skewers. There are some great lentil burger recipes, too. For classic sides, baked sweet potato fries or bean salads offer flavor without the fried element. Are there favorite flavors you want to keep—like smoky, spicy, or tangy?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely smoky and spicy—that’s what I miss most from barbecue. If you know any recipes that hit those notes with plant-based ingredients, send them my way. Also, since I have to take cholesterol meds now, I’m sticking to that every morning at breakfast, no exceptions. This routine is non-negotiable, even if I’m traveling."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid commitment! There are a few plant-based rubs and homemade smoky sauces I can recommend for grilled veggies or tofu—smoked paprika is your friend. I can also suggest prepping overnight oats or whole-grain toast as breakfast anchors for your meds, especially if you’re on the road. Anything you need for keeping the medication routine smooth?"
+        },
+        {
+          "role": "user",
+          "content": "I'm good on mornings—I already start the day with breakfast at home. I just have to make sure I pack meds when traveling, but that's easy enough. The harder part is making meals interesting and not slipping up on restaurant nights. Used to try new takeout spots, but now I only go if I know it’s low-cholesterol. Feedback on how to spot “safe” menu options would help, especially if I go with coworkers."
+        },
+        {
+          "role": "assistant",
+          "content": "When eating out, stick to grilled fish or chicken, veggie-heavy dishes, and ask for dressings or sauces on the side. Avoid creamy, fried, or breaded menu items, and don’t be shy about asking what oils or fats are used—most places are used to dietary questions now. If you want, I can give you scripts for politely requesting adjustments, too. Would that help for work dinners?"
+        },
+        {
+          "role": "user",
+          "content": "That would help—especially to avoid sounding picky. One last thing: for grocery runs, Saturday mornings are my slot, so if you have recommendations for products or brands that keep cholesterol low, send them over. Thanks for all this, really—it’s a big shift, but I think I’m ready to roll with it."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—I'll put together a list of heart-healthy brands (whole grain breads, plant-based proteins, low-fat dairy) and tips for quick label checks, so you’re set for Saturday shopping. And for work dinners, simple scripts plus examples of safe orders will help you navigate options smoothly. If you ever want more recipe ideas or need troubleshooting on travel days, just ask!"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His younger sister in Austin was accepted into a year-long study-abroad program in Spain, meaning she will be relocating overseas and unable to visit or join regular family Zoom calls for the upcoming academic year.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Coordinates special one-on-one video calls with his sister twice a month to maintain connection while she's abroad—never schedules them during her exam weeks",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_047",
+            "fact": "Saves photos and family updates to a shared Google Drive folder so his sister can access news from home asynchronously",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Sends a morning check-in text to his sister on days he knows she has an exam—never posts family matters on social media"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Sends regular WhatsApp voice notes to his sister in Spain—no longer relies on morning exam texts; avoids sharing family updates on social media to protect her privacy abroad",
+              "domain": "social_relationships"
+            },
+            "reason": "With his sister relocating overseas for a study-abroad program, her exam schedule and local time zone are unpredictable and texting routines (especially morning messages) may no longer make sense. Instead, he adopts asynchronous voice notes as his main way to stay in touch, accommodating time zone and lifestyle changes."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_015",
+            "fact": "Always joins the monthly family Zoom call with camera on—never multitasks during family calls",
+            "domain": "social_relationships",
+            "reason": "His sister will not be able to join the regular family Zoom calls from Spain due to travel and academic conflicts. The long-standing full-family Zoom routine ceases for the upcoming year, making this preference temporarily irrelevant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, bit of a curveball—my sister just got into this study-abroad program in Spain, so she’ll be moving there for a year. We’re pretty close, and I’m used to checking in with her when she has exams or just to make sure she’s okay. But I know the time zone difference and her schedule are going to make our routines tricky. Any advice for keeping in touch without totally disrupting my week?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change, congrats to her—and I’m sure it feels weird for you. The time zone gap can make regular check-ins tough, especially if you’re both busy. Have you thought about shifting to more asynchronous communication, like voice notes or shared photo albums, so you aren’t tied to real-time texting?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually, I was thinking of dropping the morning exam texts. She’ll be studying at odd times and I don’t want to wake her up or miss her whole day. I’m planning to send WhatsApp voice notes instead, since she can reply when she has a break. Also, I’m not sharing family stuff on social media anymore—just feels safer while she’s abroad."
+        },
+        {
+          "role": "assistant",
+          "content": "Voice notes are a good idea—more personal than texts, and way easier across time zones. Keeping updates off social makes sense too, especially with privacy concerns. Would it help to have a shared space for family photos or news, so she can catch up whenever she wants? Like Google Drive or Dropbox?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, you’re onto something. I just started saving photos and family updates to a Google Drive folder so she can check at her own pace. It’s already helped with keeping her in the loop without needing her to be online all the time."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s perfect—and it allows her to feel connected no matter where she is. What about video calls? Are you planning to keep scheduled calls, or is that tough with her new routine?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I want to stay consistent, so I’m coordinating one-on-one video calls with her twice a month, but definitely skipping those during her exam weeks. That way we get some real conversation time even if the family Zoom isn’t possible."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move—it’s good to set boundaries around busy periods, and two dedicated calls a month is realistic. Speaking of Zoom, is your family still doing monthly calls, or will that change now she’s away?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually changing. We’ve had the camera-on full-family Zooms every month, but she can’t make them this year between travel, classes, and time zones. That routine’s kind of on pause for now, so I’m focusing more on just sharing updates and these one-on-ones."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s understandable—sometimes routines evolve with big life events. Sounds like you’re already adapting with new ways to connect. Anything else you want to try, or any concerns about keeping the bond strong while she’s away?"
+        },
+        {
+          "role": "user",
+          "content": "I think I’m set for now—just want to make sure she still feels included and isn’t out of touch while she’s gone. If you have suggestions for meaningful ways to share everyday stuff without overloading her, I’m all ears."
+        },
+        {
+          "role": "assistant",
+          "content": "One idea is to occasionally record short video snippets—like updates from family events or your city explorations. You can upload them to your Drive folder, so she gets a richer sense of home life. Or maybe write periodic letters she can read when she’s homesick. Keeping it low-pressure and flexible will help her feel connected, but not overwhelmed."
+        },
+        {
+          "role": "user",
+          "content": "I like the video snippet idea actually. I’m out and about pretty often, so sending little bits from Dallas could be fun. Thanks—this helped me organize what’ll work best."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The logistics company announces a merger with a larger national firm; all business development staff are required to complete an intensive two-month training program on the new company’s sales strategies and software beginning next week, with certification mandatory for continued employment.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Uses digital flashcard apps nightly to memorize merger-specific sales scripts and software functions—prefers solo study over group calls except for scheduled exam prep sessions",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Tracks daily progress in the training portal and rewards himself with a meal from his favorite healthy restaurant only after finishing each weekly module",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_040",
+              "fact": "Sets aside Saturday mornings for project planning and catch-up tasks while launch deadlines are active—routinely works weekends for this phase"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Allocates Saturday mornings exclusively for study and skills review while completing the mandatory merger training—pauses weekend work tasks for the duration of the certification period",
+              "domain": "work_habits"
+            },
+            "reason": "The mandatory, intensive merger training takes priority over normal project planning during weekends; he must dedicate Saturday mornings to certification requirements and temporarily suspend project-specific weekend work until training ends."
+          },
+          {
+            "from": {
+              "id": "pref_038",
+              "fact": "Attends weekly evening virtual meetings with cross-functional launch team—never schedules social activities on meeting nights"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Attends nightly virtual study groups with business development colleagues during merger training—puts launch team meetings on hold until training completion",
+              "domain": "work_habits"
+            },
+            "reason": "During the two-month merger training, launch team meeting schedules are suspended so he can participate in frequent virtual study groups with staff for exam prep; social conflicts now revolve around training, not project launch team duties."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_033",
+            "fact": "Arranges a post-pitch meal at a local restaurant with clients after major meetings to build rapport—never leaves immediately after concluding business",
+            "domain": "work_habits",
+            "reason": "Major client meetings and post-pitch meals are on hold during the intensive merger training; staff are not conducting regular client pitches or in-person meetings for this period."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, big curveball—my company is merging with a larger national player, and now all of us in business development are starting a mandatory training program next week. It runs two months, full-on: new sales strategies, new platform, and we have to pass exams to stay. I'm trying to figure out how to structure my days so I can keep my sanity and not fall behind. What would you recommend for balancing the training with my regular tasks?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a major transition! With an intensive training period like that, it makes sense to rethink your usual routines. Are the training sessions prescheduled, or is it mostly self-paced? Also, do you anticipate keeping up with your normal work responsibilities, or will everything pause for the training?"
+        },
+        {
+          "role": "user",
+          "content": "Most work tasks still continue, but client pitches and major meetings are on hold for now. The training is a mix of scheduled webinars and self-paced modules, but certification is required. Evenings are booked for group study sessions with colleagues. Honestly, weekends will be tight, so I’m considering shifting some habits to prioritize the study."
+        },
+        {
+          "role": "assistant",
+          "content": "Given that, blocking designated study slots might help. Have you used any specific study techniques or tools before? And how does this disrupt your usual weekend routine—do you normally work or have downtime on Saturdays?"
+        },
+        {
+          "role": "user",
+          "content": "Normally, Saturday mornings are my slot for project planning and catch-up tasks—especially during launch phases. But with this merger training, I’m pausing weekend work stuff and dedicating Saturday mornings exclusively to studying and skills review. It’s the only way I’ll get through these modules without scrambling last minute."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move—setting aside uninterrupted time for study will definitely help with retention. For evenings, since you have group study sessions, do you still prefer solo study, or do you find value in team prep?"
+        },
+        {
+          "role": "user",
+          "content": "I’m actually leaning towards solo study most nights. I use digital flashcard apps to memorize sales scripts and software functions for the merger; it’s way more efficient than group calls unless there’s a scheduled exam prep session. I need quiet to process info, so group sessions are just for when I need clarification or practice scenarios."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—active recall with flashcards is proven for memorization. Are you tracking your progress somehow? It can help motivate and pace your study."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’m logging my daily progress in the training portal. I promised myself a meal at my favorite healthy restaurant whenever I finish a weekly module. It keeps me going, since the work-provided snacks are just not cutting it."
+        },
+        {
+          "role": "assistant",
+          "content": "Nice incentive! Rewards tied to milestones make modules less daunting. Since client meetings are suspended, are you also putting your usual post-pitch restaurant meetups on hold? Or are you still connecting in different ways?"
+        },
+        {
+          "role": "user",
+          "content": "Those meals are definitely on hold. No regular client pitches or in-person meetups for now—that’s all part of the pause while we focus on training. I’ll revisit the rapport-building stuff once the certification phase wraps up."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. When the training wraps, you’ll have a fresh toolkit for building those relationships anyway. Should we look at ways to optimize your daily workflow during the training, or do you feel solid with the time blocks you’ve set up?"
+        },
+        {
+          "role": "user",
+          "content": "I could use ideas for keeping my energy up and stress down between modules. The schedule’s pretty relentless—group study most nights and solo practice after work. I want to avoid burning out or letting fitness slip again."
+        },
+        {
+          "role": "assistant",
+          "content": "Given your routine, keeping movement in your day and prepping healthy meals (as you already do) are solid. Maybe setting a mid-day walk or quick workout between sessions could help reset mentally. Also, how’s your coffee intake during this busier period—are you keeping it to mornings, or is stress pushing you toward late-day caffeine?"
+        },
+        {
+          "role": "user",
+          "content": "Still limiting coffee to two cups before noon, never after 2pm. Headaches creep up when I push it, so sticking to what works. And the step tracker is keeping me honest—I don’t let weekday steps fall below 7,000 even when I’m stuck studying."
+        },
+        {
+          "role": "assistant",
+          "content": "Great self-awareness, especially about not letting fitness slide. For stress, maybe you could layer in some short mindfulness breaks or try evening stretching before solo study. That helps some people reset after intensive cognitive work. Anything you’ve tried in the past for mental recharge?"
+        },
+        {
+          "role": "user",
+          "content": "I haven’t tried mindfulness apps much, but I do read business memoirs for leisure. Maybe I’ll squeeze in half an hour before bed—it helps me wind down and keeps me away from work screens late at night."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Sustained a mild wrist sprain while lifting weights during his Friday morning personal training session; doctor advises avoiding upper body strength exercises for six weeks and limiting screen time to prevent aggravation.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_054",
+            "fact": "Substitutes weekday upper body strength sessions with daily 30-minute walks outdoors or on treadmill to maintain activity during wrist recovery",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Limits evening screen use after 8pm, opting for print books or podcasts to comply with doctor’s advice and minimize wrist strain",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Books a personal training session every Friday morning to stay accountable—never skips workouts two weeks in a row"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Pauses personal training for upper body workouts and instead books guided lower body or cardio-focused sessions every Friday—switches to walking, cycling, or trainer-led stretching for accountability during recovery",
+              "domain": "health_body"
+            },
+            "reason": "Due to the wrist sprain, the doctor advises avoiding upper body strength exercise for six weeks. He must shift focus to activities that do not involve his injured wrist, meaning upper body training sessions are replaced with lower body, cardio, or mobility sessions for accountability."
+          },
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Always reviews slide decks out loud the night before a big meeting—never relies only on silent reading for preparation"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Reviews slide decks using silent practice and makes annotated notes the night before a big meeting—avoids out-loud rehearsal to minimize screen and wrist strain during recovery",
+              "domain": "work_habits"
+            },
+            "reason": "Out-loud rehearsal often involves extended screen use and, for him, gestures or note-taking that put stress on his injured wrist. With doctor-advised limited screen time, he adapts by reviewing silently and relying on written/annotated notes."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I managed to sprain my wrist during my Friday morning training session—classic move. Honestly, it's annoying more than anything. Doctor says absolutely no upper body strength work for six weeks and to limit screen time, or it'll drag out even longer. My routines are totally disrupted. What can I do to stay active and avoid going stir crazy?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ouch—that's rough, especially for someone disciplined about workouts. Staying active with a wrist injury is tricky, but there's still plenty you can do. Have you considered shifting focus to lower body or cardio sessions? Things like cycling, brisk walking, or even guided stretching could keep the routine intact and your mind off the injury. Anything you already enjoy among those?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I actually paused my usual personal training and booked guided lower body and cardio sessions instead—I'm sticking with Fridays for accountability, just no upper body. It's weird not bench pressing but walking and cycling feel decent so far. I've also started doing daily half-hour walks outdoors or on the treadmill to keep my step count up during recovery."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move—consistency is half the battle. The trainer-led sessions on Fridays should help keep you engaged, and daily walks are great for maintaining activity and clearing your head. Are you finding it hard to hit your 7,000-step minimum or is that staying pretty steady?"
+        },
+        {
+          "role": "user",
+          "content": "The steps are actually easier since I'm walking more intentionally now. I'm just worried about the evenings—limiting screen time is tough. I used to wind down by catching up on emails or prepping slide decks, sometimes until late. Now I’m trying to find off-screen ways to decompress, but print books and podcasts only go so far."
+        },
+        {
+          "role": "assistant",
+          "content": "Screen restriction can feel like sensory deprivation if you’re used to winding down with digital work. But podcasts, audiobooks, or even short guided meditations might help smooth the evening. Are you sticking to business memoirs for print reading, or branching out into anything else?"
+        },
+        {
+          "role": "user",
+          "content": "Still mostly business memoirs—I just don’t pick up fiction unless my girlfriend actually recommends something good. With less screen time after 8pm, I started flipping through print books more, though. It's not as stimulating as prepping a pitch deck, but at least it doesn't make my wrist throb."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid adaptation. Speaking of pitch decks, how are you handling prep for client meetings now, especially without your usual out-loud rehearsal routine for slide reviews? Any adjustments there?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's definitely changed. I used to review my slide decks out loud the night before, but now I avoid that entirely since it means more screen time and physical strain with gestures or notes. I’ve switched to silent practice—just making annotated notes while I review the slides quietly the night before big meetings. It’s not ideal, but it keeps the wrist rested."
+        },
+        {
+          "role": "assistant",
+          "content": "Adapting on the fly! Silent review isn’t quite as immersive, but annotated notes can be surprisingly effective for backup during the meeting. Has this impacted your confidence going into client pitch meetings, or are your public speaking skills still improving steadily?"
+        },
+        {
+          "role": "user",
+          "content": "It’s a bit less confidence-boosting, to be honest, but so far I haven’t bombed a meeting. The annotated notes help give me something to anchor to when I get nervous. I just make sure I don’t practice out loud or rely on last-minute screen prep, which limits strain."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. It sounds like you’re managing recovery well and maintaining your routines within reason. Are there any particular challenges you’re facing with networking, meal prepping, or maintaining your sleep schedule now that upper body workouts and late-night email runs are off the table?"
+        },
+        {
+          "role": "user",
+          "content": "Meal prep actually helps more now—I can't risk grabbing fast food and putting on more weight while I can't lift. Sleep schedule has been inconsistent, but I set phone notifications off at night as usual. The main adjustment is cutting evening screen use after 8pm; I've started winding down with podcasts or print books to comply with the doctor's advice and minimize wrist strain."
+        },
+        {
+          "role": "assistant",
+          "content": "Those are smart moves. Podcasts are a good way to fill that gap, especially if you find series related to business, sports, or anything else you enjoy. It sounds like you’ve adapted most parts of your routine—anything you wish you could get back to sooner, or is there an aspect that’s still frustrating?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the hardest part is skipping upper body sessions for so long. I’ll be counting down the six weeks until I can bench again. For now, cardio and walking will have to do; I just want to avoid a setback and heal right the first time. Thanks for talking through all this—I needed the perspective on making these changes work."
+        },
+        {
+          "role": "assistant",
+          "content": "Happy to help! Your approach—switching to lower body and cardio, silent slide deck prep, and evening screen limits—sounds solid. Stick with the recovery plan and the routines you’ve built in the meantime. If you ever need suggestions for new walking routes or podcasts, just ask. Here’s hoping the six weeks fly by."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Started experiencing persistent insomnia and daytime fatigue after several weeks of late-night project work and irregular sleep; doctor recommends a formal sleep study and a strict nightly sleep schedule to address possible sleep disorder.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_058",
+            "fact": "Sets a fixed 10:30pm nightly bedtime alarm and follows a wind-down routine involving dim lighting, reading, and zero device use for at least 30 minutes before sleep",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_059",
+            "fact": "Completes a detailed sleep journal entry each morning tracking hours slept, sleep quality, and fatigue levels for doctor review",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_037",
+              "fact": "Allocates evenings for project-related meetings and urgent follow-ups; willingly shifts personal downtime to late night or weekends during launch phase"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Blocks all work activities after 9pm and reschedules project meetings to earlier slots when possible—strictly saves late evenings for winding down and sleep hygiene due to doctor’s sleep protocol",
+              "domain": "daily_routines"
+            },
+            "reason": "The doctor’s recommendation following a possible sleep disorder diagnosis requires him to institute a strict nightly routine and avoid late-night work interference. He now avoids allocating evenings to work obligations after 9pm and reschedules project tasks earlier."
+          },
+          {
+            "from": {
+              "id": "pref_022",
+              "fact": "Plans the next day's top three priorities every night before bed—never leaves task lists open-ended"
+            },
+            "to": {
+              "id": "pref_057",
+              "fact": "Plans the next day's priorities during early evening—avoids stimulating task management right before bed in order to minimize pre-sleep cognitive activity",
+              "domain": "daily_routines"
+            },
+            "reason": "Pre-bed task planning causes mental stimulation and exacerbates insomnia. The sleep study protocol requires shifting mentally engaging routines away from bedtime."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_055",
+            "fact": "Limits evening screen use after 8pm, opting for print books or podcasts to comply with doctor’s advice and minimize wrist strain",
+            "domain": "daily_routines",
+            "reason": "His temporary wrist recovery is complete; screen time limits were only for wrist strain, now replaced by priorities around sleep hygiene rather than injury management."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my doctor just flagged that all my late project nights might be more than just stress—he thinks there's a real sleep disorder brewing. I'm supposed to do a sleep study and stick to this strict evening routine, but honestly, I'm at a loss for how to juggle work deadlines and still follow all these protocols. Got any strategies for blocking off evening work, but not falling behind?"
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for sharing what’s going on. That’s a tough balance, especially in your business development role. Are most of your project tasks flexible enough to move to earlier hours, or are there obligations that typically run late into the evening?"
+        },
+        {
+          "role": "user",
+          "content": "I used to let project meetings spill over into the evening whenever things got urgent, especially during rollout phases. But now I have to block all work activities after 9pm and shift meetings to earlier slots if possible. The doctor was pretty clear—no work interfering with my wind-down. So late-night work is off the table for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift. Does your team know about these new boundaries? It usually helps to set expectations up front so last-minute requests don’t end up interrupting your recovery window. Have you run into any pushback so far from stakeholders about moving meeting times?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve told my direct manager and a couple clients. Most people are understanding but there are definitely folks who still throw 7pm invites my way. I just decline now unless it’s truly unavoidable. One trick that helps—client pitch meetings are always mornings for me, so at least those don’t cause late chaos. But task planning is giving me trouble. I used to plan my top priorities right before bed, and I guess the mental stimulation is making sleep worse."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense—your mind stays active if you’re planning right before bedtime. Would moving your priority list to earlier in the evening help? Maybe make it part of an after-dinner routine rather than a pre-sleep ritual?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ve started scheduling planning during early evenings now. I avoid stimulating task management right before bed so I don’t rile up my brain. Feels odd, honestly—I'm used to closing out the day by mapping tomorrow, but now I do it before winding down."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid adjustment, even if it feels strange at first. How are you handling wind-down now? Is there a specific routine to help transition away from screens and work, or are you still figuring that part out?"
+        },
+        {
+          "role": "user",
+          "content": "My doctor had me set a fixed 10:30pm nightly bedtime alarm. After 9pm, I follow a wind-down routine: dim lighting, reading (print only), and no devices for at least 30 minutes before sleep. It’s stricter than what I did before—used to just slap on blue-light glasses and scroll, but device-free is supposed to work better."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great—limiting screens and sticking to print reading is ideal. Are podcasts or audiobooks part of your wind-down now, or is it purely print so far? And how’s it working—any noticeable difference in sleep quality yet?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly print books right now. Podcasts were fine when my wrist was acting up, but that’s healed—so the screen limit isn’t about injury anymore, just sleep hygiene. The new routine feels like a stricter reset, but if it actually gets me sleeping I’ll take it."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad your wrist is better! Sleep hygiene is definitely the priority here. Are you tracking your sleep in any particular way for the study, or just observing how you feel?"
+        },
+        {
+          "role": "user",
+          "content": "I started a detailed sleep journal every morning—hours slept, sleep quality, fatigue levels. It’s for the doctor to review, so I have to be pretty consistent. I keep it near my breakfast setup so I don’t forget."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move keeping the journal handy. With your meal prepping and blocked evening work, you’ve really overhauled your pre-bed and morning routines. Is there anything about the new setup that's making daytime fatigue worse, or are things slowly improving—in energy, headaches, anything?"
+        },
+        {
+          "role": "user",
+          "content": "I’m noticing some improvement in headaches and the fatigue hasn’t been as bad on days when I stick to the routine. The hardest part is missing out on late catch-ups—sometimes I used to get a burst of focus at 10 or 11pm, but now that’s reserved strictly for winding down. So it’s taking time to adjust."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—those late-night bursts can be tough to give up, but the consistency should pay off. Let me know if you need more strategies for earlier focus or prepping for the next day without that late window. Otherwise, it sounds like you’re on track—just need to give the new routine time to settle."
+        },
+        {
+          "role": "user",
+          "content": "Definitely. If you have any ideas for squeezing more into the day without slipping back into the old late-night habits, let me know. Thanks for helping me talk through these changes!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Selected by company leadership to represent the business development team at an industry conference in Houston, requiring him to prepare a keynote presentation and participate in panel discussions alongside national competitors.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_061",
+            "fact": "Schedules mock panel sessions with external mentors and senior management before major industry presentations—never relies only on peer review within his project team for conference preparation",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_062",
+            "fact": "Prioritizes networking with national competitors and industry leaders during conferences—actively seeks out cross-firm connections at large events, beyond routine regional outreach",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_053",
+              "fact": "Reviews slide decks using silent practice and makes annotated notes the night before a big meeting—avoids out-loud rehearsal to minimize screen and wrist strain during recovery"
+            },
+            "to": {
+              "id": "pref_060",
+              "fact": "Practices keynote and panel presentations out loud with live audience feedback sessions—avoids silent solo review before major industry events to build confidence and fluency",
+              "domain": "work_habits"
+            },
+            "reason": "Preparing for a high-stakes keynote and panel alongside national competitors requires a shift from solo, silent review to intensive out-loud rehearsal with peer/audience feedback. Live practice helps overcome public speaking anxiety and improves stage presence, which is crucial for this conference."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_049",
+            "fact": "Attends nightly virtual study groups with business development colleagues during merger training—puts launch team meetings on hold until training completion",
+            "domain": "work_habits",
+            "reason": "Merger training is now complete, and his focus has shifted to preparing for the industry conference. The circumstance requiring nightly study groups no longer exists."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big update—I got tapped to represent our business development team at the logistics conference in Houston next month. It's a big deal; I'll be doing a keynote and joining a panel with some national competitors. Public speaking is still pretty new for me, and this is definitely a step up from pitching clients. Any advice for prepping keynote presentations and managing nerves before panels?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats—that's a huge opportunity! These kinds of events definitely raise the stakes compared to smaller client pitches. For prepping keynotes, out-loud rehearsal really helps; have you tried practicing with a live audience, like colleagues or friends, or do you usually review presentations silently?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I'm shifting to out-loud rehearsal for this one. Used to keep prep just between me and my screen, but that's not cutting it anymore—I've started practicing with live audiences, even getting feedback from folks outside my team. It feels way more effective, especially for building confidence before something this public."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move—live feedback always exposes things you might miss solo. When you get feedback, do you stick to project teammates or loop in external mentors or execs for bigger events? Sometimes broader perspective makes all the difference with panel prep."
+        },
+        {
+          "role": "user",
+          "content": "For the conference, I'm actually scheduling mock panel sessions with mentors and senior management. It's new for me—I usually keep review internal, but I realized just my project team isn't enough for something on this scale. External perspective sharpens the delivery and helps anticipate tougher questions."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a great strategy. Mock panels especially can help rehearse handling curveball questions and keep responses crisp. How are you approaching networking at the event? These conferences are prime for building bigger industry connections, not just with the usual regional folks."
+        },
+        {
+          "role": "user",
+          "content": "Definitely planning to prioritize networking with national competitors and industry leaders this time. Normally I stick to regional outreach, but the conference is a chance to connect way beyond that—I want to act on cross-firm introductions, not just stay in my comfort zone."
+        },
+        {
+          "role": "assistant",
+          "content": "You're thinking bigger, which is exactly the right approach. When you get those introductions, it often helps to prep a few tailored talking points that bridge your platform rollout to industry trends—they create memorable conversations. By the way, will your prep routine change much now that you're focused on the conference? Are you still joining those nightly virtual study groups you used during merger training, or has that wound down?"
+        },
+        {
+          "role": "user",
+          "content": "Good catch—that's actually changed. I dropped the nightly study groups with the team; merger training wrapped up last week and now my focus is all conference prep. Launch team meetings are on hold, too. No more nightly sessions for now."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—those group sessions demand a lot of collective brainpower but aren’t needed for conference prep. So, to summarize: you’re rehearsing keynotes out loud with live audiences, setting up mock panel sessions with mentors and execs, prioritizing cross-firm networking, and have dropped nightly study groups. Is there anything else about the conference or travel logistics that you’d like help planning for?"
+        },
+        {
+          "role": "user",
+          "content": "I think that's the key stuff. Just need to lock in my travel and block time for all these prep sessions. Appreciate the help—it feels more manageable now."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Drafts partnership outreach emails in templates—never sends cold emails without customizing the opening paragraph",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Blocks the hour after in-office networking events for immediate follow-up notes—never delays outreach to new contacts overnight",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Preps all weekday lunches on Sunday—never grabs fast food during the week",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Limits coffee to two cups before noon—never drinks caffeinated beverages after 2pm to avoid evening headaches",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Wears blue-light blocking glasses after 9pm when using screens—never answers emails in bed to reduce sleep disruption",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Logs daily steps with his fitness tracker—never lets weekday step count fall below 7,000",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Calls his mother every Sunday afternoon at the same time—never misses unless traveling",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Follows up with three new contacts after each networking event—never connects on LinkedIn without a personalized note",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Watches one live sports game (in person or on TV) every weekend—never misses a Dallas Mavericks home game on TV",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Chooses hiking or outdoor walks in local parks over indoor activities on Sundays—never spends an entire weekend indoors",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Reads business memoirs for leisure—never picks up fiction unless recommended by his girlfriend",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Schedules at least one spontaneous city exploration day each month—never revisits the same neighborhood twice in a row",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts each weekday with a 10-minute news briefing while making breakfast—never checks work email before eating",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Shops for groceries only on Saturday mornings—never does midweek runs unless something is urgent",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Sets his phone to Do Not Disturb from 10pm to 7am—never allows social notifications to interrupt sleep",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Spends most evenings in person with his girlfriend while she stays in Dallas—no longer relies on scheduled video calls or frequent texting to maintain connection",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "Travels to partner offices for in-person pitch meetings—no longer hosts major presentations virtually from conference rooms or home",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Schedules client pitch meetings according to partner office availability, often accommodating afternoon slots due to travel constraints—no longer able to guarantee morning-only meetings",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Chooses to listen to business podcasts during intercity drives instead of music to stay mentally engaged while traveling solo",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_034",
+        "fact": "Cleans his apartment on Saturday mornings or whenever his father is scheduled to visit—flexibly moving chores to ensure the space is ready for company",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Keeps guest bedding and toiletries ready at all times in his apartment for his father's frequent visits—never stores guest items out of immediate reach",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Schedules at least one dinner out each week with his father during visits—avoids repeating the same restaurant within a month when dining with family",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_041",
+        "fact": "Experiments with new plant-based recipes at home twice a month—no longer cooks or eats barbecue with red meat or fried foods",
+        "domain": "leisure_hobbies",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Switches to heart-healthy dinners on meeting evenings—opts for reheated home-cooked meals, salads, or grilled fish, avoiding takeout unless it's clearly labeled cholesterol-friendly",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_043",
+        "fact": "Reads nutrition labels for all new grocery purchases—never buys packaged foods without checking cholesterol content",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_044",
+        "fact": "Takes prescribed cholesterol medication every morning with breakfast—never skips a dose, even when traveling",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_045",
+        "fact": "Sends regular WhatsApp voice notes to his sister in Spain—no longer relies on morning exam texts; avoids sharing family updates on social media to protect her privacy abroad",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Coordinates special one-on-one video calls with his sister twice a month to maintain connection while she's abroad—never schedules them during her exam weeks",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_047",
+        "fact": "Saves photos and family updates to a shared Google Drive folder so his sister can access news from home asynchronously",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_048",
+        "fact": "Allocates Saturday mornings exclusively for study and skills review while completing the mandatory merger training—pauses weekend work tasks for the duration of the certification period",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_050",
+        "fact": "Uses digital flashcard apps nightly to memorize merger-specific sales scripts and software functions—prefers solo study over group calls except for scheduled exam prep sessions",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_051",
+        "fact": "Tracks daily progress in the training portal and rewards himself with a meal from his favorite healthy restaurant only after finishing each weekly module",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_052",
+        "fact": "Pauses personal training for upper body workouts and instead books guided lower body or cardio-focused sessions every Friday—switches to walking, cycling, or trainer-led stretching for accountability during recovery",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_054",
+        "fact": "Substitutes weekday upper body strength sessions with daily 30-minute walks outdoors or on treadmill to maintain activity during wrist recovery",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_056",
+        "fact": "Blocks all work activities after 9pm and reschedules project meetings to earlier slots when possible—strictly saves late evenings for winding down and sleep hygiene due to doctor’s sleep protocol",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_057",
+        "fact": "Plans the next day's priorities during early evening—avoids stimulating task management right before bed in order to minimize pre-sleep cognitive activity",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_058",
+        "fact": "Sets a fixed 10:30pm nightly bedtime alarm and follows a wind-down routine involving dim lighting, reading, and zero device use for at least 30 minutes before sleep",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_059",
+        "fact": "Completes a detailed sleep journal entry each morning tracking hours slept, sleep quality, and fatigue levels for doctor review",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_060",
+        "fact": "Practices keynote and panel presentations out loud with live audience feedback sessions—avoids silent solo review before major industry events to build confidence and fluency",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_061",
+        "fact": "Schedules mock panel sessions with external mentors and senior management before major industry presentations—never relies only on peer review within his project team for conference preparation",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_062",
+        "fact": "Prioritizes networking with national competitors and industry leaders during conferences—actively seeks out cross-firm connections at large events, beyond routine regional outreach",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Prefers to schedule all client pitch meetings before noon—never accepts afternoon slots unless unavoidable",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_031",
+        "reason": "Twice-monthly travel for in-person pitches means his schedule must align with partner office availability, often resulting in afternoon meetings after arriving onsite."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Switches to working from a quiet conference room for virtual presentations—never hosts high-stakes calls from home",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "Company's new protocol mandates that all major deal pitches take place in-person at client offices across Texas, making virtual presentations from conference rooms or home obsolete for these events."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Always reviews slide decks out loud the night before a big meeting—never relies only on silent reading for preparation",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_053",
+        "reason": "Out-loud rehearsal often involves extended screen use and, for him, gestures or note-taking that put stress on his injured wrist. With doctor-advised limited screen time, he adapts by reviewing silently and relying on written/annotated notes."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Books a personal training session every Friday morning to stay accountable—never skips workouts two weeks in a row",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_052",
+        "reason": "Due to the wrist sprain, the doctor advises avoiding upper body strength exercise for six weeks. He must shift focus to activities that do not involve his injured wrist, meaning upper body training sessions are replaced with lower body, cardio, or mobility sessions for accountability."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Video-calls his girlfriend every Thursday evening—never lets more than two days pass without at least texting",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "His girlfriend is now living with him for three months, making regular in-person time the new norm. The need for scheduled video calls and daily texting becomes obsolete."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Sends a morning check-in text to his sister on days he knows she has an exam—never posts family matters on social media",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_045",
+        "reason": "With his sister relocating overseas for a study-abroad program, her exam schedule and local time zone are unpredictable and texting routines (especially morning messages) may no longer make sense. Instead, he adopts asynchronous voice notes as his main way to stay in touch, accommodating time zone and lifestyle changes."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Always joins the monthly family Zoom call with camera on—never multitasks during family calls",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "His sister will not be able to join the regular family Zoom calls from Spain due to travel and academic conflicts. The long-standing full-family Zoom routine ceases for the upcoming year, making this preference temporarily irrelevant."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Experiments with new barbecue recipes at home twice a month—never eats at the same restaurant more than once a month",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_041",
+        "reason": "Due to the high cholesterol diagnosis and the doctor's strict advice to eliminate red meat and fried foods, traditional barbecue recipes—typically heavy on smoked beef, pork, or fried sides—are medically inadvisable. He will now shift to trying plant-based or lean protein alternatives instead."
+      },
+      {
+        "id": "pref_022",
+        "fact": "Plans the next day's top three priorities every night before bed—never leaves task lists open-ended",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_057",
+        "reason": "Pre-bed task planning causes mental stimulation and exacerbates insomnia. The sleep study protocol requires shifting mentally engaging routines away from bedtime."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Cleans his apartment Friday evenings to mark the transition to weekend—never leaves chores for Sunday nights",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_034",
+        "reason": "With his father planning frequent stays, cleaning is now driven by guest visits rather than a fixed Friday routine. He prioritizes preparing for family rather than strictly anchoring chores to Friday evenings."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Plans and prepares homemade dinners together with his girlfriend at least four nights a week—intentionally avoids eating out except for special occasions during her stay",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "This preference depended on his girlfriend living in Dallas. She is no longer staying with him, so weekday homemade couple dinners are not possible."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Allocates Sunday afternoons for exploring new Dallas neighborhoods or attractions as a couple—chooses joint outings over solo city exploration during her visit",
+        "domain": "leisure_hobbies",
+        "created_at_session": 0,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "Joint Sunday outings were tied to his girlfriend's stay in Dallas; with her gone, this preference is irrelevant."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Adjusts evening routines to minimize work-related tasks after 8pm, prioritizing shared downtime with his girlfriend",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_037",
+        "reason": "Leading a cross-functional launch team with weekly evening meetings and accelerated deadlines makes minimizing work tasks after 8pm impossible. His evening schedule is now dictated by project needs."
+      },
+      {
+        "id": "pref_033",
+        "fact": "Arranges a post-pitch meal at a local restaurant with clients after major meetings to build rapport—never leaves immediately after concluding business",
+        "domain": "work_habits",
+        "created_at_session": 1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "Major client meetings and post-pitch meals are on hold during the intensive merger training; staff are not conducting regular client pitches or in-person meetings for this period."
+      },
+      {
+        "id": "pref_037",
+        "fact": "Allocates evenings for project-related meetings and urgent follow-ups; willingly shifts personal downtime to late night or weekends during launch phase",
+        "domain": "daily_routines",
+        "created_at_session": 3,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_056",
+        "reason": "The doctor’s recommendation following a possible sleep disorder diagnosis requires him to institute a strict nightly routine and avoid late-night work interference. He now avoids allocating evenings to work obligations after 9pm and reschedules project tasks earlier."
+      },
+      {
+        "id": "pref_038",
+        "fact": "Attends weekly evening virtual meetings with cross-functional launch team—never schedules social activities on meeting nights",
+        "domain": "work_habits",
+        "created_at_session": 3,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_049",
+        "reason": "During the two-month merger training, launch team meeting schedules are suspended so he can participate in frequent virtual study groups with staff for exam prep; social conflicts now revolve around training, not project launch team duties."
+      },
+      {
+        "id": "pref_039",
+        "fact": "Keeps dinner simple on meeting evenings, switching to quick reheated meals or healthy takeout to avoid skipping meals during long work sessions",
+        "domain": "daily_routines",
+        "created_at_session": 3,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_042",
+        "reason": "His new heart health regimen means generic takeout (often fast or unhealthy) is now risky, especially at night. He will only choose meal options known to be low in cholesterol and saturated fat, favoring home-cooked or vetted healthy places."
+      },
+      {
+        "id": "pref_040",
+        "fact": "Sets aside Saturday mornings for project planning and catch-up tasks while launch deadlines are active—routinely works weekends for this phase",
+        "domain": "work_habits",
+        "created_at_session": 3,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_048",
+        "reason": "The mandatory, intensive merger training takes priority over normal project planning during weekends; he must dedicate Saturday mornings to certification requirements and temporarily suspend project-specific weekend work until training ends."
+      },
+      {
+        "id": "pref_049",
+        "fact": "Attends nightly virtual study groups with business development colleagues during merger training—puts launch team meetings on hold until training completion",
+        "domain": "work_habits",
+        "created_at_session": 6,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "Merger training is now complete, and his focus has shifted to preparing for the industry conference. The circumstance requiring nightly study groups no longer exists."
+      },
+      {
+        "id": "pref_053",
+        "fact": "Reviews slide decks using silent practice and makes annotated notes the night before a big meeting—avoids out-loud rehearsal to minimize screen and wrist strain during recovery",
+        "domain": "work_habits",
+        "created_at_session": 7,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_060",
+        "reason": "Preparing for a high-stakes keynote and panel alongside national competitors requires a shift from solo, silent review to intensive out-loud rehearsal with peer/audience feedback. Live practice helps overcome public speaking anxiety and improves stage presence, which is crucial for this conference."
+      },
+      {
+        "id": "pref_055",
+        "fact": "Limits evening screen use after 8pm, opting for print books or podcasts to comply with doctor’s advice and minimize wrist strain",
+        "domain": "daily_routines",
+        "created_at_session": 7,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "His temporary wrist recovery is complete; screen time limits were only for wrist strain, now replaced by priorities around sleep hygiene rather than injury management."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:35:39.487319"
+}

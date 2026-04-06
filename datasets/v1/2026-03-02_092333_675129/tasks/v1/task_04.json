@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_961c40e5",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_039",
+        "fact": "Strictly avoids all weeknight social activities after 8pm to guarantee uninterrupted pre-sleep routine for CPAP use, regardless of work demands",
+        "supersedes": {
+          "id": "pref_028",
+          "fact": "Limits social plans on weekdays to accommodate early work hours — avoids late-night outings"
+        }
+      },
+      {
+        "id": "pref_026",
+        "fact": "Schedules urgent Paris-based client calls exclusively during early morning hours (before 10am local) to align with Paris mid-day — never after 5pm local anymore",
+        "supersedes": {
+          "id": "pref_001",
+          "fact": "Schedules all urgent Paris-based client calls after 5pm local — never during routine daytime hours"
+        }
+      },
+      {
+        "id": "pref_040",
+        "fact": "Implements a strict nightly wind-down routine: no screens after 9pm, CPAP machine set up by 10pm, and lights out at the same time daily, regardless of work or family obligations"
+      },
+      {
+        "id": "pref_006",
+        "fact": "Strictly avoids dairy in all meals — checks labels and never orders creamy dishes at restaurants"
+      },
+      {
+        "id": "pref_049",
+        "fact": "Allocates one long weekend each school term to travel to Toronto for father-daughter time, planning these visits well in advance"
+      },
+      {
+        "id": "pref_018",
+        "fact": "Watches classic French films at home every Friday night — never opts for Hollywood blockbusters"
+      }
+    ]
+  },
+  "persona": "A bilingual helpdesk specialist assisting clients in both French and English"
+}

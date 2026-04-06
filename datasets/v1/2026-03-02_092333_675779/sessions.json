@@ -1,0 +1,1480 @@
+{
+  "persona": "A first-generation college student pursuing a master's in biology",
+  "persona_id": "persona_20260302_093511",
+  "expanded_persona": {
+    "base_persona": "A first-generation college student pursuing a master's in biology",
+    "age": 24,
+    "gender": "female",
+    "location": "Denver, CO",
+    "work_education": [
+      "Second year master's student at University of Colorado Denver, specializing in molecular genetics",
+      "Works as a teaching assistant for undergraduate biology labs (12 hrs/week) to help cover tuition",
+      "Recently began thesis research on gene expression in prairie vole populations; spends evenings collecting specimens",
+      "Juggling her coursework with a competitive research grant application due in two months"
+    ],
+    "health_wellness": [
+      "Experiences frequent migraine headaches, managed with prescription medication and dietary changes",
+      "Cycles to campus most days for exercise and to save on transportation costs",
+      "Often struggles with anxiety around deadlines and financial pressures, attends weekly counseling sessions",
+      "Mostly prepares meals at home but sometimes skips breakfast when rushed"
+    ],
+    "family_relationships": [
+      "Lives alone in a small studio apartment five miles from campus",
+      "Parents immigrated from El Salvador; father works construction, mother is a school cafeteria worker",
+      "Supports her younger brother, a high school junior, with tutoring and advice about college applications",
+      "Visits her parents every Sunday for dinner, often helps translate paperwork and manage family finances"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Schedules thesis lab work only in the evenings to avoid daytime distractions — never collects specimens during office hours",
+        "Prepares lab materials for her teaching assistant shifts the night before — never leaves setup until the morning",
+        "Drafts grant applications in library quiet rooms — never works on funding proposals at home",
+        "Replies to student emails in batches twice a day; avoids instant responses to preserve focus",
+        "Uses color-coded planners to track deadlines for research, teaching, and coursework"
+      ],
+      "health_body": [
+        "Avoids chocolate, caffeine, and processed meats — never consumes them due to migraine triggers",
+        "Cycles to campus regardless of weather — never takes public transit unless physically unwell",
+        "Skips breakfast if pressed for time but always prepares lunch at home to avoid cafeteria food",
+        "Schedules counseling sessions for early afternoons on Fridays — never weekends or evenings",
+        "Logs migraine symptoms daily using a mobile app and reviews patterns with her counselor every month"
+      ],
+      "social_relationships": [
+        "Visits family for Sunday dinner every week without fail — never misses unless out of town",
+        "Tutors her younger brother virtually through video chats on weekday evenings — never in person except for rare family visits",
+        "Helps parents with translation and paperwork during dinner visits — never delegates these tasks to others",
+        "Communicates primarily through WhatsApp — never uses email for family matters",
+        "Maintains friendships through group study sessions — avoids large social gatherings and parties"
+      ],
+      "leisure_hobbies": [
+        "Explores local nature trails by bike every Saturday morning — never stays inside unless weather is severe",
+        "Attends monthly book club meetings at the neighborhood library — never participates in online book discussions",
+        "Cooks complex Salvadoran dishes from scratch on weekends — avoids frozen or packaged meals",
+        "Watches wildlife documentaries exclusively in Spanish for language practice",
+        "Plans one new museum or art exhibit outing each month — never revisits the same exhibit twice"
+      ],
+      "daily_routines": [
+        "Meal preps lunches and dinners every Sunday night for the week — never buys pre-made meals",
+        "Checks email only after finishing morning tea — never before getting out of bed",
+        "Reviews her color-coded planner each night before sleep to update deadlines and commitments",
+        "Makes weekly grocery lists based on Sunday dinner recipes and family requests — never shops impulsively",
+        "Limits phone notifications to urgent research and family messages — silences all others during study hours"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Her younger brother was accepted to a prestigious summer STEM program in another state, prompting her parents to ask her to help coordinate his travel arrangements, applications for financial aid, and new housing options.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Prefers scheduling extended phone/video calls with her brother every weekend to discuss his progress and address travel and housing issues — avoids short, daily chats",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Uses online spreadsheets and shared folders to track her brother’s financial aid paperwork and travel plans — never relies on text threads alone for coordination",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Tutors her younger brother virtually through video chats on weekday evenings — never in person except for rare family visits"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Arranges and coordinates her brother’s academic support and logistics remotely — no longer tutors him directly, but manages his travel, housing, and financial aid for his out-of-state STEM program",
+              "domain": "social_relationships"
+            },
+            "reason": "Her brother’s acceptance to an out-of-state summer STEM program, combined with her parents’ request for help, shifts her involvement from direct tutoring to supporting his relocation and administrative needs. She can’t tutor him directly anymore, but takes on a new role of coordinator."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, quick update—my younger brother just got accepted into that big summer STEM program out of state! My parents are super proud but, unsurprisingly, they've already asked me to help sort out his travel, financial aid, and housing. Juggling everything feels overwhelming, especially with my grant application deadline coming up. Any thoughts on organizing all this without dropping the ball on my own stuff?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that’s amazing news for your brother! Congrats to him and your family—and to you for being the go-to coordinator. The situation sounds demanding. Since you’re balancing grad school and research deadlines, could breaking down your brother’s tasks into checklists or timelines help? Are there particular parts, like travel or paperwork, that seem most urgent or complicated right now?"
+        },
+        {
+          "role": "user",
+          "content": "It's mostly the paperwork—there are a ton of forms for financial aid, housing applications, and travel arrangements. I want to keep all his stuff organized separately from my own, so I don’t mix up deadlines. I used to tutor him directly a few nights a week, but with him going out of state I’m switching to handling logistics from afar instead. So now my focus is more on coordinating than tutoring."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it, so your role is shifting from academic support to being the logistics manager. That’s a big change! For organizing paperwork, have you tried a shared drive or digital folder system? You could create dedicated folders for financial aid, travel, and housing—maybe even spreadsheets to track status and deadlines. Would something like Google Drive work for you and your brother?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, Google Drive is what I’m using. I actually set up an online spreadsheet and a folder to keep all his travel and financial aid docs. It’s way better than sorting through endless WhatsApp texts. I don’t want to lose track of anything, especially since the deadlines are scattered and my own planner is already pretty packed."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move—shared folders eliminate a lot of chaos from messaging threads. Do you and your brother meet regularly to review his progress, or is it more ad hoc as things come up? Would a weekly check-in help streamline updates and questions?"
+        },
+        {
+          "role": "user",
+          "content": "We’re actually moving to extended phone or video calls every weekend instead of short daily chats. It gives us a chunk of time to talk through housing, travel logistics, and anything he needs help with. The daily stuff was too scattered for keeping track of all the moving parts right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great adjustment—longer, focused check-ins should help everyone stay on the same page. For travel, are you handling booking flights and planning his route, or have you found any tools that make it easier? Also, is your brother comfortable navigating these systems himself, or are you the main point person?"
+        },
+        {
+          "role": "user",
+          "content": "I’m definitely the main point person. He’s a bit overwhelmed and my parents aren’t familiar with online booking or forms, so most of it falls to me. I’ve been cross-referencing travel options in our shared spreadsheet and mapping out deadlines for applications. It’s a lot, but batching things and having everything organized online helps."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve built a solid structure for handling the new responsibilities. Since you’re managing so much, maybe try setting aside a designated planning hour each week—maybe after your weekly call with him—to update spreadsheets and follow up on tasks. That separation could keep your grad work and his logistics from overlapping too much."
+        },
+        {
+          "role": "user",
+          "content": "That’s actually a good idea—I think scheduling a planning hour after our weekend calls could help me recap what needs to be done and update things. I really need to keep clear boundaries so my thesis and grant writing don’t get buried under his paperwork. Thanks, this helps clarify how to approach it!"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Her father suffered a workplace injury that required surgery, leading her mother to ask for more help managing bills, appointments, and communication with her father's doctors and employer.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Checks her phone for family updates and urgent messages multiple times daily — prioritizes responsiveness to her parents and father's medical situation over previous notification limits",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Organizes medical and financial documents for her father using a digital folder shared with her mother — newly collaborative tracking of paperwork",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Helps parents with translation and paperwork during dinner visits — never delegates these tasks to others"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Handles translation, medical paperwork, and coordination for her parents throughout the week via phone and email — no longer confines these tasks to Sunday dinner visits",
+              "domain": "social_relationships"
+            },
+            "reason": "Her father's injury requires ongoing communication with doctors and his employer, plus regular help with bills and appointments. Her mother specifically requested more support outside their Sunday dinner tradition."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_024",
+            "fact": "Makes weekly grocery lists based on Sunday dinner recipes and family requests — never shops impulsively",
+            "domain": "daily_routines",
+            "reason": "Her father’s injury disrupts the weekly Sunday dinner routine, causing unpredictable family needs and less reliance on formal dinner menus. Grocery planning for Sunday dinners is no longer feasible."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could really use some help structuring my week. My dad was hurt at work and had surgery, so now I’m juggling my usual grad school routine plus medical paperwork, bills, and conversations with doctors and his employer. My mom’s asked me to help a lot more—way beyond our usual Sunday dinner check-ins. Any tips for balancing all this without dropping my research or coursework?"
+        },
+        {
+          "role": "assistant",
+          "content": "I’m sorry to hear about your dad’s injury—that sounds stressful and overwhelming. Balancing grad school and family responsibilities is tough even in normal times. Since your mom needs more help outside the Sunday dinners, what’s changed most in your day-to-day routine? Are you finding it harder to focus on your thesis work, or is the workload manageable for now?"
+        },
+        {
+          "role": "user",
+          "content": "The biggest thing is I’m handling translation and medical paperwork for my parents throughout the week, not just on Sundays anymore. It’s a lot of phone calls, emails, and scheduling, after I finish coursework or TA shifts. I used to keep all family tasks for Sundays, but that just isn’t possible with everything that’s going on."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift. Having to respond to urgent tasks throughout the week instead of batching them must make scheduling harder. Are you using any tools or calendars to keep track, or is it more ad hoc? And has this affected how you plan your research evenings, or the time you set aside for grant writing?"
+        },
+        {
+          "role": "user",
+          "content": "I started organizing medical and financial documents in a digital folder and shared it with my mom. We need to coordinate everything, since she’s handling some things on her own during the day while I’m at school. Before, I did all the paperwork myself at my parents’ place, but with unpredictable updates and appointments, we have to collaborate more and track things together online."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a smart move—digital folders can make information sharing easier and reduce mistakes. Are you setting regular check-ins with your mom, or checking updates as needed? Has this new system changed how you handle notifications—like do you check your phone more often for family updates than you used to?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. I check my phone multiple times a day for family updates and urgent messages now—it’s become a priority with my dad’s medical situation. I used to limit phone notifications so I could focus on study and lab work, but now I need to be more responsive. I guess that’s another adjustment I hadn’t fully considered."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Emergencies and constant updates mean stricter notification boundaries aren’t feasible. One thing you could try is designating specific response windows during your least busy times, so you’re still available for urgent family needs but aren’t constantly interrupted during deep work. Is your color-coded planner helping you track these new commitments?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve updated my planner, but it’s messy. With my dad’s injury, our Sunday dinner routine is disrupted—sometimes we skip it if he’s not well enough. I used to make weekly grocery lists based on Sunday dinner recipes and family requests, but now family needs are unpredictable, so grocery planning isn’t formal anymore. Sometimes I just shop based on what we need for appointments or recovery meals."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s understandable—injury recovery makes routines harder to maintain. Flexible grocery planning is probably best until things stabilize. For your own schedule, do you find meal prep and planning still helps, or are you having to improvise more often during the week as well?"
+        },
+        {
+          "role": "user",
+          "content": "For myself, I still meal prep lunches and dinners Sunday nights, but grocery lists for family are much more impulsive now. I just focus on whatever helps my dad or what my mom requests. It’s definitely less predictable, but keeping my own meals prepped helps me stay on track for school."
+        },
+        {
+          "role": "assistant",
+          "content": "Good—maintaining some personal structure can help you feel less overwhelmed. As for integrating family updates with your research, maybe you could use scheduled reminders or task lists to help manage both. If you ever need templates or tools for tracking medical paperwork or organizing appointments, let me know. Would something like that help, or are you set for now?"
+        },
+        {
+          "role": "user",
+          "content": "Templates for tracking appointments and paperwork might actually help—especially since I’m coordinating between my parents, doctors, and his employer. I’ll take any suggestions you have. Thanks for talking this through, it’s helped clarify what’s changed and what needs more structure."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—happy to help. I can recommend a few digital tools for collaborative document management and appointment tracking, and share templates for medical expenses and communication logs if needed. Let me know what format works best for your family, and I’ll send some links and sample files. And if anything else shifts in your routine, feel free to check in for more ideas."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Awarded a competitive research grant for her prairie vole genetics thesis, which includes funding for additional lab equipment and requires her to present project updates monthly to a university oversight committee.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Prepares a summary of research findings at the end of each month for oversight committee reports — never skips documentation even during busy weeks",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_034",
+            "fact": "Uses newly granted lab equipment as a priority for all thesis experiments, preferring these tools over previously borrowed or shared items",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Schedules thesis lab work only in the evenings to avoid daytime distractions — never collects specimens during office hours"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Schedules thesis lab work and specimen collection during both daytime and evening hours in order to accommodate monthly oversight committee presentations and increased research demands from the new grant",
+              "domain": "work_habits"
+            },
+            "reason": "The research grant now requires monthly updates and makes additional lab equipment available, resulting in more intensive data collection and stricter timelines. She can no longer limit lab work to evenings; she now utilizes daytime hours to meet committee expectations and research output goals."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news—I was just awarded the prairie vole genetics grant! Super excited, but it's already getting intense. Between the new equipment rollout and the monthly committee presentations, I'm scrambling to rebalance. I need help figuring out how to manage all this added lab work without letting teaching or coursework slip. What would you suggest for prioritizing when everything feels urgent now?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That's a huge achievement. With the extra demands from the grant, have you found any slack in your current schedule, or is every block already allocated? Sometimes mapping out exactly what's fixed and what's flexible helps uncover pockets of time, even if they're small."
+        },
+        {
+          "role": "user",
+          "content": "Honestly, my old way was to do thesis lab work and specimen collection only in the evenings—kept things quieter, less distraction. But now I can't stick to that. Grant deadlines and committee meetings mean I have to use daytime hours too, even during office hours. It's been tricky coordinating that around teaching assistant shifts."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Having to fit lab work into daytime hours probably adds scheduling friction, especially since you're teaching as well. Have you tried blocking out fixed hours for each activity on a color-coded planner, or some other system? Or is the schedule changing week to week based on committee needs?"
+        },
+        {
+          "role": "user",
+          "content": "I'm still keeping the color-coded planner—it's my lifeline honestly. But now I'm adjusting blocks more often, since specimen collection can spill into the day if there's an equipment booking or committee update. Speaking of equipment, the grant came with new tools and I'm prioritizing them for all my thesis experiments. No more scrambling to borrow gear."
+        },
+        {
+          "role": "assistant",
+          "content": "Prioritizing the new equipment is smart, especially since reliability matters now. Are there any new workflows or protocols you need to adopt for those tools, or are they just upgrades from the older shared items?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly upgrades—faster and more sensitive. I'm reworking some protocols but that's manageable. The bigger wrinkle is documentation. The grant requires a summary report at the end of every month for the committee. So I have to prep formal updates, even if the week is slammed. That’s new for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Monthly reporting is definitely an extra layer! Would it help to draft your summary in small pieces as you go (say, after each experiment or specimen collection), rather than leaving it all to the end of the month? That way, even during hectic weeks, you wouldn’t risk skipping documentation."
+        },
+        {
+          "role": "user",
+          "content": "That's a good idea. I'm actually starting to jot brief findings after each session, so compiling the summary isn't as overwhelming. I never skip the documentation now—it's non-negotiable given the grant's oversight. I used to let myself slide if things were busy, but that's not possible anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid adjustment. Since you’re juggling so many tasks, do you have a way to signal to yourself what’s truly urgent versus just important? It might make prioritization less stressful if the oversight requirements get flagged visually, or you use a checklist specifically for committee deliverables."
+        },
+        {
+          "role": "user",
+          "content": "Actually, I started marking committee-related tasks in red on the planner to keep those top of mind. The demand is more than before, but at least now I don't lose track of what needs to be documented or presented. Balancing everything is still tough—especially with the new habit of working in both daytime and evenings—but I think these tweaks are moving me in the right direction."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re adapting well given the new pressures. Do you anticipate any conflicts between your teaching duties and daytime lab work, or have you managed to sync both so far? If a major rush hits, would shifting teaching prep to earlier or later times help minimize overlap?"
+        },
+        {
+          "role": "user",
+          "content": "If needed, I can prep lab materials for TA shifts the night before—I've never left setup until morning anyway, so that's not a variable. The real change was having to give up my evening-only lab routine for more flexibility. But as long as I stay strict about documentation and use the new equipment first, the rest just needs constant vigilance."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re finding a workable rhythm! Having reliable equipment and well-defined processes should help maintain consistency. Is there anything else about the grant or committee requirements that’s tripping you up, or are you just focused on keeping all the plates spinning?"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "University lab supervisor announced new safety protocols that require all field specimen collection to occur during daytime hours; evening work is no longer permitted due to updated insurance regulations.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_036",
+            "fact": "Blocks early mornings for field specimen collection to comply with new daytime-only research protocols — avoids midday due to sun exposure and migraine risk",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_032",
+              "fact": "Schedules thesis lab work and specimen collection during both daytime and evening hours in order to accommodate monthly oversight committee presentations and increased research demands from the new grant"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Schedules all thesis specimen collection and lab work exclusively during daytime hours due to new safety regulations — no longer conducts evening field or lab activities",
+              "domain": "work_habits"
+            },
+            "reason": "The university now prohibits all specimen collection and research lab work in the evening due to revised insurance policies and safety protocols. She must restrict all field and lab activities for her thesis to daytime hours."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I need some help reworking my lab schedule. The university just announced new safety rules—no more evening specimen collection, everything has to happen during daytime hours for insurance reasons. I used to collect specimens after my TA shifts in the evenings, since labs are less crowded and I could focus, but that's not allowed now. Any ideas for managing field work so I can still get enough samples for my thesis?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough shift—especially if evenings worked well for focused research. Are you able to flex your daytime hours at all? Maybe mornings would be quieter before most people are around. Or could you adjust your TA or coursework scheduling to open up some daytime blocks for fieldwork?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’m thinking early mornings are probably my best bet. I can block those out for specimen collection and move some prep for teaching to later, though it means more juggling. I’d rather avoid midday—sun exposure triggers migraines, and I usually feel worse if I’m outside then."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, especially given the migraine issue. Early mornings might give you cooler temps and fewer distractions. Would shifting your teaching prep to afternoons work? And are there campus resources—like quiet rooms or storage—that could help streamline transitions between your TA duties and fieldwork?"
+        },
+        {
+          "role": "user",
+          "content": "I usually prep lab materials for my TA shifts the night before—I’ve never left setup until the morning. If I switch to mornings for specimen collection, I’ll just have to be careful not to overlap time slots; probably review my planner to work out the logistics. Quiet rooms are great for grant stuff, but not so necessary for prepping lab kits."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it, so keeping evening prepping for TA work and switching research to mornings. That could help keep your workflow stable. Have you thought about how this impacts energy levels? Cycling to campus early for fieldwork, then TA shifts later—will that be sustainable, or do you need to factor in extra rest or meal adjustments?"
+        },
+        {
+          "role": "user",
+          "content": "Good point—I’ll probably have to get up earlier, which means I might skip breakfast more often if I'm rushed. Lunch I always make at home—cafeteria food is a migraine trigger. I just need to make sure my meal prep covers early starts, maybe pack breakfast for after collection."
+        },
+        {
+          "role": "assistant",
+          "content": "Packing breakfast sounds like a solid workaround, especially since you’re avoiding cafeteria food. Do you use your color-coded planner to track these new schedule blocks? Maybe you could add early morning fieldwork as a recurring task to help visualize the adjustments. Also, logging migraines after morning sessions might help you spot any new patterns."
+        },
+        {
+          "role": "user",
+          "content": "Definitely—I update my planner every night, so I’ll block early mornings specifically for field collection. And yeah, I log migraine symptoms daily in an app and review them with my counselor monthly. Scheduling counseling on Friday afternoons should stay manageable, since I won’t need to do fieldwork then."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you have a strong system for keeping things organized and monitoring your health. One thing: will these changes affect your ability to tutor your brother? Are you still able to do your weekday evening video chats, or is your energy stretched too thin?"
+        },
+        {
+          "role": "user",
+          "content": "I think I’ll still be okay on that front. I tutor him virtually on weekday evenings, so as long as I finish fieldwork in the mornings and TA shifts early enough, I should have enough time. I never do tutoring in person except the Sunday family visit, which won’t change."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. So, to recap: you’re shifting all thesis specimen collection and lab work to daytime hours—mostly early mornings to avoid sun exposure and migraine triggers. Evening fieldwork is out, but you keep evening prep for teaching and tutoring your brother virtually. Anything else you need help reconfiguring?"
+        },
+        {
+          "role": "user",
+          "content": "That about covers it! The biggest adjustment is strictly daytime for fieldwork, and blocking early mornings is new for me. I’ll keep an eye on energy and migraine patterns, and update my planner as I go. Thanks for helping me talk it through."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome! Sounds like you’ve got a practical plan. If things get overwhelming, maybe revisit your schedule in a few weeks to see if any tweaks are needed. And let me know if you hit unexpected snags—I’m happy to brainstorm further."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "After several weeks of worsening migraines, her neurologist adjusted her treatment plan and prescribed a new daily medication with strict scheduling requirements, including mandatory morning doses and dietary restrictions beyond her previous regimen.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Sets daily phone alarms to ensure on-time morning and evening medication doses — prioritizes medication schedule over previous notification preferences",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Skips breakfast if pressed for time but always prepares lunch at home to avoid cafeteria food"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Never skips breakfast — always eats a morning meal due to medication scheduling, but may shorten lunch or adjust meal timing instead",
+              "domain": "health_body"
+            },
+            "reason": "Her new migraine medication must be taken on a strict schedule with a mandatory morning dose, and skipping breakfast compromises the medication’s efficacy and tolerability. She is now required to eat something every morning, even if rushed, but may substitute or reschedule other meals instead."
+          },
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Avoids chocolate, caffeine, and processed meats — never consumes them due to migraine triggers"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Avoids chocolate, caffeine, processed meats, citrus fruits, and dairy — never consumes these foods due to heightened migraine and medication-trigger risk",
+              "domain": "health_body"
+            },
+            "reason": "Her new migraine medication introduces additional dietary restrictions, including citrus and dairy, which were not previously avoided. These additions are now necessary alongside previous trigger avoidance."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I need your help figuring out how to adjust my routines. My neurologist just switched up my migraine meds—pretty strict scheduling. It’s morning and evening doses now, and there are more dietary restrictions than before. I’m worried about fitting this in with thesis lab work, teaching, and cycling to campus. Can you help me rethink my mornings, especially?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, happy to help. Sounds like you’re juggling a lot. What does a typical morning look like for you now? Are you finding the new medication schedule tough to stick to, or is something else throwing things off?"
+        },
+        {
+          "role": "user",
+          "content": "I used to skip breakfast when pressed for time—just grab my meds and get going on days when I had to prep lab materials before my TA shift. But now the morning dose needs to be taken with food, or I get sick. So I can’t really skip breakfast anymore, even if I'm running late; I have to eat something, which makes the mornings feel rushed."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift. Maybe batch-prepping breakfast could help, so you have something ready to grab quickly—like overnight oats or savory muffins. Do those fit with your new dietary restrictions, or are there foods you have to avoid?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, it’s gotten stricter now: I already never touched chocolate, caffeine, or processed meats because of migraine triggers, but the new med means I also have to keep away from citrus fruits and dairy. So oats are okay as long as they’re made with water, and I need to watch for things like yogurt or cheese sneaking in."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it, so no dairy or citrus. Maybe you could try prepping rice porridge, chia seed pudding with oat milk, or a veggie-based breakfast burrito—just skip the cheese. Would those work? And do you have any flexibility for shifting lunch instead, if breakfast is now mandatory?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, lunch timing is more flexible—I could make it lighter or eat later. The main thing is I have to prioritize breakfast for the morning meds, even if that means adjusting lunch. Before, I’d sometimes skip breakfast, but that’s not an option anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great you’re able to adapt lunch for the new routine. For the breakfast, would prepping a few grab-and-go options on Sunday night help streamline things, given your meal prep habit? And with the stricter med schedule, have you found a way to stay on track—are phone reminders effective or do you use an old-school planner?"
+        },
+        {
+          "role": "user",
+          "content": "I actually set daily phone alarms now—not just for the morning meds, but for both doses. It’s the only way I don’t forget, since the schedule is strict. I never used to allow notifications except for urgent family or research messages, but the alarms take priority over that old policy."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—sometimes a routine change needs new tools. It’s good you’re giving the alarms top priority. With the new dietary restrictions and medication schedule, have you noticed any other routines that don’t work anymore, or is the main adjustment around breakfast and time management?"
+        },
+        {
+          "role": "user",
+          "content": "The main shifts have really been breakfast—never skipping it anymore—and the expanded list of foods to avoid. The alarms are new, but everything else is pretty much just a matter of fitting all this in before heading out to cycle, since public transit is still a no-go unless I’m really unwell. I’m still doing meal prep Sunday nights, but now I plan for the stricter breakfast requirements too."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve been proactive about adapting. Do you feel the new regime is helping with your migraines yet, or is it still too early to tell? And if the morning routine gets too overwhelming, would you consider shifting some study or lab prep earlier in the evening to lighten mornings, or is that not practical with your schedule?"
+        },
+        {
+          "role": "user",
+          "content": "It’s early, but I do notice fewer migraine spikes in the mornings. As for shifting lab prep, I already do all my TA setup the night before—never leave it for morning—so that part’s alright. The real crunch is just making sure I fit in breakfast, meds, cycling, and replying to student emails after my tea."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s awesome you’ve kept your prep routine so streamlined. With breakfast now required, maybe adding a quick, portable option to your meal prep could smooth things out. Would you like suggestions for more dairy-, citrus-, and caffeine-free breakfast recipes, or tips for fitting the alarms into your planner?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s go with breakfast recipes—a few options would be great. I already use my planner to cross-check the alarms at night, so I’ve got that covered. Just need something that won’t be boring after a week, and keeps me on track with my dietary rules."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. Here are a few dairy-, citrus-, caffeine-, and chocolate-free breakfast ideas: savory vegetable and potato hash (prepared in advance and portioned for the week); cornmeal cakes topped with avocado and tomatoes; grain bowls with steamed veggies and lean poultry or tofu; and chia pudding made with oat milk plus berries (no citrus). Each can be varied a bit to avoid monotony. If you want more, let me know!"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "During a routine annual physical, her doctor discovered abnormally high blood pressure and ordered immediate lifestyle changes, including reducing sodium intake, increasing regular aerobic exercise, and scheduling weekly check-ins to monitor progress.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_041",
+            "fact": "Checks sodium content and nutritional information for every meal before eating — never consumes foods without confirming sodium levels first",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_042",
+            "fact": "Schedules weekly blood pressure check-ins with her doctor on Thursday afternoons — never lets more than seven days go without professional monitoring",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Cycles to campus regardless of weather — never takes public transit unless physically unwell"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Alternates between cycling and walking to campus each morning to increase aerobic exercise while reducing exertion on days with migraine or high blood pressure symptoms — public transit is now avoided unless severely unwell or weather is dangerous",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor’s recommendation for more aerobic exercise to manage high blood pressure means she can’t simply rely on cycling alone, and must incorporate regular brisk walks as well. She needs to diversify her exercise routine for cardiovascular benefits while accommodating fluctuating physical symptoms."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my doctor found out I have high blood pressure during my physical last week. She's pretty strict—has me cutting sodium, doing more aerobic exercise, and checking in every Thursday. I’m feeling overwhelmed. Honestly, I don't even know where to start with meal planning or fitting in new exercise routines around my migraines, research, and TA shifts. Any advice?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot to take on, especially with your already packed schedule. Let’s start with meal planning. Do you usually prep meals for the week, or cook daily? And are there particular foods you already avoid because of the migraines that might overlap with the sodium restrictions?"
+        },
+        {
+          "role": "user",
+          "content": "I meal prep lunches and dinners every Sunday night for the week, and I've always avoided chocolate, caffeine, and processed meats because of migraines. But now I have to check sodium content for every meal before eating—my doctor said I can't have anything unless I've checked the nutrition info first. Salvadoran cooking uses a lot of cheese and canned stuff, so I'm worried I’ll have to change those recipes. Any ideas?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good habit, and checking nutrition info adds an extra step. For Salvadoran dishes, you could try swapping canned ingredients for fresh whenever possible, and use low-sodium cheeses or alternatives. Are you open to experimenting with flavorings—like herbs, garlic, or citrus—to make up for cutting back on salt? And maybe we can brainstorm a few weekday lunch ideas you can meal prep that are both migraine-friendly and low-sodium."
+        },
+        {
+          "role": "user",
+          "content": "I’m definitely open to that—I've already started using more fresh produce, especially for weekend cooking, but weekdays are tougher. I always prepare lunch at home to avoid cafeteria food, but sometimes breakfast gets skipped when I’m rushing. Now I feel like I have to plan ahead even more, since I can’t eat anything without checking the sodium first. Any quick, savory breakfast ideas that are low sodium and still filling?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Oatmeal made with water and topped with fresh fruit, seeds, or nuts is quick and naturally low in sodium. For something savory, maybe try homemade veggie egg muffins—skip the cheese and add herbs for flavor. A sliced avocado with whole grain toast and tomatoes could work, too. Would you have time to prep breakfasts in advance, like during your Sunday meal prep? Or does your morning schedule make that tricky?"
+        },
+        {
+          "role": "user",
+          "content": "If I prep breakfast ahead on Sundays, I could maybe grab those egg muffins in the morning. My routine is pretty tight since I usually cycle to campus regardless of weather, but now I have to alternate between cycling and walking each morning to increase aerobic exercise without overdoing it on migraine days or if the blood pressure is high. I’m avoiding public transit altogether unless I’m really unwell or the weather’s dangerous. So, mornings are busy, but planning helps."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for clarifying. Alternating cycling and walking sounds like a good balance for exercise and symptom management. On mornings when walking, could you sip tea and have something portable, like a prepared smoothie or fruit-and-nut bar with low sodium? That way, you don’t skip breakfast just because you’re rushing. How are you tracking your exercise and blood pressure changes—is your doctor recommending you log activity and readings, or just check in weekly?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually a good idea for busy mornings. As for tracking, I log migraine symptoms daily on an app and review them with my counselor monthly, but blood pressure is new. My doctor has me scheduled for weekly check-ins every Thursday afternoon, and she made it clear: I can’t go more than seven days between professional monitoring. So, I guess I’ll need to keep a closer eye on activity, too."
+        },
+        {
+          "role": "assistant",
+          "content": "Weekly check-ins are a solid safety net. Would it help to set reminders or calendar events for your Thursday appointments and activity logs? Maybe include both cycling and walking in your planner to visualize the balance and avoid overlap with migraine triggers. Since you’re juggling grant applications, TA shifts, research, and family, are there areas where you can streamline chores or ask for support to make room for these new health routines?"
+        },
+        {
+          "role": "user",
+          "content": "I wish, but basically, chores and family stuff are all on me. I visit my parents every Sunday for dinner and always help with their paperwork and finances then, plus tutor my brother virtually on weeknights. I don’t delegate any of that. At least meal prep on Sundays is routine, and I make weekly grocery lists based on what my family wants and our Sunday dinner recipes—never shop impulsively. I just have to get used to reading sodium labels for everything now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a heavy load, but your organized routines are a huge asset. Maybe you can incorporate sodium checks into your grocery list planning and meal prep—so it’s just another box to tick, rather than an added stress. For physical activity, scheduling set times for walking or cycling and checking how you feel day-to-day could make those choices automatic. Would you like help building a template for your planner to track both meals (with sodium info) and exercise choices?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, that would help! My planner is already color-coded for deadlines and commitments, but I could use a dedicated area to log meal sodium content and which days I cycle versus walk. That way, I can balance exercise for my blood pressure and migraines, and make sure I’m not skipping my doctor appointments."
+        },
+        {
+          "role": "assistant",
+          "content": "Great! I’ll help you design a customizable template: one column for meal planning with sodium counts, another for daily physical activity (cycle/walk), and a space to mark Thursday doctor check-ins. You can also note migraine symptoms and see patterns, helping you choose the right activity for each day. Would you like the template digitally, or printed for your planner?"
+        },
+        {
+          "role": "user",
+          "content": "Digital is better—I review my planner nightly but use my phone for tracking migraines, so syncing works well. Thanks, this feels more manageable now."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome! I’ll send you a customizable digital planner template with sections for sodium tracking, exercise logging, migraine notes, and Thursday check-ins. More structure should help ease some stress as you adapt. Let me know if you need more meal ideas or tips for integrating new routines with your research schedule."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Her parents received notice that their apartment lease will not be renewed due to building renovations, and they must move out within two months; her mother asks for her help searching for affordable housing, handling relocation logistics, and translating lease agreements.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Checks affordable housing listings and schedules apartment visits online for her parents at least three times per week — prioritizes this over leisure activities until the move is complete",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Prefers to coordinate all lease negotiations and document review herself, translating directly for her mother and handling all landlord communications by phone or email",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Meal preps lunches and dinners every Sunday night for the week — never buys pre-made meals"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Relies on a mix of quick pre-made meals and batch cooking on alternate weeknights; Sunday meal prep is now skipped due to family relocation needs",
+              "domain": "daily_routines"
+            },
+            "reason": "She will increasingly spend Sundays helping her parents search for, secure, and settle into a new apartment, leaving little or no time for her previous Sunday night meal prep ritual. She needs a more flexible approach, including using pre-made meals."
+          },
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Visits family for Sunday dinner every week without fail — never misses unless out of town"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Sunday family time now rotates between helping with apartment searches, relocation logistics, and eating together in non-routine locations — the weekly dinner tradition at her parents' home is suspended until they are resettled",
+              "domain": "social_relationships"
+            },
+            "reason": "Her parents’ forced move means there may not be a fixed family home or reliable kitchen for Sunday dinners. She'll spend Sundays helping them move or meeting in alternative locations instead of maintaining the previous dinner tradition."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I need some help. My parents just got notice that their apartment lease won't be renewed—they have two months to move out, and my mom's asked me to help with finding something affordable, sorting paperwork, and handling all the landlord stuff. I honestly have no idea where to start, especially with all my classes, TA work, and grant applications piling up. How should I even begin organizing this?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds overwhelming, but you're already ahead by helping with logistics and translation. Given your schedule, it might help to break the process into manageable steps: searching for listings, coordinating visits, reviewing leases, and planning the actual move. Do you want to focus on finding housing options first, or setting up a system for tracking tasks and deadlines related to the move?"
+        },
+        {
+          "role": "user",
+          "content": "I think finding housing has to come first—that's what my mom is most stressed about. I've started checking some affordable listings online, but it's exhausting. I can't take on everything alone, but my parents' English isn't strong, so I do need to be involved. I'm already spending time three times a week on research and scheduling apartment visits for them, so my usual weekends for meal prepping and leisure stuff are basically gone."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to prioritize the search right now, especially with such a tight timeline. I can help you organize a workflow for reviewing listings and setting up visits—maybe a shared folder or spreadsheet to keep track? For meal prepping, would batch cooking on weeknights work, or do you need quick meals for a while? It sounds like you’ll need flexibility around your usual routines."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, batch cooking on weeknights and quick pre-made meals are pretty much all I can manage lately. I can't keep up my Sunday night meal prep ritual with family stuff taking up those evenings. I just grab whatever's easiest now, as long as it doesn't trigger migraines. Flexibility is key until the move is over."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart adjustment—keeping meals simple and migraine-safe while freeing up your Sundays for your family. For apartment searching, are there particular neighborhoods or budget limits your parents have in mind, or is it mostly about finding whatever fits their needs and finances?"
+        },
+        {
+          "role": "user",
+          "content": "Their budget is tight, so mostly looking in west and north Denver, close to my mom's school and my dad's work sites. We’re prioritizing safety, public transit access, and reasonable rent—nothing fancy. I’ve started using online platforms to schedule tours and visit apartments, but I'm organizing all the lease negotiation and paperwork myself, including translating details for my mom. I don’t want anything to slip through the cracks, so I handle all landlord communications."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—you’re handling the communication directly, which makes sense to avoid misunderstandings. If you want, I can help draft scripts for landlord calls or emails, and flag common issues in lease agreements for you to review and translate. Are you finding the online listing process manageable, or would you rather automate parts of it, like email reminders for scheduled tours or tracking application progress?"
+        },
+        {
+          "role": "user",
+          "content": "Sending reminders and tracking applications would help—a spreadsheet and scheduled email prompts would be great. My evenings are stretched thin since I’m still meeting my TA setup obligations and spending time in the prairie vole lab. Also, our Sunday dinners aren’t happening like before; we’re meeting wherever works, sometimes even in coffee shops just to talk apartment logistics. Traditions are on hold until they settle somewhere new."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big transition, but your flexibility will help everyone adjust. Having mobile-friendly tracking tools can free up time and brain space. I’ll set up a sample housing search spreadsheet and draft a template for reminders you can automate. For Sunday meetings, would you like suggestions for affordable places to gather while you’re between homes? Or focus on bringing easy meals/snacks to those meetings?"
+        },
+        {
+          "role": "user",
+          "content": "Suggestions for affordable meeting spots would help—anything convenient for all of us, since we need Wi-Fi for paperwork and sometimes quiet for translation. Bringing snacks sometimes works, but with our schedule now, it depends. I’m putting my leisure stuff like book club and Saturday trail rides on pause—I absolutely need to prioritize housing search until it’s done."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—housing takes priority for now, and routines can return when things settle. Local libraries often have study rooms and Wi-Fi for meetings and paperwork, plus you can bring snacks in most cases. Community centers and affordable cafes are also options. I’ll compile a list for you. Anything else about coordinating with your parents or handling logistics that feels especially challenging right now?"
+        },
+        {
+          "role": "user",
+          "content": "It's mainly the volume—keeping up with all the listings, vetting them, and then translating everything for my mom. I’ll keep handling negotiations, but if you can help organize lease review checklists and draft communication templates, that would take a lot off my plate."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, I’ll create lease review checklists and templates for landlord communication. You can customize them for each situation. If you need help adapting your planner to fit search and move logistics, let me know—I can suggest color-coding and batching techniques that match your usual workflow."
+        },
+        {
+          "role": "user",
+          "content": "Thanks, that would be perfect. Color-coding will help me track housing tasks separately from research and teaching deadlines. I’ll review anything you send and tweak it for my scheduling needs. Once my parents are resettled, I’ll try to get back to my routines, but for now, housing logistics come first."
+        },
+        {
+          "role": "assistant",
+          "content": "Great! I’ll send customized templates, a color-coded tracker, and suggestions for local gathering spots. Let me know if anything on the checklist needs adjustments as you go. You’re balancing a lot—happy to help streamline where I can."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "While cycling to campus, she was struck by a car at a busy intersection, resulting in a fractured wrist and mandated physical therapy—her doctor prohibits cycling and strenuous activities for at least six weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_049",
+            "fact": "Brings an e-reader and audiobooks for transit commutes, shifting to screen-based reading during recovery from her cycling injury",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Schedules physical therapy sessions on weekday mornings before campus when possible, prioritizing wrist rehabilitation over previous morning activities",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_040",
+              "fact": "Alternates between cycling and walking to campus each morning to increase aerobic exercise while reducing exertion on days with migraine or high blood pressure symptoms — public transit is now avoided unless severely unwell or weather is dangerous"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Takes public transit to campus exclusively — cycling and walking are prohibited due to her wrist fracture and physical therapy restrictions, regardless of weather or other conditions",
+              "domain": "health_body"
+            },
+            "reason": "The doctor's order after her cycling injury strictly prohibits both cycling and walking to campus for at least six weeks. She must now rely solely on public transit, even though she previously avoided it whenever possible."
+          },
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Explores local nature trails by bike every Saturday morning — never stays inside unless weather is severe"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Stays indoors for weekend recreation — replaces nature trail rides with indoor activities like reading and streaming documentaries while recovering from her wrist fracture",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Because her wrist injury prohibits both cycling and other strenuous activity, she is unable to ride nature trails or go on active outdoor excursions for at least six weeks; her weekends are now focused on restful, sedentary hobbies."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I need some help figuring out my routines after getting hit by a car on my way to campus. My wrist is fractured and the doctor banned cycling and anything strenuous for at least six weeks. I'm just... pretty lost on how I should reorganize things, especially since cycling was my main transport and exercise. Any suggestions for staying on top of everything?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm so sorry to hear about your accident. That sounds overwhelming, especially with your schedule. Since cycling is off the table, do you have another way to get to campus, or is that still a puzzle? And is your wrist making lab work or teaching harder?"
+        },
+        {
+          "role": "user",
+          "content": "Getting there is actually my biggest issue. Walking used to be my fallback, but now I can't even do that—doctor says no walking long distances either. So I've been taking public transit every day, which I honestly avoided before unless the weather was bad or I was seriously unwell. It's not ideal, but I don't have a choice with the wrist for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change in your routine. Do you feel comfortable on transit, or would you like ideas for making that time more bearable or productive? And since you’re missing your usual exercise, are you feeling restless or have you found ways to substitute indoor activities?"
+        },
+        {
+          "role": "user",
+          "content": "Transit isn’t my favorite, but I started bringing my e-reader and queuing up audiobooks for the commute, so screen-based reading is keeping me sane while I heal. As for exercise, I can’t do the Saturday morning nature trail bike rides anymore—doctor’s orders are to stay indoors and focus on recovery. I’ve swapped those rides with reading or streaming wildlife documentaries for now."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart switch on both counts—staying stimulated and resting. Are you using your usual library book club or finding new indoor hobbies? And with the change to your mornings, is there room now to fit in other self-care like PT, or is scheduling tricky?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, mornings have shifted a lot. I’m scheduling physical therapy sessions weekday mornings, before heading to campus when possible. Rehab for my wrist has to take priority over my previous morning routines. Book club is still monthly at the library, but right now my weekend leisure is mostly restful stuff indoors."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes a lot of sense. How’s the physical therapy fitting in with your teaching assistant prep and thesis lab schedule? Are you able to keep up with lab work, or has the injury forced you to adjust how and when you do those tasks?"
+        },
+        {
+          "role": "user",
+          "content": "Lab work is mostly evenings, same as before—I haven’t changed that, except maybe taking a bit longer with specimen collection since handling is awkward with one hand. Prepping materials for teaching still happens late at night, so I don’t leave things until morning, especially with PT before campus now. It’s rough, but I’m managing."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s impressive multitasking. If you need any help tracking deadlines or organizing your planner around PT, transit, and other new commitments, let me know—I know color-coded planners work for you. Are there other routines, like meal prepping or your usual family dinners, that feel harder right now?"
+        },
+        {
+          "role": "user",
+          "content": "Meal prep is tougher but I still do lunches and dinners Sunday nights. I haven’t bought any pre-made meals—sticking to homemade. My family dinners every Sunday are non-negotiable, so I just take transit out there now. Even though I used to bike or walk to their place, I’m not missing those visits. Helping with paperwork and translations is more awkward with the wrist, but I’m still doing it."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad you’re maintaining those traditions—that continuity can be really grounding. How about counseling or tracking migraine symptoms? Are you finding the new transit routine or indoor weekends affecting your health, or is it steady so far?"
+        },
+        {
+          "role": "user",
+          "content": "It’s steady so far—the only change has been swapping out aerobic exercise for more sedentary activities. I’m keeping my counseling sessions scheduled for Friday early afternoons, same as before. My migraine logging routine hasn’t changed either—I still review my symptoms monthly with my counselor."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re managing the essentials despite all the upheaval. Since your weekends are indoors now, do you want any recommendations for enriching activities—maybe new Spanish-language documentaries, local virtual museum tours, or something else to fill the gap from trail riding?"
+        },
+        {
+          "role": "user",
+          "content": "That’d be great! I’m open to new documentary recs, especially in Spanish. I might look into virtual museum tours too—it’d be a good substitute since I can’t plan a new exhibit outing this month. Thanks for helping me reorganize all this around recovery."
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! I’ll pull together some top wildlife documentaries in Spanish and check for virtual exhibit tours you might enjoy. Let me know if you hit any unexpected bumps with transit, physical therapy, or adapting new habits—I’m here to help."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Her younger brother was awarded an academic scholarship that allows him to enroll early at a state university out of town, and her parents ask her to serve as his primary point of contact and advocate with the university's admissions and financial aid offices.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Checks university admissions and financial aid portals for her brother daily to monitor deadlines, requests, and document status — never delegates these logins to her brother or parents due to language barriers and urgency",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Prepares formal email correspondence on behalf of her brother to university offices, including drafting appeal letters and asking follow-up questions — always reviews communications for clarity and tone before sending",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_027",
+              "fact": "Prefers scheduling extended phone/video calls with her brother every weekend to discuss his progress and address travel and housing issues — avoids short, daily chats"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Now connects with her brother through short, frequent check-ins multiple times a week — prioritizes responsiveness over in-depth weekend calls due to her role as his university advocate and need to address time-sensitive university matters promptly",
+              "domain": "social_relationships"
+            },
+            "reason": "With her brother enrolling early at an out-of-town university and her being his primary point of contact for admissions and financial aid, many issues now require timely responses throughout the week. Extended weekend calls are insufficient for the rapid coordination needed at the start of his college transition."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news—my brother just got an early academic scholarship at CSU, and he'll be starting this summer. My parents want me to handle all his university stuff since I'm familiar with admissions and financial aid. But their English isn't great, and I'm already barely keeping up with my own schedule. Do you have advice for managing all his paperwork and deadlines without letting my thesis or grant application slip?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats to your brother—that's a huge step! I can see how being his point of contact adds a lot. For paperwork and deadlines, have you considered creating a shared document or calendar to track tasks for him alongside your own, maybe using your color-coded planner? Or do you prefer to keep your system separate for work versus family?"
+        },
+        {
+          "role": "user",
+          "content": "I keep my planner strictly for work and school stuff—it gets messy if I mix in family things. For my brother, I started checking the admissions and financial aid portals daily, just to monitor requests and document uploads. I can't really delegate that because neither my parents nor my brother feel comfortable navigating those sites and a lot is time-sensitive."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—daily monitoring keeps you ahead of urgent requests. To streamline, maybe set a fixed morning or evening block for portal checks? Also, are you handling communication directly with CSU, like emailing admissions or financial aid offices?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I'm drafting all formal emails for him—appeals, questions, everything. I review each message carefully for clarity and tone before sending, since these are pretty high-stakes. It's a bit stressful since English isn't my parents' strong suit and if there's an issue, I can't afford mistakes."
+        },
+        {
+          "role": "assistant",
+          "content": "You're doing a lot for him, and that's so helpful. Since email has to be perfect, have you built templates for recurring requests or types of communication, so you don't have to start from scratch each time? Or do you customize each message based on the situation?"
+        },
+        {
+          "role": "user",
+          "content": "I used to write separate, in-depth emails every weekend after checking all his documents, but now I just respond whenever something comes up, and often it's short check-ins or follow-up questions rather than long calls. With university timelines moving fast, I had to give up the extended weekend-only calls we relied on before, and switch to frequent, shorter chats throughout the week. It's not ideal, but responsiveness matters more right now."
+        },
+        {
+          "role": "assistant",
+          "content": "Short, frequent check-ins make sense with shifting deadlines. For urgent matters, would message summaries or voice memos work for your brother, or does he prefer video? Are these check-ins interfering with your usual routines, like prepping lab materials or batching student emails?"
+        },
+        {
+          "role": "user",
+          "content": "He prefers WhatsApp messages—quick texts work best. I've actually managed to keep my lab prep routine intact, since I still prep materials the night before my TA shifts. But my evenings used to be more focused; now they're interrupted as I handle stuff for him and monitor for university requests. It's a bit harder to stay disciplined with grant writing, but I still go to the library for it, never at home."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad you're keeping up with lab prep and grant work at the library. For interruptions, would batching the portal checks right before library time help minimize distractions? Or do you need to check throughout the day for truly urgent cases?"
+        },
+        {
+          "role": "user",
+          "content": "I wish I could batch, but with things moving so quickly, I have to check portals at least once in the morning and again late afternoon. Some issues are flagged as urgent and need immediate follow-up. It's not ideal, but the transition period for my brother calls for flexibility. Once he's settled, maybe I can return to batching."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a smart plan—flexibility now, structure later. Do you want help building a checklist or template for typical university communications for your brother, or would you prefer suggestions for managing your own anxiety and time pressure while supporting him?"
+        },
+        {
+          "role": "user",
+          "content": "A checklist and templates would help, especially for common emails—I'm starting to feel overwhelmed by the volume, and I'd like consistency. Also, any strategies for keeping work and his university stuff from blending together? I don't want to lose track of my commitments."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, I'll draft a checklist and some templates you can modify for appeals, document requests, and follow-ups. To keep boundaries, maybe dedicate a physical folder or digital notebook for his university tasks, distinct from your binder or planner? That way, you avoid overlap and keep both streams organized."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "The university's biology department invited her to co-author a high-profile research paper with a visiting scholar from Germany, requiring her to shift her thesis focus and collaborate intensively in-person over the next three months.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_056",
+            "fact": "Always eats lunch with her co-author in department break areas, prioritizing team discussion over solo meal rituals for three months",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_057",
+            "fact": "Initiates daily review sessions for manuscript edits with her collaborator, blocking a consistent hour each afternoon for feedback exchanges",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Drafts grant applications in library quiet rooms — never works on funding proposals at home"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Drafts grant applications and research-related documents alongside her collaborator in department offices — avoids library quiet rooms in favor of in-person collaboration spaces during intensive co-authorship period",
+              "domain": "work_habits"
+            },
+            "reason": "The intense in-person collaboration with the visiting scholar necessitates working closely in departmental spaces rather than in isolated library rooms. The urgency and teamwork requirements of co-authoring a high-profile paper override her former preference for quiet solo library work."
+          },
+          {
+            "from": {
+              "id": "pref_035",
+              "fact": "Schedules all thesis specimen collection and lab work exclusively during daytime hours due to new safety regulations — no longer conducts evening field or lab activities"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Prioritizes collaborative lab sessions and specimen analysis with her co-author during afternoon and early evening hours in departmental labs — adapts work hours to maximize joint productivity, even if it overrides previous daytime-only routines",
+              "domain": "work_habits"
+            },
+            "reason": "The paper co-authoring phase requires adapting her schedule to match the visiting scholar's availability, which often includes afternoon and early evening session blocks. Intensive collaboration trumps the prior restriction against evening lab work, especially since safety protocols now allow for supervised sessions."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Things just got very real! The biology department asked me to co-author a big research paper with a visiting scholar from Germany. It means shifting my thesis focus and working super closely with them for the next three months. I’m feeling overwhelmed—especially with the grant deadline looming. Do you have tips for balancing intensive collaboration with everything else, like teaching, my research, and family commitments?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge opportunity—congratulations, even if it’s stressful! Balancing collaboration and other obligations will be tricky. Are you expected to work with the visiting scholar every day, or is it more of a few concentrated sessions per week? Knowing the intensity will help me suggest ways to block out time for teaching and grant writing without burning out."
+        },
+        {
+          "role": "user",
+          "content": "It’s pretty much daily for now. We’re blocking afternoons and early evenings to tackle manuscript edits and lab analysis together. I’m getting used to being in the department labs much later than I used to, which is a shift since I always preferred daytime-only fieldwork. The upside is that safety protocols allow supervised evening lab sessions for now."
+        },
+        {
+          "role": "assistant",
+          "content": "So your lab schedule has shifted to match their availability and department policies—that makes sense. With those afternoons and evenings booked, you’ll need recovery time elsewhere. Have you been able to keep up with prepping for your teaching assistant shifts? It might help to batch setup ahead, given your new lab hours."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I still prep lab materials for teaching the night before—I never leave setup for the morning, especially now that evenings are packed with collaboration. I’m also finding it tricky to keep my solo routines, like lunch or library work. We always eat lunch together in the department break area, since that time helps us debrief and plan. It’s changed my usual habit of solo meals or library quiet room writing."
+        },
+        {
+          "role": "assistant",
+          "content": "Switching to team lunches and department offices for writing is a big adjustment, especially if you used to rely on solitude to focus. Is working alongside your collaborator helping your process, or do you miss quiet time for tasks like the grant application?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve had to shift—now I draft grant applications and manuscript edits with my collaborator in departmental spaces. Library quiet rooms aren’t practical for this phase, so I’m avoiding them. It’s actually efficient, though I miss my usual quiet, but the paper’s urgency means teamwork comes first for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That collaborative energy is great for urgent projects, but I know it’s tough to lose your normal recharge time. Are you blocking any consistent daily windows for review or feedback, or does your schedule change each week?"
+        },
+        {
+          "role": "user",
+          "content": "We actually set a daily review session for manuscript edits—one hour blocked each afternoon. It’s consistent, which helps me plan around it, especially for batching student email replies and keeping counseling on Fridays."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a strong routine. Batching tasks and maintaining counseling are smart ways to protect your mental health, especially during high-pressure periods. Has the collaboration affected your family routines or leisure activities, or are you able to keep Sunday dinners and Saturday trail rides?"
+        },
+        {
+          "role": "user",
+          "content": "So far, family routines are safe. I never miss Sunday dinners, and I still meal prep Sunday nights, though I’ve had to adjust my grocery lists for more department lunches. Leisure’s squeezed, but I keep my Saturday nature rides unless weather’s awful. Museum outings and book club are last to go, since they help me decompress."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re prioritizing what matters most and adapting the rest. Keeping some leisure time and family touchpoints will help you navigate the next three months. Would you like help creating a visual weekly plan to balance your afternoon/evening lab work, collaborator lunches, and other commitments?"
+        },
+        {
+          "role": "user",
+          "content": "That would help! If you could suggest a layout that highlights the manuscript review block, department lunches, and collaborative sessions, I’ll customize it. It’ll make tracking deadlines easier, especially with my color-coded planner habits."
+        },
+        {
+          "role": "assistant",
+          "content": "Great. I recommend creating a planner with: a dedicated color for manuscript review sessions (daily afternoon hour), another for department lunches, and a third for collaborative lab analyses in the afternoons/evenings. Add teaching prep (evening before your shifts) and reserve Friday early afternoons for counseling. You can overlay grant application drafting blocks in a fourth color for clarity. Would you like a sample week template to start filling in?"
+        },
+        {
+          "role": "user",
+          "content": "Yes please—a sample week template would be perfect. With these new collaborative routines, a clear visual will help me manage all the moving parts. Thanks for talking it through and helping me adjust. I feel less overwhelmed already!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Prepares lab materials for her teaching assistant shifts the night before — never leaves setup until the morning",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Replies to student emails in batches twice a day; avoids instant responses to preserve focus",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Uses color-coded planners to track deadlines for research, teaching, and coursework",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Schedules counseling sessions for early afternoons on Fridays — never weekends or evenings",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Logs migraine symptoms daily using a mobile app and reviews patterns with her counselor every month",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Communicates primarily through WhatsApp — never uses email for family matters",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Maintains friendships through group study sessions — avoids large social gatherings and parties",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Attends monthly book club meetings at the neighborhood library — never participates in online book discussions",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Cooks complex Salvadoran dishes from scratch on weekends — avoids frozen or packaged meals",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Watches wildlife documentaries exclusively in Spanish for language practice",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Plans one new museum or art exhibit outing each month — never revisits the same exhibit twice",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks email only after finishing morning tea — never before getting out of bed",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Reviews her color-coded planner each night before sleep to update deadlines and commitments",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Limits phone notifications to urgent research and family messages — silences all others during study hours",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Arranges and coordinates her brother’s academic support and logistics remotely — no longer tutors him directly, but manages his travel, housing, and financial aid for his out-of-state STEM program",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Uses online spreadsheets and shared folders to track her brother’s financial aid paperwork and travel plans — never relies on text threads alone for coordination",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Handles translation, medical paperwork, and coordination for her parents throughout the week via phone and email — no longer confines these tasks to Sunday dinner visits",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Checks her phone for family updates and urgent messages multiple times daily — prioritizes responsiveness to her parents and father's medical situation over previous notification limits",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Organizes medical and financial documents for her father using a digital folder shared with her mother — newly collaborative tracking of paperwork",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Prepares a summary of research findings at the end of each month for oversight committee reports — never skips documentation even during busy weeks",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Uses newly granted lab equipment as a priority for all thesis experiments, preferring these tools over previously borrowed or shared items",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Blocks early mornings for field specimen collection to comply with new daytime-only research protocols — avoids midday due to sun exposure and migraine risk",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Never skips breakfast — always eats a morning meal due to medication scheduling, but may shorten lunch or adjust meal timing instead",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_038",
+        "fact": "Avoids chocolate, caffeine, processed meats, citrus fruits, and dairy — never consumes these foods due to heightened migraine and medication-trigger risk",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Sets daily phone alarms to ensure on-time morning and evening medication doses — prioritizes medication schedule over previous notification preferences",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Checks sodium content and nutritional information for every meal before eating — never consumes foods without confirming sodium levels first",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Schedules weekly blood pressure check-ins with her doctor on Thursday afternoons — never lets more than seven days go without professional monitoring",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Relies on a mix of quick pre-made meals and batch cooking on alternate weeknights; Sunday meal prep is now skipped due to family relocation needs",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_044",
+        "fact": "Sunday family time now rotates between helping with apartment searches, relocation logistics, and eating together in non-routine locations — the weekly dinner tradition at her parents' home is suspended until they are resettled",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Checks affordable housing listings and schedules apartment visits online for her parents at least three times per week — prioritizes this over leisure activities until the move is complete",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Prefers to coordinate all lease negotiations and document review herself, translating directly for her mother and handling all landlord communications by phone or email",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Takes public transit to campus exclusively — cycling and walking are prohibited due to her wrist fracture and physical therapy restrictions, regardless of weather or other conditions",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Stays indoors for weekend recreation — replaces nature trail rides with indoor activities like reading and streaming documentaries while recovering from her wrist fracture",
+        "domain": "leisure_hobbies",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Brings an e-reader and audiobooks for transit commutes, shifting to screen-based reading during recovery from her cycling injury",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Schedules physical therapy sessions on weekday mornings before campus when possible, prioritizing wrist rehabilitation over previous morning activities",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Now connects with her brother through short, frequent check-ins multiple times a week — prioritizes responsiveness over in-depth weekend calls due to her role as his university advocate and need to address time-sensitive university matters promptly",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Checks university admissions and financial aid portals for her brother daily to monitor deadlines, requests, and document status — never delegates these logins to her brother or parents due to language barriers and urgency",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Prepares formal email correspondence on behalf of her brother to university offices, including drafting appeal letters and asking follow-up questions — always reviews communications for clarity and tone before sending",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Drafts grant applications and research-related documents alongside her collaborator in department offices — avoids library quiet rooms in favor of in-person collaboration spaces during intensive co-authorship period",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_055",
+        "fact": "Prioritizes collaborative lab sessions and specimen analysis with her co-author during afternoon and early evening hours in departmental labs — adapts work hours to maximize joint productivity, even if it overrides previous daytime-only routines",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Always eats lunch with her co-author in department break areas, prioritizing team discussion over solo meal rituals for three months",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Initiates daily review sessions for manuscript edits with her collaborator, blocking a consistent hour each afternoon for feedback exchanges",
+        "domain": "work_habits",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Schedules thesis lab work only in the evenings to avoid daytime distractions — never collects specimens during office hours",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "The research grant now requires monthly updates and makes additional lab equipment available, resulting in more intensive data collection and stricter timelines. She can no longer limit lab work to evenings; she now utilizes daytime hours to meet committee expectations and research output goals."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Drafts grant applications in library quiet rooms — never works on funding proposals at home",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_054",
+        "reason": "The intense in-person collaboration with the visiting scholar necessitates working closely in departmental spaces rather than in isolated library rooms. The urgency and teamwork requirements of co-authoring a high-profile paper override her former preference for quiet solo library work."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Avoids chocolate, caffeine, and processed meats — never consumes them due to migraine triggers",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "Her new migraine medication introduces additional dietary restrictions, including citrus and dairy, which were not previously avoided. These additions are now necessary alongside previous trigger avoidance."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Cycles to campus regardless of weather — never takes public transit unless physically unwell",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_040",
+        "reason": "Her doctor’s recommendation for more aerobic exercise to manage high blood pressure means she can’t simply rely on cycling alone, and must incorporate regular brisk walks as well. She needs to diversify her exercise routine for cardiovascular benefits while accommodating fluctuating physical symptoms."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Skips breakfast if pressed for time but always prepares lunch at home to avoid cafeteria food",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_037",
+        "reason": "Her new migraine medication must be taken on a strict schedule with a mandatory morning dose, and skipping breakfast compromises the medication’s efficacy and tolerability. She is now required to eat something every morning, even if rushed, but may substitute or reschedule other meals instead."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Visits family for Sunday dinner every week without fail — never misses unless out of town",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_044",
+        "reason": "Her parents’ forced move means there may not be a fixed family home or reliable kitchen for Sunday dinners. She'll spend Sundays helping them move or meeting in alternative locations instead of maintaining the previous dinner tradition."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Tutors her younger brother virtually through video chats on weekday evenings — never in person except for rare family visits",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Her brother’s acceptance to an out-of-state summer STEM program, combined with her parents’ request for help, shifts her involvement from direct tutoring to supporting his relocation and administrative needs. She can’t tutor him directly anymore, but takes on a new role of coordinator."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Helps parents with translation and paperwork during dinner visits — never delegates these tasks to others",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "Her father's injury requires ongoing communication with doctors and his employer, plus regular help with bills and appointments. Her mother specifically requested more support outside their Sunday dinner tradition."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Explores local nature trails by bike every Saturday morning — never stays inside unless weather is severe",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_048",
+        "reason": "Because her wrist injury prohibits both cycling and other strenuous activity, she is unable to ride nature trails or go on active outdoor excursions for at least six weeks; her weekends are now focused on restful, sedentary hobbies."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Meal preps lunches and dinners every Sunday night for the week — never buys pre-made meals",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_043",
+        "reason": "She will increasingly spend Sundays helping her parents search for, secure, and settle into a new apartment, leaving little or no time for her previous Sunday night meal prep ritual. She needs a more flexible approach, including using pre-made meals."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Makes weekly grocery lists based on Sunday dinner recipes and family requests — never shops impulsively",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "Her father’s injury disrupts the weekly Sunday dinner routine, causing unpredictable family needs and less reliance on formal dinner menus. Grocery planning for Sunday dinners is no longer feasible."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Prefers scheduling extended phone/video calls with her brother every weekend to discuss his progress and address travel and housing issues — avoids short, daily chats",
+        "domain": "social_relationships",
+        "created_at_session": 0,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_051",
+        "reason": "With her brother enrolling early at an out-of-town university and her being his primary point of contact for admissions and financial aid, many issues now require timely responses throughout the week. Extended weekend calls are insufficient for the rapid coordination needed at the start of his college transition."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Schedules thesis lab work and specimen collection during both daytime and evening hours in order to accommodate monthly oversight committee presentations and increased research demands from the new grant",
+        "domain": "work_habits",
+        "created_at_session": 2,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "The university now prohibits all specimen collection and research lab work in the evening due to revised insurance policies and safety protocols. She must restrict all field and lab activities for her thesis to daytime hours."
+      },
+      {
+        "id": "pref_035",
+        "fact": "Schedules all thesis specimen collection and lab work exclusively during daytime hours due to new safety regulations — no longer conducts evening field or lab activities",
+        "domain": "work_habits",
+        "created_at_session": 3,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "The paper co-authoring phase requires adapting her schedule to match the visiting scholar's availability, which often includes afternoon and early evening session blocks. Intensive collaboration trumps the prior restriction against evening lab work, especially since safety protocols now allow for supervised sessions."
+      },
+      {
+        "id": "pref_040",
+        "fact": "Alternates between cycling and walking to campus each morning to increase aerobic exercise while reducing exertion on days with migraine or high blood pressure symptoms — public transit is now avoided unless severely unwell or weather is dangerous",
+        "domain": "health_body",
+        "created_at_session": 5,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_047",
+        "reason": "The doctor's order after her cycling injury strictly prohibits both cycling and walking to campus for at least six weeks. She must now rely solely on public transit, even though she previously avoided it whenever possible."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-02T09:35:11.612152"
+}

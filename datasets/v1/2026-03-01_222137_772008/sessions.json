@@ -1,0 +1,1415 @@
+{
+  "persona": "A freelance consultant specializing in CRM solutions for small businesses",
+  "persona_id": "persona_20260301_224350",
+  "expanded_persona": {
+    "base_persona": "A freelance consultant specializing in CRM solutions for small businesses",
+    "age": 35,
+    "gender": "female",
+    "location": "Denver, CO",
+    "work_education": [
+      "Runs her own freelance consultancy focused on implementing and optimizing CRM platforms for local startups and small businesses",
+      "Currently working on three client projects simultaneously, juggling deadlines and requirements",
+      "Attends a monthly meetup for Denver tech freelancers to network and discuss recent trends",
+      "Enrolled in an online certification course for Salesforce to expand her offerings",
+      "Has to manage her own invoicing, contracts, and marketing – dedicates Fridays to business admin tasks"
+    ],
+    "health_wellness": [
+      "Healthy, but often skips lunch when caught up in client calls, leading to frequent afternoon energy crashes",
+      "Does yoga at a neighborhood studio twice a week to manage back pain from long hours at a laptop",
+      "Recently started using a standing desk to combat sedentary work habits",
+      "Struggles with mild insomnia, especially when facing tight project deadlines",
+      "Makes weekly meal plans to eat healthier but finds it hard to stick with them during busy project weeks"
+    ],
+    "family_relationships": [
+      "Lives with her partner, an elementary school teacher; they coordinate schedules to spend evenings together",
+      "No children, but is actively involved in helping her younger sister move to Denver for a new job",
+      "Regularly video calls with parents who live in Seattle, and visits them twice a year",
+      "Has a close circle of friends from her college days; hosts monthly game nights at her apartment",
+      "Frequently lends a hand with neighbor's childcare during school breaks"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Reviews client emails only at designated times—never responds immediately during work blocks",
+        "Reserves Wednesday mornings exclusively for deep client work; avoids meetings or calls on that day",
+        "Uses Asana to track all project tasks; never relies on spreadsheets for task management",
+        "Always drafts contracts herself; refuses to use generic online templates",
+        "Schedules business admin tasks strictly for Fridays—never lets invoices or marketing spill into client workdays"
+      ],
+      "health_body": [
+        "Only eats lunch if it’s scheduled as a calendar event; never grabs snacks during client calls",
+        "Does yoga classes at the studio—never at home or online for back pain management",
+        "Switches between sitting and standing every hour during workdays—never sits for extended periods",
+        "Sticks to a wind-down routine with herbal tea and reading on nights before deadlines; never watches screens after 9pm if insomnia threatens",
+        "Preps weekly meal plans each Sunday, but skips prep if work is hectic—never relies on frozen meals"
+      ],
+      "social_relationships": [
+        "Coordinates evening plans with her partner through a shared calendar—never double-books or schedules last-minute outings",
+        "Hosts monthly game nights at her apartment, inviting only close college friends—never attends large gatherings",
+        "Video-calls parents every Sunday afternoon, never substitutes with text or email",
+        "Helps her sister run errands and settle in, but never lets family requests interrupt client project hours",
+        "Offers babysitting for neighbor’s children only during pre-arranged school breaks—never accepts same-day requests"
+      ],
+      "leisure_hobbies": [
+        "Attends local board game cafes every other Saturday—never spends weekends entirely at home",
+        "Reads business and mystery novels, alternating genres; avoids romance books",
+        "Takes short city hikes in Denver parks on Sundays—never hikes alone in remote areas",
+        "Plans mini weekend trips within Colorado quarterly, never travels out of state for leisure",
+        "Watches new indie films at local theaters—never streams blockbuster movies online"
+      ],
+      "daily_routines": [
+        "Starts each morning with a 15-minute meditation—never checks her phone before meditating",
+        "Batch grocery shops on Thursday evenings—never makes daily trips for ingredients",
+        "Keeps her inbox at zero by clearing emails each evening, never lets messages pile up",
+        "Spends 30 minutes weekly updating her LinkedIn profile and posting industry news—never ignores her professional online presence",
+        "Reserves Sunday afternoons for personal planning and relaxation, never schedules client meetings or work tasks during that time"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Diagnosed with carpal tunnel syndrome in her dominant hand after weeks of increasing wrist pain, with a specialist recommending a treatment plan involving bracing and a temporary reduction in keyboard use.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_028",
+            "fact": "Uses ergonomic devices at her workstation, including a vertical mouse and split keyboard, to minimize wrist strain during client work",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Prefers audio-based learning resources for her Salesforce certification course instead of typing-intensive modules",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Always drafts contracts herself; refuses to use generic online templates"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Uses contract drafting software with voice input and auto-generation tools to reduce typing; avoids manual drafting due to wrist pain",
+              "domain": "work_habits"
+            },
+            "reason": "Her carpal tunnel diagnosis and doctor-mandated reduction in keyboard use make extensive manual contract drafting physically difficult and potentially harmful."
+          },
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Switches between sitting and standing every hour during workdays—never sits for extended periods"
+            },
+            "to": {
+              "id": "pref_027",
+              "fact": "Alternates between short work sessions using voice dictation and frequent breaks with wrist stretching; avoids prolonged desk work in any position",
+              "domain": "health_body"
+            },
+            "reason": "Treatment for carpal tunnel necessitates frequent rest and reduced keyboard/mouse use, so simply alternating sitting/standing does not address the core issue."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_007",
+            "fact": "Does yoga classes at the studio—never at home or online for back pain management",
+            "domain": "health_body",
+            "reason": "Bracing and wrist pain from carpal tunnel make in-person yoga (especially poses relying on wrist strength or flexibility) temporarily inadvisable per doctor’s recommendation. She cannot attend studio sessions until she recovers."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, a bit of a curveball—just got officially diagnosed with carpal tunnel in my right hand. I’ve honestly felt it coming for weeks, but hearing the specialist say 'brace and minimal typing' made it real. I’m trying to figure out how to keep my client projects on track without wrecking my wrist further. Any tips for adjusting workflows when you basically have to stop using your main hand for typing?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s tough—carpal tunnel can really throw things off, especially with the amount of writing and computer work you do. For the immediate term, do you already use any speech-to-text software, or are you looking for recommendations on getting started? Also, are your clients aware yet, or are you trying to keep everything business-as-usual for them?"
+        },
+        {
+          "role": "user",
+          "content": "Telling clients is my last resort—I’d rather adapt behind the scenes if I can. I haven’t really used speech-to-text except for phone stuff, but I guess now’s the time. The hardest part is contracts. I used to draft everything myself from scratch, but spending hours typing isn’t possible right now. Are there auto-generation tools that actually feel trustworthy, or do you know any contract platforms that support voice input?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, there are some solid contract platforms now that do more than just fill-in-the-blank templates. For example, PandaDoc and LawYaw allow for voice dictation through integrated tools or by using third-party dictation software. They’re pretty customizable—so you can keep your specific clauses without typing every word. Would you prefer to set up a template library and edit by voice, or start entirely from scratch each time using dictation?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I’m moving away from the 'draft everything myself' model because of my wrist. I used to refuse any sort of automatic contract tool, but now, anything that cuts down on keyboard use is a win. Voice input for edits and auto-generation is my ideal—are there tools where I can load in my old contract language so things still feel like \"me,\" but without the typing?"
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely. Most of those platforms let you upload your standard clauses or past contracts, and then assemble new ones with a few voice commands or selections. You can also use services like Documate that let you design workflows with reusable language blocks. Integrate that with Dragon NaturallySpeaking or your OS’s built-in voice tools and you could essentially build, review, and send contracts hands-free. Want help narrowing down the platform based on price, features, or how well the voice input integrates?"
+        },
+        {
+          "role": "user",
+          "content": "Features and voice input matter more than price. I can justify software costs if it means less pain and more billable work. On a related note, working at my desk is rough right now—just switching between sitting and standing doesn’t solve it, since it’s all about giving my wrist a break. Are there ways to arrange my workday so I’m not making things worse? I’m already taking more breaks than before, but it’s feeling kind of chaotic."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re right—carpal tunnel isn’t just about posture, it’s repetitive motion and static hand positions over time. Since alternating between sitting and standing isn’t enough anymore, maybe organize your work in short, themed blocks—with non-typing tasks (calls, voice notes, quick brainstorming, or reviewing things by audio) in between. You could set a timer for, say, 20-30 minutes of hands-on work (voice or minimal typing), followed by stretches or a break. Do you have ergonomic devices like a vertical mouse or split keyboard, or is that also a change you’re considering?"
+        },
+        {
+          "role": "user",
+          "content": "I just upgraded my workstation—vertical mouse, split keyboard—the works, even though typing isn’t supposed to be a big part of my day for now. But for client work, I’m using voice dictation as much as possible and doing lots of gentle stretching. I just have to avoid those long blocks at my desk, period. Scheduling is trickier than I thought—any tricks for managing client communications without constant hand use?"
+        },
+        {
+          "role": "assistant",
+          "content": "That setup sounds good for prevention long-term. For now, you could try batching client communications into set periods and use audio replies or voice notes when possible—clients might even appreciate quick updates that way. If you rely on project trackers like Asana, most have mobile apps with strong voice features for comments and updates. Would shifting more to voice memos, even via email, fit your relationships with clients?"
+        },
+        {
+          "role": "user",
+          "content": "I think that could work, at least for clients I know well. For others, I’m sticking with Asana but using its voice comment feature—typing is pretty much out unless absolutely needed. By the way, I’m in the middle of a Salesforce online course, and all these typing-heavy modules are slowing me down. Are there decent audio-based learning resources for Salesforce, or am I stuck with the standard interface?"
+        },
+        {
+          "role": "assistant",
+          "content": "Salesforce’s official Trailhead modules are pretty text-heavy, but there are some alternatives. Pluralsight and Udemy have audio-rich courses, and there are podcasts and YouTube channels (like Focus on Force) that do deep dives with lots of walkthroughs. You can also use text-to-speech browser extensions to listen to written content. Would a combination of these options help, or do you need full hands-free interactivity?"
+        },
+        {
+          "role": "user",
+          "content": "Text-to-speech definitely helps, and I’m already queuing up Pluralsight audio lessons between client tasks. At least I can keep listening while stretching or resting my hand. Something else—my doctor basically banned me from yoga for now because of all the wrist load, even though I usually go to in-person studio classes. Do you know any alternative home routines (not yoga) that are safe for mild exercise and back pain when wrists are off-limits?"
+        },
+        {
+          "role": "assistant",
+          "content": "That must be hard if studio yoga was a core routine. For the time being, gentle core and leg stretches, resistance band work (not using your hands), and guided breathing or meditation can help. There are apps like StretchIt or even the 'Yoga for Back Pain' routines on YouTube with wrist-free modifications. Have you already given up studio visits due to the brace, or are you looking to find something to replace that community vibe while you recover?"
+        },
+        {
+          "role": "user",
+          "content": "Yep—I’ve dropped in-person yoga until I’m cleared by my doctor. Classic sun salutations just aren’t possible right now, so I’m sticking to home stretching, guided meditation, and the occasional short outdoor walk for movement. Not the same as the studio, but the risk isn’t worth it. Hoping I don’t lose all my progress on the back pain front."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart call. Healing comes first; progress will come back once you’re able to move more freely. If you need resources for pain-friendly routines or more speech-first workflows, just ask. And let me know when you want to compare contract platforms—I can send a shortlist tailored to your needs."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed persistent shoulder and neck pain following several back-to-back weeks of high-intensity client work, leading her doctor to prescribe mandatory physical therapy sessions and restrictions on certain yoga poses.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_032",
+            "fact": "Complies strictly with doctor-ordered restrictions on certain yoga poses—participates only in gentle/stretching-focused sessions and avoids poses involving weight on shoulders/neck",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_033",
+            "fact": "Keeps a detailed log of pain symptoms and PT exercises at her workstation, updating it during each break for better tracking and communication with her therapist",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_027",
+              "fact": "Alternates between short work sessions using voice dictation and frequent breaks with wrist stretching; avoids prolonged desk work in any position"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Schedules mandatory physical therapy exercises for shoulder and neck throughout the workday, replacing breaks with targeted PT routines and avoiding desk work when soreness returns",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor's prescription for physical therapy and the need to address shoulder and neck pain make her former routine of wrist stretching during breaks insufficient. Now, her breaks center around prescribed PT exercises, not wrist-focused routines."
+          },
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Only eats lunch if it’s scheduled as a calendar event; never grabs snacks during client calls"
+            },
+            "to": {
+              "id": "pref_031",
+              "fact": "Schedules adequate lunch and snack breaks with ergonomic postures and screen-free downtime, as skipping meals plus poor ergonomics worsens shoulder and neck pain",
+              "domain": "health_body"
+            },
+            "reason": "Her physician's advice to better address physical health means she now schedules not just lunch but also dedicated ergonomic/posture breaks and avoids meals at her desk, as her previous routine exacerbated her pain."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_018",
+            "fact": "Takes short city hikes in Denver parks on Sundays—never hikes alone in remote areas",
+            "domain": "leisure_hobbies",
+            "reason": "Her physical therapist has restricted strenuous activity, including hikes, until her shoulder and neck pain improve; walking for exercise is temporarily replaced by PT and gentler movement."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some workflow help. I developed pretty persistent shoulder and neck pain after a few brutal project weeks in February—doctor’s orders are now daily PT exercises, strict limits on certain activities, and major changes during my workday. It's totally upended how I structure breaks and handle my client calls. I want to stay productive, but not at the expense of my health. Any ideas for integrating the new routines without blowing up my calendar?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds rough—balancing client demands and doctor's orders is no joke. First, are the PT exercises something you can blend into your existing breaks, or do you need to schedule completely new time blocks throughout the day? Also, did your doctor give you clear guidelines on what to stop or adapt in your work habits beyond the exercises?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I actually have to schedule PT sessions throughout the day now. My old routine was wrist stretches and voice dictation during short breaks, but the therapist wants me to do focused exercises for my shoulder and neck instead—and if the pain flares up, I have to step away from my desk completely. So breaks are basically all PT-focused, not just quick stretches anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a significant shift. Have you figured out how many PT breaks you need—and do you set calendar events for them to ensure you don’t run out of time between client work? Are there specific times that work best for your project workflow, or are you having to play it by ear based on pain levels?"
+        },
+        {
+          "role": "user",
+          "content": "So far, I’m blocking PT breaks every two hours in Asana, with some flex if I start to get sore. I actually update a log at my desk after each exercise session—the therapist wants detailed tracking to adjust my plan if things don’t improve. Honestly, it’s a lot to keep up with, on top of usual tasks."
+        },
+        {
+          "role": "assistant",
+          "content": "Keeping a log should really help in the long run, even if it’s an extra step now. For the rest of your day—like meals and downtime—have you needed to shift your habits too? Sometimes pain issues can get worse if you’re skipping food or eating at your desk. Have you considered changing how you handle lunch or snacks?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, that’s something else I’ve had to change. I used to only eat lunch if I scheduled it as a calendar event, and snacks were pretty much off-limits during calls. But my doctor says skipping meals made things worse, especially with poor posture. Now I’m actually scheduling both lunch and snack breaks, making sure to take them screen-free and in an ergonomic position—definitely no eating at the desk anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—good nutrition and posture are so important for recovery. How about physical activity outside of work? Do you still make it to your yoga classes, or has that changed as well?"
+        },
+        {
+          "role": "user",
+          "content": "Yoga’s a bit more complicated now. I have to comply strictly with my doctor’s restrictions—no poses that put weight on my shoulders or neck. I still go to the studio, but only do gentle, stretching classes and avoid anything too strenuous or where I'd normally be on my shoulders. The instructors have been great about suggesting modifications."
+        },
+        {
+          "role": "assistant",
+          "content": "Good to hear your studio’s supportive. What about weekends? I remember you liked city hikes on Sundays to reset. Are you still able to do those, or has your therapist put any limits there while you recover?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I had to put Sunday hikes on hold. My PT ruled out anything remotely strenuous until the pain’s under control. So for now, I’m prioritizing my therapy and gentler movement instead of hiking—hopefully just temporarily."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense to take a break until you’re healed. Given all those changes, the biggest challenge now is probably managing energy and sticking to the plan. Would a daily routine checklist or some form of accountability help? Or is Asana already covering enough tracking for you?"
+        },
+        {
+          "role": "user",
+          "content": "I think Asana plus my PT log does a decent job for detailed tracking, but I might play with a daily checklist view for an at-a-glance summary. It’s the mental switch—remembering not to just power through soreness and to actually do my exercises before the pain worsens—that’s hardest for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. Setting recurring reminders and maybe a simple habit tracker could reinforce those pause points—so you don’t default back to work mode despite the discomfort. And as recovery progresses, you can adapt. Let me know if you need template ideas or help integrating with your existing setup!"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Secured a long-term retainer contract with a rapidly growing Denver tech startup, requiring her to dedicate at least three full workdays each week to their ongoing CRM migration and support needs.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Checks Slack and instant messages hourly for retainer client on dedicated workdays, but silences notifications from other clients during those periods",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Brings a packed lunch for retainer client onsite days to avoid missing meals; avoids skipping lunch even during busy migration phases",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Reserves Wednesday mornings exclusively for deep client work; avoids meetings or calls on that day"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Reserves Monday, Tuesday, and Wednesday exclusively for ongoing work with the retainer client; avoids meetings or calls for other projects on these days",
+              "domain": "work_habits"
+            },
+            "reason": "The new retainer contract requires her to dedicate at least three full workdays to one client, so she can no longer reserve Wednesdays for deep work for any project. Instead, she now blocks multiple consecutive days exclusively for the retainer client and avoids scheduling non-retainer meetings or calls on those days."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Exciting news—I just landed a long-term retainer contract with one of the Denver tech startups. I'll be handling their CRM migration and ongoing support, at least three full workdays a week. It's great from a stability angle, but my old routine just got thrown out the window. Do you have suggestions for integrating this commitment without neglecting my other clients or totally derailing my personal life?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That's a huge win, especially for a freelancer. Balancing a major retainer with other project work can definitely throw your existing systems for a loop. Out of curiosity, how are you structuring your week now? Are you keeping certain days for the retainer client, or mixing them in with everything else?"
+        },
+        {
+          "role": "user",
+          "content": "I've started reserving Mondays, Tuesdays, and Wednesdays exclusively for the retainer client. I found that context-switching was killing my productivity, so now I'm avoiding meetings or calls for other projects on those days—just full focus for the startup. It means less flexibility for my other clients, but it's the only way to stay sane. The rest of the week is for my remaining projects and admin."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a smart approach. Blocking consecutive days for deep work lets you really get into the migration with fewer interruptions. How are you handling client communications on those dedicated days? Are you still checking emails or messages from your other projects, or pausing outreach to keep your head in the retainer work?"
+        },
+        {
+          "role": "user",
+          "content": "Now, I check Slack and instant messages from the retainer client hourly on those dedicated workdays. I actually silence notifications from my other clients so I don't get distracted—I'll catch up on those at the end of the day or during my non-retainer blocks. It's been surprisingly helpful, even though I worried I'd miss something urgent."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a solid boundary—nice work! The hourly check-in probably keeps you responsive without derailing your focus every few minutes. Have you had any pushback from your other clients about the slower replies, or have they adapted? Also, with onsite days, how are you managing things like meals or taking breaks? I remember those migration projects can get pretty consuming."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's been an adjustment too. The startup has me onsite at least once a week, sometimes more during active migration sprints. Honestly, I used to just power through and skip lunch during busy phases—I can't do that anymore. I pack a lunch whenever I'm onsite now, and I make sure it's actually on my calendar as a real break. No more missing meals and crashing at 3pm!"
+        },
+        {
+          "role": "assistant",
+          "content": "Good for you. It’s so easy to skip meals when you’re caught up in onsite chaos. Blocking lunch as an event and bringing food sounds like a sustainable fix. Have you already worked those new routines into your Asana task planning, or is that part still a work in progress?"
+        },
+        {
+          "role": "user",
+          "content": "I'm still figuring out the best way to represent these new routines in Asana, but for now I'm blocking out \"retainer client\" time as all-day tasks for those three days, and setting personal reminders for lunch and even a couple stretch breaks. It's kind of weird seeing 'Lunch break—packed' in my task list, but otherwise I’ll skip it. I just have to be more structured now than before."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes total sense. If it’s on the calendar and in Asana, it’s real! For your Thursday and Friday blocks, are you still managing business admin on Fridays or has the shift required you to adjust that too?"
+        },
+        {
+          "role": "user",
+          "content": "Admin is still Fridays only—I'm refusing to let invoices or marketing creep into my client days again. The standing rule holds: client work only Monday to Thursday, admin and catch-up on Fridays. Honestly, it’s the only thing keeping my sanity intact now that the retainer is taking up fixed days."
+        },
+        {
+          "role": "assistant",
+          "content": "That discipline will definitely pay off, especially as your schedule becomes more predictable. It sounds like you’ve been intentional about what to keep—and what to adjust—as you take on this new anchor client. Is there anything you feel like you’re dropping or missing that used to be important, or has it all worked out so far?"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger sister, after landing a job in Denver, moves in temporarily with her and her partner until she finds her own apartment, significantly altering their household routine and evening schedules.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Shares cooking and meal prep duties with her sister on weeknights, rather than preparing meals alone—prefers collaborative meal times while her sister lives with her",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Enjoys TV shows or group movie nights with her partner and sister several evenings a week, shifting leisure time from solo reading to shared entertainment",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Coordinates evening plans with her partner through a shared calendar—never double-books or schedules last-minute outings"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Coordinates evening plans as a household (with her partner and sister) through a shared calendar—never double-books or schedules last-minute outings without group discussion",
+              "domain": "social_relationships"
+            },
+            "reason": "With her sister now temporarily living in the household, evening routines and plans involve a third person, requiring adjustments to how calendar coordination happens. She now considers both her partner and sister when planning shared activities or downtime."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my little sister just moved in with us for a bit—she landed a job in Denver and is apartment hunting. It’s going well, but it’s a big shift for our evenings and routines. I’m finding it harder to keep evenings focused or relaxing, because everyone’s around and schedules are overlapping. Any tips for how to adapt my work-life boundaries, or keep things from feeling chaotic in the evenings?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment, especially when you’re used to having just two people’s routines to coordinate! First off, congrats to your sister—that’s exciting. When you say evenings feel chaotic, is it mostly the clash of activities (like work bleeding into home time), or more about scheduling downtime? How have you handled organizing plans so far with three adults in the mix?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks! It’s honestly both. Evenings used to be easier to coordinate—just my partner and I through a shared calendar, so we’d avoid double-booking or last-minute stuff. Now with my sister here, we need to consider her too. We’re experimenting with a shared household calendar for evening plans, like dinner, TV, or if one of us has something outside. But we haven’t nailed the flow yet, and sometimes someone’s caught off guard. Any advice on group planning tools or processes for that?"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re on the right track with a shared calendar—it really is the best way to coordinate for a three-person household. Sometimes setting a weekly check-in can help: everyone sits down for 10 minutes to run through the week’s evenings, flag anything unusual, and clarify ‘quiet nights’ versus group nights. Do you all use the same digital calendar platform? And do you find that level of group discussion works for your personalities, or is it awkward for anyone?"
+        },
+        {
+          "role": "user",
+          "content": "We all use Google Calendar—it’s been manageable so far. The quick weekly check-in might actually help, because sometimes my partner or sister forgets to put something in, or we assume downtime that isn’t there. Also, meals have changed a ton! I used to cook solo most weeknights, but it’s been a nice break sharing meal prep duty with my sister. We’ve started alternating who leads dinner, and it’s pretty fun, though it takes some planning. I’m torn about how much time to dedicate to it versus work stuff—sometimes client work runs late. How strict should I be with evening meal timing if we’re all sharing the load?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great that you’re enjoying the collaborative cooking! It can be tough to balance work spillover with group meals. If the shared meal feels important (as connection and decompression), I’d recommend blocking it as a recurring calendar event, just like a meeting—maybe a 15-minute buffer beforehand so you can wrap up work and shift mental gears. On heavy work nights, could you agree that whoever is busiest can step back from cooking and the other two take over? That way, everyone gets a break sometimes, but meals still happen at a reasonable hour."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that sounds doable. We’ve already had two nights where my calls ran over, and my sister jumped in to start dinner—so we’re naturally swapping around. Making it an official calendar block (with buffer time) will probably help get my head out of work mode. Maybe we can rotate who’s \"on call\" for dinner based on work intensity. Also, I used to default to reading in the evenings, but lately, the three of us have been picking shows or movies to watch together most nights. It’s a fun shift—even if I’m reading less. I guess I’m looking for ways to keep some solo recharging time without missing out on group chill time."
+        },
+        {
+          "role": "assistant",
+          "content": "Group TV or movie nights sound like a great bonding opportunity—and it’s normal for your solo reading time to ebb a bit while your sister’s living with you. You might try designating certain evenings each week as \"household\" nights for shared entertainment, and others as \"personal\" nights for solo activities. You could even add these to your shared calendar so it’s visible and no one feels excluded. Have you found any tension so far if someone wants alone time while the others are together? Or is everyone pretty understanding when someone opts out?"
+        },
+        {
+          "role": "user",
+          "content": "No real tension so far—everyone seems chill if someone wants downtime alone. I like the transparency of having some nights as \"group\" and some as personal time, especially now that there are more people and we’re all adjusting. I just need to get better at actually blocking off solo time or picking a couple evenings not to join in. Scheduling everything on the shared calendar has helped—honestly, it’s the main way we’ve kept from stepping on each other’s toes. Plus, cooking together and watching shows has made the transition kind of fun, even with the routine shakeup."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re navigating the changes really well—embracing flexibility but still honoring your own routines. The emphasis on clear communication, shared calendars, and collaborative meals is working for you. Over time, you’ll find your rhythm, whether it’s alternating solo and group evenings or adjusting who handles dinner when work ramps up. If things start to feel chaotic again, don’t hesitate to revisit your check-in process or experiment with new routines—all transitions take a little trial and error."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Started experiencing severe insomnia symptoms, including frequent nighttime awakenings and extreme fatigue, leading her doctor to prescribe a medication and require a shift in evening routines and stricter sleep hygiene protocols.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_041",
+            "fact": "Sets a daily alarm to take prescribed insomnia medication one hour before bedtime, never delays or skips it—even on weekends or during social events",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_042",
+            "fact": "Avoids evening game nights and late outings, preferring quiet home routines after 8pm to prioritize rest and sleep hygiene",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Sticks to a wind-down routine with herbal tea and reading on nights before deadlines; never watches screens after 9pm if insomnia threatens"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Adheres to a strict nightly wind-down protocol prescribed by her doctor: takes insomnia medication, avoids herbal tea, screens, and reading after 8pm; instead uses blackout curtains and a white noise machine to support sleep hygiene regardless of deadlines",
+              "domain": "health_body"
+            },
+            "reason": "Her insomnia has become severe, with frequent awakenings and extreme fatigue. Doctor's intervention requires not just informal wind-downs before deadlines, but daily, formal sleep hygiene routines around medication and environmental changes, regardless of project stress."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, could use your help. My insomnia's gotten way worse recently—like, multiple awakenings a night and I just feel wiped out. My doctor actually gave me a prescription and some non-negotiable sleep hygiene rules. It's been a lot. I'm trying to figure out how to stick to these new routines without derailing my consulting work or disappointing clients."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really tough. I can imagine how disruptive that level of fatigue would be, especially when you’re balancing multiple projects. Do you mind sharing a bit about the new sleep hygiene rules your doctor set? Then we can look for ways to adapt your work habits and routines around them."
+        },
+        {
+          "role": "user",
+          "content": "Sure, the biggest thing is I now have to set an alarm to take my insomnia medication exactly one hour before bedtime—no skipping or pushing it even if I'm busy. Afterwards, I can't have any herbal tea, no screens, and even reading is out after 8pm. I have to use blackout curtains and a white noise machine, every single night. So even on deadline crunches, I have to stop everything at 8 and just focus on winding down with those environmental things. It's stricter than what I used to do—that routine was more flexible, just tea and reading if I felt stressed."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a whole different level of structure—especially the 8pm wind-down regardless of what’s going on. With that in place, how is it affecting your project work or client communication? Are you running into situations where clients expect availability in the evening, or is the bigger challenge sticking to the routine when work runs late?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly it's client emails piling up or last minute requests after 7. I used to sometimes hop on a quick call or fire off responses in the evening if something was urgent, but now I just can't. The other piece is social stuff—I had to start skipping our monthly game nights and any late outings. Evenings are off-limits now so I can get my medication and that strict wind-down in."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. It sounds like your boundaries need to be extra visible, both for work and socially. For clients, would it help to set or update expectations around your new ‘no work after 8pm’ policy? Maybe an auto-responder or a calendar blocker so you're not tempted? And for your game nights, have you considered shifting those to an earlier slot or even to weekends during the day?"
+        },
+        {
+          "role": "user",
+          "content": "For clients, a calendar blocker definitely helps. I've started adding a recurring 'offline for sleep hygiene' event at 8. I also let them know I won't reply to anything after that, and honestly, it's been okay once I explained the situation. As for game nights—I'm skipping evening ones altogether for now, and don't plan to attend late gatherings. Quiet home routines after 8pm are just non-negotiable. Maybe I'll look for Saturday board game cafes earlier in the day instead."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid adaptation—especially the clear communication. Switching to daytime or afternoon social events is smart, and prioritizing strict bedtime routines will hopefully help your energy longer-term. How are you finding the fatigue during your workday? Any adjustments to how you schedule focus blocks or manage admin tasks so you’re not crashing mid-afternoon?"
+        },
+        {
+          "role": "user",
+          "content": "I’m still balancing the energy dips. Wednesdays I protect for deep work and Fridays for admin, as usual. But if I feel a crash coming on, I’m trying to adjust my schedule to allow for brief rest or step away, rather than just pushing through. The insomnia meds help, but only if I’m strict about the routine. So far, having that clear evening wall and prepping my environment early is making a difference. I just know now that anything work or social-related after 8pm is off the table, period."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re handling a big change with a lot of intentionality—being open with your clients and proactively adjusting your social plans should take a lot off your mind in the evenings. If you need help optimizing your calendar automations or want to brainstorm ways to restructure your working blocks for better energy, just ask. And good on you for putting your health first, even when it means giving up things you enjoy in the short term!"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received an invitation to present at a regional small business technology conference in Denver, requiring her to prepare a workshop and network with industry leaders over a multi-day event.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_044",
+            "fact": "Prepares in-depth workshop materials and rehearses presentations repeatedly before all public speaking engagements to reduce pre-event anxiety",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_045",
+            "fact": "Seeks out post-event networking opportunities at tech conferences—even if it requires staying out past usual evening routine—to maximize industry connections and client leads",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Hosts monthly game nights at her apartment, inviting only close college friends—never attends large gatherings"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Attends large networking events and industry gatherings when required for professional growth, despite usually avoiding such settings in her personal life",
+              "domain": "social_relationships"
+            },
+            "reason": "Being an invited presenter and participant at a multi-day regional conference pushes her to engage in large gatherings, which she previously avoided. The professional necessity of networking and presenting at industry events outweighs her longstanding aversion to large in-person groups."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, huge thing: I was just invited to present a workshop at the regional small business tech conference here in Denver. It’s a multi-day thing with tons of big players, and they want me to lead a session on practical CRM implementation for startups. It’s super exciting, but also kind of daunting—I usually stick to smaller groups. The networking aspect alone feels overwhelming. Any advice on how to tackle preparing for this, especially with all my usual client work still in motion?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big milestone—congratulations! It’s normal to feel a bit out of your element, especially if you’re used to more intimate settings. For the workshop itself, how do you usually prep before public speaking? Do you rely on outlining your talking points, slide decks, practice runs, or something else? And for the networking side, are there particular types of connections you’re hoping to make?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks! When it comes to presenting, I really need to rehearse a lot before I actually feel confident. I always go pretty deep into materials and practice the whole delivery more than once—otherwise I’ll just get anxious, especially with a bigger crowd. As for networking, I usually avoid large events in my personal life, but obviously with this, I can’t just slip out after my talk. I need to actually engage and meet new people—so... yeah, kind of outside my comfort zone."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense, especially with the stakes being higher this time. Since thorough preparation helps calm your nerves, do you want help breaking down your workshop content or organizing your practice schedule? For networking, maybe we can come up with some strategies or even a ‘game plan’ for balancing genuine conversation with energy management. Would that be useful, or is there a specific part you feel least prepared for right now?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely could use help structuring both. For the workshop, timing and flow are my biggest worries—making sure the session isn’t too rushed or too bogged down. And for networking, yeah, a plan could help. I know I’m going to have to attend the big evening mixers and maybe some post-event gatherings with other presenters—even if that means staying out later than my usual routine. In this case, I think it’s worth it for the connections."
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you on both counts. For your workshop, one helpful approach is scripting out the first couple of minutes and your transitions, then timing each segment during rehearsals so you can adjust for pacing. Would you like a sample outline template for a one-hour session? For networking, since you’re willing to flex your usual evening schedule, perhaps you can set goals—like meaningful conversations with three new industry contacts each night—to keep things focused without burnout. What do you think?"
+        },
+        {
+          "role": "user",
+          "content": "A template would be very helpful, especially for pacing. And setting concrete goals for each networking event sounds doable—gives me permission to opt for quality over quantity. I’ll need to plan for late evenings, though, which isn’t typical for me, but it’s the best way to get the most out of this conference. I’ve even started shifting some of my admin work so I’m not running invoices or proposals on those days—just fully present for the conference and events."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—protecting the event days so you can be present. I’ll share an outline structure for your session, keeping in mind you can rehearse each section repeatedly and tweak timing as needed. For networking: map out the key mixers and post-event gatherings, and block time for decompression the next morning if you can swing it. If you need quick conversation starters or a follow-up system for new leads, let me know—I can help with both. Anything else you need to feel prepped?"
+        },
+        {
+          "role": "user",
+          "content": "Appreciate it. If you’ve got some easy conversation openers for talking with other tech professionals and maybe a checklist for following up after the conference, that would round things out for me. Just, honestly, thanks for helping me think through this—presenting publicly and working a room were always things I’d avoid if possible, but for professional growth, I know I need to stretch a bit."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Began experiencing gastrointestinal issues and was diagnosed with irritable bowel syndrome (IBS) after several weeks of symptoms; doctor instructed her to follow a specific dietary regimen and track food triggers closely.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Keeps a digital log of all meals, snacks, and symptoms—updates after each eating occasion to monitor IBS triggers and patterns",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Chooses board game cafes and outings based on menu options compatible with her IBS diet—avoids venues that cannot accommodate dietary restrictions",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Preps weekly meal plans each Sunday, but skips prep if work is hectic—never relies on frozen meals"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Follows a strict doctor-prescribed IBS dietary regimen—tracks food triggers daily and avoids spontaneous meal changes; never prepares weekly meal plans without reviewing symptom logs from prior days",
+              "domain": "health_body"
+            },
+            "reason": "Her IBS diagnosis requires careful management of dietary triggers and adherence to a regimen determined by her healthcare provider. Weekly meal planning is now dominated by medical necessity, with daily review of symptoms and avoidance of foods flagged as triggers."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey! So, I've been officially diagnosed with IBS after a few rough weeks of stomach issues. My doctor wants me to stick to a pretty strict dietary regimen and track every food and symptom. I'm good at systems, but this is a different kind of tracking. Any advice for integrating that into my already-packed work schedule without it all slipping through the cracks?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really challenging—especially when your consulting plate is full. For tracking, have you looked into any specialized apps, or are you thinking more about building a custom solution that fits your workflow? And do you want to keep food/symptom logs separate from your work platforms like Asana, or together for convenience?"
+        },
+        {
+          "role": "user",
+          "content": "I need to keep work and health totally separate, so definitely not Asana. Right now, I'm updating a digital log after every meal or snack because I have to catch patterns and avoid potential triggers. It's working, but it's easy to forget to log if I'm in back-to-back client calls. I’m worried I might miss something important when my day gets hectic."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—protecting work/health boundaries helps with focus. Have you experimented with scheduled reminders or automation, like setting phone alerts after traditional eating times, or linking your calendar events to prompts to log your meal and symptoms? Or do you prefer checking in manually as you already do?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, scheduled reminders could help, especially if they’re non-intrusive. The only thing is, my lunch only happens if it’s on my calendar already—otherwise, I end up skipping or just not eating until I crash. So, I’d want log reminders tied to calendar events, ideally. Any platforms that let you do that easily?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—some diary apps (like Cara Care or mySymptoms) let you set reminders, but integrating them with your actual calendar events would require something like Zapier or Apple Shortcuts. You could have a calendar event trigger a reminder on your phone to log both food and any symptoms. Would that work for you, or do you use a particular calendar system (Google, Outlook, etc.)?"
+        },
+        {
+          "role": "user",
+          "content": "Google Calendar, definitely. Integrations sound great—I’d just want the prompt right after my scheduled lunch slot so I don’t forget. Oh, and I used to prep weekly meal plans every Sunday, but that’s out the window. Now, my meal planning is all about reviewing the past week’s symptom logs, identifying triggers, and planning meals accordingly. Can’t just batch recipes anymore and call it good."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change, but it sounds like you’re already building a feedback loop—reviewing symptom logs before you plan. Have you set up a worksheet or digital journal to summarize triggers, or is it all in your diary app? And when you’re planning meals, is it mostly home-cooked, or do you also consider local restaurants and outings?"
+        },
+        {
+          "role": "user",
+          "content": "I summarize in Notion right now—a trigger list, a safe foods list that I keep updating, and any patterns that pop up. As for outings, it’s definitely been an adjustment. For instance, I had to switch up my board game cafe roster; I’ll only go to ones with menu options that won’t wreck my stomach. A lot of my old go-tos just aren’t an option anymore, especially if they can’t confirm what’s in the food or let me customize."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move—nothing derails social plans like second-guessing the food. Are your friends and regular gaming group aware of your new requirements, or do you still find yourself having to explain or advocate for your restrictions at the table? I’m happy to help brainstorm scripts or even make a list of safe local eats if that would make planning with your group easier."
+        },
+        {
+          "role": "user",
+          "content": "They’re all pretty supportive, honestly. I just send out menu links before we book anywhere. What’s helped most is knowing exactly what works for me week by week—logging everything after each meal, looking back before planning, and just being up front about what I can have. The only struggle is sometimes I wish the process were a little less of a production, but I can’t afford to be spontaneous anymore. So, routines and logging are just my reality."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve really built a system that works, even if it’s more high-maintenance than you’d like. If you ever want to streamline the feedback process—like auto-tagging symptom patterns or generating trigger reports—I can help you set up some automations in Notion or link it to your log app. Sometimes even small efficiencies help make the routines feel less burdensome."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her partner was offered a short-term summer teaching fellowship out of state, requiring them to temporarily live apart for several months and coordinate their routines and communications from a distance.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Schedules daily video calls with her partner every evening during the fellowship—never replaces these with texts or emails to maintain connection across distance",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Prepares quick, simple meals on weeknights with her sister—avoids elaborate recipes and group meal planning until her partner returns",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_037",
+              "fact": "Coordinates evening plans as a household (with her partner and sister) through a shared calendar—never double-books or schedules last-minute outings without group discussion"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Coordinates evening plans separately with her sister via a shared calendar; schedules video check-ins with her partner to coordinate across locations—never relies on spontaneous texts or phone calls for evening planning during the fellowship months",
+              "domain": "social_relationships"
+            },
+            "reason": "With her partner temporarily living out of state, household evening coordination shifts from in-person group planning to managing separate routines: she and her sister coordinate locally, while she schedules remote check-ins with her partner instead of spontaneous communication."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_038",
+            "fact": "Shares cooking and meal prep duties with her sister on weeknights, rather than preparing meals alone—prefers collaborative meal times while her sister lives with her",
+            "domain": "daily_routines",
+            "reason": "Her partner's absence means meal prep with her sister is now default rather than a preference over group meal times; the group household routine no longer includes her partner for collaborative meals, and the previous arrangement is no longer relevant."
+          },
+          {
+            "id": "pref_039",
+            "fact": "Enjoys TV shows or group movie nights with her partner and sister several evenings a week, shifting leisure time from solo reading to shared entertainment",
+            "domain": "leisure_hobbies",
+            "reason": "With her partner away for several months, regular group entertainment with both is not possible; evenings shift to solo or with her sister, and this preference for three-person leisure ceases to apply for the duration."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use your help. My partner just started his out-of-state summer teaching fellowship, so we're living apart for a few months. It's only been a week and I'm already feeling kind of out of whack juggling my consulting work, having my sister move in, and keeping connected with him long-distance. Do you have any practical tips for keeping my schedule and routines stable when everything's changing?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment! Balancing work, family, and maintaining a long-distance relationship can be a lot to coordinate. Are there specific areas you’re finding most disrupted—like your work focus, personal routines, or staying connected with your partner day-to-day? We can break it down if that helps."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually, evenings are the most chaotic so far. My sister and I are managing most things together since she just moved in, but now I can't coordinate dinner and plans with my partner in person. We’re syncing up through scheduled video check-ins instead. Any suggestions for staying on top of plans without everything devolving into last-minute texting?"
+        },
+        {
+          "role": "assistant",
+          "content": "Scheduled video check-ins are a smart way to maintain connection and avoid confusion—definitely better than a flurry of texts. For practical planning, do you use a shared calendar with your sister for local evening plans, or is it more informal? Having clear separation between ‘home’ logistics and remote check-ins could help keep things streamlined."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I coordinate with my sister using our shared calendar for evening stuff—never just improvise plans. For my partner, I set video calls in advance, so we don’t rely on spontaneous phone calls or texts, especially while he’s away for this fellowship. It keeps everything sane on my end."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really structured, which makes sense given all the moving parts. How’s the dynamic with weeknight meals now that your sister’s there and your partner’s away? Are you still prepping as a group or has it shifted?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, meal prep has shifted too. My sister and I just focus on quick, simple meals during the week. No elaborate recipes or group meal planning while he’s gone—it’s just survive and nourish right now. We used to do group dinners or movie nights all together, but that’s not happening these months, so it’s scaled-back cooking and mostly just the two of us sharing kitchen duty."
+        },
+        {
+          "role": "assistant",
+          "content": "Completely fair—easier recipes make a huge difference when things are busy and the group is smaller. Are you finding the change in how you spend your evenings—fewer group activities—makes it harder to wind down, or is it more manageable with just you and your sister?"
+        },
+        {
+          "role": "user",
+          "content": "It’s different, for sure. I dropped the group movie/TV routine with both my partner and sister—just not possible right now. It’s mostly either solo reading or an occasional movie with my sister, but the rhythm’s shifted. I’m honestly missing the full group hangouts, but it’s manageable for a few months."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—group routines are hard to replicate long-distance. If you’re looking to add something new for connection or relaxation (with your sister or solo), would you prefer more structured activities—like themed dinners or planned local outings—or are you leaning toward simplicity until your partner returns?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I’m keeping things simple. Quick dinners with my sister, and just sticking to the basics on weeknights. The only thing I won’t compromise is the daily video call with my partner—even if I’m tired or busy, we never skip to just texts or emails. That’s been key for us staying connected."
+        },
+        {
+          "role": "assistant",
+          "content": "That daily video call sounds like a great anchor for you both, especially during a temporary separation. Keeping dinners low-key and your routine simplified helps balance all the extra coordination. Is there anything in your self-care or workday routines that you feel is falling through the cracks and want help troubleshooting?"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "One of her key clients requests an urgent overhaul of their CRM workflows due to a sudden business pivot, requiring her to quickly learn and implement a new CRM platform unfamiliar to her, halting progress on her current Salesforce certification while she dedicates substantial time to mastering the new system.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Blocks out time daily for rapid learning and skill acquisition in the unfamiliar CRM platform—prioritizes urgent client needs over her own certification progress and typical admin routines",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Joins online user communities and expert forums specific to the new CRM platform to seek troubleshooting advice and workflow best practices—prefers peer advice over formal course materials during pivotal project adaptation periods",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_029",
+              "fact": "Prefers audio-based learning resources for her Salesforce certification course instead of typing-intensive modules"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Switches to video tutorials, interactive forums, and community webinars for mastering the new CRM platform—avoids audio-only lessons due to the complex, visual nature of this unfamiliar system and project urgency",
+              "domain": "daily_routines"
+            },
+            "reason": "Her Salesforce certification course is put on indefinite pause as a key client requires rapid adoption of an entirely new CRM platform. Audio-based learning is ineffective for a system she's never used, so her learning preference shifts to highly visual and interactive resources that support accelerated skill acquisition."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_034",
+            "fact": "Reserves Monday, Tuesday, and Wednesday exclusively for ongoing work with the retainer client; avoids meetings or calls for other projects on these days",
+            "domain": "work_habits",
+            "reason": "The urgent overhaul project for a key client with a new CRM system means her schedule must become flexible and responsive to unpredictable client needs, making fixed retainer days impossible. There are no exclusive days reserved for any client while she adapts to rapid-learning and implementation requirements."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I’m in a bit of a crunch—one of my main clients pivoted their entire sales process, which means I’ve got to overhaul their whole CRM setup basically overnight. And of course, they picked a completely new platform I’ve never worked with before! I’ve put my Salesforce cert on ice until this is done. I need advice on how to get up to speed on a new CRM fast without completely letting my other projects or health routines implode. Where should I even start?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds intense! Rapidly picking up a new CRM under pressure is no joke. Since you’re used to Salesforce, you’re probably pretty methodical with learning. What’s the new CRM platform your client chose? And do you know if there’s a sandbox or test environment you can play in, or are you stuck learning from docs and help articles?"
+        },
+        {
+          "role": "user",
+          "content": "It’s called SpikeFlow (I know, not a household name). Thankfully I have a sandbox with some demo data. Their documentation exists but is pretty dry—lots of static help articles. For Salesforce, I usually lean on audio lessons while I work, but these SpikeFlow workflows are super visual and not at all intuitive. I feel like I need more than just listening to info. Any ideas for sources or approaches that are more hands-on?"
+        },
+        {
+          "role": "assistant",
+          "content": "Audio probably won’t cut it if you need to see all the moving parts. I’d suggest searching for video walkthroughs—maybe on YouTube or in tech community webinars. Some platforms also have interactive forums or office hours where experts demo live solutions. Have you checked if SpikeFlow has a user community or scheduled trainings? Hands-on and highly visual content can really shortcut the learning curve."
+        },
+        {
+          "role": "user",
+          "content": "Exactly—audio-only isn’t working right now. I’m shifting to video tutorials, community forums, and webinars since following along visually is way faster for this sort of fire-drill. I found a few SpikeFlow power users who host troubleshooting sessions, which should help. So for now, no more audio-only modules for this kind of learning, at least. I’m trying to absorb as much as possible—do you suggest time-blocking learning or just cramming when I can?"
+        },
+        {
+          "role": "assistant",
+          "content": "Nice pivot! Blocking dedicated time is usually more effective than cramming, especially when juggling multiple projects. If deadlines allow, could you set aside an hour or two each day just for SpikeFlow? That way, you can give your brain space to process—and you’re less likely to burn out. Are you able to move some of your usual admin routines or is everything packed tight right now?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve actually had to block out time daily just for SpikeFlow crash-course stuff—I have no choice with how quickly my client wants results. That means I’m pushing admin like invoicing and marketing back, even on Fridays where I’d normally reserve time for that. Client work and project triage have to come first at the moment. It’s not ideal, but this overhaul needs all my attention. One thing I haven’t changed is that I’m still using Asana for tracking—no going back to spreadsheets! Any other tips for making this transition smoother or ways I can avoid hitting a wall?"
+        },
+        {
+          "role": "assistant",
+          "content": "Your focus on Asana for task tracking is definitely smart—less chaos when switching between projects. Since you’re running in triage mode, leveraging peer advice is huge. You mentioned finding user-hosted troubleshooting sessions—are you joining any expert online communities too? Sometimes, forums have dedicated SpikeFlow threads for workflow best practices, or even template libraries from other consultants. Also, protecting small breaks, even 10 minutes to stand up or stretch, can help with energy and prevent those afternoon crashes you mentioned struggling with before."
+        },
+        {
+          "role": "user",
+          "content": "Yes, I joined a couple of SpikeFlow user groups and expert forums. I’m posting questions when I hit snags and browsing threads for best practices, since working through real use-case discussions is much quicker than formal courses right now. Honestly, I’m relying on peer input more heavily than ever—I’ll take a war story or hack from another consultant over an official manual any day during a time like this. As for breaks, I’m trying to stick with standing every hour, but my usual lunch break sometimes disappears. But you’re right, building in a little pause helps. Oh, I used to have exclusive client days on my calendar, but I had to drop that too—my schedule has to stay completely flexible to deal with surprise requirements from this client. No more fixed blocks for retainer work. Things are a little wild!"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds wild, but you’re adapting fast. Prioritizing community learning, dropping rigid scheduling, and keeping your tools consistent is a great response. As things settle, you can ease back in some routines and eventually restart your Salesforce cert studies. In the meantime, let me know if you need help prioritizing SpikeFlow tasks, organizing info from the forums, or anything else to keep burnout at bay."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her parents announce they are moving from Seattle to Denver to be closer to their daughters, planning to stay with her and her partner for several weeks while searching for a permanent home.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_056",
+            "fact": "Prepares group meals and eats with her parents and partner most evenings, prioritizing family-style dinners over solo or pair routines while parents are in the household",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_057",
+            "fact": "Plans family outings and short weekend activities in Denver with her parents, focusing on helping them explore neighborhoods and local amenities during their house search",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_058",
+            "fact": "Sets aside extended weeknight time for conversations and support with parents, even if it means reducing evening leisure activities or shifting game night schedules",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Video-calls parents every Sunday afternoon, never substitutes with text or email"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Coordinates in-person time with parents throughout the week while they stay in her home—video calls are replaced with face-to-face conversations and shared activities",
+              "domain": "social_relationships"
+            },
+            "reason": "Her parents are now living with her for several weeks while they search for a permanent home in Denver, making weekly video calls unnecessary and irrelevant. Their communication becomes more frequent and in-person."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_050",
+            "fact": "Schedules daily video calls with her partner every evening during the fellowship—never replaces these with texts or emails to maintain connection across distance",
+            "domain": "social_relationships",
+            "reason": "Her partner is no longer living out of state; the fellowship period is over, and they are both at home. Daily video calls for connection across distance no longer apply."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, big news... my parents just told us they're moving from Seattle to Denver! They're staying with us for a few weeks while they house-hunt. I'm excited but also a little thrown off—my routine is definitely changing. Any tips for juggling work, my parents being around all day, and still getting some downtime?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that is big! It sounds both fun and a little overwhelming. First off, congrats—having family nearby can be amazing. Since they'll be staying for a chunk of time, what part of your routine has felt most disrupted so far? Is it work focus, your usual downtime, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "It's a bit of everything, honestly. I used to count on quiet evenings to unwind with my partner or read, and now I'm obviously spending a lot more time chatting with my parents after work. Plus, I'm prepping group dinners most nights, which means less time for my usual yoga or catching up on mystery novels. I want to be present for them but not totally abandon my own routines... any ideas?"
+        },
+        {
+          "role": "assistant",
+          "content": "It definitely makes sense that your evenings feel more crowded! Preparing group dinners is generous—and probably helpful for them as they get settled. Are you finding family dinners enjoyable, or do they feel like one more task? And is there any chunk of your evening you still want to keep just for yourself, even if it's shorter?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I do like the dinners—it's been kind of nice to sit down as a group most nights, especially since my partner teaches and usually eats on the fly. But it does mean personal things get bumped, especially when I'm also setting aside extra time in the evenings to talk with my parents about neighborhoods, their house search, or just hang out. Before, I'd do yoga at the studio and then have a little reading-before-bed time most nights, but that routine is kind of out the window for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—and it’s great that you’re embracing mealtime as a positive. Since your evenings are busier, maybe you could block some \"me\" moments elsewhere. For example, is there a way to work in a short walk or meditation after dinner, before everyone winds down? Or would shifting yoga to weekends help? Also, are your parents pretty independent during the day, or do you feel pulled into helping them throughout your work hours?"
+        },
+        {
+          "role": "user",
+          "content": "Luckily, I've kept my client work pretty protected—I'm strict about not letting family requests interrupt work blocks. But outside of that, I'm doing more to help them explore Denver on weekends and planning little outings to show them different neighborhoods. Sundays used to be reserved for personal relaxation and planning, but lately we've been using that time to check out open houses or go for family walks. Also, I don't need those Sunday video calls anymore since, well, we're now face-to-face daily!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift! Having your usual personal Sunday time repurposed for family outings and losing those video call rituals must feel strange, but also rewarding. When you plan weekend activities, do you find it energizing to play tour guide, or does it leave you in need of solo recharge?"
+        },
+        {
+          "role": "user",
+          "content": "A little of both, honestly. I like helping them get oriented—I've planned short local adventures to check out coffee shops and parks that might work for them, so it feels purposeful. But I've definitely cut back on my own solo stuff, like my Sunday city hikes alone or spontaneous visits to board game cafes. And monthly game nights with friends might have to shift around while my parents are here, since evenings tend to be family-focused now."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s awesome you’re balancing that—being a Denver ambassador for your parents, but also recognizing your own needs. For the game nights, would your college friends be open to mixing up the timing? Or maybe you could host a smaller group, or involve your parents if that feels comfortable. And for hikes, could you invite them along to your favorite city park, keeping the tradition but making it family-style for now?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I think game nights will just shift later in the month or be more flexible for now—I want to prioritize group dinners and evening conversations with everyone in the house. And you’re right, inviting the family for a Sunday city park walk actually worked last weekend. I also dropped daily video calls with my partner, since we’re both home now and evenings are so family-heavy. My communication habits have changed a lot, ha!"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re adapting well, even if things are more dynamic! Dropping the daily video calls must be a relief, but having family in the same space introduces its own set of routines. Is there anything you’re missing that we haven’t talked about—like time with friends, relaxation, or handling your ongoing client load now that evenings are fuller?"
+        },
+        {
+          "role": "user",
+          "content": "I think my main challenge is just protecting enough quiet time to decompress, especially with my parents at the apartment past dinnertime. But I’m making it work by being a little more structured—moving my reading or wind-down routine later, and being upfront about needing 15–20 minutes solo in the evenings some nights. For now, I’m just focusing on helping them settle in, enjoying family-style meals, and making sure we find them a place they love."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a healthy approach—communicating your need for solo recharge while embracing the benefits of having your parents close by. If you ever feel the need to reset boundaries or shift schedules again, just remember it’s okay to revisit your routines as things evolve. And if you want help brainstorming easy meal plans or quick ways to recharge during these busy weeks, I’m here!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Reviews client emails only at designated times—never responds immediately during work blocks",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_003",
+        "fact": "Uses Asana to track all project tasks; never relies on spreadsheets for task management",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Schedules business admin tasks strictly for Fridays—never lets invoices or marketing spill into client workdays",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Helps her sister run errands and settle in, but never lets family requests interrupt client project hours",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Offers babysitting for neighbor’s children only during pre-arranged school breaks—never accepts same-day requests",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Attends local board game cafes every other Saturday—never spends weekends entirely at home",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Reads business and mystery novels, alternating genres; avoids romance books",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Plans mini weekend trips within Colorado quarterly, never travels out of state for leisure",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Watches new indie films at local theaters—never streams blockbuster movies online",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts each morning with a 15-minute meditation—never checks her phone before meditating",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Batch grocery shops on Thursday evenings—never makes daily trips for ingredients",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Keeps her inbox at zero by clearing emails each evening, never lets messages pile up",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Spends 30 minutes weekly updating her LinkedIn profile and posting industry news—never ignores her professional online presence",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Reserves Sunday afternoons for personal planning and relaxation, never schedules client meetings or work tasks during that time",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Uses contract drafting software with voice input and auto-generation tools to reduce typing; avoids manual drafting due to wrist pain",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Uses ergonomic devices at her workstation, including a vertical mouse and split keyboard, to minimize wrist strain during client work",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "Schedules mandatory physical therapy exercises for shoulder and neck throughout the workday, replacing breaks with targeted PT routines and avoiding desk work when soreness returns",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Schedules adequate lunch and snack breaks with ergonomic postures and screen-free downtime, as skipping meals plus poor ergonomics worsens shoulder and neck pain",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Complies strictly with doctor-ordered restrictions on certain yoga poses—participates only in gentle/stretching-focused sessions and avoids poses involving weight on shoulders/neck",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Keeps a detailed log of pain symptoms and PT exercises at her workstation, updating it during each break for better tracking and communication with her therapist",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_035",
+        "fact": "Checks Slack and instant messages hourly for retainer client on dedicated workdays, but silences notifications from other clients during those periods",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Brings a packed lunch for retainer client onsite days to avoid missing meals; avoids skipping lunch even during busy migration phases",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_040",
+        "fact": "Adheres to a strict nightly wind-down protocol prescribed by her doctor: takes insomnia medication, avoids herbal tea, screens, and reading after 8pm; instead uses blackout curtains and a white noise machine to support sleep hygiene regardless of deadlines",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Sets a daily alarm to take prescribed insomnia medication one hour before bedtime, never delays or skips it—even on weekends or during social events",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Avoids evening game nights and late outings, preferring quiet home routines after 8pm to prioritize rest and sleep hygiene",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_043",
+        "fact": "Attends large networking events and industry gatherings when required for professional growth, despite usually avoiding such settings in her personal life",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Prepares in-depth workshop materials and rehearses presentations repeatedly before all public speaking engagements to reduce pre-event anxiety",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Seeks out post-event networking opportunities at tech conferences—even if it requires staying out past usual evening routine—to maximize industry connections and client leads",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Follows a strict doctor-prescribed IBS dietary regimen—tracks food triggers daily and avoids spontaneous meal changes; never prepares weekly meal plans without reviewing symptom logs from prior days",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Keeps a digital log of all meals, snacks, and symptoms—updates after each eating occasion to monitor IBS triggers and patterns",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Chooses board game cafes and outings based on menu options compatible with her IBS diet—avoids venues that cannot accommodate dietary restrictions",
+        "domain": "leisure_hobbies",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Coordinates evening plans separately with her sister via a shared calendar; schedules video check-ins with her partner to coordinate across locations—never relies on spontaneous texts or phone calls for evening planning during the fellowship months",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Prepares quick, simple meals on weeknights with her sister—avoids elaborate recipes and group meal planning until her partner returns",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Switches to video tutorials, interactive forums, and community webinars for mastering the new CRM platform—avoids audio-only lessons due to the complex, visual nature of this unfamiliar system and project urgency",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Blocks out time daily for rapid learning and skill acquisition in the unfamiliar CRM platform—prioritizes urgent client needs over her own certification progress and typical admin routines",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Joins online user communities and expert forums specific to the new CRM platform to seek troubleshooting advice and workflow best practices—prefers peer advice over formal course materials during pivotal project adaptation periods",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Coordinates in-person time with parents throughout the week while they stay in her home—video calls are replaced with face-to-face conversations and shared activities",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Prepares group meals and eats with her parents and partner most evenings, prioritizing family-style dinners over solo or pair routines while parents are in the household",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Plans family outings and short weekend activities in Denver with her parents, focusing on helping them explore neighborhoods and local amenities during their house search",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Sets aside extended weeknight time for conversations and support with parents, even if it means reducing evening leisure activities or shifting game night schedules",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Reserves Wednesday mornings exclusively for deep client work; avoids meetings or calls on that day",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_034",
+        "reason": "The new retainer contract requires her to dedicate at least three full workdays to one client, so she can no longer reserve Wednesdays for deep work for any project. Instead, she now blocks multiple consecutive days exclusively for the retainer client and avoids scheduling non-retainer meetings or calls on those days."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Always drafts contracts herself; refuses to use generic online templates",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Her carpal tunnel diagnosis and doctor-mandated reduction in keyboard use make extensive manual contract drafting physically difficult and potentially harmful."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Only eats lunch if it’s scheduled as a calendar event; never grabs snacks during client calls",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_031",
+        "reason": "Her physician's advice to better address physical health means she now schedules not just lunch but also dedicated ergonomic/posture breaks and avoids meals at her desk, as her previous routine exacerbated her pain."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Does yoga classes at the studio—never at home or online for back pain management",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": null,
+        "reason": "Bracing and wrist pain from carpal tunnel make in-person yoga (especially poses relying on wrist strength or flexibility) temporarily inadvisable per doctor’s recommendation. She cannot attend studio sessions until she recovers."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Switches between sitting and standing every hour during workdays—never sits for extended periods",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_027",
+        "reason": "Treatment for carpal tunnel necessitates frequent rest and reduced keyboard/mouse use, so simply alternating sitting/standing does not address the core issue."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Sticks to a wind-down routine with herbal tea and reading on nights before deadlines; never watches screens after 9pm if insomnia threatens",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_040",
+        "reason": "Her insomnia has become severe, with frequent awakenings and extreme fatigue. Doctor's intervention requires not just informal wind-downs before deadlines, but daily, formal sleep hygiene routines around medication and environmental changes, regardless of project stress."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Preps weekly meal plans each Sunday, but skips prep if work is hectic—never relies on frozen meals",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "Her IBS diagnosis requires careful management of dietary triggers and adherence to a regimen determined by her healthcare provider. Weekly meal planning is now dominated by medical necessity, with daily review of symptoms and avoidance of foods flagged as triggers."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Coordinates evening plans with her partner through a shared calendar—never double-books or schedules last-minute outings",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_037",
+        "reason": "With her sister now temporarily living in the household, evening routines and plans involve a third person, requiring adjustments to how calendar coordination happens. She now considers both her partner and sister when planning shared activities or downtime."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Hosts monthly game nights at her apartment, inviting only close college friends—never attends large gatherings",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_043",
+        "reason": "Being an invited presenter and participant at a multi-day regional conference pushes her to engage in large gatherings, which she previously avoided. The professional necessity of networking and presenting at industry events outweighs her longstanding aversion to large in-person groups."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Video-calls parents every Sunday afternoon, never substitutes with text or email",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "Her parents are now living with her for several weeks while they search for a permanent home in Denver, making weekly video calls unnecessary and irrelevant. Their communication becomes more frequent and in-person."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Takes short city hikes in Denver parks on Sundays—never hikes alone in remote areas",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "Her physical therapist has restricted strenuous activity, including hikes, until her shoulder and neck pain improve; walking for exercise is temporarily replaced by PT and gentler movement."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Alternates between short work sessions using voice dictation and frequent breaks with wrist stretching; avoids prolonged desk work in any position",
+        "domain": "health_body",
+        "created_at_session": 0,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "Her doctor's prescription for physical therapy and the need to address shoulder and neck pain make her former routine of wrist stretching during breaks insufficient. Now, her breaks center around prescribed PT exercises, not wrist-focused routines."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Prefers audio-based learning resources for her Salesforce certification course instead of typing-intensive modules",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_052",
+        "reason": "Her Salesforce certification course is put on indefinite pause as a key client requires rapid adoption of an entirely new CRM platform. Audio-based learning is ineffective for a system she's never used, so her learning preference shifts to highly visual and interactive resources that support accelerated skill acquisition."
+      },
+      {
+        "id": "pref_034",
+        "fact": "Reserves Monday, Tuesday, and Wednesday exclusively for ongoing work with the retainer client; avoids meetings or calls for other projects on these days",
+        "domain": "work_habits",
+        "created_at_session": 2,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "The urgent overhaul project for a key client with a new CRM system means her schedule must become flexible and responsive to unpredictable client needs, making fixed retainer days impossible. There are no exclusive days reserved for any client while she adapts to rapid-learning and implementation requirements."
+      },
+      {
+        "id": "pref_037",
+        "fact": "Coordinates evening plans as a household (with her partner and sister) through a shared calendar—never double-books or schedules last-minute outings without group discussion",
+        "domain": "social_relationships",
+        "created_at_session": 3,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "With her partner temporarily living out of state, household evening coordination shifts from in-person group planning to managing separate routines: she and her sister coordinate locally, while she schedules remote check-ins with her partner instead of spontaneous communication."
+      },
+      {
+        "id": "pref_038",
+        "fact": "Shares cooking and meal prep duties with her sister on weeknights, rather than preparing meals alone—prefers collaborative meal times while her sister lives with her",
+        "domain": "daily_routines",
+        "created_at_session": 3,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "Her partner's absence means meal prep with her sister is now default rather than a preference over group meal times; the group household routine no longer includes her partner for collaborative meals, and the previous arrangement is no longer relevant."
+      },
+      {
+        "id": "pref_039",
+        "fact": "Enjoys TV shows or group movie nights with her partner and sister several evenings a week, shifting leisure time from solo reading to shared entertainment",
+        "domain": "leisure_hobbies",
+        "created_at_session": 3,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "With her partner away for several months, regular group entertainment with both is not possible; evenings shift to solo or with her sister, and this preference for three-person leisure ceases to apply for the duration."
+      },
+      {
+        "id": "pref_050",
+        "fact": "Schedules daily video calls with her partner every evening during the fellowship—never replaces these with texts or emails to maintain connection across distance",
+        "domain": "social_relationships",
+        "created_at_session": 7,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "Her partner is no longer living out of state; the fellowship period is over, and they are both at home. Daily video calls for connection across distance no longer apply."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:43:50.230835"
+}

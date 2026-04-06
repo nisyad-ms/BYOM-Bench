@@ -1,0 +1,1500 @@
+{
+  "persona": "A 28-year-old data scientist working remotely for a healthcare startup",
+  "persona_id": "persona_20260302_093505",
+  "expanded_persona": {
+    "base_persona": "A 28-year-old data scientist working remotely for a healthcare startup",
+    "age": 28,
+    "gender": "male",
+    "location": "Seattle, WA",
+    "work_education": [
+      "Works remotely as a lead data scientist for a 40-person telehealth startup specializing in predictive analytics for patient monitoring",
+      "Coordinates weekly virtual stand-ups across time zones and manages two junior data analysts",
+      "Recently tasked with developing a machine learning model for early detection of chronic illnesses; project deadline is next quarter",
+      "Has a master's degree in statistics from University of Washington and attends monthly online workshops to stay current",
+      "Considering switching to a managerial role to reduce technical workload"
+    ],
+    "health_wellness": [
+      "Frequently experiences neck and back discomfort due to extended hours at his home workstation",
+      "Tries to maintain a daily morning routine of yoga and stretching; involved in a virtual fitness challenge with friends",
+      "Eats mostly home-cooked meals but struggles to limit late-night snacking when working overtime",
+      "Recently started tracking his sleep with a fitness device after noticing irregular sleep patterns",
+      "Occasionally feels isolated working from home, especially during long sprints; has begun scheduling weekly therapy sessions"
+    ],
+    "family_relationships": [
+      "Lives alone in a rented one-bedroom apartment downtown",
+      "Is in a long-distance relationship (girlfriend lives in San Francisco); they visit each other every six weeks",
+      "Parents are retired and live in Portland, OR; he calls them every Sunday afternoon",
+      "Has an older sister who recently had twins; occasionally helps with remote babysitting via video calls",
+      "Close-knit group of college friends in Seattle, but meets in person less often since switching to remote work"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Schedules all team meetings in early afternoon — never before 10am or after 4pm due to time zone differences",
+        "Replies to urgent work messages immediately, but delays non-critical emails until the end of the workday",
+        "Blocks two hours each morning for uninterrupted model development work — no meetings or calls allowed",
+        "Delegates routine data cleaning tasks to junior analysts, focusing only on high-level modeling and project oversight",
+        "Joins monthly online workshops live — never watches recordings after the fact"
+      ],
+      "health_body": [
+        "Starts each workday with a 30-minute yoga and stretching routine — never skips even during deadlines",
+        "Prepares all main meals at home, but allows one takeout dinner per week as a treat",
+        "Uses a standing desk for half of his work hours — never works a full day sitting",
+        "Tracks sleep metrics nightly and reviews weekly reports; avoids caffeine after 2pm to improve sleep regularity",
+        "Participates in virtual fitness challenges with friends; never works out solo without sharing progress"
+      ],
+      "social_relationships": [
+        "Schedules video calls with his girlfriend twice weekly and never texts about important matters — prefers face-to-face",
+        "Hosts monthly game nights with college friends in Seattle — always in-person, never virtual",
+        "Calls parents every Sunday afternoon without fail; never cancels except for emergencies",
+        "Checks in with his sister twice a week and always volunteers for remote babysitting when she requests",
+        "Never attends large gatherings, preferring small group hangouts or one-on-one meetups"
+      ],
+      "leisure_hobbies": [
+        "Explores new Seattle coffee shops every Saturday morning — never revisits the same cafe within a month",
+        "Plays strategy board games with friends monthly; avoids online gaming entirely",
+        "Goes hiking in the surrounding mountains at least once a month, regardless of weather",
+        "Reads sci-fi novels in print format, never on tablets or e-readers",
+        "Plans at least one weekend getaway every quarter — prioritizes nature destinations and avoids city breaks"
+      ],
+      "daily_routines": [
+        "Starts the day with a digital journal entry using a dedicated app — never journals on paper",
+        "Checks work emails after breakfast, but avoids personal email inbox until after lunch",
+        "Shops for groceries on Tuesday evenings, never on weekends to avoid crowds",
+        "Sets device limits every evening — disables all work notifications after 9pm",
+        "Prepares a nightly herbal tea as his last activity before bed, never consumes food after 10pm"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "The telehealth startup announced a merger with a larger healthcare company, requiring all lead data scientists, including him, to migrate project management and team coordination to the new company’s proprietary platform within the next three weeks.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Uses the new proprietary platform exclusively for project coordination and team communication — no longer uses Slack or Asana for primary workflow tasks",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Schedules all team meetings in early afternoon — never before 10am or after 4pm due to time zone differences"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Schedules all team meetings according to the new company’s proprietary platform defaults, which require meetings to be between 9am and 5pm PST — no longer strictly early afternoon",
+              "domain": "work_habits"
+            },
+            "reason": "The merger requires mandatory migration to the new company’s project management platform, which enforces synchronized calendar scheduling across departments. He must adapt his meeting times to the new system’s defaults, losing control over his previous preferred time window."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey — big change at work. My startup just announced a merger with a larger healthcare company, and now all our project management is moving to their proprietary platform. I've got three weeks to completely migrate my team workflows. Honestly, I'm feeling pretty overwhelmed and looking for strategies to make this transition less chaotic. Any ideas on setting up smooth coordination?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big shift, especially if your team's used to certain routines. The fact you have a tight deadline adds extra pressure. Are you able to import some of your old workflows into this new platform, or are you having to reinvent processes completely?"
+        },
+        {
+          "role": "user",
+          "content": "Unfortunately, it’s pretty much a complete overhaul. The new company’s platform doesn’t support integration with Slack or Asana, so we’re supposed to use their system exclusively for all project coordination and team communication. I’m still figuring out how to set up new channels and automate task assignments for my analysts."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it, so you're retiring Slack and Asana for anything primary. That can be a tough adjustment for everyone, especially if your team relies on quick chats or familiar task boards. How are your analysts handling it so far, and have you run into any unexpected hiccups setting up communication or task flows?"
+        },
+        {
+          "role": "user",
+          "content": "They're a bit confused — and honestly, so am I. The layout is really different, and I’m used to scheduling all our team meetings in early afternoon to fit everyone's time zones. But the new platform enforces default calendar slots between 9am and 5pm, so I lost control over timing. Some meetings are now earlier than I like, and my focus hours are getting squeezed."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a meaningful loss if you relied on that early afternoon window to protect your mornings. Have you thought about communicating your previous scheduling habits to your new colleagues, or is the platform pretty strict about enforcing these defaults?"
+        },
+        {
+          "role": "user",
+          "content": "It's pretty strict. The calendar sync feature won’t let me override the defaults, so I have to adapt and schedule meetings between 9am and 5pm PST now. No more reserve of early afternoons — I'm stuck with what the platform allows, which messes up my model development block in the mornings."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s tough; having your deep work time intruded on can really impact productivity, especially for work like model development. Would shifting your model development block earlier, say before 9am, or later in the afternoon help you recover some focus hours? Or is the new schedule filling up both ends?"
+        },
+        {
+          "role": "user",
+          "content": "I’m considering shifting to earlier mornings, but I want to keep my yoga routine first thing — it's non-negotiable for my back and neck. Plus, the new platform requires people to be available throughout the day, so even late afternoons aren’t safe. I’ll probably just have to be more flexible, but the loss of uninterrupted time is frustrating."
+        },
+        {
+          "role": "assistant",
+          "content": "That's sensible to protect your yoga and stretching time, especially if it's helping with discomfort. Maybe you could experiment with splitting your deep work into smaller chunks, or using the platform's notification settings to carve out mini-focus periods. Have you checked if there’s a 'do not disturb' or focus mode in the new system?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll look into that — I know they have some notification controls. But right now, my bigger concern is getting everyone up to speed on the platform and figuring out how to organize projects without Slack or Asana. Any tips for onboarding a small remote team onto totally new software?"
+        },
+        {
+          "role": "assistant",
+          "content": "Onboarding usually goes smoother with a two-pronged approach: start with a walkthrough or training session for your team, and then create a cheat sheet for quick reference. For remote teams, screen-shared demos and short video guides can help. Is there official training from the new company, or are you expected to self-organize?"
+        },
+        {
+          "role": "user",
+          "content": "They’ve got some documentation, but it’s pretty dry. I think I’ll prep a quick walkthrough for my junior analysts and set up a reference doc of our new procedures. Maybe schedule a couple practice sessions for task assignments and project coordination via the new platform before we go live."
+        },
+        {
+          "role": "assistant",
+          "content": "Good idea — hands-on practice will build confidence. You could also collect feedback during those sessions so you can tweak workflows before the official migration. One suggestion: keep a log of common questions or hiccups your team has, so you can address them collectively and possibly share back to the new company for future improvements."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Developed persistent wrist and forearm pain diagnosed as early-stage repetitive strain injury by his physician, who ordered a temporary halt on all keyboard use longer than 45 minutes at a stretch and referred him to occupational therapy.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_029",
+            "fact": "Uses voice-to-text or dictation tools for work communications and notes instead of typing whenever possible",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_030",
+            "fact": "Takes scheduled 15-minute breaks every hour to rest his wrists and do occupational therapy exercises as prescribed",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Starts the day with a digital journal entry using a dedicated app — never journals on paper"
+            },
+            "to": {
+              "id": "pref_028",
+              "fact": "Starts the day with an audio journal entry recorded on his phone — avoids all typing or device use in the morning per occupational therapy recommendation",
+              "domain": "daily_routines"
+            },
+            "reason": "The physician-mandated reduction of keyboard use and referral to occupational therapy specifically target typing. To comply and protect his recovery, he replaces his typed digital journaling routine with audio journaling."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So I was just diagnosed with early-stage repetitive strain injury—wrist and forearm pain from too much keyboard time. My doctor insisted I limit typing to 45-minute stretches and referred me to occupational therapy. It’s already messing with my work routine. Any advice for making this bearable, especially since most of my day is typing and coding?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds rough, especially with your workload and all the remote collaboration. Glad your doctor caught it early, though! Are you able to shift some of your tasks away from typing for now? Maybe more meetings or oversight, less hands-on?"
+        },
+        {
+          "role": "user",
+          "content": "I wish it was that simple. I still need to build out the modeling stuff, but am trying to delegate more data cleaning to my junior analysts. The bigger struggle is day-to-day communication—emails, Slack, even journaling. I have to cut down on all of it. I’m open to suggestions for substitutes."
+        },
+        {
+          "role": "assistant",
+          "content": "That's smart to hand off routine tasks. For communication, have you tried voice-to-text or dictation tools? Those can help reduce keyboard use for emails and Slack messages. Not perfect, but a big relief if you're trying to keep typing time low."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I actually just started using voice-to-text for most work communications and notes—dictation in Teams, Google Docs, anywhere I can. It's clunky at times, but better than pushing through the pain. I'm also recording audio logs for my daily journal instead of typing them in the app every morning like I used to. Doctor insisted I avoid all device use in the morning to start."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes a lot of sense. Audio journaling seems like a good adaptation—plus, speaking your thoughts can feel pretty different from typing them out. Are you finding it hard to avoid devices in the morning, or has the change actually helped with your routine in other ways?"
+        },
+        {
+          "role": "user",
+          "content": "It's a weird switch, but honestly, it was easier than I expected. Not tapping out text means I fall into less mindless phone scrolling early on. Still, I have to plan ahead for work stuff, since I delay checking emails until after breakfast anyway. The hard part is blocking off enough breaks: I’m trying to take 15 minutes every hour, as prescribed, for wrist stretches and resting. Not sure how to fit it all in, especially during crunch periods."
+        },
+        {
+          "role": "assistant",
+          "content": "That's actually great self-care, even if it's tricky with your deadlines. Could you schedule those 15-minute breaks directly into your calendar so meetings or deep work blocks don't run over them? Maybe set a recurring reminder so your team knows not to interrupt."
+        },
+        {
+          "role": "user",
+          "content": "I've started integrating scheduled breaks into my calendar, yeah. It helps a bit, but there's pressure from project timelines—especially leading a team and coordinating across time zones. I'm hoping occupational therapy gives me more tools for handling this. Any tech or ergonomic hack you recommend for persistent wrist issues?"
+        },
+        {
+          "role": "assistant",
+          "content": "Beyond dictation and scheduled breaks, some folks swear by split keyboards, wrist rests, or vertical mice to reduce strain. Have you experimented with ergonomic devices, or would that disrupt your standing desk setup?"
+        },
+        {
+          "role": "user",
+          "content": "I use a standing desk for half of each workday, but my ergonomic equipment is pretty basic. I haven't tried split keyboards or vertical mice yet, but maybe I should. I'm also looking to reduce technical workload overall. Considering a move to more managerial tasks, but not sure about the timing."
+        },
+        {
+          "role": "assistant",
+          "content": "That might be a smart longer-term shift—focusing on oversight and strategy rather than day-to-day keyboard-heavy tasks. Given your skills and experience, moving toward management could actually protect your health while letting you contribute in new ways. Want to talk through how to propose or transition into a manager role?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, let's do that. My lead has been open to the idea, especially since I'm already overseeing the junior analysts. If this injury persists, I won't have a choice. By the way, game nights and coffee shop visits are still on—just no board games with lots of shuffling tiles for now!"
+        },
+        {
+          "role": "assistant",
+          "content": "Glad you're still able to keep up with your favorite activities outside work—it helps to have those outlets when dealing with health issues. For your move toward management, maybe start by outlining exactly which technical tasks you’d want to delegate and what managerial responsibilities you’re ready to take on. Would you like help drafting a plan or a conversation starter for your lead?"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Began experiencing frequent migraines severe enough to disrupt his morning yoga routine and work focus; his doctor ordered a full neurological evaluation and recommended a temporary reduction of screen time and daily electronic device usage.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Limits total daily screen time by setting device shutdown alarms and takes extended mid-day breaks away from all electronics as per doctor’s advice",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_034",
+            "fact": "Prioritizes offline relaxation activities (listening to music, gentle walks, or eyes-closed meditation) during migraine flare-ups instead of digital entertainment",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Starts each workday with a 30-minute yoga and stretching routine — never skips even during deadlines"
+            },
+            "to": {
+              "id": "pref_031",
+              "fact": "Replaces morning yoga with gentle walking or light stretching on migraine days — avoids all yoga or strenuous activity when symptoms are present",
+              "domain": "health_body"
+            },
+            "reason": "Migraine severity now disrupts his ability to complete the usual 30-minute yoga routine. The doctor’s recommendation to reduce physical strain and screen/device use during acute symptoms leads him to adopt a gentler, lower-exertion alternative rather than rigidly continuing yoga daily."
+          },
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Joins monthly online workshops live — never watches recordings after the fact"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Skips live online workshops when experiencing migraines; now reviews recordings later in short screen-limited increments as recommended",
+              "domain": "work_habits"
+            },
+            "reason": "His physician has explicitly advised him to limit screen time due to migraines, which makes attending full-length live workshops counterproductive and potentially harmful. Watching short segments of recordings fits his new medical constraints."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so I’ve been dealing with some pretty intense migraines lately—enough that my doctor ordered a neurological eval and told me to cut way back on screens and electronics for now. The mornings are especially rough. Got any advice for working effectively with these constraints? I need to stay on track with my project, but everything feels off."
+        },
+        {
+          "role": "assistant",
+          "content": "I’m really sorry you’re going through that. Migraines can make focus and routine a real challenge. When you say cut back on screens, are you talking shorter blocks, full breaks, or just reducing intensity? And is there any part of your workflow you can take offline, like brainstorming or reading papers on print?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, he wants me to limit total daily screen time, so I set device shutdown alarms and take longer mid-day breaks away from electronics. I’ve started keeping more notes in a physical notebook, but since most of my modeling work is in code, that’s been tricky."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, especially given your modeling needs. Maybe batching screen-heavy work into one or two focused bursts, and using breaks for strategy or conceptual planning? Are you able to delegate more of the routine coding or data cleaning to your junior analysts right now?"
+        },
+        {
+          "role": "user",
+          "content": "I already had them handling most of the data cleaning, but I might give them some more responsibility with code review and prepping datasets. The main thing I’m missing is my morning yoga routine—migraine days completely disrupt it. I switched to gentle walking or light stretching when symptoms hit, no more yoga or strenuous activity on those days."
+        },
+        {
+          "role": "assistant",
+          "content": "Walking and light stretching sound like good alternatives—especially since movement helps but intensity can trigger symptoms. Does the new routine help at all with managing discomfort, or are the migraines still interfering with your ability to focus afterward?"
+        },
+        {
+          "role": "user",
+          "content": "It helps a little, but the migraines really sap my focus for the first half of the day. I’m also skipping live online workshops for now—instead, I catch up later using the recordings, but only in short, screen-limited increments as recommended. It’s not ideal, but better than staring at a screen for two hours straight."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart adjustment. Reviewing recordings in small chunks can help retain info without overloading you screen-wise. Would it help to build a system for offline learning—like listening to audio summaries or reading printed slides—so you can keep up with new developments while protecting yourself?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I started prioritizing offline relaxation when flares happen—listening to music, taking gentle walks, or just eyes-closed meditation. No digital entertainment during those times. I used to wind down with podcasts or videos, but that’s on pause for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really smart—music and meditation can be restorative without taxing your eyes or exposure to screens. Have you found any particular genres or meditation techniques that work best for symptom relief? Also, any new challenges cropping up with your work/life balance, since device limits might impact communication?"
+        },
+        {
+          "role": "user",
+          "content": "Classical and ambient music seem to help most. For meditation, I keep it simple—just breath focus. The device limits do complicate things with my long-distance girlfriend; we usually video call twice a week, but I had to cut calls short or reschedule a couple times lately. Still, the migraines have made these boundaries more necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you and your girlfriend found a workaround that keeps you connected, like voice calls or exchanging audio messages instead of video? And are there any aspects of your social or leisure habits you’re missing, or have you been able to find new ways to enjoy downtime without screens?"
+        },
+        {
+          "role": "user",
+          "content": "We tried phone calls, which help a bit, though it’s not quite the same. I miss exploring coffee shops and game nights, but I’m still keeping up with hikes and print reading—things that don’t require electronics. My sleep tracking device has been useful for spotting irregular patterns, but I avoid looking at it too much during flare-ups."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve adapted pretty well given the circumstances—finding offline activities, shifting routines, and keeping device limits strict. If you ever need to brainstorm more ways to balance project goals with health needs, I’m here. Want to dive into strategies for keeping your team aligned while you manage screen time, or focus more on self-care options?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s focus on the team for now. I need ideas for keeping everyone coordinated without endless virtual meetings. I’d like to minimize screen time for myself, but still make sure we don’t lose momentum."
+        },
+        {
+          "role": "assistant",
+          "content": "Great plan. You could try shifting to more async communication—think project boards or summary docs, where junior analysts update progress and you review later in small chunks. You might also schedule brief, focused check-ins rather than full-length calls, and delegate more live walkthroughs to your analysts when you can’t be at your screen. Would those fit your style?"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "His girlfriend received an unexpected job offer with a relocation package to New York City, prompting a discussion about the future of their long-distance relationship and the logistics of more infrequent in-person visits.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_036",
+            "fact": "Plans coordinated virtual movie nights with his girlfriend every other week, using streaming apps to share experiences despite distance",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_037",
+            "fact": "Researches affordable flight options and accumulates travel reward points to maximize future New York City visit opportunities",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Schedules video calls with his girlfriend twice weekly and never texts about important matters — prefers face-to-face"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Schedules video calls with his girlfriend once weekly and increasingly communicates important matters over text or email due to time zone and travel constraints",
+              "domain": "social_relationships"
+            },
+            "reason": "With his girlfriend relocating to New York City, their time zones are now further apart and travel for in-person visits will be more difficult and infrequent. Scheduling twice-weekly video calls is no longer practical; text and email become necessary for important conversations."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_020",
+            "fact": "Plans at least one weekend getaway every quarter — prioritizes nature destinations and avoids city breaks",
+            "domain": "leisure_hobbies",
+            "reason": "Quarterly nature getaways initially included visits with his girlfriend in West Coast locations. With her relocating to New York City and fewer in-person visits possible, the logistics for frequent nature-focused trips are no longer feasible and their shared trips to nature destinations will decrease."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My girlfriend just accepted a job offer in New York—she's moving next month. It's honestly thrown me a bit. Our visits were already spaced out, but NYC is a lot further and the time zones are rough. I'm trying to figure out how to keep our relationship strong and adapt my routines. Any ideas for navigating this?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big shift—those cross-country moves make everything more complex, especially with time zones and travel. Are there particular parts of your routine or relationship that you're finding most challenging right now? Is scheduling time to connect the hardest part, or is it more the frequency of visits?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely both. We used to do twice-weekly video calls, but with the East Coast time difference and her new work hours, that's feeling impossible. I've started relying on texts and emails for important stuff, which honestly I never liked before, but it's necessary now."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—sometimes adapting to texting and email is unavoidable when schedules don't overlap. Have you thought about regular activities you could still share virtually? Like watching shows or movies together online, or doing a game night over video?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, we're going to try coordinated virtual movie nights every other week. We tested it with a streaming app last weekend and it actually felt pretty connected. Probably not as fun as game nights in person, but at least it's something."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid workaround. Virtual movie nights can give you something structured to look forward to, even if it's not quite the same as local game nights. On the visit front, have you looked into travel options yet—cheap flights, rewards programs, stuff like that?"
+        },
+        {
+          "role": "user",
+          "content": "I'm actually digging into that now, researching affordable flights and starting to accumulate travel reward points. If we're only able to see each other a few times a year, I want to make the most of each trip and maybe save some money in the process."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move. Sometimes airlines have credit card offers that ramp up rewards quickly, and checking flight alerts can help you catch deals. Has this impacted your other travel plans, like weekend getaways or hiking trips? Are you rethinking those too?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I used to plan a nature-focused weekend getaway every quarter—usually we'd pick west coast destinations and enjoy hiking together. With visits less frequent and more expensive, that's probably off the table. I don't see us keeping up with those shared trips for a while."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a tough loss—I know those nature trips were a big part of your routine. Maybe you can still aim for solo hikes locally, and just coordinate virtual catch-ups rather than shared getaways for now. Is it helpful to shift your routines or try new activities, or are you mostly looking to preserve what you can?"
+        },
+        {
+          "role": "user",
+          "content": "I think it's both. I want to hang onto the connection and routines that matter, but it's obvious some things need to change. Already adjusted the video call schedule and invested more in text/email. The movie nights help and I'll keep hiking locally. It's just a new reality."
+        },
+        {
+          "role": "assistant",
+          "content": "Adapting is always tough, but you seem intentional about finding what works for both of you. Let me know if you want help with travel planning or ideas for fresh routines—you'll probably discover new traditions together, even if they're virtual. Anything else you want to brainstorm right now?"
+        },
+        {
+          "role": "user",
+          "content": "That's actually really helpful. I may ask for tips on maximizing flight points later. Thanks for this—helps to talk it through."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "His parents decided to temporarily relocate to Seattle for three months to support his sister with childcare following her recent maternity leave, and they asked him if they could stay at his apartment during their visit.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Shares home-cooked dinners with parents every evening while they are visiting — avoids eating separately or alone",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Coordinates daily apartment chores with parents, dividing responsibility for cleaning and household errands",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Calls parents every Sunday afternoon without fail; never cancels except for emergencies"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Spends Sunday afternoons in-person with parents during their Seattle stay; phone calls reserved for emergencies or if away from home",
+              "domain": "social_relationships"
+            },
+            "reason": "With his parents living in his apartment for three months, weekly phone calls are unnecessary—he can interact with them directly in person, making the routine of remote calls obsolete unless they are out supporting his sister."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_023",
+            "fact": "Shops for groceries on Tuesday evenings, never on weekends to avoid crowds",
+            "domain": "daily_routines",
+            "reason": "His parents are staying at his apartment and will likely participate in or handle some grocery shopping. Coordination may not allow solo Tuesday grocery runs, making this preference irrelevant for the duration of their stay."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my parents decided to temporarily relocate to Seattle for three months — mainly to help my sister with her twins. They asked if they could stay at my apartment, and I agreed. It'll be a pretty big change. I'm already feeling unsettled about routines and space, especially since I usually live alone and rely on my workflow. Can you help me brainstorm ways to keep my work habits stable and carve out personal time, even with family around?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift! Having extra people at home can definitely throw off established routines. Let’s focus first on your work habits: which practices are most important for you to protect to stay productive? For example, do you have any specific blocks in your day you never compromise on, or rituals to get focused?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I always block two hours each morning for uninterrupted model development. No meetings, no calls — that's sacred. It’s my time to actually get work done and I don’t want family interruptions then. I also use a standing desk for half my work hours. I’ll need to make sure I can keep that setup with my parents around."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call — maintaining that dedicated work block is essential. Maybe you can coordinate with your parents so they know those morning hours are strictly off-limits. Would it help to draft a shared schedule, so everyone’s clear on when you need privacy? And do you have space for your standing desk, or will you need to rearrange furniture?"
+        },
+        {
+          "role": "user",
+          "content": "A shared schedule is actually a good idea. We should probably plan out not just my work hours, but also who does what around the apartment. I never had to coordinate chores before, but now we’re sharing the space. I think dividing responsibility for daily cleaning and errands could help everyone settle in."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart — by explicitly dividing household chores and errands, you can prevent overlap and avoid last-minute stress. Maybe use a digital calendar or a shared app for chores? On the topic of errands, how are you handling grocery shopping now? Anything to adjust with your parents staying?"
+        },
+        {
+          "role": "user",
+          "content": "That’s definitely changing! I used to shop for groceries solo on Tuesday evenings — never on weekends to avoid crowds. But now, with my parents here, we’ll probably coordinate shopping or they might handle it some weeks. So my usual solo Tuesday grocery run is basically dropped, at least while they’re here."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. Letting go of your usual solo shopping could free up some time, but it does mean adjusting to someone else’s preferences! Maybe you can create a shared list and rotate who shops, or go together. Any ideas about meal routines? Are you planning to keep eating separately, or combine meals?"
+        },
+        {
+          "role": "user",
+          "content": "I’m actually going to share home-cooked dinners with my parents every evening while they’re visiting. I’m avoiding eating alone or separately — it’s a way to connect and keep things communal. Lunches and breakfasts might be solo to keep my work routine intact, but dinners are together."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really positive — shared dinners can help everyone unwind and stay connected. Will you rotate cooking duties, or keep to your usual meal prep style? And as for Sundays, you previously had weekly phone calls with your parents. Is that still happening, or does being in-person change it?"
+        },
+        {
+          "role": "user",
+          "content": "Being in-person definitely changes it. Instead of weekly phone calls, I’ll spend Sunday afternoons with them directly while they’re in Seattle. Calls are now just reserved for emergencies or if I’m away from home. It’s actually nice to have real face-to-face time, so my old remote calling routine is obsolete for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great — in-person connections can be much more meaningful. With so many changes, are there any other routines or boundaries you’re worried about maintaining? For example, your evening device limits or fitness routines?"
+        },
+        {
+          "role": "user",
+          "content": "The main things are work boundaries and not skipping my morning yoga routine, even with family around. I think I can preserve those if I make it clear when I need solo time. But overall, the biggest shift is just the need to coordinate everything — chores, meals, and use of space — instead of making decisions solo."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re approaching this thoughtfully! Would you like to brainstorm templates for a shared household schedule or accountability checklists? Or tips for setting respectful boundaries for your uninterrupted work and fitness blocks?"
+        },
+        {
+          "role": "user",
+          "content": "A template for a household schedule would be helpful — something flexible but clear. I also like the idea of an accountability checklist for chores, just to make sure nothing gets overlooked. Boundaries should be easy enough if we talk it through. Thanks for helping me think this out."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Offered an internal transfer to a newly formed cross-functional team focused on AI model governance and regulatory compliance, requiring him to take on increased project oversight responsibilities and collaborate regularly with legal and clinical leads in addition to his technical team.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Schedules weekly collaborative review sessions with both legal and clinical leads to audit model documentation and regulatory compliance checkpoints",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Maintains a separate regulatory tracking notebook, distinct from his technical project log, updating it daily with compliance milestones and risk notes",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Blocks two hours each morning for uninterrupted model development work — no meetings or calls allowed"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Blocks two hours each morning for uninterrupted project governance tasks, including compliance documentation and oversight, but allows short meetings with clinical or legal leads as required",
+              "domain": "work_habits"
+            },
+            "reason": "The shift to an AI governance and regulatory compliance team means his core morning focus changes from technical model development to oversight and documentation, necessitating occasional meetings with cross-functional partners—even during his previously protected hours."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got tapped for an internal transfer—I'm moving to this new cross-functional team on AI model governance and regulatory compliance. Definitely more oversight, lots more collaboration with legal and clinical folks. Honestly, I'm worried I'm going to lose any sense of routine. Got any advice on how to set up my days so I don't get buried in meetings and compliance paperwork?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats on the move! Those kinds of teams can be intense—very different rhythm compared to pure data science work. When you think about your daily flow, what parts of your old routine do you still want to protect? Are mornings usually your deep work zone, or does the new team have fixed meeting blocks you need to work around?"
+        },
+        {
+          "role": "user",
+          "content": "Mornings used to be sacred—I blocked off two hours for uninterrupted model dev work, no meetings or calls allowed. But that's changing now. With all this governance stuff, I need to spend those hours on compliance documentation and oversight. Plus, I can't totally ban meetings anymore; sometimes clinical or legal folks need quick check-ins during my protected block. It's a shift."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—different type of focus, and those cross-functional touchpoints are hard to avoid. Have you landed on a cadence with the legal and clinical teams yet, or is it still ad hoc? If you could pick, would you prefer scheduled check-ins over sporadic requests, or does spontaneity work for you?"
+        },
+        {
+          "role": "user",
+          "content": "We're setting up weekly collaborative review sessions—me plus legal and clinical leads, auditing model docs and checking compliance milestones. Structured is definitely better, otherwise things fall through the cracks and my mornings get totally derailed."
+        },
+        {
+          "role": "assistant",
+          "content": "That kind of weekly rhythm should help anchor things. Has the compliance focus changed how you organize your project tracking? I know some people maintain separate logs for regulatory vs. technical projects—does that appeal, or would it feel like extra overhead?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you ask—I actually started a separate regulatory tracking notebook. It’s distinct from my technical project log, and I update it daily with compliance milestones and any risk notes. It keeps the oversight stuff from bleeding into my modeling thinking, which helps."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart call separating them—avoids confusion down the road, especially if audits happen. How do you make sure the compliance tracking stays up-to-date amid everything else? Are you integrating it into your daily workflow or does it get squeezed in at the end of the day?"
+        },
+        {
+          "role": "user",
+          "content": "I make a point to update it during my morning governance block—right after working on documentation. That way, it’s always current when the review sessions happen and doesn’t pile up mid-week. Feels more manageable so far."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve built a solid framework for the new demands. Do you feel confident you’ll be able to protect your routine for health and wellness, given the uptick in oversight responsibilities? Or is that the next battle?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s harder now. But yoga and stretching still start the day, no matter what. The big thing was changing my morning focus—from model dev, to governance stuff and periodic meetings. It’s a different energy, but at least I can anchor around those blocks. Setting up these compliance review sessions helps, too. Otherwise, the cross-functional interruptions would just eat the whole morning."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve landed on practical strategies—anchoring with routine, segmenting work, scheduling structured collaboration. If you need further tweaks as things evolve, let me know. Want help setting up a template for your regulatory tracking notebook, or does your current system work?"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "The company implemented a mandatory hybrid work policy requiring all lead data scientists based in Seattle to work onsite at the downtown office three days a week, with centralized team meetings moved to early mornings to accommodate East Coast leadership schedules.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Commutes to the downtown office by light rail three mornings a week, using commute time to catch up on industry podcasts instead of audio journaling or music",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_047",
+            "fact": "Regularly joins early morning in-office breakfasts with colleagues to socialize before 8am meetings, prioritizing team camaraderie over eating alone",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Participates in virtual fitness challenges with friends; never works out solo without sharing progress"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Prefers joining in-person exercise sessions with colleagues before or after office hours; rarely participates in virtual fitness challenges since returning to an office routine",
+              "domain": "health_body"
+            },
+            "reason": "The shift to mandatory hybrid work means he'll be around coworkers onsite three days a week and less reliant on remote social interactions for exercise. Virtual challenges lose relevance as in-person fitness options with colleagues become practical."
+          },
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Uses a standing desk for half of his work hours — never works a full day sitting"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Uses office-provided ergonomic chairs and occasionally takes standing breaks, but no longer relies on a standing desk as the office setup does not provide one by default",
+              "domain": "health_body"
+            },
+            "reason": "His personal home office standing desk routine isn't feasible in the company’s shared space, as assigned workstations may not have standing desks for all hybrid employees. He adapts with seated ergonomics and standing breaks instead."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_037",
+            "fact": "Researches affordable flight options and accumulates travel reward points to maximize future New York City visit opportunities",
+            "domain": "daily_routines",
+            "reason": "This preference is irrelevant; his girlfriend lives in San Francisco and the event does not involve anticipated travel to NYC. The flight-rewards focus was a holdover from previous arrangements."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So... big change this week: the company's forcing all Seattle lead data scientists back in the office three days a week. Commute, mandatory early morning meetings, the works. Honestly, I haven't done an office routine in years. I'm trying to figure out how to keep my work blocks and health habits together — any tips for structurally adapting without burning out?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a major disruption, especially with the morning meetings thrown in. Are your usual deep work blocks still possible with the new schedule, or have your mornings been taken over by meetings now?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, my two-hour morning block is pretty much gone on office days. The centralized team meetings start at 8am now for East Coast coordination, so I have to prep earlier. Also, the commute eats into my pre-work routine. I'm still looking for ways to carve out focused time — maybe later in the afternoon, but it's trickier onsite."
+        },
+        {
+          "role": "assistant",
+          "content": "It might help to identify quieter periods in the office, like mid-afternoon or right after lunch, to protect at least an hour for focus. Have you thought about adjusting your fitness habits too, since your mornings are different and you're commuting now?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, that's changed. I used to do virtual fitness challenges with friends so we could hold each other accountable remotely. But now, I'm leaning toward joining in-person exercise sessions with colleagues before or after work. The virtual stuff feels less relevant when we're all together physically several days a week."
+        },
+        {
+          "role": "assistant",
+          "content": "That transition makes sense — the social component shifts when you share a space. Have you checked whether the office has facilities or groups for exercise? Some companies have walking clubs, or even basic fitness rooms."
+        },
+        {
+          "role": "user",
+          "content": "The office isn't fancy, but a couple coworkers are doing group yoga before 8am meetings, and others head to a nearby gym after work. I'm thinking of joining them, especially since I'm already downtown. But another issue — my home setup had a standing desk for half the day, and the office workstations don't. I've had to switch to using ergonomic chairs there, then take standing breaks. It's not quite the same, but better than sitting all day."
+        },
+        {
+          "role": "assistant",
+          "content": "Ergonomic chairs plus regular standing breaks are a good adaptation, especially if standing desks aren't available. Maybe you could advocate for a few adjustable desks for your team if discomfort persists. On another note, how are you handling your commute — anything helping you make use of that time?"
+        },
+        {
+          "role": "user",
+          "content": "I'm taking the light rail, which is nice because I can use the commute to catch up on industry podcasts. I used to audio journal or listen to music, but podcasts feel more productive and get me mentally prepped for the day."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart way to use that window. Do you have recommendations on podcasts? Also, with the early morning meetings, are you eating breakfast at home or collaborating with colleagues?"
+        },
+        {
+          "role": "user",
+          "content": "These days, I join the in-office breakfasts with colleagues before those 8am meetings. It helps me wake up and get into work mode, and it's great for team camaraderie. I definitely prefer it over eating alone at my desk in the mornings."
+        },
+        {
+          "role": "assistant",
+          "content": "That helps foster connection, especially after so much remote work. Out of curiosity, does switching to hybrid make you rethink other travel habits — like planning trips for relationship visits or using rewards?"
+        },
+        {
+          "role": "user",
+          "content": "Not really, actually. I used to research affordable flights and rack up reward points for New York trips, but that was a holdover from when my girlfriend lived there. She's in San Francisco now, and with this new schedule, maximizing NYC flights isn't relevant anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense; your travel focus has shifted. With all these changes, anything else in your routine that you're struggling to adapt — meals, relaxation, or sleep, for instance?"
+        },
+        {
+          "role": "user",
+          "content": "Meal routines haven't shifted much except breakfast — I still cook lunches and dinners at home, just have to prep ahead for office days. I'm watching sleep patterns closely, since early meetings throw things off, but the herbal tea routine before bed helps me wind down. The biggest hurdle is fitting all my usual journal entries and focused work in with less flexible mornings."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you're making thoughtful adjustments. You might try a quick digital journal entry during your rail commute, to keep that habit going without losing time. If you want help rebalancing your weekly blocks or habits, I could suggest some templates or routines. What do you think?"
+        },
+        {
+          "role": "user",
+          "content": "A commute journal sounds smart — I'll try that. And yes, any templates for slotting deep work in afternoons on hybrid days would be useful. Thanks for talking this through; I needed to vent and brainstorm."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "His sister was hospitalized unexpectedly due to a severe medical complication, prompting the family to ask him to step in as the primary caregiver for her twins at her home for at least several weeks.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Schedules all work and personal activities around the twins’ nap and meal times, avoiding any appointments or calls during these periods",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Prefers brief outdoor walks with the twins in a stroller to decompress, replacing solitary exercise or hiking during caregiving",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Hosts monthly game nights with college friends in Seattle — always in-person, never virtual"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Switches to hosting virtual game nights with friends while living at his sister's house as primary caregiver; avoids in-person meetups for the duration",
+              "domain": "social_relationships"
+            },
+            "reason": "Being the primary caregiver for his sister's twins at her home prevents him from hosting or attending in-person gatherings with his friends in Seattle. He adapts the game nights to a virtual format to maintain connection while fulfilling family duties."
+          },
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Explores new Seattle coffee shops every Saturday morning — never revisits the same cafe within a month"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Pauses weekly Seattle coffee shop explorations; instead prioritizes at-home coffee routines while caregiving at his sister's residence",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "His move to his sister's home for several weeks as primary caregiver makes Saturday morning coffee shop visits in Seattle infeasible. He temporarily replaces this habit with home-based coffee routines."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_040",
+            "fact": "Coordinates daily apartment chores with parents, dividing responsibility for cleaning and household errands",
+            "domain": "daily_routines",
+            "reason": "He has moved out of his apartment temporarily to his sister’s home to care for her twins; daily apartment chore coordination with parents is not relevant during this period."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, could use some help restructuring everything. My sister was hospitalized pretty suddenly, and I had to move to her place to care for her twins. I'll be here for several weeks at least. It's been a wild adjustment—balancing work, the kids, and my own routines. Any tips on keeping things together and staying productive?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge transition—stepping in as primary caregiver is intense! Are you able to keep your usual remote work setup, or have your work hours changed? How are you approaching time management with the twins’ schedules in the mix?"
+        },
+        {
+          "role": "user",
+          "content": "I’m still working remotely, but nothing happens unless it fits around the twins’ nap and meal times. All meetings and calls are strictly outside those windows, otherwise it’s just chaos. So I need everything work-related—and personal—to work around their schedule."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—anchoring your calendar to their routines sets a solid foundation. Are you able to block focus time for deep work, like you used to, or has that shifted? And for personal time: have you found ways to decompress, or is that on pause until things settle?"
+        },
+        {
+          "role": "user",
+          "content": "Deep work blocks are a challenge, but I'm squeezing them in while the twins nap, which means focus time shifts from morning to whenever they're asleep. As for decompressing, hikes are out for now—I’ve been taking brief outdoor walks with the twins in a stroller instead. It's not my solo exercise routine, but it helps."
+        },
+        {
+          "role": "assistant",
+          "content": "Walking with the twins is a great way to get fresh air and movement—especially when longer hikes are off the table. With routines changed, have you had to adapt other habits, like meal prep or your Seattle coffee shop visits? Curious if you've been able to maintain those rituals."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, coffee shop explorations are on pause. Instead, I’ve been prioritizing at-home coffee routines while here—experimenting with new beans and brewing methods during quieter moments. It’s a good substitute until I’m back in Seattle. Meals are home-cooked as usual, but I have to plan everything to align with the twins’ schedules."
+        },
+        {
+          "role": "assistant",
+          "content": "Great workaround for the coffee ritual! What about social connection—game nights with friends, for example? Are those still happening, or have you needed to adapt?"
+        },
+        {
+          "role": "user",
+          "content": "Had to switch game nights to a virtual format—hosting or joining in-person events isn’t possible while I’m here as caregiver. It’s not quite the same, but it helps me stay connected with friends without leaving the house."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move—virtual game nights keep the social link going. Are you still coordinating apartment chores with your parents, or has moving to your sister’s place changed that arrangement?"
+        },
+        {
+          "role": "user",
+          "content": "That’s dropped for now. Since I’m living at my sister’s place and focused on her twins, coordinating daily apartment chores with my parents isn’t relevant until I move back."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes perfect sense—your focus is on family caregiving for now. Sounds like you’ve made some really thoughtful adaptations. If you want help designing a more structured daily schedule, or suggestions for maintaining wellness while juggling caregiving and work, let me know. Happy to brainstorm ways to support you."
+        },
+        {
+          "role": "user",
+          "content": "Thanks, I actually could use help mapping a daily schedule with blocks for work, outdoor walks, and a little solo time if possible. It’s a puzzle, but I want to keep some routines intact even with the twins’ needs front and center."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Diagnosed with obstructive sleep apnea after a sleep study was ordered due to ongoing irregular sleep patterns and persistent daytime fatigue; prescribed nightly use of a CPAP machine and scheduled follow-up with a sleep specialist.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_054",
+            "fact": "Prefers relaxing, low-stimulation activities (e.g., reading, soft music) in the hour before bed to facilitate CPAP adjustment and minimize sleep disruptions from device discomfort",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Now keeps his phone and other electronics on the opposite side of the bedroom overnight to avoid screen-induced insomnia and prevent interference with CPAP compliance feedback",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_025",
+              "fact": "Prepares a nightly herbal tea as his last activity before bed, never consumes food after 10pm"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Completes his full CPAP setup routine—including machine assembly and mask checks—as his last activity before bed, abstaining from food or drinks (including herbal tea) for at least 30 minutes prior",
+              "domain": "daily_routines"
+            },
+            "reason": "With obstructive sleep apnea, he’s prescribed nightly CPAP use. To ensure optimal CPAP adherence and avoid post-tea mask discomfort (e.g., leaks or dry mouth), his bedtime routine now centers around the CPAP setup and foregoing any late-evening food or beverages."
+          },
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Tracks sleep metrics nightly and reviews weekly reports; avoids caffeine after 2pm to improve sleep regularity"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Strictly monitors CPAP machine usage data every morning and synchronizes sleep apnea reports with his fitness tracker, focusing on therapy adherence, oxygen levels, and mask fit warnings, while still avoiding caffeine after 2pm",
+              "domain": "health_body"
+            },
+            "reason": "The new diagnosis shifts the monitoring emphasis from general fitness tracker sleep metrics to the more specific CPAP data and apnea events. Effective management now hinges on therapy metrics and device adherence instead of just sleep regularity."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I just got officially diagnosed with obstructive sleep apnea after my sleep study. I'm now supposed to use a CPAP machine every night, and I've got follow-ups scheduled. Honestly, adapting my routines has been tougher than I expected. Can you help me figure out how to manage the adjustment, especially around bedtime and tracking the therapy?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, and it’s normal to need time to adapt. Let’s start with your bedtime routine—did you have established habits before this diagnosis, or is everything changing for you now?"
+        },
+        {
+          "role": "user",
+          "content": "My evening rituals were pretty dialed in before this. I used to wind down with a cup of herbal tea every night, right before bed, but that’s on pause for now. Setting up the CPAP—assembling it, checking the mask—is now my last activity before going to sleep. I also have to avoid eating or drinking for at least 30 minutes before, or else I get mask leaks and dry mouth."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—CPAP routines do require some careful timing. How are you feeling about the mask setup? Is it comfortable for you yet, or do you find it disrupts your wind-down period?"
+        },
+        {
+          "role": "user",
+          "content": "I’m still getting used to the mask, honestly. I noticed it helps if my pre-bed activities are mellow—I started doing things like reading (print books only) or listening to quiet music for about an hour before bed. High-stimulation stuff makes adjusting to the CPAP harder."
+        },
+        {
+          "role": "assistant",
+          "content": "Reading and relaxing music are great choices. Have you considered any breathing exercises before you start the CPAP routine, or does your yoga routine earlier in the day do enough in that department?"
+        },
+        {
+          "role": "user",
+          "content": "Yoga is strictly a morning thing for me—I never skip. By evening, I prefer to keep it low-effort. Also, since I started CPAP, I moved my phone and electronics to the far side of my bedroom overnight, so I’m not tempted by screens that mess with my sleep or CPAP compliance feedback."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move—screens can really interfere, both with sleep and tracking device stats reliably. Speaking of stats, are you mainly reviewing your fitness tracker data, or are you checking the CPAP-specific reports now?"
+        },
+        {
+          "role": "user",
+          "content": "I’m focusing heavily on the CPAP machine’s data every morning now—usage, apnea events, oxygen levels, mask fit warnings. I also sync those reports to my fitness tracker, but the main priority is making sure I’m using the CPAP as prescribed. I still avoid caffeine after 2pm, but the monitoring has shifted from general sleep metrics to CPAP therapy adherence."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid monitoring routine, and it should give you a fuller picture of your sleep quality and therapy compliance. How’s your energy during the day since you started CPAP, and what’s the follow-up plan with your specialist?"
+        },
+        {
+          "role": "user",
+          "content": "It’s early days, but I think there’s a slight improvement. My specialist wants me to track CPAP use consistently for the next few weeks and come in with all synced reports. I’m hoping the new routine sticks—making it part of my wind-down is helping. The biggest challenge is not having that calming herbal tea right before bed anymore, but I’m finding other ways to relax."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re adapting well, despite the loss of your old tea ritual. Maybe over time, the new routine will feel just as calming, especially if your sleep improves. Want tips on alternative evening relaxation strategies, or are you content with your print book and music routine for now?"
+        },
+        {
+          "role": "user",
+          "content": "I think the print books and music are working for now—plus, not having the phone near my bed helps a lot. I might try some gentle aromatherapy, as long as it doesn’t interfere with the CPAP mask. I appreciate the suggestions!"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome! Aromatherapy can be soothing, but just check with your specialist about which scents are safe—some oils might affect mask seals or respiratory comfort. If your CPAP routine ever starts to feel tedious or uncomfortable, let me know. We can brainstorm more tweaks to make the bedtime process smoother."
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. Thanks for helping me walk through all this. It really helps to talk it out while my habits are still settling."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to help! Adaptation takes time, but you’re already proactive about monitoring and routine design. If anything feels off, or you want to revisit evening routines as you adjust, just let me know. Sleep well tonight!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "The telehealth startup was selected as a pilot site for a government-funded research initiative, and he was appointed lead coordinator responsible for integrating new research protocols into the data science team’s workflow, with a compressed one-month onboarding timeline.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Reviews new research protocol documentation nightly and drafts clarifying questions for early-morning regulatory calls during the onboarding period",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_058",
+            "fact": "Blocks all non-essential meetings and postpones personal appointments for four weeks to ensure focused onboarding and protocol integration for the research pilot",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Delegates routine data cleaning tasks to junior analysts, focusing only on high-level modeling and project oversight"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Temporarily resumes hands-on data cleaning and protocol adherence tasks, working alongside the team to rapidly integrate new research requirements for the pilot initiative",
+              "domain": "work_habits"
+            },
+            "reason": "As lead coordinator for the new government-funded research pilot, he must ensure rapid, accurate protocol integration within a one-month onboarding window. This responsibility requires direct, hands-on involvement in data cleaning and compliance to guarantee standards are met and knowledge is effectively transferred — he cannot delegate these tasks as in routine cycles."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Our startup just got picked as a pilot site for a government research initiative, and I've been put in charge of integrating the new protocols for data science. They want onboarding done in one month. I'm honestly a bit overwhelmed and not sure how to juggle my usual workload with all the extra compliance and documentation. Can you help me figure out how to streamline things, so I can keep up without burning out?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a huge responsibility — congratulations and, yeah, sounds intense! With a compressed onboarding timeline, prioritization becomes critical. Are there certain routine tasks or meetings you could pause or delegate for now, to clear space for protocol integration? And are you getting any guidance on what counts as 'compliant' from the initiative, or is it still all landing on you to interpret?"
+        },
+        {
+          "role": "user",
+          "content": "I've actually blocked all non-essential meetings and postponed personal appointments for the next four weeks. I usually rely on my morning model dev block and a few core team meetings, but for this pilot, I'm trying to keep it just the essentials—so more solo work, less group calls. As for compliance, I have protocol docs from the initiative, but some parts are vague, so I've started reviewing them nightly and drafting questions for early-morning regulatory calls. It's adding another layer to my day."
+        },
+        {
+          "role": "assistant",
+          "content": "That approach makes sense — focusing on solo, deep work and keeping meetings to just what's absolutely necessary. It's smart to review the documentation nightly and prep for those regulatory calls; getting clarity early will save time downstream. Is there anything you can offload to your junior analysts, or are you needing to handle the bulk yourself right now? And how are you finding the shift in your daily rhythm, with more compliance and fewer regular meetings?"
+        },
+        {
+          "role": "user",
+          "content": "Normally, I delegate routine data cleaning to the junior team, but for this initiative, I've had to jump in hands-on. The new protocols have lots of details around data integrity and compliance, and I can't risk mistakes or gaps—so I'm working alongside them every day on cleaning and adherence. It's a very different rhythm compared to just high-level modeling and oversight. Definitely more granular and time-consuming."
+        },
+        {
+          "role": "assistant",
+          "content": "Getting directly involved makes sense, especially with the stakes so high for the pilot and such a tight onboarding window. It must be tricky balancing that granular work with your usual deeper modeling focus. Are you able to maintain your morning yoga routine and standing desk, or are you having to shift those wellness habits at all with the added workload? Sometimes physical routines are the first thing to slip under heavy deadlines."
+        },
+        {
+          "role": "user",
+          "content": "It's actually been important for me to keep my morning yoga and stretching—30 minutes every workday, no exceptions, even with the onboarding crunch. That part hasn't changed. But the evenings are now filled with protocol review and question drafting, so it's harder to wind down. I still track my sleep metrics and try to stick to device limits after 9pm, though the regulatory calls early in the morning do tempt me to check emails sooner."
+        },
+        {
+          "role": "assistant",
+          "content": "It's impressive you're maintaining your yoga and device boundaries amidst all this. Protocol review in the evenings is definitely a mental load, especially if calls are early. Have you found any tricks to help with staying focused during these late sessions—like batch processing questions, or using templates for notes—or is it mostly manual as you learn the new requirements?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly manual so far, since every protocol section is new and needs careful attention. I do batch up my questions so I don’t lose track, but every night is a deep dive into documentation. Hoping it’ll get easier as the onboarding goes on. Thanks for helping me think through this—I guess the most important thing is preserving focus and not letting my routines drop, even when the workflow itself is more hands-on than before."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—you’re doing the right thing by carving out focused solo time, hands-on work, and keeping your personal routines intact. As the protocols become more familiar, you’ll likely be able to streamline further. If you need help organizing clarifying questions, automating compliance checklists, or setting micro-goals for the onboarding month, just let me know. Don’t hesitate to lean on support when things feel heavy!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Replies to urgent work messages immediately, but delays non-critical emails until the end of the workday",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Prepares all main meals at home, but allows one takeout dinner per week as a treat",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Checks in with his sister twice a week and always volunteers for remote babysitting when she requests",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Never attends large gatherings, preferring small group hangouts or one-on-one meetups",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Plays strategy board games with friends monthly; avoids online gaming entirely",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Goes hiking in the surrounding mountains at least once a month, regardless of weather",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Reads sci-fi novels in print format, never on tablets or e-readers",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks work emails after breakfast, but avoids personal email inbox until after lunch",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Sets device limits every evening — disables all work notifications after 9pm",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Schedules all team meetings according to the new company’s proprietary platform defaults, which require meetings to be between 9am and 5pm PST — no longer strictly early afternoon",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Uses the new proprietary platform exclusively for project coordination and team communication — no longer uses Slack or Asana for primary workflow tasks",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Starts the day with an audio journal entry recorded on his phone — avoids all typing or device use in the morning per occupational therapy recommendation",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_029",
+        "fact": "Uses voice-to-text or dictation tools for work communications and notes instead of typing whenever possible",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Takes scheduled 15-minute breaks every hour to rest his wrists and do occupational therapy exercises as prescribed",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Replaces morning yoga with gentle walking or light stretching on migraine days — avoids all yoga or strenuous activity when symptoms are present",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_032",
+        "fact": "Skips live online workshops when experiencing migraines; now reviews recordings later in short screen-limited increments as recommended",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Limits total daily screen time by setting device shutdown alarms and takes extended mid-day breaks away from all electronics as per doctor’s advice",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Prioritizes offline relaxation activities (listening to music, gentle walks, or eyes-closed meditation) during migraine flare-ups instead of digital entertainment",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Schedules video calls with his girlfriend once weekly and increasingly communicates important matters over text or email due to time zone and travel constraints",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Plans coordinated virtual movie nights with his girlfriend every other week, using streaming apps to share experiences despite distance",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Spends Sunday afternoons in-person with parents during their Seattle stay; phone calls reserved for emergencies or if away from home",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Shares home-cooked dinners with parents every evening while they are visiting — avoids eating separately or alone",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Blocks two hours each morning for uninterrupted project governance tasks, including compliance documentation and oversight, but allows short meetings with clinical or legal leads as required",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Schedules weekly collaborative review sessions with both legal and clinical leads to audit model documentation and regulatory compliance checkpoints",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Maintains a separate regulatory tracking notebook, distinct from his technical project log, updating it daily with compliance milestones and risk notes",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Prefers joining in-person exercise sessions with colleagues before or after office hours; rarely participates in virtual fitness challenges since returning to an office routine",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Uses office-provided ergonomic chairs and occasionally takes standing breaks, but no longer relies on a standing desk as the office setup does not provide one by default",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Commutes to the downtown office by light rail three mornings a week, using commute time to catch up on industry podcasts instead of audio journaling or music",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Regularly joins early morning in-office breakfasts with colleagues to socialize before 8am meetings, prioritizing team camaraderie over eating alone",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Switches to hosting virtual game nights with friends while living at his sister's house as primary caregiver; avoids in-person meetups for the duration",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Pauses weekly Seattle coffee shop explorations; instead prioritizes at-home coffee routines while caregiving at his sister's residence",
+        "domain": "leisure_hobbies",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Schedules all work and personal activities around the twins’ nap and meal times, avoiding any appointments or calls during these periods",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Prefers brief outdoor walks with the twins in a stroller to decompress, replacing solitary exercise or hiking during caregiving",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Completes his full CPAP setup routine—including machine assembly and mask checks—as his last activity before bed, abstaining from food or drinks (including herbal tea) for at least 30 minutes prior",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Strictly monitors CPAP machine usage data every morning and synchronizes sleep apnea reports with his fitness tracker, focusing on therapy adherence, oxygen levels, and mask fit warnings, while still avoiding caffeine after 2pm",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Prefers relaxing, low-stimulation activities (e.g., reading, soft music) in the hour before bed to facilitate CPAP adjustment and minimize sleep disruptions from device discomfort",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Now keeps his phone and other electronics on the opposite side of the bedroom overnight to avoid screen-induced insomnia and prevent interference with CPAP compliance feedback",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Temporarily resumes hands-on data cleaning and protocol adherence tasks, working alongside the team to rapidly integrate new research requirements for the pilot initiative",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Reviews new research protocol documentation nightly and drafts clarifying questions for early-morning regulatory calls during the onboarding period",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Blocks all non-essential meetings and postpones personal appointments for four weeks to ensure focused onboarding and protocol integration for the research pilot",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Schedules all team meetings in early afternoon — never before 10am or after 4pm due to time zone differences",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "The merger requires mandatory migration to the new company’s project management platform, which enforces synchronized calendar scheduling across departments. He must adapt his meeting times to the new system’s defaults, losing control over his previous preferred time window."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Blocks two hours each morning for uninterrupted model development work — no meetings or calls allowed",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "The shift to an AI governance and regulatory compliance team means his core morning focus changes from technical model development to oversight and documentation, necessitating occasional meetings with cross-functional partners—even during his previously protected hours."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Delegates routine data cleaning tasks to junior analysts, focusing only on high-level modeling and project oversight",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "As lead coordinator for the new government-funded research pilot, he must ensure rapid, accurate protocol integration within a one-month onboarding window. This responsibility requires direct, hands-on involvement in data cleaning and compliance to guarantee standards are met and knowledge is effectively transferred — he cannot delegate these tasks as in routine cycles."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Joins monthly online workshops live — never watches recordings after the fact",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "His physician has explicitly advised him to limit screen time due to migraines, which makes attending full-length live workshops counterproductive and potentially harmful. Watching short segments of recordings fits his new medical constraints."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Starts each workday with a 30-minute yoga and stretching routine — never skips even during deadlines",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_031",
+        "reason": "Migraine severity now disrupts his ability to complete the usual 30-minute yoga routine. The doctor’s recommendation to reduce physical strain and screen/device use during acute symptoms leads him to adopt a gentler, lower-exertion alternative rather than rigidly continuing yoga daily."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Uses a standing desk for half of his work hours — never works a full day sitting",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "His personal home office standing desk routine isn't feasible in the company’s shared space, as assigned workstations may not have standing desks for all hybrid employees. He adapts with seated ergonomics and standing breaks instead."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Tracks sleep metrics nightly and reviews weekly reports; avoids caffeine after 2pm to improve sleep regularity",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_053",
+        "reason": "The new diagnosis shifts the monitoring emphasis from general fitness tracker sleep metrics to the more specific CPAP data and apnea events. Effective management now hinges on therapy metrics and device adherence instead of just sleep regularity."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Participates in virtual fitness challenges with friends; never works out solo without sharing progress",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_044",
+        "reason": "The shift to mandatory hybrid work means he'll be around coworkers onsite three days a week and less reliant on remote social interactions for exercise. Virtual challenges lose relevance as in-person fitness options with colleagues become practical."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Schedules video calls with his girlfriend twice weekly and never texts about important matters — prefers face-to-face",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "With his girlfriend relocating to New York City, their time zones are now further apart and travel for in-person visits will be more difficult and infrequent. Scheduling twice-weekly video calls is no longer practical; text and email become necessary for important conversations."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Hosts monthly game nights with college friends in Seattle — always in-person, never virtual",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_048",
+        "reason": "Being the primary caregiver for his sister's twins at her home prevents him from hosting or attending in-person gatherings with his friends in Seattle. He adapts the game nights to a virtual format to maintain connection while fulfilling family duties."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Calls parents every Sunday afternoon without fail; never cancels except for emergencies",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "With his parents living in his apartment for three months, weekly phone calls are unnecessary—he can interact with them directly in person, making the routine of remote calls obsolete unless they are out supporting his sister."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Explores new Seattle coffee shops every Saturday morning — never revisits the same cafe within a month",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "His move to his sister's home for several weeks as primary caregiver makes Saturday morning coffee shop visits in Seattle infeasible. He temporarily replaces this habit with home-based coffee routines."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Plans at least one weekend getaway every quarter — prioritizes nature destinations and avoids city breaks",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "Quarterly nature getaways initially included visits with his girlfriend in West Coast locations. With her relocating to New York City and fewer in-person visits possible, the logistics for frequent nature-focused trips are no longer feasible and their shared trips to nature destinations will decrease."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts the day with a digital journal entry using a dedicated app — never journals on paper",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_028",
+        "reason": "The physician-mandated reduction of keyboard use and referral to occupational therapy specifically target typing. To comply and protect his recovery, he replaces his typed digital journaling routine with audio journaling."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Shops for groceries on Tuesday evenings, never on weekends to avoid crowds",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "His parents are staying at his apartment and will likely participate in or handle some grocery shopping. Coordination may not allow solo Tuesday grocery runs, making this preference irrelevant for the duration of their stay."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Prepares a nightly herbal tea as his last activity before bed, never consumes food after 10pm",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_052",
+        "reason": "With obstructive sleep apnea, he’s prescribed nightly CPAP use. To ensure optimal CPAP adherence and avoid post-tea mask discomfort (e.g., leaks or dry mouth), his bedtime routine now centers around the CPAP setup and foregoing any late-evening food or beverages."
+      },
+      {
+        "id": "pref_037",
+        "fact": "Researches affordable flight options and accumulates travel reward points to maximize future New York City visit opportunities",
+        "domain": "daily_routines",
+        "created_at_session": 3,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "This preference is irrelevant; his girlfriend lives in San Francisco and the event does not involve anticipated travel to NYC. The flight-rewards focus was a holdover from previous arrangements."
+      },
+      {
+        "id": "pref_040",
+        "fact": "Coordinates daily apartment chores with parents, dividing responsibility for cleaning and household errands",
+        "domain": "daily_routines",
+        "created_at_session": 4,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "He has moved out of his apartment temporarily to his sister’s home to care for her twins; daily apartment chore coordination with parents is not relevant during this period."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-02T09:35:05.945050"
+}
