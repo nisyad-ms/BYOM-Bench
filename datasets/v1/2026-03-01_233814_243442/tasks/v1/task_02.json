@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_64193952",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_052",
+        "fact": "Initiates weekly video calls with his brother in Seattle to coordinate wedding planning and family logistics — discussions now directly involve schedules, travel, and shared responsibilities",
+        "supersedes": {
+          "id": "pref_012",
+          "fact": "Calls his brother in Seattle monthly for personal updates — avoids discussing work unless his brother brings it up"
+        }
+      },
+      {
+        "id": "pref_026",
+        "fact": "Reschedules date nights to Saturday evenings when his wife has Friday shifts — may skip them if both have late weekend events",
+        "supersedes": {
+          "id": "pref_015",
+          "fact": "Schedules regular date nights with his wife every other Friday — never cancels except for emergencies"
+        }
+      },
+      {
+        "id": "pref_048",
+        "fact": "Chooses handwritten recognition notes or public praise on team calls as his primary method for acknowledging high performance, replacing monetary incentives and hosted dinners"
+      },
+      {
+        "id": "pref_050",
+        "fact": "Actively participates in weekly leadership training sessions for merger integration — reviews all assigned materials on Sunday evenings to prepare for each Monday workshop"
+      },
+      {
+        "id": "pref_017",
+        "fact": "Plans one hiking trip each quarter with his kids — never vacations in cities during school breaks"
+      },
+      {
+        "id": "pref_002",
+        "fact": "Delivers feedback only in one-on-one calls — never gives performance critiques during group sessions"
+      }
+    ]
+  },
+  "persona": "A regional sales director overseeing a team of 15 representatives"
+}

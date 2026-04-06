@@ -5,8 +5,8 @@ only ``build_context`` differs.  This module extracts the common parts so
 each agent file stays minimal.
 """
 
-from byom_bench.client import CONFIG, LLMClient, PooledLLMClient
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.client import CONFIG, LLMClient, PooledLLMClient
+from ream_bench.schemas import MultiSessionOutput
 
 
 class _BaselineAgent:

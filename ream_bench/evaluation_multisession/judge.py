@@ -9,9 +9,9 @@ import json
 import re
 from typing import Any
 
-from byom_bench.client import CONFIG, LLMClient, PooledLLMClient
-from byom_bench.prompts import render_prompt
-from byom_bench.schemas import (
+from ream_bench.client import CONFIG, LLMClient, PooledLLMClient
+from ream_bench.prompts import render_prompt
+from ream_bench.schemas import (
     EvaluationTaskSpec,
     MultiSessionEvaluationResult,
 )

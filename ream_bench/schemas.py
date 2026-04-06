@@ -1,7 +1,7 @@
 """
-Shared data models for BYOM-Bench.
+Shared data models for REAM-Bench.
 
-This module consolidates all data models used across the BYOM-Bench pipeline:
+This module consolidates all data models used across the REAM-Bench pipeline:
 - Preference and task models (for evaluation)
 - Multi-session conversation and timeline models
 - Evaluation result models

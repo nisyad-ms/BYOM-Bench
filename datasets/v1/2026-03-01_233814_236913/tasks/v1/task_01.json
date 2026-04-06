@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_eaf775f5",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_051",
+        "fact": "Prioritizes gentle indoor mobility exercises, such as yoga or stretching, as primary physical activity per doctor’s orders—temporarily avoids outdoor walks until further cardiac evaluation",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Only walks outside for exercise; avoids indoor gyms entirely"
+        }
+      },
+      {
+        "id": "pref_039",
+        "fact": "Dedicates Mondays to in-depth business analysis and expense reviews, reallocating routine financial paperwork to shorter sessions throughout the week as needed; now occasionally schedules urgent marketing strategy calls on Mondays if related to cost increases.",
+        "supersedes": {
+          "id": "pref_005",
+          "fact": "Blocks Mondays for financial paperwork; never schedules staff meetings or marketing activities that day"
+        }
+      },
+      {
+        "id": "pref_057",
+        "fact": "Regularly coordinates long-distance soccer tournament transportation logistics with other parents via group chats, handling ridesharing and planning at least two weeks in advance"
+      },
+      {
+        "id": "pref_053",
+        "fact": "Requests family and staff assistance for all heavy lifting tasks in the shop; absolutely avoids carrying boxes or supplies himself while under doctor’s restrictions"
+      },
+      {
+        "id": "pref_045",
+        "fact": "Shares calendar access and weekly appointment reminders with his wife and sons to coordinate parental care — never allows medical visits to go unscheduled or double-booked."
+      },
+      {
+        "id": "pref_040",
+        "fact": "Regularly price-checks local competitors' menus each month and revises shop pricing when necessary to offset rising fixed costs driven by rent increases."
+      }
+    ]
+  },
+  "persona": "A small business owner managing payroll for five employees"
+}

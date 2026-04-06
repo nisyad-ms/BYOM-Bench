@@ -1,4 +1,4 @@
-"""Mem0 Memory Store for BYOM-Bench.
+"""Mem0 Memory Store for REAM-Bench.
 
 Uses the mem0 library (https://github.com/mem0ai/mem0) for automatic memory
 extraction, consolidation, and semantic search. Backed by local Qdrant for
@@ -12,8 +12,8 @@ from unittest.mock import patch
 
 from mem0 import Memory
 
-from byom_bench.client import get_agent_config, resolve_azure_openai_config
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.client import get_agent_config, resolve_azure_openai_config
+from ream_bench.schemas import MultiSessionOutput
 
 from ._sentinel import SentinelMixin
 

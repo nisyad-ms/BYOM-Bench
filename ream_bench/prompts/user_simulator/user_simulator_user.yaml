@@ -1,6 +1,6 @@
 name: User Simulator User Prompt
 description: User prompt providing conversation history for user simulator to respond to
-used_by: byom_bench/evaluation_multisession/user_simulator.py::MultiSessionUserSimulator
+used_by: ream_bench/evaluation_multisession/user_simulator.py::MultiSessionUserSimulator
 variables:
   - conversation: Formatted conversation history as string
 

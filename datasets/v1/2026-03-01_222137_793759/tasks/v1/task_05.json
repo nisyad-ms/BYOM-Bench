@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_34209b44",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_043",
+        "fact": "Now purchases lunch on campus most weekdays due to increased grading workload and larger class sizes, prepping only occasional meals at home",
+        "supersedes": {
+          "id": "pref_021",
+          "fact": "Preps lunch for the week on Sundays — never buys cafeteria food during the semester"
+        }
+      },
+      {
+        "id": "pref_040",
+        "fact": "Now visits parents two to three times per week, flexibly accommodating their increased needs for help with household tasks and medical appointments; Sunday visits are no longer fixed, but scheduled as needed.",
+        "supersedes": {
+          "id": "pref_012",
+          "fact": "Visits parents every Sunday afternoon for errands — never misses unless out of town"
+        }
+      },
+      {
+        "id": "pref_015",
+        "fact": "Prefers written communication for work relationships — rarely makes phone calls to colleagues"
+      },
+      {
+        "id": "pref_047",
+        "fact": "Prepares detailed presentation scripts and slide decks for conferences, preferring to deliver rehearsed and polished talks rather than improvising."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Monitors hydration closely and drinks lemon water throughout teaching days — never chooses caffeinated sodas"
+      },
+      {
+        "id": "pref_048",
+        "fact": "Books pet-sitting or cat drop-in services for any overnight academic travel to ensure peace of mind during conferences."
+      }
+    ]
+  },
+  "persona": "A community college instructor teaching academic writing skills"
+}

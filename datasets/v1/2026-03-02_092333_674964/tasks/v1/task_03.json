@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_9b8bb041",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_045",
+        "fact": "Calls her parents multiple times a week to coordinate post-surgery support and discuss her mother's recovery; texting becomes secondary during this period",
+        "supersedes": {
+          "id": "pref_012",
+          "fact": "Texts her parents every Sunday evening to check in — avoids long phone calls unless it's a special occasion"
+        }
+      },
+      {
+        "id": "pref_053",
+        "fact": "Switched from crocheting to coloring or simple puzzle books while listening to podcasts — avoids all activities requiring two-handed dexterity until cast is removed",
+        "supersedes": {
+          "id": "pref_016",
+          "fact": "Crochets small projects while listening to podcasts — never watches TV at the same time"
+        }
+      },
+      {
+        "id": "pref_043",
+        "fact": "Commutes to the office three days a week via light rail — always listens to tech podcasts during transit instead of music or audiobooks"
+      },
+      {
+        "id": "pref_007",
+        "fact": "Sticks to a fully vegetarian diet at home — refuses to cook meat even for guests"
+      },
+      {
+        "id": "pref_059",
+        "fact": "Cleans and checks her CPAP mask nightly as part of her pre-bed routine to prevent discomfort and ensure machine effectiveness."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Attends every virtual therapy session without rescheduling — considers these appointments non-negotiable"
+      }
+    ]
+  },
+  "persona": "A junior web developer at a nonprofit organization"
+}

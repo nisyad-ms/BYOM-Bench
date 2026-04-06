@@ -1,0 +1,1442 @@
+{
+  "persona": "A tenured history professor at a major university",
+  "persona_id": "persona_20260301_235028",
+  "expanded_persona": {
+    "base_persona": "A tenured history professor at a major university",
+    "age": 47,
+    "gender": "female",
+    "location": "Ann Arbor, MI",
+    "work_education": [
+      "Professor of Modern European History at University of Michigan, tenured for 6 years",
+      "Currently chairing the department’s curriculum committee; faces pressure to modernize courses for digital formats",
+      "Researching for a forthcoming book on post-war immigration trends in France; juggles travel for archival work with teaching",
+      "Supervises three PhD students, one of whom is struggling with dissertation progress",
+      "Teaches a large undergraduate survey course every spring, spends significant time mentoring first-gen students"
+    ],
+    "health_wellness": [
+      "Diagnosed with mild hypertension two years ago; manages through medication and regular brisk walks",
+      "Recently began physical therapy for chronic lower back pain, caused by years of sedentary deskwork",
+      "Stays mentally sharp by participating in weekly chess nights at a local café",
+      "Enjoys baking as stress relief but has been advised to cut back on sugar due to health concerns",
+      "Occasionally suffers from migraines during periods of high academic workload"
+    ],
+    "family_relationships": [
+      "Married 15 years to a software engineer; spouse's job requires frequent out-of-town travel",
+      "Has a 14-year-old daughter about to start high school and an 11-year-old son who plays youth soccer",
+      "Mother lives nearby and needs help with errands, but remains largely independent",
+      "Hosts Sunday family dinners, which often include close friends and graduate students",
+      "Maintains a strong bond with her younger sister, who lives in Chicago and visits twice a year"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Prefers to give written feedback on student papers—never uses verbal critique in office hours",
+        "Only schedules department meetings after 10am; avoids early morning commitments whenever possible",
+        "Uses collaborative cloud documents for curriculum revisions—refuses to send edits via email attachments",
+        "Blocks Thursday afternoons exclusively for research—never schedules teaching or administrative tasks during this time",
+        "Requires all PhD advisees to submit weekly progress updates—never accepts infrequent check-ins"
+      ],
+      "health_body": [
+        "Takes daily brisk walks outdoors, rain or shine—never uses the treadmill indoors",
+        "Bakes sugar-free versions of favorite desserts—never uses traditional recipes with added sugar",
+        "Does physical therapy exercises every evening before bed—never skips even on weekends",
+        "Avoids caffeine entirely due to migraines—only drinks herbal tea or water",
+        "Plays chess at the café weekly to keep mentally active—never plays online matches"
+      ],
+      "social_relationships": [
+        "Hosts Sunday family dinners without fail—never cancels, even during busy weeks",
+        "Facilitates group text threads for family planning—never relies solely on individual texts or emails",
+        "Checks in with her PhD students via regular video conferencing—never uses phone calls for academic mentorship",
+        "Organizes special outings with her daughter before school transitions—never misses important milestones",
+        "Visits her mother every Saturday to help with errands—never delegates this to anyone else"
+      ],
+      "leisure_hobbies": [
+        "Reads historical novels for leisure—never reads contemporary fiction",
+        "Plans at least one archival research trip per semester to a new city—never repeats the same destination in consecutive years",
+        "Watches classic European cinema on Friday nights—never streams blockbuster action movies",
+        "Attends local art exhibits monthly—never skips openings held at university museums",
+        "Plays board games with her son every Sunday afternoon—never allows digital devices during game time"
+      ],
+      "daily_routines": [
+        "Starts every morning with a ten-minute mindfulness meditation in her study—never checks email before meditating",
+        "Meal preps healthy lunches for the week every Sunday evening—never buys cafeteria food on campus",
+        "Keeps a handwritten planner for all tasks—never relies on digital calendars for scheduling",
+        "Shops for groceries early Saturday mornings—never does late-night shopping runs",
+        "Silences phone notifications during evening hours—never responds to work messages after 7pm"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger sister in Chicago announced plans to move to Ann Arbor for a new job, intending to stay with her family for several months while searching for a permanent place to live.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Sets aside a weekday evening each week for one-on-one sister time—no other social or work commitments allowed during this block",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Now keeps shared household shopping and meal-planning lists in a cloud doc for coordination with her sister—first time using digital planning tools for home management",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Hosts Sunday family dinners without fail—never cancels, even during busy weeks"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Hosts Sunday family dinners weekly, now larger and more casual to accommodate her sister's temporary stay—occasionally shifts to Saturday for flexibility but never skips a weekend gathering",
+              "domain": "social_relationships"
+            },
+            "reason": "With her younger sister now living in the home, Sunday dinners expand in scale and must flex for both households' schedules. The spirit (never skipping a weekly gathering) remains, but exact timing and form evolve to integrate her sister and balance increased household dynamics."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my sister just announced she's moving from Chicago to Ann Arbor for her new job and will be staying with us for a few months while she looks for a place. Exciting, but also a bit daunting! Suddenly our house is going to be a lot fuller, and I'm realizing I need to rethink how we do meals, routines, and probably social things. Any advice to help ease the transition, and make sure no one's falling through the cracks?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big life change, but it sounds wonderful that you’ll have your sister with you for a while. When you say routines and meals, do you mean you’re looking for ways to streamline day-to-day logistics, or are you more concerned about keeping family traditions going? Maybe both?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely both. For one, our weekly Sunday dinners have always anchored the week—they’re pretty formal, sometimes including friends or grad students. But with her move, I want to keep that tradition, maybe make it more relaxed since we’ll be juggling two households under one roof and more people. Scheduling flexibility's going to matter, especially as my sister settles in and meets her new colleagues. I don't want to skip the weekly gathering, but exact timing may shift some weekends or get more casual. What might help with that?"
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense for the dinner to evolve as your family grows. Shifting the timing or making the meal less formal could actually make it easier for everyone to participate—especially your sister as she adjusts to a new job. Would moving it to Saturday sometimes work for you? Or a potluck-style meal so everyone contributes?"
+        },
+        {
+          "role": "user",
+          "content": "Saturday could work, and honestly a more casual, larger dinner is going to feel right with my sister’s schedule. The important thing is not skipping a weekly meal together—even with more moving parts. I feel like it keeps everyone anchored, but I’m open to some flexibility now. Potluck style might work, especially since she loves cooking too. I’d welcome some digital tools to help coordinate who’s making what—that’s not something we’ve done before."
+        },
+        {
+          "role": "assistant",
+          "content": "Using a digital planning tool could be a good way to keep everyone involved and reduce confusion—especially with two cooks! There are apps or even simple cloud documents where you can share meal ideas, shopping lists, and schedule for the week. Would you want sample templates for shared meal planning or suggestions for apps that are easy and collaborative? Also, do you want to keep the food as healthy as usual, or are you open to some new dishes with your sister around?"
+        },
+        {
+          "role": "user",
+          "content": "A cloud document for meal-planning and shared shopping lists would be perfect—honestly, it’s the first time I’m thinking of managing home logistics digitally. I’d appreciate some templates or app suggestions. And yes, keeping food healthy is still important—though my sister and I both bake, we stick to sugar-free recipes given my health concerns. Coordination will help with that too. Now that the household’s busier, I’m also realizing I’ll want dedicated time each week for just us as sisters—no work, no family obligations."
+        },
+        {
+          "role": "assistant",
+          "content": "Wonderful idea! Setting aside a weekday evening just for you and your sister will help maintain your bond amid all the activity. You could block that time in your planner and make it a ritual—whether baking together, catching up, or even going out somewhere local. For meal planning, Google Sheets or Notion are easy to use and good for collaboration—do either appeal to you, or would you prefer something very simple?"
+        },
+        {
+          "role": "user",
+          "content": "I think Google Sheets will work—I use it for curriculum already, so it fits. I’ll start a weekly shared doc for meal planning and groceries, and we can both add ideas or dietary needs. As for sister time, I’m going to reserve one evening midweek—no social or work commitments allowed, just us. It’s the only way to ensure we don’t get lost in the chaos! This is new for me, since family time usually revolves around big weekend gatherings."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a great plan. Reserving sister time midweek ensures you get quality time together without the noise of bigger gatherings. The Google Sheet will simplify meal coordination—and you can even use the same document for household errands, schedules, and notes about dietary preferences if you want. Would a basic template with columns for meals, who's cooking, shopping lists, and dietary notes help you get started?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, a starter template would be helpful. Having columns for meal assignments, ingredient shopping, special dietary requests, and a little space for notes will make it easy to coordinate. I’m glad you brought up errands—I’m thinking about using the doc for household chores and planning too, since it’s more dynamic now. I’m excited for this, just want to make sure everyone’s needs get met as we adjust."
+        },
+        {
+          "role": "assistant",
+          "content": "Great! I’ll put together a sample template you can adapt for your household’s needs—with sections for meals, shopping, chores, dietary notes, and personal touches. This approach could make the transition smoother, and help everyone feel involved. Is there anything else about household logistics or routines you’d like help with? Maybe managing quiet time for your own research or balancing support for your kids?"
+        },
+        {
+          "role": "user",
+          "content": "I think this covers the main transition points for now. The big changes are the expanded, more casual weekly dinners that sometimes shift to Saturday, the move to digital planning for meals and errands, and the new commitment to set aside dedicated sister time each week. Those should help us manage the energy, keep routines meaningful, and not lose sight of individual needs. Thanks for being a sounding board—I’ll reach out if we need to tweak things as we go."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome! It sounds like you’re approaching this with a lot of thought and care. The new routines should help keep things stable and meaningful despite all the change. If you need to refine the templates or want ideas for fun, healthy recipes, just ask. I hope your sister’s transition goes smoothly and your family enjoys this new chapter!"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced a sudden worsening of chronic lower back pain, resulting in doctor’s orders to temporarily stop her daily brisk walks and begin a program of aquatic therapy at a local rehabilitation center.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Prefers to schedule aquatic therapy in the late afternoon—never opts for early morning sessions to avoid discomfort after rest",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Brings a historical novel to read during post-therapy rest periods at the rehabilitation center—never scrolls her phone while waiting",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Takes daily brisk walks outdoors, rain or shine—never uses the treadmill indoors"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Attends aquatic therapy sessions at the rehabilitation center as her primary form of exercise—never takes brisk outdoor walks until cleared by doctor",
+              "domain": "health_body"
+            },
+            "reason": "Her worsening back pain resulted in doctor’s orders to stop daily outdoor walks and begin aquatic therapy. The way she maintains physical activity has fundamentally switched from walking to aquatic exercise."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Yesterday my back pain got much worse — I've been ordered off the daily walks for now and started aquatic therapy at the rehab center. It feels pretty disruptive, honestly. Do you have any advice for keeping routines stable when your main form of exercise suddenly changes?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really challenging, especially when exercise anchors so much of your day. Are you able to keep any part of your old routine, like getting outside or maintaining specific time blocks? How is the aquatic therapy structured?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not allowed to do the outdoor walks at all — my doctor was very clear. All activity is aquatic therapy, which takes place at the rehab center. I've only had one session so far, but it's definitely different. I want to keep some structure around it. Right now, I can choose scheduling times for the sessions, but I'm honestly not sure what will work best."
+        },
+        {
+          "role": "assistant",
+          "content": "Since you have some flexibility, maybe you could line up therapy sessions with times that naturally fit your workflow or minimize disruption. For some people, early mornings work, for others evenings. Do you have preference for when you'd like to go, or commitments that shape your available windows?"
+        },
+        {
+          "role": "user",
+          "content": "I definitely don't want early morning sessions — they're uncomfortable after a night of rest and my back feels stiffest then. Late afternoon seems best, after finishing most work. That way I'm not rushing from lectures or committee meetings, and the pool tends to be a bit quieter."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Late afternoon is often a good time for physical therapy since it's a natural transition out of work. How have you managed the downtime before or after therapy—are you able to decompress, or does it feel rushed?"
+        },
+        {
+          "role": "user",
+          "content": "There's always a bit of a waiting period before and after, but I don't mind. I've started bringing a historical novel with me and using that rest time to read, rather than staring at my phone like most people in the waiting room. It's a small comfort, honestly."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a wonderful habit, and a nice way to reclaim a sense of calm. Do you find aquatic therapy is meeting your needs for movement, or do you miss aspects of your walking routine—in particular, being out in nature?"
+        },
+        {
+          "role": "user",
+          "content": "I do miss being outdoors—the walking was my way to clear my head, rain or shine. But for now, I have to stick strictly to aquatic therapy until my doctor clears me. It's strange not being outside daily, but at least I can still schedule exercise consistently. The transition has been abrupt, but necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "It takes real discipline to adjust your routine so quickly, especially when it was so well-established. Would small changes—like using the pool area’s windows to enjoy natural light, or stepping outside briefly when feasible—help preserve any of that outdoor feeling, or does the rehab center make that difficult?"
+        },
+        {
+          "role": "user",
+          "content": "The rehab center does have big windows with decent light, so that's something. I don't linger outside much, since the priority is avoiding strain. For now, aquatic therapy is the primary exercise. I'm not even considering brisk walks until I'm cleared. It's a big shift, but at least the late afternoon sessions are working, and reading helps keep me centered."
+        },
+        {
+          "role": "assistant",
+          "content": "I’m glad you’ve found ways to structure the new routine and preserve parts of your former habits, like reading and scheduling therapy to suit your rhythm. If new challenges come up—like scheduling conflicts or changes to your physical therapy—would you like help brainstorming ways to adjust further?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely, that's why I reached out. This transition is still new, so I'll keep looking for ways to preserve structure and sanity until I can get back to my usual walks. For now, aquatic therapy in the late afternoon is my anchor, and my historical novels get me through the downtime."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The university administration announced that all curriculum committee meetings must now be held in-person at 8am to accommodate new scheduling constraints, abruptly shifting her long-standing avoidance of early morning commitments.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Prepares breakfast and review materials the night before 8am committee meetings, to minimize stress on early mornings",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Only schedules department meetings after 10am; avoids early morning commitments whenever possible"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Now attends curriculum committee meetings in person at 8am, despite longstanding avoidance of early mornings; only resists scheduling other meetings before 10am if possible.",
+              "domain": "work_habits"
+            },
+            "reason": "The university's new mandate requires her to be physically present for 8am curriculum committee meetings, overruling her previous policy of avoiding early morning commitments. Her ability to control meeting times is reduced for committee business, though she still avoids scheduling other meetings early when possible."
+          },
+          {
+            "from": {
+              "id": "pref_030",
+              "fact": "Prefers to schedule aquatic therapy in the late afternoon—never opts for early morning sessions to avoid discomfort after rest"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Schedules aquatic therapy around mandatory 8am meetings, sometimes attending morning sessions to fit new committee constraints",
+              "domain": "health_body"
+            },
+            "reason": "The mandatory 8am meetings force her to restructure her therapy schedule, leading her to occasionally attend morning sessions, which she previously avoided."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So the university just dropped this on us: all curriculum committee meetings have to be in-person and at 8am, starting next week. I haven’t had a pre-10am department meeting in literally years, mostly by design. Between teaching, research, health stuff and family, my mornings are pretty tightly choreographed — now I need to figure out how to fit these 8am sessions in without everything unraveling. Got any strategies for reworking my morning routine so I don’t start the day already stressed?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that’s a major shift! Early meetings can be tough, especially when you’ve built your schedule around later mornings. Let’s start with the basics: what’s your usual morning routine, and which parts feel non-negotiable — things you rely on for mental clarity or to manage your health? Are there any rituals, tasks, or prep you don’t want to sacrifice?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, my ten-minute mindfulness meditation before anything else is non-negotiable. It sets the tone — I won’t check email, review documents, or even start breakfast before that. Then I usually get the kids ready, take a brisk outdoor walk (rain or shine, never treadmill), and do my PT exercises for my back. It’s pretty rigid, but the walk and meditation are what keep me mentally and physically intact. Shifting everything earlier seems daunting, and skipping isn’t an option."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — those anchors are foundational. If moving everything earlier isn’t realistic, maybe some tasks could shift to the previous night? For example, prepping breakfast or laying out materials you need for the committee meeting so mornings aren’t as rushed. Would that help? Also, do you have flexibility with your PT or walk after the meeting, or do those need to stay first thing?"
+        },
+        {
+          "role": "user",
+          "content": "Prepping breakfast and reviewing committee materials the night before is actually a new habit I started last week when the admin notice came in. It helps minimize stress, so that part’s workable. As for PT and the walk, I need the walk in the morning for hypertension and mental clarity — and I won’t do it indoors, so unless weather totally prohibits, it stays. The physical therapy exercises I’ve been doing in the evening, but now, since aquatic therapy sometimes needs to fit around the 8am meetings, I’ll occasionally book morning sessions, which is new for me. I used to avoid morning PT entirely because my back is stiff after rest, but flexibility is necessary now."
+        },
+        {
+          "role": "assistant",
+          "content": "That adjustment sounds smart — prepping the night before and being open to moving some therapy around will help. For the walk, could you shorten it a little on committee days, then do a second, longer walk later? Or would that affect how you feel in the morning? And regarding breakfast — are you prepping just for yourself, or for your kids as well?"
+        },
+        {
+          "role": "user",
+          "content": "Right now, it’s mainly for myself, but if the kids’ schedules start getting affected, I’ll expand to prepping their breakfasts too. As for the brisk walk, I’ve tried shorter versions before and it really doesn’t give me the same benefit — so I’m sticking to the full routine. But shifting other tasks, like email review or feedback on papers, will wait until after the meeting, and I’ll keep other meetings post-10am if possible. It’s only the curriculum committee that’s mandatory at 8am, so I’m still resisting scheduling department or student meetings before 10."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great you still have control over scheduling most meetings later. To optimize your committee days, you might consolidate tasks that require focus for after 10am, when you’re more settled. Since you’re prepping materials the night before, would a checklist help to ensure nothing is left out, especially with the earlier start? And is there anything about the meeting venue or logistics (e.g., transportation, parking) that could be streamlined or planned in advance to make mornings easier?"
+        },
+        {
+          "role": "user",
+          "content": "A checklist does help — I keep one in my handwritten planner, so I review it the night before and again after meditation in the morning. Parking shouldn’t be an issue, but I might shift my grocery shopping on Saturdays to slightly later so I’m not overtired on committee days. Honestly, having breakfast and meeting prep done the night before is my best tool for now. The committee mandate means I can’t flex around aquatic therapy as much, so sometimes those sessions are awkwardly early, but I’m adapting. The biggest shift is realizing I have to plan my evenings with more foresight than ever, so mornings don’t spiral."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her spouse was offered a temporary six-month assignment overseas and will be relocating abroad, leaving her to manage household and family responsibilities independently during this period.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_036",
+            "fact": "Checks in daily with her spouse overseas via scheduled evening video calls—never relies only on intermittent emails or messages",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_037",
+            "fact": "Now manages the household’s evening routines solo, ensuring homework is completed and chores are done before leisure activities—never defers responsibilities to others during this period",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_034",
+              "fact": "Prepares breakfast and review materials the night before 8am committee meetings, to minimize stress on early mornings"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Prepares breakfast and all family members' morning routines the night before—including school bags, lunches, and review materials—to minimize morning chaos while managing the household alone",
+              "domain": "daily_routines"
+            },
+            "reason": "With her spouse relocating overseas, she must single-handedly handle morning routines for her children, adding school preparations on top of her own work tasks. The preference shifts from personal prep for early meetings to thorough preparation for the entire household."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_027",
+            "fact": "Sets aside a weekday evening each week for one-on-one sister time—no other social or work commitments allowed during this block",
+            "domain": "social_relationships",
+            "reason": "Her sister is no longer staying temporarily; the spouse's absence means her sister does not reside in the home or require dedicated weekday evening time, freeing up this slot for family management."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My husband just accepted a six-month assignment overseas. He leaves in a week, so I'll be managing the household, kids, and everything else on my own. I'm honestly feeling pretty overwhelmed, especially with mornings—getting both kids out the door, prepping for my classes, and keeping things running smoothly. Any ideas for how to streamline those busy mornings?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge adjustment, especially with work and family demands. For mornings, are there routines you’ve relied on previously that could be adapted? Some people find prepping breakfast or layouts the night before helps, but I wonder if there’s more you can do to reduce chaos. What’s your current evening prep like?"
+        },
+        {
+          "role": "user",
+          "content": "Until now, I mostly prepped my own breakfast and review materials the night before early committee meetings, but with my husband gone, I’ve started prepping everything—breakfast, school bags, lunches, even review materials—for all of us every night. It’s the only way to prevent morning chaos when I’m managing everything solo."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach. Getting all the logistics handled in advance definitely makes mornings less stressful. Would having a checklist for each family member help, or do you prefer keeping it informal in your planner? What about evening routines—are you making any changes to cope with the extra load?"
+        },
+        {
+          "role": "user",
+          "content": "Evenings have become much more structured—I now have to ensure homework is done and chores finished before anyone can move on to leisure. There’s just no one to defer these responsibilities to while my husband’s away. I handle it solo now."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense; holding that structure helps everyone know what to expect. Are you finding it’s cutting into your research or downtime? If so, maybe you could designate a specific window for your own work, or anchor a family activity right after the routine is done, as a motivator."
+        },
+        {
+          "role": "user",
+          "content": "That’s been a challenge—I still block Thursday afternoons for research as before, but evenings are all solo management now. One adjustment is that my sister no longer stays temporarily; I’ve dropped our dedicated weekday evening one-on-one time since she’s back in Chicago and doesn't need it."
+        },
+        {
+          "role": "assistant",
+          "content": "Dropping that routine probably frees up some bandwidth, but it may feel bittersweet. Will you replace that time with something else, or maybe use it for quiet reflection or to catch up on tasks? How about staying connected with your husband—have you figured out a communication schedule that works?"
+        },
+        {
+          "role": "user",
+          "content": "We schedule daily evening video calls—never just intermittent emails or texts. With the time difference, this is the only way to really stay connected during his assignment."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great way to maintain closeness and consistency. Have you noticed any ripple effects on your own wellness or stress relief routines, like baking or chess night, with these new demands?"
+        },
+        {
+          "role": "user",
+          "content": "So far, I’m holding onto most of my routines—weekly chess night, meal prep on Sundays, family dinners. It’s busy, but prepping everything the night before and sticking to video calls help me stay organized."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing an impressive job navigating this transition. If you ever feel mornings or evenings slipping, we could brainstorm micro-adjustments or ways to delegate small tasks to the kids. Just let me know if you want to explore more strategies!"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her 14-year-old daughter was unexpectedly placed on the varsity soccer team, requiring daily after-school practices and frequent weekend travel for tournaments, substantially increasing logistical demands on the family.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Now uses a shared digital calendar with her spouse and daughter for tracking soccer practices, tournaments, and family schedules—never relies solely on her handwritten planner for logistics",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Regularly joins carpools or organizes rides with other soccer families to manage tournament travel, prefers collaborative planning for transportation over solo driving",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Visits her mother every Saturday to help with errands—never delegates this to anyone else"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Coordinates errands for her mother via phone/text and delegates some tasks to her son or friends when schedule conflicts arise due to weekend soccer travel—only visits in person when possible",
+              "domain": "social_relationships"
+            },
+            "reason": "Her daughter's varsity soccer schedule requires frequent weekend travel, making it difficult to personally visit her mother every Saturday. She now sometimes relies on remote coordination and delegation when absent."
+          },
+          {
+            "from": {
+              "id": "pref_026",
+              "fact": "Hosts Sunday family dinners weekly, now larger and more casual to accommodate her sister's temporary stay—occasionally shifts to Saturday for flexibility but never skips a weekend gathering"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Hosts weekend family dinners flexibly, often at variable times and sometimes in other towns near soccer tournaments—never skips a gathering but now adapts location or day to fit travel for her daughter's games",
+              "domain": "social_relationships"
+            },
+            "reason": "The daughter's varsity schedule with frequent tournaments means family gatherings must sometimes happen away from home or at irregular times. She adapts the routine to prioritize togetherness wherever feasible."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Things just got very busy in our household: my daughter was unexpectedly placed on the varsity soccer team this spring, which means daily practices and weekend travel for tournaments. I’m struggling to juggle her schedule with my own work and family routines. Can you help me brainstorm ways to stay organized and minimize stress?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations to your daughter! That’s a big achievement, but I can see how the logistics make everything more complex. When you think about organization, do you prefer digital tools, written lists, or something else? And are there particular routines that feel most disrupted right now?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve always relied on my handwritten planner for task management, but it’s falling short with all the moving parts. We actually started using a shared digital calendar with my husband and daughter just to keep track of practices, tournament weekends, and family schedules. Otherwise things would slip through the cracks—it’s not realistic to handle logistics with pen and paper anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move—digital calendars definitely help with dynamic schedules, especially for coordination across the family. Have you set up any notifications or color coding? Also, with tournaments out of town, have you run into challenges managing other family responsibilities, like errands or weekend routines?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a big challenge, actually. Saturdays used to be my standing time to visit my mom and help with errands personally, but now I’m often away for soccer. I’ve started coordinating errands with her by phone or text, and sometimes delegate tasks to my son or nearby friends when I can’t go myself. I still visit in person whenever possible, but I can’t be as consistent anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve adapted well by delegating and staying connected remotely. Has your mom adjusted to this new arrangement, or do you worry about anything slipping through? On the soccer side, who handles transportation for the weekend tournaments—do you drive, or is there a team carpool?"
+        },
+        {
+          "role": "user",
+          "content": "Transportation is another adjustment. I regularly join soccer family carpools or organize rides with other parents—which is a relief. Coordinating rides collaboratively is a lot less stressful than solo driving, and it frees me up to do work on the road if needed. I try to plan ahead, since last-minute arrangements are chaotic."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great to hear. Carpooling not only reduces the load, but also builds community among the families. Do the tournaments affect your family dinners or other weekend rituals, or have you found ways to keep those going?"
+        },
+        {
+          "role": "user",
+          "content": "Family dinners were another sticking point—I’ve always hosted Sunday gatherings, but now we need to be more flexible. Sometimes I shift the dinner to Saturday, or hold it in a restaurant near the tournament location rather than at home. We never skip the gathering, but the timing and venue have to adapt week by week. It’s all about maintaining togetherness, wherever we are."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re maintaining your family traditions, even with all the changes—which takes creativity and commitment. Would you like strategies for streamlining meal prep, travel planning, or ways to stay grounded amid the shifting schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Streamlining meal prep would help—Sunday nights are hectic, prepping lunches while managing tournament gear and family logistics. And if you have ideas for keeping routines consistent despite the variability, I’d appreciate those too."
+        },
+        {
+          "role": "assistant",
+          "content": "For meal prep, you could batch-cook staples earlier in the week or freeze portions when possible, to lessen Sunday’s pressure. With your shared calendar, scheduling meal prep blocks as a recurring event might keep everyone accountable. For grounding routines, anchoring a few ‘non-negotiables’—like your morning meditation—can maintain stability. Would coordinating prep tasks with your son or spouse fit, now that you’re delegating more in other areas?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, coordinating meal prep makes sense, especially since we’re all tracking schedules on the shared calendar now. Delegation isn’t my natural instinct, but it’s necessary given the soccer logistics and my evolving responsibilities."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s a big transition, but you’re clearly making proactive adjustments. Would you like templates for shared task lists or tips for balancing travel and self-care, given your health routines and the added stress?"
+        },
+        {
+          "role": "user",
+          "content": "Templates for task lists could help, especially since we’re working as a team more often. And any advice for maintaining my physical therapy and walks when travel interrupts my usual schedule would be great. I want to keep those routines intact, even away from home."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—I’ll share adaptable task list templates for use in your digital calendar or shared drives. For self-care during travel, keeping lightweight exercise tools (like resistance bands), and planning walks in unfamiliar places can maintain your routine. Scheduling brief mindfulness in travel settings also helps manage stress. Let me know if you want tailored templates or specific travel self-care strategies!"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received a diagnosis of pre-diabetes during her annual physical, prompting her physician to advise immediate dietary adjustments and increased monitoring of blood sugar levels.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Tracks blood sugar levels daily using a digital glucose monitor—never relies on periodic doctor visits or manual logging",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Plans family meals with a priority on low-carb, high-fiber dishes—never allows pasta or bread-based dinners at home",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Bakes sugar-free versions of favorite desserts—never uses traditional recipes with added sugar"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "No longer bakes desserts at home—prefers fresh fruit or savory snacks as alternatives to sweets",
+              "domain": "health_body"
+            },
+            "reason": "The pre-diabetes diagnosis requires immediate and stricter dietary management. Even sugar-free baked goods can spike blood sugar or encourage unhealthy eating habits; her physician advised eliminating desserts entirely and focusing on low-glycemic options."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got some unsettling news at my annual physical—my doctor says I'm pre-diabetic. I've managed hypertension fairly well, but this is a whole new territory. She wants me to overhaul my diet immediately and start monitoring blood sugar. Honestly, the timing could not be worse; spring semester is always chaotic. Any tips for adapting my routines without letting work or family slip?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm sorry to hear about the new diagnosis—but glad you caught it early! The urgency makes sense. With your academic and family load, the key will be integrating small changes that fit your schedule. You mentioned monitoring blood sugar—is that something you need to log daily, or just at clinic visits?"
+        },
+        {
+          "role": "user",
+          "content": "Daily tracking, unfortunately. I just ordered a glucose monitor my doctor recommended—it syncs to an app, so at least I won't have to write it all out manually. But it's one more thing to remember each morning alongside meditation, lunch prep, and chess night logistics. Any ideas for keeping the new data habit from becoming a chore?"
+        },
+        {
+          "role": "assistant",
+          "content": "Integrating it into your morning routine is smart—maybe right before or after your mindfulness meditation, since that's already a fixed habit. The app should help streamline the process. Would you prefer to review trends weekly, or focus on day-to-day numbers?"
+        },
+        {
+          "role": "user",
+          "content": "Weekly patterns seem most useful—that way I can see if anything in my routine is impacting the numbers, like a big family dinner. On that note, meal planning just got much trickier. I've always cooked, but now she wants me to avoid bread and pasta entirely at home. I need some good, filling alternatives—especially for Sunday dinners."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, especially for a big family meal. Low-carb, high-fiber dishes could work—think roasted vegetables, legumes, or grilled proteins. Are there any favorites among your family, or do they need convincing to try new options?"
+        },
+        {
+          "role": "user",
+          "content": "They're pretty adaptable, though my son loves pasta and my daughter likes bakery bread. But after talking it through with them, they agree to prioritize low-carb dishes—I'm planning to serve grain bowls with lentils, maybe some roasted cauliflower, and grilled chicken this weekend. No pasta or bread at our dinners for the foreseeable future."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds delicious! Lentils and veggies have plenty of flavor and fiber. Do you need recipe inspiration for savory, low-glycemic snacks as well? You mentioned baking for stress relief—would you still want healthier recipes, or are you shifting away from desserts completely?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, my doctor wants me to stop baking desserts altogether, even the sugar-free kinds I've leaned on for years. Apparently, they still spike blood sugar or encourage bad habits. So I'm switching to fresh fruit or savory snacks like roasted chickpeas—no more baked treats at home for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, but a sensible one given your doctor’s advice. Fruit and savory snacks can be satisfying, and you might find new favorites. If you'd like, I can suggest snack ideas or meal strategies for family gatherings? Or would you rather focus on adapting your daily work routines first?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s start with snacks—I need options that work for Sunday dinners but also for my weekday schedule. I used to bring a piece of homemade cake for an afternoon pick-me-up, but that won’t fly anymore. I’d love low-carb ideas that can be prepared ahead, since my schedule is always packed."
+        },
+        {
+          "role": "assistant",
+          "content": "Great—here are some options: roasted chickpeas, seasoned nuts, veggie sticks with hummus, boiled eggs, and salad jars with beans or grilled tofu. All are low-carb and can be prepared in batches for easy access. For Sunday dinners, you could set up a small platter with olives, cheese, and veggie dippers. Would any of those fit your family’s tastes?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, those sound perfect. The kids love hummus and olives, and I can prep salad jars for my lunchbox. And with the glucose monitor, I’ll be able to see how these tweaks affect my numbers throughout the week. Thanks—this is feeling manageable, not like a crisis. If you have suggestions for more dinner menus, I’m open."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. I can recommend seasonal menus and explain nutritional details to ensure you’re hitting fiber and protein targets. I’m glad this is helping—adapting routines takes time, but your planning instincts are strong. Let me know if you want detailed recipes or meal rotation ideas for family dinners or busy teaching weeks!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After experiencing several particularly intense migraines over a three-week period during midterms, her neurologist prescribed a new daily preventive medication regimen and instructed her to log headache triggers and patterns in detail.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Uses a digital headache diary app daily to log migraine triggers, onset times, and medication adherence—no longer keeps mental or paper notes for this tracking purpose",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_047",
+            "fact": "Declines late-night academic events or spontaneous evening outings to minimize migraine triggers identified in her headache log, prioritizing a strict evening wind-down routine",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Avoids caffeine entirely due to migraines—only drinks herbal tea or water"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Follows a strict daily preventive migraine regimen, including new medication and detailed trigger journaling; consults her headache diary before choosing any beverage or snack, not just avoiding caffeine",
+              "domain": "health_body"
+            },
+            "reason": "The neurologist’s new instructions require her to expand management from simply avoiding caffeine to actively logging triggers and adhering to a medication and tracking plan. She must now consult past headache patterns for all dietary choices, not only caffeine."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I'm reaching out because it’s been a rough few weeks. After those intense migraines during midterms, my neurologist put me on a new daily medication and wants me tracking everything—triggers, patterns, times of onset. I'm supposed to log it all in detail, which feels overwhelming on top of my teaching and committee work. Do you have any strategies for integrating this headache tracking into a busy academic routine?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a lot to juggle, especially in the middle of midterms and committee responsibilities. Are you using a paper journal, or digital tracking tools? There are some apps that make it easy to log symptoms quickly. If you already have a preferred method, we can brainstorm ways to make it part of your established routine."
+        },
+        {
+          "role": "user",
+          "content": "I started using a digital headache diary app—it's what the neurologist recommended. I log triggers, onset, medication adherence every day. It's actually the only thing I'm tracking digitally; my planner and everything else are still handwritten. I just find the app much easier for this purpose since I can log on the go, especially between classes. But remembering to check in regularly is proving tricky."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great adaptation—apps can simplify pattern-tracking. Since you rely on a handwritten planner for most tasks, would it help to use a visual cue or reminder in your planner to prompt logging at specific times? For example, a sticker or note for ‘headache diary check’ after lunch and before bed. Or, would you rather build it into an existing routine, like after your evening physical therapy, so it feels less like an add-on and more like part of your wind-down?"
+        },
+        {
+          "role": "user",
+          "content": "I like the idea of routines. I've already started logging entries right after my physical therapy exercises in the evening—it's a natural wind-down slot. I’m also finding that I need to consult my headache log before choosing any beverage or snack, not just avoiding caffeine like before. The new regimen means I have to pay much closer attention to patterns, so I check the diary before even pouring a cup of herbal tea. It’s a stricter process."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a significant shift from simply avoiding caffeine to actively managing all dietary triggers. Consulting your log before any food or drink seems smart, but it must add a layer of decision fatigue. Would batch-prepping snack options based on your logged triggers help reduce daily micro-decisions? Perhaps you could plan a weekly menu after reviewing diary entries, minimizing uncertainty day to day."
+        },
+        {
+          "role": "user",
+          "content": "Batch-prepping is helpful, and it aligns with what I do for lunches on Sunday evenings. I just need to be more rigorous now about reviewing the diary before finalizing the menu. I notice late-night events or spontaneous outings tend to correlate with migraine onset in my log, so I’m declining academic evening commitments and sticking to a strict wind-down routine. That’s a new adjustment—I used to attend some department events after dinner, but now I simply can't risk it."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough change, but protecting your evenings makes sense given your trigger patterns. Are colleagues understanding about these new boundaries? If attending department events is expected of you as chair, you might want to communicate your situation proactively so they can support your need for structure. On the strict wind-down routine—a consistent cue like turning off notifications could reinforce your evening rhythm. Would you like ideas for unwinding that won’t interfere with your migraine management?"
+        },
+        {
+          "role": "user",
+          "content": "Most colleagues are understanding, thankfully. I already silence phone notifications during evening hours, so work messages wait until morning. The most challenging part is integrating the detailed digital tracking, since I’d always kept mental or paper notes for headaches before. The transition feels odd, but the neurologist insisted on the app for accuracy and pattern recognition."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense—digital logs often reveal patterns that paper notes might miss. Since you’re already using your app post-physical therapy and before menu-planning, maybe linking another review with your morning mindfulness could help. You could quickly review triggers logged overnight before meditating, so you start each day informed. Would pairing it with that routine be feasible, or does it disrupt your usual meditation rhythm?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve thought about it, but I’m committed to keeping email and screens off before meditation. The evening review is enough for now. What I dropped completely is late-night spontaneous outings, which I never declined in the past—a direct result of the logged migraine triggers. I prioritize my wind-down over everything now."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—your evening routine is clearly non-negotiable, and that discipline will serve you well. Pairing evening log review with physical therapy, careful meal planning, and strict boundaries around events all sound like excellent strategies. Is there any aspect where you still feel friction, or want to brainstorm ways to streamline the diary use or routine further?"
+        },
+        {
+          "role": "user",
+          "content": "I’m mostly struggling to remember midday entries, since I move between lectures, advising, and committee meetings. The app helps, but I sometimes have gaps. Maybe I should set a recurring midday reminder?"
+        },
+        {
+          "role": "assistant",
+          "content": "A midday app notification could prompt quick entries—especially on days when your schedule shifts. You could sync it with your lunch break or just after office hours. Alternatively, if you’re collaborating on cloud documents for curriculum revision, could a diary entry become part of your workflow checklist—so you see it when you prep for meetings? That might offer another cue without cluttering your calendar."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The university awarded her a major internal research grant, stipulating that she design and launch an interdisciplinary digital history course for undergraduates within the next academic year, including collaboration with the computer science department.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Prefers to develop course modules in cross-disciplinary working groups—never designs new digital curriculum solo for major projects",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Regularly attends joint faculty-student hackathons or digital history workshops at the university—never skips collaborative events related to the grant course launch",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Prefers to give written feedback on student papers—never uses verbal critique in office hours"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Now provides both written and live digital feedback via collaborative platforms—regularly uses real-time verbal feedback during interdisciplinary course labs, especially when working with computer science peers",
+              "domain": "work_habits"
+            },
+            "reason": "The new digital history course requires innovative, collaborative approaches with students and computer science faculty. Live digital labs and group work necessitate real-time verbal critique and guidance, which cannot be replaced by written comments alone."
+          },
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Keeps a handwritten planner for all tasks—never relies on digital calendars for scheduling"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Now uses a hybrid scheduling approach: maintains a handwritten planner for personal tasks, but relies on digital calendar tools for all course design, student coordination, and interdisciplinary project scheduling",
+              "domain": "daily_routines"
+            },
+            "reason": "Designing and launching the digital history course in partnership with computer science, plus the internal grant's requirements, means she must use shared digital calendars for project management—her handwritten planner cannot support collaborative or tech-integrated scheduling."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got the internal grant—big deal, but slightly overwhelming! The university wants me to build an interdisciplinary digital history course, and I have to collaborate with computer science faculty. I'm supposed to launch it next academic year, so planning needs to start now. Can you help me figure out how to approach this? Digital stuff is not my usual comfort zone, and the coordination piece seems complicated."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on the grant! That’s a huge professional milestone. The shift to an interdisciplinary, digital format is definitely a big swing from traditional history teaching. Are you mainly concerned about course design, the collaboration logistics, or something else? It might help to break up the planning—where do you want to start?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, both. The course design is intimidating because it's so different from our usual surveys. And the coordination—there are a lot more moving pieces. Until now, I’ve always designed curriculum solo, but I think this will need to be more of a group effort. I’m already in touch with two CS faculty, but I don’t want to get stuck doing all the heavy lifting myself."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—digital courses really benefit from cross-disciplinary perspectives, especially when you’re integrating technical elements. Have you considered setting up working groups for the major modules? It can help spread the workload and spark new ideas. Some universities use collaborative planning sessions or even faculty-student hackathons. Would something like that feel doable?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, that’s exactly what I want. I prefer developing modules in cross-disciplinary working groups—never solo, especially for a project like this. The grant’s expectations kind of force the issue, but I think it’ll be good for everyone, including the students."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect, that sets you up well for collaboration. For the logistics, are you thinking of regular group meetings, or maybe workshops that combine course planning with hands-on digital work? Scheduling can be tricky with multiple departments involved. What’s your usual method for keeping everyone on track?"
+        },
+        {
+          "role": "user",
+          "content": "So, this is new territory. I always used a handwritten planner for everything—including scheduling meetings—but there’s no way that will work for coordinating across teams and departments. I’ve started using hybrid scheduling: I still keep my handwritten planner for personal tasks, but for course design and student coordination, I rely on digital calendars now. Shared tools are essential with so many stakeholders."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes total sense—a digital calendar is almost required for a project of this scale. It’s great you’re keeping your personal system while adapting for the collaborative parts. For module development, do you want to run a couple of pilot sessions or workshops with both history and CS students before launch? That way you can test content and get early feedback, which often surfaces technical issues before full roll-out."
+        },
+        {
+          "role": "user",
+          "content": "I like that idea. Our university holds joint faculty-student hackathons and digital history workshops, and now with the grant I regularly attend those. I never skip events related to launching this course—the collaborative energy is really helpful, and it keeps me in touch with the tech side."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s fantastic—you’re already plugged into the practical side and getting feedback through actual collaborative events. For the course itself, how do you plan to approach student feedback? Will you stick to written comments, or does the digital and CS partnership push you toward more real-time or verbal feedback during labs?"
+        },
+        {
+          "role": "user",
+          "content": "That’s shifted for sure. Historically, I only gave written feedback on student papers—never verbal critiques during office hours. But with these digital history labs, especially when working alongside CS peers, I’m now providing both written and live digital feedback using collaborative platforms. Real-time verbal guidance during group work is essential—written comments alone just aren’t enough."
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent, you’re adapting to modern learning environments as well! The real-time critique should help students iterate faster and feel more engaged. Anything else that’s changed in your routines or preferences because of the grant? Like, are you finding yourself spending more time online or adjusting your research blocks for this project?"
+        },
+        {
+          "role": "user",
+          "content": "Yes—my week looks different now. Thursday afternoons are still reserved for personal research, but I find myself working in interdisciplinary groups for module development, which never happened before. And I’ve dropped solo curriculum design entirely for this major project. Even scheduling, planning, feedback—I’m using blended strategies now."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re embracing the collaborative aspect fully, which will make your digital course stronger and more innovative. If you need help organizing module development or setting up feedback mechanisms, let me know. Want suggestions for structuring interdisciplinary group work, or are you more interested in best practices for digital engagement?"
+        },
+        {
+          "role": "user",
+          "content": "I’d appreciate tips for structuring the interdisciplinary groups—especially to keep the workload balanced and make sure we aren’t just replicating old models in a digital space. And any advice on keeping student voices central during the planning would be great."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "One of her three PhD advisees—previously struggling—formally withdrew from the doctoral program, requiring her to take over their funded teaching assignments mid-semester while supporting the remaining students through the abrupt transition.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_054",
+            "fact": "Prefers to co-host or swap teaching responsibilities with fellow faculty when covering unexpected classes taken over from withdrawn students—avoids solo emergency coverage when possible",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Now maintains a confidential reflection journal to process student advising challenges and unexpected program transitions—never used written reflective methods for professional stress before",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Blocks Thursday afternoons exclusively for research—never schedules teaching or administrative tasks during this time"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Now uses Thursday afternoons primarily for emergency teaching assignments or student support when necessary—research block is no longer strictly protected if coverage demands arise",
+              "domain": "work_habits"
+            },
+            "reason": "The withdrawal of her struggling PhD advisee mid-semester forced her to take over their funded teaching commitments. To accommodate abrupt schedule changes and student needs, she sacrifices her previously rigid research block for instructional or mentoring duties during this crisis period."
+          },
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Requires all PhD advisees to submit weekly progress updates—never accepts infrequent check-ins"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Now tailors check-in frequency and format to each PhD student's needs, offering biweekly or ad hoc support in response to recent student withdrawal; no longer insists on rigid weekly progress updates from all advisees",
+              "domain": "work_habits"
+            },
+            "reason": "The recent loss of a struggling PhD student prompted her to reevaluate her supervision style. She now adjusts communication and accountability to prevent overwhelm or disengagement, focusing on flexibility and student well-being rather than strict uniform deadlines."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I'm hoping you have some practical advice. One of my PhD advisees—she was really struggling—formally withdrew from the program last week. Not only has that been an emotional punch, but I’ve had to absorb her funded teaching assignments mid-semester. Balancing my department chair duties, research, and now this emergency coverage has thrown everything off. How can I keep the other students supported without derailing my own work and health routines?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry to hear that—it’s a huge disruption both emotionally and logistically. To start, have you been able to adjust your schedule at all, or did you just squeeze new teaching duties into whatever gaps you had? Sometimes shifting existing blocks can prevent burn-out, but it depends on what you’re able and willing to move."
+        },
+        {
+          "role": "user",
+          "content": "I had to give up my sacred Thursday research afternoons, at least for now. That's when I'm covering emergency teaching or student support—that research block isn’t protected anymore. I just couldn’t leave students hanging. I’m used to holding that time exclusively for my writing, so it’s frustrating, but covering these classes takes priority right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a real sacrifice, and temporary disruptions can quickly become the new normal. Are you able to delegate any department or committee tasks so you can regain some research hours elsewhere, or is everything landing squarely on your plate? And with the sudden increase in teaching, have you considered co-teaching or splitting duties with other faculty to ease the load?"
+        },
+        {
+          "role": "user",
+          "content": "Glad you mentioned co-teaching—I’ve started reaching out to colleagues to co-host or swap classes. I prefer partnering with another faculty member when possible, instead of solo coverage. It prevents me from feeling isolated in these emergency shifts, and helps the students get continuity. Not always reality, but that's my preference now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach—shared responsibility is often less overwhelming, and students benefit from diverse perspectives. In terms of advising your remaining PhD students, do you still use weekly progress updates, or have you reconsidered your feedback structure after the withdrawal? Sometimes rigid schedules can add stress during uncertain periods."
+        },
+        {
+          "role": "user",
+          "content": "I’ve shifted to tailoring check-ins for each student. No more blanket weekly updates—I offer biweekly or even ad hoc support if that’s what they need. Losing a student made me reevaluate my approach; I want to avoid anyone feeling overwhelmed. Flexibility is key now, even though it’s outside my comfort zone."
+        },
+        {
+          "role": "assistant",
+          "content": "That level of flexibility will probably make a difference, especially since transitions can affect each student so differently. Are you finding any ways to process the emotional and professional stress of this upheaval yourself? Sometimes talking through these events or writing can provide clarity, but academic culture tends to focus on problem-solving over reflection."
+        },
+        {
+          "role": "user",
+          "content": "Actually, I’ve started keeping a confidential reflection journal between advising sessions. Never used written reflection for professional stress before, but it’s helping me process student challenges and these abrupt program transitions. It feels awkward at times, but it grounds me and helps me separate my own reactions from what my students need."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s an excellent practice—journaling can help clarify patterns and provide distance when things get messy. It’s hard to set aside time for that, but it pays off in the long run. Given everything you’re managing, is there anything you wish you could offload or automate, even temporarily? Or are you mostly focused on survival mode until things stabilize?"
+        },
+        {
+          "role": "user",
+          "content": "Survival mode is right—I’m mostly focused on giving the remaining students stability and not losing momentum on my book research. If things get too hectic, I’m not afraid to ask for a lighter committee load or more administrative support; I’ve learned to advocate for myself. But my immediate priority is making sure the transition feels as seamless as possible for my students."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re striking a careful balance—supporting others without sacrificing your own well-being. Since you’re managing more unpredictable obligations, have you adjusted any other routines, like mindfulness practice or meal prepping, to fit around your new schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Not much has changed there. I still do my morning meditation and meal prep every Sunday. But shifting my Thursday afternoons for student needs and collaborating more on coverage has definitely affected everything else. I’m just trying to keep hold of the non-negotiables while staying open to change where I have to."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s admirable—having anchor routines when everything else is shifting can make a big difference. If you need support on creating collaborative workflows for teaching or structuring flexible mentoring check-ins, I’m happy to help brainstorm solutions or templates. Let me know, and I can assemble some resources tailored to your current reality."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her mother suffered a minor fall at home and, upon hospital discharge, was advised by her care team to avoid driving and limit certain activities, requiring ongoing help with errands, transportation, and household tasks from family members.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Prioritizes grouping her own household’s and her mother’s errands into a single outing whenever possible to reduce time away from work and minimize schedule strain",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_058",
+            "fact": "Uses a shared family task board (digital or physical) to assign her mother’s errands and appointments to available family members—created after her mother’s fall to manage care coordination",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_038",
+              "fact": "Coordinates errands for her mother via phone/text and delegates some tasks to her son or friends when schedule conflicts arise due to weekend soccer travel—only visits in person when possible"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Now personally manages her mother's errands, transportation, and household tasks multiple times a week—rarely delegates or relies on remote coordination, prioritizing direct support due to her mother's new restrictions",
+              "domain": "social_relationships"
+            },
+            "reason": "Her mother's fall and resulting inability to drive or perform certain activities creates an ongoing need for hands-on assistance several times each week. She can no longer primarily coordinate remotely or delegate; in-person support has become the norm and priority."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My mother took a minor fall last week, and since being discharged, she can't drive for a while and needs a lot more hands-on help with errands and household stuff. I'm trying to figure out how to fit more frequent visits and support into my already packed schedule between teaching, research, and the kids' activities. Do you have suggestions for managing the logistics without letting things slip at work or home?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm so sorry to hear about your mother's fall. That's a big shift in responsibility, especially with your already full plate. When you say 'more frequent visits,' is that daily or multiple times per week? And are there particular types of errands or tasks that need priority, or is it a broad mix like groceries, doctors, and household maintenance?"
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely multiple times a week—sometimes even more, depending on appointments. She has check-ups, pharmacy runs, grocery trips, and some basic chores like laundry and meal prep, since she’s been told to rest and not try to climb stairs or handle heavier things. I used to coordinate most errands remotely, sometimes delegating to my son or a friend if our weekends got busy with soccer travel, but now it's really fallen to me to do these in person."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like delegation or remote coordination isn't an option anymore, and in-person support is required. Grouping errands might help—you could combine your mother's needs with your own family's errands in a single outing whenever possible. Have you tried restructuring your routine so errands for both households overlap, or is that too disruptive?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually what I’ve started doing. If I need groceries or pharmacy items for us, I add hers to the list and do it all in one trip. Otherwise, I'm losing too much time to separate errands each week. It's not perfect, but it keeps things manageable for now. The challenge is coordinating with my family's ever-changing schedules, especially with my husband's travel and the kids' activities."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart strategy—reducing the number of trips helps keep things efficient. Since your family's schedule is unpredictable, would a digital task board or shared calendar help with coordination? That way, you can assign errands or appointments to whoever's available, and everyone knows what's pending. Have you used anything like that before?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, after my mom’s fall I set up a shared family task board—first tried digital, then switched to a physical board in the kitchen, so everyone can see at a glance what needs doing and who’s assigned. It's been helpful for tracking appointments and logistics, even if the bulk still falls on me. Before this, I never did anything that formal, but with her restrictions it became necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a great adaptation, especially with so much to coordinate now. The physical board also helps kids stay involved and aware of their roles, even if your share is larger right now. Is there anything about your work commitments or routines that’s been toughest to adjust since taking on more direct care for your mother?"
+        },
+        {
+          "role": "user",
+          "content": "The hardest part is balancing my department responsibilities and research time with the increased errands. I used to be able to juggle by delegating or coordinating remotely, but with my mom unable to drive or take care of basics herself, it's rarely possible now. I just have to prioritize direct support several times each week. My Thursday afternoon research block still helps preserve focus, but the rest of my week is a lot less predictable."
+        },
+        {
+          "role": "assistant",
+          "content": "It's admirable that you’re making her care such a priority, even with the competing demands. Keeping your Thursday research block sacred is wise. If you're looking for other ways to save time, could you batch paperwork or correspondence for your students on certain evenings, or automate reminders for them? That might help free up pockets of time for your mother without sacrificing academic responsibilities."
+        },
+        {
+          "role": "user",
+          "content": "That’s a good suggestion. I already stick to written feedback for papers, and I use collaborative documents to streamline revisions. I've started batch-processing student progress updates in the evenings when possible—especially since my phone is silenced after 7pm, leaving email as the main channel. I’m also meal prepping both for my household and my mom on Sunday evenings, to keep weekday time open for errands."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re managing an impressive juggling act. It seems like thoughtful batching and coordination have become key, especially now that your mother needs so much hands-on support. Let me know if you want help finding apps for task boards, family coordination, or streamlining student admin tasks—sometimes tools can make all the difference."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_003",
+        "fact": "Uses collaborative cloud documents for curriculum revisions—refuses to send edits via email attachments",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Does physical therapy exercises every evening before bed—never skips even on weekends",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Plays chess at the café weekly to keep mentally active—never plays online matches",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Facilitates group text threads for family planning—never relies solely on individual texts or emails",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Checks in with her PhD students via regular video conferencing—never uses phone calls for academic mentorship",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Organizes special outings with her daughter before school transitions—never misses important milestones",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Reads historical novels for leisure—never reads contemporary fiction",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Plans at least one archival research trip per semester to a new city—never repeats the same destination in consecutive years",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Watches classic European cinema on Friday nights—never streams blockbuster action movies",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Attends local art exhibits monthly—never skips openings held at university museums",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Plays board games with her son every Sunday afternoon—never allows digital devices during game time",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts every morning with a ten-minute mindfulness meditation in her study—never checks email before meditating",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Meal preps healthy lunches for the week every Sunday evening—never buys cafeteria food on campus",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Shops for groceries early Saturday mornings—never does late-night shopping runs",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Silences phone notifications during evening hours—never responds to work messages after 7pm",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_028",
+        "fact": "Now keeps shared household shopping and meal-planning lists in a cloud doc for coordination with her sister—first time using digital planning tools for home management",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Attends aquatic therapy sessions at the rehabilitation center as her primary form of exercise—never takes brisk outdoor walks until cleared by doctor",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Brings a historical novel to read during post-therapy rest periods at the rehabilitation center—never scrolls her phone while waiting",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Now attends curriculum committee meetings in person at 8am, despite longstanding avoidance of early mornings; only resists scheduling other meetings before 10am if possible.",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Schedules aquatic therapy around mandatory 8am meetings, sometimes attending morning sessions to fit new committee constraints",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Prepares breakfast and all family members' morning routines the night before—including school bags, lunches, and review materials—to minimize morning chaos while managing the household alone",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Checks in daily with her spouse overseas via scheduled evening video calls—never relies only on intermittent emails or messages",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Now manages the household’s evening routines solo, ensuring homework is completed and chores are done before leisure activities—never defers responsibilities to others during this period",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Hosts weekend family dinners flexibly, often at variable times and sometimes in other towns near soccer tournaments—never skips a gathering but now adapts location or day to fit travel for her daughter's games",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Now uses a shared digital calendar with her spouse and daughter for tracking soccer practices, tournaments, and family schedules—never relies solely on her handwritten planner for logistics",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Regularly joins carpools or organizes rides with other soccer families to manage tournament travel, prefers collaborative planning for transportation over solo driving",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "No longer bakes desserts at home—prefers fresh fruit or savory snacks as alternatives to sweets",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Tracks blood sugar levels daily using a digital glucose monitor—never relies on periodic doctor visits or manual logging",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Plans family meals with a priority on low-carb, high-fiber dishes—never allows pasta or bread-based dinners at home",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Follows a strict daily preventive migraine regimen, including new medication and detailed trigger journaling; consults her headache diary before choosing any beverage or snack, not just avoiding caffeine",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Uses a digital headache diary app daily to log migraine triggers, onset times, and medication adherence—no longer keeps mental or paper notes for this tracking purpose",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Declines late-night academic events or spontaneous evening outings to minimize migraine triggers identified in her headache log, prioritizing a strict evening wind-down routine",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Now provides both written and live digital feedback via collaborative platforms—regularly uses real-time verbal feedback during interdisciplinary course labs, especially when working with computer science peers",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Now uses a hybrid scheduling approach: maintains a handwritten planner for personal tasks, but relies on digital calendar tools for all course design, student coordination, and interdisciplinary project scheduling",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Prefers to develop course modules in cross-disciplinary working groups—never designs new digital curriculum solo for major projects",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Regularly attends joint faculty-student hackathons or digital history workshops at the university—never skips collaborative events related to the grant course launch",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Now uses Thursday afternoons primarily for emergency teaching assignments or student support when necessary—research block is no longer strictly protected if coverage demands arise",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Now tailors check-in frequency and format to each PhD student's needs, offering biweekly or ad hoc support in response to recent student withdrawal; no longer insists on rigid weekly progress updates from all advisees",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Prefers to co-host or swap teaching responsibilities with fellow faculty when covering unexpected classes taken over from withdrawn students—avoids solo emergency coverage when possible",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Now maintains a confidential reflection journal to process student advising challenges and unexpected program transitions—never used written reflective methods for professional stress before",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Now personally manages her mother's errands, transportation, and household tasks multiple times a week—rarely delegates or relies on remote coordination, prioritizing direct support due to her mother's new restrictions",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Prioritizes grouping her own household’s and her mother’s errands into a single outing whenever possible to reduce time away from work and minimize schedule strain",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Uses a shared family task board (digital or physical) to assign her mother’s errands and appointments to available family members—created after her mother’s fall to manage care coordination",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Prefers to give written feedback on student papers—never uses verbal critique in office hours",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_048",
+        "reason": "The new digital history course requires innovative, collaborative approaches with students and computer science faculty. Live digital labs and group work necessitate real-time verbal critique and guidance, which cannot be replaced by written comments alone."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Only schedules department meetings after 10am; avoids early morning commitments whenever possible",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "The university's new mandate requires her to be physically present for 8am curriculum committee meetings, overruling her previous policy of avoiding early morning commitments. Her ability to control meeting times is reduced for committee business, though she still avoids scheduling other meetings early when possible."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Blocks Thursday afternoons exclusively for research—never schedules teaching or administrative tasks during this time",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_052",
+        "reason": "The withdrawal of her struggling PhD advisee mid-semester forced her to take over their funded teaching commitments. To accommodate abrupt schedule changes and student needs, she sacrifices her previously rigid research block for instructional or mentoring duties during this crisis period."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Requires all PhD advisees to submit weekly progress updates—never accepts infrequent check-ins",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_053",
+        "reason": "The recent loss of a struggling PhD student prompted her to reevaluate her supervision style. She now adjusts communication and accountability to prevent overwhelm or disengagement, focusing on flexibility and student well-being rather than strict uniform deadlines."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Takes daily brisk walks outdoors, rain or shine—never uses the treadmill indoors",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "Her worsening back pain resulted in doctor’s orders to stop daily outdoor walks and begin aquatic therapy. The way she maintains physical activity has fundamentally switched from walking to aquatic exercise."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Bakes sugar-free versions of favorite desserts—never uses traditional recipes with added sugar",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "The pre-diabetes diagnosis requires immediate and stricter dietary management. Even sugar-free baked goods can spike blood sugar or encourage unhealthy eating habits; her physician advised eliminating desserts entirely and focusing on low-glycemic options."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Avoids caffeine entirely due to migraines—only drinks herbal tea or water",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "The neurologist’s new instructions require her to expand management from simply avoiding caffeine to actively logging triggers and adhering to a medication and tracking plan. She must now consult past headache patterns for all dietary choices, not only caffeine."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Hosts Sunday family dinners without fail—never cancels, even during busy weeks",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "With her younger sister now living in the home, Sunday dinners expand in scale and must flex for both households' schedules. The spirit (never skipping a weekly gathering) remains, but exact timing and form evolve to integrate her sister and balance increased household dynamics."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Visits her mother every Saturday to help with errands—never delegates this to anyone else",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "Her daughter's varsity soccer schedule requires frequent weekend travel, making it difficult to personally visit her mother every Saturday. She now sometimes relies on remote coordination and delegation when absent."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Keeps a handwritten planner for all tasks—never relies on digital calendars for scheduling",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "Designing and launching the digital history course in partnership with computer science, plus the internal grant's requirements, means she must use shared digital calendars for project management—her handwritten planner cannot support collaborative or tech-integrated scheduling."
+      },
+      {
+        "id": "pref_026",
+        "fact": "Hosts Sunday family dinners weekly, now larger and more casual to accommodate her sister's temporary stay—occasionally shifts to Saturday for flexibility but never skips a weekend gathering",
+        "domain": "social_relationships",
+        "created_at_session": 0,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "The daughter's varsity schedule with frequent tournaments means family gatherings must sometimes happen away from home or at irregular times. She adapts the routine to prioritize togetherness wherever feasible."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Sets aside a weekday evening each week for one-on-one sister time—no other social or work commitments allowed during this block",
+        "domain": "social_relationships",
+        "created_at_session": 0,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "Her sister is no longer staying temporarily; the spouse's absence means her sister does not reside in the home or require dedicated weekday evening time, freeing up this slot for family management."
+      },
+      {
+        "id": "pref_030",
+        "fact": "Prefers to schedule aquatic therapy in the late afternoon—never opts for early morning sessions to avoid discomfort after rest",
+        "domain": "health_body",
+        "created_at_session": 1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "The mandatory 8am meetings force her to restructure her therapy schedule, leading her to occasionally attend morning sessions, which she previously avoided."
+      },
+      {
+        "id": "pref_034",
+        "fact": "Prepares breakfast and review materials the night before 8am committee meetings, to minimize stress on early mornings",
+        "domain": "daily_routines",
+        "created_at_session": 2,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "With her spouse relocating overseas, she must single-handedly handle morning routines for her children, adding school preparations on top of her own work tasks. The preference shifts from personal prep for early meetings to thorough preparation for the entire household."
+      },
+      {
+        "id": "pref_038",
+        "fact": "Coordinates errands for her mother via phone/text and delegates some tasks to her son or friends when schedule conflicts arise due to weekend soccer travel—only visits in person when possible",
+        "domain": "social_relationships",
+        "created_at_session": 4,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "Her mother's fall and resulting inability to drive or perform certain activities creates an ongoing need for hands-on assistance several times each week. She can no longer primarily coordinate remotely or delegate; in-person support has become the norm and priority."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T23:50:28.771788"
+}

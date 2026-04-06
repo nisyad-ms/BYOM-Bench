@@ -17,14 +17,14 @@ import time
 from dataclasses import dataclass, field
 from typing import Any, Callable, Literal
 
-from byom_bench.agents import ContextAwareAgent, NoContextAgent
-from byom_bench.client import AsyncLLMPool, LLMClient, PooledLLMClient
-from byom_bench.schemas import (
+from ream_bench.agents import ContextAwareAgent, NoContextAgent
+from ream_bench.client import AsyncLLMPool, LLMClient, PooledLLMClient
+from ream_bench.schemas import (
     EvaluationTaskSpec,
     MultiSessionEvaluationResult,
     MultiSessionOutput,
 )
-from byom_bench.task_generators import EvaluationTaskGenerator
+from ream_bench.task_generators import EvaluationTaskGenerator
 
 from .judge import MultiSessionJudge
 from .user_simulator import MultiSessionUserSimulator

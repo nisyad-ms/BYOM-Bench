@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_e9d77e85",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_053",
+        "fact": "Prioritizes in-person meetings for departmental coordination in the Chicago office — schedules video calls only for external or off-site contacts when required",
+        "supersedes": {
+          "id": "pref_003",
+          "fact": "Always schedules video calls with remote department contacts — avoids lengthy email threads for coordination"
+        }
+      },
+      {
+        "id": "pref_054",
+        "fact": "No longer requests remote work arrangements for family needs — strictly adheres to the office-required schedule and travel policies set by Deloitte",
+        "supersedes": {
+          "id": "pref_040",
+          "fact": "Requests flexibility to work remotely from Cleveland for several weeks to provide in-person care for her mother, prioritizing family over routine client travel during her mother's immediate recovery period"
+        }
+      },
+      {
+        "id": "pref_015",
+        "fact": "Handles family conflict by setting boundaries, politely declining to mediate between her fiancé and her parents"
+      },
+      {
+        "id": "pref_013",
+        "fact": "Prefers texting or messaging with friends for casual check-ins — avoids spontaneous phone calls"
+      },
+      {
+        "id": "pref_034",
+        "fact": "Schedules weekly in-depth planning sessions with her fiancé to evaluate relocation pros and cons, using shared documents to track questions and decisions"
+      },
+      {
+        "id": "pref_056",
+        "fact": "Eats lunch with colleagues in the office cafeteria most days to facilitate team rapport — replaces prior solo lunch walks during remote/hybrid schedules."
+      }
+    ]
+  },
+  "persona": "A 28-year-old junior auditor working at a multinational corporation"
+}

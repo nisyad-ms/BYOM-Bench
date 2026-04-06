@@ -1,4 +1,4 @@
-"""Graphiti (Zep) Memory Store for BYOM-Bench.
+"""Graphiti (Zep) Memory Store for REAM-Bench.
 
 Uses the graphiti-core library (https://github.com/getzep/graphiti) with an
 embedded Kùzu graph database for temporal knowledge graph construction and
@@ -25,8 +25,8 @@ from graphiti_core.llm_client.config import LLMConfig
 from graphiti_core.nodes import EpisodeType
 from openai import AsyncAzureOpenAI
 
-from byom_bench.client import get_agent_config, resolve_azure_openai_config
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.client import get_agent_config, resolve_azure_openai_config
+from ream_bench.schemas import MultiSessionOutput
 
 from ._sentinel import SentinelMixin
 

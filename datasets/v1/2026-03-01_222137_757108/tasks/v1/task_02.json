@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_098cf27e",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_033",
+        "fact": "Exclusively chooses low-impact workouts like swimming, walking, or gentle stretching — avoids all high-intensity and impact activities until cleared by physician",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Chooses low-impact workouts like elliptical or swimming for most exercise sessions — saves high-intensity for basketball only"
+        }
+      },
+      {
+        "id": "pref_057",
+        "fact": "Prefers high-stakes mainstage conference presentations and external HR keynote sessions over routine in-house training; proactively seeks high-profile speaking opportunities.",
+        "supersedes": {
+          "id": "pref_041",
+          "fact": "Now conducts large group presentations and virtual training sessions for company-wide HR and payroll system integration — rarely uses small groups except for specialized follow-ups."
+        }
+      },
+      {
+        "id": "pref_006",
+        "fact": "Prepares all weekday lunches at home — avoids cafeteria and fast food entirely"
+      },
+      {
+        "id": "pref_059",
+        "fact": "Shares highlights and industry insights from HR conferences with management and peer team leads within a week of returning — always prepares a takeaway memo."
+      },
+      {
+        "id": "pref_055",
+        "fact": "Checks in daily (by phone or video call) with HR leads at newly assigned facilities to monitor labor relations issues firsthand"
+      },
+      {
+        "id": "pref_007",
+        "fact": "Does daily stretching routines before office hours to manage lower back pain"
+      }
+    ]
+  },
+  "persona": "A mid-level HR manager at a regional manufacturing company"
+}

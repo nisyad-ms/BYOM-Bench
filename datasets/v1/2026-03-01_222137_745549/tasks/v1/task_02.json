@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_c32703af",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_043",
+        "fact": "Now delegates most project syncs to team leads and primarily attends executive and cross-department meetings—participates in core team discussions only for high stakes milestones or escalations",
+        "supersedes": {
+          "id": "pref_001",
+          "fact": "Holds all project syncs as video calls with cameras on—never allows purely audio meetings for core teams"
+        }
+      },
+      {
+        "id": "pref_056",
+        "fact": "Preps quick, portable vegetarian meals as needed for herself and her mother—does not maintain a strict Sunday batch prep and often relies on ready-made options during weeks of medical caregiving",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Preps all weekday lunches on Sundays to maintain a vegetarian diet—never eats meat during the workweek"
+        }
+      },
+      {
+        "id": "pref_003",
+        "fact": "Reviews code only after engineers submit self-assessment notes—never gives feedback without context"
+      },
+      {
+        "id": "pref_041",
+        "fact": "Wears her CPAP device nightly without exception—never falls asleep without it, even for naps"
+      },
+      {
+        "id": "pref_042",
+        "fact": "Finishes dinner by 7pm and avoids any evening snacks to minimize nighttime reflux and optimize CPAP comfort"
+      },
+      {
+        "id": "pref_025",
+        "fact": "Limits social media usage to a single 15-minute block after dinner—never checks feeds in the morning"
+      }
+    ]
+  },
+  "persona": "A 38-year-old software architect with a background in machine learning"
+}

@@ -1,5 +1,5 @@
 """
-Shared Azure OpenAI client for BYOM-Bench.
+Shared Azure OpenAI client for REAM-Bench.
 
 This module provides a simple, reusable Azure OpenAI client for components
 that need basic LLM access. Components with more complex needs (like
@@ -7,7 +7,7 @@ data_generation's AzureQueryLLM with conversation threading) should keep
 their specialized implementations.
 
 Usage:
-    from byom_bench.client import LLMClient
+    from ream_bench.client import LLMClient
 
     # Chat completion
     client = LLMClient()

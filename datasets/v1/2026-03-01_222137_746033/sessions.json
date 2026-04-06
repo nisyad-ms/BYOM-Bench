@@ -1,0 +1,1468 @@
+{
+  "persona": "A 28-year-old customer support manager at a multinational e-commerce company",
+  "persona_id": "persona_20260301_223344",
+  "expanded_persona": {
+    "base_persona": "A 28-year-old customer support manager at a multinational e-commerce company",
+    "age": 28,
+    "gender": "male",
+    "location": "Dallas, TX",
+    "work_education": [
+      "Manages a 15-person multilingual customer support team for a global e-commerce platform headquartered in Dallas",
+      "Recently promoted after implementing a new ticket-routing system that improved response times by 20%",
+      "Currently working remotely four days a week, spends Fridays in the office for team meetings",
+      "Tasked with training staff on a new AI-powered support chatbot rolling out next quarter",
+      "Regularly deals with high-stress peak periods during holiday shopping seasons, sometimes working overtime"
+    ],
+    "health_wellness": [
+      "Struggled with migraines since college; sees a neurologist quarterly and uses preventative medication",
+      "Started jogging three mornings a week in the neighborhood after doctor recommended more exercise",
+      "Participates in a meal delivery service and is attempting to lose weight after gaining 15 pounds last year",
+      "Averages about 6 hours of sleep, sometimes less during busy work weeks",
+      "Practices mindfulness meditation using an app most evenings to manage work-related stress"
+    ],
+    "family_relationships": [
+      "Lives with long-term girlfriend and their adopted dog in a rented townhouse",
+      "Girlfriend works in marketing and travels for work every other month; he manages household duties when she’s away",
+      "Parents live three hours away in Houston, visits them with girlfriend for major holidays",
+      "Older sister recently moved to Dallas for a new job; they meet for lunch once a month",
+      "Primary caregiver for the dog, coordinating vet visits and daily walks"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Always schedules all team video calls before noon — never hosts meetings after lunch",
+        "Prepares detailed written agendas for every Friday in-office meeting — never improvises topics on the spot",
+        "Responds to urgent internal messages only during peak hours (9am-2pm) — avoids after-hours replies unless critical",
+        "Conducts one-on-one trainings for new tech rollouts — never delegates onboarding of new systems to team leads",
+        "Blocks two hours on Monday mornings every week for workflow review — no calls or emails allowed during this time"
+      ],
+      "health_body": [
+        "Never skips morning jogs on Tuesdays, Thursdays, or Saturdays — reschedules rather than cancels when busy",
+        "Avoids all caffeine after 2pm to reduce the risk of migraines",
+        "Relies exclusively on a meal delivery service for weeknight dinners — never cooks from scratch Monday through Friday",
+        "Sets a strict 10:30pm device curfew to improve sleep quality — never uses screens in bed",
+        "Practices meditation with an app for 15 minutes nightly — never skips, even when traveling"
+      ],
+      "social_relationships": [
+        "Sets aside Sunday nights for date night with girlfriend, regardless of schedule — never makes other plans then",
+        "Always video-calls parents on the first Saturday of each month — never misses, even when traveling",
+        "Meets sister for lunch once a month at a different local restaurant every time — never repeats the same spot twice in a row",
+        "Hosts small-group dog playdates at local park every second Saturday — never attends large dog events",
+        "Shares household chores with girlfriend but does all dog care responsibilities solo when she’s traveling"
+      ],
+      "leisure_hobbies": [
+        "Watches one documentary every weekend — never watches reality TV",
+        "Plays co-op video games online with college friends every Wednesday night — never plays solo games",
+        "Explores new Dallas coffee shops monthly — never goes to national chains on weekends",
+        "Attends at least one local live music show each month — avoids festivals with large crowds",
+        "Plans a weekend hiking trip at least once per quarter — never hikes in extreme heat above 95°F"
+      ],
+      "daily_routines": [
+        "Walks the dog every morning before breakfast — never skips, regardless of weather",
+        "Does a full tidy-up of the house every Sunday afternoon — never leaves chores for weekdays",
+        "Reads news from a single local source each morning — never browses multiple outlets",
+        "Checks personal email once daily after work — never during the workday",
+        "Refills weekly medication organizer every Sunday without fail — never relies on memory for doses"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced a severe migraine episode at work during a holiday season peak, resulting in an unplanned ER visit and neurologist recommending stricter sleep and stress management routines.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_028",
+            "fact": "Uses a sleep tracking app nightly and reviews sleep quality reports every morning — never skips monitoring, even on weekends",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Completes a 10-minute evening prep routine to wind down for sleep, including setting out clothes and prepping breakfast for the next morning",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Sets a strict 10:30pm device curfew to improve sleep quality — never uses screens in bed"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Sets a stricter 9:45pm device curfew — avoids all screen use after 9:45pm, including in the living room, to prioritize migraine prevention",
+              "domain": "health_body"
+            },
+            "reason": "Following the neurologist’s advice after the severe migraine and ER visit, he adopts an earlier device curfew to enforce improved sleep hygiene and minimize late-night stimulation, directly targeting migraine triggers."
+          },
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Never skips morning jogs on Tuesdays, Thursdays, or Saturdays — reschedules rather than cancels when busy"
+            },
+            "to": {
+              "id": "pref_027",
+              "fact": "Replaces morning jogs with low-impact evening walks on Tuesdays, Thursdays, or Saturdays — avoids vigorous morning exercise due to migraine risk",
+              "domain": "health_body"
+            },
+            "reason": "The neurologist’s recommendation emphasizes stricter sleep and stress routines, leading him to switch from potentially migraine-triggering morning jogs to gentler evening walks for exercise."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I need some help reworking my routines. I had a really bad migraine episode at work last week—ended up in the ER during the holiday rush. My neurologist says I have to be stricter about sleep and stress management, but honestly, all the usual advice feels disconnected from the reality of peak periods. Can you help me figure out a practical way to keep my work and health in balance, especially now?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds intense—I'm glad you're prioritizing your health after that. You're right, the typical advice doesn't consider work intensity, especially during holiday peaks in e-commerce. Where do you feel the biggest tension between health recommendations and your usual work commitments? Is it the schedule, the stress spikes, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely schedule. The hours get longer and more unpredictable—sometimes I barely get six hours of sleep when things are busy. I used to rely on jogging three mornings a week for stress relief, but my neurologist told me after this episode to avoid vigorous morning exercise—it might be contributing to the migraines. So I'm stuck figuring out what else I can do to unwind and keep active that won’t mess with my sleep."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—morning workouts can ramp up stimulation just when your body needs calm. Would easing into low-intensity activities work for you? Maybe swapping jogging for gentle walks or stretching, possibly later in the day? Or does your schedule make that difficult?"
+        },
+        {
+          "role": "user",
+          "content": "I actually started doing low-impact evening walks instead—Tuesdays, Thursdays, and Saturdays like before, but after dinner. I thought about yoga, but I hate guided classes and streaming videos are out, so just walking works best. It’s not as energizing as jogging, but it’s way better for my head. Just had to drop the morning jogs completely."
+        },
+        {
+          "role": "assistant",
+          "content": "That adjustment sounds wise, especially if your neurologist backs it. Evening walks can be effective for winding down, plus they're low-stress and flexible. With your schedule, what wind-down habits do you currently use to signal the end of the workday—and have you made any changes after the ER visit?"
+        },
+        {
+          "role": "user",
+          "content": "I set a strict device curfew before, but now I'm even more careful. Screens go off at 9:45pm, not just in the bedroom—no laptop, phone, or TV even in the living room after that. I started prepping for sleep with a 10-minute routine in the evening: I set out my clothes for the next day and prep breakfast, so I don’t have to think in the morning. It helps me actually relax instead of scrolling."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a strong approach—removing screens earlier and prepping for tomorrow can really help lower stimulation. How are you measuring if it’s working? Are you relying on how you feel, or do you use any tracking tools or journals?"
+        },
+        {
+          "role": "user",
+          "content": "I added a sleep tracking app to my nightly routine. I check the report every morning and don’t skip it—even on weekends. It’s been useful to see if the new curfew and evening prep actually improve my sleep quality and help prevent migraines."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move. Quantifying the impact makes it easier to refine your habits. Are you seeing results so far—better sleep, fewer migraine triggers—or is it still early days?"
+        },
+        {
+          "role": "user",
+          "content": "It’s only been a week since the ER visit, but I’m already getting more consistent sleep and my mornings feel less rushed. Stress isn’t gone, obviously—holiday season is still wild—but at least these changes make it more manageable. I think sticking to low-impact walks, earlier curfew, and tracking sleep will actually help if I don’t slip during peak times."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s real progress. The hardest part is often maintaining new habits when work ramps up—so building routines you never skip, even on busy days, is key. Anything you'd like help streamlining further, like your evening wind-down or workday boundaries? Or do you want to focus more on stress management strategies in the work context?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, streamlining the evening routine for maximum migraine prevention is the priority right now. I need the wind-down to be absolutely foolproof—especially with sleep tracking showing a direct link between late hours and migraine spikes. If you have ideas for adding relaxation techniques that don’t involve screens or require more than 10 minutes, I’m all ears."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Since you already do a prep routine and no screens, consider low-effort options like gentle stretching, aromatherapy, or listening to soothing music—nothing intensive or tech-heavy. You could also try brief journaling or gratitude listing, which can help shift your mind away from work concerns. Anything here feel doable given your current setup?"
+        },
+        {
+          "role": "user",
+          "content": "The stretching and music could fit—aromatherapy sounds worth a shot too. I already use a mindfulness meditation app for 15 minutes every night, even when I travel. It’s non-negotiable for me, so it actually anchors my routine. Adding 2–3 minutes of gentle stretching after meditation might be perfect."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s excellent—you’ve built a core routine you don’t skip, and small additions are more likely to stick. If you want to optimize further based on your sleep tracking, you could try tweaking which stretches or scents you use and see if it correlates with even better sleep or fewer migraines. Let me know if you need help picking options or tracking those effects, but sounds like you’re on the right path."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Girlfriend was offered a six-month work assignment in Chicago and has decided to temporarily relocate, leaving him as sole head of household and primary caretaker of their dog.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Performs all household chores and dog care independently every day — creates new chore schedule to manage solo responsibilities",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Schedules weekly video calls with girlfriend every Sunday evening to stay connected while she’s away",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Sets aside Sunday nights for date night with girlfriend, regardless of schedule — never makes other plans then"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Uses Sunday nights for personal relaxation or calls with girlfriend, no in-person plans during her assignment — does not prioritize date night activities",
+              "domain": "social_relationships"
+            },
+            "reason": "With his girlfriend relocating to Chicago for six months, in-person Sunday date nights are no longer possible. He adapts by using Sunday evenings for solo relaxation or video calls, but does not reserve them for structured date activities."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_015",
+            "fact": "Shares household chores with girlfriend but does all dog care responsibilities solo when she’s traveling",
+            "domain": "social_relationships",
+            "reason": "For the next six months, the girlfriend is not just traveling occasionally but fully relocated and not available for any household duties, so sharing chores is not possible — he will handle all responsibilities without periodic sharing."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my girlfriend just took a six-month work assignment in Chicago—she officially leaves on Monday. It’s going to be a pretty big shift for both of us, especially since I’ll be handling everything here solo. I’m used to splitting chores and planning Sunday date nights, but I guess now I need a new routine. Any tips for managing household responsibilities without getting totally overwhelmed?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment, especially when you’re used to sharing the load. It makes sense you’re thinking about a new routine. Would you prefer having a set schedule for chores, or are you more comfortable with tackling things as-needed? Also, how’s your workload at the moment—are there days that are particularly stressful or busy?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I think a set schedule is going to be necessary. My work days stay pretty packed, especially now that I’m preparing to train the team on a new AI chatbot soon. I used to split household chores with her (and do all the dog stuff solo when she was traveling), but with her gone for six months, I’ll have to handle everything myself every day. I probably need to create a new chore plan so things don’t pile up."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—having a clear plan makes the workload more manageable. For daily chores, maybe consider grouping tasks by day or prioritizing those that need frequent attention versus ones that can wait. Since you’re already the primary dog caretaker, I assume those routines stay the same, but what about bigger things like laundry or cleaning? Would setting specific days for those help?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I already do a full house tidy-up every Sunday afternoon, so I plan to keep that going. But now, rather than splitting stuff like laundry and kitchen cleaning with her during the week, I’ll need to work all of those in myself. I might dedicate short blocks each evening to certain chores, so it doesn’t build up."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds reasonable—a little each evening and a big tidy on Sunday should help keep things manageable. For meal times, has anything changed? Are you still doing the meal delivery service, or are you thinking about adjusting your dinner routine with her out of town?"
+        },
+        {
+          "role": "user",
+          "content": "I’m definitely sticking with the meal delivery service for weeknight dinners—cooking from scratch is way too time-intensive with everything else going on. That routine hasn’t changed. But Sunday nights used to be our standing date night, and that’s obviously not happening in person now. I guess I’ll use Sunday evenings for personal relaxation, maybe some calls with her, but I’m not reserving it for date night activities anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—using Sunday evenings for downtime or connecting virtually could be a good way to relax and maintain your connection. Do you plan to schedule regular video calls with her, or just reach out ad hoc?"
+        },
+        {
+          "role": "user",
+          "content": "We talked about it, and I’m going to schedule weekly video calls with her every Sunday evening. Having something on the calendar helps us stay connected and gives some structure, since she’ll be pretty busy in Chicago."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great approach, especially during a long-distance stretch. It’ll likely make the transition smoother for both of you. With all these new solo responsibilities and the new call routines, do you feel like you’ll need to adjust anything else in your daily schedule, or is the rest of your routine staying pretty steady?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly steady, apart from creating the new chore plan and making sure I don’t let anything fall behind. I’ll just need to get used to taking care of everything every day, rather than relying on sharing duties like before. The dog’s care routine is already locked in, but now that all household chores are on me, I’ve started working out a checklist to keep myself organized."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re thinking it through and putting solid routines in place. A checklist is a good idea and can prevent things from slipping through the cracks. If you need apps or tools to help with organization, let me know—I can recommend some for household management. And if you want tips for balancing work and solo home responsibilities, I’m here to help!"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed plantar fasciitis after increasing jogging mileage, resulting in persistent heel pain and a doctor's order to pause all running and switch to low-impact exercise for at least two months.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Tracks daily pain levels and recovery progress using a plantar fasciitis app every evening before bed during rehabilitation period",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_027",
+              "fact": "Replaces morning jogs with low-impact evening walks on Tuesdays, Thursdays, or Saturdays — avoids vigorous morning exercise due to migraine risk"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Pauses all jogging and walking-based exercise; switches exclusively to stationary cycling or swimming three evenings weekly, as recommended for plantar fasciitis recovery",
+              "domain": "health_body"
+            },
+            "reason": "The new diagnosis of plantar fasciitis and doctor's order to avoid jogging and even extended walking necessitate a full change in exercise routine, replacing all outdoor walks/jogs with non-weight-bearing, low-impact activities."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I just got hit with plantar fasciitis after bumping up my jogging mileage. My doctor basically banned running and even long walks for at least two months. I'm supposed to switch to low-impact exercise, but honestly, my whole routine revolved around those morning jogs. How do people keep moving when they can't run or walk outside?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ouch, that sounds rough — especially since jogging was such a core part of your schedule. For low-impact options, stationary cycling and swimming are often top recommendations since they take the pressure off your feet. Have you tried either before, or are you starting fresh?"
+        },
+        {
+          "role": "user",
+          "content": "I'm basically starting from scratch. I’ve always preferred jogging outside, but I guess I’ll need to get used to the gym bike or the pool. The doc was clear—no walking-based exercise either. I’ll just be sticking to stationary cycling or swimming, three evenings a week, not mornings. Apparently, mornings are still migraine risk territory without jogging as a warmup."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — shifting to evenings can help with migraine prevention if mornings are tricky now. Are you considering joining a gym nearby, or planning to use equipment at home? Some people find the pool especially helpful for this kind of injury, but the logistics can be a hurdle."
+        },
+        {
+          "role": "user",
+          "content": "I'm leaning toward the gym since I don't have any equipment at home. Pool access would be nice, but I'll see which ones near me actually have lap swimming hours. It’s weird not starting the day with exercise, but I’ve got to avoid anything weight-bearing until the pain settles."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re being careful, which should help the recovery along. Are you tracking your symptoms or progress in any way? Sometimes having data can make the rehab feel more manageable, especially for something like plantar fasciitis that can be slow to improve."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually—my doctor had me download a plantar fasciitis app to track daily pain levels and recovery progress. I log everything every evening before bed while I'm off my feet. That way I can really see if things are improving week to week."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move! The tracking makes it easier to spot patterns — and can help with reporting back to your doctor at check-ins. Any other parts of your routine been disrupted? Like, were your dog walks affected now that you’re avoiding walking exercise?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, unfortunately, dog walks are on pause for now, too. My girlfriend’s been helping out with walks and park outings lately so I don’t aggravate my heel. It’s strange, since I never used to miss those daily walks, but I can’t risk slowing down recovery."
+        },
+        {
+          "role": "assistant",
+          "content": "Having support at home definitely helps! Are there any other habits you’re worried about disrupting — like your sleep, work routines, or stress management — with this sudden shift? Sometimes big changes ripple out in unexpected ways."
+        },
+        {
+          "role": "user",
+          "content": "So far, my sleep has been decent and I’m sticking to my meditation routine, but I am worried evening exercise might mess with my device curfew. I’ll just need to plan so I’m done early enough for wind-down time."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s wise — finishing your workouts early evening should let you stick with your 10:30pm curfew and still fit in meditation. Do you want suggestions for structuring your new exercise schedule, or are you looking more for ways to stay motivated during the recovery phase?"
+        },
+        {
+          "role": "user",
+          "content": "Maybe both. I’ll need to keep this up for two months, so anything that helps with motivation would be great. Also, any tips for keeping track of progress or making gym routines less boring would help."
+        },
+        {
+          "role": "assistant",
+          "content": "One idea is to set mini-goals on your app — not just pain levels, but also consistency with workouts. Pairing cycling or swimming with music, podcasts, or even documentaries can make sessions go faster. You could even treat each week’s gym session as a time for catching up on your favorite weekend documentaries if that fits."
+        },
+        {
+          "role": "user",
+          "content": "Good idea! I always watch a documentary every weekend, so catching up on a few during stationary cycling could be a solid motivator. Thanks for your help — it’s good to have a plan while this injury heals. I’ll stick to tracking everything in the app and see how it goes."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Company leadership announces a mandatory return-to-office policy requiring all managers to be on-site full-time starting next month, ending the current hybrid work arrangement.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_036",
+            "fact": "Prepares weeknight outfits and lunches every Sunday evening in advance to streamline busy office mornings",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_037",
+            "fact": "Commutes to the office by car every weekday — listens to podcasts focused on recent customer support innovations during drives",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Always schedules all team video calls before noon — never hosts meetings after lunch"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Schedules all team meetings in-person before noon — no longer hosts video calls except for cross-site collaboration",
+              "domain": "work_habits"
+            },
+            "reason": "With the new mandatory return-to-office requirement, team meetings need to be in-person rather than virtual. He now prioritizes in-person morning meetings and reserves video calls for external or remote participants only."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_031",
+            "fact": "Performs all household chores and dog care independently every day — creates new chore schedule to manage solo responsibilities",
+            "domain": "daily_routines",
+            "reason": "This preference was established when the girlfriend was away for assignments; but full-time office work means less time solo at home and previous adaptation is no longer relevant as the household schedule changes with less weekday presence."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my company just dropped the bombshell: all managers back to the office full-time next month. I was really getting used to the hybrid thing—it's going to trash my weekday routine. I want your help figuring out how to adjust, especially mornings. What would you focus on first?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—especially since you just got into the groove with the hybrid schedule. For mornings, the key is prepping whatever can be handled the night before. Are there certain parts—like breakfast, dog duty, or outfit planning—that tend to slow you down, or is it mostly about getting out the door on time?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely getting out the door is the hardest. I’ve started prepping my work outfits and packing lunches every Sunday evening—otherwise, I just scramble. Dog walks still need to happen first thing no matter what, but anything that makes the rest smoother helps. Got any tips for keeping the Sunday prepping habit going?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re on the right track by batching the prep—Sunday is perfect for that. To stick with it, maybe set a Sunday evening reminder and treat it like an appointment, since you already do a full tidy-up then. If you make prepping part of your clean-up routine, it’s less likely to get skipped. Have you noticed other parts of your old hybrid routine that are tough to carry over, or is mornings the main pain point?"
+        },
+        {
+          "role": "user",
+          "content": "Mornings are the biggie, but I’ll also have a daily car commute now. I actually started listening to podcasts about customer support innovation during drives last week to make it less painful. It keeps me motivated and helps me stay on top of trends, but if you know any good podcast recs, I’m all ears."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart way to use the drive time! I can recommend 'Call Center Chronicles' and 'The Customer Support Show'—both are solid, with a mix of interviews and real-world tactics. Since you’re handling a new AI support chatbot rollout, 'AI in Customer Experience' could be useful too. With the daily commute and prepping in advance, have you run into issues managing household or dog care, or does your girlfriend’s schedule help balance it out now?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, that changed. Before, when my girlfriend traveled, I did all household chores and dog care solo every day, and even set up a separate chore schedule for myself. But with both of us working more typical hours in the office, I don’t need that solo plan anymore. We’re shifting things around—she’s less likely to travel during peak office periods now anyway."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a relief—having some shared responsibility again takes the edge off. With weekdays busier, do you think you’ll keep hosting those regular dog playdates, or will that shift as well? And what’s your plan for workouts—will morning jogs still fit in, or will you have to reschedule?"
+        },
+        {
+          "role": "user",
+          "content": "Dog playdates stay on Saturdays—it’s the only dog event I still do. As for workouts, I never skip my morning jogs on Tuesdays, Thursdays, or Saturdays. If I have to, I reschedule, but jogging is non-negotiable for my migraines. I just need to keep early meetings and commute from messing with those mornings."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great discipline—protecting those jog slots is key. On meeting structure, will you keep scheduling team calls before noon, or does the return-to-office change how you organize them?"
+        },
+        {
+          "role": "user",
+          "content": "Good question. That actually changed: I now schedule all team meetings in-person before noon. No more video calls unless we need to connect with remote colleagues or other offices. It’s a big adjustment, but having everyone on-site makes in-person morning meetings the new normal for us."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—that should keep your work flow running smoothly, even if it’s more intense. Is there anything else from your old routine that you dropped or added to support this transition?"
+        },
+        {
+          "role": "user",
+          "content": "I think that covers the big changes. Sunday evenings prepping outfits and lunches, commuting with podcasts every weekday, shifting away from the solo chore schedule at home, and in-person morning meetings only for the team. Everything else feels manageable so far."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve done a solid job adapting—making those shifts up front sets you up for a smoother transition. Want help building a weekly checklist to track these new habits, or are you good for now?"
+        },
+        {
+          "role": "user",
+          "content": "A checklist would be great for keeping myself on track, actually. Let’s do that!"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Older sister announces engagement to her partner and asks him to help plan and host her upcoming engagement party in Dallas, expecting regular involvement in event preparations over the next few months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Coordinates shared group chats and schedules for engagement party planning — prefers structured checklists and assigns tasks among family and friends",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Researches and visits local party venues every Saturday afternoon with his sister and her fiancé to shortlist locations for the engagement event",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Meets sister for lunch once a month at a different local restaurant every time — never repeats the same spot twice in a row"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Meets sister weekly for engagement party planning sessions, often at her apartment or event venue — restaurant lunches are no longer regular or prioritized",
+              "domain": "social_relationships"
+            },
+            "reason": "The sister's engagement and his role as party planner require frequent meetings for preparation, shifting their monthly lunch habit to regular planning sessions at practical locations rather than restaurants."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so big update — my sister just got engaged and asked me to help plan and host her engagement party in Dallas. We’re supposed to meet pretty regularly to get things moving. I haven’t really planned an event, let alone with family involved. Where should I even start with organizing something like this?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's amazing news! Congrats to your sister — and to you for getting roped in as party planner. With family events, it helps to begin with the basics: set a target date, draft a guest list, and discuss the kind of party vibe everyone wants. Are you thinking formal, casual, indoors, outdoors? And will you be coordinating the planning solo or is your sister and her fiancé hands-on?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks! She and her fiancé definitely want to be involved, so we’ll be meeting weekly for planning sessions at either her apartment or the venue we’re looking at — kind of swapped out our usual monthly restaurant lunches for these. The vibe is leaning more modern-casual, not super formal, but definitely something memorable. I’m worried about keeping everyone organized and on schedule, since my family can get scattered quickly. Any tools or templates I should consider?"
+        },
+        {
+          "role": "assistant",
+          "content": "Weekly planning sessions sound like a solid approach, especially if you're not repeating restaurants every time now. For keeping things on track, shared checklists work really well — you could use Google Sheets, Trello, or even Asana. Assign tasks and deadlines so everyone knows their role. Would you prefer a digital group chat to coordinate, or stick with email for updates?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely a group chat. I’ll probably set up one with my sister, her fiancé, and some friends helping out — then keep a checklist and assign tasks so no one drops the ball. Structured tracking is important for me, otherwise things slip with my work schedule. If you have templates for event planning checklists, send them over. Also, venue hunting is part of my job now; we started visiting party spots every Saturday afternoon as a group, so weekends are busier than before."
+        },
+        {
+          "role": "assistant",
+          "content": "Great call on the group chat, that'll make coordination smoother. I'll share a couple of event planning checklist templates you can customize — they're organized by timeline and roles, which should fit your style. For venue selection, do you have priorities for location, size, costs, or amenities? And are there any Saturdays you can't commit because of existing routines?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks, those templates will help. For venues, we’re mostly focused on finding something local and easy for guests traveling from Houston. Size-wise, we want enough room for 50-60 people without it feeling stuffy. Saturdays are mostly open — we’ve made venue visits the main weekend thing, which pushed some of my leisure stuff (like coffee shop explorations) to Sundays or weekday evenings. But Saturday afternoons are set aside for venue shortlist trips with my sister and her fiancé, so I can commit to those for the next month or so."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood — shifting your usual weekend plans to accommodate venue tours makes sense given the time frame. When visiting venues, take photos and keep a comparison list so it's easy to review later. If some venues offer sample menus or décor packages, it's worth checking those out during your visits. Do you all plan to decide on the venue together, or are you gathering options for your sister to choose?"
+        },
+        {
+          "role": "user",
+          "content": "We’re definitely making the decision as a group. I’m doing a lot of the research, but the shortlist is a joint effort, and everyone’s visiting to see the spaces firsthand. I’m tracking costs and amenities in a shared sheet for us to review after each Saturday, and I’ll bring up décor packages like you suggested. Coordination with family and friends is new for me, so assigning tasks in the checklist—and making sure it’s structured—is key. If you have advice on smoothing out family involvement, let me know; otherwise, I think we’ve covered the main changed routines."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you've developed a clear structure and are involving everyone in the process, which is half the battle. For smoothing family planning, set up regular check-in times and make each person's responsibilities clear and manageable — no ambiguity. Encourage input but keep the final call with your sister and her fiancé to avoid decision fatigue. If any conflicts pop up, revisit the checklist so everyone sees the tasks and deadlines in black and white. Let me know if you want sample communication templates for group chats, or advice on handling last-minute issues."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Meal delivery service notifies customers of a six-week suspension due to supply chain disruptions, leaving him without his usual weeknight dinner solution.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Shops for basic groceries every Sunday evening to stock up for weeknight dinners while the meal service is suspended — avoids large, crowded supermarkets by shopping late",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Preps extra portions of dinner to have leftovers for busy workdays — prioritizes meals that reheat well",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Relies exclusively on a meal delivery service for weeknight dinners — never cooks from scratch Monday through Friday"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Cooks simple, quick-prep dinners at home on weeknights — avoids elaborate or time-consuming recipes while meal delivery is suspended",
+              "domain": "health_body"
+            },
+            "reason": "With the meal delivery service suspended for at least six weeks, he must now prepare his own dinners. Since weeknight time is limited and cooking is not his usual habit, he will opt for quick and simple meals rather than elaborate ones."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my meal delivery service just sent out a notice—it’s suspended for six weeks, supply chain issue. Not ideal, since I relied on them for all my weeknight dinners. I haven’t cooked for myself in ages, especially during the week. Got any practical dinner strategies for someone who’s more comfortable troubleshooting tech than recipes?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's rough, especially if weeknights are already busy. Do you prefer to keep meals super simple, or are you willing to branch out just a little while the service is paused? For practical strategies, maybe start with one-pan or sheet pan dinners—throw protein and veggies on a tray, bake, and you're done. Would that fit your style?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, simple is key. If dinner takes more than 30 minutes, I won’t manage it after work, especially during peak periods. I definitely want to avoid elaborate recipes for now—quick-prep is my only rule until the delivery comes back."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—short and sweet. Sheet pan meals, stir fries, or tacos can usually hit the 30-minute window. Are there proteins or veggies you like, or need to avoid based on your migraines or dietary goals? Also, would you consider prepping a couple meals at once to save time?"
+        },
+        {
+          "role": "user",
+          "content": "Prepping extra is actually a smart idea. If I have leftovers, I can reheat on busy days, which sounds way better than cooking daily. As for ingredients, nothing triggers my migraines except maybe a lot of processed meats, so I’ll steer clear of that. I’m aiming to lose some weight, so lean proteins and veggies are a plus."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect, that narrows the options. Chicken, turkey, salmon, or tofu with lots of veggies work well for batch prepping. Things like chili, grain bowls, or baked chicken with vegetables reheat easily. Will you need to shop differently now, or are you already stocked at home?"
+        },
+        {
+          "role": "user",
+          "content": "I’m going to need to shop, since I really only kept snacks and breakfast stuff in the house when the meal service was running. I think Sunday nights are best—I can shop late when it’s less crowded, since big supermarkets stress me out. That way I’m stocked for weeknight dinners."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call—late Sunday shopping avoids the rush and sets you up for the week. Maybe keep a running grocery list on your phone for essentials. Do you have basic kitchen gear for prepping, or is that another hurdle?"
+        },
+        {
+          "role": "user",
+          "content": "Thankfully, the basics are covered—skillet, baking sheet, rice cooker. My girlfriend cooks sometimes on the weekend, so we have what I need for most simple meals. I just don’t want to mess with anything too technical, and cleanup has to be quick, since work gets intense especially during holiday seasons."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you've got the tools and the plan. Would it help to have a weekly dinner menu template—like 3-4 rotating quick recipes that you can double for leftovers? You can repeat proteins and switch out sides to keep things flexible."
+        },
+        {
+          "role": "user",
+          "content": "A template would actually make this a lot less stressful, especially if I can just cycle through a few favorites. I’ll pick recipes that reheat well and make extra portions. If you have suggestions for meals that fit all those criteria, I'm all ears."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. For easy meal templates: 1) Baked chicken or salmon with roasted veggies, 2) Stir fry with tofu or shrimp and mixed vegetables, 3) Turkey chili or veggie chili, 4) Grain bowls (rice or quinoa + lean protein + salad mix). All reheat well and use minimal pots/pans. Plus, you can mix up sauces or spice profiles to keep things interesting."
+        },
+        {
+          "role": "user",
+          "content": "That’s perfect. I’ll build a Sunday night grocery checklist around those. And since the meal delivery is suspended, cooking quick at home and shopping weekly is the new move—never thought I’d actually say that. At least it’s temporary."
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely temporary, but you might find a favorite recipe or two along the way! Let me know if you want a sample shopping list or tips for smoothing out the Sunday grocery run. And if you run into any weekday time crunches, leftovers will save the day."
+        },
+        {
+          "role": "user",
+          "content": "Leftovers are going to be the lifesaver for sure. I’ll try prepping double portions and see how it goes this week. Thanks for talking through this—I actually feel less overwhelmed now that I have a plan, even if it’s not as convenient. If you have any more low-effort dinner hacks, send them my way."
+        },
+        {
+          "role": "assistant",
+          "content": "Will do! You’ve got a solid system, and quick-prep plus leftovers is a winning combo. If you need new meal ideas or shortcuts (like pre-chopped veggies or microwaveable grains), just ask. Good luck—six weeks will fly by, and you may end up with a few go-to dishes for future backup!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Selected by company leadership to lead a cross-department task force responsible for integrating customer service data with the new global logistics platform, requiring collaboration with teams in Europe and Asia and participation in late-evening strategy calls twice a week.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Blocks 30 minutes after late-evening task force calls for decompressing with short mindfulness meditation or journaling, to offset stress and sleep disruption",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Uses team collaboration platforms to track cross-timezone follow-ups, creates dedicated weekly checklist for task force responsibilities",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Responds to urgent internal messages only during peak hours (9am-2pm) — avoids after-hours replies unless critical"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Responds to urgent internal and cross-department messages during both peak hours and late evenings on Tuesdays and Thursdays due to recurring strategy calls — restricts after-hours replies on other days",
+              "domain": "work_habits"
+            },
+            "reason": "The new task force assignment requires regular late-evening strategy calls with Europe and Asia twice a week, making his prior after-hours communication avoidance impractical on those evenings."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I got tapped to lead this new cross-department task force—just kicked off last week. It’s a wildcard, lots of late-evening calls with teams in Europe and Asia now. I’m juggling more moving parts than usual, and my old work boundaries aren’t holding up. I need to figure out a better way to keep track of action items from all these timezone overlaps without letting it eat my evenings. Any advice on getting organized and protecting my downtime?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats—that’s a big responsibility! Late-evening calls can definitely mess with your usual routines. When you say your old boundaries aren’t holding up, is it mostly the messaging and task management bleeding into your personal hours, or something else? For tracking action items, have you tried centralized platforms like Asana, or do you mainly use email and Slack to follow up?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, it’s mostly the messaging. I used to only respond to urgent internal stuff during peak hours, 9 to 2, and kept evenings clear unless it was a real emergency. Now, with these recurring late calls on Tuesdays and Thursdays, I have to reply to cross-department messages after hours too. But I still try to restrict after-hours responses on other days. So far, I’m using Slack and Outlook, but it’s getting messy keeping track of who needs what, especially with timezone gaps."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. Having to reply after hours twice a week is a real shift. For the action items, would a dedicated checklist or running doc for the task force help? You could update it after each strategy call, and maybe use a collaboration platform to assign follow-ups based on timezone. That way, nothing falls through the cracks, and you can reference it throughout the week. How do you typically keep your team organized—are checklists your thing, or do you prefer status updates?"
+        },
+        {
+          "role": "user",
+          "content": "Checklists, absolutely. I’ve started creating a dedicated weekly one just for task force responsibilities, and I’m tracking cross-timezone follow-ups in our team collaboration platform—that’s been the most manageable so far. I update it after the late calls, but I haven't figured out the best way to deal with the stress and sleep disruption from those evenings. Any tips for decompressing when your routine gets thrown off like that?"
+        },
+        {
+          "role": "assistant",
+          "content": "A weekly checklist plus platform tracking is a solid approach—sounds like you're adapting fast. For decompressing after those late calls, what does your evening wind-down usually look like? Some people swear by shutting off screens, others like a quick walk or journaling. Since your routine is getting disrupted twice a week, maybe adding a short meditation or reflective practice could help reset your mind before bed. How strict are you about evening habits—do you already have a device curfew or something similar?"
+        },
+        {
+          "role": "user",
+          "content": "I’m super strict about device use—I set a 10:30pm curfew and never use screens in bed, to try to improve sleep. I meditate nightly with an app for 15 minutes, even when I travel, and that helps a lot with stress. But after these calls, I block 30 minutes for decompressing—either short mindfulness meditation or journaling—otherwise it’s hard to wind down. That’s a new thing I added just for these late evenings."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great new step—those decompressing blocks can really help with winding down, especially after high-stress calls. Have you noticed if the overlap between meditation and journaling makes one more effective for sleep, or do you alternate depending on the day? Also, are you finding it challenging to keep up with your usual morning routines after these late strategy sessions, or has blocking decompressing time kept things stable for you?"
+        },
+        {
+          "role": "user",
+          "content": "I tend to pick whichever feels right—sometimes meditation is enough, sometimes writing helps get the thoughts out. So far, I’ve been able to stick to my morning jogs, even after late calls. But tracking all the new task force stuff means I’ve had to rework how I organize action items, like I mentioned. Blocking decompress time helps, but I’m definitely feeling the strain. Anyway, the checklists and platform tracking are keeping things manageable, but I’d love suggestions for keeping better boundaries with the rest of my work, so late calls don’t turn into constant after-hours responses."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear the decompressing is working and you're maintaining your morning jogs—that’s impressive. For boundaries, maybe set explicit expectations with your colleagues: outside Tuesday and Thursday, you stick to peak hours for replies unless it’s urgent. If you document this in your status updates or task force notes, people may start respecting the pattern. You could also snooze non-critical channels or schedule email batches for the next morning. What’s your approach for communicating boundaries—do you usually spell it out, or let your reply patterns speak for themselves?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve mostly relied on my reply patterns, but with this new task force, I might need to be more direct about my availability. Already started letting people know that I’ll respond after hours only on Tuesdays and Thursdays when we have calls, but otherwise stick to peak hours. Snoozing non-critical channels sounds useful—I’ll give that a shot."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—clarity helps manage expectations, especially with multiple timezones involved. Snooze settings can free up your evenings so alerts don’t break your decompressing block. Alongside your checklists and platform tracking, you might also add auto-replies for non-urgent messages during off-hours, reinforcing when you're available. If you need help wording a boundary message or want tips for automation, let me know!"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His girlfriend's parents announce they are coming to stay with him for two weeks in Dallas while she is away in Chicago, requesting to use the guest room and spend extended time together.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_048",
+            "fact": "Prepares more elaborate home-cooked meals and shifts dinners to the dining table for two weeks to accommodate girlfriend's parents' stay, prioritizing family-style presentation over quick solo meals",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_049",
+            "fact": "Walks the dog with girlfriend's parents each evening after dinner if weather allows, inviting them along to encourage bonding",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Temporarily declines or reschedules all evening social invitations unrelated to hosting duties during the two weeks of girlfriend's parents' visit",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_030",
+              "fact": "Uses Sunday nights for personal relaxation or calls with girlfriend, no in-person plans during her assignment — does not prioritize date night activities"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Spends Sunday nights having dinner and in-person conversation with girlfriend's parents during their visit — personal time moved to later evenings after guests retire",
+              "domain": "social_relationships"
+            },
+            "reason": "With his girlfriend's parents staying with him for two weeks and specifically requesting extended time together, his typical Sunday evening solo routine or private video calls with his girlfriend is now replaced by hosting her parents for dinner and conversation. His alone time is delayed until after they retire for the evening."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my girlfriend’s parents just told us they’re coming to stay for two weeks—right when she’ll be out of town in Chicago for work. I’ll be hosting solo, and honestly, I have no clue how to adjust my routines for this, especially since they want to spend extra time together. Any suggestions for keeping things organized, and not losing my mind?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that's a big adjustment—hosting for two weeks, and solo at that! Are there particular routines or boundaries you’re worried about conflicting with, like work schedule, downtime or household stuff? It might help to map out a plan for both your hosting duties and your typical work hours, so you feel more in control."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, weekends are where it feels toughest. I usually keep Sunday nights for personal time or video calls with my girlfriend when she’s away, but I’m guessing that’ll change. Her parents specifically asked to do dinners together on Sundays while they’re here, so I’ll need to shift my solo recharge to later in the evening, after they head to bed. Any tips on keeping my sanity while my personal time moves around like that?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a good call—protecting ‘me time’ matters, even with guests. Since your recharge window is moving later, have you considered scheduling a short wind-down routine? Maybe a bit of meditation or reading before bed, to signal the day’s end and help you decompress. Would that work, or do other evening routines help you relax?"
+        },
+        {
+          "role": "user",
+          "content": "Meditation definitely helps—I use an app nightly for about 15 minutes, even when traveling. I plan to stick with that after dinner, since it works well even if my routine gets pushed back. The bigger shift is actually in how I handle dinners. Normally, I rely on meal delivery for weeknight dinners, but with her parents visiting, I’ll be cooking more elaborate meals and serving at the dining table, at least while they’re here. That’s not my usual solo style, but it feels like the right move."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful adjustment! Cooking for guests does change the dynamic a lot. Perhaps you could prep menus ahead and use batch-cooking for some evenings, so you’re not overwhelmed daily. Would you like recipes geared toward family-style meals or dish ideas to suit their preferences? Also, how does shifting from delivery to home-cooked affect your time constraints?"
+        },
+        {
+          "role": "user",
+          "content": "Good question. I’ll probably spend more time in the kitchen, but I think prepping in advance will help. For their preferences, they’re pretty open—as long as meals feel homey, nothing super spicy, and not too heavy. Actually, another thing: I usually walk the dog solo every evening, but I’m planning to invite them along for walks after dinner if weather cooperates. That way, it feels like more quality bonding time without just sitting indoors. Any advice for making these walks enjoyable for all of us?"
+        },
+        {
+          "role": "assistant",
+          "content": "Inviting them for the dog walks is a great way to build connection! Maybe try routes with interesting sights or gentle terrain—a park loop or neighborhood stroll with benches, so no one feels rushed. If you sense they're tired, keep the walk flexible. You could even bring water and treats for the dog to make it a small event. Do you want tips on conversation prompts or topics for the walks, in case you need to keep it lively?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that’d be helpful—sometimes I run out of things to chat about, especially if we’re spending every evening together. And this actually ties into another adjustment: I’m temporarily turning down or rescheduling all unrelated evening social invites while they’re here. Normally I’d have a few midweek meet-ups or game nights, but for these two weeks my evenings are reserved for hosting duties. It’s a bit isolating, but I figure it’s temporary. Conversation starters would be awesome."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a considerate approach, and focusing on hosting will probably mean a lot to them. For conversation starters, you could ask them about their own travels, stories from when your girlfriend was growing up, or favorite spots in Dallas they've yet to visit. You could also share your own local discoveries—new coffee shops, music venues, or hiking areas. If you need a fallback topic, bringing up your dog’s quirks or funny pet memories usually sparks laughter. Want some more tailored prompts, or is that enough to begin with?"
+        },
+        {
+          "role": "user",
+          "content": "Those are all great! Sharing local finds is easy, since I try new coffee shops monthly and hit up live music shows. And pet stories are always a crowd-pleaser. I think I can build from there. I feel better knowing my routines can adapt, even if they’re a bit different for two weeks. Thanks for helping me think it through."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing a fantastic job balancing your own needs with hosting duties. Two weeks will fly by—and you’ll likely build a great rapport with your girlfriend’s parents in the process. If you need meal prep recipes or extra conversation prompts as things progress, let me know! Good luck—sounds like you have this under control."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The company announces a major restructuring of the customer support division, dissolving his current team and reassigning him to oversee a new international team based across multiple time zones, effective next quarter.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Adjusts his daily work schedule to include at least one evening or early morning meeting per week to collaborate live with international team members in different time zones",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Plans a dedicated 30-minute 'unplug' ritual after every late international meeting to manage stress and maintain migraine prevention routines",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_035",
+              "fact": "Schedules all team meetings in-person before noon — no longer hosts video calls except for cross-site collaboration"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Schedules most team meetings as video calls across various time zones — only hosts in-person meetings for rare local collaborations",
+              "domain": "work_habits"
+            },
+            "reason": "The company has dissolved his local team and reassigned him to manage an international team spanning multiple time zones. In-person meetings are no longer practical; he must now schedule the majority of meetings virtually, often outside of local office hours."
+          },
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Prepares detailed written agendas for every Friday in-office meeting — never improvises topics on the spot"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Prepares detailed agendas for each virtual team meeting, distributing them 24 hours in advance to accommodate different time zones and ensure clarity",
+              "domain": "work_habits"
+            },
+            "reason": "With the loss of a weekly, in-person Friday meeting and a switch to remote global calls, he now needs to provide agendas further ahead to support asynchronous preparation and clarify objectives for a dispersed team."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_049",
+            "fact": "Walks the dog with girlfriend's parents each evening after dinner if weather allows, inviting them along to encourage bonding",
+            "domain": "social_relationships",
+            "reason": "Girlfriend's parents' visit has ended, so the context for evening dog walks with them no longer exists. He will resume his normal household routines."
+          },
+          {
+            "id": "pref_050",
+            "fact": "Temporarily declines or reschedules all evening social invitations unrelated to hosting duties during the two weeks of girlfriend's parents' visit",
+            "domain": "social_relationships",
+            "reason": "Hosting duties for girlfriend's parents have concluded, so the blanket social blackout is no longer relevant and does not apply going forward."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So the news came down: they're dissolving my Dallas team and putting me in charge of this new international group across three continents. I'm trying not to panic, but it's a huge shift—my whole routine just got upended. I need advice on restructuring my work week without burning out."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a massive change—not just for your responsibilities, but also for logistics and routines. Can you share how your current work schedule looks, especially meetings and collaboration hours? That'll help me suggest ways to rebalance things."
+        },
+        {
+          "role": "user",
+          "content": "I used to host all our team meetings in-person before noon, never did video calls except for cross-site stuff. But now, with everyone in different time zones, I've had to shift—most meetings are video calls now, and in-person is just for the rare local collabs. Scheduling is a nightmare; sometimes I'm hopping on at 7am or 8pm."
+        },
+        {
+          "role": "assistant",
+          "content": "Adjusting to those scattered hours can be rough, especially if you're used to a fixed block of local time. Have you noticed any impact on your routines outside of work—like exercise, meal prep, or downtime? Or are you finding ways to protect that, even with evening calls?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I've had to make some new rules for myself. At least once a week now, I plan for an early morning or evening meeting just to catch folks live. It messes with things sometimes—migraine triggers are a concern and I really don’t want to let stress pile up."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—those fluctuating hours can be risky, especially for migraine management. Have you set up any boundaries or recovery routines for yourself after a late meeting? Sometimes a wind-down ritual can help reduce stress and transition back to personal time."
+        },
+        {
+          "role": "user",
+          "content": "I actually just started doing a dedicated 30-minute 'unplug' after every late international call—no screens, just stretching or meditation. It helps, and my neurologist is supportive. Otherwise, the stress creeps in fast."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a great approach—intentional unplug time can make a real difference. How are you handling prep for these remote meetings? With everyone spread out, do you still use those detailed written agendas, or have you adjusted your approach for the global team?"
+        },
+        {
+          "role": "user",
+          "content": "I had to adapt. Now I prep detailed agendas for every virtual meeting, but I send them 24 hours in advance so people have enough time to review—time zones make last-minute stuff impossible. The Dallas Friday meeting routine is gone; it's all asynchronous prep now."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart change—providing agendas ahead is key for async teams. Have you been able to keep up with other routines? I remember you mentioned walking your dog with your girlfriend’s parents during their visit. Is that still happening, or has your evening schedule freed up?"
+        },
+        {
+          "role": "user",
+          "content": "Nope, that's over. Girlfriend's parents just left, so I’ve dropped those evening dog walks with them—back to my usual solo walks and household duties. Also, I’m open to evening social invites again; I’d temporarily declined everything while they were here."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re settling back into your baseline household rhythm now that hosting is over. Has managing a global team affected your social or leisure routines, like weekly doc viewing or co-op gaming nights? Or are you still fitting those in around the new meeting schedule?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve kept up my leisure stuff—watch a doc every weekend, co-op games on Wednesdays. The hardest part is dealing with unpredictable work hours, but I block date night on Sundays and set device curfews to keep boundaries."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s solid—protecting Sunday nights and a strict device curfew are great ways to preserve downtime. For your workflow, do you want to try any tools or routines for scheduling across time zones, or are you good with your current system?"
+        },
+        {
+          "role": "user",
+          "content": "I'm managing so far with calendar tools and the agenda process, but sometimes the overlap is tough. If you have recommendations for stress management while juggling these new schedules, I'd love them. Otherwise, I think I’ve covered the main changes."
+        },
+        {
+          "role": "assistant",
+          "content": "For stress, continuing your unplug ritual after late meetings is great. Consider batching international calls into set days, if possible, to limit disruption. Pairing meditation with brief walks—especially after a tough meeting—could help reinforce boundaries. Let me know if you want resources for these, or help automating agenda prep!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Invited to present the company's AI chatbot training program at an industry conference in San Francisco, requiring him to travel for four days and prepare a detailed session for a global audience of customer experience managers.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_056",
+            "fact": "Prefers to schedule extended, distraction-free solo work blocks in the evenings at the hotel while preparing for conference presentations — avoids all nonessential social activities during the trip",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_057",
+            "fact": "Always researches healthy meal options and preorders to-go food near the conference venue to maintain his migraine- and weight-management routines while traveling",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Hosts small-group dog playdates at local park every second Saturday — never attends large dog events"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Pauses hosting dog playdates during business travel — arranges for a friend or dog sitter to care for his dog while away",
+              "domain": "social_relationships"
+            },
+            "reason": "Traveling to San Francisco for an industry conference means he can't host his regular dog playdates or be present for his dog's social routine. He must temporarily suspend this activity and coordinate care for his dog while he's away."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, big change: the company tapped me to present our new AI chatbot training at an industry conference in San Francisco next month. I'm flying out for four days and have to prep a session for a pretty international crowd. I'm juggling prep, the remote team, and usual migraine stuff—could use some help keeping the stress and routines on track while I'm gone. Any travel hacks for staying organized and migraine-free during a busy work trip?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats on the conference invitation! That's a great recognition. Traveling for a high-stakes event can definitely throw routines off—especially with migraines and a tight prep schedule. Are there any particular routines or daily blocks you already rely on that you'd want to keep intact on the road? Or is it more about building new habits for this trip?"
+        },
+        {
+          "role": "user",
+          "content": "I really need some solo work time to focus on my presentation. When I'm in hotels during work trips, I usually block out long evening stretches for prep and avoid unnecessary social stuff—otherwise my attention gets scattered and I fall behind. Any suggestions for minimizing distractions or scheduling those blocks effectively?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—setting dedicated solo work blocks is smart, and evening hotel time is ideal since you can control your environment. One tip is to use the hotel room's Do Not Disturb sign and turn off all but essential notifications on devices. Also, consider scheduling your solo blocks into your calendar and marking them as 'busy' so colleagues don't expect replies. Whether you prep at a desk or prefer a quiet lounge, sticking to the same spot nightly can reinforce the habit."
+        },
+        {
+          "role": "user",
+          "content": "Right, I always make those blocks non-negotiable—calendar is marked, phone goes silent except for emergencies. I skipped all the conference happy hours last time I traveled for work, just to keep that focus. So social events are out unless they're absolutely essential for work. I guess I'll have to let my manager know that's my plan for San Francisco."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds wise. Communicating your priorities ahead of time sets expectations and avoids any pressure to socialize that would cut into your prep. Since you'll be sticking to solo work blocks and skipping most nonessential events, is there anything about your usual routines that might still get disrupted—like exercise, meals, or pet care at home?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, the dog stuff is a challenge. Normally, I host a small dog playdate at the local park every second Saturday, but when I travel, I pause those and have a friend or sitter step in for walks and vet visits. I make sure the sitter follows his usual routine—he's used to daily morning walks and me being the primary caregiver, so consistency matters for him."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call on arranging a routine for your dog and suspending group playdates temporarily. Keeping him on the same walk schedule will help reduce his stress while you're gone. Do you have a preferred sitter, or are you considering a professional service this time? And does your girlfriend help out if she happens to be home, or is it strictly handled via a friend or pet sitter?"
+        },
+        {
+          "role": "user",
+          "content": "When my girlfriend’s traveling for work—and she will be when I’m in San Francisco—I rely on a friend who’s familiar with our dog. He’s not a professional sitter, but he’s consistent and sticks to the routine. I give him detailed instructions, just like I do for work agendas. No improvisation there. As for meals, I need to figure out how to keep up with my usual healthy routine on the road. Crowded conference buffets are a migraine risk for me, so I like to research healthy places nearby and preorder to-go food."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid strategy: preordering healthy food nearby helps you avoid buffet pitfalls and maintains control over what you eat for migraine and weight management. You can use apps like Yelp or DoorDash to filter for migraine-friendly options—low sodium, avoiding triggers like MSG, etc. Are you planning to stick with meal delivery for dinners as you do at home, or are you adapting your plan for San Francisco based on what's available?"
+        },
+        {
+          "role": "user",
+          "content": "Pretty much adapting—you can't rely on meal delivery at a conference, so I’ll pick out a few local restaurants with healthy menus and preorder each meal. I’ll stick with to-go options for weeknights, try to avoid caffeine after 2pm, and definitely steer clear of heavy foods. I might make a list on Sunday before I leave, just like I do with meds and chores at home."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds very organized—creating a meal plan ahead of time and avoiding known triggers will give you peace of mind and keep migraine risk lower. If you want, I can help you build a shortlist of San Francisco restaurants or healthy to-go spots near the venue. Would that be helpful? Also, do you want tips for maintaining your meditation routine or tackling exercise on a travel schedule?"
+        },
+        {
+          "role": "user",
+          "content": "A shortlist would be great—especially places within walking distance of the Moscone Center. I’m bringing my meditation app and keeping the usual 15-minute nightly practice, even if I’m wiped from the conference. As for exercise, I’ll try to squeeze in short jogs if there’s time, but it’s not a deal-breaker for this trip. The main thing is food, migraine management, and those solo work blocks."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—I'll pull together some healthy to-go options near Moscone Center and note which ones do preorder for convenience. Keeping your routine steady—meditation, healthy food, dog care arrangements, and distraction-free work blocks—will make the trip smoother. If you run into any unexpected schedule conflicts, just let me know and we can problem-solve on the fly. Anything else you want to plan ahead for, like prepping materials or setting up remote support for your team while you’re traveling?"
+        },
+        {
+          "role": "user",
+          "content": "I think having backup plans for urgent ticket coverage while away is smart—I’m scheduling extra workflow review time Monday before I fly. All the new AI chatbot rollouts mean I can’t delegate onboarding, so I’ll host one-on-ones virtually in the evenings leading up to the trip. If you could help me draft a quick checklist for prep—including updating the dog’s care instructions, meal options list, solo work block scheduling, and team handoff steps—that would cover all the bases."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—I’ll draft a checklist covering dog care instructions, healthy meal plans near Moscone Center with preorder options, dedicated solo work block reminders, and steps for managing the team’s ticket and AI onboarding coverage while you’re away. Would you like this as a shareable document or added to your personal task tracking app?"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_004",
+        "fact": "Conducts one-on-one trainings for new tech rollouts — never delegates onboarding of new systems to team leads",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Blocks two hours on Monday mornings every week for workflow review — no calls or emails allowed during this time",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Avoids all caffeine after 2pm to reduce the risk of migraines",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Practices meditation with an app for 15 minutes nightly — never skips, even when traveling",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Always video-calls parents on the first Saturday of each month — never misses, even when traveling",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Watches one documentary every weekend — never watches reality TV",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Plays co-op video games online with college friends every Wednesday night — never plays solo games",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Explores new Dallas coffee shops monthly — never goes to national chains on weekends",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Attends at least one local live music show each month — avoids festivals with large crowds",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Plans a weekend hiking trip at least once per quarter — never hikes in extreme heat above 95°F",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Walks the dog every morning before breakfast — never skips, regardless of weather",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Does a full tidy-up of the house every Sunday afternoon — never leaves chores for weekdays",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Reads news from a single local source each morning — never browses multiple outlets",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Checks personal email once daily after work — never during the workday",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Refills weekly medication organizer every Sunday without fail — never relies on memory for doses",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Sets a stricter 9:45pm device curfew — avoids all screen use after 9:45pm, including in the living room, to prioritize migraine prevention",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Uses a sleep tracking app nightly and reviews sleep quality reports every morning — never skips monitoring, even on weekends",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Completes a 10-minute evening prep routine to wind down for sleep, including setting out clothes and prepping breakfast for the next morning",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_032",
+        "fact": "Schedules weekly video calls with girlfriend every Sunday evening to stay connected while she’s away",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Pauses all jogging and walking-based exercise; switches exclusively to stationary cycling or swimming three evenings weekly, as recommended for plantar fasciitis recovery",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Tracks daily pain levels and recovery progress using a plantar fasciitis app every evening before bed during rehabilitation period",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Prepares weeknight outfits and lunches every Sunday evening in advance to streamline busy office mornings",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Commutes to the office by car every weekday — listens to podcasts focused on recent customer support innovations during drives",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Meets sister weekly for engagement party planning sessions, often at her apartment or event venue — restaurant lunches are no longer regular or prioritized",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Coordinates shared group chats and schedules for engagement party planning — prefers structured checklists and assigns tasks among family and friends",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Researches and visits local party venues every Saturday afternoon with his sister and her fiancé to shortlist locations for the engagement event",
+        "domain": "leisure_hobbies",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Cooks simple, quick-prep dinners at home on weeknights — avoids elaborate or time-consuming recipes while meal delivery is suspended",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Shops for basic groceries every Sunday evening to stock up for weeknight dinners while the meal service is suspended — avoids large, crowded supermarkets by shopping late",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Preps extra portions of dinner to have leftovers for busy workdays — prioritizes meals that reheat well",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Responds to urgent internal and cross-department messages during both peak hours and late evenings on Tuesdays and Thursdays due to recurring strategy calls — restricts after-hours replies on other days",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Blocks 30 minutes after late-evening task force calls for decompressing with short mindfulness meditation or journaling, to offset stress and sleep disruption",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Uses team collaboration platforms to track cross-timezone follow-ups, creates dedicated weekly checklist for task force responsibilities",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Spends Sunday nights having dinner and in-person conversation with girlfriend's parents during their visit — personal time moved to later evenings after guests retire",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Prepares more elaborate home-cooked meals and shifts dinners to the dining table for two weeks to accommodate girlfriend's parents' stay, prioritizing family-style presentation over quick solo meals",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Schedules most team meetings as video calls across various time zones — only hosts in-person meetings for rare local collaborations",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Prepares detailed agendas for each virtual team meeting, distributing them 24 hours in advance to accommodate different time zones and ensure clarity",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Adjusts his daily work schedule to include at least one evening or early morning meeting per week to collaborate live with international team members in different time zones",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Plans a dedicated 30-minute 'unplug' ritual after every late international meeting to manage stress and maintain migraine prevention routines",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Pauses hosting dog playdates during business travel — arranges for a friend or dog sitter to care for his dog while away",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Prefers to schedule extended, distraction-free solo work blocks in the evenings at the hotel while preparing for conference presentations — avoids all nonessential social activities during the trip",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Always researches healthy meal options and preorders to-go food near the conference venue to maintain his migraine- and weight-management routines while traveling",
+        "domain": "health_body",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Always schedules all team video calls before noon — never hosts meetings after lunch",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "With the new mandatory return-to-office requirement, team meetings need to be in-person rather than virtual. He now prioritizes in-person morning meetings and reserves video calls for external or remote participants only."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Prepares detailed written agendas for every Friday in-office meeting — never improvises topics on the spot",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_052",
+        "reason": "With the loss of a weekly, in-person Friday meeting and a switch to remote global calls, he now needs to provide agendas further ahead to support asynchronous preparation and clarify objectives for a dispersed team."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Responds to urgent internal messages only during peak hours (9am-2pm) — avoids after-hours replies unless critical",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_044",
+        "reason": "The new task force assignment requires regular late-evening strategy calls with Europe and Asia twice a week, making his prior after-hours communication avoidance impractical on those evenings."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Never skips morning jogs on Tuesdays, Thursdays, or Saturdays — reschedules rather than cancels when busy",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_027",
+        "reason": "The neurologist’s recommendation emphasizes stricter sleep and stress routines, leading him to switch from potentially migraine-triggering morning jogs to gentler evening walks for exercise."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Relies exclusively on a meal delivery service for weeknight dinners — never cooks from scratch Monday through Friday",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "With the meal delivery service suspended for at least six weeks, he must now prepare his own dinners. Since weeknight time is limited and cooking is not his usual habit, he will opt for quick and simple meals rather than elaborate ones."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Sets a strict 10:30pm device curfew to improve sleep quality — never uses screens in bed",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Following the neurologist’s advice after the severe migraine and ER visit, he adopts an earlier device curfew to enforce improved sleep hygiene and minimize late-night stimulation, directly targeting migraine triggers."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Sets aside Sunday nights for date night with girlfriend, regardless of schedule — never makes other plans then",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "With his girlfriend relocating to Chicago for six months, in-person Sunday date nights are no longer possible. He adapts by using Sunday evenings for solo relaxation or video calls, but does not reserve them for structured date activities."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Meets sister for lunch once a month at a different local restaurant every time — never repeats the same spot twice in a row",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "The sister's engagement and his role as party planner require frequent meetings for preparation, shifting their monthly lunch habit to regular planning sessions at practical locations rather than restaurants."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Hosts small-group dog playdates at local park every second Saturday — never attends large dog events",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "Traveling to San Francisco for an industry conference means he can't host his regular dog playdates or be present for his dog's social routine. He must temporarily suspend this activity and coordinate care for his dog while he's away."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Shares household chores with girlfriend but does all dog care responsibilities solo when she’s traveling",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "For the next six months, the girlfriend is not just traveling occasionally but fully relocated and not available for any household duties, so sharing chores is not possible — he will handle all responsibilities without periodic sharing."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Replaces morning jogs with low-impact evening walks on Tuesdays, Thursdays, or Saturdays — avoids vigorous morning exercise due to migraine risk",
+        "domain": "health_body",
+        "created_at_session": 0,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "The new diagnosis of plantar fasciitis and doctor's order to avoid jogging and even extended walking necessitate a full change in exercise routine, replacing all outdoor walks/jogs with non-weight-bearing, low-impact activities."
+      },
+      {
+        "id": "pref_030",
+        "fact": "Uses Sunday nights for personal relaxation or calls with girlfriend, no in-person plans during her assignment — does not prioritize date night activities",
+        "domain": "social_relationships",
+        "created_at_session": 1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_047",
+        "reason": "With his girlfriend's parents staying with him for two weeks and specifically requesting extended time together, his typical Sunday evening solo routine or private video calls with his girlfriend is now replaced by hosting her parents for dinner and conversation. His alone time is delayed until after they retire for the evening."
+      },
+      {
+        "id": "pref_031",
+        "fact": "Performs all household chores and dog care independently every day — creates new chore schedule to manage solo responsibilities",
+        "domain": "daily_routines",
+        "created_at_session": 1,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "This preference was established when the girlfriend was away for assignments; but full-time office work means less time solo at home and previous adaptation is no longer relevant as the household schedule changes with less weekday presence."
+      },
+      {
+        "id": "pref_035",
+        "fact": "Schedules all team meetings in-person before noon — no longer hosts video calls except for cross-site collaboration",
+        "domain": "work_habits",
+        "created_at_session": 3,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_051",
+        "reason": "The company has dissolved his local team and reassigned him to manage an international team spanning multiple time zones. In-person meetings are no longer practical; he must now schedule the majority of meetings virtually, often outside of local office hours."
+      },
+      {
+        "id": "pref_049",
+        "fact": "Walks the dog with girlfriend's parents each evening after dinner if weather allows, inviting them along to encourage bonding",
+        "domain": "social_relationships",
+        "created_at_session": 7,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "Girlfriend's parents' visit has ended, so the context for evening dog walks with them no longer exists. He will resume his normal household routines."
+      },
+      {
+        "id": "pref_050",
+        "fact": "Temporarily declines or reschedules all evening social invitations unrelated to hosting duties during the two weeks of girlfriend's parents' visit",
+        "domain": "social_relationships",
+        "created_at_session": 7,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "Hosting duties for girlfriend's parents have concluded, so the blanket social blackout is no longer relevant and does not apply going forward."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:33:44.471644"
+}

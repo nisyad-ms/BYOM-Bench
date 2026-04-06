@@ -4,7 +4,7 @@ description: >
   the counterfactual test now evaluates the response RELATIVE TO the question asked.
   If the agent spontaneously introduces preference-specific details in response to
   a broad question, that IS recall even if individual pieces are common knowledge.
-used_by: byom_bench/evaluation_multisession/judge.py::MultiSessionJudge
+used_by: ream_bench/evaluation_multisession/judge.py::MultiSessionJudge
 variables:
   - none (system prompt is static)
 

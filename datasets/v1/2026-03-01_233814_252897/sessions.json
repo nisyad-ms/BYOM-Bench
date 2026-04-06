@@ -1,0 +1,1509 @@
+{
+  "persona": "An early-stage entrepreneur launching a direct-to-consumer skincare brand",
+  "persona_id": "persona_20260301_234820",
+  "expanded_persona": {
+    "base_persona": "An early-stage entrepreneur launching a direct-to-consumer skincare brand",
+    "age": 29,
+    "gender": "female",
+    "location": "Los Angeles, CA",
+    "work_education": [
+      "Founder and CEO of a startup skincare brand, currently pre-launch and preparing for crowdfunding campaign",
+      "Handles product formulation, sourcing, and marketing personally; networking with dermatologists and influencers weekly",
+      "Attending monthly entrepreneur meet-ups and accelerator workshops to refine her business plan and pitch",
+      "Managing limited finances—bootstrapping with personal savings and a small business loan",
+      "Former marketing manager at a fashion e-commerce firm, left job six months ago to pursue entrepreneurship full-time"
+    ],
+    "health_wellness": [
+      "Battling occasional adult acne, which inspired her to develop her skincare formulations",
+      "Often skips meals or eats on the go due to packed work schedule; drinks multiple cups of coffee daily",
+      "Has a consistent evening yoga routine to reduce stress and unwind after work hours",
+      "Experienced mild insomnia since taking on business risk, averaging 5-6 hours of sleep per night",
+      "Active on wellness trends but struggles to maintain consistent workout habits"
+    ],
+    "family_relationships": [
+      "Lives with her long-term partner, a graphic designer helping with branding for her startup",
+      "Close-knit relationship with her younger sister, who assists part-time with packaging and logistics",
+      "Parents live nearby in Pasadena; she visits every other weekend and seeks their emotional support",
+      "No children; considering starting a family in the next few years, but currently prioritizing business",
+      "Mentors a high school student interested in entrepreneurship through an online program"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Drafts business emails and campaign pitches first thing in the morning — never leaves important communications for after noon",
+        "Only schedules meetings before 3pm; refuses evening calls or Zooms to protect downtime",
+        "Prefers collaborating in-person when networking with influencers — avoids purely digital introductions whenever possible",
+        "Keeps a detailed budget spreadsheet updated daily; never relies on mental math or ballpark figures for spending decisions",
+        "Attends entrepreneur meet-ups alone to maximize networking; never brings her partner or family members"
+      ],
+      "health_body": [
+        "Tests every new skincare formulation on herself for two weeks before sharing samples — never skips personal trials",
+        "Avoids dairy and processed sugar to minimize acne breakouts, but indulges in dark chocolate once a week",
+        "Never does high-intensity workouts; sticks exclusively to yoga or Pilates in the evenings",
+        "Sets a strict 'device-off' rule one hour before bed to combat insomnia — never checks work email after 9pm",
+        "Preps healthy snacks on Sundays for the week ahead, but never cooks full meals during workdays"
+      ],
+      "social_relationships": [
+        "Chats with her sister via voice notes rather than text; never schedules calls unless urgent",
+        "Hosts Sunday brunches monthly for family and close friends — never attends large parties",
+        "Shares business milestones only with her parents and partner; never posts about them on social media",
+        "Prefers ongoing mentorship conversations over text instead of scheduled video calls",
+        "Never discusses business stress with her partner during dinner; reserves that time for personal conversation"
+      ],
+      "leisure_hobbies": [
+        "Spends Saturday mornings exploring local artisan markets; never shops at chain retail stores for leisure",
+        "Enjoys attending skincare ingredient workshops and industry pop-ups monthly — avoids virtual classes",
+        "Paints botanical illustrations on weekends for relaxation; never does digital art",
+        "Keeps her reading strictly to non-fiction wellness and business books — avoids fiction entirely",
+        "Travels for mini wellness retreats within California twice a year; never takes international vacations"
+      ],
+      "daily_routines": [
+        "Starts every morning with journaling and a cup of matcha — never drinks coffee before noon",
+        "Checks emails only twice daily: once at 8am and once at 4pm — never outside those hours",
+        "Does not use social media during work hours; only posts after 6pm",
+        "Prepares all to-do lists by hand in a planner, avoiding digital productivity apps",
+        "Runs errands and grocery shops late in the evening to avoid crowds — never during midday"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Secured a strategic partnership with a leading Los Angeles dermatologist, who will co-host educational livestreams and collaborate on product endorsement, dramatically increasing public visibility and credibility ahead of the crowdfunding launch.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Posts about upcoming livestreams and skincare educational events to her brand's social media accounts, directly engaging her audience prior to the crowdfunding launch",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Prepares talking points and product demonstration materials ahead of each scheduled livestream with the dermatologist, prioritizing clarity and audience education",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Reviews direct feedback and comments from educational livestreams each week, adapting her product messaging based on audience questions",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Prefers collaborating in-person when networking with influencers — avoids purely digital introductions whenever possible"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Actively seeks out digital collaboration opportunities with influencers and experts, including livestreams and webinars — embraces virtual networking as a core business strategy",
+              "domain": "work_habits"
+            },
+            "reason": "The dermatologist partnership includes co-hosting educational livestreams and online product endorsements, requiring her to fully engage with digital networking and collaboration channels, which she previously avoided."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Just signed a partnership with one of the top dermatologists in LA! We're planning a series of educational livestreams and product endorsements together before my crowdfunding launch. Honestly, I'm excited but nervous—I've barely done anything digital before, in terms of influencer collabs. Can you help me figure out how to prep for these livestreams and boost engagement without losing my authenticity?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s fantastic news—a dermatologist partnership is a huge credibility boost! Since you’re new to digital collaborations, do you want advice on structuring livestreams, handling realtime Q&A, or more on marketing them ahead of time? And when you mention authenticity, what are your biggest worries—tone, product messaging, or the logistics?"
+        },
+        {
+          "role": "user",
+          "content": "I think structure and messaging are my main concerns. I don't want it to feel salesy—I really want it to educate. I've started prepping talking points and product demos before each stream to keep the focus clear, but I'm unsure if I'm doing enough. Also, I need strategies for driving people to sign up for the events, especially since this is my first time posting about them on my brand's socials."
+        },
+        {
+          "role": "assistant",
+          "content": "Prepping talking points and product demos ahead of each stream is a great move for clarity, especially with a medical expert onboard. To keep it educational, consider framing your demos as solving common skin concerns or answering real audience questions. For driving sign-ups, you can tease key topics and expert tips on your social channels—maybe use countdown stories or short teaser clips. Since this is your first time posting event promo, do you have a content calendar, or are you planning posts ad hoc?"
+        },
+        {
+          "role": "user",
+          "content": "I usually only post after 6pm (to avoid work hour distractions), but now I'm scheduling a few posts and stories during the day ahead of these livestreams. It's a bit weird to actually engage the audience directly—before, I mostly kept milestones private. Now I'm sharing the event details and inviting questions. Is there a way to stay consistent and not come across as pushy?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Consistency is more about showing up regularly than posting constantly—sharing genuine behind-the-scenes of prep can build trust. Inviting questions before each event gives your audience a voice and draws them in naturally. You might also use polls or open-ended prompts in your stories to gauge interest on topics, giving you live feedback. For tone, just focus on sharing your expertise and journey—it won’t feel pushy if you’re genuinely educating. Do you plan to review livestream comments and adapt messaging, or keep it fairly static?"
+        },
+        {
+          "role": "user",
+          "content": "I've started reviewing audience feedback from each livestream, actually. It helps me adapt my messaging—sometimes viewers bring up concerns I hadn't thought of! I want to make sure we're addressing what they care about. Not sure how to handle negative comments though, or if I should respond in real time or later."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a strong approach. Addressing feedback and shaping content based on real questions shows you’re listening. For negative comments, the best balance is to thank them for their input and clarify any misunderstandings live, but save deeper responses for post-event follow-ups—this gives you time to consider your reply thoughtfully. You could even dedicate a segment at each stream’s start to recap the previous event’s most common questions or concerns. Does that fit with your workflow, or do you prefer a more spontaneous Q&A?"
+        },
+        {
+          "role": "user",
+          "content": "A recap segment actually sounds helpful. Gives structure, and I like having my talking points ready. Especially since prepping demonstration materials before every livestream is now a priority—I want to keep things clear and educational, not scattershot. It's a shift for me; I used to avoid virtual networking, but now digital events are becoming core to my brand strategy, thanks to this partnership."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big mindset shift, but embracing digital collaborations will really expand your reach. Having prepared materials, talking points, and structured recaps positions you as both professional and approachable. Over time, virtual engagement will feel more natural. Do you see yourself continuing with digital collabs long-term, or do you still prefer in-person events whenever possible?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I'm now actively seeking digital collab opportunities with influencers and experts—even webinars, not just livestreams. It’s become a core business strategy almost overnight. I still enjoy in-person events, but virtual networking’s reach and flexibility are too valuable to ignore, given what this dermatologist partnership is opening up."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—digital reach is hard to beat, especially for pre-launch visibility. With your focus on education, you could even invite audience members to submit case studies or skin stories for future streams, deepening the sense of community. At this stage, would you want tools for analyzing livestream engagement and growth, or are you mainly interested in content feedback for now?"
+        },
+        {
+          "role": "user",
+          "content": "Mainly content feedback right now—I check comments and questions weekly to adjust messaging. But engagement metrics might be useful once the crowdfunding launch gets closer. For the moment, I’m just focused on keeping the streams educational, prepping materials ahead, and building genuine conversation. That’s helped me ease into this new digital direction."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful sequencing—content first, metrics later. As you gain confidence, you can scale up with more sophisticated tools, but your current approach is strong for authenticity and connection. Let me know if you need ideas for stream topics or ways to source compelling audience questions—I’d be happy to help brainstorm!"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed a severe allergic reaction to one of her newly formulated skincare samples, resulting in a doctor-recommended pause on all personal product testing and requiring daily medication to manage symptoms.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Keeps a daily health journal to track medication side effects, skin reactions, and overall wellbeing during recovery",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Avoids all in-person skincare product demos and on-camera live product applications to prevent accidental exposure to allergens",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Tests every new skincare formulation on herself for two weeks before sharing samples — never skips personal trials"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "No longer tests skincare formulations on herself; now relies on external volunteer testers and lab analysis before sharing samples",
+              "domain": "health_body"
+            },
+            "reason": "After developing a severe allergic reaction, her doctor instructed her to stop all personal product testing. She now needs to rely on trusted third-party testers and professional lab results."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, could use some help. I just had a pretty severe allergic reaction to one of my new skincare formulations—spent most of last weekend in urgent care, and my doctor said absolutely no more testing products on myself for now. He wants me on daily meds while everything calms down. I feel totally thrown off—it's always been me trialing everything first, but now I have to rethink that. Any advice on setting up reliable product testing without personal trials?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really stressful. I’m so sorry you had to go through that—especially as someone used to hands-on testing. For reliable product testing, you could look into forming a small, trusted panel of volunteer testers. Working with labs for additional analysis can help validate safety and efficacy before sharing samples more widely. Have you already started recruiting testers, or would you like suggestions on how to find reliable volunteers?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I haven't even started recruiting yet. I used to test each formula for two weeks myself, then share with friends and family—but that's out for now. I'm worried about consistency since I can't do the trials personally. I guess I need to set up a formal feedback system for external testers, right?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—a structured feedback system is key. You could create standardized forms for testers to report skin reactions, product feel, and results, maybe even check-in surveys at several points during the trial period. Partnering with a dermatologist for clinical oversight could make the process more robust, and lab analysis can fill any gaps you’d normally catch yourself. Would you like help outlining what your tester feedback forms should capture?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, that would be great. I also need to track my own recovery, since I'm adjusting to these meds and can't risk another reaction. I've started keeping a daily health journal—logging side effects, skin changes, everything. Maybe I should make something similar for testers to use?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move—having a daily health journal for yourself will help inform future formulation decisions. For testers, a similar journal format works well: ask them to track any skin changes, sensitivity, application experience, and overall wellbeing. You can standardize reporting intervals (like daily logs or end-of-week summaries), and request photos if they’re comfortable. Would you prefer digital forms or handwritten journals for them?"
+        },
+        {
+          "role": "user",
+          "content": "Handwritten would align better with how I keep records—plus, some testers might feel more honest jotting things down versus typing. I’ll provide paper journals and clear prompts. Another hurdle: I usually do in-person demos and on-camera product applications to show textures, but my doctor said I need to cut out all exposure—even accidental. So I can’t demo anything live until I’m fully clear."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough adjustment, given how much you value in-person interaction for demos. Maybe recorded videos by your testers or detailed photos could substitute for now, with you narrating (but not applying products). Alternatively, you could leverage third-party influencers or dermatologists for live demonstrations. Have you already asked any regular collaborators if they’d be comfortable leading product demos?"
+        },
+        {
+          "role": "user",
+          "content": "I haven't brought it up yet—I wanted to make sure I had clear protocols first so no one gets exposed irresponsible. I’m thinking: written instructions, signed waivers, sample batch tracking, and an allergen checklist for each tester. I won’t do any hands-on demos or on-camera applications myself until my doctor clears me. Does that sound like a reasonable approach?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds both responsible and professional—protecting yourself and your testers is critical. Written instructions, waivers, and batch tracking cover the bases, and an allergen checklist is especially important given what happened. You might also consider a pre-screening questionnaire to filter out anyone with similar sensitivities. If you’d like, I can help draft templates for instructions and feedback tools. Is there anything else you’re struggling with since the reaction?"
+        },
+        {
+          "role": "user",
+          "content": "I think that's most of it on the testing front. The transition feels weird, but I’d rather keep everyone safe. Right now, my main focus is tracking my own health daily and keeping distance from product demos. I’ll need to rely on external testers, written feedback, and lab results before sharing anything going forward."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid plan and a sustainable shift for both your wellbeing and the business. If you’d like help creating tester documentation or advice on managing the logistics, just let me know. And if you ever want to brainstorm alternate ways to stay engaged with your brand while avoiding direct exposure, I’m here to help."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger sister received a job offer in San Francisco and decided to relocate within a month, ending her regular part-time help with packaging and logistics for the skincare startup.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Schedules biweekly video catch-up calls with her sister to stay close despite physical distance; prefers evening slots over random chat messages",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Allocates two hours each week to personally manage startup packaging and logistics tasks previously handled by her sister—chooses late Friday afternoons for these responsibilities",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Preps healthy snacks on Sundays for the week ahead, but never cooks full meals during workdays"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Buys quick, pre-made healthy snacks and lunches from local shops or delivery services—no longer preps snacks at home on Sundays",
+              "domain": "health_body"
+            },
+            "reason": "Her sister previously assisted with packaging and logistics during weekends, which often supported her Sunday snack prep routine. With her sister relocating and her own workload increasing, she no longer has time or help to prep snacks at home and instead relies on purchasing ready-made options."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_011",
+            "fact": "Chats with her sister via voice notes rather than text; never schedules calls unless urgent",
+            "domain": "social_relationships",
+            "reason": "Her sister has relocated to San Francisco and is no longer involved in daily startup operations or physically nearby. Their communication pattern will likely change due to different routines, time zones, and increased distance."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My sister accepted a job in San Francisco and is moving out in a few weeks, so she'll no longer be around to help with startup logistics. I have to take on her packaging and shipping tasks, and suddenly my calendar feels impossible. I'm worried I won't keep up with everything — especially since crowdfunding is about to kick off. How do I stay sane and not let packaging eat up the rest of my workweek?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift — both practically and emotionally. Taking on more hands-on work can quickly overwhelm founders, so it’s smart to assess now. Are you able to automate any shipping or fulfillment tasks, or is hands-on packing unavoidable for the moment? Also, are there times in your week that feel more flexible for those tasks, or do you have to squeeze them in unpredictably?"
+        },
+        {
+          "role": "user",
+          "content": "Automation isn’t really an option until after pre-launch. For now, I need to handle it myself, but I don't want it to spill past Friday afternoons. I'm going to set aside two hours late every Friday for packaging and logistics — that's what my sister used to help with, and I feel like blocking it will at least keep the chaos contained."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s actually a solid boundary — batching tasks like packaging into a predictable slot can make your workload more manageable. It might also help with mental separation. Since you’ll be picking up extra hands-on work, do you foresee shifting other routines around, like your snack prep or downtime habits?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's already changed. I used to prep snacks on Sundays but with my sister gone and the extra logistics time, I just don't have it in me. I've started buying pre-made healthy snacks and lunches from local shops or delivery apps instead. It's not ideal, but it's saving me time."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s completely understandable — convenience is key when your personal bandwidth shrinks. Are you finding it easy to source good options locally, or is the delivery route working better? Sometimes founders in LA get creative with meal delivery subscriptions, or even local meal pickup spots. Any favorites?"
+        },
+        {
+          "role": "user",
+          "content": "Delivery's fastest for now, but I do prefer popping out to my usual health food spot when I'm running evening errands. It's a balance — just can't rely on home prep the way I used to. The weekly schedule feels more rigid now, though, since my Fridays are basically booked with logistics time."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re proactively containing the disruption, which is great. How are you handling the change with your sister — have you found new ways to stay connected, since you won’t see her as often or work together?"
+        },
+        {
+          "role": "user",
+          "content": "We're actually scheduling biweekly video calls in the evenings to catch up. It feels more deliberate than our old habit of quick voice notes during the day. Since she's in San Francisco now, we both like having planned face-to-face time instead of random texting."
+        },
+        {
+          "role": "assistant",
+          "content": "I love that you’re building intentional connection into the new routine. Has your mentorship or support dynamic changed too, now that she’s starting her own job and not involved in your business?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. We used to be totally entwined with the startup, daily logistics, and family stuff. Now our mentorship and business conversations are really separate from catch-ups. Plus, I dropped the habit of chatting via voice notes; it doesn’t really fit with her work schedule and distance. Calls work better now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big transition, but it sounds like you’re adapting well. If you need help finding ways to ease your workload further, or streamline those Friday logistics blocks, let me know — I can suggest checklist systems or connect you with local temp help if it gets overwhelming."
+        },
+        {
+          "role": "user",
+          "content": "Thanks — honestly, the calendar and snack shifts have been the hardest immediate changes, but I’m glad I was able to create the biweekly calls. If I need more help on workflow or sourcing, I’ll reach out."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Accepted into a city-wide small business accelerator program, granting her access to weekly expert mentorship sessions, exclusive pitch opportunities, and $20,000 in non-dilutive funding for her brand.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Blocks Wednesday afternoons exclusively for 1:1 mentorship and accelerator resource sessions — never schedules other business meetings during that time",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_038",
+            "fact": "Prioritizes early review of accelerator-provided financial planning templates and expert feedback for all capital allocation decisions",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Initiates biweekly networking follow-ups with other cohort founders via email — no longer relies on chance encounters at monthly entrepreneur meet-ups",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Attends entrepreneur meet-ups alone to maximize networking; never brings her partner or family members"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Regularly attends accelerator cohort events and pitch sessions with her partner, leveraging his graphic design expertise for real-time support and feedback",
+              "domain": "work_habits"
+            },
+            "reason": "The accelerator program offers frequent group events, mentorship sessions, and pitch opportunities where collaborative participation is both encouraged and beneficial. Her partner’s expertise directly enhances her business presentations and brand visuals, making solo attendance less advantageous."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big update: I found out I was accepted into the city-wide accelerator! It’s only been a week, but it already feels like everything about my routine is shifting. Between the weekly mentorship, pitch prep, and the $20k grant, I’m trying to figure out how to make the most of the resources without dropping the ball on product development. Honestly, I have no clue how to structure my schedule now that so much is happening. Can you help me map out a new workflow?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That’s huge—and such a game changer, especially with non-dilutive funding and expert access. When you look at your typical week, what feels most crowded right now? Is it the mentorship sessions, pitch events, or ongoing work on product formulation?"
+        },
+        {
+          "role": "user",
+          "content": "I’d say the mentorship and accelerator events are pulling me in the most, especially since the cohort meets at least twice a week and the mentors give us action items to follow up on. I don’t want to let product formulation slip, but their advice is super practical. Also, my partner’s started coming to the cohort events with me—his feedback on branding is really helpful for the pitches. That’s definitely new; I used to go solo to networking stuff, but he’s basically my real-time design sounding board now."
+        },
+        {
+          "role": "assistant",
+          "content": "Great move involving your partner! Cohort events tend to be more collaborative, so it makes sense to tap into his expertise. Does his presence change how you approach those sessions, or do you still focus on maximizing one-on-one connections with mentors and other founders?"
+        },
+        {
+          "role": "user",
+          "content": "I still push for one-on-one time with mentors, but now we coordinate on the presentations and visuals beforehand and do all the pitch sessions together. It’s honestly made feedback more actionable, since he can tweak the branding instantly and I don’t have to relay it later. I’m also starting to block Wednesday afternoons just for mentorship and accelerator resource sessions—I’m keeping that slot totally clear for deep work with mentors, and not scheduling any other meetings during that window."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart boundary—dedicating protected time means you’ll get the most from those sessions. Is Wednesday the best day because of the accelerator schedule, or did you pick it to balance other demands like product testing and logistics?"
+        },
+        {
+          "role": "user",
+          "content": "It’s mostly because Wednesdays are when the main resource sessions and mentor office hours happen. I noticed if I have other business meetings on the same day, I end up distracted and can’t really absorb their feedback, so now I reserve that block strictly for accelerator stuff."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes complete sense. With the accelerator giving such direct feedback, how are you factoring their guidance into your financial planning? Have you started using their templates or tools for capital allocation, or does your spreadsheet workflow still take priority?"
+        },
+        {
+          "role": "user",
+          "content": "This is actually a big shift for me: I’m prioritizing early review of the accelerator-provided financial planning templates—especially for the grant allocation and burn rate projections. I still keep my daily spreadsheet updated, but now I run everything through their templates and review any capital decisions with mentor feedback before making moves. The advice on cash flow and projected spend has already helped me avoid a few mistakes."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a perfect hybrid—leveraging expert templates while keeping your own rigorous tracking. Are you finding networking within the cohort helpful for sharing best practices, or do you still rely more on the broader entrepreneur meet-ups?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you ask—networking has totally changed since joining the cohort. I don’t go to entrepreneur meet-ups much anymore. Instead, I initiate biweekly follow-ups with fellow cohort founders via email now, which helps build more meaningful relationships. I realized bumping into people at meet-ups felt random; this regular check-in with accelerator peers is much more productive."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid strategy. Cohort-driven networking is usually much more focused, and biweekly emails help deepen connections. Is there anything in your workflow or routine you feel is missing, now that accelerator tasks are front and center? Any old habits you’re struggling to maintain?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the biggest thing is juggling everything. My previous solo meet-up habit is gone; now I never attend those without my partner—his design insights matter a lot more these days. And with this new structure, the mentorship sessions and capital planning templates have become key. I’m mostly learning to let go of some old habits that don’t fit anymore and focusing on what helps me grow faster."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re adapting quickly and making use of new opportunities. If you need guidance on optimizing accelerator resources or want actionable ways to balance ongoing product work with mentor feedback, I can help brainstorm specifics. Want to prioritize workflow next, or are there other areas you want to tackle first?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s dive into workflow next. With all these new blocks and cohort commitments, I want to make sure product testing, influencer outreach, and financial reviews don’t fall through the cracks. I can share my current planner layout if you want to see what I’ve tried so far."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her partner was offered a remote contract with a major national design agency, requiring them to significantly increase client work hours and take on key branding projects from home.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Coordinates daily workspace boundaries and schedules with her partner to minimize distractions during overlapping video calls and client meetings",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Prioritizes quick, shared lunches with her partner between work sessions instead of solo meals on busy weekdays",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_036",
+              "fact": "Regularly attends accelerator cohort events and pitch sessions with her partner, leveraging his graphic design expertise for real-time support and feedback"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Usually attends accelerator cohort events and pitch sessions solo; her partner joins only occasionally due to increased remote client workloads",
+              "domain": "work_habits"
+            },
+            "reason": "Her partner's new remote contract with a major agency requires significantly more client hours and focus from home, so he can no longer participate in regular cohort events or real-time feedback during sessions."
+          },
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Never discusses business stress with her partner during dinner; reserves that time for personal conversation"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Openly discusses business stress and challenges with her partner during dinner, using their shared home workspace as an opportunity to collaborate and decompress together",
+              "domain": "social_relationships"
+            },
+            "reason": "With her partner working from home more extensively and taking on key branding projects, their professional and personal spheres overlap. Dinner becomes a space to share work-related stress and support each other."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My partner landed a remote contract with a big design agency—so he'll be deep in client projects from home most days now. We're both working more, and I need help figuring out how to keep my routine stable and make sure the business doesn't fall through the cracks. Any advice on managing work-life boundaries when you're suddenly sharing your workspace with a partner full-time?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, congrats to him! Sharing the workspace definitely takes adjustment. Are you both working out of the same room, or do you have separate zones for focus? Sometimes having distinct workspaces—or even a simple schedule for who uses which area—can help minimize distractions and keep productivity high."
+        },
+        {
+          "role": "user",
+          "content": "We're in a two-bedroom, so we split the second room as an office. Now that he's got more client calls and meetings, we've started coordinating our daily schedules to avoid overlap—especially video calls. Otherwise, it's chaos! But I still get distracted when his meetings run over or if he needs to brainstorm branding while I'm prepping campaign emails. Any tricks for protecting deep work when you can't fully separate?"
+        },
+        {
+          "role": "assistant",
+          "content": "Coordinating schedules is a great start. You could try time-blocking for uninterrupted focus—for example, defining a no-interruption window each morning when you both commit to solo work. Noise-cancelling headphones or a 'do not disturb' signal (like a door hanger) can reinforce the boundaries. Have you experimented with any physical cues or signals to indicate you're not available?"
+        },
+        {
+          "role": "user",
+          "content": "We haven't used physical signals, but I might try a desk lamp or sign when I'm in campaign mode—so he knows not to ping me for design stuff mid-email. The main thing is keeping our calendars aligned, especially since I draft important communications early in the morning. He's usually on calls by 10, so I block 8–9 for emails. Lunchtime is trickier though—we've started prioritizing quick shared lunches instead of solo meals so we can catch a break together. That part's actually been easier with him home more."
+        },
+        {
+          "role": "assistant",
+          "content": "Shared lunch sounds like a nice way to stay connected even during a packed day. If mornings are your prime focus time, maybe you both formalize those blocks—even a sticky note on your desk for 'email hour.' For lunch, keeping it simple and prepping in advance could help; have you tried batch-making snacks so you can just grab and go together between meetings?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I prep healthy snacks every Sunday, but during the week I almost never cook full meals. We usually just grab whatever's ready. Honestly, squeezing in those lunches is new—before his contract, I’d eat alone or skip lunch entirely on busy days. Now it’s sort of our mini recharge. The only challenge is making sure it doesn’t spill into work talk, since we both have a lot going on."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great shift, even if it’s quick. Have you considered setting a rule for lunch—like only personal catch-up, no work talk unless urgent? It might help keep the recharge feeling. On workspace boundaries: since he’s handling bigger branding projects now, has that changed how you collaborate on startup tasks? Does he still join you for accelerator workshops or pitch sessions?"
+        },
+        {
+          "role": "user",
+          "content": "He used to come to accelerator events and pitch sessions with me all the time—that was super helpful for real-time branding feedback. But with his client workload picking up, he can only join occasionally now. Most sessions I attend solo, which is a bit weird since we were such a team before. I’m having to lean more on other founders for feedback these days."
+        },
+        {
+          "role": "assistant",
+          "content": "Solo attendance definitely changes the dynamic. Maybe you could set up brief debrief sessions afterwards—just 15 minutes to download feedback and questions, when he’s between client work. That way you still get his perspective, but on your own schedule. Does discussing work at home feel comfortable now, or do you try to separate business talk from your personal time?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, that’s changed too. We used to keep dinner strictly personal, no business talk allowed. But with our work spheres overlapping so much now, we’ve started sharing business stress and challenges at dinner—just to decompress and support each other. It actually helps, but it can make switching off harder some nights."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—sometimes sharing helps reduce the stress. Maybe after dinner you can reestablish some downtime together, like your device-off hour before bed, so you both get the chance to unwind fully. Any strategies you’re considering to keep things balanced, or is it mostly adapting day by day as workloads shift?"
+        },
+        {
+          "role": "user",
+          "content": "It’s a bit of both! We’re setting workspace boundaries daily, syncing our schedules to minimize overlap, and sticking with shared lunches for quick breaks. Accelerator events I handle alone now—he joins only when client projects allow. And we openly talk business at dinner, which is new for us, but feels like the right move. I think the next step is refining our office cues for focus time and maybe carving out some post-dinner downtime so we don’t carry work stress all night."
+        },
+        {
+          "role": "assistant",
+          "content": "Those sound like really healthy adjustments! Refining workspace signals and carving out downtime should help, especially as your routines evolve. Let me know if you want tips on setting up post-dinner relaxation, or on optimizing those focus blocks—anything to make this new phase feel more sustainable."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The commercial kitchen space she used for small-batch skincare production abruptly shut down for major renovations, leaving her without a workspace for manufacturing and fulfillment until further notice.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Actively researches and negotiates for alternative production spaces online, prioritizing short-term rentals and flexible arrangements",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Participates in online skincare founder forums and virtual troubleshooting groups to exchange advice on navigating workspace disruptions",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_035",
+              "fact": "Allocates two hours each week to personally manage startup packaging and logistics tasks previously handled by her sister—chooses late Friday afternoons for these responsibilities"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "No longer schedules weekly packaging and logistics management; pauses fulfillment-related tasks until the commercial kitchen reopens or a new workspace is secured",
+              "domain": "work_habits"
+            },
+            "reason": "Without a production or fulfillment workspace, she cannot meaningfully allocate time to hands-on packaging or logistics tasks, so these responsibilities are suspended."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_017",
+            "fact": "Enjoys attending skincare ingredient workshops and industry pop-ups monthly — avoids virtual classes",
+            "domain": "leisure_hobbies",
+            "reason": "Most in-person skincare industry events (ingredient workshops and pop-ups) require product samples and demos, which are infeasible without a production workspace. She cannot participate until manufacturing capabilities resume."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help. The commercial kitchen I was using for production shut down unexpectedly for renovations yesterday, and they don’t know how long it’ll take. I’m stuck mid-prep for my crowdfunding campaign and suddenly have nowhere to make, package, or fulfill orders. Any ideas on how to get small-batch production going quickly, or just ways to not stall completely while I figure this out?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough curveball, especially so close to your crowdfunding launch. Are you looking for fully-equipped spaces to rent short-term, or would something smaller like an artisanal co-packing studio work for interim batches? I can also help brainstorm how to keep your campaign momentum going if production is paused."
+        },
+        {
+          "role": "user",
+          "content": "I’m actually spending most of my time researching production spaces online now—short-term rental kitchens or anything flexible so I don’t get locked in. My priority is somewhere I can resume at least trial production and prep samples for demos, even if it’s not ideal for scaling. If you know where other indie skincare founders start looking, I’d love tips!"
+        },
+        {
+          "role": "assistant",
+          "content": "Great, you’re focusing on flexibility. LA has quite a few shared commercial kitchens—though some book up quickly. Have you checked platforms like Kitchen United or CloudKitchens? Also, some cosmetics labs offer short-term access if you’re willing to use their facility standards and equipment. Are you open to those, or do you need ingredient control for your formulations?"
+        },
+        {
+          "role": "user",
+          "content": "Ingredient control is non-negotiable—I hand-source and personally formulate everything before sharing samples, so I need a space where I can bring my own materials and handle small-batch runs myself. Co-packing isn’t right for me yet. I’ve also started joining some online founder forums and virtual troubleshooting groups this week to see what others do in emergencies like this."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move! Those forums can be gold mines for workaround strategies and leads on pop-up spaces. There’s a Slack for beauty founders called IndieBeauty—have you tried that, or do you prefer more structured discussion boards? Also, since sample demos are a priority, would temporary lab rentals at universities be possible, or is access too restrictive?"
+        },
+        {
+          "role": "user",
+          "content": "I haven’t tried IndieBeauty yet, mostly sticking to structured boards on Makers Row and Reddit so far—anything to crowdsource advice. University labs could be tricky; access is usually limited and not compatible with outside business activities. Not to mention, most industry ingredient workshops and pop-ups I used to attend require product demos, which I can’t do until I get manufacturing up and running again. So, I’m skipping those at least for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—those events are hard to leverage if you don’t have fresh samples. Maybe focusing on virtual networks until you’re set up again is best. Are you pausing all fulfillment and logistics tasks, or are there parts you can still coordinate remotely with your sister? I know you were hands-on with packaging before."
+        },
+        {
+          "role": "user",
+          "content": "I’ve actually stopped handling packaging and logistics tasks altogether for now. I used to block late Friday afternoons for them, but there’s nothing to fulfill without a workspace. I’ve paused that schedule until I have a production spot again—no sense allocating time for it when we’re at a standstill."
+        },
+        {
+          "role": "assistant",
+          "content": "Completely reasonable—better to save energy for steps you can control and restart logistics once you secure a space. Is there anything else you want advice on while you’re in this holding pattern? For example, ways to keep backers engaged or strategies for networking virtually since in-person demos aren’t possible?"
+        },
+        {
+          "role": "user",
+          "content": "That’s exactly what I need. I’m trying to keep momentum, so any tips for keeping interest high pre-launch while production is paused would be amazing. I’m new to virtual networking since I always went in-person for influencer and industry meet-ups, so ideas for fostering relationships online would help, too."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Diagnosed with chronic migraines after several weeks of intense headaches and blurred vision; neurologist prescribes medication and recommends strict routine changes to manage triggers.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_049",
+            "fact": "Schedules brief daily rest breaks in a dark, quiet environment to proactively manage migraine symptoms",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Always carries migraine medication and water; promptly declines work, social, or networking activities if prodromal symptoms appear",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Never does high-intensity workouts; sticks exclusively to yoga or Pilates in the evenings"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Avoids all group exercise classes and evening workouts; now does gentle stretching and short guided relaxation routines midday—prioritizing migraine-safe, solo activities",
+              "domain": "health_body"
+            },
+            "reason": "With chronic migraines, neurologist advises against routine evening exertion, possible visual triggers, and group environments that can increase sensory overload. She adapts to gentle stretching and solo relaxation routines at midday to accommodate her condition."
+          },
+          {
+            "from": {
+              "id": "pref_025",
+              "fact": "Runs errands and grocery shops late in the evening to avoid crowds — never during midday"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Runs errands and grocery shops exclusively in early morning hours to minimize light and noise exposure; avoids evenings to reduce migraine flares",
+              "domain": "daily_routines"
+            },
+            "reason": "Neurologist recommends avoiding late evening exposure (bright lights, noise, exhaustion) and stresses the importance of early hours to minimize migraine triggers. She shifts her errand schedule accordingly."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_021",
+            "fact": "Starts every morning with journaling and a cup of matcha — never drinks coffee before noon",
+            "domain": "daily_routines",
+            "reason": "As part of migraine management, caffeine intake needs to be strictly controlled and potentially eliminated. Her doctor may advise against all caffeinated beverages, making this preference both risky and irrelevant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So I got officially diagnosed with chronic migraines last week. That explains the headaches and vision stuff, but now my doctor is pushing some major changes—scheduled meds, strict routines, managing triggers. I’m a couple days in and my workflow is all over the place. How can I keep my business on track when I’m supposed to avoid stress and overhaul my schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really tough, especially given how hands-on you are with the brand pre-launch. When you say your workflow is all over—are there specific parts of your daily routine that feel most disrupted, or is it more everything at once? Maybe we can pinpoint a couple adjustments to help you regain some structure."
+        },
+        {
+          "role": "user",
+          "content": "Definitely the afternoons. I used to do evening yoga classes and hit Pilates after calls to destress, but now my neurologist says evening workouts and group classes are out—apparently, they can trigger migraines. I’m trying short midday stretches or guided relaxation sessions solo, but it’s hard to fit them in with my meetings and product testing. Any ideas for making that midday break stick without wrecking my schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s a big shift from having a set evening routine. Since you’re moving your stretching and relaxation to midday, have you considered blocking a specific window for that break every day? Maybe right after your morning email check, before meetings start ramping up? If consistency is key for migraine management, even a 15-minute slot could work. Do you have flexibility between your calls and sample testing, or is everything tightly packed?"
+        },
+        {
+          "role": "user",
+          "content": "Morning is usually when I draft important emails and pitches—never after noon, so I can’t move that. Meetings are always before 3pm, but it’s pretty full until lunch. I’m experimenting with scheduling a quick daily rest break in a dark, quiet space before my lunch window. It’s new, but if it keeps migraines away, I guess it’s worth defending. I just don’t want clients to think I’m unavailable."
+        },
+        {
+          "role": "assistant",
+          "content": "Taking care of your health has to come first, even if it means carving out some clear boundaries. You could set your calendar so you appear 'busy' during that break—no one needs to know it's for migraine prevention. Since your calls never run past 3pm, maybe 11:45 or noon could become your protected slot? Also, when symptoms hit, do you have a plan for stepping away from work quickly, or is that something you’re still figuring out?"
+        },
+        {
+          "role": "user",
+          "content": "That’s something I’m working on. Now I always carry migraine meds and water, and if I sense prodromal symptoms, I decline or reschedule work, networking, or social plans, no questions asked. It’s weird for me—I used to tough out headaches, but now preemptive rest is basically mandatory."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re building a solid proactive strategy, even though it’s a big culture shift from powering through. Do you need help crafting an out-of-office template for those times, or communicating your new boundaries with collaborators and influencers? Sometimes making your limits clear up front reduces awkwardness—and protects your downtime."
+        },
+        {
+          "role": "user",
+          "content": "That’s a good idea. I’m used to in-person influencer collabs, but now I have to be ready to bow out if I feel a migraine coming. Communicating that early will help. Also, errands and grocery shopping used to be a late evening thing for me—quiet, less crowded—but now bright lights and noise at night flare things up. I’m switching to early morning errands before things get busy, which means adjusting everything else, too."
+        },
+        {
+          "role": "assistant",
+          "content": "That change makes sense—early mornings are usually calmer and less stimulating. Has that affected your morning routines, like how you plan your day or prep snacks? Are there any conflicts with your business tasks or family visits in the morning, or can you fit errands in before your 8am email check?"
+        },
+        {
+          "role": "user",
+          "content": "It’s a bit of juggling, but manageable. I prep healthy snacks Sunday night, so errands are more for fresh ingredients or re-ups. I try to run them right after journaling, before I start business emails, so I keep my work blocks intact. And honestly, I had to give up my morning matcha—the neurologist wants me to control or eliminate caffeine entirely. I’m not drinking coffee before noon, or at all now, so the ritual is just journaling and water."
+        },
+        {
+          "role": "assistant",
+          "content": "Giving up matcha and coffee sounds difficult, especially since routines help anchor the day. Are you finding that journaling still grounds you, or are you looking for a new ritual in the morning? If hydration is important, maybe a herbal tea or warm lemon water could fill the gap without caffeine."
+        },
+        {
+          "role": "user",
+          "content": "Journaling still helps—so I’m keeping that. Herbal tea is a decent substitute. Mostly, I’m just focused on protecting migraine triggers (noise, light, caffeine) and building rest breaks into my work cycle. It’s all a bit rigid, but if it keeps me functional, I’ll stick with it."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s impressive how quickly you’ve adapted so many parts of your routine. If you need help tracking triggers, adjusting workflows, or figuring out ways to communicate your needs to collaborators, let me know. Would you like to draft announcement language for new boundaries, or should we dig into workflow tweaks to keep your business moving?"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her father was unexpectedly hospitalized after a mild stroke, prompting her to take on additional responsibilities supporting her mother and coordinating care during his recovery.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Keeps her phone on loud and checks messages frequently throughout the day to coordinate her father's care — never uses Do Not Disturb mode during daytime hours",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Prepares weekly meal plans and grocery lists for her parents, prioritizing nutritious, easy-to-cook dishes for her father’s recovery",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Hosts Sunday brunches monthly for family and close friends — never attends large parties"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Pauses hosting Sunday brunches while her father recovers — instead organizes small, informal visits and delivers meals to her parents' home, avoiding group gatherings",
+              "domain": "social_relationships"
+            },
+            "reason": "Her father's hospitalization and her new caregiving role demand her presence and support at her parents' home. She suspends brunch hosting for the foreseeable future, shifting toward personally supporting her family and minimizing wider social gatherings."
+          },
+          {
+            "from": {
+              "id": "pref_043",
+              "fact": "Prioritizes quick, shared lunches with her partner between work sessions instead of solo meals on busy weekdays"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Frequently eats lunch alone or with her mother during weekdays at her parents' home, as she spends midday supporting her father’s recovery; does not prioritize meals with her partner",
+              "domain": "social_relationships"
+            },
+            "reason": "Because she's now regularly at her parents' house during the day to support her mother and coordinate care, her lunch routine has shifted toward solitary or family meals rather than lunches with her partner."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_040",
+            "fact": "Usually attends accelerator cohort events and pitch sessions solo; her partner joins only occasionally due to increased remote client workloads",
+            "domain": "work_habits",
+            "reason": "Her ability to attend events is significantly impacted by caregiving responsibilities. She no longer has the capacity for cohort events during her father's recovery and participation is paused."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey—I wanted to check in. My dad had a mild stroke last week, and I've been at my parents' house a lot helping out. It’s thrown my schedule upside down. I’m trying to keep my skincare launch on track, but between supporting my mom and coordinating care, I have no bandwidth. How do I keep the business moving without totally burning out?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm so sorry to hear about your dad. That sounds really stressful, especially with the business pre-launch. The first thing might be to simplify your workflow and look for tasks you can pause or delegate. Are there parts of your startup plan—like influencer outreach, sample distribution, or campaign prep—that you could temporarily scale back? Or is there anything you feel comfortable handing off to your sister or partner?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve started leaning on my sister for more packaging and logistics. But I honestly can’t do the accelerator workshops or cohort events right now. Those were always solo and super valuable, but between hospital visits and prepping meals for the family, I just don’t have space for them. Is that going to hurt my crowdfunding prep?"
+        },
+        {
+          "role": "assistant",
+          "content": "Skipping accelerator events definitely means missing some networking and feedback, but since you're focusing on in-person connections, maybe you can tap your existing local contacts instead. Are you still able to meet with dermatologists and influencers face-to-face, or has that also shifted? For crowdfunding prep, maybe concentrate on updating your pitch materials at home rather than at workshops."
+        },
+        {
+          "role": "user",
+          "content": "Influencer networking is still happening occasionally—in-person only, when I can squeeze it in nearby. But I’ve paused all my group brunches; instead, I’m doing small visits and dropping off meals at my parents’ place. The bigger events just aren’t realistic while my dad’s recovering. I've also found myself making weekly meal plans and grocery lists for my parents, focusing on easy, healthy stuff for my dad. I’ve never been this organized around food!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge shift—but actually really positive for your dad’s recovery. Meal planning could give your mom peace of mind, too. Since your routine’s changed, have your lunchtime habits shifted as well, or are you still grabbing quick lunches with your partner like before?"
+        },
+        {
+          "role": "user",
+          "content": "Not really—my lunches these days are either solo or with my mom, since I’m usually at their place midday. It’s so different from my usual partner lunch breaks. My phone is basically glued to me now, on loud, and I’m checking messages constantly for updates from doctors or my sister. I used to be more strict about notifications, but not anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—staying accessible is crucial during family emergencies. It’s good you’re recognizing what needs to change. Do you find it’s eating into your work focus, or are you able to set dedicated times for checking business emails or campaign tasks?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s harder to stick to my usual email windows. I still try to do critical business emails first thing in the morning, but I’m checking messages throughout the day for family stuff, so my routine is messier. I do keep my device-off hour before bed, though—it’s the only way I sleep at all right now!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great that you’re holding onto that evening boundary. With everything going on, you need downtime. Are there any caregiving tasks you wish you could streamline, like meal prep or appointment coordination? It might help free up short blocks of time for work or self-care."
+        },
+        {
+          "role": "user",
+          "content": "I’m pretty efficient at prepping weekly meals; the challenge is making them simple enough for my dad and my mom to cook together, since I can’t stay there all day. I make big lists and batch shop late in the evening when stores are empty. Appointment coordination is ongoing—I keep my phone accessible all day and never use Do Not Disturb mode anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Late-night shopping is a smart workaround, avoiding crowds and giving you some quiet time. For meal prep, maybe prepping components ahead—like cooked grains or chopped veggies—could make it easier for your parents. Since accelerator workshops are on pause, have you considered online pitch review if you have downtime at your parents' house, or is that too distracting?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, digital classes feel more stressful than helpful right now. If I get a quiet moment, I focus on updating my planner or prepping materials by hand. I’m just pausing cohort events until things stabilize. I appreciate the suggestions, though—I’ll try prepping more meal components for my parents. And thanks for listening… I feel stretched thin, but it's starting to feel manageable."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s completely understandable. It sounds like you’re adapting well and keeping your priorities clear. If you need help brainstorming additional ways to streamline tasks or balance caregiving with business, just let me know. And don’t hesitate to take the pressure off—your dad’s health comes first. Sending lots of support as you juggle everything."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Enrolled in a specialized eight-week sleep clinic program after her insomnia ratings worsened during a routine health assessment, requiring nightly participation in in-person cognitive behavioral therapy and biofeedback sessions.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Attends nightly in-person cognitive behavioral therapy and biofeedback sessions between 8-10pm, strictly prioritizing this clinic window over all other activities or events.",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_058",
+            "fact": "No longer schedules any social dinners, late meetings, or leisure activities after 7pm during the clinic program period; evenings are reserved exclusively for sleep-focused therapy participation.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Sets a strict 'device-off' rule one hour before bed to combat insomnia — never checks work email after 9pm"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Adheres to a clinic-mandated digital abstinence for two hours before bed; disables all notifications and avoids any screen use during the evening therapy window (8-10pm), including personal communications and entertainment apps.",
+              "domain": "health_body"
+            },
+            "reason": "The sleep clinic program enforces more rigorous evening habits to improve insomnia, requiring strict avoidance of all screen/device use for two hours before sleep, not just work communications. The required therapy session falls within this window, broadening the scope of digital abstinence beyond email."
+          },
+          {
+            "from": {
+              "id": "pref_031",
+              "fact": "Keeps a daily health journal to track medication side effects, skin reactions, and overall wellbeing during recovery"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Maintains a detailed sleep log and mood tracker as required by the clinic, focusing nightly on sleep patterns, pre-bed behaviors, and CBT homework, deprioritizing medication and skin reaction tracking.",
+              "domain": "health_body"
+            },
+            "reason": "The sleep clinic protocol requires specific tracking of sleep-related metrics and clinic homework to support therapy outcomes, shifting her journaling focus from general wellness and skin issues to targeted sleep behaviors and CBT progress."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, after my latest health assessment, my insomnia scores were worse than I thought. I just started an eight-week sleep clinic program last night—it's very hands-on, lots of in-person CBT and biofeedback. It's a big commitment: every night from 8-10pm, clinic protocol says absolutely no devices or screens. My evenings feel pretty flipped upside down. I could use some help recalibrating my evening routines so I don't slip up—especially with all the temptation to check email, talk to family, or even just scroll for a bit."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds intense, but ultimately positive if it helps your sleep! With that two-hour digital blackout each evening, how has it affected your usual winding-down habits so far? Are you finding it hard to unplug, or is the clinic structure making it easier?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it's tougher than I expected. I used to have a 'device-off' rule for just an hour before bed, mainly to avoid work email after 9pm. Now the clinic mandates two hours—8 to 10pm—with absolutely no screens and all notifications disabled, not just work stuff. That means no texting my sister, no checking DMs, not even music apps. The in-person CBT/biofeedback takes up the whole window. It’s stricter than anything I’ve ever done."
+        },
+        {
+          "role": "assistant",
+          "content": "I see! That’s a much heavier restriction, especially since it covers personal communications and entertainment, not just work. Does the clinic offer guidance on substitute evening activities, or do you have to come up with analog options on your own? How are you handling any urge to connect with family or decompress?"
+        },
+        {
+          "role": "user",
+          "content": "They actually want everything social and leisure wrapped up by 7pm, so nothing overlaps or tempts me during the therapy window. That means no late dinners, no evening chats, even monthly brunches with friends have to end earlier for now. I'm only allowed sleep-focused activities after 8pm—mostly the therapy itself, then logging my sleep and mood for the clinic. It's pretty regimented."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a significant change! So you’ve had to pull back from any social or work-related events after 7pm—especially dinners or phone calls. With the new sleep log and mood tracker as your main evening tasks, are you missing your old health journaling habits? How does tracking sleep metrics compare to your previous system?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I used to keep a health journal every night—mostly to track skincare reactions, any medication side effects, and general wellbeing. Now the clinic wants me to focus strictly on sleep patterns, CBT homework, and mood tracking. So journaling about skin stuff is on pause for now. It's weird to deprioritize that since my skin journey inspired the business, but I get why they're focusing me."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—the clinic is narrowing your scope for more targeted results. Given your routines have changed, are there other pain points you’re running into? For example, has this impacted your nightly yoga or partner time? And do you need help reorganizing anything else to avoid evening slip-ups?"
+        },
+        {
+          "role": "user",
+          "content": "I’m sticking to my yoga, but I do it earlier now—usually right after work and before dinner. Partner time is compressed too; we both know evenings are off-limits for the next two months, so we do personal stuff together earlier if possible. No late errands either; anything after 7 just isn’t happening until the program ends. The main friction is just remembering to prep everything in advance—snacks, journaling tools, logistics—and making sure nobody expects to reach me in the evening."
+        },
+        {
+          "role": "assistant",
+          "content": "That approach is good—front-loading tasks and proactive communication can help avoid disruptions. Would you like help drafting a template message for your family or contacts, setting expectations about your new evening routine? Or tips on prepping everything in advance so you don’t feel rushed or pressured before heading into therapy?"
+        },
+        {
+          "role": "user",
+          "content": "A message template would help! My sister especially needs reminders since she usually sends me voice notes at night, and my parents try for evening calls sometimes. I just want everyone to know I’ll be offline after 7—no exceptions. Also, I might need a checklist for prepping my sleep log, yoga gear, healthy snacks, and anything for clinic homework, so I don’t scramble right before 8."
+        },
+        {
+          "role": "assistant",
+          "content": "Great—I can help with both. Here’s a possible message: “For the next eight weeks, I’ll be offline after 7pm every night for a sleep clinic program—no texts, calls, or messages during that window. I’ll check in with you earlier in the day if needed!” As for the checklist, would you prefer something you can add to your paper planner, or is a printed sheet more convenient given your digital abstinence?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely prefer handwriting it in my paper planner—still sticking to analog for to-do lists even though the clinic’s rules are stricter with screens now. A printed sheet is fine if it helps, but nothing digital right now. Just need a concise reminder I can refer to after dinner."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. Here’s a suggested checklist for your planner:\n1. Prep healthy evening snack\n2. Set out yoga mat/gear (if needed)\n3. Gather sleep log and mood tracker\n4. Review CBT homework sheets\n5. Communicate offline status to family (if not done already)\n6. Fill water bottle\n7. Power down all devices by 7:45pm\nYou can tweak accordingly—does this cover everything?"
+        },
+        {
+          "role": "user",
+          "content": "That covers it well. Thanks! The night structure is definitely a work in progress, but sticking to these boundaries makes me hopeful the sleep clinic will actually help."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her mother, overwhelmed by her father's recovery and new caregiving demands, asks her to spend several nights each week in Pasadena to provide hands-on support and help with household management.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_060",
+            "fact": "Prepares evening and morning routines specifically for her father's needs while staying in Pasadena, including medication reminders and facilitating gentle mobility exercises, before tending to her own work or health tasks.",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_061",
+            "fact": "Regularly coordinates complex to-do lists and schedules with her mother using a shared digital app, breaking her former preference for paper planners at home.",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_058",
+              "fact": "No longer schedules any social dinners, late meetings, or leisure activities after 7pm during the clinic program period; evenings are reserved exclusively for sleep-focused therapy participation."
+            },
+            "to": {
+              "id": "pref_059",
+              "fact": "Allocates several weeknights per week to overnight caregiving and household management in Pasadena—evening therapy and sleep routines are temporarily deprioritized.",
+              "domain": "daily_routines"
+            },
+            "reason": "Her mother has requested she stay multiple nights in Pasadena to provide hands-on support. This makes her evening therapy and strict sleep-focused routines difficult or impossible to sustain, as family caregiving must now take priority on those nights."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I need your help figuring out how to balance pretty much everything right now. My mom just asked me to start spending several nights a week in Pasadena—my dad's recovering and she needs hands-on support at home. The timing couldn't be worse with the business launch stuff and prepping for crowdfunding. Any advice on how to keep both family and work from falling apart?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a lot to juggle, especially with your pre-launch phase and family needing extra care. When your evenings are booked in Pasadena, does that make it hard to stick to your usual routines—like your yoga and sleep schedule? Or is it primarily the work side you're struggling to maintain?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, both. My evening yoga and sleep routines are kind of on hold—I'm spending those nights doing caregiving stuff and household management. My sleep's even worse than usual, since I can't really prioritize it when I'm staying over there. It's frustrating, but my dad needs me so it's just reality for now."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense that your wellness routines would be tough to maintain. How are you structuring your mornings and evenings now—in Pasadena, are you able to carve out any time for yourself, or do you start with caregiving right away? Maybe we can look at small ways to anchor your day if long blocks aren't possible."
+        },
+        {
+          "role": "user",
+          "content": "In Pasadena, I start with my dad’s needs first thing—medication, gentle mobility exercises before my own work or health stuff. I do try to squeeze in journaling and matcha if I can, but I have to prep breakfast and meds for him before I think about anything else."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful approach—putting your dad’s routine first. Since your mornings are shifted, maybe batching your journaling or matcha ritual for later, if possible, could give you a bit of stress relief. For mobility exercises, do you want suggestions on routines that are gentle and don’t require much time, or are you already following doctor guidance?"
+        },
+        {
+          "role": "user",
+          "content": "We’re following the physical therapist’s instructions, so the exercises are pretty specific. I don’t really need new routines for him; just trying to make them part of the new rhythm. What I could use is help organizing everything—the to-do lists, medication reminders, groceries, etc. I used to use my paper planner, but my mom insisted we use a shared digital app so she can see updates. I hate it, but it’s necessary, I guess."
+        },
+        {
+          "role": "assistant",
+          "content": "Switching to digital tools under family pressure is pretty common! Which app are you using for shared lists and scheduling? Some have built-in notification systems that can help keep everyone on track without extra effort. We can tweak it so you’re not overwhelmed by reminders, and you still feel somewhat in control—would that help?"
+        },
+        {
+          "role": "user",
+          "content": "We're using Google Keep. My mom likes it for reminders, sharing tasks, and checking things off herself. I miss my paper planner—it's how I usually stay grounded—but at least this keeps us synced so nothing falls through the cracks. Could you suggest ways to adapt Google Keep so it's less chaotic? Or ways I can make my personal routines fit around all the caregiving logistics?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. You can color-code notes in Google Keep for different categories—family care, business, personal wellness—so things don’t blur together. Setting up notifications at times when you’re free (not right when you wake up or during work pitches) can make reminders less stressful. For personal routines, maybe you allocate a micro-break for yourself after caregiving is done? Even a five-minute matcha or breathing ritual before work could help you transition between roles."
+        },
+        {
+          "role": "user",
+          "content": "Color-coding's a good call. And I’ll try to shift my matcha ritual to after my dad’s morning routine, even if it means I miss it some days. Of course, some days I barely eat until noon, but that's nothing new. This whole switch has made my evenings feel less like 'me time' and more like scheduled chaos. Anyway, thanks for helping me think through this. Just wanted to be sure I didn't let either side totally slide."
+        },
+        {
+          "role": "assistant",
+          "content": "You're handling a lot, so it's okay if routines are flexible for now. Let me know if you need advice on meal prepping quickly or micro wellness breaks. And if Google Keep ever gets overwhelming, there are ways to simplify notifications or use recurring reminders for meds and household tasks. You're not alone in wanting structure amid the new responsibilities—small adaptations now can make a big difference long-term."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Drafts business emails and campaign pitches first thing in the morning — never leaves important communications for after noon",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_002",
+        "fact": "Only schedules meetings before 3pm; refuses evening calls or Zooms to protect downtime",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Keeps a detailed budget spreadsheet updated daily; never relies on mental math or ballpark figures for spending decisions",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Avoids dairy and processed sugar to minimize acne breakouts, but indulges in dark chocolate once a week",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Shares business milestones only with her parents and partner; never posts about them on social media",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Prefers ongoing mentorship conversations over text instead of scheduled video calls",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Spends Saturday mornings exploring local artisan markets; never shops at chain retail stores for leisure",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Paints botanical illustrations on weekends for relaxation; never does digital art",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Keeps her reading strictly to non-fiction wellness and business books — avoids fiction entirely",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Travels for mini wellness retreats within California twice a year; never takes international vacations",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks emails only twice daily: once at 8am and once at 4pm — never outside those hours",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Does not use social media during work hours; only posts after 6pm",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Prepares all to-do lists by hand in a planner, avoiding digital productivity apps",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Actively seeks out digital collaboration opportunities with influencers and experts, including livestreams and webinars — embraces virtual networking as a core business strategy",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Posts about upcoming livestreams and skincare educational events to her brand's social media accounts, directly engaging her audience prior to the crowdfunding launch",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Prepares talking points and product demonstration materials ahead of each scheduled livestream with the dermatologist, prioritizing clarity and audience education",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Reviews direct feedback and comments from educational livestreams each week, adapting her product messaging based on audience questions",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "No longer tests skincare formulations on herself; now relies on external volunteer testers and lab analysis before sharing samples",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Avoids all in-person skincare product demos and on-camera live product applications to prevent accidental exposure to allergens",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Buys quick, pre-made healthy snacks and lunches from local shops or delivery services—no longer preps snacks at home on Sundays",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Schedules biweekly video catch-up calls with her sister to stay close despite physical distance; prefers evening slots over random chat messages",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_037",
+        "fact": "Blocks Wednesday afternoons exclusively for 1:1 mentorship and accelerator resource sessions — never schedules other business meetings during that time",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Prioritizes early review of accelerator-provided financial planning templates and expert feedback for all capital allocation decisions",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Initiates biweekly networking follow-ups with other cohort founders via email — no longer relies on chance encounters at monthly entrepreneur meet-ups",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_041",
+        "fact": "Openly discusses business stress and challenges with her partner during dinner, using their shared home workspace as an opportunity to collaborate and decompress together",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Coordinates daily workspace boundaries and schedules with her partner to minimize distractions during overlapping video calls and client meetings",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_044",
+        "fact": "No longer schedules weekly packaging and logistics management; pauses fulfillment-related tasks until the commercial kitchen reopens or a new workspace is secured",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Actively researches and negotiates for alternative production spaces online, prioritizing short-term rentals and flexible arrangements",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Participates in online skincare founder forums and virtual troubleshooting groups to exchange advice on navigating workspace disruptions",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_047",
+        "fact": "Avoids all group exercise classes and evening workouts; now does gentle stretching and short guided relaxation routines midday—prioritizing migraine-safe, solo activities",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Runs errands and grocery shops exclusively in early morning hours to minimize light and noise exposure; avoids evenings to reduce migraine flares",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Schedules brief daily rest breaks in a dark, quiet environment to proactively manage migraine symptoms",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_050",
+        "fact": "Always carries migraine medication and water; promptly declines work, social, or networking activities if prodromal symptoms appear",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_051",
+        "fact": "Pauses hosting Sunday brunches while her father recovers — instead organizes small, informal visits and delivers meals to her parents' home, avoiding group gatherings",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Frequently eats lunch alone or with her mother during weekdays at her parents' home, as she spends midday supporting her father’s recovery; does not prioritize meals with her partner",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Keeps her phone on loud and checks messages frequently throughout the day to coordinate her father's care — never uses Do Not Disturb mode during daytime hours",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_054",
+        "fact": "Prepares weekly meal plans and grocery lists for her parents, prioritizing nutritious, easy-to-cook dishes for her father’s recovery",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_055",
+        "fact": "Adheres to a clinic-mandated digital abstinence for two hours before bed; disables all notifications and avoids any screen use during the evening therapy window (8-10pm), including personal communications and entertainment apps.",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Maintains a detailed sleep log and mood tracker as required by the clinic, focusing nightly on sleep patterns, pre-bed behaviors, and CBT homework, deprioritizing medication and skin reaction tracking.",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_057",
+        "fact": "Attends nightly in-person cognitive behavioral therapy and biofeedback sessions between 8-10pm, strictly prioritizing this clinic window over all other activities or events.",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_059",
+        "fact": "Allocates several weeknights per week to overnight caregiving and household management in Pasadena—evening therapy and sleep routines are temporarily deprioritized.",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_060",
+        "fact": "Prepares evening and morning routines specifically for her father's needs while staying in Pasadena, including medication reminders and facilitating gentle mobility exercises, before tending to her own work or health tasks.",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_061",
+        "fact": "Regularly coordinates complex to-do lists and schedules with her mother using a shared digital app, breaking her former preference for paper planners at home.",
+        "domain": "work_habits",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_003",
+        "fact": "Prefers collaborating in-person when networking with influencers — avoids purely digital introductions whenever possible",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "The dermatologist partnership includes co-hosting educational livestreams and online product endorsements, requiring her to fully engage with digital networking and collaboration channels, which she previously avoided."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Attends entrepreneur meet-ups alone to maximize networking; never brings her partner or family members",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "The accelerator program offers frequent group events, mentorship sessions, and pitch opportunities where collaborative participation is both encouraged and beneficial. Her partner’s expertise directly enhances her business presentations and brand visuals, making solo attendance less advantageous."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Tests every new skincare formulation on herself for two weeks before sharing samples — never skips personal trials",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "After developing a severe allergic reaction, her doctor instructed her to stop all personal product testing. She now needs to rely on trusted third-party testers and professional lab results."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Never does high-intensity workouts; sticks exclusively to yoga or Pilates in the evenings",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_047",
+        "reason": "With chronic migraines, neurologist advises against routine evening exertion, possible visual triggers, and group environments that can increase sensory overload. She adapts to gentle stretching and solo relaxation routines at midday to accommodate her condition."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Sets a strict 'device-off' rule one hour before bed to combat insomnia — never checks work email after 9pm",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_055",
+        "reason": "The sleep clinic program enforces more rigorous evening habits to improve insomnia, requiring strict avoidance of all screen/device use for two hours before sleep, not just work communications. The required therapy session falls within this window, broadening the scope of digital abstinence beyond email."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Preps healthy snacks on Sundays for the week ahead, but never cooks full meals during workdays",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "Her sister previously assisted with packaging and logistics during weekends, which often supported her Sunday snack prep routine. With her sister relocating and her own workload increasing, she no longer has time or help to prep snacks at home and instead relies on purchasing ready-made options."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Chats with her sister via voice notes rather than text; never schedules calls unless urgent",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "Her sister has relocated to San Francisco and is no longer involved in daily startup operations or physically nearby. Their communication pattern will likely change due to different routines, time zones, and increased distance."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Hosts Sunday brunches monthly for family and close friends — never attends large parties",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_051",
+        "reason": "Her father's hospitalization and her new caregiving role demand her presence and support at her parents' home. She suspends brunch hosting for the foreseeable future, shifting toward personally supporting her family and minimizing wider social gatherings."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Never discusses business stress with her partner during dinner; reserves that time for personal conversation",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_041",
+        "reason": "With her partner working from home more extensively and taking on key branding projects, their professional and personal spheres overlap. Dinner becomes a space to share work-related stress and support each other."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Enjoys attending skincare ingredient workshops and industry pop-ups monthly — avoids virtual classes",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "Most in-person skincare industry events (ingredient workshops and pop-ups) require product samples and demos, which are infeasible without a production workspace. She cannot participate until manufacturing capabilities resume."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts every morning with journaling and a cup of matcha — never drinks coffee before noon",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "As part of migraine management, caffeine intake needs to be strictly controlled and potentially eliminated. Her doctor may advise against all caffeinated beverages, making this preference both risky and irrelevant."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Runs errands and grocery shops late in the evening to avoid crowds — never during midday",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_048",
+        "reason": "Neurologist recommends avoiding late evening exposure (bright lights, noise, exhaustion) and stresses the importance of early hours to minimize migraine triggers. She shifts her errand schedule accordingly."
+      },
+      {
+        "id": "pref_031",
+        "fact": "Keeps a daily health journal to track medication side effects, skin reactions, and overall wellbeing during recovery",
+        "domain": "health_body",
+        "created_at_session": 1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_056",
+        "reason": "The sleep clinic protocol requires specific tracking of sleep-related metrics and clinic homework to support therapy outcomes, shifting her journaling focus from general wellness and skin issues to targeted sleep behaviors and CBT progress."
+      },
+      {
+        "id": "pref_035",
+        "fact": "Allocates two hours each week to personally manage startup packaging and logistics tasks previously handled by her sister—chooses late Friday afternoons for these responsibilities",
+        "domain": "work_habits",
+        "created_at_session": 2,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_044",
+        "reason": "Without a production or fulfillment workspace, she cannot meaningfully allocate time to hands-on packaging or logistics tasks, so these responsibilities are suspended."
+      },
+      {
+        "id": "pref_036",
+        "fact": "Regularly attends accelerator cohort events and pitch sessions with her partner, leveraging his graphic design expertise for real-time support and feedback",
+        "domain": "work_habits",
+        "created_at_session": 3,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_040",
+        "reason": "Her partner's new remote contract with a major agency requires significantly more client hours and focus from home, so he can no longer participate in regular cohort events or real-time feedback during sessions."
+      },
+      {
+        "id": "pref_040",
+        "fact": "Usually attends accelerator cohort events and pitch sessions solo; her partner joins only occasionally due to increased remote client workloads",
+        "domain": "work_habits",
+        "created_at_session": 4,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "Her ability to attend events is significantly impacted by caregiving responsibilities. She no longer has the capacity for cohort events during her father's recovery and participation is paused."
+      },
+      {
+        "id": "pref_043",
+        "fact": "Prioritizes quick, shared lunches with her partner between work sessions instead of solo meals on busy weekdays",
+        "domain": "social_relationships",
+        "created_at_session": 4,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_052",
+        "reason": "Because she's now regularly at her parents' house during the day to support her mother and coordinate care, her lunch routine has shifted toward solitary or family meals rather than lunches with her partner."
+      },
+      {
+        "id": "pref_058",
+        "fact": "No longer schedules any social dinners, late meetings, or leisure activities after 7pm during the clinic program period; evenings are reserved exclusively for sleep-focused therapy participation.",
+        "domain": "daily_routines",
+        "created_at_session": 8,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_059",
+        "reason": "Her mother has requested she stay multiple nights in Pasadena to provide hands-on support. This makes her evening therapy and strict sleep-focused routines difficult or impossible to sustain, as family caregiving must now take priority on those nights."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T23:48:20.857921"
+}

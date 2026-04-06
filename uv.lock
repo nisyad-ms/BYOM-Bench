@@ -420,7 +420,7 @@ wheels = [
 ]
 
 [[package]]
-name = "byom-bench"
+name = "ream-bench"
 version = "1.0.0"
 source = { editable = "." }
 dependencies = [
@@ -480,9 +480,9 @@ requires-dist = [
     { name = "azure-ai-projects", specifier = ">=2.0.0b3" },
     { name = "azure-identity", specifier = ">=1.15.0" },
     { name = "bedrock-agentcore", specifier = ">=1.3.0" },
-    { name = "byom-bench", extras = ["hindsight"], marker = "extra == 'all'" },
-    { name = "byom-bench", extras = ["mem0"], marker = "extra == 'all'" },
-    { name = "byom-bench", extras = ["zep"], marker = "extra == 'all'" },
+    { name = "ream-bench", extras = ["hindsight"], marker = "extra == 'all'" },
+    { name = "ream-bench", extras = ["mem0"], marker = "extra == 'all'" },
+    { name = "ream-bench", extras = ["zep"], marker = "extra == 'all'" },
     { name = "google-cloud-aiplatform", specifier = ">=1.75.0" },
     { name = "graphiti-core", extras = ["kuzu"], marker = "extra == 'zep'", specifier = ">=0.28.0" },
     { name = "hindsight-all", marker = "extra == 'hindsight'", specifier = ">=0.4.15" },

@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_19caa5bf",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_048",
+        "fact": "Returns to silencing phone notifications in the evening, trusting her sister to handle urgent calls regarding their mother's health while she's home",
+        "supersedes": {
+          "id": "pref_028",
+          "fact": "Keeps her phone unmuted all day for urgent calls about her mother’s health — pauses notification silencing until her mother’s recovery stabilizes"
+        }
+      },
+      {
+        "id": "pref_043",
+        "fact": "Relies on daily video or phone check-ins with her mother while abroad, delegating in-person visits to her sisters",
+        "supersedes": {
+          "id": "pref_027",
+          "fact": "Makes daily check-in visits to her mother’s home before starting work — never skips a day unless traveling"
+        }
+      },
+      {
+        "id": "pref_031",
+        "fact": "Regularly connects with faculty from other departments over coffee after planning meetings to foster interdisciplinary relationships"
+      },
+      {
+        "id": "pref_036",
+        "fact": "Prioritizes weekly community partnership meetings during the first months of the grant rollout — automatically reschedules less critical internal team catch-ups to accommodate these"
+      },
+      {
+        "id": "pref_011",
+        "fact": "Hosts Sunday family dinners each week — screens all personal calls during this time"
+      },
+      {
+        "id": "pref_046",
+        "fact": "Participates in cultural outings organized by her host university, preferring group excursions to solo sightseeing while abroad"
+      }
+    ]
+  },
+  "persona": "A mid-career sociologist with multiple published journal articles"
+}

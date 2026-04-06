@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_88e1ec38",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_032",
+        "fact": "Skips live online workshops when experiencing migraines; now reviews recordings later in short screen-limited increments as recommended",
+        "supersedes": {
+          "id": "pref_005",
+          "fact": "Joins monthly online workshops live — never watches recordings after the fact"
+        }
+      },
+      {
+        "id": "pref_031",
+        "fact": "Replaces morning yoga with gentle walking or light stretching on migraine days — avoids all yoga or strenuous activity when symptoms are present",
+        "supersedes": {
+          "id": "pref_006",
+          "fact": "Starts each workday with a 30-minute yoga and stretching routine — never skips even during deadlines"
+        }
+      },
+      {
+        "id": "pref_017",
+        "fact": "Plays strategy board games with friends monthly; avoids online gaming entirely"
+      },
+      {
+        "id": "pref_014",
+        "fact": "Checks in with his sister twice a week and always volunteers for remote babysitting when she requests"
+      },
+      {
+        "id": "pref_033",
+        "fact": "Limits total daily screen time by setting device shutdown alarms and takes extended mid-day breaks away from all electronics as per doctor’s advice"
+      },
+      {
+        "id": "pref_027",
+        "fact": "Uses the new proprietary platform exclusively for project coordination and team communication — no longer uses Slack or Asana for primary workflow tasks"
+      }
+    ]
+  },
+  "persona": "A 28-year-old data scientist working remotely for a healthcare startup"
+}

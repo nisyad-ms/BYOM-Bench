@@ -12,9 +12,9 @@ natural message writing.
 import re
 from collections.abc import Mapping, Sequence
 
-from byom_bench.client import CONFIG, ContentFilterError, LLMClient, PooledLLMClient
-from byom_bench.prompts import render_prompt
-from byom_bench.schemas import EvaluationTaskSpec
+from ream_bench.client import CONFIG, ContentFilterError, LLMClient, PooledLLMClient
+from ream_bench.prompts import render_prompt
+from ream_bench.schemas import EvaluationTaskSpec
 
 
 class MultiSessionUserSimulator:

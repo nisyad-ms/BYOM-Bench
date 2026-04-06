@@ -1,0 +1,1526 @@
+{
+  "persona": "A recent MBA graduate specializing in business intelligence and analytics",
+  "persona_id": "persona_20260301_223711",
+  "expanded_persona": {
+    "base_persona": "A recent MBA graduate specializing in business intelligence and analytics",
+    "age": 27,
+    "gender": "female",
+    "location": "Chicago, IL",
+    "work_education": [
+      "Graduated from Northwestern University's MBA program with a focus on business analytics three months ago",
+      "Currently a data analyst at a midsize e-commerce startup, working on building dashboards to track sales KPIs",
+      "Received a full-time job offer during a summer internship, but is still considering whether to accept it long-term or pursue consulting",
+      "Spending evenings preparing for her Certified Business Analysis Professional (CBAP) exam to expand qualifications",
+      "Attends monthly meetups for women in tech and analytics in downtown Chicago"
+    ],
+    "health_wellness": [
+      "Runs regularly along Lake Michigan trail, aiming for three morning jogs a week",
+      "Recently developed mild insomnia after a shift to remote work, often struggles to fall asleep before midnight",
+      "Experiencing some work-related eye strain from long hours on screens; started using blue-light glasses",
+      "Mostly vegetarian, but recently exploring pescatarian options to increase protein intake",
+      "Takes yoga classes on Saturdays to help manage stress and maintain flexibility"
+    ],
+    "family_relationships": [
+      "Lives alone in a one-bedroom apartment in Lincoln Park, enjoying independence for the first time",
+      "Close relationship with younger brother, who is finishing undergrad in Philadelphia; they game online together every week",
+      "Parents live in Minneapolis; visits for holidays but keeps in touch mainly via video calls",
+      "Currently single; ended a relationship during her final MBA semester and isn't dating at the moment",
+      "Part of a tight-knit group of friends from her MBA cohort; they have regular weekend brunches and share job leads"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Blocks calendar for deep work in the morning — never schedules meetings before 11am",
+        "Keeps Slack notifications muted except during post-lunch hours — refuses to check messages continuously",
+        "Saves most challenging dashboard tasks for late afternoon, when she feels most focused — never starts them first thing in the morning",
+        "Organizes files and analyses in dedicated project folders — never leaves documents unnamed or in downloads",
+        "Uses handwritten to-do lists daily to track progress — never fully relies on digital apps for task management"
+      ],
+      "health_body": [
+        "Runs three times a week along Lake Michigan trail — never jogs indoors on a treadmill",
+        "Wears blue-light glasses for all screen-based work sessions after 6pm — doesn't wear them during the day",
+        "Chooses pescatarian protein options at home but only eats vegetarian when dining out with friends",
+        "Keeps her Saturday mornings reserved for yoga class — never books other obligations during that time",
+        "Implements a no-screens rule 30 minutes before bed to help with insomnia — never reads emails or messages in bed"
+      ],
+      "social_relationships": [
+        "Plays cooperative online games weekly with her brother — never skips unless traveling or one of them is sick",
+        "Only attends social events if they're planned in advance — avoids spontaneous invites or last-minute plans",
+        "Initiates monthly group chats with her MBA cohort to keep job leads circulating — never lets more than a month go by without checking in",
+        "Reserves video calls with parents for Sunday evenings — never substitutes with text unless it's urgent",
+        "Hosts brunch at her apartment every other month — never dines at the same restaurant twice in a row for brunch outings"
+      ],
+      "leisure_hobbies": [
+        "Prefers independent travel focused on art museums and local coffee shops — avoids large group tours or package vacations",
+        "Never watches reality TV — only streams documentaries or prestige dramas when relaxing at home",
+        "Dedicates one evening a week to experimenting with new pescatarian recipes — never repeats the same dish in a month",
+        "Attends live author talks or book signings whenever possible — never joins virtual book clubs",
+        "Spends Sunday afternoons reading physical books in local parks — avoids e-books or audiobooks for leisure"
+      ],
+      "daily_routines": [
+        "Prepacks healthy lunches every night to save time in the morning — never buys lunch during the workweek",
+        "Starts every morning with a ten-minute guided meditation — never skips, even on weekends",
+        "Shops for groceries late Friday evenings to avoid crowds — never goes on Saturdays",
+        "Limits social media use to 15 minutes per day — never allows push notifications",
+        "Organizes weekly errands and appointments in her planner every Sunday night — never leaves scheduling to chance"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Company leadership announced a sudden merger with a larger retail tech firm, resulting in a restructuring of teams and an immediate mandate for all data analysts to report to a new director and participate in cross-functional project planning sessions every week.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Prepares personal talking points and questions in advance for weekly cross-functional meetings to ensure her perspective is considered, since she is now on a larger, more complex team",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Uses an afternoon walk after project meetings to decompress and reset focus before returning to analytical tasks",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Blocks calendar for deep work in the morning — never schedules meetings before 11am"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Now participates in mandatory cross-functional project planning sessions scheduled in the mornings — no longer refuses meetings before 11am",
+              "domain": "work_habits"
+            },
+            "reason": "Due to the merger, there is an immediate mandate for all data analysts to attend weekly project planning meetings at times set by cross-functional teams, including mornings. She cannot block her morning hours for deep work anymore."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, things just got real at work — my startup was merged with this much bigger retail tech firm and now our whole analyst team is reporting to a new director. We have to do cross-functional project planning every week, and the timing is...not ideal. I used to protect my mornings for deep work, but now I'm being pulled into meetings first thing. Any advice on staying productive when my schedule isn't mine anymore?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—especially losing your protected morning time. With meetings now intruding on your focused hours, one approach is to move your deep work to whatever blocks you still control, maybe later in the day. Are there any parts of your afternoons you can still reserve for challenging tasks, or is the calendar filling up across the board?"
+        },
+        {
+          "role": "user",
+          "content": "Afternoons are a little safer, thankfully—most meetings so far are scheduled in the morning. I’m actually saving my more complex dashboard work for late afternoon now. But I’m finding it hard to shift gears back into analytics after those planning sessions. The meetings can be mentally draining, and I have trouble re-focusing."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—back-to-back context switches are tough. Have you tried blocking a short reset period after the meetings? Sometimes a quick walk or another break helps decompress and transition. Or does your new schedule make that tricky?"
+        },
+        {
+          "role": "user",
+          "content": "I started taking a short walk outside after the project meetings. It’s actually become kind of essential—just to decompress and reset before I dive into the technical work again. I never did this before, but it helps clear my head after all that cross-functional chatter."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid addition! Those afternoon walks are great for restoring focus—and you get some sunlight, which is nice after staring at screens all day. On the meeting front, are you able to contribute meaningfully, or do you feel lost in the shuffle of the bigger team? Sometimes prepping talking points before meetings can help anchor your perspective."
+        },
+        {
+          "role": "user",
+          "content": "Actually, that's exactly what I've started doing. I write out my main points and a few questions the night before each planning session. With everything moving so fast and so many new faces, I just want to make sure my perspective is actually heard. It's a little extra prep, but it makes the meeting itself less overwhelming."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart strategy—coming prepared gives you more agency, especially in a bigger cross-functional setting. Have you noticed your direct work shifting as a result of these meetings? Are your dashboard projects getting more complex demands, or is it mostly just more voices in the mix?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly more voices, though the KPIs are evolving a bit. I’m spending more time clarifying requirements, which makes the prep all the more important. To your earlier question, since the merger, my mornings are now booked with project meetings and I can’t block them for deep work like I used to."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for explaining how that’s changed. It’s tough to have your prime work hours repurposed, but your strategies—moving deep work to afternoons, prepping for meetings, decompression walks—sound like you’re adapting well. Would you like support structuring your to-do lists or time blocks to align with your new routine?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I think I just need to tweak my planner a bit. With mornings given over to meetings, I’ve started batching analysis work between 3 and 5pm, plus those focused prep sessions for the cross-team meetings. What I really want is a way to keep earlier deep work habits alive—just, you know, somewhere else in my day."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re already on the right track by batching analysis in the afternoons. You might also try a short midday block for solo prep or quiet work, even if it’s not as long as your old morning sessions. Pairing it with your afternoon walk could create a mini-routine for regaining focus. Would that fit with how the meetings are scheduled?"
+        },
+        {
+          "role": "user",
+          "content": "It might. The cross-functional meetings usually end by 11:30 or noon, so I could sandwich a quick prep block right after before grabbing lunch—then walk later in the afternoon. I’ll test that next week and see if it helps. Thanks, this actually gives me some hope for reclaiming parts of my day."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear it! As your role expands, little structure tweaks can make a big difference. If you run into more changes—like new tools, evolving KPIs, or shifting meeting times—just ping me and we can brainstorm adjustments. Good luck with the new cross-functional reality!"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Offered a spot in an exclusive women-in-tech leadership accelerator program after being nominated by her manager, requiring participation in intensive workshops and mentorship sessions over the next six months alongside her current job responsibilities.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Prepares specific questions and reflections ahead of each accelerator mentorship session and debriefs key takeaways in a private journal afterward",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Limits non-essential social events to twice a month during the accelerator to preserve time and energy for program work and self-study",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Keeps her Saturday mornings reserved for yoga class — never books other obligations during that time"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Occasionally reschedules Saturday yoga class to accommodate accelerator program workshops — prioritizes program commitments when there is a conflict",
+              "domain": "health_body"
+            },
+            "reason": "The accelerator program includes intensive weekend workshops that sometimes overlap with her yoga time. She now chooses to attend leadership sessions when conflicts arise and makes up yoga at other times."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got offered a spot in a women-in-tech leadership accelerator program—my manager nominated me, and I accepted. It's apparently pretty intense, with workshops and mentorship sessions running for six months alongside my regular job. I'm excited, but a bit overwhelmed about how to balance everything. Could you help me figure out how to integrate the accelerator into my routine without burning out?"
+        },
+        {
+          "role": "assistant",
+          "content": "First, congratulations! That's a huge opportunity. Balancing job responsibilities and intensive accelerator work is definitely a challenge. To get started, can you tell me a bit about your current weekly routine? What does your schedule look like right now, and are there any fixed activities (work, wellness, social) you prioritize?"
+        },
+        {
+          "role": "user",
+          "content": "Sure. My mornings are pretty structured—I block them off for deep work and avoid meetings before 11am, and I jog along Lake Michigan three times a week. Saturday mornings are usually reserved for yoga class, but the accelerator has some weekend workshops that occasionally overlap. I’ve started rescheduling yoga to other times when that happens, so I’m prioritizing program sessions if there’s a conflict."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Shifting yoga shows you're committed to the accelerator, but it's smart to keep up your wellness routine wherever possible. Since workshops might change your weekends, do you have strategies for preserving your regular jogs, or is that flexible too? Also, are the workshops mostly mornings or afternoons—have you gotten a sense of their schedule yet?"
+        },
+        {
+          "role": "user",
+          "content": "The workshop calendar is pretty varied, but mostly late mornings or midday on Saturdays and occasional evenings midweek. I've got some flexibility with my jogging since I do those in the early mornings, so those are still manageable unless there’s a rare early Saturday session. My biggest concern is maintaining enough downtime and focus for self-study—I'm also prepping for the CBAP exam in the evenings. With everything ramping up, I’m debating whether I need to scale back on my social calendar."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like your day is getting pretty full! Balancing accelerator work, CBAP prep, and your job will definitely require some strategic scheduling. Scaling back on social events is one way to recover time and energy. Are your social meetups usually frequent, or do you think customizing your attendance would help? For non-essential events, maybe you could limit them so you don’t overcommit."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I used to attend every women-in-tech meetup and brunch my friends hosted, but now I'm trying to limit non-essential social events to twice a month while the accelerator is going. It’s actually helped me carve out more energy for program work and exam prep. I still keep those group chats active, but in-person stuff isn’t a priority right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid strategy—maintaining group chats keeps you connected without draining your time. With fewer social obligations, how are you preparing for accelerator sessions themselves? Some people find it useful to set intentions before workshops or mentorship meetings and reflect afterwards."
+        },
+        {
+          "role": "user",
+          "content": "I’ve actually started prepping specific questions and reflections ahead of each mentorship session—I make a list in my notebook with things I want to discuss and review. Afterward, I debrief key takeaways in a private journal. It keeps me focused and helps me track my progress, especially since juggling multiple commitments makes it easy to forget what I learned."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a fantastic approach! Actively preparing and debriefing will deepen your experience and make the program more valuable. Since you’re rescheduling yoga, balancing social, and prepping for each session, are there any other routines you’re worried about disrupting? Or do you feel you’ve got a handle on most of your priorities?"
+        },
+        {
+          "role": "user",
+          "content": "I feel pretty good so far—the biggest changes are juggling yoga times when workshops conflict, prepping for mentorships, and limiting social events. Otherwise, I’m keeping my usual work blocks, meditation, and meal prep routines. The main thing I’d like help with is maintaining focus and rest with so much going on, especially since insomnia has been creeping in since my shift to remote work."
+        },
+        {
+          "role": "assistant",
+          "content": "Sleep issues are tough, especially with high demands on your time and attention. Sticking to your no-screens-before-bed rule is a strong foundation—but as your schedule tightens, consider adding gentle relaxation routines (like reading or light stretching) in the evenings. If you want, I can suggest some techniques to help wind down before sleep, even after a busy accelerator day?"
+        },
+        {
+          "role": "user",
+          "content": "I’d appreciate that! I already meditate every morning, but maybe I could add a short relaxation routine before bed. Reading in the park on Sundays helps, but winding down on busy evenings is tricky. Any evidence-based suggestions for evening wind-down routines that pair well with my no-screens policy?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. With your no-screens policy, some options include gentle yoga stretches, journaling in your notebook (which you already do after mentorship sessions), or reading a physical book. Progressive muscle relaxation or guided breathing (without a screen, using audio) can also be helpful. Creating a consistent cue—like dimming lights or using a favorite scent—signals your body it’s time to rest. Would you like me to help you build a short evening wind-down checklist?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, a checklist would be great. I like the idea of pairing journaling with light stretching and maybe a short breathing exercise before bed—it's simple and fits the routines I'm already used to. Thanks for helping me integrate these changes. I think I've got the main adjustments covered for now."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed persistent wrist and forearm pain, diagnosed by her physician as early signs of repetitive strain injury, leading to a medical directive to limit keyboard use outside of work hours and implement daily physical therapy exercises.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Performs physician-recommended wrist and forearm physical therapy exercises daily after work, as part of her evening routine",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Uses handwritten to-do lists daily to track progress — never fully relies on digital apps for task management"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Uses voice memos and digital task manager apps for daily to-do tracking — avoids handwritten lists due to wrist strain",
+              "domain": "work_habits"
+            },
+            "reason": "Her physician advised limiting keyboard use outside of work due to repetitive strain injury. Handwriting lists would also aggravate her wrist and forearm pain, so she now relies on voice-based and digital methods for task tracking."
+          },
+          {
+            "from": {
+              "id": "pref_018",
+              "fact": "Dedicates one evening a week to experimenting with new pescatarian recipes — never repeats the same dish in a month"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Streams new pescatarian cooking tutorials and bookmarks recipes, but avoids hands-on cooking experiments due to wrist pain",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Preparing and chopping ingredients for new recipes is physically intensive and exacerbates her repetitive strain injury. She now explores new recipes passively by watching tutorials but avoids actual cooking experiments for now."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I got diagnosed with early repetitive strain injury last week—wrist and forearm pain that's apparently from too much typing and laptop work. My doctor is pretty strict about limiting keyboard use outside of work and prescribed daily physical therapy stretches. I'm anxious because my usual routines—like handwritten lists and cooking experiments—were how I managed stress and stayed productive. Any suggestions for adapting without feeling totally behind?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry you're dealing with that—it’s so tough when your go-to routines suddenly aren’t possible. For task management, have you tried digital task apps or voice-based tools, or do you prefer sticking with pen and paper?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I had to drop handwritten lists. Writing hurts nearly as much as typing now. I'm using voice memos and digital task manager apps for my daily to-dos. It's weird relying on tech for something I've always done by hand, but the pain makes it non-negotiable."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes total sense—voice memos are actually pretty handy for capturing quick thoughts, and digital apps can sync across devices. Which task manager are you using? Is it helping you stay as organized as paper lists did?"
+        },
+        {
+          "role": "user",
+          "content": "I’m trying Todoist because it syncs well on my phone and laptop, and voice input is pretty seamless. The hardest part has been resisting the urge to edit or add detail constantly, since more typing equals more pain. I guess the digital system works, but I still miss scribbling lists and crossing things off at my desk."
+        },
+        {
+          "role": "assistant",
+          "content": "It can be a tough adjustment, especially when the tactile part of list-making is what helps you focus. If using Todoist, maybe setting up simple morning and evening check-ins with voice commands could limit manual edits. On the stress management front, did you have to tweak other routines, like your weekly cooking experiments, or are those still doable?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, those had to change too. Chopping and prepping ingredients is exactly what aggravates my wrist, so I stopped hands-on cooking experiments for now. Instead, I stream new pescatarian cooking tutorials and bookmark recipes, but I avoid actually making them myself until my pain improves. It's frustrating not to try the recipes, but watching is less risky."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart workaround—there are so many great tutorials out there, and you’ll have a whole arsenal of recipes ready for when you’re healed. Just curious, are you able to stick with your other wellness routines, like running, yoga, or meditation, or did those have to shift as well?"
+        },
+        {
+          "role": "user",
+          "content": "Luckily, running and yoga are still fine—no wrist strain with those. The doctor actually said yoga might help with flexibility and recovery. Yoga Saturdays are non-negotiable, and running along the Lake Michigan trail is great for stress. I also added daily physical therapy exercises for my wrist and forearm right after work. It’s become a standard part of my evening routine."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great to hear. Making PT exercises a part of your evening routine is really proactive. Are you tracking those exercises in your digital task manager as well, or does your routine feel solid enough that you don’t need reminders?"
+        },
+        {
+          "role": "user",
+          "content": "I do add them to Todoist, but mostly as a recurring reminder. It’s become so habitual that I rarely miss it. Honestly, the hardest part is resisting all the stuff I used to do to decompress, but I’m learning to adapt. Thanks for helping me think this through—it’s less overwhelming now."
+        },
+        {
+          "role": "assistant",
+          "content": "Happy to help! You’re actually handling the transition really thoughtfully—voice memos, streaming tutorials, PT built in, and sticking with your core routines. If you ever need suggestions for hands-free recipe exploration or more stress management ideas that avoid wrist strain, just ask. Do you want tips for managing any other parts of your routine, or does this cover the main challenges?"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger brother accepted a summer internship in Chicago and asked to stay with her for the duration, moving into her apartment temporarily while he completes the program.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_036",
+            "fact": "Shops for groceries in larger quantities and with her brother’s input, accommodating his preferences and appetite while he lives with her",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_037",
+            "fact": "Prepares shared dinners at home with her brother on weeknights, incorporating his favorite pescatarian or vegetarian dishes",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Plays cooperative online games weekly with her brother — never skips unless traveling or one of them is sick"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Plays split-screen local co-op games in person with her brother weekly while he stays with her — rarely plays online together during this time",
+              "domain": "social_relationships"
+            },
+            "reason": "Her brother will be physically present for the summer internship, so their gaming time will shift from purely online to in-person local co-op, reflecting the opportunity to play together on the same device."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big update: My younger brother just moved into my apartment for the summer. He got a Chicago internship and asked to stay with me. I'm excited but honestly a little overwhelmed — it's been a while since I've had anyone else in my space. Can you help me figure out some ways to balance my routines and work with him here? Especially meal planning and keeping my evenings productive for CBAP prep."
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats to your brother! That’s a big shift. Balancing personal routines when someone else is around can be tricky, especially for meal planning and exam prep. Do you foresee needing to adapt your usual meal schedule or workspace layout? And how do you typically prep for the CBAP exam—quiet study or some interactive methods?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, definitely adapting meals. Until now, I prepacked lunches solo and stuck to mostly vegetarian dinners, but he’s pescatarian and has a bigger appetite. We want to cook together during the week, try more recipes—evenings for shared dinners are on my mind. As for CBAP prep, I need quiet, so I’ll probably block out time in the bedroom while he’s unwinding elsewhere."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid plan. For dinners, have you thought about batch-cooking larger portions and planning a weekly menu with your brother? That way, both of your protein preferences are covered and you save time on weeknights. Maybe review recipes together on Sunday to prep a shopping list. For exam prep, do you usually use digital resources or paper notes? Is your bedroom a good space for focused study, or do you need to set up extra quiet zones?"
+        },
+        {
+          "role": "user",
+          "content": "I like the batch-cooking idea—especially since I’ll be shopping for groceries in bigger quantities now and factoring in his favorites and input. We’re planning to do one big run Friday evening and split the haul. I lean toward paper notes for CBAP, keeping the digital stuff to daytime hours so I avoid screens before bed. My desk's in my bedroom, so closing the door will be my go-to if noise is an issue."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move with the grocery shopping—late Friday runs should still avoid crowds even with the bigger haul. Since you’re prepping for an exam and cooking more together, maybe consider a shared meal calendar posted somewhere you both see it. That way, it’s easier to coordinate kitchen time and minimize conflicts. For your CBAP study, letting your brother know your blocked study periods might help him plan his own activities, so he doesn’t accidentally disrupt your focus. Do you plan to keep your early morning runs and yoga routines the same?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ll stick to my runs along Lake Michigan and my Saturday yoga class—those are non-negotiable for stress management. He’s actually interested in joining for a jog or two, which is fine as long as I keep my solo days. One thing we've started is playing split-screen local co-op games in the evenings together, instead of online gaming like we used to. Kind of nice to do it in person now, but I have to remind myself to log off by 10pm so I get enough sleep."
+        },
+        {
+          "role": "assistant",
+          "content": "Playing games in person sounds like a great way to unwind and connect after work. Transitioning from online to local co-op probably makes evenings more fun but also could risk encroaching on your wind-down time. Maybe set a weekly schedule: planned gaming nights versus nights reserved for CBAP prep, so you can stick to your sleep goals. Are any of his favorite dishes a challenge for your usual pescatarian meal repertoire, or are you finding good overlap?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly overlap! He likes a lot of the same seafood dishes, so we’ve been experimenting with new recipes on our shared dinner nights. I’m keeping vegetarian for brunches or dining out with friends, but at home, I loosen up for our evening meals together. It’s actually made the meal rotation more interesting. And yeah, prepping a weekly schedule for gaming versus study is a good idea—I'll talk to him about that."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a win-win: more varied meals and quality time, plus you’re preserving your own boundaries in social settings. For the grocery list, maybe use a shared Google Doc or a paper list that you both add to during the week. As your preferences are evolving, is there anything else about your daily routine that’s been disrupted—like your physical book afternoons or organizational habits?"
+        },
+        {
+          "role": "user",
+          "content": "Not too disrupted so far—I still do Sunday afternoon reading in local parks solo, and my handwritten to-do lists are going strong. The biggest change is definitely shopping and meal prep habits; for the first time, I have to factor in someone else's preferences and appetite. Also, preparing shared dinners on weeknights is new for me—I used to just cook for myself. But I think it’s adding a positive rhythm to my evenings."
+        },
+        {
+          "role": "assistant",
+          "content": "I love that you’re embracing these changes and finding new rhythms. Having someone around for meal prep brings a fresh energy—especially with experimenting with recipes and splitting tasks. One tip: keep some quick backup meals ready for those busy dashboard-build days, so you both have options even when you’re tired. Other than meal planning and gaming, is there anything else you’d like help with as you settle into sharing your space for the summer?"
+        },
+        {
+          "role": "user",
+          "content": "I think the main thing is making sure I keep my work deep-focus blocks and not let the social element spill into mornings. He sleeps in, so that’s working out. We’re both pretty good at respecting each other’s calendar and planner routines. I’ll probably also tweak my shopping lists to prep snacks for his internship days, since he’s not used to this kind of work schedule."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you've got a thoughtful approach! Keeping your morning blocks undisturbed and prepping snacks for him show you’re both proactive and considerate. If you need ideas for easy pescatarian lunches or stress-managing snacks, just ask. And if anything about the routine slips out of sync in the coming weeks, we can troubleshoot together. Good luck—enjoy the summer, and congrats again to your brother!"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her parents announced they are retiring earlier than planned and intend to spend extended periods visiting both her and her brother over the coming year, starting with a month-long stay at her apartment in Chicago.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Plans and cooks pescatarian dinners with her parents during their stay, adding one family recipe night per week at their request",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Temporarily gives her parents use of her bedroom and moves to the living room for the duration of their Chicago visit, prioritizing family comfort over her own routine",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Limits hosting non-family guests or brunches while parents are in residence and prioritizes shared meals with them instead",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Reserves video calls with parents for Sunday evenings — never substitutes with text unless it's urgent"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Spends daily in-person time with her parents during their extended stays, replacing weekly video calls — only sets up video calls when they are traveling or not in Chicago",
+              "domain": "social_relationships"
+            },
+            "reason": "Because her parents will be living with her for a month (and visiting regularly thereafter), it no longer makes sense to schedule weekly video calls when she can spend in-person time daily. Video calls are now reserved for when her parents are away."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my parents just announced they're retiring early and plan to spend a month at my place in Chicago, starting next week. I'm excited but pretty nervous about how it's going to affect my routines—especially work, since it's such a small apartment and I usually need quiet for analysis. Any ideas for managing the space and boundaries, both for focus and family time?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big change! It sounds like you'll need to balance your deep work needs with spending more time together. For focus, have you considered noise-cancelling headphones or setting up a \"working hours\" sign in your space (even if it's just a corner of the living room)? And for family time, do you anticipate having regular shared meals or activities during their stay?"
+        },
+        {
+          "role": "user",
+          "content": "Headphones are a good call—I usually block my mornings for deep work and don't take meetings before 11, so I guess I'll need to be more explicit about that with my parents. As for meals, they're really excited to cook together, which is new for me. We're planning on pescatarian dinners while they're here, plus one family recipe night a week, at their request. Should I pre-plan menus or keep it flexible?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a fun opportunity to try new recipes, and family recipe night could be a nice anchor! If you prefer organized routines, maybe draft a weekly dinner plan and leave one or two flexible nights for spontaneous cooking or takeout. Does having a plan help you feel less stressed, or do you enjoy some culinary surprises?"
+        },
+        {
+          "role": "user",
+          "content": "I actually dedicate one evening a week to experimenting with new pescatarian recipes, but I never repeat a dish in the same month—so planning helps me keep track. Family recipe night will make that a bit more predictable, but it's worth it. The main thing is making sure it doesn't disrupt my work dinner schedule too much. And since my parents are staying in my bedroom, I'll be in the living room for the month, which means less private space overall."
+        },
+        {
+          "role": "assistant",
+          "content": "Giving up your bedroom is a generous move—will that affect your nighttime routine, like meditation or managing your insomnia? And for the shared dinners, maybe you can prep ingredients ahead on Friday evenings like you do with lunch, so you limit weeknight stress. Are you planning to adjust your evening activities, or will your family join your usual routines?"
+        },
+        {
+          "role": "user",
+          "content": "I'm definitely keeping my ten-minute morning meditation—never skip it, regardless of company. For bedtime, I still plan on following my no-screens rule before sleep, but I'll have to adjust since the living room doesn't feel as private. As for dinners, prepping in advance makes sense, especially on Fridays, since that's when I grocery shop to avoid crowds. I'll loop my parents into my prepping routine so it's smoother."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call incorporating them into your prep routine—it'll also help them settle in and find their way around the kitchen. Given the limited space, are you planning to pause your usual hosting for brunches or social events while they're staying with you, or will you try to fit those in as well?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I'm limiting hosting non-family guests or brunches during their stay. Usually I brunch with my MBA friends every other month, but with my parents here, I'll prioritize meals with them instead. It's temporary, so everyone understands, and there's less pressure for social scheduling."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach—it can be overwhelming to try to keep everyone happy when space and energy are limited. One thing to consider: now that you’re spending daily in-person time with your parents, will you keep your old weekly video calls with them, or switch to something else to keep in touch after they leave?"
+        },
+        {
+          "role": "user",
+          "content": "I used to reserve Sunday video calls with them, but there's no point while they're actually here in Chicago. I'll only set up video calls when they’re traveling or not in town; during their extended stays, daily in-person time replaces that routine."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—face-to-face is much better when possible. Are there any other routines you’re concerned about, like your running schedule or yoga classes, given the new household setup?"
+        },
+        {
+          "role": "user",
+          "content": "I still plan to run three times a week along Lake Michigan trail and attend yoga on Saturdays—those are non-negotiable. I’ll make sure my parents know those are my self-care times and not to schedule activities over them. The main changes are really hosting, space use, and the daily dinner routines."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a thoughtful balance. To recap, you’re giving your parents your bedroom and moving to the living room, prioritizing shared meals (especially pescatarian dinners and family recipe nights), pausing brunch hosting, and swapping weekly video calls for daily in-person time. With prep and boundaries in place, it seems manageable. Is there anything else you'd like help planning, maybe around work habits or exam study with the new dynamic?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, yes—I'm prepping for the CBAP exam in the evenings, and I need a quiet block for that. I'll just let my parents know those hours are off-limits for interruptions, same as my morning analytics work. Thanks for helping me think through all this—it feels much more doable now."
+        },
+        {
+          "role": "assistant",
+          "content": "Happy to help! Setting clear boundaries for study and deep work, plus involving your parents in prep routines, should make their stay enjoyable for everyone. If you need new pescatarian recipe ideas or want advice on maintaining focus, just ask. Good luck with the CBAP and family time!"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received an urgent request from company leadership to relocate temporarily to the firm's Boston office for a four-month project supporting the integration of newly acquired teams, with travel arrangements and housing provided by the company.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Joins weekly post-work team dinners with Boston colleagues to foster connections and learn about the newly acquired teams during the integration project",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Explores Boston’s art museums and local coffee shops on weekends, seeking solo experiences in new neighborhoods",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_045",
+            "fact": "Schedules Sunday video calls with her Chicago MBA cohort to stay connected and exchange job leads while temporarily away",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Runs three times a week along Lake Michigan trail — never jogs indoors on a treadmill"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Jogging three times a week on Boston’s Charles River Esplanade or nearby urban routes — avoids indoor treadmills but no longer runs specifically on the Lake Michigan trail",
+              "domain": "health_body"
+            },
+            "reason": "She will be living temporarily in Boston for four months, making her Lake Michigan routine impossible. She adapts by seeking similar outdoor paths in Boston rather than indoor treadmills."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_037",
+            "fact": "Prepares shared dinners at home with her brother on weeknights, incorporating his favorite pescatarian or vegetarian dishes",
+            "domain": "daily_routines",
+            "reason": "Her four-month relocation to Boston for work means she won’t be physically living with her brother in Chicago, making their shared weeknight dinner tradition impossible."
+          },
+          {
+            "id": "pref_035",
+            "fact": "Plays split-screen local co-op games in person with her brother weekly while he stays with her — rarely plays online together during this time",
+            "domain": "social_relationships",
+            "reason": "Relocating to Boston for the entire project duration means she can’t play in-person games with her brother in Chicago; their living arrangement is paused."
+          },
+          {
+            "id": "pref_036",
+            "fact": "Shops for groceries in larger quantities and with her brother’s input, accommodating his preferences and appetite while he lives with her",
+            "domain": "daily_routines",
+            "reason": "Temporarily moving to Boston makes it impossible to shop with her brother or accommodate his preferences in grocery planning."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help figuring out my routines. Leadership just told me I need to relocate to Boston for four months—a pretty urgent integration project for our newly acquired teams. They'll take care of travel and housing, but I start in just two weeks and I'm trying to sort out what parts of my daily and weekly rhythms can actually survive this move, and what needs rethinking. What's the best way to adapt, especially since my Chicago routines are pretty locked in?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift in a tight timeframe! Will you be working in-office most days or is it still remote/hybrid? It can help to compartmentalize routines—what’s mission critical (like deep work slots or wellness anchors), vs. what’s flexible. Is your current daily structure something you want to keep as much as possible, or are you open to new approaches that fit Boston’s pace?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll be onsite most days—partly to meet the new teams, partly because leadership wants high visibility. I really value having blocked morning deep work (never meetings before 11am, even in Chicago), and handwritten to-do lists, so those are coming with me. But the bigger challenge is my wellness habits. For example, I usually run three times a week along the Lake Michigan trail—never jog indoors. That’s obviously not possible in Boston, so I’m thinking maybe I could try the Charles River Esplanade instead? The route needs to be outdoors and urban, definitely avoiding treadmills."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a perfect adaptation—Charles River Esplanade is a favorite for Boston runners and hits the same outdoor, urban vibe. You’ll likely notice a different energy, but it’s equally scenic. Are there other health routines you’d like to preserve in Boston, or ones that need revisiting based on a new environment or schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Saturday yoga is non-negotiable—I already found a studio that fits my schedule near Back Bay. On the food front, I used to mostly prepare vegetarian meals, but I’ve recently started exploring pescatarian options at home. I’ll need to find local markets for fish, but restaurant-wise, I stick with vegetarian with friends. One thing to note: when my brother was living with me in Chicago, we’d do shared weeknight dinners and co-op games in person. That’s off the table now since I’ll be in Boston—so I guess I need some solo routines for evenings."
+        },
+        {
+          "role": "assistant",
+          "content": "Shifting to solo evenings can actually open up new possibilities, like exploring Boston’s food scene or finding local events. For pescatarian meals, Boston has a decent selection of seafood markets—do you want recommendations near your neighborhood? And regarding your gaming tradition, will you be keeping up weekly online sessions with your brother, or does his schedule make that tough while you’re away?"
+        },
+        {
+          "role": "user",
+          "content": "We’re sticking with weekly online sessions—it's a must, unless one of us is traveling or sick. The local split-screen gaming is on pause since we're not living together for now, and I’ll be shopping for groceries solo, not in bulk or accommodating his preferences. As far as food markets, yes—the closer to my new place the better. And I’d also like ideas for low-key evening activities that aren’t too social, since I prefer planned events and actively avoid anything spontaneous."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—I’ll dig up nearby seafood markets and some reliably vegetarian restaurants for your outings with friends. For evenings, Boston has some excellent art museums with late hours, plus independent coffee shops that are perfect for solo visits. Does exploring those sound appealing? Or are you more interested in skill-building or certification prep during quiet evenings?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely museums and coffee shops. Solo weekends exploring new neighborhoods are my thing, and I never go for group tours or packaged experiences. Certification prep is still important—I spend evenings on CBAP study—but I do want a balance. I also plan to join weekly post-work team dinners with Boston colleagues, mostly to help forge connections and learn about the newly acquired teams. That’s new for me—I never did regular team dinners in Chicago."
+        },
+        {
+          "role": "assistant",
+          "content": "Post-work team dinners can really help integration, and a steady cadence keeps things low-pressure—plus Boston’s got plenty of spots to try. For your weekend explorations, I can recommend lesser-known museums and some curated coffee itineraries in different neighborhoods. As for CBAP prep, do you need tactics for staying on track while shifting locations, or are your routines already working?"
+        },
+        {
+          "role": "user",
+          "content": "My CBAP prep is pretty locked in—I carve out that study time every evening. The bigger shift is social: I used to host brunches for my Chicago MBA cohort or join them out, but now I’ll need to schedule Sunday video calls with them while I’m in Boston. That way we keep sharing job leads and don’t lose touch. It’s important to me, since I never let more than a month go by without a check-in. So, brunch hosting and Chicago outings are paused for now, but video calls keep us connected."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move—Sunday video calls will bridge that gap nicely, especially for keeping cohorts in the loop and swapping leads. Out of curiosity, will you have any family routines you want to maintain from afar, or does this move mostly impact friend connections and your brother?"
+        },
+        {
+          "role": "user",
+          "content": "It’s mainly friends and my brother affected. The weeknight dinner and split-screen gaming traditions are dropped for now, but my video calls with parents are unchanged—they’re always Sunday evenings, unless something urgent comes up. The biggest adjustment is finding new routines for solo time in Boston, plus keeping those planned connections back home. I’d love a list of the best art museums, independent coffee shops, and seafood markets in Boston—and any tips for joining local tech or analytics events."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! I’ll pull together Boston’s top art museums, under-the-radar coffee shops, and seafood markets close to Back Bay. There are also monthly women-in-tech/analytics meetups—would you like details or introductions when you settle in? These events tend to be well-organized, perfect for your preference to avoid last-minute surprises."
+        },
+        {
+          "role": "user",
+          "content": "Yes, details on those meetups would be great—I only attend events that are planned ahead and fit my calendar, so that’s perfect. Thanks for all this. I feel clearer about what I need to adjust and what I can keep stable, especially since my preferences changed a lot with the move."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "During a routine physical, bloodwork revealed significantly elevated cholesterol levels, and her doctor prescribed a strict dietary plan cutting most dairy and fried foods while instructing her to increase cardiovascular activity beyond her current running routine.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_048",
+            "fact": "Checks nutritional labels and tracks daily food choices in a heart-health app before every meal to ensure compliance with her prescribed diet",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_049",
+            "fact": "Follows dedicated online support groups for women managing high cholesterol and shares progress weekly, seeking accountability and community advice",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Chooses pescatarian protein options at home but only eats vegetarian when dining out with friends"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Strictly avoids dairy and fried foods both at home and when dining out, selecting only heart-healthy pescatarian and vegetarian meals regardless of social setting",
+              "domain": "health_body"
+            },
+            "reason": "Due to her elevated cholesterol and doctor's strict dietary mandate, she cannot be flexible with her food choices based on location or company. Dairy and fried foods must be eliminated everywhere, and she must select meals based on strict nutritional criteria rather than social preference."
+          },
+          {
+            "from": {
+              "id": "pref_042",
+              "fact": "Jogging three times a week on Boston’s Charles River Esplanade or nearby urban routes — avoids indoor treadmills but no longer runs specifically on the Lake Michigan trail"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Increases cardiovascular activity by adding two additional workouts per week, such as cycling, HIIT classes, or brisk walks, on top of the usual jogging routine",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor instructed her to further increase cardiovascular activity beyond her current running schedule. She adapts by supplementing her jogs with new forms of exercise to meet this requirement."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_033",
+            "fact": "Streams new pescatarian cooking tutorials and bookmarks recipes, but avoids hands-on cooking experiments due to wrist pain",
+            "domain": "leisure_hobbies",
+            "reason": "She must now strictly avoid certain recipes that feature dairy or fried foods, and her cooking interests are governed by medical necessity, not experimentation or streaming tutorial variety."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I got hit with a curveball at my routine checkup last week—my cholesterol came back pretty high. Doctor's orders are strict: basically, no dairy, no fried foods, and I have to ramp up cardio beyond just running. I'm trying not to let it mess with my work or social rhythms, but honestly, I'm feeling a bit lost. Where would you start with making sustainable changes?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really overwhelming—especially since so much of your routine already prioritizes health. On the cardio front, are you thinking of expanding your running schedule, or trying new activities altogether? And food-wise, do you have any go-to meals that might fit the new restrictions, or are you totally starting from scratch?"
+        },
+        {
+          "role": "user",
+          "content": "I can stick with my morning jogs since that helps me unplug, but I have to tack on two more cardio workouts, according to my doc. Tried a HIIT class and a long bike ride over the weekend, which wasn't bad. As for meals, it's a bit chaotic because I used to pick pescatarian options at home, but would go fully vegetarian with friends. Now, I have to strictly avoid dairy and fried foods everywhere—social or solo. It's not just a home thing anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Nice job on branching out with the HIIT and cycling! Adding intensity and frequency should really make a difference. For the food part, sticking to heart-healthy pescatarian and vegetarian dishes all the time is definitely a shift. How are your friends reacting, or have you had to navigate any tricky dining-out conversations yet?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I haven't had to explain much yet because I've only eaten out with friends once since the news. I just ordered a salad with grilled salmon—no cheese or creamy dressing. I did have to push back a bit because someone wanted to split fried appetizers, but I stuck to the plan. The hardest part is remembering to check every menu and label. I'm tracking all my food choices in a heart-health app now, before every meal. It's kind of tedious but seems necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "That's really proactive—and honestly, tracking is a smart move. Are you looking for app suggestions, or have you found one that works for you? Also, does the new diet affect your prepping habits with work lunches or dinners, or are you able to adapt your usual recipes?"
+        },
+        {
+          "role": "user",
+          "content": "I've settled on an app my doctor recommended—it's simple and helps spot sneaky cholesterol triggers. As for meal prep, it's definitely changed. I always prepack healthy lunches, but now I'm double-checking every ingredient, scanning labels each night before sealing containers. Also, I dropped my usual habit of streaming new pescatarian cooking tutorials and recipe experiments because my wrist started acting up, and frankly, now I can't play as freely with recipes. I need to follow strict nutritional criteria instead."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—sometimes adapting means cutting back on the fun parts, unfortunately. Wrist pain on top of new restrictions sounds frustrating. Are you mostly sticking with simple meals, or rotating a few safe staples for now? And for cardio, do the HIIT classes and cycling fit well into your schedule, or are you having to shift other routines around?"
+        },
+        {
+          "role": "user",
+          "content": "I'm mostly keeping it simple—lots of veggie bowls with quinoa, lentils, baked fish, and steamed greens. I batch-cook so I don't repeat the same thing too often, but I can't experiment like before. For workouts, I'm keeping my three morning runs, then squeezing in HIIT or cycling on two evenings, or brisk walks if I need something lower-impact. It means less chill time, but so far, Saturday yoga is safe. I joined an online support group for women managing high cholesterol—sharing progress weekly helps with accountability and new recipe ideas."
+        },
+        {
+          "role": "assistant",
+          "content": "That accountability sounds invaluable—not just for motivation, but for practical tips. Sharing your progress with people facing similar challenges could make everything less isolating. Are the support group’s suggestions helpful so far? And anything from their experience you're thinking about trying—either regarding meal prep or exercise?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, it's been surprisingly useful. They've shared some dairy-free substitutions and creative ways to make baked dishes flavorful without frying. I also learned about a local indoor cycling studio from the group and might check out their beginner classes. Still, the biggest change for me is that everything—social meals, cooking, exercise—has to be filtered through heart-health priorities now, not just taste or convenience. It's a lot, but I'm determined not to let it derail my work or relationships."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re handling this with a lot of resolve, especially given all those layers of adjustment. If you're ever looking for recipe inspiration that fits the guidelines, or new cardio routines that won't conflict with your schedule, just let me know—we can find what works. Is there anything else you’re running into trouble with, or want help streamlining as you get used to this new reality?"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "While jogging along the Lake Michigan trail early one morning, she slipped on wet pavement and fractured her ankle, requiring her to wear a walking boot and avoid weight-bearing exercise for six weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Devotes morning physical activity time to seated upper-body workouts or stretching routines recommended by her physical therapist, until cleared for weight-bearing cardio",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Arranges weekend video chats during her usual social brunch time to stay connected with friends, since she cannot easily attend in-person gatherings while in a walking boot",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_047",
+              "fact": "Increases cardiovascular activity by adding two additional workouts per week, such as cycling, HIIT classes, or brisk walks, on top of the usual jogging routine"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Temporarily replaces all cardio workouts with seated upper-body strength or flexibility routines — avoids jogging, brisk walks, cycling, or HIIT due to ankle fracture recovery",
+              "domain": "health_body"
+            },
+            "reason": "A fractured ankle mandates six weeks of non-weight-bearing activity, so her routine of increasing cardio with jogging, walking, cycling, and HIIT is not possible. She must switch to seated or lying-down exercise options that do not put pressure on her injured ankle."
+          },
+          {
+            "from": {
+              "id": "pref_028",
+              "fact": "Uses an afternoon walk after project meetings to decompress and reset focus before returning to analytical tasks"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Uses a short, guided mindfulness or breathing session at her desk to decompress after meetings — avoids walks due to mobility restrictions during recovery",
+              "domain": "health_body"
+            },
+            "reason": "Because weight-bearing activity is not allowed while her ankle heals, her routine of decompressing with an afternoon walk is replaced by a stationary mindfulness practice."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So... I fractured my ankle while jogging on the Lake Michigan trail last week. I’m officially stuck in a walking boot and banned from any weight-bearing exercise for at least six weeks. Have you got any ideas for maintaining some kind of morning routine, especially since running was my main anchor?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ouch, that sounds rough! I know your morning jogs were a foundational part of your day. Are you hoping for something that’s still physically active—maybe upper-body workouts or stretching—or more mental, like meditation or mindfulness to fill that slot?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely want to keep some movement in my mornings, but the physical therapist recommended seated upper-body routines and stretches since I can't do cardio or anything that needs me to stand. Meditation is still non-negotiable—I actually kept that going even right after the injury, but I miss the active part."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great you’re keeping up your meditation. For the physical side, have you tried resistance bands for upper-body work? Or maybe chair yoga? Both can be pretty effective and flexible, and can be timed to fit right after your meditation."
+        },
+        {
+          "role": "user",
+          "content": "I've started using resistance bands for shoulder and arm exercises, plus some of the stretches my PT gave me. Chair yoga sounds promising, but I usually reserve Saturday mornings for my regular yoga class—except I can’t go in person right now. Maybe something virtual for now?"
+        },
+        {
+          "role": "assistant",
+          "content": "Virtual yoga could bridge the gap—many studios offer live or recorded sessions specifically for injuries or limited mobility. Would you rather stick with your usual yoga studio's virtual options, or try something new tailored to recovery?"
+        },
+        {
+          "role": "user",
+          "content": "I think my studio has a gentle yoga class online. I’ll check for anything focused on injury recovery. Speaking of adaptations, after meetings I’d normally decompress with a quick walk outside, but obviously that’s off the table. Any desk-friendly ways to reset after intense project sessions?"
+        },
+        {
+          "role": "assistant",
+          "content": "Desk-based mindfulness is a solid alternative—guided breathing exercises, short visualization, or even progressive muscle relaxation can do wonders. Do you want something structured like an app, or a quick written script to keep by your desk?"
+        },
+        {
+          "role": "user",
+          "content": "A guided script would be ideal—I can keep it in my planner for easy access since I prefer physical notes for routines. I’ll miss the walk but a quick, mindful break is better than nothing. Oh, and another thing: social brunches have become tricky since I can’t easily get out or host. My MBA cohort usually gets together in person, but I’ve been switching to video chats instead."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart workaround. Weekend video brunches might actually keep the group tighter, plus you don’t risk overexerting your ankle. Have you found any new ways to keep those virtual hangouts feeling meaningful, or need ideas for formats and games to keep things lively?"
+        },
+        {
+          "role": "user",
+          "content": "We’ve started sharing recipe photos and holding little cooking contests, which adds some fun. I’m also trying out new pescatarian dishes each week since I can’t repeat recipes, but for now everything’s from my kitchen rather than dining out. The hardest thing is just not repeating my old cardio habit—I used to increase activity with extra HIIT or cycling, but that’s off the table until I'm cleared."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—you’re limited to seated or non-weight-bearing workouts. Have you considered upper-body interval training, or maybe flexibility-focused routines to keep up your fitness level during recovery?"
+        },
+        {
+          "role": "user",
+          "content": "Exactly—I’m sticking to upper-body intervals and stretching. It’s a temporary substitute, but it’s what I can manage right now. So, to sum up: no jogging, walks, cycling, or HIIT, but I’m committed to seated or lying-down routines. Once I get the all-clear, I’ll ramp up my cardio again."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach—prioritizing what you can do now and preparing for a strong comeback when healed. If you need help with structured seated workout or mindfulness scripts, just let me know. Happy to help you tweak routines as things evolve!"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her close friend from the MBA cohort announced a sudden engagement and asked her to be the maid of honor, requesting her involvement in planning major events and frequent meetups with the bridal party over the next several months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_055",
+            "fact": "Regularly coordinates and leads wedding-related planning sessions and activities for her friend’s bridal party, making scheduling a priority and keeping detailed checklists for upcoming events.",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_056",
+            "fact": "Frequently attends group outings and bridal party hangouts outside her usual social circle, including venue tours, decoration shopping, and celebratory dinners.",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Only attends social events if they're planned in advance — avoids spontaneous invites or last-minute plans"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Accepts and attends frequent spontaneous meetups with the bridal party, sometimes responding to last-minute texts or invitations for wedding planning or celebration events",
+              "domain": "social_relationships"
+            },
+            "reason": "Being the maid of honor requires flexibility for in-person planning, impromptu bridal party gatherings, and urgent event tasks, which often arise with little advance notice. She must now participate in spontaneous social events related to the wedding."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_031",
+            "fact": "Limits non-essential social events to twice a month during the accelerator to preserve time and energy for program work and self-study",
+            "domain": "social_relationships",
+            "reason": "The accelerator program has concluded, so limiting non-essential social events specifically for accelerator work is no longer relevant; her time management priorities have shifted to CBAP prep and maid of honor duties."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Things just got real — my friend from the MBA cohort announced her engagement out of the blue last week and asked me to be her maid of honor. I want to help her, but now I'm being pulled into way more bridal party events and planning sessions than I expected. My calendar is wrecked. Any tricks for balancing wedding duties with my job and CBAP prep?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that's exciting and definitely a big commitment! Congrats on being maid of honor. With work and CBAP prep, plus all these bridal party events, your time management skills are going to be seriously tested. Are these new obligations more recurring or mostly last-minute invites? That could help tailor some strategies."
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it's a mix. I used to only go to social things if they were planned weeks ahead, but I've started accepting a lot of spontaneous bridal party meetups and last-minute planning hangouts. Venue tours, group dinners, dress fittings — sometimes I get a text hours before and just have to go. It’s messing with my usual routines, so I need ways to stay on top of work and CBAP study despite the unpredictability."
+        },
+        {
+          "role": "assistant",
+          "content": "You're stepping up in a big way! So the shift toward frequent, unscheduled social and planning events is real. One tactic is to predefine pockets of flex time in your calendar—blocks you keep open for short-notice events, without sacrificing your deep work or study sessions. Would that fit with your style? Or do you prefer scheduling everything tightly and risking having to shuffle when wedding things pop up?"
+        },
+        {
+          "role": "user",
+          "content": "I love the idea of flex blocks. My morning deep work is non-negotiable — I never schedule meetings before 11am, and I keep Slack muted except post-lunch. But for wedding stuff, I’m now making exceptions, like reserving some evenings for bridal party outings or planning catch-ups. I’ve also started keeping detailed checklists for each event so I don’t lose track. Coordination is priority now, with so many moving parts."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move with the checklists and keeping morning focus for work. Maybe you could build a dedicated planner just for maid-of-honor duties—an event tracker, key contacts, and to-do lists—so it's separated from job or CBAP prep. Would digital or handwritten work best for you? And are you finding the social aspect draining, or is it mostly logistical stress?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely handwritten for lists—digital apps just aren't as effective for me. Logistically, it’s a lot, but socially, it’s new territory. I’m going to way more group outings and bridal party hangouts outside my usual circle—venue tours, decoration shopping, dinners. Usually I avoid spontaneous gatherings, but now these events are fun and necessary for my friend. Still, I need to fit them around everything else."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense: balancing enjoyment with obligations is tricky. Since your spontaneous social time has increased, have you run into conflicts with your CBAP prep or job tasks yet? How do you prioritize when wedding events overlap with quieter study nights, for example?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve had to get creative. For CBAP prep, I block certain evenings and protect them unless it’s wedding planning that really can’t wait. Keeping those blocks strict for studying helps. For work, I still stick to challenging dashboard tasks in late afternoons, but lately, I sometimes adjust if a big planning session comes up. And I coordinate and lead most wedding activities, so a lot of my scheduling revolves around the bridal party’s needs now."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you're actively leading and organizing bridal events, which adds project management on top of social time. Would it help to use your business analytics skills—maybe build a shared dashboard or timeline for the bridal party? It could streamline communication and make event planning easier. Or do you think everyone prefers informal updates?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention it! I actually made a basic shared spreadsheet to track deadlines and responsibilities. They're not into dashboards, but checklists and timelines work well for this crowd. That’s become my go-to, alongside group texts for quick coordination. I did drop some earlier limits, like restricting social events during my accelerator program—but since that’s over, I have a bit more freedom. Now it’s all about CBAP and wedding duties."
+        },
+        {
+          "role": "assistant",
+          "content": "That clarification helps—a shift from limiting social events for accelerator to focusing on CBAP and bridal responsibilities. Since your weekends are busier now, have you had to move or skip any routines, like your yoga classes or brunches? Or do you try to weave those in around new obligations?"
+        },
+        {
+          "role": "user",
+          "content": "Saturday yoga is still sacred! But brunch hosting is on pause, since a lot of my weekends go to wedding stuff. If the bridal party wants to meet on short notice, I’m much more flexible now. Before, I would’ve declined, but it just comes with the job. My planner’s full, but it’s mostly checklists for bridal events and exam tasks these days."
+        },
+        {
+          "role": "assistant",
+          "content": "You've done a remarkable job adapting—to spontaneous meetups, leading wedding planning, and putting checklists front and center. The new habits are a clear evolution: more flexibility and leadership, but still maintaining key boundaries. If you ever need help optimizing your scheduling or want accountability check-ins for CBAP prep, just let me know. Anything in particular about the planning or balancing acts you want to drill deeper into next?"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her company announced a major expansion into the European market and selected her as the lead analyst to coordinate cross-border analytics, requiring her to attend pre-dawn virtual meetings with overseas teams and adapt reporting processes to comply with new international data standards.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_059",
+            "fact": "Strictly maintains blackout curtains and dim lighting in the evenings to support winding down for early pre-dawn wake-ups — actively avoids bright screens after 8pm",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_060",
+            "fact": "Prepares international data compliance checklists for all new reporting — reviews every client dashboard for adherence to EU standards before submission",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Saves most challenging dashboard tasks for late afternoon, when she feels most focused — never starts them first thing in the morning"
+            },
+            "to": {
+              "id": "pref_057",
+              "fact": "Completes most challenging dashboard analytics and reporting first thing in the morning to align with European team meetings — no longer reserves them for late afternoon",
+              "domain": "work_habits"
+            },
+            "reason": "Her new role as lead analyst for the European expansion requires her to attend pre-dawn virtual meetings and deliver analytics in sync with European business hours. She now needs to focus on complex reporting early, not later in the day."
+          },
+          {
+            "from": {
+              "id": "pref_022",
+              "fact": "Starts every morning with a ten-minute guided meditation — never skips, even on weekends"
+            },
+            "to": {
+              "id": "pref_058",
+              "fact": "Moves daily guided meditation to evenings after meetings due to early-morning European calls — no longer practices meditation first thing each morning",
+              "domain": "daily_routines"
+            },
+            "reason": "Pre-dawn meetings with overseas teams have overtaken her morning routine, making her old meditation schedule unworkable. She now meditates after work instead."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, big update: my company is expanding into Europe and they've put me in charge of coordinating analytics for the cross-border teams. That means pre-dawn meetings (like, sometimes 5:30am!) and adapting all our reporting to fit new international data standards. I could use some help figuring out how to manage my workday, especially since everything's shifted. How do people deal with suddenly having to deliver their most complex work before sunrise?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that’s a huge responsibility—and an equally huge schedule change! Pre-dawn meetings can definitely throw off familiar work rhythms. Have you changed when you tackle your most challenging analytics tasks, or are you still saving them for later in the day?"
+        },
+        {
+          "role": "user",
+          "content": "No, that's out the window now. I actually have to do all the heavy dashboard analytics and reporting first thing in the morning, right after those early video calls. The European teams need numbers ASAP for their business hours, so my old late-afternoon focus block won’t work. Any tips for staying alert and mentally sharp that early, especially when I'm trying to crank out detailed reports?"
+        },
+        {
+          "role": "assistant",
+          "content": "Switching to high-focus work at dawn isn’t easy, but a solid routine can help. Are you still doing your morning meditation before work, or has the meeting schedule made that tricky? Sometimes a short breathing exercise immediately before jumping into analytics can prime your brain for focus."
+        },
+        {
+          "role": "user",
+          "content": "Actually, I had to move my meditation to evenings now. It used to anchor my mornings, but it's just not feasible with these pre-dawn calls. I wind down with it after the workday instead. So I'm still looking for a way to feel grounded in the mornings without my usual routine. Maybe something less time-intensive?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great that you’re keeping meditation in your day, even if it’s shifted. For mornings, how about a quick mindfulness check-in or a glass of water while reviewing your task list? That might give you a gentle transition into focus mode. Also, since your evenings are changing, are you adjusting anything else to help with winding down early for those wake-ups—like avoiding bright screens, changing lighting, or blackout curtains?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. I’ve gotten strict about blackout curtains and keeping my apartment dimly lit in the evenings, especially since I need to wind down much earlier. Bright screens are totally off-limits after 8pm, otherwise I can't sleep. It’s been an adjustment, but it helps a bit with the switch to pre-dawn starts."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move—dim lighting and blackout curtains can make a big difference, especially as you’re trying to sync your sleep to those early meetings. Is your insomnia any better, or are you still struggling to fall asleep? Sometimes unplugging early can help, but the stress of new responsibilities can keep the mind active."
+        },
+        {
+          "role": "user",
+          "content": "It’s improved a little, at least on weekdays. The early wind-down and screens-off routine definitely helps—though my brain is still pretty wired after back-to-back meetings and intensive reporting. One thing that's gotten more complicated is making sure all the new KPIs and dashboards comply with EU data standards. I find myself making compliance checklists and reviewing every dashboard before sending anything out. Any best practices for managing international data compliance smoothly so I'm not triple-checking every single thing?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach—compliance checklists can minimize risk and keep you efficient. For international reporting, it helps to build templates that flag compliance issues automatically, so you don’t have to review everything from scratch. Are you using any tools that help automate those checks, or is it mostly manual at this stage?"
+        },
+        {
+          "role": "user",
+          "content": "Right now it’s mostly manual—I draft checklists and review each client dashboard myself to make sure everything fits EU standards before submission. Automation would be amazing, but I’m still figuring out what tools our team could integrate for that. It’s a lot, but I’d rather be safe than sorry."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s definitely wise—manual reviews are time-consuming, but better for catching early issues. As your process settles, you could look into analytics platforms with rule-based compliance flags, so your checklists become part of the workflow. If you’d like, I can help you research tools that support GDPR and other European data requirements, or draft a standard operating procedure for your team as you scale up?"
+        },
+        {
+          "role": "user",
+          "content": "That would be helpful—if you could suggest some analytics tools with built-in compliance support or templates for SOPs, I could streamline this process. Thanks for walking through all these changes; it's been a whirlwind, so having a plan helps."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Keeps Slack notifications muted except during post-lunch hours — refuses to check messages continuously",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Organizes files and analyses in dedicated project folders — never leaves documents unnamed or in downloads",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Wears blue-light glasses for all screen-based work sessions after 6pm — doesn't wear them during the day",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Implements a no-screens rule 30 minutes before bed to help with insomnia — never reads emails or messages in bed",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Initiates monthly group chats with her MBA cohort to keep job leads circulating — never lets more than a month go by without checking in",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Hosts brunch at her apartment every other month — never dines at the same restaurant twice in a row for brunch outings",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Prefers independent travel focused on art museums and local coffee shops — avoids large group tours or package vacations",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Never watches reality TV — only streams documentaries or prestige dramas when relaxing at home",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Attends live author talks or book signings whenever possible — never joins virtual book clubs",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Spends Sunday afternoons reading physical books in local parks — avoids e-books or audiobooks for leisure",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Prepacks healthy lunches every night to save time in the morning — never buys lunch during the workweek",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Shops for groceries late Friday evenings to avoid crowds — never goes on Saturdays",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Limits social media use to 15 minutes per day — never allows push notifications",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Organizes weekly errands and appointments in her planner every Sunday night — never leaves scheduling to chance",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Now participates in mandatory cross-functional project planning sessions scheduled in the mornings — no longer refuses meetings before 11am",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Prepares personal talking points and questions in advance for weekly cross-functional meetings to ensure her perspective is considered, since she is now on a larger, more complex team",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Occasionally reschedules Saturday yoga class to accommodate accelerator program workshops — prioritizes program commitments when there is a conflict",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Prepares specific questions and reflections ahead of each accelerator mentorship session and debriefs key takeaways in a private journal afterward",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Uses voice memos and digital task manager apps for daily to-do tracking — avoids handwritten lists due to wrist strain",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Performs physician-recommended wrist and forearm physical therapy exercises daily after work, as part of her evening routine",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_038",
+        "fact": "Spends daily in-person time with her parents during their extended stays, replacing weekly video calls — only sets up video calls when they are traveling or not in Chicago",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Plans and cooks pescatarian dinners with her parents during their stay, adding one family recipe night per week at their request",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Temporarily gives her parents use of her bedroom and moves to the living room for the duration of their Chicago visit, prioritizing family comfort over her own routine",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Limits hosting non-family guests or brunches while parents are in residence and prioritizes shared meals with them instead",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_043",
+        "fact": "Joins weekly post-work team dinners with Boston colleagues to foster connections and learn about the newly acquired teams during the integration project",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Explores Boston’s art museums and local coffee shops on weekends, seeking solo experiences in new neighborhoods",
+        "domain": "leisure_hobbies",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Schedules Sunday video calls with her Chicago MBA cohort to stay connected and exchange job leads while temporarily away",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Strictly avoids dairy and fried foods both at home and when dining out, selecting only heart-healthy pescatarian and vegetarian meals regardless of social setting",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Checks nutritional labels and tracks daily food choices in a heart-health app before every meal to ensure compliance with her prescribed diet",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Follows dedicated online support groups for women managing high cholesterol and shares progress weekly, seeking accountability and community advice",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_050",
+        "fact": "Temporarily replaces all cardio workouts with seated upper-body strength or flexibility routines — avoids jogging, brisk walks, cycling, or HIIT due to ankle fracture recovery",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Uses a short, guided mindfulness or breathing session at her desk to decompress after meetings — avoids walks due to mobility restrictions during recovery",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Devotes morning physical activity time to seated upper-body workouts or stretching routines recommended by her physical therapist, until cleared for weight-bearing cardio",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Arranges weekend video chats during her usual social brunch time to stay connected with friends, since she cannot easily attend in-person gatherings while in a walking boot",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_054",
+        "fact": "Accepts and attends frequent spontaneous meetups with the bridal party, sometimes responding to last-minute texts or invitations for wedding planning or celebration events",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Regularly coordinates and leads wedding-related planning sessions and activities for her friend’s bridal party, making scheduling a priority and keeping detailed checklists for upcoming events.",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Frequently attends group outings and bridal party hangouts outside her usual social circle, including venue tours, decoration shopping, and celebratory dinners.",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_057",
+        "fact": "Completes most challenging dashboard analytics and reporting first thing in the morning to align with European team meetings — no longer reserves them for late afternoon",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Moves daily guided meditation to evenings after meetings due to early-morning European calls — no longer practices meditation first thing each morning",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_059",
+        "fact": "Strictly maintains blackout curtains and dim lighting in the evenings to support winding down for early pre-dawn wake-ups — actively avoids bright screens after 8pm",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_060",
+        "fact": "Prepares international data compliance checklists for all new reporting — reviews every client dashboard for adherence to EU standards before submission",
+        "domain": "work_habits",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Blocks calendar for deep work in the morning — never schedules meetings before 11am",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Due to the merger, there is an immediate mandate for all data analysts to attend weekly project planning meetings at times set by cross-functional teams, including mornings. She cannot block her morning hours for deep work anymore."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Saves most challenging dashboard tasks for late afternoon, when she feels most focused — never starts them first thing in the morning",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_057",
+        "reason": "Her new role as lead analyst for the European expansion requires her to attend pre-dawn virtual meetings and deliver analytics in sync with European business hours. She now needs to focus on complex reporting early, not later in the day."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Uses handwritten to-do lists daily to track progress — never fully relies on digital apps for task management",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "Her physician advised limiting keyboard use outside of work due to repetitive strain injury. Handwriting lists would also aggravate her wrist and forearm pain, so she now relies on voice-based and digital methods for task tracking."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Runs three times a week along Lake Michigan trail — never jogs indoors on a treadmill",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "She will be living temporarily in Boston for four months, making her Lake Michigan routine impossible. She adapts by seeking similar outdoor paths in Boston rather than indoor treadmills."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Chooses pescatarian protein options at home but only eats vegetarian when dining out with friends",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "Due to her elevated cholesterol and doctor's strict dietary mandate, she cannot be flexible with her food choices based on location or company. Dairy and fried foods must be eliminated everywhere, and she must select meals based on strict nutritional criteria rather than social preference."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Keeps her Saturday mornings reserved for yoga class — never books other obligations during that time",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "The accelerator program includes intensive weekend workshops that sometimes overlap with her yoga time. She now chooses to attend leadership sessions when conflicts arise and makes up yoga at other times."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Plays cooperative online games weekly with her brother — never skips unless traveling or one of them is sick",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "Her brother will be physically present for the summer internship, so their gaming time will shift from purely online to in-person local co-op, reflecting the opportunity to play together on the same device."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Only attends social events if they're planned in advance — avoids spontaneous invites or last-minute plans",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_054",
+        "reason": "Being the maid of honor requires flexibility for in-person planning, impromptu bridal party gatherings, and urgent event tasks, which often arise with little advance notice. She must now participate in spontaneous social events related to the wedding."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Reserves video calls with parents for Sunday evenings — never substitutes with text unless it's urgent",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "Because her parents will be living with her for a month (and visiting regularly thereafter), it no longer makes sense to schedule weekly video calls when she can spend in-person time daily. Video calls are now reserved for when her parents are away."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Dedicates one evening a week to experimenting with new pescatarian recipes — never repeats the same dish in a month",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "Preparing and chopping ingredients for new recipes is physically intensive and exacerbates her repetitive strain injury. She now explores new recipes passively by watching tutorials but avoids actual cooking experiments for now."
+      },
+      {
+        "id": "pref_022",
+        "fact": "Starts every morning with a ten-minute guided meditation — never skips, even on weekends",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_058",
+        "reason": "Pre-dawn meetings with overseas teams have overtaken her morning routine, making her old meditation schedule unworkable. She now meditates after work instead."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Uses an afternoon walk after project meetings to decompress and reset focus before returning to analytical tasks",
+        "domain": "health_body",
+        "created_at_session": 0,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_051",
+        "reason": "Because weight-bearing activity is not allowed while her ankle heals, her routine of decompressing with an afternoon walk is replaced by a stationary mindfulness practice."
+      },
+      {
+        "id": "pref_031",
+        "fact": "Limits non-essential social events to twice a month during the accelerator to preserve time and energy for program work and self-study",
+        "domain": "social_relationships",
+        "created_at_session": 1,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "The accelerator program has concluded, so limiting non-essential social events specifically for accelerator work is no longer relevant; her time management priorities have shifted to CBAP prep and maid of honor duties."
+      },
+      {
+        "id": "pref_033",
+        "fact": "Streams new pescatarian cooking tutorials and bookmarks recipes, but avoids hands-on cooking experiments due to wrist pain",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "She must now strictly avoid certain recipes that feature dairy or fried foods, and her cooking interests are governed by medical necessity, not experimentation or streaming tutorial variety."
+      },
+      {
+        "id": "pref_035",
+        "fact": "Plays split-screen local co-op games in person with her brother weekly while he stays with her — rarely plays online together during this time",
+        "domain": "social_relationships",
+        "created_at_session": 3,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "Relocating to Boston for the entire project duration means she can’t play in-person games with her brother in Chicago; their living arrangement is paused."
+      },
+      {
+        "id": "pref_036",
+        "fact": "Shops for groceries in larger quantities and with her brother’s input, accommodating his preferences and appetite while he lives with her",
+        "domain": "daily_routines",
+        "created_at_session": 3,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "Temporarily moving to Boston makes it impossible to shop with her brother or accommodate his preferences in grocery planning."
+      },
+      {
+        "id": "pref_037",
+        "fact": "Prepares shared dinners at home with her brother on weeknights, incorporating his favorite pescatarian or vegetarian dishes",
+        "domain": "daily_routines",
+        "created_at_session": 3,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "Her four-month relocation to Boston for work means she won’t be physically living with her brother in Chicago, making their shared weeknight dinner tradition impossible."
+      },
+      {
+        "id": "pref_042",
+        "fact": "Jogging three times a week on Boston’s Charles River Esplanade or nearby urban routes — avoids indoor treadmills but no longer runs specifically on the Lake Michigan trail",
+        "domain": "health_body",
+        "created_at_session": 5,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_047",
+        "reason": "Her doctor instructed her to further increase cardiovascular activity beyond her current running schedule. She adapts by supplementing her jogs with new forms of exercise to meet this requirement."
+      },
+      {
+        "id": "pref_047",
+        "fact": "Increases cardiovascular activity by adding two additional workouts per week, such as cycling, HIIT classes, or brisk walks, on top of the usual jogging routine",
+        "domain": "health_body",
+        "created_at_session": 6,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_050",
+        "reason": "A fractured ankle mandates six weeks of non-weight-bearing activity, so her routine of increasing cardio with jogging, walking, cycling, and HIIT is not possible. She must switch to seated or lying-down exercise options that do not put pressure on her injured ankle."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:37:11.191184"
+}

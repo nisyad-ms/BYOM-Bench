@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_19ad5800",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_026",
+        "fact": "Visits elderly mother in person every evening to assist with mobility and medical needs — phone check-ins only used when an in-person visit is impossible",
+        "supersedes": {
+          "id": "pref_013",
+          "fact": "Checks in with elderly mother every morning via phone call — never skips even when busy"
+        }
+      },
+      {
+        "id": "pref_032",
+        "fact": "No longer participates in men's basketball league; replaces Saturday mornings with supervised aquatic therapy or gentle pool exercise",
+        "supersedes": {
+          "id": "pref_016",
+          "fact": "Plays in men’s basketball league every Saturday morning without fail — never misses for work"
+        }
+      },
+      {
+        "id": "pref_038",
+        "fact": "Takes prescribed cholesterol medication with breakfast every morning — never misses a dose"
+      },
+      {
+        "id": "pref_056",
+        "fact": "Sets aside one evening per week to review and update labor dispute strategy documentation for all sites under his responsibility"
+      },
+      {
+        "id": "pref_043",
+        "fact": "Attends mandatory remote onboarding workshops for all HR managers, taking notes digitally and sharing summaries with junior staff weekly."
+      },
+      {
+        "id": "pref_046",
+        "fact": "Shares daily transportation duties with his wife for son's ADHD after-school program, alternating days and updating the shared digital family calendar each week"
+      }
+    ]
+  },
+  "persona": "A mid-level HR manager at a regional manufacturing company"
+}

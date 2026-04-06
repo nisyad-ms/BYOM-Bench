@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_5a03d5de",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_048",
+        "fact": "Now runs errands on Saturdays after the artisan market concludes, shifting away from exclusive Tuesday mornings due to booth obligations and increased weekend activities.",
+        "supersedes": {
+          "id": "pref_024",
+          "fact": "Schedules weekly errands for Tuesday mornings only — never runs errands on weekends"
+        }
+      },
+      {
+        "id": "pref_042",
+        "fact": "Switches to texting his parents weekly to stay in touch, but no longer organizes in-person childcare visits due to their relocation out of state",
+        "supersedes": {
+          "id": "pref_012",
+          "fact": "Calls his parents every Monday to organize the week’s childcare visit — avoids texting for family coordination"
+        }
+      },
+      {
+        "id": "pref_050",
+        "fact": "Enjoys interacting with regular artisan market customers in person every Saturday, making friendly conversation and giving brief live carving demonstrations when permitted."
+      },
+      {
+        "id": "pref_052",
+        "fact": "Holds monthly in-person meetings with local boutique owners or gallery curators to plan Timber Threads product lines and joint promotions"
+      },
+      {
+        "id": "pref_008",
+        "fact": "Never snacks during late evening work sessions; sticks to herbal tea only"
+      },
+      {
+        "id": "pref_002",
+        "fact": "Packages every order by hand with a personalized thank-you note; never uses generic packing slips"
+      }
+    ]
+  },
+  "persona": "A stay-at-home parent running a handmade crafts shop on Etsy"
+}

@@ -1,0 +1,1536 @@
+{
+  "persona": "A solo freelance photographer who travels internationally for assignments",
+  "persona_id": "persona_20260301_234828",
+  "expanded_persona": {
+    "base_persona": "A solo freelance photographer who travels internationally for assignments",
+    "age": 34,
+    "gender": "female",
+    "location": "Berlin, Germany",
+    "work_education": [
+      "Works as a freelance photographer specializing in travel, lifestyle, and documentary projects",
+      "Regularly receives assignments from European travel magazines; current project involves a month-long shoot in Morocco",
+      "Often manages all logistics herself, including travel visas, gear maintenance, and image editing deadlines",
+      "Maintains an active Instagram account with 88k followers, generating supplemental income through influencer partnerships",
+      "Considering a shift to video content production, taking evening classes in cinematography"
+    ],
+    "health_wellness": [
+      "Generally healthy but struggles with jet lag and disrupted sleep patterns due to frequent time zone changes",
+      "Follows a mostly plant-based diet when at home, but adjusts to local cuisines when abroad",
+      "Swims regularly when in Berlin, uses hotel gyms to stay active while traveling",
+      "Mild chronic back pain from carrying heavy camera equipment; started seeing a physiotherapist recently"
+    ],
+    "family_relationships": [
+      "Lives alone in a rented studio apartment in Berlin, rarely home for more than three weeks at a time",
+      "Keeps in close touch with her younger sister in London via video calls, visits annually",
+      "Single, after ending a long-term relationship two years ago; occasionally dates, but travel complicates commitments",
+      "Parents are retired and live in Spain; family reunions are infrequent due to her busy schedule"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Edits photos in late-night sessions after shoots — never delegates retouching to anyone else",
+        "Schedules all freelance assignments to avoid overlapping travel dates, refusing double bookings",
+        "Responds to client emails within 24 hours, even while abroad — never lets inbox pile up",
+        "Posts behind-the-scenes stories on Instagram after every travel day, never skips content updates during assignments",
+        "Only accepts projects that allow creative control over both photography and location — refuses generic stock photo gigs"
+      ],
+      "health_body": [
+        "Adopts local cuisine when traveling, but never eats dairy or red meat when at home in Berlin",
+        "Packs lightweight resistance bands to do stretching exercises daily in hotel rooms — never misses, even on shoot days",
+        "Schedules physiotherapy appointments immediately upon returning to Berlin, never postpones despite busy work",
+        "Uses blackout curtains and sleep masks while traveling, never sleeps without them in unfamiliar places to combat jet lag",
+        "Swims at least twice a week when in Berlin, choosing swimming over gym workouts whenever possible"
+      ],
+      "social_relationships": [
+        "Video-calls her sister every Sunday evening, regardless of location — never switches to texting for the weekly check-in",
+        "Checks in with parents monthly via a group video call, never lets more than six weeks pass without contact",
+        "Keeps dating casual and short-term, never commits to long-distance relationships",
+        "Maintains connections with past clients by sending personalized photo postcards from new destinations",
+        "Prefers meeting friends one-on-one in coffee shops or quiet bars — avoids large group gatherings"
+      ],
+      "leisure_hobbies": [
+        "Explores local street art and galleries in every city she visits — never skips opportunities for cultural immersion",
+        "Collects vintage postcards from each assignment location, refusing digital souvenirs",
+        "Journals travel experiences nightly, handwriting rather than using electronic devices",
+        "Uses downtime on shoots to walk and photograph neighborhoods just for fun, never schedules formal tourist excursions",
+        "Attends indie film screenings or festivals whenever possible, prioritizing them over mainstream cinemas"
+      ],
+      "daily_routines": [
+        "Starts every morning with oat milk coffee and 10 minutes of quiet meditation — never checks emails before this routine",
+        "Plans travel logistics (flights, visas, accommodation) on Thursday evenings each week, never leaves arrangements last minute",
+        "Backs up photo files nightly to two separate drives — never relies solely on cloud storage",
+        "Posts Instagram stories at sunset local time during assignments, never posts in real-time throughout the day",
+        "Shops for groceries only at neighborhood markets when in Berlin, avoids supermarkets unless absolutely necessary"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "A major European travel magazine offered her an exclusive year-long contract as their lead photographer, requiring her to commit to a set number of feature shoots across multiple countries and prioritize their assignments over other freelance work.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_028",
+            "fact": "Uses a shared editorial calendar required by the magazine to coordinate all shoot dates and deadlines; no longer relies solely on her personal planner",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Sets aside two days per month to brainstorm and propose new feature ideas exclusively for the magazine, shifting focus from pitching to multiple outlets",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Schedules all freelance assignments to avoid overlapping travel dates, refusing double bookings"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Prioritizes assignments from the exclusive magazine contract, accepting overlapping travel dates when necessary for their shoots; only declines double bookings outside contract requirements",
+              "domain": "work_habits"
+            },
+            "reason": "The exclusive year-long contract requires her to prioritize this magazine's assignments over all other freelance work, and possibly accept overlapping or tighter scheduling to fulfill contractual obligations."
+          },
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Only accepts projects that allow creative control over both photography and location — refuses generic stock photo gigs"
+            },
+            "to": {
+              "id": "pref_027",
+              "fact": "Accepts projects from the exclusive magazine contract even when some assignments limit creative direction or predetermine locations, as per contract terms",
+              "domain": "work_habits"
+            },
+            "reason": "The contract means she is obligated to execute assigned shoots which may not grant her previous level of creative control or freedom to choose locations."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big update: I just signed a year-long exclusive contract with a major travel magazine. They want me as their lead photographer, so I’ll be prioritizing their assignments from now on. The catch is, some shoots might overlap or come with less creative freedom than I’m used to. I need to figure out how to adjust my planning workflow and keep up with everything. Do you have advice for juggling multiple shoots and deadlines—especially if I now have to coordinate with their editorial team?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations, that’s a huge step! Balancing overlapping shoots and less creative input is definitely a shift. First, are they giving you access to any shared tools, like project calendars or collaboration platforms? Setting up reminders and establishing a clear workflow with their editorial team can help avoid confusion. Are you still planning everything in your personal planner, or will you have to split your workflow now?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, they’re requiring me to use their shared editorial calendar to coordinate all shoot dates and deadlines, which is new for me. My personal planner isn’t enough anymore—deadlines live in their system now. This feels more structured than I’m used to. Any tips for managing back-and-forth between my usual routines and the magazine’s system so I don’t miss anything?"
+        },
+        {
+          "role": "assistant",
+          "content": "Transitioning to a shared calendar can feel limiting, but you might find it helpful for cross-team visibility. One approach is to schedule daily or weekly syncs with the editorial calendar, then update your personal planner as needed for travel, gear, and personal obligations. Would blocking a set time each week for calendar reconciliation work for your workflow? Or do their assignments change too frequently for that?"
+        },
+        {
+          "role": "user",
+          "content": "Blocking a weekly time could help. Right now, they update the calendar fairly regularly but give me at least a month's notice for bigger features. I also have to set aside two days per month to brainstorm and propose new feature ideas for them—so pitching to other outlets is kind of on pause. That’s another change, since I used to split time between several clients. How do you recommend I approach idea generation now, when the focus is just one magazine?"
+        },
+        {
+          "role": "assistant",
+          "content": "With your focus narrowed, you can develop a deeper understanding of the magazine’s brand and audience, which should help refine your pitches. Maybe start a running list of ideas inspired by your travels—jot them down as you go, then dedicate those two days for fleshing out and formatting them for the editorial team. Since you're still journaling nightly, could you use those entries as a springboard for brainstorm sessions?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a good call. My journaling is still handwritten every night, so I can pull themes and visuals from my travel notes. Just need to get used to tailoring ideas to their editorial style. Also, assignments with this contract sometimes limit my creative direction, or lock in locations. Before, I’d only accept projects if I had full control, but now I have to follow their brief even if it’s a stock or pre-set location. How do I stay motivated on assignments where I’m not calling all the shots?"
+        },
+        {
+          "role": "assistant",
+          "content": "Maintaining motivation when creative control is restricted can be tricky. One approach is to focus on small creative touches within the brief—composition, lighting, or capturing spontaneous moments. Could you use your downtime during shoots to experiment for yourself, even if the main assignment is more rigid? And perhaps keep photographing neighborhoods—for fun—to balance out the structured work?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely, I still squeeze in personal neighborhood shoots whenever I can. That keeps things lively. The main logistical difference is that I used to refuse overlapping travel dates and never booked double shoots, but now I sometimes have to accept overlapping schedules for the magazine. Outside their contract, though, I’m still declining double bookings. Any strategies for managing my energy and health when the schedule gets tighter than I’d like?"
+        },
+        {
+          "role": "assistant",
+          "content": "When your schedule gets tight, it’s even more important to protect your routines—especially for back health and sleep. Could you plan recovery days after major shoots, or at least stick to your stretching and blackout curtain rituals even when traveling? Also, using resistance bands in hotel rooms—are you still keeping up with that daily?"
+        },
+        {
+          "role": "user",
+          "content": "Yep, stretching and resistance bands are non-negotiable, same as maintaining blackout curtains and sleep masks for jet lag. Recovery days might be harder to schedule, though, depending on how their calendar shakes out. I’ll have to coordinate physiotherapy visits more carefully now, since overlap is possible. But keeping my wellness rituals is key or I’ll burn out quickly."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve got strong routines in place. Maybe you could use the editorial calendar not just for work, but to reserve time blocks for recovery, physio appointments, and sleep planning—just to make sure you’re not constantly on the move. As for travel logistics, will you still do your Thursday planning sessions, or is that shifting with the magazine’s calendar updates?"
+        },
+        {
+          "role": "user",
+          "content": "I think I’ll keep my Thursday sessions for personal travel logistics, but I’ll need to sync them with the magazine’s updates—so I’m not double-booking things outside their assignments. It’ll be a mix of my old habits and new coordinated routines. This adjustment is going to take some trial and error but I’m excited about the challenge. Thanks for probing—this helped me get a grip on all the new moving parts."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome! Sounds like you’re already thinking through the transitions in a practical way. If you need help optimizing workflow, or want to brainstorm feature ideas, let me know anytime. Wishing you smooth shoots—and plenty of creative moments, even within the structured gigs."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger sister in London announced she is getting married and invited her to be maid of honor, setting the wedding date for early autumn when she is typically booked for magazine shoots abroad.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Coordinates her autumn schedule to be available in London for wedding rehearsals and planning activities, declining magazine assignments that conflict with wedding commitments",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Initiates frequent video calls with her sister mid-week (in addition to Sunday) to help with wedding preparations, favoring collaborative planning over their usual catch-up routine",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Keeps dating casual and short-term, never commits to long-distance relationships"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "No longer dates during the months leading up to her sister's wedding, prioritizing family commitments over casual relationships until the event is over",
+              "domain": "social_relationships"
+            },
+            "reason": "Preparing to be maid of honor means she is focused on supporting her sister and helping with wedding planning, and travel schedules complicate time for casual dating. She consciously decides to pause romantic pursuits in favor of her family role."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I just got some big news—my sister in London is getting married in early autumn and asked me to be her maid of honor. I’m thrilled but also a bit anxious, since autumn is usually packed with magazine assignments. I need help figuring out how to manage my freelance bookings without letting anyone down—or missing anything important for the wedding. Any ideas for restructuring my schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations—that's such an exciting role to take on! Balancing your freelance work with wedding commitments sounds tricky, especially since your assignments overlap with autumn. Do you already know the exact wedding date or are there rehearsals and planning events you'll need to be present for ahead of time?"
+        },
+        {
+          "role": "user",
+          "content": "She set the wedding for late September, but there’ll definitely be rehearsals and meet-ups leading up to it. I usually try to avoid double bookings, but I think I’ll actually need to block out a chunk of time for London, not just the wedding weekend. It’s new for me to turn down magazine shoots in that season, but I don’t want anything interfering. What’s the best way to communicate that to clients without losing future work?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's wise—setting clear boundaries up front will help you stay reliable for both your sister and your clients. Maybe you could let clients know that you're booked for a major family event in autumn and unavailable for new assignments during that period, but available before and after. It shows commitment and professionalism, and you could even offer to deliver any prep work early if clients want to reserve you ahead for later projects. Is there any flexibility for remote work during those weeks in London, or will you want to keep all focus on the wedding?"
+        },
+        {
+          "role": "user",
+          "content": "For the weeks around the wedding, I want to be fully in London—helping my sister with planning and rehearsals, not splitting focus. So I’ll be declining anything that would pull me away, even short shoots. It feels strange since I normally squeeze in assignments whenever I can, but this time family comes first. I guess I’ll need to update my usual workflow and block out those dates immediately."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—prioritizing family, especially for a once-in-a-lifetime event, is the right move. Blocking those dates in your calendar ASAP gives you a clear line to reference with clients. You could also post a note in your email signature about limited availability during late September if you like. Since you'll be in London longer than usual, does that change any routines—like your weekly check-ins with your sister, or how you keep up with client communications?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, it does! Usually, my sister and I have a Sunday evening video call to catch up, but now we’ve started mid-week calls, too—planning stuff together, picking venues, brainstorming the wedding shoot. It’s much more collaborative than our usual chats. I’ll probably keep my client comms as is—responding within 24 hours—but my main focus mid-week will be helping her organize everything."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds special—mid-week calls for collaborative planning will really help your sister feel supported. Maintaining prompt client responses while shifting your primary attention to her is a good balance. Are you planning to take on the photo coverage for her wedding, or will you be strictly in the maid-of-honor role?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you ask—she actually wants me to be fully present as maid of honor, not distracted with photographing the day. She’s hiring someone else so I can focus on her and the wedding prep. It's another reason I’m pausing casual dating for a while—I want to be all in for her, rather than splitting energy between relationships and this big family event. Normally I keep things brief and casual romantically, but I decided to suspend dating until after the wedding."
+        },
+        {
+          "role": "assistant",
+          "content": "That shows real commitment. Putting dating on pause to prioritize family is a thoughtful decision, and giving yourself headspace to be there for your sister—and for yourself—is valuable. As you shift gears and spend more time collaborating and planning, do you want any help organizing those prep calls or managing logistics for your London stay?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually—I could use help with keeping track of all the wedding-related appointments and tasks, since I’m used to planning travel logistics but not event prep. Normally I plan flights and accommodation Thursday evenings for work trips; this time I’ll need to coordinate London visits for rehearsals and planning sessions, not just a single travel window. Maybe a shared calendar or checklist with my sister would help?"
+        },
+        {
+          "role": "assistant",
+          "content": "A shared online calendar, like Google Calendar, could be a great way for both of you to track appointments—venue visits, dress fittings, rehearsal dinners, and so on. Setting up reminders for each step could keep things from slipping through the cracks. Would you prefer digital tools, or would a physical planner or journal work better, since you usually handwrite your travel notes?"
+        },
+        {
+          "role": "user",
+          "content": "We’ll try digital for this, since it’s easier for us both to reference while apart. My nightly handwritten journaling stays for personal reflections, but for wedding logistics, syncing online is just practical. Thanks for the suggestion! I’m feeling better about managing all this now—especially since I’ve decided to coordinate my autumn entirely around her wedding, not just the event itself. It’s a big shift, but worth it."
+        },
+        {
+          "role": "assistant",
+          "content": "It really sounds like you're embracing the new role and adjusting your freelance routine in a way that supports both your sister and your own peace of mind. If you need ideas for communicating with clients, keeping up with planning calls, or even finding ways to decompress during busy days in London, just let me know. You’ve got a lot on your plate, but your priorities are clear—and that’s half the battle."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her primary camera and backup lens were stolen during a shoot in Morocco, leaving her without her usual equipment for upcoming assignments and forcing her to rely on rented or unfamiliar gear until replacements can be arranged.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Rents unfamiliar camera equipment for shoots and spends extra time learning new controls and settings before each assignment",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Shares updates about her gear loss and adaptation process on Instagram stories, prioritizing transparency with followers during assignments",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Backs up photo files nightly to two separate drives — never relies solely on cloud storage"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Backs up photo files nightly using cloud storage and rented hardware, as her usual drives and backup gear are unavailable due to equipment theft",
+              "domain": "daily_routines"
+            },
+            "reason": "Her usual backup drives were in the stolen gear bag; while waiting for replacements she must adapt to using temporary rental gear and cloud storage to secure her work."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_007",
+            "fact": "Packs lightweight resistance bands to do stretching exercises daily in hotel rooms — never misses, even on shoot days",
+            "domain": "health_body",
+            "reason": "Her resistance bands were packed with the stolen camera equipment; she cannot use or pack them until replacements are arranged."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey — I’m in Marrakech and my worst nightmare finally happened: someone nabbed my primary camera and my backup lens during a shoot yesterday. I’m scrambling to find rental gear, but everything feels off and I’m worried about my deadlines. Any ideas for adapting quickly when your usual kit is gone, especially for tight assignments?"
+        },
+        {
+          "role": "assistant",
+          "content": "Oh no, that’s brutal! Having your familiar gear taken away mid-shoot is tough on both workflow and confidence. Are you able to rent similar models locally, or is it completely different gear? And are there particular features or settings you rely on that you’re having trouble replicating?"
+        },
+        {
+          "role": "user",
+          "content": "I managed to track down a decent full-frame body, but the controls are totally different from my usual. I’m spending extra time just learning the layouts before each shoot. The lenses are nowhere near what I had, so I have to adjust my shooting style. It's slowing me down and the muscle memory is gone. I really hate wasting time on technical settings, but I guess I have to now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — getting comfortable with new controls before each assignment is definitely extra work. Would it help to schedule some daily practice runs so you can build up some new reflexes? Or maybe set up pre-shoot checklists to speed up your new routine? How’s this affecting your editing workflow?"
+        },
+        {
+          "role": "user",
+          "content": "Editing is a mess too. My backup drives were in the stolen bag, so I have to use rented hardware and cloud storage for backing up files at night. I’ve always avoided relying on the cloud, but it’s the only way to feel secure now. It’s a bit unsettling, but I can’t risk losing more data."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart call for the moment — cloud storage definitely gives you some extra peace of mind during gear chaos. Are you running into upload speed issues with hotel internet, or have you found a reliable spot? And is this backup process temporary until you replace your drives?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, it’s definitely temporary. As soon as I get my replacement gear shipped over, I’ll switch back to my usual setup. Hotel WiFi is actually decent, but I have to double check every file. Also, my resistance bands for stretching were in that bag, so my usual morning stretches are out the window for now. If you have alternate ideas for hotel room stretches, let me know."
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry about the resistance bands — those are such a staple for travel workouts. You might try using a towel for certain stretching routines, or just do bodyweight moves like yoga flows in your room. Would you be open to trying basic Pilates mat stretches? They’re good for back pain and require no equipment."
+        },
+        {
+          "role": "user",
+          "content": "Pilates mat stretches could work, thanks! I just need something to keep my back from locking up after long shoot days. Anyway, I’ve been sharing the gear loss and how I’m adapting on Instagram, just to be transparent with followers. Kind of helps to process everything, plus people seem to appreciate seeing the behind-the-scenes struggle."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really honest approach — sharing how you’re adapting lets your followers see the real creative process, not just the highlights. Are you getting any useful support or gear recommendations from them? And do you feel posting these updates is helping you stay connected during this tricky assignment?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve gotten a few tips on local rental shops and some messages from other photographers who've been through similar losses. It's surprisingly helpful, and it keeps the pressure off to be perfect. I still post at sunset, but I’ve made the stories a bit more about the process lately, not just the finished shots."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like it’s turning into a positive way to engage your audience, even if the situation started rough. Is there anything specific you’d like help with, either on the technical side or with adapting your routines beyond just gear and backups?"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Diagnosed with a moderate lumbar disc herniation after worsening back pain during prolonged travel, with her doctor recommending she pause swimming and avoid carrying heavy camera gear for at least two months.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Delegates on-location camera setup, breakdown, and heavy gear transport to local assistants or fixers during assignments, never carries or lifts equipment herself due to medical restriction",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Incorporates daily physiotherapist-recommended stretches and core stabilization exercises in place of previous swimming or gym routines",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Swims at least twice a week when in Berlin, choosing swimming over gym workouts whenever possible"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Attends gentle yoga or physiotherapy-guided exercise classes twice a week in Berlin, avoiding swimming and strenuous gym workouts as per medical advice",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor advised to pause swimming and avoid strain due to lumbar disc herniation. To stay active and support recovery, she switches to low-impact, medically-approved activities."
+          },
+          {
+            "from": {
+              "id": "pref_019",
+              "fact": "Uses downtime on shoots to walk and photograph neighborhoods just for fun, never schedules formal tourist excursions"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Uses downtime on shoots to rest at her accommodation, pursuing indoor creative hobbies like sketching or photo editing, avoiding exploratory walks to protect her back",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Extended walking for street photography is discouraged while herniated disc is healing; she needs physically restful downtime, shifting her off-tour custom from walks to indoor, sedentary activities."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_034",
+            "fact": "Rents unfamiliar camera equipment for shoots and spends extra time learning new controls and settings before each assignment",
+            "domain": "work_habits",
+            "reason": "Her doctor recommends avoiding carrying and operating heavy camera gear; she is pausing hands-on use of professional equipment for at least two months and cannot meaningfully continue this gear-acclimation pattern."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I just found out I have a lumbar disc herniation after weeks of worsening back pain, mostly from my last few trips. My doctor said absolutely no swimming or carrying heavy gear for at least two months. I honestly have no idea how to stay active or work—both physically and professionally—without my usual routines. Any advice?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds tough, especially with your travel-heavy photography schedule. Let's start with your activity routine—besides swimming, what’s worked for keeping you active in the past? Are you open to lower-impact options like yoga or gentle stretching?"
+        },
+        {
+          "role": "user",
+          "content": "I used to swim twice a week in Berlin, always preferred it to the gym. But now swimming is off-limits, so I’ve been looking at gentle yoga classes and physiotherapy-guided exercise. My physiotherapist is helping me figure out which movements are safe. Any suggestions for how to stay motivated with such a change? I’m used to water and that rhythm."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s definitely a big shift, especially losing your main source of exercise. Have you found a yoga or physio class in Berlin that appeals to you yet? Sometimes starting a new routine is easier with a community or an accountability partner. Would tracking progress or journaling your recovery help keep you motivated?"
+        },
+        {
+          "role": "user",
+          "content": "I’m still looking for a physio-friendly yoga studio—recommendations would be helpful! I do journal nightly about my travel and experiences, so maybe adding a short wellness log could work. My challenge is downtime on shoots—I’d usually walk and photograph neighborhoods for fun, but even those walks are out now. I need sedentary ways to stay creative indoors. Any ideas?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—I can suggest a few yoga studios with gentle classes, and some physiotherapy clinics that offer guided group sessions. As for indoor creativity: have you tried sketching, editing older photo sets, or experimenting with new styles in Lightroom? Perhaps curating a themed gallery for Instagram or making creative short reels could channel your energy while keeping things physically restful?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually a good idea. I’ve started sketching a bit, and focusing more on indoor photo editing—so, not walking around for casual photography like before. I’m easing into short reels for Instagram as well, since video content is something I want to pursue more. But on assignments, logistics are overwhelming now. I can’t set up or carry heavy gear myself—what’s the best way to delegate that?"
+        },
+        {
+          "role": "assistant",
+          "content": "For on-location work, you could hire local assistants or fixers to handle all setup, breakdown, and gear transport—many destinations have skilled freelancers or teams for this purpose. Is your travel magazine willing to help organize or cover the cost? If not, platforms like CrewScout or Production Paradise often list local crew, and you can specify exactly what support you need."
+        },
+        {
+          "role": "user",
+          "content": "Yes, I’m delegating all camera setup, teardown, and anything involving lifting gear to local assistants now—my doctor was very firm about not carrying or operating heavy equipment myself for at least two months. I guess this means less hands-on learning with unfamiliar rented cameras on new assignments, which was my habit before. But I’ll need to let that go for now."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move prioritizing your recovery—and good call letting go of hands-on gear acclimation during this period. If you still need to familiarize yourself with new equipment, maybe try remote tutorials or virtual walkthroughs from manufacturers, so you’re confident in settings without physically handling the gear. Do you need help finding resources or guides for this?"
+        },
+        {
+          "role": "user",
+          "content": "That could work—I hadn’t thought of virtual walkthroughs, but now that I can’t do hands-on trials, online guides are probably the way to go. One other thing: I’m keeping up with daily physiotherapist-recommended stretches and core stabilization, substituting those in place of my old routines while traveling. Even on shoot days, I make time for them—any tips for keeping the habit consistent on the road?"
+        },
+        {
+          "role": "assistant",
+          "content": "Making time for daily stretches is key, especially for recovery. Packing lightweight aids like resistance bands and scheduling your routine for a set time—perhaps after your morning meditation or in the evening before editing—can reinforce the habit. Some apps cue routines, but since you journal nightly, maybe linking stretches to that ritual would help. Would you like suggestions for remote-friendly exercise videos or apps?"
+        },
+        {
+          "role": "user",
+          "content": "That’s helpful, thanks. I always pack resistance bands, and linking my stretches to my journaling could work well. One last thing: I’m adapting to all these changes, but is there anything else I might be missing, work-wise or wellness-wise, now that most of my routines are on pause? I’d prefer low-pressure ideas for recovery, not adding more stress."
+        },
+        {
+          "role": "assistant",
+          "content": "You seem to be approaching the transition thoughtfully. Beyond your new activity and creative routines, consider scheduling pockets of true rest and reflection—perhaps incorporating gentle mindfulness sessions, listening to new indie films or music, and embracing indoor cultural exploration (like virtual gallery visits). Staying connected with your support network—as you do with your sister—is great for well-being. Give yourself space for slower recovery, and avoid overscheduling. Let me know if you want specific recommendations for yoga studios, creative indoor activities, or remote assistants in upcoming locations."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her parents announce they are selling their home in Spain and relocating permanently to Berlin, planning to move into a flat within a short distance of her apartment.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_041",
+            "fact": "Keeps Sundays flexible for spontaneous family gatherings with her parents, declining nonessential work or social invitations on those afternoons",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Checks in with parents monthly via a group video call, never lets more than six weeks pass without contact"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Meets parents in person for weekly lunches or weekend visits whenever both are in Berlin, rarely relies on group video calls now that they live nearby",
+              "domain": "social_relationships"
+            },
+            "reason": "Her parents are relocating from Spain to an apartment near hers in Berlin, making in-person visits much more convenient and natural than scheduled video calls. The behavior shifts from remote check-ins to frequent, in-person family time."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my parents just told me they're selling their place in Spain and moving here — like, actually to Berlin, within walking distance from my apartment. It's pretty surreal! I'm excited but also a bit anxious about how this will affect my routines, especially since I'm barely home and my work is so erratic. I'm used to managing everything solo, and I don't really know how to fit regular family time in. Any ideas on balancing this without losing the flexibility I need for assignments and editing deadlines?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that's a big change! It'll be a new kind of support — but also, as you said, new demands on your time. Can you tell what they're hoping for in terms of seeing you? Are they expecting weekly meetups, or just more spontaneous hangs? That might help in figuring out what routines can flex and which need protection for your work."
+        },
+        {
+          "role": "user",
+          "content": "They're talking about wanting weekly lunches or weekend visits, especially since they'll be so close. I used to just check in on family via group video call every month, but that's sort of obsolete now. Honestly, I haven't figured out if I'll set a fixed day or just play it by ear depending on when I'm actually in Berlin. It feels weird to plan for in-person time after so many years being remote. Is it better to schedule something or keep it loose around my travel assignments?"
+        },
+        {
+          "role": "assistant",
+          "content": "It depends on what helps you feel in control. For some freelancers, blocking out a family lunch every week grounds the schedule — others prefer to keep it semi-spontaneous. Since your work trips can change last-minute and you value flexibility, maybe you could have an anchor day (like Sundays) for family time, but treat it as a flexible slot: if you're here, you meet, otherwise just catch up later. Would that work, or does your Sunday already tend to fill up with shoots or editing?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I'm thinking Sundays might make sense for family gatherings. I usually call my sister then, but since my parents will be nearby, I could meet them in person and just video call my sister as usual. I've started keeping Sundays flexible and declining work and social invites on those afternoons unless they're essential. So yeah, I could reserve that for family stuff and not stress about double-booking, at least when I'm in town."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid plan! Keeping Sundays open could help, especially since it aligns with your existing check-in habit. Do your parents know you’ll still be traveling a lot? Maybe setting expectations early about your availability — so they know some Sundays won’t be possible — could prevent any disappointment."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I made it clear to them I’ll still be away half the time. My schedule doesn’t really allow for routine except when I’m home, and I told them not to expect weekly gatherings if I’m shooting abroad. They seem pretty understanding so far. I’ll try for weekly lunches or visits when I am in Berlin, but it’ll be rare for us to need video calls now, honestly."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a healthy boundary. So, to recap: in-person visits when you're in Berlin and Sundays reserved for family, plus your sister’s video call tradition continues. How do you feel about fitting these into your creative routines — will it disrupt your editing/backup schedule or are you confident about keeping those stable regardless?"
+        },
+        {
+          "role": "user",
+          "content": "I think I’ll be fine — I already back up files nightly after shoots and edit late at night, so those routines won’t conflict. I just needed reassurance that giving Sundays to family won’t completely throw off my work or leisure balance. I’m used to having that time for planning logistics, but I’ll shift travel planning to Thursdays like usual. As long as my evenings are open for editing, Sundays can be flexible family days."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. It sounds like you’ll keep your core routines intact and just layer in family time where it works. If you ever need to recalibrate—say, if their expectations change or your schedule gets even crazier—let me know and I can help brainstorm adjustments. Any other anxieties about the change? Maybe how it’ll affect your social life, or dating, now that family’s closer?"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed a persistent allergic reaction to a common food additive found in many local dishes during a month-long assignment in Southeast Asia, resulting in repeated hospital visits and a doctor's order to avoid this ingredient strictly in her diet going forward.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Pre-contacts local hosts, fixers, or guides before each assignment to share her food restriction and request ingredient lists or safe recommendations before arrival",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Carries a personal translation card explaining her allergy and emergency protocol in the local language, presenting it at every restaurant or market while abroad",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Adopts local cuisine when traveling, but never eats dairy or red meat when at home in Berlin"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Strictly researches and avoids any dishes or packaged foods containing the allergenic additive when traveling or at home, declining local delicacies with the ingredient even if customary; continues plant-based focus in Berlin, still avoids dairy and red meat",
+              "domain": "health_body"
+            },
+            "reason": "After repeated hospitalizations abroad and a medical order, she can no longer freely adopt local cuisine if it contains the allergen. She must now always screen for this ingredient, sometimes refusing regional specialties that would have previously been a core part of her travel food experience."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey—so, not the update I wanted to share, but I spent most of my Southeast Asia assignment bouncing between hospital visits. Turns out I'm seriously allergic to a food additive that's everywhere in local dishes. Doctor said strict avoidance, no exceptions. Problem is, my whole workflow assumes I can eat pretty much anything on assignment. Any ideas on changing up my meal routine when I'm traveling?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, I’m really sorry to hear that—sounds stressful, especially with your schedule and all the dining out that comes with travel. Is the additive something you can easily spot on menus, or is it hidden in packaged/restaurant foods? We can look at ways to screen in advance, or strategies for safe eating while on the road."
+        },
+        {
+          "role": "user",
+          "content": "Not easy, unfortunately. It’s in a lot of sauces and spice mixes, not always listed clearly. I’m used to sampling local food while on assignment, but now I basically need to avoid some classic dishes completely if there’s a chance the ingredient is in there. So I can’t freely adopt local cuisine anymore, even if it’s the norm. I still stick to plant-based in Berlin, but abroad, it’s all about dodging this additive—even if that means turning down regional specialties."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge shift for someone whose work and social life revolve around exploring food culture! Have you started any new strategies for screening meals or minimizing risk when traveling? For example, do you scan labels closely or try to request ingredient lists from restaurants?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, major adjustment. I’ve begun researching restaurants and packaged foods ahead of each trip—triple-checking anything for the additive. I’m not shy about asking for ingredient lists, even if it means declining customary dishes. It feels awkward but I can’t risk it. I’ve also started pre-contacting local hosts, fixers, or guides before each assignment to ask for recommendations and ingredient info before I even arrive. Sometimes they help me find safe spots—which is new for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move; local connections can really make a difference, especially with hidden ingredients. Do you ever run into language barriers when explaining the allergy at restaurants or markets? Maybe carrying a translated allergy card could help streamline those conversations and ensure people understand the severity."
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. The language issue is a real problem—especially when menus don’t translate well or staff doesn’t speak English. I started carrying a personal translation card, actually, that explains exactly what I’m allergic to and what to do in an emergency, in the local language. I show it everywhere—markets, restaurants, even hotel breakfast buffets. It’s made things easier and I feel safer. I never used to do that before this whole ordeal."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really proactive! Having a card like that must cut down on the confusion and helps for emergencies, too. Are there any routines you’ve had to drop or modify because of the allergy? For example, did you used to go on food tours or join communal meals, and now avoid them? Or is it more about the behind-the-scenes screening?"
+        },
+        {
+          "role": "user",
+          "content": "It’s mostly about screening, but I’ve had to cut back on food tours and saying yes to communal meals unless I know exactly what’s in everything. I miss the sort of spontaneous culinary experiences, but safety wins out now. My old routine—adopting local cuisine while traveling—just doesn't fit anymore, even though it was a core part of my approach up to this point."
+        },
+        {
+          "role": "assistant",
+          "content": "Totally understandable. You’ve really adapted fast considering how much travel dictates your daily life. Would you like help creating a travel checklist for food safety—like pre-trip research steps, alerting hosts, backup food options? Or are you mostly looking for coping strategies while on assignment (snack ideas, meal prep, etc.)?"
+        },
+        {
+          "role": "user",
+          "content": "A checklist would actually help! I’ve got some local contacts helping, and the translation card is a staple now. Maybe supplementing with backup snacks, and reminders to request ingredient lists. Also, steps for flagging food restrictions before booking accommodations—for example, making sure hotel breakfasts are safe. Anything that helps me feel prepared, so I’m not improvising every meal."
+        },
+        {
+          "role": "assistant",
+          "content": "Great, I’ll draft something for you: 1) Pre-contact hosts/guides to flag your allergy and request safe recommendations; 2) Prepare translation cards detailing your allergy & emergency actions; 3) Research local packaged foods and standard dishes for hidden additives; 4) Stock up on safe snacks for gaps between meals; 5) Confirm with accommodations about allergy-safe meal options before arrival; 6) Always ask for full ingredient lists and decline dishes if uncertain. Anything else you’d add based on your experience?"
+        },
+        {
+          "role": "user",
+          "content": "That covers most of it. The only thing I’d emphasize is not hesitating to turn down regional specialties, even if it feels impolite—the risk is real. And using those local connections to scout out grocery stores with safe options (in case restaurants don’t work out). Thanks for walking through this. I’m finding my new groove, but it’s definitely a work in progress!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "While in Berlin for a short break between assignments, she slipped on wet tiles at her local pool and fractured her right wrist, requiring a cast and prohibiting her from using cameras or computer equipment for several weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Uses recovery period to listen to photography and cinematography podcasts for creative inspiration, never skips the daily learning session while unable to shoot or edit",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Connects with clients and followers through personal Instagram updates about her recovery and daily life in Berlin, shifting from project-based content to personal storytelling until she can resume photography",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_018",
+              "fact": "Journals travel experiences nightly, handwriting rather than using electronic devices"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Records nightly audio journals on her phone using voice memos, as writing by hand is impossible with her right wrist in a cast",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Her wrist fracture prevents handwriting and extensive use of electronic devices with one hand. She adopts voice memos as a direct substitute for nightly reflection and documentation."
+          },
+          {
+            "from": {
+              "id": "pref_038",
+              "fact": "Delegates on-location camera setup, breakdown, and heavy gear transport to local assistants or fixers during assignments, never carries or lifts equipment herself due to medical restriction"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Delegates all on-location photography—including camera operation, gear adjustments, and composition—to trusted assistants or postpones shoots entirely, as she cannot physically operate camera equipment with her wrist in a cast",
+              "domain": "work_habits"
+            },
+            "reason": "The wrist fracture makes her unable to perform or direct any camera operations herself, not just lifting or setup; active shooting is impossible, so she must either fully delegate all shooting or pause work assignments."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_001",
+            "fact": "Edits photos in late-night sessions after shoots — never delegates retouching to anyone else",
+            "domain": "work_habits",
+            "reason": "Her wrist is immobilized for several weeks; she cannot use a mouse or tablet for photo editing, so this personal editing routine is entirely infeasible until recovery."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, quick update: I fractured my right wrist slipping at the pool yesterday—full cast, can't use my camera or laptop for weeks. I'm honestly anxious about falling behind, both client work and my Instagram. Any suggestions for staying connected and keeping creative while I'm basically one-handed?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds rough—especially given your workload and how hands-on you are. For staying connected, maybe focus on content that doesn't require new shoots: behind-the-scenes stories, personal updates, maybe photo essays from your archive? For creativity, have you considered voice memos or even short audio diaries? Could be a good substitute for journaling and engaging your audience."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I've actually started recording audio journals on my phone at night instead of writing—handwriting is impossible with this cast and typing is awkward one-handed. It's surprisingly cathartic, and I might even share snippets on Instagram if followers are interested."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a great adaptation! Audio diaries can offer a really intimate glimpse into your creative process. Sharing snippets could strengthen the connection with your audience, especially since they know you’re sidelined for a bit. Do you feel comfortable delegating any ongoing assignments, or is that off the table for you?"
+        },
+        {
+          "role": "user",
+          "content": "Delegation's tricky. Normally I'd manage gear setup myself, but now it's total hands-off—I can't operate cameras at all, not just lift equipment. For now, I've postponed shoots unless I can fully trust an assistant with the entire process, including composition. It's kind of maddening not to be in control, but no other option."
+        },
+        {
+          "role": "assistant",
+          "content": "That loss of control must be frustrating, especially since your style depends so much on your direct involvement. Are you able to supervise remotely, or does it feel like the creative vision is too diluted that way? If postponing, maybe this an opportunity to focus more on storytelling or creative planning for future projects?"
+        },
+        {
+          "role": "user",
+          "content": "I'd love to supervise, but I honestly can't do much even from afar with one hand. Editing is completely out—I used to spend late nights retouching, but the mouse and tablet are unmanageable right now. I have to drop all editing for a few weeks, which is strange since I never delegate retouching."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, especially since personal editing was such core part of your workflow. Maybe shifting your Instagram focus to personal storytelling for now could maintain engagement. Followers appreciate real-life updates, and recovery narratives are surprisingly relatable. Have you thought about sharing daily life in Berlin instead of just project work?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually what I’ve started doing—posting updates about recovery and day-to-day life rather than project shots. It feels a bit vulnerable, but people have responded well. I’m also looking for new ways to stay inspired: any ideas for creative learning while I can’t shoot or edit?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great to hear the personal content resonates! For inspiration, what about photography and cinematography podcasts? You can listen while resting, and it’s a way to keep up with industry trends and creative techniques without needing to use your hands. Any particular topics you’d want to dive deeper into—storytelling, technical skills, or maybe documentary approaches?"
+        },
+        {
+          "role": "user",
+          "content": "Podcasts are perfect—I've already added a daily session to my routine so I never miss out on learning while stuck like this. Lately I've been interested in documentary storytelling and cinematic techniques, especially since I started taking cinematography classes before the injury."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a productive direction. There are some fantastic podcasts on documentary and cinematography—would you like a few recommendations? Also, since your routine is impacted, are there any wellness adjustments you’re considering, or is physiotherapy already covering recovery needs?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks, recommendations would be great! In terms of wellness, I’m sticking with my physiotherapist for recovery, and adjusting training routines as needed. I can still do stretching with resistance bands, just left-handed only for now. Most of my focus is on mental health and staying creatively engaged."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, mental engagement and creative stimulation are key during recovery. I’ll share a few podcast lists tailored to documentary and cinematic storytelling. It sounds like you've adapted remarkably well given the circumstances. Anything else I can help with—client communication, backup routines, or keeping your followers feeling connected?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, client communication’s covered—I’ve been updating clients personally and explaining the situation, shifting focus to future planning or pausing assignments as needed. Right now, keeping up the creative spark without my usual hands-on methods is my main challenge. Thanks for the support and ideas—it really helps!"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Awarded a prestigious international grant to produce a documentary series focused on cultural festivals across South America, requiring her to shift her upcoming schedule and dedicate four consecutive months to intensive fieldwork, video production, and collaboration with local videographers.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_051",
+            "fact": "Collaborates daily with local videographers and fixers, prioritizing co-created video content over solo work during all South American festival assignments",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_052",
+            "fact": "Devotes every evening on location to reviewing raw video footage with her field team, pausing typical solo travel journaling and personal social media updates for the duration of the grant project",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_026",
+              "fact": "Prioritizes assignments from the exclusive magazine contract, accepting overlapping travel dates when necessary for their shoots; only declines double bookings outside contract requirements"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Prioritizes projects funded by major international grants, even over magazine contract shoots, accepting exclusive multi-month commitments that preclude overlapping freelance assignments",
+              "domain": "work_habits"
+            },
+            "reason": "Winning the prestigious international grant for a multi-month South America documentary series forces her to put all other assignments, including her magazine contract, on hold to focus full-time on the grant project."
+          },
+          {
+            "from": {
+              "id": "pref_029",
+              "fact": "Sets aside two days per month to brainstorm and propose new feature ideas exclusively for the magazine, shifting focus from pitching to multiple outlets"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Suspends regular magazine feature ideation sessions while focused on grant-funded documentary work, dedicating creative energy solely to the funded project and collaborations with local teams",
+              "domain": "work_habits"
+            },
+            "reason": "The grant’s exclusive scope and the ongoing collaborative production schedule mean she cannot reliably set aside time or creative resources for non-grant magazine pitches during the 4-month fieldwork period."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_031",
+            "fact": "Coordinates her autumn schedule to be available in London for wedding rehearsals and planning activities, declining magazine assignments that conflict with wedding commitments",
+            "domain": "work_habits",
+            "reason": "The wedding and associated commitments are no longer ongoing and do not impact current work schedules; her focus now shifts fully to the grant project and South American fieldwork."
+          },
+          {
+            "id": "pref_032",
+            "fact": "Initiates frequent video calls with her sister mid-week (in addition to Sunday) to help with wedding preparations, favoring collaborative planning over their usual catch-up routine",
+            "domain": "social_relationships",
+            "reason": "Wedding preparations with her sister are now complete and no longer require mid-week planning calls; the specific context for this preference has ended."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news: I was awarded the international grant for the South America cultural festival doc series. It means four straight months on the road—mostly fieldwork and video shoots, working with local teams. To be honest, I'm scrambling to adjust everything: work commitments, routines, gear, even my usual creative process. Can you help me think through how to plan for a total shift like this? Especially so I don’t lose track of health and deadlines."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That’s an incredible opportunity—but I can see how it disrupts everything. Let’s break it down: which aspects feel most overwhelming right now? Is it the logistics, health routines, balancing all your professional obligations, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "The big thing is prioritizing the grant project. I usually juggle travel magazine assignments, but this grant is exclusive—so I’ve put everything else, including my contract shoots, on pause. It’s a full commitment. Now I need to restructure all my freelance scheduling and make sure I don’t accidentally overlap with existing jobs. I also suspended my regular feature brainstorming sessions for the magazine so I can focus only on the documentary with my collaborators."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—this kind of project needs your undivided attention, especially with daily fieldwork and collaboration. Are you coordinating directly with local videographers, or still planning to do most work solo? And how’s the transition to video affecting your usual workflows—especially editing and content creation?"
+        },
+        {
+          "role": "user",
+          "content": "I'm working daily with local videographers and fixers for the festival shoots. Collaborative video is the priority now—solo photo work takes a back seat, which is a big change. Evenings are spent with the team reviewing raw footage, instead of my usual solo travel journaling or personal social updates. I’ve paused those routines for the grant duration."
+        },
+        {
+          "role": "assistant",
+          "content": "Shifting from solo work to daily collaboration is a big adjustment. How are you managing the creative control—you’ve always preferred projects where you could dictate both photography style and location. Is it challenging relinquishing some of that? And with evenings booked for footage review, are you worried about losing your nightly downtime or journaling habit?"
+        },
+        {
+          "role": "user",
+          "content": "I still have a say on the doc series’ visual direction, but I’m embracing more co-created content—it's necessary for the festivals and helps with cultural authenticity. Losing solo journaling is tough, honestly. Normally, I write by hand every night, but right now, group review sessions take priority. I figured I'd return to journaling after the grant wraps."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful compromise. Since your routine is so altered, are there other habits you’re needing to drop or modify? For example, with previous commitments like family events or extra check-ins with your sister—are those still happening amidst the new schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Earlier I coordinated my autumn schedule to be available in London for my sister’s wedding, declining magazine assignments to make time for rehearsals and planning. But the wedding’s over now—those commitments aren’t ongoing. I also had frequent midweek calls with her for wedding prep, but that’s finished, so we’re back to our usual Sunday video call routine."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—so the wedding era is behind you, and the focus now is wholly on the grant project. With your priorities so shifted, how will you maintain health routines? The travel pace is intense, especially with jet lag and back pain. Will you be able to stick to your resistance bands and regular stretching, or does collaborating and fieldwork make that harder?"
+        },
+        {
+          "role": "user",
+          "content": "I’m determined not to miss stretching, even with the hectic schedule. Resistance bands are coming with me like always, and I’ll carve out time for quick hotel room stretches daily. That’s non-negotiable—I learned not to skip that with my back issues."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect—that consistency is crucial. Now that all your creative energy is focused on the documentary and festivals, do you want help streamlining logistics or managing backup routines for your video files? It sounds like evenings are solely for team review; maybe setting up automated backups for footage will save you some time and headspace."
+        },
+        {
+          "role": "user",
+          "content": "Good call. I always backed up photo files to two drives nightly, but with the video workload and group review, I’ll need to automate. I’ll set up a system for footage backups so I can stay present during the reviews. Anything else you’d recommend as I navigate this new normal?"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re already adapting remarkably well. Since your routines and priorities are so different for these four months, setting clear boundaries on remaining freelance inquiries and automating any admin tasks—like emails or calendar reminders—could help. You might also schedule regular check-ins (even just a few minutes) for personal reflection, so you don’t lose your sense of self amidst the intense collaboration. Do you want suggestions for tracking creative breakthroughs or keeping some form of solo documentation, even briefly?"
+        },
+        {
+          "role": "user",
+          "content": "Brief documentation could work. Maybe a weekly handwritten summary, just so I remember personal impressions. And yes, I’ll clarify boundaries for clients—no overlap or double booking during these grant months. Thanks for helping me sort through this—feels less overwhelming now!"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger sister in London gave birth to her first child and asked her to visit soon to help during the newborn's first weeks, prompting family expectations for more frequent travel between Berlin and London.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_054",
+            "fact": "Schedules flexible work assignments and travel to London more frequently to provide ongoing support for her sister and newborn, even at the expense of turning down some freelance opportunities",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Frequently seeks out baby-friendly cafés or quiet parks in London for outings with her sister and the newborn during visits, preferring these over bustling central city spots",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Video-calls her sister every Sunday evening, regardless of location — never switches to texting for the weekly check-in"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Prioritizes extended in-person visits with her sister in London during the newborn’s first weeks, pausing the regular Sunday video-call routine while on-site",
+              "domain": "social_relationships"
+            },
+            "reason": "With her sister asking for in-person help after giving birth, the usual remote check-in pattern will be replaced by direct support and face-to-face time in London, making weekly video calls unnecessary or redundant while she is there."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_030",
+            "fact": "No longer dates during the months leading up to her sister's wedding, prioritizing family commitments over casual relationships until the event is over",
+            "domain": "social_relationships",
+            "reason": "The wedding planning and associated commitments are complete and her focus has shifted to supporting her sister post-birth rather than wedding preparations; the specific event (wedding) referenced by this preference is over."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My sister just had her baby in London—I'm flying out tomorrow to stay with her. It's a big shift; I want to be there as much as possible in these first weeks, but I'm worried about balancing ongoing client projects and my own routines. Can you help me figure out how to manage work, family, and all the travel logistics during this phase?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Congratulations to your sister—and to you, auntie. Supporting her during the newborn stage is a big commitment. First, how long are you planning to stay for this initial visit, and are you aiming to continue assignments while you're in London, or pausing everything for a while?"
+        },
+        {
+          "role": "user",
+          "content": "I'm planning to stay at least two weeks initially, maybe longer if she needs extra help. I want to take on less freelance work than usual for a bit—just the flexible shoots or editing tasks I can do remotely. It means saying no to some travel magazine projects, which feels weird but necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a wise call—family comes first, especially now. Since you'll be in London for an extended stay and keeping your workload light, are there parts of your workflow that feel harder to adapt? For example, do you have client deadlines coming up, or do you need help figuring out how to keep up your social media presence with less location content?"
+        },
+        {
+          "role": "user",
+          "content": "I do have a couple of editing deadlines, but they're manageable; honestly, it's my Instagram routine I'm thinking about. Usually, I post sunset stories and behind-the-scenes photos from assignments, but since I'll mostly be helping with the baby, my content might look pretty different. Also, I'm expecting to be out with my sister and the newborn more—I've already been scouting baby-friendly cafes and quiet parks for our outings since the central city spots are just too crowded for her right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a great pivot! Featuring London’s quieter corners and baby-friendly venues could resonate with your followers, showing a new side of your travel lifestyle. Maybe you could do a mini-series on navigating the city with a newborn—documenting your favorite peaceful locations, even quick journal snippets or photo postcards from those outings."
+        },
+        {
+          "role": "user",
+          "content": "I like the idea of a mini-series. And yes, collecting vintage postcards is always part of my routine, so that won't change. One more thing: during my stay, I'll actually pause the regular Sunday video calls I do with my sister since I'll be with her in person. Face-to-face feels more important while she's adjusting to parenthood."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds perfect—being there in person will be so meaningful for both of you. With your usual check-in routine on hold, is there anything you want help with in terms of maintaining your own wellness or social connections while your focus is on family?"
+        },
+        {
+          "role": "user",
+          "content": "Good prompt. I think the main thing will be managing my own sleep and back pain—I'll bring resistance bands and a sleep mask for hotel nights if needed. No changes there. I do feel odd about turning down gigs, but the flexibility is needed. Oh, also, my dating pattern is shifting a bit. Before, I stopped dating during my sister's wedding planning, but that's over now and my focus is on the baby. So for now, I'm not dating anyone—family comes first."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes total sense—these kinds of transitions are intense, and pausing dating for now gives you more energy for family. For your back and sleep, sticking to your routines will help: stretching daily and using your blackout setup even in new places. If you need recommendations for London physiotherapists or quiet hotels, let me know. And for turning down gigs, maybe you could set up an automated response for inquiries, so clients know you’re taking some family time but still available for remote work."
+        },
+        {
+          "role": "user",
+          "content": "That's a solid idea—I might set up an auto-response to clarify my limited availability. I'll also update past clients with photo postcards from London; since I'll be there more often now, I'm planning to visit regularly between Berlin and London for my sister and the baby, even if it means fewer assignments for now."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re creating a thoughtful balance. Making your travel more frequent but flexible will help your sister—and those regular postcards are a lovely touch for maintaining client relationships. For your London trips, do you want any help with travel logistics—accommodation, visa reminders, or tips for traveling with baby gear, since you’ll likely be helping with outings more often?"
+        },
+        {
+          "role": "user",
+          "content": "I'd appreciate some tips for baby-friendly transport around London, and maybe a list of cafes or quiet parks near her neighborhood. I’m used to traveling solo and managing camera equipment, so adding stroller routes and baby-friendly spots is new territory for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! I’ll compile a list of peaceful parks and cozy, stroller-friendly cafes near your sister’s area. For transport, consider apps like Citymapper—which show accessibility info for transit lines—and look for black cabs with ramps if needed. Maybe you could do a little photo project highlighting these spaces as well, blending your documentary style with family moments. Would you like a shortlist of indie film screenings or galleries you could visit solo, for downtime while you’re in London?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, please—a shortlist would be great for evenings when my sister’s resting and I need a break. Exploring local galleries and indie screenings is still something I’ll prioritize, even though most outings will be with her and the baby."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I’ll gather recommendations both for baby-friendly outings and your own solo cultural escapes nearby. Whenever logistics get overwhelming or you need help adjusting your work calendar, just ask—I’m here to support your new routine."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "While shooting an assignment in rural Romania, she was bitten by a stray animal, prompting emergency rabies treatment and a doctor's order to avoid international travel for several weeks until her course of vaccines is completed.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_058",
+            "fact": "Uses her recovery period to connect with Berlin-based creative peers through coffee meetups and casual portfolio reviews, prioritizing in-person networking over remote collaborations",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_059",
+            "fact": "Begins documenting her recovery and local Berlin experiences through Instagram stories, shifting her content from travel focus to personal wellness and urban life updates",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Maintains connections with past clients by sending personalized photo postcards from new destinations"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Maintains connections with past clients by sending personalized photo postcards depicting Berlin or recent local work, as doctor-ordered travel restrictions prevent access to new international destinations",
+              "domain": "social_relationships"
+            },
+            "reason": "The rabies exposure and mandatory vaccine protocol prohibit international travel for several weeks, meaning she cannot produce postcards from new foreign locations as she usually would; her connection efforts must focus on Berlin or other recent, local content."
+          },
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Explores local street art and galleries in every city she visits — never skips opportunities for cultural immersion"
+            },
+            "to": {
+              "id": "pref_057",
+              "fact": "Explores street art and galleries exclusively in Berlin and the surrounding area, pausing cultural immersion in new cities due to medical travel restrictions",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Because her doctor has forbidden international travel while she completes her vaccine course, she cannot visit new cities and must limit her cultural outings to Berlin or local sites."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_043",
+            "fact": "Pre-contacts local hosts, fixers, or guides before each assignment to share her food restriction and request ingredient lists or safe recommendations before arrival",
+            "domain": "daily_routines",
+            "reason": "She is medically prohibited from accepting new international assignments, so there are no upcoming trips requiring pre-contact with local guides or hosts; the logistical need for this behavior is suspended until travel resumes."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, this is the weirdest assignment aftermath I’ve ever had. Got bitten by a stray dog while shooting in rural Romania last week—full rabies protocol, endless doctor visits. They ordered me to stay in Berlin, no travel at all until the vaccine course is finished. I’m feeling restless and honestly a bit lost, since I can’t take on new shoots abroad or explore anywhere new. Any ideas for keeping my work and creative momentum going from home?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that sounds intense! I’m glad you’re getting the treatment you need, but I can imagine the sudden stop is jarring. For your work, can you pivot to local assignments or personal projects in Berlin—maybe document urban life, street art, or even your recovery journey? And have you considered reaching out to Berlin-based creatives for collaboration or networking while you’re grounded?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, connecting locally is something I’m starting to do. I’ve lined up a couple of in-person coffee meetups and casual portfolio reviews with other Berlin photographers, since remote collaboration just doesn’t feel as satisfying. It’s helping a bit, but I wonder if there are other ways to use this forced downtime for career growth without relying on travel."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move—local networking can open up new opportunities and lead to creative inspiration. Since you're grounded, maybe now is a good time to focus on refining your editing or experimenting with video content, especially since you’re already taking cinematography classes. Have you thought about documenting your recovery or Berlin experiences for Instagram, either as photo essays or short video reels?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I’ve started shifting my Instagram stories toward personal wellness and Berlin urban life instead of travel. I’m nervous about my follower engagement, since they're used to exotic locations, but I feel like if I share this part of the story honestly, it might resonate. And yes, video experiments are happening—I’m making little clips around Berlin and using my recovery as a theme."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds authentic and compelling. Transparent storytelling often deepens audience connection, and recovery themes are relatable. Perhaps you could run a series: 'Photographer in Recovery'—daily snippets, reflections, and Berlin scenes? Also, since you can’t travel, have you considered updating your client postcards with local photography? That could help maintain relationships even if the locations aren’t new."
+        },
+        {
+          "role": "user",
+          "content": "I’ve had to adjust on that front, actually. I used to send clients personalized postcards from new destinations, but now, it’s only Berlin or recent local shoots. It’s not quite as exciting for them, but it’s the best I can do given the circumstances. I just make sure they're personal and creative so my connection doesn’t slip during this travel hiatus."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great way to adapt—your creative eye can make Berlin feel fresh, even for seasoned clients. Maybe you could tie the postcards to Berlin’s vibrant art scene or your recovery journey, adding a unique angle? Speaking of art, are you still visiting galleries, or have your cultural outings changed due to your travel restrictions?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve stopped exploring new cities for cultural immersion—doctor’s orders. Now, I’m only checking out local galleries and street art here in Berlin or nearby. It’s limiting, but there’s actually more than I realized. I’ll admit, part of me misses discovering art in entirely new places, though."
+        },
+        {
+          "role": "assistant",
+          "content": "There’s definitely rich material in Berlin’s art scene, so maybe this is a chance to dig deeper into what’s right outside your door. Has the pause changed anything about how you approach logistics for assignments, like prepping food arrangements with local hosts before travel, or is that on hold as well?"
+        },
+        {
+          "role": "user",
+          "content": "That part is dropped for now—I used to pre-contact hosts or guides before shoots to discuss food restrictions and ingredient lists, but since I can’t accept new international assignments, there’s no logistical need for those conversations. I’ll revisit when travel’s back on, but it’s one less thing to coordinate at the moment."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—fewer moving parts while you’re homebound. Sounds like you’re turning limitations into opportunities: networking locally, focusing on wellness, and experimenting with creative approaches. Is there anything else you’re struggling to adapt to, or a part of your routine you’re hoping to reinvent during recovery?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I think my main struggle is keeping the momentum going without the excitement of new destinations. But chatting with peers, journaling nightly, and shifting my content focus is helping. If you have any other ideas for local creative projects or ways to keep my audience engaged, I’m open."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. You might experiment with a 'Berlin from a Local’s Lens' project, showcasing lesser-known neighborhoods or stories. Or create short documentary pieces about local artists, blending your photo and video skills. Inviting followers to suggest Berlin locations could foster interaction, too. Let me know if you want help brainstorming formats!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_003",
+        "fact": "Responds to client emails within 24 hours, even while abroad — never lets inbox pile up",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Posts behind-the-scenes stories on Instagram after every travel day, never skips content updates during assignments",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Schedules physiotherapy appointments immediately upon returning to Berlin, never postpones despite busy work",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Uses blackout curtains and sleep masks while traveling, never sleeps without them in unfamiliar places to combat jet lag",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Prefers meeting friends one-on-one in coffee shops or quiet bars — avoids large group gatherings",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Collects vintage postcards from each assignment location, refusing digital souvenirs",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Attends indie film screenings or festivals whenever possible, prioritizing them over mainstream cinemas",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts every morning with oat milk coffee and 10 minutes of quiet meditation — never checks emails before this routine",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Plans travel logistics (flights, visas, accommodation) on Thursday evenings each week, never leaves arrangements last minute",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Posts Instagram stories at sunset local time during assignments, never posts in real-time throughout the day",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Shops for groceries only at neighborhood markets when in Berlin, avoids supermarkets unless absolutely necessary",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_027",
+        "fact": "Accepts projects from the exclusive magazine contract even when some assignments limit creative direction or predetermine locations, as per contract terms",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Uses a shared editorial calendar required by the magazine to coordinate all shoot dates and deadlines; no longer relies solely on her personal planner",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_033",
+        "fact": "Backs up photo files nightly using cloud storage and rented hardware, as her usual drives and backup gear are unavailable due to equipment theft",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Shares updates about her gear loss and adaptation process on Instagram stories, prioritizing transparency with followers during assignments",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Attends gentle yoga or physiotherapy-guided exercise classes twice a week in Berlin, avoiding swimming and strenuous gym workouts as per medical advice",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Uses downtime on shoots to rest at her accommodation, pursuing indoor creative hobbies like sketching or photo editing, avoiding exploratory walks to protect her back",
+        "domain": "leisure_hobbies",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Incorporates daily physiotherapist-recommended stretches and core stabilization exercises in place of previous swimming or gym routines",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_040",
+        "fact": "Meets parents in person for weekly lunches or weekend visits whenever both are in Berlin, rarely relies on group video calls now that they live nearby",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Keeps Sundays flexible for spontaneous family gatherings with her parents, declining nonessential work or social invitations on those afternoons",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Strictly researches and avoids any dishes or packaged foods containing the allergenic additive when traveling or at home, declining local delicacies with the ingredient even if customary; continues plant-based focus in Berlin, still avoids dairy and red meat",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Carries a personal translation card explaining her allergy and emergency protocol in the local language, presenting it at every restaurant or market while abroad",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Records nightly audio journals on her phone using voice memos, as writing by hand is impossible with her right wrist in a cast",
+        "domain": "leisure_hobbies",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Delegates all on-location photography—including camera operation, gear adjustments, and composition—to trusted assistants or postpones shoots entirely, as she cannot physically operate camera equipment with her wrist in a cast",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Uses recovery period to listen to photography and cinematography podcasts for creative inspiration, never skips the daily learning session while unable to shoot or edit",
+        "domain": "leisure_hobbies",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Connects with clients and followers through personal Instagram updates about her recovery and daily life in Berlin, shifting from project-based content to personal storytelling until she can resume photography",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Prioritizes projects funded by major international grants, even over magazine contract shoots, accepting exclusive multi-month commitments that preclude overlapping freelance assignments",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Suspends regular magazine feature ideation sessions while focused on grant-funded documentary work, dedicating creative energy solely to the funded project and collaborations with local teams",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Collaborates daily with local videographers and fixers, prioritizing co-created video content over solo work during all South American festival assignments",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Devotes every evening on location to reviewing raw video footage with her field team, pausing typical solo travel journaling and personal social media updates for the duration of the grant project",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Prioritizes extended in-person visits with her sister in London during the newborn’s first weeks, pausing the regular Sunday video-call routine while on-site",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Schedules flexible work assignments and travel to London more frequently to provide ongoing support for her sister and newborn, even at the expense of turning down some freelance opportunities",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Frequently seeks out baby-friendly cafés or quiet parks in London for outings with her sister and the newborn during visits, preferring these over bustling central city spots",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Maintains connections with past clients by sending personalized photo postcards depicting Berlin or recent local work, as doctor-ordered travel restrictions prevent access to new international destinations",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Explores street art and galleries exclusively in Berlin and the surrounding area, pausing cultural immersion in new cities due to medical travel restrictions",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Uses her recovery period to connect with Berlin-based creative peers through coffee meetups and casual portfolio reviews, prioritizing in-person networking over remote collaborations",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_059",
+        "fact": "Begins documenting her recovery and local Berlin experiences through Instagram stories, shifting her content from travel focus to personal wellness and urban life updates",
+        "domain": "work_habits",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Edits photos in late-night sessions after shoots — never delegates retouching to anyone else",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "Her wrist is immobilized for several weeks; she cannot use a mouse or tablet for photo editing, so this personal editing routine is entirely infeasible until recovery."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Schedules all freelance assignments to avoid overlapping travel dates, refusing double bookings",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "The exclusive year-long contract requires her to prioritize this magazine's assignments over all other freelance work, and possibly accept overlapping or tighter scheduling to fulfill contractual obligations."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Only accepts projects that allow creative control over both photography and location — refuses generic stock photo gigs",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_027",
+        "reason": "The contract means she is obligated to execute assigned shoots which may not grant her previous level of creative control or freedom to choose locations."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Adopts local cuisine when traveling, but never eats dairy or red meat when at home in Berlin",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "After repeated hospitalizations abroad and a medical order, she can no longer freely adopt local cuisine if it contains the allergen. She must now always screen for this ingredient, sometimes refusing regional specialties that would have previously been a core part of her travel food experience."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Packs lightweight resistance bands to do stretching exercises daily in hotel rooms — never misses, even on shoot days",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "Her resistance bands were packed with the stolen camera equipment; she cannot use or pack them until replacements are arranged."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Swims at least twice a week when in Berlin, choosing swimming over gym workouts whenever possible",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "Her doctor advised to pause swimming and avoid strain due to lumbar disc herniation. To stay active and support recovery, she switches to low-impact, medically-approved activities."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Video-calls her sister every Sunday evening, regardless of location — never switches to texting for the weekly check-in",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_053",
+        "reason": "With her sister asking for in-person help after giving birth, the usual remote check-in pattern will be replaced by direct support and face-to-face time in London, making weekly video calls unnecessary or redundant while she is there."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Checks in with parents monthly via a group video call, never lets more than six weeks pass without contact",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_040",
+        "reason": "Her parents are relocating from Spain to an apartment near hers in Berlin, making in-person visits much more convenient and natural than scheduled video calls. The behavior shifts from remote check-ins to frequent, in-person family time."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Keeps dating casual and short-term, never commits to long-distance relationships",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "Preparing to be maid of honor means she is focused on supporting her sister and helping with wedding planning, and travel schedules complicate time for casual dating. She consciously decides to pause romantic pursuits in favor of her family role."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Maintains connections with past clients by sending personalized photo postcards from new destinations",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "The rabies exposure and mandatory vaccine protocol prohibit international travel for several weeks, meaning she cannot produce postcards from new foreign locations as she usually would; her connection efforts must focus on Berlin or other recent, local content."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Explores local street art and galleries in every city she visits — never skips opportunities for cultural immersion",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_057",
+        "reason": "Because her doctor has forbidden international travel while she completes her vaccine course, she cannot visit new cities and must limit her cultural outings to Berlin or local sites."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Journals travel experiences nightly, handwriting rather than using electronic devices",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "Her wrist fracture prevents handwriting and extensive use of electronic devices with one hand. She adopts voice memos as a direct substitute for nightly reflection and documentation."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Uses downtime on shoots to walk and photograph neighborhoods just for fun, never schedules formal tourist excursions",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_037",
+        "reason": "Extended walking for street photography is discouraged while herniated disc is healing; she needs physically restful downtime, shifting her off-tour custom from walks to indoor, sedentary activities."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Backs up photo files nightly to two separate drives — never relies solely on cloud storage",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "Her usual backup drives were in the stolen gear bag; while waiting for replacements she must adapt to using temporary rental gear and cloud storage to secure her work."
+      },
+      {
+        "id": "pref_026",
+        "fact": "Prioritizes assignments from the exclusive magazine contract, accepting overlapping travel dates when necessary for their shoots; only declines double bookings outside contract requirements",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "Winning the prestigious international grant for a multi-month South America documentary series forces her to put all other assignments, including her magazine contract, on hold to focus full-time on the grant project."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Sets aside two days per month to brainstorm and propose new feature ideas exclusively for the magazine, shifting focus from pitching to multiple outlets",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_050",
+        "reason": "The grant’s exclusive scope and the ongoing collaborative production schedule mean she cannot reliably set aside time or creative resources for non-grant magazine pitches during the 4-month fieldwork period."
+      },
+      {
+        "id": "pref_030",
+        "fact": "No longer dates during the months leading up to her sister's wedding, prioritizing family commitments over casual relationships until the event is over",
+        "domain": "social_relationships",
+        "created_at_session": 1,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "The wedding planning and associated commitments are complete and her focus has shifted to supporting her sister post-birth rather than wedding preparations; the specific event (wedding) referenced by this preference is over."
+      },
+      {
+        "id": "pref_031",
+        "fact": "Coordinates her autumn schedule to be available in London for wedding rehearsals and planning activities, declining magazine assignments that conflict with wedding commitments",
+        "domain": "work_habits",
+        "created_at_session": 1,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "The wedding and associated commitments are no longer ongoing and do not impact current work schedules; her focus now shifts fully to the grant project and South American fieldwork."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Initiates frequent video calls with her sister mid-week (in addition to Sunday) to help with wedding preparations, favoring collaborative planning over their usual catch-up routine",
+        "domain": "social_relationships",
+        "created_at_session": 1,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "Wedding preparations with her sister are now complete and no longer require mid-week planning calls; the specific context for this preference has ended."
+      },
+      {
+        "id": "pref_034",
+        "fact": "Rents unfamiliar camera equipment for shoots and spends extra time learning new controls and settings before each assignment",
+        "domain": "work_habits",
+        "created_at_session": 2,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "Her doctor recommends avoiding carrying and operating heavy camera gear; she is pausing hands-on use of professional equipment for at least two months and cannot meaningfully continue this gear-acclimation pattern."
+      },
+      {
+        "id": "pref_038",
+        "fact": "Delegates on-location camera setup, breakdown, and heavy gear transport to local assistants or fixers during assignments, never carries or lifts equipment herself due to medical restriction",
+        "domain": "work_habits",
+        "created_at_session": 3,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "The wrist fracture makes her unable to perform or direct any camera operations herself, not just lifting or setup; active shooting is impossible, so she must either fully delegate all shooting or pause work assignments."
+      },
+      {
+        "id": "pref_043",
+        "fact": "Pre-contacts local hosts, fixers, or guides before each assignment to share her food restriction and request ingredient lists or safe recommendations before arrival",
+        "domain": "daily_routines",
+        "created_at_session": 5,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "She is medically prohibited from accepting new international assignments, so there are no upcoming trips requiring pre-contact with local guides or hosts; the logistical need for this behavior is suspended until travel resumes."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T23:48:28.255436"
+}

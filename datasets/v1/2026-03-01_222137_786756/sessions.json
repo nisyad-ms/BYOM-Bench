@@ -1,0 +1,1466 @@
+{
+  "persona": "A finance manager at a nonprofit organization with limited technical resources",
+  "persona_id": "persona_20260301_223320",
+  "expanded_persona": {
+    "base_persona": "A finance manager at a nonprofit organization with limited technical resources",
+    "age": 38,
+    "gender": "female",
+    "location": "Milwaukee, WI",
+    "work_education": [
+      "Finance manager at a local nonprofit focused on community development; oversees budgeting and fiscal reporting",
+      "Often spends extra hours manually reconciling accounts due to outdated Excel-based systems",
+      "Recently tasked with training program managers on basic financial processes due to staffing shortages",
+      "Advocates for digital upgrades but struggles to secure funding for new accounting software",
+      "MS in Accounting from University of Wisconsin-Milwaukee; 4 years in the nonprofit sector after a decade in corporate finance"
+    ],
+    "health_wellness": [
+      "Experiencing mild carpal tunnel symptoms from repetitive computer work; tries wrist stretches during the workday",
+      "Extremely caffeine-dependent—drinks 3-4 cups of coffee daily to maintain energy during late budget cycles",
+      "Enjoys weekend morning runs in her neighborhood, though she’s recently reduced pace due to lingering knee pain",
+      "Stresses about work deadlines but feels calmest when volunteering at community garden, which she does once per week"
+    ],
+    "family_relationships": [
+      "Lives with her partner (a public school teacher) and their 12-year-old son in a bungalow near downtown",
+      "Juggles school drop-offs and pickups around her work hours—her partner works longer afternoons",
+      "Mother recently moved into assisted living nearby; visits her for Sunday lunch and manages her finances",
+      "Close-knit friend group from college; they meet every other month for book club"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Insists on double-checking manually reconciled accounts before finalizing reports—never submits unchecked work, even under time pressure",
+        "Schedules training sessions for program managers only in small groups—refuses to do large all-staff meetings",
+        "Advocates for digital tools but only proposes cost-neutral solutions—avoids suggesting expensive upgrades without a funding plan",
+        "Blocks out quiet time before noon for monthly reports—never schedules internal meetings in the morning",
+        "Prefers written documentation over video tutorials when instructing colleagues—never records training videos herself"
+      ],
+      "health_body": [
+        "Does wrist and finger stretches at her desk every two hours—never skips these on office days, regardless of workload",
+        "Limits coffee after 3pm—even during late budget crunches, switches to herbal tea in the afternoon",
+        "Runs only on weekend mornings and strictly on flat neighborhood routes—avoids hilly parks to protect her knees",
+        "Prepares healthy snacks for long workdays—never relies on vending machine food",
+        "Uses an ergonomic keyboard and mouse at home—avoids standard office peripherals whenever possible"
+      ],
+      "social_relationships": [
+        "Always visits her mother for Sunday lunch—never misses this family ritual without advance notice",
+        "Handles all school drop-offs, but never pickup on days when monthly reports are due",
+        "Keeps book club gatherings strictly to every other month—never reschedules to a different cadence",
+        "Texts her close friend group daily but prefers voice calls with her partner in the evenings",
+        "Manages her mother’s finances personally—never delegates this task, even when busy"
+      ],
+      "leisure_hobbies": [
+        "Volunteers at the community garden every Saturday morning—never accepts other social invitations at that time",
+        "Chooses contemporary fiction for book club—never suggests nonfiction or classics",
+        "Plans annual family vacations to national parks—never revisits the same park twice",
+        "Attends local community events only if her son is interested—never goes alone",
+        "Prefers streaming TV series in the evenings—never watches live television"
+      ],
+      "daily_routines": [
+        "Preps breakfast and packed lunches the night before—never leaves weekday meals to chance",
+        "Checks her email only after her son leaves for school—never before morning family time",
+        "Does Sunday night budget reviews for both work and personal finances—never skips, regardless of plans",
+        "Takes a 10-minute walk after dinner every evening—never brings her phone along",
+        "Keeps her phone on silent at home from 7pm onward—never replies to work messages after that time"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The nonprofit board approved a grant specifically earmarked for upgrading the organization’s accounting software, providing budget for a digital transition after years of manual reconciliations.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Prefers hands-on group demos for new accounting software rollouts—volunteers as the first user to test and customize workflows for her team",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Schedules short 'open-door' help sessions twice a week to support staff adjusting to the new digital system—offers spontaneous troubleshooting instead of rigidly structured trainings",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Advocates for digital tools but only proposes cost-neutral solutions—avoids suggesting expensive upgrades without a funding plan"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Now actively recommends paid digital solutions for finance processes, prioritizing robust features over low cost, since grant funding is secured for upgrades",
+              "domain": "work_habits"
+            },
+            "reason": "With dedicated grant funding authorized for accounting software upgrades, she no longer needs to restrict herself to only cost-neutral or free tools and can seek high-quality, paid solutions."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news: the board finally approved the grant for accounting software upgrades. I've spent years patching our Excel files and now we actually have a budget for this. Where do I even start? I want to make sure we choose something that won't just dump more work onto me or the program managers."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That's a huge win, especially after working with outdated tools. The first step is usually mapping your must-have features: budgeting, reporting, reconciliation, preferably with solid audit trails. How comfortable are your team members with digital tools, and do you want something cloud-based or on-premise?"
+        },
+        {
+          "role": "user",
+          "content": "Most of our staff barely use spreadsheets, and a couple are honestly nervous about technology. I want something cloud-based so we don't have to mess with internal servers. Now that funding isn't the main constraint, I'm prioritizing robust features—even if they're paid. Before, I could only suggest free stuff, but this grant really opens the door."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a good shift, especially if security and support are priorities—paid solutions tend to offer more reliability and actual customer service. Since you're switching from cost-neutral to feature-centric recommendations, would it help to look at options like QuickBooks Online, Sage Intacct, or Blackbaud? Have you demoed any already, or are you looking for starting points?"
+        },
+        {
+          "role": "user",
+          "content": "I've tried basic QuickBooks in the past but not these enterprise versions. I'm planning on scheduling hands-on group demos for us so we can test workflows. I usually prefer being the first user to explore and customize settings—it's easier to troubleshoot issues when I know the system inside out. Can you help draft criteria or a checklist for selecting software?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Some criteria you might include: multi-user access with permissions, integration with your banking institution, customizable reporting templates, ease of import/export for historical data, and nonprofit-specific tracking (like restricted grants). Do you want a checklist that also covers onboarding experience and user support for rolling out to less tech-savvy staff?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, onboarding is critical—short, clear learning curves, good help resources, and a responsive support team. Since I'm starting with group demos, I'll have to build a rollout plan. Afterward, I'm thinking of holding 'open-door' help sessions twice a week for staff to drop in if they're struggling with the new system. I won't do rigid scheduled trainings; flexible support is better while everyone adjusts."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds effective. Open-door sessions offer targeted help and reduce anxiety for staff who aren’t comfortable asking questions in big groups. Would you like me to suggest draft communication for inviting staff to these sessions, or help structure a simple sign-up system?"
+        },
+        {
+          "role": "user",
+          "content": "A draft invitation would be helpful. Since it's drop-in, I just want staff to know the hours and feel free to show up with any questions. Honestly, these sessions may need to cover everything from login to customizing report layouts, so an open agenda makes sense."
+        },
+        {
+          "role": "assistant",
+          "content": "Sure thing! Here’s a sample invitation:\n\n\"Hi all, \n\nStarting next week, I’ll be holding open-door help sessions on Tuesdays and Thursdays from 2–3pm in the conference room. Feel free to drop in—no appointment needed—for any questions or troubleshooting as we transition to the new accounting software. Whether it’s login issues or customizing reports, I’m here to help.\"\n\nYou can tweak timing/location as needed. Does this work for your team’s schedule, or should we adjust the hours?"
+        },
+        {
+          "role": "user",
+          "content": "That’s perfect! Tuesdays and Thursdays line up well with other staff routines. Thanks for helping me organize this. I’ll start putting together a selection checklist and get the demos booked. If you have a sample checklist template for software evaluations, send it my way."
+        },
+        {
+          "role": "assistant",
+          "content": "Will do! I’ll draft a checklist template covering feature sets, usability, onboarding resources, support responsiveness, nonprofit compliance, and workflow customization. You can adjust it as you go through demos. Let me know how the first group session goes—happy to help refine training materials or troubleshoot rollout challenges."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her partner was asked to lead a new after-school program at their school, requiring longer work hours and shifting most afternoon school pickups and evening responsibilities to her.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Prepares quick weekday dinners using meal prep strategies—rarely cooks elaborate evening meals during school weeks",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Allocates time for assisting her son with homework most evenings—never schedules work tasks during this family window",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Handles all school drop-offs, but never pickup on days when monthly reports are due"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Handles all school drop-offs and pickups on weekdays—never misses afternoon pickups unless her partner is available",
+              "domain": "social_relationships"
+            },
+            "reason": "Her partner’s new after-school program means she must handle nearly all pickups, not just on report days. She now consistently does both drop-off and pickup unless her partner is unexpectedly free."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my partner was tapped to lead the new after-school program at his school—started this week. It's great for him, but it means I'm now in charge of pickups and evening routines pretty much every weekday. Between wrapping up work, getting my son from school, and squeezing in dinner, I feel like I'm running a logistics operation. Any tips for keeping us organized or making evenings less chaotic?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—sounds like you’re juggling a lot. The first thing that comes to mind is streamlining transitions. Have you tried prepping parts of dinner ahead of time, or using meal plans to cut down the evening cooking scramble? Also, does your son have after-school activities or homework that need to fit in?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, meal planning has helped. I actually started prepping quick dinners for weekdays, so we're rarely doing anything elaborate at night anymore. I try to keep it simple—batch cook protein, veggies, and grains on Sundays and just assemble things. My son's got homework most nights, and I carve out time to help him before I even look at work emails or reports, so that's one non-negotiable now."
+        },
+        {
+          "role": "assistant",
+          "content": "Setting aside homework time is smart—it gives structure to the evening and keeps things predictable for him. Since you’re meal prepping and keeping family time prioritized, how do you handle your own work tasks now? Are you able to keep your usual routine, or has that shifted?"
+        },
+        {
+          "role": "user",
+          "content": "My work routine has definitely shifted. I used to only handle pickups on days when I wasn’t closing monthly reports, but now I’m doing both drop-offs and pickups every weekday unless my partner is suddenly free—which is rare with his new hours. I can’t schedule work stuff during our homework window, so I move my budget reviews to after dinner, once my son’s settled. It’s a stretch some nights, but I won’t let work cut into family time."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really disciplined. Shifting budget reviews later means you’re working with a tighter window, especially since evenings are busier. Are you still sticking to your Sunday night reviews for work and personal finances, or has that moved too with the new family routine?"
+        },
+        {
+          "role": "user",
+          "content": "Sunday night reviews are still a must—nothing’s bumped that, even with my partner’s schedule. It’s the only way I stay on top of both nonprofit and personal budgets. The non-negotiables are homework help most evenings, quick dinners during the week, and handling all school pickups and drop-offs now unless my partner's schedule miraculously clears up."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve developed some strong boundaries, even as things got more complex. For the quick dinners, do you use any specific meal prep tools or planning apps, or is it just your own system? And for your son’s homework, do you set a fixed time or let it flex around your evening schedule?"
+        },
+        {
+          "role": "user",
+          "content": "I keep it low-tech—just a whiteboard calendar and handwritten meal plans for the week. I track what needs prepping on Sundays. Homework help starts right after we get home; I never schedule work tasks during that period. No exceptions, even if deadlines are looming. It's the only weekday window that doesn’t move."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really clear structure. With so many responsibilities, have you had to drop any old habits—like, did you ever rely on more elaborate dinners or different pickup routines before this change?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. I used to cook more complicated meals some weeknights if my partner was home to handle pickup and homework. Now, it's all quick, prepped stuff on school nights. And I stopped juggling pickup only when I wasn't doing monthly reports—now it's just assumed I'm handling all school pickups unless something unusual happens. The meal prep is new, too; I started that only after my partner's hours shifted."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—the evolved routine and meal prep are smart adaptations. Is there anything you wish you could delegate, or are there pain points you haven’t solved yet? For instance, would involving your son in dinner prep help free up time, or is he tired after school?"
+        },
+        {
+          "role": "user",
+          "content": "He actually likes to help with packing lunches the night before, so that's been fun—but he's pretty wiped after school and homework, so I keep dinner simple. I'm not delegating pickups unless my partner's schedule changes, and homework help is non-negotiable. I can't outsource those. The real challenge is keeping myself from squeezing in work while we're doing homework—I stick to it, but it's tempting sometimes when reports are due."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing a great job holding those boundaries. If you ever need help finding more efficient meal prep ideas or ways to streamline evening routines, I could look up resources or recommend tools. Otherwise, it sounds like your new preferences are working out for now, even if it’s a lot."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed moderate carpal tunnel syndrome confirmed by her doctor, who prescribed mandatory wrist braces and restricted her from typing for more than 30 minutes at a stretch.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Uses voice-to-text software for routine emails and note-taking—aims to minimize typing wherever possible on workdays",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_034",
+            "fact": "Takes scheduled 10-minute hand and wrist breaks after every 30 minutes of computer use—never ignores medical break protocol, even during deadlines",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Prefers written documentation over video tutorials when instructing colleagues—never records training videos herself"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Now prefers recording video tutorial instructions for colleagues—avoids lengthy written documentation due to wrist strain",
+              "domain": "work_habits"
+            },
+            "reason": "Mandated wrist braces and strict 30-minute typing limit prevent composing extensive written guides. She now opts to record brief, clear video tutorials to reduce typing and manage carpal tunnel risk."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My doctor just confirmed moderate carpal tunnel, so I'm wearing wrist braces and can't type for more than half an hour at a time. It's a pretty big shift for me—especially during budget season. Do you have any practical ideas for getting through month-end reporting with this new restriction?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm sorry you're dealing with carpal tunnel—especially during your busiest period. Are you able to use dictation or voice-to-text tools to cut down on typing? Or do you still need to fill out a lot of forms and spreadsheets manually?"
+        },
+        {
+          "role": "user",
+          "content": "I've been experimenting with voice-to-text for routine emails and note-taking—it's helping a little. But the big issue is the Excel spreadsheets; I still have to do most of that manually, and the formulas are tricky to speak out loud. At least for now, my doc insists on a strict protocol: 30 minutes of computer work, then a mandatory 10-minute hand and wrist break before I can start again. I'm sticking to it, even on deadline days."
+        },
+        {
+          "role": "assistant",
+          "content": "That break schedule is smart, even if it slows things down. For the spreadsheet work, could you prep templates in advance, or use macros to automate repetitive steps? Even simple shortcuts might reduce the strain. Are there any tasks you can delegate or batch between breaks?"
+        },
+        {
+          "role": "user",
+          "content": "Unfortunately, we're short-staffed so delegating isn't really an option. I do batch what I can—I plan my work so I can tackle account reconciliations during my typing windows, then switch to reviewing numbers in printouts during the breaks. Macros sound promising, but I'm not super technical. Is there an easy way to set those up?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—Excel has a macro recorder that lets you capture steps without coding. For example, you can record formatting changes or repetitive calculations, and replay the macro later. Would you be interested in a quick guide or a video walkthrough on setting up basic macros?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I'd appreciate a video walkthrough. I've switched from my usual written guides—I can't type out the long instructions anymore. Now I record short video tutorials for my colleagues and myself, both for clarity and to save my wrists. If you have a concise video or clear step-by-step instructions I can narrate, that's ideal."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart adjustment, both for your health and your team's learning. I'll find a clear macro walkthrough in video format and summarize the key steps for your notes. If you need help with the narration process, let me know. Are there other recurring finance tasks that would benefit from screen-recorded tutorials or automation right now?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I think the bank reconciliation process could use a video tutorial—most of our program managers get confused with the Excel steps. Now that I can't type out lengthy documentation, I prefer recording instructions and linking them for staff, which has cut down on questions. It's funny how my old habit was to write detailed manuals, but that's just not sustainable with these wrist issues."
+        },
+        {
+          "role": "assistant",
+          "content": "It's great that you've found a way to adapt your teaching approach. Making tutorials could also help you reduce repetitive typing, and possibly streamline onboarding for new staff. If you like, I can suggest video editing tools that work well with screen recording and voiceovers—some are simple and can help you create quick, clear guides. Would you be interested in those?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. Anything that keeps editing quick and doesn’t require a ton of typing is a win for me. I’m also curious if there are voice-controlled tools for managing email—right now, voice-to-text helps with drafting messages, but sometimes the formatting gets messy. Any ideas for streamlining that?"
+        },
+        {
+          "role": "assistant",
+          "content": "There are a few email clients that integrate well with voice commands—for example, Outlook and Gmail both support basic dictation and voice controls for composing, sending, and archiving messages. You may also find Chrome extensions or smartphone apps that specialize in voice-based email management. Would you like recommendations for these, or instructions for setting up dictation in your current system?"
+        },
+        {
+          "role": "user",
+          "content": "Recommendations would be great. Since I’m using Outlook at work, I’ll try their voice features first. And just so you know, per my doctor’s advice, I never skip the 10-minute breaks after every 30 minutes at the computer—even during critical budget reviews. If you have workflow tips that fit with those pauses, I’d love to hear them."
+        },
+        {
+          "role": "assistant",
+          "content": "That discipline will help your recovery in the long run. For workflow, batching quick tasks between breaks and prepping materials for review offline can maximize productivity. You could also set up reminders to structure your work around the break schedule—apps like Pomodoro timers can help, or even Outlook calendar alerts. Would you like help setting up those reminders, or tips for organizing reports so they're ready for your review during rest intervals?"
+        },
+        {
+          "role": "user",
+          "content": "Tips for organizing reports during rest intervals would be helpful. I try to print out relevant summaries beforehand so I can review data by hand while resting. It makes the break feel productive, but I want to make sure I’m not risking strain by reviewing printed materials. As long as I’m following the brace and break protocol, that’s allowed."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a thoughtful approach. Reviewing printouts during breaks is a good way to stay engaged without typing, and as long as you keep your wrists braced and avoid repetitive motions, it shouldn't aggravate your symptoms. Would you like a checklist for prepping reports efficiently, so the most relevant data is always at hand? I can also share strategies for prioritizing which documents to print and review."
+        },
+        {
+          "role": "user",
+          "content": "That would be perfect. Streamlining print prep and review fits well with my new routine. Between the wrist braces, break schedule, and switching to video tutorials and voice-to-text, I think I’m finally finding a balance. Thanks for helping me rethink all these processes!"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her mother experienced a fall in assisted living, prompting staff to recommend additional support for daily activities and requesting family involvement in caretaking decisions.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Checks in daily with assisted living staff by phone or text to monitor her mother's well-being—never waits for weekly updates or for staff to reach out first",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_038",
+            "fact": "Prefers brief evening family time at home after caretaking visits—prioritizes decompressing with her partner and son, avoids additional social plans",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Always visits her mother for Sunday lunch—never misses this family ritual without advance notice"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Now visits her mother multiple times each week—takes an active role in daily caretaking and support, not just Sunday lunch",
+              "domain": "social_relationships"
+            },
+            "reason": "Her mother’s recent fall and recommendation from assisted living staff for increased family support means she can no longer limit visits to just Sundays; she takes on a more involved caretaking role with multiple weekly visits."
+          },
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Manages her mother’s finances personally—never delegates this task, even when busy"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Now involves her sibling in managing their mother’s finances—shares duties to focus on direct caregiving responsibilities",
+              "domain": "social_relationships"
+            },
+            "reason": "With the urgent need for ongoing caretaking after her mother’s fall, she chooses to delegate some finance management tasks to her sibling, freeing up time and emotional bandwidth for hands-on support."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_016",
+            "fact": "Volunteers at the community garden every Saturday morning—never accepts other social invitations at that time",
+            "domain": "leisure_hobbies",
+            "reason": "Her mother’s need for increased support means she may need to be available during Saturday mornings, and cannot commit to the community garden with the same reliability."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hi—so my mom had a fall earlier this week in assisted living. She's okay physically, but the staff say she needs more support now, and they want family to be more involved in day-to-day decisions. I'm suddenly making more trips over there and juggling her care alongside work and everything else. I need help thinking through how to rebalance things so I don't drop the ball at home or work."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really tough, especially with your workload. When you say making more trips, does that mean you've shifted your routine quite a bit already? What does your week look like now, both with your mom and at home?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, absolutely—before this, I always visited her for Sunday lunch, and it was a fixed ritual, but now I’m swinging by multiple times a week. Sometimes after work, sometimes on Saturday mornings if she needs extra help. It’s a lot more hands-on than before, so evenings at home have become precious. I try to keep family time short and quiet after those visits, and we’re avoiding extra social plans for now."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like decompressing with your partner and son is a real priority after caretaking days. Are you managing your mother's finances yourself, or is someone helping? That might free up some bandwidth, if possible."
+        },
+        {
+          "role": "user",
+          "content": "I actually decided to share those duties with my sibling, which is a pretty big shift for me—I’ve always managed Mom’s finances personally and never delegated, even when swamped. But with all the hands-on care now, I need space to focus on being there for her physically and emotionally. We split the admin now so I’m less stretched."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart adjustment. Splitting administrative responsibilities can really lighten the mental load. To keep tabs on your mom’s well-being, are you mostly relying on updates from the assisted living staff—or are you initiating check-ins yourself?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve started checking in daily with the staff, by phone or text. I don’t wait for weekly updates or for them to reach out first, just because I can’t risk missing changes. It keeps me in the loop and reassures my sibling too."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s proactive and probably brings some peace of mind. You mentioned Saturday mornings; have you still been able to volunteer at the community garden, or are those visits to your mom taking priority?"
+        },
+        {
+          "role": "user",
+          "content": "I had to give up the garden volunteering for now. Saturdays are often needed for my mom, and I can’t commit to the garden at the same pace I used to. It was always a non-negotiable weekly ritual, but caretaking is the priority now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a meaningful sacrifice, but it’s clear your mom’s needs come first. Now that some of these routines have shifted, would you like help planning new ways to carve out restorative time for yourself, or strategies for keeping your work tasks from slipping? Maybe we could review what’s most at risk in your schedule."
+        },
+        {
+          "role": "user",
+          "content": "That would be helpful. I’m worried about neglecting my own routines—especially with the loss of garden time and so many evening shifts. Maybe we could look at small ways to recharge during the week, and how to keep the extra workload from impacting my reports or training at work."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Let’s identify pockets of time where you can decompress, even briefly, and look at how you might adapt your work processes. Do you already have any protected time at work, or could we shift some tasks to take advantage of quieter periods? Also, are there ways your sibling could help beyond finances to lighten the load more?"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The nonprofit’s executive director announced an abrupt reduction in administrative support staff due to unexpected funding cuts, requiring her to absorb additional financial reporting and grant compliance responsibilities on top of her existing workload.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Now spends evenings completing administrative work from home to meet reporting deadlines—often prioritizes urgent grant compliance tasks over personal leisure time",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Relies more heavily on coffee throughout the day, including afternoons, to sustain energy during extended work hours caused by staff cuts",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_026",
+              "fact": "Now actively recommends paid digital solutions for finance processes, prioritizing robust features over low cost, since grant funding is secured for upgrades"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Has returned to recommending only free or low-cost finance tools—avoids paid software entirely due to loss of funding for upgrades",
+              "domain": "work_habits"
+            },
+            "reason": "The abrupt reduction in administrative support was triggered by unexpected funding cuts, which means grant money for software upgrades is now unavailable. She must revert to cost-conscious options and can no longer consider paid digital solutions."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_028",
+            "fact": "Schedules short 'open-door' help sessions twice a week to support staff adjusting to the new digital system—offers spontaneous troubleshooting instead of rigidly structured trainings",
+            "domain": "work_habits",
+            "reason": "With the administrative team cut and digital systems abandoned due to funding loss, staff are no longer adjusting to new digital tools—these sessions have no audience or relevance."
+          },
+          {
+            "id": "pref_027",
+            "fact": "Prefers hands-on group demos for new accounting software rollouts—volunteers as the first user to test and customize workflows for her team",
+            "domain": "work_habits",
+            "reason": "There will be no new accounting software rollouts, since funding cuts mean the nonprofit must stick to its outdated systems; there are no demos or implementation workflows to be customized."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "It's been a rough few days—the executive director announced that we're losing half our admin support staff, effective immediately. I’m picking up finance reporting and grant compliance on top of everything else, and there’s no budget for tech upgrades anymore. Honestly, I’m trying to keep my head above water. Do you have any ideas for streamlining reporting or making grant tracking less stressful, given we’re stuck with Excel?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds overwhelming, especially with outdated systems and no extra hands. Sticking to Excel, you could try automating repetitive tasks with macros, or using templates that ensure consistent grant tracking. Are you comfortable with Excel formulas and basic automation, or is that another hurdle?"
+        },
+        {
+          "role": "user",
+          "content": "Formulas I can handle, but I’ve never touched macros before—plus, our computers are so old they don’t always cooperate. I used to look into paid digital solutions for automating this stuff, but now I can only consider free or very low-cost tools. Anything that involves ongoing fees or major upgrades is off the table now."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for clarifying—I'll skip suggestions that require paid software. For free options, have you tried Google Sheets for collaboration or looked into open-source add-ons for Excel? Sometimes plugins can help, but I understand you might have security restrictions as well. Are you open to cloud-based tools, or do you need to keep everything local?"
+        },
+        {
+          "role": "user",
+          "content": "Security-wise, we have to keep our files local. I can’t use Google Sheets for sensitive financial info or grant compliance—it's all got to stay on our shared drive. That’s why I still rely on manual double-checks before submitting anything. I know it takes longer, but I’ve never been comfortable going any faster with these old files."
+        },
+        {
+          "role": "assistant",
+          "content": "Manual double-checks are wise when accuracy matters, especially in nonprofit finances. Would it help to standardize a checklist or written guide that program managers can follow when they assist with basic financial processes? That way, you’re not fielding the same questions as often."
+        },
+        {
+          "role": "user",
+          "content": "That would help—I’ve actually been training small groups of program managers on basics due to staff shortages. I never do big all-staff meetings for this kind of thing. I’m still making written guides, but haven’t had time for much else. My evenings are now spent finishing admin work from home just to keep up with urgent grant deadlines, so I often put off leisure time to get everything done."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like your workload has become even heavier. Balancing home and work must be tough, especially with late-night admin tasks. Are you finding it possible to maintain any downtime, routines, or family commitments on the weekends, or are things bleeding over?"
+        },
+        {
+          "role": "user",
+          "content": "The weekends are mostly intact—I still volunteer at the community garden Saturday mornings and have Sunday lunch with my mom. But weeknights have definitely changed. I rely more heavily on coffee throughout the day now, including afternoons, just to sustain energy for extended work hours. I used to switch to tea after three, but that’s gone out the window with all the reporting I’m picking up."
+        },
+        {
+          "role": "assistant",
+          "content": "Long workdays can definitely up the caffeine dependency. Given the added strain, have your office ergonomics or self-care routines shifted? Are you able to keep up with your wrist stretches and healthy snacks, given the pressure and time crunch?"
+        },
+        {
+          "role": "user",
+          "content": "I’m still on top of wrist stretches and healthy snacks—that needs to stay, or I’ll crash. What’s changed is that I spend more time on admin in the evenings, so my usual open-door help sessions for staff are gone. I used to offer troubleshooting on new digital systems, but since funding was cut for upgrades, nobody is adjusting to new tools, so those sessions aren’t relevant anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—no new systems means no need for troubleshooting support. Since everything’s staying manual, you might consider setting up a recurring group check-in just for grant compliance questions. Even a brief written FAQ could help others self-serve. Would small group email threads or brief docs work for your team right now?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, small group emails are manageable. I’ll try a written FAQ—video tutorials or demos aren’t practical. As for software rollouts, those are totally off the table. No testing or customizing workflows because we’re stuck with what we have—I dropped hands-on demos from my routine since there’s nothing to roll out."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—no digital rollouts, just maintaining what’s in place. For reporting, would templates and written checklists for each grant help ease the burden and reduce late-night work? Sometimes even a simple structure for each report can keep things on track."
+        },
+        {
+          "role": "user",
+          "content": "A checklist for monthly grants actually sounds like it would help. Anything that keeps me from having to redo things late in the evening is worth a try. Thanks for helping brainstorm—I think small written docs and checklists are about all I can add right now."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her knee pain during weekend runs intensified, leading her doctor to order a temporary halt to all running and prescribe physical therapy for a suspected meniscus injury.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Follows a prescribed set of physical therapy exercises for her knee every Saturday and Sunday morning—never skips sessions regardless of family plans",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Reads health and recovery articles on joint care during her physical therapy rest intervals—prefers expert blogs over general wellness content",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Runs only on weekend mornings and strictly on flat neighborhood routes—avoids hilly parks to protect her knees"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Temporarily avoids running altogether—replaces weekend morning runs with doctor-prescribed physical therapy exercises at home",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor has ordered a total halt to running due to intensified knee pain and a suspected meniscus injury, so she must suspend her usual weekend route and instead follow physical therapy routines for recovery."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "This weekend was tough—I’ve been dealing with increasing knee pain during my Saturday morning runs, and now my doctor says I need to stop running altogether, at least for a while. They’re pretty sure it’s a meniscus injury and have me starting physical therapy exercises at home instead. I’m feeling out of sorts, honestly. I relied on those runs for stress relief. Do you have any suggestions for keeping some weekend structure or replacing that routine while I recover?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really frustrating. Losing a familiar routine, especially something that helps you decompress, is tough. Are your physical therapy exercises set up to be done at the same time as your previous runs, or are you modifying your schedule? And do you want ideas only for weekend mornings or for more ways to fill in for the running habit throughout the week?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sticking to Saturday and Sunday mornings for the physical therapy—my doctor was clear it's better to keep a consistent schedule. So I haven’t skipped a session yet, even with family plans. The exercises are mostly at-home stretches and strength work, nothing strenuous. I’d like to keep my mornings structured around that slot, but I’m missing that sense of accomplishment from actually getting out for a run. What could help with motivation and mood, besides just doing the exercises?"
+        },
+        {
+          "role": "assistant",
+          "content": "Maintaining your morning structure is a smart move—it preserves the routine cue even if the activity changes. If motivation is flagging, would tracking your progress (like marking completed PT sessions, or noting improvements) help keep you engaged? Also, are you comfortable spending a few moments outside before or after your exercise—maybe a walk around the block, or even a bit of time on your porch, to mimic what you enjoyed about your runs?"
+        },
+        {
+          "role": "user",
+          "content": "I wish I could do a walk, but my doctor has nixed even mild walks for now—anything weight-bearing is on hold until my knee stabilizes. So it’s strictly the prescribed exercises at home, then rest. I usually take a few minutes to stretch and hydrate after. What I have started doing is reading articles on joint care and recovery during my rest intervals—expert blogs, not generic wellness stuff. It feels productive, and motivates me to stick to the PT, but I’d love more ways to keep mentally active while I’m sidelined."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great way to use your rest intervals—learning more about your injury and recovery gives you a sense of agency. If you’re enjoying those expert blogs, you might consider curating a list of reputable sources so you can easily jump in during breaks. Would journaling your experience—tracking symptoms, PT progress, or even mental state—appeal to you? Sometimes reflecting in writing helps you spot improvement, or gives you an outlet for any frustration."
+        },
+        {
+          "role": "user",
+          "content": "Journaling could work—I like the idea of tracking progress. Maybe a simple log in Excel, since it’s familiar. And collecting a list of science-backed blogs is definitely something I can do; I prefer that to sifting through general wellness tips. Thanks for the suggestion. Just to clarify, I’m no longer doing my usual weekend runs at all; it’s completely switched over to these physical therapy routines. I don’t plan to miss any sessions, even if family plans come up."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—so your weekend mornings are now dedicated to PT exercises, with no running and no interruptions for other plans. That kind of consistency really supports recovery. If you were feeling a sense of accomplishment from your runs, maybe you could build in a mini milestone system—like rewarding yourself with a favorite breakfast or new reading material after you finish your session. Would that fit with your structured approach?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, a post-session reward sounds motivating—maybe a special smoothie or time set aside to read a few chapters from my book club pick. That would make the whole routine feel more intentional. I appreciate the ideas. It’s hard to accept the change, but I’m committed to following the plan and staying positive. Honestly, I haven’t skipped or rescheduled a PT session even once, and I’ve dropped running for now, which was a big shift for me."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re adapting really thoughtfully given the circumstances. If anything changes with your PT regimen or you want more resources on knee recovery or structured morning routines, just let me know. And feel free to ask about ways to keep that sense of accomplishment present—sometimes small habits around your PT can make the difference. Wishing you a smooth, steady recovery!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The organization merged with a partner nonprofit, requiring her to coordinate and standardize financial practices across both teams while learning new reporting protocols adopted from the merger partner.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Allocates dedicated calendar blocks each week for learning and adapting to new financial reporting software and protocols introduced by the merger—prioritizes this learning even during peak reporting cycles",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Sets up recurring cross-team check-ins to address financial process questions—actively fosters communication between former separate teams for smoother integration",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_039",
+              "fact": "Has returned to recommending only free or low-cost finance tools—avoids paid software entirely due to loss of funding for upgrades"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Now researches and selectively endorses paid finance software if it aligns with the newly adopted protocols, prioritizing cross-team compatibility over cost when standardization is required by the merger.",
+              "domain": "work_habits"
+            },
+            "reason": "The merger requires standardized protocols adopted from the partner organization, which uses different, often paid, finance software. She must now recommend compatible paid solutions to comply with unified procedures, rather than strictly focusing on free or low-cost tools."
+          },
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Schedules training sessions for program managers only in small groups—refuses to do large all-staff meetings"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Now delivers joint training sessions for both legacy and merger partner staff, often in large-group formats, to accelerate standardized process onboarding and ensure consistent adoption.",
+              "domain": "work_habits"
+            },
+            "reason": "Coordinating across both teams with urgent deadlines and the need for rapid onboarding leaves little room for only small groups; organization now demands large-format, unified training sessions for efficiency."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, the merger officially went through last week—we're now one big nonprofit. I'm suddenly coordinating across two teams and have to learn the new reporting protocols the partner org used. Their system is... a lot more complex (and, frankly, more expensive) than our old Excel spreadsheets. I need to train both legacy and new staff, quickly. Where would you even start when onboarding everyone onto a new finance process and software?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a huge transition—not just for you, but the whole organization. When you say their system is more complex, is it a completely new software platform, or an upgraded version of something you’ve used before? And how much overlap is there in the financial workflows between the two teams? Knowing that will help plan the best onboarding approach."
+        },
+        {
+          "role": "user",
+          "content": "It's actually a whole new platform—paid software called FundGuard, plus a reporting suite that automates a lot of what I used to do manually. Our old approach was pure Excel, so there’s almost zero overlap. The partner team has been using FundGuard for years, and their protocols are pretty standardized. Our leadership wants everyone to switch, so no more patchwork. I have to do training, but with staff shortages and the merger, I'm now expected to deliver it in larger groups instead of my usual small-sessions. How do I make that effective for different skill levels?"
+        },
+        {
+          "role": "assistant",
+          "content": "Switching from Excel to FundGuard is a big leap, especially for staff used to the hands-on approach. For large-group trainings, you might consider splitting your sessions into an overview plus breakout segments focused on specific roles or functions, so people aren’t overwhelmed. Have you had any time to get comfortable with FundGuard yourself, or are you learning as you teach?"
+        },
+        {
+          "role": "user",
+          "content": "Learning as I go, honestly. I’ve blocked out specific calendar time each week just to get up to speed with FundGuard and the new reporting protocols, even though it’s throwing off my normal report cycle. It’s a lot—especially since I still have to handle monthly budgeting, and now cross-team check-ins to answer process questions. I don’t want staff feeling lost, but we’re really pressed for time."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s smart to protect blocks for self-training—if you’re not confident with the new system, it’s hard to help others. The recurring cross-team check-ins also sound helpful for keeping everyone on track. If you’re pressed for time, maybe you could record short walkthroughs on the trickiest FundGuard features for reference. Or would that not fit your usual training style?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I’ve always preferred written documentation over video tutorials; I never record training videos myself. I’m planning to create step-by-step guides—though covering FundGuard’s features in clear, simple language is a challenge. I might supplement a few walkthroughs that the partner team already has, but mostly sticking to written handouts."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—written docs are easier for staff to revisit and reference. If the partner team already has useful walkthroughs, maybe you can adapt their existing materials so you’re not reinventing the wheel. For your large training sessions, you might consider pairing up legacy and partner staff for peer support during onboarding—that way, experience from the partner side could help everyone else acclimate faster. Have you found the staff open to cross-team collaboration so far?"
+        },
+        {
+          "role": "user",
+          "content": "Surprisingly, yes—setting up recurring check-ins between teams is smoothing things out. I actively foster that communication now, which wasn’t necessary before. It’s helping identify gaps where our processes differ—so I can tailor the guides and flag surprises early. But I still have to research and endorse paid software solutions to meet the merger’s standardized protocols, even though I used to avoid recommending anything but free or low-cost tools."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a real shift—not only are you adjusting your training format, but now you’re balancing cost against compatibility and compliance. FundGuard and other paid tools are clearly the new standard; standardization usually trumps budget at times like this. Are you already exploring integrations or comparing alternatives for future needs, or is leadership pushing FundGuard as the sole platform for now?"
+        },
+        {
+          "role": "user",
+          "content": "Leadership is pretty set on FundGuard for accounting and reporting. Anything else we bring in has to work seamlessly with it and fit those protocols. I’ve started researching compatible add-ons and even selectively endorsing paid tools if they fit—instead of my old rule of ‘no paid software without a funding plan.’ It’s uncomfortable, but standardization is the priority now. So that preference had to evolve with the merger."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re handling a lot of moving parts—adapting your training style, learning new software, and facilitating cross-team collaboration. Given all this, would finding a community or user group for FundGuard help speed up your learning curve—or are you already connecting with merger partner staff for best practices?"
+        },
+        {
+          "role": "user",
+          "content": "The merger partner team has been a good resource so far. Their lead accountant shares tips during our joint check-ins. I’m thinking of joining a FundGuard user group online just to get exposure to broader troubleshooting and tips. My weekly blocks for learning are helping, but I’ll need all the support I can get!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great idea—user groups usually surface real-world solutions and shortcuts that aren’t in official documentation. To wrap up, sounds like you’ve evolved your approach in several ways: training in large groups, setting aside dedicated learning time, fostering cross-team connections, and recommending paid tools when required. If you keep adapting like this, your staff will have a much smoother transition. Let me know if you want help drafting written guides or finding peer support groups—I’d be happy to assist."
+        },
+        {
+          "role": "user",
+          "content": "Thanks—I might take you up on the guide drafting, since clear written docs are my comfort zone for onboarding. I appreciate your help thinking through these changes. I’m juggling more, but setting up the weekly learning blocks and check-ins is keeping everything from slipping through the cracks."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Diagnosed with high blood pressure during a routine checkup, her doctor instructed her to implement daily monitoring and make immediate dietary changes to reduce sodium and caffeine intake.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Uses a digital blood pressure monitor to track readings every morning and logs them in a health app before breakfast—never skips daily monitoring",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Meticulously checks sodium content on all food labels and now preps low-sodium meals ahead of time for herself and her family",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_041",
+              "fact": "Relies more heavily on coffee throughout the day, including afternoons, to sustain energy during extended work hours caused by staff cuts"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Strictly limits coffee to a single morning cup—switches to decaf or herbal tea for the rest of the day to comply with dietary instructions for blood pressure control",
+              "domain": "health_body"
+            },
+            "reason": "Her new high blood pressure diagnosis and physician’s advice to reduce caffeine intake require her to give up her habitual all-day coffee drinking, restricting her to just one cup in the morning and prompting a switch to low-caffeine alternatives."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I got diagnosed with high blood pressure last week during my annual checkup. It was pretty surprising, and my doctor wants me to track it daily and cut back on sodium and caffeine starting immediately. I’m honestly overwhelmed by how many things I need to change, especially with how hectic my days are at work. Can you help me figure out how to adjust my routine without everything falling apart?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough adjustment, especially when your schedule is already packed. Daily monitoring and dietary shifts can feel like a lot all at once. Would you like to start by structuring your mornings, or focus on changes around meals or work habits first? Which part feels most challenging right now?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, mornings are tricky. My routine is pretty tight already with making breakfast, packing lunches the night before, and making sure my son gets off to school before I even check work emails. Now I need to fit in blood pressure monitoring every day, and I’m not sure when to do it so I don’t forget or end up rushing."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like mornings are highly structured for you, but you’re committed to keeping health monitoring consistent. Could you pair your blood pressure check with an existing task—maybe right before breakfast, or just after your son leaves for school? Would adding a reminder in your phone or calendar help keep it from getting lost in the shuffle?"
+        },
+        {
+          "role": "user",
+          "content": "I actually bought a digital blood pressure monitor and started checking my readings every morning before breakfast. I log them in a health app right after, so it’s become part of my routine now. I don’t skip it—doctor’s orders. Reminders help but I’m usually up early enough that I remember."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great—you’ve built a reliable habit around monitoring already. Since you’re making dietary changes too, do you need help meal planning for low sodium options? Are you prepping these meals ahead for just yourself, or for your whole family?"
+        },
+        {
+          "role": "user",
+          "content": "I’m checking sodium content on everything now, and prepping low-sodium meals for myself and my family. The labels are eye-opening! I do most of the prep the night before anyway, just so weekday mornings aren’t chaotic. It’s definitely a change from how I used to shop and cook."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re being thorough and proactive about the dietary adjustments. For snacks at work, would you like suggestions for easy low-sodium options that fit your prep habits? Or are you already set in that area?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve switched to prepping healthier, low-sodium snacks for long workdays. I never rely on vending machine food—honestly, I don’t trust we have anything decent there anyway. But if you have ideas that aren’t too complicated, I’m open to them."
+        },
+        {
+          "role": "assistant",
+          "content": "Sure thing—some easy options include raw veggies with hummus (watch the sodium in the hummus), unsalted nuts, fruit, low-fat yogurt, or homemade trail mix. I can send you recipes for simple, low-sodium snacks if you want. Would you like a list tailored for batch-prepping ahead of time?"
+        },
+        {
+          "role": "user",
+          "content": "That would be helpful. I’m aiming for things I can prep Sunday night along with my usual work review—just don’t want anything that takes too long. Also, on caffeine, I used to drink 3-4 cups of coffee a day (sometimes more when we’re short staffed). Now I strictly limit myself to just one cup in the morning. The rest of the day, I switch to decaf or herbal tea. It’s probably the hardest change so far!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment, especially if you relied on coffee for energy during busy cycles. Have you noticed any impact on your focus or productivity during afternoons yet? If so, are there other energy-boosting habits—like quick movement breaks or stretching—that have helped compensate?"
+        },
+        {
+          "role": "user",
+          "content": "Afternoons are rough, but I’m sticking with the doctor’s plan. If I start to feel sluggish after lunch, I’ll usually do a session of wrist and finger stretches at my desk—it’s something I do every two hours anyway, even when I’m swamped. Herbal tea helps a little, but it’s not as energizing as coffee. Still, I don’t touch caffeine after my morning cup now. That old habit is gone."
+        },
+        {
+          "role": "assistant",
+          "content": "I admire your consistency. It’s tough to shift out of a longstanding caffeine routine, especially with demanding work responsibilities. Are there any other parts of your daily routine that the diagnosis has affected, or are you mostly focused on those changes for now? If you need help creating a tracking system for sodium or caffeine intake alongside your blood pressure readings, I can help with templates or app recommendations."
+        },
+        {
+          "role": "user",
+          "content": "I think the biggest changes right now are the daily blood pressure checks, logging everything in the health app, and reworking meal plans to be low sodium for all of us. And of course, strictly limiting coffee—no more afternoon cups, period. I appreciate the offer for templates, but I’m managing with my health app for now. Batch snack recipes and maybe a few easy meal ideas would be great, though!"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—I'll pull together some quick batch snack ideas and a few low-sodium meal recipes you can prep ahead. If you ever need help adjusting your workflow or finding ways to make wellness tasks fit into your workday, let me know. You’re doing a lot, and it’s impressive how quickly you’ve adapted."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her 12-year-old son was offered a place in a regional math enrichment program that meets two evenings per week across town, requiring regular weeknight transportation and coordination between her and her partner.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Schedules all personal and family evening activities around her son's math program—avoids committing to new weeknight obligations that could interfere with transportation duties",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Uses the wait time during her son's math sessions to catch up on reading or work—prefers bringing a book or laptop instead of driving home and back",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_029",
+              "fact": "Handles all school drop-offs and pickups on weekdays—never misses afternoon pickups unless her partner is available"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Now alternates weeknight school pickups with her partner, coordinating based on their son's math program schedule—never assumes full pickup responsibility alone during enrichment nights",
+              "domain": "social_relationships"
+            },
+            "reason": "Her son's evening math program across town introduces new transportation logistics, requiring her and her partner to split weeknight pickups depending on each other's availability and the math program nights. She can no longer handle all pickups alone during those times."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My son got into this regional math enrichment program, which is fantastic, but it meets two evenings a week across town. We’re going to have to coordinate transportation, and evenings are about to get a lot more complicated. Any ideas on how to adjust our routines so we don’t go completely off the rails?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really exciting opportunity for your son! But I can see how those weeknight commitments could complicate your family logistics. Are evenings typically packed already, or do you and your partner usually have some flexibility? And are you both equally able to help with pickup and dropoff?"
+        },
+        {
+          "role": "user",
+          "content": "Evenings were sort of predictable before—my partner works later, so I’ve always handled school pickups. But with these math sessions, we’ll need to split weeknight pickups, depending on his program schedule. I can’t handle them all alone anymore, not with the extra driving and the timing. We’re going to have to coordinate pretty closely now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—so you’re moving from handling most pickups yourself to a more shared approach on enrichment nights. How are you thinking about fitting the driving around everything else—do you anticipate needing to reschedule other activities, or is it just about coordination?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, we’re already setting up a spreadsheet for weeknight pickups and dropoffs so neither of us misses a turn. The hardest part is actually avoiding new commitments Tuesday and Thursday evenings; I have to keep every evening activity planned around the math program now. No more spontaneous meetups or work calls those nights. It’s the transportation that dominates everything else."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart to lock down those evenings for family logistics. It sounds like you’re ruling out new weeknight obligations so nothing interferes with your son’s math program. Does that mean things like community events or evening work tasks will need to move to other nights, or get skipped?"
+        },
+        {
+          "role": "user",
+          "content": "Yep, anything personal or family-related that happens on those evenings is a no-go now. I’m already telling friends I won’t commit to book club on those nights or join ad hoc community meetings unless it fits our math schedule. I even rescheduled a work training session to a different evening, just to avoid the overlap."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a fair trade-off—prioritizing your son’s opportunity. Do you usually stay nearby during the sessions, or do you drive home and back? If you’re waiting, maybe that could become some productive downtime?"
+        },
+        {
+          "role": "user",
+          "content": "I’m planning to stay and wait during his sessions—driving home doesn’t make sense with traffic and timing. I figured I could use that time to catch up on reading or even work stuff. I’ll bring a book or my laptop rather than just sit there or make extra trips."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a good use of the downtime. You could even make it a routine to have a book ready for your wait time—maybe knock out some book club reading or review work documents if you need. Are you making any other changes to your evenings, like adjusting dinner or bedtime schedules?"
+        },
+        {
+          "role": "user",
+          "content": "We’re tweaking dinner times a bit so my son isn’t rushed right after school, and I’m prepping those meals the night before now. Bedtime’s still steady, but I have to do email and work reviews after he’s at the math program instead of later in the evening."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re building as much predictability as you can into these new routines. Are there other logistics you’re worried about, or does this mostly come down to managing overlaps and keeping evenings clear?"
+        },
+        {
+          "role": "user",
+          "content": "I think the main challenge is just staying adaptable. We’ll keep alternating pickups—never assuming one person handles it alone now. And I’ve got my evenings blocked so nothing else interferes. The only other thing is making sure I use that wait time well; otherwise, I’ll just be annoyed at all the driving."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Since you’re focused on sharing pickup duties and maximizing wait time, maybe you can experiment with productivity strategies—like setting a checklist for what you want to read or work on while you wait. And if you ever run into last-minute conflicts, having that shared schedule will help keep things smooth. Anything else you’d like help problem-solving as you get used to this new setup?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a good idea. I’ll try making a weekly reading list and maybe a shortlist of work tasks to tackle on those evenings. For now, this covers the main adjustments. I’ll reach out if anything else crops up once we’re a few weeks in. Thanks for helping me think it out!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Following a routine blood test during her annual physical, her physician discovered abnormal liver enzyme levels, prompting additional screenings and requiring her to avoid over-the-counter painkillers and alcohol while medical evaluation continues.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_056",
+            "fact": "Carefully reads ingredient labels and avoids all over-the-counter painkillers and processed foods—only selects snacks and meals vetted as safe for liver health until her medical evaluation is complete",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_057",
+            "fact": "No longer consumes alcohol at social gatherings or family meals, regardless of occasion, while her liver is being monitored and until cleared by her doctor",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_049",
+              "fact": "Strictly limits coffee to a single morning cup—switches to decaf or herbal tea for the rest of the day to comply with dietary instructions for blood pressure control"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Completely eliminates coffee (including decaf) and strictly avoids all caffeine sources—consumes only water and approved herbal teas throughout the day while medical testing continues",
+              "domain": "health_body"
+            },
+            "reason": "Her physician's warning about abnormal liver enzyme levels, combined with pending evaluations and a requirement to avoid substances metabolized by the liver, now means she must cut out all coffee and even decaf, which can still stress the liver. She switches only to water and non-caffeinated, liver-safe herbal teas until more is known."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_009",
+            "fact": "Prepares healthy snacks for long workdays—never relies on vending machine food",
+            "domain": "health_body",
+            "reason": "Many of her previously 'healthy' snacks (such as protein bars and nut mixes) contain ingredients or preservatives that are now restricted as a precaution due to her liver abnormality. She cannot reliably continue her established snack-prep routine without re-evaluating which foods are liver-safe."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could really use some help figuring out my food and work routines. I just had my annual physical, and my doctor found abnormal liver enzymes in my bloodwork. Now I'm stuck with more screenings and he told me I need to avoid alcohol, painkillers, and pretty much anything stressful for my liver until they figure out what's going on. It's thrown off my usual habits and I'm struggling to adapt. Any ideas for keeping energy up and staying organized?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a huge adjustment to make on top of everything else. It’s smart you’re trying to rethink routines early. Can you share a bit about which habits or foods have been hardest to change? For energy specifically, what did you use before—did you rely on anything like coffee or snacks to get through the workday?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, coffee was my lifeline. I’d have three or four cups a day, especially when reconciling accounts late. Now, I’m not allowed any caffeine—not even decaf—while these tests are happening. I can only drink water and some herbal teas my doctor approved for liver health. Energy’s suddenly hard to come by; I’m dragging in the afternoons. I used to prep healthy snacks, but now I’m reading every ingredient label and avoiding anything processed, just to be safe."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough transition, especially cutting out caffeine entirely. For snacks, since you’re avoiding processed foods and checking labels closely, have you found any options that feel safe and help with afternoon energy? Things like fresh fruit, veggies, or simple homemade snacks might work, but it really depends on what you’re comfortable with. And for drinks: which herbal teas have you been okay’d for?"
+        },
+        {
+          "role": "user",
+          "content": "So far, I’ve stuck to carrot sticks, apples, and plain rice cakes. My doctor said peppermint and chamomile are fine, so I’m alternating between those and water. I haven’t found any snacks I can prep ahead, since even my usual nut mixes and protein bars have ingredients I need to avoid. I used to rely on the snack prep when work got hectic, but now I just keep it simple. Also, no alcohol at all for now—even at Sunday lunches with my mom or book club nights."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—keeping it simple until you know more is wise. Losing your usual snack prep routine is probably especially hard during busy periods. If you want, I can help brainstorm some liver-friendly recipes or quick snacks that you can make at home. And for social occasions, I imagine navigating no alcohol is a new challenge too. How have your friends or family responded at gatherings?"
+        },
+        {
+          "role": "user",
+          "content": "Everyone’s been really supportive, though my book club likes their wine, so I just bring my own tea now. My partner has started checking labels with me, which helps. The trickiest part is handling long days at work. I used to grab snacks from the office stash or vending machine in emergencies, but I’m not doing that anymore—too many unknowns. So I’ve given up my old habit of prepping snacks for work altogether, at least until I can vet things properly."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great you have support—it’s always easier when family pitches in. Giving up prepared snacks and vending machine quick fixes must make busy days even more challenging, especially since you’re so hands-on with your job. Would it help to create a simple list of safe grab-and-go options, or maybe a weekly meal plan for lunches and snacks? I can help with templates or suggestions if you like."
+        },
+        {
+          "role": "user",
+          "content": "A safe snack list would be really helpful—something I can quickly reference when shopping. For lunches, I already prep those the night before, but snacks are the pain point. I’m also careful to avoid any over-the-counter painkillers for now, even after weekend runs. I read every label just to be sure there aren’t additives that could affect my liver. If you could give me a list—or even a checklist—I can cross-reference with my doctor."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, I can make a checklist focused on fresh and minimally-processed foods, plus potential herbal teas you can double-check with your doctor. For snacks: fresh fruits, raw veggie sticks, homemade unsalted popcorn, plain rice cakes, unsweetened applesauce, and possibly oats or homemade granola without additives. For pain relief after runs, since you’re avoiding all OTC painkillers, have you tried gentle stretching or heat packs? I can recommend more non-medical options if needed."
+        },
+        {
+          "role": "user",
+          "content": "Gentle stretching and heat packs are about all I’m using, especially for my knee and mild carpal tunnel. It’s not ideal, but anything to avoid painkillers right now. I’m being really careful—even checking every ingredient before buying something new. This checklist idea should make shopping easier, and I’ll run it past my doctor. Thanks for the help."
+        },
+        {
+          "role": "assistant",
+          "content": "Of course! If you need support with label reading—for example, common additives to avoid, or sample shopping guides—I can put those together as well. And if you want ideas for keeping energy up without caffeine, maybe gentle movement breaks or fresh air could help a bit during your workday. Let me know what’s most useful for you going forward."
+        },
+        {
+          "role": "user",
+          "content": "Those resources would help a lot. I’m experimenting with short walks around the office instead of reaching for coffee, and sticking with water and herbal tea. Not quite the same boost, but I’m managing. It's just a big shift cutting out all caffeine, including decaf, and watching every ingredient. Until I get more answers from my doctor, I have to err on the side of caution."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing all the right things—adapting quickly and prioritizing your health. I’ll send you an ingredient checklist and a snack shopping guide tailored for liver health. And if you want tips on non-caffeinated ways to stay alert throughout long workdays, I have options you can try. If you have other routines that are affected, let me know so we can work through them together."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Insists on double-checking manually reconciled accounts before finalizing reports—never submits unchecked work, even under time pressure",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Blocks out quiet time before noon for monthly reports—never schedules internal meetings in the morning",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Does wrist and finger stretches at her desk every two hours—never skips these on office days, regardless of workload",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Limits coffee after 3pm—even during late budget crunches, switches to herbal tea in the afternoon",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Uses an ergonomic keyboard and mouse at home—avoids standard office peripherals whenever possible",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Keeps book club gatherings strictly to every other month—never reschedules to a different cadence",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Texts her close friend group daily but prefers voice calls with her partner in the evenings",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Chooses contemporary fiction for book club—never suggests nonfiction or classics",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Plans annual family vacations to national parks—never revisits the same park twice",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Attends local community events only if her son is interested—never goes alone",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Prefers streaming TV series in the evenings—never watches live television",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Preps breakfast and packed lunches the night before—never leaves weekday meals to chance",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks her email only after her son leaves for school—never before morning family time",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Does Sunday night budget reviews for both work and personal finances—never skips, regardless of plans",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Takes a 10-minute walk after dinner every evening—never brings her phone along",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Keeps her phone on silent at home from 7pm onward—never replies to work messages after that time",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Prepares quick weekday dinners using meal prep strategies—rarely cooks elaborate evening meals during school weeks",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Allocates time for assisting her son with homework most evenings—never schedules work tasks during this family window",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Now prefers recording video tutorial instructions for colleagues—avoids lengthy written documentation due to wrist strain",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Uses voice-to-text software for routine emails and note-taking—aims to minimize typing wherever possible on workdays",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Takes scheduled 10-minute hand and wrist breaks after every 30 minutes of computer use—never ignores medical break protocol, even during deadlines",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Now visits her mother multiple times each week—takes an active role in daily caretaking and support, not just Sunday lunch",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Now involves her sibling in managing their mother’s finances—shares duties to focus on direct caregiving responsibilities",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Checks in daily with assisted living staff by phone or text to monitor her mother's well-being—never waits for weekly updates or for staff to reach out first",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Prefers brief evening family time at home after caretaking visits—prioritizes decompressing with her partner and son, avoids additional social plans",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_040",
+        "fact": "Now spends evenings completing administrative work from home to meet reporting deadlines—often prioritizes urgent grant compliance tasks over personal leisure time",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Temporarily avoids running altogether—replaces weekend morning runs with doctor-prescribed physical therapy exercises at home",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Follows a prescribed set of physical therapy exercises for her knee every Saturday and Sunday morning—never skips sessions regardless of family plans",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Reads health and recovery articles on joint care during her physical therapy rest intervals—prefers expert blogs over general wellness content",
+        "domain": "leisure_hobbies",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Now researches and selectively endorses paid finance software if it aligns with the newly adopted protocols, prioritizing cross-team compatibility over cost when standardization is required by the merger.",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Now delivers joint training sessions for both legacy and merger partner staff, often in large-group formats, to accelerate standardized process onboarding and ensure consistent adoption.",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Allocates dedicated calendar blocks each week for learning and adapting to new financial reporting software and protocols introduced by the merger—prioritizes this learning even during peak reporting cycles",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Sets up recurring cross-team check-ins to address financial process questions—actively fosters communication between former separate teams for smoother integration",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_050",
+        "fact": "Uses a digital blood pressure monitor to track readings every morning and logs them in a health app before breakfast—never skips daily monitoring",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Meticulously checks sodium content on all food labels and now preps low-sodium meals ahead of time for herself and her family",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Now alternates weeknight school pickups with her partner, coordinating based on their son's math program schedule—never assumes full pickup responsibility alone during enrichment nights",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Schedules all personal and family evening activities around her son's math program—avoids committing to new weeknight obligations that could interfere with transportation duties",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Uses the wait time during her son's math sessions to catch up on reading or work—prefers bringing a book or laptop instead of driving home and back",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Completely eliminates coffee (including decaf) and strictly avoids all caffeine sources—consumes only water and approved herbal teas throughout the day while medical testing continues",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Carefully reads ingredient labels and avoids all over-the-counter painkillers and processed foods—only selects snacks and meals vetted as safe for liver health until her medical evaluation is complete",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "No longer consumes alcohol at social gatherings or family meals, regardless of occasion, while her liver is being monitored and until cleared by her doctor",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Schedules training sessions for program managers only in small groups—refuses to do large all-staff meetings",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "Coordinating across both teams with urgent deadlines and the need for rapid onboarding leaves little room for only small groups; organization now demands large-format, unified training sessions for efficiency."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Advocates for digital tools but only proposes cost-neutral solutions—avoids suggesting expensive upgrades without a funding plan",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "With dedicated grant funding authorized for accounting software upgrades, she no longer needs to restrict herself to only cost-neutral or free tools and can seek high-quality, paid solutions."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Prefers written documentation over video tutorials when instructing colleagues—never records training videos herself",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "Mandated wrist braces and strict 30-minute typing limit prevent composing extensive written guides. She now opts to record brief, clear video tutorials to reduce typing and manage carpal tunnel risk."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Runs only on weekend mornings and strictly on flat neighborhood routes—avoids hilly parks to protect her knees",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "Her doctor has ordered a total halt to running due to intensified knee pain and a suspected meniscus injury, so she must suspend her usual weekend route and instead follow physical therapy routines for recovery."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Prepares healthy snacks for long workdays—never relies on vending machine food",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "Many of her previously 'healthy' snacks (such as protein bars and nut mixes) contain ingredients or preservatives that are now restricted as a precaution due to her liver abnormality. She cannot reliably continue her established snack-prep routine without re-evaluating which foods are liver-safe."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Always visits her mother for Sunday lunch—never misses this family ritual without advance notice",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "Her mother’s recent fall and recommendation from assisted living staff for increased family support means she can no longer limit visits to just Sundays; she takes on a more involved caretaking role with multiple weekly visits."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Handles all school drop-offs, but never pickup on days when monthly reports are due",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "Her partner’s new after-school program means she must handle nearly all pickups, not just on report days. She now consistently does both drop-off and pickup unless her partner is unexpectedly free."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Manages her mother’s finances personally—never delegates this task, even when busy",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "With the urgent need for ongoing caretaking after her mother’s fall, she chooses to delegate some finance management tasks to her sibling, freeing up time and emotional bandwidth for hands-on support."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Volunteers at the community garden every Saturday morning—never accepts other social invitations at that time",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "Her mother’s need for increased support means she may need to be available during Saturday mornings, and cannot commit to the community garden with the same reliability."
+      },
+      {
+        "id": "pref_026",
+        "fact": "Now actively recommends paid digital solutions for finance processes, prioritizing robust features over low cost, since grant funding is secured for upgrades",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "The abrupt reduction in administrative support was triggered by unexpected funding cuts, which means grant money for software upgrades is now unavailable. She must revert to cost-conscious options and can no longer consider paid digital solutions."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Prefers hands-on group demos for new accounting software rollouts—volunteers as the first user to test and customize workflows for her team",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "There will be no new accounting software rollouts, since funding cuts mean the nonprofit must stick to its outdated systems; there are no demos or implementation workflows to be customized."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Schedules short 'open-door' help sessions twice a week to support staff adjusting to the new digital system—offers spontaneous troubleshooting instead of rigidly structured trainings",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "With the administrative team cut and digital systems abandoned due to funding loss, staff are no longer adjusting to new digital tools—these sessions have no audience or relevance."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Handles all school drop-offs and pickups on weekdays—never misses afternoon pickups unless her partner is available",
+        "domain": "social_relationships",
+        "created_at_session": 1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_052",
+        "reason": "Her son's evening math program across town introduces new transportation logistics, requiring her and her partner to split weeknight pickups depending on each other's availability and the math program nights. She can no longer handle all pickups alone during those times."
+      },
+      {
+        "id": "pref_039",
+        "fact": "Has returned to recommending only free or low-cost finance tools—avoids paid software entirely due to loss of funding for upgrades",
+        "domain": "work_habits",
+        "created_at_session": 4,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "The merger requires standardized protocols adopted from the partner organization, which uses different, often paid, finance software. She must now recommend compatible paid solutions to comply with unified procedures, rather than strictly focusing on free or low-cost tools."
+      },
+      {
+        "id": "pref_041",
+        "fact": "Relies more heavily on coffee throughout the day, including afternoons, to sustain energy during extended work hours caused by staff cuts",
+        "domain": "health_body",
+        "created_at_session": 4,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "Her new high blood pressure diagnosis and physician’s advice to reduce caffeine intake require her to give up her habitual all-day coffee drinking, restricting her to just one cup in the morning and prompting a switch to low-caffeine alternatives."
+      },
+      {
+        "id": "pref_049",
+        "fact": "Strictly limits coffee to a single morning cup—switches to decaf or herbal tea for the rest of the day to comply with dietary instructions for blood pressure control",
+        "domain": "health_body",
+        "created_at_session": 7,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "Her physician's warning about abnormal liver enzyme levels, combined with pending evaluations and a requirement to avoid substances metabolized by the liver, now means she must cut out all coffee and even decaf, which can still stress the liver. She switches only to water and non-caffeinated, liver-safe herbal teas until more is known."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:33:20.039456"
+}

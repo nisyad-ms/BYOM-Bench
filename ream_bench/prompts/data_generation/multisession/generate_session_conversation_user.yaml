@@ -1,6 +1,6 @@
 name: Generate Session Conversation (v2)
 description: Generates a conversation around a life event where the user naturally reveals only the preferences that changed this session (new + evolved), not all active preferences.
-used_by: byom_bench/data_generators/multisession.py::_generate_session_conversation
+used_by: ream_bench/data_generators/multisession.py::_generate_session_conversation
 variables:
   - persona: The user persona description
   - life_event: The life event context for this session

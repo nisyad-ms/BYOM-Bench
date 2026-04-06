@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_88b10e29",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_043",
+        "fact": "Eats homemade lunches at his desk during recovery — avoids walking to the break room due to mobility restrictions",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Brings homemade lunches to work but never eats at his desk — always moves to the break room to eat"
+        }
+      },
+      {
+        "id": "pref_057",
+        "fact": "Suspends all mentorship and upskilling activities for junior admin; devotes all available work hours to IRS audit preparation until completion",
+        "supersedes": {
+          "id": "pref_036",
+          "fact": "No longer schedules weekly accounting training sessions with staff — focused solely on own workload during peak audit preparation"
+        }
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks emails only at 10am and 4pm — avoids notifications outside those windows"
+      },
+      {
+        "id": "pref_006",
+        "fact": "Checks blood pressure every morning before breakfast — never skips even when rushed"
+      },
+      {
+        "id": "pref_013",
+        "fact": "Hosts monthly board game nights for his college friends at his home; never chooses a venue outside the house"
+      },
+      {
+        "id": "pref_001",
+        "fact": "Reviews all accounting entries at the end of each day — never leaves reconciliation tasks for later"
+      }
+    ]
+  },
+  "persona": "A senior accountant at a nonprofit organization with limited staff"
+}

@@ -3,7 +3,7 @@ description: >
   Iteration 3 of experiment. Relaxes v11e's strict "zero details" to allow
   broad topical framing while prohibiting specific distinguishing details.
   Keeps the mandatory anti-leakage check structure.
-used_by: byom_bench/evaluation_multisession/user_simulator.py::MultiSessionUserSimulator
+used_by: ream_bench/evaluation_multisession/user_simulator.py::MultiSessionUserSimulator
 variables:
   - persona_summary: Brief summary of the persona
   - current_preference: "The preference to EVALUATE (id + fact), or 'N/A' on the first turn"

@@ -1,0 +1,1532 @@
+{
+  "persona": "A junior corporate lawyer at a multinational firm specializing in mergers and acquisitions",
+  "persona_id": "persona_20260301_223416",
+  "expanded_persona": {
+    "base_persona": "A junior corporate lawyer at a multinational firm specializing in mergers and acquisitions",
+    "age": 29,
+    "gender": "female",
+    "location": "Chicago, IL",
+    "work_education": [
+      "Third year associate at Baker McKenzie, M&A division, often works 60-hour weeks during deal rushes",
+      "Recently assigned lead associate responsibilities for her first cross-border acquisition project",
+      "Mentors summer interns and helps onboard new associates in her practice group",
+      "Balancing prep for internal promotion review next quarter; upskilling in international tax law",
+      "Still pays off student loans from Northwestern Law, which influences her career decisions"
+    ],
+    "health_wellness": [
+      "Experiencing frequent tension headaches and mild insomnia during high-stress deal closings",
+      "Routinely attends evening barre classes at her local studio to unwind and stay fit",
+      "Recently started using a meal delivery service to avoid skipping meals at work",
+      "Takes weekend hikes along the Lakefront with friends when work allows",
+      "Moderate caffeine intake, sometimes pushes boundaries with late-night coffee"
+    ],
+    "family_relationships": [
+      "Lives alone in a high-rise downtown; long-distance relationship with partner in San Francisco",
+      "Calls her younger sister daily, who is a grad student facing anxiety about job prospects",
+      "Parents live in Milwaukee; she visits for major holidays and family gatherings",
+      "Close friend group from law school bonds over career stress and meets monthly for brunch",
+      "Occasionally cares for her elderly grandfather, driving up to Milwaukee when he needs help after doctor visits"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Blocks two hours every morning for uninterrupted deal documentation — refuses meeting requests before 11 am during active projects",
+        "Delegates routine research tasks to interns whenever possible, focusing her own time on client strategy and negotiation",
+        "Drafts all client emails after 7 pm to ensure she can review them thoroughly — never sends quick replies during busy work hours",
+        "Schedules weekly check-ins with new associates she mentors — prefers video calls to impersonal written feedback",
+        "Only attends firm-sponsored upskilling sessions related to international tax law — skips general legal webinars"
+      ],
+      "health_body": [
+        "Never skips her evening barre class, even when deadlines loom — refuses to substitute with home workouts or gym sessions",
+        "Limits caffeine to one cup before noon, but allows herself exceptions on deal closing nights",
+        "Uses her meal delivery service exclusively Monday through Friday — never cooks during the workweek",
+        "Takes digital detox days once per month: no emails or work messages, prioritizes Lakefront hikes",
+        "Keeps a headache journal tracking triggers and remedies — avoids over-the-counter medication unless symptoms interfere with work"
+      ],
+      "social_relationships": [
+        "Schedules nightly phone calls with her partner, never misses a day — avoids video chats except on weekends",
+        "Never shares career stress with her parents, discusses only during brunches with law school friends",
+        "Texts her younger sister throughout the day, calls only after 9 pm when both can vent",
+        "Arranges Milwaukee visits around her grandfather's medical appointments, never lets work disrupt family caregiving",
+        "Hosts onboarding coffee meetups for summer interns at her favorite café — never delegates mentorship duties"
+      ],
+      "leisure_hobbies": [
+        "Reads mystery novels exclusively on weekends — never streams TV shows",
+        "Plans Lakefront hikes with friends at least once a month, weather permitting — refuses solo outdoor activities",
+        "Books tickets for local theater performances quarterly, always attends with her friend group",
+        "Collects vintage Chicago architecture prints, visits pop-up galleries every season",
+        "Spends Sunday mornings exploring new coffee shops downtown — never repeats the same spot twice in a month"
+      ],
+      "daily_routines": [
+        "Starts every morning reviewing her calendar and to-do list for the day — never checks email before breakfast",
+        "Keeps her phone on Do Not Disturb after 10 pm, except for calls from her partner or sister",
+        "Orders household supplies online bi-weekly, never shops in-store for essentials",
+        "Meal preps healthy snacks for the week each Sunday afternoon — will never rely on vending machines",
+        "Completes a five-minute guided meditation each night before bed, regardless of workload or stress"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed chronic wrist pain and numbness, diagnosed as early-stage carpal tunnel syndrome after seeking medical attention for persistent discomfort during document review at work.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Uses voice-to-text software for drafting long documents and emails to reduce wrist strain at work",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Wears ergonomic wrist braces during computer use and while sleeping as preventative care",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Never skips her evening barre class, even when deadlines loom — refuses to substitute with home workouts or gym sessions"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Replaces barre classes with low-impact yoga sessions at home, avoiding strain on her wrists due to carpal tunnel syndrome — refuses in-studio classes until condition improves",
+              "domain": "health_body"
+            },
+            "reason": "Chronic wrist pain and carpal tunnel diagnosis prevent exercises that require bearing weight with wrists or strong grip; medical advice likely recommends rest and lower-impact, wrist-neutral alternatives."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_017",
+            "fact": "Plans Lakefront hikes with friends at least once a month, weather permitting — refuses solo outdoor activities",
+            "domain": "leisure_hobbies",
+            "reason": "Carpal tunnel syndrome often involves avoiding long walks carrying items, and even moderate hiking can strain the wrists and aggravate symptoms during flare-ups. The habit is likely paused per doctor recommendation."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So... I got diagnosed with early-stage carpal tunnel last week after my wrist pain wouldn't go away during some marathon document review sessions. I'm pretty worried about managing work and health right now, especially since it's my first lead associate project. Any advice on making this less overwhelming?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really tough, especially with the added pressure of leading a big project. Have you had to adjust your daily work routine at all since the diagnosis, or are you still figuring out what works?"
+        },
+        {
+          "role": "user",
+          "content": "I'm still experimenting, but I've started using voice-to-text when drafting longer documents and client emails—it's definitely weird, but it helps avoid typing for hours. Also, my doctor recommended wearing ergonomic wrist braces basically whenever I'm at my computer and even while sleeping. It's early days, but I think this is helping a little."
+        },
+        {
+          "role": "assistant",
+          "content": "Those sound like smart changes. Voice-to-text takes some getting used to, but it's a solid strategy. Are you able to delegate some of the heavy document review, or is it all hands on deck with the cross-border acquisition?"
+        },
+        {
+          "role": "user",
+          "content": "I wish I could offload more, but as lead associate, most of the client emails and negotiation prep falls to me. Routine research I give to interns, but the critical stuff still lands on my desk. My normal morning block for uninterrupted documentation is even more important now since I need to pace myself and avoid overdoing it."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—protecting that morning block is definitely key, especially if you’re relying on voice tools and want to minimize interruptions. How about your after-work routines? Are you keeping your usual barre classes, or did you have to change that up given the wrist issue?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, that’s been a big change. I had to drop barre classes for now because anything involving grip or wrist weight is off-limits. I’ve swapped in low-impact yoga sessions at home, specifically focusing on wrist-neutral poses, and I won’t go back to the studio until things improve. Barre was non-negotiable for stress relief, so it’s been hard to adjust."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment, especially since exercise routines can be such a grounding force. At least yoga can still offer some of that stress relief, even if it’s not quite the same. What about your Lakefront hikes—are you still able to join those with friends, or is that off the table for now?"
+        },
+        {
+          "role": "user",
+          "content": "Unfortunately, I had to pause those hikes too. The doctor said longer walks, especially if I’m carrying water or bags, can aggravate the wrists. I’ll miss those monthly outings with my friends, but for now it’s best to let it go until the flare-ups settle."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s understandable, even if it’s disappointing. Maybe your friends could visit you instead, or you could all try something more wrist-friendly together. Out of curiosity, how’s the adjustment affecting your mentoring of new associates or the intern onboarding? Has the wrist issue changed your process at all?"
+        },
+        {
+          "role": "user",
+          "content": "It’s made me rethink some things—I’m holding onboarding coffee meetups as usual, but I’m handwriting less and using voice notes for feedback during check-ins. The tech side takes getting used to, but I still want mentoring to feel personal. The braces are a bit noticeable, so I’ve started mentioning the carpal tunnel diagnosis when we meet just to avoid awkwardness."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great that you’re keeping those mentorship connections strong, even with the adjustments. If you ever need help finding more accessible tools or apps—especially for voice note sharing across your team—let me know. Want to brainstorm ways to keep stress manageable during deal closings, given all these changes?"
+        },
+        {
+          "role": "user",
+          "content": "That’d be helpful. I’m already logging headache triggers, and I’m stricter about caffeine, but staying balanced feels even tougher now with fewer exercise options and no hikes. I appreciate any fresh ideas that don’t rely on physical activity or computer use—maybe something for winding down at night that won’t strain my wrists."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her partner in San Francisco accepted a new job that requires frequent international travel, significantly reducing their ability to coordinate nightly phone calls and regular visits.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Sends a daily ‘good morning’ message to her partner regardless of location or time zone, maintaining connection while apart",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Joins a bi-weekly virtual support group for professionals in long-distance relationships, seeking community and advice during her partner's frequent absences",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Schedules nightly phone calls with her partner, never misses a day — avoids video chats except on weekends"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Coordinates phone calls with her partner only when his travel schedule allows — now prefers spontaneous text exchanges or voice notes instead of nightly calls",
+              "domain": "social_relationships"
+            },
+            "reason": "Her partner’s new job with frequent international travel makes nightly phone calls nearly impossible due to unpredictable time zones and limited availability. She substitutes with asynchronous texting and voice notes."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help. My partner just started a new job in San Francisco and it's a big international role—he’s traveling constantly now. Before, we always had a nightly phone call; now, the time zones are a mess, he’s barely in the same place, and we’re struggling to keep up with each other. I’m trying to figure out better ways to stay connected, but I feel sort of lost. Any suggestions for long-distance communication that actually works when schedules are unpredictable?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds tough—especially with such a drastic shift from your usual routine. Nightly calls provide a lot of stability, so losing that can really throw you. For unpredictable schedules, have you tried using asynchronous options like text messages or voice notes? Sometimes checking in when you each are free (rather than trying to coordinate in real time) can help keep the connection alive."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually, we’ve started sending more spontaneous texts and voice notes instead of forcing phone calls every night. We still try to talk when we can, but there’s no guarantee. It’s weird adjusting, honestly. Calls aren’t off the table—they just happen when his travel allows. I guess I’d love some ideas for routines or habits that feel meaningful, even when we’re mostly texting."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great you’re leaning into voice notes—they convey emotion so much better than texts. For routines, some couples like exchanging a daily message, even something simple like a ‘good morning’ or sharing something positive about their day. Have you thought about creating a shared ritual that fits within your new reality, like sending updates at a specific time, or maybe even a photo from wherever you’re each working?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention that—I started sending him a daily ‘good morning’ message, no matter where he is or what time zone we’re dealing with. It gives me something to look forward to, and I think it makes him feel remembered too. But beyond that, I keep worrying that we’ll drift apart if we don’t have some regular touchpoint. Are there any communities or support groups for people in situations like this?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sending a daily ‘good morning’ is a really thoughtful tradition—those little moments can make all the difference. As for support, there are actually virtual groups specifically for professionals dealing with long-distance or frequent travel relationships. These meetups offer advice and shared experiences from others navigating similar challenges, and sometimes even provide practical tips for managing the shifting communication."
+        },
+        {
+          "role": "user",
+          "content": "I recently joined a bi-weekly virtual support group for professionals in long-distance relationships—it’s helping, honestly. Hearing people talk about how they balance things makes me feel less alone. The advice helps, but it’s also just comforting to know others are figuring this out too. Any tips for making the most out of these kinds of groups?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s fantastic you’re already tapping into that community! To get the most out of those sessions, you might want to set an intention before each meeting—think of a question or topic you’d like insight on, and be open about your own challenges. Sharing specifics often invites the best wisdom from others. Also, if the group has any accountability pairs, it can be helpful to connect regularly with one member for ongoing support."
+        },
+        {
+          "role": "user",
+          "content": "Setting an intention for each session is a good idea—I tend to just show up and listen, but maybe being more active would help me get more out of it. I’ll try pairing up with someone next time if that’s an option. Thanks for all this, it’s honestly reassuring to know there are solid alternatives to our old routine."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome—adjusting to a new rhythm is always messy at first, but you’re taking all the right steps. Remember, connection isn’t just about frequency—it’s about presence and authenticity, even if it’s a quick voice note or message. If you notice any patterns that help you feel closer, try to weave those into your daily habits. Let me know if you’d ever like more strategies or support. You’ve got this!"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received a formal offer from Baker McKenzie to relocate to their London office for a two-year assignment leading European M&A transactions, with expedited internal promotion review as part of the package.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Seeks out expatriate and international lawyer networking events outside work hours to build a London-based professional and social circle",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Tries one new European cuisine restaurant each week with colleagues to explore local food culture and foster team connection",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Schedules bi-weekly video calls with her family to maintain close connections despite the time difference",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Takes digital detox days once per month: no emails or work messages, prioritizes Lakefront hikes"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Takes digital detox days once per month: no emails or work messages, prioritizes walks or museum visits around London parks and landmarks",
+              "domain": "health_body"
+            },
+            "reason": "Relocating to London eliminates access to Chicago's Lakefront trails. She will adapt her detox habit to explore London’s parks or cultural sites."
+          },
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Orders household supplies online bi-weekly, never shops in-store for essentials"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Shops for household essentials in-person at local London stores and open markets to adapt to local brands and supply options",
+              "domain": "daily_routines"
+            },
+            "reason": "Moving internationally means U.S.-based delivery services and familiar brands are mostly unavailable; she will need to adapt to in-person shopping and new suppliers in London."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_014",
+            "fact": "Arranges Milwaukee visits around her grandfather's medical appointments, never lets work disrupt family caregiving",
+            "domain": "social_relationships",
+            "reason": "Living in London makes impromptu trips to Milwaukee unrealistic or impossible; she cannot practically handle regular caregiving for her grandfather from abroad."
+          },
+          {
+            "id": "pref_008",
+            "fact": "Uses her meal delivery service exclusively Monday through Friday — never cooks during the workweek",
+            "domain": "health_body",
+            "reason": "Her current meal delivery service is Chicago-based and won't operate internationally; she'll need new food routines in London."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I officially got the London assignment offer from Baker McKenzie. It’s honestly a career game-changer—two years as lead on European M&A deals, with fast-track promo review. But… I’ve never moved abroad, and suddenly every routine feels like it needs a reset. Can you help me figure out practical ways to ground myself the first few months? Especially with healthy habits and making connections?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on the offer—that’s huge! Transitioning abroad is definitely a big shift, but you’re right to focus on routines. When you think about healthy habits, is it more about maintaining what works for you now (exercise, meals, digital boundaries), or evolving them to fit London? Anything you've already identified as a challenge?"
+        },
+        {
+          "role": "user",
+          "content": "It’s both, honestly. For example, I always do evening barre classes in Chicago—no substitutions. I already scoped out a barre studio near the London office, priority number one. What I’m stuck on is food—my meal delivery service here keeps me sane during the week, but it won’t work in London. I’ll need new options for workdays, preferably something that doesn’t have me cooking every night."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart call checking out local barre options! On meals, London has good prepared meal delivery choices (like Detox Kitchen, Mindful Chef), but also great grab-and-go healthy options near most business districts. If you don't want to cook much, maybe combining delivery with occasional supermarket runs for easy snacks? Would picking a few staple snack brands help with stay-fuelled, or do you prefer homemade meal prep?"
+        },
+        {
+          "role": "user",
+          "content": "I actually do weekly meal prep for snacks every Sunday—it’s one routine I’ll keep, wherever I am. But for essentials? I used to order supplies online bi-weekly and rarely shopped in-store, but with different brands and no familiar sites, I think I’ll need to shift to checking out local shops and markets in person instead."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—a lot of U.S. delivery services won’t ship internationally, and exploring London markets is actually a fun way to get familiar with local options. You could make a list of essentials before you go, then scout stores near your new flat once you arrive. Do you want suggestions for must-visit markets or specific shops, or would you rather discover them as you settle in?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s go with suggestions—anything that helps me avoid wandering cluelessly! Another big shift: I used to take monthly digital detox days, always prioritizing Lakefront hikes in Chicago. Obviously, I won’t have the Lakefront anymore. So I’ll start exploring London parks or museums on those detox days instead—any tips for balancing nature and urban culture?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great adaptation. London has amazing green spaces—Hyde Park, Regent’s Park, Hampstead Heath—and plenty of museums and galleries. Maybe alternate parks and museums each month for variety? You could also join walking tours—some focus on historic neighborhoods or architecture, which might appeal to you. Are you hoping to do those solo, or would you rather invite colleagues or expats along?"
+        },
+        {
+          "role": "user",
+          "content": "I much prefer outings with others—even in Chicago, I never did solo hikes. One thing I’m planning is to seek out expatriate and international lawyer networking events outside work hours, to start building a social and professional circle in London. If you have recommendations on where to find those, I’d appreciate it."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. There are several expat groups in London—InterNations is popular, and the American Bar Association has a London chapter. Many legal professional associations host monthly mixers or topic panels for international lawyers. I’d also suggest checking firm-sponsored socials and LinkedIn groups for legal expats. Would you be comfortable going solo at first, or is it better to attend with colleagues?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll likely mix both—team outings, but also solo if it helps me meet new people. As for food, I want to get a sense of London’s international scene, so I’ll try one new European cuisine restaurant each week with colleagues. I think it’ll help both with local exploration and team connection. Open to suggestions there too!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a fantastic approach—London has nearly every cuisine you can imagine. You could make a rotating shortlist (French in South Kensington, Spanish tapas in Soho, Italian in Shoreditch, etc.). If you want more structure, some places offer special team menus for groups. Would you like to track favorites, or just try something new every week without repeats for the first few months?"
+        },
+        {
+          "role": "user",
+          "content": "I’m all for not repeating spots—I already do that with coffee shops in Chicago. Last thing: family. I used to drive to Milwaukee regularly when my grandfather needed help, but that won’t be possible in London. Instead, I’ll schedule bi-weekly video calls with my family to keep connections strong despite the time difference."
+        },
+        {
+          "role": "assistant",
+          "content": "Staying connected virtually is wise, and bi-weekly is a nice cadence given the time zone. You might want to set regular times, and rotate who hosts/catches up each session. For your grandfather, maybe you could participate in care conversations remotely, or set up group chats with relatives to stay in the loop? Would that help, or does your family already have support systems in place?"
+        },
+        {
+          "role": "user",
+          "content": "They’re good—I’ll pitch in as much as possible from afar, but regular caregiving just won’t be realistic anymore. I’ll have to let go of that role, which is tough. Anyway, I think that covers the major resets. Thanks for helping me break this down—anything else I should keep on my radar for a London transition as a corporate lawyer?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re already covering the essentials—routines, social/professional circles, family. Maybe just focus on flexible expectations: some habits will adapt further as you settle in. Keep an open mind as you explore local culture, and use your networking instinct to ease the transition. And don’t forget to build in downtime for yourself—London moves fast, but you’ll find your rhythm. Let me know anytime you want to brainstorm specifics!"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Internal policy change at Baker McKenzie requires all M&A associates, including her, to resume full-time in-office work and client meetings five days a week, ending the previous hybrid arrangement.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Attends evening barre classes at the studio closest to the office immediately after work — avoids going home first to maintain attendance and minimize travel time",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Eats dinner at the office lounge after finishing client meetings—prefers hot meals delivered to the building rather than cooking or eating at home during the week",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Schedules weekly check-ins with new associates she mentors — prefers video calls to impersonal written feedback"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Schedules weekly check-ins with new associates exclusively in-person at the office — uses face-to-face meetings rather than video calls for mentorship",
+              "domain": "work_habits"
+            },
+            "reason": "The firm-wide return to fully in-office work eliminates remote mentorship and video calls. She adapts by meeting mentees in-person for check-ins."
+          },
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Hosts onboarding coffee meetups for summer interns at her favorite café — never delegates mentorship duties"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Hosts onboarding coffee meetups for summer interns exclusively at the office café — avoids offsite gatherings due to firm policy and client proximity",
+              "domain": "social_relationships"
+            },
+            "reason": "With the mandatory in-office policy and increased client presence, she can no longer organize onboarding events at external venues. They now take place in the building’s café."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_026",
+            "fact": "Replaces barre classes with low-impact yoga sessions at home, avoiding strain on her wrists due to carpal tunnel syndrome — refuses in-studio classes until condition improves",
+            "domain": "health_body",
+            "reason": "Since she must be in the office five days a week, evening home yoga sessions are impractical, and her wrist condition has improved, allowing her to resume studio classes."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So Baker just announced the new policy—every associate has to be in the office full-time again, five days a week, including all client meetings. I’m honestly scrambling to figure out what to adjust in my routine. Hybrid gave me a little breathing room, and I’m worried I'll lose my evening unwind time in the shuffle. Do you have any tips for maintaining healthy boundaries when office hours become all-day, every day?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough transition, especially with those hours. I’ve seen folks struggle most when the commute eats up their after-work time. What’s your evening routine like now—are there things you absolutely don’t want to give up?"
+        },
+        {
+          "role": "user",
+          "content": "Barre class is non-negotiable for me. I used to go to the studio by my apartment after work, but going home first just isn’t realistic with the new schedule. I started attending at the studio closest to the office—literally right after I finish work, so I’m not tempted to bail on days when I’m exhausted. That part’s actually working so far."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move! That proximity helps keep the habit. Are you planning to eat dinner at home after class, or does the office schedule make that tricky?"
+        },
+        {
+          "role": "user",
+          "content": "I barely see my apartment during the week now. I’ve come to rely on hot meal deliveries in the office lounge after I’m done with client meetings—eating there is just more practical. Cooking at home during the week is totally out unless it's the weekend."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—having reliable meals delivered can keep energy up during those long days. Any issues with getting a good variety, or is the delivery service covering you pretty well?"
+        },
+        {
+          "role": "user",
+          "content": "The service is solid for weekdays, so I only prep snacks at home for Sunday. I just needed to switch it up from the old routine; skipping meals during deal rushes was an issue. But eating dinner in the lounge means fewer late-night cravings, which helps with the insomnia."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a good adjustment. Have you noticed any challenges with work boundaries now that the lines are blurred—like finding time for digital detox, or keeping your check-ins with new associates?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, weekly check-ins with new associates are now exclusively face-to-face in the office; video calls aren't happening anymore. It’s actually been a surprisingly good shift for mentorship—I can read their reactions better. But I do miss the flexibility."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s interesting how in-person sometimes improves feedback, even if it cuts down flexibility. Speaking of mentorship, do you still host onboarding coffee meetups for interns at your favorite café, or has the policy changed those as well?"
+        },
+        {
+          "role": "user",
+          "content": "Those are now always at the office café—no more offsite gatherings, unfortunately. Firm wants us visible for clients and close to the action. It’s less personal, but at least no one gets lost trying to find the place."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good workaround given the circumstances. How are you handling exercise? I remember you mentioned switching to home yoga for a while because of wrist issues—does the return to barre mean the carpal tunnel improved?"
+        },
+        {
+          "role": "user",
+          "content": "Exactly. I dropped the home yoga because my wrists have gotten better and office location makes studio barre more convenient again. Honestly, I wouldn’t be able to keep up with yoga at home while in the office full-time anyway."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear the wrists are better! You’ve proactively shifted a lot to make this work. Do you have any concerns about managing stress now that downtime is harder to protect, or are your current boundaries holding up?"
+        },
+        {
+          "role": "user",
+          "content": "I’m still experimenting—a tighter routine means I have to be more mindful about weekend recovery. I’m sticking with Lakefront hikes and digital detox days, but I’ll probably need to get creative if office life keeps ramping up."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s all about finding the pockets of real rest when you can. If you need help brainstorming new ways to decompress or manage work stress, just let me know."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her elderly grandfather took a fall at home in Milwaukee and now requires ongoing assistance with mobility and regular doctor visits, prompting the family to coordinate more frequent caregiving support.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Coordinates a bi-weekly family group text and video call to organize her grandfather's care logistics, even when she's not physically present",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Brings her work laptop and mobile hotspot during family caregiving weekends to remain available for urgent deal tasks",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_024",
+              "fact": "Meal preps healthy snacks for the week each Sunday afternoon — will never rely on vending machines"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Now prepares grab-and-go snacks for her car every weekend — relies on portable options for Milwaukee drives and family visits due to less predictable weekends",
+              "domain": "daily_routines"
+            },
+            "reason": "Her weekends are no longer predictable, and she often travels between Chicago and Milwaukee to support her grandfather. As a result, she preps snacks for travel rather than for long workdays and cannot maintain her meticulous home snack routine."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My family is trying to figure out a schedule for supporting my grandfather after his fall—I'm driving between Chicago and Milwaukee a lot more, and honestly it's throwing my routines totally off. I still have cross-border deal deadlines piling up at work. Can we brainstorm ways to adapt without dropping the ball on either front?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really challenging—balancing a demanding job with new family caregiving responsibilities is a lot to juggle. Are there specific routines or parts of your week that you're struggling most with? For example, is it meal planning, exercise, staying connected with your team, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, weekends are the messiest now. I used to set aside Sunday afternoons to prep healthy snacks for the week, but that's not really possible anymore since I might be on the road. I need help figuring out a new system for staying nourished, especially during those unpredictable Milwaukee trips."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—so your usual Sunday snack prep isn't practical with all the travel. Would prepping portable, grab-and-go snacks that you can keep in your car work better? Things like trail mix, bars, or wraps that don’t require refrigeration?"
+        },
+        {
+          "role": "user",
+          "content": "Yes! That's actually what I've started doing: making snack packs specifically for my car on weekends. I realized I can't rely on my old home routine when I may not even be in Chicago. Portable options help since vending machines in hospital waiting rooms aren’t exactly healthy."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart pivot—having travel snacks ready will definitely help. Since weekends are now less predictable, do you find it hard to disconnect or take time for yourself? Or are you able to fit in some self-care, maybe during those drives or while you're waiting at appointments?"
+        },
+        {
+          "role": "user",
+          "content": "Self-care is tricky, but I try. I still take my guided meditation every night and fit in Lakefront hikes with friends when I can. One change is that I now bring my work laptop and mobile hotspot during Milwaukee weekends, just in case urgent deal tasks come up. That wasn’t part of my routine before, but the cross-border project means I can’t go totally offline."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to stay flexible—especially with your lead role on the acquisition. Has this new setup impacted your family coordination? Are you bouncing between everyone’s schedules, or have you found ways to streamline communication for your grandfather’s care?"
+        },
+        {
+          "role": "user",
+          "content": "We actually started a bi-weekly family group text and video call to organize logistics, like medication and appointments. Even if I can't be there, I help out virtually. It’s made the scheduling way easier and keeps everyone on the same page."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great strategy. Group calls can really reduce miscommunication and help set expectations. Is there anything else you’re struggling with—like maintaining boundaries for work versus family, or anything you want to tweak about these new routines?"
+        },
+        {
+          "role": "user",
+          "content": "Boundaries are tough, but I'm using Do Not Disturb after 10pm, except for calls from my partner or sister. The biggest adjustment has honestly been shifting my snack routine—travel snacks for the car, not home prep—and making sure I'm equipped for both urgent work issues and family discussions, even on weekends. I think I'm getting there, but any suggestions on minimizing work stress during long caregiving stretches?"
+        },
+        {
+          "role": "assistant",
+          "content": "Given all these changes, your commitment to meditation and structured communication is already huge. You might also try batching work tasks in advance—like finishing deal documentation before Friday, so you have fewer urgent items during Milwaukee visits. Would scheduling a short check-in with your team before weekends help? That way everyone knows your availability, and pressing items can be handled proactively."
+        },
+        {
+          "role": "user",
+          "content": "That’s a good idea—I’ll try a team check-in before I head out for caregiving weekends. If anything urgent comes up while I’m at my grandfather’s, at least I have my laptop and hotspot to jump in remotely. The group call with my family helps there, too; I know what needs attention and can plan work around appointments."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve put solid systems in place—adjusting snack routines, family calls, and remote work tools. Let me know if you need help with anything else, like optimizing work-from-hospital strategies or ways to recharge during downtime. You’re balancing a lot, but your proactive approach will serve you well."
+        },
+        {
+          "role": "user",
+          "content": "Thanks! This was helpful—I needed reassurance that these adaptations make sense. I’ll keep tweaking as I go, but right now, portable snacks, remote work kit, and the bi-weekly family calls are my lifelines."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Started experiencing persistent heart palpitations and dizziness during evening barre classes, leading her primary care physician to order a cardiac workup and instruct her to temporarily stop all high-intensity exercise.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Tracks daily heart symptoms and step count with a wearable device, reviewing logs nightly to monitor changes for her upcoming cardiology appointment",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Schedules all non-urgent personal commitments after 8 pm to allow for flexible rest and recovery time immediately after work while awaiting her cardiac workup",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_039",
+              "fact": "Attends evening barre classes at the studio closest to the office immediately after work — avoids going home first to maintain attendance and minimize travel time"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Temporarily avoids all high-intensity in-studio workouts — instead, takes short, gentle evening walks near her apartment to stay lightly active as advised by her physician",
+              "domain": "health_body"
+            },
+            "reason": "After experiencing persistent heart palpitations and dizziness during barre and receiving a direct medical order to stop high-intensity exercise pending cardiac evaluation, she cannot safely attend in-studio barre or any strenuous class. She adapts by substituting with gentle, low-intensity walks until cleared to resume more vigorous activity."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I need some help adjusting my routine — last week I started getting heart palpitations and feeling dizzy during barre class, and my doctor ordered a cardiac workup. She said absolutely no high-intensity exercise for now, which pretty much ruins my post-work unwind. Is there anything you can recommend to stay active without breaking doctor's orders? The after-work movement is non-negotiable, but it has to be gentle for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds worrisome, but it’s great you're listening to your doctor. For gentle activity, evening walks can work well — low-intensity, easy to control your pace, and still give your mind a reset after work. Would walking near your apartment help recreate that post-work transition, or do you prefer getting a little farther from home?"
+        },
+        {
+          "role": "user",
+          "content": "Walking works, especially since my doctor wants me to avoid anything strenuous or crowded for now. I've started taking short, gentle walks near my apartment instead of barre class — not as satisfying, honestly, but manageable. I just can’t do in-studio classes until I'm cleared. I want to make sure I stick with daily movement — any ideas to make the walks more engaging without pushing myself physically?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. You could make your walks more enjoyable by exploring different routes, pairing them with a podcast, or even listening to an audiobook. Maybe connecting with nature or architecture could help — since you enjoy vintage Chicago architecture, maybe plan routes past some interesting buildings or seasonal pop-up galleries. Would that add enough variety without increasing intensity?"
+        },
+        {
+          "role": "user",
+          "content": "Great idea! If the weather’s decent I could loop past a few landmarks or gallery windows. Not sure I want to always listen to something though — sometimes I need the quiet to decompress after work. By the way, for now I’m also tracking daily symptoms on my wearable: heart rate, dizziness, that sort of thing, and step counts. I review the logs each night ahead of my cardiology appointment, so I'd rather not add anything distracting that might make symptoms harder to notice."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes complete sense — staying tuned in to your body is key, especially given the circumstances. Quiet walks can be restorative. Would you consider a walking meditation? It's gentle, doesn't require tuning out, and pairs well with mindfulness. Are there particular times after work you prefer for these walks, or are you keeping things flexible pending your doctor’s results?"
+        },
+        {
+          "role": "user",
+          "content": "I’m keeping things pretty flexible. My doctor suggested prioritizing rest right after work, so I don’t commit to anything non-urgent until after 8 pm right now. That gives me space to walk, recover, track my symptoms, and review client emails later. So nothing scheduled early evening — even social stuff is on hold until after 8, just so I don’t overcommit before I know more about my heart."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach — giving yourself that buffer for rest and monitoring is important, especially with so much uncertainty. Restricting commitments can be tricky; has that affected your usual onboarding meetups with interns or any other social routines? If so, are there adjustments you’re making or do you plan to delay those until you’re cleared?"
+        },
+        {
+          "role": "user",
+          "content": "The coffee onboarding sessions for interns are still happening, but I’ve moved them later when possible. The bigger impact is with evening social stuff and workouts. Normally I attend barre class at the studio near my office immediately after work so I don’t go home first and risk skipping. But now barre is on hold, and I refuse home workouts or the gym — only short gentle walks outside, and only after work. It’s a big shift, but my doctor was adamant."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood — sticking to gentle outdoor walks is definitely the safest option right now. It sounds like you’ve made clear adaptations to your routine. For your walks, maybe tracking step goals alongside your symptom log will help give a sense of accomplishment, without overreaching. That way, you keep your routine structured but in line with your doctor’s advice. Is there anything else about your day-to-day that’s been disrupted, or are the main changes around exercise and evening commitments?"
+        },
+        {
+          "role": "user",
+          "content": "Those are the main shifts. I’m still using my meal delivery service and keeping my regular work habits. Digital detox days, Lakefront hikes, and mystery novel time on weekends are all still on — just waiting for clearance to get back to more active hikes. Right now, tracking symptoms and making space for recovery are my biggest priorities."
+        },
+        {
+          "role": "assistant",
+          "content": "All clear. You’re making thoughtful changes without losing touch with the routines that help you decompress. Once your cardiac workup is complete, you’ll hopefully find out what you can resume or need to modify longer-term. Until then, gentle movement, careful symptom tracking, and flexible time after work should keep you safely active. Let me know if you want ideas for self-care practices beyond walks!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Assigned as lead counsel for a major cross-border merger involving simultaneous negotiations across multiple time zones, requiring nightly conference calls and urgent document review outside normal business hours for the next several months.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_049",
+            "fact": "Keeps her work phone by her bedside and sleeps with notification alerts on for urgent deal-related calls, expecting interruptions during overnight negotiations",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Priors short, daily power naps over long nightly sleep blocks to cope with disrupted sleep cycles during intense deal sprints",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Blocks two hours every morning for uninterrupted deal documentation — refuses meeting requests before 11 am during active projects"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "No longer holds uninterrupted morning work blocks — now schedules work and meetings at all hours, including late nights, to coordinate with deal teams across global time zones",
+              "domain": "work_habits"
+            },
+            "reason": "Leading a cross-border merger requires her to accommodate urgent tasks and conference calls across various time zones, eliminating the possibility of reserving fixed, interruption-free morning blocks."
+          },
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Drafts all client emails after 7 pm to ensure she can review them thoroughly — never sends quick replies during busy work hours"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Drafts and sends client emails throughout the day and night as urgent deal events occur—cannot wait for a set review time due to real-time cross-border negotiations",
+              "domain": "work_habits"
+            },
+            "reason": "The nature of round-the-clock cross-border negotiations means she must send timely, sometimes immediate, client communications instead of batching them after hours."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I got assigned the lead counsel role for a cross-border merger—my first as lead, and it's huge. The time zones are brutal; I'm on conference calls almost every night and emails fly around at all hours. I'm barely sleeping and my whole routine feels upside down. Any advice on staying functional during this kind of deal sprint?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats on landing the lead role—that's a major milestone! With the constant schedule changes and urgent communication, it's tricky to find any balance. Are there any parts of your routine you've managed to keep steady, or has everything been upended?"
+        },
+        {
+          "role": "user",
+          "content": "It's honestly all up in the air. I used to block out my mornings for uninterrupted work—no meetings before 11 am, protected time for deal doc review. That's completely gone now. I'm scheduling work and meetings at all hours, including late nights, to stay synced with deal teams across Europe and Asia."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds exhausting. Losing your morning focus block probably makes it tough to catch your breath, let alone organize your day. Are you still able to batch client emails after hours, or has that changed too?"
+        },
+        {
+          "role": "user",
+          "content": "No batching anymore—I'm drafting and sending client emails literally whenever things happen, day or night. It used to be after 7 pm so I could double-check everything, but now real-time negotiations mean urgent replies can't wait for a set review time."
+        },
+        {
+          "role": "assistant",
+          "content": "The pace is relentless when everything’s real-time. If your days and nights are blurred, how are you handling sleep and notifications? Are you able to fully unplug, or do you keep devices on?"
+        },
+        {
+          "role": "user",
+          "content": "I keep my work phone by my bedside and sleep with notification alerts on now. It's the only way to catch urgent overnight calls, but I'm getting interrupted constantly. I never used to do that—even had my phone on Do Not Disturb after 10 pm except for family—but deal urgency means I have to be reachable."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—you went from strict boundaries to nonstop availability. Are you still getting full nights of sleep, or are you trying to squeeze in rest some other way?"
+        },
+        {
+          "role": "user",
+          "content": "No full nights anymore. I'm prioritizing short, daily power naps over long nightly sleep blocks to cope with the disruptions. It’s the only way to stay semi-functional during intense deal sprints."
+        },
+        {
+          "role": "assistant",
+          "content": "Short naps are a smart adaptation, given all those interruptions. Are you finding ways to protect other wellness habits—like your evening barre class, meal delivery, or digital detox days? Or is everything on hold during this deal?"
+        },
+        {
+          "role": "user",
+          "content": "Barre classes and meal delivery are hanging in there, surprisingly—those feel non-negotiable for me. But digital detox days are impossible right now. I’ll try to squeeze in a Lakefront hike when the deal calms down, but that's a future luxury."
+        },
+        {
+          "role": "assistant",
+          "content": "Your commitment to barre and meal delivery makes sense—they anchor your routine when everything else is chaos. With your schedule so fragmented, have you tried any tools or habits that help track tasks or manage client communication in real-time?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve started using task boards to track urgent items and a shared calendar so teams know when to expect a response. It’s clunky but helps. I’m also keeping a headache journal—trigger frequency is way up since the deal sprint started, so I need data to manage it."
+        },
+        {
+          "role": "assistant",
+          "content": "Task boards and headache tracking sound like solid moves. For power naps and sleep interruptions, have you looked into any meditation apps or quick relaxation techniques to maximize rest between deal calls?"
+        },
+        {
+          "role": "user",
+          "content": "I’m sticking with my five-minute guided night meditation, even if it’s just after a nap or right before another call. Honestly, it’s the only part of my wind-down routine I haven’t let go, and it helps calm my mind before trying to rest again."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s impressive discipline—holding onto meditation and barre is probably helping you stay centered. If you ever want tips on optimizing your brief sleep windows or managing email in time-zone chaos, let me know. Otherwise, congrats again on the lead role, and I hope the deal closes smoothly!"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger sister, after months of job anxiety, received a postdoctoral offer in Boston and plans to relocate within the next two months, requesting her support during the transition and move.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Blocks out at least one full weekend over the next two months to travel to Boston and help her sister settle in, pausing most work and social commitments during that period",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Researches and compiles neighborhood guides and postdoc resources in Boston to send to her sister, even consulting her own professional network for referrals and tips",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Texts her younger sister throughout the day, calls only after 9 pm when both can vent"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Frequently initiates spontaneous voice and video calls with her sister at various times, prioritizing flexibility and availability to support her during the move—text convos become less routine as urgent logistics dominate",
+              "domain": "social_relationships"
+            },
+            "reason": "With her sister relocating to Boston and requesting support, conversations are more immediate, logistical, and responsive to real-time needs. The scheduled nightly vent-calls are replaced by more frequent, adaptive voice and video calls for coordination and emotional support."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My younger sister finally landed her postdoc—she got an offer in Boston, after months of stressing about job stuff. She asked for help with the move and settling in, so now I’m figuring out how to support her while keeping up with work and deal deadlines. What’s the best way to stay available for her without letting things at Baker McKenzie slip?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge milestone for her—and for you, with everything on your plate. Supporting family during a transition is tricky when your work is so time-sensitive. Are you considering shifting your usual schedule or routines to make room for helping her, or do you prefer to keep your current structure and fit her needs in around that?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll probably need to shift some things around. Normally, my sister and I text throughout the day and strictly call after 9 pm, but with the move, I’ve been starting spontaneous voice and even video calls whenever we need to coordinate logistics or if she’s feeling overwhelmed. The vent calls are less routine lately—conversations are constant and more urgent. So flexibility is becoming necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—urgent changes require more immediate communication than a nightly debrief. Do you find it disruptive, or are you able to adapt your work focus when those calls come through? Would it help to block out specific windows for her, or do you need the freedom to respond as things pop up?"
+        },
+        {
+          "role": "user",
+          "content": "I definitely need flexibility, so scheduled windows aren’t really working right now. I’ve had to be more responsive—sometimes making calls in the middle of the day if it’s urgent, even if I previously avoided that at work. Honestly, last-minute logistical issues for the move have made text convos secondary; calls are faster and more supportive. So, I’m prioritizing her needs, even if it’s not my old habit."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re really leaning into support, even at the cost of your usual boundaries. Given your calendar’s demands, are you planning to carve out a dedicated trip to Boston, or will you try to manage everything remotely? Blocking a weekend entirely might be tough during deal closings, but could be valuable if you want uninterrupted time with her."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’m actually blocking at least one full weekend over the next two months to travel out there—I want to be hands-on as she gets settled, and I’ll pause most work and social commitments during that weekend. Remote support is okay for some things, but I want to be present for her first few days. I’ll let my team know in advance so nothing critical falls through."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—proactive communication with your team will help set expectations. Have you already started looking into Boston neighborhoods, or are you planning to help her once you arrive? Sometimes having resources in advance eases the stress for both of you."
+        },
+        {
+          "role": "user",
+          "content": "I’ve actually started researching and compiling neighborhood guides, postdoc resources, and tips for Boston to send her. I even tapped my own professional network—colleagues who went to school around Boston or have contacts there—to get referrals and local insights. I want her to feel supported before she even moves, plus it helps her narrow options before we tour places together."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s going above and beyond—she’ll appreciate having those contacts and guides. Will you coordinate any introductions with your network, or just send her the info so she can reach out when she’s ready? Also, do you need help building out that resource list, or are you already feeling comfortable with your approach?"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Diagnosed with moderate iron deficiency anemia following cardiac workup for palpitations and dizziness, prescribed daily iron supplements and instructed to adjust meal delivery preferences to increase iron intake.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_056",
+            "fact": "Consistently sets a daily evening reminder to take her prescribed iron supplement with food — never skips, and always takes it separately from coffee or dairy products as instructed to maximize absorption.",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_057",
+            "fact": "Adds a daily log entry tracking her energy, dizziness, and meals in a health app — proactively notes iron-rich foods consumed and supplement schedule for future discussions with her doctor.",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_044",
+              "fact": "Temporarily avoids all high-intensity in-studio workouts — instead, takes short, gentle evening walks near her apartment to stay lightly active as advised by her physician"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Selects and attends gentle, iron-boosting Pilates or restorative yoga classes twice per week — substitutes cardio with movement forms recommended for anemia, and avoids outdoor walks if feeling fatigued or dizzy",
+              "domain": "health_body"
+            },
+            "reason": "Her anemia diagnosis places new emphasis on fatigue management and iron absorption, and the physician now advises movement tailored for anemia rather than generic gentle walks. Studio sessions featuring restorative movement and instructors versed in supporting anemic clients offer her safer, more carefully modulated activity."
+          },
+          {
+            "from": {
+              "id": "pref_040",
+              "fact": "Eats dinner at the office lounge after finishing client meetings—prefers hot meals delivered to the building rather than cooking or eating at home during the week"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Customizes all office dinner meal orders to include iron-rich options (like lean beef, lentils, or leafy greens) — tracks iron content and prioritizes vitamin C pairings to boost absorption",
+              "domain": "daily_routines"
+            },
+            "reason": "Following her anemia diagnosis and prescription, her meals are no longer selected passively or for convenience alone; she now actively chooses and tracks iron-rich foods and absorption strategies for every dinner meal, per medical instruction."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so I just found out I'm moderately anemic—iron deficiency. My cardiologist prescribed iron supplements and said I need to rethink my meals and workouts. Honestly, I've never paid much attention to iron, and now I'm supposed to track it daily. I really need help figuring out what changes make sense given my schedule, especially with food and exercise. Where should I even start?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a lot to process, especially on top of your deal schedule. Iron management can feel overwhelming at first, but once you identify where it fits into your routine, it's easier to maintain. For meals, do you have control over what's in your delivery orders, or is it a fixed menu from your service? For exercise, are you being told to rest, or is gentle activity still recommended?"
+        },
+        {
+          "role": "user",
+          "content": "The meal service I use lets me customize orders, but until now I've mostly gone for whatever looks convenient after meetings—usually hot meals at the office lounge. Now, I'm supposed to pick dishes that are high in iron and add vitamin C sides to help absorb it. I need to start tracking iron content for each dinner, and pair foods like beef or lentils with greens and citrus. It's so fussy compared to just grabbing whatever. Any tips for picking menu items or staying motivated?"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you're being proactive already. Pairing iron-rich foods with vitamin C is a strong strategy. To simplify, maybe create a shortlist of office dinner combos you know check the boxes—like beef stir-fry with bell peppers, lentil bowls with citrus vinaigrette, or chicken with steamed broccoli. Most meal services show nutrition details, so you could quickly scan for iron content. It might help to log your favorites in a notes app for easy reference. Would something like a meal-tracking spreadsheet fit your workflow, or do you prefer logging on your phone?"
+        },
+        {
+          "role": "user",
+          "content": "I'm actually logging everything in a health app now—energy levels, meals, supplement timing, dizziness. It helps for doctor follow-ups but it's also a lot of extra steps. I'm not used to thinking about these details after work. But it's the only way to keep track of how much iron I'm actually getting. Any recs for making this less tedious? Or ways to automate reminders for meals and supplements?"
+        },
+        {
+          "role": "assistant",
+          "content": "Your health app approach is great for data and accountability, especially if it's easy to enter info. Some apps can set custom reminders—so you could have one for your evening supplement and another for meal logging. If the app supports barcode or quick photo logging, that might speed things up. Do you already have a set time for taking your supplement, or does it depend on when you finish meetings?"
+        },
+        {
+          "role": "user",
+          "content": "I've started setting a daily evening reminder to take my iron pill—with food, as instructed, and always away from dairy or coffee so I get the best absorption. I never skip it, which is new for me. But timing can get messy when meetings run late and I haven't eaten yet. It's actually forcing me to pay more attention to how and when I eat, instead of just multitasking meals."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a huge shift! Consistency with supplements will help, especially when paired with meals that boost effectiveness. Since late meetings disrupt your routine, maybe you could schedule your iron-rich dinner and supplement as non-negotiable calendar blocks—protecting them like you do with morning documentation. Would that fit, or is your evening always unpredictable during deal closings?"
+        },
+        {
+          "role": "user",
+          "content": "During deal closings, my evenings aren't always predictable. But now I make sure my dinner is iron-rich and tracked. I can't just sit in the lounge and grab whatever anymore. Customizing orders and tracking iron/vitamin C pairings is my new normal—even if it takes extra time. The supplement reminder is in my calendar, so I don’t forget after stressful nights."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you're adapting well. On the workout side, did your doctor recommend any specific changes? Are you able to continue commuting to your barre studio, or are you pausing those classes for now?"
+        },
+        {
+          "role": "user",
+          "content": "I've had to pause barre for now—my doctor said high-intensity studio workouts aren’t safe until my energy stabilizes. I used to do gentle walks near my apartment when I felt off, but now the advice is more specific: gentle, iron-boosting Pilates or restorative yoga classes twice a week. These are movement forms recommended for anemia, and the studio has instructors who know how to modulate activity for anemic clients. I avoid outdoor walks if I'm feeling dizzy or fatigued—they’re not always safe for me anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—a tailored approach will help you stay safely active. Are you enjoying the Pilates and restorative yoga options so far? If studio commutes get tough, would you consider remote classes, or do you prefer the in-person support?"
+        },
+        {
+          "role": "user",
+          "content": "In-person is definitely my preference, especially since the instructors know about my anemia and can make adjustments. I haven’t switched to remote classes, only studio sessions that feel restorative and manageable. If I’m too fatigued or dizzy, I’ll skip outdoor walking altogether. I want to stick to movement that’s modulated for anemia—my physician emphasized that point."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart strategy—expert guidance makes a big difference, especially with symptoms like dizziness. It sounds like your routines are evolving to fit your new needs. As you continue, are you finding any particular barriers on days when work gets chaotic and your energy drops? Anything about your tracking or meal setup that still isn’t working?"
+        },
+        {
+          "role": "user",
+          "content": "The main barrier is staying motivated with meal tracking. It’s easier to slip up when deals are busy, but the app log keeps me honest. I’m sticking to supplement timing and avoiding coffee or dairy before I take it. Dropping barre was tough, but the shift to restorative movement has helped. I don’t do those casual evening walks anymore because some days it’s just not safe—the fatigue is real."
+        },
+        {
+          "role": "assistant",
+          "content": "You're prioritizing your health well, despite all the pressures. As your anemia improves, you may be able to adjust routines further. Meanwhile, your discipline with supplements and customized meals is impressive. If you need recipe or order inspirations, or find yourself in a rut, let me know—happy to help brainstorm! Anything else about your new workflow you'd like to optimize?"
+        },
+        {
+          "role": "user",
+          "content": "I think that covers it. The logging, meal customization, and modified fitness routine are all new for me, but I’m managing. I’ll reach out if I hit a wall—thanks for the help!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Baker McKenzie expanded its M&A division and selected her to co-lead a task force implementing new regulatory compliance protocols for all cross-border transactions, requiring her to develop and conduct intensive training sessions for both associates and client teams over the next quarter.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_059",
+            "fact": "Develops detailed slide decks and interactive case studies for internal and client training sessions, preferring hands-on learning formats over lecture-based presentations",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_060",
+            "fact": "Schedules early morning practice run-throughs of training materials in a private conference room before each live session, never rehearses at home due to workspace constraints",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_061",
+            "fact": "Prioritizes collaborative feedback with co-leads after each training session, conducting immediate debriefs to refine content and delivery for future sessions",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Only attends firm-sponsored upskilling sessions related to international tax law — skips general legal webinars"
+            },
+            "to": {
+              "id": "pref_058",
+              "fact": "Attends and leads firm-sponsored regulatory and compliance training sessions for cross-border transactions, regardless of whether they relate to international tax law, as part of her new task force co-lead role",
+              "domain": "work_habits"
+            },
+            "reason": "Her new leadership role in the cross-border compliance task force requires her to both participate and facilitate intensive training sessions covering regulatory protocols, expanding her focus beyond just international tax law upskilling."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Baker just tapped me to co-lead a task force for new cross-border compliance protocols. I have to develop and run intensive training sessions all quarter, both for associates and for client teams. I'm honestly pretty overwhelmed. I know I need to make the trainings engaging — lecture formats won't cut it with our group. Any advice on structuring these so people actually learn (and don't tune out)?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats on the new role — that’s a big responsibility! You’re absolutely right: lecture formats can quickly lose people, especially in a high-stakes compliance context. Have you had a chance to sketch out what you want the sessions to look like, or are you starting from scratch? Sometimes interactive elements — case studies, scenarios, breakout groups — help keep people engaged. Would that fit with your vision?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I'm leaning heavily toward hands-on formats. I've started developing detailed slide decks and interactive case studies instead of just lecture notes. I really want participants to work through hypothetical cross-border challenges, so they apply the protocols, not just memorize them. But I haven’t run sessions this big before. How do I keep things organized, especially if we have mixed groups (interns, new associates, clients) all under one roof?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great approach! Interactive case studies will definitely push people toward active engagement. For mixed groups, clear session structure helps — maybe have breakout teams cross-pollinate (mixing roles) so everyone brings a unique perspective? You could assign specific tasks or roles for each subgroup so they tackle different segments of a compliance scenario. Do you plan to facilitate all the sessions yourself, or will you bring in other co-leads or subject experts?"
+        },
+        {
+          "role": "user",
+          "content": "It’s a joint effort. I’m co-leading each training, and after every session, my co-leads and I run immediate debriefs to refine the content and delivery. That’s new for me — I usually keep feedback to email, but now we’re treating post-session debriefs as non-negotiable. The challenge is the time crunch. We need to iterate fast, but I also want some way to track what works so we can adapt quickly for the next audience."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a strong feedback loop. Maybe keep a shared document or tracker for session insights right after each debrief? Jot down which interactive activities worked, where people struggled, and any group dynamic notes. That way, next time you prep, you won’t be starting from memory. As you iterate, are you planning practice run-throughs of the material, or straight into live delivery?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely practice runs. I book a private conference room early mornings before every live session. I never rehearse at home — my workspace there just isn’t set up for training. It gives me uninterrupted time to walk through the flow and catch any gaps. But it’s eating into my usual deep work hours. Any tips for prepping without losing my early morning deal doc block, or do I just need to accept some trade-offs for now?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart rehearsal strategy, especially for high-impact sessions. It’s tough if those early slots used to be your deal documentation time. If the rehearsal schedule isn’t flexible, maybe experiment with shifting your deep work block slightly later in the morning, or breaking it into two shorter periods on training days. Could delegating some deal prep to interns during this busy stretch help mitigate the loss?"
+        },
+        {
+          "role": "user",
+          "content": "I already lean on interns for routine research, and focus on client strategy myself. But given this new training workload, I might need to delegate more. Also, I should mention: I used to attend only upskilling sessions about international tax law, skipping anything else, but that’s not an option now. With the task force, I have to lead and participate in firm-sponsored regulatory and compliance training sessions for cross-border work, even if they’re outside my usual specialty."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. That’s a big shift — having to expand beyond your comfort zone. Attending, plus leading, does make it harder to maintain old routines. Are you finding any unexpected overlaps between the new regulatory trainings and your tax law upskilling? Or is it mostly a matter of having to learn and facilitate content that’s not your passion?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s mostly a stretch. There’s a little overlap — tax implications come up in cross-border deals, but most protocol sessions focus more on regulatory hurdles and operational compliance than pure tax. Still, I have to stay current on both fronts, since I review tax risk as lead associate on active acquisitions. It’s just… more plates spinning than before."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense! For keeping all those plates spinning, calendaring dedicated content review blocks might help, so protocol and tax priorities don’t bleed into each other. On the training front, since you’re using hands-on materials and running early practice sessions, have you found a good workflow for prepping case studies? Any pain points I can help you smooth out?"
+        },
+        {
+          "role": "user",
+          "content": "The toughest part is aligning case study complexity with the diverse audience. Interns get lost if I push too fast, but client teams expect depth. And since I’m adapting after every debrief with co-leads, I sometimes feel like I’m reinventing the wheel. The collaborative feedback helps, but tracking which tweaks actually improve engagement is tricky."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a classic training dilemma. Maybe try pre-session polls or quick knowledge checks so you can calibrate case studies to each group’s baseline? Build up a template for modifications as you go — ‘beginner’ vs. ‘advanced’ versions, so you aren’t starting from scratch every time. And your tracker could record which versions worked best for each participant mix, speeding up future prep."
+        },
+        {
+          "role": "user",
+          "content": "I like that — templates and post-training trackers would streamline things. I’ll test that for upcoming sessions. Thanks for helping me work through this. Balancing lead associate tasks and the compliance training leadership has been a challenge, but iterating with co-leads and keeping everything hands-on is already making a difference."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Delegates routine research tasks to interns whenever possible, focusing her own time on client strategy and negotiation",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Limits caffeine to one cup before noon, but allows herself exceptions on deal closing nights",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Keeps a headache journal tracking triggers and remedies — avoids over-the-counter medication unless symptoms interfere with work",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Never shares career stress with her parents, discusses only during brunches with law school friends",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Reads mystery novels exclusively on weekends — never streams TV shows",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Books tickets for local theater performances quarterly, always attends with her friend group",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Collects vintage Chicago architecture prints, visits pop-up galleries every season",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Spends Sunday mornings exploring new coffee shops downtown — never repeats the same spot twice in a month",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts every morning reviewing her calendar and to-do list for the day — never checks email before breakfast",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Keeps her phone on Do Not Disturb after 10 pm, except for calls from her partner or sister",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Completes a five-minute guided meditation each night before bed, regardless of workload or stress",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_027",
+        "fact": "Uses voice-to-text software for drafting long documents and emails to reduce wrist strain at work",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Wears ergonomic wrist braces during computer use and while sleeping as preventative care",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Coordinates phone calls with her partner only when his travel schedule allows — now prefers spontaneous text exchanges or voice notes instead of nightly calls",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Sends a daily ‘good morning’ message to her partner regardless of location or time zone, maintaining connection while apart",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Joins a bi-weekly virtual support group for professionals in long-distance relationships, seeking community and advice during her partner's frequent absences",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Takes digital detox days once per month: no emails or work messages, prioritizes walks or museum visits around London parks and landmarks",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Shops for household essentials in-person at local London stores and open markets to adapt to local brands and supply options",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Seeks out expatriate and international lawyer networking events outside work hours to build a London-based professional and social circle",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Tries one new European cuisine restaurant each week with colleagues to explore local food culture and foster team connection",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Schedules bi-weekly video calls with her family to maintain close connections despite the time difference",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_037",
+        "fact": "Schedules weekly check-ins with new associates exclusively in-person at the office — uses face-to-face meetings rather than video calls for mentorship",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Hosts onboarding coffee meetups for summer interns exclusively at the office café — avoids offsite gatherings due to firm policy and client proximity",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_041",
+        "fact": "Now prepares grab-and-go snacks for her car every weekend — relies on portable options for Milwaukee drives and family visits due to less predictable weekends",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Coordinates a bi-weekly family group text and video call to organize her grandfather's care logistics, even when she's not physically present",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_043",
+        "fact": "Brings her work laptop and mobile hotspot during family caregiving weekends to remain available for urgent deal tasks",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_045",
+        "fact": "Tracks daily heart symptoms and step count with a wearable device, reviewing logs nightly to monitor changes for her upcoming cardiology appointment",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Schedules all non-urgent personal commitments after 8 pm to allow for flexible rest and recovery time immediately after work while awaiting her cardiac workup",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_047",
+        "fact": "No longer holds uninterrupted morning work blocks — now schedules work and meetings at all hours, including late nights, to coordinate with deal teams across global time zones",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Drafts and sends client emails throughout the day and night as urgent deal events occur—cannot wait for a set review time due to real-time cross-border negotiations",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Keeps her work phone by her bedside and sleeps with notification alerts on for urgent deal-related calls, expecting interruptions during overnight negotiations",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_050",
+        "fact": "Priors short, daily power naps over long nightly sleep blocks to cope with disrupted sleep cycles during intense deal sprints",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_051",
+        "fact": "Frequently initiates spontaneous voice and video calls with her sister at various times, prioritizing flexibility and availability to support her during the move—text convos become less routine as urgent logistics dominate",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Blocks out at least one full weekend over the next two months to travel to Boston and help her sister settle in, pausing most work and social commitments during that period",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Researches and compiles neighborhood guides and postdoc resources in Boston to send to her sister, even consulting her own professional network for referrals and tips",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_054",
+        "fact": "Selects and attends gentle, iron-boosting Pilates or restorative yoga classes twice per week — substitutes cardio with movement forms recommended for anemia, and avoids outdoor walks if feeling fatigued or dizzy",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Customizes all office dinner meal orders to include iron-rich options (like lean beef, lentils, or leafy greens) — tracks iron content and prioritizes vitamin C pairings to boost absorption",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Consistently sets a daily evening reminder to take her prescribed iron supplement with food — never skips, and always takes it separately from coffee or dairy products as instructed to maximize absorption.",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_057",
+        "fact": "Adds a daily log entry tracking her energy, dizziness, and meals in a health app — proactively notes iron-rich foods consumed and supplement schedule for future discussions with her doctor.",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_058",
+        "fact": "Attends and leads firm-sponsored regulatory and compliance training sessions for cross-border transactions, regardless of whether they relate to international tax law, as part of her new task force co-lead role",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_059",
+        "fact": "Develops detailed slide decks and interactive case studies for internal and client training sessions, preferring hands-on learning formats over lecture-based presentations",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_060",
+        "fact": "Schedules early morning practice run-throughs of training materials in a private conference room before each live session, never rehearses at home due to workspace constraints",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_061",
+        "fact": "Prioritizes collaborative feedback with co-leads after each training session, conducting immediate debriefs to refine content and delivery for future sessions",
+        "domain": "work_habits",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Blocks two hours every morning for uninterrupted deal documentation — refuses meeting requests before 11 am during active projects",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_047",
+        "reason": "Leading a cross-border merger requires her to accommodate urgent tasks and conference calls across various time zones, eliminating the possibility of reserving fixed, interruption-free morning blocks."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Drafts all client emails after 7 pm to ensure she can review them thoroughly — never sends quick replies during busy work hours",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_048",
+        "reason": "The nature of round-the-clock cross-border negotiations means she must send timely, sometimes immediate, client communications instead of batching them after hours."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Schedules weekly check-ins with new associates she mentors — prefers video calls to impersonal written feedback",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_037",
+        "reason": "The firm-wide return to fully in-office work eliminates remote mentorship and video calls. She adapts by meeting mentees in-person for check-ins."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Only attends firm-sponsored upskilling sessions related to international tax law — skips general legal webinars",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_058",
+        "reason": "Her new leadership role in the cross-border compliance task force requires her to both participate and facilitate intensive training sessions covering regulatory protocols, expanding her focus beyond just international tax law upskilling."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Never skips her evening barre class, even when deadlines loom — refuses to substitute with home workouts or gym sessions",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Chronic wrist pain and carpal tunnel diagnosis prevent exercises that require bearing weight with wrists or strong grip; medical advice likely recommends rest and lower-impact, wrist-neutral alternatives."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Uses her meal delivery service exclusively Monday through Friday — never cooks during the workweek",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "Her current meal delivery service is Chicago-based and won't operate internationally; she'll need new food routines in London."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Takes digital detox days once per month: no emails or work messages, prioritizes Lakefront hikes",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "Relocating to London eliminates access to Chicago's Lakefront trails. She will adapt her detox habit to explore London’s parks or cultural sites."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Schedules nightly phone calls with her partner, never misses a day — avoids video chats except on weekends",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "Her partner’s new job with frequent international travel makes nightly phone calls nearly impossible due to unpredictable time zones and limited availability. She substitutes with asynchronous texting and voice notes."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Texts her younger sister throughout the day, calls only after 9 pm when both can vent",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_051",
+        "reason": "With her sister relocating to Boston and requesting support, conversations are more immediate, logistical, and responsive to real-time needs. The scheduled nightly vent-calls are replaced by more frequent, adaptive voice and video calls for coordination and emotional support."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Arranges Milwaukee visits around her grandfather's medical appointments, never lets work disrupt family caregiving",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "Living in London makes impromptu trips to Milwaukee unrealistic or impossible; she cannot practically handle regular caregiving for her grandfather from abroad."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Hosts onboarding coffee meetups for summer interns at her favorite café — never delegates mentorship duties",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_038",
+        "reason": "With the mandatory in-office policy and increased client presence, she can no longer organize onboarding events at external venues. They now take place in the building’s café."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Plans Lakefront hikes with friends at least once a month, weather permitting — refuses solo outdoor activities",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": null,
+        "reason": "Carpal tunnel syndrome often involves avoiding long walks carrying items, and even moderate hiking can strain the wrists and aggravate symptoms during flare-ups. The habit is likely paused per doctor recommendation."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Orders household supplies online bi-weekly, never shops in-store for essentials",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "Moving internationally means U.S.-based delivery services and familiar brands are mostly unavailable; she will need to adapt to in-person shopping and new suppliers in London."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Meal preps healthy snacks for the week each Sunday afternoon — will never rely on vending machines",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_041",
+        "reason": "Her weekends are no longer predictable, and she often travels between Chicago and Milwaukee to support her grandfather. As a result, she preps snacks for travel rather than for long workdays and cannot maintain her meticulous home snack routine."
+      },
+      {
+        "id": "pref_026",
+        "fact": "Replaces barre classes with low-impact yoga sessions at home, avoiding strain on her wrists due to carpal tunnel syndrome — refuses in-studio classes until condition improves",
+        "domain": "health_body",
+        "created_at_session": 0,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "Since she must be in the office five days a week, evening home yoga sessions are impractical, and her wrist condition has improved, allowing her to resume studio classes."
+      },
+      {
+        "id": "pref_039",
+        "fact": "Attends evening barre classes at the studio closest to the office immediately after work — avoids going home first to maintain attendance and minimize travel time",
+        "domain": "health_body",
+        "created_at_session": 3,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_044",
+        "reason": "After experiencing persistent heart palpitations and dizziness during barre and receiving a direct medical order to stop high-intensity exercise pending cardiac evaluation, she cannot safely attend in-studio barre or any strenuous class. She adapts by substituting with gentle, low-intensity walks until cleared to resume more vigorous activity."
+      },
+      {
+        "id": "pref_040",
+        "fact": "Eats dinner at the office lounge after finishing client meetings—prefers hot meals delivered to the building rather than cooking or eating at home during the week",
+        "domain": "daily_routines",
+        "created_at_session": 3,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_055",
+        "reason": "Following her anemia diagnosis and prescription, her meals are no longer selected passively or for convenience alone; she now actively chooses and tracks iron-rich foods and absorption strategies for every dinner meal, per medical instruction."
+      },
+      {
+        "id": "pref_044",
+        "fact": "Temporarily avoids all high-intensity in-studio workouts — instead, takes short, gentle evening walks near her apartment to stay lightly active as advised by her physician",
+        "domain": "health_body",
+        "created_at_session": 5,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_054",
+        "reason": "Her anemia diagnosis places new emphasis on fatigue management and iron absorption, and the physician now advises movement tailored for anemia rather than generic gentle walks. Studio sessions featuring restorative movement and instructors versed in supporting anemic clients offer her safer, more carefully modulated activity."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:34:16.845825"
+}

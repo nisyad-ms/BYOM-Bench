@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_832858af",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_054",
+        "fact": "Performs prescribed cardiac rehabilitation exercises and daily health checks before leaving for the store — avoids previous back-focused PT routines except on cardiologist’s advice",
+        "supersedes": {
+          "id": "pref_030",
+          "fact": "Performs physical therapy exercises as prescribed every morning before leaving for the store — avoids unsupervised stretching routines to prevent aggravation"
+        }
+      },
+      {
+        "id": "pref_050",
+        "fact": "Accepts rides from family or uses ride-sharing instead of driving himself to the store — avoids driving after cardiac incident until cleared by his physician",
+        "supersedes": {
+          "id": "pref_029",
+          "fact": "Drives to the store and back daily to minimize strain on his injured back — walking is avoided until cleared by his physical therapist"
+        }
+      },
+      {
+        "id": "pref_013",
+        "fact": "Never brings up financial worries around his children — discusses serious topics with his wife after the kids are in bed"
+      },
+      {
+        "id": "pref_015",
+        "fact": "Uses WhatsApp to coordinate with distant relatives — never discusses family news through social media posts"
+      },
+      {
+        "id": "pref_025",
+        "fact": "Unplugs from all digital devices during family dinners — never brings his phone to the table"
+      },
+      {
+        "id": "pref_011",
+        "fact": "Calls parents overseas on Sunday mornings — never lets a month pass without connecting"
+      }
+    ]
+  },
+  "persona": "An immigrant small business owner managing finances for a family-run grocery store"
+}

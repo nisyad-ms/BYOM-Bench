@@ -1,0 +1,1473 @@
+{
+  "persona": "A mid-career backend developer at a fintech startup",
+  "persona_id": "persona_20260301_234954",
+  "expanded_persona": {
+    "base_persona": "A mid-career backend developer at a fintech startup",
+    "age": 36,
+    "gender": "female",
+    "location": "Seattle, WA",
+    "work_education": [
+      "Lead backend developer at a 40-person fintech startup, overseeing a small team of four engineers",
+      "Currently tasked with migrating the company’s payment processing system to a new cloud provider, which requires frequent late-night deployments",
+      "Recently completed a certification in secure software design to address heightened regulatory requirements",
+      "Mentors a junior developer weekly, prioritizing professional growth within the team",
+      "Negotiating for more flexible hours after the company went hybrid post-pandemic"
+    ],
+    "health_wellness": [
+      "Has mild carpal tunnel syndrome managed by ergonomic equipment and weekly physical therapy",
+      "Runs three times a week, training for her first half-marathon",
+      "Uses a meal delivery service during work sprints to avoid skipping meals",
+      "Struggles with insomnia during high-stress project deadlines"
+    ],
+    "family_relationships": [
+      "Lives with her partner of five years (a freelance graphic designer) in a townhouse near downtown",
+      "No children; jointly cares for an elderly cat with chronic kidney disease requiring daily medication",
+      "Maintains weekly video calls with her younger sister, recently relocated to Japan",
+      "Frequent host for game nights with close friends, which provides much-needed social support"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Schedules all deployments after 10pm but never on weekends to minimize disruption to her team",
+        "Communicates project updates strictly through detailed Slack threads — avoids spontaneous video calls",
+        "Blocks two hours every Monday for focused code review — won't allow meetings during this slot",
+        "Prioritizes security documentation over speed for all feature launches, referencing regulatory checklists",
+        "Mentors her junior developer through weekly one-on-one code sessions, never relying solely on asynchronous feedback"
+      ],
+      "health_body": [
+        "Does all coding from a standing desk with an ergonomic keyboard — never works from a couch or bed",
+        "Always does pre-run stretching routines to prevent wrist flare-ups before outdoor runs",
+        "Uses meal delivery only during high-stress sprints — otherwise insists on cooking fresh at home",
+        "Follows a strict no-caffeine-after-2pm rule to manage insomnia",
+        "Books physical therapy appointments on Friday evenings, never reschedules them for work obligations"
+      ],
+      "social_relationships": [
+        "Hosts in-person game nights biweekly — never substitutes with online versions",
+        "Handles all her cat’s medication personally — never delegates to her partner",
+        "Maintains a strict weekly video call with her sister, always at the same time regardless of schedule changes",
+        "Celebrates teammates’ achievements with personalized handwritten notes instead of public Slack praise",
+        "Never mixes work socials with intimate friend gatherings — keeps colleague and friend circles separate"
+      ],
+      "leisure_hobbies": [
+        "Plays cooperative board games only — refuses to participate in competitive formats",
+        "Chooses local indie coffee shops for weekend reading — never visits big chains",
+        "Attends tech meetups in person, never online webinars, for networking",
+        "Prefers weekend hiking trips over city-based activities whenever weather permits",
+        "Keeps a private blog of cat care tips and never shares it on social media"
+      ],
+      "daily_routines": [
+        "Begins every morning with a 10-minute meditation before checking emails or messages",
+        "Preps her cat’s medication immediately after breakfast — never before",
+        "Restricts all work-related notifications on her phone after 8pm, except for deployment emergencies",
+        "Performs a nightly digital detox: reads physical books in bed, never uses screens",
+        "Shops for groceries exclusively at neighborhood co-ops — never uses large supermarkets or delivery apps"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed acute plantar fasciitis after ramping up half-marathon training, leading her podiatrist to recommend pausing all running for at least six weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Prefers swimming at the neighborhood aquatic center on weekends as a low-impact activity during running hiatus",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Always does pre-run stretching routines to prevent wrist flare-ups before outdoor runs"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Always does pre-swim stretching routines to prevent wrist flare-ups before pool workouts",
+              "domain": "health_body"
+            },
+            "reason": "Her podiatrist recommended stopping all running for at least six weeks due to plantar fasciitis, so she has switched to swimming as a low-impact alternative, continuing her joint-protecting stretching habit but for pool sessions instead of runs."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_019",
+            "fact": "Prefers weekend hiking trips over city-based activities whenever weather permits",
+            "domain": "leisure_hobbies",
+            "reason": "Hiking is now medically inadvisable due to the plantar fasciitis diagnosis, which requires pausing weight-bearing and impact foot activities for at least six weeks."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, my half-marathon dreams are on pause for at least six weeks. Just got diagnosed with acute plantar fasciitis after ramping up training, and my podiatrist basically forbade all running and hiking. It sucks. I know I need to stay active (otherwise my insomnia gets worse), so I'm looking for advice about low-impact routines. Have you helped anyone shift to alternatives like swimming or something before?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm sorry to hear about the plantar fasciitis—that's a tough setback, especially with your running routine. Swimming is actually a great low-impact alternative and often recommended for situations like this. Do you have access to a pool nearby, or are you open to other options like cycling or strength training?"
+        },
+        {
+          "role": "user",
+          "content": "I do have an aquatic center a short walk from my place—I've been thinking about weekend swims, but wasn't sure if it's worth it. I’ve never been much of a swimmer, honestly. Cycling could work, but I’m wary of even mild pedal pressure right now. Strength stuff is tricky; I need to protect my wrists because of carpal tunnel. So I guess swimming is probably my best shot."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, given your concerns about both the plantar fasciitis and your wrists. Swimming lets you control intensity and avoid putting weight on your feet. The aquatic center is a great resource—especially if it's local and accessible. Since you're new to swimming, would you like advice on building a basic routine, or tips for keeping it wrist-friendly?"
+        },
+        {
+          "role": "user",
+          "content": "Both, actually. When I started running, pre-work stretching was a game changer for my wrists—and I don’t want to drop that. So I plan to do pre-swim stretching routines now to prevent flare-ups before pool workouts. Any suggestions for warm-ups or swim strokes that are easier on wrists?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a really smart move, carrying over that stretching habit. For swimming, gentle wrist and shoulder mobility exercises before hitting the pool are helpful. As for swim strokes, backstroke and freestyle are generally easiest on wrists—you can avoid breaststroke, which places more sideways stress. Start with relaxed laps and build up. Would you want specific stretches or prefer a general mobility sequence?"
+        },
+        {
+          "role": "user",
+          "content": "If you have a quick routine for pre-swim mobility focused on wrists and shoulders, that would be ideal. Also, for the next few weekends, I’ll probably stick to swimming at the neighborhood aquatic center as my main activity. It’s the only low-impact thing I actually feel comfortable doing right now, so flexibility in routine is pretty important."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Here’s a simple pre-swim routine: wrist circles, gentle wrist flexion/extension, shoulder rolls, and arm swings. You can finish with open-arm chest stretches against the pool wall before starting. It’s great you have the aquatic center nearby; making swimming your main weekend activity could help fill that hiking gap during recovery. If you want, I can help you map out a progression for swim endurance, too."
+        },
+        {
+          "role": "user",
+          "content": "That'd be helpful. Weekend hiking was my default for years—downtime, quiet, all that jazz. My podiatrist said no hiking, even gentle trails, until I'm cleared after six weeks. Honestly, city-based activities aren’t my thing; the pool is the only option that works for me now. So a swim endurance plan could keep me motivated."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—let’s focus on weekend swim progression. Since you’re new to swimming, try starting with 10-15 minutes of consistent, gentle laps, emphasizing relaxed breathing and wrist-friendly strokes. Increase duration by about 5 minutes each week, as comfort improves. If you find it repetitive, the aquatic center may have group classes or open swim sessions to mix things up. Would you want structure, or do you prefer flexible, solo workouts for this recovery phase?"
+        },
+        {
+          "role": "user",
+          "content": "For now, I prefer solo sessions. Keeps things calm and lets me adjust for my wrist and foot. I’ll stick to the routine you outlined, increment up slowly, and keep logging progress like I did with runs. Thanks for helping me pivot—this was actually useful and gave me a new angle."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced a severe flare-up of carpal tunnel syndrome during a multi-day late-night deployment, prompting her physician to prescribe a mandatory two-week break from all typing and coding work.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Dictates project updates using speech-to-text tools instead of typing to comply with her physician’s orders during recovery",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Favors daily walks with her partner for stress relief while avoiding all keyboard and screen-based leisure during her medical break",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Blocks two hours every Monday for focused code review — won't allow meetings during this slot"
+            },
+            "to": {
+              "id": "pref_028",
+              "fact": "No longer performs Monday code reviews — temporarily replaced by asynchronous code comment reading (audio or text-to-speech) while on physician-mandated break from typing and coding",
+              "domain": "work_habits"
+            },
+            "reason": "During the required break from all typing/coding for carpal tunnel recovery, she cannot do her usual hands-on code review. She now listens to code reviews via accessible tools, adapting her workflow for the restriction."
+          },
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Mentors her junior developer through weekly one-on-one code sessions, never relying solely on asynchronous feedback"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Mentors her junior developer solely via asynchronous voice memos and annotated recordings during her recovery period — no live hands-on sessions",
+              "domain": "work_habits"
+            },
+            "reason": "With the strict medical ban on typing/coding, she cannot run interactive code sessions; instead, she continues mentoring using voice memos and pre-recorded walkthroughs."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_006",
+            "fact": "Does all coding from a standing desk with an ergonomic keyboard — never works from a couch or bed",
+            "domain": "health_body",
+            "reason": "She is banned from all typing and coding work for two weeks due to a severe carpal tunnel flare-up, so there is no coding at a desk or elsewhere during this period."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I've just had a nasty carpal tunnel flare-up—during the last wave of late-night payment deployments, my wrist basically gave out. My physician is insisting on zero typing or coding for two weeks. I'm honestly stumped on how to keep things running with my team, mentor my junior dev, and not lose my mind in the process. Any ideas for how to stay connected and productive while respecting this no-typing rule?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds rough—especially given how hands-on your role is. Since typing and coding are off the table, have you looked into dictation tools or voice-based workflows for project updates? It could be a way to stay present without violating your doctor's orders. Are there tasks you feel comfortable moving to audio or voice memos?"
+        },
+        {
+          "role": "user",
+          "content": "I've actually started using speech-to-text tools for posting project updates in Slack. It's surprisingly decent, though the formatting isn't as sharp as I'd like. For code reviews, I've been listening to annotated walkthroughs rather than reviewing manually—it's strange not blocking out my usual Monday review slot, but it's what I can manage right now. But mentoring is harder; I can't do our weekly live pairing sessions."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart adaptations—audio really fills the gap for now. For mentoring, would asynchronous voice memos or pre-recorded walkthroughs work? Sometimes getting feedback at your own pace (and in your own voice) is actually clearer for a junior dev. Could that fit, or are there obstacles I might not see?"
+        },
+        {
+          "role": "user",
+          "content": "That's what I've landed on. I send him voice memos with context and annotated recordings for tricky sections—definitely not as interactive as our usual hands-on sessions, but it's all I can safely do until I'm cleared. He seems to appreciate the walkthroughs, though it's more asynchronous than I'd prefer."
+        },
+        {
+          "role": "assistant",
+          "content": "I think that's a solid middle ground, especially given you're prioritizing recovery. On the team front: are you planning to keep your visibility through voice-based Slack threads for now, or is there a risk you'll miss out on real-time updates? How are you handling the late-night deployment routines with the current restriction?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sticking to dictating my updates for now. My team is aware of the situation, and I'm relying on them to handle live deployments. I'm only jumping in via audio when absolutely necessary—I've set my phone for emergency alerts after 8pm, but all other notifications are off. I can't do any actual deployments myself at the moment."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a good boundary. Are you finding ways to fill the downtime that don't involve screens, since coding and typing are off-limits? Anything helping manage stress or that insomnia risk, given how intense the last sprint was?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I've started taking daily walks with my partner after dinner—it helps clear my head, and I avoid any screen-based leisure right now. Reading physical books in bed for my nightly digital detox is a lifesaver. No board games on a tablet either; all keyboard activities are out."
+        },
+        {
+          "role": "assistant",
+          "content": "That's great—the physical activity and screen-free evenings should really help. Are there routines you miss or had to drop altogether, besides coding from your standing desk? Anything you feel weirdly unmoored by right now?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. Normally I'd be at my standing desk with that ergonomic setup, but with the full typing ban, I'm not doing any coding or desk work—in fact, I've moved away from my workspace entirely for the next two weeks. Feels odd, but it's necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "That kind of spatial reset can actually reinforce the recovery—sometimes your body needs to unlearn the work-space association. Are you able to keep up with other routines, like mentoring, your cat's care, and communication with your team? Or is there anything else you're worried about maintaining during the break?"
+        },
+        {
+          "role": "user",
+          "content": "I'm keeping up with my cat's medication as usual—no changes there. Weekly mentoring is just asynchronous for now, and project comms happen via dictated updates. It's not ideal, but at least things aren't falling through the cracks. The main shift has been dropping all hands-on code review and coding work for now."
+        },
+        {
+          "role": "assistant",
+          "content": "You're adapting really thoughtfully. Would you like help finding new ways to stay mentally engaged—maybe podcasts, audiobook tech talks, or hands-free project planning tools, since you're off keyboards for a while? Or would you prefer to focus on rest and recovery first?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks—honestly, a mix could work. I've already started listening to audiobook tech talks and some podcast interviews with other backend leads. Project planning is mostly in my head or via voice notes at the moment. Any other hands-free productivity tricks you recommend?"
+        },
+        {
+          "role": "assistant",
+          "content": "A few ideas: set voice reminders for key tasks, use voice-controlled calendar apps for scheduling, and leverage smart assistants for hands-free follow-ups. For deeper engagement, explore interactive audio workshops or voice-driven brainstorming tools—some meetups even host podcast-style group discussions for tech folks. Let me know if you want links or suggestions for specific apps."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Company secured a large venture capital investment, triggering aggressive expansion plans — including assignment of a second junior developer to her team and introduction of new product launch deadlines requiring collaboration across multiple departments.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Coordinates feature launches in cross-department teams via structured standing meetings — no longer restricts updates to Slack threads only",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_034",
+            "fact": "Celebrates major project milestones with informal team lunches for her direct reports, a practice new to the expanded team",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_029",
+              "fact": "Mentors her junior developer solely via asynchronous voice memos and annotated recordings during her recovery period — no live hands-on sessions"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Begins weekly paired mentorship sessions in person with both junior developers, returning to interactive feedback and live code walkthroughs",
+              "domain": "work_habits"
+            },
+            "reason": "With the expansion enabled by new VC funding, she is assigned a second junior developer and resumes in-person hands-on mentoring, reflecting both renewed team growth and a shift away from the recovery-imposed restrictions."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news: our startup just secured a massive VC round. Now there's sudden pressure to scale and hit new product launch dates—I'm getting a second junior developer, and everyone’s talking cross-team sprints. I’m used to a tight, backend-focused workflow and keeping things pretty structured within my group, so I’m a bit anxious about the chaos. What’s a practical way to onboard a new person and foster collaboration, without losing my sanity or my usual security-first process?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats on the funding! That’s exciting, but I can see how it adds a layer of complexity. Onboarding a second junior is a big shift, especially as your scope grows. Have you had much experience with cross-department launches before, or will these be your first? And what’s your preferred way to teach new team members—do you stick mostly to asynchronous feedback, or have you tried live mentoring sessions?"
+        },
+        {
+          "role": "user",
+          "content": "For the past few months, I actually relied on async methods—voice memos and annotated recordings—when mentoring our junior, since I was recovering from a wrist flare-up. But now that things have stabilized, I’m getting back to hands-on paired sessions. With two juniors, I’ll start doing weekly in-person walkthroughs for both, focusing on interactive feedback and real code reviews."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great to hear your recovery’s going well! Interactive mentoring can really accelerate ramp-up. Given the pressure for new features and tight security requirements, maybe you could pair your juniors together on small sub-tasks—one reviews the other’s PRs before yours, so you’re not the sole gatekeeper? Are you planning to document these paired sessions, or keep them more informal?"
+        },
+        {
+          "role": "user",
+          "content": "I still keep documentation formal—especially anything related to regulatory compliance. But with the team expanding, I want those paired sessions to be a space for exploratory questions and live debugging, without stressing about turning every exchange into an artifact. I’m also trying to balance how much structured communication I maintain. Previously, I restricted all project updates to detailed Slack threads. But with more cross-department coordination happening now, I’m joining regular standing meetings for feature launches."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift! Meetings can help alignment, though they often threaten deep work time. If you’re joining structured standing meetings, how are you protecting your dedicated code review slots? Are you still blocking out Monday mornings as your meeting-free zone?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely—I won’t let anyone schedule over my Monday focus block. That’s non-negotiable, especially now with several departments vying for my attention. I just make it clear that code reviews are my top priority in that window. I don’t mind the feature-launch meetings as long as they don’t eat into that slot."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move! Communicating those boundaries proactively will set expectations early. With more collaboration, are you thinking of ways to build camaraderie? Sometimes growth spurts lead to team silos if everyone’s head-down. Any ideas for celebrating milestones or integrating the new juniors?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you ask—I’m starting to organize informal team lunches for my direct reports whenever we hit major project milestones. It’s a new practice for my group. I used to stick to handwritten notes for individual achievements, but with the expanded team, gathering everyone together feels more impactful."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a nice touch. Shared meals can help build trust, especially with new hires. Are you keeping these lunches casual, or do you incorporate any work topics—like retros or project highlights—or is it strictly off-the-clock?"
+        },
+        {
+          "role": "user",
+          "content": "I want them to feel casual and off-the-clock—no agenda, just relaxing and connecting. My team knows I keep social and work circles separate, so this is mainly about bonding, not dissecting sprints. Of course, if someone wants to bring up a challenge over lunch, that’s fine, but it’s not required."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds well-considered—a great way to foster team spirit. Are you feeling ready to manage this dual onboarding and cross-team sprint, or are there aspects you’re still concerned about? With so many changes, it’s important you set manageable boundaries."
+        },
+        {
+          "role": "user",
+          "content": "I’m getting there. The biggest adjustment is letting go of my old communication habits. Restricting updates to Slack threads kept things neat, but now I need to get comfortable leading structured meetings. Plus, returning to in-person mentorship after months of async work feels like progress, even if it’s more taxing. I’m hopeful the team lunches will help offset the stress. If you have any tips for balancing hands-on mentoring with onboarding two juniors at once, I’d appreciate it."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re already approaching this thoughtfully. For onboarding two juniors, consider a buddy system—let them collaborate on onboarding tasks, with you as their resource for tricky issues. That way, they build rapport and confidence together. Also, share your expectations about pairing, documentation, and participation in department meetings early, to avoid confusion. Would you like help drafting a quick onboarding checklist or a mentorship session outline?"
+        },
+        {
+          "role": "user",
+          "content": "A mentorship session outline would be great, actually—especially one that encourages interactive feedback and live code walkthroughs, since that’s now my main approach. I want to be sure both juniors get equal hands-on experience each week."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. I’ll draft a session outline that includes pair programming, shared debugging, security checklist review, and plenty of space for open discussion. You can adapt it as needed, but the structure will help both juniors feel supported and accountable. Let me know how it works and if you’d like feedback loops built in for future sessions!"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her partner received a lucrative freelance contract with a client based in London, requiring frequent video meetings at odd hours and occasional short-term travel abroad for several weeks at a time.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Keeps household noise minimal during her partner’s early-morning or late-night London client video calls, adjusting routines to avoid disruptions",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_038",
+            "fact": "Blocks one evening per week for solo leisure activities when her partner travels, choosing reading or solo board games to unwind",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Hosts in-person game nights biweekly — never substitutes with online versions"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Hosts remote game nights via video calls whenever her partner is traveling abroad; alternates between in-person and online formats depending on presence at home",
+              "domain": "social_relationships"
+            },
+            "reason": "Her partner's frequent travel abroad means her home is occasionally empty, making in-person hosting less practical. She adapts by switching to remote game nights during these periods to maintain connection with friends."
+          },
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Handles all her cat’s medication personally — never delegates to her partner"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Handles her cat’s medication personally when both partners are home; delegates to her partner during his travel periods abroad",
+              "domain": "social_relationships"
+            },
+            "reason": "With her partner traveling frequently and sometimes absent overnight, she must share medication duties; the rigid refusal to delegate is no longer feasible."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help figuring out my routines. My partner just landed a big freelance gig with a client in London—means weird video meeting hours and he's going to be traveling abroad off and on for a few weeks at a time. My schedule already feels tight with late-night deployments, but now the house dynamics are totally different. Any strategies for juggling all the moving parts without letting everything slip?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats to your partner—that's exciting, but those time zone shifts sound tricky! So you’re balancing critical deployments, your own work stress, and now a partner with an unpredictable schedule. What’s changed the most for you—are you noticing it in your evenings, mornings, or somewhere else?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, evenings are the hardest. I used to rely on game nights with friends every other week for decompression, but with him traveling and the house quiet, hosting doesn’t really make sense. I’ve started switching to remote game nights over video calls when he’s away—actually works out surprisingly well, though it's not quite the same vibe. But it's better than nothing!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great adaptation! Swapping in-person for remote keeps the social connection, even if the atmosphere changes. Curious—do you coordinate these online sessions around your partner’s travel, or just stick to a fixed cadence?"
+        },
+        {
+          "role": "user",
+          "content": "I alternate now, based on whether he’s at home or abroad. In-person when possible, remote when he’s away. It keeps things flexible, and honestly makes the emptiness less noticeable. Scheduling’s a bit trickier with everyone, but most friends are willing. The one thing I miss is setting up the physical board games—digital versions aren't as tactile, but cooperative formats still work okay."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense! The digital board game transition is always a bit of a compromise, but being able to preserve cooperation is a plus. Given the house is quieter, does that affect your routines during his client calls? London meetings must be early morning or late at night Seattle time."
+        },
+        {
+          "role": "user",
+          "content": "Definitely. I’ve had to adjust to keeping the household noise minimal whenever he’s on those calls, especially in the mornings. Sometimes it means shifting my cat’s medication routine a bit or holding off on prepping breakfast if he’s set up in the kitchen. It also impacts how I schedule my own work tasks—if there’s a deployment window overlapping, I have to make sure we’re not both hogging bandwidth or causing distractions."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s considerate! With both of you juggling critical remote work, minimizing disruption is key. How are you managing your cat’s care, especially while your partner is traveling—have you delegated medication duties or kept them all yourself?"
+        },
+        {
+          "role": "user",
+          "content": "That’s changed too. I still handle all the medication myself when we’re both home, but I’ve started delegating to my partner while he’s abroad. I used to insist on doing everything personally, but with him gone for days at a time, it’s just not possible. I showed him the routine before his first trip, and he’s surprisingly good at sticking to it, even with the time zone difference."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move. Having a shared routine with clear instructions makes transitions smoother—and it lets you focus on work or decompress when needed. With the extra alone time, have you made any changes to your nightly or weekend routines for your own wellness, since you’re sometimes solo in the house?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I block one evening each week for solo leisure whenever he’s away—usually reading or solo board games, sometimes a longer meditation or journaling session. It helps me decompress without feeling like I’m just filling time. I found I really need something structured, otherwise I’d fall into doomscrolling or lose sleep—especially with project deadlines and insomnia lurking."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds healthy—structured solo downtime is underrated, especially during high-stress sprints. Have you noticed any impact on your physical therapy, running schedule, or meal routines with all this flux, or are those still holding steady?"
+        },
+        {
+          "role": "user",
+          "content": "Those routines are mostly intact. PT is still Fridays and I stick to pre-run stretches. But with more nights alone and the odd hours, I’m dialing back on meal delivery—sometimes I get creative with what’s in the fridge, but during sprints I default to delivery. The big change is really in how I balance social connection and quiet time with the house shifting between full and empty so often."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve adapted impressively—flexing between remote and in-person, delegating when necessary, and carving out solo routines. Sounds like you’re staying resourceful despite all the moving parts. Anything else you’re hoping to optimize, or particular pain points you want to tackle next?"
+        },
+        {
+          "role": "user",
+          "content": "I’d love to tighten up the coordination around deployment emergencies versus noise constraints—sometimes those late nights coincide with his London meetings, and I end up tiptoeing around. Maybe there's a smarter way to handle notifications or shared space, so neither of us interrupts the other during crunch time?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Have you considered syncing your calendars to flag high-stakes windows, like deployment or video calls, for mutual awareness? You could also set up silent notification modes for critical alerts—perhaps use vibration or low-volume chimes so you don’t disturb each other, but still catch emergencies. Would that fit your workflow?"
+        },
+        {
+          "role": "user",
+          "content": "That could work. We sync some calendars already, but I haven't tried color-coding around critical noise windows or silent notifications. I’ll experiment and see if that minimizes overlap. Thanks for brainstorming—having this extra layer of flexibility makes the transitions a lot easier."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger sister announced she is expecting her first child in Japan, with their parents unable to travel; the family asks her to help support and coordinate remote preparations for the upcoming birth.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Shops online for baby supplies and coordinates international gift delivery weekly to support her sister in Japan",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Researches bilingual parenting blogs and forums to gather and share relevant resources with her sister",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Maintains a strict weekly video call with her sister, always at the same time regardless of schedule changes"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Now has flexible, more frequent video calls and shared planning sessions with her sister, adjusting times as needed to coordinate support for the pregnancy and upcoming birth",
+              "domain": "social_relationships"
+            },
+            "reason": "Her sister's pregnancy and the family’s need for her help coordinating preparations from abroad require more frequent and flexible video communication, replacing the former rigid weekly cadence."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big family news—my younger sister in Japan just told us she's pregnant! None of us can go over, so the family wants me to coordinate support remotely. I’m juggling my own work crunch right now, plus trying to figure out how to actually help her from Seattle. Any practical tips for organizing this? Planning calls, supply shopping, time zone juggling… it’s suddenly a lot."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s an exciting change—congratulations to your sister (and your family)! Remote coordination can be tricky, especially with time zones and everyone’s schedules. Are you handling check-ins with her yourself, or working out a shared calendar with the family for calls and planning sessions? How flexible is everyone’s availability, especially hers?"
+        },
+        {
+          "role": "user",
+          "content": "Right now it’s mostly me and her on video calls—used to be just once a week, same time, but now we’re improvising. I’ll hop on pretty much whenever she needs, or if there’s a planning task (doctor updates, paperwork, that stuff). My parents join sometimes, but since I’m the only one not tied to a strict work schedule, it’s mostly falling to me. I guess my old strict weekly call routine is out the window."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like your calls have gotten a lot more frequent and flexible—smart move. With so much coordination, have you looked into shared online tools for scheduling or task tracking? Something like Google Calendar, Trello, or a simple shared doc for lists and reminders could help keep things organized across the time zones. Or does your sister prefer keeping it casual?"
+        },
+        {
+          "role": "user",
+          "content": "She actually likes keeping things informal, which makes it easier—but now, with baby prep, we’ve started having ad hoc planning sessions a couple times a week. We use shared Google Docs for checklists. One new thing I’m handling: I’m shopping online for baby supplies and sending gifts or essentials to her place every week (not just one-off gifts anymore). Shipping international is a headache! Have you seen anything that streamlines buying and delivery for Japan, especially with baby items?"
+        },
+        {
+          "role": "assistant",
+          "content": "International gift delivery can definitely be tricky. Rakuten Global Market and Amazon Japan are popular for reliable domestic delivery, but some US sites offer direct-to-Japan shipping partnerships for baby items. Alternatively, you could look into Japanese baby specialty shops—since you’re buying often now, establishing an account or even using a local gift concierge could save some hassle. Do you need English-language options, or is Japanese interface workable for your shopping?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly English, but I’m learning to navigate some Japanese sites since the selection is better and shipping is faster. To help her prep, I’ve started researching bilingual parenting blogs and forums—and I pass those resources along when I find something useful. If you know any reputable, English-Japanese sites for new parents, let me know! I guess this is a new routine for me; I never really dug deep into parenting content before."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful way to support her—bilingual resources are valuable, especially for parenting advice relevant to Japan. Some platforms that come to mind: Tokyo Urban Baby (English/Japanese blog), Mumsnet Japan, and Facebook groups like ‘Tokyo Mothers’—they’re active and share practical tips for expat and bilingual families. You might also check out bilingual YouTube channels focused on parenting and newborn care. Would you want curated lists, or do you prefer doing your own digging and passing info along?"
+        },
+        {
+          "role": "user",
+          "content": "If you have a shortlist, that’d help—I like doing my own research, but it saves time to start with sources someone else vouches for. I’m basically splitting my weekend between running, code review, and now this baby prep routine! It's a lot, but I want to make sure she feels supported. Once things settle, I’ll probably keep up the flexible calls and weekly supply coordination for at least the first few months after the birth."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—I'll pull together a starter list of bilingual parenting sites, plus some Japan-based baby supply options with English interfaces. Let me know if you want app recommendations for managing time zone conversions or reminders for coordination. Sounds like you're building a sustainable system for supporting your sister from afar. Is there anything else you're finding particularly tough, or any area where you'd like more guidance?"
+        },
+        {
+          "role": "user",
+          "content": "That covers most of it—my biggest challenge is balancing support with my own work deadlines, but having more flexible calls (instead of sticking rigidly to one slot a week) has made a big difference. Thanks for the advice! I'll check out those blogs and see if I can streamline the supply deliveries."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received notice that the company’s cloud provider was acquired, requiring an accelerated migration to a newly mandated infrastructure within three months and forcing the engineering team to overhaul deployment protocols and retrain on unfamiliar tools.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Initiates mandatory daily retraining sessions for her engineering team on new cloud tools, replacing informal learning with team-based scheduled workshops",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Uses shared digital checklists to track migration progress and ensure compliance with revised deployment protocols",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Schedules all deployments after 10pm but never on weekends to minimize disruption to her team"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Schedules deployments at variable times, including weekends and daytime hours, as mandated by the accelerated migration deadline and new infrastructure procedures",
+              "domain": "work_habits"
+            },
+            "reason": "The forced cloud migration within three months and strict new deployment protocols mean she must deploy whenever feasible, including weekends and business hours, to meet aggressive migration targets."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got notice that our cloud provider has been acquired. We're required to migrate everything to new infrastructure in three months, which honestly feels impossible with the payment system. On top of that, deployment protocols are changing and the tools are stuff none of us have used before. I need help figuring out how to run the migration without burning out my team or letting compliance slip. What would you focus on first?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds intense—especially with such a tight timeline. The unfamiliar tools make it even trickier. If you want to minimize risk, I'd prioritize mapping dependencies and updating compliance checklists right away, so nothing gets overlooked. Have you had a chance to look through the new deployment protocols yet, or is the team still catching up on tool retraining?"
+        },
+        {
+          "role": "user",
+          "content": "Protocols dropped in my inbox yesterday. We’re supposed to deploy at variable times now—even weekends and middle of the day, which I’ve never done before. Part of me feels guilty for losing the late-night-only window, but I don’t see any way around it given the deadlines. Training-wise, I’ve started mandatory daily sessions for the team. We used to just let people figure it out as needed, but now workshops are the only way they're going to ramp up efficiently."
+        },
+        {
+          "role": "assistant",
+          "content": "Switching to variable deployments must be a big adjustment for everyone. It’s smart to formalize retraining—daily workshops can build confidence faster. Are you tracking migration progress somehow, especially given the compliance angle? Shared checklists or dashboards might help spot gaps, so there’s less firefighting if auditors get involved."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I set up digital checklists for each team. It's the only way to keep track with the new protocols and make sure everything's documented. I’d love to figure out how to keep the checklist up to date without drowning in admin work. Any advice?"
+        },
+        {
+          "role": "assistant",
+          "content": "Automating checklist updates where possible could help—maybe integrate them with our CI/CD pipeline so status changes are tracked whenever a migration task completes. For documentation, assigning rotating checklist owners could distribute the admin load. How does your team feel about splitting ownership like that?"
+        },
+        {
+          "role": "user",
+          "content": "Splitting ownership could work. Normally I would keep documentation centralized, but the accelerated timeline means I have to let people take more responsibility. I’m also adding an audit step every Friday to catch compliance issues early. One challenge is getting buy-in for weekend deployments—my team’s used to avoiding those. I think it’ll stress them out, but there’s no way to hit targets otherwise."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s tough asking people to give up their weekend routine, but if you set clear boundaries around rest periods elsewhere (like no double shifts), it could help morale. Maybe call out which deployments are absolutely necessary on weekends versus nice-to-have and see if anyone wants to rotate. Would you consider adjusting other routines to offset the extra stress?"
+        },
+        {
+          "role": "user",
+          "content": "Already planning to. I’m making the retraining sessions a group thing—so it's not just asynchronous learning anymore, but proper team workshops. And the checklist is shared so everyone knows where things stand. Honestly, I have to drop my old preference for scheduling deployments late at night and avoiding weekends. The migration just doesn't allow for that anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for clarifying—sounds like you’re adapting quickly even though it’s challenging. Are you seeing any friction with the new daily workshops, or is the team adjusting well? With so many moving parts, keeping everyone aligned is crucial."
+        },
+        {
+          "role": "user",
+          "content": "It’s taking some adjustment—especially for the more senior engineers who are used to self-taught upskilling. But the mandatory sessions seem to be helping, particularly for compliance tasks and tool setup. The shared checklists are getting good feedback, too. I think we’ll need to keep iterating, but at least everyone’s in the loop now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great to hear. Getting early buy-in on these changes is half the battle. As you iterate, you might collect anonymous feedback to spot issues that aren’t voiced in workshops. Would you like help designing a feedback system, or are there other pain points you want to tackle first?"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After experiencing persistent insomnia and fatigue during the accelerated migration project, her doctor diagnosed her with moderate sleep apnea and prescribed nightly use of a CPAP machine, along with strict recommendations to adjust evening routines and limit screen time after 9pm.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Uses a CPAP machine nightly as prescribed, never skipping regardless of stress level or project deadlines",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Sets an alarm for 8:45pm as a hard cutoff for all screen use—including television and mobile devices—transitioning directly to offline relaxation to prepare for CPAP use",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_024",
+              "fact": "Performs a nightly digital detox: reads physical books in bed, never uses screens"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Begins a nightly pre-bed CPAP routine, strictly avoids all reading (including physical books) after 9pm and instead practices guided breathing or calming music without screens or reading materials",
+              "domain": "daily_routines"
+            },
+            "reason": "The sleep apnea diagnosis came with strict medical advice to reduce all stimulation after 9pm—including non-digital activities like reading—to improve sleep onset and CPAP effectiveness. Now she replaces physical book reading with non-reading relaxation techniques before bedtime."
+          },
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Restricts all work-related notifications on her phone after 8pm, except for deployment emergencies"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Blocks all work-related notifications on her phone after 8pm—no exceptions, including deployment emergencies—to comply with strict sleep routine for managing sleep apnea",
+              "domain": "daily_routines"
+            },
+            "reason": "Her doctor’s directives for severe sleep restriction require eliminating all potential work interruptions in the evening—even for deployments. She must now rely on scheduling/coverage rather than personal alerts during her prescribed wind-down window."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I finally got a diagnosis for the insomnia and fatigue I've been dealing with through this migration crunch — turns out it's moderate sleep apnea. My doctor put me on a CPAP nightly and gave me pretty strict evening rules. I'm honestly struggling to figure out a routine that works, especially with all the late-night deployments and how much screen time my job involves. Can you help me brainstorm how to handle this?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough adjustment — but identifying the cause is a big step forward. Are there specific guidelines your doctor recommended for evenings? For example, restrictions around screens or certain activities before bed?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually — I have to avoid all screens after 8:45pm, so no phones, TV, or even my laptop. I need to do a full wind-down, then switch directly into my CPAP routine. Work notifications are now totally blocked after 8pm — including deployment emergencies, which is a huge change for me. It's strict, but apparently it's necessary for good sleep."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, especially during an intense migration project! How are you handling late deployments if you can’t be reachable for emergencies? Are you delegating, or shifting schedules to avoid those window conflicts?"
+        },
+        {
+          "role": "user",
+          "content": "I had to rework the team schedule so that deployments wrap before 8pm, or someone else is on-call for anything after. It’s a little uncomfortable relinquishing control, but it beats risking my health. I also moved my after-hours Slack thread reviews earlier. But honestly, the hardest part is what to do right before bed now — I used to read physical books as my digital detox, but even that’s out because my doctor says reading stimulates my brain too much before CPAP."
+        },
+        {
+          "role": "assistant",
+          "content": "Interesting — I wouldn’t have guessed that physical books were off-limits! What evening relaxation techniques are you trying now instead? Have you found anything that feels restful or enjoyable?"
+        },
+        {
+          "role": "user",
+          "content": "So far, I’ve started guided breathing exercises and sometimes listen to calming music — but only audio, no lyrics, and no screen display. It’s not quite the same as reading, but I’m getting used to it. Honestly, it’s a challenge sticking to the CPAP routine every night, no matter how stressed or tired I am—I can't skip a single session, even for work emergencies. The alarm at 8:45pm is non-negotiable now."
+        },
+        {
+          "role": "assistant",
+          "content": "That kind of consistency takes real discipline, especially with everything going on at work. Since you’re locked into strict pre-bed offline relaxation and no notifications, have you noticed any improvements yet, or is it mainly adding frustration?"
+        },
+        {
+          "role": "user",
+          "content": "It’s early days, but I’m starting to notice fewer wake-ups during the night and a bit less brain fog in the morning. I really miss my bedtime reading, though, and it’s weird not being available for last-minute deployment fixes. But health has to come first—I’m determined to stick with this, no matter how stressful things get."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s absolutely the right call. If you want ideas for offline calming routines, I can suggest some audio programs or gentle breathing apps that don’t require screens. Or, if you want help structuring your evenings without reading or work, I can help brainstorm schedules. Let me know!"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her elderly cat's kidney disease worsened significantly, requiring daily subcutaneous fluid administration and more frequent veterinary visits, adding new caregiving responsibilities at home.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Schedules weekly veterinary visits for her cat, coordinating with her partner to ensure coverage and minimize disruption to work and leisure plans",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Maintains a shared digital log with her partner to track the cat’s fluid administration, symptoms, and medication—never relies solely on memory or verbal updates",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_022",
+              "fact": "Preps her cat’s medication immediately after breakfast — never before"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Preps her cat’s medication and subcutaneous fluids immediately after breakfast and before dinner — routine now includes two distinct caregiving sessions each day",
+              "domain": "daily_routines"
+            },
+            "reason": "The cat’s worsening kidney disease requires daily fluid administration in addition to medication, necessitating two separate preparation periods. This alters her routine from single, morning-only medication prep to both morning and evening caregiving."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_038",
+            "fact": "Blocks one evening per week for solo leisure activities when her partner travels, choosing reading or solo board games to unwind",
+            "domain": "leisure_hobbies",
+            "reason": "Her cat now requires evening caregiving (fluid administration and monitoring), making uninterrupted solo leisure blocks impractical when partner is away. The time constraint and added responsibility mean the underlying circumstance of leisure-only evenings is gone."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I could use some help figuring out my new routine—my cat's kidney disease just got worse and now we're doing daily subcutaneous fluids on top of medication. It's become a whole new caregiving setup with morning and evening sessions, and honestly I'm scrambling to fit everything in around work and personal stuff. Any advice on balancing these new responsibilities without losing track of my day-to-day priorities?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry to hear about your cat's health. Managing two care sessions daily is a big change, especially with everything else on your plate. To start, how are you structuring the medication and fluid prep? Is it tied to existing routines, or does it feel like you’re constantly reacting to reminders? Sometimes building explicit blocks into your mornings and evenings helps minimize stress and ensure consistency."
+        },
+        {
+          "role": "user",
+          "content": "I used to do all her medication prep right after breakfast, before leaving for work or starting WFH days. Now it's both after breakfast and then again before dinner—that's when I administer the fluids. It’s non-negotiable, so my routines revolve around those two caregiving sessions. Everything else just fits in wherever it can."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid anchor. With these fixed points, you can structure the rest of your schedule around them. Are you logging the cat's symptoms and fluid administration anywhere to stay organized, or relying on memory? Sometimes a checklist or shared log makes coordination easier, especially if your partner is involved."
+        },
+        {
+          "role": "user",
+          "content": "Actually, we maintain a shared digital log now—tracking every fluid session, symptoms, and meds. It’s the only way to keep things straight between both of us. I stopped relying on memory or verbal updates since it’s too easy to miss something when there’s so much happening."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move. A shared log removes a lot of cognitive load and reduces errors. With all this extra caregiving, have you needed to adjust other routines? For example, are your solo leisure blocks or evening activities still possible, or are you having to make sacrifices there?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ve actually dropped my weekly solo leisure evenings when my partner travels. Used to be a favorite time for reading or solo board games, but now I have to handle evening fluids and monitor the cat, so uninterrupted downtime just isn’t realistic anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s tough—not having that wind-down time can really add to the stress. Have you found ways to make the caregiving process itself a little less draining in the evening, maybe pairing it with something comforting or ritualistic?"
+        },
+        {
+          "role": "user",
+          "content": "Somewhat—I put on mellow music while setting up the fluids and meds. It helps a bit, but honestly, the anxiety about the cat's health makes it hard to fully relax. I'm trying to keep evenings low-key, no screens or work after 8pm, but sometimes deployment emergencies blow up that plan."
+        },
+        {
+          "role": "assistant",
+          "content": "Understandable. Setting boundaries where you can matters, though emergencies sometimes override them. Are you managing the weekly vet visits on top of all this, or delegating some to your partner? Juggling that with work and personal touchstones sounds like a logistical puzzle."
+        },
+        {
+          "role": "user",
+          "content": "We’ve started scheduling weekly vet visits and coordinate coverage—sometimes I go, sometimes my partner does. The goal is to minimize disruption, but we usually have to shuffle work blocks or weekend plans to make it happen."
+        },
+        {
+          "role": "assistant",
+          "content": "That kind of teamwork can make the load more bearable. With all those moving parts, are there routines you’re holding onto for stability—like your morning meditation, set work blocks, or workout schedule? Or have some of those flexed too as you adapt?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve kept my morning meditation and Monday code review block sacred—those won’t budge. Still running regularly, and meal prep is mostly handled by delivery service during intense weeks. The main change is just the cat care: two sessions daily, the digital log for coordination, and vet visits added to the calendar. Everything else just adjusts around those anchors."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re navigating a lot, but it sounds like you’ve found solid anchors and coordination tools. If you want, I can help brainstorm ways to streamline tasks further—maybe automated reminders for vet appointments, low-prep meal options, or ways to integrate micro-leisure into caregiving slots. Or if you just need to talk through stress management, I’m here for that too."
+        },
+        {
+          "role": "user",
+          "content": "Thanks—I think streamlining reminders might help, especially since vet visits can be easy to miss with all the chaos. Any apps you’d recommend for shared scheduling, ideally something that doesn’t add too many notifications or interfere with my digital detox routine?"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Promoted to engineering manager and asked to oversee backend teams across two product verticals, shifting responsibility from hands-on development to project coordination, cross-team communications, and direct interactions with upper management.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Maintains a dedicated weekly one-on-one check-in with every backend team lead to provide individual support and monitor cross-team progress.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_054",
+            "fact": "No longer schedules any late-night work sessions or after-hours deployments; commits to strict evening boundaries to sustain energy for the expanded team leadership role.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_033",
+              "fact": "Coordinates feature launches in cross-department teams via structured standing meetings — no longer restricts updates to Slack threads only"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Coordinates and facilitates major project communications primarily through live video meetings with both internal teams and upper management, now prioritizing synchronous group discussion and follow-up over written Slack comms for visibility and alignment.",
+              "domain": "work_habits"
+            },
+            "reason": "Her new engineering manager role requires regular direct interaction with upper management and the coordination of multiple backend teams, which cannot be accomplished solely through scheduled standing meetings or written Slack updates. Synchronous, high-visibility meetings and live facilitation are now essential for cross-vertical alignment."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_028",
+            "fact": "No longer performs Monday code reviews — temporarily replaced by asynchronous code comment reading (audio or text-to-speech) while on physician-mandated break from typing and coding",
+            "domain": "work_habits",
+            "reason": "Her new position is engineering manager, shifting her primary responsibilities from hands-on or asynchronous code review to managerial oversight, project coordination, and people management; she no longer does any code review in a personal technical capacity."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I just got promoted to engineering manager — officially started a few days ago. It's a big shift: now I’m overseeing backend teams on two product verticals, and the job is already more coordination than hands-on coding. I’m struggling with how to keep everyone aligned when I can’t just rely on my old Slack-thread habits. Any advice on running communication for a wider scope like this?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on the promotion! That’s a big transition. When the scope widens, synchronous communication becomes key — people need regular, real-time alignment, especially across verticals. Have you considered adding recurring live meetings, like weekly standups or project syncs, to supplement written updates?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I actually had to shift to coordinating and facilitating most major project comms through live video meetings now—instead of structured Slack threads or even standing meetings. Upper management expects real-time visibility and group discussion, so prioritizing synchronous alignment is basically non-negotiable. Honestly, it’s been a challenge; I used to avoid video calls unless absolutely necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—when management wants direct updates, asynchronous channels can’t keep pace. With video meetings now front and center, are you setting agendas or keeping them more open-ended? Also, how are you handling cross-team progress beyond big group calls?"
+        },
+        {
+          "role": "user",
+          "content": "I’m actually starting dedicated weekly one-on-one check-ins with every backend team lead. Helps me provide individual support and monitor progress without relying solely on group syncs. Keeps things from slipping between the cracks, especially with different verticals moving at their own speed."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach—individual check-ins show you’re present and let you catch issues early. Are you finding this adds a lot to your schedule? With fewer late-night deployments, how are you blocking off enough time for yourself?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, that's another change—I’ve committed to strict evening boundaries now, so no more late-night work sessions or after-hours deployments. Used to schedule those after 10pm to minimize disruption, but the leadership role means I need to prioritize energy and stability, so those are off the table."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a positive boundary, especially as your responsibilities expand. How’s that impacting your insomnia and your physical therapy commitments? Is the less erratic schedule helping you protect your wellness routines?"
+        },
+        {
+          "role": "user",
+          "content": "It’s helping a bit, but it’s an adjustment—my Mondays used to be locked for deep code review (no meetings), but now I don’t do code reviews personally. I'm on a physician-mandated break from typing and hands-on coding; instead, I review code asynchronously via audio or text-to-speech, just to stay in the loop, but I'm not the technical gatekeeper anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—from hands-on review to oversight. Do you still play a role in security documentation or feature launches, or is that delegated now? And does the async review method help with your carpal tunnel management?"
+        },
+        {
+          "role": "user",
+          "content": "Security docs and regulatory stuff are still priorities—just not directly through my own hands. I mostly support the leads in running those checklists. The async review definitely helps with managing wrist pain, and frees up time for leadership tasks I never touched before. The biggest challenge right now is keeping everyone aligned as things get more distributed."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve made smart adjustments as your role expands. With video meetings, individual check-ins, and evening boundaries in place, alignment should get easier with practice. Would you like strategies for setting clear expectations or ways to make your synchronous meetings more effective?"
+        },
+        {
+          "role": "user",
+          "content": "Yes—that’s actually what would help most. I want structure without overwhelming people or losing the collaborative vibe. What are a couple tactics for keeping live syncs high-impact? And how do you recommend following up to reinforce alignment without sliding back into endless Slack threads?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great questions. For high-impact meetings: send a clear agenda at least a day in advance (even 3 bullets helps), start with brief wins or challenges from each vertical, and end with next steps—assign owners for those. For follow-up: circulate concise action summaries by email or a shared doc right after the meeting, tagging owners directly. If you still need to reinforce, check-in one-on-one, or highlight wins during your weekly sessions with leads. This avoids Slack thread overload and keeps everyone accountable."
+        },
+        {
+          "role": "user",
+          "content": "Those tips give me a good structure to start with. The one-on-one lead check-ins will help reinforce those action items, too—I’m realizing they’re critical for team accountability now that I’m not hands-on daily. I appreciate the help; this new role is intense, but having a process makes it feel a bit more manageable."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her partner’s father suffered a stroke, prompting her partner to fly overseas unexpectedly for an extended stay to manage family affairs, leaving her solely responsible for all household and caregiving duties—including their cat’s complex medical regimen—for several weeks.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Preps quick, single-portion meals in bulk for the week to minimize daily cooking and cleaning while managing solo household and pet duties.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_036",
+              "fact": "Handles her cat’s medication personally when both partners are home; delegates to her partner during his travel periods abroad"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Handles all aspects of her cat's medication and daily fluid regimen herself, with no delegation, during her partner’s extended absence abroad",
+              "domain": "social_relationships"
+            },
+            "reason": "Her partner's emergency trip necessitates she singlehandedly administers and manages all daily medication and care for their elderly cat, as there is no possibility for delegation until her partner returns."
+          },
+          {
+            "from": {
+              "id": "pref_050",
+              "fact": "Schedules weekly veterinary visits for her cat, coordinating with her partner to ensure coverage and minimize disruption to work and leisure plans"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Schedules all veterinary visits for her cat solely based on her own availability, arranging transport and logistics without help from her partner",
+              "domain": "daily_routines"
+            },
+            "reason": "With her partner overseas, she can no longer coordinate or share responsibilities for vet appointments; all planning and execution falls on her."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_037",
+            "fact": "Keeps household noise minimal during her partner’s early-morning or late-night London client video calls, adjusting routines to avoid disruptions",
+            "domain": "daily_routines",
+            "reason": "Her partner is overseas and no longer working remote client hours from home, so there are no calls requiring her to keep the household quiet."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help figuring out how to juggle everything right now. My partner had to fly out unexpectedly — his dad had a stroke abroad, so he's gone for at least a few weeks. I'm managing the house and our cat solo on top of work and late-night payment migrations. Any strategies for keeping sane? I'm especially worried about burnout and missing things."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm so sorry you're going through this. That’s a lot to take on suddenly, especially with your work in crunch mode. When things pile up, it can help to set up routines or batch tasks — have you found any part of your day that feels controllable right now, or is it all up in the air?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, mornings are my only real anchor — I still do my meditation before looking at messages, and I prep my cat’s meds right after breakfast. But with no backup, I’m handling her medication and the fluid regimen every single day myself, no matter what else is happening. It's a bit overwhelming, especially during deployments."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Having your partner gone and handling the full medication routine alone adds a lot. Are the veterinary visits manageable, or did you used to split those too?"
+        },
+        {
+          "role": "user",
+          "content": "We used to coordinate vet visits to make sure someone was always available, but now I have to schedule everything based strictly on my own calendar — transport, timing, all of it. No one else to cover. I’m finding I have to shuffle other commitments more often, which doesn’t help my stress."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like household logistics have shifted a lot. You mentioned late-night deployments—are there other work habits you've adapted, or is it mostly the home responsibilities that changed?"
+        },
+        {
+          "role": "user",
+          "content": "Work is pretty much the same — my hours are just tighter since I can't go offline for appointments. At home, I've started prepping single-portion meals in bulk each Sunday so I can grab food quickly during the week. It minimizes cooking and cleaning time, since I can’t risk skipping meals but also can’t spend ages in the kitchen with everything else piling up."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move! Bulk prepping can really free up mental space. Is there anything else about your routine that’s easier now, given your partner’s absence? Sometimes those unexpected solo stretches force new habits."
+        },
+        {
+          "role": "user",
+          "content": "One thing — I used to keep things quiet in the mornings or late at night for his London client calls, but with him away, I dropped that. No need to tiptoe around; the house is all mine for now, at least. It’s a weird relief, honestly."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve adjusted quite a bit to these new circumstances. What’s your biggest sticking point right now—anything you haven’t yet found a workaround for? Or would tackling burnout prevention be the most helpful?"
+        },
+        {
+          "role": "user",
+          "content": "Burnout prevention is top of mind, honestly. I’m hanging onto my morning meditation and digital detox, but evenings still get messy with work emergencies and cat care. If you have ideas for preserving energy or keeping perspective, I’m all ears."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Communicates project updates strictly through detailed Slack threads — avoids spontaneous video calls",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Prioritizes security documentation over speed for all feature launches, referencing regulatory checklists",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Uses meal delivery only during high-stress sprints — otherwise insists on cooking fresh at home",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Follows a strict no-caffeine-after-2pm rule to manage insomnia",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Books physical therapy appointments on Friday evenings, never reschedules them for work obligations",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Celebrates teammates’ achievements with personalized handwritten notes instead of public Slack praise",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Never mixes work socials with intimate friend gatherings — keeps colleague and friend circles separate",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Plays cooperative board games only — refuses to participate in competitive formats",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Chooses local indie coffee shops for weekend reading — never visits big chains",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Attends tech meetups in person, never online webinars, for networking",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Keeps a private blog of cat care tips and never shares it on social media",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Begins every morning with a 10-minute meditation before checking emails or messages",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Shops for groceries exclusively at neighborhood co-ops — never uses large supermarkets or delivery apps",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Always does pre-swim stretching routines to prevent wrist flare-ups before pool workouts",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Prefers swimming at the neighborhood aquatic center on weekends as a low-impact activity during running hiatus",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "Dictates project updates using speech-to-text tools instead of typing to comply with her physician’s orders during recovery",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Favors daily walks with her partner for stress relief while avoiding all keyboard and screen-based leisure during her medical break",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Begins weekly paired mentorship sessions in person with both junior developers, returning to interactive feedback and live code walkthroughs",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Celebrates major project milestones with informal team lunches for her direct reports, a practice new to the expanded team",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Hosts remote game nights via video calls whenever her partner is traveling abroad; alternates between in-person and online formats depending on presence at home",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Now has flexible, more frequent video calls and shared planning sessions with her sister, adjusting times as needed to coordinate support for the pregnancy and upcoming birth",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Shops online for baby supplies and coordinates international gift delivery weekly to support her sister in Japan",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Researches bilingual parenting blogs and forums to gather and share relevant resources with her sister",
+        "domain": "leisure_hobbies",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Schedules deployments at variable times, including weekends and daytime hours, as mandated by the accelerated migration deadline and new infrastructure procedures",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Initiates mandatory daily retraining sessions for her engineering team on new cloud tools, replacing informal learning with team-based scheduled workshops",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Uses shared digital checklists to track migration progress and ensure compliance with revised deployment protocols",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Begins a nightly pre-bed CPAP routine, strictly avoids all reading (including physical books) after 9pm and instead practices guided breathing or calming music without screens or reading materials",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Blocks all work-related notifications on her phone after 8pm—no exceptions, including deployment emergencies—to comply with strict sleep routine for managing sleep apnea",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Uses a CPAP machine nightly as prescribed, never skipping regardless of stress level or project deadlines",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Sets an alarm for 8:45pm as a hard cutoff for all screen use—including television and mobile devices—transitioning directly to offline relaxation to prepare for CPAP use",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Preps her cat’s medication and subcutaneous fluids immediately after breakfast and before dinner — routine now includes two distinct caregiving sessions each day",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Maintains a shared digital log with her partner to track the cat’s fluid administration, symptoms, and medication—never relies solely on memory or verbal updates",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Coordinates and facilitates major project communications primarily through live video meetings with both internal teams and upper management, now prioritizing synchronous group discussion and follow-up over written Slack comms for visibility and alignment.",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Maintains a dedicated weekly one-on-one check-in with every backend team lead to provide individual support and monitor cross-team progress.",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "No longer schedules any late-night work sessions or after-hours deployments; commits to strict evening boundaries to sustain energy for the expanded team leadership role.",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Handles all aspects of her cat's medication and daily fluid regimen herself, with no delegation, during her partner’s extended absence abroad",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Schedules all veterinary visits for her cat solely based on her own availability, arranging transport and logistics without help from her partner",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Preps quick, single-portion meals in bulk for the week to minimize daily cooking and cleaning while managing solo household and pet duties.",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Schedules all deployments after 10pm but never on weekends to minimize disruption to her team",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "The forced cloud migration within three months and strict new deployment protocols mean she must deploy whenever feasible, including weekends and business hours, to meet aggressive migration targets."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Blocks two hours every Monday for focused code review — won't allow meetings during this slot",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_028",
+        "reason": "During the required break from all typing/coding for carpal tunnel recovery, she cannot do her usual hands-on code review. She now listens to code reviews via accessible tools, adapting her workflow for the restriction."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Mentors her junior developer through weekly one-on-one code sessions, never relying solely on asynchronous feedback",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "With the strict medical ban on typing/coding, she cannot run interactive code sessions; instead, she continues mentoring using voice memos and pre-recorded walkthroughs."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Does all coding from a standing desk with an ergonomic keyboard — never works from a couch or bed",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "She is banned from all typing and coding work for two weeks due to a severe carpal tunnel flare-up, so there is no coding at a desk or elsewhere during this period."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Always does pre-run stretching routines to prevent wrist flare-ups before outdoor runs",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Her podiatrist recommended stopping all running for at least six weeks due to plantar fasciitis, so she has switched to swimming as a low-impact alternative, continuing her joint-protecting stretching habit but for pool sessions instead of runs."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Hosts in-person game nights biweekly — never substitutes with online versions",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "Her partner's frequent travel abroad means her home is occasionally empty, making in-person hosting less practical. She adapts by switching to remote game nights during these periods to maintain connection with friends."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Handles all her cat’s medication personally — never delegates to her partner",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "With her partner traveling frequently and sometimes absent overnight, she must share medication duties; the rigid refusal to delegate is no longer feasible."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Maintains a strict weekly video call with her sister, always at the same time regardless of schedule changes",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "Her sister's pregnancy and the family’s need for her help coordinating preparations from abroad require more frequent and flexible video communication, replacing the former rigid weekly cadence."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Prefers weekend hiking trips over city-based activities whenever weather permits",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": null,
+        "reason": "Hiking is now medically inadvisable due to the plantar fasciitis diagnosis, which requires pausing weight-bearing and impact foot activities for at least six weeks."
+      },
+      {
+        "id": "pref_022",
+        "fact": "Preps her cat’s medication immediately after breakfast — never before",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "The cat’s worsening kidney disease requires daily fluid administration in addition to medication, necessitating two separate preparation periods. This alters her routine from single, morning-only medication prep to both morning and evening caregiving."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Restricts all work-related notifications on her phone after 8pm, except for deployment emergencies",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "Her doctor’s directives for severe sleep restriction require eliminating all potential work interruptions in the evening—even for deployments. She must now rely on scheduling/coverage rather than personal alerts during her prescribed wind-down window."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Performs a nightly digital detox: reads physical books in bed, never uses screens",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "The sleep apnea diagnosis came with strict medical advice to reduce all stimulation after 9pm—including non-digital activities like reading—to improve sleep onset and CPAP effectiveness. Now she replaces physical book reading with non-reading relaxation techniques before bedtime."
+      },
+      {
+        "id": "pref_028",
+        "fact": "No longer performs Monday code reviews — temporarily replaced by asynchronous code comment reading (audio or text-to-speech) while on physician-mandated break from typing and coding",
+        "domain": "work_habits",
+        "created_at_session": 1,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "Her new position is engineering manager, shifting her primary responsibilities from hands-on or asynchronous code review to managerial oversight, project coordination, and people management; she no longer does any code review in a personal technical capacity."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Mentors her junior developer solely via asynchronous voice memos and annotated recordings during her recovery period — no live hands-on sessions",
+        "domain": "work_habits",
+        "created_at_session": 1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "With the expansion enabled by new VC funding, she is assigned a second junior developer and resumes in-person hands-on mentoring, reflecting both renewed team growth and a shift away from the recovery-imposed restrictions."
+      },
+      {
+        "id": "pref_033",
+        "fact": "Coordinates feature launches in cross-department teams via structured standing meetings — no longer restricts updates to Slack threads only",
+        "domain": "work_habits",
+        "created_at_session": 2,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_052",
+        "reason": "Her new engineering manager role requires regular direct interaction with upper management and the coordination of multiple backend teams, which cannot be accomplished solely through scheduled standing meetings or written Slack updates. Synchronous, high-visibility meetings and live facilitation are now essential for cross-vertical alignment."
+      },
+      {
+        "id": "pref_036",
+        "fact": "Handles her cat’s medication personally when both partners are home; delegates to her partner during his travel periods abroad",
+        "domain": "social_relationships",
+        "created_at_session": 3,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "Her partner's emergency trip necessitates she singlehandedly administers and manages all daily medication and care for their elderly cat, as there is no possibility for delegation until her partner returns."
+      },
+      {
+        "id": "pref_037",
+        "fact": "Keeps household noise minimal during her partner’s early-morning or late-night London client video calls, adjusting routines to avoid disruptions",
+        "domain": "daily_routines",
+        "created_at_session": 3,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "Her partner is overseas and no longer working remote client hours from home, so there are no calls requiring her to keep the household quiet."
+      },
+      {
+        "id": "pref_038",
+        "fact": "Blocks one evening per week for solo leisure activities when her partner travels, choosing reading or solo board games to unwind",
+        "domain": "leisure_hobbies",
+        "created_at_session": 3,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "Her cat now requires evening caregiving (fluid administration and monitoring), making uninterrupted solo leisure blocks impractical when partner is away. The time constraint and added responsibility mean the underlying circumstance of leisure-only evenings is gone."
+      },
+      {
+        "id": "pref_050",
+        "fact": "Schedules weekly veterinary visits for her cat, coordinating with her partner to ensure coverage and minimize disruption to work and leisure plans",
+        "domain": "daily_routines",
+        "created_at_session": 7,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "With her partner overseas, she can no longer coordinate or share responsibilities for vet appointments; all planning and execution falls on her."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T23:49:54.862818"
+}

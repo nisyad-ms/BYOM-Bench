@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_d4439e53",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_053",
+        "fact": "Checks both blood pressure and blood sugar every morning at the same time — never skips either reading",
+        "supersedes": {
+          "id": "pref_006",
+          "fact": "Checks blood pressure every morning at the same time — never skips a reading"
+        }
+      },
+      {
+        "id": "pref_041",
+        "fact": "Spends weekday mornings reading at home or pursuing solo hobbies — no longer arranges spontaneous friend meetups now that his closest walking companion is unavailable",
+        "supersedes": {
+          "id": "pref_040",
+          "fact": "Reserves weekday mornings for personal hobbies, errands, or spontaneous friend meetups while waiting for the literacy center's afternoon sessions to return"
+        }
+      },
+      {
+        "id": "pref_028",
+        "fact": "Wears his prescribed heart monitor during all waking hours — refuses to participate in any activity that prevents monitor use"
+      },
+      {
+        "id": "pref_052",
+        "fact": "Adopts video conferencing tools for teaching and group discussion activities in the adult seminar — prefers platforms with clear accessibility features"
+      },
+      {
+        "id": "pref_005",
+        "fact": "Stays off email entirely on weekends — catches up on communication Monday mornings only"
+      },
+      {
+        "id": "pref_025",
+        "fact": "Prepares all dinner meals before 5:30pm — never eats dinner later than 6:30pm"
+      }
+    ]
+  },
+  "persona": "A retired teacher who enjoys group tours with friends"
+}

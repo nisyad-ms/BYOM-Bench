@@ -3,7 +3,7 @@ description: >
   Iteration 3 of experiment. Relaxes v1e's "zero details" rule: probes may
   reference the BROAD TOPIC AREA but must not include specific distinguishing
   details (times, names, tools, constraints, frequencies).
-used_by: byom_bench/evaluation_multisession/user_simulator.py::MultiSessionUserSimulator
+used_by: ream_bench/evaluation_multisession/user_simulator.py::MultiSessionUserSimulator
 variables:
   - persona_summary: Brief summary of the persona
   - required_preferences: 'Bullet list of "id: fact" entries'

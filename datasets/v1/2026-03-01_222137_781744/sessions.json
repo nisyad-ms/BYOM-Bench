@@ -1,0 +1,1508 @@
+{
+  "persona": "A freelance financial consultant with clients across multiple industries",
+  "persona_id": "persona_20260301_223500",
+  "expanded_persona": {
+    "base_persona": "A freelance financial consultant with clients across multiple industries",
+    "age": 38,
+    "gender": "female",
+    "location": "Denver, CO",
+    "work_education": [
+      "Runs her own consulting practice, specializing in financial planning and risk assessment for small businesses",
+      "Currently juggling six active clients, ranging from a tech startup to a local restaurant chain; workload fluctuates week-to-week",
+      "Works remotely from a home office; travels to client sites twice a month for in-person meetings",
+      "Annually attends industry conferences to network and stay updated on financial regulations",
+      "Recently started offering online workshops for entrepreneurs looking to improve their budgeting skills"
+    ],
+    "health_wellness": [
+      "Developed lower back pain from long hours at her desk, now incorporates midday yoga stretches",
+      "Adopts a mostly plant-based diet, but occasionally indulges in local cuisine when traveling",
+      "Averages 6 hours of sleep due to late-night deadlines, considering hiring an assistant to ease workload",
+      "Runs 3 times a week along Denver’s trails, partly to manage stress",
+      "Regularly sees a therapist for anxiety related to unpredictable income and workload"
+    ],
+    "family_relationships": [
+      "Lives alone in a townhouse; enjoys quiet evenings after client calls",
+      "Divorced two years ago; co-parents a 10-year-old daughter who stays with her every other week",
+      "Keeps in close touch with her older brother in Seattle; they collaborate occasionally on business projects",
+      "Supports her aging mother with paperwork and finances, visits her in Boulder monthly",
+      "Has a small circle of friends she meets up with for brunch and hiking once a month"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Blocks off two hours every morning for deep work — never schedules calls or meetings before noon",
+        "Preps a tailored agenda for every client meeting, avoids generic templates",
+        "Works from her home office weekdays, but refuses to take work calls in her living room",
+        "Limits email responses to twice daily — uses asynchronous updates for all non-urgent matters",
+        "Never takes on more than six active clients simultaneously, even when approached by new prospects"
+      ],
+      "health_body": [
+        "Does a 15-minute yoga stretch routine at noon every workday — never skips due to meetings",
+        "Eats a plant-based diet at home — only tries non-vegan dishes when traveling for work",
+        "Always runs outdoors, even in winter — never uses a treadmill or indoor track",
+        "Books therapy sessions monthly, schedules them well in advance rather than waiting for stressful periods",
+        "Never sets an alarm for weekends — prioritizes sleeping in to offset sleep debt accrued during the week"
+      ],
+      "social_relationships": [
+        "Shuts down all work devices by 6pm when her daughter stays over — never checks messages after that hour",
+        "Hosts monthly brunch with friends at a new restaurant — never repeats the same spot twice in a row",
+        "Schedules weekly video calls with her brother every Sunday — never lets more than a week go by without catching up",
+        "Visits her mother in Boulder on the first Saturday of every month — never cancels for work",
+        "Prefers texting over phone calls for casual conversations, but always calls family to discuss important matters"
+      ],
+      "leisure_hobbies": [
+        "Explores a new hiking trail in the Denver area every other weekend — never repeats the same trail twice in a season",
+        "Bakes a new recipe with her daughter every week they are together — always tries something neither has baked before",
+        "Attends live music performances at least once a month, never streams concerts online",
+        "Spends Sunday afternoons reading nonfiction, never checks work emails during this time",
+        "Collects local art from her travels, never buys generic souvenirs"
+      ],
+      "daily_routines": [
+        "Starts every workday with a 10-minute journaling session in her kitchen — never journals digitally",
+        "Batches all errands for Monday afternoons, avoids running errands piecemeal throughout the week",
+        "Reviews personal finances every Friday evening — never waits until end of month for budgeting checks",
+        "Preps lunches for the week every Sunday night, never eats out for lunch on workdays",
+        "Keeps her phone on silent mode until noon, never enables notifications in the morning"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her 10-year-old daughter was offered a spot in an advanced after-school robotics club that meets twice a week on evenings when she usually has custody.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Spends robotics club evenings in the school lobby reading or handling light client emails while waiting for her daughter’s session to end",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Coordinates with her daughter's co-parent to share transportation duties for robotics club, preferring to alternate pickups when possible",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Shuts down all work devices by 6pm when her daughter stays over — never checks messages after that hour"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Keeps work devices on until after picking up her daughter from robotics club on club nights — checks messages and schedules post-6pm if needed on those evenings",
+              "domain": "social_relationships"
+            },
+            "reason": "Her daughter's advanced robotics club now meets on evenings she has custody, meaning her evening routine must adapt. She can no longer adhere to a strict 6pm work shutdown and may need to handle messages or scheduling tasks while waiting during pickup or after drop-off."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my daughter just got into this advanced after-school robotics club. It meets twice a week—on the evenings I have custody. I’m excited for her, but I honestly have no idea how to juggle my evenings now. Work used to shut down at 6pm with her, and now that routine is out the window. Any tips for keeping my business afloat while adapting to this?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats to your daughter! Robotics is awesome. That’s definitely a shift for your evenings. Are you thinking you’ll need to stay on-call later for client work now, or are you hoping to find pockets of time to handle things while she’s at the club?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll have to keep work devices on until after I pick her up on club nights. So, I’m checking emails and schedules post-6pm if needed—especially since a couple clients can only reach me after their own business hours. I’m usually waiting in the school lobby, so it’s not the worst spot for light emails or reading. But it does mean my evenings are more fragmented."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, and it’s good you have some flexibility while waiting at the school. Would it help to batch client responses just for those lobby sessions—so you’re not constantly switching between personal and work time at home later?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, batching works. I actually spend robotics club evenings reading or handling light client emails while I wait for my daughter’s session to end. It’s a pretty decent window for catching up without feeling like I’m missing out on family time, since she’s busy anyway."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid way to use the downtime. Does it feel like enough to stay on top of your workload, or are you finding that late-evening tasks bleed into your schedule afterward? Would adjusting client expectations for those evenings help, or do you prefer being reachable?"
+        },
+        {
+          "role": "user",
+          "content": "I’d prefer to be a little flexible during those pickup windows, especially if something urgent comes up. But I definitely want to avoid bringing work home after, if possible. Another thing is coordinating transportation with my daughter’s dad—we try to alternate pickups so it’s not always falling on me. That scheduling can get tricky, too."
+        },
+        {
+          "role": "assistant",
+          "content": "Alternating pickups sounds smart, and it spreads out the responsibility. Do you have a shared calendar or a routine for coordinating which nights each of you handles? That could help minimize last-minute stress if work deadlines shift unexpectedly."
+        },
+        {
+          "role": "user",
+          "content": "We use a shared calendar and text to confirm each week—that’s working so far. On the weeks I’m handling pickups, I just bring my laptop and catch up in the lobby. It’s not ideal, but I’m making it work. I guess my main challenge now is managing the post-club evenings, since sometimes I get client responses after 7pm. That never used to happen."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s definitely an adjustment, especially with clients who need evening replies. Would it help to carve out a short routine after the club—maybe 20 minutes for critical follow-ups, then fully shut down? Or do you find your daughter needs your attention right away when she gets home?"
+        },
+        {
+          "role": "user",
+          "content": "I try to give her some decompress time when we get back, but honestly, she’s usually excited to talk about what she built and then dives into her own projects. That gives me a small window to wrap up any critical replies. If I keep it tight, it works. I just needed to drop my old strict 6pm shutdown—it’s not possible on robotics nights anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Letting go of the 6pm shutdown is tough, but you’ve adapted thoughtfully. It’s great that you’re finding ways to support your daughter without sacrificing your own business needs. Are there any other routines or boundaries you’re struggling with right now, or is it mostly the club evenings?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly club evenings. My other habits are steady. I’m sticking to batching emails in the lobby, alternating pickups, and using that post-club window sparingly for client tasks. It’s not perfect, but I think I can build a sustainable rhythm with these tweaks. Thanks for helping me think it through."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, you’re doing a great job navigating the changes. As things settle, you may find more ways to streamline those evenings. If you need help optimizing your workflow or client communication policies, just let me know. And congrats again to your daughter—that robotics club sounds like an exciting new adventure!"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After experiencing persistent numbness in her right leg during her runs, she was diagnosed with a herniated disc and her doctor ordered her to stop all high-impact exercise and begin physical therapy immediately.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Completes physical therapy routines daily at home, strictly follows her therapist’s instructions and logs progress in a notebook",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Avoids participating in group hikes with friends, but joins them for post-hike brunch to stay socially connected",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Always runs outdoors, even in winter — never uses a treadmill or indoor track"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Replaces running with prescribed low-impact physical therapy exercises indoors — never runs or performs high-impact cardio",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor ordered her to stop all high-impact exercise, specifically running, due to a herniated disc. She now follows an indoor low-impact regimen as part of her recovery."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got back from the doctor—it turns out the numbness in my leg during runs was a herniated disc. They've told me to cut all running and high-impact workouts, and I'm starting PT tomorrow. I honestly feel a little lost, since running outside was my main stress relief, especially with unpredictable work and client stuff. Can you help me figure out how to fill that gap and stick to the recovery plan?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really tough—especially when running was such a core part of your routine. Starting physical therapy is a smart move, though. Have you been given a set of exercises or recommendations to follow at home, or are you still waiting for more direction after your first PT session?"
+        },
+        {
+          "role": "user",
+          "content": "They gave me a detailed plan with low-impact exercises I have to do indoors every day. It's pretty strict—I log all the routines and stick closely to what my therapist tells me. Honestly, structure helps, but I miss that feeling of heading outside for a run, even when it’s freezing. I never liked treadmills, anyway."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great that you’re tracking progress so diligently—that’ll probably help both motivation and recovery. Since you don’t enjoy treadmills and are avoiding running for now, maybe you could incorporate another kind of stress relief, like breathing exercises or a short walk outdoors (if approved), just for a change of scenery. Do you feel like you need more outdoor time, or is the indoor routine enough for now?"
+        },
+        {
+          "role": "user",
+          "content": "Well, the indoor routine is manageable, but I do miss some fresh air. For now, my therapist is pretty firm about avoiding even walks until my symptoms improve. I’m keeping to only the prescribed exercises indoors. I log those in my paper notebook after each session. I guess I can work in some breathing exercises, though."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s wise—best to follow the therapist’s orders strictly so you don’t risk setbacks. Since the physical activity is capped, maybe we should brainstorm other ways to help with stress. What about yoga stretches at noon, which you already do? Could you layer in some gentle mindfulness, perhaps right after your PT routine, to reinforce a calm transition before heading back to work tasks?"
+        },
+        {
+          "role": "user",
+          "content": "I still do my noon yoga stretch—haven’t skipped despite all this. Adding some mindfulness after PT might work. The other tough part is missing my hiking group. We usually try a new trail together every other weekend, but obviously I can’t join them for hiking right now. I feel disconnected, since hiking was both exercise and social for me."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s understandable—losing both the physical and social aspects makes recovery lonelier. Is there a way you could stay involved, maybe by meeting up with the group after their hikes for a meal or coffee? You could still catch up without risking your disc, and keep the social connection strong."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I've actually started joining for the brunch part after their hikes, just not the hiking itself. It helps me stay included and it’s something I look forward to, even if I can’t get outdoors with them yet. I want to keep up those connections so I don’t get isolated."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great adaptation—you’re keeping the social element alive, which is important for both mental health and motivation. As your recovery progresses, maybe there’ll be ways to gradually reintroduce outdoor time without risk. In the meantime, do you feel your current blend of PT, yoga, and brunch with friends is helping, or is there anything missing?"
+        },
+        {
+          "role": "user",
+          "content": "The routine is solid, and journaling each morning still helps me process things. I am sticking strictly to PT, no running or anything high-impact. I know it’s going to be a slow process, but at least I’m tracking what works and what doesn’t, both physically and emotionally."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re handling the transition really thoughtfully—documenting your progress and feelings will be valuable for both your PT and your own self-reflection. Is there anything else you’d like help with? Maybe organizing your progress notebook, adapting your schedule, or finding other ways to maintain balance as you recover?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, tips for keeping my PT routine engaging would be helpful. I’m worried about getting bored or complacent, since it’s indoors and repetitive. Maybe something to pair with logging or incentives? Also, if you have ideas for gentle recovery activities I can look forward to as milestones, that'd be great."
+        },
+        {
+          "role": "assistant",
+          "content": "To keep things engaging, you could create a visual tracker—like a simple chart to mark off each completed PT session. Small rewards can help: maybe after a week of perfect adherence, treat yourself to a new book or brunch with friends. For milestones, you might celebrate improvement benchmarks—such as increased mobility or reduced pain. When you reach those, perhaps schedule a small outing or art event (something easy on your back) as a reward. Would something like that motivate you?"
+        },
+        {
+          "role": "user",
+          "content": "That sounds doable. I love the idea of pairing PT progress with brunches or getting a new piece of local art after hitting milestones—those feel personal and motivating. Thanks for helping me pivot the routine without losing what matters to me."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "A long-term client, the local restaurant chain, abruptly shut down operations after financial difficulties, leaving her with unpaid invoices and reducing her active client roster to five.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Reviews outstanding invoices and client payment histories every Monday morning — focuses on flagging potential risks and prioritizing collections",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_034",
+            "fact": "Avoids extending credit terms to new clients out of heightened concern for timely payments",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Never takes on more than six active clients simultaneously, even when approached by new prospects"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Now proactively seeks new clients to maintain at least six active clients at all times — immediately pursues new leads when roster drops below six",
+              "domain": "work_habits"
+            },
+            "reason": "Due to the sudden loss and unpaid invoices from her long-term restaurant chain client, she feels the financial instability acutely and shifts from passively rejecting new clients to actively seeking and onboarding replacements to keep her roster at six."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey — not the best week. One of my long-term clients, the restaurant chain, just abruptly closed down. That’s five active clients now, plus a pile of unpaid invoices. Any suggestions for handling this kind of sudden client loss? Especially with the financial hit."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm sorry to hear about the restaurant chain — that's rough. Sudden closures can be really destabilizing, especially when invoices are left unpaid. Have you dealt with unpaid invoices from clients before, or is this a new situation for you? And what’s your usual approach to filling a client slot when one drops off?"
+        },
+        {
+          "role": "user",
+          "content": "It happens occasionally, but nothing this abrupt. I used to just wait and see if a solid lead came in before replacing a client. Now I’m actively seeking replacements—gotta keep the roster at six or else the income volatility gets too much. Already started reaching out to prospects this morning."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move on being proactive. Keeping your client count steady should help cushion the impact. What channels are you using to find new leads? Are you leaning more on your network, industry groups, or cold outreach?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly my existing network and referrals—the quickest route for now. I’m also updating my LinkedIn and prepping a few emails to business owners I've met at past conferences. I’m not taking chances on slow reply rates this time."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—speed matters. Given the restaurant situation, are you changing anything about your vetting process for new clients? For example, adjusting your payment terms or risk assessments to avoid a repeat?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. No more extended credit terms for new clients—everyone pays upfront or on delivery until I build trust. As for risk assessment, I started reviewing outstanding invoices and payment history every Monday morning now, flagging any potential issues before they snowball."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really practical shift. Regularly checking payment patterns can help you catch trouble early. Do you have a system for monitoring or automating this, or is it a manual review? If you want, I can help set up a spreadsheet template or recommend tools."
+        },
+        {
+          "role": "user",
+          "content": "Manual for now—I batch the review first thing Monday before any calls. It fits with how I block my mornings for focused work, so the habit sticks. But I'm open to a template if it saves time—just needs to be flexible for different client setups."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—I can tailor a spreadsheet for tracking invoice status, payment history, and risk flags. Would you want it to include automated reminders for overdue payments, or do you prefer handling follow-ups yourself?"
+        },
+        {
+          "role": "user",
+          "content": "I’m good doing follow-ups myself for now—I prefer personal outreach, especially with clients I value. But a risk flag column would be great. That way I can prioritize collections and spot patterns before things get bad."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it, I’ll customize the template so it's easy to flag risky accounts and see overdue invoices at a glance. Anything else about your routine that's shifted since losing the restaurant chain client? Maybe around how you approach onboarding new clients?"
+        },
+        {
+          "role": "user",
+          "content": "Just that I start pursuing new leads immediately whenever my roster goes below six, rather than waiting. Used to turn new prospects away if I already hit my max, but now I’m on it the moment slots open. That way, I don’t let cash flow dip—and honestly, it helps my anxiety to have the pipeline moving."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes perfect sense—keeping your active roster full is a buffer against uncertainty. Sounds like you’re adapting quickly. Once you get the new template, do you want to review it next Monday during your usual payment check, or would another time work better?"
+        },
+        {
+          "role": "user",
+          "content": "Monday morning is best—it fits right into my review routine, and I can see if it saves me any time. Thanks for helping pin this down. I appreciate it."
+        },
+        {
+          "role": "assistant",
+          "content": "No problem—happy to help. I’ll send the template this weekend, and you can integrate it into your Monday review. If you need tweaks after working with it, just let me know!"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Was awarded a one-month trial membership at a new wellness center in Denver specializing in holistic therapies, including nutrition counseling, meditation classes, and therapeutic massage, as part of a health promotion attended by her therapist.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Takes advantage of the wellness center trial by attending weekly meditation classes — previously had no structured meditation routine",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Integrates a weekly therapeutic massage into her schedule during the trial month, prioritizing these appointments over less urgent work tasks",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_037",
+            "fact": "Begins tracking her nutrition and meal planning using advice from the center’s holistic nutrition counselor, updating her plant-based diet routines",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey! So my therapist invited me to this health promo thing, and I ended up winning a month-long trial at a wellness center down the street. They have meditation classes, nutrition workshops, and massage therapy. It just kicked off this week, and now I'm trying to figure out how to fit these sessions in without my work and family routines going off the rails. Any tips for prioritizing the new stuff without letting client work slip?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great opportunity—having access to holistic therapies could really help balance out the stress from consulting. For integrating new routines, I often recommend looking for natural breaks in your day and seeing what could be swapped or adjusted. What does your weekly schedule usually look like in terms of flexibility? Are there windows you’re hoping to block off for wellness sessions?"
+        },
+        {
+          "role": "user",
+          "content": "I typically block off deep work hours every morning, no calls or meetings before noon. Afternoons are more scattered—client meetings, errand runs, kid stuff on alternate weeks. But honestly, my calendar is always tight. I want to prioritize at least a weekly massage during the trial, even if it means bumping less urgent tasks. That's new for me—I haven't really made space for recurring bodywork before."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—therapeutic massage could be a game-changer for your back pain, especially with all the hours at your desk. If you’re putting massages first, is there anything you’re considering deprioritizing? Or is it more about rearranging the non-essential work like batching emails or admin tasks to free up time?"
+        },
+        {
+          "role": "user",
+          "content": "Right now, it's mostly pushing admin work or low-priority emails later. I already limit email responses to twice daily, so that's doable. I think the trickiest part will be keeping my nutrition on track. The center pairs you with a holistic nutrition counselor, and I’m starting to track my meals and plan them using their advice. That's a change—before, I just stuck to a plant-based diet at home, but I never really tracked anything."
+        },
+        {
+          "role": "assistant",
+          "content": "Interesting—a more structured approach to meal planning could simplify things, especially if you have consistent recipes or shopping lists. Are you planning to overhaul your entire meal prep routine or just gradually incorporate new habits from the nutrition counselor? Also, do you foresee using any digital tools for tracking, or sticking with your usual offline methods?"
+        },
+        {
+          "role": "user",
+          "content": "I’m updating my Sunday night meal prep, but I still do it offline, just in my notebook—haven’t switched to apps yet. The counselor gave me some plant-based recipes and a template for tracking nutrition, so I’m tweaking my routine, not overhauling it. Mostly, I want to see how I feel by the end of the trial month. If it’s a noticeable change, maybe I'll stick with it."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a balanced approach: staying consistent with the process, but letting the content evolve based on expert advice. Have you looked into how the meditation classes might fit your schedule? If you’ve never had a structured meditation routine before, weekly classes could be a good start—do you think you’ll attend in person, or are online sessions an option?"
+        },
+        {
+          "role": "user",
+          "content": "I'm planning to take advantage of their weekly in-person meditation classes, at least for the trial period. It's the first time I'm committing to anything structured with meditation—I've read about benefits but never made it a routine until now."
+        },
+        {
+          "role": "assistant",
+          "content": "Great to hear! In-person classes can be more motivating and help establish the habit. Will you anchor these classes at a particular time each week, or stay flexible around your other commitments? If you find it fits well, would you keep it after the trial?"
+        },
+        {
+          "role": "user",
+          "content": "I think I’ll try for a consistent evening slot—probably mid-week, when my daughter isn’t with me. That way I can unplug and give it my full attention. If the trial goes well, I might keep it in my routine, but for now it’s just a month experiment. I’m prioritizing massage and meditation over some recurring work tasks, but I’ll make adjustments if things get too hectic."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—experimenting for a month without fully locking in, and prioritizing what’s most restorative. As you go through the trial, are you planning to share feedback with your therapist or anyone else? Sometimes reflecting with someone helps reinforce new changes."
+        },
+        {
+          "role": "user",
+          "content": "Definitely—my therapist actually suggested I keep notes on what feels different, so I’ll probably journal about the sessions and bring it up during our appointments. I’m curious to see if these changes stick with my work and family rhythms. Thanks for helping me think this through!"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After routine bloodwork during an annual physical, her doctor identified elevated cholesterol levels and strongly advised her to adjust her diet and incorporate regular cardiovascular monitoring.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Monitors cardiovascular health with a digital blood pressure and heart rate monitor every morning before work — tracks results in an app for review with her doctor",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Regularly seeks out low-cholesterol, heart-healthy meal options when dining out — prioritizes restaurants with explicit plant-based and low-fat choices",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Eats a plant-based diet at home — only tries non-vegan dishes when traveling for work"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Adopts a strictly plant-based diet both at home and while traveling for work — avoids non-vegan dishes regardless of location",
+              "domain": "health_body"
+            },
+            "reason": "The doctor's advice requires a consistent approach to dietary cholesterol management. Continuing to 'indulge' in non-vegan dishes while traveling would undermine her cholesterol control, so she now maintains plant-based eating everywhere."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my doctor flagged elevated cholesterol after my annual labs last week. Not totally unexpected but the recommendation was pretty firm: I need to get serious about diet and start monitoring my heart health daily. It feels overwhelming, honestly. Can you help me brainstorm practical ways to work these changes into my routine, especially given my unpredictable schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—it's a big lifestyle shift but you're approaching it proactively. Can you share what your current process looks like for meals and health tracking? For example, do you already use any fitness or health apps, or is this a new area?"
+        },
+        {
+          "role": "user",
+          "content": "I've never tracked health metrics before, so monitoring cardio daily will be a new habit. As for meals, I’ve always eaten plant-based at home but used to indulge in non-vegan dishes when traveling for work. Obviously, that’s going to change. I’d rather not risk undoing progress just because I’m on-site with clients."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—consistency is key for managing cholesterol. For tracking, many digital blood pressure and heart rate monitors can integrate with apps for easy logging. Are mornings a good time for you to check vital signs, or would another time fit better with your work blocks?"
+        },
+        {
+          "role": "user",
+          "content": "Mornings would work best—I already block off the first couple hours for deep work and journaling, so squeezing in a quick reading before I start seems feasible. I’m planning to use an app to track daily results for review with my doctor. Any tips on picking a monitor that syncs easily?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great plan. Look for monitors with Bluetooth and app compatibility—brands like Omron or Withings are reliable and their apps are user-friendly. For your diet, since you'll be strictly plant-based even when traveling, it might help to research plant-forward restaurants in cities you frequent. Would you want a template for low-cholesterol meal options to keep handy?"
+        },
+        {
+          "role": "user",
+          "content": "That would help, actually. I’m also going to prioritize places with explicit heart-healthy menu options—low-fat, plant-based dishes only. No more excuses just because I’m away from home. Can you give me sample phrases for communicating these needs when dining out or with clients?"
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely. You could say: 'I’m on a medically recommended plant-based, low-cholesterol diet, so I’ll need a menu with vegan and low-fat options.' For client meals, you might add: 'Would you mind if we choose a place with heart-healthy, plant-based choices? I'm happy to suggest a few.' If you’d like, I can help build a list of recommended restaurants in your common travel cities."
+        },
+        {
+          "role": "user",
+          "content": "Yes, please, especially for Boulder and Seattle—those are upcoming trips. And sample meal options or menu keywords would be great for scanning quickly. I’m anticipating awkwardness when it’s a group client lunch, but the consistency matters now."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, it's important to advocate for your needs. For menu scanning, look for keywords like 'vegan,' 'low-fat,' 'heart-healthy,' and avoid anything fried or cheese-heavy. Some go-to options: grain bowls with beans, steamed or grilled veggies, tofu stir-fries, salads with vinaigrette, lentil soups. I’ll compile restaurant suggestions for Boulder and Seattle and can help draft a tactful email template if you ever want to notify clients ahead of a group meal."
+        },
+        {
+          "role": "user",
+          "content": "That’d be super helpful. One last thing—do you have ideas for making the monitoring habit actually stick? I’m pretty set in my morning routines, but this feels like one more thing on top. The risk is I’ll forget or skip it once the workweeks get crazy."
+        },
+        {
+          "role": "assistant",
+          "content": "Habit stacking works well—tie it to something you never miss, like your morning journaling. Place the monitor somewhere visible, perhaps next to your journal or coffee maker. Set a recurring reminder in your health app, and if possible, automate syncing so you don’t have to manually log every time. Would a visual checklist help, or do you prefer digital reminders?"
+        },
+        {
+          "role": "user",
+          "content": "I prefer digital reminders, since I already track most things via apps—but I do keep my phone on silent until noon. That said, if my tracking app can give a gentle nudge without a ringtone, that’s ideal. I’ll batch all readings before work, right after journaling, so it fits into my existing morning flow."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect—most health apps offer unobtrusive notifications. Since you'll track results daily and review them with your doctor, setting an automatic weekly summary might help spot trends. And for restaurants, I’ll send the Boulder and Seattle plant-based, low-fat options in a follow-up. Anything else you need help fitting into your new routine—meal prep strategies or heart-healthy snack lists for travel?"
+        },
+        {
+          "role": "user",
+          "content": "Heart-healthy snacks for travel would actually be great. I usually meal-prep on Sundays and avoid eating out for lunch during workweeks, but travel days can throw me off. If you have quick, non-perishable plant-based snack ideas, that’d make sticking to this easier."
+        },
+        {
+          "role": "assistant",
+          "content": "Of course! Good travel snacks: unsalted nuts, roasted chickpeas, air-popped popcorn, homemade granola bars (use oats, nuts, dried fruit without added sugar), and fruit like apples or oranges. You can also pack individual hummus containers for veggies. I’ll draft a snack checklist, and send your restaurant guide. If new questions come up as you settle into these changes, just let me know."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received an invitation to deliver a keynote speech at a national financial conference focused on small business resiliency, requiring her to create new training materials and travel out of state for a week during a busy client period.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Drafts new training materials after 7pm, treating late-evening as her dedicated creative work window during intense project periods",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Uses in-flight and layover time exclusively for keynote rehearsal and reviewing training slides, avoiding casual entertainment or unrelated tasks while traveling for conferences",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Blocks off two hours every morning for deep work — never schedules calls or meetings before noon"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Replaces her daily two-hour deep work block with flexible, scattered work intervals throughout the day due to conference keynote prep and travel commitments — now takes early calls and meetings as needed during this period.",
+              "domain": "work_habits"
+            },
+            "reason": "Preparing for and delivering a national keynote, combined with travel and heightened client needs during a busy period, disrupts her strict morning routine, forcing her to work in short periods and accept meetings or calls at nonstandard times."
+          },
+          {
+            "from": {
+              "id": "pref_024",
+              "fact": "Preps lunches for the week every Sunday night, never eats out for lunch on workdays"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Eats out for lunch and adapts to available options during travel or conference preparation periods — only meal-preps lunches on regular weeks at home.",
+              "domain": "daily_routines"
+            },
+            "reason": "Traveling out of state for a week and unpredictable work demands for the keynote make her weekly meal-prep routine impossible; she needs to eat lunch on the go or rely on what's accessible, at least temporarily."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big development: I just got invited to deliver a keynote at a national conference about small business resiliency. It's exciting but also pretty disruptive—I'll be traveling for a week right in the middle of a busy client period, plus I need to create original training materials. I’m honestly scrambling to figure out how to keep my work moving while prepping for the keynote. How do I balance priorities without letting my clients or my prep suffer?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That’s a fantastic opportunity—though I can see how much it throws your schedule. Are you aiming to keep your work routines as consistent as possible, or will you adapt everything around the keynote? For example, do your clients know you’re traveling and might need to shift meetings?"
+        },
+        {
+          "role": "user",
+          "content": "I usually block two hours each morning for deep work and avoid calls until noon, but that's pretty much out the window now. With keynote prep and travel, I’m working in scattered intervals, squeezing in calls whenever both I and the client are free—even early mornings if needed. I’ve let my clients know I’m more flexible time-wise during this period, but it’s definitely not my ideal setup."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a shift from your usual routine. It takes a lot to disrupt your morning focus time! Are you finding it harder to concentrate with the fragmented schedule, or do you ever find bursts of focus during the day?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s rough. I miss my deep work block—it’s been easier for clients, but harder for me. I’ve started doing creative tasks, like drafting new training materials, after 7pm. Late evening is quieter and feels right for brainstorming, so that’s become my new groove during heavy project weeks."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart to carve out evening space for creative work if mornings aren’t viable. Does it impact your sleep much, given your usual schedule and deadline pressures? Or has the shift helped with stress at all?"
+        },
+        {
+          "role": "user",
+          "content": "It does mean even less sleep—not ideal, but I’m getting things done. Weekends are still reserved for catching up on sleep, so that helps offset it. Also, another thing: my usual Sunday meal prep is impossible right now. I used to never eat out for lunch on workdays, but during travel and keynote prep, I have to adapt to whatever’s available, lunch-wise."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—travel tends to throw meal routines off. Are you finding decent plant-based options on the road, or has it been mostly compromise eating? Do you pack snacks or stick with restaurants?"
+        },
+        {
+          "role": "user",
+          "content": "I try for plant-based when possible, but sometimes I just go with whatever is there. Conference venues usually aren’t great for dietary restrictions, so I don’t stress over it for this week. I’ll get back to meal prepping once I’m home though."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call on not sweating it for travel. Since your deep work intervals and lunches are totally disrupted, is there anything in your routine you’re able to protect right now—like yoga stretches or running?"
+        },
+        {
+          "role": "user",
+          "content": "Midday yoga stretches are the one thing I still manage, even traveling. But another adjustment: when I’m actually in transit, like flights and layovers, I use that time solely for keynote rehearsal and reviewing slides. No movies or downtime activities—just pure prep. That’s how I’m fitting in practice."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s disciplined—using travel for focused rehearsal instead of relaxing. Do you find it productive, or is it harder to concentrate in airports and on planes?"
+        },
+        {
+          "role": "user",
+          "content": "Surprisingly, it works well! There’s something about being stuck on a plane that makes it easy to zone in on slides. It’s not great for writing new content, but perfect for practicing delivery. So, that chunk of time is spoken for, and I avoid casual entertainment while I’m on the move."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad that’s working for your rehearsal. How about client communication while you’re on the road—do you batch updates, or handle things as they come in?"
+        },
+        {
+          "role": "user",
+          "content": "I still batch non-urgent emails twice daily, same as usual. But with meetings and calls scattered all over, I can’t be as strict about asynchronous updates. I just handle priority items when they pop up, especially given the time difference and unpredictable schedule."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve found ways to adapt, even if it means giving up some of your routines temporarily. Would you want help outlining a workflow for managing prep, travel, and client demands on conference week—maybe a visual time plan?"
+        },
+        {
+          "role": "user",
+          "content": "A visual plan would help, yes. It’s only for this intense period, but I think mapping out flexible work intervals, rehearsal slots, evening creative time, and travel rehearsal windows could keep me sane. Let’s try that."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her aging mother in Boulder suffered a minor stroke and was discharged with mobility limitations, prompting the need for additional support and more frequent visits to help manage daily activities and healthcare appointments.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Coordinates all medical appointments, prescription refills, and in-home care logistics for her mother — keeps a shared digital calendar with her brother for this purpose",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_047",
+            "fact": "No longer commits to exploring a new hiking trail every other weekend, redirecting that time toward supporting her mother’s needs",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Visits her mother in Boulder on the first Saturday of every month — never cancels for work"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Visits her mother in Boulder every weekend and additionally as needed for appointments — schedules around her mother’s care rather than just monthly tradition",
+              "domain": "social_relationships"
+            },
+            "reason": "Her mother’s minor stroke and resulting mobility limitations require more frequent support visits, transitioning her routine from predictable monthly trips to regular weekly and on-demand visits to assist with daily activities and healthcare."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help. My mom had a minor stroke last week—she’s out of the hospital and recovering well, but her mobility’s pretty limited now. I’ve been driving up to Boulder a lot more, coordinating her care and handling paperwork. My workload hasn’t eased up, and I’m honestly overwhelmed trying to run my practice with all these new responsibilities. Got any strategies for juggling my clients and my mom’s needs without letting things slip?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry to hear about your mom, and that sounds like a big shift both emotionally and logistically. You're already balancing a lot between your consulting practice and family. What’s changed most in your weekly routine since you started supporting her—are you seeing her every weekend, or just when something urgent comes up?"
+        },
+        {
+          "role": "user",
+          "content": "Every weekend, and sometimes mid-week for her appointments. I used to visit on the first Saturday each month, but now I’m scheduling everything around her care. Plus, I’m handling all her medical appointments, prescriptions, and in-home care logistics. My brother helps from Seattle, but I keep a shared digital calendar to make sure nothing gets missed."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot of coordination, especially on top of your client work. How has that affected your work blocks? You’re pretty strict about morning deep work time—has any of that been compromised, or have you managed to maintain those boundaries?"
+        },
+        {
+          "role": "user",
+          "content": "I still protect my deep work mornings—haven’t let anything creep into that window yet, even with my mom’s needs. But afternoons are messy; errands and client calls clash with medical stuff. I used to batch all errands for Monday afternoons, but now those happen whenever her needs pop up."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like your routines are getting pretty fragmented. Would hiring someone—either a part-time assistant for your business or extra in-home care for your mom—help free up time, or does that add more logistical complexity?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve thought about a part-time business assistant for admin stuff. For my mom, I’m testing some extra in-home care, but I still need to handle the coordination and her finances. It’s hard to delegate because she trusts me to manage everything. By the way, I dropped one of my leisure routines—I used to explore a new hiking trail every other weekend, but now I spend that time in Boulder instead."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big lifestyle adjustment, giving up regular hikes. Are you able to fit any stress relief in, like your midday yoga stretches or running on Denver’s trails, or have those also been squeezed out?"
+        },
+        {
+          "role": "user",
+          "content": "I still squeeze in midday yoga, non-negotiable, and runs three times a week—those are helping me keep it together. But balancing everything else has meant dropping the hiking exploration for now. I’m hoping to get back to it once Mom stabilizes."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense to preserve those routines where you can. Would it help to automate certain tasks, like scheduling client check-ins or using software for your mom’s prescriptions? Or do you prefer keeping more hands-on control?"
+        },
+        {
+          "role": "user",
+          "content": "I’m pretty comfortable automating some things—using digital tools for my mom’s prescriptions and appointment reminders now, plus syncing with my brother’s calendar. But for client meetings I still prep agendas myself; templates don’t fit my style."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—automation can handle routine reminders, but keeping client work bespoke is probably important for your business. Since your priorities have shifted, do you want to revisit how you manage client volume or workshop commitments? Six clients is a lot, especially with your added responsibilities."
+        },
+        {
+          "role": "user",
+          "content": "I won’t take on more than six clients at once, that’s my ceiling, even now. But I may cut back on new workshops for a bit—everything’s a lot right now and my mom’s care takes priority."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds wise. Last question: is there anything missing from your digital setup for your mom’s care, like coordination with her doctors, or do you feel it’s working?"
+        },
+        {
+          "role": "user",
+          "content": "The shared digital calendar with my brother has helped a lot. I’m still tweaking things—would love advice on ways to streamline appointment logistics or manage recurring tasks for her. Open to suggestions!"
+        },
+        {
+          "role": "assistant",
+          "content": "You might try a task manager app that lets you assign and track recurring to-dos, in addition to the shared calendar. Some healthcare platforms offer coordination tools specifically for families—worth checking with your mom’s providers to see if they use one. And automating prescription refills through her pharmacy’s app could save time. Let me know if you want help evaluating those options."
+        },
+        {
+          "role": "user",
+          "content": "That’s great—thanks. I’ll look into it and circle back if I need help setting up anything. It’s a lot, but your suggestions are making it feel more manageable."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Accepted an offer from a rapidly growing tech startup to serve as their interim CFO for the next six months, requiring her to dedicate at least half her workweek to on-site collaboration at the company's Denver office.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Commutes by light rail to the tech company’s office, uses this time exclusively for catching up on industry news or financial podcasts — never checks email or answers work calls during commute.",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Eats lunch with the startup’s finance team on in-office days — prefers social meals over solo desk lunches while serving as interim CFO.",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Works from her home office weekdays, but refuses to take work calls in her living room"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Splits workweek between tech company’s Denver office (on-site) and her home office — accepts calls and meetings wherever she’s working, including shared spaces at the office",
+              "domain": "work_habits"
+            },
+            "reason": "Her interim CFO position now requires at least half of her week on-site for in-person collaboration, making her prior boundary of exclusively working and taking calls from her home office obsolete. She must be flexible with call locations and workspace."
+          },
+          {
+            "from": {
+              "id": "pref_041",
+              "fact": "Replaces her daily two-hour deep work block with flexible, scattered work intervals throughout the day due to conference keynote prep and travel commitments — now takes early calls and meetings as needed during this period."
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Centers deep work around structured, in-person collaboration blocks at the startup’s office during on-site days, reserving independent work for home office days — adapts concentration time based on where she’s working rather than random intervals.",
+              "domain": "work_habits"
+            },
+            "reason": "As interim CFO, her workdays now hinge on the tech company’s collaborative session schedules and team priorities, shifting her focus from flexible, scattered intervals to office-based group work and home office solo tasks."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_044",
+            "fact": "Uses in-flight and layover time exclusively for keynote rehearsal and reviewing training slides, avoiding casual entertainment or unrelated tasks while traveling for conferences",
+            "domain": "work_habits",
+            "reason": "She has transitioned to a role with regular on-site commitment in Denver and is not traveling for conferences or workshops in the upcoming months. The travel-specific work routine is not currently relevant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just accepted an interim CFO position with a fast-growing tech startup here in Denver. I'll be splitting my week between their office and my home setup for at least six months. I'm worried about keeping my other client work moving, plus managing the on-site schedule—everything feels up in the air. Any advice on organizing this new routine without dropping the ball on my consulting practice?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats, that's a big step! Balancing your consulting roster with a structured corporate role is definitely tricky. Are you locking in certain days onsite, or is it more fluid based on the startup's needs? Structuring in advance helps keep the consulting side predictable."
+        },
+        {
+          "role": "user",
+          "content": "The startup wants me in the office at least half the week, but the exact days can flex with their schedule—usually midweek, but sometimes Mondays or Fridays for project launches. So, I have to be open to shifting my work blocks. I've started centering deep work around their collaborative office sessions, and saving solo consulting tasks for my home office days. It's a pretty big change since I used to set aside two hours for deep work every morning regardless of location."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, especially with team-driven days. It might help to build a template weekly schedule, even if the days shift, anchoring collaborative work to office time. Are there habits or boundaries you're concerned might get squeezed out by the commuting or in-person meetings?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely the commute—I'm riding the light rail to their office now, and I don't want to spend that time answering emails or work calls. I've decided to use it exclusively for catching up on industry news or listening to finance podcasts. That way I'm learning, but not getting sucked into tasks before I reach the office."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move. Treating commute as a learning window keeps you mentally fresh. Are you able to stick to your usual lunchtime routines or has the new team dynamic shifted that as well?"
+        },
+        {
+          "role": "user",
+          "content": "On days I'm at the office, I eat lunch with the startup's finance team—it's actually nice to mix things up and avoid solo desk lunches for a change. At home, I still prep my lunches ahead and stick to plant-based meals, but I like the social aspect onsite."
+        },
+        {
+          "role": "assistant",
+          "content": "That shift sounds positive—social meals can make the workplace feel much friendlier. Has your conference travel or keynote prep routine changed? I know you tended to use travel time for slide review and rehearsals."
+        },
+        {
+          "role": "user",
+          "content": "Good catch. I actually dropped those routines for now. I'm not traveling for conferences or keynote workshops while doing the interim CFO role—my schedule is anchored here in Denver for the next several months."
+        },
+        {
+          "role": "assistant",
+          "content": "That will free up a lot of mental energy, at least for a bit. Are you finding the new workspace—in the startup's shared spaces—works for taking calls and meetings, or is it a challenge compared to your home office environment?"
+        },
+        {
+          "role": "user",
+          "content": "I've had to let go of my old boundary about only taking calls from my home office. Now, I accept calls and meetings wherever I'm working—home, shared office spaces, even the break area if needed. It's not as private, but it's necessary for the role."
+        },
+        {
+          "role": "assistant",
+          "content": "Flexibility really pays off with fast-moving teams, even if it means adjusting old habits. Anything else that's shifted—like how you schedule your concentration time, now that deep work is tied to office collaboration?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, my concentration and deep work periods are now shaped around the startup's in-person blocks. I focus on group strategy while onsite, then shift to independent analysis or consulting work back at home. I used to scatter work intervals based on daily needs, but now it's much more location-driven."
+        },
+        {
+          "role": "assistant",
+          "content": "That location-driven structure might actually help compartmentalize tasks and manage context switching. Are there routines that you're worried haven't adapted smoothly, or do you feel like the main changes are working so far?"
+        },
+        {
+          "role": "user",
+          "content": "So far, most changes feel workable. It took some adjustment, especially dropping the travel routines and relaxing my home office boundaries, but I'm keeping up. The commute-only podcast habit is actually refreshing, and the team lunches are a welcome addition."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear you're managing the transition! Let me know if you need help streamlining your week further or balancing client demands while you're onsite. It sounds like you're creating a sustainable rhythm with these new preferences."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her older brother in Seattle announced his intention to temporarily relocate to Denver for three months to help launch a new business venture, requesting her assistance with logistics and initial planning while living nearby.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_054",
+            "fact": "Sets aside dedicated weekday evenings for assisting her brother with his business launch logistics after client hours, prioritizing him over leisure activities during his stay",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Actively seeks local networking events and entrepreneurial meetups to attend with her brother, aiming to connect him with the Denver business community",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Schedules weekly video calls with her brother every Sunday — never lets more than a week go by without catching up"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Plans frequent in-person meetups and collaborative working sessions with her brother while he's living in Denver — replaces scheduled video calls with shared local activities and business planning.",
+              "domain": "social_relationships"
+            },
+            "reason": "Her brother is relocating to Denver for three months and will be living nearby, making weekly video calls unnecessary. She will now prioritize in-person interaction and joint logistical work sessions."
+          },
+          {
+            "from": {
+              "id": "pref_046",
+              "fact": "Coordinates all medical appointments, prescription refills, and in-home care logistics for her mother — keeps a shared digital calendar with her brother for this purpose"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Switches to in-person coordination of her mother’s care logistics with her brother during his stay in Denver — handles appointments and paperwork collaboratively face-to-face rather than relying exclusively on a shared digital calendar.",
+              "domain": "daily_routines"
+            },
+            "reason": "Her brother's temporary physical presence allows them to coordinate her mother's appointments and care together directly, rather than relying solely on digital tools."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my brother just let me know he'll be relocating to Denver for three months to launch a business here. He's asked for help with logistics, planning, and some introductions in town. It's exciting but definitely going to shake up my routines. I need help figuring out how to keep client work steady and still be present for him, especially since my schedule is already packed. Any advice on balancing those priorities?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big change — having your brother move nearby and starting something new together sounds rewarding, but can definitely stretch your bandwidth. When you say 'shake up your routines,' what part of your week do you expect might get disrupted the most? Would his business launch overlap a lot with your client hours, or do you think you can carve out dedicated time for him?"
+        },
+        {
+          "role": "user",
+          "content": "I'm planning to set aside weekday evenings to help him with his logistics after client work wraps up. Normally I'd use that time for leisure or catching up with friends, but for these three months, I want to prioritize his venture. I figured if we keep it structured and don't let it bleed into daytime, I can keep my practice running smoothly. But I'm a little worried I'll burn out, any ways to safeguard downtime?"
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, especially if your clients still get your undivided attention during the day. Setting clear boundaries between business hours and assisting your brother should help. Have you thought about scheduling fixed downtime blocks each week — maybe keep your Sunday afternoons for yourself, or batch leisure activities so you're not constantly on? Sometimes anchoring a weekly 'reset' session helps preserve energy."
+        },
+        {
+          "role": "user",
+          "content": "Sundays are actually my protected reading time — nonfiction, no work emails, just recharging. I'm not planning to give that up, even with his visit. The main adjustment is moving my evening social stuff out of the way for him, at least until his launch is underway. Hopefully my monthly brunch group can flex to brunch instead of evening hangs. And I do want to mix in local networking events we can attend together, since I’m trying to connect him with the business community here."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart — keeping Sundays for yourself is key, especially with more demands on your energy. Local networking events are a great dual-purpose — you can introduce him to the Denver scene and potentially meet new contacts for yourself. Would you prefer to target entrepreneur meetups, or are you thinking more industry-specific mixers? If you've got a list of upcoming events, I can help you strategize which might be worthwhile for both of you."
+        },
+        {
+          "role": "user",
+          "content": "Definitely entrepreneur-focused events, ideally with small business owners or startup founders. I know a few regular meetups but haven't looked into new ones lately — I'll need to make a list. If you have recommendations on how to find fresh events, that's helpful! Also, since he'll be living nearby, we plan to do frequent in-person working sessions instead of our usual weekly video calls. That should streamline logistics, but it'll mean more spontaneous schedule coordination. Any tips for managing shared time without letting it get too chaotic?"
+        },
+        {
+          "role": "assistant",
+          "content": "Switching from video calls to in-person sessions is a big shift — it's more collaborative but can risk accidental overlap or losing structure. Maybe block out recurring work sessions on your calendars so you both know when to expect them. You could also set guidelines on what gets handled during those sessions versus quick texts or emails, to avoid constant interruptions. For event searches, platforms like Meetup, Eventbrite, and local chambers of commerce are worth checking. And don't forget co-working spaces — some host monthly entrepreneur socials."
+        },
+        {
+          "role": "user",
+          "content": "Recurring blocks are a good idea. I'll suggest we keep a couple nights per week reserved, so we both know when the priority is business planning. As for rapid coordination, we're also switching how we handle our mother's care logistics. Usually we use a shared digital calendar for appointments and paperwork, but with him in Denver, we'll coordinate everything in person. It'll probably be more efficient, but it might mean reshuffling my Monday errand batch if we need to go together. Any suggestions for keeping that stress-free?"
+        },
+        {
+          "role": "assistant",
+          "content": "In-person coordination can simplify things, but as you noted, it may disrupt your existing errand batching. Maybe try setting a fixed window for joint errands — for example, first Monday afternoon of each month exclusively for your mother's appointments, so the rest of your week stays predictable. You could also prep paperwork ahead of time, and use a checklist during your sessions to minimize confusion. If you're juggling logistics together, having a clear agenda or set outcomes per visit can help keep things efficient."
+        },
+        {
+          "role": "user",
+          "content": "That’s a good call. I’ll bring back my agenda habit from client meetings and use it with him for joint errands and care visits. With both of us hands-on in Boulder, we won’t need the digital calendar as much for now. I’m optimistic about this, especially since we usually only coordinate via text or calls. Having dedicated evenings for his business launch, replacing video calls with in-person sessions, and collaborating on mom’s care face-to-face — they’re all big changes, but I think they’ll make things more effective. Appreciate your help mapping this out."
+        },
+        {
+          "role": "assistant",
+          "content": "You're taking a really intentional approach, which will definitely help keep things balanced. Remember to revisit these plans partway through the three months to see if they're still working for you — especially if client demand shifts or your brother’s business needs evolve. If you want, I can help set up check-in reminders or template agendas for your collaborative sessions. And whenever you need downtime or logistics support, just let me know!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received notice that a major new compliance law affecting financial reporting for small businesses in Colorado will take effect in 90 days, requiring her to overhaul her consulting frameworks and complete mandatory state certification to retain her current client base.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Blocks out daily two-hour morning study sessions for compliance exam prep until the mandatory certification is complete — pauses other creative work during this period.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_058",
+            "fact": "Immediately reads updates from Colorado Department of Regulatory Agencies and state financial boards — subscribes to all official compliance law newsletters for real-time changes.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_059",
+            "fact": "Temporarily opts for quick meal solutions (like meal kits or prepared foods) during the intensive certification cram period to free up time for study and client frameworks overhaul.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_055",
+              "fact": "Actively seeks local networking events and entrepreneurial meetups to attend with her brother, aiming to connect him with the Denver business community"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Now prioritizes attending compliance workshops and state-sponsored trainings required for her certification, reducing attendance at local entrepreneurial networking events unless directly relevant to the new law.",
+              "domain": "work_habits"
+            },
+            "reason": "The sudden need to overhaul her consulting business for the new Colorado compliance law means her available time and focus shift to required training and legal education, leaving little time for general networking not related to compliance."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I need your help problem-solving. I just got notified that Colorado is rolling out a major new compliance law for small businesses, and I have to get state-certified within 90 days to keep my clients. It’s a pretty big overhaul for my consulting frameworks — and I’m scrambling to figure out how to shift my schedule and get through this adaption period. Can you help me work out how to juggle prep, client work, and everything else?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds intense. Getting certified on a tight timeline while updating your frameworks sounds like a lot to balance. Let’s break it down: do you know yet what the certification process involves—like study hours, workshops, or deadlines? And is it clear which parts of your client work need immediate changes versus those you can update gradually?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve looked at the requirements and it’s pretty comprehensive — mandatory state-sponsored trainings, exam prep, plus ongoing updates from the financial boards. I’ll need to block off consistent time just to study and read up on the latest, separate from my usual client prep hours. I already have a routine for deep work in the mornings, but I’m thinking I’ll have to dedicate that slot strictly to compliance exam prep until this is done, and put creative work on hold."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense to leverage your deep work block for focused study, especially since mornings are when you’re sharpest. For ongoing updates, do you have a system for tracking changes to the law and relevant board announcements, or are you manually checking sites and emails? Streamlining that info might help save time as new guidance rolls in."
+        },
+        {
+          "role": "user",
+          "content": "Good point. I actually went ahead and subscribed to every official compliance newsletter from the Colorado Department of Regulatory Agencies and the financial boards. Now I get real-time updates straight to my inbox, which helps — though my email is a mess right now. I used to respond only twice daily, but during this transition I’m making an exception for compliance alerts; they’re too important for async."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart call to prioritize those alerts—even if it means a bit more email disruption. With most of your mornings dedicated to study and your inbox buzzing, how are you approaching client communications? Are you shifting meetings or using more asynchronous updates, given the new demands on your time?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’m moving everything I can to async updates right now, except for truly urgent client requests. Still blocking off calls in the afternoons, but I’m letting clients know things might be slower. I have six active clients and I’m not taking new ones during this period, but the current ones will need updates as I rework their reporting frameworks for the new law. It’s forcing me to be honest about bandwidth. Also, I’ve had to drop some of my outside networking — normally I’d attend local entrepreneurial meetups with my brother, but right now compliance workshops and state trainings have to take priority. I'll only go to networking events if they're directly related to this new law."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a necessary shift, though I imagine it’ll be a change not attending those meetups with your brother. Maybe once the certification is done, you can get back to those connections. Since your calendar’s tighter, are you making any changes to your routines—like how you handle meals, breaks, or day-to-day errands—to free up time?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. Normally I prep plant-based lunches for the week and batch errands Mondays, but I’ve temporarily switched to meal kits and prepared foods so I don’t have to cook or plan as much during this certification cram period. It’s not my style, but it buys me study hours. Errands are still Monday afternoons, though—can’t do piecemeal or I lose focus. I’m hoping I’ll get back to my usual meal prep once this phase passes."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a pragmatic trade-off—meal kits can really help free up time when things get hectic. And keeping your errands in a batch still preserves your core routine. Out of curiosity, how’s this change affected your wellness routines—like yoga, running, and therapy sessions? Are you able to maintain those with the added workload?"
+        },
+        {
+          "role": "user",
+          "content": "So far, I haven’t skipped my midday yoga stretch, and I'm still running outdoors three times a week—those are non-negotiable for stress. Therapy sessions are still monthly, scheduled in advance. The trickiest part is sleep: I’m averaging six hours, so not great, but I refuse to set an alarm on weekends to offset it. Really hoping all these adjustments are temporary."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great you’re holding onto your wellness anchors despite the added pressure. Protecting your non-work time, even if sleep is tight, goes a long way. At this point, do you feel like your new study blocks, prioritized compliance workshops, and meal kit routine are working—or are there pain points you still need to solve before things stabilize?"
+        },
+        {
+          "role": "user",
+          "content": "The new structures are helping, but my biggest pain point is staying organized. I’m getting so much info—from newsletters, workshops, and clients—that I need a better tracking system. My usual journals and agenda prepping aren’t cutting it. Could you help me figure out a workflow or tools to manage all the compliance materials, client framework drafts, and ongoing law updates?"
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely. Since you prefer analog journaling and tailored agendas, maybe combining a physical planner for deadlines/workshops with a digital doc for reference materials and update tracking (so you can search quickly) would help. For compliance updates, a spreadsheet or dashboard tracking key requirements and timelines could be handy. Would something like that fit, or do you want everything to stay offline?"
+        },
+        {
+          "role": "user",
+          "content": "For reference materials and law updates, digital is fine—I need the searchability. But I’ve never journaled digitally, so I’ll keep that morning routine in my kitchen notebook. I like the dashboard idea for tracking requirements, and I’ll dedicate a digital doc for ongoing workshop notes and framework changes. I think this will help with clarity."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid plan. By centralizing compliance materials and notes digitally, you can reduce information overload and have everything at hand for client updates. Keeping your analog journaling untouched also preserves your morning anchor. Is there anything else you need help adapting, or does this cover your main pain points for the transition?"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Preps a tailored agenda for every client meeting, avoids generic templates",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Limits email responses to twice daily — uses asynchronous updates for all non-urgent matters",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Does a 15-minute yoga stretch routine at noon every workday — never skips due to meetings",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Books therapy sessions monthly, schedules them well in advance rather than waiting for stressful periods",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Never sets an alarm for weekends — prioritizes sleeping in to offset sleep debt accrued during the week",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Hosts monthly brunch with friends at a new restaurant — never repeats the same spot twice in a row",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Prefers texting over phone calls for casual conversations, but always calls family to discuss important matters",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Explores a new hiking trail in the Denver area every other weekend — never repeats the same trail twice in a season",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Bakes a new recipe with her daughter every week they are together — always tries something neither has baked before",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Attends live music performances at least once a month, never streams concerts online",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Spends Sunday afternoons reading nonfiction, never checks work emails during this time",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Collects local art from her travels, never buys generic souvenirs",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts every workday with a 10-minute journaling session in her kitchen — never journals digitally",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Batches all errands for Monday afternoons, avoids running errands piecemeal throughout the week",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Reviews personal finances every Friday evening — never waits until end of month for budgeting checks",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Keeps her phone on silent mode until noon, never enables notifications in the morning",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Keeps work devices on until after picking up her daughter from robotics club on club nights — checks messages and schedules post-6pm if needed on those evenings",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Spends robotics club evenings in the school lobby reading or handling light client emails while waiting for her daughter’s session to end",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Coordinates with her daughter's co-parent to share transportation duties for robotics club, preferring to alternate pickups when possible",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Replaces running with prescribed low-impact physical therapy exercises indoors — never runs or performs high-impact cardio",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Completes physical therapy routines daily at home, strictly follows her therapist’s instructions and logs progress in a notebook",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Avoids participating in group hikes with friends, but joins them for post-hike brunch to stay socially connected",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Now proactively seeks new clients to maintain at least six active clients at all times — immediately pursues new leads when roster drops below six",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Reviews outstanding invoices and client payment histories every Monday morning — focuses on flagging potential risks and prioritizing collections",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Avoids extending credit terms to new clients out of heightened concern for timely payments",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Takes advantage of the wellness center trial by attending weekly meditation classes — previously had no structured meditation routine",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Integrates a weekly therapeutic massage into her schedule during the trial month, prioritizing these appointments over less urgent work tasks",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Begins tracking her nutrition and meal planning using advice from the center’s holistic nutrition counselor, updating her plant-based diet routines",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Adopts a strictly plant-based diet both at home and while traveling for work — avoids non-vegan dishes regardless of location",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Monitors cardiovascular health with a digital blood pressure and heart rate monitor every morning before work — tracks results in an app for review with her doctor",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Regularly seeks out low-cholesterol, heart-healthy meal options when dining out — prioritizes restaurants with explicit plant-based and low-fat choices",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Eats out for lunch and adapts to available options during travel or conference preparation periods — only meal-preps lunches on regular weeks at home.",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Drafts new training materials after 7pm, treating late-evening as her dedicated creative work window during intense project periods",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Visits her mother in Boulder every weekend and additionally as needed for appointments — schedules around her mother’s care rather than just monthly tradition",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "No longer commits to exploring a new hiking trail every other weekend, redirecting that time toward supporting her mother’s needs",
+        "domain": "leisure_hobbies",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Splits workweek between tech company’s Denver office (on-site) and her home office — accepts calls and meetings wherever she’s working, including shared spaces at the office",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Centers deep work around structured, in-person collaboration blocks at the startup’s office during on-site days, reserving independent work for home office days — adapts concentration time based on where she’s working rather than random intervals.",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Commutes by light rail to the tech company’s office, uses this time exclusively for catching up on industry news or financial podcasts — never checks email or answers work calls during commute.",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Eats lunch with the startup’s finance team on in-office days — prefers social meals over solo desk lunches while serving as interim CFO.",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Plans frequent in-person meetups and collaborative working sessions with her brother while he's living in Denver — replaces scheduled video calls with shared local activities and business planning.",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Switches to in-person coordination of her mother’s care logistics with her brother during his stay in Denver — handles appointments and paperwork collaboratively face-to-face rather than relying exclusively on a shared digital calendar.",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Sets aside dedicated weekday evenings for assisting her brother with his business launch logistics after client hours, prioritizing him over leisure activities during his stay",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Now prioritizes attending compliance workshops and state-sponsored trainings required for her certification, reducing attendance at local entrepreneurial networking events unless directly relevant to the new law.",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Blocks out daily two-hour morning study sessions for compliance exam prep until the mandatory certification is complete — pauses other creative work during this period.",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Immediately reads updates from Colorado Department of Regulatory Agencies and state financial boards — subscribes to all official compliance law newsletters for real-time changes.",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_059",
+        "fact": "Temporarily opts for quick meal solutions (like meal kits or prepared foods) during the intensive certification cram period to free up time for study and client frameworks overhaul.",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Blocks off two hours every morning for deep work — never schedules calls or meetings before noon",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "Preparing for and delivering a national keynote, combined with travel and heightened client needs during a busy period, disrupts her strict morning routine, forcing her to work in short periods and accept meetings or calls at nonstandard times."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Works from her home office weekdays, but refuses to take work calls in her living room",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_048",
+        "reason": "Her interim CFO position now requires at least half of her week on-site for in-person collaboration, making her prior boundary of exclusively working and taking calls from her home office obsolete. She must be flexible with call locations and workspace."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Never takes on more than six active clients simultaneously, even when approached by new prospects",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "Due to the sudden loss and unpaid invoices from her long-term restaurant chain client, she feels the financial instability acutely and shifts from passively rejecting new clients to actively seeking and onboarding replacements to keep her roster at six."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Eats a plant-based diet at home — only tries non-vegan dishes when traveling for work",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "The doctor's advice requires a consistent approach to dietary cholesterol management. Continuing to 'indulge' in non-vegan dishes while traveling would undermine her cholesterol control, so she now maintains plant-based eating everywhere."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Always runs outdoors, even in winter — never uses a treadmill or indoor track",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "Her doctor ordered her to stop all high-impact exercise, specifically running, due to a herniated disc. She now follows an indoor low-impact regimen as part of her recovery."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Shuts down all work devices by 6pm when her daughter stays over — never checks messages after that hour",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Her daughter's advanced robotics club now meets on evenings she has custody, meaning her evening routine must adapt. She can no longer adhere to a strict 6pm work shutdown and may need to handle messages or scheduling tasks while waiting during pickup or after drop-off."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Schedules weekly video calls with her brother every Sunday — never lets more than a week go by without catching up",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_052",
+        "reason": "Her brother is relocating to Denver for three months and will be living nearby, making weekly video calls unnecessary. She will now prioritize in-person interaction and joint logistical work sessions."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Visits her mother in Boulder on the first Saturday of every month — never cancels for work",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "Her mother’s minor stroke and resulting mobility limitations require more frequent support visits, transitioning her routine from predictable monthly trips to regular weekly and on-demand visits to assist with daily activities and healthcare."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Preps lunches for the week every Sunday night, never eats out for lunch on workdays",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "Traveling out of state for a week and unpredictable work demands for the keynote make her weekly meal-prep routine impossible; she needs to eat lunch on the go or rely on what's accessible, at least temporarily."
+      },
+      {
+        "id": "pref_041",
+        "fact": "Replaces her daily two-hour deep work block with flexible, scattered work intervals throughout the day due to conference keynote prep and travel commitments — now takes early calls and meetings as needed during this period.",
+        "domain": "work_habits",
+        "created_at_session": 5,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "As interim CFO, her workdays now hinge on the tech company’s collaborative session schedules and team priorities, shifting her focus from flexible, scattered intervals to office-based group work and home office solo tasks."
+      },
+      {
+        "id": "pref_044",
+        "fact": "Uses in-flight and layover time exclusively for keynote rehearsal and reviewing training slides, avoiding casual entertainment or unrelated tasks while traveling for conferences",
+        "domain": "work_habits",
+        "created_at_session": 5,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "She has transitioned to a role with regular on-site commitment in Denver and is not traveling for conferences or workshops in the upcoming months. The travel-specific work routine is not currently relevant."
+      },
+      {
+        "id": "pref_046",
+        "fact": "Coordinates all medical appointments, prescription refills, and in-home care logistics for her mother — keeps a shared digital calendar with her brother for this purpose",
+        "domain": "daily_routines",
+        "created_at_session": 6,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_053",
+        "reason": "Her brother's temporary physical presence allows them to coordinate her mother's appointments and care together directly, rather than relying solely on digital tools."
+      },
+      {
+        "id": "pref_055",
+        "fact": "Actively seeks local networking events and entrepreneurial meetups to attend with her brother, aiming to connect him with the Denver business community",
+        "domain": "work_habits",
+        "created_at_session": 8,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "The sudden need to overhaul her consulting business for the new Colorado compliance law means her available time and focus shift to required training and legal education, leaving little time for general networking not related to compliance."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:35:00.732583"
+}

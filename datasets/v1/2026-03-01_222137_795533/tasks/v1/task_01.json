@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_b53c60ed",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_026",
+        "fact": "Does not engage in any carving work at all due to therapist's orders; focuses only on finishing and packaging existing items during allowed work sessions",
+        "supersedes": {
+          "id": "pref_003",
+          "fact": "Completes all carving work in morning sessions — leaves finishing and packaging for evenings"
+        }
+      },
+      {
+        "id": "pref_030",
+        "fact": "No longer reads late at night; chooses short, calming activities (e.g., brief mindfulness meditation or gentle stretching) before the strictly scheduled bedtime to improve sleep quality per CPAP regimen",
+        "supersedes": {
+          "id": "pref_019",
+          "fact": "Reads paper books on woodworking techniques late at night — never uses digital guides or ebooks"
+        }
+      },
+      {
+        "id": "pref_032",
+        "fact": "Performs a brief wind-down routine, including setting up the CPAP device, dimming lights, and 5 minutes of guided breathing before bed"
+      },
+      {
+        "id": "pref_005",
+        "fact": "Runs social media ads only for new product launches — never for ongoing items"
+      },
+      {
+        "id": "pref_031",
+        "fact": "Follows a strict, physician-mandated bedtime each night to support CPAP use — avoids all stimulating activities after 9pm"
+      },
+      {
+        "id": "pref_020",
+        "fact": "Plans quarterly family day trips to nearby towns — never goes on overnight vacations"
+      }
+    ]
+  },
+  "persona": "A stay-at-home parent running a handmade crafts shop on Etsy"
+}

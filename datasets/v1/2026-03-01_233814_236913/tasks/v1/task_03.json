@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_eae14d5c",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_052",
+        "fact": "Discontinues weekend hikes and replaces them with light indoor exercise or rest per doctor’s restrictions; will reconsider outdoor treks only with medical approval",
+        "supersedes": {
+          "id": "pref_009",
+          "fact": "Goes on weekend hikes each Saturday unless weather is poor — never substitutes with indoor activities"
+        }
+      },
+      {
+        "id": "pref_048",
+        "fact": "Uses the co-op's integrated digital portal for all supplier issues and communications — calls are reserved only for non-platform emergencies; no longer contacts suppliers directly by phone for routine matters",
+        "supersedes": {
+          "id": "pref_004",
+          "fact": "Responds to supplier issues by calling directly; never relies solely on email communication for urgent matters"
+        }
+      },
+      {
+        "id": "pref_003",
+        "fact": "Learns new software by watching tutorial videos in early mornings — never attends external training sessions"
+      },
+      {
+        "id": "pref_037",
+        "fact": "Prepares simple hot dinners on tutoring evenings, ensuring the meal is ready for his wife and sons when they return home late"
+      },
+      {
+        "id": "pref_050",
+        "fact": "Experiments with new menu items monthly using featured fresh ingredients provided at co-op discount — avoids old supplier surplus deals"
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks emails and messages only before opening; never during customer rush periods"
+      }
+    ]
+  },
+  "persona": "A small business owner managing payroll for five employees"
+}

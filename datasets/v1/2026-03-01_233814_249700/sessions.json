@@ -1,0 +1,1341 @@
+{
+  "persona": "An exchange student living abroad for a semester",
+  "persona_id": "persona_20260301_234955",
+  "expanded_persona": {
+    "base_persona": "An exchange student living abroad for a semester",
+    "age": 21,
+    "gender": "female",
+    "location": "Lyon, France",
+    "work_education": [
+      "Junior at University of Minnesota, majoring in International Relations",
+      "Currently enrolled at Université Lumière Lyon 2 for a semester as part of an exchange program",
+      "Taking classes in French, struggling to keep pace with advanced conversational language",
+      "Participates in weekly student debate club to immerse herself in local culture",
+      "Works part-time (6 hrs/week) at a university cafe to earn extra money and practice speaking French"
+    ],
+    "health_wellness": [
+      "Recently switched to a Mediterranean-style diet due to limited access to familiar foods",
+      "Occasionally feels homesick, resulting in mild anxiety that she manages through journaling",
+      "Runs along the Rhône river three mornings a week to stay active",
+      "Received vaccinations prior to travel; experienced mild fatigue and jet lag first month",
+      "Uses a sleep mask and earplugs due to noisy dorm environment"
+    ],
+    "family_relationships": [
+      "Lives in university dormitory with four diverse international students",
+      "Parents and younger sister in Minneapolis; communicates via weekly video calls",
+      "Maintains a long-distance relationship with boyfriend in the US, coordinated around time zones",
+      "Has become close to an Italian roommate, often cooking and studying together",
+      "Volunteers as a conversation partner for a local French family’s children, helping them practice English"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Prefers to prepare debate arguments in advance — never speaks extemporaneously during club meetings",
+        "Only takes handwritten notes in class to reinforce French vocabulary — avoids typing or using laptops",
+        "Uses café work shifts as practice for ordering and conversing in French — refuses to slip into English even with English-speaking customers",
+        "Attends extra tutoring sessions with French language assistants — never relies solely on classroom instruction",
+        "Reviews lecture recordings each evening to catch missed conversational nuances — never skips nightly study review"
+      ],
+      "health_body": [
+        "Sticks strictly to the Mediterranean diet while in France — avoids American fast food or snacks",
+        "Runs along the Rhône river regardless of weather — never uses gym treadmills",
+        "Journals about homesickness and anxiety every Sunday morning — never discusses these feelings in group chats",
+        "Uses a sleep mask and earplugs every night in the dorm — never attempts to sleep without them",
+        "Schedules weekly meal planning with her Italian roommate, ensuring balanced Mediterranean dishes — never meal preps alone"
+      ],
+      "social_relationships": [
+        "Screens all phone calls from family and boyfriend; only answers during scheduled video sessions — never takes spontaneous calls",
+        "Hosts Sunday evening pasta dinners with her Italian roommate and invites other dorm residents — never eats alone on weekends",
+        "Coordinates daily texts and voice memos with her boyfriend to keep up despite the time zone difference — never relies just on social media updates",
+        "Always arranges meetups with the French family’s children at public parks for English practice — never invites them to her dorm",
+        "Participates in multicultural dorm events and introduces attendees to American customs — never skips dorm activities for solitary leisure"
+      ],
+      "leisure_hobbies": [
+        "Explores a new Lyon neighborhood every Saturday by walking tours — never repeats the same route twice",
+        "Keeps a travel photo journal but never posts pictures publicly until returning home",
+        "Attends local art exhibitions twice a month with friends — never goes alone or to large commercial galleries",
+        "Joins spontaneous group outings for concerts or street festivals if invited — never plans music events independently",
+        "Reads French-language novels borrowed from the university library — never reads in English during her stay"
+      ],
+      "daily_routines": [
+        "Starts each morning with French news podcasts during breakfast — never listens to English media before noon",
+        "Shops for groceries at neighborhood markets every Tuesday and Friday — never at big supermarkets",
+        "Blocks Sunday evenings for video calls home and weekly reflection journaling — never schedules late-night calls on weekdays",
+        "Limits social media browsing to 15 minutes nightly — never scrolls during class or work hours",
+        "Writes a weekly language progress checklist every Monday — never skips tracking her French improvement"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her boyfriend in the US surprised her with news that he booked a flight to visit her in Lyon for two weeks during her semester abroad.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Prioritizes planning special sightseeing and culinary experiences to share with her boyfriend — actively seeks recommendations and events unique to Lyon to make the visit memorable",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Temporarily pauses daily texts and voice memos with her boyfriend while he’s visiting, opting for in-person connection instead",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Screens all phone calls from family and boyfriend; only answers during scheduled video sessions — never takes spontaneous calls"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Embraces spontaneous calls and video chats from her boyfriend while he is visiting Lyon — schedules only with family, but answers boyfriend's calls anytime",
+              "domain": "social_relationships"
+            },
+            "reason": "With her boyfriend physically present in Lyon, spontaneity and real-time communication are now possible and desired. She no longer needs to strictly schedule interactions with him, unlike when managing time zones and distance."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Okay, I need help! My boyfriend just told me he booked flights to Lyon — he's visiting for two weeks next month, which I did NOT expect. I'm super excited but also kinda stressed, because my usual routines here are pretty set. I want to make his visit special but I have no idea where to start. Can you help me plan some unique Lyon experiences for us — not just tourist stuff, but things locals do?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, what a wonderful surprise! I can see why you'd feel excited and maybe a bit overwhelmed figuring out how to balance your usual schedule with sharing your favorite parts of Lyon. To get started: do you both prefer cultural events, foodie adventures, outdoor activities, or something else? Are there areas of Lyon or types of experiences you haven’t explored yet but want to?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely a mix — he's big into food, so I want to plan meals that are distinctly Lyonnais or Mediterranean (since that's what I've been eating lately). Also, I usually explore a new neighborhood every Saturday, so I was thinking about doing those walks together. But I've never really planned sightseeing for someone else, and I don't want to default to just the big tourist stuff. Any ideas for hidden gems, local festivals, or maybe culinary workshops?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great blend! For food, Lyon's traditional bouchons are unique but can be heavy — you might look for places that serve Mediterranean-inspired fare too. Workshops: there are local cooking classes specializing in regional dishes, some led by chefs in their homes. Neighborhoods like Croix-Rousse or Les Pentes have vibrant markets and street art. As for festivals, are his visit dates firm? I can check for events like street music or art pop-ups that line up. Also, would you both want something active like running along the Rhône, or is he more into leisurely strolls?"
+        },
+        {
+          "role": "user",
+          "content": "His dates are set—he’ll be here March 20th to April 3rd. We both like being active! I run the Rhône three times a week no matter the weather, and I’d love to show him that route. We could even switch it up one morning and run up Croix-Rousse for a view. Cooking classes sound amazing, especially if there's a Mediterranean angle. I only shop at neighborhood food markets (never supermarkets), so maybe we could do that together and cook with my Italian roommate? And yes, festivals or smaller art events would be great—nothing super commercial or crowded."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! March and April have several seasonal food and art markets — Place Carnot often hosts Mediterranean produce fairs. Cooking with your Italian roommate could create a memorable cross-cultural meal; you might even plan a group dinner, if your dorm is up for it. For running, introducing him to your usual Rhône route and the Croix-Rousse climb would show off both nature and city views. As for art, Musée des Beaux-Arts sometimes has small public workshops or local artist talks. Would it help if I pulled a calendar of neighborhood market days and looked up any smaller festivals overlapping his visit?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, a calendar would be super helpful! I already block out Tuesday and Friday mornings for grocery shopping at the markets, so those could be fun shared outings. And I always attend local art exhibitions with friends every other week, so maybe we can sync him up with one that falls during his visit. I'm all about planning ahead for these things—honestly, it's how I stay sane in debate club too. But now I want to prioritize experiences for us together, not just my strict solo routines."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — shifting some routines from solo to shared can make his visit feel truly special. Tight planning is a strength in your academic life, and you can translate it to curating memorable dates here. Do you want sample itineraries for day-long neighborhood explorations, or prefer a flexible list of must-see spots and events to choose from? Also, any dietary restrictions for him? If you want to avoid heavy Lyonnais cuisine, I can help find Mediterranean-friendly bistros or market stalls."
+        },
+        {
+          "role": "user",
+          "content": "A flexible list is better—I don’t want every minute planned, but I do want a few anchor experiences each day. He’s got no dietary restrictions, but I’ll stick to Mediterranean until he gets used to French food again! And just so you know, I’m pausing our daily texts and voice memos while he’s here; we’ll just hang out in person. For once I won’t be glued to my phone all day, which is actually nice."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like the perfect approach — anchor experiences, time for spontaneity, and fully present in-person connection. I’ll put together a list of neighborhood markets for your shopping days, unique local events, and a few Mediterranean restaurant recommendations. Since you’re exploring new neighborhoods together, I’ll include walkable routes and small cafes or art stops along the way. Are there any off-limits times due to your classes or work shifts, or are you able to schedule freely?"
+        },
+        {
+          "role": "user",
+          "content": "I still have class and debate club, and part-time shifts at the university café, but I can rearrange my schedule a bit while he’s here. Actually, for the first time, I’m not screening his calls or waiting for scheduled video chats — since he’ll be in Lyon, I want to be spontaneous about communicating. Only family video calls stay Sunday evenings. I guess my routines are evolving for these two weeks!"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, embracing spontaneity is part of sharing your city with him. So, I’ll tailor the suggestions around your flexible blocks, and note days you can shift commitments for shared outings or meals. If you need help communicating schedule changes to your roommates or arranging group events, I can help draft messages or invitations. Would you like ideas for small celebrations, like welcome dinners or cooking nights with friends?"
+        },
+        {
+          "role": "user",
+          "content": "That would be awesome! I usually host Sunday pasta dinners with my Italian roommate and other dorm friends, never solo. So now I want to plan something extra special while he’s here—maybe a dinner that combines French and Mediterranean dishes, with everyone invited. And I’ll need your help picking market buys and recipes. Thanks for helping me make this feel like more than just a tourist trip."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds delightful! I’ll suggest a French-Mediterranean fusion menu for your Sunday dinner and include market shopping lists for fresh ingredients. I’ll also highlight cozy venues for art exhibitions you can attend with your boyfriend and friends, and map out walking routes through neighborhoods you haven’t explored yet. If you want to add picnic experiences or morning market strolls for just the two of you, I can suggest scenic spots near the Rhône or Parc de la Tête d’Or. Ready for an itinerary and detailed recommendations?"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "One of her roommates, a student from Morocco, announced she is moving out unexpectedly, and a local French student will be taking her place in the dorm room for the rest of the semester.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Actively seeks opportunities to practice informal spoken French with her new French roommate during daily dorm routines",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Schedules weekly meal planning with her Italian roommate, ensuring balanced Mediterranean dishes — never meal preps alone"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Includes her new French roommate in weekly meal planning — now prepares meals as a group rather than just with her Italian roommate",
+              "domain": "health_body"
+            },
+            "reason": "With the departure of her Italian roommate's close friend from Morocco and the arrival of a local French student, her meal prep dynamic shifts to include the new roommate. This opens the group beyond the duo and favors integration."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, one of my roommates just told us she's moving out—she got accepted to a different program outside Lyon, and we just found out today. The university assigned a local French student to take her spot for the rest of the semester, and she's moving in this weekend. I'm a bit nervous, honestly! I've always meal planned with my Italian roommate, but suddenly it's going to be three of us and I barely know her. Do you have any ideas on how to make group meal prep feel comfortable for everyone, especially someone from France?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big transition! Including a local French student could actually be a great opportunity to learn more about Lyonnaise food and culture. For meal prep, maybe start with a simple group brainstorming session—ask both roommates about favorite dishes or dietary preferences, and see if you can make a meal rotation that balances everyone’s tastes and cultural backgrounds. Would you feel comfortable proposing a Mediterranean-style dish first, to set the tone?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I think that's a good idea. I want to stick to the Mediterranean diet since it's helped me adjust here and my Italian roommate is into it too. I guess now we can make meal planning a group thing, instead of just the two of us like before. I’m hoping the new roommate will want to join in and maybe offer some French recipes to try. Do you have any tips for including her without making her feel outnumbered by us non-locals?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! To make her feel welcome, you might start with a 'French night'—ask your new roommate if she'd like to teach you one of her favorite home recipes or traditions, then the next night you could share a Mediterranean meal together. It creates balance, and shows you’re genuinely interested in her culture. Also, you could rotate who decides the meal each week so everyone has a chance to share their background. Does that sound doable with your schedules?"
+        },
+        {
+          "role": "user",
+          "content": "That would work! We usually plan meals on Sunday afternoons, and I think she’s available based on her class schedule. I used to only prep meals with my Italian roommate, but now I'll make sure to include the new roommate in the planning. Honestly, having a local French student might help us discover more authentic ingredients at the market, too. I’ll have to adjust our routine a bit—it's good timing since my Italian roommate’s friend from Morocco is leaving and the group dynamic was going to feel smaller anyway."
+        },
+        {
+          "role": "assistant",
+          "content": "Great approach! Inviting your new roommate to join Sunday meal planning sessions should help everyone integrate. And yes, she’ll likely know local markets and regional specialties, which could broaden your ingredient list. If you want to keep the Mediterranean focus but add French flair, you might ask her about recipes that use seasonal produce or local cheeses. Do you have any plans for the first meal together or want help picking one?"
+        },
+        {
+          "role": "user",
+          "content": "Maybe something simple, like ratatouille or a Niçoise salad—it keeps our Mediterranean theme but has some French roots. I’m a little worried about the conversational aspect, though. My French is decent for class and debate prep, but daily informal talk still trips me up. Now that she’ll be here, I should make more effort to practice spoken French with her, especially during routine things like cooking and cleaning. Do you have strategies for getting more comfortable with casual French conversation?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart idea—living with a native speaker is perfect for improving everyday French! You might try setting up one night a week where you speak only French during dinner and meal prep, and explicitly ask her to correct your mistakes or teach slang and informal phrases. Also, you could start a running list of new words or expressions and review them together every few days. Would you feel comfortable asking her for feedback directly, or is that too intimidating?"
+        },
+        {
+          "role": "user",
+          "content": "I think I can ask her for feedback if I frame it as wanting to learn—most locals here appreciate the effort! Before, I was mostly practicing at the café and in tutoring sessions, but now I want to actively use informal French with her during regular dorm routines. It’ll probably help me pick up idioms and conversational shortcuts that aren’t taught in class. Should I set up a casual routine, like chatting while cooking or maybe after dinner, or just let it happen naturally?"
+        },
+        {
+          "role": "assistant",
+          "content": "Either approach works! Setting up dedicated moments—like chatting during cooking or after dinner—can create pressure-free opportunities to practice, but it’s also fine to let things unfold organically. You might mention at your first meal that you’d love her help with conversational French and see where it leads. If you feel awkward at first, simple topics (food, weekend plans, favorite Lyon spots) are a good place to start. Will you keep journaling about your progress, as usual, or do you want to try a different technique to track your improvement?"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Sprained her ankle while running along the Rhône river; doctor instructed her to avoid running and strenuous activity for at least a month.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_032",
+            "fact": "Uses guided meditation apps every morning to manage anxiety and replace her usual outdoor exercise routine",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_033",
+            "fact": "Requests rides from dorm mates to attend Saturday neighborhood explorations, since she cannot walk long distances temporarily",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Runs along the Rhône river regardless of weather — never uses gym treadmills"
+            },
+            "to": {
+              "id": "pref_031",
+              "fact": "Avoids running or strenuous activity entirely due to doctor’s orders — instead opts for gentle stretching at home during recovery",
+              "domain": "health_body"
+            },
+            "reason": "After spraining her ankle, she must follow medical advice to completely avoid running or any strenuous exercise. Her active habit is replaced by low-impact stretching for at least the month."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So... I sprained my ankle on my run along the Rhône this morning — doctor says absolutely no running or strenuous activity for at least four weeks. I've only been here a month, and running was one of my best coping habits for stress and homesickness. Any advice on staying sane physically and mentally while I'm stuck off my feet?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ouch, that sounds tough — especially when running was your anchor. Since you have to avoid strenuous activity, have you thought about gentle stretching, yoga, or other low-impact ways to keep moving? Or do you prefer a structured routine for your workouts?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I've switched to doing gentle stretching at home instead of my morning runs. I’m following the doctor’s orders to avoid anything intense and just focus on recovery for now. Not ideal, but better than nothing. I guess I could try yoga apps or something, but honestly I’m still feeling anxious without the outdoor boost. What would you recommend for managing that?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move — stretching will help maintain some mobility. For anxiety, some people find guided meditation apps helpful, especially when they can't get outdoors. Would you be interested in trying a daily meditation routine? Or maybe journaling more frequently to process those feelings?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I started trying guided meditation apps each morning since I stopped running. It's not quite the same as physical activity, but it helps me manage my anxiety and gives my day some structure. I still journal every Sunday, but for now meditation is my substitute for that outdoor headspace."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great — guided meditation can be surprisingly effective, and daily structure really matters during recovery. If you’re missing the scenery from your runs, would listening to French news podcasts during your stretching help? Or maybe playing ambient Rhône river sounds online?"
+        },
+        {
+          "role": "user",
+          "content": "I already listen to French news podcasts at breakfast, so maybe adding river sounds would be nice during stretches. My bigger concern is Saturday neighborhood explorations. I used to wander a new area each week, but I can't walk far right now. Any ideas for keeping up that habit when I'm limited?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tricky one — maybe you could explore by car or public transit instead? Or recruit friends for shorter walking tours, if you’re comfortable keeping it gentle. Would your dorm mates be willing to help out with rides for your Saturday explorations?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I've started asking dorm mates for rides on Saturdays so I can still discover a new neighborhood, even if I can't trek around like usual. They're pretty helpful and I just pick spots that have cafés or markets nearby where I can sit and people-watch. It's not as active, but at least I'm not stuck inside all day."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great adaptation! People-watching and soaking in local culture can be just as rewarding. Is there anything else you’re struggling to adjust with the new routine — like your café shifts, debate club, or volunteering?"
+        },
+        {
+          "role": "user",
+          "content": "The café work is fine since I can do everything seated, and debate club is just more challenging because my French is still catching up. But honestly, the hardest part is modifying my Saturday explorations and not getting that sense of independence on foot. The rides help, though. I think the main shift is just accepting that for now, stretching and meditation are my new routines in place of running, and asking others for help with exploring. Thanks for helping me think it through."
+        },
+        {
+          "role": "assistant",
+          "content": "Of course — it takes resilience to adapt so quickly! Leaning on stretching, meditation, and community is smart during recovery. If you ever need to brainstorm low-impact activities for exploring Lyon or coping with homesickness, I’m here to help. Want tips for documenting your neighborhood discoveries or ways to enhance your healing routine?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, suggestions for documenting my explorations without walking much would be great! I usually take photos for my travel journal, but I can't cover as much ground right now. Maybe more café sketches or interviews with locals? I’m open to ideas."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her debate club advisor nominated her as the sole international student to represent Université Lumière Lyon 2 at a regional inter-university debate tournament, requiring her to prepare arguments and participate fully in French public speaking for the first time.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Practices French public speaking skills daily by recording and reviewing her own argument presentations — uses voice recordings as her main feedback tool",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Attends specialized group workshops on French rhetoric and debate strategy twice a week, prioritizing them over general language tutoring until the tournament",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Prefers to prepare debate arguments in advance — never speaks extemporaneously during club meetings"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Actively practices and delivers extemporaneous arguments in French for tournament preparation — embraces on-the-spot public speaking in varied formats",
+              "domain": "work_habits"
+            },
+            "reason": "Being selected as the university's representative for a regional debate tournament in French means she is required to engage in impromptu speaking and defense of arguments, a core aspect of competitive debates that can't rely solely on prepared text."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news—I was nominated as the only international student to represent Université Lumière Lyon 2 at a regional debate tournament. I’ll have to argue in French, spontaneously, in front of a crowd for the first time. Honestly, I’m nervous about my speaking skills and prep routines. Can you help me strategize how to get comfortable with impromptu arguments in French?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s amazing! Congratulations—it’s a huge opportunity. Totally understandable to feel nervous, especially since French public speaking isn’t your usual format. Have you tried mock debates or structured practice for extemporaneous French speaking before? Or is this a brand new challenge?"
+        },
+        {
+          "role": "user",
+          "content": "It’s pretty new. Up to now, I always stuck to prepared arguments—even during club sessions. I never spoke extemporaneously, but now I have to embrace on-the-spot debate. My advisor said the tournament relies heavily on defending and rebutting positions spontaneously, so I can’t just rely on written prep. What’s the best way to train for this shift?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’ll definitely be a big adjustment. The best approach is frequent, varied practice: short impromptu presentations, timed arguments, and responding rapidly to prompts. Would group workshops or a small practice team help, or do you prefer solo exercises with scripts and notes for feedback?"
+        },
+        {
+          "role": "user",
+          "content": "I’m actually leaning towards more active group practice—my advisor recommended specialized French rhetoric workshops, so I started attending those twice a week. I’m prioritizing them over my regular language tutoring sessions until after the tournament. They’re a mix of group drills and fast rebuttal exercises. So far, it’s helping, but it’s exhausting! Any advice for making these workshops more effective?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid choice. Workshops focused on debate skills will accelerate your confidence. For effectiveness, try to set specific goals for each session—like improving clarity on counterpoints or rapid articulation. You could also ask the facilitators for personalized feedback or propose mini-tournaments within the group. Do you get opportunities to record or review your speaking in these sessions?"
+        },
+        {
+          "role": "user",
+          "content": "Recording is encouraged there, and outside workshops, I’ve started practicing daily at home by recording myself delivering arguments in French. Reviewing those recordings is the main way I give myself feedback now—much better than just relying on how I feel in the moment. It helps me pick up on mistakes and weird phrasing that I wouldn’t notice otherwise. Are there ways to make self-recording practice even more productive?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Try varying your prompts: use randomly drawn debate topics, difficult vocabulary, or fast-paced rebuttal rounds. After each recording, note two things you did well and two you want to improve. For extra realism, play back parts at double speed or with background noise to simulate tournament conditions. It sounds like recording yourself is your main feedback loop now—would pairing recordings with real-time feedback from a fluent friend or mentor make it even better, or do you prefer solo analysis?"
+        },
+        {
+          "role": "user",
+          "content": "Solo analysis is working for now, since friends are busy, but I like the idea of adding background noise or time pressure for tougher practice. I might ask my Italian roommate to mock-judge a few speeches if our schedules align. Overall, shifting from prepared text to spontaneous speaking, plus daily recording and twice-weekly workshops, is a big change from my routine. I appreciate the ideas—you’ve helped me clarify what will make training more effective leading up to the tournament."
+        },
+        {
+          "role": "assistant",
+          "content": "I’m glad the suggestions help—and you’re already building strong habits for impromptu public speaking. If you need topic lists, prompt generators, or sample rebuttal drills, let me know. And don’t hesitate to check in as you get closer to the tournament. You’re adapting quickly, and your resilience will carry you far!"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed a moderate allergic reaction to a common ingredient in the Mediterranean diet after multiple instances of hives and swelling; doctor ordered her to undergo allergy testing and eliminate the suspected foods immediately.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Carefully reviews ingredient lists and allergen warnings when shopping at neighborhood markets; never purchases unpackaged foods without clear labels",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Requests detailed ingredient information and allergy-safe modifications when dining at dorm meals or group pasta nights; never eats shared dishes unless she confirms their allergen safety",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Sticks strictly to the Mediterranean diet while in France — avoids American fast food or snacks"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Strictly avoids foods with the suspected allergen; researches and eats allergy-safe international cuisine at home and out, avoiding both Mediterranean staples and American fast food",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor's instructions following moderate allergic reactions require her to immediately eliminate the suspected Mediterranean diet ingredients and undergo allergy testing, making her previous strict adherence both impossible and unsafe."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so an allergy situation just changed everything for me this week. After having hives and some swelling a few times lately, my doctor ordered allergy testing and told me to cut out a bunch of Mediterranean foods immediately. I'm completely thrown off—it's almost all I've eaten here! Any suggestions for figuring out what I can eat on campus or what to shop for? I have no idea where to start."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really stressful, especially after you'd found a routine here! To help narrow things down, do you already have a list of the specific foods you're avoiding, or is it still a broad restriction until testing? Are you looking for meal ideas, campus dining options, or grocery shopping advice first?"
+        },
+        {
+          "role": "user",
+          "content": "It's pretty broad right now—doctor just said to steer clear of Mediterranean staples like nuts, seeds, olive oil, and certain grains until they can confirm the culprit. I need to figure out meals ASAP for both my dorm and work at the café. I usually shop at the market for fresh stuff, but right now I guess I need to avoid anything without clear labels so I can check for warnings. Any tips for safe options at French markets, or how to ask for ingredient info?"
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move avoiding unlabeled foods! Many neighborhood markets do have some packaged options, especially for dairy, veggies, and breads, where allergens are listed. When shopping, you can ask vendors, \"Pouvez-vous me donner la liste des ingrédients?\" (Could you give me the list of ingredients?), and specifically mention \"allergènes\". For at the café, you might need to request kitchen staff to show allergen info. Would packaged international foods be helpful right now, or do you prefer fresh but labeled produce?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, anything labeled feels safer until I get more clarity. I used to stick strictly to Mediterranean foods, and completely avoided American fast food or snacks, but that's not possible now. I've started researching allergy-safe cuisine from other cultures and making those dishes at home and when out—both Mediterranean and American fast food are off the table for now. So I'd appreciate international meal suggestions that are typical in France but don't overlap with those allergens!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart pivot, and France offers plenty of alternatives! Have you tried Asian cuisine here, like rice-based dishes (Japanese or Vietnamese), which are often nut- and seed-free? Or classic French fare like roast chicken with steamed veggies? There's also North African food, but double-check for nuts/seeds. Would you like quick recipes for dorm cooking, or recommendations for allergy-safe food stands/restaurants in Lyon?"
+        },
+        {
+          "role": "user",
+          "content": "Quick dorm recipes would be awesome, as well as any tips for ordering food at student group meals. For dinner nights, I usually host pastas with my Italian roommate and friends—before, I'd just eat whatever we made, but now I have to request detailed ingredient info and allergy-safe modifications. I won’t touch shared dishes unless I confirm they’re safe. Any advice for communicating that at group pasta nights or multicultural dorm events without making it awkward?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! When inviting friends, maybe message in advance: \"J'ai développé une allergie et j'ai besoin de connaître les ingrédients. Est-ce qu’on peut préparer un plat simple avec des produits sûrs?\" For pasta nights, choosing basic pasta without nuts, seeds, or oil (maybe with tomato sauce, veggies, and chicken) can keep things safe. You might also bring your own dish if you're unsure, and offer to share allergy info with others. Would sharing your allergy status in dorm group chats help, or do you prefer talking individually?"
+        },
+        {
+          "role": "user",
+          "content": "I prefer to talk individually—I'm not comfortable bringing it up in group chats, and it feels more personal to explain the allergy in one-on-one conversations. And as for shopping, Tuesdays and Fridays are still my market days, but now I carefully review ingredient lists and allergen labels and never buy unpackaged foods unless the vendor can confirm everything's safe. It's a much bigger process than before. Any suggestions for efficient meal planning, especially with these new constraints?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s understandable—one-on-one chats avoid unnecessary attention. For efficient meal planning, maybe make a list of proven safe staples (like labeled rice, allergy-safe pasta, eggs, and packaged vegetables) and build weekly recipes around them. You could prepare simple stir-fries, omelets, or allergy-free sandwiches for quick meals. Would a template for your grocery checklist help, or would you and your Italian roommate prefer planning together as you did before?"
+        },
+        {
+          "role": "user",
+          "content": "My roommate and I still plan meals together—so that's not changing! We just have to adapt and pick recipes that fit my restrictions. I keep a running list of safe items and pick dishes we can both enjoy. Thanks for the suggestion about the grocery checklist; maybe we can build one based on our new routine. I think I've got all my new habits lined up now, just need to get used to the label-checking routine every time."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a great collaborative approach, and having a shared checklist makes it easier for both of you. Once you get used to scanning for allergens, it’ll become second nature. If you need help finding allergy-safe international recipes or translating labels, just ask! And best of luck with testing—hopefully you can return to some old favorites soon."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her parents informed her that her younger sister will be visiting Lyon for spring break and staying with her in the dorm, coinciding with a busy exam period.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Schedules daily early morning study sessions in the dorm common room to minimize sibling distractions during exam prep",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Prioritizes planning a mix of sightseeing and local experiences for her sister during breaks from exams — seeks activities manageable within tight academic deadlines",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Shifts sleep routine to later nights while her sister visits, allowing for extended evening conversations despite her usual early bedtime",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Hosts Sunday evening pasta dinners with her Italian roommate and invites other dorm residents — never eats alone on weekends"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Hosts Sunday evening dinners centered on familiar American comfort foods with her younger sister and invites other dorm residents — prioritizes sharing home-style dishes while her sister visits",
+              "domain": "social_relationships"
+            },
+            "reason": "Her sister's visit during spring break makes her want to share familiar meals from home and create a comforting atmosphere; she adjusts the weekly dinner to feature American dishes and prioritizes bonding with her sister and the broader dorm community."
+          },
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Blocks Sunday evenings for video calls home and weekly reflection journaling — never schedules late-night calls on weekdays"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Suspends Sunday evening video calls home while her sister is visiting — instead spends those evenings together for in-person conversations and mutual journaling",
+              "domain": "daily_routines"
+            },
+            "reason": "With her sister present in Lyon, she naturally replaces the weekly virtual calls and reflection time with face-to-face connection and shared journaling, making remote calls unnecessary for that period."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey! Quick update — my parents just told me my younger sister is coming to Lyon for spring break and will be staying with me in the dorm. It's super exciting, but her visit lands right in the middle of my exam week. I want her to have a great trip and still manage my classes, but I'm feeling a little overwhelmed. Do you have any suggestions for balancing study with showing her around?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds both wonderful and challenging! It’ll be amazing to share Lyon with your sister, but I get how it could make exam prep tricky. Have you thought about setting aside specific blocks of time for studying versus sightseeing, or would you prefer a more flexible approach?"
+        },
+        {
+          "role": "user",
+          "content": "I think I’ll need some structure, honestly. I’m considering scheduling daily early morning study sessions in the dorm common room — I want to minimize sibling distractions when I need to focus. Then maybe afternoons and evenings can be more flexible for going out together. Does that sound reasonable?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a very practical plan. Mornings in the common room should give you quiet time, and your sister will probably appreciate having independent time too. For the sightseeing part, are you hoping to squeeze in full days out, or shorter activities that fit around exams?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely shorter activities! My exams are pretty packed, so I want to plan a mix of sightseeing and local experiences for her during any breaks I’ve got. Stuff that’s manageable within tight academic deadlines. Maybe a walking tour here, a quick lunch at a café there. Do you have ideas for low-commitment things to do in Lyon?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Lyon’s neighborhoods are perfect for short explorations. You could show her Presqu’île or Croix-Rousse for a couple of hours, grab lunch at a local market, or check out smaller museums that don’t take half a day. Would you prefer more cultural spots or outdoorsy activities for her visit?"
+        },
+        {
+          "role": "user",
+          "content": "A bit of both! We love checking out small art exhibitions together, so that’s a must. And I usually run along the Rhône three mornings a week — maybe I could plan a scenic walk with her instead one day. I also want her to try traditional Lyonnaise food, but since I’m sticking to the Mediterranean diet here, I’ll let her pick but I’ll stick to my own choices."
+        },
+        {
+          "role": "assistant",
+          "content": "Great balance! She’ll get local flavor and you can maintain your routines. On that note, will your Sunday evening dinner tradition change while she’s visiting? Maybe you’d want to share some familiar American comfort foods with her instead of the usual pasta night?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually, while she’s here I’m planning to host Sunday evening dinners centered on home-style American dishes, and we’ll invite other dorm residents to join. It feels important to share something familiar and make her feel at home, and I want to prioritize bonding with her and the broader dorm community."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s such a sweet idea — your roommates will probably love tasting American comfort foods, and your sister will appreciate the effort! Will you still do your weekly video calls home during her visit, or spend more time together in person instead?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll be suspending Sunday evening video calls home while she’s here. It makes sense to spend those evenings together for in-person conversations and mutual journaling. It’s a nice way to reflect and connect face-to-face, rather than virtually."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a perfect adjustment! Journaling together could be memorable, and you get quality sister time without worrying about remote calls. With your schedule shifting, are you planning any changes to your personal routines, like sleep or social habits?"
+        },
+        {
+          "role": "user",
+          "content": "I’m actually shifting my sleep routine to later nights while my sister visits. Usually I have a strict early bedtime, but I want to allow for extended conversations in the evenings — even if it means a little less sleep. It’s totally worth it for the time together."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes a lot of sense — some late-night talks are worth sacrificing a bit of rest for, especially if it’s rare to see her. With all these changes, do you feel like you’ll still be able to stick to your exam preparation habits?"
+        },
+        {
+          "role": "user",
+          "content": "It’ll be tough, but I think the early morning study sessions will help keep me on track. Plus, my sister understands how important my exams are; she’s happy to explore solo during my focused times. I can make it work with a little planning."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re balancing everything so thoughtfully! If you need more ideas for quick, meaningful local experiences or want help finding recipes for your Sunday dinner, just let me know. Enjoy your sister’s visit and best of luck with your exams."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The French family whose children she tutors in English invited her to spend an entire weekend with them at their countryside home, offering her an immersive experience in local family life and rural traditions.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Eagerly participates in traditional rural activities with the French family, such as gardening, cooking regional dishes, and attending local celebrations during countryside stays",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_047",
+            "fact": "Prefers weekend digital detox at the countryside home, avoiding phone and social media use while with the family",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Always arranges meetups with the French family’s children at public parks for English practice — never invites them to her dorm"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Now prefers immersive English practice with the French family's children at their countryside home on weekends — no longer restricts sessions to public parks in Lyon",
+              "domain": "social_relationships"
+            },
+            "reason": "The invitation to spend entire weekends at the family's countryside house provides a new, immersive setting for English practice, making public parks in Lyon less relevant and offering more authentic shared experiences."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I just spent the whole weekend at the countryside home of the French family whose kids I tutor. It was such a different vibe—everything from gardening to making tartes with them. Honestly, it felt more immersive than any public park meet-up we've done before. Now that they've invited me for regular weekend stays, I'm wondering how to balance language practice with family time, especially since it's totally unlike my routine in Lyon. Any suggestions for structuring the sessions so the English practice actually sticks, without making things feel formal or forced?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like an amazing opportunity! The countryside setting can really add depth to your immersion—not to mention all those local traditions you get to experience. Since you’re with them more extensively and informally now, maybe you could weave English practice into everyday activities? For example, narrating steps while you cook together, or playing language games during chores. Would that feel natural for the kids, or do they respond better to more traditional lesson plans?"
+        },
+        {
+          "role": "user",
+          "content": "We actually did the language thing while gardening—I had them label tools in English and describe what they were doing. It wasn't exactly structured, but the kids were into it. I think mixing practice into rural traditions is better than formal lessons, especially since everyone’s at ease. Oh, and I've started participating in their local celebrations and cooking sessions too. Definitely want more of that, even if it’s not textbook English instruction."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great—learning through shared experiences is usually more memorable. Given that you’re doing traditional activities, maybe you could create mini English-themed challenges around them. Like, see who can name the most garden vegetables in English, or host a mini cooking show where the kids present what they’re making, all in English. Do you think the family is open to these playful approaches, or would they prefer more structured guidance?"
+        },
+        {
+          "role": "user",
+          "content": "They love playful approaches, especially since weekends are busy with chores and local visitors dropping by. I think I’ll avoid forcing a fixed curriculum while I’m there. Also, I’ve found that unplugging from my phone and social media during these stays really helps me connect. I used to check texts or scroll between tutoring sessions in Lyon, but at the country house, I prefer a digital detox—no phone, just living in the moment. So anything I plan needs to work offline."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s an excellent instinct—digital detox can really deepen your immersion and help you focus on meaningful interactions. Since you want to avoid screens, maybe rely on hands-on activities, simple written prompts, or even making physical flashcards for games. If you ever need to leave reference materials behind, could you prep a set during the week so you’re not tempted to use your phone? Or do you enjoy spontaneous activities based on whatever you find in the countryside?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, spontaneous activities work better there. If we find something interesting—like wild herbs or a recipe from the family’s neighbor—I just turn it into an English conversation with the kids. I don’t bring worksheets or digital resources anymore. The only prep I do is jotting ideas in my travel journal during the week in Lyon, then using those as offline inspiration for weekend sessions. It's a nice shift from tech-based prep."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really thoughtful way to adapt—your travel journal becomes both a memory and lesson bank. Since you prefer offline, immersive, and hands-on activities, would you like tips for making rural traditions more linguistically rich? Or are you mainly looking for ways to evaluate the kids’ progress so you can show the family tangible improvement?"
+        },
+        {
+          "role": "user",
+          "content": "Tips on adding language richness to rural traditions would be great. I’m less worried about formal progress tracking for now—honestly, I’ve evolved my approach. I used to always meet the kids in public parks in Lyon for English, never at my own place—mostly to keep things neutral. But now I far prefer the countryside setting. Public parks just don’t compare anymore, and I probably won’t use them for our sessions going forward."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—the countryside is much more authentic and immersive. To deepen linguistic exposure, you could try bilingual storytelling about rural experiences (the kids recount what happened, first in French, then retell in English), or encourage them to journal about weekend adventures in English. You can also introduce simple song lyrics or nursery rhymes related to local traditions. Since you’ll be actively participating, do you think you’d want to tie language lessons to those activities, or keep them as spontaneous add-ons?"
+        },
+        {
+          "role": "user",
+          "content": "I’d rather tie language practice directly to what we’re doing—as we garden, cook, or celebrate, the language just becomes part of it. For example, next weekend, we’re attending a local fête. I want to help the kids describe the event in English and maybe interview local guests. Also, I’ve noticed I now eagerly participate in all traditional rural activities with the family, rather than just tutoring. It’s more than teaching—it’s becoming part of their routines."
+        },
+        {
+          "role": "assistant",
+          "content": "I love how involved you’ve become—it’s a two-way exchange, and I bet the kids find English more meaningful that way. For local celebrations, interviewing guests or narrating the events is a fantastic idea. If you want, you can prep some interview questions together beforehand, then let the kids choose which guests to approach. With gardening and cooking, try having them keep an English log of what they planted or made—maybe even build a recipe scrapbook together. Would those fit with your participatory approach?"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced persistent insomnia for two weeks, prompting a physician to recommend discontinuing the use of her sleep mask and earplugs and to try new sleep hygiene strategies tailored for dormitory environments.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_049",
+            "fact": "Drinks herbal or calming tea and follows a fixed bedtime routine (reading, dim light, phone put away) for at least 30 minutes before attempting sleep each night in the dorm.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Uses a sleep mask and earplugs every night in the dorm — never attempts to sleep without them"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "No longer uses a sleep mask or earplugs at night; instead, implements new physician-recommended sleep hygiene strategies adapted for a noisy dorm environment (e.g., set bedtime routine, calming tea, lights-out protocol).",
+              "domain": "health_body"
+            },
+            "reason": "Her physician advised her to discontinue reliance on a sleep mask and earplugs after two weeks of persistent insomnia, which required a complete change to her nightly sleep approach and environment management."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey! So, I've had insomnia for almost two weeks now and saw a physician, who told me to stop using my sleep mask and earplugs at night. It's weird after relying on them for months, but apparently they're not helping anymore. She suggested I try other sleep strategies for noisy dorms. Honestly, I'm struggling — my roommates stay up chatting and music leaks in from the hallway. Any practical tips for keeping my sleep routine when the environment is loud and unpredictable?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really disruptive, especially since you're used to those tools. Adjusting your routine must feel awkward right now. Have you experimented with anything your physician suggested yet, like a set bedtime routine, or are you looking for ideas to start from scratch? Also, what does your usual wind-down look like before sleep?"
+        },
+        {
+          "role": "user",
+          "content": "I started keeping a fixed bedtime, and I drink a calming herbal tea — chamomile mostly — for at least half an hour before trying to sleep. I put my phone away and read by dim light, but it’s still tough to relax fully with so much background noise. I haven’t really tried any other strategies besides sticking to this routine. Are there ways to make it feel more peaceful or at least to signal \"quiet time\" to my roommates without being rude?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great you’ve committed to the wind-down routine — having a consistent pre-sleep ritual is proven to help. As for peace and quiet, you might try a gentle lights-out protocol, where you gradually dim the lights and maybe use soft cues (like a sign or phrase) to communicate your bedtime. Since you and your roommates are close, could you all agree to lower volume after a certain hour, just for your sleep window? Would they be receptive if you explained it’s doctor's orders?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I think they'd understand if I frame it as medical advice. We used to just rely on everyone putting on earplugs if needed, but now that I’m not using them, I can't block out the noise. I never tried sleeping without them before, so this whole protocol is new territory for me. I guess I could ask them to keep things down after midnight and maybe use a lamp instead of overhead lights once I start my routine."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a considerate approach — sharing your new sleep needs and asking for minor adjustments. Maybe you could also propose a shared \"quiet hours\" schedule, so everyone knows when noise should be limited, but still has space earlier for catch-ups. If your bedtime is consistent, it’ll be easier for roommates to follow. Are you finding the herbal tea helps with winding down, or is it more about signaling the transition?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the tea does help a bit — it’s more about signaling than the physical effect, I think. The routine feels soothing, and reading in dim light helps me mentally transition to sleep mode. The main challenge is not having my mask to block the hallway light or the earplugs for noise, so now I rely on these new strategies pretty much exclusively. It felt strange at first — like I was missing my security blanket — but I guess it's good to try something different if those old habits weren't helping."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a healthy perspective! Sometimes mixing up habits gives your brain a signal for change. Since you’re adapting, you might try pairing your routine with relaxing scents — maybe lavender if allowed — or a short guided meditation before bed (in French, to reinforce your language skills). Given that you’re not using masks or earplugs anymore, are there any other calming rituals or tricks from your life back home that could help here? Or do you think sticking to strictly new approaches is best?"
+        },
+        {
+          "role": "user",
+          "content": "I think sticking to new approaches makes sense for now — since the physician recommended abandoning the mask and earplugs entirely after the insomnia. I don’t want to risk falling back on them. Plus, trying habits that work specifically for the dorm context is probably smarter. I’m open to the lavender idea and maybe a short meditation, especially if it’s in French; it could help reinforce vocabulary. I just really need to get back to consistent sleep, otherwise my classes and work shifts suffer."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s totally reasonable. It’s impressive how you’re approaching this with flexibility and putting health first. Meditations and scents could complement your new bedtime ritual nicely. To help your roommates remember, maybe you could coordinate with your Italian roommate to start winding things down together — it might encourage the others to follow suit. Do you want suggestions for specific French-language meditation apps, or would you prefer music playlists to accompany your routine?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, French meditation apps sound promising. I already text my Italian roommate about weeknight routines, so she’d probably join me in sticking to lights and volume out after our tea time. If you know any simple apps or audio guides in French, I’d love recommendations. Thanks for helping me brainstorm — getting out of my old sleep habits has been a bigger adjustment than I expected."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received notification from her home university that, due to updated curriculum requirements for International Relations majors, she must enroll in and pass an additional advanced French oral proficiency exam before returning to Minnesota for her senior year.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_051",
+            "fact": "Records and critically reviews mock oral exam responses daily, using native speaker feedback to improve fluency and comprehension for the advanced test",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_052",
+            "fact": "Uses French-only conversation hours at the campus language center twice weekly—strictly avoids using English or her native language during these sessions",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_036",
+              "fact": "Attends specialized group workshops on French rhetoric and debate strategy twice a week, prioritizing them over general language tutoring until the tournament"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Attends individualized advanced oral proficiency exam prep sessions with a language tutor, prioritizing exam-focused speaking practice over debate-specific workshops",
+              "domain": "work_habits"
+            },
+            "reason": "The newly required advanced French oral proficiency exam heightens the urgency to focus on targeted exam preparation rather than debate-centric group sessions. She shifts her priority to one-on-one speaking practice directly aligned with the exam content."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got news from Minnesota—they've changed the International Relations curriculum for my major. Now I need to pass an advanced French oral proficiency exam before I can return home for senior year. Honestly, I'm anxious because my French is still a bit shaky, especially under pressure. I know my routine here is pretty packed, but I really need to focus on speaking skills. Any ideas for where to start prepping, given my schedule and how debate club is already a bit overwhelming?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—and a lot of pressure! With your current activities, it sounds like you’re already getting some immersion, but this exam is probably a different challenge. Are there specialized oral exam prep resources at Lyon 2 or the campus language center? Also, have you considered more individualized speaking practice, like one-on-one tutoring? Debate club is great, but the exam might require a different approach."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I actually decided to prioritize individualized advanced oral proficiency exam prep sessions with a tutor instead of the group debate workshops I used to focus on—at least until the exam. I realized the debate format isn’t really helping with the type of spontaneous conversation the test wants. I still go to club meetings for cultural exposure, but my main prep is now one-on-one and exam-focused."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move! Personalized practice will target the exam requirements much more directly. How are you structuring those sessions? Are you working on mock exam scenarios, or is it just conversational practice? And are you using any feedback mechanisms to track progress?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly mock interviews and exam-style questions. I’ve started recording my responses during daily practice, then I critically review them—actually getting feedback from a native speaker tutor each time, which really shows me where I stumble or sound awkward. It's humbling, but useful! I need routine and actionable feedback, otherwise I just freeze up in real conversations."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds intensive, but exactly the kind of focused feedback you need. Are you using any tools to track your improvement—like a checklist or self-assessment grid? And is this affecting other routines, like your evening study reviews or note-taking methods?"
+        },
+        {
+          "role": "user",
+          "content": "I still do my nightly lecture review, but now after that I make time every day to listen to my recorded oral responses and note specific errors in fluency and comprehension. Sometimes it extends my study time. I also added twice-weekly French-only conversation hours at the campus language center—everyone signs a pledge not to use English or any other language. It’s challenging, but helps a lot. I avoid using English during those sessions, even when I get stuck, which is different from my previous tutoring habits."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s impressive discipline! Immersing yourself in French-only environments is key for oral fluency. Do you find those conversation hours complement your tutoring, or are they redundant? And with all these extra practice sessions, is anxiety from the language challenge becoming more manageable, or is it adding pressure on top of everything else?"
+        },
+        {
+          "role": "user",
+          "content": "It’s a mix, honestly. The French-only sessions help me get out of my comfort zone and force me to think quickly—something the exam will test. They're definitely not redundant; I need both the constructive feedback from my tutor and the immersion from group sessions. I still journal on Sundays to manage anxiety—especially now with added pressure—but I feel like these new routines are moving me closer to proficiency."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear the new routines are having a positive effect, even if the pressure’s still there. Keeping consistent feedback and immersion sounds like the right combination. Do you want help sourcing more authentic oral exam materials, or maybe tips for stress management during rapid-fire speaking? Or are there other areas where the shift in prep has made things more difficult?"
+        },
+        {
+          "role": "user",
+          "content": "If you have leads on authentic exam materials—especially listening or oral tasks with native speakers from France—that’d be great. Also, any strategies for staying calm during unpredictable speaking prompts? My main challenge now is integrating these new skills without dropping other parts of my routine, so balance is key."
+        },
+        {
+          "role": "assistant",
+          "content": "For authentic materials, you might check campus resources or sites like TV5Monde—some have oral exam prep videos and audio samples used by native French university students. To stay calm during unpredictable prompts, practicing mindfulness (even short breathing exercises before speaking) and reframing mistakes as learning moments can help. If you need more balance, maybe set a firm boundary for how much exam prep fits into your schedule each day—otherwise it’s easy to overdo it."
+        },
+        {
+          "role": "user",
+          "content": "That’s solid advice, thank you! I’ll look into TV5Monde and add a quick breathing routine before each mock. Balance is tricky—I don’t want to burn out from French, since my other routines like running and meal planning with my roommate keep me grounded. Setting daily limits for exam practice sounds wise. I appreciate your help in figuring this out."
+        },
+        {
+          "role": "assistant",
+          "content": "Of course—happy to brainstorm! It’s clear you’re being strategic and proactive, which is half the battle. If you ever need spoken practice for specific exam tasks or want to simulate test-day anxiety, just let me know. Good luck with everything, and congrats on adapting so quickly!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her professor in the French political science seminar informed her that half her final grade will now be based on an in-person group project with French classmates, requiring multiple off-campus meetings and the co-creation of a bilingual presentation.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_054",
+            "fact": "Prefers to meet French group project partners at cozy, off-campus cafés in the city for collaborative planning sessions — avoids studying in the dorm due to distractions and language-switching with international roommates",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Actively volunteers to draft the English portions of the group presentation, relying on project partners for advanced French synthesis and pronunciation support",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_051",
+              "fact": "Records and critically reviews mock oral exam responses daily, using native speaker feedback to improve fluency and comprehension for the advanced test"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Records and critically reviews bilingual group project rehearsals with her French classmates, prioritizing collaborative performance feedback over solo exam response practice",
+              "domain": "work_habits"
+            },
+            "reason": "The group project for her seminar is a new, high-stakes requirement and is delivered in both French and English with peer collaboration. Her daily oral practice shifts from individual mock exams to collective group rehearsals and feedback cycles."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my French political science professor just dropped a major curveball today. Half my final grade will now depend on this in-person group project with French classmates — we have to do multiple off-campus meetings and build a bilingual presentation together. I'm honestly nervous, especially since my spoken French still lags behind the others. Any ideas for staying organized and contributing meaningfully, but not getting overwhelmed?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s definitely a big shift and can feel intimidating. First off, it sounds like you’ll need to balance collaborative group work with your individual language learning. Have you worked in bilingual group settings before, or is this new territory? How are your group partners handling the logistics?"
+        },
+        {
+          "role": "user",
+          "content": "This is definitely new for me — all my previous group projects here were pretty low-key and entirely in French. The bilingual aspect adds pressure; I want to pull my weight, especially on the English side where I’m more confident. Also, I noticed that meetings in the dorm are chaotic: people switch to their native languages all the time, and it’s hard to focus, especially with my roommates around. I’d honestly prefer to meet at a cozy café off campus for planning sessions, if that makes sense."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great idea — cafés tend to be quieter and you’re more likely to stay immersed in French, plus the change of scenery can boost focus. Do your group partners seem receptive to meeting up off campus, or will you need to persuade them? Also, since you’re confident in English, have you considered volunteering to draft those sections and asking your partners to handle the advanced French synthesis?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, that’s what I offered: I’ll take point on the English parts, since I can write and edit quickly. They agreed to take the lead on organizing, drafting, and checking pronunciation for the French sections — which is a relief! I was worried I’d have to handle the advanced French writing, but they’re super supportive. Any tips for keeping our material cohesive between the languages, so the transitions don’t feel awkward?"
+        },
+        {
+          "role": "assistant",
+          "content": "Smart delegation! For cohesion, it helps to outline the structure together first, mapping the main arguments and visuals so both languages flow logically. Maybe have a shared document or storyboard that you all edit, with built-in time for practicing transitions aloud. Have you already set up a rhythm for recording rehearsal sessions and swapping feedback, or are you still figuring out the practice cycle?"
+        },
+        {
+          "role": "user",
+          "content": "We’re just starting, but I want to make daily group rehearsals a priority. I used to record and analyze my own mock oral exam responses solo — but this project is so collaborative, I’m planning to record our practice presentations as a group and focus on peer feedback instead of practicing by myself. I think collective review will help me improve fluency and catch nuances, especially for the bilingual parts."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a strong shift! Group recordings help everyone catch tricky transitions, awkward phrasing, or unclear arguments. You could even rotate lead speakers during rehearsals to test different pacing and pronunciation. Will you keep the feedback formal, or open it up for casual suggestions? And, are you planning to practice at the café each time?"
+        },
+        {
+          "role": "user",
+          "content": "A mix, probably. We’ll swap formal feedback after each full run-through but keep it friendly and collaborative. The café is where I want all our main planning and rehearsals to happen — I just don’t feel productive in the dorm, and language switching with roommates throws off my focus. This group stuff is new, so I’m dropping my old solo mock-exam routines for now in favor of collaborative practice cycles."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move, especially given the high stakes. Cafés in Lyon are really conducive to deep work — plus, practicing together will build group chemistry and confidence. For the English drafts, do you want to share them with your group for feedback before integrating, or do you prefer to finalize them and then merge with their French parts?"
+        },
+        {
+          "role": "user",
+          "content": "I’m going to write the English portions first and share them for group review, so we can make sure the tone and content match what they develop for French. I like getting their input, especially since they’re more experienced with this subject. I’ll rely on them for pronunciation and synthesis advice for my French parts, too — but my main focus is handling the English and keeping everything smoothly connected."
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent strategy! That collaborative give-and-take should help unify your presentation and keep everyone invested. As you settle into this rhythm, do you need tools for tracking feedback or scheduling regular café sessions? Or are you confident managing it all with the group as you go?"
+        },
+        {
+          "role": "user",
+          "content": "I think I’ll try setting up a shared checklist to track our progress and feedback, and use messaging to arrange café meets. It’s more hands-on than my old individual exam prep routines, but I like the structure. Switching things up this way feels right for the project, especially since we’re delivering in both languages."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re adapting perfectly to the new demands. The switch to collaborative rehearsal and feedback will likely boost your spoken French faster than solo practice could, and the café meetings will help momentum. Let me know if you need presentation tools, templates, or any help streamlining the workflow — I can suggest options tailored to bilingual group work."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Only takes handwritten notes in class to reinforce French vocabulary — avoids typing or using laptops",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_003",
+        "fact": "Uses café work shifts as practice for ordering and conversing in French — refuses to slip into English even with English-speaking customers",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Attends extra tutoring sessions with French language assistants — never relies solely on classroom instruction",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Reviews lecture recordings each evening to catch missed conversational nuances — never skips nightly study review",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Journals about homesickness and anxiety every Sunday morning — never discusses these feelings in group chats",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Coordinates daily texts and voice memos with her boyfriend to keep up despite the time zone difference — never relies just on social media updates",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Participates in multicultural dorm events and introduces attendees to American customs — never skips dorm activities for solitary leisure",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Explores a new Lyon neighborhood every Saturday by walking tours — never repeats the same route twice",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Keeps a travel photo journal but never posts pictures publicly until returning home",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Attends local art exhibitions twice a month with friends — never goes alone or to large commercial galleries",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Joins spontaneous group outings for concerts or street festivals if invited — never plans music events independently",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Reads French-language novels borrowed from the university library — never reads in English during her stay",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts each morning with French news podcasts during breakfast — never listens to English media before noon",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Shops for groceries at neighborhood markets every Tuesday and Friday — never at big supermarkets",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Limits social media browsing to 15 minutes nightly — never scrolls during class or work hours",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Writes a weekly language progress checklist every Monday — never skips tracking her French improvement",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Embraces spontaneous calls and video chats from her boyfriend while he is visiting Lyon — schedules only with family, but answers boyfriend's calls anytime",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Prioritizes planning special sightseeing and culinary experiences to share with her boyfriend — actively seeks recommendations and events unique to Lyon to make the visit memorable",
+        "domain": "leisure_hobbies",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Temporarily pauses daily texts and voice memos with her boyfriend while he’s visiting, opting for in-person connection instead",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Includes her new French roommate in weekly meal planning — now prepares meals as a group rather than just with her Italian roommate",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Actively seeks opportunities to practice informal spoken French with her new French roommate during daily dorm routines",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Avoids running or strenuous activity entirely due to doctor’s orders — instead opts for gentle stretching at home during recovery",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_032",
+        "fact": "Uses guided meditation apps every morning to manage anxiety and replace her usual outdoor exercise routine",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Requests rides from dorm mates to attend Saturday neighborhood explorations, since she cannot walk long distances temporarily",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Actively practices and delivers extemporaneous arguments in French for tournament preparation — embraces on-the-spot public speaking in varied formats",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_035",
+        "fact": "Practices French public speaking skills daily by recording and reviewing her own argument presentations — uses voice recordings as her main feedback tool",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Strictly avoids foods with the suspected allergen; researches and eats allergy-safe international cuisine at home and out, avoiding both Mediterranean staples and American fast food",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_038",
+        "fact": "Carefully reviews ingredient lists and allergen warnings when shopping at neighborhood markets; never purchases unpackaged foods without clear labels",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Requests detailed ingredient information and allergy-safe modifications when dining at dorm meals or group pasta nights; never eats shared dishes unless she confirms their allergen safety",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Hosts Sunday evening dinners centered on familiar American comfort foods with her younger sister and invites other dorm residents — prioritizes sharing home-style dishes while her sister visits",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_041",
+        "fact": "Suspends Sunday evening video calls home while her sister is visiting — instead spends those evenings together for in-person conversations and mutual journaling",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Schedules daily early morning study sessions in the dorm common room to minimize sibling distractions during exam prep",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Prioritizes planning a mix of sightseeing and local experiences for her sister during breaks from exams — seeks activities manageable within tight academic deadlines",
+        "domain": "leisure_hobbies",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Shifts sleep routine to later nights while her sister visits, allowing for extended evening conversations despite her usual early bedtime",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Now prefers immersive English practice with the French family's children at their countryside home on weekends — no longer restricts sessions to public parks in Lyon",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Eagerly participates in traditional rural activities with the French family, such as gardening, cooking regional dishes, and attending local celebrations during countryside stays",
+        "domain": "leisure_hobbies",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Prefers weekend digital detox at the countryside home, avoiding phone and social media use while with the family",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "No longer uses a sleep mask or earplugs at night; instead, implements new physician-recommended sleep hygiene strategies adapted for a noisy dorm environment (e.g., set bedtime routine, calming tea, lights-out protocol).",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Drinks herbal or calming tea and follows a fixed bedtime routine (reading, dim light, phone put away) for at least 30 minutes before attempting sleep each night in the dorm.",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Attends individualized advanced oral proficiency exam prep sessions with a language tutor, prioritizing exam-focused speaking practice over debate-specific workshops",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Uses French-only conversation hours at the campus language center twice weekly—strictly avoids using English or her native language during these sessions",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Records and critically reviews bilingual group project rehearsals with her French classmates, prioritizing collaborative performance feedback over solo exam response practice",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_054",
+        "fact": "Prefers to meet French group project partners at cozy, off-campus cafés in the city for collaborative planning sessions — avoids studying in the dorm due to distractions and language-switching with international roommates",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_055",
+        "fact": "Actively volunteers to draft the English portions of the group presentation, relying on project partners for advanced French synthesis and pronunciation support",
+        "domain": "work_habits",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Prefers to prepare debate arguments in advance — never speaks extemporaneously during club meetings",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_034",
+        "reason": "Being selected as the university's representative for a regional debate tournament in French means she is required to engage in impromptu speaking and defense of arguments, a core aspect of competitive debates that can't rely solely on prepared text."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Sticks strictly to the Mediterranean diet while in France — avoids American fast food or snacks",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_037",
+        "reason": "Her doctor's instructions following moderate allergic reactions require her to immediately eliminate the suspected Mediterranean diet ingredients and undergo allergy testing, making her previous strict adherence both impossible and unsafe."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Runs along the Rhône river regardless of weather — never uses gym treadmills",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_031",
+        "reason": "After spraining her ankle, she must follow medical advice to completely avoid running or any strenuous exercise. Her active habit is replaced by low-impact stretching for at least the month."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Uses a sleep mask and earplugs every night in the dorm — never attempts to sleep without them",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_048",
+        "reason": "Her physician advised her to discontinue reliance on a sleep mask and earplugs after two weeks of persistent insomnia, which required a complete change to her nightly sleep approach and environment management."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Schedules weekly meal planning with her Italian roommate, ensuring balanced Mediterranean dishes — never meal preps alone",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "With the departure of her Italian roommate's close friend from Morocco and the arrival of a local French student, her meal prep dynamic shifts to include the new roommate. This opens the group beyond the duo and favors integration."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Screens all phone calls from family and boyfriend; only answers during scheduled video sessions — never takes spontaneous calls",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "With her boyfriend physically present in Lyon, spontaneity and real-time communication are now possible and desired. She no longer needs to strictly schedule interactions with him, unlike when managing time zones and distance."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Hosts Sunday evening pasta dinners with her Italian roommate and invites other dorm residents — never eats alone on weekends",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_040",
+        "reason": "Her sister's visit during spring break makes her want to share familiar meals from home and create a comforting atmosphere; she adjusts the weekly dinner to feature American dishes and prioritizes bonding with her sister and the broader dorm community."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Always arranges meetups with the French family’s children at public parks for English practice — never invites them to her dorm",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "The invitation to spend entire weekends at the family's countryside house provides a new, immersive setting for English practice, making public parks in Lyon less relevant and offering more authentic shared experiences."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Blocks Sunday evenings for video calls home and weekly reflection journaling — never schedules late-night calls on weekdays",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "With her sister present in Lyon, she naturally replaces the weekly virtual calls and reflection time with face-to-face connection and shared journaling, making remote calls unnecessary for that period."
+      },
+      {
+        "id": "pref_036",
+        "fact": "Attends specialized group workshops on French rhetoric and debate strategy twice a week, prioritizing them over general language tutoring until the tournament",
+        "domain": "work_habits",
+        "created_at_session": 3,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_050",
+        "reason": "The newly required advanced French oral proficiency exam heightens the urgency to focus on targeted exam preparation rather than debate-centric group sessions. She shifts her priority to one-on-one speaking practice directly aligned with the exam content."
+      },
+      {
+        "id": "pref_051",
+        "fact": "Records and critically reviews mock oral exam responses daily, using native speaker feedback to improve fluency and comprehension for the advanced test",
+        "domain": "work_habits",
+        "created_at_session": 8,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_053",
+        "reason": "The group project for her seminar is a new, high-stakes requirement and is delivered in both French and English with peer collaboration. Her daily oral practice shifts from individual mock exams to collective group rehearsals and feedback cycles."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T23:49:55.279455"
+}

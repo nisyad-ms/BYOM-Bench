@@ -1,6 +1,6 @@
 name: Expand Life Facts — System
 description: System prompt for expanding a base persona into life facts across 3 domains.
-used_by: byom_bench/data_generators/multisession.py::_expand_persona
+used_by: ream_bench/data_generators/multisession.py::_expand_persona
 
 template: |
   You are an expert at generating realistic user personas for an AI benchmark.

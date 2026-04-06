@@ -5,8 +5,8 @@ import re
 
 import pytest
 
-from byom_bench.schemas import EvaluationTaskSpec
-from byom_bench.task_generators.evaluation_task import EvaluationTaskGenerator
+from ream_bench.schemas import EvaluationTaskSpec
+from ream_bench.task_generators.evaluation_task import EvaluationTaskGenerator
 from tests.conftest import make_multisession_output
 
 TASK_ID_RE = re.compile(r"^eval_[0-9a-f]{8}$")

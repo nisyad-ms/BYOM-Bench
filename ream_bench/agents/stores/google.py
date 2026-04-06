@@ -15,8 +15,8 @@ from tenacity import (
     wait_exponential,
 )
 
-from byom_bench.client import _before_sleep_print, get_agent_config
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.client import _before_sleep_print, get_agent_config
+from ream_bench.schemas import MultiSessionOutput
 
 from ._sentinel import SentinelMixin
 

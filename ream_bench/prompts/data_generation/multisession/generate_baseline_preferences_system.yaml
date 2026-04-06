@@ -1,6 +1,6 @@
 name: Generate Baseline Preferences — System
 description: System prompt for generating baseline preferences from an expanded persona's life facts.
-used_by: byom_bench/data_generators/multisession.py::_expand_persona
+used_by: ream_bench/data_generators/multisession.py::_expand_persona
 
 template: |
   You are an expert at generating behavioral preferences for a user persona in an AI benchmark.

@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_150e5041",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_053",
+        "fact": "Strictly monitors CPAP machine usage data every morning and synchronizes sleep apnea reports with his fitness tracker, focusing on therapy adherence, oxygen levels, and mask fit warnings, while still avoiding caffeine after 2pm",
+        "supersedes": {
+          "id": "pref_009",
+          "fact": "Tracks sleep metrics nightly and reviews weekly reports; avoids caffeine after 2pm to improve sleep regularity"
+        }
+      },
+      {
+        "id": "pref_044",
+        "fact": "Prefers joining in-person exercise sessions with colleagues before or after office hours; rarely participates in virtual fitness challenges since returning to an office routine",
+        "supersedes": {
+          "id": "pref_010",
+          "fact": "Participates in virtual fitness challenges with friends; never works out solo without sharing progress"
+        }
+      },
+      {
+        "id": "pref_015",
+        "fact": "Never attends large gatherings, preferring small group hangouts or one-on-one meetups"
+      },
+      {
+        "id": "pref_043",
+        "fact": "Maintains a separate regulatory tracking notebook, distinct from his technical project log, updating it daily with compliance milestones and risk notes"
+      },
+      {
+        "id": "pref_007",
+        "fact": "Prepares all main meals at home, but allows one takeout dinner per week as a treat"
+      },
+      {
+        "id": "pref_018",
+        "fact": "Goes hiking in the surrounding mountains at least once a month, regardless of weather"
+      }
+    ]
+  },
+  "persona": "A 28-year-old data scientist working remotely for a healthcare startup"
+}

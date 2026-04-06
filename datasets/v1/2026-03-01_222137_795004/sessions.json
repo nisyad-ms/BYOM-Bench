@@ -1,0 +1,1369 @@
+{
+  "persona": "A freelance graphic designer who sells custom prints online",
+  "persona_id": "persona_20260301_223949",
+  "expanded_persona": {
+    "base_persona": "A freelance graphic designer who sells custom prints online",
+    "age": 28,
+    "gender": "female",
+    "location": "Portland, OR",
+    "work_education": [
+      "Freelance graphic designer specializing in botanical and abstract prints, runs her own Etsy shop and Instagram account",
+      "Works from home studio; manages all client communications, shipping, and marketing herself",
+      "Regularly participates in local art markets and pop-up galleries, averaging two events per month",
+      "Currently negotiating a collaboration with a sustainable lifestyle brand for exclusive designs",
+      "Recently completed a certification course in digital illustration software to expand her offerings"
+    ],
+    "health_wellness": [
+      "Deals with mild carpal tunnel in her right wrist, wears a brace when sketching for longer stretches",
+      "Usually follows a plant-based diet, but occasionally eats out with friends—trying to cook more at home",
+      "Eats breakfast late due to her night owl work schedule, often works into the early morning hours",
+      "Takes weekly yoga classes for stress management and flexibility",
+      "Has struggled with periods of creative burnout; recently joined an online artist accountability group to help with motivation"
+    ],
+    "family_relationships": [
+      "Lives alone in a one-bedroom apartment; has a cat named Willow",
+      "Her younger sister attends college in Seattle; they video chat every Sunday",
+      "Parents retired and moved to rural Idaho, visit during holidays but mostly keep in touch via text",
+      "In a long-distance relationship for a year with a software developer based in Austin, TX",
+      "Close-knit circle of artist friends in Portland; hosts monthly game nights"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Schedules all client meetings and shipping tasks for afternoons — never takes calls or handles orders in the morning",
+        "Drafts all social media posts for the week in a single Sunday evening session — never posts on the fly",
+        "Responds to client emails within 24 hours but avoids checking her inbox after 8pm",
+        "Prefers in-person collaboration for new ideas — only uses video calls for final approvals",
+        "Tests every new digital illustration tool on personal projects before offering it to clients"
+      ],
+      "health_body": [
+        "Wears a wrist brace for any digital sketching session over 30 minutes — never pushes through discomfort",
+        "Cooks new plant-based recipes twice a week — avoids eating out alone, only does so for social occasions",
+        "Eats breakfast only after 11am — never starts with coffee, always makes herbal tea first",
+        "Never works through scheduled yoga class times, even under deadline pressure",
+        "Schedules at least one full day off every week strictly for non-art-related activities to manage burnout"
+      ],
+      "social_relationships": [
+        "Never misses Sunday video chats with her sister — reschedules other plans if needed",
+        "Hosts monthly game nights at her place — never rotates to friends’ houses",
+        "Always sends a physical card for family birthdays, never just a text message",
+        "Confides creative struggles only with her artist accountability group — keeps work talk light with her romantic partner",
+        "Only adopts new social plans if Willow, her cat, can be cared for without disruption"
+      ],
+      "leisure_hobbies": [
+        "Explores Portland’s botanical gardens monthly for inspiration — never visits the same garden twice in a row",
+        "Keeps a sketchbook dedicated solely to abstract doodles with no client or product purpose",
+        "Volunteers as an arts-and-crafts instructor at the local community center once a month",
+        "Drinks herbal tea while listening to vinyl records as her evening wind-down — never listens to music with lyrics during this time",
+        "Goes on spontaneous day trips along the Oregon Coast when artist’s block hits, never stays home in those moments"
+      ],
+      "daily_routines": [
+        "Starts every morning with 15 minutes of guided meditation — never checks her phone before",
+        "Shops for groceries at the Saturday farmers market — avoids supermarkets unless necessary",
+        "Limits digital device use after midnight by reading physical books before bed",
+        "Feeds Willow at exactly the same times daily — schedules her breaks around the feedings",
+        "Tracks her water intake daily and never skips filling her reusable bottle each morning"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her romantic partner received a job offer in Portland and decided to relocate, moving in with her in her apartment.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Plans weekly shared dinners at home with her partner, rotating responsibility for cooking each time",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Schedules joint morning walks in her neighborhood with her partner before starting work when possible",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Confides creative struggles only with her artist accountability group — keeps work talk light with her romantic partner"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Openly discusses creative struggles and work frustrations with her romantic partner — relies on both partner and artist group for support",
+              "domain": "social_relationships"
+            },
+            "reason": "With her partner moving in, daily proximity fosters deeper trust and emotional intimacy, making her more comfortable sharing creative struggles with him. The previous preference was motivated by distance and limited time together."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, big life update—my partner just got a job offer here in Portland and he’s officially moving in with me next week! A little surreal after a year of long distance. It feels exciting and…slightly overwhelming figuring out how to merge our routines under one roof (especially since I work from home and my space is so tied to my creative process). I could use some advice on how to adjust my work and daily rhythm without losing my flow. Any thoughts?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations—that’s such a big milestone! Going from long-distance to cohabiting is a huge transition, especially when you’re used to a solo creative space. There will definitely be an adjustment period. Can you share which parts of your routine you’re most concerned about preserving or adapting? For example, are there specific work blocks or rituals you absolutely need to keep protected?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks! Honestly, protecting my afternoons is still a must—client calls and shipping can’t budge. But mornings might be trickier now, since his new job starts a bit later than mine, and I usually start my day really quietly (meditation, then tea, no phone). It feels weird to just…not acknowledge each other in the mornings? But I also need that buffer before switching my brain on. Any ideas for blending those needs?"
+        },
+        {
+          "role": "assistant",
+          "content": "Totally get wanting to maintain that quiet time—especially if it sets the tone for your whole day. Maybe you could set clear windows: you do your individual rituals first, then check in with each other after? Or, since you mentioned tea, perhaps a shared (but silent) cup after meditation before the day gets going? Are there any routines you’re both hoping to share in the mornings?"
+        },
+        {
+          "role": "user",
+          "content": "We actually talked about trying morning walks together, just around the neighborhood before I start work. Not necessarily every single day, but a few times a week. I think it could be a nice transition out of \"me time\" without launching right into chatter. I’ll still do my meditation first and hold off on checking my phone, but adding walks with him after could work. I just…don’t want to overcomplicate things or lose my built-in focus."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a wonderful way to ease into sharing space! Morning walks can be a gentle bridge between solo time and togetherness—they also help with getting sunlight and mental clarity for the day. Keeping your meditation first is smart. You might even find that a consistent walking routine deepens focus once you’re in the studio. Would it help to plan those walks on specific days, so you both know exactly when they fit in?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that makes sense. We’ll try to pick two or three specific days a week for joint walks, depending on his schedule too. On other days, I’ll just do my thing as usual. That feels manageable. Another thing I’m trying to figure out: food! I cook plant-based most nights, and I want to keep that up. We talked about rotating who does dinner—one night I cook, one night he does. Do you have tips for making this actually stick? We can both get a little forgetful."
+        },
+        {
+          "role": "assistant",
+          "content": "A weekly schedule might help—maybe a chalkboard, calendar, or a shared note on your phones listing who’s cooking which night, plus a couple of go-to recipes you both like. If you plan out recipes ahead on a Sunday, it cuts out last-minute decision fatigue (and helps with grocery runs). Since you already cook new plant-based meals a couple times a week, maybe you can each pick a night to experiment, and keep the rest easy? Would prepping together sometimes help, or do you prefer solo kitchen time?"
+        },
+        {
+          "role": "user",
+          "content": "I love the shared calendar idea—simple, but it’ll hold us accountable. I’m definitely open to cooking together sometimes, but honestly, we both enjoy the chance to own a meal from start to finish too. I think alternating focus nights makes sense. We’ll plan one new recipe night per week and the other meals can rotate. I’ve noticed that with him moving in, I’m actually looking forward to more home-cooked meals. Before, eating together was always a restaurant treat when he visited."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lovely shift—and having routine together can be grounding, especially in a freelance lifestyle. Sharing both the cooking load and new recipe experimentation can keep things fresh. Since you used to reserve eating out for special visits, this might help you both settle in and make the home feel more yours, together. If there are special dietary needs or ingredients to coordinate, maybe make space for a quick meal-planning chat on your Sunday evenings?"
+        },
+        {
+          "role": "user",
+          "content": "Great call! We’ll use Sunday evenings for a quick check-in—plan meals, grocery lists, and also my social post drafts since I batch those then anyway. On another note, with him here now, I’m realizing we’re sharing more than just space…I’ve actually started opening up about my work frustrations and creative blocks with him, instead of keeping it just for my accountability group. I never really did that when we were apart, but it just feels natural in person. Kind of surprised myself!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s such a meaningful change—and a sign you’re building even deeper trust and partnership. Opening up about your creative process and struggles can take the edge off burnout, especially when someone cares and genuinely wants to support you. It also gives your partner a window into your world. Have you noticed any difference in how you process creative blocks since sharing more openly with him?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. Just saying some of the stress out loud takes the sting out. Sometimes he doesn’t have advice (which is fine), but it helps that he gets what late nights or tricky client moments feel like. I still rely on my artist group, but now I have both. Funny how I used to be so strict about not blending work talk with home life. It’s much less lonely this way."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve found a new balance, where sharing actually strengthens both your relationship and creative resilience. Letting go of hard boundaries can be healthy when circumstances change. Are there any other routines you’re modifying now? For example, are your social events, like game nights or market prep, shifting to include him more, or are you keeping those the same?"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger sister decided to take a semester abroad in Europe, making regular Sunday video chats difficult to coordinate due to the new time zone and travel schedule.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Saves highlights from her sister’s travels in a shared digital photo album as a way to stay connected when they can’t talk live",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Never misses Sunday video chats with her sister — reschedules other plans if needed"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Keeps in close touch with her sister throughout the semester abroad via flexible, unscheduled text and voice notes — no longer insists on weekly video calls",
+              "domain": "social_relationships"
+            },
+            "reason": "Her sister's new European time zone and unpredictable travel schedule make routine Sunday video chats unworkable. She adapts by maintaining connection through more flexible, asynchronous texting and voice notes whenever possible."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey! My sister just left for her semester abroad in Europe. We used to have these rigid Sunday video calls every week — now, with her bouncing between cities and the time difference, that's just not doable. It's been kind of weird adjusting. Do you have any ideas for keeping in touch, or little rituals, when live chats aren't possible?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big change! It can feel pretty unmooring when a strong routine gets disrupted like that, especially with someone close. If weekly video calls aren’t realistic, maybe shifting to more asynchronous ways could work — like trading voice notes, forwarding photos of your week, or even shared digital journals. Are you both good about texting, or is it more that you miss the 'face time'?"
+        },
+        {
+          "role": "user",
+          "content": "We’ve actually been sending a lot more voice notes lately! It’s less pressure than a whole call, and I can catch her when she’s available. I realized I don’t need that strict Sunday ritual, but I do want to feel like we’re keeping each other in the loop — especially with her posting all these travel snaps. I started saving my favorite ones from her Instagram into a shared album so we both have a kind of highlight reel. It’s a way to stay connected even if we can’t talk live every week."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s actually a really sweet idea — the album becomes a digital scrapbook you both contribute to, and you don’t miss the little moments. Do you share your world back with her, or is it mostly her travels right now? If you’re worried about it feeling one-sided, maybe you could add day-in-the-life shots, quick updates about Willow, or behind-the-scenes of your latest artwork. She might love getting the inside scoop from your end too."
+        },
+        {
+          "role": "user",
+          "content": "That’s a good reminder! I tend to forget she actually wants those updates from me, since most of my stuff feels pretty routine compared to gallivanting around Europe. But she always asks about Willow and what I’m working on. Maybe I’ll add a ‘Portland slice-of-life’ section to the album — market finds, new art experiments, and how the apartment plants are faring, for instance."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds perfect. It keeps the exchange mutual and gives her a little taste of home. If you both build it organically, you’ll end up with a visual story of this chapter for you and her to look back on. Would you want reminders or prompts to keep adding to it, or do you prefer just letting it grow naturally when moments strike?"
+        },
+        {
+          "role": "user",
+          "content": "I think I’ll keep it low-pressure — if it feels like a chore, we’ll both avoid it. The flexibility is actually kind of nice, especially with her schedule changing every other week. Our old fixed calls were starting to feel forced, honestly. Texts and voice notes just fit better during this season, and the album helps keep us close in a different way."
+        },
+        {
+          "role": "assistant",
+          "content": "Letting go of strict routines can feel odd, but it sounds like you’ve found a really meaningful new rhythm. And who knows, you might end up liking this flexible way of staying in touch even more. If you ever want creative prompts for what to add next, or ideas for fun digital care packages, just ask! How are you feeling about the shift so far — any particular part still feeling tough?"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The sustainable lifestyle brand collaboration was finalized, requiring her to produce a new exclusive print collection on a fixed monthly deadline, with additional virtual planning meetings each week.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_032",
+            "fact": "Blocks Monday mornings exclusively for brand project work — does not schedule any client meetings or shipping tasks during this time",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_033",
+            "fact": "Prepares a detailed task checklist for the brand project at the start of each week to stay on track for monthly deadlines",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Prefers in-person collaboration for new ideas — only uses video calls for final approvals"
+            },
+            "to": {
+              "id": "pref_031",
+              "fact": "Uses video calls for both idea generation and approvals when collaborating with remote partners — no longer waits for in-person sessions",
+              "domain": "work_habits"
+            },
+            "reason": "The new brand partnership mandates weekly virtual planning meetings for creative direction, making her past preference for in-person brainstorming impractical. She now must ideate collaboratively over video, not just finalize work that way."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey! So that brand collab I've been working toward is now official—I'm designing a monthly exclusive print collection for their eco line. It's exciting, but it's shaking up my whole work rhythm: more deadlines, plus we have a weekly virtual planning session. I want to find a structure that will help me stay on track without burning out. Got any strategies, especially for managing recurring creative projects?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats—that’s a huge milestone! Having a fixed monthly deadline can really change the pace. Some creatives block out dedicated time each week just for that anchor project, so last-minute rushes aren’t as common. Do you already have fixed blocks in your calendar, or is your schedule pretty flexible from week to week?"
+        },
+        {
+          "role": "user",
+          "content": "I just started reserving Monday mornings exclusively for the brand project. No client calls, no packaging orders—just focused design time for them. It felt weird at first but honestly, it’s helping me get into the right headspace. The only issue is that I used to keep idea generation for in-person meetups, but all our planning is over video now since the team’s remote."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift if you’re used to brainstorming face-to-face. How are you finding virtual ideation so far? Are you able to get into the creative flow, or do the video meetings feel more draining? Sometimes people prep materials ahead of time so the sessions are focused—have you tried that?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I’ve just accepted that I need to ideate with them over video, not just save calls for approvals. Being able to sketch rough concepts on my iPad during the session helps, but I still need to prep or I feel scattered. So now I use video calls for both idea generation and sign-off—kind of had no choice but to adapt."
+        },
+        {
+          "role": "assistant",
+          "content": "Totally makes sense, and using the iPad live is a great way to keep things interactive. Given the shift, do you plan your agenda in advance? Some designers I know send out moodboards or prompt lists before calls. That way, the team comes in with shared inspiration and you’re not starting cold."
+        },
+        {
+          "role": "user",
+          "content": "Yes! Before the week starts, I actually put together a detailed checklist for the brand project, including key tasks and what I want input on during each meeting. It keeps things concrete for me—especially since we have recurring sessions now. Otherwise, it’d get overwhelming fast."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s super organized—you’re building in structure from the start. Have you noticed any spillover to your other projects, or are you keeping client work and the brand collab fully separate in your schedule? It sounds like those Monday mornings and your weekly checklists are becoming a foundation."
+        },
+        {
+          "role": "user",
+          "content": "I definitely try to keep them separated. Mondays are the wall around my brand work—I don’t even let myself peek at my email for client stuff or Etsy shipping until after lunch. I’m not ready to overhaul my whole routine, but these anchor points have made adjusting to the fixed deadlines much less stressful."
+        },
+        {
+          "role": "assistant",
+          "content": "That boundary sounds really healthy, and it’s great you’re protecting your creative energy for this new opportunity. If you spot any tension points or need help balancing everything as the collab ramps up, feel free to check in. Want any tips for tweaking your weekly checklist template, or are you feeling good about it for now?"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed a repetitive strain injury in her left shoulder after several weeks of longer digital illustration sessions needed for her new print collection, leading her doctor to prescribe twice-weekly physical therapy sessions and limit heavy sketching periods.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Attends twice-weekly evening physical therapy sessions for her shoulder and schedules all work around these appointments as non-negotiable",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Avoids participating as an arts-and-crafts instructor at the community center until her shoulder recovers, opting for non-physical volunteer activities if she wishes to contribute",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Wears a wrist brace for any digital sketching session over 30 minutes — never pushes through discomfort"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Limits all digital sketching sessions to a maximum of 30 minutes, alternating with mandated shoulder stretching breaks and wearing braces as needed, even if projects are urgent",
+              "domain": "health_body"
+            },
+            "reason": "The shoulder injury and doctor's orders to cap heavy sketching make her set a hard maximum on session length—she now cannot sketch for longer periods, regardless of deadlines or comfort, and incorporates stretching breaks for her shoulder in addition to bracing her wrist."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So... I just saw my doctor about this annoying ache in my left shoulder that kept getting worse. Turns out, all those long digital illustration sessions for my new print collection weren’t doing me any favors—I’ve developed a repetitive strain injury. I start physical therapy next week (twice weekly, like, mandatory). Any ideas for managing my workload without falling behind, given I need more breaks now and can’t do those epic late-night sketching marathons anymore?"
+        },
+        {
+          "role": "assistant",
+          "content": "Oof, I’m really sorry you’re going through that. Repetitive strain injuries are no joke, especially when your art and business depend on your hands and shoulders. Since those long sketching sessions are off the table for now, have you considered restructuring your illustration process into shorter, focused sessions with set breaks? Also, maybe batching non-sketching tasks on heavier PT days could help balance things out—like prepping client emails or planning content. What does your day currently look like with these new restrictions?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s been a scramble—I’m now limited to sketching for 30 minutes max at a time, no matter what. I have to alternate those with mandatory stretching breaks for my shoulder, and I wear my wrist brace even if my wrist isn’t acting up. Even if there’s a looming deadline, I can’t push past that 30-minute mark like I used to. It’s strict, doctor’s orders. So, I’m trying to figure out the best way to adapt—especially with a release coming up."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a significant shift—good for you for sticking to the 30-minute limit, even when deadlines are relentless. Maybe you could split your creative sessions throughout the day: three or four brisk sketching rounds with other admin or marketing tasks in between. Could you use your stretching break time for quick brainstorming—like voice-memoing ideas, or thumbnailing with your non-dominant hand if it’s comfortable? Also, are there any parts of your release prep you could batch on your non-sketching days?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely going to have to get creative—I don’t think I’ve ever been this strategic with scheduling! One thing: my twice-weekly PT appointments are now non-negotiable—I have to build my whole work schedule around those evenings. No more squeezing in last-minute things, even if it means moving client meetings to another day. So afternoons feel tighter."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—protecting that PT time, no matter what, is key to actually recovering. Since afternoons are tighter now, maybe cluster your most mentally demanding non-illustration work for mornings or right after your meditation, then reserve the time between your afternoon tasks and PT for lighter work—like planning, social posts, or packaging orders. Can you automate or outsource any tasks temporarily, like using scheduled posts or a helper for shipping?"
+        },
+        {
+          "role": "user",
+          "content": "I’m open to more automation for sure—scheduling all social posts Sunday night is already my thing, but maybe it’s time to get help shipping during busy weeks. Oh, one change: I’ve also stopped volunteering as an arts-and-crafts instructor at the community center for now. Until my shoulder’s better, I just can’t handle hands-on instruction. If I want to help, I’ll stick to graphic design flyers or digital projects for them."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a wise adjustment—protecting your recovery comes first. You can always return to hands-on teaching once you’re healthy again, and supporting with digital projects still lets you stay involved. Since your regular routines are so upended, is there anything else that’s felt especially hard to let go of, or something you want help reimagining while you heal?"
+        },
+        {
+          "role": "user",
+          "content": "I think the main challenge is restraining my work sessions—I used to push through if I felt okay, but now I’m following the 30-minute max, with stretches and bracing as needed every single time, no matter how urgent things get. It’s frustrating, but I know it’s necessary. And, reorganizing around PT is new for me—haven’t missed one yet, but it’s a scheduling puzzle. At least I can still do some volunteering, just not anything physical. If you have tips for making these shorter work bursts feel productive, I’m all ears."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. For productivity in shorter bursts, try defining one tiny goal for each sketching session—like \"finish background color blocks\" or \"draft two new leaf shapes\"—rather than open-ended \"work on print.\" That way, you see measurable progress, even in 30 minutes. Using a timer (maybe paired with your herbal tea ritual) can help cue the start and end of each sprint. And consider using your shoulder stretch breaks to briefly jot down quick notes about what to tackle next—so you get momentum going for your next session without the mental friction of wondering where you left off. Would adapting micro-goals like that fit your process?"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her parents announced that they will be coming to stay with her in Portland for three weeks while their home in Idaho undergoes unexpected repairs, requiring her to adjust her living arrangements to accommodate them in her one-bedroom apartment.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Prepares shared breakfasts with her parents at the kitchen table before starting work during their stay, pausing her usual late solo breakfasts",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Avoids scheduling client video calls from home while her parents are present, preferring to work from local cafés for meetings requiring privacy",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Hosts monthly game nights at her place — never rotates to friends’ houses"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Temporarily moves monthly game nights to friends’ houses instead of hosting at her place while her parents are staying with her",
+              "domain": "social_relationships"
+            },
+            "reason": "Her one-bedroom apartment will be crowded with her parents staying for three weeks, making it impractical and disruptive to host gatherings at home. She needs to relocate game nights to friends’ homes for the duration."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my parents just told me they're coming to stay with me for the next three weeks while their house in Idaho gets repairs. I want to help them out of course, but my apartment is tiny and honestly, I'm used to working solo at home. Any thoughts on managing work and space with a full house?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that’s a big shift, especially with a one-bedroom! I can definitely see how that might throw off your work groove and routines. Are there particular things you’re most worried about—like staying productive, keeping your Etsy orders seamless, or even just having downtime?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the toughest part is client calls and meetings. My parents are super supportive but my living room/kitchen is basically my office, and there’s zero privacy. I’m debating if I need to start going out for calls, but I worry about WiFi and background noise."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense privacy would be a challenge. A lot of local cafés have pretty reliable WiFi these days, though it can get noisy at peak times. Would co-working spaces or the library work for you? Or is it mostly a WiFi quality thing?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve actually decided to avoid all client video calls from home while they’re here—I think I’ll stick to local cafés for meetings where I need privacy, since they’re close and have solid WiFi off-hours. For regular design work, I’m fine to stay home, but video calls feel impossible with the extra people around."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good boundary—at least with solo design or packaging orders, you can pop in headphones and tune it out. What about your routines around meals or self-care? Are you still getting your late breakfast and slow mornings, or has that shifted too?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that’s changed too. I usually do breakfast by myself after 11, but with my parents here, I started prepping shared breakfasts at the kitchen table before getting to work. It’s actually kind of nice, though definitely not my old rhythm."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a sweet adjustment, even if it means trading some solitude for family time. How about your monthly game nights? Are you still planning to host with your parents around, or does that need to move elsewhere while they’re staying?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely moving them for now! My apartment is too cramped for three adults and a crowd. So, I’m temporarily shifting monthly game nights to friends’ houses—the disruption would just be too much otherwise. I’ll pick it back up here once things are back to normal."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes total sense—sometimes you just have to adapt. The bigger question: how’s Willow handling all these guests and routine changes? And is there anything you’re still worried about shifting in your workflow or wellness while your parents are with you?"
+        },
+        {
+          "role": "user",
+          "content": "Willow’s skeptical but so far, so good! My main concern is keeping up with moments for myself—yoga, meditation, all that—when the apartment’s always buzzing. But I think as long as I have some afternoon café work sessions and still stick to my yoga class time, I’ll survive."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid plan—small escapes, safe spaces for work, and keeping your grounding routines as best you can. If you want brainstorms for low-stress meal ideas or ways to signal 'focus time' to your parents, just ask. It’ll be cozy, but it sounds like you’re already adapting in thoughtful ways."
+        },
+        {
+          "role": "user",
+          "content": "Thanks! Meal ideas could definitely help—I’m cooking a lot more while they’re here, and keeping it mostly plant-based. Appreciate the check-in. I’ll loop back if I need more sanity-saving strategies."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After feeling unusually fatigued and noticing changes in her appetite, she was diagnosed with iron deficiency anemia by her doctor, who recommended immediate dietary changes and regular supplementation.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_041",
+            "fact": "Takes prescribed iron supplements every day after her main meal — sets a daily phone alarm as a reminder and avoids dairy within an hour of the dose",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_042",
+            "fact": "Tracks her weekly intake of lentils, leafy greens, tofu, and dried fruit in a dedicated food journal to ensure sufficient iron-rich plant-based meals",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Eats breakfast only after 11am — never starts with coffee, always makes herbal tea first"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Eats breakfast earlier in the morning, prioritizing iron-rich foods and vitamin C sources — avoids coffee and black tea at breakfast to maximize iron absorption",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor emphasized immediate dietary changes for anemia, including shifting to earlier, nutrient-focused breakfasts and avoiding beverages that inhibit iron uptake in the morning. The old brunch-like routine and herbal tea habit are no longer compatible with her new medical needs."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so—new curveball: I just found out I have iron deficiency anemia. My doctor wants me to overhaul my breakfast and eating schedule basically immediately. Do you have any ideas for making plant-based, iron-rich breakfasts that won’t make me feel like I’m eating the same sad bowl of oatmeal every morning?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift! Sorry you’re dealing with that. For plant-based iron, variety is definitely possible—and way better than just oatmeal. Would you be open to things like savory breakfasts, or do you usually stick with sweet? For example, you could try tofu scrambles, breakfast burritos with black beans and spinach, or even lentil patties. And adding fruits rich in vitamin C (like oranges or strawberries) can really help with iron absorption. Do any of those sound appealing, or does your morning appetite lean a particular way?"
+        },
+        {
+          "role": "user",
+          "content": "Lately savory actually sounds better, which is so not my norm—but I’m trying to eat breakfast earlier now, doctor’s orders. Used to be an 11 a.m. herbal tea and toast situation, but apparently I need to eat sooner and really focus on iron. No coffee or black tea at breakfast either! So tofu scrambles or even a veggie-packed breakfast burrito honestly sound way more exciting than just cereal. I’m open to recipes as long as I can prep some things ahead—my mornings are not my creative time."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big morning routine change! Prepping ahead is smart—how about making a big batch of a lentil-spinach filling or baked chickpea ‘omelette’ squares, then reheating in the morning? You could wrap that in a tortilla with some fresh tomato or red pepper for vitamin C. Another idea: blend greens and berries into overnight oats with hemp seeds, if you ever need a grab-and-go day. Would that kind of prep fit your schedule, or do you find yourself wanting something hot and quick most mornings?"
+        },
+        {
+          "role": "user",
+          "content": "Batch cooking definitely helps. I tried a lentil-spinach scramble this week—it was actually pretty good! I’m also keeping an eye on how many times I eat lentils, greens, tofu, and dried fruit per week now—my doctor suggested tracking that in a little food journal. So anything that lets me rotate ingredients keeps me motivated. The overnight oats idea sounds easier for my art market weekends when I barely have time to eat."
+        },
+        {
+          "role": "assistant",
+          "content": "Great job already tracking your staple iron sources! That’s a solid strategy. Would you like some suggested rotation ideas, so you’re not burning out on the same combos? For example, swap in white beans or edamame for variety, or use roasted sweet potatoes as a base with wilted greens and tahini. And for dried fruit, try chopping apricots into breakfast quinoa or adding raisins to a savory bulgur pilaf. Anything you want to especially avoid or that just doesn’t work for you?"
+        },
+        {
+          "role": "user",
+          "content": "This is super helpful. I do need to avoid dairy around my iron supplement—that’s a new thing. I take the supplement with my biggest meal (usually lunch or dinner), set an alarm, and skip anything with cheese or yogurt for an hour on either side. My mornings used to be all about herbal tea, but for now I hold off on even that until later, just to be safe. Breakfast gets a glass of OJ or some strawberries instead."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—dairy can block absorption, so it’s smart to time it out. Good call on setting an alarm for your supplement too! Since you’re shifting your herbal tea and focusing on vitamin C mornings, would you like ideas for citrusy or vibrant breakfast pairings? Also, if you ever want an iron boost for weekend brunches with friends (since you sometimes eat out), there are some great iron-rich vegan options at many Portland spots. Want a mini list?"
+        },
+        {
+          "role": "user",
+          "content": "A list would be awesome! For now I’m really trying to cook breakfasts at home since eating out solo isn’t my thing. I’m still getting used to early breakfast and the whole \"don’t drink tea with my meal\" thing—feels weird after so many years of late starts and ritual. But it’s getting easier. Anyway, I think your batch-cook savory ideas will make it much simpler. Thanks for talking it out with me!"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re so welcome! Change is always a process, but you’re handling it thoughtfully. I’ll send you a list of local vegan brunch places with iron-rich options for when you do want to go out with friends. And if you ever want new breakfast recipes that rotate in other ingredients, just ask. If you want help updating your meal tracker template for easier logging—or reminders for supplement timing—let me know. You’ve got this!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Willow, her cat, was diagnosed with chronic kidney disease during a routine vet visit, requiring her to administer daily medication, adjust Willow's diet, and schedule regular check-ups.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Prepares Willow’s daily medication and prescription food each morning before starting any work or personal routine",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Tracks Willow’s symptoms and medication administration in a dedicated pet health journal reviewed weekly with the vet",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_020",
+              "fact": "Goes on spontaneous day trips along the Oregon Coast when artist’s block hits, never stays home in those moments"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Stays home to care for Willow whenever artist’s block hits, using indoor activities for inspiration instead of spontaneous day trips",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Willow’s chronic kidney disease means she requires daily medication and close supervision. The responsibility makes it impossible to leave at a moment’s notice for a whole day, so she must now remain home during creative slumps, prioritizing Willow’s care and shifting to indoors-based inspiration."
+          },
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Only adopts new social plans if Willow, her cat, can be cared for without disruption"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Avoids all social plans that would require Willow to miss a medication dose or disrupt her special diet — only makes plans if cat care is completely secured and aligned with Willow’s new medical schedule",
+              "domain": "social_relationships"
+            },
+            "reason": "The new medication and strict dietary regimen mean even brief or last-minute absences risk Willow’s health. She has become more restrictive, only agreeing to social invitations if they perfectly fit Willow’s medical needs and feeding times."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, could use your help figuring out a new groove. Willow—my cat—was just diagnosed with chronic kidney disease. She seems okay for now, but it's a whole routine: meds every day, prescription food, lots of vet follow-ups. I honestly haven't wrapped my head around how to balance this and stay on top of work. Have any tips for adapting schedules around a pet's medical needs without burning out?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm so sorry to hear about Willow. That sounds like a lot to manage, especially alongside your freelance work and everything you juggle. Would it help to map your day around the times Willow needs care, then cluster work and personal tasks around that? Or are the medication and feeding schedules really rigid? Sometimes building a morning routine centered on pet care first can help create some structure—what's your current routine look like now?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks. That's actually what I've started doing—every morning now begins with prepping Willow's meds and measuring out her prescription food, before I touch anything else. Even before meditation or making tea. It does help anchor the day, but also eats into my usual quiet time. My biggest trouble is with unplanned stuff—like if inspiration strikes and I want to head out for a change of scenery, or a friend texts last minute. I used to go on day trips to the coast any time I hit artist’s block, but that's just not doable anymore. Now, if I feel stuck, I have to stay home and find indoor ways to get inspired instead."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a major shift—those coast day trips sounded amazing! I can see how losing that outlet could make creative ruts feel deeper. When you’re housebound now, what kinds of indoor inspiration actually work for you? Are there routines or activities that reliably help, or are you still figuring out what clicks?"
+        },
+        {
+          "role": "user",
+          "content": "Still figuring it out, honestly. I’ve tried diving into my abstract doodle sketchbook and rearranging the studio a bit for a fresh vibe, but it isn’t quite the same as a day outside. I've started exploring still-life setups with houseplants or rearranging my vinyl record corner for something visually fresh. If you have other suggestions for getting unblocked from home, I’m all ears. It’s definitely an adjustment—especially since I can’t just leave for hours without worrying about Willow’s meds and meals."
+        },
+        {
+          "role": "assistant",
+          "content": "Those sound like solid starting points—still-life sketching and changing up your space are classic tricks. Have you experimented with online museum tours or art livestreams for a dose of different visuals? Sometimes even browsing botanical photography archives can spark something, especially since you can't easily visit gardens or galleries on a whim. Maybe setting up a rotating indoor inspiration corner (plants, thrifted objects, art books) could give you a mini “trip” feel without leaving Willow?"
+        },
+        {
+          "role": "user",
+          "content": "Ooh, I like the mini inspiration corner idea. That could give me something to tinker with and photograph at home. Online resources are good too—haven’t tried virtual museum tours yet, but I love the botanical photo archive suggestion. The main thing I run into is regulating my time so Willow’s medical needs never get disrupted. Before, I’d sometimes take new social plans if someone could feed her, but now I only say yes if her care can be handled exactly—no missed meds or diet changes, even for an hour or two. Last weekend I had to skip a last-minute market meet-up because the timing clashed with her pill schedule!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough but understandable boundary. With all these new checks and routines, are you tracking Willow’s symptoms and meds somewhere, or just keeping it in your head? Some people find a dedicated pet health journal or an app helps them feel a little more in control, especially when vet check-ups get frequent."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I started a health journal for her. Every morning after meds, I jot down what I gave her, any symptoms, and how she’s eating. I review it weekly with the vet, which helps both for peace of mind and so nothing slips through cracks. It’s actually reassuring to see patterns and track how she’s doing day to day—it beats the stress of trying to remember everything at once."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s so proactive—and honestly, a great template for self-care too! If you notice things getting overwhelming, make sure you’re giving yourself the same kind of intentional check-ins, especially for burnout. Has shifting all these routines affected the time you set aside for non-work, non-art breaks? Still keeping at least one true day off for yourself each week?"
+        },
+        {
+          "role": "user",
+          "content": "It’s trickier since my \"breaks\" now involve a lot of Willow care, but I’m still making those days off happen. I just tend toward indoor things—reading, tea, maybe organizing my supplies—so I’m free for her meds and meals. My accountability group’s been helpful for keeping me honest about mental health check-ins too."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re doing an amazing job adjusting, even with how much has changed. If you want, I can help brainstorm more indoor creativity hacks, time-blocking ideas for your freelance projects, or even ways to automate reminders for Willow’s care. Just let me know what would ease your days the most right now."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Accepted an invitation to participate as a featured artist in a high-profile Portland art festival, requiring her to create new large-scale prints, attend mandatory planning workshops, and manage a public booth for four consecutive days.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_048",
+            "fact": "Participates in mandatory festival planning workshops each Monday morning, prioritizing these over regular client or brand tasks until the event concludes",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_049",
+            "fact": "Works late into the night on large-scale print creation for the festival, suspending her usual evening wind-down routine and tea ritual during prep weeks",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Engages with visitors and other artists daily at her festival booth, actively soliciting feedback and networking instead of her typical solo gallery event approach",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Schedules at least one full day off every week strictly for non-art-related activities to manage burnout"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Suspends her weekly full day off until after the festival, temporarily allowing art-related activities to fill her week to keep pace with project demands",
+              "domain": "health_body"
+            },
+            "reason": "The high-profile festival involves mandatory planning workshops and booth management for four consecutive days, plus a heavier prep schedule. To meet deadlines and obligations, she can no longer guarantee a full day off from art, at least until the festival wraps up."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_032",
+            "fact": "Blocks Monday mornings exclusively for brand project work — does not schedule any client meetings or shipping tasks during this time",
+            "domain": "work_habits",
+            "reason": "The festival requires mandatory planning workshops on Monday mornings and brand project work must be paused or rescheduled; she cannot maintain this exclusive block."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey! Big life update — I just accepted an invitation to be a featured artist at that major Portland art festival in April. It's definitely the biggest thing I've ever committed to. They'll have me creating several new large-scale prints, running my own booth for four days, and I have to attend weekly planning workshops. I'm already feeling the pressure. Do you have any ideas for balancing all of this without totally burning out or letting my client work suffer?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, congratulations! That’s such an exciting opportunity—and a huge increase in scope. Balancing festival prep with ongoing client work does sound intense. Since you’ll be making large pieces and manning a booth, your schedule’s probably changed a lot. How are you currently structuring your week? Are full days off still possible, or have you had to give those up until after the festival?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, about that—my usual \"at least one full day off strictly for non-art activities\" is definitely on pause right now. There’s just no way to keep pace if I try to hold that boundary, at least until the event’s over. Mondays now start with mandatory festival planning workshops, so I have to prioritize that over client tasks too. It all feels a bit relentless. Is there a way to keep momentum without losing my mind?"
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you. Suspending your non-art day off is a big adjustment, but probably necessary in the short term. Since Monday mornings are blocked for festival planning, would it make sense to cluster similar work later in the week—like grouping your client communications and shipping into dedicated afternoon blocks? And are you batching any of your art production yet, or is it more of an ongoing process right now?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve started clustering shipment and emails to the afternoons, since those mornings are now a loss for anything besides festival meetings. I’m batch-producing the large-scale prints really late at night, though. My usual evening wind-down routine with herbal tea and vinyl is basically out—I just need more hours for big pieces. Not ideal, but it’s what fits. Anything I should watch for with these late-night work sprints?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge change! Skipping your tea-and-vinyl wind-down to work extra late definitely throws off your rest routine. Make sure your workspace stays ergonomic—wear your wrist brace for any long digital sessions, and take movement breaks even when you’re locked in. Are you getting enough sleep, or are these late nights eating into your mornings? Maybe there’s a small replacement ritual you could try—like a brief stretch or reading—even if just for a few minutes."
+        },
+        {
+          "role": "user",
+          "content": "Sleep is a little rough right now, but I’m making it work. I am still wearing my wrist brace and not skipping movement breaks—non-negotiable. As for rituals, I squeeze in a tiny bit of guided meditation most mornings before I touch my phone, but evenings are basically for giant digital canvases at this point. Oh—and since the festival wants lots of active engagement, I'll be at my booth all four days, talking to visitors and other artists every day. That’s not my usual style—I typically stick to solo gallery events. I want to be intentional about networking, but it’s draining. How do I keep my energy up for four days straight without withdrawing?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift from working mostly solo to constant engagement for four days! For energy management: build in small recovery moments between high-stimulation periods—step away for a few minutes to recharge, hydrate, or jot quick notes (maybe in your abstract doodle sketchbook, purely for yourself). If you can, keep your favorite snacks and a big water bottle at the booth. Do you have support for booth breaks—maybe a friend, or someone who could cover for you at times so you’re not running on empty?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a good reminder. I’ll draft a break schedule (and probably bribe a couple of artist friends with free prints to watch the booth so I can decompress or check on Willow via pet cam). Normally I’d use Monday mornings to play catch-up on my brand collab project, but I can’t do that now—festival workshops totally take priority until the event is over. Fingers crossed the brand is patient. Should I give them a heads-up about my shifted Monday availability?"
+        },
+        {
+          "role": "assistant",
+          "content": "Definitely—open communication with the brand is best. Letting them know Mondays are off-limits for now, but that you’ll be responsive at other times, helps set expectations. You could offer them a firm alternate slot each week (maybe a dedicated afternoon?) so nothing falls through the cracks. Once the festival wraps, you can shift back to your old Monday rhythm."
+        },
+        {
+          "role": "user",
+          "content": "I’ll do that. The brand has been flexible so far, and I’m keeping up with their emails in other blocks. Honestly, the hardest thing is dealing with so many new faces and opinions every day during the festival—soliciting feedback, networking, and all that. I’m used to working out ideas in-person only with folks I know, but now I’ll be actively collecting feedback and chatting up strangers constantly. It’ll be new, for sure."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s brave—actively collecting feedback and talking to strangers isn’t easy, especially when you’re used to close-knit artist circles. Since this is new for you, maybe create a shortlist of questions or prompts so conversations stay focused and don’t get overwhelming. You could even track useful feedback in a notebook for later, so you don’t have to filter or remember everything in the moment. And when you need a breather, it’s absolutely fine to step back, even if just for a few deep breaths."
+        },
+        {
+          "role": "user",
+          "content": "That notebook idea is perfect—I’m definitely adding it to my festival checklist. Honestly, most of my typical boundaries and rituals are on hold until May, but I think the experience will be worth it. Thanks for helping me think through the changes—I’m nervous but excited!"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re so welcome! This festival is a major leap, and it’s natural for some routines to get bent during prep. By planning your breaks, setting clear boundaries with the brand, and creating small recovery spaces for yourself, you’ll be able to handle the intensity. And Willow will be cheering you on from home! Good luck—you’ll crush it!"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her romantic partner received an offer to work remotely for his new Portland-based job, prompting discussions about relocating together to a larger apartment that can better accommodate both their workspaces and future needs.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Sets up a combined home studio with her partner, dividing workspace zones and collaborating on creative projects at least once a week",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Establishes a shared weekly cleaning ritual with her partner to maintain order in the larger apartment, alternating primary cleaning tasks",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Schedules dedicated 'tech-free' evenings where she and her partner disconnect from devices to focus on cooking together or playing board games",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_037",
+              "fact": "Temporarily moves monthly game nights to friends’ houses instead of hosting at her place while her parents are staying with her"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Hosts monthly game nights in her new larger apartment, welcoming both her partner and friends as co-hosts",
+              "domain": "social_relationships"
+            },
+            "reason": "With her partner relocating to Portland and the impending move to a larger shared apartment, it becomes possible and appealing to resume hosting game nights at home, now with space for more guests and shared responsibility."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_038",
+            "fact": "Prepares shared breakfasts with her parents at the kitchen table before starting work during their stay, pausing her usual late solo breakfasts",
+            "domain": "daily_routines",
+            "reason": "Her parents' stay has ended, and with partner moving in, the breakfast routine will shift from parent-focused to partner-focused or solo; the underlying circumstance of parents staying is gone."
+          },
+          {
+            "id": "pref_039",
+            "fact": "Avoids scheduling client video calls from home while her parents are present, preferring to work from local cafés for meetings requiring privacy",
+            "domain": "work_habits",
+            "reason": "Her parents are no longer present in the household, removing the privacy concern that motivated her preference for café-based meetings."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big changes here — my partner just got an offer to work remotely for a Portland-based company, so we’re starting the search for a bigger apartment together! I’m a mix of excited and overwhelmed. With both of us working from home, I want to make sure we set it up so we aren’t on top of each other all day. Any tips for organizing a shared home workspace, or things to look for in an apartment?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations, that’s exciting! And totally understandable to feel a little overwhelmed — blending workspaces (and lives!) is a big step. For the apartment search, think about natural light, quiet zones, and flexible areas you can both customize. As for the workspace, it's helpful to literally map out who does what, where: do you need a closed-door office to take calls while your partner prefers open space, or vice versa? Also, how much storage will you realistically need for your supplies and prints? Have you two talked about any must-haves or deal-breakers yet?"
+        },
+        {
+          "role": "user",
+          "content": "We’ve started the conversation but haven’t nailed down the details. I’ll definitely need a zone for all my shipping supplies and art stuff, while he needs space for coding and video meetings. We’re leaning toward a second bedroom or a large den we can split. Also, I’m hoping to have enough space to set up a combined studio so we can collaborate on some projects. I think dividing up the actual work zones is going to be important. Have you seen any creative layouts for joint studios that avoid feeling cluttered, especially with totally different work styles?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely — a second bedroom or big den is ideal for keeping your work worlds separate but connected. For a shared studio, visual dividers (like bookshelves or indoor plants) work wonders to subtly create separate zones without feeling boxed in. You might each customize your sections—one for art, one for tech—while having a central table for collaboration (or some shared wall space for brainstorming). Since you both have different kinds of clutter—prints and art tools vs. cables and monitors—storage furniture that closes (like cabinets or rolling carts) can really help keep things tidy. It can also help to plan weekly tidying sessions to reset the space. Would something like a shared cleaning ritual appeal to you, or does that sound too rigid for your creative flow?"
+        },
+        {
+          "role": "user",
+          "content": "No, I actually think a shared weekly cleaning routine would help us stay sane! Especially since our work can easily spill out everywhere if we’re not careful. We already talked about alternating cleaning tasks and making it a ritual, like a reset before the week starts. We figure it’ll help us both stay productive, and avoid either of us feeling like we’re picking up all the slack."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really healthy—having a plan in place means way less stress down the line. Setting a regular time for it helps make sure it actually happens, too. On the collaboration front, do you already have ideas for the sorts of projects you want to work on together in the new studio? Or are you imagining more spontaneous creative sessions?"
+        },
+        {
+          "role": "user",
+          "content": "A little of both, honestly. We agreed to set aside time each week for at least one creative project together—maybe a print-and-code combo or designing stuff for our new place. Even if it’s just for fun, I want to make it a regular thing so our creative paths actually cross, not just share the same space. But we’ll make sure we can each retreat into our own zone when we need to focus!"
+        },
+        {
+          "role": "assistant",
+          "content": "Love that balance! Dedicating weekly time for collaboration while protecting solo work is the best of both worlds. Since you’re both working from home, have you talked about how to keep some tech-free time in your lives? It’s easy for work to bleed into everything when the boundary is just a doorway. Maybe it’s dedicated evenings for screen-free activities like cooking or games?"
+        },
+        {
+          "role": "user",
+          "content": "Funny you mention that—one new thing we’re doing is 'tech-free' evenings once a week. No screens, just us cooking together, playing board games, or whatever non-device activity we’re in the mood for. We both need that reset or it’s too tempting to check emails all night. I think it’ll also help us actually connect outside of work mode, which hasn’t always been easy with the long-distance thing!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s such a great habit—and so important now that you’ll both be working and living in the same space. It really helps to set those intentional boundaries together. Shifting gears a bit: how does this move affect your hosting and social routines? Are you hoping to continue hosting game nights and gatherings in the new place, or does it feel like too much for now?"
+        },
+        {
+          "role": "user",
+          "content": "No, actually, I’m looking forward to hosting again! We want to resume monthly game nights, but this time from our new apartment—with both me and my partner co-hosting. The extra space means we can finally fit all our friends comfortably and maybe even involve more collaborative hosting. Before, I was moving game nights to friends’ places if my family stayed with me, but those days are over and I genuinely want to build our home as a gathering spot."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s wonderful—sounds like the bigger apartment will open up a lot of opportunities, both professionally and socially. It must also feel good to shape these routines together rather than just adapting to solo rhythms or temporary circumstances. Are there any routines you’ve let go of from before, now that your partner will be around full-time?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ve already dropped two things from when my parents were staying with me. I’d been shifting client video calls to cafés for privacy, but now that I’ll be living just with my partner, I don’t see the need. And since my parents left, I stopped doing those shared breakfasts with them—I think my breakfasts will either be solo again or sometimes with my partner, depending on our morning routines. So a couple old habits out, some new ones in."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s totally natural, and it sounds like you’re being thoughtful about what to carry forward and what to let go. The mix of work-life, creative time, and social connection sounds both intentional and flexible. If you need more resources on workspace ideas, tools for collaborative project management, or suggestions for structuring those device-free evenings, just ask—there’s so much you can explore together!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received notification from her primary shipping provider that rates for both domestic and international packages will increase substantially, effective next month; she must quickly identify alternative shipping solutions or adjust her Etsy pricing and fulfillment process to remain competitive.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Checks multiple shipping provider quote tools online each week to monitor rates and update Etsy shop policies, rather than sticking to one provider",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_058",
+            "fact": "Reviews international postage and customs requirements monthly to identify the most affordable, reliable options for overseas clients",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Schedules all client meetings and shipping tasks for afternoons — never takes calls or handles orders in the morning"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Schedules shipping tasks in the morning to align with new shipping provider pickup times; client meetings remain in the afternoon",
+              "domain": "work_habits"
+            },
+            "reason": "With major shipping rate increases, she must consider alternative providers, many of which only offer morning pickups for small businesses. To avoid paying the old provider's high rates, she adapts by shifting shipping-related tasks to mornings, even though she previously avoided work at that time."
+          },
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Drafts all social media posts for the week in a single Sunday evening session — never posts on the fly"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Post shipping updates and price changes on social media as needed throughout the week, supplementing scheduled posts with timely, on-the-fly announcements",
+              "domain": "work_habits"
+            },
+            "reason": "The sudden rate hike requires her to communicate ongoing shipping and pricing adjustments with customers quickly, making strict Sunday-only scheduling impractical. She must engage with her audience more reactively to maintain trust and transparency."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just found out my main shipping provider is hiking their rates big time starting next month—both domestic and international. It's not a small jump either. I feel like I need to scramble and rethink my whole Etsy fulfillment workflow, or I'll price myself right out of the market. Do you know any good tools for comparing shipping rates for small creative sellers, or advice for breaking news like this to customers without scaring them off?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ugh, that's so rough! A lot of artists have been hit with those sudden increases recently. For comparing rates, Shippo and Pirate Ship can be helpful—they let you check multiple carriers and see both domestic and international options. As for communicating with customers, a combo of honesty plus reassurance usually works best. Maybe a post explaining the situation, highlighting any benefits (like more reliable tracking), and updating your FAQ and shop policies?\n\nAre you looking to keep your same packaging, or are you open to adjusting parcel sizes or materials to optimize for cheaper rates?"
+        },
+        {
+          "role": "user",
+          "content": "I'm open to changing packaging if it helps. I mostly ship flat prints, so I have some flexibility, but I'd rather not compromise on the experience too much.\n\nAbout announcing it—I usually schedule all my posts once a week on Sunday evenings, but I think this situation is going to force me to be more reactive. I'll probably have to post updates as soon as things change. Any tips for making those unscheduled announcements feel genuine? I hate spamming people."
+        },
+        {
+          "role": "assistant",
+          "content": "Totally get you. People appreciate heads-ups, especially if you explain what’s changing and why—and what you’re doing to soften any impact. You could frame quick updates as ‘studio notes’ or ‘real-time behind-the-scenes’ posts, so they feel personal, not just transactional. Stories and pinned highlights on Instagram work well for timely updates that don’t clutter your feed.\n\nIf you’re posting outside your usual schedule, is that going to disrupt the rest of your social media planning? Or are you okay supplementing pre-scheduled posts with the as-needed announcements?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll still schedule the main batch on Sundays, but yeah, this is one of those rare times I’ll post on the fly when shipping or pricing changes pop up. It’s not my favorite style, but I think customers will appreciate transparency more than my perfect grid aesthetic right now.\n\nAbout rates—I’ve already started checking tools like Pirate Ship and even ShipStation. I think this’ll become a weekly task until the dust settles, instead of just sticking to one provider like before. Did I miss any good multi-carrier quote tools?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid set! Those two cover most major carriers. Easyship is another, especially for international shipments—they help with customs forms too, which could save you time. Also, Sendle is increasingly popular for small packages on the West Coast, and they offer free pickups. Just watch out for volume requirements or possible integration quirks with Etsy.\n\nSince you’ll be checking rates more regularly now, do you have a system for tracking carrier policy changes? Or are you still mostly focused on price alone?"
+        },
+        {
+          "role": "user",
+          "content": "It’s evolving—now I’m tracking more than just price. I set a monthly reminder to review international postage requirements and customs forms too, since I want to avoid any expensive missed details for overseas orders.\n\nSeparate question though—since most alternative carriers only do morning pickups in my neighborhood, I’ve already had to shift my workflow. I’m now scheduling shipping tasks first thing in the morning, rather than bundling them in the afternoon. Still keeping client meetings in the afternoons. It’s pretty disruptive to my usual rhythm, but I guess I can adjust. Any advice for transitioning to earlier work blocks when you’re naturally a night owl?"
+        },
+        {
+          "role": "assistant",
+          "content": "Morning shifts can be rough if you’re not used to them, but it helps to front-load only the shipping-specific tasks, then let the rest of your routine stay familiar. Maybe pair those morning shipping blocks with a positive ritual—like your usual herbal tea, or a favorite record—so it feels less like a chore. You could even prep everything the night before, so you just have to print labels and process orders while it’s still quiet.\n\nAre you finding the earlier start is throwing off your creative energy later in the day, or is it mostly just an adjustment issue for now?"
+        },
+        {
+          "role": "user",
+          "content": "So far it’s just an adjustment—my creative energy still peaks in the evening. At least I don’t have to take calls or design first thing, just get orders out! The trick is not skipping meditation or Willow’s feeding, which anchor my mornings. If this shipping schedule change sticks, I’ll need to build a better buffer before diving into emails or anything creative.\n\nAppreciate the feedback! I’ll give Easyship and Sendle a look and see what fits. And yep, I’m officially that person obsessively testing new quote tools every week now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great attitude—flexibility really pays off when running your own shop. And it sounds like you’re already building the right habits without losing the self-care essentials. Let me know which provider turns out best. If you need help drafting a customer update or want feedback on a new process doc, I’m here! Hope Willow enjoys the extra morning company, at least."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_003",
+        "fact": "Responds to client emails within 24 hours but avoids checking her inbox after 8pm",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Tests every new digital illustration tool on personal projects before offering it to clients",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Cooks new plant-based recipes twice a week — avoids eating out alone, only does so for social occasions",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Never works through scheduled yoga class times, even under deadline pressure",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Always sends a physical card for family birthdays, never just a text message",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Explores Portland’s botanical gardens monthly for inspiration — never visits the same garden twice in a row",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Keeps a sketchbook dedicated solely to abstract doodles with no client or product purpose",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Volunteers as an arts-and-crafts instructor at the local community center once a month",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Drinks herbal tea while listening to vinyl records as her evening wind-down — never listens to music with lyrics during this time",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts every morning with 15 minutes of guided meditation — never checks her phone before",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Shops for groceries at the Saturday farmers market — avoids supermarkets unless necessary",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Limits digital device use after midnight by reading physical books before bed",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Feeds Willow at exactly the same times daily — schedules her breaks around the feedings",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Tracks her water intake daily and never skips filling her reusable bottle each morning",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Openly discusses creative struggles and work frustrations with her romantic partner — relies on both partner and artist group for support",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Plans weekly shared dinners at home with her partner, rotating responsibility for cooking each time",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Schedules joint morning walks in her neighborhood with her partner before starting work when possible",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Keeps in close touch with her sister throughout the semester abroad via flexible, unscheduled text and voice notes — no longer insists on weekly video calls",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Saves highlights from her sister’s travels in a shared digital photo album as a way to stay connected when they can’t talk live",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Uses video calls for both idea generation and approvals when collaborating with remote partners — no longer waits for in-person sessions",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Prepares a detailed task checklist for the brand project at the start of each week to stay on track for monthly deadlines",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Limits all digital sketching sessions to a maximum of 30 minutes, alternating with mandated shoulder stretching breaks and wearing braces as needed, even if projects are urgent",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_035",
+        "fact": "Attends twice-weekly evening physical therapy sessions for her shoulder and schedules all work around these appointments as non-negotiable",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Avoids participating as an arts-and-crafts instructor at the community center until her shoulder recovers, opting for non-physical volunteer activities if she wishes to contribute",
+        "domain": "leisure_hobbies",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_040",
+        "fact": "Eats breakfast earlier in the morning, prioritizing iron-rich foods and vitamin C sources — avoids coffee and black tea at breakfast to maximize iron absorption",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_041",
+        "fact": "Takes prescribed iron supplements every day after her main meal — sets a daily phone alarm as a reminder and avoids dairy within an hour of the dose",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Tracks her weekly intake of lentils, leafy greens, tofu, and dried fruit in a dedicated food journal to ensure sufficient iron-rich plant-based meals",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Stays home to care for Willow whenever artist’s block hits, using indoor activities for inspiration instead of spontaneous day trips",
+        "domain": "leisure_hobbies",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_044",
+        "fact": "Avoids all social plans that would require Willow to miss a medication dose or disrupt her special diet — only makes plans if cat care is completely secured and aligned with Willow’s new medical schedule",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Prepares Willow’s daily medication and prescription food each morning before starting any work or personal routine",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Tracks Willow’s symptoms and medication administration in a dedicated pet health journal reviewed weekly with the vet",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Suspends her weekly full day off until after the festival, temporarily allowing art-related activities to fill her week to keep pace with project demands",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Participates in mandatory festival planning workshops each Monday morning, prioritizing these over regular client or brand tasks until the event concludes",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Works late into the night on large-scale print creation for the festival, suspending her usual evening wind-down routine and tea ritual during prep weeks",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Engages with visitors and other artists daily at her festival booth, actively soliciting feedback and networking instead of her typical solo gallery event approach",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Hosts monthly game nights in her new larger apartment, welcoming both her partner and friends as co-hosts",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Sets up a combined home studio with her partner, dividing workspace zones and collaborating on creative projects at least once a week",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Establishes a shared weekly cleaning ritual with her partner to maintain order in the larger apartment, alternating primary cleaning tasks",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Schedules dedicated 'tech-free' evenings where she and her partner disconnect from devices to focus on cooking together or playing board games",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Schedules shipping tasks in the morning to align with new shipping provider pickup times; client meetings remain in the afternoon",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Post shipping updates and price changes on social media as needed throughout the week, supplementing scheduled posts with timely, on-the-fly announcements",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Checks multiple shipping provider quote tools online each week to monitor rates and update Etsy shop policies, rather than sticking to one provider",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Reviews international postage and customs requirements monthly to identify the most affordable, reliable options for overseas clients",
+        "domain": "work_habits",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Schedules all client meetings and shipping tasks for afternoons — never takes calls or handles orders in the morning",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "With major shipping rate increases, she must consider alternative providers, many of which only offer morning pickups for small businesses. To avoid paying the old provider's high rates, she adapts by shifting shipping-related tasks to mornings, even though she previously avoided work at that time."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Drafts all social media posts for the week in a single Sunday evening session — never posts on the fly",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_056",
+        "reason": "The sudden rate hike requires her to communicate ongoing shipping and pricing adjustments with customers quickly, making strict Sunday-only scheduling impractical. She must engage with her audience more reactively to maintain trust and transparency."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Prefers in-person collaboration for new ideas — only uses video calls for final approvals",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_031",
+        "reason": "The new brand partnership mandates weekly virtual planning meetings for creative direction, making her past preference for in-person brainstorming impractical. She now must ideate collaboratively over video, not just finalize work that way."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Wears a wrist brace for any digital sketching session over 30 minutes — never pushes through discomfort",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_034",
+        "reason": "The shoulder injury and doctor's orders to cap heavy sketching make her set a hard maximum on session length—she now cannot sketch for longer periods, regardless of deadlines or comfort, and incorporates stretching breaks for her shoulder in addition to bracing her wrist."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Eats breakfast only after 11am — never starts with coffee, always makes herbal tea first",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_040",
+        "reason": "Her doctor emphasized immediate dietary changes for anemia, including shifting to earlier, nutrient-focused breakfasts and avoiding beverages that inhibit iron uptake in the morning. The old brunch-like routine and herbal tea habit are no longer compatible with her new medical needs."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Schedules at least one full day off every week strictly for non-art-related activities to manage burnout",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_047",
+        "reason": "The high-profile festival involves mandatory planning workshops and booth management for four consecutive days, plus a heavier prep schedule. To meet deadlines and obligations, she can no longer guarantee a full day off from art, at least until the festival wraps up."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Never misses Sunday video chats with her sister — reschedules other plans if needed",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "Her sister's new European time zone and unpredictable travel schedule make routine Sunday video chats unworkable. She adapts by maintaining connection through more flexible, asynchronous texting and voice notes whenever possible."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Hosts monthly game nights at her place — never rotates to friends’ houses",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_037",
+        "reason": "Her one-bedroom apartment will be crowded with her parents staying for three weeks, making it impractical and disruptive to host gatherings at home. She needs to relocate game nights to friends’ homes for the duration."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Confides creative struggles only with her artist accountability group — keeps work talk light with her romantic partner",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "With her partner moving in, daily proximity fosters deeper trust and emotional intimacy, making her more comfortable sharing creative struggles with him. The previous preference was motivated by distance and limited time together."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Only adopts new social plans if Willow, her cat, can be cared for without disruption",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_044",
+        "reason": "The new medication and strict dietary regimen mean even brief or last-minute absences risk Willow’s health. She has become more restrictive, only agreeing to social invitations if they perfectly fit Willow’s medical needs and feeding times."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Goes on spontaneous day trips along the Oregon Coast when artist’s block hits, never stays home in those moments",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_043",
+        "reason": "Willow’s chronic kidney disease means she requires daily medication and close supervision. The responsibility makes it impossible to leave at a moment’s notice for a whole day, so she must now remain home during creative slumps, prioritizing Willow’s care and shifting to indoors-based inspiration."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Blocks Monday mornings exclusively for brand project work — does not schedule any client meetings or shipping tasks during this time",
+        "domain": "work_habits",
+        "created_at_session": 2,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "The festival requires mandatory planning workshops on Monday mornings and brand project work must be paused or rescheduled; she cannot maintain this exclusive block."
+      },
+      {
+        "id": "pref_037",
+        "fact": "Temporarily moves monthly game nights to friends’ houses instead of hosting at her place while her parents are staying with her",
+        "domain": "social_relationships",
+        "created_at_session": 4,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_051",
+        "reason": "With her partner relocating to Portland and the impending move to a larger shared apartment, it becomes possible and appealing to resume hosting game nights at home, now with space for more guests and shared responsibility."
+      },
+      {
+        "id": "pref_038",
+        "fact": "Prepares shared breakfasts with her parents at the kitchen table before starting work during their stay, pausing her usual late solo breakfasts",
+        "domain": "daily_routines",
+        "created_at_session": 4,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "Her parents' stay has ended, and with partner moving in, the breakfast routine will shift from parent-focused to partner-focused or solo; the underlying circumstance of parents staying is gone."
+      },
+      {
+        "id": "pref_039",
+        "fact": "Avoids scheduling client video calls from home while her parents are present, preferring to work from local cafés for meetings requiring privacy",
+        "domain": "work_habits",
+        "created_at_session": 4,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "Her parents are no longer present in the household, removing the privacy concern that motivated her preference for café-based meetings."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:39:49.111075"
+}

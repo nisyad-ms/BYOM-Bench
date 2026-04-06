@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_8dbb4301",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_032",
+        "fact": "Now accepts interdepartmental integration meetings as early as 8:30am to coordinate with new teams in the merged organization — incident triage is shifted to later in the morning as needed",
+        "supersedes": {
+          "id": "pref_001",
+          "fact": "Blocks off early mornings for high-priority incident triage — never schedules meetings before 10am"
+        }
+      },
+      {
+        "id": "pref_048",
+        "fact": "Prefers in-person discussions for project updates and team coordination at the office — avoids email and messaging except for urgent outages or after-hours incidents",
+        "supersedes": {
+          "id": "pref_003",
+          "fact": "Prefers asynchronous communication for updates — avoids phone calls unless dealing with outages"
+        }
+      },
+      {
+        "id": "pref_041",
+        "fact": "Prioritizes facilitating group video calls with his kids and nieces when his brother is traveling, ensuring both families participate together at least once per week"
+      },
+      {
+        "id": "pref_019",
+        "fact": "Relaxed bike rides through the neighborhood twice a week — never cycles on main roads"
+      },
+      {
+        "id": "pref_010",
+        "fact": "Completes a short mindfulness meditation after stressful work incidents — never skips this routine even for urgent meetings"
+      },
+      {
+        "id": "pref_018",
+        "fact": "Only reads nonfiction books about technology and healthcare — never chooses fiction or fantasy"
+      }
+    ]
+  },
+  "persona": "A senior DevOps engineer managing cloud infrastructure for a healthcare company"
+}

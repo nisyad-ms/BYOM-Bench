@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_574cff11",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_054",
+        "fact": "Processes online orders and ships as schedule permits, often batching shipments in the late afternoon to accommodate on-site appraisal commitments",
+        "supersedes": {
+          "id": "pref_002",
+          "fact": "Processes all online orders before 10am — never leaves shipping tasks for the afternoon"
+        }
+      },
+      {
+        "id": "pref_030",
+        "fact": "Browses special rare book auction events at the library monthly — attends in-person auctions instead of poetry readings",
+        "supersedes": {
+          "id": "pref_020",
+          "fact": "Attends poetry readings at the local library monthly — never participates in virtual events"
+        }
+      },
+      {
+        "id": "pref_010",
+        "fact": "Prepares herbal tea with breakfast daily — never drinks coffee since switching diets"
+      },
+      {
+        "id": "pref_055",
+        "fact": "Prefers conducting in-person client meetings for large collection appraisals and negotiations, rather than email or phone, to build rapport and assess conditions directly"
+      },
+      {
+        "id": "pref_042",
+        "fact": "Researches and implements cost-saving shipping methods (such as batch shipments or regional drop-off points) for online orders each week"
+      },
+      {
+        "id": "pref_015",
+        "fact": "Regularly recommends books to former students through social media — never uses group chats for personal updates"
+      }
+    ]
+  },
+  "persona": "A retired teacher supplementing income by reselling vintage books online"
+}

@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_1f4c90a1",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_036",
+        "fact": "Cooks low-sodium vegetarian dinners every night — avoids takeout, meat, and high-sodium foods at home",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Cooks vegetarian dinners every night — never eats takeout or meat at home"
+        }
+      },
+      {
+        "id": "pref_033",
+        "fact": "Pauses hiking activities with friends and avoids all strenuous outdoor excursions — focuses on indoor relaxation or socializing until cleared by her doctor",
+        "supersedes": {
+          "id": "pref_020",
+          "fact": "Visits new hiking trails near Denver with friends every other month — never repeats the same trail within six months"
+        }
+      },
+      {
+        "id": "pref_009",
+        "fact": "Avoids all caffeine after 5 pm — drinks herbal tea instead, even when tired"
+      },
+      {
+        "id": "pref_023",
+        "fact": "Disables all notifications on her phone and laptop after 8 pm — never checks devices until the following morning"
+      },
+      {
+        "id": "pref_005",
+        "fact": "Communicates with clients strictly via email or scheduled Zoom calls — avoids phone calls or unscheduled messages"
+      },
+      {
+        "id": "pref_046",
+        "fact": "Sets a timer to ensure work sessions at her desk never exceed one hour without a mandatory movement and stretching break—even during important video calls or meetings"
+      }
+    ]
+  },
+  "persona": "An independent freelance consultant who regularly drafts contracts for clients"
+}

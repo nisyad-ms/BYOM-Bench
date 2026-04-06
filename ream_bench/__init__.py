@@ -1,4 +1,4 @@
-"""BYOM-Bench: A benchmark for evaluating LLM personalization through multi-turn conversations.
+"""REAM-Bench: A benchmark for evaluating LLM personalization through multi-turn conversations.
 
 This package provides a 2-stage pipeline:
 1. Data Generation - Creating synthetic multi-session conversations with evolving preferences
@@ -12,7 +12,7 @@ Main modules:
     - client: Shared LLM client
 
 Usage:
-    from byom_bench.data_generators import MultiSessionGenerator
+    from ream_bench.data_generators import MultiSessionGenerator
 
     # Generate multi-session data with preference evolution
     generator = MultiSessionGenerator(
@@ -22,13 +22,13 @@ Usage:
     result = generator.generate_multi_session()
 
     # Generate evaluation tasks (inspect without full evaluation)
-    from byom_bench.task_generators import EvaluationTaskGenerator
+    from ream_bench.task_generators import EvaluationTaskGenerator
     generator = EvaluationTaskGenerator()
     tasks = generator.generate_batch(result, num_tasks=1)
     print(tasks[0].rubric.required_preferences)
 
     # Run full evaluation
-    from byom_bench.evaluation_multisession import run_evaluation
+    from ream_bench.evaluation_multisession import run_evaluation
     eval_result = run_evaluation(result, agent_type="context")
 """
 
@@ -36,8 +36,8 @@ __version__ = "0.1.0"
 
 # Don't import submodules here to avoid circular imports
 # Users should import directly from submodules:
-#   from byom_bench.schemas import ...
-#   from byom_bench.data_generators import ...
-#   from byom_bench.task_generators import ...
+#   from ream_bench.schemas import ...
+#   from ream_bench.data_generators import ...
+#   from ream_bench.task_generators import ...
 
 __all__ = ["__version__"]

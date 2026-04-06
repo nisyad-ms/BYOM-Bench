@@ -1,8 +1,8 @@
 """Context-aware agent with full preference history."""
 
-from byom_bench.formatting import format_preference_history
-from byom_bench.prompts import render_prompt
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.formatting import format_preference_history
+from ream_bench.prompts import render_prompt
+from ream_bench.schemas import MultiSessionOutput
 
 from ._baseline import _BaselineAgent
 

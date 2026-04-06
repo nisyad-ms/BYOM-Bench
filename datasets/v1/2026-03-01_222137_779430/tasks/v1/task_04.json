@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_639f8bb8",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_026",
+        "fact": "Checks in with his mother in person daily while she lives with him—no scheduled phone calls during her recovery",
+        "supersedes": {
+          "id": "pref_011",
+          "fact": "Schedules weekly phone check-ins with his mother—never relies on texting alone to stay in touch"
+        }
+      },
+      {
+        "id": "pref_056",
+        "fact": "Reviews next day’s calendar immediately after dinner—no evening planning or pre-bed review allowed, per doctor's recommendation for a consistent, device-free sleep routine",
+        "supersedes": {
+          "id": "pref_024",
+          "fact": "Reviews next day’s calendar each evening before bed—never makes last-minute changes after lights out"
+        }
+      },
+      {
+        "id": "pref_054",
+        "fact": "Avoids scheduling any non-essential external calls or meetings during the funder evaluation preparation period"
+      },
+      {
+        "id": "pref_037",
+        "fact": "Uses a wearable heart rate monitor continuously throughout the day to track cardiac health and medication effects—reviews trends each evening before bed"
+      },
+      {
+        "id": "pref_007",
+        "fact": "Uses an at-home blood pressure monitor every morning—logs readings in a dedicated health app"
+      },
+      {
+        "id": "pref_006",
+        "fact": "Prepares plant-based lunches at home daily—never eats fast food on workdays"
+      }
+    ]
+  },
+  "persona": "A mid-career nonprofit director managing grant agreements and partnerships"
+}

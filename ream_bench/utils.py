@@ -1,4 +1,4 @@
-"""Shared utilities for BYOM-Bench test scripts.
+"""Shared utilities for REAM-Bench test scripts.
 
 Includes:
 - File naming and discovery for outputs

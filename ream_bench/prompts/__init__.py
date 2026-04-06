@@ -1,14 +1,14 @@
 """
-Prompt management for BYOM-Bench.
+Prompt management for REAM-Bench.
 
 This module provides a centralized system for loading and managing prompts
-used across the BYOM-Bench pipeline. Prompts are stored as YAML files with
+used across the REAM-Bench pipeline. Prompts are stored as YAML files with
 metadata describing their purpose and usage.
 
 Prompt versions are controlled via prompts.yaml at project root.
 
 Usage:
-    from byom_bench.prompts import render_prompt
+    from ream_bench.prompts import render_prompt
 
     # Render with variables (version resolved from config)
     text = render_prompt(

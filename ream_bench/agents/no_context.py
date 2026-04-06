@@ -1,7 +1,7 @@
 """No-context agent (baseline) with no memory of past conversations."""
 
-from byom_bench.prompts import render_prompt
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.prompts import render_prompt
+from ream_bench.schemas import MultiSessionOutput
 
 from ._baseline import _BaselineAgent
 

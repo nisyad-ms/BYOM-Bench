@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_8b2ddeb4",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_031",
+        "fact": "Temporarily stops attending all yoga classes, focusing solely on prescribed physical therapy due to shoulder restrictions",
+        "supersedes": {
+          "id": "pref_008",
+          "fact": "Only attends gentle or chair-based yoga classes — avoids any yoga with weight-bearing poses on knees"
+        }
+      },
+      {
+        "id": "pref_040",
+        "fact": "Shifts grocery shopping to weekday afternoons (Wednesday or Friday), coordinating trips with after-school pickups and grandchildren’s needs — no longer sticks strictly to Tuesday mornings",
+        "supersedes": {
+          "id": "pref_025",
+          "fact": "Does grocery shopping on Tuesday mornings only, avoiding weekends and peak hours"
+        }
+      },
+      {
+        "id": "pref_012",
+        "fact": "Babysits her grandchildren at her daughter’s home only — never at her own home to avoid childproofing"
+      },
+      {
+        "id": "pref_051",
+        "fact": "Reads to her grandchildren before bedtime every night while staying at their home — chooses their favorite storybooks over her usual hardcover reading routine"
+      },
+      {
+        "id": "pref_038",
+        "fact": "Organizes virtual tax advisory sessions for local seniors using video chat — avoids phone consultations, preferring visual interaction"
+      },
+      {
+        "id": "pref_018",
+        "fact": "Attends local chamber music concerts monthly — never goes to large stadium shows"
+      }
+    ]
+  },
+  "persona": "A retired finance professor who volunteers as a tax advisor"
+}

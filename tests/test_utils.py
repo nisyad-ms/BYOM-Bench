@@ -1,7 +1,7 @@
-"""Tests for byom_bench.utils — patterns, paths, and directory helpers."""
+"""Tests for ream_bench.utils — patterns, paths, and directory helpers."""
 
-import byom_bench.utils as utils
-from byom_bench.utils import (
+import ream_bench.utils as utils
+from ream_bench.utils import (
     EVAL_PATTERN,
     SESSION_DIR_PATTERN,
     TASK_PATTERN,

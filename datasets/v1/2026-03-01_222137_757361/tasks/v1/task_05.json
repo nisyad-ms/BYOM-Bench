@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_a8053036",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_034",
+        "fact": "Temporarily avoids all physical therapy exercises at home, following doctor’s orders, until cleared to resume after her course of medication",
+        "supersedes": {
+          "id": "pref_007",
+          "fact": "Completes physical therapy exercises daily at home, even on weekends — never skips due to busy workdays"
+        }
+      },
+      {
+        "id": "pref_048",
+        "fact": "Now spends most weekday evenings in live online business classes or class project meetings; video chats with her partner briefly after class when possible, in-person time limited to weekends.",
+        "supersedes": {
+          "id": "pref_028",
+          "fact": "Spends quality evening time in person with her partner most nights — video chats only when one of them is away"
+        }
+      },
+      {
+        "id": "pref_013",
+        "fact": "Makes Sunday morning calls to her parents without fail — never skips even if traveling"
+      },
+      {
+        "id": "pref_032",
+        "fact": "Commutes by light rail each weekday morning — uses the time for reading or podcast listening rather than driving or walking."
+      },
+      {
+        "id": "pref_057",
+        "fact": "Takes three dedicated 10-minute outdoor light exposure breaks during workdays and immediately after work, regardless of weather, as prescribed therapy for tension headaches"
+      },
+      {
+        "id": "pref_020",
+        "fact": "Keeps a scrapbook of travel destinations she manages for sales reps — never documents her own trips"
+      }
+    ]
+  },
+  "persona": "A 28-year-old office administrator supporting a remote sales team"
+}

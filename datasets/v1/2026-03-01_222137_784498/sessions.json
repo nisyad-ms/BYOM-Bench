@@ -1,0 +1,1483 @@
+{
+  "persona": "A retired finance professor who volunteers as a tax advisor",
+  "persona_id": "persona_20260301_223257",
+  "expanded_persona": {
+    "base_persona": "A retired finance professor who volunteers as a tax advisor",
+    "age": 68,
+    "gender": "female",
+    "location": "Evanston, IL",
+    "work_education": [
+      "Retired from Northwestern University, where she taught finance for 35 years",
+      "Volunteers twice a week at a local community center providing free tax advice during tax season",
+      "Serves on the board of a non-profit focused on economic education for seniors",
+      "Occasionally leads guest lectures at her former university and mentors graduate students"
+    ],
+    "health_wellness": [
+      "Diagnosed with mild hypertension, manages with diet and medication",
+      "Walks 2 miles every morning with a neighborhood group",
+      "Recently recovered from knee replacement surgery; attends physical therapy weekly",
+      "Enjoys gardening and participates in community yoga classes, though sometimes constrained by joint pain"
+    ],
+    "family_relationships": [
+      "Widowed; husband passed away four years ago",
+      "Lives alone but has a daughter and two grandchildren nearby in Chicago, whom she babysits twice a week",
+      "Maintains weekly phone calls with her brother out of state, who has begun to struggle with mobility issues",
+      "Active in a book club of retired colleagues and friends, hosts monthly meetings"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Prepares thoroughly for each tax advisory session — never gives on-the-spot advice without reviewing materials beforehand",
+        "Communicates with non-profit board members exclusively via scheduled video calls — avoids lengthy group email chains",
+        "Only agrees to mentor students who commit to monthly check-ins — declines one-off conversations",
+        "Declines all paid consulting work; volunteers time exclusively to non-profit and community causes",
+        "When guest lecturing, uses physical handouts for students — never relies on digital presentations"
+      ],
+      "health_body": [
+        "Follows a low-sodium, Mediterranean-inspired diet — never eats processed frozen meals",
+        "Completes home physical therapy exercises daily — never skips, even on busy days",
+        "Only attends gentle or chair-based yoga classes — avoids any yoga with weight-bearing poses on knees",
+        "Schedules medication reminders on her phone — never relies on memory alone",
+        "Refuses to drive when joint pain flares up; always arranges rides or uses ride-shares instead"
+      ],
+      "social_relationships": [
+        "Hosts all book club meetings at her house — never rotates locations",
+        "Babysits her grandchildren at her daughter’s home only — never at her own home to avoid childproofing",
+        "Calls her brother every Sunday morning, no exceptions — never texts in place of a call",
+        "Always bakes a homemade treat when meeting with friends — never brings store-bought desserts",
+        "Avoids large family gatherings; prefers small, intimate get-togethers with just immediate family"
+      ],
+      "leisure_hobbies": [
+        "Spends Saturday afternoons tending to her backyard garden — never schedules social events during this time",
+        "Reads only physical hardcover books — never uses e-readers or tablets for reading",
+        "Attends local chamber music concerts monthly — never goes to large stadium shows",
+        "Plans one day trip each month to a nearby botanical garden or park — never revisits the same one twice in a row",
+        "Participates in crossword puzzle competitions at the community center — never does online puzzles"
+      ],
+      "daily_routines": [
+        "Begins every morning with a two-mile group walk, rain or shine — never substitutes with solo treadmill walks",
+        "Preps all meals the night before to manage dietary needs — never improvises meals last minute",
+        "Turns her phone off after 8pm — never checks digital devices before bed",
+        "Writes a gratitude note in her paper journal each evening — never uses digital apps for journaling",
+        "Does grocery shopping on Tuesday mornings only, avoiding weekends and peak hours"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Invited by Northwestern University to co-teach a semester-long graduate seminar in finance as a visiting professor, requiring weekly on-campus commitments and curriculum planning.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Reserves Thursday afternoons exclusively for seminar curriculum planning and office hours — declines all volunteer and social requests during this time",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "When guest lecturing, uses physical handouts for students — never relies on digital presentations"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Develops and delivers digital slide presentations for graduate seminars — no longer uses physical handouts to facilitate in-depth classes",
+              "domain": "work_habits"
+            },
+            "reason": "As a co-teacher for a semester-long graduate seminar, she must engage students over multiple sessions, use collaborative materials, and streamline feedback, requiring her to adopt digital presentations instead of single-use paper handouts suited only to one-off guest lectures."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Northwestern called last week and asked me to co-teach their graduate seminar in finance this semester. It's a longer-term role than my usual guest lectures—weekly classes plus curriculum planning. I haven't taught a full course in years, and I could use some help figuring out how to balance this new commitment with my volunteering and personal routines. Where would you start?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That sounds like a wonderful opportunity and a big shift from your usual schedule. The weekly, semester-long format can definitely require more planning and energy. Do you know yet what days the classes and meetings will fall on, or are you still figuring that part out? Also, what feels most challenging about balancing things right now—the time, the curriculum work, or keeping up with your wellness routines?"
+        },
+        {
+          "role": "user",
+          "content": "Classes are Wednesdays, and I’m anticipating campus meetings or prep once a week as well. Actually, I'm thinking I need to reserve some afternoons for curriculum planning and office hours—otherwise things will get too scattered. My volunteering happens on Mondays and Fridays, plus babysitting and book club. I'm worried I can’t fit it all in without letting something slip, especially with physical therapy and my garden time."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to carve out protected time for classroom prep, especially since co-teaching requires coordination. Reserving a weekly block—say Thursday afternoons—could give you mental space for curriculum work and student meetings. Would you consider declining requests for volunteering or social activities during that dedicated slot, so it stays reserved for academic planning? And how strict are you about garden time and physical therapy routines—do you need to keep those unchanged?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, Thursday afternoons are what I'm planning to reserve exclusively for seminar prep and office hours. I already told the community center I won't be available then, and I'll say the same to my daughter and book club. Physical therapy and garden time are non-negotiable—I attend PT weekly and spend Saturday afternoons in the garden, no exceptions. I can flex on other social events but those are set in stone."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great approach. Clear boundaries make a semester commitment manageable. Do you anticipate needing to adjust your meal prep or grocery routines with the weekly teaching? Sometimes adding a campus day means rethinking time for cooking, shopping, or dietary planning. Are you comfortable with your current schedule, or should we brainstorm tweaks to keep things consistent?"
+        },
+        {
+          "role": "user",
+          "content": "I'm keeping meal prep and grocery routines unchanged. I still prep meals the night before and grocery shop early Tuesday mornings—never on weekends or last-minute. That works well with my diet, and I don't plan to change it for the seminar. What I'm more concerned about is adapting to digital teaching tools. In the past, I only used physical handouts for guest lectures, but a weekly seminar means I’ll need to deliver digital slide presentations and collect feedback electronically—I can’t stick with paper anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Moving to digital presentations is a big adjustment, but it can definitely help with engagement and streamlining assignments. Are you comfortable with the tech setup in the classrooms, or would you like tips for preparing digital slides, managing collaborative documents, or collecting student feedback? Also, do you want recommendations for tools that are straightforward and won’t require excessive tech learning?"
+        },
+        {
+          "role": "user",
+          "content": "I’d appreciate straightforward tool suggestions. The seminar format is new to me, so I want something reliable for slide decks, collaborative planning, and sharing materials. I’m comfortable on Zoom and basic email, but haven't used platforms like Canvas or Google Slides. Also, I'll keep all book club meetings at my house as usual, not rotating locations, but I’ll need to plan around seminar prep."
+        },
+        {
+          "role": "assistant",
+          "content": "You might find Google Slides easy to use—it's intuitive for presentations and allows sharing with co-teachers and students for collaboration. Canvas or Blackboard are good for managing course materials and assignments, but powering up your slide presentations may be sufficient for now. For collecting feedback, Google Forms is simple. Since you’re already comfortable with video calls, you’ll likely adapt quickly. Would you like step-by-step guidance to set up Google Slides, or support creating a feedback form?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, a walkthrough for Google Slides would be helpful, and any advice for efficient feedback collection. I want to streamline the administrative side so I can focus on teaching and mentoring. And just to clarify, I’ll be mentoring only students who commit to regular check-ins—no one-off conversations, even if my schedule is busier."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The non-profit board she serves on launched a new financial literacy initiative requiring additional in-person workshops for seniors, and asked her to lead monthly sessions at various community centers across Evanston.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_029",
+            "fact": "Prefers to set up workshop rooms herself before each financial literacy session — does not delegate logistical prep to center staff",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_030",
+            "fact": "Greets every participant individually at workshops and learns their name — avoids generic introductions",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Communicates with non-profit board members exclusively via scheduled video calls — avoids lengthy group email chains"
+            },
+            "to": {
+              "id": "pref_028",
+              "fact": "Communicates with board and initiative team via in-person meetings for workshop prep and feedback — minimizes remote calls or emails during active initiative periods",
+              "domain": "work_habits"
+            },
+            "reason": "The new financial literacy initiative mandates her presence for recurring workshops, leading to greater in-person collaboration and planning. Remote communication becomes less relevant as in-person sessions dominate workflow."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "The board finally launched our new financial literacy initiative for seniors — and they've asked me to lead monthly in-person workshops at community centers all over Evanston. It's exciting but a big shift from the way we've done things before, and I'm feeling a little overwhelmed by all the logistics. I want to keep sessions personal and effective, but there's a lot more to juggle now. Can you help me figure out how to structure prep and follow-ups so I don't miss anything important?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on seeing the initiative come to life! Leading monthly workshops across town is definitely a leap from virtual meetings and tax advising. To start, are you working with a team for these sessions, or handling most prep solo? Also, how do you typically track workshop materials and participant info — digital tools, paper, spreadsheets?"
+        },
+        {
+          "role": "user",
+          "content": "There's an initiative team, but lately I've preferred handling certain things in person. For prepping sessions, I've switched to meeting with the team face-to-face — we used to just schedule Zoom calls, but I find being on site so much more useful, especially now that workshops are actually happening. As for materials, I still use paper handouts and keep a binder for attendance and feedback. Digital is just too unwieldy with our participants."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, given the hands-on nature of workshops and the seniors you're serving. Meeting in person helps iron out those nitty-gritty details that can get lost over email or video. Since you're prepping handouts, do you also set up the room and logistics yourself—or do community center staff assist with those parts?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, that's something I've started doing myself. I set up the workshop room before each session—arranging seats, laying out materials, checking the AV if there's any. I don't delegate the logistics to staff anymore. It helps me get a feel for the space and make sure everything's ready for the group."
+        },
+        {
+          "role": "assistant",
+          "content": "That personal touch really sets the tone, especially for seniors who appreciate both warmth and organization. For follow-ups: are you capturing feedback on paper, or do you prefer real-time conversations after each session? With so many centers, having a consistent process could help you manage the workload."
+        },
+        {
+          "role": "user",
+          "content": "I like to keep things very personal. I greet every participant individually at each workshop and make it a point to learn their name, rather than doing generic introductions. Afterwards, I collect written feedback, but I also try to spend a few minutes chatting with everyone as they leave. It's more work, but I find people open up more that way."
+        },
+        {
+          "role": "assistant",
+          "content": "That's wonderful—and likely contributes to the trust and engagement you see. Managing all those names and conversations could be taxing over multiple workshops. Would a simple name tag system help, or do you prefer memorizing and using names without visual aids? Also, how are you tracking recurring participants over time?"
+        },
+        {
+          "role": "user",
+          "content": "I use attendance sheets—old-fashioned, but reliable—and jot brief notes beside each name after the session, just so I remember something personal for next time. Name tags are an option, though I really prefer not to depend on them. Memorizing names is part of what makes the experience meaningful for everyone."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve crafted a thoughtful, hands-on approach. Scheduling in-person meetings and handling room setup adds to your workload, but your process is both intentional and participant-focused. Would you like advice on pacing the workshops, building a handy session checklist, or managing the extra travel across Evanston? Or is there something else in the workflow you’d like to streamline?"
+        },
+        {
+          "role": "user",
+          "content": "I think a session checklist would help—especially as I'm prepping the rooms myself and meeting the team onsite rather than remotely. The travel hasn't been too bad yet, since I arrange rides if my knee is acting up. Mostly, I want to make sure I have a workflow that covers prep, personal touch, and feedback without feeling like I'm constantly scrambling."
+        },
+        {
+          "role": "assistant",
+          "content": "Great, I can help you build a pre-session and post-session checklist tailored for your style. Given your preferences, it’ll focus on physical prep, participant greetings, material distribution, feedback collection, and attendance notes. Would you like to include reminders for journaling any observations after workshops, or keep that separate from your daily gratitude notes?"
+        },
+        {
+          "role": "user",
+          "content": "Let's keep workshop observations in my binder—that works better for me and keeps things organized. For gratitude notes, I always use my paper journal in the evenings. Basically, the checklist should fit with my in-person prep routine and help me stay consistent from session to session."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. I'll draft a checklist that integrates your hands-on setup, personal greetings, log-keeping, and direct feedback gathering—all streamlined for each community center. If anything needs tweaking after a few sessions, your binder system will make adjustments easy. Do you want the checklist printed for your binder, or typed so you can update and print as needed?"
+        },
+        {
+          "role": "user",
+          "content": "Printed works best—I'll add it to my binder and update by hand if needed. Thanks for helping me sort this out. Between all the new in-person meetings, prepping rooms myself, and greeting everyone individually, it's a big change, but I think I'm finding my rhythm."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed a frozen shoulder in her dominant arm, prompting her orthopedist to prescribe a new course of physical therapy and temporarily restrict upper body activities including gardening and certain yoga movements.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Completes orthopedist-prescribed shoulder physical therapy exercises daily, prioritizing upper body rehabilitation over other fitness routines",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Only attends gentle or chair-based yoga classes — avoids any yoga with weight-bearing poses on knees"
+            },
+            "to": {
+              "id": "pref_031",
+              "fact": "Temporarily stops attending all yoga classes, focusing solely on prescribed physical therapy due to shoulder restrictions",
+              "domain": "health_body"
+            },
+            "reason": "Her orthopedist has restricted upper body activity, which includes most yoga movements she previously participated in. She cannot safely attend even gentle yoga at this time and replaces it with specialized physical therapy."
+          },
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Spends Saturday afternoons tending to her backyard garden — never schedules social events during this time"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Replaces gardening on Saturday afternoons with reading or organizing seed catalogs indoors, due to restricted upper body movement from frozen shoulder",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Her shoulder injury prevents her from physically tending the garden, so she adapts by pursuing indoor garden-related activities until recovery."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I ran into a bit of a setback last week—I’ve developed frozen shoulder in my right arm. My orthopedist prescribed daily PT and told me to stop most upper body activities for now, including gardening and yoga. Honestly, I’m feeling pretty frustrated and a bit lost about how to fill my weekends and maintain some sense of routine. Where would you suggest I start?"
+        },
+        {
+          "role": "assistant",
+          "content": "I’m sorry to hear about your frozen shoulder—that can be really difficult, especially when it impacts activities you enjoy so much. Since gardening and yoga are on hold, we could brainstorm indoor hobbies or lighter routines. Have you found any PT exercises that fit your daily schedule so far, or is that still a work in progress?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve made my physical therapy exercises a priority each day—they’re quite time-consuming, actually, especially since my orthopedist wants me to focus on upper body rehab now. I’m just unsure what to replace my Saturday gardening block with. Any ideas for garden-related activities I can do indoors?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach, making PT exercises your main activity while you recover. For indoor garden projects, would organizing your seed catalogs, planning layouts for your spring beds, or researching new plant varieties appeal to you? Those don’t require much upper body movement and could help you stay connected to gardening."
+        },
+        {
+          "role": "user",
+          "content": "Organizing my seed catalogs and planning next season’s beds is a great suggestion—it keeps me involved and fits the restriction. Actually, I’ve started setting aside Saturday afternoons for reading gardening books indoors and working on catalog orders, since I can’t get out and tend the garden right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a perfect adaptation for the time being! Since you love reading, perhaps you could explore a few new gardening books, or even try writing some short reflections on your past garden seasons. Have you found other gentle activities for weekends lately, or is this your main focus for now?"
+        },
+        {
+          "role": "user",
+          "content": "This is mostly my main focus until I regain more mobility. I did briefly consider joining a chair-based yoga class, but even gentle yoga is off the table right now—my orthopedist was clear I need to pause all yoga until my shoulder improves, so it’s just PT exercises for me."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, and it’s smart to respect those restrictions. It can be tough to lose a social and wellness activity. Are you missing the group aspect of yoga? Would connecting virtually with your yoga classmates, or perhaps finding another gentle indoor activity, help fill that gap?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I do miss the social element, but I’m not comfortable with virtual classes either—too much screen time, and my evenings are usually spent winding down after my phone goes off. I might reach out to friends in my yoga group just for conversation, though. For now, I’m sticking solely with PT as instructed."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful way to keep your wellness routine grounded and to stay connected socially. On the reading front, have you considered getting new hardcover books to supplement your gardening reading? Or are there other indoor hobbies you’d like suggestions on?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, more hardcover book recommendations would be great—especially ones with a gardening or nature theme. And if you know any crosswords related to plants, I’d love those for Saturday too. I’m just trying to keep my routine as consistent as possible while still prioritizing shoulder rehab."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! I’ll pull together a few book suggestions and see if there are any plant-themed crossword puzzles in print editions for you. Your approach—adapting your weekend routine while focusing on PT—seems both healthy and realistic. Anything else you want help planning around your new restrictions?"
+        },
+        {
+          "role": "user",
+          "content": "That covers most of it for now. The hardest part has been reorganizing my fitness and leisure routines—especially building everything around my prescribed shoulder PT, which is now the top priority each day. Thanks for helping me brainstorm ways to stay occupied indoors!"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her brother, who lives out of state and has been struggling with mobility issues, decided to move into an assisted living facility nearby in Evanston so she can visit and support him more regularly.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Prefers to coordinate and bring her brother his preferred home-cooked meals once a week to his assisted living facility",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Regularly attends social events and support groups at the assisted living facility to help her brother acclimate and meet new people",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Calls her brother every Sunday morning, no exceptions — never texts in place of a call"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Visits her brother in person at his assisted living facility every Sunday morning — no longer maintains weekly phone calls as primary contact",
+              "domain": "social_relationships"
+            },
+            "reason": "Now that her brother has moved to an assisted living facility nearby, she can see him in person regularly instead of relying on long-distance phone calls. Personal visits replace calls as her default routine for regular connection."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My brother finally made the move to the assisted living facility here in Evanston – just last week. It’s a big shift for both of us, but I’m relieved he’s nearby now. I want to make sure I help him settle in without overwhelming him (or myself). Do you have suggestions for easing the transition and supporting him, especially in these first few months?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s wonderful that you’re able to be so close and support him in person. Adjusting to assisted living is a process, and having a familiar face nearby makes all the difference. Are there specific areas you’re concerned about—like helping him make friends, managing his care, or just getting comfortable with the new routines?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly I’m worried about him feeling isolated. He’s always been social, but mobility issues made it hard for him to keep up with old friends back home. I plan to visit every Sunday, just like we used to talk on the phone, but now in person. That routine matters to both of us, so I definitely want to stick with it."
+        },
+        {
+          "role": "assistant",
+          "content": "Switching from phone calls to in-person visits sounds like a great way to maintain that connection—and likely even more meaningful. Since you’ll see him weekly, maybe you could coordinate your visits around any events or activities at the facility, so he gets to meet new people with you there for support. Have you checked out their social calendar yet?"
+        },
+        {
+          "role": "user",
+          "content": "I actually got a look at their calendar when I toured with him. They have regular social hours and even support groups for newcomers, which seem helpful. I’m thinking I’ll attend some of those with him at first—give him a chance to acclimate and meet people without feeling intimidated. I want him to know he’s not alone—but I also don’t want to overstep or make him feel dependent."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful approach. Attending some initial events together can help him feel comfortable, and then as he settles in, you can ease back and let him navigate on his own if he prefers. It’s also nice that you’re keeping your Sunday routine consistent—it anchors both of you. How else do you want to support him practically? Meals, errands, or anything in particular?"
+        },
+        {
+          "role": "user",
+          "content": "Actually yes—I plan to bring him his favorite home-cooked meals once a week. The facility offers decent food, but nothing matches what he likes from home. I’ll coordinate with him to make sure I’m bringing exactly what he wants. It feels like one way I can balance emotional support with practical help."
+        },
+        {
+          "role": "assistant",
+          "content": "Home-cooked meals are a wonderful idea, and it’s a touch of familiarity he’ll appreciate. Perhaps you can use your meal visits to check in on his dietary needs as well, ensuring the facility’s offerings align with his preferences and health requirements. Would it help to establish a regular meal drop-off time, or do you want to keep it flexible depending on his requests?"
+        },
+        {
+          "role": "user",
+          "content": "I think setting a consistent day is best—it helps him know what to expect, and I can work around my own volunteering and babysitting schedule. Sundays are for visits, so maybe midweek for meal drop offs. I’ll check with him and the facility about storing leftovers safely too."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds perfect—consistency is especially helpful in this stage. You might also ask the facility staff for any food safety guidelines or preferences regarding outside meals. If you’re attending social events, you’ll quickly get a sense for which days are best for both visits and meals. Are you planning to join any of the support groups long-term, or just at first until he settles in?"
+        },
+        {
+          "role": "user",
+          "content": "For now, I’ll join the support groups and general socials regularly, both to help him and to connect with other families. I suspect as he finds his footing, I might step back, but I’ll keep participating as long as it’s helpful. Plus, getting to know the staff and residents helps me advocate for him if needed."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great strategy—it not only helps your brother, but gives you insight into the environment and who’s available if you need support. As you adjust your routine, do you anticipate any challenges with balancing your own commitments? For example, will the Sunday visits affect your book club or babysitting schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Not really—I host book club at my house, so that stays put, and I babysit at my daughter’s home on different days. Sunday mornings are reserved for visiting my brother now; I’ve dropped our scheduled phone calls in favor of visits. It feels more natural and fits how our relationship has changed with him nearby."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve really thought this through, and your routines sound well integrated. If ever you’d like to bring book club members along for a social visit or introduce your brother to new friends, the facility’s common spaces could make that possible. Let me know if you’d like ideas on facilitating introductions or finding ways to tie your communities together."
+        },
+        {
+          "role": "user",
+          "content": "That’s a lovely suggestion—maybe once he’s settled, some cross-community visits would brighten his week. For now, the priority is getting him comfortable and not overwhelmed. Thanks for helping me think through these changes and how to support him without losing sight of my own routines."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The community center where she volunteers as a tax advisor announced a major renovation, closing its doors for the next six months and temporarily suspending all in-person tax advisory services.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Organizes virtual tax advisory sessions for local seniors using video chat — avoids phone consultations, preferring visual interaction",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_020",
+              "fact": "Participates in crossword puzzle competitions at the community center — never does online puzzles"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Participates in online crossword puzzle competitions with her book club — avoids solo online play, preferring virtual group events",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "With the community center closed for renovations, in-person crossword competitions are suspended. To maintain her competitive puzzle habit, she adapts by joining her book club for online group competitions."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_029",
+            "fact": "Prefers to set up workshop rooms herself before each financial literacy session — does not delegate logistical prep to center staff",
+            "domain": "work_habits",
+            "reason": "With the community center closed, there are no in-person financial literacy workshops for six months, so there is no opportunity for room setup."
+          },
+          {
+            "id": "pref_030",
+            "fact": "Greets every participant individually at workshops and learns their name — avoids generic introductions",
+            "domain": "social_relationships",
+            "reason": "The in-person workshops she attends at the community center are suspended, so there are no participants to greet during this closure period."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "The community center just announced a six-month renovation—so all our in-person tax advisory sessions are suspended. I’m not used to being without a regular volunteering outlet for so long. I want to help local seniors with tax advice during this period, but I’m not sure the best way to do it remotely. Any ideas on how I could make this work?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change, especially just as tax season gets underway. Are you open to digital platforms—like video chat or webinars—to reach your senior clients, or would you prefer phone consultations, or another format? It might also help to connect with existing local groups who need remote support."
+        },
+        {
+          "role": "user",
+          "content": "I’d much rather do video chats than phone calls, honestly. It’s so much easier to explain things—and I like being able to see people face to face, even if it’s virtual. But I don’t want to host large webinars; I'm used to smaller, hands-on sessions. Is there a way to replicate that online?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. You could set up a series of small group video sessions—maybe 3–6 seniors per call—so it’s more personal, and you can answer individual questions, much like you did in person. Platforms like Zoom let you schedule recurring sessions and manage group sizes. Would you need tech support for residents unfamiliar with video meetings?"
+        },
+        {
+          "role": "user",
+          "content": "I suspect a few will need some help getting started, but the community center staff and I can create step-by-step written instructions and maybe a phone hotline for first-timers. I’ll miss setting up the workshop room myself, though—I used to do all the prep rather than delegate. But I guess there’s no room to set up for a while!"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s hard to lose those tactile, preparatory routines—especially when they help set the tone for a session. For online gatherings, you might create virtual welcome slides or send participants a small packet with handouts ahead of time. That way, you preserve some of the hands-on feel, even as logistics change."
+        },
+        {
+          "role": "user",
+          "content": "That’s a good idea about the handouts—I prefer physical materials over digital ones, so mailing them ahead would work. And since there’s no in-person session for half a year, I won’t be able to greet everyone individually as they arrive or learn their names face to face, which was always my thing."
+        },
+        {
+          "role": "assistant",
+          "content": "Virtual sessions make it harder to connect personally, but you could still have everyone introduce themselves on camera during your calls. Small groups help with that, as does your signature handout approach. Is there anything else you’ll miss from your usual community center routines?"
+        },
+        {
+          "role": "user",
+          "content": "I used to look forward to our in-person crossword competitions at the center—that was my Saturday fun after garden time. Since those are off the table, I’ve started doing online competitions with my book club instead. It's a bit of adjustment, but we enjoy the virtual group events. I don’t do solo online puzzles—just group play, for the camaraderie."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a great way to maintain that social aspect and competitive spirit while the center’s closed. Transitioning traditions online can be tricky, but involving your book club is smart—they know your style and preferences. Have any other hobbies shifted lately, or just the crossword routine?"
+        },
+        {
+          "role": "user",
+          "content": "No major shifts otherwise—garden time is still sacred, and I haven’t missed a morning walk. The biggest challenge is losing the usual volunteering rhythm; moving to virtual tax sessions and adapting puzzles are my main changes."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve handled the transition thoughtfully—personalizing virtual tax help, finding new group puzzle routines, and maintaining your core habits. If you need help organizing your online tax sessions or mailing handouts, happy to brainstorm scheduling or tech solutions."
+        },
+        {
+          "role": "user",
+          "content": "Thanks, I appreciate the support. I’ll start with small-group video calls, mail physical materials as needed, and set up weekly online puzzles with the book club. It’ll be different, but at least I’ve got a plan to keep engaged."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her daughter, recently promoted to a demanding managerial role, requested that she step in to provide after-school care for her two grandchildren three additional days a week for the foreseeable future.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_041",
+            "fact": "Incorporates educational games and math practice into after-school care with her grandchildren, tailoring activities to their grade levels",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_042",
+            "fact": "Prepares a homemade snack for her grandchildren each afternoon before homework, avoiding packaged options",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_022",
+              "fact": "Preps all meals the night before to manage dietary needs — never improvises meals last minute"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Preps simple, child-friendly lunches and snacks in the mornings with her grandchildren present — no longer does all meal prep the night before, adapts for active caregiving routine",
+              "domain": "daily_routines"
+            },
+            "reason": "Her new daily caregiving responsibility for her grandchildren after school several more days per week means she needs to prepare meals with their input and participation, as schedules change and dietary needs become more varied. The habit of prepping all meals the night before is replaced by child-oriented meal prep during the day."
+          },
+          {
+            "from": {
+              "id": "pref_025",
+              "fact": "Does grocery shopping on Tuesday mornings only, avoiding weekends and peak hours"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Shifts grocery shopping to weekday afternoons (Wednesday or Friday), coordinating trips with after-school pickups and grandchildren’s needs — no longer sticks strictly to Tuesday mornings",
+              "domain": "daily_routines"
+            },
+            "reason": "With more frequent after-school caregiving, Tuesday mornings are less practical. She now shops for groceries alongside childcare duties, factoring in the grandchildren’s schedules and preferences."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_027",
+            "fact": "Reserves Thursday afternoons exclusively for seminar curriculum planning and office hours — declines all volunteer and social requests during this time",
+            "domain": "work_habits",
+            "reason": "Thursday afternoons are now needed for after-school childcare, so she cannot guarantee exclusive seminar planning time; the previous reserved slot is no longer feasible."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, my daughter's new promotion means her hours are even longer—and she's asked me to handle after-school pickup for the kids three extra days a week. I want to keep things smooth for them and for myself, but it's a lot more time and shifting logistics. I could use help figuring out how to structure these afternoons, especially around meals, snacks, and enough quiet time for my own routines. Any suggestions?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s quite a responsibility, and I’m sure your grandchildren appreciate having you around. When structuring busy afternoons, one approach is to anchor the schedule with set meal and activity times, then build in windows for your own self-care. Have you found meal prep in advance still works for your schedule, or are the daily needs of the kids making that trickier?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, prepping meals the night before isn’t cutting it anymore. Between different preferences and a rotating schedule, I’ve started making simple, kid-friendly lunches and snacks with them in the mornings—or right after school—so they can help and weigh in. I never really improvised meals before, but now I have to adapt as we go, especially since the grandkids like to help and have their own tastes. Any advice for keeping meals healthy but interactive?"
+        },
+        {
+          "role": "assistant",
+          "content": "That adaptation makes sense—kids love being involved, and it can be a learning opportunity too. For healthy, interactive snacks, you might try prepping homemade options together, like assembling veggie wraps or fruit skewers. You could also create a weekly menu board where they can choose from healthy choices you preselect. Does prepping with their input feel manageable, or do you find yourself needing more guidance to balance your dietary needs with theirs?"
+        },
+        {
+          "role": "user",
+          "content": "Prepping with their input works well now, especially if I keep things simple and child-friendly. I try to prepare a homemade snack each afternoon for them before they start homework—always avoiding packaged options, which I know are less healthy. We’ve made things like homemade trail mix, yogurt parfaits, and cheese-and-veggie plates together. I want to keep these snacks fun but as healthy as possible, maybe even sneak in some learning. Do you have suggestions for quick, educational snacks or activities?"
+        },
+        {
+          "role": "assistant",
+          "content": "Those sound delightful—and healthy! For educational snacks, you could do 'fraction sandwiches' where you cut sandwiches into halves, thirds, etc., and discuss the math as you go. Or try assembling snacks by counting ingredients, sorting colors or shapes—making it a mini math or science lesson. Speaking of learning, are the kids open to educational games after snack time, or is homework their main focus then?"
+        },
+        {
+          "role": "user",
+          "content": "They're receptive to a little math practice after snack, before homework. I started incorporating educational games into our after-school routine—tailored to their grade levels. Sometimes it's math puzzles, other times it's a quick board game with a learning twist. They enjoy learning when it feels like play, but I have to be mindful not to overload them after a long school day."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great balance—keeping education light and playful makes a lasting impact. You’re wise to avoid overwhelming them. Given the extra days, do you find your previous routines—like grocery shopping or reserving planning time—still fit, or have those shifted as well?"
+        },
+        {
+          "role": "user",
+          "content": "Good point. I used to strictly do grocery shopping on Tuesday mornings to avoid crowds, but now I often shift to Wednesday or Friday afternoons, coordinating with after-school pickup and the kids' needs. Their preferences really affect what I buy, so I plan these trips around their input. I don’t stick rigidly to Tuesday mornings anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart adjustment—working their schedules and preferences into your routine helps everyone. You mentioned planning time; do you still set aside Thursdays for seminar preparation, or has the expanded childcare made that impossible?"
+        },
+        {
+          "role": "user",
+          "content": "I can't reserve Thursday afternoons for seminar curriculum planning or office hours anymore. I needed that slot for after-school care, so now I fit planning in whenever possible, often in smaller intervals. I used to strictly decline all volunteer and social requests during that time, but that's not feasible now."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—sometimes flexibility is the only option. To help manage your own priorities, would a shared calendar or checklist—visible to your daughter or grandkids—help clarify your available times? Or do you prefer to keep your planning informal and adjust as needed?"
+        },
+        {
+          "role": "user",
+          "content": "I tend to keep things informal for now, since every week brings new surprises. But I do like the idea of a simple checklist, especially for the kids—so they know what to expect each day and can help with meal prep or activities. Thanks for the suggestions. These changes have been big, but it’s a nice opportunity to stay connected with them."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re embracing the changes remarkably well, and your grandchildren are lucky to have you. If you need more ideas—whether for snacks, games, or ways to weave education into busy afternoons—just let me know. And don’t hesitate to check in about your own routines, too; you deserve care alongside all you’re giving."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "During a routine checkup, her cardiologist identified arrhythmia and recommended she wear a heart monitor for two weeks, avoid morning group walks temporarily, and schedule additional follow-up appointments.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_044",
+            "fact": "Schedules all medical appointments and follow-ups immediately after breakfast to accommodate new heart monitoring responsibilities and minimize disruption to daily routine",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_045",
+            "fact": "Keeps an annotated daily record of heart monitor readings and symptoms, using a dedicated notebook rather than relying on digital logs",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Begins every morning with a two-mile group walk, rain or shine — never substitutes with solo treadmill walks"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Temporarily replaces morning group walks with at-home gentle stretching and light physical activity — does not engage in outdoor walks or treadmill exercise during heart monitoring period",
+              "domain": "daily_routines"
+            },
+            "reason": "The cardiologist has advised she avoid morning group walks while wearing a heart monitor, leading her to substitute the routine with safer, low-impact at-home activity while she is being monitored."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got back from my cardiologist appointment and, well, it looks like I've got arrhythmia. They've put me on a heart monitor for two weeks and told me to pause my morning group walks. I'm trying not to let it disrupt everything, but honestly, I'm at a bit of a loss for how to keep my routine without the walks. Any ideas?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm sorry to hear about your diagnosis — I know how important those walks are for you, both physically and socially. Are you looking for ways to stay active at home, or hoping to find something that substitutes the social aspect as well? What else did your doctor recommend in terms of activity during this monitor period?"
+        },
+        {
+          "role": "user",
+          "content": "The main thing is I'm not supposed to do any outdoor walking or go on the treadmill right now. I'm permitted gentle stretching or light activity at home, but nothing more strenuous. As for the social side, I do miss chatting with my neighbors, but I was thinking of just settling for phone calls until I can rejoin the group."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, and it's wise to prioritize your health right now. Gentle stretching can help keep you moving, especially after your knee surgery. Would you like ideas for stretches or activities that don't strain your joints? And for the social connection, a scheduled morning check-in by phone with your walking friends could help you stay plugged in."
+        },
+        {
+          "role": "user",
+          "content": "Yes, suggestions for joint-friendly stretches would be great. I've already set up a brief call with the group after breakfast each day, just to stay in the loop. Speaking of breakfast, I'm trying to schedule all my medical appointments and follow-ups immediately after eating. It's easier to keep things straight with the heart monitor routine — I can't really afford too much disruption since my mornings are usually so busy."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a thoughtful adjustment. Keeping appointments clustered after breakfast should help you maintain your routine. For stretching, consider gentle seated stretches and upper body mobility work — things you could easily do before or after breakfast, and that won't impact your knee or heart. Would you like a simple sequence to follow?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, please. And another thing: I was specifically told to keep a daily record of my heart monitor readings and any symptoms I notice. I'd prefer to use a dedicated notebook for this, since I'm wary of relying on digital logs. If you have ideas for organizing that record efficiently, I'd appreciate the tips."
+        },
+        {
+          "role": "assistant",
+          "content": "A paper notebook is perfect for this, especially since you're experienced with thorough record-keeping from your time advising. I'd recommend dividing each page by date, with sections for your monitor readings, symptoms, activity, and anything unusual you notice. You can add a space for questions or observations to discuss at your next appointment. Would you like a template or sample layout to get started?"
+        },
+        {
+          "role": "user",
+          "content": "A template would be helpful, thank you. I can annotate each section as needed, and it’ll make it easier when reviewing with my doctor. I’m a bit out of sorts, but carving out a new routine should help. I’m determined not to let this completely throw my schedule — just tweak things for now."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely — making intentional tweaks will help you keep your sense of normalcy. I'll send you a sample notebook layout for your health tracking, along with a simple daily stretching plan that respects your joint limitations. If anything feels off, you can adjust or skip. Is there any other part of your schedule you're worried about fitting in while you're on the monitor?"
+        },
+        {
+          "role": "user",
+          "content": "Not really — I think the main adjustments are avoiding the walks, scheduling appointments after breakfast, and organizing the notebook for monitor readings. The rest of my routine can stay as is. Once these two weeks are over, I’ll re-evaluate, but this should work for now."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a strong plan. I'll send over those templates and stretching suggestions so you can start tomorrow. Please reach out if anything about the monitor or activity feels confusing. And, if you ever want to brainstorm ways to reconnect with your walking group remotely or adapt other routines, I'm here."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Referred by her primary care physician to a nutritionist after recent lab results indicated borderline elevated blood sugar, prompting a need to reassess her diet and add regular glucose monitoring to her daily routine.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Performs daily at-home glucose monitoring every morning and logs readings as instructed by her nutritionist",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Prepares and brings individually portioned low-glycemic snacks to social events and volunteer days instead of communal baked treats",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Follows a low-sodium, Mediterranean-inspired diet — never eats processed frozen meals"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Follows a diet plan tailored by her nutritionist for blood sugar management — now avoids refined carbohydrates and sugary foods, not just processed frozen meals",
+              "domain": "health_body"
+            },
+            "reason": "Her referral to a nutritionist and new concern about elevated blood sugar means she must follow stricter dietary guidelines to manage blood glucose, going beyond her prior focus on sodium and Mediterranean principles."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My doctor just referred me to a nutritionist after my labs came back with borderline elevated blood sugar. So I'm having to rethink my whole diet and add daily glucose checks. It's a bit overwhelming. Could you help me figure out how to fit this into my regular routine—especially meal prepping?"
+        },
+        {
+          "role": "assistant",
+          "content": "Of course, I'd be glad to help. Having to monitor your blood sugar daily does add a new layer, but we can find ways to integrate it smoothly. Let's start with your meal prep: do you usually cook at a certain time, or prepare food in batches for the week?"
+        },
+        {
+          "role": "user",
+          "content": "I always prep all my meals the night before to keep things on track for my low-sodium Mediterranean diet. But now the nutritionist wants me to avoid refined carbs and anything sugary, not just processed foods. I need ideas for meals that work with these new guidelines and aren't too repetitive."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a good approach—prepping ahead does make it easier to stick to new dietary changes. Since refined carbs and sugars are out, we could focus on whole grains like quinoa or barley, lots of non-starchy veggies, healthy fats, and lean proteins. Would you like suggestions for some simple, varied recipes that fit these requirements?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. I used to rely on some whole-wheat baked goods for my book club gatherings, but it sounds like I'll need to rethink those too. Oh, and now I need low-glycemic snacks for all my volunteer sessions and social events—my nutritionist says I shouldn't just bring communal baked treats anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "So individually portioned snacks for you, and recipes for gatherings that are low-glycemic—got it. For snacks, have you tried things like hummus and veggie sticks, roasted chickpeas, cheese, or nut packs? For book club, maybe you could bring a platter of sliced fruit, or homemade mini frittatas instead of baked goods. What do you think would appeal most to your friends?"
+        },
+        {
+          "role": "user",
+          "content": "I think mini frittatas or fruit would work for book club, though I'll need to keep portions separate—my nutritionist wants me to track exactly what I eat. For snacks at the community center, I actually now pack my own every time, just for myself. It's a bit less social, but necessary. Could you help me brainstorm a few portable snack ideas that will last several days and don't need refrigeration?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Portable, non-refrigerated snacks could include homemade trail mix with unsweetened dried fruit and nuts (portion-controlled), roasted chickpeas, rice cakes with nut butter, mini packs of olives, or pumpkin seeds. Would you like suggestions for prepping these in advance, so it's easy to grab-and-go for your volunteer days?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, please—planning ahead is key for me. I've started logging my glucose readings every morning, per the nutritionist's instructions, which adds a new routine. It would help if I could pair snack prepping with logging those readings for extra structure."
+        },
+        {
+          "role": "assistant",
+          "content": "Pairing tasks is a great strategy! You could set up a simple system: after your morning walk, log your glucose reading before breakfast, then prep and portion snacks for upcoming days. Would you like a sample daily checklist to help keep all these steps organized?"
+        },
+        {
+          "role": "user",
+          "content": "That would be helpful. Just so you know, I now perform daily at-home glucose monitoring every morning—log it by hand, as advised by my nutritionist. I'm still figuring out how best to track trends without making it feel like a chore."
+        },
+        {
+          "role": "assistant",
+          "content": "Tracking by hand can feel tedious, but it also lets you see patterns over time. Perhaps keeping a dedicated paper journal just for glucose readings could tie into your gratitude notes, so you keep both journals together as part of your evening routine. Would combining these help keep the process more meaningful?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a good idea. I like the ritual of writing things down—I just don’t want it to take over my evenings. Bringing all these changes into my routine is a challenge, but I think with a clear checklist and new snacks in rotation, I can make it work. Thanks for being so thorough."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her daughter and son-in-law announced plans to travel abroad for two weeks on short notice, asking her to stay at their home to provide full-time care for her grandchildren during their absence.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_051",
+            "fact": "Reads to her grandchildren before bedtime every night while staying at their home — chooses their favorite storybooks over her usual hardcover reading routine",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_052",
+            "fact": "Prepares daily schedules of creative and educational activities at her daughter's home to keep grandchildren engaged — limits outside play to backyard only for safety and manageability",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Coordinates regular evening video calls with her brother as a substitute for in-person visits while fulfilling full-time childcare responsibilities",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_044",
+              "fact": "Schedules all medical appointments and follow-ups immediately after breakfast to accommodate new heart monitoring responsibilities and minimize disruption to daily routine"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Temporarily postpones all non-essential medical appointments and follow-ups until after her daughter's return — only addresses urgent health needs while providing full-time care for grandchildren",
+              "domain": "daily_routines"
+            },
+            "reason": "The immediate need to provide full-time childcare disrupts her ability to schedule appointments as usual in the morning and requires her to reprioritize medical visits for two weeks."
+          },
+          {
+            "from": {
+              "id": "pref_048",
+              "fact": "Prepares and brings individually portioned low-glycemic snacks to social events and volunteer days instead of communal baked treats"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Suspends bringing individually portioned low-glycemic snacks to social and volunteer events — focuses solely on preparing snacks and meals at home for grandchildren during the two-week parental absence",
+              "domain": "daily_routines"
+            },
+            "reason": "Her full-time caregiving duties mean she is neither attending volunteer days nor social events outside the home during her daughter's absence, so this routine stops temporarily."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_034",
+            "fact": "Visits her brother in person at his assisted living facility every Sunday morning — no longer maintains weekly phone calls as primary contact",
+            "domain": "social_relationships",
+            "reason": "Staying full-time at her daughter's house for two weeks makes in-person visits to her brother impossible; she cannot maintain this as her primary contact method during that period."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My daughter and her husband just told me they're headed abroad for two weeks, starting this Monday. I'll be staying at their house to look after my grandchildren full-time. I wasn't expecting this — and it's throwing my routines out of sorts. I usually babysit a couple times a week, but this is much more. I could use help planning out how to juggle the extra responsibilities, especially around meals, keeping up with my health routines, and keeping the kids engaged for such a long stretch."
+        },
+        {
+          "role": "assistant",
+          "content": "That is a big shift, especially with such short notice! Two weeks is a long time for full-time care. For meals, are you planning to stick with your usual Mediterranean-inspired, low-sodium prep? And for keeping the grandkids engaged, do you already have activities you know they love, or would you like ideas for creative or educational schedules? Also, I can help strategize ways to make sure you don't fall behind on your health routines—like PT and walks—while you're at your daughter's."
+        },
+        {
+          "role": "user",
+          "content": "I'll definitely stick with my own meal prep—I've always managed my diet carefully, and the kids are used to my cooking. What feels new is prepping everything for the four of us, and syncing that with their school and nap schedules. And I want activities lined up ahead, otherwise it'll be chaos. I’m building daily schedules with creative and educational blocks—think crafts and simple science projects. They love books, so storytime fits in every night, but outside play will have to stay in the backyard for safety. I just don’t feel comfortable wrangling them out and about right now."
+        },
+        {
+          "role": "assistant",
+          "content": "Those sound like great boundaries and proactive planning! Backyard-only play makes sense—it’ll be much more manageable. For meal prep, maybe batch-cook simple lunches or snacks that work for both you and the kids—like veggie pita pockets or Mediterranean-style mini pizzas. With evening storytime, do you have favorite books of theirs lined up, or would you like suggestions to build a theme over the two weeks? And how are you planning to fit your PT sessions in with their schedule?"
+        },
+        {
+          "role": "user",
+          "content": "I have stacks of their favorite storybooks ready—I'll be reading those to them every night instead of my usual hardcover habits. As for PT, I’m determined to do my exercises daily, but will have to fit them in when the kids are busy or napping. I’ll be skipping my community yoga for these two weeks—none of the classes fit this schedule, and I can’t arrange a ride for myself while I have full-time care duty. My morning walks will still happen, but only if I can manage them with the kids tagging along or someone else in the neighborhood helping out."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s impressive you’re adapting—reading their books and staying on track with PT is no small feat. For your walks, perhaps you can turn them into a family stroll in the mornings, or, if the kids’ schedules don’t align, even a shorter loop in the backyard or quick indoor movement while they play. Would you like help building a flexible activity schedule for the kids—one that’s easy to adjust if your health routines need to shift? And is there anything specific you need for PT at your daughter’s house (like equipment or space)?"
+        },
+        {
+          "role": "user",
+          "content": "A flexible activity schedule would be helpful—that way I can swap things around if I need a moment for PT or to rest my knee. Luckily, I’ve brought my resistance bands and my daughter’s guest room is big enough for stretches. One thing I haven’t figured out: my usual medical appointments and heart monitoring checks are always first thing after breakfast. But for these two weeks, there’s no way to get away for non-essential appointments. I plan to postpone anything routine and only handle urgent needs until the kids’ parents are back."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—prioritizing urgent health needs and postponing routine care is reasonable given your responsibilities. I can help you build reminders for your medication and exercises, so nothing slips through the cracks, even with a full house. Would you like templates for those reminders or scheduling tips? Also, since you’ll be at your daughter's, will you continue connecting with your brother on Sunday mornings, or does this new arrangement affect that routine?"
+        },
+        {
+          "role": "user",
+          "content": "Good point about reminders—I already have medication alarms set up on my phone, so that shouldn’t change. Regarding my brother, our usual Sunday morning calls or visits aren’t possible for this stretch—since I can't leave the kids and can't drive for visits even if my knees are fine. I’ll be substituting with regular evening video calls, which is a big change. He's been struggling with mobility, so I want to keep him in the loop, just from afar."
+        },
+        {
+          "role": "assistant",
+          "content": "Video calls are a great way to bridge the gap and keep your brother connected, especially since in-person visits aren’t feasible for these weeks. It’s a thoughtful adjustment. For notification management, would you like help setting up a quiet hour in your phone for these calls, or auto-reminders to connect? Is there anything you need for coordinating the kids’ schedules with your brother’s calls—like a bedtime routine that aligns?"
+        },
+        {
+          "role": "user",
+          "content": "Bedtime with the kids will be earlier than my usual—after dinner and evening storytime, so I’ll plan video calls with my brother once they’re settled down. That will keep things manageable; I’m aiming for consistency so everyone knows what to expect. I’m also suspending all my snacks and treat routines outside the house. Normally, I bring individually portioned low-glycemic snacks to community events and board meetings, but I won’t be attending any for two weeks. All my focus is on preparing meals and snacks at home for the kids."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s a wise move—simplifying outside routines to concentrate on meal prep for the grandkids. If you want help with ideas for kid-friendly, healthy snacks, just let me know! For your activity schedule, would you like a printable template that you can fill in each night for the next day, or do you prefer using your paper journal for planning? And, are there any board responsibilities you need to manage remotely while you’re at your daughter’s?"
+        },
+        {
+          "role": "user",
+          "content": "A printable template for daily schedules would be perfect—that way I can jot down what works and tweak as needed. I haven’t scheduled any board calls or video check-ins during these two weeks; my fellow board members know I’m unavailable while my daughter is away. No social or volunteer events until she’s back, so I can drop those routines for now."
+        },
+        {
+          "role": "assistant",
+          "content": "Great, I’ll provide a printable schedule template you can use for planning each day with your grandchildren. Focusing on home routines for these weeks makes good sense—it’ll help keep things structured for everyone. Just to recap, the main changes are: postponing non-essential medical appointments, shifting from in-person visits to video calls with your brother, suspending snacks/treats for social and volunteer events, reading to your grandchildren nightly, and coordinating creative/educational activities and backyard play at your daughter’s home. If you need any resources—activity ideas, meal plans, or scheduling tools—just let me know!"
+        },
+        {
+          "role": "user",
+          "content": "That summary is spot-on. I appreciate the help organizing all these moving parts. Let’s start with your activity schedule template and maybe some fresh ideas for indoor crafts and backyard games—the kids love anything hands-on. After this, I'll be in survival mode, but it feels doable now!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Slipped while descending stairs at her daughter's house, resulting in a fractured wrist that required casting and a ban on weight-bearing activities and driving for at least six weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_056",
+            "fact": "Uses voice-to-text apps or requests family assistance for personal journaling and correspondence while her dominant hand is immobilized",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_057",
+            "fact": "Requests rides from friends or family for all errands and events — avoids public transportation or independent travel while unable to drive",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_032",
+              "fact": "Replaces gardening on Saturday afternoons with reading or organizing seed catalogs indoors, due to restricted upper body movement from frozen shoulder"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Pauses all gardening and indoor plant activities — unable to read, write, or organize catalogs due to limited hand use with wrist cast; waits until cast removal to resume garden-related routines",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The wrist fracture and cast prevent her from not only gardening but also from handling, organizing, or reading seed catalogs indoors, as she cannot properly grasp or turn pages with her dominant hand immobilized."
+          },
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Always bakes a homemade treat when meeting with friends — never brings store-bought desserts"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Temporarily brings high-quality store-bought desserts to gatherings with friends or asks others to provide treats, as baking is not possible with injured wrist",
+              "domain": "social_relationships"
+            },
+            "reason": "Baking homemade treats requires two functional hands, and her wrist fracture makes kneading, mixing, and oven use unsafe and impractical. She must rely on store-bought options or others' baking."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_007",
+            "fact": "Completes home physical therapy exercises daily — never skips, even on busy days",
+            "domain": "health_body",
+            "reason": "Her ability to perform her usual physical therapy routine is interrupted by the wrist fracture and cast. She will temporarily follow a therapist-prescribed regimen focused on wrist mobility and recovery, superseding her established exercises."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I slipped at my daughter's place last week—fractured my wrist on the stairs, so now it's immobilized in a cast for six weeks, and no driving either. I'm finding the disruption pretty challenging. I'm looking for ways to keep up with volunteer commitments, my board work, and routines, despite being one-handed. Any advice for adapting, especially with all my usual activities thrown off?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm so sorry to hear about the fall and fracture. That sounds very frustrating, especially with your usual packed schedule and independent routines. Can I ask, which tasks or commitments feel most urgent to keep up with right now—and are there any you've already had to pause or adjust?"
+        },
+        {
+          "role": "user",
+          "content": "Tax season is always busy, but since I can't drive, I'm relying on my daughter for rides to the community center and meetings. Public transit isn't really a fit right now—I’m not comfortable managing it one-handed. I’m also missing my morning walks, but I’m still joining the group and just walking at a slower pace."
+        },
+        {
+          "role": "assistant",
+          "content": "That's impressive that you're keeping up with your walks—it must be good for recovery and morale. For getting to your advisory sessions and board meetings, are you coordinating rides ahead of time, or do you need help setting up something more regular? And are there any tasks at the community center that usually require two hands, like sorting papers or setting up materials?"
+        },
+        {
+          "role": "user",
+          "content": "My daughter’s been fantastic about rides—she and a neighbor are helping me get everywhere I need to go, including errands. I’ve let the tax prep team know I can’t handle any of the heavier paperwork or setup right now; I just do consultations, and prep materials in advance as always. The bigger challenge is at home. Saturday gardening is completely paused—can't manage plants or even read my seed catalogs until the cast comes off, since it's my dominant hand. That's making weekends tough."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like your support network has adapted to your needs well, which is wonderful. For your usual Saturday routine, maybe you could swap the gardening for other activities that require less hand use, like listening to music or audiobooks. Would that be enjoyable, or is it more about missing the hands-on aspect and your connection to the garden itself?"
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely missing the hands-on connection. I used to organize my seed catalogs indoors when gardening wasn’t possible, but even that’s out for now—I can’t really turn pages or jot notes with the cast on. So I’m shelving all garden-related routines until I regain full use. For now, I just rest and listen to classical music on Saturdays."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes a lot of sense—sometimes the best option is a full pause rather than a subpar substitute. Are there other routines where the cast is causing trouble? For instance, you bake treats for your book club—but is that still possible one-handed?"
+        },
+        {
+          "role": "user",
+          "content": "Baking is on hold too—for book club, I’ve started picking up high-quality store-bought desserts when we meet, or I ask friends to bring something. Not ideal, but it’s the safest choice. Oven use and mixing are tricky with only one hand, so I don’t risk it."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart adjustment—your friends are probably happy to chip in. Has journaling been affected as well, given your usual evening gratitude notes? Or are you able to write left-handed?"
+        },
+        {
+          "role": "user",
+          "content": "Journaling's a challenge too. I’m trying voice-to-text apps, but sometimes I ask my daughter to help transcribe when she visits. Actual writing isn’t feasible right now, so I’ve shifted how I document gratitude until I can use my dominant hand again."
+        },
+        {
+          "role": "assistant",
+          "content": "Great solution—voice-to-text can be surprisingly convenient once you get used to it. How about your grocery shopping? Are you still keeping to your Tuesday routine, or has that changed?"
+        },
+        {
+          "role": "user",
+          "content": "I stick to Tuesday mornings for groceries, but only with a friend or family driving, and they help carry and unpack everything. I won’t attempt public transit or independent shopping with the cast."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s clear you’re staying true to your routines while adapting thoughtfully. One last question: are you continuing your daily home physical therapy, or has the wrist injury required changes to that regimen?"
+        },
+        {
+          "role": "user",
+          "content": "I had to pause my usual PT exercises—my therapist gave me a new routine that focuses on wrist mobility and gradual healing, which replaces what I was doing for my knee and general mobility. I’ll return to the old exercises once the cast comes off."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s wise. It sounds like you’re being mindful and proactive about safety and recovery, while maintaining the aspects of your schedule that are still feasible. If you ever need suggestions for hands-free activities or want help organizing support for tasks, just let me know. Wishing you a smooth and steady recovery!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Prepares thoroughly for each tax advisory session — never gives on-the-spot advice without reviewing materials beforehand",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_003",
+        "fact": "Only agrees to mentor students who commit to monthly check-ins — declines one-off conversations",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Declines all paid consulting work; volunteers time exclusively to non-profit and community causes",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Schedules medication reminders on her phone — never relies on memory alone",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Refuses to drive when joint pain flares up; always arranges rides or uses ride-shares instead",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_011",
+        "fact": "Hosts all book club meetings at her house — never rotates locations",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Babysits her grandchildren at her daughter’s home only — never at her own home to avoid childproofing",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Avoids large family gatherings; prefers small, intimate get-togethers with just immediate family",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Reads only physical hardcover books — never uses e-readers or tablets for reading",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Attends local chamber music concerts monthly — never goes to large stadium shows",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Plans one day trip each month to a nearby botanical garden or park — never revisits the same one twice in a row",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Turns her phone off after 8pm — never checks digital devices before bed",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Writes a gratitude note in her paper journal each evening — never uses digital apps for journaling",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Develops and delivers digital slide presentations for graduate seminars — no longer uses physical handouts to facilitate in-depth classes",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Communicates with board and initiative team via in-person meetings for workshop prep and feedback — minimizes remote calls or emails during active initiative periods",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Temporarily stops attending all yoga classes, focusing solely on prescribed physical therapy due to shoulder restrictions",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Completes orthopedist-prescribed shoulder physical therapy exercises daily, prioritizing upper body rehabilitation over other fitness routines",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Prefers to coordinate and bring her brother his preferred home-cooked meals once a week to his assisted living facility",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Regularly attends social events and support groups at the assisted living facility to help her brother acclimate and meet new people",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Participates in online crossword puzzle competitions with her book club — avoids solo online play, preferring virtual group events",
+        "domain": "leisure_hobbies",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_038",
+        "fact": "Organizes virtual tax advisory sessions for local seniors using video chat — avoids phone consultations, preferring visual interaction",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Preps simple, child-friendly lunches and snacks in the mornings with her grandchildren present — no longer does all meal prep the night before, adapts for active caregiving routine",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_040",
+        "fact": "Shifts grocery shopping to weekday afternoons (Wednesday or Friday), coordinating trips with after-school pickups and grandchildren’s needs — no longer sticks strictly to Tuesday mornings",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_041",
+        "fact": "Incorporates educational games and math practice into after-school care with her grandchildren, tailoring activities to their grade levels",
+        "domain": "leisure_hobbies",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Prepares a homemade snack for her grandchildren each afternoon before homework, avoiding packaged options",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Temporarily replaces morning group walks with at-home gentle stretching and light physical activity — does not engage in outdoor walks or treadmill exercise during heart monitoring period",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Keeps an annotated daily record of heart monitor readings and symptoms, using a dedicated notebook rather than relying on digital logs",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Follows a diet plan tailored by her nutritionist for blood sugar management — now avoids refined carbohydrates and sugary foods, not just processed frozen meals",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_047",
+        "fact": "Performs daily at-home glucose monitoring every morning and logs readings as instructed by her nutritionist",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Temporarily postpones all non-essential medical appointments and follow-ups until after her daughter's return — only addresses urgent health needs while providing full-time care for grandchildren",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_050",
+        "fact": "Suspends bringing individually portioned low-glycemic snacks to social and volunteer events — focuses solely on preparing snacks and meals at home for grandchildren during the two-week parental absence",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_051",
+        "fact": "Reads to her grandchildren before bedtime every night while staying at their home — chooses their favorite storybooks over her usual hardcover reading routine",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Prepares daily schedules of creative and educational activities at her daughter's home to keep grandchildren engaged — limits outside play to backyard only for safety and manageability",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Coordinates regular evening video calls with her brother as a substitute for in-person visits while fulfilling full-time childcare responsibilities",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Pauses all gardening and indoor plant activities — unable to read, write, or organize catalogs due to limited hand use with wrist cast; waits until cast removal to resume garden-related routines",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_055",
+        "fact": "Temporarily brings high-quality store-bought desserts to gatherings with friends or asks others to provide treats, as baking is not possible with injured wrist",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Uses voice-to-text apps or requests family assistance for personal journaling and correspondence while her dominant hand is immobilized",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Requests rides from friends or family for all errands and events — avoids public transportation or independent travel while unable to drive",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Communicates with non-profit board members exclusively via scheduled video calls — avoids lengthy group email chains",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_028",
+        "reason": "The new financial literacy initiative mandates her presence for recurring workshops, leading to greater in-person collaboration and planning. Remote communication becomes less relevant as in-person sessions dominate workflow."
+      },
+      {
+        "id": "pref_005",
+        "fact": "When guest lecturing, uses physical handouts for students — never relies on digital presentations",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "As a co-teacher for a semester-long graduate seminar, she must engage students over multiple sessions, use collaborative materials, and streamline feedback, requiring her to adopt digital presentations instead of single-use paper handouts suited only to one-off guest lectures."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Follows a low-sodium, Mediterranean-inspired diet — never eats processed frozen meals",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_046",
+        "reason": "Her referral to a nutritionist and new concern about elevated blood sugar means she must follow stricter dietary guidelines to manage blood glucose, going beyond her prior focus on sodium and Mediterranean principles."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Completes home physical therapy exercises daily — never skips, even on busy days",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "Her ability to perform her usual physical therapy routine is interrupted by the wrist fracture and cast. She will temporarily follow a therapist-prescribed regimen focused on wrist mobility and recovery, superseding her established exercises."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Only attends gentle or chair-based yoga classes — avoids any yoga with weight-bearing poses on knees",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_031",
+        "reason": "Her orthopedist has restricted upper body activity, which includes most yoga movements she previously participated in. She cannot safely attend even gentle yoga at this time and replaces it with specialized physical therapy."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Calls her brother every Sunday morning, no exceptions — never texts in place of a call",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_034",
+        "reason": "Now that her brother has moved to an assisted living facility nearby, she can see him in person regularly instead of relying on long-distance phone calls. Personal visits replace calls as her default routine for regular connection."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Always bakes a homemade treat when meeting with friends — never brings store-bought desserts",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "Baking homemade treats requires two functional hands, and her wrist fracture makes kneading, mixing, and oven use unsafe and impractical. She must rely on store-bought options or others' baking."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Spends Saturday afternoons tending to her backyard garden — never schedules social events during this time",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "Her shoulder injury prevents her from physically tending the garden, so she adapts by pursuing indoor garden-related activities until recovery."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Participates in crossword puzzle competitions at the community center — never does online puzzles",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_037",
+        "reason": "With the community center closed for renovations, in-person crossword competitions are suspended. To maintain her competitive puzzle habit, she adapts by joining her book club for online group competitions."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Begins every morning with a two-mile group walk, rain or shine — never substitutes with solo treadmill walks",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_043",
+        "reason": "The cardiologist has advised she avoid morning group walks while wearing a heart monitor, leading her to substitute the routine with safer, low-impact at-home activity while she is being monitored."
+      },
+      {
+        "id": "pref_022",
+        "fact": "Preps all meals the night before to manage dietary needs — never improvises meals last minute",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_039",
+        "reason": "Her new daily caregiving responsibility for her grandchildren after school several more days per week means she needs to prepare meals with their input and participation, as schedules change and dietary needs become more varied. The habit of prepping all meals the night before is replaced by child-oriented meal prep during the day."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Does grocery shopping on Tuesday mornings only, avoiding weekends and peak hours",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_040",
+        "reason": "With more frequent after-school caregiving, Tuesday mornings are less practical. She now shops for groceries alongside childcare duties, factoring in the grandchildren’s schedules and preferences."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Reserves Thursday afternoons exclusively for seminar curriculum planning and office hours — declines all volunteer and social requests during this time",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "Thursday afternoons are now needed for after-school childcare, so she cannot guarantee exclusive seminar planning time; the previous reserved slot is no longer feasible."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Prefers to set up workshop rooms herself before each financial literacy session — does not delegate logistical prep to center staff",
+        "domain": "work_habits",
+        "created_at_session": 1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "With the community center closed, there are no in-person financial literacy workshops for six months, so there is no opportunity for room setup."
+      },
+      {
+        "id": "pref_030",
+        "fact": "Greets every participant individually at workshops and learns their name — avoids generic introductions",
+        "domain": "social_relationships",
+        "created_at_session": 1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "The in-person workshops she attends at the community center are suspended, so there are no participants to greet during this closure period."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Replaces gardening on Saturday afternoons with reading or organizing seed catalogs indoors, due to restricted upper body movement from frozen shoulder",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_054",
+        "reason": "The wrist fracture and cast prevent her from not only gardening but also from handling, organizing, or reading seed catalogs indoors, as she cannot properly grasp or turn pages with her dominant hand immobilized."
+      },
+      {
+        "id": "pref_034",
+        "fact": "Visits her brother in person at his assisted living facility every Sunday morning — no longer maintains weekly phone calls as primary contact",
+        "domain": "social_relationships",
+        "created_at_session": 3,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "Staying full-time at her daughter's house for two weeks makes in-person visits to her brother impossible; she cannot maintain this as her primary contact method during that period."
+      },
+      {
+        "id": "pref_044",
+        "fact": "Schedules all medical appointments and follow-ups immediately after breakfast to accommodate new heart monitoring responsibilities and minimize disruption to daily routine",
+        "domain": "daily_routines",
+        "created_at_session": 6,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_049",
+        "reason": "The immediate need to provide full-time childcare disrupts her ability to schedule appointments as usual in the morning and requires her to reprioritize medical visits for two weeks."
+      },
+      {
+        "id": "pref_048",
+        "fact": "Prepares and brings individually portioned low-glycemic snacks to social events and volunteer days instead of communal baked treats",
+        "domain": "daily_routines",
+        "created_at_session": 7,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_050",
+        "reason": "Her full-time caregiving duties mean she is neither attending volunteer days nor social events outside the home during her daughter's absence, so this routine stops temporarily."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:32:57.586181"
+}

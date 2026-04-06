@@ -1,0 +1,1505 @@
+{
+  "persona": "A mid-level HR manager at a regional manufacturing company",
+  "persona_id": "persona_20260301_223313",
+  "expanded_persona": {
+    "base_persona": "A mid-level HR manager at a regional manufacturing company",
+    "age": 38,
+    "gender": "male",
+    "location": "Dayton, OH",
+    "work_education": [
+      "HR manager overseeing recruitment and onboarding for a 350-employee manufacturing firm",
+      "Recently implemented a new digital payroll system; leading ongoing employee training sessions",
+      "Juggling multiple staff shortages following a wave of retirements in key production roles",
+      "Attending monthly leadership workshops to prepare for potential promotion to Senior HR Manager",
+      "Responsible for resolving several ongoing labor disputes impacting overtime schedules"
+    ],
+    "health_wellness": [
+      "Recovered from a mild heart attack 18 months ago; now follows a low-sodium diet and exercises 4 times a week",
+      "Struggles with chronic lower back pain exacerbated by long hours in the office",
+      "Participates in a local men's basketball league every Saturday morning",
+      "Sleeps an average of 6 hours per night, often interrupted by work-related stress",
+      "Has a yearly checkup due but tends to postpone routine medical appointments"
+    ],
+    "family_relationships": [
+      "Married for 11 years; wife works part-time as a speech therapist",
+      "Has two children: a son (age 8) with ADHD and a daughter (age 5) starting kindergarten",
+      "Frequently assists his elderly mother, who recently moved to a nearby assisted living facility",
+      "Lives in a suburban home; hosts Sunday dinners for extended family every other week",
+      "Partners with his wife on managing their son's therapy schedule and school meetings"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Runs staff training sessions in small groups only — never large group presentations",
+        "Responds to employee emails within 24 hours, but never answers work messages after 7pm",
+        "Delegates recruitment tasks to junior staff but handles conflict resolution personally",
+        "Tracks labor dispute cases in a dedicated spreadsheet — never relies on memory or sticky notes",
+        "Never schedules meetings back-to-back; always leaves a 15-minute buffer for documentation"
+      ],
+      "health_body": [
+        "Prepares all weekday lunches at home — avoids cafeteria and fast food entirely",
+        "Does daily stretching routines before office hours to manage lower back pain",
+        "Chooses low-impact workouts like elliptical or swimming for most exercise sessions — saves high-intensity for basketball only",
+        "Sets a strict limit of 1000mg sodium for every day — checks every food label before eating",
+        "Postpones routine medical appointments unless reminded by his wife"
+      ],
+      "social_relationships": [
+        "Coordinates son’s school and therapy appointments exclusively via shared digital calendar with wife — never relies on paper notes",
+        "Hosts extended family Sunday dinners but declines invites for weeknight gatherings",
+        "Checks in with elderly mother every morning via phone call — never skips even when busy",
+        "Prefers texting family about minor logistics — only calls for urgent matters",
+        "Limits social outings to twice a month; prioritizes family activities over friends"
+      ],
+      "leisure_hobbies": [
+        "Plays in men’s basketball league every Saturday morning without fail — never misses for work",
+        "Watches classic war movies exclusively on Friday nights — never streams new releases",
+        "Gardens in the backyard every weekend when weather allows — avoids indoor hobbies during spring and summer",
+        "Only reads nonfiction biographies — never fiction or fantasy",
+        "Plans one family hiking or park outing per month, regardless of weather"
+      ],
+      "daily_routines": [
+        "Reviews his calendar every morning before breakfast — never starts the day without checking schedule",
+        "Shuts down all screens (phone, computer, TV) by 9pm to improve sleep",
+        "Does grocery shopping Saturday afternoons only — never on weekdays",
+        "Preps evening school bags and lunches for kids before dinner — never leaves tasks to the morning",
+        "Never opens work email on Sundays; dedicates the day to family and personal time"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His elderly mother suffered a fall at the assisted living facility and now requires daily in-person support for mobility and medical appointments.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Refuses all evening social invitations except for urgent family needs to prioritize caring for his mother after work",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Prepares quick, reheatable dinners on weekdays to allow time for nightly trips to the assisted living facility",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Checks in with elderly mother every morning via phone call — never skips even when busy"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Visits elderly mother in person every evening to assist with mobility and medical needs — phone check-ins only used when an in-person visit is impossible",
+              "domain": "social_relationships"
+            },
+            "reason": "His mother now requires daily in-person support with mobility and medical issues due to her fall. Phone calls are no longer sufficient to meet her needs, necessitating daily physical visits."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I wanted to check in because things have gotten pretty hectic. My mom had a bad fall at her assisted living place last week and now needs daily help getting around and making all her medical appointments. I'm trying to juggle my work schedule, family, and now basically being at her facility every night. Got any ideas for keeping things from totally spiraling?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry to hear about your mom. That sounds overwhelming, especially with everything else on your plate. Before diving into strategies, can you walk me through how your evenings are set up now? Are you typically able to carve out time after work, or is it more unpredictable?"
+        },
+        {
+          "role": "user",
+          "content": "It's changed pretty drastically. I used to just do a morning phone call to check on her, but that's not enough anymore. Now, I drive over after work every evening so I can help her move around and prep for any medical stuff coming up. The only exception is if something urgent comes up and I just can't make it—then I do the check-in by phone. Otherwise, it's in-person every night."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment. Shifting from phone check-ins to nightly visits takes a lot more time and energy. Are you running into conflicts with other evening obligations, like your kids’ activities or social events? If so, how have you handled those so far?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I've pretty much shut down all evening social plans unless it's something urgent for family. I tell people no to weeknight gatherings now, just to protect time for my mom. My wife and I coordinate the kids’ therapy and school stuff on our calendar, so we’ve worked around it—I handle my mom, she takes care of the early evening routine at home."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Prioritizing your mom and close family is probably necessary given her needs right now. Are weekday dinners a challenge with this new routine? I know evenings get compressed when you have to head out right after work."
+        },
+        {
+          "role": "user",
+          "content": "Definitely. I can’t make anything elaborate during the week anymore. I started prepping quick, reheatable meals—mostly things I can have ready in the fridge and heat up before heading out. Otherwise, we wouldn’t eat before I have to leave for her place."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—having reheatable meals is a lifesaver in hectic periods. Want help brainstorming some simple low-sodium dinner options you can prep in advance? Or is that meal workflow working for now?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually ideas would help. I’m sticking to my 1000mg sodium limit, so anything fast that’s not loaded with salt is good. I’ve got chili and stir-fry on rotation, but starting to run out of ideas."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—let’s focus on quick, low-sodium dishes. How do you feel about things like baked chicken with roasted veggies, lentil soup you can reheat, or even homemade burrito bowls using unsalted beans and fresh toppings? All can be cooked in bulk and heated up quickly."
+        },
+        {
+          "role": "user",
+          "content": "I like those suggestions, baked chicken especially. I can do a few different marinades and change it up. Burrito bowls sound good too, as long as I can control the sodium. Soup is a little tricky—I don’t love having lots of liquid unless it’s cold outside. But I might try it once a week."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad those options seem workable. If you ever want more variations or need recipe ideas, just let me know. Beyond meals, is there anything else about your evening routine or the juggling act that you'd like help organizing—like managing schedules or delegating tasks?"
+        },
+        {
+          "role": "user",
+          "content": "Schedule-wise, I think I’ve gotten the hang of coordinating everything. We use a shared digital calendar for therapy and school stuff, and I always review my work and personal plans in the morning. I just have to keep that buffer at the end of the workday now to document things, then head out. No back-to-back meetings if I can help it."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach, especially with all these moving parts. Keeping some buffer before leaving work lets you stay organized and avoid carrying stress into your evening. Have your physical routines—like stretching or prepping kids’ stuff—had to shift at all because of these nightly visits?"
+        },
+        {
+          "role": "user",
+          "content": "Stretching I still keep up with—I do it in the morning before office hours for my back. Prepping kids’ bags and lunches is now baked into the evening routine, right before dinner, so nothing gets left till the last minute. The main thing that changed is how I spend my evenings: family and my mom take priority, everything else waits or gets skipped."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s admirable—setting those boundaries keeps things manageable and ensures you’re where you’re needed most. If you want help with further streamlining tasks, automating reminders, or even fitting in self-care around your support for your mom, just let me know. I’m here to help as your situation evolves."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Promoted to Senior HR Manager and assigned to lead a task force addressing regional labor shortages, requiring frequent travel to other company sites within Ohio.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Uses hotel gyms or pool facilities for exercise whenever traveling for work, supplementing his regular routine",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Keeps in nightly contact with family via video call whenever traveling, ensuring he participates in his son's therapy updates remotely",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_028",
+              "fact": "Prepares quick, reheatable dinners on weekdays to allow time for nightly trips to the assisted living facility"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Plans weekday dinners around hotel stays or restaurant meals due to frequent regional travel — only cooks at home on weekends",
+              "domain": "daily_routines"
+            },
+            "reason": "The new Senior HR Manager role requires frequent travel to other company sites throughout Ohio. He's often away from home and cannot stick to his previous routine of reheatable home dinners during the week."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_023",
+            "fact": "Does grocery shopping Saturday afternoons only — never on weekdays",
+            "domain": "daily_routines",
+            "reason": "With frequent regional travel and unpredictable weekend schedules, he can no longer reliably shop only on Saturday afternoons."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I just got promoted—Senior HR Manager, as of last week. Big jump, but it comes with leading this new task force on regional labor shortages. Means a ton of travel around Ohio, and I'm honestly not sure how to keep my routines from totally unraveling. Can you help me figure out how to adjust? Especially around meals, exercise, and family stuff—that’s where I’m feeling the disruption."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on the promotion! Sounds exciting, but I can see how that level of travel would shake things up. Let’s tackle meals first: are you managing to stick to your usual prepping and cooking schedule, or has hotel life forced some changes there?"
+        },
+        {
+          "role": "user",
+          "content": "Meals are definitely tricky now. I used to prep quick, reheatable dinners after work so I had time for nightly visits to my mom at her assisted living place. But lately, I’m grabbing dinner near the hotel or at restaurants most weeknights—home-cooked is only happening on weekends. I guess I need a way to keep the sodium down while eating out so much."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call on keeping an eye on sodium, especially given your health history. Restaurant menus can be tough, but some chains are better at listing nutritional info than others. Are you able to check labels or nutrition facts online before picking where to eat, or is it more spur-of-the-moment? And are you able to pack any snacks or basic meals in the hotel, or does your travel schedule make that impractical?"
+        },
+        {
+          "role": "user",
+          "content": "I always check labels when I can, but it’s mostly spur-of-the-moment these days—a lot depends on where I land, and I don’t have kitchen access most nights. Packing snacks is doable, but full meals aren’t. Honestly, the hardest part is keeping the low-sodium target (1000mg a day); I’m used to controlling ingredients at home, but now it’s a guessing game."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—controlling sodium on the road is challenging. Maybe focus on ordering simply prepared proteins and veg, skip the sauces where possible, and supplement with your own snacks when you can. On the exercise front, have you managed to keep up with your routines during travel, or has that taken a hit?"
+        },
+        {
+          "role": "user",
+          "content": "Surprisingly, exercise hasn’t slipped much. Hotels usually have some gym or pool access, so I’ve started using those during the week. It’s not quite my usual elliptical or swimming routine at home, but it works. Saturdays are still reserved for my basketball league, no matter what. That’s my non-negotiable."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great to hear! Hotel facilities can be inconsistent, but even a quick swim or some low-impact cardio can help. Do you stretch in the mornings like before, or does the change in location mess up that routine? And how’s your back with all the new travel and office time? Still manageable?"
+        },
+        {
+          "role": "user",
+          "content": "I still try to fit in morning stretches—sometimes in the hotel room before heading out. The back pain hasn’t gotten worse yet, thankfully. If anything, moving around more during site visits keeps me from sitting all day. But the biggest challenge with travel is staying connected with my family, especially keeping up with my son’s therapy schedule and checking in with my mom."
+        },
+        {
+          "role": "assistant",
+          "content": "Family routines definitely shift with all that on-the-go. How are you managing check-ins—do you call, text, or video chat with your wife and kids each night? And are you still able to coordinate your son’s therapy appointments as closely as before?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve started doing a video call with my wife and kids every night when I travel—helps me stay in the loop for therapy updates, school meetings, and just basic family life. We still use a shared digital calendar for appointments, so that hasn’t changed. And I make sure to call my mom every morning, no matter where I am. Haven’t let that slide yet."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s an impressive level of commitment, especially juggling work and family at distance. With your new travel schedule, do you still keep your previous grocery shopping routine on Saturday afternoons, or has that shifted around too?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I had to drop that. The travel means weekends are unpredictable—I can’t rely on Saturday afternoon for groceries anymore. Sometimes I squeeze it in when I’m home, other times my wife handles it or I do quick trips on another day. Definitely less routine."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—flexibility is key now. To recap: you’ve adjusted to hotel/restaurant dinners during the week, started using hotel gyms for exercise, keep in nightly contact with your family via video, and dropped the fixed Saturday grocery routine. Anything else you’re struggling with, or does that cover the big shifts?"
+        },
+        {
+          "role": "user",
+          "content": "That pretty much covers it. I think my biggest concern going forward is just maintaining those family and health touchstones despite the schedule chaos. If you have tips for travel hacks or ways to still eat healthy on the go, I’d welcome anything else you’ve got."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. For healthy travel eating: look for restaurants or chains with grilled options, skip fried foods and salty sauces, and lean on fresh produce where possible. Stock up on low-sodium snacks (like unsalted nuts, fruit, or plain yogurt) to fill gaps. For family, keep those video calls sacred—maybe try sharing a brief nightly ritual (like a story with the kids or a recap with your wife) to anchor connection. If you want help building a low-sodium eating checklist or travel workout plan, let me know and I can send suggestions."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "During a routine men's basketball league game, he severely strained his lower back and is advised by his physician to stop all high-impact activities, including basketball, for at least three months.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Attends weekly aquatic physical therapy sessions every Saturday morning to rehabilitate his back",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Reserves Saturday mornings for solo recovery time and avoids all group sports or team events",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Plays in men’s basketball league every Saturday morning without fail — never misses for work"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "No longer participates in men's basketball league; replaces Saturday mornings with supervised aquatic therapy or gentle pool exercise",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "His physician has specifically instructed him to stop all high-impact activities, including basketball, for at least three months due to a severe lower back strain. He must substitute basketball with low-impact exercise to protect his back."
+          },
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Chooses low-impact workouts like elliptical or swimming for most exercise sessions — saves high-intensity for basketball only"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Exclusively chooses low-impact workouts like swimming, walking, or gentle stretching — avoids all high-intensity and impact activities until cleared by physician",
+              "domain": "health_body"
+            },
+            "reason": "He can no longer reserve high-intensity workouts for basketball; physician's advice requires total avoidance of impact/high-intensity activity for recovery."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I hurt my back pretty badly during basketball last weekend — apparently I severely strained it. My doctor says absolutely no high-impact stuff, including basketball, for at least three months. Saturday mornings are always about basketball for me, so now I'm trying to figure out how to fill that slot. Any ideas for low-impact alternatives that are actually motivating?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds frustrating, especially since basketball has been a staple for you. When it comes to low-impact options, swimming is often recommended since it's gentle on the back and still provides a good workout. Have you tried swimming or aquatic exercise before? Or would you prefer something like walking or a dedicated stretching routine?"
+        },
+        {
+          "role": "user",
+          "content": "I've always reserved high-intensity workouts for basketball, but otherwise stuck to elliptical or swimming. Now, though, I can't do anything high-impact at all, so basketball is totally out. I'll need to stick to swimming and gentle stuff only until my doctor clears me. I like the idea of swimming, but I usually play basketball for the camaraderie — swimming sounds pretty solo."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense — losing the team aspect is probably tough. Would joining an aquatic therapy group help? Some physical therapy clinics run supervised pool sessions, and you'll usually find a few regulars that make it more social. Or, if you prefer to keep things solo for now, there are structured aquatic routines you can follow during your Saturday slot. Which sounds more appealing to you?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, my physician recommended aquatic PT, so I'm starting supervised sessions every Saturday morning. It's pretty structured — definitely solo recovery time for now, and I'm supposed to avoid all group sports or team events to minimize risk. So Saturday mornings are off-limits for anything but rehab."
+        },
+        {
+          "role": "assistant",
+          "content": "That seems like a smart call, especially for recovery. How are you adjusting to not having that social outlet on Saturdays? Are you looking for ways to add some casual interaction elsewhere, or is solo time for recovery what you need right now?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I could use the quiet. The last few months at work have been rough — staff shortages and a couple of ongoing disputes, so physical therapy is a welcome break, even if it's not very social. I'll just have to shift my routine and reserve Saturday mornings for solo recovery rather than group sports."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a healthy perspective. It sounds like this new routine—solo aquatic therapy and gentle exercise—could double as a mental break, not just physical. Are you planning to keep the swimming going once you're allowed more activity again, or will you get right back to basketball?"
+        },
+        {
+          "role": "user",
+          "content": "Good question. I think I'll stick to swimming and low-impact workouts until my doctor clears me. Honestly, after this strain, I might ease back into basketball more slowly—even if it's tempting to jump right in. For now, I'm exclusively choosing gentle swimming, walking, and stretching; nothing high-intensity or impact until further notice."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really responsible approach. If you ever want to add variation, gentle water aerobics or even yoga for back rehab could fit your needs. Let me know if you want detailed routines or suggestions for tracking progress, especially since you’re used to structure and goal-setting."
+        },
+        {
+          "role": "user",
+          "content": "Thanks, that helps! Just to recap: no basketball for now, Saturday mornings are reserved for aquatic PT and solo recovery, and all workouts are strictly low-impact. If you have any resources or tips for aquatic therapy routines, tracking my progress, or ways to make solo recovery more engaging, I'd appreciate it."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "At his annual cardiac checkup, his doctor identifies concerning changes in his cholesterol levels and orders him to start a prescription medication while recommending monthly visits with a dietitian.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Takes prescribed cholesterol medication with breakfast every morning — never misses a dose",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Sets a strict limit of 1000mg sodium for every day — checks every food label before eating"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Checks both sodium and cholesterol content on all food labels, strictly avoiding high-cholesterol foods along with sodium control",
+              "domain": "health_body"
+            },
+            "reason": "After the cardiac checkup, his doctor specifically flagged cholesterol as a new health risk and prescribed medication, meaning he now needs to monitor cholesterol intake just as strictly as sodium."
+          },
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Postpones routine medical appointments unless reminded by his wife"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Schedules and attends monthly medical and dietitian appointments without spousal prompting, prioritizing these above other commitments",
+              "domain": "health_body"
+            },
+            "reason": "His new regimen requires monthly dietitian visits and close medical oversight, a major behavioral shift that his wife can no longer solely manage for him (doctor’s orders)."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I just got back from my annual cardiac checkup, and the doc wasn't thrilled with my cholesterol numbers. I'm starting a new medication tomorrow and he told me to book a monthly appointment with a dietitian. Honestly, keeping up with all this is stressing me out—I'm already juggling a ton at work and at home. Any practical advice for managing this, without dropping the ball somewhere else?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big adjustment, especially with your workload and family schedule. Building these new routines can feel overwhelming at first, but a few practical tools can make it easier. Have you mapped out how the monthly appointments would fit into your existing calendar yet, or are you still figuring out where to squeeze them in?"
+        },
+        {
+          "role": "user",
+          "content": "I haven't scheduled the dietitian yet—just got the referral. Historically, my wife has to remind me to book any doctor stuff, but this time I promised I’d handle it myself. The cardiologist was pretty clear it can't take a back seat, so I’m planning to prioritize these monthly check-ins, even if it means rescheduling work stuff. I guess I'll need to block time for the visits and track them myself, probably alongside everything else in my morning calendar review."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid plan—you’ve already got a good habit of reviewing your calendar each morning, so incorporating medical appointments should fit naturally. You might consider creating a recurring event for both the medication reminder and the monthly visits. With work and family responsibilities, having it digital helps ensure nothing slips. Are you thinking of tying the dietitian appointments to a specific time—like after work, or during lunch breaks?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll probably aim for late mornings—after my calendar review, but before I get swallowed by emails and HR issues. Early afternoons clash too much with staff training or labor dispute meetings. Plus, I can’t do back-to-back commitments, so I need those 15-minute buffers for updates and documentation. Now that I’ll have monthly medical stuff, I’ll have to be even stricter about leaving enough space between appointments and work meetings."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, maintaining those buffers is important for sanity and accurate documentation. On the medication front, do you have a routine for taking it daily, or will this require a new morning habit? Sometimes pairing it with another established action, like breakfast, makes it more consistent."
+        },
+        {
+          "role": "user",
+          "content": "I'm planning to take the cholesterol med with breakfast every morning. It’s easier to make it non-negotiable if I can tie it to something I never skip. Plus, I always prep my lunch and evening bags for the kids before dinner, so my mornings are pretty structured now. I don’t like leaving important things to chance, especially with the new health situation."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call—anchoring the medication to breakfast is a smart move, and your evening prep helps keep mornings organized. On the diet side, are you worried about adjusting your sodium routine, or does your current low-sodium plan already make it simple to add cholesterol tracking? Sometimes expanding the label-checking can feel tedious, but if you’re already attentive, it might be manageable."
+        },
+        {
+          "role": "user",
+          "content": "Actually, it's more work now. I've been religious about checking sodium—every label, every meal. Going forward, I have to check cholesterol content too, and it slows things down more than I expected. I can’t just grab whatever looks healthy; I need to avoid anything with high cholesterol, in addition to keeping sodium low. I guess my old method needs an upgrade so I don’t miss anything."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s definitely an extra layer to your routine. Have you tried using any apps that scan nutrition labels and flag both sodium and cholesterol levels in real time? That could save you time when shopping and meal prepping. Or do you prefer sticking to manual checks, since you’ve got a reliable system already?"
+        },
+        {
+          "role": "user",
+          "content": "I usually stick to manual checks—I trust myself more than apps, honestly, and I don’t want to risk missing something important. The only thing that’s changed is adding the cholesterol numbers to what I track, so I guess I’ll just need to double-check everything. Maybe I’ll make a spreadsheet for the foods I buy often, so I don’t waste time reading the same labels every week."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart idea—a spreadsheet will streamline the process, especially with your experience tracking labor disputes that way. You could set up columns for both sodium and cholesterol, plus any other nutrients you want to watch. If you meal prep for workdays, have you noticed any foods that trip you up now that cholesterol is a concern? Or do your go-to lunches still fit with the new restrictions?"
+        },
+        {
+          "role": "user",
+          "content": "Lunches are mostly safe since I make everything at home—no cafeteria or fast food. But I’ll need to swap out some proteins and ingredients I used to rely on. I guess I’ll have to experiment a bit and see what keeps both sodium and cholesterol low. I’m just not sure what quick meal options there are for both restrictions."
+        },
+        {
+          "role": "assistant",
+          "content": "It can be tricky to find quick, satisfying meals that hit both marks. Plant-based proteins like lentils, beans, or tofu are typically low in both sodium and cholesterol. Pairing those with plenty of veggies and whole grains can give you fast prep options. Would it help if I compiled a few meal ideas based on your restrictions and usual prep time, or do you prefer coming up with your own recipes?"
+        },
+        {
+          "role": "user",
+          "content": "A list would be great, as long as it sticks with my low-sodium and low-cholesterol limits. I’m fine doing the meal prep, but I need ideas so I’m not just eating boring salads every day. Thanks for the help—it’s a relief to talk it through and not just react to new rules."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His wife accepted a full-time speech therapist position at a local school, shifting her schedule to early mornings and requiring after-school childcare arrangements for their daughter.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Coordinates his daughter's after-school pickup and care with a neighborhood sitter three times a week and integrates this into the family calendar",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_024",
+              "fact": "Preps evening school bags and lunches for kids before dinner — never leaves tasks to the morning"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Preps evening school bags and lunches for kids after dinner and coordinates prep with daughter’s after-school caregiver as needed",
+              "domain": "daily_routines"
+            },
+            "reason": "With his wife working full-time and starting early, dinner and evening routines now shift later and require coordination with the after-school caregiver to cover his daughter's needs. Prep tasks may occur after dinner or involve external help."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_015",
+            "fact": "Limits social outings to twice a month; prioritizes family activities over friends",
+            "domain": "social_relationships",
+            "reason": "With increased childcare responsibilities and coordination for his daughter after school, he is unable to attend social outings with friends, so the preference is now irrelevant — there is no opportunity for such outings."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big shift in our household this month: my wife took a full-time speech therapist job at a local school. Her mornings start way earlier, and we've had to line up after-school care for our daughter. I'm just starting to realize how much more coordination this takes. Can you help me think through how to stay organized — especially with my schedule as crazy as it is right now?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations to your wife — that’s a major step for her and for your family! With her schedule changing and new after-school logistics, what parts of your routine feel the most strained right now? Is it mornings, evenings, or both?"
+        },
+        {
+          "role": "user",
+          "content": "Evenings are tougher. We used to get school bags and lunches ready before dinner, but now we end up doing it after. Sometimes the sitter needs to help us make sure everything's prepped because my wife's too wiped out by the time she gets home. I'm not sure how to make this efficient with all the moving pieces."
+        },
+        {
+          "role": "assistant",
+          "content": "So prepping school stuff happens later, and sometimes the sitter pitches in — makes sense given your wife’s hours. Are you coordinating these tasks through any shared system, like a calendar or checklist tool, so everyone’s on the same page? Or is it more ad hoc at the moment?"
+        },
+        {
+          "role": "user",
+          "content": "We’ve got our family calendar for appointments and therapy, but now I’m adding our daughter’s after-school pickup and care times for the neighborhood sitter three days a week. That way, whoever’s responsible knows exactly when and what needs to be done. It’s still new, so we sometimes miss details."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call adding caregiver pickups to your family calendar. Maybe a recurring checklist for evening prep could help — something digital that’s easy for the sitter to access and update, too. What do you think? Would that fit into your workflow without adding too much complexity?"
+        },
+        {
+          "role": "user",
+          "content": "That might work, actually, as long as it links to the calendar. One thing is the prepping sometimes shifts depending on the sitter’s schedule — sometimes we do it together after dinner. Flexibility is key, but I have to make sure nothing gets left out since mornings are too rushed now."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it — flexibility, but no room for things slipping through the cracks. Maybe you could build a templated checklist (Google Keep, Todoist, or even a shared Google Doc) attached to the calendar event. That way, whoever’s helping — you, your wife, or the sitter — can tick off what’s done. Does that sound manageable?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, linking a checklist to the calendar is probably the best shot. We can update it as needed and track who’s doing which part, since my daughter’s routine changes week to week. Honestly, we've basically dropped social outings with friends — there's no bandwidth anymore, so family and logistics take priority now."
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you — between work, your wife's new schedule, and childcare coordination, fitting in social outings is a tall order. At least you’re prioritizing family and key routines. Is there anything else that’s slipped or shifted in your routine since the change that you’re worried about?"
+        },
+        {
+          "role": "user",
+          "content": "Other than the logistics around prep and the tighter evenings, not really. I still keep Sunday as a family-only day, and we haven't missed basketball Saturday mornings. It just feels like every spare minute gets absorbed by scheduling or follow-up. Any ideas for stress-management now that nights are squeezed and I can't see friends?"
+        },
+        {
+          "role": "assistant",
+          "content": "Given your tight evenings and limited social time, it may help to carve out brief, device-free decompressing windows — even 10 minutes after prepping school stuff or before shutting screens down at night. Since you already close screens by 9pm, is there a specific time before that when you could build in some low-key relaxation, like reading or mindful stretching?"
+        },
+        {
+          "role": "user",
+          "content": "That’s doable — I could set aside ten minutes after school prep, before we start bedtime routines. Nonfiction books are my go-to, so I could stick with that. Thanks for helping me sort this out; the calendar coordination and shared checklist will hopefully keep the new caregiver loop tight."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The company announced a merger with a larger nationwide manufacturing firm, resulting in the consolidation of several HR processes and the immediate integration with a new corporate payroll and compliance system that he must oversee and implement.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Attends mandatory remote onboarding workshops for all HR managers, taking notes digitally and sharing summaries with junior staff weekly.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Collaborates with HR counterparts in other regions via biweekly video conferences to resolve nationwide compliance issues.",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Runs staff training sessions in small groups only — never large group presentations"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Now conducts large group presentations and virtual training sessions for company-wide HR and payroll system integration — rarely uses small groups except for specialized follow-ups.",
+              "domain": "work_habits"
+            },
+            "reason": "The merger requires company-wide HR system rollouts and compliance training, making large group presentations and virtual sessions standard practice. Small-group-only style is no longer practical when onboarding hundreds at once."
+          },
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Tracks labor dispute cases in a dedicated spreadsheet — never relies on memory or sticky notes"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Tracks labor dispute cases exclusively in the new corporate HR management system — abandons spreadsheets and adapts to standardized process integration.",
+              "domain": "work_habits"
+            },
+            "reason": "The merger’s new payroll and compliance system replaces manual spreadsheets with mandatory digital workflows; he must track disputes inside the central HR software."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, here we are—the merger finally happened. I found out yesterday I’ve got to oversee the integration of this new payroll and compliance system. It’s immediate, too. I’ll need to roll out company-wide training and figure out how to train everyone at once, not just small teams. Any advice on where to start? I’ve never run anything on this scale before."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big shift. First, I'd suggest mapping out the required training modules and prioritizing the most urgent topics—like payroll basics, compliance, and user access. Since you haven't managed large trainings before, are you thinking in-person or virtual sessions? Do you have any preferences for format or tools?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I used to stick to small-group sessions so I could keep things personal and hands-on, but that's not going to cut it anymore. Looks like I’ll be doing large group presentations and virtual trainings for the whole company. Small groups will probably just be follow-ups for folks who need extra help. Any tips for keeping big presentations effective? I don’t want people zoning out halfway through."
+        },
+        {
+          "role": "assistant",
+          "content": "Keeping people engaged in large sessions can be tough, especially virtually. Using live polls or Q&A breaks can help. Would you be comfortable incorporating interactive elements, like case studies or real scenarios? Also, sharing clear digital resources after the session helps reinforce the material."
+        },
+        {
+          "role": "user",
+          "content": "I’m open to live polls and Q&A, but honestly, everything needs to be sharable digitally. The merger’s new workflows mean I have to start tracking all labor dispute cases right inside the new corporate HR system. I used to keep a dedicated spreadsheet for this, but that’s being phased out. So, everything’s got to be digital and compatible with their centralized tools."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—so you’re moving away from manual spreadsheets entirely. That will take some adjustment. Are you getting any formal training on the new HR system, or is it mostly self-guided? It might be helpful to create step-by-step guides for yourself and your team as you learn it."
+        },
+        {
+          "role": "user",
+          "content": "They’re actually running a set of mandatory remote onboarding workshops for HR managers. I attend those, take notes digitally, and then share summaries with my junior staff every week. The guides are a good idea—I’ve started collecting key points as I go so I can distribute them post-training."
+        },
+        {
+          "role": "assistant",
+          "content": "Sharing summaries is a smart move, especially since your staff will need to ramp up quickly. Are you collaborating with HR teams from other regions, or is integration mostly local so far? Sometimes sharing best practices across locations speeds things up."
+        },
+        {
+          "role": "user",
+          "content": "The integration is nationwide—I've got biweekly video conferences with HR managers from different regions just to resolve compliance issues. It's helpful, but also pretty intense. There's a lot to coordinate, and things move fast. I’m used to tackling local disputes solo; this is a whole new level."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like your scope has expanded a lot. Have you found any tools or workflows from other regions that have made your job easier so far? And given all these changes, how are you managing your regular workload and your health routines—are you able to keep those balanced?"
+        },
+        {
+          "role": "user",
+          "content": "Some regional teams use templates for dispute documentation, which I’ve adopted. As for health—I’ve kept most routines. Mornings still start with calendar review and stretching. I’m just trying to avoid late-night work since my heart attack. But the merger added a lot more screen time, so I’ve had to be stricter about shutting down at 9pm. It's a lot to juggle, but I'm adapting."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s impressive—sticking to shutdown time and stretching routines is tough with a new workload. If the pace keeps up, you might need to delegate more or automate some steps. Would you like help prioritizing tasks or finding ways to streamline the training rollout?"
+        },
+        {
+          "role": "user",
+          "content": "Prioritization would be helpful, especially now that I’m running these large group trainings and have to coordinate compliance cross-region. If you have any templates or scheduling frameworks for company-wide rollouts, I’d gladly take them."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! I can send you a rollout template that breaks trainings into phases—core HR process training first, payroll system onboarding next, compliance updates last. Each phase has suggested timelines and digital follow-up structures. I’ll include prompts for post-session feedback to help adjust future trainings. Would you like me to tailor the template based on your company’s headcount and merger deadlines?"
+        },
+        {
+          "role": "user",
+          "content": "That’s perfect. We have about 350 employees in Dayton and more in other regions joining soon. Timelines are tight, so anything structured will help. And thanks for helping me talk through these changes—a lot of old habits are out the window, so adapting is the only option."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His son’s school counselor recommended enrolling in a specialized after-school ADHD program, requiring daily transportation and coordination between parents.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Shares daily transportation duties with his wife for son's ADHD after-school program, alternating days and updating the shared digital family calendar each week",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_047",
+            "fact": "Reviews the ADHD program's communications and progress reports nightly, discussing feedback and recommendations with his wife before bedtime",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_027",
+              "fact": "Refuses all evening social invitations except for urgent family needs to prioritize caring for his mother after work"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Refuses all evening social invitations and now blocks off weeknight hours exclusively for transporting his son to and from the ADHD program, sharing this duty with his wife",
+              "domain": "social_relationships"
+            },
+            "reason": "The new after-school ADHD program requires daily transportation and parental coordination, which directly competes with his after-work hours. He now prioritizes this responsibility over previous evening routines, including family visits."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_040",
+            "fact": "Coordinates his daughter's after-school pickup and care with a neighborhood sitter three times a week and integrates this into the family calendar",
+            "domain": "daily_routines",
+            "reason": "The family's after-school logistics are now dominated by the daily transportation needs for his son's ADHD program, making the previous routine centered on coordinating pickup with a sitter obsolete."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So my son's school counselor just recommended we enroll him in a specialized after-school ADHD program. The catch is, it runs every weekday and requires one of us to drive him there and back. My wife and I are scrambling to figure out a routine. I need help balancing this new schedule with work and everything else—especially since my HR workload has spiked lately with retirements and ongoing labor disputes. Any strategies for organizing all these moving parts?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big shift in your family routine, especially with the increased work demands. To start, are you planning to alternate transportation duties with your wife, or will one of you take the lead most days? Also, do you use any tools or calendars to keep track of everyone's schedules?"
+        },
+        {
+          "role": "user",
+          "content": "We're actually planning to share the driving, alternating days and updating the family schedule on our shared digital calendar. It's the only way we think it'll work, given her therapy clients and my own unpredictable afternoons. But now I'm blocking all weeknight hours just for this—no more evening social invites, and even visits to my mom are being pushed aside. I’m trying to make sure nothing falls through the cracks at home or work."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to prioritize your son's needs under these new circumstances. Since your evenings are now reserved for transportation, how are you managing work tasks that might spill into after hours, given your HR responsibilities? Or have you set any boundaries to contain work so it doesn't conflict?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I have a hard line for work—never answer messages after 7pm, and avoid bringing work home unless absolutely urgent. I delegate wherever possible to my junior staff, but conflict resolution and labor disputes still land on me personally. I'm more careful than ever now to buffer meetings and make sure my documentation is done before leaving for the day. The ADHD program has to take priority."
+        },
+        {
+          "role": "assistant",
+          "content": "That boundary sounds healthy. For tracking your son's after-school progress and program feedback, are you building any new routines in the evening to stay up-to-date? Would a shared system for reviewing reports help?"
+        },
+        {
+          "role": "user",
+          "content": "Good question. We started reviewing the program's communications and nightly progress reports together—usually right before bed. It's helped us stay on the same page and catch any recommendations early. We talk through what the instructors suggest and update the calendar for therapy or school meetings if needed."
+        },
+        {
+          "role": "assistant",
+          "content": "That collaborative review process sounds like it's working well. With this focus on your son's needs, how are you handling your daughter's after-school care? Did you adjust your previous sitter routine, or does that still fit in?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, we dropped the sitter routine. Our daughter's pickup and care were coordinated with a neighborhood sitter three times a week, but that's out. With all the logistics dominated by daily transportation for my son, we had to switch gears. Now we plan her pickup around one of us being home—fits everything into the same family calendar."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—that streamlines things, even if it's a big change from before. Considering your new evening commitments, has this affected your Sunday family dinners or other weekend activities, or are you keeping those in place for balance?"
+        },
+        {
+          "role": "user",
+          "content": "Sunday dinners are still non-negotiable. That's my family and personal day—no work email, screens off by 9pm, everyone together. The weekday chaos makes me appreciate those Sundays even more. Thanks for helping me sort through all this. It's a lot, but I think the new routines are actually starting to make sense."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "While gardening on a weekend, he slipped on wet grass and fractured his ankle, requiring a cast and use of crutches for 6 weeks, with weight-bearing limitations and physical therapy sessions prescribed.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Strictly avoids driving or heavy domestic chores — relies on spouse and extended family for errands and heavy housework during ankle recovery",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Schedules all physical therapy appointments for the late afternoon to minimize disruption to work responsibilities",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_052",
+            "fact": "Uses a knee scooter or crutches at home and in the office, strictly according to weight-bearing guidelines provided by his doctor",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_018",
+              "fact": "Gardens in the backyard every weekend when weather allows — avoids indoor hobbies during spring and summer"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Temporarily avoids gardening activities — instead, pursues indoor hobbies such as painting or reading on weekends during injury recovery",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "With a fractured ankle, weight-bearing activities like gardening are physically not possible for at least six weeks. He shifts his weekend leisure to indoor, non-weight-bearing hobbies until he recovers."
+          },
+          {
+            "from": {
+              "id": "pref_034",
+              "fact": "Attends weekly aquatic physical therapy sessions every Saturday morning to rehabilitate his back"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Replaces aquatic physical therapy with prescribed ankle rehabilitation sessions — suspends aquatic therapy until cleared by physician after fracture recovery",
+              "domain": "health_body"
+            },
+            "reason": "His ankle injury and cast make aquatic therapy unsafe or impossible until after cast removal. Ankle-specific rehab sessions become his new Saturday routine as directed by his doctor."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_035",
+            "fact": "Reserves Saturday mornings for solo recovery time and avoids all group sports or team events",
+            "domain": "leisure_hobbies",
+            "reason": "Solo recovery time on Saturday mornings was previously linked to back rehabilitation via pool/gentle exercise, which cannot be continued with a fractured ankle; his new prescribed PT routine fully replaces this ritual for the recovery period."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, the weekend took a turn—I slipped on some wet grass while gardening and managed to fracture my ankle. I've got a cast and crutches for at least six weeks, and my doctor wants physical therapy every Saturday afternoon. I'm struggling to figure out how to keep my routines going, especially work and home stuff, without burning myself out or neglecting recovery. Any practical suggestions for adjusting my schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ouch, that sounds rough—sorry to hear it. The crutches and PT sessions are going to change things quite a bit. Are there particular routines you're worried about disrupting? For example, your office hours, exercise habits, or handling family logistics?"
+        },
+        {
+          "role": "user",
+          "content": "It's a mix, honestly. Office hours are still manageable—I can get around with the knee scooter, though I'm sticking to doctor's weight-bearing rules. The big issue is I can't garden at all, and weekends used to be for backyard work and outdoor stuff. Now I'm forced to stay inside, so I'm debating what to do with that time instead. Any low-effort indoor hobby ideas? Reading is fine, but I'd like something more hands-on."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—gardening is pretty physical and definitely out with a fractured ankle. Since you're looking for hands-on indoor hobbies, have you tried something like painting, model building, or even learning a new board game with the kids? Anything you could do seated might fit the bill."
+        },
+        {
+          "role": "user",
+          "content": "Painting actually sounds promising. I picked up some supplies for the kids a while back, so maybe I'll give it a shot this Saturday. And you're right, anything that can be done while seated is key—I'll have to avoid activities that involve standing or moving around for now. Plus, I'm going to be skipping my usual aquatic physical therapy for my back, since the cast means no pool time until my doctor clears me. All my PT is now ankle rehab."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad painting appeals to you. It's great you have supplies ready. And switching to ankle-specific PT makes sense—mobility restrictions really change what you can do. Are the new therapy sessions working for you? How do they fit in with your work responsibilities?"
+        },
+        {
+          "role": "user",
+          "content": "I purposely scheduled all the PT appointments for late afternoons so I don't have to miss much work. It's definitely a challenge since I don't like disrupting the office flow, especially with all the staff shortages lately. My wife has had to pick up a few extra chores and errands since I can't drive or move heavy stuff while I'm recovering. We're leaning on extended family, too, for grocery runs or anything big. I'm strictly avoiding driving until I'm cleared."
+        },
+        {
+          "role": "assistant",
+          "content": "That delegation is smart—recovery needs to be the priority. It's good you have support for errands and heavy chores. Having PT in the late afternoon sounds well-planned, minimizing impact on work. Are there any particular barriers you're running into at home or the office due to the mobility changes?"
+        },
+        {
+          "role": "user",
+          "content": "Getting around isn't too bad at work, since my office is close to the entrance and I set up the knee scooter for both home and office. But solo Saturday mornings are different now—used to be reserved for group basketball or solo pool workouts, both suspended for the moment. Now, it's just recovery and PT, no sports or team stuff at all until the cast comes off. I do miss the routine and camaraderie, but my priority has to be healing."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes total sense. Giving up basketball and pool time temporarily is tough, but focusing on recovery is absolutely the right call. With your support network and new routines in place, it sounds like you've adjusted pretty well. Is there anything you're still struggling to fit in or feeling stuck on?"
+        },
+        {
+          "role": "user",
+          "content": "It's mostly about keeping occupied on weekends, so thanks for helping me sort through the indoor hobby options. I'll focus on painting and maybe reading a few biographies until I'm back on my feet. Having family handle errands and heavy chores is working well for now, and as long as PT stays afternoon, I can keep work running smoothly. Appreciate your help."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The new parent company eliminated several mid-level HR roles at his site, increasing his direct reports and adding responsibility for labor relations across two additional facilities in the region.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_055",
+            "fact": "Checks in daily (by phone or video call) with HR leads at newly assigned facilities to monitor labor relations issues firsthand",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_056",
+            "fact": "Sets aside one evening per week to review and update labor dispute strategy documentation for all sites under his responsibility",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Responds to employee emails within 24 hours, but never answers work messages after 7pm"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Responds to employee emails and urgent work messages as they arrive, including after 7pm, during high-volume periods driven by expanded HR and labor relations responsibility across facilities",
+              "domain": "work_habits"
+            },
+            "reason": "The elimination of several mid-level HR roles and new oversight of two more facilities creates a workload with time-sensitive issues across more sites; he now feels obligated to stay responsive outside set hours, especially during periods of crisis or labor disputes."
+          },
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Never schedules meetings back-to-back; always leaves a 15-minute buffer for documentation"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Schedules meetings back-to-back out of necessity, often documenting cases and notes after standard office hours due to the increased volume and complexity of regional HR oversight",
+              "domain": "work_habits"
+            },
+            "reason": "His new workload, handling more direct reports and labor relations at additional facilities, necessitates consolidating meetings and sacrificing his prior buffer to meet the demands of an expanded role."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, the parent company finally made the big move—eliminated a bunch of mid-level HR jobs here, and now I’m officially responsible not just for our site but two more facilities. Direct reports jumped, and labor relations is all on me regionally. I’ve been scrambling—my calendar is a mess, no time for the buffers I used to build in. Any tips for managing the flood, especially with labor disputes needing more oversight and documentation than ever?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a heavy lift, and honestly, it’s tough to stay organized when your scope expands that quickly. For labor disputes specifically, are you keeping separate documentation for each site or integrating everything into one workflow? And for the calendar chaos—have you tried setting aside blocks for documentation, or is that even realistic with back-to-back meetings?"
+        },
+        {
+          "role": "user",
+          "content": "I wish I could block off time during office hours—used to always leave a 15-minute buffer for notes and debrief after meetings. Now it’s just impossible, meetings booked right on top of each other. I’ve started doing case notes after hours most days instead. As for documentation, I’m tracking everything in a dedicated spreadsheet like before, but now I review it in bulk one evening a week just to keep up with the disputes across all three sites."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—sometimes consolidating documentation time is the only option. Since you’re handling more direct reports and labor disputes, are you finding urgent issues come up more often outside of the usual hours? Wondering if your work boundaries are holding or if you’re needing to stay more responsive at night."
+        },
+        {
+          "role": "user",
+          "content": "Honestly, they’re gone—for now at least. I used to never answer work emails after 7pm, but lately I’m responding as things come in, even late, especially when there’s a regional labor issue or personnel crisis. It’s not sustainable long-term, but with the volume right now I have to stay on top of it."
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you—a lot of HR managers end up in that react-and-adapt mode after a restructure. Have you set up any routines to connect directly with HR leads at the new facilities, or is communication more ad hoc? Sometimes daily check-ins can help spot issues before they blow up, even if it adds more calls to your day."
+        },
+        {
+          "role": "user",
+          "content": "That’s exactly what I’m doing—every morning I call or video chat with the HR leads at both new sites to check on labor relations and any brewing issues. It’s extra time but I’d rather catch problems early than try to fix them after. It’s been useful, but obviously adds to the daily workload."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. Early detection is half the battle. For the weekly dispute strategy review—are you doing those alone, or pulling in HR leads for part of it? Sometimes a short team sync (even async) lets you share the load or spot themes you might miss solo."
+        },
+        {
+          "role": "user",
+          "content": "So far I’ve handled the weekly review solo, just updating strategy docs and tracking dispute progress. I do share summaries afterward, but I haven’t pulled others into the actual session. Might be worth trying a quick sync though, if it helps catch patterns or frees up some of my time."
+        },
+        {
+          "role": "assistant",
+          "content": "That approach could help streamline things—and covering multiple sites means pattern recognition is important. With all these changes, how’s your workload affecting your health routines? Still able to manage the stretching and meal prep, or is the spillover starting to crowd out those priorities?"
+        },
+        {
+          "role": "user",
+          "content": "Stretching and meal prep are holding up—I don’t want my old health scare creeping back. The bigger challenge is sleep: between late responses and evening documentation, I’m pretty tired, but I still make time for basketball Saturdays and family routines. It’s a balancing act, for sure."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad you’re keeping those core routines. For the expanded workload, delegating some tasks—even just initial dispute triage—to junior HR staff might help. Have you considered shifting more to them, or is the nature of these disputes such that you really need to handle it personally?"
+        },
+        {
+          "role": "user",
+          "content": "I still delegate recruitment, but I can’t let go of conflict resolution or labor disputes—too sensitive with so much turnover. Plus, the parent company is watching closely. For now, I need to stay hands-on, even if it means longer hours and more check-ins."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s understandable given the stakes. As you look ahead, any thoughts on building back in some buffers or shifting routines once things stabilize? It could help prevent burnout long-term, especially as you prep for that potential promotion."
+        },
+        {
+          "role": "user",
+          "content": "Definitely. Once labor relations settle at the new sites and direct reports get up to speed, I’ll try to reinstate buffers and stricter email boundaries. Right now, I just have to keep pace—but I’m aiming for sustainability when things finally calm down."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Selected to represent the company at a national HR conference in Chicago, tasked with delivering a mainstage presentation on workforce retention strategies to an audience of over 500 attendees.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_058",
+            "fact": "Practices conference presentations in the evenings for up to an hour, prioritizing speaking prep over leisure activities for several weeks prior to any major event.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_059",
+            "fact": "Shares highlights and industry insights from HR conferences with management and peer team leads within a week of returning — always prepares a takeaway memo.",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_041",
+              "fact": "Now conducts large group presentations and virtual training sessions for company-wide HR and payroll system integration — rarely uses small groups except for specialized follow-ups."
+            },
+            "to": {
+              "id": "pref_057",
+              "fact": "Prefers high-stakes mainstage conference presentations and external HR keynote sessions over routine in-house training; proactively seeks high-profile speaking opportunities.",
+              "domain": "work_habits"
+            },
+            "reason": "Delivering a major presentation at a national HR conference is a substantial shift from internal training. The successful experience boosts his confidence and preference for large, external, high-visibility speaking engagements, not just company-wide internal sessions."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, big change: just got back from Chicago after giving a mainstage presentation on workforce retention at the national HR conference. My first time speaking to 500+ people. The nerves were unreal, but I think it went well! Now, a bunch of folks at work want my \"secrets\" and management is asking for a rundown of conference takeaways. I’m not sure how to digest the whole experience and share it out. Any tips for summarizing something like this without overwhelming people?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats! That’s a huge milestone, especially shifting from internal training to such a visible external stage. For summarizing a big conference experience, a takeaway memo can be effective. Start with your top 3-5 insights, highlight what’s directly relevant to your firm, and maybe offer quick-hit recommendations. Are you aiming just for management, or will you share with the wider HR team as well?"
+        },
+        {
+          "role": "user",
+          "content": "Management wants a formal memo within the week, but some team leads are reaching out too. I do want to circulate highlights more broadly, but keep the main recommendations management-focused. By the way, prepping for the conference really changed up my evenings: I was spending almost an hour every night for weeks just practicing the talk—cutting into basketball nights and movie Fridays. I think I need a new routine for prepping big talks so it doesn’t mess up everything else."
+        },
+        {
+          "role": "assistant",
+          "content": "That practice sounds intense! It makes sense you’d prioritize presentation prep over leisure, especially for a high-stakes keynote. For future events, would scheduling fixed practice slots—maybe earlier in the week or splitting sessions—help, so you don’t sacrifice all your hobbies at once? Or did you find evening rehearsals worked best for focus, even if they took over personal time?"
+        },
+        {
+          "role": "user",
+          "content": "The evening rehearsals felt right—quiet house, fewer distractions. But when it gets close to a major event, I end up prioritizing speaking prep over pretty much everything else for several weeks. I actually didn’t miss basketball for the prep this time, but I did skip Friday movies and most garden time, which normally I never do. Seems like when it’s a high-profile talk, I just shift everything and make it the evening priority. It’s new for me; I used to prefer small-group trainings at work, but now I’m actually more comfortable in the big conference setting."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—moving from small-group sessions to actively seeking mainstage opportunities. Do you think you’ll keep pursuing major external speaking gigs now that you’ve had success, or do you still value in-house team training? And have you found ways to recover your personal routines after the prep blitz, like easing back into Friday movie nights or weekends in the garden?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, after this experience, I prefer the big conference keynotes over everyday internal sessions now. I’m already looking at HR events and panels I can pitch for. Small groups are more for follow-ups or specialized topics. As for routines, I try to resume leisure activities pretty quickly once the event’s done—movies on Fridays, gardening on weekends, and family time on Sundays. But during prep, I drop them almost entirely if needed."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve recalibrated your priorities around these high-visibility opportunities. As you ramp up more external presentations, you might consider setting boundaries for prep so you don’t lose personal time every cycle. Maybe create a checklist or prep schedule that still protects key leisure nights. Regarding your memo, would you like help structuring it, or drafting summary points for both management and peer leads?"
+        },
+        {
+          "role": "user",
+          "content": "A template or structure for the memo would be useful. I always share key highlights and industry insights from these conferences within a week of getting back, but sometimes it’s hard to know what’s worth including versus what’s just generic. I want the memo to be actionable, not just a recap."
+        },
+        {
+          "role": "assistant",
+          "content": "Great. For actionable memos, start with a brief overview of the conference’s purpose, then list 3-5 top takeaways, and for each, add a bullet on how it relates to our company or challenges we’re facing. Include a section for recommended next steps or pilots, and maybe a final note on upcoming opportunities for the team (like webinars or further events). Would you like draft wording for each section, or help narrowing down which insights feel most relevant for your labor dispute and retention priorities?"
+        },
+        {
+          "role": "user",
+          "content": "Draft wording would help, especially for the overview and recommendation parts. A focus on workforce retention strategies and new tech for onboarding are most relevant, since those were my presentation topics and management’s main interest. I’ll share the broader industry trends with peer leads, but the memo should be concise. By the way, now that I’m doing these big external presentations, I rarely use small groups except for specialized follow-ups. It’s totally different from how I used to approach training."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—that’s an important change. I’ll draft an overview section highlighting the conference’s scope and your presentation focus, then main takeaways with targeted recommendations for retention and onboarding. I’ll also note that broader industry trends will be shared with peer leads separately. Does that approach fit your current workflow?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, that works perfectly. To recap, my new routine after major conferences is: I practice conference presentations nightly for weeks, prioritize big keynotes over small internal sessions, and always prep a takeaway memo with highlights and insights. Sharing these shifts has actually helped clarify what’s next for me professionally. Let’s get started on that draft structure!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_003",
+        "fact": "Delegates recruitment tasks to junior staff but handles conflict resolution personally",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Prepares all weekday lunches at home — avoids cafeteria and fast food entirely",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_007",
+        "fact": "Does daily stretching routines before office hours to manage lower back pain",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_011",
+        "fact": "Coordinates son’s school and therapy appointments exclusively via shared digital calendar with wife — never relies on paper notes",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Hosts extended family Sunday dinners but declines invites for weeknight gatherings",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Prefers texting family about minor logistics — only calls for urgent matters",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Watches classic war movies exclusively on Friday nights — never streams new releases",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Only reads nonfiction biographies — never fiction or fantasy",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Plans one family hiking or park outing per month, regardless of weather",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Reviews his calendar every morning before breakfast — never starts the day without checking schedule",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Shuts down all screens (phone, computer, TV) by 9pm to improve sleep",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Never opens work email on Sundays; dedicates the day to family and personal time",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Visits elderly mother in person every evening to assist with mobility and medical needs — phone check-ins only used when an in-person visit is impossible",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Plans weekday dinners around hotel stays or restaurant meals due to frequent regional travel — only cooks at home on weekends",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Uses hotel gyms or pool facilities for exercise whenever traveling for work, supplementing his regular routine",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Keeps in nightly contact with family via video call whenever traveling, ensuring he participates in his son's therapy updates remotely",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "No longer participates in men's basketball league; replaces Saturday mornings with supervised aquatic therapy or gentle pool exercise",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Exclusively chooses low-impact workouts like swimming, walking, or gentle stretching — avoids all high-intensity and impact activities until cleared by physician",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Checks both sodium and cholesterol content on all food labels, strictly avoiding high-cholesterol foods along with sodium control",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Schedules and attends monthly medical and dietitian appointments without spousal prompting, prioritizing these above other commitments",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Takes prescribed cholesterol medication with breakfast every morning — never misses a dose",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Preps evening school bags and lunches for kids after dinner and coordinates prep with daughter’s after-school caregiver as needed",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Tracks labor dispute cases exclusively in the new corporate HR management system — abandons spreadsheets and adapts to standardized process integration.",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Attends mandatory remote onboarding workshops for all HR managers, taking notes digitally and sharing summaries with junior staff weekly.",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Collaborates with HR counterparts in other regions via biweekly video conferences to resolve nationwide compliance issues.",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Refuses all evening social invitations and now blocks off weeknight hours exclusively for transporting his son to and from the ADHD program, sharing this duty with his wife",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Shares daily transportation duties with his wife for son's ADHD after-school program, alternating days and updating the shared digital family calendar each week",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Reviews the ADHD program's communications and progress reports nightly, discussing feedback and recommendations with his wife before bedtime",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Temporarily avoids gardening activities — instead, pursues indoor hobbies such as painting or reading on weekends during injury recovery",
+        "domain": "leisure_hobbies",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Replaces aquatic physical therapy with prescribed ankle rehabilitation sessions — suspends aquatic therapy until cleared by physician after fracture recovery",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Strictly avoids driving or heavy domestic chores — relies on spouse and extended family for errands and heavy housework during ankle recovery",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Schedules all physical therapy appointments for the late afternoon to minimize disruption to work responsibilities",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Uses a knee scooter or crutches at home and in the office, strictly according to weight-bearing guidelines provided by his doctor",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Responds to employee emails and urgent work messages as they arrive, including after 7pm, during high-volume periods driven by expanded HR and labor relations responsibility across facilities",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Schedules meetings back-to-back out of necessity, often documenting cases and notes after standard office hours due to the increased volume and complexity of regional HR oversight",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Checks in daily (by phone or video call) with HR leads at newly assigned facilities to monitor labor relations issues firsthand",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Sets aside one evening per week to review and update labor dispute strategy documentation for all sites under his responsibility",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_057",
+        "fact": "Prefers high-stakes mainstage conference presentations and external HR keynote sessions over routine in-house training; proactively seeks high-profile speaking opportunities.",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Practices conference presentations in the evenings for up to an hour, prioritizing speaking prep over leisure activities for several weeks prior to any major event.",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_059",
+        "fact": "Shares highlights and industry insights from HR conferences with management and peer team leads within a week of returning — always prepares a takeaway memo.",
+        "domain": "work_habits",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Runs staff training sessions in small groups only — never large group presentations",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "The merger requires company-wide HR system rollouts and compliance training, making large group presentations and virtual sessions standard practice. Small-group-only style is no longer practical when onboarding hundreds at once."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Responds to employee emails within 24 hours, but never answers work messages after 7pm",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_053",
+        "reason": "The elimination of several mid-level HR roles and new oversight of two more facilities creates a workload with time-sensitive issues across more sites; he now feels obligated to stay responsive outside set hours, especially during periods of crisis or labor disputes."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Tracks labor dispute cases in a dedicated spreadsheet — never relies on memory or sticky notes",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "The merger’s new payroll and compliance system replaces manual spreadsheets with mandatory digital workflows; he must track disputes inside the central HR software."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Never schedules meetings back-to-back; always leaves a 15-minute buffer for documentation",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_054",
+        "reason": "His new workload, handling more direct reports and labor relations at additional facilities, necessitates consolidating meetings and sacrificing his prior buffer to meet the demands of an expanded role."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Chooses low-impact workouts like elliptical or swimming for most exercise sessions — saves high-intensity for basketball only",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "He can no longer reserve high-intensity workouts for basketball; physician's advice requires total avoidance of impact/high-intensity activity for recovery."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Sets a strict limit of 1000mg sodium for every day — checks every food label before eating",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "After the cardiac checkup, his doctor specifically flagged cholesterol as a new health risk and prescribed medication, meaning he now needs to monitor cholesterol intake just as strictly as sodium."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Postpones routine medical appointments unless reminded by his wife",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_037",
+        "reason": "His new regimen requires monthly dietitian visits and close medical oversight, a major behavioral shift that his wife can no longer solely manage for him (doctor’s orders)."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Checks in with elderly mother every morning via phone call — never skips even when busy",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "His mother now requires daily in-person support with mobility and medical issues due to her fall. Phone calls are no longer sufficient to meet her needs, necessitating daily physical visits."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Limits social outings to twice a month; prioritizes family activities over friends",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "With increased childcare responsibilities and coordination for his daughter after school, he is unable to attend social outings with friends, so the preference is now irrelevant — there is no opportunity for such outings."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Plays in men’s basketball league every Saturday morning without fail — never misses for work",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "His physician has specifically instructed him to stop all high-impact activities, including basketball, for at least three months due to a severe lower back strain. He must substitute basketball with low-impact exercise to protect his back."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Gardens in the backyard every weekend when weather allows — avoids indoor hobbies during spring and summer",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_048",
+        "reason": "With a fractured ankle, weight-bearing activities like gardening are physically not possible for at least six weeks. He shifts his weekend leisure to indoor, non-weight-bearing hobbies until he recovers."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Does grocery shopping Saturday afternoons only — never on weekdays",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "With frequent regional travel and unpredictable weekend schedules, he can no longer reliably shop only on Saturday afternoons."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Preps evening school bags and lunches for kids before dinner — never leaves tasks to the morning",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "With his wife working full-time and starting early, dinner and evening routines now shift later and require coordination with the after-school caregiver to cover his daughter's needs. Prep tasks may occur after dinner or involve external help."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Refuses all evening social invitations except for urgent family needs to prioritize caring for his mother after work",
+        "domain": "social_relationships",
+        "created_at_session": 0,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "The new after-school ADHD program requires daily transportation and parental coordination, which directly competes with his after-work hours. He now prioritizes this responsibility over previous evening routines, including family visits."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Prepares quick, reheatable dinners on weekdays to allow time for nightly trips to the assisted living facility",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "The new Senior HR Manager role requires frequent travel to other company sites throughout Ohio. He's often away from home and cannot stick to his previous routine of reheatable home dinners during the week."
+      },
+      {
+        "id": "pref_034",
+        "fact": "Attends weekly aquatic physical therapy sessions every Saturday morning to rehabilitate his back",
+        "domain": "health_body",
+        "created_at_session": 2,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "His ankle injury and cast make aquatic therapy unsafe or impossible until after cast removal. Ankle-specific rehab sessions become his new Saturday routine as directed by his doctor."
+      },
+      {
+        "id": "pref_035",
+        "fact": "Reserves Saturday mornings for solo recovery time and avoids all group sports or team events",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "Solo recovery time on Saturday mornings was previously linked to back rehabilitation via pool/gentle exercise, which cannot be continued with a fractured ankle; his new prescribed PT routine fully replaces this ritual for the recovery period."
+      },
+      {
+        "id": "pref_040",
+        "fact": "Coordinates his daughter's after-school pickup and care with a neighborhood sitter three times a week and integrates this into the family calendar",
+        "domain": "daily_routines",
+        "created_at_session": 4,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "The family's after-school logistics are now dominated by the daily transportation needs for his son's ADHD program, making the previous routine centered on coordinating pickup with a sitter obsolete."
+      },
+      {
+        "id": "pref_041",
+        "fact": "Now conducts large group presentations and virtual training sessions for company-wide HR and payroll system integration — rarely uses small groups except for specialized follow-ups.",
+        "domain": "work_habits",
+        "created_at_session": 5,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_057",
+        "reason": "Delivering a major presentation at a national HR conference is a substantial shift from internal training. The successful experience boosts his confidence and preference for large, external, high-visibility speaking engagements, not just company-wide internal sessions."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:33:13.083412"
+}

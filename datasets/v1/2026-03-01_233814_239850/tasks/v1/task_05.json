@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_ed482604",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_033",
+        "fact": "Requests hotel rooms with pools or stationary bikes—completely avoids any treadmill or gym equipment requiring weight-bearing exercise",
+        "supersedes": {
+          "id": "pref_006",
+          "fact": "Books hotel rooms with fitness centers on work trips—never relies on outdoor running due to plantar fasciitis"
+        }
+      },
+      {
+        "id": "pref_036",
+        "fact": "Closely tracks sodium intake during work travel, choosing only low-sodium meal options—even avoids many previously healthy pre-orders if sodium content is too high",
+        "supersedes": {
+          "id": "pref_007",
+          "fact": "Pre-orders healthy meals for travel days—never eats fast food at airports"
+        }
+      },
+      {
+        "id": "pref_038",
+        "fact": "Reads nutrition labels meticulously before purchasing any groceries—now avoids packaged foods high in sodium"
+      },
+      {
+        "id": "pref_037",
+        "fact": "Logs every meal and snack in a dietary tracking app daily to monitor sodium and improve accountability"
+      },
+      {
+        "id": "pref_056",
+        "fact": "Limits weekend coaching involvement with his kids’ soccer teams to accommodate mother-in-law’s appointments and rehabilitation sessions—now sometimes skips matches to oversee her care"
+      },
+      {
+        "id": "pref_002",
+        "fact": "Prepares detailed talking points for every client education event—never improvises presentations on the spot"
+      }
+    ]
+  },
+  "persona": "A mid-level sales manager at a multinational pharmaceutical company"
+}

@@ -14,8 +14,8 @@ import random
 import uuid
 from typing import Any
 
-from byom_bench.client import PIPELINE_CONFIG
-from byom_bench.schemas import (
+from ream_bench.client import PIPELINE_CONFIG
+from ream_bench.schemas import (
     EvaluationRubric,
     EvaluationTaskSpec,
     MultiSessionOutput,
@@ -36,7 +36,7 @@ class EvaluationTaskGenerator:
     No LLM calls. No client needed.
 
     Example usage:
-        >>> from byom_bench.task_generators import EvaluationTaskGenerator
+        >>> from ream_bench.task_generators import EvaluationTaskGenerator
         >>> generator = EvaluationTaskGenerator()
         >>> tasks = generator.generate_batch(multisession_output, num_tasks=3)
         >>> for task in tasks:

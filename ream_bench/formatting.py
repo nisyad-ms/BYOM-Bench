@@ -1,6 +1,6 @@
 """Shared formatting utilities for preference history."""
 
-from byom_bench.schemas import MultiSessionOutput, Preference
+from ream_bench.schemas import MultiSessionOutput, Preference
 
 
 def format_preference_history(

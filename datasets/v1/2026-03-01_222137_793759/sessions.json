@@ -1,0 +1,1362 @@
+{
+  "persona": "A community college instructor teaching academic writing skills",
+  "persona_id": "persona_20260301_223233",
+  "expanded_persona": {
+    "base_persona": "A community college instructor teaching academic writing skills",
+    "age": 38,
+    "gender": "male",
+    "location": "Sacramento, CA",
+    "work_education": [
+      "Full-time English instructor at Sacramento City College, teaching three academic writing courses per semester",
+      "Leads weekly tutoring sessions for struggling ESL students; spends extra hours on lesson planning",
+      "Recently asked to chair the department curriculum committee, juggling administrative duties with teaching",
+      "Exploring online teaching formats to help students with varied schedules, but finding adoption slow",
+      "Applying for a grant to develop a writing workshop series targeting underprepared incoming freshmen"
+    ],
+    "health_wellness": [
+      "Jogging three mornings a week before class — started to improve energy after struggling with fatigue last year",
+      "Maintains a vegetarian diet, but sometimes relies on frozen meals during grading periods",
+      "Suffers from mild asthma, uses inhaler during peak pollen season",
+      "Occasional tension headaches during midterm and finals rush, managed with yoga and over-the-counter medication"
+    ],
+    "family_relationships": [
+      "Lives with partner of six years and their two cats in a small downtown apartment",
+      "Partner works nights as a hospital tech, often leading to mismatched schedules and solo dinners",
+      "Maintains close ties with his parents, who recently moved to a retirement community nearby; visits weekly to help with errands",
+      "Has an older sister, lives out of state, communicates mainly via monthly video calls"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Holds all office hours in-person on campus — never conducts them virtually unless absolutely necessary",
+        "Designs assignments in modular units so students can complete them at their own pace; avoids rigid weekly deadlines",
+        "Responds to student emails within 24 hours but never after 8pm — disconnects from work outside those hours",
+        "Prefers group brainstorming sessions for curriculum committee work; avoids solo drafting meetings when possible",
+        "Uses rubrics for all grading to ensure fairness — never assigns grades based on intuition or subjective impressions"
+      ],
+      "health_body": [
+        "Jogging three mornings a week before class, but never exercises in the evenings due to asthma concerns",
+        "Eats freshly cooked vegetarian meals whenever possible — only resorts to frozen dinners during high-stress grading weeks",
+        "Avoids outdoor activities during peak pollen season — switches to indoor yoga to manage asthma",
+        "Relies on yoga for headache prevention — never takes prescription medication unless absolutely necessary",
+        "Monitors hydration closely and drinks lemon water throughout teaching days — never chooses caffeinated sodas"
+      ],
+      "social_relationships": [
+        "Schedules weekly dinner with partner on their night off; never lets routine slip even during busy work periods",
+        "Visits parents every Sunday afternoon for errands — never misses unless out of town",
+        "Maintains monthly video calls with his sister, never resorts to text-only catch-ups",
+        "Organizes group tutoring sessions for ESL students instead of one-on-one meetings to foster peer connections",
+        "Prefers written communication for work relationships — rarely makes phone calls to colleagues"
+      ],
+      "leisure_hobbies": [
+        "Reads historical fiction novels on weekends — never chooses contemporary romance",
+        "Volunteers at the local animal shelter twice a month; avoids charity events with large crowds",
+        "Attends poetry readings in small venues, never big literary festivals",
+        "Plays board games with friends at home — never goes to noisy game bars",
+        "Takes short day trips to parks or museums on holiday weekends, avoids overnight travel due to pet care"
+      ],
+      "daily_routines": [
+        "Preps lunch for the week on Sundays — never buys cafeteria food during the semester",
+        "Checks emails only three times per day — avoids notifications outside designated time slots",
+        "Wakes up at 5:30am on weekdays for morning jogs and quiet reading — never hits snooze",
+        "Shops for groceries at the co-op every Thursday evening; avoids big supermarkets",
+        "Spends 20 minutes each night tidying the apartment before bed — never leaves chores for weekends"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received notification that Sacramento City College will pilot a mandatory hybrid teaching model for all academic writing courses next semester, requiring instructors to deliver half of their classes online and redesign course materials for virtual learning.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Records video lectures for asynchronous viewing and prefers to pre-edit them before uploading — avoids live-streaming whenever possible",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Creates detailed step-by-step guides for students on navigating the course learning management system, prioritizing clarity and accessibility for ESL populations",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Holds all office hours in-person on campus — never conducts them virtually unless absolutely necessary"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Conducts half of office hours virtually via video calls and half in-person each week to accommodate the hybrid teaching model",
+              "domain": "work_habits"
+            },
+            "reason": "With the new mandatory hybrid teaching model, students will be attending class remotely. Maintaining only in-person office hours would fail to serve students who primarily engage online. He must now split office hours between online and on-campus formats."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got the official email—Sac City is piloting mandatory hybrid teaching for all academic writing courses next semester. That means half the classes online, and a total course redesign. I’m honestly overwhelmed. I’ve never taught fully online, and handling this shift feels daunting, especially for my ESL students. Where should I even start in adapting my materials?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change, especially with little lead time. To start, it’s helpful to break down what will need to go online—are you focusing on asynchronous content, or will you need to do live sessions too? For ESL students, clarity and accessibility will be key. Have you already selected a learning management system, or is the college standardizing on one?"
+        },
+        {
+          "role": "user",
+          "content": "We’re required to use Canvas, which thankfully I have some experience with—but only for posting syllabus and readings, never full lessons. I’m leaning toward asynchronous modules, since student schedules are all over the place. I’d like to avoid regular live-streaming if possible; honestly, editing recorded lectures appeals to me more because I can make them clearer and cut out any confusion."
+        },
+        {
+          "role": "assistant",
+          "content": "Recording and pre-editing lectures sounds like a great fit if you want precise, accessible instructions—especially for students who might replay or need captions. Canvas supports embedding videos easily. For each module, would you include step-by-step guides for navigating the online materials, or do you anticipate students will pick up the tech quickly?"
+        },
+        {
+          "role": "user",
+          "content": "I actually plan to make detailed step-by-step guides for using Canvas—most of my ESL students struggle with navigating online systems, and I want to avoid confusion from day one. Accessibility is a big focus for me, so I’ll probably build in screenshots and simple language for each process: accessing lecture videos, submitting assignments, joining virtual discussions."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart. Clear guides will make a huge difference for those students. Since half the course is now online, how will you handle office hours? Will you split them between in-person and virtual, or stick to one format?"
+        },
+        {
+          "role": "user",
+          "content": "Until now, I always held office hours in-person on campus, only going virtual in rare cases. But with so many online students next semester, I’ll need to split—half the hours will be via video calls, half in-person each week. Otherwise, the remote folks won’t get what they need. It’s a big change, but necessary for more flexibility."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s a fair adjustment. Will you block specific days for virtual office hours and others for in-person? Or rotate each week? Also, do you plan to keep your group brainstorming sessions for curriculum committee work, or are you rethinking collaboration given the new hybrid context?"
+        },
+        {
+          "role": "user",
+          "content": "I'll probably set recurring virtual hours—maybe Mondays and Thursdays online, Tuesdays and Wednesdays in-person. Fridays are off-limits for office hours. As for committee work, I still prefer group brainstorming, even if some people join remotely. Solo drafting meetings just don’t work for me. The hybrid model shouldn’t change that, as long as everyone can participate."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. For your course content, have you thought about modular units, so students can work at their own pace? Hybrid formats often benefit from flexible deadlines, especially when students juggle different schedules."
+        },
+        {
+          "role": "user",
+          "content": "Absolutely—I design all assignments in modular units for that reason. Rigid weekly deadlines never suited my student population, and I don’t see that changing. The goal is to support students wherever they are, especially as many will come from underprepared high school backgrounds."
+        },
+        {
+          "role": "assistant",
+          "content": "That philosophy will serve you well in this transition. It also aligns with your writing workshop grant proposal—modularity and clear, accessible instruction are ideal for incoming freshmen. Are you planning any additional tools or supports for students adjusting to hybrid coursework, like peer tutoring or checklists?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll keep group tutoring sessions for ESL students, and may add checklists for every assignment. I’m concerned about students feeling isolated, but I hope the guides and video office hours help. Recording and pre-editing lectures gives me more control, so I’ll avoid live-streaming whenever possible—just feels riskier and less clear."
+        },
+        {
+          "role": "assistant",
+          "content": "Completely valid. Pre-recorded content usually leads to fewer technical hiccups and can be more accessible. Since you’re putting so much effort into onboarding and clarity, those step-by-step guides will likely become a lifeline for your ESL students. If you want, I can help draft template guides or checklist formats for Canvas modules, or suggest tools for easy video editing and captioning."
+        },
+        {
+          "role": "user",
+          "content": "Templates would be hugely helpful—especially for the guides. And any recommendations for video editing software with built-in captioning would save time. Thanks for helping me clarify all this; the shift already feels less overwhelming."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Awarded the grant to launch a writing workshop series targeting underprepared incoming freshmen; tasked with developing and overseeing the program alongside regular teaching duties.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Drafts detailed feedback templates and schedules bi-weekly review meetings for the workshop series to track individual progress — maintains this outside of his regular class structure",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Blocks out one afternoon per week for uninterrupted curriculum development related to the new workshop series, declining other committee meetings during this slot",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Organizes group tutoring sessions for ESL students instead of one-on-one meetings to foster peer connections"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Coordinates writing workshop sessions in mixed-level groups for incoming freshmen, replacing regular small-group ESL tutoring with broader participation",
+              "domain": "social_relationships"
+            },
+            "reason": "The grant to develop a writing workshop series for underprepared freshmen has shifted his core support focus. Rather than only hosting group tutoring for ESL students, he now leads structured workshops that include a wider range of students and often replaces former peer-oriented ESL sessions."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Big news: I was awarded the grant for the writing workshop series, so now I'm officially in charge of launching it for our incoming freshmen. I’m pretty excited, but also a bit overwhelmed—this is on top of my usual teaching load and committee work. I need ideas for structuring the workshops so they’re sustainable, but still meet the needs of these underprepared students. Where should I start?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations—that’s a huge accomplishment! Balancing the new workload with your teaching and committee duties will be tricky. Since these workshops target a mix of skill levels, do you want them to run as stand-alone sessions, or integrated with your regular classes? Also, have you thought about what kinds of writing challenges students struggle with most, so the workshop topics can be prioritized?"
+        },
+        {
+          "role": "user",
+          "content": "Thank you! The workshops are meant to be separate from my regular classes—kind of an intensive support series, focusing on basics like thesis development, structure, and grammar. My old routine was group ESL tutoring, but the grant is pushing me toward broader participation, so now I’m coordinating mixed-level groups for incoming freshmen instead. That totally changes how I organize the sessions."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Structuring mixed-level groups is definitely more complex than targeted ESL tutoring. You might want to consider diagnostic writing prompts at the start, to gauge each student’s strengths and weaknesses, then build modular units from there. Have you figured out how you’ll track individual progress, given the larger and more varied group?"
+        },
+        {
+          "role": "user",
+          "content": "Tracking progress is actually something I’ve been thinking about a lot. I’ve started drafting detailed feedback templates and plan to hold bi-weekly review meetings outside my regular class schedule. That way, I can check in with each student and adjust my approach, rather than relying only on workshop attendance or participation."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great system—it’ll help students see their growth and give you data to iterate on the workshop format. Sounds like these review meetings are a big addition. How are you carving out time for all this curriculum development and feedback? With your committee chair role, I imagine your calendar’s pretty full."
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s been a challenge. I actually block out one afternoon per week for uninterrupted curriculum development—strictly for the workshop series. I’ve started declining other committee meetings during that slot, which isn’t something I used to do. It feels necessary given everything else going on."
+        },
+        {
+          "role": "assistant",
+          "content": "Setting aside protected time is smart, especially when you’re spearheading a new initiative. Since you’re now mixing students from different backgrounds, have you thought about collaborative activities, like peer review or group brainstorming, within the workshops? Or do you plan to keep the focus mostly on structured skills practice?"
+        },
+        {
+          "role": "user",
+          "content": "I want to keep some collaborative elements—peer review helps students learn from each other—but I’m wary of unstructured activities, since the broader skill range makes it tough to keep things focused. Modular units and targeted practice will be at the core, and collaborative tasks will be optional add-ons."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach. Modular units give flexibility, and optional collaborative pieces avoid overwhelming students who might not be ready for peer feedback. As you refine these materials, do you need help designing sample rubrics or templates for the workshops? Or are you planning to adapt from your existing course materials?"
+        },
+        {
+          "role": "user",
+          "content": "I’m adapting from my current rubrics, but the feedback templates are entirely new since I’ll be using them for bi-weekly check-ins. If you have suggestions for efficient template structures—or ways to balance individualized feedback with time constraints—I’d love to hear them."
+        },
+        {
+          "role": "assistant",
+          "content": "One idea is to use a checklist approach for each writing skill, with space for concise notes rather than lengthy comments. That way you can quickly highlight strengths and areas for improvement. You could also set up a rotating focus, so each bi-weekly meeting targets a different skill—thesis one session, grammar the next—which spreads the workload. Would that fit your workflow?"
+        },
+        {
+          "role": "user",
+          "content": "That could work. A checklist would keep things consistent without overwhelming me. Rotating the skill focus is a smart move—I hadn’t considered it, but it’ll help me pace feedback and give students clear targets. I’ll give it a try during my next curriculum block."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like a plan! If you need sample checklists or want to brainstorm specific skill targets, just let me know. Balancing individual and group needs is tough but you’re setting up strong supports already. Anything else about the new routine you’re finding especially challenging, or needing to rethink?"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed severe asthma symptoms during spring pollen surge, prompting urgent medical consultation and resulting in a prescription for daily inhaled corticosteroids.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Uses a real-time local pollen tracker app every morning to decide on air purification needs and to set windows closed before leaving for work",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Jogging three mornings a week before class, but never exercises in the evenings due to asthma concerns"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Discontinued morning jogging during spring pollen season — now exclusively utilizes indoor recumbent bike or guided indoor yoga for aerobic exercise until pollen counts subside",
+              "domain": "health_body"
+            },
+            "reason": "The onset of severe asthma after spring pollen exposure and introduction of daily inhaled corticosteroids makes outdoor jogging during pollen surges too risky, prompting a full shift to indoor aerobic activities for respiratory safety."
+          },
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Relies on yoga for headache prevention — never takes prescription medication unless absolutely necessary"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Relies on yoga for headache prevention and now consistently takes prescribed inhaled corticosteroids for asthma management — accepts prescription medication as part of daily wellness routine",
+              "domain": "health_body"
+            },
+            "reason": "The new prescription for daily inhaled corticosteroids marks a major change: prescription medications are no longer 'absolutely necessary' exceptions, but routine due to severe asthma."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_008",
+            "fact": "Avoids outdoor activities during peak pollen season — switches to indoor yoga to manage asthma",
+            "domain": "health_body",
+            "reason": "This behavior is now redundant and entirely superseded: instead of just switching to indoor yoga during pollen spikes, he now avoids all outdoor exercise and uses a range of indoor activities to comply with a stricter asthma management plan. See evolution of pref_006."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey. So, not the spring I imagined: my asthma got way worse with the pollen. Ended up at urgent care and now I'm on daily inhaled steroids. My routine is pretty disrupted and honestly I'm struggling to keep energy up. Any tips for maintaining some normalcy with all these changes?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds tough—especially with the unpredictability of spring in Sacramento. Are there particular parts of your routine you’re missing most, or areas where the adjustment feels hardest?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, missing my morning jogs is a big one. I always ran before class but that's off the table now until the pollen calms down—my doctor made it pretty clear outdoor cardio is out for the season. I've started using a recumbent bike indoors and doing guided yoga for aerobic exercise instead, just to play it safe."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move. Indoor options are definitely safer during heavy pollen days. Do you feel like the bike and yoga are helping with energy, or is it still a tough adjustment compared to running outdoors?"
+        },
+        {
+          "role": "user",
+          "content": "It's helping, but not quite the same. The air inside feels a lot better though, especially since I’m checking pollen levels every morning now. I downloaded a local tracker app and it tells me when to shut my windows and crank up the purifier before heading to work—my old habit was just switching to indoor yoga, but now I avoid all outdoor exercise and do everything inside until the pollen drops."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really proactive approach. The app sounds useful. Do you find it affects other parts of your daily routine—like errands, grocery shopping, or even how you prep for classes?"
+        },
+        {
+          "role": "user",
+          "content": "Errands aren't too bad since I mostly run those on Sundays after visiting my parents, but I'm sticking to inside activities otherwise. The bigger shift is just accepting that meds are part of the daily rhythm now. I used to avoid prescription stuff unless it was absolutely necessary, but now I take the inhaled steroids every morning before breakfast—alongside my yoga routine for headaches. It's weird to settle into it as a normal thing."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to feel strange about adding medication to your daily routine, especially if it’s a shift in philosophy. Is there anything about the process that feels disruptive, or are you finding ways to fold it seamlessly into your mornings now?"
+        },
+        {
+          "role": "user",
+          "content": "Folding it in has gone okay—I do the inhaler while my lemon water steeps, so it’s just another step. I have had to tweak my morning sequence, but at least it works. Looking for ways to keep up energy and stay present during classes though; the transition definitely threw off my usual groove."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad you’ve integrated it into the flow. In terms of staying present and energized, are you noticing patterns—like drops in focus at certain times? Would adjusting your indoor workouts or midday breaks help, or do you need strategies for classroom energy?"
+        },
+        {
+          "role": "user",
+          "content": "Late mornings tend to drag, so I’m experimenting with short stretches or a few minutes on the bike between classes. And I stick to hydration routines pretty strictly now—never mess with caffeinated sodas, just lemon water. The worry was that I’d get headaches if I slipped on yoga or hydration, but the new plan is working so far."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great. The combination of exercise, hydration, and consistent medication is really comprehensive. Have the changes affected how you structure your work with students or the curriculum committee? Any challenges with group sessions or your usual modular assignment style?"
+        },
+        {
+          "role": "user",
+          "content": "Not too much, other than being a bit more mindful about keeping windows shut in classrooms and office hours. My tutoring sessions for ESL students are still group-based, and I haven’t shifted anything drastic for assignments. The real change is on the personal side—I dropped my old habit of just switching to indoor yoga during pollen spikes. Now it’s full indoor exercise, period, and a stronger daily asthma management plan."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it. Sounds like you’ve built a layered approach: indoor exercise, daily meds, real-time pollen tracking, and environmental controls. If you need to brainstorm ways to sustain motivation or adapt wellness practices for your students, I’m here. Anything you want help with next—maybe tips for keeping your workshop series or online teaching pilots resilient to shifting energy levels?"
+        },
+        {
+          "role": "user",
+          "content": "That would help. With the grant application for incoming freshmen workshops, I want to be sure I don’t overcommit—especially since unpredictable health stuff crops up now. Maybe we could look at flexible structures or contingency planning for days I don’t feel 100%?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Flexible workshop formats—modular units, peer-led sessions, asynchronous check-ins—can ease the load and keep things running smoothly if you need a lighter day. Want to talk through frameworks or draft an adaptation plan?"
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced a minor foot injury during a morning jog, resulting in doctor's orders to temporarily avoid all high-impact exercise, including jogging, for several weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_036",
+            "fact": "Incorporates short, low-impact mobility and balance exercises into his morning routine to maintain energy while recovering from his foot injury",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_032",
+              "fact": "Discontinued morning jogging during spring pollen season — now exclusively utilizes indoor recumbent bike or guided indoor yoga for aerobic exercise until pollen counts subside"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Discontinued all high-impact exercise, including indoor cycling — now substitutes daily gentle yoga and light stretching routines for aerobic activity, as doctor-ordered until foot heals",
+              "domain": "health_body"
+            },
+            "reason": "The foot injury and doctor's directive to avoid all high-impact exercise mean he cannot use the recumbent bike or any other weight-bearing aerobic exercise (even indoors); he must find wholly non-impact forms of movement. Therefore, he replaces cycling and intense yoga with gentle yoga and stretching exclusively."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, quick check-in: I ended up injuring my foot on my usual morning jog — nothing major, but my doctor wants me off all high-impact stuff for a few weeks, including jogging and even the recumbent bike. Any ideas on how to keep my energy up and stay active, given these restrictions?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ouch—sorry to hear about your injury! That does limit things. For staying active without impact, gentle yoga or stretching routines can work well. Have you tried any low-impact mobility exercises, or do you prefer something more structured?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I've pivoted to daily gentle yoga and light stretching in the mornings, just until my foot heals. I actually started adding short balance and mobility exercises as part of my routine. It's not the same as jogging, but I do feel a bit more energized. Any tips for making those sessions feel more motivating, especially for an early start?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a smart adjustment. Sometimes pairing stretching or yoga routines with upbeat music or guided videos can help with motivation—especially first thing in the morning. Do you usually work out independently, or are you open to following virtual classes or app-led sessions?"
+        },
+        {
+          "role": "user",
+          "content": "I prefer keeping things independent — I have a few trusty YouTube channels for yoga, but I avoid full group classes or apps. Mostly, I like routines I can tweak around my schedule and keep short. I start at 5:30am, so I want something focused, not elaborate. Also, coffee's not an option for me, so I rely on lemon water to wake up."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—short, flexible, and independent routines, with lemon water over caffeine. Maybe you could set up a playlist with your favorite yoga videos, rotating them so it feels fresh? And if you’re doing balance exercises, you might try progress tracking—seeing even small gains can be encouraging. Is there a particular movement you find challenging or enjoyable right now?"
+        },
+        {
+          "role": "user",
+          "content": "Balance work has definitely been tougher than expected, especially on one leg. I’ve stuck mostly to simple mobility flows and stretches—nothing weight-bearing for now, per doctor’s orders. I had been using the indoor recumbent bike during pollen season, but that’s out, too, so no cycling or aerobic stuff until I’m cleared. Honestly, I appreciate any balance/mobility sequence suggestions that don’t stress the foot."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—avoiding anything weight-bearing. For balance and mobility, seated routines can actually help. Try seated leg lifts, gentle hip rotations, and upper body stretches. You can also use a chair for standing side leg raises if you don't put weight on your injured foot. Would you like a printable sequence for mornings, or are you leaning toward video guidance?"
+        },
+        {
+          "role": "user",
+          "content": "Printable would be great. Easier to glance at than pausing a video, especially before class. I like simple moves I can repeat, so anything that fits into a ten-minute block would work well. Also, I’m trying to maintain my usual hydration — lemon water on hand throughout—but I don’t want anything that requires equipment I don’t have."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect—a simple, printable ten-minute routine, no special equipment. I'll put together a gentle sequence focusing on seated stretches, shoulder rolls, neck mobility, and light core activation. That should support energy and recovery. Would you like some tips for gradually increasing challenge as your foot improves, or are you planning to stick to this until your doctor clears you?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll stick to just gentle stretches and mobility until I get the green light—definitely avoiding high-impact or weight-bearing options for now. I’ll circle back once I’m cleared and ready to ramp things up. Meanwhile, if you have any recommendations for keeping up my motivation when I can’t jog or cycle, I’m all ears. The routine shift is throwing me off a bit."
+        },
+        {
+          "role": "assistant",
+          "content": "Totally understandable—routine disruptions can sap motivation. Maybe set a small reward for sticking to your morning stretch/yoga streak, or mark it off on a calendar for visual progress. Integrating a short meditation or breathing exercise afterward might also leave you feeling more energized and grounded for your teaching days. Would that fit your schedule, or do you prefer just the movement piece?"
+        },
+        {
+          "role": "user",
+          "content": "A brief breathing exercise sounds doable—something I can add after mobility work, for maybe two or three minutes. I like the idea of marking off progress, and a little reward at the end of the week could help since I’m missing the runner’s high for now. Thanks for the sequence suggestion—feel free to include breathing/meditation cues, too."
+        },
+        {
+          "role": "assistant",
+          "content": "Will do! I'll put together a concise morning routine: seated and floor stretches, gentle balance moves without foot stress, plus a closing guided breathing cue. Should I tailor it toward prepping for a teaching day—energizing and focusing—or more toward relaxation in case you need it for unwinding?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s aim for energizing and focus—my mornings set the tone for class, and I need something that helps me transition from home to campus mode. Relaxation I can fit in the evenings if needed. Thanks, this should help bridge the gap while my foot heals."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Partner was offered and accepted a supervisory hospital tech position in a nearby city, resulting in their work schedule shifting to rotating 12-hour shifts including weekends and more frequent overnights.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_038",
+            "fact": "Initiates brief check-in video calls with partner before bed on nights when they’re on overnight shifts, to maintain daily connection despite conflicting routines",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_039",
+            "fact": "Schedules solo weekend brunch outings at local cafés to compensate for frequent partner absences, choosing venues with relaxed atmospheres over crowded hotspots",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Schedules weekly dinner with partner on their night off; never lets routine slip even during busy work periods"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "No longer able to schedule a fixed weekly dinner with partner due to rotating 12-hour shifts; now plans spontaneous meals together when their schedules overlap, regardless of weekday or weekend",
+              "domain": "social_relationships"
+            },
+            "reason": "The partner’s new hospital tech position includes unpredictable, rotating shifts and frequent overnights, meaning a fixed night off is no longer reliably available. They must adapt to more sporadic, opportunistic shared meals."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My partner just started a new supervisory role at the hospital in Davis—big step for them, but the shifts are completely unpredictable now, with a lot of overnights and weekends. We used to have a regular weekly dinner together, but that's basically gone. I’m finding it tough to keep our routines feeling normal or connected. Any suggestions for navigating this, or maybe structuring my week so it doesn’t feel so fragmented?"
+        },
+        {
+          "role": "assistant",
+          "content": "That does sound like a major shift, both for your partner and your own day-to-day. When a fixed routine disappears, it’s easy to feel unmoored. Are you looking more for practical ways to maintain connection with your partner, or tools to help reestablish your own rhythm throughout the week—or maybe both?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely both, though honestly the partner connection feels harder right now. We always used to make time for dinner on their night off, no matter how busy work got. But now, their schedule is all over—sometimes working weekends, sometimes overnights midweek, and not even the same days each week. We just can’t plan a fixed evening together anymore, so I have to work around spontaneous overlap when it happens."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—so the reliable anchor is gone and you’re adapting to fleeting moments. Would it help to have some non-dinner touchpoints, like short check-ins or traditions you could fit in regardless of timing? Or are you already doing some version of that now?"
+        },
+        {
+          "role": "user",
+          "content": "We started doing brief check-in video calls before bed on nights when they’re on overnight shifts—usually ten minutes, just so we touch base before the day ends. It’s not the same as a shared meal, but it’s helping maintain a sense of daily connection even when our routines don’t align."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great adaptation. Short, consistent check-ins can go a long way. Since you’re no longer able to schedule dinners, how are you handling the solo time when your partner’s gone? Do you tend to stay home, or find ways to get out and break up the routine?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve actually started scheduling solo brunch outings at local cafés on weekends, especially when they’re at the hospital. I look for places with a relaxed vibe—quiet tables, nothing too crowded. It gives me something to look forward to and makes weekends feel less empty, even if I’m there alone."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds restorative—and a clever way to counteract the isolation. Have you noticed any challenges with these café brunches: timing, finding a favorite spot, or feeling awkward solo? If it’s working, maybe you could build in small reading sessions or even use it as inspiration for your writing workshops."
+        },
+        {
+          "role": "user",
+          "content": "No major challenges so far. I actually enjoy the down time—sometimes bring a historical fiction novel, sometimes brainstorm workshop ideas for the grant proposal. It’s become a mini tradition. The hardest thing’s just remembering to be flexible with shared meals and not expecting routine, since that was such a core part of our relationship before. Now it’s all about taking the opportunity when our schedules overlap, weekday or weekend."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve made thoughtful adjustments—spontaneous meals and daily touchpoints, plus solo activities that energize you. If you ever feel the loss of routine weighing on you, maybe you could document those spontaneous meal moments over time, like a photo or brief journal entry, to create new rituals. Would that kind of practice feel natural, or too forced?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, almost all of this feels natural now. We don’t need new rituals to replace the old; it’s enough to be present when we have moments together. The night video calls and chance meals have adjusted our expectations. Doing these brunches solo gives me space to recharge before heading back into lesson planning or curriculum work. I think I’ve found new anchors for my week—even if they’re just more flexible now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s an affirming realization. Adapting anchors and cultivating flexibility often leads to stronger habits and connections in the end. If you ever want ideas for solo activities, or ways to share small experiences with your partner despite the schedule, I’m always here to brainstorm. Thank you for sharing how you’re navigating the changes—you’ve modeled a really healthy response."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His elderly father experienced a fall at the retirement community, leading to new mobility challenges; his parents requested extra weekly assistance for household tasks and medical appointments.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_041",
+            "fact": "Keeps a shared digital calendar with his parents to coordinate medical appointments and household assistance, updating it actively as needs change.",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_042",
+            "fact": "Preps extra vegetarian meals each week to bring to his parents, ensuring they have healthy options despite his father’s limited mobility.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Visits parents every Sunday afternoon for errands — never misses unless out of town"
+            },
+            "to": {
+              "id": "pref_040",
+              "fact": "Now visits parents two to three times per week, flexibly accommodating their increased needs for help with household tasks and medical appointments; Sunday visits are no longer fixed, but scheduled as needed.",
+              "domain": "social_relationships"
+            },
+            "reason": "His father’s new mobility challenges have made the prior routine of a solitary, fixed Sunday visit insufficient. Both parents now require extra weekly support and appointment help, prompting a shift to more frequent, flexible visits rather than a single, non-missable weekly commitment."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my dad had a pretty serious fall last week. He’s okay, but his mobility is really limited now. My parents are asking for help with errands and medical appointments, and it’s already shifting my schedule. I could use advice on how to balance this new reality with work, especially since I can’t always do the Sunday visits anymore. Any tips for keeping everything straight?"
+        },
+        {
+          "role": "assistant",
+          "content": "I’m really sorry to hear about your dad. That sounds like a challenging time for your family. Since your routine has changed and Sundays aren’t guaranteed anymore, do you have a way to track all the new appointments and tasks, or is it mostly mental notes at this point? Sometimes a shared calendar or checklist can help, but everyone’s workflow is different."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I actually set up a shared digital calendar with my parents. I update it whenever new appointments or household needs come up, and it’s been a lifesaver for coordinating things like transportation and meal drop-offs. It’s definitely more moving pieces than before."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great move — a shared calendar definitely helps keep everyone in sync. Are you having to rearrange your teaching or committee responsibilities around these extra visits, or are you mostly managing outside work hours for now? I can suggest prioritization tools, but I’m curious if you have any flexibility built in already."
+        },
+        {
+          "role": "user",
+          "content": "I’m trying to keep work boundaries intact, so most visits are early morning or after afternoon classes. But I’m going two or three times a week now, instead of just once. My old Sunday-only routine isn’t cutting it — we switch up which days depending on their needs and appointments, so it’s just more fluid. That means I need extra planning to fit in grading and class prep."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense — flexible scheduling can get tricky when your workdays are already full. Since you’re prepping visits throughout the week, have you run into any challenges staying on top of your own meal routines or exercise? Sometimes self-care drops off with increased caregiving."
+        },
+        {
+          "role": "user",
+          "content": "I’ve actually started prepping extra vegetarian meals each week — I bring them to my parents so there’s something healthy on hand, since my dad can’t get around the kitchen as much. It means extra effort on Sundays but it saves time later. At home, I’m still sticking to my usual lunch prep, but grading weeks get dicey."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really thoughtful, and it probably saves your parents some stress, too. For your own workload, would batching errands or appointment runs on the same day help, or is their schedule too unpredictable for that? Also, are you getting help from other family members, or is it mainly you for now?"
+        },
+        {
+          "role": "user",
+          "content": "My sister’s out of state, so it’s basically just me locally. I tried batching errands on certain days, but their needs change, especially with medical appointments popping up. That’s why the calendar helps — we can adjust on the fly. I’m managing for now, but if things get more complicated, I might need outside help."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve adapted impressively given how quickly things shifted. If you end up needing further support — like home care services or transportation help — I can help research options around Sacramento. For now, maybe creating a set weekly review with your parents to look ahead at the calendar could help keep surprises to a minimum?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a good idea. We sort of do that when new appointments come up, but I like the idea of a standing weekly check-in, maybe Saturday mornings so we can plan meals and errands together. Thanks for the suggestion — I think that’ll help me stay proactive instead of just reacting every time something pops up."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Sacramento City College announced a significant reduction in state funding, resulting in the elimination of several courses and the consolidation of academic writing classes; his teaching load was adjusted to include two larger, mixed-level sections with reduced support for tutoring.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_044",
+            "fact": "Prioritizes digital assignment submission and automated plagiarism checks for efficiency when managing larger class sizes",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_045",
+            "fact": "Now runs brief, open Q&A sessions after each class to compensate for eliminated tutoring hours, making support immediately accessible to mixed-level students",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Preps lunch for the week on Sundays — never buys cafeteria food during the semester"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Now purchases lunch on campus most weekdays due to increased grading workload and larger class sizes, prepping only occasional meals at home",
+              "domain": "daily_routines"
+            },
+            "reason": "With the teaching load consolidated into two larger, mixed-level sections and reduced tutoring support, time spent grading and lesson planning has substantially increased. He no longer consistently has the time or energy to prep lunch for the full week, so opts to buy meals on campus more frequently."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_030",
+            "fact": "Drafts detailed feedback templates and schedules bi-weekly review meetings for the workshop series to track individual progress — maintains this outside of his regular class structure",
+            "domain": "work_habits",
+            "reason": "Budget cuts and course consolidation mean the workshop series is no longer funded or feasible. Bi-weekly review meetings and feedback templates for the workshop are now irrelevant, as all support must occur within the main class structure."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Sac City announced some big changes last week—state funding got cut and now our academic writing courses are consolidated. I went from three courses and regular tutoring sessions to two jam-packed, mixed-level classes, and all tutoring hours are gone. The workload is pretty overwhelming. I'm trying to figure out how to manage grading efficiently and help the students who need extra support. Any suggestions for prioritizing in this new reality?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a huge shift—especially with mixed-level sections and less tutoring support. For grading efficiency, have you thought about restructuring assignments, maybe by using more modular tasks or peer reviews, so students can self-assess? And for student support, are you able to keep office hours, or do you need to adapt those as well?"
+        },
+        {
+          "role": "user",
+          "content": "I've kept my office hours in-person on campus, but they're a lot less effective with larger groups and no dedicated tutoring. I actually started running quick Q&A sessions after each class—not formal, just whoever wants to stay and ask questions. It's helped a bit, since some students stick around for clarification, but it's pretty rushed. I haven't tried peer reviews yet, though—they can be a mixed bag when there's such a wide skill range."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart workaround—open Q&A gives everyone a chance at immediate support. Do you see students from different skill levels taking advantage equally, or is it mostly the same few? For assignment management, would shifting to more digital submissions help? With larger classes, tools like automated plagiarism checks and comment banks can really cut down on redundant work if that's an option."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, the Q&A tends to skew toward the stronger students, but occasionally I'll get a few ESL folks. As for assignments, I actually made digital submission mandatory this semester—and added automated plagiarism checks. It's helping a lot with the paperwork, since there's just not enough time for manual review now. I do try to personalize feedback where possible, but honestly it's tougher with more students and less time."
+        },
+        {
+          "role": "assistant",
+          "content": "Digital submission is definitely the right move, especially for tracking and efficiency. Have you considered using feedback templates—maybe a set of common responses you can customize for each student's work? Or even quick video feedback for your main points, if written comments are slowing you down. Also, how are you handling lesson planning now with the mixed-level classes? Are you splitting material, or keeping everything more general?"
+        },
+        {
+          "role": "user",
+          "content": "I'm mostly modularizing units so students can work at their own pace, but I do have to keep things pretty general—there's not enough bandwidth to tailor lessons for different levels. And about feedback templates: I used to draft really detailed ones and hold bi-weekly review meetings for my workshop series on incoming freshmen, but that's not funded anymore. Had to drop those meetings completely and refocus everything on main class support."
+        },
+        {
+          "role": "assistant",
+          "content": "That's tough, losing the workshop structure and bi-weekly check-ins. Modular units do seem to help, especially for pace and fairness. Since there's no dedicated tutoring and your time is stretched, maybe leveraging group activities in class—like brief peer-editing rounds or collaborative brainstorming—could foster peer support without taking much extra prep time. How are you managing your own workload in all of this? Any routines that have had to change?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, my routines have taken a hit. I used to prep lunch for the week every Sunday—never bought cafeteria food during the semester—but with all the extra grading and lesson planning, now I'm buying lunch on campus most weekdays and only prepping at home occasionally. Not ideal, but it's the only way I'm making things work right now."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—when time gets tight, food prep is usually one of the first things to slip. Maybe you could try prepping one or two easy meals midweek, just to balance things out. If you ever need healthy vegetarian options from campus, I can help you scout what's available or suggest quick recipes. Has juggling everything affected your other routines—like jogging or board game nights with friends?"
+        },
+        {
+          "role": "user",
+          "content": "Jogging early mornings is the one thing I've kept consistent. Board game nights have been sporadic, but my partner and I still have our weekly dinner—no matter how hectic work gets. It's mostly the little things like food prep that have changed. Thanks for the suggestion on campus meal options, actually—it could help avoid falling into the frozen meal trap again."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear some routines are holding steady—it’s important to keep those touchstones. Don’t hesitate to let me know if you want help with finding quick vegetarian campus meals, or streamlining any of your grading workflows further. With your class sizes and reduced support, efficiency really is key. Is there anything else you want to adjust in your day-to-day, or are you mainly focused on keeping students engaged right now?"
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Accepted an invitation to present at a regional academic conference on his curriculum innovations, requiring travel during the spring semester and the development of a formal presentation based on his hybrid and workshop program experiences.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Prepares detailed presentation scripts and slide decks for conferences, preferring to deliver rehearsed and polished talks rather than improvising.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Books pet-sitting or cat drop-in services for any overnight academic travel to ensure peace of mind during conferences.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_018",
+              "fact": "Attends poetry readings in small venues, never big literary festivals"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Now attends regional academic and literary conferences at larger venues when presenting his own work, but still avoids major festivals as a general attendee.",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Being invited to present at a regional academic conference required him to participate in a larger professional gathering—something he previously avoided unless presenting his own work. His preference now accommodates such events, but only when he is an active participant."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, my department chair roped me into presenting at the regional academic conference next month — it's the first time I've agreed to one of these outside our normal routine. I'll be traveling for a couple days and need to pull together a formal presentation on our curriculum innovations, especially the hybrid program and freshman workshops. Any advice on structuring the talk, or how best to prep for a conference like this?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats! That’s a great opportunity — though I can imagine it adds a new layer of prep, especially if you're not used to larger conferences. For structuring your talk, maybe start by outlining the main pain points you addressed with your hybrid and workshop programs, then walk through the process, outcomes, and lessons learned. Are you thinking slides, a printed handout, or something interactive for your session?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely slides — I don’t feel comfortable improvising in front of a crowd. I usually prefer to have a detailed script and a polished slide deck ready to go. I figure it’s less stressful if I can just rehearse my delivery. I’m less concerned about handouts since attendees can download everything after. Do you have any suggestions for making slides effective for an academic audience?"
+        },
+        {
+          "role": "assistant",
+          "content": "Having a script and polished slides is smart, especially if it helps you feel more in control. For academic audiences, concise slides with clear data, examples, and practical takeaways work well. Avoid text-heavy slides — focus on visuals and talking points, and maybe use a few case studies or student testimonials if you have them. How long is your talk, and will there be Q&A?"
+        },
+        {
+          "role": "user",
+          "content": "The session’s supposed to be about 30 minutes, plus 10 for Q&A. I’ve got some anonymized student feedback I can weave in, along with before-and-after samples from our workshop series. I want to leave room to discuss the adoption challenges around the hybrid format, since faculty interest has been patchy. Oh, and since it’s a pretty big conference, I’m actually stepping outside my usual poetry readings and small events — I’ve always avoided larger venues unless I’m presenting. So this feels a bit different."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift! Being on stage at a regional conference is a different sort of energy compared to smaller readings. Since you’ll address both innovations and adoption challenges, maybe build your script so you can pivot quickly between story-driven content and practical recommendations. If you’re comfortable, maybe leave a slide open for audience input during Q&A? Also, any plans for travel logistics or managing your schedule around the event?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, travel is the main thing I’m starting to plan — it’ll mean staying overnight, so I need to book pet-sitting for our cats. I’ve never left them for work trips before, but I figure drop-in services are the safest option for peace of mind. I’m sorting out trains and the hotel, but the biggest stressor is just keeping up with everything during the semester. Department admin, lesson prep, tutoring… have you got tips for balancing it all during conference weeks?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a full plate. For balancing the workload, batching tasks ahead of time can help: front-load lesson planning and grading before you leave, automate announcements and email replies if possible, and maybe ask a colleague to cover on-campus tutoring for that week. For the cats, drop-in visits are reliable, and some pet-sitters offer updates, so you can check in while away. Do you plan to stay engaged with students remotely, or disconnect entirely during the conference?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll prep assignments in modular units so students can work independently while I’m gone, and set clear rubrics in advance. I don’t respond to emails after 8pm anyway, so I’ll stick to my usual schedule and check in remotely but only at set intervals. I want the conference focus to be on delivering a polished talk, so I won't be juggling too many things on the fly. With the pet-sitter booked, I can actually concentrate. I appreciate all the advice — anything else you’d recommend for prepping a first major conference?"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re setting yourself up well. For the conference itself, practice your script several times in real conditions — maybe in the classroom after hours for a sense of scale. Bring backup copies of slides on a USB and in your email/cloud, just in case. Watch out for networking moments; even if you don't love large crowds, you'll likely meet peers who share your challenges. Leave yourself time post-presentation to decompress, and enjoy being an active participant rather than just a spectator."
+        },
+        {
+          "role": "user",
+          "content": "That’s good advice. I’m definitely not signing up for big literary festivals or sitting in on sessions unless I’m actively participating — so this new conference habit is strictly as a presenter for now. Thanks for your help walking through it. I’ll practice the script, prep the slides, and make sure the cats are set. Fingers crossed!"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely — you’ve got a focused approach, and that’s the best way to keep the stress in check. Rehearsing, keeping routines stable for home and work, and prepping for your cats will go a long way. Conference presenting is a skill that grows with experience, so enjoy the learning curve. Good luck, and let me know how it goes!"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Diagnosed with iron deficiency anemia during routine bloodwork after reporting ongoing fatigue to his doctor; advised to begin daily iron supplementation and modify his vegetarian diet to include more iron-rich foods.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Tracks daily iron supplement intake using a medication reminder app, marking doses as completed every morning before class",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Researches café and restaurant menus for iron-rich vegetarian dishes before brunch outings, selecting venues offering fortified grains or leafy greens",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Eats freshly cooked vegetarian meals whenever possible — only resorts to frozen dinners during high-stress grading weeks"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Prioritizes vegetarian meals featuring iron-rich foods and regularly incorporates fortified products or select eggs into his diet; avoids low-iron vegetarian options even during busy weeks",
+              "domain": "health_body"
+            },
+            "reason": "His diagnosis of iron deficiency anemia and medical advice to modify his vegetarian diet means freshness alone is no longer the primary filter—he must prioritize iron content. Reliance on frozen meals or low-iron vegetarian staples is now deliberately avoided, even during stressful periods."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, turns out my constant fatigue wasn't just mid-semester stress—it’s iron deficiency anemia. My doctor wants me on daily iron supplements and to overhaul my vegetarian diet for more iron-rich foods. Honestly, I have no clue where to start—my usual meals are pretty basic and I relied on frozen dinners during grading rush. Can you help me figure out a plan I can actually stick with, even on busy weeks?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot to process, but you’re right to make changes now. For vegetarians, good iron sources include lentils, beans, leafy greens (like spinach), tofu, and iron-fortified cereals or grains. How comfortable are you with prepping meals ahead versus cooking each night? And do you have texture or flavor preferences that make some ingredients a tough sell?"
+        },
+        {
+          "role": "user",
+          "content": "Meal prepping is key for me—I always do lunch prep on Sundays, so that’ll stay. I do prefer freshly cooked meals, but now I need to prioritize iron content. Used to opt for quick frozen meals during grading overload, but I’m ditching that habit since they’re mostly low-iron. If it means more eggs or fortified stuff, I’m okay with it. Just need ideas for things that don’t taste bland or require hours each night."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it, sustained meal prep and easily assembled dinners. Have you tried making big veggie-and-bean chili, lentil stew, or egg-and-spinach frittatas? All are iron-rich, reheat well, and you can batch them. Plus, you can sneak in fortified grains like quinoa. For quick dinners, assembling a salad with baby spinach, chickpeas, roasted pumpkin seeds, and boiled eggs could work too. Would those fit your style, or do you need faster options still?"
+        },
+        {
+          "role": "user",
+          "content": "That sounds workable, especially the chili and frittata—I like the idea of batch-cooking. And I’ll definitely add spinach and eggs; they’re easy to prep. I’m also researching menus more closely before going out for brunch now, trying to pick places with iron-rich vegetarian dishes or fortified grains. It’s a new habit, but helpful when eating out."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move to scope out menus ahead; so many spots offer basic vegetarian fare but skimp on iron. When you find places that do it right, maybe make a note for future brunches. Are you making any other shifts in daily routine, like supplement intake or tracking new foods, or is it mainly diet so far?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, tracking supplements is new for me. I use a medication reminder app and mark off my iron dose each morning before class—that routine came directly from my doctor. It’s one less thing to remember, which helps with my packed schedule. As for new foods, I’m trying out fortified cereals on busy days—they’re less exciting, but practical."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid habit—apps make tracking so much easier, especially given your teaching load. If fortified cereals turn out bland, you can mix them with fruit or nuts for flavor and extra nutrients. Since your lunch prep and ingredient choices are shifting, do you want help building a weekly menu or grocery list focused on iron, or does your co-op already carry everything you need?"
+        },
+        {
+          "role": "user",
+          "content": "A weekly grocery list would be great, especially if it’s co-op-friendly and covers iron-rich staples. I never buy from big supermarkets, so whatever you can suggest should fit the small grocery vibe. Thanks for helping me rethink routines—I’m still adjusting, but keeping meals iron-heavy and tracking my supplement are new priorities now."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to help! Next time you shop at the co-op, start with lentils, chickpeas, spinach or kale, quinoa, tofu, eggs, pumpkin seeds, and iron-fortified cereals or grains. Grab vitamin C-rich produce (like bell peppers or oranges) to help with iron absorption. I’ll pull together a sample menu and list formatted for easy prep. Let me know if you want substitution ideas or quick recipes—and hang in there with all the adjustments!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His partner’s hospital contracts with a healthcare network in their new city, offering a relocation stipend and requiring them to move within three months; they must decide whether to relocate together or manage a long-distance relationship.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Schedules intentional video dinner dates with partner twice a week to maintain closeness while living apart, prioritizing this time over other social plans.",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Begins seeking local community events or small group classes on weekends to counterbalance solo living and reduced household companionship.",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_037",
+              "fact": "No longer able to schedule a fixed weekly dinner with partner due to rotating 12-hour shifts; now plans spontaneous meals together when their schedules overlap, regardless of weekday or weekend"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Plans regular solo dinners and schedules video calls with partner during mealtimes, as they will be living apart due to the relocation; shared in-person meals become occasional and tied to visits.",
+              "domain": "social_relationships"
+            },
+            "reason": "The partner’s hospital contract requires relocation and they’ve chosen to manage a long-distance relationship. Planned spontaneous meals in person are now impossible in their day-to-day life, so he must substitute solo meals and virtual dinner calls for regular connection."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_038",
+            "fact": "Initiates brief check-in video calls with partner before bed on nights when they’re on overnight shifts, to maintain daily connection despite conflicting routines",
+            "domain": "social_relationships",
+            "reason": "With the move to a long-distance relationship, their routines are no longer simply mismatched by shift—they are geographically separate every night. Check-in calls for overnight shifts are now redundant; regular virtual connection must replace this."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my partner’s hospital just contracted with a new network, and now they’ve got a relocation stipend, but we only have three months before they have to move. We talked it through and decided to try managing a long-distance relationship for now—in-person visits, but mostly apart day-to-day. I’m feeling pretty weird about suddenly having solo dinners and losing our routine. Any ideas on how to keep some sense of connection and also not turn every evening into lonely downtime?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment—having your regular meal routines upended must feel strange. To maintain connection, some couples schedule virtual dinner dates—setting aside time each week to eat together over video chat. Have you considered something like that, or would it feel too forced?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, actually, we’re both up for video dinner dates. We started planning to have them twice a week and prioritize that time, even if it means skipping other social stuff. It’s definitely not the same as spontaneous meals together, but I think it’ll help us keep a sense of routine. The rest of the week is mostly regular solo dinners, though."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart way to create anchor points in your week. Since you’ll be living solo more often, do you think you’ll want to fill those other evenings with social plans or keep them quiet? Some people use solo dinners as a time for decompressing, but others seek out community so it doesn’t feel isolating."
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I’m already feeling the lack of companionship—not just from my partner, but the general energy at home is a lot quieter now. I started searching for local community events or small-group classes on weekends to balance it. Not huge charity events or crowded places—just more manageable things to break up the solo routine."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Smaller gatherings or hobby classes could provide a new social rhythm without overwhelming you. Are you looking more for recurring activities—like a book club or workshop series—or casual drop-in events? And does the shift impact your other routines, like checking in with your partner before bed or during shift changes?"
+        },
+        {
+          "role": "user",
+          "content": "It definitely changes how we check in. Before, when my partner was on overnight shifts, we’d do quick video calls before bed. Now that we’re going to be physically apart every night, the idea of those shift-specific calls feels kind of redundant. We’ll rely on regular virtual dinner dates and occasional longer visits instead, since daily routines don’t align anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—so your focus is on intentional connection, rather than brief nightly check-ins tied to work shifts. As routines evolve, it’s helpful to schedule out those video dinners ahead of time, so nothing unintentionally pushes them aside. Would you like ideas for other solo or social routines to help balance evenings, or are you mainly concerned about maintaining closeness with your partner?"
+        },
+        {
+          "role": "user",
+          "content": "Both, really. The main thing is keeping the relationship strong, but I don’t want to fall into total isolation when the apartment’s empty. Scheduling those dinner calls is my top priority, but I’m also looking for suggestions on solo routines—something fulfilling that isn’t just grading papers or watching TV. Now I don’t have that fixed weekly dinner with my partner, so it’s a bit of a blank space to fill."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. With your fixed weekly dinner gone, you might try setting new micro-rituals—maybe a regular time for historical fiction reading or joining a poetry reading group. For nourishing solo routines, structured activities like meal prepping or volunteering can help. If you want to avoid big crowds, a local animal shelter or small-class cooking workshops could work. Would any of those fit into your new weekly rhythm?"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Designs assignments in modular units so students can complete them at their own pace; avoids rigid weekly deadlines",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_003",
+        "fact": "Responds to student emails within 24 hours but never after 8pm — disconnects from work outside those hours",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Prefers group brainstorming sessions for curriculum committee work; avoids solo drafting meetings when possible",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Uses rubrics for all grading to ensure fairness — never assigns grades based on intuition or subjective impressions",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Monitors hydration closely and drinks lemon water throughout teaching days — never chooses caffeinated sodas",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Maintains monthly video calls with his sister, never resorts to text-only catch-ups",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Prefers written communication for work relationships — rarely makes phone calls to colleagues",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Reads historical fiction novels on weekends — never chooses contemporary romance",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Volunteers at the local animal shelter twice a month; avoids charity events with large crowds",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Plays board games with friends at home — never goes to noisy game bars",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Takes short day trips to parks or museums on holiday weekends, avoids overnight travel due to pet care",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks emails only three times per day — avoids notifications outside designated time slots",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Wakes up at 5:30am on weekdays for morning jogs and quiet reading — never hits snooze",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Shops for groceries at the co-op every Thursday evening; avoids big supermarkets",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Spends 20 minutes each night tidying the apartment before bed — never leaves chores for weekends",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Conducts half of office hours virtually via video calls and half in-person each week to accommodate the hybrid teaching model",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "Records video lectures for asynchronous viewing and prefers to pre-edit them before uploading — avoids live-streaming whenever possible",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Creates detailed step-by-step guides for students on navigating the course learning management system, prioritizing clarity and accessibility for ESL populations",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Coordinates writing workshop sessions in mixed-level groups for incoming freshmen, replacing regular small-group ESL tutoring with broader participation",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Blocks out one afternoon per week for uninterrupted curriculum development related to the new workshop series, declining other committee meetings during this slot",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Relies on yoga for headache prevention and now consistently takes prescribed inhaled corticosteroids for asthma management — accepts prescription medication as part of daily wellness routine",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Uses a real-time local pollen tracker app every morning to decide on air purification needs and to set windows closed before leaving for work",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Discontinued all high-impact exercise, including indoor cycling — now substitutes daily gentle yoga and light stretching routines for aerobic activity, as doctor-ordered until foot heals",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Incorporates short, low-impact mobility and balance exercises into his morning routine to maintain energy while recovering from his foot injury",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Schedules solo weekend brunch outings at local cafés to compensate for frequent partner absences, choosing venues with relaxed atmospheres over crowded hotspots",
+        "domain": "leisure_hobbies",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Now visits parents two to three times per week, flexibly accommodating their increased needs for help with household tasks and medical appointments; Sunday visits are no longer fixed, but scheduled as needed.",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_041",
+        "fact": "Keeps a shared digital calendar with his parents to coordinate medical appointments and household assistance, updating it actively as needs change.",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Preps extra vegetarian meals each week to bring to his parents, ensuring they have healthy options despite his father’s limited mobility.",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Now purchases lunch on campus most weekdays due to increased grading workload and larger class sizes, prepping only occasional meals at home",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_044",
+        "fact": "Prioritizes digital assignment submission and automated plagiarism checks for efficiency when managing larger class sizes",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Now runs brief, open Q&A sessions after each class to compensate for eliminated tutoring hours, making support immediately accessible to mixed-level students",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Now attends regional academic and literary conferences at larger venues when presenting his own work, but still avoids major festivals as a general attendee.",
+        "domain": "leisure_hobbies",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_047",
+        "fact": "Prepares detailed presentation scripts and slide decks for conferences, preferring to deliver rehearsed and polished talks rather than improvising.",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Books pet-sitting or cat drop-in services for any overnight academic travel to ensure peace of mind during conferences.",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Prioritizes vegetarian meals featuring iron-rich foods and regularly incorporates fortified products or select eggs into his diet; avoids low-iron vegetarian options even during busy weeks",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_050",
+        "fact": "Tracks daily iron supplement intake using a medication reminder app, marking doses as completed every morning before class",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_051",
+        "fact": "Researches café and restaurant menus for iron-rich vegetarian dishes before brunch outings, selecting venues offering fortified grains or leafy greens",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Plans regular solo dinners and schedules video calls with partner during mealtimes, as they will be living apart due to the relocation; shared in-person meals become occasional and tied to visits.",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_053",
+        "fact": "Schedules intentional video dinner dates with partner twice a week to maintain closeness while living apart, prioritizing this time over other social plans.",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_054",
+        "fact": "Begins seeking local community events or small group classes on weekends to counterbalance solo living and reduced household companionship.",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Holds all office hours in-person on campus — never conducts them virtually unless absolutely necessary",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "With the new mandatory hybrid teaching model, students will be attending class remotely. Maintaining only in-person office hours would fail to serve students who primarily engage online. He must now split office hours between online and on-campus formats."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Jogging three mornings a week before class, but never exercises in the evenings due to asthma concerns",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "The onset of severe asthma after spring pollen exposure and introduction of daily inhaled corticosteroids makes outdoor jogging during pollen surges too risky, prompting a full shift to indoor aerobic activities for respiratory safety."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Eats freshly cooked vegetarian meals whenever possible — only resorts to frozen dinners during high-stress grading weeks",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_049",
+        "reason": "His diagnosis of iron deficiency anemia and medical advice to modify his vegetarian diet means freshness alone is no longer the primary filter—he must prioritize iron content. Reliance on frozen meals or low-iron vegetarian staples is now deliberately avoided, even during stressful periods."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Avoids outdoor activities during peak pollen season — switches to indoor yoga to manage asthma",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "This behavior is now redundant and entirely superseded: instead of just switching to indoor yoga during pollen spikes, he now avoids all outdoor exercise and uses a range of indoor activities to comply with a stricter asthma management plan. See evolution of pref_006."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Relies on yoga for headache prevention — never takes prescription medication unless absolutely necessary",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "The new prescription for daily inhaled corticosteroids marks a major change: prescription medications are no longer 'absolutely necessary' exceptions, but routine due to severe asthma."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Schedules weekly dinner with partner on their night off; never lets routine slip even during busy work periods",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_037",
+        "reason": "The partner’s new hospital tech position includes unpredictable, rotating shifts and frequent overnights, meaning a fixed night off is no longer reliably available. They must adapt to more sporadic, opportunistic shared meals."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Visits parents every Sunday afternoon for errands — never misses unless out of town",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_040",
+        "reason": "His father’s new mobility challenges have made the prior routine of a solitary, fixed Sunday visit insufficient. Both parents now require extra weekly support and appointment help, prompting a shift to more frequent, flexible visits rather than a single, non-missable weekly commitment."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Organizes group tutoring sessions for ESL students instead of one-on-one meetings to foster peer connections",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "The grant to develop a writing workshop series for underprepared freshmen has shifted his core support focus. Rather than only hosting group tutoring for ESL students, he now leads structured workshops that include a wider range of students and often replaces former peer-oriented ESL sessions."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Attends poetry readings in small venues, never big literary festivals",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_046",
+        "reason": "Being invited to present at a regional academic conference required him to participate in a larger professional gathering—something he previously avoided unless presenting his own work. His preference now accommodates such events, but only when he is an active participant."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Preps lunch for the week on Sundays — never buys cafeteria food during the semester",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_043",
+        "reason": "With the teaching load consolidated into two larger, mixed-level sections and reduced tutoring support, time spent grading and lesson planning has substantially increased. He no longer consistently has the time or energy to prep lunch for the full week, so opts to buy meals on campus more frequently."
+      },
+      {
+        "id": "pref_030",
+        "fact": "Drafts detailed feedback templates and schedules bi-weekly review meetings for the workshop series to track individual progress — maintains this outside of his regular class structure",
+        "domain": "work_habits",
+        "created_at_session": 1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "Budget cuts and course consolidation mean the workshop series is no longer funded or feasible. Bi-weekly review meetings and feedback templates for the workshop are now irrelevant, as all support must occur within the main class structure."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Discontinued morning jogging during spring pollen season — now exclusively utilizes indoor recumbent bike or guided indoor yoga for aerobic exercise until pollen counts subside",
+        "domain": "health_body",
+        "created_at_session": 2,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "The foot injury and doctor's directive to avoid all high-impact exercise mean he cannot use the recumbent bike or any other weight-bearing aerobic exercise (even indoors); he must find wholly non-impact forms of movement. Therefore, he replaces cycling and intense yoga with gentle yoga and stretching exclusively."
+      },
+      {
+        "id": "pref_037",
+        "fact": "No longer able to schedule a fixed weekly dinner with partner due to rotating 12-hour shifts; now plans spontaneous meals together when their schedules overlap, regardless of weekday or weekend",
+        "domain": "social_relationships",
+        "created_at_session": 4,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_052",
+        "reason": "The partner’s hospital contract requires relocation and they’ve chosen to manage a long-distance relationship. Planned spontaneous meals in person are now impossible in their day-to-day life, so he must substitute solo meals and virtual dinner calls for regular connection."
+      },
+      {
+        "id": "pref_038",
+        "fact": "Initiates brief check-in video calls with partner before bed on nights when they’re on overnight shifts, to maintain daily connection despite conflicting routines",
+        "domain": "social_relationships",
+        "created_at_session": 4,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "With the move to a long-distance relationship, their routines are no longer simply mismatched by shift—they are geographically separate every night. Check-in calls for overnight shifts are now redundant; regular virtual connection must replace this."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:32:33.751199"
+}

@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_0205f42d",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_033",
+        "fact": "Attends mandatory in-person training sessions on weekday evenings as scheduled; no longer completes training modules online at home",
+        "supersedes": {
+          "id": "pref_003",
+          "fact": "Completes online training modules on Sunday evenings rather than squeezed in during work breaks"
+        }
+      },
+      {
+        "id": "pref_042",
+        "fact": "Handles family errands for her mother both spontaneously and by appointment, accommodating urgent post-surgery requests that can't be planned in advance",
+        "supersedes": {
+          "id": "pref_015",
+          "fact": "Always organizes family errands in advance — never does spontaneous trips when helping her mother"
+        }
+      },
+      {
+        "id": "pref_046",
+        "fact": "Prioritizes resolving customer issues within call time limits over thorough troubleshooting, due to increased manager oversight and performance plan requirements"
+      },
+      {
+        "id": "pref_039",
+        "fact": "Uses blackout curtains not only for nighttime but also for daytime sleep during early-morning shift weeks to improve rest"
+      },
+      {
+        "id": "pref_057",
+        "fact": "Sets up a rotating childcare calendar with her sister, ensuring that each has dedicated work and rest periods per day while covering niece supervision shifts"
+      },
+      {
+        "id": "pref_018",
+        "fact": "Plans movie nights with friends at indie theaters — avoids blockbuster multiplexes"
+      }
+    ]
+  },
+  "persona": "An entry-level support agent at a regional telecommunications provider"
+}

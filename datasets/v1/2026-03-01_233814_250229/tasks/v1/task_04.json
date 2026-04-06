@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_ee44735a",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_029",
+        "fact": "Attends aquatic therapy sessions at the rehabilitation center as her primary form of exercise—never takes brisk outdoor walks until cleared by doctor",
+        "supersedes": {
+          "id": "pref_006",
+          "fact": "Takes daily brisk walks outdoors, rain or shine—never uses the treadmill indoors"
+        }
+      },
+      {
+        "id": "pref_056",
+        "fact": "Now personally manages her mother's errands, transportation, and household tasks multiple times a week—rarely delegates or relies on remote coordination, prioritizing direct support due to her mother's new restrictions",
+        "supersedes": {
+          "id": "pref_038",
+          "fact": "Coordinates errands for her mother via phone/text and delegates some tasks to her son or friends when schedule conflicts arise due to weekend soccer travel—only visits in person when possible"
+        }
+      },
+      {
+        "id": "pref_047",
+        "fact": "Declines late-night academic events or spontaneous evening outings to minimize migraine triggers identified in her headache log, prioritizing a strict evening wind-down routine"
+      },
+      {
+        "id": "pref_020",
+        "fact": "Plays board games with her son every Sunday afternoon—never allows digital devices during game time"
+      },
+      {
+        "id": "pref_016",
+        "fact": "Reads historical novels for leisure—never reads contemporary fiction"
+      },
+      {
+        "id": "pref_019",
+        "fact": "Attends local art exhibits monthly—never skips openings held at university museums"
+      }
+    ]
+  },
+  "persona": "A tenured history professor at a major university"
+}

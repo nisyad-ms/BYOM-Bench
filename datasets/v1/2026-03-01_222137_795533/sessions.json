@@ -1,0 +1,1457 @@
+{
+  "persona": "A stay-at-home parent running a handmade crafts shop on Etsy",
+  "persona_id": "persona_20260301_223709",
+  "expanded_persona": {
+    "base_persona": "A stay-at-home parent running a handmade crafts shop on Etsy",
+    "age": 36,
+    "gender": "male",
+    "location": "Portland, OR",
+    "work_education": [
+      "Owner and sole operator of 'Timber Threads', an Etsy shop specializing in hand-carved wooden toys and home decor",
+      "Spends 20-30 hours a week on crafting, packaging, and responding to customer messages, mostly during mornings and late evenings",
+      "Active in several online maker communities; exchanges woodworking tips and collaborates for giveaways",
+      "Recently began experimenting with social media advertising to increase sales",
+      "Has a bachelor’s degree in graphic design, but hasn’t worked in an office job since his eldest child was born"
+    ],
+    "health_wellness": [
+      "Has mild lower back pain from hours spent carving at his home workbench; tries stretches recommended by his physical therapist",
+      "Generally healthy but cooks vegetarian meals for the family due to his spouse’s dietary preferences",
+      "Rarely gets uninterrupted sleep due to his toddler’s inconsistent bedtime routine",
+      "Enjoys weekend hikes with family, weather permitting, but struggles to find time for solo exercise",
+      "Recently started taking short daily walks for mental clarity between work sessions"
+    ],
+    "family_relationships": [
+      "Lives with his spouse (a full-time nurse working evening shifts), a 4-year-old daughter, and 18-month-old son",
+      "Primary caregiver on weekdays; manages preschool drop-off/pick-up and daily routines for his children",
+      "Spouse’s rotating schedule leads to solo parenting most weekday evenings",
+      "His parents live nearby and visit weekly to help with childcare",
+      "Social circle mainly consists of other stay-at-home parents met through local parenting groups"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Responds to Etsy customer messages within 2 hours during working hours — avoids letting replies linger overnight",
+        "Packages every order by hand with a personalized thank-you note; never uses generic packing slips",
+        "Completes all carving work in morning sessions — leaves finishing and packaging for evenings",
+        "Participates in online maker community forums daily but never joins video chats; prefers written communication",
+        "Runs social media ads only for new product launches — never for ongoing items"
+      ],
+      "health_body": [
+        "Does back stretches every morning before starting work — never skips even on busy days",
+        "Cooks vegetarian dinners for the family every night — never makes separate meals for himself",
+        "Never snacks during late evening work sessions; sticks to herbal tea only",
+        "Goes for a short walk after lunch for mental clarity — never walks in the evening",
+        "Prioritizes family weekend hikes over solo exercise — only rarely works out alone"
+      ],
+      "social_relationships": [
+        "Schedules playdates with other stay-at-home parents at least once a week — never leaves social plans spontaneous",
+        "Calls his parents every Monday to organize the week’s childcare visit — avoids texting for family coordination",
+        "Always organizes weekday routines around spouse’s shift schedule; never overlaps dinner time with late shifts",
+        "Hosts monthly craft-making sessions for neighborhood families — never attends craft fairs solo",
+        "Sends photo updates of the kids to his spouse daily after preschool pickup, never misses a weekday"
+      ],
+      "leisure_hobbies": [
+        "Works on personal woodworking projects only after the kids’ bedtime — never carves for fun during the day",
+        "Explores new local hiking trails with family every Sunday — never repeats the same trail twice in a month",
+        "Bakes bread from scratch on Saturday mornings — never buys bakery bread for the family",
+        "Reads paper books on woodworking techniques late at night — never uses digital guides or ebooks",
+        "Plans quarterly family day trips to nearby towns — never goes on overnight vacations"
+      ],
+      "daily_routines": [
+        "Preps breakfast for the family every morning before anyone wakes — never skips this even on weekends",
+        "Checks Etsy shop stats immediately after preschool drop-off — never during the afternoon",
+        "No screens allowed at the dinner table — enforces this rule strictly with the entire family",
+        "Schedules weekly errands for Tuesday mornings only — never runs errands on weekends",
+        "Reviews weekly calendar every Sunday evening with spouse — never plans last-minute activities"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed severe lower back pain after an extended holiday rush, resulting in a physical therapist recommending a temporary halt to all carving work and prescribing daily rehabilitation exercises.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_028",
+            "fact": "Performs daily rehabilitation exercises for lower back pain each morning as prescribed, without exceptions until cleared by the therapist",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Engages in light, non-crafting creative activities (like sketching or digital design) after the kids’ bedtime to maintain mental wellbeing during the carving pause",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Completes all carving work in morning sessions — leaves finishing and packaging for evenings"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Does not engage in any carving work at all due to therapist's orders; focuses only on finishing and packaging existing items during allowed work sessions",
+              "domain": "work_habits"
+            },
+            "reason": "Severe lower back pain has led the physical therapist to recommend a complete pause on carving activities. Continuing carving work, in any session, would contradict medical advice and worsen his condition."
+          },
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Works on personal woodworking projects only after the kids’ bedtime — never carves for fun during the day"
+            },
+            "to": {
+              "id": "pref_027",
+              "fact": "No personal woodworking/carving projects at all; pursues non-physical creative hobbies after bedtime while injury persists",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "A temporary halt on all carving includes leisure activities. He cannot pursue woodworking projects, even for fun, and must seek alternative hobbies."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_006",
+            "fact": "Does back stretches every morning before starting work — never skips even on busy days",
+            "domain": "health_body",
+            "reason": "The prescribed rehabilitation plan replaces regular morning stretches with a new routine focused on recovery exercises, making the old stretching regimen irrelevant during this period."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, holiday rush really did a number on my back. I ended up with pretty severe pain and my PT told me to completely stop carving for a bit—no exceptions. I honestly have no idea how to run Timber Threads when I can’t carve, even for a few weeks. How would you approach keeping the shop running with my hands tied?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds tough, especially with carving being the heart of your product line. Are you able to finish and package any existing items, or is it a total pause for everything? And do you have any backup inventory to lean on, or are you at zero carved stock right now?"
+        },
+        {
+          "role": "user",
+          "content": "I do have some finished items from pre-rush, so I can focus on packaging and shipping for now. But all carving—new orders, restocks, even personal projects—is totally off-limits. Right now, I’m just finishing up what’s already started, and hoping demand doesn’t outpace the inventory I have left."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a relief you have some stock to work with. Could you temporarily shift your shop messaging—maybe highlight limited inventory or offer a note about hand-finishing? Or even pause new orders for carved items until you heal? Are there any non-carved products or digital items you could promote in the meantime?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll definitely update the shop description to mention the inventory limits. My shop’s almost entirely hand-carved items, so other product types aren’t an option. It’s strange not carving in the mornings, since that was always my studio time. And I’ve had to swap my usual morning stretches with daily rehab exercises from my PT—no more just stretching, it’s all about recovery right now."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move focusing on recovery—especially with a prescribed rehab routine. Is there anything you’d like help with for your mornings, given this change? Maybe organizing your finishing and packaging sessions, or ideas for alternative creative outlets while you’re sidelined?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, yes. Evenings are the toughest—I used to carve personal pieces for fun after bedtime, but that’s out too. For now, I’m trying to keep mentally active with light creative stuff after the kids are asleep, like sketching or dabbling in digital design. Something I can do sitting comfortably without aggravating my back."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great way to keep the creative spark going, and digital design fits well given your graphic design background. Are there particular tools you enjoy using, or would you like inspiration for sketching projects that could later become new Timber Threads items when you’re cleared to carve again?"
+        },
+        {
+          "role": "user",
+          "content": "I’m mostly sticking to pencil and paper for now—nothing too ambitious. I may try some digital mockups in Illustrator if I get the energy. The lack of carving is weird, but this switch is helping a bit. As for mornings, I’ve been strict about the rehab exercises—no skipping, not even on busy days—since my PT made it clear consistency is key."
+        },
+        {
+          "role": "assistant",
+          "content": "Consistency really is crucial for recovery, and you’re doing the right thing by sticking to the routine. Would a daily log or habit tracker help with rehab motivation, or is your current system working? And are there any challenges you’ve hit balancing rehab time with family tasks, like prepping breakfast or preschool drop-off?"
+        },
+        {
+          "role": "user",
+          "content": "I don’t think I need a tracker—my mornings are pretty structured already. I fit my rehab between prepping breakfast and school drop-off, which works since I always handle breakfast before anyone’s up. Honestly, the old morning stretches are gone for now—they don’t fit with the PT protocol, so rehab exercises replaced them."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve adapted quickly, even with so many routines disrupted. Have you run into any issues maintaining shop responsiveness, like replying to customer messages or handling packaging? And is there anything in your workflow you want to adjust to make things easier during recovery?"
+        },
+        {
+          "role": "user",
+          "content": "I'm still able to respond to customer messages quickly—just like always—and I handle packaging since that’s less physical than carving. It’s forced me to focus on finishing, thank-you notes, and updating shop stats after school drop-off since I’m not distracted by carving. For mental clarity, I’m still doing my midday walks, but that's about as much movement as I can handle."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad you’re keeping up with packaging and customer comms—that’s the heart of a strong shop. As you transition to more finishing work and creative outlets, are there new routines you’d like to build in? Maybe ways to connect with maker communities or your social circle, now that solo carving sessions are off the table?"
+        },
+        {
+          "role": "user",
+          "content": "I still check in with maker forums daily, though it's weird not posting progress shots or carving tips. I’m considering sharing sketches or digital concepts for now, just to stay active. And after bedtime, instead of woodworking, I’m focusing on things like sketching, which is way less physical and helps me decompress. For now, no woodworking projects at all—until my back is cleared, even just for fun."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a thoughtful approach, and your community will appreciate seeing the creative process even if it’s not carved pieces. Once you’re healed, you’ll come back with fresh ideas. Is there anything else I can help with—adjusting craft session plans, new ways to keep the kids entertained, or meal routines that could help during your recovery spell?"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received a positive sleep apnea diagnosis after a sleep study, with physician requiring nightly use of a CPAP device and advising stricter sleep schedule to improve long-term health.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Follows a strict, physician-mandated bedtime each night to support CPAP use — avoids all stimulating activities after 9pm",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Performs a brief wind-down routine, including setting up the CPAP device, dimming lights, and 5 minutes of guided breathing before bed",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_019",
+              "fact": "Reads paper books on woodworking techniques late at night — never uses digital guides or ebooks"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "No longer reads late at night; chooses short, calming activities (e.g., brief mindfulness meditation or gentle stretching) before the strictly scheduled bedtime to improve sleep quality per CPAP regimen",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "To adhere to the prescribed strict sleep schedule for effective CPAP therapy and better long-term health, he must avoid stimulating activities like reading woodworking books late into the night and instead focus on calming activities that support an early, consistent bedtime."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_029",
+            "fact": "Engages in light, non-crafting creative activities (like sketching or digital design) after the kids’ bedtime to maintain mental wellbeing during the carving pause",
+            "domain": "leisure_hobbies",
+            "reason": "With a mandatory strictly scheduled bedtime to address sleep apnea, he can no longer spend discretionary time on evening creative activities after the kids sleep; the prior routine fails to fit the new medical requirements."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Just got the results back from my sleep study and it's official—I've got sleep apnea. My doctor wants me on a CPAP every night, plus I need to stick to a strict bedtime. I know it's important, but I'm having trouble figuring out what changes to make in my nightly routine, especially since I usually wind down by reading woodworking books after the kids are asleep. What did you suggest for folks who have to switch gears like this?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment, but it’s good you have a plan laid out. Reading can be relaxing, but late-night activities—especially paper books about woodworking—might be a bit stimulating if your physician’s recommending a strict bedtime. Do you have a sense of what needs to happen before bed now, or are you still figuring out how to structure your evenings? Are you open to replacing reading with something more calming?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I'm definitely open to new wind-down routines. Since my doctor wants me to avoid anything that might keep my mind active after 9pm, I can't really read woodworking books at night anymore. Instead, I've started doing short mindfulness meditations or gentle stretching right before bed, but I'm not sure if that's enough. I also need to set up the CPAP device and dim the lights—it's supposed to help cue my brain to sleep. Got any tips for sticking to this kind of routine when I’m used to squeezing in work or creative stuff after bedtime?"
+        },
+        {
+          "role": "assistant",
+          "content": "Swapping stimulating creative activities for calming rituals is a solid call. Mindfulness or stretching are both great. Since you’re dimming the lights and setting up the CPAP device, maybe try pairing that with a consistent 5-minute breathing routine—doing it at the same time every evening helps cement the signals for winding down. You mentioned squeezing in evening creative work; what kinds of activities are you most missing, and do they fit anywhere else in your day, or does the new schedule bump those out entirely?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, a lot of those light creative activities—like sketching or trying out digital design ideas—were just little ways to decompress after the kids' bedtime. But since I have to be strict about getting to bed early, those are off the table now. There's not really room in my evening for them, and it's got to stay that way for my health. I dropped that whole habit pretty abruptly. Now it’s all about prepping for sleep, not winding down creatively."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, and it makes sense that you had to pause those creative outlets. Sometimes, people find new ways to decompress earlier in the day—like short doodle sessions or jotting down design ideas during lunch breaks or right after morning carving. Does your current daytime schedule have pockets for quick, non-crafting creative recharge, or are those pretty much swallowed by family and shop duties?"
+        },
+        {
+          "role": "user",
+          "content": "Daytimes are pretty packed, especially with Timber Threads and the kids. The only reliable gap is right after lunch, when I usually take a short walk for mental clarity. I don’t want to cut into that—it’s kind of sacred for me. The new night routine is strictly about setting up my CPAP, dimming the lights, then 5 minutes of breathing exercises—every night, no matter what. No screens, no books, nothing stimulating after 9pm. It’s a hard switch from my old pattern, but I know it’s necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "Good for you for sticking with those boundaries—it’s tough to enforce but essential for effective CPAP therapy. Your after-lunch walks sound like a helpful anchor for downtime, and the nighttime wind-down routine seems well thought out. If you ever want ideas for short, calming activities that won’t get in the way of your sleep (maybe audio-guided meditations or gentle journaling), let me know. For now, focusing on consistency with your CPAP setup and avoiding all stimulation after 9pm is definitely the right track. Any other bumps in the transition, or questions about keeping family habits running smoothly as you adjust?"
+        },
+        {
+          "role": "user",
+          "content": "Not really, just the challenge of making the bedtime strict every night—especially when the kids’ routine runs late. But we’re working on shifting everything earlier. Thanks for the help. I think I have a good handle on the changes I need to stick to for now."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His spouse received an offer for a permanent day-shift nursing position at a hospital across town, requiring her to be away from home during standard weekday hours instead of evenings.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Prepares and eats weekday family dinners without the spouse; switches to sending a family mealtime recap message and photo after the children are in bed",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Always organizes weekday routines around spouse’s shift schedule; never overlaps dinner time with late shifts"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Structures weekday routines independently of spouse’s work hours, since family dinners now happen without her on most weekdays due to standard day shifts",
+              "domain": "social_relationships"
+            },
+            "reason": "His spouse’s new permanent day-shift job means she is away during standard dinner time; the previous coordination to avoid dinner overlap with late shifts no longer applies. He must organize routines not around her shift changes, but around her new predictable absence during dinner."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_015",
+            "fact": "Sends photo updates of the kids to his spouse daily after preschool pickup, never misses a weekday",
+            "domain": "social_relationships",
+            "reason": "With the spouse now unavailable during weekday afternoons due to standard hospital hours, sending photo updates after pickup is less meaningful, as she cannot check them at work. This routine loses its relevance with her daytime absence."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, could use your input. My wife just took a permanent day-shift nursing job starting this week, so her evenings are now consistently booked at the hospital instead of rotating. It's kind of upended how we do family routines, especially dinner and bedtime. Any strategies for keeping things smooth solo now, or ideas for routines to make evenings feel less hectic?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big transition, but I imagine having predictable hours could at least help with planning. For solo evenings, some people find early prepping — like batch cooking or laying out bedtime steps in advance — helps reduce chaos. Are there parts of your old routine that you want to keep, or are you open to trying new approaches for dinner and winding down?"
+        },
+        {
+          "role": "user",
+          "content": "We used to coordinate dinner around whatever shift she was on — if she worked late, I'd push family meals later so we could eat together, or at least overlap a bit. But that's not really doable now; she's gone all evening weekdays, so I've started structuring dinner and bedtime independently. Having a set routine is helping, but dinners are pretty quiet. Any tips for keeping the meal lively for the kids, or for marking the end of the day without her there?"
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — losing that shared meal anchor can feel isolating. For younger kids, sometimes a simple ritual, like lighting a candle or taking turns sharing something good from their day, makes dinners special even if she can’t join. Would it help to set up a post-dinner video chat or text for her, so the kids can connect after mealtime? Or does her new hospital schedule make her unavailable for that?"
+        },
+        {
+          "role": "user",
+          "content": "She's typically tied up at work until well after the kids' bedtime now, so real-time calls aren't an option. I started prepping and eating weekday dinners just with the kids, then after they're in bed, I send her a recap message and a photo from dinner. It's a small way to keep her in the loop without stressing her schedule — better than trying for live updates. That seems to work, but we're all adjusting."
+        },
+        {
+          "role": "assistant",
+          "content": "Sending her a recap and photo is a thoughtful touch, especially given hospital hours. It's a nice way to keep family connected without expecting her to participate in real time. Have you noticed any impact on the kids — do they miss seeing her after dinner, or adjust pretty quickly with your new routine?"
+        },
+        {
+          "role": "user",
+          "content": "They're still pretty little. My daughter occasionally asks why mom isn't at dinner, but we made a little routine around showing her drawings for mom after we eat. Honestly, adapting to the new evening solo has been manageable — the biggest change is not sending my usual daily photo updates after preschool pickup. That was something I always did when she was on evening shifts, but now she's too busy at the hospital during the day, so those pictures don't really fit anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — if she can’t check daytime updates, sending them probably feels less meaningful. Shifting to a post-bedtime recap is a nice replacement, and sharing the kids’ drawings bridges the gap for them, too. Out of curiosity, any challenges balancing shop work and solo parenting in the evenings, now that you’re managing both with less overlap?"
+        },
+        {
+          "role": "user",
+          "content": "It's definitely an adjustment. I'm sticking to carving work mornings only, so evenings are still for finishing and packaging after bedtime. The main challenge is keeping the kids engaged solo until bed without TV or devices, since we always stick to no screens at dinner. Having my parents visit weekly still helps cover childcare, but for now, I'm just trying to keep the new routine steady. Thanks for the help — figuring out these transitions is half the battle."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "While on a family hike in Forest Park, twisted his ankle on a muddy trail, resulting in a moderate sprain; doctor instructed him to avoid weight-bearing activities, including daily walks, and wear a brace for at least six weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Organizes weekend indoor craft sessions for the family in place of hiking, using child-friendly projects that don't require standing",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_038",
+            "fact": "Refreshes kids’ play routines with more storytime and tabletop games to minimize active movement during his ankle recovery",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Goes for a short walk after lunch for mental clarity — never walks in the evening"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Replaces after-lunch walks with seated mindfulness meditation for mental clarity — avoids all weight-bearing activities while recovering from ankle sprain",
+              "domain": "health_body"
+            },
+            "reason": "Due to doctor’s instructions to avoid weight-bearing activities, he can no longer take his daily walk after lunch, a previously essential mental clarity ritual. Seated mindfulness now replaces walking."
+          },
+          {
+            "from": {
+              "id": "pref_010",
+              "fact": "Prioritizes family weekend hikes over solo exercise — only rarely works out alone"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Pauses all family weekend hikes; prioritizes indoor family activities until cleared for hiking post-sprain",
+              "domain": "health_body"
+            },
+            "reason": "His moderate ankle sprain requires avoidance of any hiking or weight-bearing activity for at least six weeks. The family hiking tradition must temporarily stop and switch to alternatives."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_017",
+            "fact": "Explores new local hiking trails with family every Sunday — never repeats the same trail twice in a month",
+            "domain": "leisure_hobbies",
+            "reason": "The ankle injury removes the circumstance of Sunday family hikes entirely, as hiking is impossible during recovery; there’s no replacement activity for this specific habit."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so quick update: I ended up twisting my ankle pretty badly while hiking in Forest Park with the family last weekend. Doctor says moderate sprain—I'm in a brace for at least six weeks and supposed to avoid anything weight-bearing. This has completely thrown off my routine. Any tips on keeping sane while stuck inside, especially since my daily walks were a lifesaver for mental clarity?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ouch, that sounds rough! Sorry to hear about the sprain. Losing your daily walks can definitely mess with your sense of routine. Are you looking for ways to clear your head during midday, or just general indoor strategies to keep the cabin fever at bay?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly midday—lunchtime walks were my thing for clearing my head between work sessions, but obviously that's off the table. I need a new ritual for mental clarity, but not sure what would actually work since I'm supposed to keep off my feet."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. One option could be seated mindfulness meditation—it’s low-impact, and can have similar benefits for mental clarity. Have you tried any guided meditations or breathing exercises before, or would you prefer something less structured?"
+        },
+        {
+          "role": "user",
+          "content": "I've dabbled in mindfulness apps but never got super consistent. But I guess now I don't have much of a choice. I think I'll start with a simple seated meditation right after lunch to replace my walk—has to be off my feet, obviously. So that's my new plan for midday clarity during recovery."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good approach—starting simple helps make it stick, and you can always try different formats if it feels stale. To make it a bit more engaging, some people keep a small journal nearby to jot down thoughts after the session. Sound like something you’d use?"
+        },
+        {
+          "role": "user",
+          "content": "Probably not a journal—I tend to process things mentally, and my hands are usually busy with craft projects or answering messages. Speaking of which, weekends are the real challenge now. We would always hike as a family, but that's totally paused, so I'm scrambling for indoor activities that keep the kids entertained and don't require me standing."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s tricky, especially with little ones used to active weekends. Have you brainstormed any indoor alternatives yet? Maybe crafting together, science experiments, or something else that fits your creative vibe?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I'm starting to organize weekend indoor craft sessions for the family. Kid-friendly projects like painting and simple wood puzzles (nothing that needs standing). I’m still figuring out how to keep the energy up without hiking—it's a big shift for all of us."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid pivot! Family crafting can be fun, and it lets you stay involved without stressing the ankle. If you want a change of pace, you could try guided storytime or tabletop games—anything that’s interactive but keeps everyone seated. Is the family on board with less active weekends so far?"
+        },
+        {
+          "role": "user",
+          "content": "They're adjusting—my daughter especially misses the hikes, but she's warmed up to more storytime and board games. I've refreshed the kids' play routines with more tabletop stuff and reading, just to minimize active movement while I'm recovering. Honestly, it's a relief not to chase a toddler around as much right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a healthy adjustment for everyone. And with your parents visiting weekly, maybe you can tap them for extra hands if you need more stationary activities. Do you need ideas for new inside games or crafts, or are you set for now?"
+        },
+        {
+          "role": "user",
+          "content": "I think I'm set for crafts—I've got plenty of supplies stockpiled. Old habit was exploring new hiking trails every Sunday with the family (never repeated the same trail in a month), but that's totally gone for now. The ankle injury means no hiking at all, so Sunday outdoors is just on hold. No replacement for that, so it's all indoor stuff until I get cleared."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s tough having to shelve that tradition—even temporarily. Once you’re healed, you can always revisit the trail-hopping; for now, leaning into creativity and family games seems like the right move. Let me know if you want suggestions to keep things fresh or ways to bring a bit of the outdoors in while you recover!"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "An Instagram influencer with a large parenting and home decor following featured one of his hand-carved toys in a post, causing a sudden surge in Timber Threads orders and dozens of new customer inquiries within 24 hours.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Shifts from handwritten thank-you notes to pre-printed cards for packaging most orders, reserving handwritten notes only for special/custom requests during periods of heavy order volume",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Now checks Etsy shop stats multiple times throughout the day, including afternoons and evenings, to monitor ongoing order surges and troubleshoot issues in real time",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Responds to Etsy customer messages within 2 hours during working hours — avoids letting replies linger overnight"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Prioritizes responding to Etsy customer messages from new buyers within 4 hours, but allows regular inquiries and messages from returning customers to wait up to 24 hours due to high volume after going viral",
+              "domain": "work_habits"
+            },
+            "reason": "The sudden surge in orders and new customer messages from the influencer’s post makes it infeasible to reply to every inquiry within 2 hours. He now actively triages, responding rapidly only to new/influencer-generated contacts and letting low-priority replies wait until workload permits."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, my shop just went viral for the first time. An Instagram influencer with a big parent-following featured one of my carved toys yesterday, and now Timber Threads is absolutely swamped—dozens of new orders and a tidal wave of customer messages. I'd love help triaging the chaos: balancing replying quickly, managing order fulfillment, and keeping sanity. Where would you start?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s amazing—and probably pretty overwhelming! Congratulations on the buzz, though. For triaging, first step is categorizing inquiries: urgent vs routine. Are you already using any tools (tags, folders, templates) to sort messages on Etsy, or is it still manual?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve always just replied manually and made sure to answer everyone within two hours during working time—that’s been my rule since opening the shop. But with this spike from the influencer, I had to switch it up: now I reply to new buyers and influencer referrals within four hours, but let regulars or low-priority messages wait up to a day. Otherwise I’d just drown. I’ve tried Etsy’s message folders, but honestly, it gets clunky fast."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart adjustment—prioritizing new buyers sounds crucial right now. For regulars, most will understand delays during surges! If folders aren’t helping much, would using saved response templates make a difference, especially for order confirmations or FAQs? That might save some time."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, templates help for some common questions, so I use those when I can. Speaking of saving time—since I’ve always hand-written thank-you notes for every order, packaging has become a real bottleneck. I started using pre-printed cards for most orders, only keeping handwritten notes for customs or special requests while things are so crazy. It feels less personal, but there’s no way I could keep up otherwise."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, and honestly, buyers appreciate thoughtful touches even in print. When the order volume drops off again, you can always bring back handwritten notes more broadly. Are you handling all packaging yourself, or could family help with assembling boxes or prepping materials?"
+        },
+        {
+          "role": "user",
+          "content": "It’s still just me for now. My parents pitch in with childcare weekly, but I haven’t asked them to help with shop stuff yet. Another thing—I used to check Etsy stats only once a day after preschool drop-off. Now I’m checking stats and sales multiple times through the afternoon and evening to track the surge and catch any issues fast. It’s nonstop, but I don’t trust things not to break when it’s this busy."
+        },
+        {
+          "role": "assistant",
+          "content": "Totally fair—when sales move that quickly, monitoring is key. Maybe you could set a couple specific times for stat checks so it doesn’t become constant? That might help with stress. Are you worried about burnout, or just more concerned about missing something urgent right now?"
+        },
+        {
+          "role": "user",
+          "content": "A bit of both, honestly. I’m nervous about missing urgent problems, especially with so many new customers, but I’m also feeling the strain. If I don’t pace myself, it’s easy to let work bleed into family time. Having fixed windows for stat checks could help, but in this window I need flexibility. Hopefully once the wave eases, I can get back to normal."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. Viral moments call for some temporary flexibility! Is there anything else in your routine that feels especially off right now? Or anything specific you’d like help troubleshooting—order fulfillment, time management, or maintaining boundaries?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly just juggling work and family—trying not to let one overwhelm the other. I think with these changes, I’m managing for now: prioritizing new customer replies, using pre-printed thank-you cards, and checking stats multiple times a day while things are busy. Once things settle, I hope I can revert to a few of my old habits, but this new reality needed some bends."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re handling the surge admirably—making smart choices to preserve both your business and your sanity. When things cool down, those personal touches and tighter routines can return. If you want to brainstorm more sustainable workflow tweaks as the shop grows, I’m here to help. For now, congrats on the viral moment—it’s no small feat!"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His parents announced they will be relocating out of state within the next two months, ending their weekly in-person childcare help and visits.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Now relies on last-minute, flexible playdates with other local parents or accepts spontaneous visits, due to increased solo parenting and unpredictable childcare gaps after his parents' move",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Utilizes evening screen time (kids’ educational shows) 1-2 times per week when solo parenting, to free up time for dinner preparation or work catch-up, despite previous reluctance",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Calls his parents every Monday to organize the week’s childcare visit — avoids texting for family coordination"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Switches to texting his parents weekly to stay in touch, but no longer organizes in-person childcare visits due to their relocation out of state",
+              "domain": "social_relationships"
+            },
+            "reason": "With his parents moving away and no longer available for regular in-person childcare, coordinating weekly visits is no longer relevant. He now maintains connection by texting, as calling is less necessary for logistics."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_011",
+            "fact": "Schedules playdates with other stay-at-home parents at least once a week — never leaves social plans spontaneous",
+            "domain": "social_relationships",
+            "reason": "The ability to pre-schedule weekly playdates relied heavily on his parents' regular help; without their childcare support, his week-to-week availability becomes less predictable, making this strict, advance planning impractical."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my parents just told me they’re moving out of state in two months. Kind of threw me for a loop — we've relied on their weekly childcare visits since my eldest was born. I’m worried about keeping the household running (Timber Threads, the kids, my spouse’s shifts) without their help. How do you suggest I start adapting? Especially with the unpredictability it’ll add to the week."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change, and losing that steady extra support can make solo parenting a lot trickier. When you look ahead at your week, what parts feel most fragile or likely to tip over without their childcare? Is it managing work blocks for Timber Threads, dinner routines, or more about last-minute kid logistics?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s a mix — but the childcare gaps are tough. I used to call my parents every Monday to line up their visits for preschool pickups and backup coverage, but that's not really relevant anymore. I’ve started texting them just to check in, but without organizing logistics. As for the kids, my spouse’s shifts mean I’ll be solo pretty much every weekday evening, and that’s when things pile up: dinner, messages from Etsy customers, packaging, keeping the kids entertained. I might need to rethink everything."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it. Transitioning from those scheduled backup visits to texting for connection makes sense, and it sounds like you’re facing more solo evenings now. Would it help to set up a standing swap with other local parents for playdates or coverage, or is your schedule too variable to commit to regular plans?"
+        },
+        {
+          "role": "user",
+          "content": "I used to schedule weekly playdates in advance — it was easy when the grandparents could reliably cover those slots. Now my week-to-week is so unpredictable, I can’t set plans that far ahead. I’ve found myself relying more on last-minute playdates or accepting spontaneous visits from neighborhood parents. It’s not ideal, but I guess flexibility matters more now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — sometimes flexibility beats routine when solo parenting gets hectic. Have you been able to carve out new solo time for Timber Threads in the evenings, or is it all hands-on with the kids until bedtime?"
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely hands-on right up to bedtime most nights. Where I used to avoid screens at all costs during solo evenings, I’ve started using evening screen time — educational shows for the kids — once or twice a week. That frees me up just enough to catch up on dinner prep or respond to a few work messages. I feel a little guilty, but honestly, it’s the only way I can juggle everything now."
+        },
+        {
+          "role": "assistant",
+          "content": "You shouldn’t feel guilty at all — when circumstances change, so do routines, and educational shows can be a lifeline for solo parents needing a breather. Has this new flexibility helped you keep up with orders and customer communication, or is it still a challenge fitting those in?"
+        },
+        {
+          "role": "user",
+          "content": "It's still a challenge, but the extra 20-30 minutes from screen time gives me a little breathing room. I'm responding to Etsy messages as quickly as before, just sometimes during these impromptu windows. And with the unpredictability from losing my parents’ help, I’ve had to get comfortable with more spontaneous scheduling overall, even if that’s not my default. If you have other ways to streamline the work/kid balance, I’m all ears!"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! Sounds like your adaptability is paying off, even if it’s not your preferred mode. To streamline further, maybe batch errands, or automate parts of your shop workflow (like standard customer replies), though I know you personalize everything. Are there any family routines you’re adjusting now, or are you mostly focused on patching the gaps?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly patching gaps for now. I haven’t changed much about dinners or morning routines — those are pretty sacred around here. It’s just the social and childcare sides that are shifting. My biggest concern is keeping the kids active and connected with friends, now that my ability to schedule in advance is gone. I’ll likely keep leaning on spontaneous playdate offers and quick texts to my parents, just to stay in touch. Thanks for helping me talk it through."
+        },
+        {
+          "role": "assistant",
+          "content": "Of course! You’re navigating this with a lot of intention, even amid unpredictability, and it sounds like you’re finding your new rhythm. Let me know if you want help drafting quick outreach messages for neighborhood parents or tips for balancing the craft shop work during family transitions — I’m always here to brainstorm."
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Routine blood work revealed elevated cholesterol levels during his annual physical; his doctor advised immediate dietary changes, including reducing processed snacks, increasing fiber-rich foods, and limiting saturated fats in all family meals.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_046",
+            "fact": "Introduces daily family fruit bowls as a main after-dinner snack, fully eliminating chips, cookies, or processed treats for everyone",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Cooks vegetarian dinners for the family every night — never makes separate meals for himself"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Prepares vegetarian, high-fiber, low-saturated-fat dinners for the whole family nightly — proactively avoids processed snacks and fatty dairy products in all recipes",
+              "domain": "health_body"
+            },
+            "reason": "His doctor has advised urgent dietary changes due to elevated cholesterol, including increased fiber and reduced saturated fats and processed snacks. He must now consciously modify family recipes to exclude high-fat cheeses, butter, cream, and processed vegetarian snacks, changing how he cooks."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_018",
+            "fact": "Bakes bread from scratch on Saturday mornings — never buys bakery bread for the family",
+            "domain": "leisure_hobbies",
+            "reason": "This preference likely relied on baking recipes using ingredients that are often high in saturated fat (e.g., butter, whole milk, eggs) which the doctor now forbids. Until he can adapt his bread recipes or sources, the circumstance for this baking ritual doesn't exist."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so at my yearly physical last week, my doctor found that my cholesterol is up—like, pretty significantly. He wants me to overhaul my diet asap: less processed snacks, way more fiber, and cut out saturated fats entirely. I cook vegetarian for the family already, but now I'm kind of stuck figuring out what to actually make for dinner that'll work for everyone. Any suggestions for family meals that hit all those marks and aren't bland?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a lot to take on, especially with kids in the mix. Since you're already vegetarian, the biggest shifts will be your fat sources and the snack side. For dinners, meals built around beans, lentils, whole grains, and veggies work really well for fiber. Maybe try things like chickpea stew, lentil tacos, or stir-fries with brown rice and loads of veggies. Are there any particular dishes your family already likes, or dietary preferences beyond vegetarian I should keep in mind?"
+        },
+        {
+          "role": "user",
+          "content": "We eat a lot of pasta, veggie curry, and homemade pizza nights, but now I need to ditch all the cheese, creamy sauces, and buttery crusts. My spouse prefers Mediterranean flavors, so I could lean on that, but I can't use feta or creamy dressings anymore. Plus, I have to avoid processed snacks—even the \"healthy\" veggie chips. The doctor was really clear about that. So anything that's heavy on whole foods and not greasy is what I'm after."
+        },
+        {
+          "role": "assistant",
+          "content": "Mediterranean is a great direction! Lots of fresh veggies, legumes, olive oil (in moderation), and herbs. For pizza you could try a tomato base, heaps of roasted vegetables, and maybe a sprinkling of nutritional yeast for flavor instead of cheese. For pasta, swap out creamy sauces for things like tomato-garlic or veggie-forward pestos made with walnuts instead of parmesan. Would your family go for a big salad or grain bowl as a main, maybe with roasted chickpeas for crunch?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, grain bowls actually sound promising—I've been experimenting with quinoa, brown rice, farro. Roasted chickpeas won over my daughter, too. I also started serving a big fruit bowl after dinner for everyone, since we can't do chips or cookies anymore. It's been a hit so far, but I'm running out of ideas for variety. Can you suggest some ways to mix it up?"
+        },
+        {
+          "role": "assistant",
+          "content": "Love the fruit bowl idea! You could change it up seasonally: berries, melon, pineapple chunks, apple or pear slices with a sprinkle of cinnamon, or even citrus segments. For a fun twist, try mixing in chopped dates, figs, or sprinkling on some toasted oats or coconut flakes—totally unsweetened, of course. You might also offer homemade unsweetened applesauce or blended frozen bananas as 'nice cream.' Would your kids be into smoothies for snack, or do you prefer sticking to whole fruit?"
+        },
+        {
+          "role": "user",
+          "content": "We mostly stick to whole fruit—the kids like the colors, and it feels more filling. I haven't tried coconut flakes yet, but that's easy enough. I do miss baking bread on Saturdays, though. Used to make it from scratch every weekend, but most recipes I loved used butter or whole milk, and that's now off the table. Until I find a good low-fat bread recipe, that tradition's on pause."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s tough—losing a family ritual can really sting. Maybe weekend breakfast could shift to something else just for now? Oat pancakes or banana muffins made with olive oil, or even a do-it-yourself “toast bar” with whole wheat bread and lots of fruit toppings could fill that gap a bit. When you’re ready, there are plenty of dairy-free bread recipes out there (think olive oil focaccia, or basic yeast loaves) that don’t need butter or milk. Want help tracking down some options you can test out?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, I’d appreciate some bread recipe suggestions that actually taste good and don’t use any butter, milk, or eggs. The family really loved the Saturday bread routine, so I’d like to bring it back if I can make it fit the new guidelines. For now, weekend breakfasts are a bit improvised, but we’re making it work."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! I'll send you some tried-and-true olive oil bread recipes and a couple whole-grain, no-fat options. It can take some tweaking to fit the taste and texture you want, so let me know what ingredients you have on hand or what flavors your family prefers. If you want to experiment, maybe let your kids help shape the loaves or rolls—it keeps the ritual alive, even while you test new ideas."
+        },
+        {
+          "role": "user",
+          "content": "That’d be fun—they love helping with anything messy. One last thing: I’m focusing way more on meal planning now. I prep high-fiber, low-fat vegetarian dinners for the whole family every night, double-checking ingredients for saturated fats and processed stuff. I’m way more careful now, which is new for me. Any resources or apps you recommend for tracking healthy recipes or nutrient info without getting obsessive?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s smart to be diligent, but keeping it manageable matters too. For meal planning and tracking, apps like Yummly, Forks Over Knives, or Mealime are all food-focused and let you set preferences for plant-based, high-fiber, and low saturated fat. Some let you filter recipes or generate shopping lists automatically. If you prefer paper methods (since you run a crafts shop and might like analog), simple meal planning pads or recipe journals might work just as well. Would you rather use your phone or keep things offline?"
+        },
+        {
+          "role": "user",
+          "content": "I actually prefer jotting things down on paper—old habits from my shop, I guess! I'll stick with pen and notebook for planning. Thanks for helping me sort through all these changes. It's honestly been a bigger shift than expected, but having options makes it easier to manage."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Accepted into a local weekend artisan market, securing a booth for Timber Threads as a regular vendor starting next month; requires in-person attendance and product display every Saturday morning.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_049",
+            "fact": "Prepares an artisan market display on Friday evenings, involving inventory review, labeling, and booth setup planning; never leaves preparation until Saturday morning.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_050",
+            "fact": "Enjoys interacting with regular artisan market customers in person every Saturday, making friendly conversation and giving brief live carving demonstrations when permitted.",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Hosts monthly craft-making sessions for neighborhood families — never attends craft fairs solo"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Attends the weekend artisan market as a solo vendor for Timber Threads — now regularly participates in craft fairs alone, without neighborhood families",
+              "domain": "social_relationships"
+            },
+            "reason": "The new booth at the local artisan market requires him to represent Timber Threads on his own every Saturday, directly contradicting his previous habit of never attending craft fairs solo. This move to in-person, solo participation changes his social approach."
+          },
+          {
+            "from": {
+              "id": "pref_024",
+              "fact": "Schedules weekly errands for Tuesday mornings only — never runs errands on weekends"
+            },
+            "to": {
+              "id": "pref_048",
+              "fact": "Now runs errands on Saturdays after the artisan market concludes, shifting away from exclusive Tuesday mornings due to booth obligations and increased weekend activities.",
+              "domain": "daily_routines"
+            },
+            "reason": "Securing a Saturday booth means Tuesday mornings are no longer ideal for all weekly errands, and he needs to address supply runs or business errands after market participation. He can no longer avoid weekend errands."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_037",
+            "fact": "Organizes weekend indoor craft sessions for the family in place of hiking, using child-friendly projects that don't require standing",
+            "domain": "leisure_hobbies",
+            "reason": "His new Saturday morning booth commitment as a market vendor eliminates the opportunity to host indoor craft sessions for the family during weekends; the event replaces the previous routine and the underlying circumstance is gone."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, big shift this month—I just got accepted as a regular vendor at the Saturday local artisan market! Timber Threads finally gets a booth. I'm excited, but honestly it's messing with my routine. Do you have any suggestions for managing prep, display, and my family schedule now that Saturdays look totally different?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats on the booth—very cool news! How are you thinking about prepping inventory and setting up your display? Are you planning to do any live work at the booth, or mostly just show finished pieces? And on the family side, will anyone join you on market days or are you going solo?"
+        },
+        {
+          "role": "user",
+          "content": "So, I'll be doing this solo most Saturdays—my spouse works the evening nurse shift, so it's all me. The market wants vendors to arrive early for setup, and I might do some short carving demos for visitors if there's space. As for prep, I think Friday nights are going to have to become my dedicated time for reviewing inventory, labeling, setting up the display plan—can't risk leaving it for Saturday morning anymore. Any thoughts on streamlining that?"
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense to prep Friday night so setup goes smoothly. Since you hand-package and label everything, maybe batch your labels and thank-you notes ahead—could you make templated notes? For the display, a checklist or mock setup photos might help avoid forgetting anything. How do you handle inventory tracking now, and does Friday evening prep change any other family plans?"
+        },
+        {
+          "role": "user",
+          "content": "It definitely shifts things. I used to host weekend indoor craft sessions for the kids and family—especially if hiking wasn't possible—but that's off the table now with the Saturday booth taking most of my focus. Instead, I'm prepping for the market while the family winds down after dinner. As for inventory, I track with a spreadsheet and review after the kids' bedtime; probably won't change much, but I will have to add booth-specific checks on Fridays."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a fair trade-off—booth prep can be pretty involved. If you can reliably review inventory late Friday, you’ll avoid that Saturday scramble. Is your spouse able to help with the kids while you prep, given the evening nurse shift? And since you’re solo at the booth, will you need to adapt your packaging process or customer communication for in-person sales?"
+        },
+        {
+          "role": "user",
+          "content": "Usually, my spouse leaves for work just as the kids are settling for bed—so I squeeze the prep in after they're down. As for in-person sales, I actually enjoy chatting with market customers and giving quick carving demos when permitted by the organizers. It's a change from my previous routine, where I only hosted craft sessions with neighborhood families and never attended fairs by myself—but now I regularly go solo, which is new for me."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like this new role as a solo vendor is giving you a fresh way to connect—those live demos can draw a crowd. For booth days, how will you handle errands? Will you keep your Tuesday schedule for supply runs, or does Saturday market duty change when those happen?"
+        },
+        {
+          "role": "user",
+          "content": "Good question—I used to do all errands early Tuesday mornings, but Saturday market means I often need to pick up supplies or run business errands right after the booth closes. So I'm switching errands to Saturdays post-market, which feels odd but necessary now. Tuesdays are mostly for crafts and recovery these days."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big shift—moving errands to weekends will take some getting used to, but sounds efficient considering the market's demands. Any concerns about how Saturday booth days will affect your personal woodworking projects or family hiking routines?"
+        },
+        {
+          "role": "user",
+          "content": "I always worked on my own woodworking projects late at night after the kids were in bed, so that hasn't changed. The bigger impact is on our Sunday hikes—those are family-only, so we still explore new trails together, never repeating the same one in a month. But the indoor weekend craft sessions with the family are dropped for now; Saturday market takes priority and there's no room for the old routine."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad your night carving time is protected! Losing the indoor craft sessions makes sense given the market schedule. If you ever want ideas for quick family crafts that fit into weeknights, just ask. For your market booth, do you need any support sourcing display materials or prepping signage?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, signage is a good point. I want something clean and reusable—preferably hand-painted, since I can do that after prepping inventory Friday night. I avoid digital prints, feels less personal. Any ideas for sturdy but portable display boards? Also, anything special I should do for regular artisan market customers, now that I'll be seeing some of them weekly?"
+        },
+        {
+          "role": "assistant",
+          "content": "For signs, hand-painted reclaimed wood boards or chalk panels look great and fit your shop style. You could prep a few smaller boards for rotating product highlights. As for regulars, personalized thank-yous, occasional demo sessions, or even a small loyalty stamp card can build community and boost repeat visits. How do you handle post-market follow-up—do you direct people to your Etsy, or keep it in-person only?"
+        },
+        {
+          "role": "user",
+          "content": "I usually give a card with my Etsy link plus a handwritten note for new customers, but for repeat visitors I'm starting to recognize faces and enjoy chatting. Sometimes I offer a quick carving demo if the organizers allow, just so folks can see the process. Live conversation is a big plus compared to online interactions—makes it more meaningful. I try to keep the mood friendly and personal every Saturday."
+        },
+        {
+          "role": "assistant",
+          "content": "That personal touch is exactly what sets an artisan booth apart. If you ever want to share video or photos from your demos online for advertising, let me know—I can help with tips. Overall, it sounds like you’ve adapted your routines thoughtfully. Anything else you need support with as this new booth schedule settles in?"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received a feature article about Timber Threads in a popular Portland lifestyle magazine, bringing requests from local boutiques and galleries to carry his products wholesale and invitations to collaborate on exclusive collections.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Holds monthly in-person meetings with local boutique owners or gallery curators to plan Timber Threads product lines and joint promotions",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Reserves weekday early afternoon sessions for assembling larger batch orders and preparing exclusive packaging for wholesale clients",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_047",
+              "fact": "Attends the weekend artisan market as a solo vendor for Timber Threads — now regularly participates in craft fairs alone, without neighborhood families"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Now prioritizes building wholesale relationships and collaborates with local boutiques and galleries on exclusive Timber Threads collections, shifting focus away from regular solo artisan market vending",
+              "domain": "social_relationships"
+            },
+            "reason": "Receiving wholesale requests and invitations for exclusive collaborations from local boutiques/galleries dramatically shifts business focus from direct-to-customer market sales to nurturing and fulfilling business-to-business partnerships and limited-collection projects."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_049",
+            "fact": "Prepares an artisan market display on Friday evenings, involving inventory review, labeling, and booth setup planning; never leaves preparation until Saturday morning.",
+            "domain": "work_habits",
+            "reason": "Market booth setup routines are no longer relevant now that his primary weekend sales channel shifts from public markets to fulfilling boutique and gallery wholesale orders, which require different preparation and scheduling."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So Timber Threads got featured in PDX Living, and now I've got local boutiques and some galleries reaching out wanting wholesale batches and exclusive collections. It's exciting, but my workflow feels upside down. I know how to package single orders, but prepping larger batches and working on custom lines feels overwhelming. Any tips for setting up routine or systems to handle wholesale without dropping the ball elsewhere?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats on getting featured! That's a big leap. Transitioning from single Etsy orders to wholesale batches definitely needs a different setup. Are you looking for advice about workspace organization, batching your production, or time management? Or maybe how to handle the communications and collaborations?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it's all of the above. The workspace is tight, and I'm still the only pair of hands. I started reserving early afternoons for assembling batch orders and preparing exclusive packaging for boutique clients, but it's tough balancing that with my usual Etsy workflow and parenting routine. The idea of monthly collaboration meetings with boutique owners is new for me—I never had to do that when everything was direct-to-customer online."
+        },
+        {
+          "role": "assistant",
+          "content": "That move—dedicating early afternoons to wholesale prep—is smart, especially if your mornings are locked in for carving and evenings for finishing. Those monthly in-person collaboration meetings sound important but could be exhausting. Are you finding it’s shifting your energy or time away from your solo work, or has it helped clarify what you need to produce each month?"
+        },
+        {
+          "role": "user",
+          "content": "It's weird, but the meetings actually help me plan joint collections in advance, which kills some of the guesswork. But I’m definitely spending less time prepping for artisan markets, which used to be my main sales channel (especially solo booth setup on Friday nights). Now it’s much more about nurturing wholesale relationships and making sure the batch orders for shops are ready and packaged exclusively. I actually dropped my weekly market prep routine since most of my weekend sales are now through boutiques or gallery orders."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a pretty big shift—so you’re not spending your Friday evenings on inventory review or booth setup anymore? Does that free up time, or do the wholesale batch orders and exclusive packaging just fill in the gap? And are you missing any aspects of the in-person market scene?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, not having to set up my market booth every week has freed up some time, but the wholesale orders take way more planning—labeling, custom packaging, and bigger quantities. I don’t miss the chaos of Saturday morning setups, but I do miss connecting with regular customers and other vendors face-to-face. The upside is boutique owners are usually flexible about drop-off times and offer good feedback, plus monthly meetings give me a new way to stay connected locally."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like the social side of boutique collaborations replaces some of what you missed at the markets, and you’re getting useful feedback to shape your collections. With wholesale demands increasing, are you considering any changes to your workspace or negotiating childcare so you’ll have more daytime batch prep time? Or is that early afternoon slot the best fit around your parenting duties?"
+        },
+        {
+          "role": "user",
+          "content": "For now, early afternoons are the best fit—my parents sometimes help with the kids one afternoon a week, but I don’t want to change too much. The monthly meetings do push me to think about product lines for the boutiques and galleries, so having that slot is essential. I’m just learning to balance batch assembly with family routines and keeping the personal touch in packaging, which is what boutique clients love."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—and keeping your signature packaging with personalized notes is probably what draws the boutique owners to your work. If managing batch orders gets overwhelming, you might consider templating your process or prepping certain components in smaller blocks throughout the week. Want ideas for batching labeling or packaging to save time, or do you prefer keeping every order unique?"
+        },
+        {
+          "role": "user",
+          "content": "I’m open to batching steps for efficiency, but I won’t skip the personal touches. It’s tempting to standardize for volume, but I think that’s what keeps Timber Threads distinct. And since boutique orders are usually for limited collections, I have to plan every batch a bit differently based on their input. That’s why those monthly meetings have become central to my workflow—I didn’t expect that, but it works."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great approach, especially since boutique clients value the exclusivity and personalization. As you keep developing these collections, you might want to track each boutique’s preferences and past orders, so you can streamline communication and prep. Would a simple spreadsheet or tactile order tracker help, or are you already using some system?"
+        },
+        {
+          "role": "user",
+          "content": "I started a paper ledger for wholesale orders and boutique preferences—it works better for me than digital tools, since I review it quickly before each meeting. I’m still figuring out how to balance everything, but reserving weekday early afternoon for batch prep and packaging is becoming routine now. Monthly meetings with boutique owners are just another thing to plug into the calendar. Overall, my focus has shifted away from weekly solo vending and market prep; I’m much more in the wholesale and collaboration mindset these days."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve adapted your workflow pretty intentionally. The shift from solo vending to boutique collaboration is a big business evolution. If you ever find yourself stretched too thin, you could explore prepping simple batch components during quieter times or getting occasional help with packaging. Keeping it all in the family and having flexible drop-offs definitely ease the transition. Is there any other part of the new routine you’re struggling with, or do you want advice on negotiating terms for exclusives and joint promotions with boutiques?"
+        },
+        {
+          "role": "user",
+          "content": "Negotiating exclusives is probably the next hurdle—now that I’m holding regular meetings, a couple shop owners want to develop Timber Threads lines that are only available at their locations. I want to be fair with pricing and not overcommit, since batch fulfillment eats up more hours than single Etsy orders. Any tips for setting boundaries or managing limited collection projects?"
+        },
+        {
+          "role": "assistant",
+          "content": "Limiting collection size and prioritizing clear terms are key. Set minimum order quantities, specify lead times based on your capacity, and clarify exclusivity periods so you’re not locked into endless commitments. Boutique owners tend to respect boundaries if you communicate them upfront. You might also build in review points at each monthly meeting to assess how the partnership is working and adjust as needed. Want sample terms or contract templates, or are you comfortable drafting your own?"
+        },
+        {
+          "role": "user",
+          "content": "Sample terms would help, especially around lead time, minimums, and exclusivity language. I’d like to keep my batches manageable and still have room for family and ongoing Etsy orders. Thanks for helping me think this through—it feels like Timber Threads is entering a whole different phase, and the regular market routines just don't fit anymore."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Learned that his preschool-aged daughter's closest friend will be moving out of state next month, prompting his daughter to become noticeably more withdrawn and reluctant to attend weekly playdates and group activities.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_055",
+            "fact": "Introduces a daily after-preschool quiet ritual (such as drawing or reading together) to provide extra reassurance and connection for his daughter during this emotionally difficult transition",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_043",
+              "fact": "Now relies on last-minute, flexible playdates with other local parents or accepts spontaneous visits, due to increased solo parenting and unpredictable childcare gaps after his parents' move"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Actively avoids scheduling playdates and group activities for his preschool-aged daughter, instead prioritizing low-key one-on-one time at home or with family while she copes with her close friend's departure",
+              "domain": "social_relationships"
+            },
+            "reason": "His daughter's increased reluctance and withdrawal following her best friend's move lead him to intentionally pause social playdate organizing, focusing on gentle support and minimizing potentially stressful group interactions."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, could use some advice. My daughter's best friend at preschool is moving out of state next month, and she's really withdrawn since we told her. She’s not interested in going to playdates or group activities lately—and honestly, I’m not sure how to help her through it. Any ideas for supporting her during this time? I want to make things feel safe and comfortable, but I don’t want to push too much."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds tough—for both of you. Transitions like this can really shake up a little one’s sense of security. At her age, loss of a close friend can feel almost world-ending. If she’s resistant to playdates and group settings lately, perhaps sticking to simple, familiar routines will help her feel more grounded. Are there any activities she loves doing one-on-one with you or family?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ve actually stopped scheduling her usual weekly playdates for now. She tends to get overwhelmed by groups, so we’re focusing on quieter one-on-one time—usually with me, my spouse, or her grandparents when they visit. I’m prioritizing low-key, at-home stuff instead of pushing social plans. Was wondering if you had suggestions for gentle ways to help her process, maybe through some creative or comforting rituals?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a wise approach. Kids often need the space to be sad, and forced socializing can add stress. Creative rituals can help! Would she enjoy something like drawing, easy crafts, or reading stories together after preschool every day? Sometimes a daily routine where you both share a quiet moment—maybe even working on a simple craft—can give her a safe place for her feelings to emerge."
+        },
+        {
+          "role": "user",
+          "content": "Actually, we just started a daily quiet ritual after preschool—she chooses between drawing, reading, or sometimes gentle music while we wind down together. It’s helped, I think; she’s calmer, and sometimes talks a little about her friend moving. I want to keep this going, but I’m struggling for ideas to keep it fresh without making it feel like ‘therapy’. Any suggestions for low-pressure ways to enrich this routine?"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great that she’s opening up even a little—that means your presence and routine are giving her permission to be vulnerable. To keep things fresh: maybe rotate simple activities she enjoys, like choosing a new picture book from the library each week, or doing easy nature drawings based on things from your backyard or hikes. You might even make a small memory book about good times with her friend, if she feels up to it, but only if she’s receptive. How does she respond to stories about change or friendship?"
+        },
+        {
+          "role": "user",
+          "content": "She loves picture books, especially ones about feelings or animals, and sometimes asks me to read them multiple times. I haven’t tried stories specifically about change yet, but maybe we’ll pick some up. I’d be careful with the memory book—for now, she gets pretty sad if anything reminds her of the move. Maybe I’ll wait a bit. Any tips for choosing the right books? I try to keep them gentle and not too ‘lesson-heavy’."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—gentle, indirect books can work better than ones that hammer home the big message. Look for stories where the themes are subtle: animals adapting to a new environment, moving homes, or making new friends, but without a forced moral. Portland libraries and bookstores usually have good staff recommendations if you ask for books about feelings, transitions, or resilience. To keep her routine engaging, maybe let her pick a book herself, so she feels a sense of control. Is there anything she draws or crafts lately that seems to soothe her?"
+        },
+        {
+          "role": "user",
+          "content": "She’s started drawing a lot of little animals lately, sometimes with her friend included—so I let her lead, but keep it casual. We use colored pencils and keep the table quiet, just us. I used to organize neighborhood craft playdates for local families, but I’m holding off on those for now. One-on-one feels safer for her during this transition. I guess my approach has shifted—less social, more family or solo time."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re adapting thoughtfully to her needs—it’s okay to pause the group craft sessions for now. Keeping her world close-knit and calm will help her rebuild confidence at her own pace. If she wants, maybe she could help with your woodworking in small ways—like sanding a simple toy or picking out paint colors, just as something you do side-by-side. But only if it feels fun, not like an obligation."
+        },
+        {
+          "role": "user",
+          "content": "We’ve tried that! After dinner, sometimes we do a little woodworking together—just the basics, nothing serious. She likes picking out wood scraps or handing me small tools. It’s become a quiet bonding time. Thanks, this helps. I’ll keep things gentle, prioritize the daily quiet ritual, and slowly introduce new books and low-pressure crafts. Anything I should watch out for as she adjusts?"
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to help—and your intuition is right. Just keep an eye out for signs of persistent sadness or avoidance, but otherwise trust your slow approach. Kids sometimes bounce back unpredictably; gentle rituals and family closeness are a solid foundation. Don’t hesitate to check in with her teachers, too—they might have insight into how she’s coping at preschool. And remember: your support is the key. If anything changes or you need new ideas, just reach out."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Packages every order by hand with a personalized thank-you note; never uses generic packing slips",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Participates in online maker community forums daily but never joins video chats; prefers written communication",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_005",
+        "fact": "Runs social media ads only for new product launches — never for ongoing items",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Never snacks during late evening work sessions; sticks to herbal tea only",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Plans quarterly family day trips to nearby towns — never goes on overnight vacations",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Preps breakfast for the family every morning before anyone wakes — never skips this even on weekends",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks Etsy shop stats immediately after preschool drop-off — never during the afternoon",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "No screens allowed at the dinner table — enforces this rule strictly with the entire family",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Reviews weekly calendar every Sunday evening with spouse — never plans last-minute activities",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Does not engage in any carving work at all due to therapist's orders; focuses only on finishing and packaging existing items during allowed work sessions",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_027",
+        "fact": "No personal woodworking/carving projects at all; pursues non-physical creative hobbies after bedtime while injury persists",
+        "domain": "leisure_hobbies",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Performs daily rehabilitation exercises for lower back pain each morning as prescribed, without exceptions until cleared by the therapist",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "No longer reads late at night; chooses short, calming activities (e.g., brief mindfulness meditation or gentle stretching) before the strictly scheduled bedtime to improve sleep quality per CPAP regimen",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Follows a strict, physician-mandated bedtime each night to support CPAP use — avoids all stimulating activities after 9pm",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Performs a brief wind-down routine, including setting up the CPAP device, dimming lights, and 5 minutes of guided breathing before bed",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Structures weekday routines independently of spouse’s work hours, since family dinners now happen without her on most weekdays due to standard day shifts",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Prepares and eats weekday family dinners without the spouse; switches to sending a family mealtime recap message and photo after the children are in bed",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Replaces after-lunch walks with seated mindfulness meditation for mental clarity — avoids all weight-bearing activities while recovering from ankle sprain",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Pauses all family weekend hikes; prioritizes indoor family activities until cleared for hiking post-sprain",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Refreshes kids’ play routines with more storytime and tabletop games to minimize active movement during his ankle recovery",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Prioritizes responding to Etsy customer messages from new buyers within 4 hours, but allows regular inquiries and messages from returning customers to wait up to 24 hours due to high volume after going viral",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Shifts from handwritten thank-you notes to pre-printed cards for packaging most orders, reserving handwritten notes only for special/custom requests during periods of heavy order volume",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Now checks Etsy shop stats multiple times throughout the day, including afternoons and evenings, to monitor ongoing order surges and troubleshoot issues in real time",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Switches to texting his parents weekly to stay in touch, but no longer organizes in-person childcare visits due to their relocation out of state",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Utilizes evening screen time (kids’ educational shows) 1-2 times per week when solo parenting, to free up time for dinner preparation or work catch-up, despite previous reluctance",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Prepares vegetarian, high-fiber, low-saturated-fat dinners for the whole family nightly — proactively avoids processed snacks and fatty dairy products in all recipes",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Introduces daily family fruit bowls as a main after-dinner snack, fully eliminating chips, cookies, or processed treats for everyone",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Now runs errands on Saturdays after the artisan market concludes, shifting away from exclusive Tuesday mornings due to booth obligations and increased weekend activities.",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Enjoys interacting with regular artisan market customers in person every Saturday, making friendly conversation and giving brief live carving demonstrations when permitted.",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Now prioritizes building wholesale relationships and collaborates with local boutiques and galleries on exclusive Timber Threads collections, shifting focus away from regular solo artisan market vending",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Holds monthly in-person meetings with local boutique owners or gallery curators to plan Timber Threads product lines and joint promotions",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Reserves weekday early afternoon sessions for assembling larger batch orders and preparing exclusive packaging for wholesale clients",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Actively avoids scheduling playdates and group activities for his preschool-aged daughter, instead prioritizing low-key one-on-one time at home or with family while she copes with her close friend's departure",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_055",
+        "fact": "Introduces a daily after-preschool quiet ritual (such as drawing or reading together) to provide extra reassurance and connection for his daughter during this emotionally difficult transition",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Responds to Etsy customer messages within 2 hours during working hours — avoids letting replies linger overnight",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "The sudden surge in orders and new customer messages from the influencer’s post makes it infeasible to reply to every inquiry within 2 hours. He now actively triages, responding rapidly only to new/influencer-generated contacts and letting low-priority replies wait until workload permits."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Completes all carving work in morning sessions — leaves finishing and packaging for evenings",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Severe lower back pain has led the physical therapist to recommend a complete pause on carving activities. Continuing carving work, in any session, would contradict medical advice and worsen his condition."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Does back stretches every morning before starting work — never skips even on busy days",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": null,
+        "reason": "The prescribed rehabilitation plan replaces regular morning stretches with a new routine focused on recovery exercises, making the old stretching regimen irrelevant during this period."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Cooks vegetarian dinners for the family every night — never makes separate meals for himself",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "His doctor has advised urgent dietary changes due to elevated cholesterol, including increased fiber and reduced saturated fats and processed snacks. He must now consciously modify family recipes to exclude high-fat cheeses, butter, cream, and processed vegetarian snacks, changing how he cooks."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Goes for a short walk after lunch for mental clarity — never walks in the evening",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "Due to doctor’s instructions to avoid weight-bearing activities, he can no longer take his daily walk after lunch, a previously essential mental clarity ritual. Seated mindfulness now replaces walking."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Prioritizes family weekend hikes over solo exercise — only rarely works out alone",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "His moderate ankle sprain requires avoidance of any hiking or weight-bearing activity for at least six weeks. The family hiking tradition must temporarily stop and switch to alternatives."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Schedules playdates with other stay-at-home parents at least once a week — never leaves social plans spontaneous",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "The ability to pre-schedule weekly playdates relied heavily on his parents' regular help; without their childcare support, his week-to-week availability becomes less predictable, making this strict, advance planning impractical."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Calls his parents every Monday to organize the week’s childcare visit — avoids texting for family coordination",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "With his parents moving away and no longer available for regular in-person childcare, coordinating weekly visits is no longer relevant. He now maintains connection by texting, as calling is less necessary for logistics."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Always organizes weekday routines around spouse’s shift schedule; never overlaps dinner time with late shifts",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "His spouse’s new permanent day-shift job means she is away during standard dinner time; the previous coordination to avoid dinner overlap with late shifts no longer applies. He must organize routines not around her shift changes, but around her new predictable absence during dinner."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Hosts monthly craft-making sessions for neighborhood families — never attends craft fairs solo",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_047",
+        "reason": "The new booth at the local artisan market requires him to represent Timber Threads on his own every Saturday, directly contradicting his previous habit of never attending craft fairs solo. This move to in-person, solo participation changes his social approach."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Sends photo updates of the kids to his spouse daily after preschool pickup, never misses a weekday",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "With the spouse now unavailable during weekday afternoons due to standard hospital hours, sending photo updates after pickup is less meaningful, as she cannot check them at work. This routine loses its relevance with her daytime absence."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Works on personal woodworking projects only after the kids’ bedtime — never carves for fun during the day",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_027",
+        "reason": "A temporary halt on all carving includes leisure activities. He cannot pursue woodworking projects, even for fun, and must seek alternative hobbies."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Explores new local hiking trails with family every Sunday — never repeats the same trail twice in a month",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "The ankle injury removes the circumstance of Sunday family hikes entirely, as hiking is impossible during recovery; there’s no replacement activity for this specific habit."
+      },
+      {
+        "id": "pref_018",
+        "fact": "Bakes bread from scratch on Saturday mornings — never buys bakery bread for the family",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": null,
+        "reason": "This preference likely relied on baking recipes using ingredients that are often high in saturated fat (e.g., butter, whole milk, eggs) which the doctor now forbids. Until he can adapt his bread recipes or sources, the circumstance for this baking ritual doesn't exist."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Reads paper books on woodworking techniques late at night — never uses digital guides or ebooks",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "To adhere to the prescribed strict sleep schedule for effective CPAP therapy and better long-term health, he must avoid stimulating activities like reading woodworking books late into the night and instead focus on calming activities that support an early, consistent bedtime."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Schedules weekly errands for Tuesday mornings only — never runs errands on weekends",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_048",
+        "reason": "Securing a Saturday booth means Tuesday mornings are no longer ideal for all weekly errands, and he needs to address supply runs or business errands after market participation. He can no longer avoid weekend errands."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Engages in light, non-crafting creative activities (like sketching or digital design) after the kids’ bedtime to maintain mental wellbeing during the carving pause",
+        "domain": "leisure_hobbies",
+        "created_at_session": 0,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "With a mandatory strictly scheduled bedtime to address sleep apnea, he can no longer spend discretionary time on evening creative activities after the kids sleep; the prior routine fails to fit the new medical requirements."
+      },
+      {
+        "id": "pref_037",
+        "fact": "Organizes weekend indoor craft sessions for the family in place of hiking, using child-friendly projects that don't require standing",
+        "domain": "leisure_hobbies",
+        "created_at_session": 3,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "His new Saturday morning booth commitment as a market vendor eliminates the opportunity to host indoor craft sessions for the family during weekends; the event replaces the previous routine and the underlying circumstance is gone."
+      },
+      {
+        "id": "pref_043",
+        "fact": "Now relies on last-minute, flexible playdates with other local parents or accepts spontaneous visits, due to increased solo parenting and unpredictable childcare gaps after his parents' move",
+        "domain": "social_relationships",
+        "created_at_session": 5,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_054",
+        "reason": "His daughter's increased reluctance and withdrawal following her best friend's move lead him to intentionally pause social playdate organizing, focusing on gentle support and minimizing potentially stressful group interactions."
+      },
+      {
+        "id": "pref_047",
+        "fact": "Attends the weekend artisan market as a solo vendor for Timber Threads — now regularly participates in craft fairs alone, without neighborhood families",
+        "domain": "social_relationships",
+        "created_at_session": 7,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_051",
+        "reason": "Receiving wholesale requests and invitations for exclusive collaborations from local boutiques/galleries dramatically shifts business focus from direct-to-customer market sales to nurturing and fulfilling business-to-business partnerships and limited-collection projects."
+      },
+      {
+        "id": "pref_049",
+        "fact": "Prepares an artisan market display on Friday evenings, involving inventory review, labeling, and booth setup planning; never leaves preparation until Saturday morning.",
+        "domain": "work_habits",
+        "created_at_session": 7,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "Market booth setup routines are no longer relevant now that his primary weekend sales channel shifts from public markets to fulfilling boutique and gallery wholesale orders, which require different preparation and scheduling."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:37:09.259212"
+}

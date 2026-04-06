@@ -1,10 +1,10 @@
-# BYOM-Bench: A Benchmark for Evaluating LLM Personalization Memory
+# REAM-Bench: A Benchmark for Evaluating LLM Personalization Memory
 
 ## Motivation
 
 Large language models are increasingly deployed as persistent personal assistants, yet there is no standard benchmark for measuring how well they remember and apply user preferences over time. Real users accumulate preferences across dozens of conversations — dietary restrictions, work-hour constraints, tool choices — and expect their assistant to recall these without being reminded. Preferences also *evolve*: a job change shifts someone's schedule, a health diagnosis alters their diet. An effective memory system must not only recall current preferences but also avoid applying stale ones that have been superseded.
 
-BYOM-Bench addresses this gap. It is a fully synthetic, end-to-end benchmark that generates realistic multi-session conversation histories with evolving user preferences, creates evaluation tasks that demand proactive preference application, and scores agents on **preference recall** — did the agent proactively remember and correctly apply the user's current preferences?
+REAM-Bench addresses this gap. It is a fully synthetic, end-to-end benchmark that generates realistic multi-session conversation histories with evolving user preferences, creates evaluation tasks that demand proactive preference application, and scores agents on **preference recall** — did the agent proactively remember and correctly apply the user's current preferences?
 
 ## Pipeline Overview
 
@@ -44,7 +44,7 @@ A well-performing agent should maximize preference recall while minimizing stale
 
 ### Agent Types and Baselines
 
-BYOM-Bench evaluates agents along a spectrum. Two deterministic baselines bracket the range: a **context** agent that receives the ground-truth list of current preferences (upper bound) and a **nocontext** agent with no past information (lower bound). Between these sit the memory-backed agents — **Azure AI Foundry**, **Google Vertex AI Agent Engine**, **AWS Bedrock AgentCore**, **Mem0**, **Zep/Graphiti** — each using its own retrieval and storage strategy. All memory agents share a common tool-calling loop where the agent can invoke a memory-search tool during conversation, and retrieved memories are injected into subsequent turns.
+REAM-Bench evaluates agents along a spectrum. Two deterministic baselines bracket the range: a **context** agent that receives the ground-truth list of current preferences (upper bound) and a **nocontext** agent with no past information (lower bound). Between these sit the memory-backed agents — **Azure AI Foundry**, **Google Vertex AI Agent Engine**, **AWS Bedrock AgentCore**, **Mem0**, **Zep/Graphiti** — each using its own retrieval and storage strategy. All memory agents share a common tool-calling loop where the agent can invoke a memory-search tool during conversation, and retrieved memories are injected into subsequent turns.
 
 ### Scoring and Aggregation
 

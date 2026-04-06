@@ -1,0 +1,1345 @@
+{
+  "persona": "An international PhD candidate in environmental science",
+  "persona_id": "persona_20260301_224955",
+  "expanded_persona": {
+    "base_persona": "An international PhD candidate in environmental science",
+    "age": 27,
+    "gender": "female",
+    "location": "Seattle, WA",
+    "work_education": [
+      "Third-year PhD student at University of Washington specializing in climate modeling",
+      "Original from Germany; fully funded by a DAAD scholarship, requiring biannual progress reports",
+      "Currently preparing for her dissertation proposal defense, scheduled in two months",
+      "Leads a weekly undergraduate lab section, balancing teaching duties with research",
+      "Working on a collaborative water conservation project with a local nonprofit; attends fieldwork every other Friday"
+    ],
+    "health_wellness": [
+      "Recently diagnosed with mild asthma exacerbated by pollen allergies common in the Pacific Northwest",
+      "Misses regular yoga sessions due to erratic research hours, aiming to resume a consistent routine",
+      "Experiencing persistent wrist pain from laptop use, currently undergoing physical therapy",
+      "Struggles with sleep due to stress and jet lag after visiting Germany during academic breaks",
+      "Transitioning to a plant-based diet after environmental impact studies; still adjusting to meal prep"
+    ],
+    "family_relationships": [
+      "Lives alone in a studio apartment near campus; frequently video calls parents and younger sister in Munich",
+      "Has a partner back home in Germany; long-distance relationship maintained by monthly visits and daily chats",
+      "Close friendships with fellow international students, often attends Friday potlucks",
+      "Regularly mentors a freshman from India in her department, providing both academic and emotional support"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Prepares all DAAD progress reports at least two weeks in advance — never submits anything last minute",
+        "Strictly blocks out 9-11am for personal research — never schedules teaching or meetings during that time",
+        "Records her lab section lectures for undergrads, but never reuses past material; updates slides every quarter",
+        "Collaborates only through scheduled video calls — avoids long email threads for project discussions",
+        "Never works in campus cafés or public spaces; does all writing and data analysis at her home desktop with ergonomic setup"
+      ],
+      "health_body": [
+        "Does yoga routines at home using German-language YouTube channels — never attends local group classes",
+        "Only cooks plant-based meals at home; avoids eating out unless vegan options are guaranteed",
+        "Uses a wrist brace for all laptop work — never types for over 45 minutes straight without taking a stretch break",
+        "Keeps an air purifier running in her apartment — never opens windows during high-pollen days",
+        "Follows a strict bedtime relaxation routine with guided meditation, never checks work emails after 10pm"
+      ],
+      "social_relationships": [
+        "Schedules weekly video dinners with her partner in Germany — never lets work interfere with that call",
+        "Attends every Friday international student potluck, always brings a homemade vegan dish",
+        "Never initiates group chats; prefers one-on-one messaging for maintaining close connections",
+        "Mentors her freshman mentee in person on campus — never switches to virtual meetings unless one of them is traveling",
+        "Always video calls her family on Sunday afternoons, never switches to audio-only even under weak connection"
+      ],
+      "leisure_hobbies": [
+        "Goes hiking only when air quality is good — never hikes during peak pollen season",
+        "Volunteers monthly for local urban garden projects; never schedules anything else on those Saturdays",
+        "Attends indie film screenings on campus but never goes to mainstream theaters",
+        "Learns new vegan recipes from German cookbooks, never uses English food blogs",
+        "Spends free evenings reading climate fiction in German, never in English"
+      ],
+      "daily_routines": [
+        "Begins every morning with 10 minutes of stretching and herbal tea — never coffee",
+        "Meal preps every Sunday evening for the week; never leaves food choices to the day-of",
+        "Does all personal errands on Wednesdays — never runs errands on weekends",
+        "Tracks her sleep and stress using a German health app, never uses US-based trackers",
+        "Disconnects completely from digital devices every Saturday evening — no screens, emails, or social media"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her DAAD scholarship committee informed her of a mid-cycle audit requiring an additional, unplanned progress report due within three weeks, disrupting her usual advance preparation schedule.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Temporarily forgoes her Saturday evening digital detox when deadlines for audit-related work are imminent",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Prepares all DAAD progress reports at least two weeks in advance — never submits anything last minute"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Completes DAAD progress reports on a rolling basis, sometimes submitting close to the deadline due to unpredictable requirements",
+              "domain": "work_habits"
+            },
+            "reason": "The unexpected, mid-cycle audit with a tight three-week deadline makes advance preparation impossible and disrupts her strict early-submission habit."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I just got an email from the DAAD committee—they're doing a mid-cycle audit and want an extra progress report in three weeks. That's... not how I usually do things. I always submit well in advance, but this is totally throwing off my schedule and I honestly don't know how to reorganize. Can you help me work out a plan so I don't go into panic mode?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that's a lot of pressure! Sudden deadlines like that are rough, especially when you're used to planning ahead. Let’s try to break it down: What else is immovable on your calendar in the next three weeks—like teaching, fieldwork, your own research blocks? And how long does a typical DAAD report take you to write?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks for understanding. I can’t move my lab section or the Friday NGO fieldwork days, so those are locked. I also block 9–11am for my dissertation work and really hate giving that up, but… maybe I’ll need to squeeze in audit prep elsewhere. Normally I’d draft the report at least two weeks early, but obviously, that’s not possible now. I guess I have to work on it whenever I can, even if it means cutting it close to the deadline."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re adjusting and might have to finish this report closer to the deadline than you’d like. Since your mornings are protected for research, I’d avoid touching them if possible—you need that continuity for your proposal defense prep. Would scheduling short work sessions late afternoon or early evenings work? Or maybe break the report into smaller sections so you can chip away during gaps?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, breaking it down might help. Early evenings are usually open—at least before my video calls with family or my partner. I can try to draft one section at a time. I used to treat DAAD reporting as a set routine, but with these unpredictable requirements, I’m starting to think I need more of a rolling approach—tackle pieces when I can, and accept that sometimes deadlines get tight."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a healthy adaptation. Flexibility matters a lot, especially with PhD curveballs. Since the DAAD requirements could change again, maybe sketch out a modular outline for future reports—even pre-fill some boilerplate details as you make research progress. That way if another audit pops up, you’re not starting from scratch. Is there anything else at risk of being squeezed out right now, like self-care routines?"
+        },
+        {
+          "role": "user",
+          "content": "Self-care is definitely the first thing to slip. I try to do a full digital detox every Saturday evening—no screens, no work—but honestly, if I’m staring down this audit and deadline, I might have to let that go temporarily. I don’t love it, but finishing this report on time might mean checking email or editing on Saturday night if I need to."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s totally understandable to flex—even healthy boundaries can bend if it’s for a clear, time-bound reason. The key is to view it as temporary, not a new norm. Maybe set a plan for a bigger unwind or digital break once the report is submitted? For this sprint, do you want me to help you structure a week-by-week report drafting schedule or prioritize your most vulnerable routines so they aren’t lost completely?"
+        },
+        {
+          "role": "user",
+          "content": "A week-by-week schedule for the report would be great—especially if it leaves space for dissertation work and teaching. And yes, a plan to gradually return to my normal digital detox after the deadline would help, too. I just want to get through this audit without burning out or feeling like I’m dropping the ball everywhere else."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect, let’s outline your weeks. For the next three weeks: Reserve early afternoons (post-teaching or after lunch) for focused DAAD segments—aim for one section per session. Keep your 9–11am research block untouched and your teaching/fieldwork as-is. On Saturdays, let yourself do email or quick edits if you must, but plan a ‘no screens’ slot as soon as the report’s sent. I’ll help you set reminders for wrist/stretch breaks during those writing bursts, too. Shall we draft a more detailed schedule for week one?"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her younger sister received a university exchange placement to study in Vancouver for a semester and decided to visit Seattle several weekends throughout the term, requesting to stay with her in the studio apartment during each visit.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_029",
+            "fact": "Shares her studio apartment with her sister on select weekends, adjusting her space and routines for company; enjoys planning special breakfasts and evening walks together when hosting.",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_030",
+            "fact": "Temporarily switches to video calling parents on Saturday evenings when her sister is present, so all three join together and connect from Seattle.",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Does all personal errands on Wednesdays — never runs errands on weekends"
+            },
+            "to": {
+              "id": "pref_028",
+              "fact": "Runs personal errands on weekends when her sister visits — enjoys doing them together, even if it means shifting away from her usual Wednesday routine.",
+              "domain": "daily_routines"
+            },
+            "reason": "Her sister's weekend visits change her usual solo Wednesday errand ritual. She now prefers to complete errands together with her sister during those visit weekends, prioritizing shared time and flexibility."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My sister just got her exchange placement for UBC in Vancouver! She’s planning to visit me here in Seattle basically every two or three weekends this semester and stay at my studio. I’m really excited, but also a little overwhelmed juggling all my usual routines, dissertation prep, and teaching on top of hosting her. Any advice for making my weekends with her feel special—without losing what I need for work and health?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations to your sister—and to you! Having her nearby sounds like a great support, but I understand the extra logistical load, especially with your upcoming proposal defense and teaching duties. Since you’ve normally relied on weekends for rest and personal organization, what’s the main thing you’re worried about? Is it finding time for work, keeping your routines (like meal prep, meditation), or making sure you both enjoy her visits?"
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely a mix of all those. We’re both used to plenty of personal space, and honestly my studio isn’t huge. I want to make her visits feel welcoming and fun, but nearly all my weekend routines are pretty structured—things like Sunday meal prepping, device-free Saturday evenings, and my usual deep cleaning and errands. I guess I worry about losing my own rhythm, but I also don’t want her to feel like she’s just dropped into my work zone."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a healthy concern! Balancing your need for rest and structure with quality time isn’t easy, but it is possible. Would you be open to flexing some routines, like shifting errands or meal prep to different times, so you and your sister can share those activities? Or do you prefer to keep those solo as your recharge time? Also, do you want ideas for low-cost ways to make the studio cozier for two?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I’ve already decided to start doing my personal errands together with her during the weekends when she visits. It’s different from my usual approach—before, I’d strictly do everything on Wednesdays, never weekends—but I realized it’s more fun tackling groceries, the farmer’s market, or even trips to the drugstore together. It turns basic chores into shared adventures for us, so I’m adapting there!"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great adjustment—errands can definitely be quality sister time, especially with a change of scenery! For meal prep, would your sister enjoy cooking with you as well? Maybe you could try out new vegan recipes together—double benefit of sharing your new diet and keeping it playful. If that feels too chaotic, you could still prep the basics ahead, then do a special breakfast or snack just for the two of you on her visit days."
+        },
+        {
+          "role": "user",
+          "content": "I love the breakfast idea! When she’s here, I want to do special breakfasts—like homemade Bircher muesli or vegan pancakes—before we head out for walks or errands. Dinners will probably stay simple, since I don’t want to fuss with elaborate evening cooking after a long day. And yeah, we’ve been talking about trying plant-based baking experiments together—she’s curious about it too."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds perfect—and gives you both a cozy ritual to look forward to! For evenings, since your studio is small, maybe evening walks or tea in a nearby park could give you both a mental recharge and a little extra breathing space before bed. Would that fit with your relaxation routine? Also, how are you handling your usual device-free Saturday evenings now that your sister will be around?"
+        },
+        {
+          "role": "user",
+          "content": "Our plan is to keep Saturday evenings as screen-free as usual, but with the twist that we both put phones away and maybe do board games or swap stories from the week. One small change I’m making: when she’s here, we’ll both video call our parents together on Saturday evenings from my apartment, so all three of us can connect from Seattle. Normally I always call my family solo on Sundays, but this feels like a nice way to share the weekend with everyone."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a wonderful adaptation—and I’m sure your parents will love getting both daughters together on the call! It’s also a smart way to keep everyone connected despite the distance and schedules. Have you talked with your sister about potential study or downtime needs? Sometimes setting aside a quiet hour or two—even if you’re both in the same room—can help you both recharge and prevent overwhelm."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, we agreed up front that if I need to focus on writing or she needs to prep for exams, we’ll each bring headphones and carve out solo time—even if it means one of us grabs the bed while the other takes the desk. We’re both introverts, so it helps to set expectations. And I think swapping my routines on her visit weekends (like errands or even switching the family video call) actually makes me look forward to her being here, rather than stressing about disruptions."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’ve struck a great balance—holding onto the routines that matter, but flexing in ways that actually deepen your connection with her and your family. If you ever want activity ideas, easy vegan brunch tips, or strategies for keeping your work blocks intact while hosting, I’m here. Anything else you’re anticipating as a challenge, or do you feel set for her first weekend?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I think the biggest adjustment will just be sharing my tiny space and keeping things tidy enough for two! But I feel ready. I’m excited to see how our dynamic shifts with us both away from home, especially as she gets used to Vancouver. I’ll definitely reach out if I hit any new snags. Thanks for helping me talk through it all!"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re very welcome—and congratulations again to both of you! Wishing you a semester full of sister adventures, cozy breakfasts, and just enough alone time to keep you energized. I’m here anytime you need to recalibrate or troubleshoot as you settle into these new rhythms."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Developed a severe pollen-induced asthma flare during spring fieldwork for the water conservation project, resulting in her physician issuing strict orders to avoid outdoor activities and prescribing daily inhaler use for the remainder of the season.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_033",
+            "fact": "Uses her prescribed inhaler daily, integrates medication reminders into her health app routine; never skips inhaler use while pollen levels are elevated",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_034",
+            "fact": "Replaces Friday spring fieldwork with data analysis or remote project meetings; never attends in-person outdoor sessions until clearance from her physician",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_017",
+              "fact": "Volunteers monthly for local urban garden projects; never schedules anything else on those Saturdays"
+            },
+            "to": {
+              "id": "pref_031",
+              "fact": "Temporarily avoids all volunteering for urban garden projects due to pollen exposure risk; instead focuses on remote sustainability efforts during the spring season",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Her physician's strict orders to avoid outdoor activities due to a severe pollen-induced asthma flare make attending any in-person gardening events dangerous. She replaces the in-person volunteering with online advocacy and sustainability work until pollen levels decrease."
+          },
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Goes hiking only when air quality is good — never hikes during peak pollen season"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "No longer goes hiking at all during spring; strictly avoids all outdoor leisure activities due to physician-mandated asthma precautions",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Even occasional hiking during spring is now medically prohibited due to her severe asthma flare and doctor’s explicit advice against all outdoor activity for the season."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_005",
+            "fact": "Never works in campus cafés or public spaces; does all writing and data analysis at her home desktop with ergonomic setup",
+            "domain": "work_habits",
+            "reason": "While the persona would still prefer her home setup, the physician's orders and her severe asthma flare make the reason for avoiding public spaces (potential pollen, not just ergonomics) prominent, but preference persists and evolves instead of dropping. Therefore, no preference is dropped for this event."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Honestly, I’m pretty frustrated right now. I just had a severe asthma flare during the Friday spring fieldwork for the water project—had to leave early, and my doctor is prohibiting all outdoor activity until the pollen drops, inhaler every day. I don’t even know how I’m going to manage work and volunteering with everything moved indoors. Can we talk through how to restructure my schedule and still feel like I’m contributing?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry to hear about the asthma flare—that sounds challenging, especially since so much of your spring is usually tied to outdoor work. Let’s break it down: which activities feel hardest to let go of, and are there remote or indoor alternatives you’d consider for the next couple months?"
+        },
+        {
+          "role": "user",
+          "content": "The urban garden volunteering is a big one. I normally never schedule anything else on those Saturdays—it’s my favorite way to stay grounded, but now there’s no way I can risk it. My doctor was emphatic, and even the last outdoor session left me completely out of breath. I wish there were indoor ways to still help, or at least remote options. And, for hiking—even with my usual air quality precautions, I can’t do it at all during spring now. It’s a bigger shift than I expected."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for sharing—that’s a tough transition given how central those activities are for you. For the urban garden, what about shifting your energy into supporting their outreach, digital content, or planning their summer volunteer drives? Many groups need remote help during these months. Also, are you interested in other indoor environmental advocacy projects? And with hiking off the table, have you found any indoor routines that help you recharge physically or mentally?"
+        },
+        {
+          "role": "user",
+          "content": "I think I could support their sustainability education projects online, maybe help draft materials or data visuals for their upcoming workshops. I can focus on indoor and digital advocacy until it’s safe again. For movement, I’m mostly sticking with home yoga when I can—and now, I have to be extra cautious, since missing an inhaler dose isn’t an option. I’ve added medication reminders to my German health app so I never forget, especially while the pollen is so bad."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart adaptation—your digital skills can be a major asset for those programs, and many organizations need people who understand both the science and how to communicate effectively. With the inhaler, syncing reminders to your existing health app is a great call. Is there anything in your daily or weekly schedule that now feels awkward or unsustainable due to the extra indoor time? For example, what happens with the water conservation fieldwork—are you still involved in some way?"
+        },
+        {
+          "role": "user",
+          "content": "Fieldwork is tricky. I’ve had to skip all in-person outdoor sessions—my physician’s orders are strict. So, I now fill those Fridays with remote data analysis or join the project meetings by video instead. No more on-site work until the pollen count drops and I get medical clearance. It’s not ideal, but I’d rather adapt than risk another hospital trip."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to prioritize your health. Remote data analysis and virtual collaboration still provide valuable project support, and it might even free up energy for your dissertation prep and teaching. Are there other routines thrown off by these changes—like how you decompress after a hectic week or stay connected with friends?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I have to get creative there too. No outdoor hiking or gardening, so I’m reading more climate fiction in German in the evenings and updating my vegan meal prep with new recipes—trying to keep busy indoors. I also replaced my usual volunteering block with online sustainability forums and digital campaign work for now. The main stress is juggling all these changes, dissertation proposal prep, and remembering not to skip my inhaler. But you’re right—remote work does help protect those core hours I need for research and teaching."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid pivot—channeling both your skills and your values, while making sure you stay healthy. If you ever need new indoor routines, accountability hacks for consistency, or fresh ideas for digital sustainability work, let me know. Would you like resources for remote volunteering, time-tracking tips, or perhaps a few suggestions for ergonomic home yoga props, given your wrist issues and asthma?"
+        },
+        {
+          "role": "user",
+          "content": "Thanks. Remote volunteering resources would be helpful—I’ve already started making lists for the spring. And I’ll take any tips for better home yoga routines, especially for days when the pollen is at its worst and my energy’s low. The switch is tough, but I’m adjusting."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The nonprofit partner for her collaborative water conservation project received a major grant to expand the study, resulting in a new requirement for her to co-lead a weekly in-person team meeting and coordinate with additional project staff, significantly increasing her project management responsibilities.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_036",
+            "fact": "Prefers using organizational tools and shared task boards (e.g., Trello or Asana) to manage tasks and track progress with expanded project team members",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_037",
+            "fact": "Now regularly schedules brief one-on-one check-ins with new project staff to personalize team coordination and problem-solving outside group meetings",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Collaborates only through scheduled video calls — avoids long email threads for project discussions"
+            },
+            "to": {
+              "id": "pref_035",
+              "fact": "Co-leads weekly in-person team meetings for project collaboration, supplementing video calls as needed; no longer avoids face-to-face group discussions",
+              "domain": "work_habits"
+            },
+            "reason": "She is now required to co-lead a weekly in-person team meeting and coordinate with additional staff for the expanded project. This makes in-person meetings a new norm for project collaboration, which directly contradicts her old preference for scheduled video calls and aversion to face-to-face group discussions."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_034",
+            "fact": "Replaces Friday spring fieldwork with data analysis or remote project meetings; never attends in-person outdoor sessions until clearance from her physician",
+            "domain": "work_habits",
+            "reason": "With the new project grant and expansion, her responsibilities now include co-leading in-person team meetings indoors (not fieldwork/outdoor), which supersedes the temporary avoidance of in-person sessions. The specific restriction against in-person meetings (as opposed to outdoor fieldwork) no longer applies."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, the nonprofit I’m partnering with for the water conservation project just landed a huge grant—which is great, but now they want me to co-lead weekly in-person team meetings and handle more project management. It’s honestly a bigger switch than I expected. My plate was already full with research, teaching, and writing up my DAAD reports. Any advice on how to balance these new responsibilities without letting other things slip?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s an exciting development, but I can see how the added project management load could feel overwhelming. Let’s break it down—do you have any preferred tools or routines for tracking tasks and deadlines right now, or has most of your management been more informal?"
+        },
+        {
+          "role": "user",
+          "content": "Up until now, I mostly planned my week on paper and used calendar blocks for deep work. But with the expanded team, I’ve switched to using a shared Trello board. It’s actually helping, since everyone can see tasks and progress in real-time. I’m definitely relying on that a lot to keep things from slipping through the cracks."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—visual boards like Trello do a lot to keep everyone on track, especially with more moving pieces. Have the in-person meetings changed how you’re collaborating with the team, especially compared to before? Or do you supplement with video calls or written updates?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that’s a big shift for me. I used to avoid group discussions except over scheduled video calls—I really preferred keeping things remote unless absolutely necessary. But now co-leading these weekly in-person meetings is just part of the job. I still use video calls if specific team members can’t make it, but in-person sessions are the new standard."
+        },
+        {
+          "role": "assistant",
+          "content": "Making the leap to more face-to-face collaboration can be challenging if you’re used to remote-only. How are you finding the dynamic? Has anything surprised you—good or bad—about leading in-person versus virtual discussions?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I was worried about group energy and staying on track, but it’s been smoother than I expected. I get a better read on the team and problems are easier to spot early. What does take more time now are the one-on-one check-ins—I’ve started making a point to touch base with new staff individually every couple weeks. It personalizes things and issues don’t get buried."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—a mix of group and individual attention often gets the best from a growing team. With more of your week in meetings, have you had to drop or rearrange some old routines to fit everything in? Or are you still protecting certain blocks for your research or other priorities?"
+        },
+        {
+          "role": "user",
+          "content": "I still block out 9-11am for my own research no matter what, but other routines definitely changed. For example, before this grant, I used to do most project collaboration over video, and I avoided long email chains. That’s changed now with the in-person meetings. On the flip side, I used to coordinate some Friday spring fieldwork in person, but I’m not doing outdoor sessions for now—especially with my asthma. All fieldwork is on hold until my doctor clears it, so I’m switching those Fridays to data analysis or project meetings indoors."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a wise call—fieldwork can be tough when pollen counts are high, especially with asthma. Good that you can shift your involvement indoors for now. How’s your wrist holding up with the extra laptop work from all this new planning and coordination? Are you still keeping your break routine?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I still stick to 45 minutes max on the laptop with a stretch break, and always wear my wrist brace, no exceptions. The only real difference is more time spent organizing the Trello board or prepping meeting agendas instead of just data analysis. So far, it’s manageable as long as I keep the breaks and don’t try to multitask."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re clearly adapting your routines to handle the new workload strategically—shifting collaboration formats, leaning into task boards, and keeping strong self-care boundaries. Do you want help thinking through ways to make meetings even more efficient, or support for carving out time for things like yoga or sleep with all this extra coordination?"
+        },
+        {
+          "role": "user",
+          "content": "I could use advice on both, actually. Meetings tend to overrun if we aren’t careful—especially with a bigger group. And my yoga routine keeps slipping out of my schedule since I’m either prepping, recovering from meetings, or just exhausted. Streamlining meetings and protecting my downtime would really help."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her physical therapist diagnosed her with mild carpal tunnel syndrome after ongoing wrist pain worsened, recommending immediate reduction of laptop use and mandatory ergonomic adjustments before returning to extended typing sessions.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Uses voice-controlled smart home devices and hands-free apps for meal prep and wellness tracking while minimizing wrist strain",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Prefers out-loud brainstorming and collaborative whiteboard sessions for group project work, avoiding shared digital docs until ergonomic upgrades are complete",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Uses a wrist brace for all laptop work — never types for over 45 minutes straight without taking a stretch break"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Avoids extended typing altogether; switches to voice dictation and handwritten notes for research or teaching prep, only resumes typing after ergonomic adjustments pass therapist's review",
+              "domain": "health_body"
+            },
+            "reason": "Her physical therapist diagnosed her with mild carpal tunnel syndrome and recommended immediate reduction of laptop use. She must now minimize typing sessions entirely, substituting alternate input methods, until full ergonomic changes are made."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_019",
+            "fact": "Learns new vegan recipes from German cookbooks, never uses English food blogs",
+            "domain": "leisure_hobbies",
+            "reason": "Carpal tunnel syndrome makes handling heavy cookbooks and regular reading/typing difficult; she is not able to consistently follow cookbook recipes until her wrist improves, so this preference is temporarily irrelevant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, I just got diagnosed with mild carpal tunnel in my right wrist. My physical therapist was clear: no extended typing, immediate ergonomic changes, and I’m not even supposed to prep lectures or reports with my usual laptop routine until she approves my setup. I’m honestly overwhelmed. I need some practical ways to keep my teaching and research afloat while following these restrictions. Can we brainstorm options?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot to adjust to, especially with your teaching and dissertation proposal on the horizon. Let’s break it down: for your teaching, are you able to switch to voice dictation for lecture notes or grading? And for research writing—have you tried using speech-to-text tools, or do you prefer working by hand during this period?"
+        },
+        {
+          "role": "user",
+          "content": "I’m actually trying to use voice dictation for everything now—both lecture prep and research notes. It’s not perfect, especially with science terms, but better than risking more wrist pain. I’ve also switched to jotting ideas and marking up journal articles by hand for now. No typing until my ergonomic setup is cleared by my PT. Any ideas for keeping group work and meetings productive, though? I can’t do long email threads or real-time editing in shared docs right now."
+        },
+        {
+          "role": "assistant",
+          "content": "Voice dictation and handwritten notes sound like smart moves. For group work, could you propose out-loud brainstorming or whiteboard sessions, either in person or over video? That’d minimize typing for you, and collaborative visual tools help surface ideas quickly. For meetings, would a designated note-taker handle summaries, so you stay engaged without needing to track everything digitally?"
+        },
+        {
+          "role": "user",
+          "content": "That could work! I honestly like whiteboard sessions and speaking things out loud much more right now. I’ve also started requesting hands-free project meetings—just scheduled video calls with live discussion, and someone else sends the action items. It’s way better than fighting with my wrist over Slack threads. What about meal planning? I usually lean on my heavy German vegan cookbooks, but turning pages and following steps has been a pain—literally."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes total sense—those cookbooks aren’t exactly lightweight or easy on the hands. Would voice-activated recipe apps or smart home devices work for you instead? You could follow prompts hands-free, which’d help your wrist, and even set timers or control appliances by voice. Do you already have any favorites, or want recommendations tailored to vegan options?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I just set up my voice assistant for recipe and shopping list management! It’s honestly a lifesaver—no flipping pages or typing out lists. I’m letting the German cookbooks rest until my wrist improves. Could you suggest other ways to offload digital tasks—like for wellness tracking or daily routines—without stressing my wrist more?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! For wellness tracking, many hands-free or voice-controlled health apps integrate with smart devices—so you can log sleep, stress, or reminders just by speaking. Would voice commands to log meals, start meditation routines, or even adjust your air purifier fit into your day? Are you already using a specific system for your routines?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve moved all my wellness tracking to hands-free apps integrated with my smart speaker. That way I don’t have to interact with my phone or type at all. The same goes for meal prep timers and calendar reminders. My main challenge now is finding more ways to collaborate for research or project work without defaulting to typing—for example, prepping my DAAD progress report or organizing proposal edits. Any thoughts?"
+        },
+        {
+          "role": "assistant",
+          "content": "For solo work like your DAAD report, you could try outlining and drafting via voice dictation, then having a colleague or assistant help with light editing if needed. For collaborative work, scheduling group whiteboard sessions where you talk through findings together and someone else enters notes might keep everyone aligned and let you participate fully. If visualizing models or results, maybe use tablet sketching or physical diagrams you can capture by photo, rather than digital-only tools for now. Would your collaborators be open to these approaches?"
+        },
+        {
+          "role": "user",
+          "content": "Most are, yes—especially for short-term adaptation. I’m leaning on out-loud brainstorming and having others type or organize shared docs. Until my ergonomic setup gets PT approval, I really have to avoid extended typing altogether, even for my most important tasks. It's less efficient, but my hand thanks me."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her partner in Germany was accepted into a start-up incubator program overseas, which requires them to relocate to Singapore for at least nine months, making in-person visits difficult and altering the time zone for their daily communication.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_042",
+            "fact": "Now leaves WhatsApp voice messages for her partner and family whenever live calls aren't possible, embracing asynchronous communication due to Singapore's time zone and incubator constraints",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_043",
+            "fact": "Schedules occasional shared online film screenings with her partner, selecting films that are accessible in both Singapore and Seattle and coordinating start times across time zones",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Schedules weekly video dinners with her partner in Germany — never lets work interfere with that call"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Schedules weekly video brunches with her partner in Singapore — adapts timing due to time zone difference; sometimes shifts calls to Sundays to avoid conflicts with her partner's incubator schedule",
+              "domain": "social_relationships"
+            },
+            "reason": "Her partner's relocation to Singapore introduces a major time zone difference and more demanding incubator commitments. Maintaining the previous dinner schedule would be unfeasible; they now adapt to brunch calls and occasional Sunday shifts to preserve regular contact."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_030",
+            "fact": "Temporarily switches to video calling parents on Saturday evenings when her sister is present, so all three join together and connect from Seattle.",
+            "domain": "social_relationships",
+            "reason": "Her sister no longer visits regularly, and the group Seattle call is obsolete with her partner relocated to Singapore and unable to join at a convenient time. The Saturday evening group video call format is no longer relevant."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so big relationship update: my partner just got accepted into a start-up incubator and had to move to Singapore! The timing is great for him, but honestly, the time zone difference just made things a lot harder for us. I’m worried about keeping up our connection with his new schedule and all the demands—it used to be so easy with Germany, but now, daily video dinners just aren’t realistic. I’d love some ideas on how to adapt our routines so we still feel close, especially with my own dissertation proposal coming up soon."
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that’s a huge change—congrats to him! But I can see how such a drastic time shift would throw everything off. Balancing big milestones on both sides isn’t easy. When you say daily video dinners are no longer feasible, have you been able to find any alternate touchpoints, or has the communication just become more sporadic lately? Are there parts of your routine that you want to preserve most?"
+        },
+        {
+          "role": "user",
+          "content": "Right now we’re trying to stay in touch, but his incubator schedule means evenings for me are deep into the night or super early for him. We actually just switched to having weekly video brunches instead—usually on Saturdays, sometimes Sundays if his program runs late. Not every day anymore, but at least we get to share a meal and catch up properly once a week."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart adaptation—brunch is a nice midpoint between your days. Do you still aim for a set time each week, or is it more flexible depending on both your schedules? And for the other days, have you considered asynchronous options, like leaving each other voice notes or sharing short videos, to keep up a sense of day-to-day presence?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, we’ve actually started leaving WhatsApp voice messages for each other now. If one of us is in a meeting or fieldwork or it’s just too late, we just talk when we can and listen later. It’s weirdly comforting to get a little message when I wake up or right after my teaching block. Definitely a change from seeing each other on video so regularly!"
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great that you’re both open to new ways of staying connected—not everyone pivots to voice messages so quickly. Have you thought about incorporating any shared activities to add a sense of doing things together, even across those hours? For example, some couples do virtual watch parties or get creative about ‘together but apart’ hobbies."
+        },
+        {
+          "role": "user",
+          "content": "Funny you say that! We just coordinated our first shared online film screening last weekend. It took a bit of searching to find something available in both Seattle and Singapore, but it was totally worth it to sync up the start and chat during the film. I think we’ll do that every few weeks, just for some kind of ‘date night’ atmosphere."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds genuinely fun—and definitely a fresh way to recreate couple time at a distance. How did the logistics go? Any tips for choosing a platform or managing the time difference that other people in similar situations might find useful? (Also, if you want movie recommendations that fit both regions, I can help brainstorm!)"
+        },
+        {
+          "role": "user",
+          "content": "Thanks! So far, streaming platforms with global access are the only way it works—no indie campus screenings for now, sadly. Mostly we just plan around our brunch call, then pick a Saturday or Sunday morning for me, which is late evening for him. Coordinating was tricky at first but it’s gotten easier. Oh, and as an aside—since my partner’s now in Asia and his schedule’s so different, I stopped doing our group family video call with my parents and sister on Saturdays. It doesn’t really make sense anymore since my sister isn’t always around, and the time zones just don’t line up. I just go back to my usual Sunday afternoon chats with them instead."
+        },
+        {
+          "role": "assistant",
+          "content": "It seems like you’ve been really thoughtful about what works—and what needs to be let go of for now. Shifting from those group video calls is probably bittersweet, but it’s important that you’re keeping some core routines with your family, especially while things are so busy. If you’d like, I can also help you set up reminders or find tools to coordinate these new rhythms, so things feel a bit more anchored as you prep for your dissertation defense. Would that be helpful for you right now?"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her mentee, the freshman from India she regularly supports, confided that their parents are divorcing and requested ongoing emotional support, leading her to take on a more active role in helping them navigate family stress and adjustment challenges.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_045",
+            "fact": "Actively searches for and shares mental health and campus support resources with her mentee — regularly recommends external counseling, peer groups, or relevant workshops based on her mentee’s needs",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_046",
+            "fact": "Schedules weekly check-in sessions with her mentee focused explicitly on emotional wellbeing, separate from academic mentoring",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_014",
+              "fact": "Mentors her freshman mentee in person on campus — never switches to virtual meetings unless one of them is traveling"
+            },
+            "to": {
+              "id": "pref_044",
+              "fact": "Now checks in daily with her mentee through both in-person meetings and ongoing WhatsApp text and audio exchanges; prioritizes frequent virtual support even when neither is traveling",
+              "domain": "social_relationships"
+            },
+            "reason": "Her mentee is experiencing significant family distress and has explicitly requested ongoing emotional support. She adapts her approach, extending mentoring to frequent text/audio exchanges outside campus meetings, prioritizing emotional availability virtually regardless of their respective locations."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, can I get some advice? My freshman mentee just shared that their parents are getting divorced, and they've asked me to be much more available for support. It's thrown me a bit—normally I just meet them weekly on campus, but now they're messaging me every day and want more emotional check-ins. I'm worried I'll either do too much and burn out, or not be supportive enough. Any ideas for how to manage this, while still setting some boundaries?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, that's a tough situation. It's generous of you to want to be present, and it's understandable that this increase in contact feels like a new responsibility. One effective strategy is setting clear expectations around your availability—maybe outlining what times or formats work best for your daily check-ins, so it doesn't become overwhelming. Have you already adjusted how often you connect, or are you still figuring that out?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, we've actually shifted to checking in almost every day now, sometimes in person and sometimes over WhatsApp—text and voice messages. Before, I really only met my mentee in person unless either of us was traveling, but since this all started, we message back and forth regularly, even if we're both on campus. It's a big change for me—I don't usually like constant messaging, but I know they need it right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a meaningful adjustment on your part. Regular text and voice support can be really reassuring for someone going through family stress, but it can also become time-consuming. Would it help to agree on a set time for your daily check-ins, rather than responding throughout the day? Or does your mentee seem to need the flexibility of more spontaneous communication?"
+        },
+        {
+          "role": "user",
+          "content": "So far I've tried to stay really responsive, because they said the uncertainty with their family makes them anxious, but I'd honestly prefer to have more structure. I'm considering proposing a quick message at a set time each evening, and then keeping our weekly meet-ups for deeper conversations. Also, I've started scheduling a separate weekly session just for emotional support—that's now distinct from any academic advising. But I'm not sure if that's the right setup."
+        },
+        {
+          "role": "assistant",
+          "content": "That actually sounds like a thoughtful solution. Separating emotional and academic check-ins gives you both structure and predictability. Your idea of a daily message at a set time could reassure your mentee without making you feel constantly on-call. You might try explaining that you want to be consistent for them, but need to balance it with your own schedule—setting those expectations openly. Beyond your own support, have you suggested other resources, like campus mental health services or student groups, to complement what you're providing?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I'm already actively looking for resources for them. I've sent info on the university counseling center and some peer support groups, and encouraged them to consider counseling. Whenever I find a relevant workshop or support service, I share it. I think it helps, but I also want to make sure I'm not overwhelming my mentee or making them feel like I'm just deflecting their concerns."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re approaching this really thoughtfully—sharing resources alongside your personal support strikes a good balance. Maybe you could frame these suggestions as options they can explore at their own pace, rather than expectations or requirements. How has it felt for you personally to expand your mentoring like this? Are you able to check in with yourself, too, to make sure the increased support isn't taking a toll on your own wellbeing?"
+        },
+        {
+          "role": "user",
+          "content": "It's honestly been a little draining, especially balancing everything with my dissertation proposal coming up soon, teaching, and my own health stuff. But I'm making it work for now—and actually, being more proactive with my mentee feels important. I've realized I need to prioritize their emotional check-ins and not just the academic side, at least for the near future. That's a shift for me, but I think it's the right one."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you're adapting thoughtfully as your mentee’s needs evolve. Setting up consistent check-in times, regularly sharing resources, and splitting your sessions between academic and emotional topics all sound like healthy strategies. Remember, supporting someone in distress can be continuous work, so it’s important you also carve out time for personal rest and boundaries. If you find yourself needing to reset expectations or reduce the intensity, that's okay too—sustainable support is more valuable in the long run. Is there any particular part of this new routine that feels most challenging right now?"
+        },
+        {
+          "role": "user",
+          "content": "The hardest part is probably staying attentive to their texts without letting it interrupt my research or sleep. I'm thinking of letting them know I'll respond once in the evening unless it's an emergency. That way, they know I'm not ignoring them, but I also protect my own focus a bit."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a wise boundary and should help you maintain both your focus and wellbeing. Communicating your plan openly—letting your mentee know you care, you'll check in daily, and you’ll respond as soon as you’re able—should provide them with reassurance while keeping things manageable for you. If you need help drafting that message or explaining the new routine, I can help. Or, if you have other concerns around supporting your mentee or balancing your priorities, let me know."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "She was invited to present her dissertation proposal at an interdisciplinary climate modeling symposium hosted by the University of Washington, requiring her to develop a public-facing version of her research and coordinate with faculty from outside her department over the next month.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_048",
+            "fact": "Prepares a non-technical public presentation of her dissertation proposal, tailoring slides and explanations for interdisciplinary faculty and community attendees — avoids jargon-heavy language",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_049",
+            "fact": "Connects with faculty outside her department at least weekly throughout symposium preparation, actively seeking feedback from non-specialist researchers",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Strictly blocks out 9-11am for personal research — never schedules teaching or meetings during that time"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Now allocates 9-11am for interdisciplinary symposium coordination and faculty meetings, temporarily pausing exclusive personal research blocks until the presentation is complete",
+              "domain": "work_habits"
+            },
+            "reason": "Preparing a public-facing dissertation proposal for the UW symposium requires her to coordinate with faculty outside her department, often during morning hours. The necessity of flexibility and cross-disciplinary collaboration means her previous strict research block must be suspended in favor of coordinating meetings for the symposium."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got invited to present my dissertation proposal at the interdisciplinary climate modeling symposium here at UW. It's exciting, but honestly a bit overwhelming—I've never prepped a public-facing version of my research before, and I need to coordinate with faculty outside my department over the next month. Could you help me figure out how to approach both the collaboration and the actual presentation? I have no idea where to start with making my work accessible for people who aren't in climate science."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations! That’s a huge professional milestone, though I can imagine it brings a unique set of challenges. For the interdisciplinary aspect, a good starting point is identifying what parts of your research resonate beyond your specialty—think about what interests, say, hydrologists, urban planners, or even community organizers about climate modeling. For your presentation, it often helps to start with a story or central theme rather than data or models right away. \n\nHow are you currently structuring your days to accommodate these new coordination efforts? Are you finding time for extra faculty meetings, or is it squeezing your usual research schedule?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I had to change a big part of my schedule. I used to block 9-11am every morning for personal research and didn’t let anything touch that time, but now I'm allocating those hours to organize with faculty, since most of the meetings and feedback sessions have to happen in the morning. My solo research time is on hold until after the symposium, which is not ideal for momentum but feels necessary. Any recommendation for managing that transition?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a significant shift, especially for deep-focused work. To keep some momentum on your independent research, could you reserve even 20-30 minutes somewhere else in the day, maybe just to jot down ongoing ideas or track slow-burn tasks? For your symposium commitments, having a shared document or central agenda for meetings might streamline recurring discussions, so you don’t lose threads between different faculty groups. Are you comfortable integrating more open-ended collaborations, or do you prefer defined, outcome-focused agendas in these meetings?"
+        },
+        {
+          "role": "user",
+          "content": "Defined agendas are much better for me, otherwise things sprawl and I get overwhelmed. I’ve started scheduling weekly check-ins with faculty outside my department just for this period, to actively seek their feedback. It’s new for me—usually my collaboration is pretty contained within our climate group. But I have to adjust for now.\n\nAlso, could you help me brainstorm how to actually make my proposal non-technical? My usual presentations are full of jargon-heavy slides. This one has community attendees and researchers from all over campus."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, adjusting the level of technicality is one of the trickier parts. A strong strategy is to focus presentations around questions and impacts, not methods or equations. Can you summarize your dissertation in two or three sentences, as if you’re explaining it to a neighbor with zero science background? That usually highlights the core narrative to build around.\n\nFor slides: use visuals and analogies, minimize acronyms, and explicitly define any that you must use. Maybe you could incorporate a quick visual or demo to illustrate your main climate model outputs—something community and faculty alike would grasp at a glance. Would that style feel comfortable, or does it seem too far from your usual approach?"
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely out of my comfort zone! I’m planning to tailor both my slides and explanations to avoid heavy jargon this time—I want it to be understandable for anyone who comes, even if they aren’t researchers. I hadn’t thought about opening with a clear, really simple summary, but that makes sense. I might also ask some non-specialist friends to listen to a practice run. Do you think it would be helpful to use some community-focused examples, like recent Seattle water initiatives, to ground the research?"
+        },
+        {
+          "role": "assistant",
+          "content": "Yes, local examples are fantastic—connecting your climate modeling work to something visible in the Seattle community bridges the knowledge gap for non-experts and shows real-world relevance. Giving your audience a relatable context helps them care about your results. Practicing with friends from outside your field is a great idea—they can flag anything that still sounds too technical.\n\nAs your meetings and feedback rounds gear up, how are you balancing these new commitments with your established routines like your lab section leadership or physical therapy? Has this extra coordination forced you to adjust anything else?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, a few things had to shift for now. My personal research blocks in the morning are on hold—I’ve reallocated that time specifically for these symposium meetings and coordination. Luckily, most of my other routines stay intact for now. I'm just trying to stay disciplined about what slots get used for what, so things don’t spill everywhere. The big piece is just being flexible—even if it’s temporary.\n\nThanks, this chat helped clarify how to approach the presentation, and I’ll prioritize practical, local examples and clear visuals. Let me know if you have any more ideas on making the process less overwhelming, especially around keeping track of faculty input from outside my department."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad it’s helping! For tracking faculty input, consider dedicating a single document (perhaps a collaborative OneNote or a structured Google Doc) where all external feedback goes. Tag suggestions by faculty name or discipline, and summarize action items in plain language. Before each week, skim the list and highlight the feedback most directly relevant to your current draft.\n\nIf any particular piece of advice or critique seems unclear, don’t hesitate to ask for clarification—other disciplines often appreciate you looping back with follow-up questions. Most importantly, carve out a little time to reflect after meetings. Even five minutes to jot down what landed (or didn’t) can prevent feedback fatigue.\n\nLet me know how your next planning session goes, and if you want to rehearse parts of your public talk, I’m happy to be your test audience!"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After fainting during a routine morning yoga session at home, her doctor diagnosed her with iron deficiency anemia and prescribed daily supplements, along with dietary changes to address low iron levels.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_052",
+            "fact": "Adds daily reminders for iron supplement intake in her German health app; never skips or delays the supplement routine.",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_053",
+            "fact": "Prep meals in advance to avoid fatigue-related skipping; focuses on batch-cooking iron-rich dishes each Sunday evening.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Only cooks plant-based meals at home; avoids eating out unless vegan options are guaranteed"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Prioritizes iron-rich plant-based meals (e.g., lentils, tofu, spinach); now occasionally includes carefully selected vegetarian options (such as eggs or dairy) to meet iron needs, regardless of full vegan status.",
+              "domain": "health_body"
+            },
+            "reason": "Her iron deficiency anemia diagnosis requires her to adapt her plant-based diet to incorporate more iron-rich foods. Doctor's orders may necessitate occasional vegetarian meals to boost iron, directly contradicting her previous strict vegan-only stance."
+          },
+          {
+            "from": {
+              "id": "pref_021",
+              "fact": "Begins every morning with 10 minutes of stretching and herbal tea — never coffee"
+            },
+            "to": {
+              "id": "pref_051",
+              "fact": "Now begins every morning with dietary iron supplement and gentle stretching — skips herbal tea if it interferes with iron absorption, and avoids coffee or calcium-rich beverages in the morning.",
+              "domain": "daily_routines"
+            },
+            "reason": "Daily iron supplementation is now mandatory, and dietary advice typically requires avoiding tea, coffee, or milk in the morning to prevent absorption interference. Her previous herbal tea habit conflicts with her new health requirements."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, not how I wanted to start March... I actually fainted during yoga yesterday morning. Turns out I've got iron deficiency anemia—doctor says it's probably a combination of my plant-based diet and how hectic my schedule's been. Now I need to take daily iron supplements and rethink my meals. Can you help me figure out how to adjust my routine and food prep so I don’t end up lightheaded again—without just defaulting to boring stuff like plain lentils?"
+        },
+        {
+          "role": "assistant",
+          "content": "Wow, that sounds scary—and a lot to process! I’m glad you caught it before anything worse happened. You mentioned daily iron supplements—do you have a set time you’re supposed to take them? For food, would you prefer to stick as closely as possible to plant-based, or is your doctor encouraging you to widen your options to things like eggs or dairy? That’ll help me tailor some ideas."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, it was super disorienting. My doctor said absolutely don’t skip or delay the iron pills, and to set a daily reminder so I don’t forget, especially on busy days. I just added them to my German health app—I use that for tracking sleep and stress too, so it fits into my routine. \n\nAnd I’m still prioritizing plant-based meals, but she did recommend I add eggs or dairy sometimes, especially if I’m struggling with fatigue or my labs don’t improve. I was really strict vegan at home before, but for now, I’m open to some flexibility as long as it helps my levels."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move setting reminders—the consistency should really help! On the food side, that bit of flexibility opens some doors. Would you like help assembling a weekly meal plan with both high-iron plant-based dishes and some vegetarian options? Or are you more interested in creative batch-cooking ideas so you can prep once and not worry during hectic weeks?"
+        },
+        {
+          "role": "user",
+          "content": "Batch-cooking ideas would be great, actually. I meal prep every Sunday so I don’t end up skipping meals during crunch times. I’d like to have a few iron-rich recipes I can scale up. I was also told to avoid tea or coffee around my iron supplement, which is tough—I was used to starting my day with stretching and a mug of herbal tea! Now I’m supposed to skip the tea if it interferes with absorption, and absolutely no coffee or anything with much calcium in the morning."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough adjustment, especially with how comforting a morning tea can be. But it makes sense with the supplement. Would a glass of water alongside your stretching routine do the trick for now? For cooking, would you like German-style recipes made iron-rich, or are you open to trying new cuisines? I can suggest, for example, a lentil-spinach stew with egg and rye bread, or a tofu curry that works well for batch prep."
+        },
+        {
+          "role": "user",
+          "content": "Definitely open to new ideas, but I gravitate toward German flavors, especially since most online recipes here use English measurements and unfamiliar spice combos. I have two German vegan cookbooks I pull from—they’ve got a good basics section. But I could use help modifying dishes: adding tofu or beans, spinach, maybe serving with a poached egg or yogurt if needed. \n\nAlso, since the diagnosis, I’m prepping even more carefully on Sundays to avoid getting too tired during the week. If I leave food decisions to the day-of, I just end up skipping meals, so planning ahead is essential."
+        },
+        {
+          "role": "assistant",
+          "content": "Great—so we’ll focus on batch-prepping German-inspired, iron-rich meals, and layering in vegetarian options where it helps. For example, you could make a big pot of Linseneintopf with extra spinach and top portions with a poached egg. Or prep bean salads with plenty of herbs, pumpkin seeds, and a side of whole-grain bread (you can add a yogurt-based dip for more iron if you like). Would it help if we outline five main meals you can rotate, then brainstorm ways to adapt them for variety?"
+        },
+        {
+          "role": "user",
+          "content": "That would be perfect. And thanks for thinking through the details with me—adjusting habits feels a lot less daunting with a plan. I’ll probably need help keeping my breakfast routines simple too, since I have to take my supplement first thing and can’t go back to my old chai or herbal teas. Maybe some suggestions there too?"
+        },
+        {
+          "role": "assistant",
+          "content": "Of course! For breakfast, after your supplement and a short wait (30-60 minutes, per most guidelines), you could try overnight oats made with water, chia seeds, grated apple, and pumpkin seeds—plus a spoon of yogurt if that fits. Or a tofu scramble with sautéed veggies and rye toast. We can build out a full list of breakfast and lunch options so you never have to wing it. Let’s start with a sample meal plan and a shopping list based on your cookbook staples and these adaptations—does that work?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, let’s do it. Thank you! I’ll share my go-to recipes and you can help me tweak them for this new reality. That’ll keep things familiar but healthier. I appreciate your help thinking through the routine—it’s definitely going to be an adjustment but I feel more organized already."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her dissertation advisor announced a sudden six-month sabbatical starting next month, requiring her to temporarily switch to a new supervisory committee chair and adapt her research progress reporting and dissertation feedback process.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_055",
+            "fact": "Consults with multiple committee members before major dissertation milestones, no longer relies solely on a single advisor’s feedback for drafts and revisions",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_056",
+            "fact": "Keeps detailed notes on all dissertation feedback conversations, organizing responses by committee member rather than advisor",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_026",
+              "fact": "Completes DAAD progress reports on a rolling basis, sometimes submitting close to the deadline due to unpredictable requirements"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Schedules DAAD progress reports strictly according to new supervisor's review cycle, always submits them at least one week before internal committee deadlines",
+              "domain": "work_habits"
+            },
+            "reason": "Her advisor's six-month sabbatical means a new committee chair determines the timeline and review process for DAAD reports. With stricter and earlier submission demands, her previous habit of rolling, last-minute reporting now contradicts the new supervisor's structured requirements."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My advisor just told us she's taking a 6-month sabbatical starting at the end of next month. So I'll have to switch to a new committee chair right in the middle of prepping for my dissertation proposal. It's giving me whiplash. How do people adjust to a sudden change like this without everything falling apart?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds incredibly stressful, especially so close to your proposal defense. A sudden change in supervision can throw off established routines, but it doesn't have to derail your progress. Have you met with the new committee chair yet, or are there any guidelines about how they'll want things done? Gathering their expectations early can help you adapt your workflow before the transition actually happens."
+        },
+        {
+          "role": "user",
+          "content": "I just met with her this week. She’s very structured—lots of clear deadlines and expects to review all official reports well before any internal committee cutoff. So, for example, I can’t get away with sending my DAAD progress reports last-minute anymore. Now I have to schedule them around her review cycles, and I’ll submit at least a week before those committee deadlines. It’s... a much tighter ship than before."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big adjustment, but having earlier deadlines could give you extra cushion to incorporate feedback or handle unforeseen issues. Does this new structure also affect how you draft your dissertation materials, or just progress reporting? Some students find it helpful to break those larger milestones into smaller, weekly check-ins when expectations shift like this. Would that kind of breakdown help with your stress, or is it mainly the report deadlines you're worried about?"
+        },
+        {
+          "role": "user",
+          "content": "It's both, honestly. The new chair wants feedback from multiple committee members before I submit anything major—not just her review or the advisor's. So now I can’t just send my drafts to one person and assume I’ll get a comprehensive evaluation. I have to coordinate with everyone, which feels like herding cats."
+        },
+        {
+          "role": "assistant",
+          "content": "Juggling several people’s preferences and schedules can definitely be tricky, but looping in other committee members early could help prevent conflicting suggestions later. Maybe you could set up a single shared document for their comments, or at least a summary log of who gave what feedback, so issues aren’t lost or repeated. Do you already have a system for tracking suggestions from multiple people, or would you like help organizing that?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I’ve started keeping really detailed notes on all my feedback calls with committee members, not just my advisor. I organize them by person, not just by draft version, so I can reference exactly who said what. It feels like overkill sometimes, but I can’t rely on memory anymore—especially since I’m getting revision requests from several directions at once."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds smart, not overkill—especially with so many voices involved. Having organized notes by committee member helps clarify who’s driving which comments. If you want, I can suggest templates or simple tools for organizing this kind of feedback trail, or help you streamline your note-taking workflow. Or is your current system working well enough for now?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, my system is working for now, but if you know of a template that handles multi-person feedback—especially something that can cross-reference specific sections of a draft—that’d be useful. Also, if you have ideas for tracking which feedback I’ve already responded to versus what’s still open, that’s where it gets muddled for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. I can share templates that allow you to tag feedback by section and committee member, and flag items as 'open,' 'in progress,' or 'resolved.' That way you always have a real-time overview of what’s outstanding. If you like, I can set one up in Google Sheets, or if you’re using anything else for organizing drafts, let me know. For now, do you want the template as a spreadsheet or something else?"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_003",
+        "fact": "Records her lab section lectures for undergrads, but never reuses past material; updates slides every quarter",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Does yoga routines at home using German-language YouTube channels — never attends local group classes",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Keeps an air purifier running in her apartment — never opens windows during high-pollen days",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Follows a strict bedtime relaxation routine with guided meditation, never checks work emails after 10pm",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Attends every Friday international student potluck, always brings a homemade vegan dish",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Never initiates group chats; prefers one-on-one messaging for maintaining close connections",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Always video calls her family on Sunday afternoons, never switches to audio-only even under weak connection",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Attends indie film screenings on campus but never goes to mainstream theaters",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Spends free evenings reading climate fiction in German, never in English",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Meal preps every Sunday evening for the week; never leaves food choices to the day-of",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Tracks her sleep and stress using a German health app, never uses US-based trackers",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Disconnects completely from digital devices every Saturday evening — no screens, emails, or social media",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_027",
+        "fact": "Temporarily forgoes her Saturday evening digital detox when deadlines for audit-related work are imminent",
+        "domain": "daily_routines",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Runs personal errands on weekends when her sister visits — enjoys doing them together, even if it means shifting away from her usual Wednesday routine.",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_029",
+        "fact": "Shares her studio apartment with her sister on select weekends, adjusting her space and routines for company; enjoys planning special breakfasts and evening walks together when hosting.",
+        "domain": "social_relationships",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Temporarily avoids all volunteering for urban garden projects due to pollen exposure risk; instead focuses on remote sustainability efforts during the spring season",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_032",
+        "fact": "No longer goes hiking at all during spring; strictly avoids all outdoor leisure activities due to physician-mandated asthma precautions",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Uses her prescribed inhaler daily, integrates medication reminders into her health app routine; never skips inhaler use while pollen levels are elevated",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Co-leads weekly in-person team meetings for project collaboration, supplementing video calls as needed; no longer avoids face-to-face group discussions",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_036",
+        "fact": "Prefers using organizational tools and shared task boards (e.g., Trello or Asana) to manage tasks and track progress with expanded project team members",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Now regularly schedules brief one-on-one check-ins with new project staff to personalize team coordination and problem-solving outside group meetings",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Avoids extended typing altogether; switches to voice dictation and handwritten notes for research or teaching prep, only resumes typing after ergonomic adjustments pass therapist's review",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Uses voice-controlled smart home devices and hands-free apps for meal prep and wellness tracking while minimizing wrist strain",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Prefers out-loud brainstorming and collaborative whiteboard sessions for group project work, avoiding shared digital docs until ergonomic upgrades are complete",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Schedules weekly video brunches with her partner in Singapore — adapts timing due to time zone difference; sometimes shifts calls to Sundays to avoid conflicts with her partner's incubator schedule",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "Now leaves WhatsApp voice messages for her partner and family whenever live calls aren't possible, embracing asynchronous communication due to Singapore's time zone and incubator constraints",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Schedules occasional shared online film screenings with her partner, selecting films that are accessible in both Singapore and Seattle and coordinating start times across time zones",
+        "domain": "leisure_hobbies",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Now checks in daily with her mentee through both in-person meetings and ongoing WhatsApp text and audio exchanges; prioritizes frequent virtual support even when neither is traveling",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_045",
+        "fact": "Actively searches for and shares mental health and campus support resources with her mentee — regularly recommends external counseling, peer groups, or relevant workshops based on her mentee’s needs",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Schedules weekly check-in sessions with her mentee focused explicitly on emotional wellbeing, separate from academic mentoring",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Now allocates 9-11am for interdisciplinary symposium coordination and faculty meetings, temporarily pausing exclusive personal research blocks until the presentation is complete",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_048",
+        "fact": "Prepares a non-technical public presentation of her dissertation proposal, tailoring slides and explanations for interdisciplinary faculty and community attendees — avoids jargon-heavy language",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_049",
+        "fact": "Connects with faculty outside her department at least weekly throughout symposium preparation, actively seeking feedback from non-specialist researchers",
+        "domain": "work_habits",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Prioritizes iron-rich plant-based meals (e.g., lentils, tofu, spinach); now occasionally includes carefully selected vegetarian options (such as eggs or dairy) to meet iron needs, regardless of full vegan status.",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_051",
+        "fact": "Now begins every morning with dietary iron supplement and gentle stretching — skips herbal tea if it interferes with iron absorption, and avoids coffee or calcium-rich beverages in the morning.",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_052",
+        "fact": "Adds daily reminders for iron supplement intake in her German health app; never skips or delays the supplement routine.",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Prep meals in advance to avoid fatigue-related skipping; focuses on batch-cooking iron-rich dishes each Sunday evening.",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Schedules DAAD progress reports strictly according to new supervisor's review cycle, always submits them at least one week before internal committee deadlines",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_055",
+        "fact": "Consults with multiple committee members before major dissertation milestones, no longer relies solely on a single advisor’s feedback for drafts and revisions",
+        "domain": "work_habits",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Keeps detailed notes on all dissertation feedback conversations, organizing responses by committee member rather than advisor",
+        "domain": "work_habits",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Prepares all DAAD progress reports at least two weeks in advance — never submits anything last minute",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "The unexpected, mid-cycle audit with a tight three-week deadline makes advance preparation impossible and disrupts her strict early-submission habit."
+      },
+      {
+        "id": "pref_002",
+        "fact": "Strictly blocks out 9-11am for personal research — never schedules teaching or meetings during that time",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_047",
+        "reason": "Preparing a public-facing dissertation proposal for the UW symposium requires her to coordinate with faculty outside her department, often during morning hours. The necessity of flexibility and cross-disciplinary collaboration means her previous strict research block must be suspended in favor of coordinating meetings for the symposium."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Collaborates only through scheduled video calls — avoids long email threads for project discussions",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_035",
+        "reason": "She is now required to co-lead a weekly in-person team meeting and coordinate with additional staff for the expanded project. This makes in-person meetings a new norm for project collaboration, which directly contradicts her old preference for scheduled video calls and aversion to face-to-face group discussions."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Never works in campus cafés or public spaces; does all writing and data analysis at her home desktop with ergonomic setup",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "While the persona would still prefer her home setup, the physician's orders and her severe asthma flare make the reason for avoiding public spaces (potential pollen, not just ergonomics) prominent, but preference persists and evolves instead of dropping. Therefore, no preference is dropped for this event."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Only cooks plant-based meals at home; avoids eating out unless vegan options are guaranteed",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_050",
+        "reason": "Her iron deficiency anemia diagnosis requires her to adapt her plant-based diet to incorporate more iron-rich foods. Doctor's orders may necessitate occasional vegetarian meals to boost iron, directly contradicting her previous strict vegan-only stance."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Uses a wrist brace for all laptop work — never types for over 45 minutes straight without taking a stretch break",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "Her physical therapist diagnosed her with mild carpal tunnel syndrome and recommended immediate reduction of laptop use. She must now minimize typing sessions entirely, substituting alternate input methods, until full ergonomic changes are made."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Schedules weekly video dinners with her partner in Germany — never lets work interfere with that call",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "Her partner's relocation to Singapore introduces a major time zone difference and more demanding incubator commitments. Maintaining the previous dinner schedule would be unfeasible; they now adapt to brunch calls and occasional Sunday shifts to preserve regular contact."
+      },
+      {
+        "id": "pref_014",
+        "fact": "Mentors her freshman mentee in person on campus — never switches to virtual meetings unless one of them is traveling",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_044",
+        "reason": "Her mentee is experiencing significant family distress and has explicitly requested ongoing emotional support. She adapts her approach, extending mentoring to frequent text/audio exchanges outside campus meetings, prioritizing emotional availability virtually regardless of their respective locations."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Goes hiking only when air quality is good — never hikes during peak pollen season",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "Even occasional hiking during spring is now medically prohibited due to her severe asthma flare and doctor’s explicit advice against all outdoor activity for the season."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Volunteers monthly for local urban garden projects; never schedules anything else on those Saturdays",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_031",
+        "reason": "Her physician's strict orders to avoid outdoor activities due to a severe pollen-induced asthma flare make attending any in-person gardening events dangerous. She replaces the in-person volunteering with online advocacy and sustainability work until pollen levels decrease."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Learns new vegan recipes from German cookbooks, never uses English food blogs",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "Carpal tunnel syndrome makes handling heavy cookbooks and regular reading/typing difficult; she is not able to consistently follow cookbook recipes until her wrist improves, so this preference is temporarily irrelevant."
+      },
+      {
+        "id": "pref_021",
+        "fact": "Begins every morning with 10 minutes of stretching and herbal tea — never coffee",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_051",
+        "reason": "Daily iron supplementation is now mandatory, and dietary advice typically requires avoiding tea, coffee, or milk in the morning to prevent absorption interference. Her previous herbal tea habit conflicts with her new health requirements."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Does all personal errands on Wednesdays — never runs errands on weekends",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_028",
+        "reason": "Her sister's weekend visits change her usual solo Wednesday errand ritual. She now prefers to complete errands together with her sister during those visit weekends, prioritizing shared time and flexibility."
+      },
+      {
+        "id": "pref_026",
+        "fact": "Completes DAAD progress reports on a rolling basis, sometimes submitting close to the deadline due to unpredictable requirements",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_054",
+        "reason": "Her advisor's six-month sabbatical means a new committee chair determines the timeline and review process for DAAD reports. With stricter and earlier submission demands, her previous habit of rolling, last-minute reporting now contradicts the new supervisor's structured requirements."
+      },
+      {
+        "id": "pref_030",
+        "fact": "Temporarily switches to video calling parents on Saturday evenings when her sister is present, so all three join together and connect from Seattle.",
+        "domain": "social_relationships",
+        "created_at_session": 1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "Her sister no longer visits regularly, and the group Seattle call is obsolete with her partner relocated to Singapore and unable to join at a convenient time. The Saturday evening group video call format is no longer relevant."
+      },
+      {
+        "id": "pref_034",
+        "fact": "Replaces Friday spring fieldwork with data analysis or remote project meetings; never attends in-person outdoor sessions until clearance from her physician",
+        "domain": "work_habits",
+        "created_at_session": 2,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "With the new project grant and expansion, her responsibilities now include co-leading in-person team meetings indoors (not fieldwork/outdoor), which supersedes the temporary avoidance of in-person sessions. The specific restriction against in-person meetings (as opposed to outdoor fieldwork) no longer applies."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:49:55.621073"
+}

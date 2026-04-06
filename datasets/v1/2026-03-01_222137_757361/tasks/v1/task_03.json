@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_240df480",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_031",
+        "fact": "Prefers in-person check-ins with Denver-based colleagues, reserving video calls solely for the remote sales team",
+        "supersedes": {
+          "id": "pref_002",
+          "fact": "Uses only video calls for check-ins — avoids phone calls to foster stronger team connections"
+        }
+      },
+      {
+        "id": "pref_036",
+        "fact": "Pauses all hiking and outdoor activity planning while restricted from exercise or walking for her back injury",
+        "supersedes": {
+          "id": "pref_018",
+          "fact": "Plans short local hikes twice a month — won’t drive more than an hour for outdoor activities"
+        }
+      },
+      {
+        "id": "pref_033",
+        "fact": "Brings prepared lunches to eat in the office lounge Monday through Thursday — prefers not to eat at her desk."
+      },
+      {
+        "id": "pref_058",
+        "fact": "Refuses all nonessential video calls or online social events on weeknights, prioritizing offline, low-stimulation activities for headache recovery"
+      },
+      {
+        "id": "pref_046",
+        "fact": "Uses voice-to-text and speech recognition software for all significant work communication, minimizing keyboard use except for brief tasks"
+      },
+      {
+        "id": "pref_043",
+        "fact": "Prefers organizing onboarding sessions in small groups instead of all-at-once webinars to foster deeper connections among new remote hires"
+      }
+    ]
+  },
+  "persona": "A 28-year-old office administrator supporting a remote sales team"
+}

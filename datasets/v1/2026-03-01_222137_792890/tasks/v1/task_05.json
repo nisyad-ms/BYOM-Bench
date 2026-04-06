@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_71d0de60",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_032",
+        "fact": "No longer goes hiking at all during spring; strictly avoids all outdoor leisure activities due to physician-mandated asthma precautions",
+        "supersedes": {
+          "id": "pref_016",
+          "fact": "Goes hiking only when air quality is good — never hikes during peak pollen season"
+        }
+      },
+      {
+        "id": "pref_041",
+        "fact": "Schedules weekly video brunches with her partner in Singapore — adapts timing due to time zone difference; sometimes shifts calls to Sundays to avoid conflicts with her partner's incubator schedule",
+        "supersedes": {
+          "id": "pref_011",
+          "fact": "Schedules weekly video dinners with her partner in Germany — never lets work interfere with that call"
+        }
+      },
+      {
+        "id": "pref_056",
+        "fact": "Keeps detailed notes on all dissertation feedback conversations, organizing responses by committee member rather than advisor"
+      },
+      {
+        "id": "pref_046",
+        "fact": "Schedules weekly check-in sessions with her mentee focused explicitly on emotional wellbeing, separate from academic mentoring"
+      },
+      {
+        "id": "pref_010",
+        "fact": "Follows a strict bedtime relaxation routine with guided meditation, never checks work emails after 10pm"
+      },
+      {
+        "id": "pref_013",
+        "fact": "Never initiates group chats; prefers one-on-one messaging for maintaining close connections"
+      }
+    ]
+  },
+  "persona": "An international PhD candidate in environmental science"
+}

@@ -1,4 +1,4 @@
-"""Shared fixtures and factory helpers for BYOM-Bench tests."""
+"""Shared fixtures and factory helpers for REAM-Bench tests."""
 
 import json
 import random
@@ -7,7 +7,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from byom_bench.schemas import (
+from ream_bench.schemas import (
     EvaluationRubric,
     EvaluationTaskSpec,
     ExpandedPersona,
@@ -225,7 +225,7 @@ def sample_eval_task(sample_multisession_output):
 @pytest.fixture
 def tmp_outputs_dir(tmp_path):
     """Create a realistic outputs directory structure for testing."""
-    import byom_bench.utils as utils
+    import ream_bench.utils as utils
 
     old_outputs = utils.OUTPUTS_DIR
     utils.OUTPUTS_DIR = tmp_path

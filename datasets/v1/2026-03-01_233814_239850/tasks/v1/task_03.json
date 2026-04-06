@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_e6f8b195",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_043",
+        "fact": "Begins office days by reviewing calendar at his desk, but checks emails first on the train commute for urgent issues",
+        "supersedes": {
+          "id": "pref_021",
+          "fact": "Starts each weekday by reviewing his calendar and setting priorities—never checks email before this ritual"
+        }
+      },
+      {
+        "id": "pref_030",
+        "fact": "Alternates between home-cooked and restaurant Sunday dinners—relies on restaurant reservations when MBA class assignments pile up or after an especially busy week",
+        "supersedes": {
+          "id": "pref_012",
+          "fact": "Organizes family Sunday dinners—never lets restaurant reservations replace home-cooked meals"
+        }
+      },
+      {
+        "id": "pref_024",
+        "fact": "Limits phone use during family dinner and evening hours—never answers work calls after 7pm"
+      },
+      {
+        "id": "pref_048",
+        "fact": "Logs CPAP machine usage and sleep quality daily in a health app—never skips tracking even on travel nights"
+      },
+      {
+        "id": "pref_019",
+        "fact": "Sets aside time for creative hobbies like woodworking during vacation—never brings office work on holiday"
+      },
+      {
+        "id": "pref_031",
+        "fact": "Schedules two dedicated study blocks each week after work on non-class nights—never leaves MBA assignments for weekends due to family commitments"
+      }
+    ]
+  },
+  "persona": "A mid-level sales manager at a multinational pharmaceutical company"
+}

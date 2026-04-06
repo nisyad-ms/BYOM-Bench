@@ -1,4 +1,4 @@
-"""Mem0 Graph Memory Store for BYOM-Bench.
+"""Mem0 Graph Memory Store for REAM-Bench.
 
 Uses the mem0 library with Kùzu graph database for entity/relationship extraction
 and graph-based retrieval alongside vector search. Backed by local Qdrant for
@@ -11,8 +11,8 @@ from pathlib import Path
 
 from mem0 import Memory
 
-from byom_bench.client import get_agent_config, resolve_azure_openai_config
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.client import get_agent_config, resolve_azure_openai_config
+from ream_bench.schemas import MultiSessionOutput
 
 from ._sentinel import SentinelMixin
 

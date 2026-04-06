@@ -5,7 +5,7 @@ description: >
   least once per user message and apply retrieved memories to personalise its
   response. Used with the tool-calling loop in _tool_calling.py.
 used_by:
-  - byom_bench/agents/memory_agent.py::MemoryAgent
+  - ream_bench/agents/memory_agent.py::MemoryAgent
 
 template: |
   You are a helpful assistant that remembers user preferences and applies them proactively.

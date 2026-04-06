@@ -82,7 +82,7 @@ class TestGatherResultsIntegration:
         self._write_eval_file(eval_dir, "eval_01_context_02.json", pref_score=0.99)
         self._write_eval_file(eval_dir, "eval_01_context_03.json", pref_score=0.0)
 
-        from byom_bench.utils import EVAL_PATTERN
+        from ream_bench.utils import EVAL_PATTERN
 
         results = []
         for f in sorted(eval_dir.glob("eval_*.json")):

@@ -1,0 +1,1557 @@
+{
+  "persona": "A bilingual helpdesk specialist assisting clients in both French and English",
+  "persona_id": "persona_20260302_093445",
+  "expanded_persona": {
+    "base_persona": "A bilingual helpdesk specialist assisting clients in both French and English",
+    "age": 34,
+    "gender": "male",
+    "location": "Montreal, QC",
+    "work_education": [
+      "Works full-time at a midsize IT solutions company, handling technical support inquiries for Canadian and European clients",
+      "Frequently juggles urgent issues across time zones, leading to some evening shifts to support Paris-based customers",
+      "Recently completed an advanced troubleshooting certification to qualify for internal promotions",
+      "Mentors two junior helpdesk staff, especially in language coordination and customer service standards"
+    ],
+    "health_wellness": [
+      "Struggles with stress-induced tension headaches during peak demand periods",
+      "Has mild lactose intolerance and carefully manages his diet to avoid symptoms",
+      "Cycles to work year-round, averaging 18 kilometers weekly; uses indoor trainer in winter",
+      "Occasionally skips meals on busy days; trying to establish regular lunch breaks"
+    ],
+    "family_relationships": [
+      "Lives alone in a small apartment near downtown Montreal",
+      "Divorced two years ago; shares custody of his 7-year-old daughter, who stays every other weekend",
+      "Close relationship with his younger sister, who recently moved from France; visits her weekly",
+      "Supports his aging mother, who needs help managing household bills and medications"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Schedules all urgent Paris-based client calls after 5pm local — never during routine daytime hours",
+        "Uses shared digital task boards to track issue progress with junior staff; never relies on email threads for coordination",
+        "Blocks out 30 minutes daily for process documentation — refuses to let backlog build up",
+        "Conducts mentoring sessions exclusively in French to help juniors gain confidence — never mixes languages during training",
+        "Prefers to handle complex troubleshooting cases solo, delegating only simple tickets to others"
+      ],
+      "health_body": [
+        "Strictly avoids dairy in all meals — checks labels and never orders creamy dishes at restaurants",
+        "Eats a prepared lunch at his desk every day — never skips except in emergencies",
+        "Cycles to work every day regardless of weather, switching to indoor trainer only if road conditions are unsafe",
+        "Takes short stretching breaks every 2 hours during workdays to reduce tension headaches; never goes more than 3 hours without moving",
+        "Uses herbal teas exclusively for headache relief — never uses over-the-counter painkillers unless symptoms become severe"
+      ],
+      "social_relationships": [
+        "Visits his sister every Sunday afternoon without fail — never cancels for work",
+        "Only communicates with his mother via in-person visits or phone calls — never uses text messages for important discussions",
+        "Plans special activities for his daughter’s weekends, never repeats the same outing twice in a month",
+        "Keeps all work conversations strictly professional; never socializes with clients outside work channels",
+        "Organizes quarterly family dinners for his close relatives — won’t let more than three months slip without hosting"
+      ],
+      "leisure_hobbies": [
+        "Explores local art galleries on solo weekends — never revisits the same exhibit twice",
+        "Maintains a personal blog documenting cycling routes — posts at least twice per month",
+        "Watches classic French films at home every Friday night — never opts for Hollywood blockbusters",
+        "Plays cooperative board games with his daughter during custody weekends — never computer games",
+        "Travels outside Montreal at least twice a year for cultural festivals — avoids beach vacations"
+      ],
+      "daily_routines": [
+        "Starts each morning by reviewing his calendar and setting three top priorities — never begins work without a plan",
+        "Shops for groceries only on Wednesday evenings, never weekends",
+        "Checks personal finances every Saturday morning — never lets bills wait past their due date",
+        "Keeps a digital log of meals and symptoms to manage lactose intolerance; never writes it by hand",
+        "Prepares coffee in a French press daily — never uses drip or pod machines"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Offered a six-month rotation to lead the European client support desk, requiring regular early morning coordination with Paris-based teams and responsibility for all escalated cases from France.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Begins workdays with a team huddle call to align European support priorities — never skips this ritual during rotation",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Limits social plans on weekdays to accommodate early work hours — avoids late-night outings",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Schedules all urgent Paris-based client calls after 5pm local — never during routine daytime hours"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Schedules urgent Paris-based client calls exclusively during early morning hours (before 10am local) to align with Paris mid-day — never after 5pm local anymore",
+              "domain": "work_habits"
+            },
+            "reason": "The six-month rotation to lead the European client support desk requires regular early morning coordination with Paris-based teams. To address client escalation during their business day, he must now schedule urgent calls in Montreal mornings instead of evenings."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so I just accepted that six-month rotation leading the European client desk. It's a big shift—I'll be coordinating with Paris-based teams now, and all the escalated cases from France come straight to me. But it's totally messing with my usual routine. I'm a bit stressed already—do you have tips for managing the earlier hours and, honestly, keeping up with everything?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats—that’s a huge opportunity! Early mornings can definitely shake things up. Are you finding the shift in hours is changing your workflow, or is it mostly affecting personal routines so far? Let’s start with work: how are you planning to handle coordination with the Paris teams? Anything you want help streamlining?"
+        },
+        {
+          "role": "user",
+          "content": "For work, the biggest change is the urgent Paris client calls—I used to schedule those after 5pm my time, but now I have to do them early mornings. It’s a new rhythm for me. I need to be sharp first thing, and I don’t want to let anything slip with escalations. Any suggestions for prepping efficiently for those calls or keeping my focus so early?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big pivot—going from evenings to mornings could feel jarring for a while. One approach: set up a quick morning routine before your first call, maybe review any overnight updates and prep notes as soon as you wake up. Do you use a daily planning system now, or would it help to build a new process for tracking escalated cases before 10am?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I always start my mornings by reviewing my calendar and setting my top three priorities—never begin work without a plan. But now, I also do a team huddle call to align European support priorities right at the start of each day. It’s become a ritual during this rotation and I never skip it. It helps, but there’s a flood of info some days."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re on the right track—a team huddle keeps everyone on the same page and can help filter what’s most urgent. If info overload is an issue, maybe designate a quick debrief after the huddle to clarify priorities, or capture action items in a shared digital task board. Are you using anything specific to coordinate issue progress with your juniors or just handling escalations solo?"
+        },
+        {
+          "role": "user",
+          "content": "I rely on a shared digital task board for coordination with juniors—never email threads. But I’m still handling all the complex cases solo and delegating the easy tickets. The main thing is with the early calls, I’ve had to limit my social plans on weekdays—no late nights anymore. Otherwise, it’s too hard to be alert in the morning."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—those early client calls demand focus, so cutting back on weekday social plans sounds smart. Has the shift affected your cycling routine or meal schedule at all? Some people find early work hours help reinforce habits like regular lunch breaks, others struggle to fit things in."
+        },
+        {
+          "role": "user",
+          "content": "Not too much for cycling—I still commute by bike. But now that I’m up earlier, I try to eat lunch at my desk at the usual time rather than skipping. I do have to make sure I take my stretching breaks every two hours, especially with the new stress levels. Headaches are more frequent with these morning calls."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad you’re staying on top of the cycling and breaks—that’s crucial for keeping tension headaches at bay. On the work side, now that your schedule’s shifted, do you foresee any friction with mentoring sessions or process documentation? Or has the new rhythm helped keep those on track?"
+        },
+        {
+          "role": "user",
+          "content": "Mentoring is still exclusively in French and I never mix languages during training, but the timing had to move earlier as well. For documentation, I still block out 30 minutes daily so the backlog doesn’t build up. The biggest adjustment is really the early Paris calls and having to protect my energy by avoiding late-night social stuff on weekdays."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re adapting well—by moving mentoring and documentation earlier, you’re safeguarding your standards and routines. Would it help to build a wind-down ritual at night, to prep your mind for those early calls? That way you can ease the adjustment and maintain your performance for the rotation. Anything specific you’d like feedback on, or is it mostly about finding ways to stay sharp morning after morning?"
+        },
+        {
+          "role": "user",
+          "content": "I think mostly it’s about staying sharp and managing the stress from escalated cases. I had to drop evening client calls entirely—so all urgent Paris issues are now mornings before 10am, never after 5pm like before. That’s the big change. I appreciate the advice on routines—maybe I’ll try a night wind-down. Thanks!"
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome! The move to early mornings is tough but manageable with clear routines. A wind-down could be as simple as herbal tea and prepping your priorities for the next day. If you need pointers on stress reduction or workflow tools, just ask. Good luck with the rotation—it sounds like you’re well-organized for what’s ahead."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "His younger sister, recently settled in Montreal, was unexpectedly hospitalized after a minor car accident, requiring him to provide daily support and help manage her recovery for several weeks.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_030",
+            "fact": "Shifts grocery shopping to flexible evenings based on sister's needs — no longer tied to Wednesday evenings",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_031",
+            "fact": "Prepares and delivers homemade meals for his sister several times per week during her recovery, prioritizing simple, lactose-free dishes",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Visits his sister every Sunday afternoon without fail — never cancels for work"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Provides daily in-person support for his sister during her hospitalization and recovery — postpones all other personal visits unless essential",
+              "domain": "social_relationships"
+            },
+            "reason": "His sister's hospitalization means she requires daily assistance, replacing the habitual single weekly visit with much more frequent and prioritized in-person support for the duration of her recovery."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, quick update — my sister ended up in the hospital last week after a car accident. Nothing life threatening, but she's going to need daily support for at least a few weeks. I'm suddenly balancing work, her recovery stuff, and my usual family routines. I need help adjusting my schedule and figuring out how to stay on top of everything without burning out. Any thoughts?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry to hear about your sister — that sounds stressful, especially with everything else you’re juggling. With her needing daily support, how has your usual routine changed so far? Are there specific pain points (work, meals, downtime) you’re struggling with the most?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the biggest shift is I’ve paused all other social visits for now. I'm seeing my sister daily, sometimes at the hospital or at her place depending on her recovery progress. Everything else — including my usual Sunday visits to her — is on hold unless absolutely necessary. It's throwing off my normal pattern, but she really needs the help."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense, prioritizing her care is understandable. Between work and daily visits, how are you handling everyday logistics? For instance, are you still cycling to your office and prepping your own meals, or has any of that routine changed?"
+        },
+        {
+          "role": "user",
+          "content": "Cycling to work is still non-negotiable — keeps my head clear. The part that’s had to shift is grocery shopping. I used to always go Wednesday evenings but now it’s more flexible, depending on what my sister needs or when I can fit it in. Planned routines just don’t work in this situation, so I shop on whatever evening fits best week to week."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move, being flexible with errands. Since you’re supporting her daily, are you also helping with meals? If so, do you have any constraints there, like dietary restrictions or preferences you need to keep in mind for both yourself and her?"
+        },
+        {
+          "role": "user",
+          "content": "Exactly — I’ve started prepping and bringing her simple meals, mostly lactose-free since I can’t have dairy and want to keep things easy for both of us. I try to deliver homemade dishes a few times a week for her recovery, and I pay extra attention to ingredients and labeling. Nothing fancy, just balanced meals that don’t risk digestive problems."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great — keeping meals uncomplicated and safe is key during recovery. Would you like meal planning help, batch recipes, or perhaps suggestions for dishes that stay fresh and are easy to transport? And are there any other daily coordination tasks (bills, medication, work priorities) you're finding tricky to manage with this new routine?"
+        },
+        {
+          "role": "user",
+          "content": "Meal planning help would be fantastic, especially recipes I can cook quickly and portion out for a few days. Transport is a concern since I’m cycling and need containers that don’t spill! I also want to make sure I’m leaving enough time for my own prepared lunches at work — that habit sometimes slips when I’m rushing to support her, but it’s important for me to avoid skipping meals."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood — let’s focus on recipes you can prep in under 30 minutes, are lactose-free, and travel well in leak-proof containers. I’ll also share tips for batch prepping both lunches and dinners so you keep your own nutrition up as well. Is there anything else about managing your updated schedule that’s proving difficult? For example, keeping your digital task board updated or adjusting your mentoring sessions with junior staff?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, work hasn’t needed much adjustment except for a couple evening shifts. I still rely on the digital task board and document daily, so my team coordination is solid. Mentoring sessions are staying on schedule, all in French per usual. The biggest thing is just making sure I don’t let personal appointments or errands fall behind while my sister is recovering."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve kept work structure as consistent as possible, which should help maintain stability. For your personal errands, would it help to create a shared calendar with reminders for grocery runs, bill payments, and medicine drop-offs — or do you prefer a more flexible, off-the-cuff approach while your sister recovers?"
+        },
+        {
+          "role": "user",
+          "content": "A shared digital calendar would help. I’ve dropped my old fixed scheduling pattern for grocery shopping and family visits to focus on her instead, so reminders and flexibility are key. Once she’s back to full health I’ll probably revert, but for now adaptability is more important than routine."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great mindset, especially during times like this. I’ll suggest a few easy-to-use calendar apps and recipe options that fit your needs, plus some transport tips for meals via bike. Let me know if there are any specific family or work tasks you need suggestions for — otherwise, I can send you all those resources to help streamline the next few weeks."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "His aging mother experienced a health setback that made her unable to manage her household independently, prompting her to move temporarily into his apartment so he can assist with daily care and medications.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Administers and tracks his mother's medications with a daily checklist—never relies on memory or casual reminders",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Avoids scheduling non-essential evening activities to ensure he's present at home to assist his mother with bedtime care",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_022",
+              "fact": "Shops for groceries only on Wednesday evenings, never weekends"
+            },
+            "to": {
+              "id": "pref_032",
+              "fact": "Shops for groceries multiple times per week as needed, prioritizing fresh items to support his mother's dietary and medication needs rather than maintaining a fixed schedule",
+              "domain": "daily_routines"
+            },
+            "reason": "With his mother living with him and requiring daily care and dietary management, a rigid grocery schedule is no longer practical. He now shops flexibly, often multiple times a week, to accommodate her health and meal needs."
+          },
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Eats a prepared lunch at his desk every day — never skips except in emergencies"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Prepares and shares lunch at home with his mother on weekdays, no longer eating alone at his work desk during remote work periods or days he cares for her at home",
+              "domain": "health_body"
+            },
+            "reason": "Caring for his mother at home requires preparing lunch for both of them and makes solo desk lunches obsolete on days he is providing in-person care or working remotely to be present."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help adapting my routines. My mom had a pretty serious health setback last week, so she's living with me for a while. I’m juggling her care, work, and everything else — my old system isn’t holding up. Any ideas for managing the new complexity, especially around errands and meal prep?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change — it’s great you’re stepping up for her. For errands and meal prep, one strategy is batching tasks: pick one or two days for shopping and prep, so you’re not scrambling every day. Does your usual schedule allow for that, or have you had to adjust your routines?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I used to shop groceries only on Wednesday evenings — super regimented. But that’s gone out the window. Now I’m heading out multiple times a week, basically whenever Mom needs something fresh or medication supplies. Fixed schedules just don’t work anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense, especially with changing needs. Have you found any systems for keeping track of what’s needed, or do you rely on mental notes and quick trips? Sometimes a shared digital list can help, especially if you’re shopping more frequently."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I started using a grocery app to track her dietary needs along with my own — it’s more precise than mental notes. Next challenge is lunch. I always ate lunch solo at my desk during workdays, but with Mom here, I’m prepping and sharing lunch at home, at least on weekdays when I work remotely or when she needs me during the day."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a positive adaptation — sharing meals can be grounding for both of you (and probably forces you to take proper breaks). Is prepping meals together manageable, considering your own food restrictions? You mentioned before keeping dairy out of all meals."
+        },
+        {
+          "role": "user",
+          "content": "Exactly, I’m strict about avoiding dairy — still checking every label and keeping Mom’s meals lactose-free too, since digestions can be tricky at her age. I’ve started logging symptom notes in my app for both of us now. One issue is tracking her meds; it’s a lot to remember. Any tips?"
+        },
+        {
+          "role": "assistant",
+          "content": "Medication management is critical, especially if schedules or doses vary. A daily checklist — digital or printed — can help you track each med and time. You could set alarms for doses if you prefer tech, or use a simple chart. Do you keep a written schedule, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "I never trust memory for meds. I use a daily digital checklist for her now, marking off every pill and time — it’s the only way I feel confident. I tried alarms but found the checklist easier with all the variable doses."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move. That visual tracking brings peace of mind. Aside from errands and meals, how has the adjustment affected your evenings or downtime? You used to keep some pressure on work, especially with Paris clients. Is that still feasible?"
+        },
+        {
+          "role": "user",
+          "content": "I actually avoid non-essential evening activities now unless it’s urgent work — I want to be home for Mom’s bedtime care and keep evenings free of anything that can wait. It’s a shift; I normally handle evening client calls but I’m stricter about what’s truly necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s admirable—setting boundaries is key, especially with your workload and caregiving. Does your junior staff cover more tickets in the evening, or do you just triage differently for Paris clients?"
+        },
+        {
+          "role": "user",
+          "content": "I delegate simple tickets to juniors more aggressively now for Paris hours and only take the complex cases if absolutely necessary. The main change is I can’t add extra evening activities, even just solo errands, because I want to be present for Mom."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a lot of responsibility, but you’re handling it well by evolving your approach. Would it help to revisit your task board routines or automate any household or work processes? Anything you want to streamline?"
+        },
+        {
+          "role": "user",
+          "content": "I think optimizing reminders and digital checklists is helping most — especially for meds and groceries. The biggest adjustment is the flexible errands and shared lunch, which was never part of my routine before. Thanks, this helps clarify my new system."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Company announced a major restructuring of the helpdesk support model, dissolving current language-based mentoring groups and requiring all mentoring sessions and team meetings to be conducted in English moving forward.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Now reviews and revises his mentoring materials to ensure clarity for non-native English speakers — avoids using idiomatic language or regionally-specific terms in all team documentation.",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Conducts mentoring sessions exclusively in French to help juniors gain confidence — never mixes languages during training"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Conducts all mentoring sessions and team meetings exclusively in English, regardless of mentee language background — no longer uses French for work training or staff development.",
+              "domain": "work_habits"
+            },
+            "reason": "The restructuring eliminated language-based mentoring and mandates that all sessions be conducted in English. He can no longer express this preference for French, and must fully shift his mentoring to English only, regardless of his or his mentees’ language strengths."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I need a bit of guidance. My company just dropped a big restructuring bomb—no more French mentoring, everything has to be in English now. I’ve always run my coaching sessions in French to help my junior staff. Now I’m worried they’ll struggle, especially the newer one who’s not super comfortable with English. Any advice for making the transition smoother?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough shift, especially for your juniors who counted on French guidance. Since everyone’s switching, have you had a chance to gauge how your team feels about the change? Sometimes starting group conversations about expectations and anxieties helps. Also, are there specific concepts your mentee tends to trip over in English, or is it more about general confidence?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, both of them have different weak spots—the less-experienced one struggles with tech jargon, while the other is okay but trips up on more idiomatic stuff. I’m already thinking I’ll need to rewrite my mentoring materials to avoid expressions they might not get. Any suggested strategies for keeping it clear without sounding too robotic?"
+        },
+        {
+          "role": "assistant",
+          "content": "Rewriting for clarity is a solid move. One approach is to use short sentences and stick with standard vocabulary—nothing regionally specific. Have you considered adding simple examples or visual prompts? Sometimes diagrams or annotated screenshots bridge the gap when words get tricky, especially if someone’s new to the technical side."
+        },
+        {
+          "role": "user",
+          "content": "I haven’t leaned too much on visuals before, but maybe I should. I’ve always relied on direct explanations, and honestly, I used to mix in local references when mentoring in French. Now I’m trying to avoid that entirely—no idioms, and sticking to basics. It feels like a balancing act; I want it clear, but not dull."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to miss those familiar touches. Maybe keep it clear and straightforward for now, but as they gain confidence, slowly reintroduce some flavor—explaining idioms or cultural terms as a mini-language lesson alongside tech mentoring. You could even create a glossary of tricky words for the team. Would something like that help your juniors feel more included without risking confusion?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, a glossary is a great idea. I hadn’t thought about making one for English terms—just assumed we’d muddle through. I guess this will help me revise my materials, too. I’m planning to review them all, line by line, so nothing gets lost for those who aren’t native speakers."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s very thorough—your juniors will appreciate it. When revising, maybe test the materials with them for feedback. If something isn’t clear, tweak it before rolling out to a wider group. Out of curiosity, does this new policy affect how you run your team meetings, or just mentoring sessions?"
+        },
+        {
+          "role": "user",
+          "content": "Both, actually. Team meetings are now English-only, no exceptions, even if everyone’s bilingual. I used to flip back and forth depending on who was present, but now I avoid French entirely for anything work-related—mentoring, meetings, documentation, everything. Company’s pretty strict about it. So, my preference for French is gone at work, at least for training. Doesn’t feel right, but I don’t have a choice."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big cultural change—it makes sense you’re feeling out of sorts. With your focus on clarity, maybe you’ll turn this challenge into a strength for the whole team, especially as you build up accessible materials. Are there any particular English resources or templates you’ve found useful for technical onboarding, or do you prefer creating everything from scratch?"
+        },
+        {
+          "role": "user",
+          "content": "I usually build my own, but I’m open to examples. The main thing is making sure nothing trips up non-native speakers—no slang, no Montreal-local terminology, just plain and simple. I’ll probably share drafts with my juniors before finalizing, so their feedback can highlight what sticks or what’s confusing."
+        },
+        {
+          "role": "assistant",
+          "content": "Draft sharing is a great approach. You could even schedule regular feedback check-ins, where your mentees review sections of materials and suggest improvements. It shows you value their input, and helps them transition faster. Do you want me to recommend any basic English technical templates or tools for easy editing?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, if you have any links to onboarding templates or sample troubleshooting guides that avoid idioms, send them my way. I’m also thinking of making some visual aids—flowcharts and annotated screenshots—for the trickier procedures. Thanks for all your help."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, I’ll gather up some clear, idiom-free technical onboarding templates and guides for you. Visual aids like flowcharts and screenshots are excellent—especially as more non-native speakers join the team. Let me know if you want support integrating visuals with your written guides or if you need feedback channels for your juniors. You’ve got a thoughtful approach, even with the change."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "After experiencing increasingly severe headaches and chronic fatigue, he was diagnosed with moderate sleep apnea and prescribed nightly use of a CPAP machine, along with medical orders to adjust his work and exercise routines to prioritize consistent sleep schedules.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Implements a strict nightly wind-down routine: no screens after 9pm, CPAP machine set up by 10pm, and lights out at the same time daily, regardless of work or family obligations",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Documents nightly CPAP usage and sleep patterns in a dedicated digital health log — never skips entries even on weekends",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_008",
+              "fact": "Cycles to work every day regardless of weather, switching to indoor trainer only if road conditions are unsafe"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Limits cycling to low-intensity commutes and uses indoor trainer for short, evening sessions only to ensure adherence to a consistent sleep schedule — never cycles late or for long durations anymore",
+              "domain": "health_body"
+            },
+            "reason": "With his new diagnosis of moderate sleep apnea, his physician has ordered that he avoid vigorous or lengthy exercise close to bedtime and commit to a predictable sleep schedule. He must now keep cycling modest and avoid evening or intense sessions that could disrupt CPAP use and sleep quality."
+          },
+          {
+            "from": {
+              "id": "pref_028",
+              "fact": "Limits social plans on weekdays to accommodate early work hours — avoids late-night outings"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Strictly avoids all weeknight social activities after 8pm to guarantee uninterrupted pre-sleep routine for CPAP use, regardless of work demands",
+              "domain": "daily_routines"
+            },
+            "reason": "Effective CPAP therapy and medical advice now require a fixed, early bedtime. He must be home and device-ready every night, meaning even moderate evening plans are no longer compatible with his health needs."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_010",
+            "fact": "Uses herbal teas exclusively for headache relief — never uses over-the-counter painkillers unless symptoms become severe",
+            "domain": "health_body",
+            "reason": "With sleep apnea now identified as the root cause of chronic headaches, management must shift to CPAP adherence and sleep hygiene rather than relying on ad hoc herbal remedies; the old approach is no longer relevant or advised."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I just got officially diagnosed with sleep apnea. They’ve got me on a CPAP every night and I’m trying to stick to a regular sleep schedule—the doctor was pretty firm. I’m a bit lost about how to juggle work, exercise, and my daughter’s weekends without messing up the new routine. Got any strategies for keeping everything on track?"
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for sharing—sleep apnea is a big adjustment, especially with all you have going on. Sticking to a regular sleep schedule is essential, but challenging with different demands. Have you started tracking your sleep or CPAP use yet, or are you still figuring out the process?"
+        },
+        {
+          "role": "user",
+          "content": "I started logging everything digitally, actually—each night I note CPAP usage and sleep patterns, even weekends. I don’t skip entries anymore; my doctor’s monitoring it remotely. It makes me more aware, but the routine feels rigid. How can I keep days consistent when work always spills over?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great step—consistent logging really helps uncover patterns. To avoid late work spills, you might want to set a hard cutoff for evening tasks, like no work after a certain hour. What’s your typical evening routine now, and how late do you handle work or Paris client calls?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve had to strictly avoid any social plans or work after 8pm on weekdays now. It doesn’t matter if clients are urgent—after 8, I wind down, get ready for the CPAP, and stick to screens-off by 9. I set up the machine by 10 and lights out at that time, no exceptions. Even mentoring sessions, family stuff, everything just stops early. Any way I can make sure I don’t get pulled off schedule by emergencies?"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like your boundaries are clear. For emergencies, maybe put an auto-reply or status on your work chat after 8pm so colleagues and clients know you’re offline. Delegating urgent after-hours cases to your junior staff might also help. Does your team coordinate well with digital task boards, or do you have to intervene a lot?"
+        },
+        {
+          "role": "user",
+          "content": "We use shared task boards for everything—I never rely on email for coordination anymore. I try to delegate simple tickets but take the complex troubleshooting cases myself. The tricky part is some Paris issues can get priority in the evenings, but now I cut off all work at 8pm because of the new routine. Weekend client fires are rare, so that’s good. Any advice for keeping exercise manageable—I used to cycle home late almost every night, but now I can’t keep that up."
+        },
+        {
+          "role": "assistant",
+          "content": "Good point—exercise timing can really affect sleep. Maybe switch to low-intensity cycling for commutes only, or use the indoor trainer earlier in the evening for short sessions. How have you adjusted your cycling routine so far?"
+        },
+        {
+          "role": "user",
+          "content": "Cycling’s changed a lot: now I limit myself to low-intensity commutes and only use the indoor trainer for short, early-evening sessions—never late or for long durations anymore. My doctor warned against vigorous exercise close to bedtime, so I’ve dropped longer evening rides completely. I miss it, but sleep comes first now."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes a lot of sense. Short, early activity can support sleep, but too much intensity will disrupt it. Have you had to change your evening wind-down activities too, like screen time or hobbies?"
+        },
+        {
+          "role": "user",
+          "content": "Absolutely. I implemented a strict wind-down routine: no screens after 9, CPAP set up by 10, lights out every night at the same time. I had to reorganize social visits; even helping my mom or seeing my sister, nothing happens past 8pm anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Consistency is key there. How’s it going with headaches? Any improvement since the new sleep adjustments? Are you still using herbal teas for relief or have you shifted approaches?"
+        },
+        {
+          "role": "user",
+          "content": "The headaches have improved, actually. Since sleep apnea turned out to be the real cause, it’s more about CPAP adherence and sleep hygiene now, not as much herbal tea. I don’t rely on those remedies anymore—the doctor said it’s not relevant. If the headaches ever get severe, I’ll use meds, but otherwise, sticking to the routine is the best relief."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s encouraging to hear. Documenting symptoms along with sleep patterns can show progress over time. Given all the changes, do you feel your workflow and family balance are manageable, or do some areas still need tweaks?"
+        },
+        {
+          "role": "user",
+          "content": "With the routine and tracking in place, it’s becoming manageable—though I’m still figuring out my daughter's weekends and special activities since I need to be home evenings. At least I know what’s non-negotiable, and I stick to the boundaries. Thanks for helping me think it through."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing a great job adapting and keeping priorities clear. If you ever need strategies for creative weekend activities or further stress management, just ask. Let me know if you want help to refine your digital health log or optimize your task board for the new schedule!"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Suffered a cycling accident during his winter commute, resulting in a fractured wrist that requires him to avoid outdoor cycling and strenuous activity for 8 weeks and attend regular physiotherapy sessions.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_044",
+            "fact": "Attends weekly physiotherapy sessions for wrist recovery and follows prescribed home exercises daily; prioritizes rehabilitation over all other physical activity",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_045",
+            "fact": "Completes leisure reading and watches French films at home to fill weekend time previously devoted to cycling and gallery visits",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_038",
+              "fact": "Limits cycling to low-intensity commutes and uses indoor trainer for short, evening sessions only to ensure adherence to a consistent sleep schedule — never cycles late or for long durations anymore"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Suspends all cycling activities (indoor and outdoor) for 8 weeks due to wrist fracture; substitutes physiotherapy sessions for daily physical activity instead",
+              "domain": "health_body"
+            },
+            "reason": "The cycling accident and wrist fracture means he is medically barred from both outdoor cycling and indoor trainer use; physiotherapy is now his only permitted exercise."
+          },
+          {
+            "from": {
+              "id": "pref_017",
+              "fact": "Maintains a personal blog documenting cycling routes — posts at least twice per month"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Pauses cycling blog updates and instead posts about his recovery progress and local physiotherapy experiences for the next 8 weeks",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Unable to cycle, he cannot document new routes, but maintains blog activity by focusing on recovery and physiotherapy during his rehabilitation."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_016",
+            "fact": "Explores local art galleries on solo weekends — never revisits the same exhibit twice",
+            "domain": "leisure_hobbies",
+            "reason": "His wrist fracture and mobility restrictions prevent him from comfortably visiting art galleries solo for several weeks, making this preference irrelevant during recovery."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some advice. I had a cycling accident on my winter commute last week—fractured my wrist pretty badly. Doctor says no cycling at all for two months, not even on the trainer. I'm struggling to figure out how to adapt my usual routines, especially since cycling was my main physical activity and stress reliever. Any suggestions for staying active, managing stress, and keeping my routines on track?"
+        },
+        {
+          "role": "assistant",
+          "content": "Oof, that sounds rough. Sorry to hear about the accident—wrist fractures can really mess with mobility. Are you able to do any physical activity at all, or is it strictly rest? Sometimes physio exercises are allowed even when cycling isn't. Should we look at gentle movement alternatives or focus on stress relief through non-physical means for now?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I'm attending weekly physiotherapy sessions and doing home exercises as prescribed. Right now, that's pretty much all I'm allowed for physical activity—anything else is off-limits until the wrist heals. So I need to prioritize rehab over anything else. I'm mostly worried about keeping my stress headaches manageable since cycling used to be my go-to. Any tips there?"
+        },
+        {
+          "role": "assistant",
+          "content": "Got it—physiotherapy as your main activity, and stress management is a concern. For headaches, are you still able to take stretching breaks during work or does the wrist make that tricky? Also, do you still use herbal teas for relief, or would something like guided breathing exercises be useful to complement your routine?"
+        },
+        {
+          "role": "user",
+          "content": "I can do light stretching, just nothing weight-bearing or that strains the wrist. Herbal teas are still my go-to for headaches, but I'm open to adding breathing exercises or maybe audio-guided relaxation if you have recommendations. And my weekend routines are a bit off now, since I used to spend solo time at art galleries. Wrist mobility makes that uncomfortable, so I'm skipping gallery visits for now. Looking for alternatives to fill the time."
+        },
+        {
+          "role": "assistant",
+          "content": "Audio-guided relaxation can definitely help—apps like Calm or Insight Timer offer French content if that's a preference. Since gallery visits are paused, perhaps leisure reading or classic French films could fill the gap? You could even explore new genres or directors if you want to mix things up. Do those interest you, or would you prefer something more interactive?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I've already started doing more leisure reading, and French films have become my Friday night staple lately—just keeping things low-key at home. That helps. Another thing: I've paused updates on my cycling blog since I'm not riding, but I want to keep it active. I'm thinking of documenting my recovery process and local physiotherapy experiences instead. Do you have ideas for topics or ways to keep readers engaged through this change?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great idea to pivot your blog! Readers appreciate transparency and real-life challenges. You could share your weekly physio goals, tips on maintaining motivation during recovery, and maybe interview a local physiotherapist for insights. Updates on how you adapt your routines—like your transition from cycling to rehab—could resonate with other active people facing setbacks. Would you like content ideas tailored for your Montreal audience, or something broader?"
+        },
+        {
+          "role": "user",
+          "content": "Montreal-focused is perfect—my readership is mostly local cyclists and commuters. Highlighting local resources and physio clinics, sharing accessibility tips, or reviewing recovery-friendly cafes (since I still have to keep dairy out of my diet!) would hit home. Are there any local virtual events or communities for injured cyclists you know of?"
+        },
+        {
+          "role": "assistant",
+          "content": "There are a few online Montreal cycling groups—like Vélo Montréal and Cyclistes du Québec—where injured riders share recovery tips and alternative activities. Some organize virtual meetups or share health professional recommendations. You could also check out local library-hosted book clubs or film discussion nights, which often have accommodations for mobility issues and could expand your Friday film habit into a social setting. Would you like me to compile links or contacts for those groups?"
+        },
+        {
+          "role": "user",
+          "content": "That would be great, thanks! Since my routines are so different now, I've been using physio as my daily movement and focusing on rehab first. Cycling is off the table entirely for 8 weeks—even indoor. So, if you see anything about getting back on the trainer soon, that's not happening. My priorities are sticking to rehab, keeping my blog active with recovery updates, and finding constructive ways to manage downtime and headaches."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—full focus on physiotherapy, blog pivots, and stress management. I’ll gather links for local recovery communities and accessible events, and some resources for relaxation and herbal headache remedies. Let me know if you need routine planning tips or help with blog content calendars during this period. Anything else you'd like to troubleshoot or adapt?"
+        },
+        {
+          "role": "user",
+          "content": "Not at the moment—I feel more settled now that my priorities are clear and I've got new ideas for the blog and downtime. Just have to accept that art gallery weekends are on hold, and keep moving forward with rehab."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you're handling this transition proactively. If you ever need more reading or film recommendations, or want to brainstorm blog angles about recovery in Montreal, I'm here. I’ll follow up with those local group links and virtual event options. Take care, and best wishes for your wrist recovery!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "His ex-wife informed him that she is relocating to Toronto for a new job and requested to change their custody arrangement, meaning his daughter will now only visit during extended school holidays instead of every other weekend.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_048",
+            "fact": "Initiates video calls with his daughter every Sunday evening to share updates and play a short collaborative online activity, to maintain consistent contact between school holidays",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_049",
+            "fact": "Allocates one long weekend each school term to travel to Toronto for father-daughter time, planning these visits well in advance",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Plans special activities for his daughter’s weekends, never repeats the same outing twice in a month"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Invents creative virtual or long-distance activities to stay engaged with his daughter during extended school holidays — no longer plans regular in-person weekend outings",
+              "domain": "social_relationships"
+            },
+            "reason": "With his daughter living in Toronto and only visiting during school holidays, weekend outings are no longer possible; the preference must shift to activities that can sustain their bond across distance and over less frequent in-person visits."
+          },
+          {
+            "from": {
+              "id": "pref_019",
+              "fact": "Plays cooperative board games with his daughter during custody weekends — never computer games"
+            },
+            "to": {
+              "id": "pref_047",
+              "fact": "Plays family-friendly online games and co-op apps with his daughter during remote visits, reserving board games for in-person school holiday stays",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "He cannot play board games with his daughter every other weekend when she is in Toronto; to maintain their shared pastime, they need digital alternatives during remote periods, with board games reserved for her less frequent extended visits."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, big change: my ex-wife told me she's moving to Toronto for work. So, starting this spring, my daughter will only visit during her school holidays instead of weekends. I want to keep our connection strong, but I'm not sure how to shift from regular in-person time to something that's still meaningful. Any advice on remote activities, or ways to stay engaged?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s definitely a huge adjustment. I can imagine missing those regular weekends together must feel tough. When you think about staying connected, are you hoping for activities that you can do together online, or more ways to share daily life across the distance—like joint projects or routines?"
+        },
+        {
+          "role": "user",
+          "content": "I’m aiming for both—I’d like some virtual activities we can share weekly, and also things for the longer holiday visits so we still have that in-person quality time. Before, I used to plan special outings every weekend she was here, mixing things up so we never repeated the same activity twice in a month. Obviously, that's not going to work with her in Toronto. Now I’m trying to invent creative virtual or long-distance options we can do together between visits."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—the old routine for in-person outings was pretty varied. For online options, have you tried things like collaborative drawing apps, virtual escape rooms, or online science experiments? Those can be fun, especially for younger kids. And for the in-person holiday time, do you still want to plan unique activities, or would you rather focus on traditions she misses while away?"
+        },
+        {
+          "role": "user",
+          "content": "For remote weeks I’m leaning toward creative digital activities, maybe things we can build or play together online. We used to play cooperative board games in person—I never did computer games with her, but now it seems like family-friendly online games and co-op apps are the way to go when we’re apart. I’ll save the board games for her school holiday stays. Any recommendations for kid-safe online games that encourage teamwork?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely, the transition from board games to digital co-op activities is pretty common for families separated by distance. There are games like 'Minecraft' in creative mode or 'Lego Builder's Journey' that are collaborative and not competitive or intense. There are also platforms like Tabletopia that simulate board games online with video chat. Is she comfortable using a tablet or computer for these, or do you need something simple to set up each time?"
+        },
+        {
+          "role": "user",
+          "content": "She's pretty handy with a tablet, and I want things we can launch quickly during a call. In fact, I’m thinking about initiating video calls every Sunday evening to share updates and play a short collaborative online activity—that way we're consistent about contact, keeping Sundays as our time even if we're not together. I’d just want the activities to be light, not too long, so it doesn’t feel like homework."
+        },
+        {
+          "role": "assistant",
+          "content": "Keeping a fixed day for your calls is such a good idea—it creates a routine she can look forward to, especially with fun activities. Short games like 'Drawful' (collaborative Pictionary), digital jigsaw puzzles, or cooperative storytelling apps might work perfectly for calls under an hour. Would you like a list of low-setup options you both can try for those weekly Sundays?"
+        },
+        {
+          "role": "user",
+          "content": "That would be helpful, thanks. Also, to balance things, I plan to allocate one long weekend each school term to travel to Toronto for father-daughter time. I’ll be planning these visits well in advance. Any advice on making those trips special—given they’ll be less frequent?"
+        },
+        {
+          "role": "assistant",
+          "content": "Great strategy. With less frequent visits, making each one memorable becomes important. You could pick a theme for each trip—a food adventure, art exploration, or science outings—so each long weekend stands out. Since you’re planning ahead, maybe involve her in the choices: let her vote on themes or specific activities before each visit. Would you like suggestions for Toronto kid-friendly events or places that pair well with your interests?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, a themed approach sounds good, and she likes deciding together. For the in-person stays, I’ll go back to board games and other hands-on stuff. Online games are only for the gap periods. Also, I'll need activities that fit a city we don't know that well yet—and ones that align with my lactose intolerance so we don’t end up somewhere problematic for meals."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart to plan around your dietary needs. Toronto has a lot of kid-friendly museums, art galleries, and parks that don’t revolve around food, plus plenty of restaurants with dairy-free menus. I’ll include options that won’t cause issues for you, and maybe a shortlist of venues with kid activities and space for board games or creative projects. Would you prefer mostly indoor activities for winter visits, or flexible outdoor options as well?"
+        },
+        {
+          "role": "user",
+          "content": "Both, since weather can be unpredictable. I’m also updating my blog to document the cycling routes and new city experiences when I visit. Something that helps me keep a record and maybe share those adventures with her after each trip—sort of a digital scrapbook."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s fantastic—sharing the blog with her gives another layer of connection. You could even collaborate on entries after each trip: picking photos or writing captions together, either in Toronto or over your weekly calls. I’ll also send ideas for activities that can feed into your digital scrapbook. How’s the transition going for you emotionally? Anything else I can help with—like organizing your planning or stress management during this shift?"
+        },
+        {
+          "role": "user",
+          "content": "It's tough, but having a plan helps. Thanks for talking it through—I needed to sort out what routines were still possible. Getting a list of games and Toronto kid-friendly outings, plus tips for digital collaboration, would be a good start."
+        },
+        {
+          "role": "assistant",
+          "content": "Of course! I'll compile suggestions for Sunday collaborative apps, board-game venues and kid events in Toronto, plus easy ways to co-create a digital scrapbook. If you need more support, like tools for keeping plans organized or strategies for stress, let me know anytime. You’re already taking great steps for your daughter—and yourself."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Referred by his doctor to a multidisciplinary stress management program at a local clinic after routine bloodwork revealed elevated blood pressure linked to chronic work-related stress and prior persistent headaches.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_051",
+            "fact": "Attends weekly in-person workshops at the stress management clinic, never substitutes with online sessions or skips unless medically excused",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_052",
+            "fact": "Logs daily mood, blood pressure, and physical symptoms in his clinic’s mobile health app as part of his stress management regimen",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Takes short stretching breaks every 2 hours during workdays to reduce tension headaches; never goes more than 3 hours without moving"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Adopts structured relaxation techniques (guided breathing or mindfulness) for 10 minutes twice daily during work, in place of stretching breaks, as recommended by his stress management program",
+              "domain": "health_body"
+            },
+            "reason": "His enrollment in the clinic’s stress management program introduces specific, clinically-guided interventions focused on relaxation and lowering blood pressure, rather than informal physical stretching to manage headaches."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so my doctor referred me to a stress management clinic after my recent bloodwork. Apparently my blood pressure's been creeping up—linked to work stress and the headaches that won't quit. They're starting me on this structured program, so I need help figuring out how to actually fit it in with my usual routine, especially when things get crazy at work. Got suggestions?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a big adjustment, and probably overdue with your workload. Are the clinic's recommendations flexible, or do you need to stick to a precise schedule for their activities? What does your workday look like right now—is there any wiggle room where you could integrate new habits without it feeling like extra pressure?"
+        },
+        {
+          "role": "user",
+          "content": "They’re pretty specific—it’s not just 'take more breaks.' I’m supposed to do 10 minutes of guided breathing or mindfulness twice daily during work, instead of the old stretching breaks I used to take every couple hours. I never went more than three hours without moving, but this new approach is more structured and I need to really follow it, apparently. Any advice on how to carve out those slots during my support shifts?"
+        },
+        {
+          "role": "assistant",
+          "content": "So the stretching breaks are being replaced by relaxation sessions—you have to block out dedicated time for those. If your workload is busiest with Paris clients after 5pm, could you schedule one mindfulness block before that rush starts, and another mid-afternoon? Are you able to control your calendar enough to protect those slots, or do incoming tickets sometimes derail plans?"
+        },
+        {
+          "role": "user",
+          "content": "I usually have some control early in the day—I always start by reviewing my calendar and setting my top priorities. So I could pencil in a session mid-morning, then another one after my documentation block. But if an urgent ticket comes up, I’d have to delay it. Also, the clinic wants me to log my mood, blood pressure, and any physical symptoms daily in their mobile app, so I need reminders for that. My old habit was just tracking meals and symptoms for lactose stuff in a digital log, but now it’s more detailed and includes stress metrics. Any tools or hacks for keeping up with all these logs without slipping?"
+        },
+        {
+          "role": "assistant",
+          "content": "Given the extra logging, it might help to set recurring phone reminders to prompt you after your relaxation sessions—that way, you tie it to a new habit rather than relying on memory. If your clinic’s app allows exporting data, you could consolidate your meal/symptom tracking and mood logs in one dashboard. For busy days, is there a risk you’ll skip sessions, or are the clinic instructions strict? Would having accountability help, or does that just add more stress?"
+        },
+        {
+          "role": "user",
+          "content": "Skipping isn’t really an option—they want strict attendance at weekly in-person workshops. No online sessions, and no skipping unless I’m medically excused. So that’s another fixed block on my calendar. Accountability helps, but I don’t want to overload myself with reminders to the point it adds stress. I’m open to habit-stacking if it keeps it simple."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—tying new tasks to existing routines is usually more effective. Maybe you could anchor your first mindfulness session right after your initial calendar review, and the second one post-documentation, as you mentioned. After each, set a quick phone alert to log your metrics in the clinic’s app. Since you never start work without planning priorities, anchoring the first session there would reinforce consistency. Are the workshops always at a set day and time, or do you need to adjust for changing schedules?"
+        },
+        {
+          "role": "user",
+          "content": "The workshops are every Wednesday at 6pm, in-person only. I never substitute them or skip unless I’m medically excused. That fits after work, but I’ll need to shift my usual grocery shopping to avoid overlap. Otherwise, the routine is pretty stable—I’m just trying to make the new clinic requirements mesh with my existing habits without letting anything slide."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve already got strong routines, so it’s mostly a matter of reshuffling. If Wednesday evenings are now workshop time, shifting grocery shopping to Tuesday or Thursday could help. For the mood and blood pressure logs, anchoring them to your new relaxation sessions will reduce slip-ups. Have you noticed any impact from the structured mindfulness yet, or is it too early to tell?"
+        },
+        {
+          "role": "user",
+          "content": "It’s early days, but I noticed my last recorded blood pressure was a little lower after breathing exercises. Headache frequency hasn’t changed much yet, but I’m hopeful. Honestly, the hardest part was dropping my regular stretching breaks—they felt good physically, but the clinic wants clinically guided relaxation instead for stress and blood pressure. Guess I’ll see how it goes."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re taking the transition seriously, and trying to adapt without losing your sense of control. If guided relaxation proves helpful for your symptoms and blood pressure, you might get used to it just as you did with stretching before. Keep monitoring how you feel, and adjust timing if needed. Since you also have support responsibilities at work, any changes to how you coordinate with your junior staff during this process?"
+        },
+        {
+          "role": "user",
+          "content": "Not really—my mentoring sessions with juniors are still blocked in French, and I don’t mix languages or let clinic stuff interfere. I just mention if I’m stepping out for a breathing session, so they know what’s up. No other changes there."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s good—keeping mentoring consistent helps your team, and you’re modeling balance by being open about your health routine. Let me know if you need ideas for integrating reminders or tracking, or if the clinic’s app isn’t flexible enough. Anything else you’re struggling with around the new program?"
+        },
+        {
+          "role": "user",
+          "content": "No, I think I’ve got most of it covered now—blocking time for breathing twice daily, weekly workshops on Wednesdays, and logging mood, blood pressure, and symptoms in the app every day. That covers the main clinic requirements. Thanks for helping me work through how to fit everything in without letting my old routines or work slip."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear it! If you need a fresh routine template or tools for habit-stacking, let me know. You’re balancing a lot, and it’s impressive how you keep both your health priorities and work duties in sync. Good luck with the program—hope the new techniques pay off soon."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "Promoted to bilingual support team supervisor, now responsible for direct managerial oversight of eight staff members across multiple time zones and required to attend weekly cross-departmental leadership meetings during core North American office hours.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_055",
+            "fact": "Schedules weekly one-on-one coaching sessions with each staff member to support their ongoing development and performance as required by his new supervisor role",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_056",
+            "fact": "Reviews and tracks staff performance metrics bi-weekly, focusing on multilingual customer satisfaction scores",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Prefers to handle complex troubleshooting cases solo, delegating only simple tickets to others"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Delegates complex troubleshooting cases to senior staff members — focuses on managerial oversight and coordination rather than hands-on technical resolution",
+              "domain": "work_habits"
+            },
+            "reason": "Promotion to supervisor introduces new managerial responsibilities and requires his attention on team performance and cross-departmental coordination. He no longer has capacity to personally handle complex cases and must delegate them."
+          },
+          {
+            "from": {
+              "id": "pref_027",
+              "fact": "Begins workdays with a team huddle call to align European support priorities — never skips this ritual during rotation"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "Starts workdays with a cross-team leadership briefing that includes both European and North American staff, replacing the exclusive European huddle",
+              "domain": "work_habits"
+            },
+            "reason": "Now supervising a diverse support team across time zones, he is required to participate in cross-departmental leadership meetings during core North American hours, and needs to shift from the Europe-only huddle to broader leadership briefings."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, big change: I just got promoted to supervisor on the bilingual support team. It's only been a week, but my schedule is all over the place and I'm trying to figure out how to manage all eight staff members spread across Montreal and Europe. I'm not used to these weekly cross-departmental leadership meetings during normal office hours. Any tips for structuring my days so I don't lose track of everything?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations on the promotion! Stepping into a supervisor role with cross-time-zone responsibilities can definitely throw your routine off balance. Are you still starting your mornings with the team huddle for European priorities, or has your daily kickoff shifted now that you have broader leadership duties?"
+        },
+        {
+          "role": "user",
+          "content": "That's actually changed. I used to do a huddle just with the European support crew, but now my mornings start with a cross-team leadership briefing covering both European and North American staff. It's bigger, more formal, and eats into the time I used to set aside for focused planning."
+        },
+        {
+          "role": "assistant",
+          "content": "That shift makes sense, given your new scope. Maintaining visibility across both regions is key, but I can see how those briefings limit your solo prep time. How are you currently keeping tabs on what your team is working on—does your digital task board still work for coordination, or are you experimenting with new tools for oversight?"
+        },
+        {
+          "role": "user",
+          "content": "I still rely on the shared digital task board for tracking progress—email is too messy. But now, instead of just coordinating simple tickets, I'm delegating complex troubleshooting cases to senior staff members. My focus is shifting more toward managerial oversight and keeping everyone aligned, rather than handling the tough technical cases myself."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—letting others take ownership of technical challenges frees you up to focus on the bigger picture. With oversight as your priority, are you using any regular check-ins or coaching methods to support your staff’s development? Or is performance feedback mainly ad hoc?"
+        },
+        {
+          "role": "user",
+          "content": "The company expects me to schedule weekly one-on-one coaching sessions with each team member now. It's a lot, but I think it'll help with ongoing development and performance. I haven't figured out the best rhythm for these yet, honestly."
+        },
+        {
+          "role": "assistant",
+          "content": "Weekly 1:1s are a solid start, even if they're a time investment—they’ll help your team feel supported and keep performance goals clear. Have you begun tracking any team metrics or customer satisfaction scores yet to measure progress, or is that still in the works?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve just started reviewing and tracking performance metrics every two weeks—especially our multilingual customer satisfaction scores. I can already see some patterns, but I need to make better use of the data for feedback."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great—bi-weekly reviews will help you spot trends and celebrate wins. Want any help setting up dashboards or templates for tracking these scores, or are you comfortable with your current process?"
+        },
+        {
+          "role": "user",
+          "content": "I could use some advice on dashboards—right now I'm just importing the survey scores into a spreadsheet, but it's not very visual. If you know a tool that works well for tracking multilingual CSAT data and individual performance over time, I’m all ears."
+        },
+        {
+          "role": "assistant",
+          "content": "For a midsize team, tools like Microsoft Power BI or Google Looker Studio are quite effective for tracking and visualizing customer satisfaction data, with flexible filters for language segmentation. Both integrate well with spreadsheets and ticket systems, so you can build charts for individual and team trends. Do you already have access to either, or prefer something with minimal setup?"
+        },
+        {
+          "role": "user",
+          "content": "We have Power BI licenses, but I haven't set up anything myself yet. I'll look into it, thanks. One challenge is making the dashboards accessible for bilingual team members—so labels and explanations need to work in both French and English. Any tips for that?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—Power BI supports multilingual dashboards if you use text fields carefully and apply translations via bookmarks or layered visuals. Start by designing your main dashboard in one language, then add translated labels and toggle options. This way, both French and English staff can get the info they need. I can send a simple tutorial if you want."
+        },
+        {
+          "role": "user",
+          "content": "That'd be helpful, thanks. I feel like I'm adjusting more to the people management side now than the technical—definitely a learning curve. But I guess that's expected! Appreciate the help."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/02/2026",
+        "event": "His younger sister announced her engagement to a longtime friend from France and asked him to help coordinate family travel and host relatives from abroad for the wedding celebrations in Montreal.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_058",
+            "fact": "Regularly coordinates travel logistics, accommodations, and local arrangements for visiting relatives from France, actively manages digital group planning tools and takes on a hosting role for events related to his sister's wedding",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_059",
+            "fact": "Shifts Friday night entertainment from solitary French films at home to hosting group movie nights featuring classic French cinema for visiting family during the wedding festivities",
+            "domain": "leisure_hobbies"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Organizes quarterly family dinners for his close relatives — won’t let more than three months slip without hosting"
+            },
+            "to": {
+              "id": "pref_057",
+              "fact": "Plans and hosts frequent multi-day gatherings for extended family, including relatives from abroad, throughout the sister’s wedding celebration period — regular family dinners replaced by event-based hosting",
+              "domain": "social_relationships"
+            },
+            "reason": "His sister’s engagement and request to coordinate family travel and host relatives from France shifts his family involvement from ordinary quarterly dinners to intensive, multi-day hosting responsibilities for extended family, especially during wedding festivities."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_029",
+            "fact": "Provides daily in-person support for his sister during her hospitalization and recovery — postpones all other personal visits unless essential",
+            "domain": "social_relationships",
+            "reason": "His sister has recovered and is now engaged; hospitalization is long past, and her support needs have changed to wedding planning and social hosting, making daily recovery visits irrelevant."
+          },
+          {
+            "id": "pref_031",
+            "fact": "Prepares and delivers homemade meals for his sister several times per week during her recovery, prioritizing simple, lactose-free dishes",
+            "domain": "social_relationships",
+            "reason": "Meal delivery was required during his sister’s medical recovery phases, which are now complete; her needs have shifted towards help with event coordination, not routine meal support."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My sister just got engaged! She wants the wedding here in Montreal, and asked me to help organize travel for our relatives from France and host family gatherings during the celebrations. I’ve never taken on this kind of hosting before — do you have tips for juggling logistics, hosting guests, and keeping everything sane with my work schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations, that's fantastic news! It's a big step, and managing family travel plus event hosting can definitely become overwhelming. Are you expecting a lot of guests at once, or will their visits be staggered? Also, do you have a preferred method for tracking travel plans and accommodations — spreadsheets, group chats, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "It's going to be a steady flow of people for a few weeks. Most relatives will overlap during the wedding itself, but some will arrive earlier or stay longer. My sister asked me to coordinate flights, local transport, and set up group activities so they can enjoy Montreal while here. I started using a digital planning tool to manage everyone's itineraries, so it's easy to update and share — group chats aren't nearly organized enough for this crowd."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move using a dedicated planning tool — it'll help keep everyone on the same page. For accommodations, do your relatives prefer hotel rooms or private rentals? And with so many visitors, are you managing the hosting solo or delegating some duties to other family members?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly hotels — everyone has their own preferences and budgets. But I’ll be hosting a lot of the gatherings myself, including multi-day events during the wedding week. This is a big change for me; I used to organize quarterly family dinners, but now it’s more about hosting extended events, especially for those coming from abroad."
+        },
+        {
+          "role": "assistant",
+          "content": "That's quite a shift, from routine dinners to intensive event hosting. For the gatherings, are you aiming for formal meals, casual activities, or a mix? And since you work evening hours with Paris clients, have you figured out how you'll balance hosting with work obligations?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely a mix. Some formal meals, but mostly casual outings and home-based events. Luckily, my work schedule is flexible enough that I can block off key times for family stuff, and reschedule client calls if needed. I’m also taking the lead on travel logistics — regularly coordinating flights, accommodations, and activities for relatives from France. It’s become a big part of my routine, at least for these next few months."
+        },
+        {
+          "role": "assistant",
+          "content": "Great — it sounds like you've managed to carve out space for hosting, which is crucial. Are you planning any themed evenings or special group activities for your visiting relatives? And have you found ways to combine your usual hobbies with the celebrations, so you're not entirely giving up your own routines?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually something I’ve been thinking about. I used to spend Friday evenings watching classic French films solo, but now I’m shifting to group movie nights featuring French cinema during the festivities. It’s a nice way to share a piece of my routine with everyone and make it social for family."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great idea! Sharing classic French films with your guests not only ties in your own enjoyment, but also gives everyone a taste of culture together. Any other routines changing in this period, especially around your sister? I recall you spent a lot of time supporting her before — is that still needed?"
+        },
+        {
+          "role": "user",
+          "content": "No, that phase is behind us. I used to provide daily in-person support when she was hospitalized, even prioritizing visits over other things. Now her focus is on wedding plans and social events, so those recovery visits are no longer relevant."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood — so your role is now more about event coordination and hosting. What about meal prep? I know you helped with homemade meals before. Are you still making regular dishes for her, or has that shifted with her recovery?"
+        },
+        {
+          "role": "user",
+          "content": "That’s changed too. Meal delivery for her was mostly during recovery, when she needed lactose-free dishes. Now she’s back to normal, and our focus is on event planning, not routine meal support."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it, your energy is going towards organizing, logistics, and multi-day hosting instead of daily support. Do you have any particular concerns about guest accommodations, group activities, or managing the extended celebration period?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly, I’m just trying to ensure everyone’s travel, lodging, and scheduling gets coordinated smoothly. The digital planning tool helps, but I’d like advice on how to manage group expectations and keep things running smoothly when people are overlapping. Anything you recommend for that?"
+        },
+        {
+          "role": "assistant",
+          "content": "With overlapping guests and varying expectations, setting up a shared itinerary — maybe via the digital planning tool — can minimize confusion. Provide clear daily schedules with times for group meals, outings, and downtime. Also, ask relatives ahead of time about dietary preferences or must-see activities, so you can plan accordingly. For logistics, ensure everyone knows local transportation options and how to contact you in case issues arise. Creating a WhatsApp or Signal group just for urgent updates might help, even if main planning stays in the tool."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Uses shared digital task boards to track issue progress with junior staff; never relies on email threads for coordination",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_003",
+        "fact": "Blocks out 30 minutes daily for process documentation — refuses to let backlog build up",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_006",
+        "fact": "Strictly avoids dairy in all meals — checks labels and never orders creamy dishes at restaurants",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Only communicates with his mother via in-person visits or phone calls — never uses text messages for important discussions",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Keeps all work conversations strictly professional; never socializes with clients outside work channels",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Watches classic French films at home every Friday night — never opts for Hollywood blockbusters",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Travels outside Montreal at least twice a year for cultural festivals — avoids beach vacations",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts each morning by reviewing his calendar and setting three top priorities — never begins work without a plan",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_023",
+        "fact": "Checks personal finances every Saturday morning — never lets bills wait past their due date",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_024",
+        "fact": "Keeps a digital log of meals and symptoms to manage lactose intolerance; never writes it by hand",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Prepares coffee in a French press daily — never uses drip or pod machines",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Schedules urgent Paris-based client calls exclusively during early morning hours (before 10am local) to align with Paris mid-day — never after 5pm local anymore",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "Shifts grocery shopping to flexible evenings based on sister's needs — no longer tied to Wednesday evenings",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Shops for groceries multiple times per week as needed, prioritizing fresh items to support his mother's dietary and medication needs rather than maintaining a fixed schedule",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_033",
+        "fact": "Prepares and shares lunch at home with his mother on weekdays, no longer eating alone at his work desk during remote work periods or days he cares for her at home",
+        "domain": "health_body",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Administers and tracks his mother's medications with a daily checklist—never relies on memory or casual reminders",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Avoids scheduling non-essential evening activities to ensure he's present at home to assist his mother with bedtime care",
+        "domain": "daily_routines",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Conducts all mentoring sessions and team meetings exclusively in English, regardless of mentee language background — no longer uses French for work training or staff development.",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Now reviews and revises his mentoring materials to ensure clarity for non-native English speakers — avoids using idiomatic language or regionally-specific terms in all team documentation.",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Strictly avoids all weeknight social activities after 8pm to guarantee uninterrupted pre-sleep routine for CPAP use, regardless of work demands",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Implements a strict nightly wind-down routine: no screens after 9pm, CPAP machine set up by 10pm, and lights out at the same time daily, regardless of work or family obligations",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Documents nightly CPAP usage and sleep patterns in a dedicated digital health log — never skips entries even on weekends",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Suspends all cycling activities (indoor and outdoor) for 8 weeks due to wrist fracture; substitutes physiotherapy sessions for daily physical activity instead",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Pauses cycling blog updates and instead posts about his recovery progress and local physiotherapy experiences for the next 8 weeks",
+        "domain": "leisure_hobbies",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Attends weekly physiotherapy sessions for wrist recovery and follows prescribed home exercises daily; prioritizes rehabilitation over all other physical activity",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Completes leisure reading and watches French films at home to fill weekend time previously devoted to cycling and gallery visits",
+        "domain": "leisure_hobbies",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Invents creative virtual or long-distance activities to stay engaged with his daughter during extended school holidays — no longer plans regular in-person weekend outings",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Plays family-friendly online games and co-op apps with his daughter during remote visits, reserving board games for in-person school holiday stays",
+        "domain": "leisure_hobbies",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Initiates video calls with his daughter every Sunday evening to share updates and play a short collaborative online activity, to maintain consistent contact between school holidays",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Allocates one long weekend each school term to travel to Toronto for father-daughter time, planning these visits well in advance",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_050",
+        "fact": "Adopts structured relaxation techniques (guided breathing or mindfulness) for 10 minutes twice daily during work, in place of stretching breaks, as recommended by his stress management program",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Attends weekly in-person workshops at the stress management clinic, never substitutes with online sessions or skips unless medically excused",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Logs daily mood, blood pressure, and physical symptoms in his clinic’s mobile health app as part of his stress management regimen",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Delegates complex troubleshooting cases to senior staff members — focuses on managerial oversight and coordination rather than hands-on technical resolution",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Starts workdays with a cross-team leadership briefing that includes both European and North American staff, replacing the exclusive European huddle",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Schedules weekly one-on-one coaching sessions with each staff member to support their ongoing development and performance as required by his new supervisor role",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Reviews and tracks staff performance metrics bi-weekly, focusing on multilingual customer satisfaction scores",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_057",
+        "fact": "Plans and hosts frequent multi-day gatherings for extended family, including relatives from abroad, throughout the sister’s wedding celebration period — regular family dinners replaced by event-based hosting",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Regularly coordinates travel logistics, accommodations, and local arrangements for visiting relatives from France, actively manages digital group planning tools and takes on a hosting role for events related to his sister's wedding",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_059",
+        "fact": "Shifts Friday night entertainment from solitary French films at home to hosting group movie nights featuring classic French cinema for visiting family during the wedding festivities",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Schedules all urgent Paris-based client calls after 5pm local — never during routine daytime hours",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "The six-month rotation to lead the European client support desk requires regular early morning coordination with Paris-based teams. To address client escalation during their business day, he must now schedule urgent calls in Montreal mornings instead of evenings."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Conducts mentoring sessions exclusively in French to help juniors gain confidence — never mixes languages during training",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "The restructuring eliminated language-based mentoring and mandates that all sessions be conducted in English. He can no longer express this preference for French, and must fully shift his mentoring to English only, regardless of his or his mentees’ language strengths."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Prefers to handle complex troubleshooting cases solo, delegating only simple tickets to others",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_053",
+        "reason": "Promotion to supervisor introduces new managerial responsibilities and requires his attention on team performance and cross-departmental coordination. He no longer has capacity to personally handle complex cases and must delegate them."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Eats a prepared lunch at his desk every day — never skips except in emergencies",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "Caring for his mother at home requires preparing lunch for both of them and makes solo desk lunches obsolete on days he is providing in-person care or working remotely to be present."
+      },
+      {
+        "id": "pref_008",
+        "fact": "Cycles to work every day regardless of weather, switching to indoor trainer only if road conditions are unsafe",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "With his new diagnosis of moderate sleep apnea, his physician has ordered that he avoid vigorous or lengthy exercise close to bedtime and commit to a predictable sleep schedule. He must now keep cycling modest and avoid evening or intense sessions that could disrupt CPAP use and sleep quality."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Takes short stretching breaks every 2 hours during workdays to reduce tension headaches; never goes more than 3 hours without moving",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_050",
+        "reason": "His enrollment in the clinic’s stress management program introduces specific, clinically-guided interventions focused on relaxation and lowering blood pressure, rather than informal physical stretching to manage headaches."
+      },
+      {
+        "id": "pref_010",
+        "fact": "Uses herbal teas exclusively for headache relief — never uses over-the-counter painkillers unless symptoms become severe",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "With sleep apnea now identified as the root cause of chronic headaches, management must shift to CPAP adherence and sleep hygiene rather than relying on ad hoc herbal remedies; the old approach is no longer relevant or advised."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Visits his sister every Sunday afternoon without fail — never cancels for work",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "His sister's hospitalization means she requires daily assistance, replacing the habitual single weekly visit with much more frequent and prioritized in-person support for the duration of her recovery."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Plans special activities for his daughter’s weekends, never repeats the same outing twice in a month",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "With his daughter living in Toronto and only visiting during school holidays, weekend outings are no longer possible; the preference must shift to activities that can sustain their bond across distance and over less frequent in-person visits."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Organizes quarterly family dinners for his close relatives — won’t let more than three months slip without hosting",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_057",
+        "reason": "His sister’s engagement and request to coordinate family travel and host relatives from France shifts his family involvement from ordinary quarterly dinners to intensive, multi-day hosting responsibilities for extended family, especially during wedding festivities."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Explores local art galleries on solo weekends — never revisits the same exhibit twice",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "His wrist fracture and mobility restrictions prevent him from comfortably visiting art galleries solo for several weeks, making this preference irrelevant during recovery."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Maintains a personal blog documenting cycling routes — posts at least twice per month",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_043",
+        "reason": "Unable to cycle, he cannot document new routes, but maintains blog activity by focusing on recovery and physiotherapy during his rehabilitation."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Plays cooperative board games with his daughter during custody weekends — never computer games",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_047",
+        "reason": "He cannot play board games with his daughter every other weekend when she is in Toronto; to maintain their shared pastime, they need digital alternatives during remote periods, with board games reserved for her less frequent extended visits."
+      },
+      {
+        "id": "pref_022",
+        "fact": "Shops for groceries only on Wednesday evenings, never weekends",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_032",
+        "reason": "With his mother living with him and requiring daily care and dietary management, a rigid grocery schedule is no longer practical. He now shops flexibly, often multiple times a week, to accommodate her health and meal needs."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Begins workdays with a team huddle call to align European support priorities — never skips this ritual during rotation",
+        "domain": "work_habits",
+        "created_at_session": 0,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_054",
+        "reason": "Now supervising a diverse support team across time zones, he is required to participate in cross-departmental leadership meetings during core North American hours, and needs to shift from the Europe-only huddle to broader leadership briefings."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Limits social plans on weekdays to accommodate early work hours — avoids late-night outings",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "Effective CPAP therapy and medical advice now require a fixed, early bedtime. He must be home and device-ready every night, meaning even moderate evening plans are no longer compatible with his health needs."
+      },
+      {
+        "id": "pref_029",
+        "fact": "Provides daily in-person support for his sister during her hospitalization and recovery — postpones all other personal visits unless essential",
+        "domain": "social_relationships",
+        "created_at_session": 1,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "His sister has recovered and is now engaged; hospitalization is long past, and her support needs have changed to wedding planning and social hosting, making daily recovery visits irrelevant."
+      },
+      {
+        "id": "pref_031",
+        "fact": "Prepares and delivers homemade meals for his sister several times per week during her recovery, prioritizing simple, lactose-free dishes",
+        "domain": "social_relationships",
+        "created_at_session": 1,
+        "superseded_at_session": 9,
+        "replaced_by": null,
+        "reason": "Meal delivery was required during his sister’s medical recovery phases, which are now complete; her needs have shifted towards help with event coordination, not routine meal support."
+      },
+      {
+        "id": "pref_038",
+        "fact": "Limits cycling to low-intensity commutes and uses indoor trainer for short, evening sessions only to ensure adherence to a consistent sleep schedule — never cycles late or for long durations anymore",
+        "domain": "health_body",
+        "created_at_session": 4,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "The cycling accident and wrist fracture means he is medically barred from both outdoor cycling and indoor trainer use; physiotherapy is now his only permitted exercise."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-02T09:34:45.087757"
+}

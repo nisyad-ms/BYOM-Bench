@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_a8c28a47",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_026",
+        "fact": "Relies on stock images or his wife's photos for book listings — avoids personal photography due to limited wrist function",
+        "supersedes": {
+          "id": "pref_001",
+          "fact": "Photographs every book himself for listings — never uses stock images from the internet"
+        }
+      },
+      {
+        "id": "pref_040",
+        "fact": "Includes generic printed thank-you cards with each order — no longer handwrites notes due to decreased volume and time required for new shipping policy",
+        "supersedes": {
+          "id": "pref_003",
+          "fact": "Handwrites a thank-you note with each order — never includes generic printed cards"
+        }
+      },
+      {
+        "id": "pref_028",
+        "fact": "Uses voice dictation apps to keep track of garden observations and order notes while his wrist is healing"
+      },
+      {
+        "id": "pref_006",
+        "fact": "Eats fully plant-based at home — never prepares meat or dairy for himself"
+      },
+      {
+        "id": "pref_016",
+        "fact": "Visits Portland's independent bookstores every Saturday morning — never orders personal books online"
+      },
+      {
+        "id": "pref_056",
+        "fact": "Brings portable snacks and a thermos of herbal tea to on-site jobs, taking brief solo breaks outdoors when cataloging for several hours"
+      }
+    ]
+  },
+  "persona": "A retired teacher supplementing income by reselling vintage books online"
+}

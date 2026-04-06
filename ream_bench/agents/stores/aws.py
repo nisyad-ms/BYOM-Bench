@@ -15,8 +15,8 @@ from tenacity import (
     wait_exponential,
 )
 
-from byom_bench.client import _before_sleep_print, get_agent_config
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.client import _before_sleep_print, get_agent_config
+from ream_bench.schemas import MultiSessionOutput
 
 from ._sentinel import SentinelMixin
 
@@ -225,7 +225,7 @@ class AWSMemoryStore(SentinelMixin):
         """Create memory store, capture its ID immediately, then wait for ACTIVE."""
         memory = self._memory_client.create_memory(
             name=self.memory_name,
-            description="BYOM-Bench long-term memory store",
+            description="REAM-Bench long-term memory store",
             strategies=strategies,
             event_expiry_days=self.event_expiry_days,
         )

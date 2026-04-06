@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_b44e9227",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_042",
+        "fact": "Uses rideshare or accepts help from family/friends for all work commutes during ankle fracture recovery — strictly avoids walking or driving himself",
+        "supersedes": {
+          "id": "pref_026",
+          "fact": "Drives or uses rideshare to work while recovering from severe back pain; avoids walking until cleared by physician"
+        }
+      },
+      {
+        "id": "pref_038",
+        "fact": "Regularly spends time caring for his father at home throughout the week; no longer restricts interactions to Saturday visits",
+        "supersedes": {
+          "id": "pref_011",
+          "fact": "Visits his father every Saturday afternoon; never cancels even for work obligations"
+        }
+      },
+      {
+        "id": "pref_058",
+        "fact": "Prepares detailed audit binders and organizes supporting documents nightly at home, outside office hours, to ensure readiness for IRS interviews"
+      },
+      {
+        "id": "pref_059",
+        "fact": "Avoids scheduling or attending non-essential meetings (including board game nights) during audit window; declines invitations in favor of audit tasks"
+      },
+      {
+        "id": "pref_048",
+        "fact": "Initiates nightly video calls with his spouse on weekdays to maintain connection while she is away"
+      },
+      {
+        "id": "pref_028",
+        "fact": "Completes daily physical therapy exercises as instructed; prioritizes recovery activities in his routine"
+      }
+    ]
+  },
+  "persona": "A senior accountant at a nonprofit organization with limited staff"
+}

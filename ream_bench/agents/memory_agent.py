@@ -9,8 +9,8 @@ Provides the shared plumbing that all memory agents need:
 
 import threading
 
-from byom_bench.client import PooledLLMClient
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.client import PooledLLMClient
+from ream_bench.schemas import MultiSessionOutput
 
 from ._internal.tool_calling import respond_with_memory_search
 from .stores.protocol import MemoryStore

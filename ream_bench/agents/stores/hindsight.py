@@ -1,4 +1,4 @@
-"""Hindsight Memory Store for BYOM-Bench.
+"""Hindsight Memory Store for REAM-Bench.
 
 Uses the Hindsight library (https://github.com/vectorize-io/hindsight) with an
 embedded PostgreSQL database for biomimetic memory organization (world facts,
@@ -7,7 +7,7 @@ graph + temporal with reciprocal rank fusion).
 
 Azure OpenAI provides LLM and embedding operations.
 
-Install: pip install byom-bench[hindsight]
+Install: pip install ream-bench[hindsight]
 """
 
 import os
@@ -16,8 +16,8 @@ from typing import Any
 
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 
-from byom_bench.client import get_agent_config, resolve_azure_openai_config
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.client import get_agent_config, resolve_azure_openai_config
+from ream_bench.schemas import MultiSessionOutput
 
 from ._sentinel import SentinelMixin
 

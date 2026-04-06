@@ -40,7 +40,7 @@ __all__ = [
 ]
 
 # Re-export all autodiscovered store classes so existing
-# ``from byom_bench.agents import Mem0MemoryStore`` continues to work.
+# ``from ream_bench.agents import Mem0MemoryStore`` continues to work.
 for _name, _cls in _STORE_REGISTRY.items():
     globals()[_cls.__name__] = _cls
     if _cls.__name__ not in __all__:

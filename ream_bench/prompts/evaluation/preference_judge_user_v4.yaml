@@ -2,7 +2,7 @@ name: Preference Judge User Prompt (v4)
 description: >
   User prompt providing data for preference recall scoring. Includes simulator
   verdicts extracted from scratchpads alongside required preferences and transcript.
-used_by: byom_bench/evaluation_multisession/judge.py::MultiSessionJudge
+used_by: ream_bench/evaluation_multisession/judge.py::MultiSessionJudge
 variables:
   - required_preferences: List of preferences to evaluate with optional supersedes info
   - transcript: JSON formatted dialogue transcript

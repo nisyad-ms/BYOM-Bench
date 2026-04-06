@@ -5,7 +5,7 @@ description: |
   specific preference knowledge to earn PRODUCTIVE. Turns with helpful but
   unpersonalized advice are classified as GENERIC (penalized).
   CLARIFYING_QUESTION folded into GENERIC for simpler classification.
-used_by: byom_bench/evaluation_multisession/judge.py::MultiSessionJudge
+used_by: ream_bench/evaluation_multisession/judge.py::MultiSessionJudge
 variables:
   - none (system prompt is static)
 

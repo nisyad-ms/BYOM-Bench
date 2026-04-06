@@ -26,13 +26,13 @@ from tenacity import (
     wait_exponential,
 )
 
-from byom_bench.client import (
+from ream_bench.client import (
     _before_sleep_print,
     _discover_all_endpoints,
     _parse_env_list,
     get_agent_config,
 )
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.schemas import MultiSessionOutput
 
 
 def _get_foundry_deployments() -> list[str]:

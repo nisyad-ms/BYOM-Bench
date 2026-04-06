@@ -1,0 +1,1597 @@
+{
+  "persona": "An executive at a manufacturing firm overseeing digital transformation initiatives",
+  "persona_id": "persona_20260301_223416",
+  "expanded_persona": {
+    "base_persona": "An executive at a manufacturing firm overseeing digital transformation initiatives",
+    "age": 48,
+    "gender": "male",
+    "location": "Columbus, OH",
+    "work_education": [
+      "Chief Operating Officer at a mid-sized automotive parts manufacturer (700 employees)",
+      "Leads a cross-functional team responsible for implementing ERP and automation across three plants",
+      "Regularly consults with external IT vendors and hosts bi-weekly progress reviews for senior management",
+      "Facing resistance from veteran floor staff about new digital workflows; invests significant time in change management",
+      "Recently completed a 6-week executive course in Industry 4.0 strategies at Purdue University"
+    ],
+    "health_wellness": [
+      "Maintains a strict schedule for morning gym sessions (Monday-Friday, 6am); prioritizes cardiovascular fitness",
+      "Diagnosed with mild hypertension 2 years ago; takes medication and tracks blood pressure daily",
+      "Manages stress levels with mindfulness and occasional evening walks; frequently feels pressure from work deadlines",
+      "Sticks to a mostly plant-based diet after cholesterol scare last year, though occasionally indulges with colleagues at business dinners"
+    ],
+    "family_relationships": [
+      "Lives in suburban Columbus with spouse (elementary school teacher) and two teenage children (ages 15 and 17)",
+      "Drives children to after-school activities most weeknights; balances family events with frequent work travel",
+      "Mother lives alone in town after father’s recent passing; visits weekly to help with groceries and home repairs",
+      "Marriage is stable but spouse has requested more shared time due to his frequent absences for work"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Prepares detailed agendas for every meeting and shares them at least a day in advance — refuses to run ad-hoc sessions",
+        "Accepts vendor proposals only after in-person demos — never approves based on paperwork alone",
+        "Blocks two hours every Thursday morning for uninterrupted strategic planning — no calls, emails, or meetings allowed during this time",
+        "Insists that all project updates are delivered orally in bi-weekly progress reviews; never reads lengthy written reports outside meetings",
+        "Uses a digital kanban board to assign team tasks and monitor deadlines — never tracks project work via email threads"
+      ],
+      "health_body": [
+        "Works out only in the early morning — will skip entirely rather than exercise later in the day",
+        "Refuses red meat except when dining out with business partners; otherwise stays strictly plant-based",
+        "Measures blood pressure every morning before breakfast and logs it in a dedicated mobile app — never skips a day",
+        "Takes a 10-minute mindfulness break at the office every afternoon; closes office door and silences phone",
+        "Never consumes caffeinated beverages after noon — only water or herbal tea in the afternoon and evening"
+      ],
+      "social_relationships": [
+        "Takes his children to every after-school event personally unless out of town — never delegates this to others if in Columbus",
+        "Schedules a weekly lunch hour with his spouse — never cancels except for last-minute travel",
+        "Calls his mother every Sunday evening even if also visiting earlier in the week; says it establishes continuity",
+        "Hosts quarterly dinners for his direct reports at his home but never invites upper management",
+        "Responds to all colleague texts within an hour but only replies to non-urgent emails in batches at midday and evening"
+      ],
+      "leisure_hobbies": [
+        "Plays chess online with the same group every Saturday night — never participates in local chess clubs",
+        "Explores Columbus metro parks with family one Sunday afternoon per month — refuses to visit the same park twice in a season",
+        "Prefers audiobooks about industrial history during solo travel — never listens to music in the car when alone",
+        "Collects vintage model cars, adding one new piece every quarter, but never displays them outside his private study",
+        "Takes a long bike ride every holiday morning, regardless of weather — never skips unless out of town"
+      ],
+      "daily_routines": [
+        "Prepares and eats the same oatmeal and fruit breakfast every weekday — never varies his morning meal except on weekends",
+        "Charges his phone in the kitchen overnight and never brings devices into the bedroom after 9 pm",
+        "Reviews the next day's calendar with his spouse every night after dinner — insists on this as a shared ritual",
+        "Runs all family grocery shopping Saturday mornings before 10 am — never uses delivery or curbside pickup",
+        "Sets out workout clothes and work attire the night before — never chooses outfits in the morning"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After months of preparation, the company board approved a merger with a European auto parts supplier, requiring integration of new teams and workflows across locations and mandating travel to Frankfurt for joint leadership meetings.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_028",
+            "fact": "Uses video conferencing tools for weekly cross-continental leadership check-ins, preferring collaborative whiteboard features over email for real-time updates.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Schedules midweek family video calls from Frankfurt to stay connected during international trips.",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Works out only in the early morning — will skip entirely rather than exercise later in the day"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Works out in hotel gyms or outdoors during international trips, regardless of time of day — accepts evening workouts while traveling for merger meetings.",
+              "domain": "health_body"
+            },
+            "reason": "The merger mandates frequent travel to Frankfurt and hectic leadership meetings. To maintain fitness while abroad, he adapts his workout schedule, accepting exercise outside his usual early morning slot."
+          },
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Takes his children to every after-school event personally unless out of town — never delegates this to others if in Columbus"
+            },
+            "to": {
+              "id": "pref_027",
+              "fact": "Delegates children's after-school transport to his spouse or a family friend during weeks when merger-related travel takes priority, even if occasionally in Columbus.",
+              "domain": "social_relationships"
+            },
+            "reason": "Frequent and unpredictable travel for the merger makes it impossible for him to reliably handle after-school activities. He now prioritizes travel obligations and delegates family transportation when necessary."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "The board finally signed off on the merger with the German supplier — kickoff is immediate. I'm expected in Frankfurt a lot over the next quarter, plus integrating their team and systems. I need to figure out how to keep our plants running smoothly while managing a whole new layer of cross-continental leadership. Any suggestions for staying organized and connected with everyone, without letting things slip here?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge transition — congrats, but I imagine the logistics are daunting. For cross-continental leadership, many execs lean heavily on collaborative video conferencing tools for real-time updates, especially those with integrated whiteboards. Are you currently using platforms like Teams or Miro? Would adding routine virtual check-ins help, or do you prefer sticking to in-person where possible?"
+        },
+        {
+          "role": "user",
+          "content": "In-person will be impossible at this scale; the time zones alone make joint meetings tough. I’m looking at scheduling weekly video check-ins with the German leadership, actually. I’ve found real-time whiteboard features way better for quick feedback and status updates than email. Email threads get way too fragmented for project work, especially with language barriers."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds smart — digital whiteboards help everyone visualize workflows and decisions without the clutter of email. For your internal team, how will you balance being physically away from the plants with continuing your bi-weekly progress reviews? Will you run those remotely as well or try to delegate?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll still host our progress reviews, but remotely. Oral updates are essential — we never rely on written reports outside meetings for project status. I’ll dial in from Frankfurt, but the format stays. Delegating isn’t an option for leadership updates; I need to be the voice regardless of location. The trickier part is keeping family in the loop when I’m abroad for a week or more. Any tips for making that less disruptive at home?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough balance. When I’ve seen execs travel internationally for extended periods, some schedule regular video calls—midweek family check-ins, for example—to stay connected. Would a fixed weekly video call from Frankfurt help maintain continuity? Or do your family routines already have a structure that can adapt easily?"
+        },
+        {
+          "role": "user",
+          "content": "A fixed midweek call makes sense, actually. Our evening calendar review is a family ritual, so I’ll try to move it online while I’m away. The bigger change is after-school logistics; I used to drive my kids everywhere unless out of town, but with the merger travel I’ll need to delegate more often. My spouse or a friend will cover transport, even if I’m back in Columbus for a few days between trips. That’s new for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Delegating family transport is a big shift, but it’s great you have trusted support in place. On your own routines, travel disrupts everything—from fitness to meals. Do you plan to maintain your morning gym schedule overseas, or will you adjust for the time zones and hotel facilities?"
+        },
+        {
+          "role": "user",
+          "content": "I’m adapting. Normally, I only work out early mornings—if I miss that slot, I skip altogether. But on merger trips, I’ll use hotel gyms or go outdoors whenever I can, even if it’s evening. Maintaining fitness is too important with all this schedule volatility and the stress that comes with it."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—travel flexibility will help keep your health on track. Will you shift any other wellness routines for these trips? For example, do your blood pressure checks or plant-based meals need updating, or do you have strategies to keep those consistent even with international travel?"
+        },
+        {
+          "role": "user",
+          "content": "BP checks are non-negotiable—I always log readings daily before breakfast, wherever I am. Plant-based meals will be trickier in Europe, but I stick to them unless at business dinners. The main adaptation is exercise timing. I might have to combine mindfulness breaks with walks in unfamiliar places but I’m not dropping those habits."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’re thoughtfully evolving routines without sacrificing your priorities. One last thing—will you capture project activity from both teams on your Kanban board, or do you have a separate workflow for European integration tasks?"
+        },
+        {
+          "role": "user",
+          "content": "Everything goes on the Kanban board—deadlines, cross-team assignments, integration tasks. Never track via email. Weekly video check-ins with the leadership teams will drive task updates, using real-time collaborative whiteboards for clarity. The new cadence seems sustainable, but ask me in a month!"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re building a new approach with both flexibility and structure. The shift to more video calls, adjusted workout schedules, and delegated family logistics shows you’re meeting the complexity head-on. If you need help streamlining international workflows or automating updates between the Kanban board and video conferences, let me know. I’m here to help as the transition unfolds."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "During his annual physical, his doctor identified signs of sleep apnea and ordered an at-home sleep study, leading to a diagnosis and a prescription for nightly CPAP therapy.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Puts on CPAP mask at least 30 minutes before bedtime to acclimate — never goes to bed without it since diagnosis",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Reviews nightly CPAP sleep quality statistics with his spouse weekly — uses the feedback to discuss health goals and adjust bedtime routines",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_022",
+              "fact": "Charges his phone in the kitchen overnight and never brings devices into the bedroom after 9 pm"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Now keeps his phone on the nightstand to sync and monitor CPAP data each night — devices are allowed in the bedroom solely for CPAP-related use",
+              "domain": "daily_routines"
+            },
+            "reason": "CPAP therapy requires using a connected device to monitor sleep data and compliance. He can no longer keep devices out of the bedroom entirely, as tracking and syncing CPAP results is now a nightly necessity."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just got my sleep study results—turns out I officially have sleep apnea. Doctor prescribed a nightly CPAP therapy and I started last week. I’ve been trying to stick with it, but honestly the routine feels clunky and I’m struggling to settle into sleep. Since I need to monitor the machine nightly, any tips for working this into an already structured evening routine?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment, especially with the demands you’re juggling at work and home. How much time are you currently allocating for setting up and acclimating to the CPAP before bedtime? Sometimes a longer wind-down period helps, but it can clash with tightly scheduled evenings."
+        },
+        {
+          "role": "user",
+          "content": "I’m actually giving myself at least 30 minutes before bed—putting the mask on while I read or prep for tomorrow. I don’t go to bed without it now, per doctor’s orders, so that window’s non-negotiable. It's still weird, but slowly getting used to it. What can I do to make falling asleep easier while getting through that awkward phase?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s smart—gradually acclimating before actual sleep. For the awkwardness, some people benefit from pairing their CPAP acclimation with low-stimulation activities, like listening to audiobooks or gentle breathing exercises. Given your goal-oriented approach, do you typically review any personal health metrics before sleep, or is that something you do elsewhere?"
+        },
+        {
+          "role": "user",
+          "content": "I used to keep all devices out of the bedroom after 9pm—charged my phone in the kitchen overnight without exception. But now, with CPAP monitoring, I need the phone synced to the machine on the nightstand each night. Only for sleep data, though—no other distractions allowed. I do check my CPAP stats every morning, but I’m also starting to review sleep quality with my spouse each week to talk through health goals and adjust bedtime if needed."
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for sharing—those are thoughtful boundaries. Syncing the phone just for CPAP is a clear adaptation. The weekly review with your spouse is a great partnership approach, both for accountability and mutual support. Have you noticed any impact on your energy or mood since starting therapy, either at work or during family activities?"
+        },
+        {
+          "role": "user",
+          "content": "I’d say mornings are a bit steadier. Not huge changes yet, but I’m no longer waking up foggy, which helps with my early workout and prepping breakfast. Evenings are trickier; sometimes I’m tired but not sleepy, probably from the mask. Any evening wind-down strategies that mesh with my structured schedule? I close my office door for a 10-minute mindfulness break most afternoons, but nights are less consistent."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re already doing well with the mindfulness break during the day. For evenings, you might try a short, device-free walk after dinner—even if just around the block. It can help signal transition and calm before sleep, especially on CPAP nights. If walks don’t fit, consider stretching or low-impact yoga. How does this align with your current family calendar and nightly routines?"
+        },
+        {
+          "role": "user",
+          "content": "I usually review the next day’s calendar with my spouse right after dinner—still sticking to that, since we both depend on it. Afterward, I’m driving kids to activities or helping my mom, so I get home and start CPAP prep pretty late. Walks are hit-or-miss, but maybe a short one with my spouse would help us unwind. And if I haven't mentioned, I never vary my weekday breakfast—oatmeal and fruit, same as always. Sleep apnea hasn't changed that, thankfully."
+        },
+        {
+          "role": "assistant",
+          "content": "Consistency with breakfast is a solid anchor, especially with your plant-based dietary focus. Pairing a brief evening walk with your spouse could reinforce both health and connection—plus, it fits your style of structured shared activities. If you find that late-night device use creeps in beyond CPAP tracking, consider a timer or app limiter to keep boundaries tight. Would you like help choosing a sleep tracking app or tips for making that weekly review more actionable?"
+        },
+        {
+          "role": "user",
+          "content": "I’m set on the app front—the CPAP syncs directly, and the weekly review has become our new ritual. Still figuring out how to use that data for practical tweaks, so suggestions there would help. Also, since I have to keep my phone on the nightstand now, I make a point not to check notifications during wind-down—only CPAP stats. So the device stays bedroom-only for therapy."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a disciplined strategy. For actionable CPAP review, you might set small weekly targets—like increasing total hours or reducing mask-off events—and track progress over time. You can also compare nights when you stick to your wind-down routine versus evenings with more disruptions, adjusting as needed. If you and your spouse notice patterns, use that to modify bedtime or evening activity. Anything else about your routine feeling pressure from this change—or is the main challenge just finding a smoother wind-down?"
+        },
+        {
+          "role": "user",
+          "content": "Mainly the wind-down challenge. My calendar review and CPAP acclimation are now must-dos, which pushes out anything spontaneous. I do miss having device-free evenings, but it's unavoidable for now. Otherwise, my routines are holding—morning workouts, meal prep, mindfulness, but this CPAP step will take some getting used to. Appreciate the help, and I’ll try out those walk and data review strategies."
+        },
+        {
+          "role": "assistant",
+          "content": "You’ve made impressive adjustments already. With time, CPAP will become just another element of your structured routine, and pairing it with healthy wind-down habits can even enhance sleep quality. If you run into friction points or want to brainstorm additional strategies for family or work-life balance, let me know. Good luck, and keep tracking those improvements—both for health and peace of mind."
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The company’s largest plant suffered a major cybersecurity breach, shutting down all automated equipment and forcing his team to coordinate production manually while external consultants investigate and remediate the attack.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_035",
+            "fact": "Checks and responds to plant floor staff texts and calls immediately, overriding his usual batch-response rule, to maintain real-time communication during manual operations post-cyberattack",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_036",
+            "fact": "Initiates daily morning crisis standups with cross-functional leaders and external consultants until automated systems are restored after the cybersecurity breach",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Uses a digital kanban board to assign team tasks and monitor deadlines — never tracks project work via email threads"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Temporarily tracks urgent team tasks and updates via email threads and phone calls rather than digital kanban, due to disrupted automated systems after the cybersecurity breach",
+              "domain": "work_habits"
+            },
+            "reason": "The digital kanban board depends on the automated equipment and IT systems that are now offline after the breach. With production forced manual and IT infrastructure compromised, the team is reverting to less preferred but available methods like email and phone for task coordination."
+          },
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Blocks two hours every Thursday morning for uninterrupted strategic planning — no calls, emails, or meetings allowed during this time"
+            },
+            "to": {
+              "id": "pref_034",
+              "fact": "Suspends the Thursday strategic planning block to remain available for urgent crisis management and constant incident updates, until the plant breach is resolved",
+              "domain": "work_habits"
+            },
+            "reason": "Ongoing emergency requires continuous coordination and rapid response; maintaining an uninterrupted block is impractical during the crisis. He must remain accessible to staff, consultants, and executives."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "The week has been chaos. Our main plant suffered a pretty serious cyberattack—every automated system's offline, so we're scrambling with manual processes. I need help structuring team communication and priorities in this mess, since our usual tools aren't available. Where would you start if you were in my shoes?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds incredibly challenging. With your digital systems down, I imagine tracking work and updating priorities is much harder. Are you still able to use any digital platforms, or is everything offline—are people falling back to paper or verbal instructions on the floor?"
+        },
+        {
+          "role": "user",
+          "content": "Almost everything digital is out, including our kanban board. I've had to switch to updating task assignments and tracking through email threads and phone calls, which I'd normally avoid. It's not ideal, but it's the only way to keep things moving until the IT folks get system access back."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—sometimes you have to adapt, even if it's not your preferred workflow. Are you finding email and phone coordination disruptive, or are people managing okay with the shift? Any bottlenecks you’re seeing so far?"
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely more disruptive, especially on the plant floor. The biggest bottleneck is getting real-time feedback from operators—they’re used to updating tasks digitally or waiting for the bi-weekly review, but now everyone’s texting or calling with issues. I've started responding immediately to those, which is a big change from my usual batch-response routine."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment, but it probably helps morale and problem-solving during a crisis. Are you able to sustain that level of responsiveness, or is it starting to overwhelm your schedule? Would a set standup or daily escalation window help streamline?"
+        },
+        {
+          "role": "user",
+          "content": "Good question. To keep everyone focused and avoid a constant flood, I initiated daily morning crisis standups with my leadership team and the external consultants. That way, everyone's on the same page first thing, and urgent issues get spotlighted. It’s helped, but I’m still on call all day for surprises."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a strong approach—anchoring the morning with a crisis standup provides structure. With all this extra coordination and real-time responsiveness, are you able to maintain any of your usual strategic planning blocks, or have those gone by the wayside for now?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve had to suspend my Thursday morning strategic planning block entirely. There's no way to leave calls and emails unchecked during an incident this serious. It’s frustrating, but I’ll bring the block back once we're out of emergency mode."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood—sometimes crisis management trumps everything else. As IT works to restore the automated systems, are you tracking any new skills or process improvements you’d want to reinforce post-breach? Or is this mostly about getting through the day-to-day right now?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, most of the focus is on getting through each day. But I’ve noticed the need for clearer manual fallback procedures and more cyber training for floor staff. Once we’re back online, I’ll prioritize a review of response protocols. For now, keeping communication lines open and prioritizing issues in real time is the best I can do."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds practical—you’re handling the crisis, and capturing lessons for later. Would you like help drafting a plan for post-restoration debrief and staff retraining, or do you want to focus just on immediate tactics until things stabilize?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s keep it tactical for now. If you have suggestions for keeping manual task tracking from falling through the cracks—especially as everyone’s stressed and steps get missed—I'm open to ideas. Email and phone coordination is manageable, but the risk is missing smaller tasks or details since we’re outside our usual workflow."
+        },
+        {
+          "role": "assistant",
+          "content": "In that case, it may help to designate a point person on each shift to summarize critical issues and completed tasks at the end of their shift and send a daily update email. That way, you receive a consolidated snapshot, and nothing slips through. You could also use a shared spreadsheet for manual tracking if access is possible—even simple offline docs can help maintain visibility. Would that fit within your current constraints?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a practical suggestion. We do have limited access to shared spreadsheets on some unaffected devices, so I’ll ask shift leads to log summaries there and email me at shift end. Consolidated updates should help reduce the noise and keep priority issues in focus."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "The CEO announced a surprise company-wide initiative mandating all managers, including his direct reports, complete a two-month rotation working on the factory floor to build firsthand understanding of operational challenges and veteran staff concerns.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Wears steel-toed boots and company-standard safety gear during all factory shifts; keeps personal attire and accessories off the floor for compliance",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Eats lunch in the staff cafeteria with line workers during factory rotation; declines executive dining room access for the duration",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Insists that all project updates are delivered orally in bi-weekly progress reviews; never reads lengthy written reports outside meetings"
+            },
+            "to": {
+              "id": "pref_037",
+              "fact": "Now reviews written daily shift summaries provided by floor staff during his factory rotation; oral updates are reserved for bi-weekly management sessions only",
+              "domain": "work_habits"
+            },
+            "reason": "The two-month factory rotation requires direct engagement with operational teams, who produce written shift summaries as part of their routine. To gain authentic insight and respect shop-floor practices, he must adapt to reading written updates daily, rather than exclusively oral reviews."
+          },
+          {
+            "from": {
+              "id": "pref_001",
+              "fact": "Prepares detailed agendas for every meeting and shares them at least a day in advance — refuses to run ad-hoc sessions"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Joins informal, ad-hoc standups and huddles during factory shifts without prior agenda — adapts to spontaneous discussions between line teams in rotation",
+              "domain": "work_habits"
+            },
+            "reason": "The factory floor environment operates with frequent spontaneous huddles and briefings to address production needs and team concerns. Adhering strictly to advance agendas would alienate staff and limit his effectiveness during the rotation."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I have to say, yesterday’s CEO announcement caught everyone off guard. I’ll be starting a two-month factory floor rotation next Monday—my first since joining the company. I’m used to managing transformation from the conference room, not working in steel-toed boots. I’d appreciate some ideas for shifting my daily workflow and staying productive while adapting to this new reality."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s quite a dramatic shift—but also a valuable perspective. What’s your biggest concern right now? Is it maintaining executive responsibilities, adjusting to the floor schedule, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s a mix. The floor teams run on routines I’m unfamiliar with—lots of informal huddles, and they rely heavily on written shift summaries for updates. I'm used to structured, oral report-outs at bi-weekly reviews. I know I’ll need to adapt, but I’m worried about missing strategic work while reading daily summaries and joining unscheduled standups."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a practical challenge. Would it help to set aside a fixed time slot each day for reviewing those written shift summaries and engaging in ad-hoc huddles, to preserve some predictability? Or do production demands require you to stay flexible?"
+        },
+        {
+          "role": "user",
+          "content": "I think flexibility is crucial here—these shift huddles happen spontaneously, so I’ll have to join without any agenda, which is the opposite of my usual meeting style. But I can probably block time after the shift ends to actually read the daily summaries. My old habit was to ignore anything written except oral reviews, but that won’t fly on the floor."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense—embracing informal, ad-hoc communication will help you build rapport on the floor. For your reading time, a consistent window right after each shift could anchor your routine. Regarding your strategic work, will you still have your Thursday morning block, or does the rotation change your schedule entirely?"
+        },
+        {
+          "role": "user",
+          "content": "I’m keeping the Thursday strategic block remote for now, but everything else will be adjusted to fit the factory’s hours. That includes wearing steel-toed boots and full safety gear on every shift. No personal attire—I’ve already set aside my usual accessories for compliance. I'll be eating in the staff cafeteria with the line workers too, even though I’d normally use the executive dining room."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move—joining the team for lunch goes a long way in building trust. Are there any challenges with the cafeteria menu, given your mostly plant-based diet? And has the new gear affected your morning workout or prep routine?"
+        },
+        {
+          "role": "user",
+          "content": "The cafeteria actually has decent plant-based options, so that's workable. My morning gym sessions won’t change—I’ll just bring the boots and gear to the locker room instead of my usual work clothes. It does mean keeping my phone and personal items separate, since nothing but basics is allowed on the floor."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear your fitness routine is intact. For keeping track of project work, will you still use your digital kanban board for team tasks, or has the rotation shifted your tracking habits?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll keep the kanban board for my cross-functional team; it’s still the best way to manage deadlines. But for factory updates, I’ll rely on their written shift summaries—reading them daily, rather than waiting for oral updates at bi-weekly reviews. It’s definitely a departure from my old approach."
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. Integrating the written summaries into your daily review should help you capture the pulse of operations. Would it be helpful to maintain a brief daily log of observations during your rotation, so you can reference key learnings when you return to your regular role?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a good idea. I’ll add a daily note section in my workflow—maybe after reading the shift summaries, before heading home. Between joining spontaneous floor huddles, reading written reports, and adjusting to safety protocols, I think that will help me synthesize things."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve got a solid plan to adapt. If you need support managing your executive workload or keeping your family routines balanced during the rotation, just let me know—I can help brainstorm solutions."
+        },
+        {
+          "role": "user",
+          "content": "Thanks, I appreciate it. Balancing the new floor schedule with my usual responsibilities is going to take some trial and error, but I feel more prepared now."
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Sustained a moderate ankle sprain during his early morning gym session, requiring several weeks of physician-ordered rest and a temporary halt to all weight-bearing exercises.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Incorporates daily upper body resistance band workouts and guided seated stretches at home in lieu of his usual morning gym cardio routine due to ankle injury",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Prefers to spend recovery period mornings reading industry news and strategic reports with coffee instead of exercising",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_020",
+              "fact": "Takes a long bike ride every holiday morning, regardless of weather — never skips unless out of town"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Replaces holiday morning long bike rides with extended indoor upper body and flexibility routines while recovering from his ankle sprain — avoids all cycling or weight-bearing exercise until cleared by physician",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The moderate ankle sprain and physician-ordered rest require abstaining from all weight-bearing activities, including biking, until healed. He adapts his holiday exercise ritual to focus on seated or non-weight-bearing upper body and flexibility work."
+          },
+          {
+            "from": {
+              "id": "pref_025",
+              "fact": "Sets out workout clothes and work attire the night before — never chooses outfits in the morning"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Now only sets out work attire the night before; does not prepare workout clothes during recovery from his ankle injury",
+              "domain": "daily_routines"
+            },
+            "reason": "As physician-ordered rest halts all gym sessions, he no longer prepares gym clothing. His routine shifts to laying out only work clothes until he can resume exercise."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_024",
+            "fact": "Runs all family grocery shopping Saturday mornings before 10 am — never uses delivery or curbside pickup",
+            "domain": "daily_routines",
+            "reason": "The ankle injury impedes his ability to walk around stores; for the duration of his recovery, this in-person shopping routine is no longer feasible, nor is there a substitute in the preferences (his family or spouse will manage or use delivery if needed)."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Well, my morning gym routine is officially sidelined. Sprained my ankle during Wednesday’s workout and the doc says no weight-bearing exercise for several weeks. I’m not great at downtime, so I need help figuring out a routine that keeps me sane—and ideally, productive. Any recommendations for an exec stuck at home who’s used to starting the day at full tilt?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ouch, sorry to hear about your ankle. That’s a tough adjustment, especially if mornings set your pace. When you say 'productive,' do you mean physically active, mentally sharp, or both? Are you looking to recreate the structure of your gym routine with alternatives, or open to a whole new approach?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly both. I need movement to clear my head, but also something to keep focus before work starts. Cardio’s out while I’m healing, but I’ve started reading industry news and strategic reports with my morning coffee—something I used to save for later. I’m trying to keep the 'productive energy' going, even if I’m not on the treadmill."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart pivot. Swapping exercise for strategic reading can keep your mind sharp and still anchor your day. For the movement part, have you experimented with any upper body workouts or seated stretches? Resistance bands or chair-based routines could provide some activity without stressing your ankle."
+        },
+        {
+          "role": "user",
+          "content": "Actually, yes. I’ve started doing daily upper body resistance band workouts along with guided, seated stretches—both at home in the mornings now. It’s not the same as gym cardio, but it feels manageable and keeps me moving without impacting the injury. I haven’t tried any other alternatives yet."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a strong adaptation. Given your usual discipline, do you structure those workouts as strictly as your old gym sessions? Also, are you continuing any other health rituals—like meal prep or morning checklist—so the routine stays intact overall?"
+        },
+        {
+          "role": "user",
+          "content": "Routine is pretty much intact apart from the gym change. Still prepping oatmeal and fruit every weekday, setting out work attire at night—though I’ve stopped laying out workout clothes during recovery, since I’m not hitting the gym. I’m making sure my blood pressure checks and mindfulness breaks stay on track."
+        },
+        {
+          "role": "assistant",
+          "content": "Glad to hear the rest of your routine holds steady—and good call on keeping the work attire ready, even with the gym clothes on hiatus. About your holiday morning bike rides: have you found a substitute for those, given the restriction on weight-bearing exercise? Or are you skipping them until your ankle is cleared?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually changed too. For now, I’ve replaced the holiday bike rides with longer upper body and flexibility sessions indoors. No cycling or anything that puts weight on my ankle until the doc says it’s safe. I miss it, but I’m making sure the holiday exercise ritual stays alive, just in a modified form."
+        },
+        {
+          "role": "assistant",
+          "content": "That level of adaptation should help you maintain some sense of normalcy. Are there other routines you’ve had to tweak—like weekend family errands or outdoor activities—because of the injury?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, definitely. I’ve had to drop the Saturday morning grocery run. Walking around stores is off-limits for now, so my spouse has taken over, or we get delivery if needed. Not ideal, but I physically can’t swing it right now, and there’s no good workaround."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, and it’s smart to outsource when safety is an issue. Sounds like you’ve reconfigured your core routines without losing your sense of structure. Do you feel like there’s anything missing—something you’re craving—but haven’t figured out how to replace yet?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, the thing I miss most is the movement and sense of accomplishment from my usual workouts. Everything else feels manageable for now, but I’d appreciate ideas on keeping the mental side sharp while stuck at home—maybe something new to try alongside industry reading or work prep?"
+        },
+        {
+          "role": "assistant",
+          "content": "How about adding a new skill to your offseason—like short online courses in a non-work topic, or even chess tactics training, since you already play regularly? Could help keep your mind engaged and offer a sense of progress. Or, if you want something more collaborative, maybe schedule a virtual strategy chat with your chess group?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually a solid idea. I never thought about using this downtime for chess skill improvement—could be a fun way to stay sharp. I’ll look for a good course or interactive trainer. Thanks, this has been really helpful in getting my new routines squared away."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After a follow-up with his cardiologist revealed worsening hypertension despite medication and lifestyle measures, his physician prescribed a second daily antihypertensive and ordered a low-sodium dietary plan with strict activity monitoring.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Uses a digital platform to log daily sodium intake and activity minutes, shares logs weekly with his cardiology care team for compliance checks",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Declines offers to split appetizers or order shared entrees at work dinners unless ingredients and sodium levels are made explicit, prioritizing menu transparency",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_043",
+              "fact": "Incorporates daily upper body resistance band workouts and guided seated stretches at home in lieu of his usual morning gym cardio routine due to ankle injury"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Transitions to supervised, moderate-intensity cardio on a recumbent bike and low-impact machine circuit under clinic oversight, replacing home upper body-only routines, as required by stricter cardiac activity monitoring",
+              "domain": "health_body"
+            },
+            "reason": "His cardiologist ordered stricter activity monitoring and safe cardiac rehab-style exercise due to worsening hypertension. He can no longer self-direct upper body routines at home but must do medically approved low-impact sessions under supervision."
+          },
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Refuses red meat except when dining out with business partners; otherwise stays strictly plant-based"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Excludes all red meat entirely, even during business dining, and requests low-sodium, plant-centric options at all meals including client events",
+              "domain": "health_body"
+            },
+            "reason": "A physician-ordered low-sodium diet for uncontrolled hypertension now requires him to avoid red meat altogether, not even making exceptions during business-related dining out."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_041",
+            "fact": "Replaces holiday morning long bike rides with extended indoor upper body and flexibility routines while recovering from his ankle sprain — avoids all cycling or weight-bearing exercise until cleared by physician",
+            "domain": "leisure_hobbies",
+            "reason": "His activity is now determined not by orthopedic recovery but by cardiologist-mandated cardiac safety protocols; prior injury-based adjustment is obsolete, as all exercise now requires tailored monitoring for hypertension, not simply avoiding weight-bearing."
+          },
+          {
+            "id": "pref_044",
+            "fact": "Prefers to spend recovery period mornings reading industry news and strategic reports with coffee instead of exercising",
+            "domain": "daily_routines",
+            "reason": "His current mornings now center on physician-prescribed, supervised exercise and diet management; the previous low-activity, recovery-focused routine is no longer relevant as orthopedic rest is superseded by active cardiac monitoring."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Just got back from my cardiologist—hypertension's gotten worse even though I've been sticking to the old routines. They've doubled my meds and now I've got a low-sodium dietary plan to follow, plus activity monitoring. I'm not sure how to fit all this in, especially with work and travel. Any advice for keeping compliance without letting it take over everything?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough adjustment, especially on top of your work demands. Tracking compliance can feel overwhelming, but there are ways to make it more efficient. How are you currently logging diet and activity—are you using any apps or tools, or is this all manual?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I’ve started using a digital platform to log my daily sodium and activity minutes. It’s required—I have to send weekly reports to the cardiology care team. The system works well enough, but it’s one more thing to manage on top of everything else. Any suggestions for streamlining it?"
+        },
+        {
+          "role": "assistant",
+          "content": "Since you’re required to log anyway, maybe automating reminders could help—setting recurring calendar alerts or batching entries at a set time. With your work schedule, could you tie logging to another routine, like your morning email check or strategic planning block?"
+        },
+        {
+          "role": "user",
+          "content": "That’s not a bad idea. I always check my calendar after breakfast, before heading out. If I slot logging sodium and activity right after blood pressure, it should become routine. The bigger headache is eating out for business—I’m supposed to exclude all red meat now, even with clients, and every meal has to be low-sodium. Last night’s vendor dinner was awkward—I had to ask about ingredients in detail, even skipped appetizers because nothing had sodium info."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s tricky, especially with the social dynamics at business dinners. Would it help to email restaurants in advance about menu options, or are you often going to new places without much notice? How did your colleagues respond—any pushback?"
+        },
+        {
+          "role": "user",
+          "content": "Most of the time, dinners are booked by someone else, so I don’t have much advance control. I ended up declining shared dishes unless sodium and ingredients were spelled out. People were curious, but no real pushback. I’m making it clear up front now: plant-centric, no red meat, and explicit menu transparency always. It’s awkward, but non-negotiable."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a strong stance, and it sets expectations early—probably easier than handling surprises at the table. You could ask whoever’s scheduling to flag these restrictions with restaurants ahead of time. For travel, do you have go-to spots where you can order reliably, or do you often end up improvising?"
+        },
+        {
+          "role": "user",
+          "content": "Travel’s unpredictable, but I started asking hotels for plant-based, low-sodium options at all meals. I’ve cut out red meat entirely—no exceptions, even for business events. That’s a change; I used to allow it with partners, but compliance comes first now. Any tips for handling those situations gracefully, especially when hosts insist on their menu?"
+        },
+        {
+          "role": "assistant",
+          "content": "You might prep a quick script about medical restrictions—frames it less as a preference, more as a necessity, so hosts are less likely to take it personally. Also, suggesting alternatives (“Can we order X instead?”) keeps things positive. Have you run into any resistance from senior management or clients yet, or has it mostly just been curiosity?"
+        },
+        {
+          "role": "user",
+          "content": "So far, just curiosity—I’m upfront about physician orders. Everyone’s been accommodating, though I have to be diligent: no split entrees unless sodium’s explicit, and I’m always reviewing options on the digital logging platform afterward. That raises one other point—my workouts have changed too. Used to do resistance bands and stretches at home after my ankle sprain. Now, my cardiologist requires supervised cardio and low-impact machine circuits—no more self-directed routines."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift. Are you heading to a clinic daily, or just some days under supervision? How does that affect your morning schedule, especially with your gym habits and work commitments?"
+        },
+        {
+          "role": "user",
+          "content": "Right now, it’s clinic-based every weekday morning. It’s mostly recumbent bike and circuit machines—all moderate-intensity under staff oversight. I used to self-direct at home, but supervision is mandatory now: no cycling outdoors, no upper body-only workouts. That’s replaced previous routines, and it eats into early mornings, but it keeps me compliant. I’ve dropped the old recovery-morning habit—no more just reading industry news with coffee instead of exercise."
+        },
+        {
+          "role": "assistant",
+          "content": "So your mornings are fully booked with supervised exercise and compliance logging. That’s quite a transition from solo routines. Does it affect family time or other daily rituals, or have you managed to keep those intact around the new clinic sessions?"
+        },
+        {
+          "role": "user",
+          "content": "Most routines are intact. I set out clothes the night before as usual, and we still review calendars after dinner. But holidays are now different—used to take long bike rides; that’s gone. My activity is now determined by cardiac safety, not ankle recovery or weather. No cycling, no weight-bearing routines, just the supervised clinic sessions. So, I had to drop those holiday rides altogether."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a meaningful change—those holiday rides sounded like a favorite tradition. Given the new constraints, is there anything you want to try for leisure that meets the cardiac guidelines, or is it best to focus on compliance for now?"
+        },
+        {
+          "role": "user",
+          "content": "For now, compliance is the priority. Once my cardiologist says it’s safe, maybe I’ll revisit some traditions. Right now, routines are dictated by clinic oversight and dietary tracking—no room for improvisation. So, any advice for making the compliance measures feel less intrusive? Sometimes it’s hard not to resent all the structure."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s valid—rigid structure can feel burdensome. You’re already tying logging to established routines, which helps. Maybe reframing compliance as investment in your own leadership longevity—so work, travel, and family all benefit—can make it feel more purposeful. And if you can keep a couple rituals (like calendar review with your spouse), that helps maintain normalcy amidst all the changes. Willing to try that?"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His mother was hospitalized for a mild stroke, prompting discharge home but now requiring daily visits and support with meals, medication, and mobility.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Arranges his work calendar to leave the office an hour early each weekday, ensuring time for daily caregiving visits to his mother after her stroke recovery",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Prepares low-sodium, plant-based dinners for his mother several nights per week, adapting family recipes to meet her dietary restrictions post-stroke",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Calls his mother every Sunday evening even if also visiting earlier in the week; says it establishes continuity"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Visits his mother daily after work and assists with meals, medication, and mobility — calls only if unable to visit in person that day",
+              "domain": "social_relationships"
+            },
+            "reason": "His mother's stroke requires close daily support and direct assistance; phone calls are no longer sufficient or primary, and in-person visits become the routine. Calls are now fallback, not continuity."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My mother had a mild stroke last week. She’s home now but needs daily help—meals, medication, just getting around. I’m trying to figure out how to rework my work and family routines, starting with my afternoons. Any suggestions for managing all this without burning out or letting deadlines slip?"
+        },
+        {
+          "role": "assistant",
+          "content": "I’m really sorry to hear about your mother. That’s a big shift. Balancing work and caregiving is tough, especially with your executive responsibilities. Are you considering limiting office hours, or shifting meetings? What parts of your workday are most flexible right now?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve adjusted my calendar to leave the office an hour early every weekday now. That gives me enough time to do her dinner, help with medication, and stay until she’s settled for the evening. I still run bi-weekly progress reviews, but I’m pushing routine vendor meetings earlier. The challenge is keeping my Thursday strategic planning block truly uninterrupted, since requests to cover in-person tasks pop up last minute."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move on the calendar. Have you delegated any responsibilities to your team, or considered remote check-ins? Keeping Thursday mornings sacred is critical given your need for long-term focus. Would scheduling a buffer before or after your planning block help manage any urgent requests, or is it more about team alignment?"
+        },
+        {
+          "role": "user",
+          "content": "I haven’t delegated much yet, since a lot of the resistance from floor staff needs leader face-time. But I did set boundaries—only urgent calls or emails during Thursday morning. Shifting off ad-hoc meetings has helped. For my mother, I visit daily, so phone calls are only if I can’t make it. That used to be reversed—I’d always call Sunday evenings for continuity regardless of visits. Now I see her in person each day; phone calls fill gaps, not routines."
+        },
+        {
+          "role": "assistant",
+          "content": "Shifting to daily in-person visits is a big change. Are those visits structured, or more flexible based on her needs? And do you feel you’re able to decompress, or is your mindfulness practice getting squeezed out?"
+        },
+        {
+          "role": "user",
+          "content": "Most visits are pretty structured—I prep her dinner, check medications, help with mobility, then clean up. I’m keeping my 10-minute mindfulness break in the office, but I added an extra short one after leaving her house. Otherwise I bring home more stress than usual. I’ve started prepping low-sodium, plant-based dinners for her several nights a week, adapting recipes we share. Her diet is stricter post-stroke than even mine."
+        },
+        {
+          "role": "assistant",
+          "content": "Adapting your plant-based meals and adding low-sodium is thoughtful—and probably challenging, given her preferences. Have you found any family favorites that work, or are you experimenting? Is there a way to streamline meal prep, maybe batch-cooking or prepping sides in advance, so it fits alongside your work demands?"
+        },
+        {
+          "role": "user",
+          "content": "I’m experimenting for now—some dishes are easier to adapt than others, especially traditional ones. Batch-cooking helped this week: I prepped modified lentil stew and brown rice for both her and my own family. I always take care of these after work, so leaving early is non-negotiable. Calls are fallback—and I don’t do grocery delivery, so Saturday mornings are even busier now. It’s a lot, but I’m finding small efficiencies."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re juggling an impressive amount. It sounds like you’ve turned new constraints into habits—early office departure, daily caregiving visits, and adapting mealtime logistics. Is there anything that still feels unsustainable, or are you looking for specific tools or methods to improve one area?"
+        },
+        {
+          "role": "user",
+          "content": "I think the biggest gap is managing my team’s expectations when I’m leaving early. I’ve always insisted on oral project updates during bi-weekly reviews, and I don’t read reports outside meetings. I’m considering whether I need to change that, but for now I want to preserve the in-person rhythm—just earlier in the day. My mother’s needs forced a big reorganization, but I don’t feel ready to compromise on key work routines yet."
+        },
+        {
+          "role": "assistant",
+          "content": "Maintaining your preferred way of running project reviews is important for clarity and accountability. Maybe you could shift some oral updates to earlier, or try compact video summaries for non-critical progress to buy yourself an extra hour some days. If those aren’t feasible, reinforcing your office departure policy with the team could help everyone plan ahead. Would you like help drafting a communication for your staff, or with meal prepping resources for your mother?"
+        },
+        {
+          "role": "user",
+          "content": "Drafting a communication for the staff would be good—I plan to lay out my new schedule and reinforce that oral updates remain the norm, but meetings will be earlier. I want to clarify that daily caregiving is the reason, and I’ll still be reachable for urgent issues after hours, just not physically in the plant. For meal prep, I have enough ideas to start, mostly adapted from my own plant-based repertoire."
+        },
+        {
+          "role": "assistant",
+          "content": "Great. I can draft a message that explains your new office hours and priorities, emphasizes your commitment to oral updates, and sets expectations for urgent communication after hours. It’ll also highlight the reason: daily caregiving for your mother. Would you prefer a direct, brief memo or something more conversational for your team?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s go with a brief memo—my team appreciates clarity and brevity. I can share context if anyone asks for more details."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Spouse accepted a grant-funded summer teaching fellowship at a university two hours away, which will require her to live on campus weekdays and limit her availability for daily family routines for the next three months.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_054",
+            "fact": "Drives his teenage children to all after-school activities on weekdays for the duration of his spouse's teaching fellowship, except when travelling; relies on family friends only for emergencies.",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_055",
+            "fact": "Schedules a weekly video call with his spouse and children every Thursday evening during the fellowship to maintain family connection despite distance.",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Schedules a weekly lunch hour with his spouse — never cancels except for last-minute travel"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Suspends weekly lunch hours with his spouse for the summer — arranges occasional weekend meetups when she is available from her teaching fellowship",
+              "domain": "social_relationships"
+            },
+            "reason": "With his spouse living on campus for her summer teaching fellowship two hours away, weekday lunch hours are not feasible. He adapts by shifting the connection to weekends when she can visit home."
+          },
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Reviews the next day's calendar with his spouse every night after dinner — insists on this as a shared ritual"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Switches to video or phone calendar check-ins with his spouse three times a week after dinner, rather than nightly in person, during her summer fellowship",
+              "domain": "daily_routines"
+            },
+            "reason": "His spouse will not be home except weekends. The nightly, in-person review is replaced with remote check-ins three evenings a week to preserve the coordination ritual."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_027",
+            "fact": "Delegates children's after-school transport to his spouse or a family friend during weeks when merger-related travel takes priority, even if occasionally in Columbus.",
+            "domain": "social_relationships",
+            "reason": "His spouse is now unavailable on weekdays for three months due to the teaching fellowship. This delegation to her is not possible; responsibilities must be redistributed or handled by him or others."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "We just found out my wife got a summer teaching fellowship at a university two hours away, and she'll be on campus weekdays through August. It's great for her, but I'm a bit overwhelmed trying to figure out how to keep our family routines smooth. I'm especially worried about the evenings with the kids and syncing schedules. Any thoughts for keeping things running—both at home and staying connected?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations to your wife—that’s a big achievement! It sounds like this will shake up quite a few established routines for your family. When it comes to syncing schedules and keeping things running at home, do you already use any shared calendars or regular check-ins that help keep everyone on track? Or is it mostly informal coordination night by night?"
+        },
+        {
+          "role": "user",
+          "content": "We used to review the next day’s calendar after dinner every night—an in-person ritual I insisted on, actually. But now, with her on campus all week, we’ll have to switch to remote check-ins. I’m thinking video or phone calendar reviews three evenings a week after dinner just to keep that coordination up. Nightly is probably too much given her workload and distance."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid adjustment, and carving out a few evenings for those check-ins should help maintain the continuity. For the kids’ evenings, do you plan to pick up more of the after-school activity logistics yourself, or will you look to delegate some of it to friends or extended family? It can be a lot to juggle, especially with your own work schedule."
+        },
+        {
+          "role": "user",
+          "content": "For now, I’ll be driving both kids to all their after-school activities on weekdays, unless I’m traveling. We’ve decided to only rely on family friends for emergencies this summer—otherwise, it’s all me. That used to be split between me, my wife, and others, but with her gone, it’s more hands-on than before."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift. I know you’re pretty strict about running all family grocery shopping Saturday mornings and not using delivery—will this stay the same, or will you need to tweak anything to help with the increased weekday load?"
+        },
+        {
+          "role": "user",
+          "content": "Grocery shopping will stay as-is—Saturday mornings before 10 a.m. are non-negotiable. What’s going to change is our weekly lunch hour together. We used to have that every week unless I was traveling, but I’ll suspend it for the summer since weekday lunch won’t work when she’s away. Instead, we’ll try to arrange occasional weekend meetups when she’s available from her fellowship."
+        },
+        {
+          "role": "assistant",
+          "content": "Adjusting from weekly in-person lunch to weekend meetups is a nice way to keep the connection alive. Have you thought about establishing any regular shared touchpoints for the whole family, like a video call during the week, now that your wife is away? Sometimes setting a fixed time helps everyone feel included, even with distance."
+        },
+        {
+          "role": "user",
+          "content": "That’s a good idea. I’ve actually started scheduling a weekly video call with my wife and the kids every Thursday evening just for this purpose, so everyone can catch up together. It’s a new routine, but I think it’ll help bridge the gap."
+        },
+        {
+          "role": "assistant",
+          "content": "That Thursday video call should really help keep everyone feeling connected. With your wife unable to handle weekday activity runs, are you comfortable relying solely on family friends for emergencies, or do you see yourself needing to reevaluate your delegation strategy if your own travel intensifies?"
+        },
+        {
+          "role": "user",
+          "content": "That’s a bit of a change—I used to delegate driving to my wife or family friends during busy merger weeks, even if I was technically around. That won’t work for the next three months; with her out of the picture on weekdays, I’m dropping that delegation to her entirely. Unless I’m out of town or it’s an emergency, the responsibility’s squarely on me."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. It’s impressive how you’re consciously adapting these routines and keeping everyone connected despite the upheaval. If you want, I can help you build a shared digital workflow to organize activity schedules and check-ins, so nothing slips through the cracks. Would you like recommendations for family calendar tools, or have you already settled on something?"
+        },
+        {
+          "role": "user",
+          "content": "We’re pretty set with Google Calendar for now, but I’m open to tips for keeping things visible to the kids as well—not just me and my wife. I appreciate the help. Honestly, it’s a lot, but at least we’re finding ways to stay in touch and keep the basics running."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re tackling a tough transition with a clear head—prioritizing connection, routine, and flexibility where needed. If you need advice on helping your kids adjust, or streamlining these new check-ins, just let me know. And congrats again to your wife on the fellowship!"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "He was offered and accepted a board seat on a regional manufacturing technology consortium, requiring monthly evening meetings, quarterly strategy retreats, and participation in policy discussions with peer executives from competing firms.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_057",
+            "fact": "Participates in monthly evening board meetings for the manufacturing tech consortium, blocking out those nights and declining other social or family commitments at those times",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_058",
+            "fact": "Prepares written talking points and gathers recent sector news ahead of consortium policy discussions, replacing his informal practice of mental note-taking for internal meetings",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_059",
+            "fact": "Uses after-consortium-meeting dinners as his sole exception for trying new regional cuisine, while strictly adhering to dietary restrictions during all other business travel",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Plays chess online with the same group every Saturday night — never participates in local chess clubs"
+            },
+            "to": {
+              "id": "pref_056",
+              "fact": "Plays chess online with his group most Saturday nights except when attending consortium board meetings; occasionally joins in-person ad hoc games with peers during strategy retreats, despite previous avoidance of local clubs",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "The new board seat entails quarterly strategy retreats and networking with regional peers, which often include casual evening board games. He chooses to engage socially by joining these in-person chess matches, a significant shift from his previous policy of avoiding any local or in-person chess events."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I wanted to check in for some advice, given this new role—I just accepted a board seat for the regional manufacturing technology consortium. Monthly evening meetings, quarterly retreats, policy work with other execs in the area. It's a great opportunity but already feels disruptive. My calendar is tighter, there's more travel, and I'm unsure how to balance this with family commitments and my current workflow. Where would you start if you were me?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats on joining the consortium—that sounds like an impactful move. With board meetings and retreats in play, it's understandable your schedule would tighten. Are you facing more conflicts with your family commitments, or is work travel the main stressor right now? And do you want help prioritizing calendar blocks, or are you thinking more about adjusting day-to-day routines?"
+        },
+        {
+          "role": "user",
+          "content": "Both, honestly. Board meetings are fixed—monthly evenings—and I have to decline other evening plans, including family events. That's a shift for us; we've always kept most evenings free except when I'm traveling. I need some strategies for prepping ahead so I don't let these new meetings become last-minute scrambles, either. I usually run through mental notes for internal work stuff, but policy discussions are more formal. Any templates or routines worth trying?"
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to formalize your prep for these policy discussions, especially given the higher stakes. Many board members use structured talking points and compile sector news beforehand. Would you prefer a template for written talking points that you can customize each meeting, or something more interactive, like a digital note-taking system to help organize your thoughts as new news comes in?"
+        },
+        {
+          "role": "user",
+          "content": "A written talking points template would help—I'm pivoting from my usual informal approach. I've started gathering recent sector headlines two days before each board meeting and drafting key questions or comments in advance. Having a shareable outline structure would help so I can add stats, talking points, and a short summary for each topic. If you have an example format, that'd be great."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. A useful format is a simple outline: Start with Agenda Item, Supporting Data or News, Key Talking Point, Potential Questions, and Action/Follow-Up. You can set it up in Word or a collaborative doc. Would you like a sample template for this, including prompts for sector headlines and space for stats?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, please—having prompts for recent headlines would be useful, since I need to tie in regional news. Also, the board meetings involve dinner afterwards, and the group tends to try different regional restaurants. I'm strict about my diet during business travel, but I've decided consortium dinners are the sole exception where I'll try whatever's on offer, even new cuisines. So I'm looking for ways to manage the diet overall, knowing I'll have these exceptions. Any suggestions?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's smart—enjoying the dinners is a great way to build relationships, and maintaining your plant-based diet elsewhere can offset those occasional exceptions. Would a tracking app help you monitor these exceptions, or do you prefer to keep it informal? Also, do you need meal ideas for your business travel days, or are you mainly focused on managing after-dinner effects (like blood pressure or energy)?"
+        },
+        {
+          "role": "user",
+          "content": "I use an app to log my blood pressure and meals, so I plan to add notes after consortium dinners to track those exceptions. For travel, I'm comfortable keeping it strict unless it's one of these board events—I've got plant-based meals worked out with most hotels and vendors. The only other curveball is chess. My old routine was online games with my Saturday group, never in-person or local clubs. But retreats include casual chess among board peers, and I've started participating. I still play online most weekends, but now join ad hoc in-person games at retreats—something I used to avoid. That change surprised me."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a positive shift—social chess at retreats likely helps with networking as well. Balancing your usual online games with occasional in-person ones can enrich your experience. Has this made scheduling your Saturday evenings more complicated? Or do you find yourself missing your regular group at those times?"
+        },
+        {
+          "role": "user",
+          "content": "It's mostly just a scheduling adaptation. I play online with my group most Saturday nights, except consortium board meeting weekends. At retreats, I join peers for ad hoc games, even though I used to avoid any local or in-person chess. It was important for me not to skip these networking opportunities. Otherwise, my routines are stable. I just need support streamlining prep for policy discussions, managing monthly board nights, and keeping my diet and chess habits in sync with the new calendar."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it. You’ve made thoughtful adjustments: blocking consortium evenings, formalizing prep, adapting your chess habits, and maintaining dietary structure except for those dinners. You might benefit from a checklist system for board meeting prep, integrating both agenda notes and sector headlines. For calendar balance, using a recurring event or ‘blackout’ for those monthly evenings can help communicate your unavailability to family and colleagues upfront. Would you like a sample checklist for board prep or advice on communicating these new boundaries?"
+        },
+        {
+          "role": "user",
+          "content": "A checklist would be great—if you could add prompts for capturing key news items, personal talking points, follow-up actions, and maybe a dietary exception log for dinner afterwards, that'd cover all bases. For communicating calendar changes, I've already started blocking those evenings out and declining other commitments, including family events. It's not ideal but necessary, given the consortium schedule."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. I’ll draft a board prep checklist with news prompts, sections for talking points, action items, and a post-meeting dietary log. This will streamline your prep and help you track the exceptions without stress. Your calendar blocking is the right tactic—have you had pushback from family, or are they adapting? If you need talking points for explaining these new boundaries to them, I can help with that as well."
+        },
+        {
+          "role": "user",
+          "content": "There's been some adjustment—my spouse misses having me around certain evenings, but understands it's fixed and rare compared to my usual travel. I've prioritized communicating these changes ahead of time, reviewing my calendar with her nightly after dinner. As long as I stick to that, we stay aligned. The big shift is that consortium meetings always take precedent now, so I have to say no to all other evening social plans on those nights."
+        },
+        {
+          "role": "assistant",
+          "content": "Reviewing your calendar nightly is a solid habit—it keeps things transparent. With fixed consortium nights, upfront communication really helps minimize friction. You’ve made deliberate changes: formal prep routines, calendar blocks, and dietary tracking. I’ll send you that template and checklist. Let me know if you want help tweaking it further as you settle into this new board role."
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "His 17-year-old child was accepted to a highly competitive boarding school program out of state and decided to enroll for senior year, requiring the family to navigate living apart and new visitation routines.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_061",
+            "fact": "Schedules bi-weekly video calls with his boarding school child to stay connected and discuss academics, replacing prior daily in-person contact.",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_062",
+            "fact": "Plans monthly weekend trips to visit his boarding school child, aligning family schedules around school events and breaks whenever possible.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_054",
+              "fact": "Drives his teenage children to all after-school activities on weekdays for the duration of his spouse's teaching fellowship, except when travelling; relies on family friends only for emergencies."
+            },
+            "to": {
+              "id": "pref_060",
+              "fact": "Now drives only his younger child to after-school activities on weekdays; coordinates out-of-state travel and weekend visits for the older child instead, as his 17-year-old is away at boarding school.",
+              "domain": "daily_routines"
+            },
+            "reason": "With one child now living out of state for school, the daily transportation routine shifts from driving both children to only being responsible for the younger one's local activities. His involvement with the older child now centers on coordinating travel logistics and visits."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Our oldest just got accepted to a boarding school program out of state—he starts next semester. We're proud, but honestly, it's a big shift. The family is trying to figure out how to stay connected and keep routines stable, especially with my work and travel schedule. Any advice on managing this kind of transition?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a major milestone, and it definitely changes the family dynamic. From what you’ve shared, keeping routines is important for you—and I know you already have a pretty structured schedule. When you think about staying connected, are you focusing more on day-to-day touchpoints or deeper quality time during visits?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, both. We used to see each other every evening for check-ins, but obviously that's not possible now. I'm thinking about setting up a regular video call schedule with him—bi-weekly, maybe—to talk through academics and just catch up. I want something consistent, but not overwhelming for him given his new workload. What’s the best way to keep those calls meaningful?"
+        },
+        {
+          "role": "assistant",
+          "content": "A bi-weekly cadence strikes a nice balance. To keep calls meaningful, you might kick off with a recurring agenda—just like you do for your work meetings. Consider preparing a brief outline ahead of time: personal check-in, school updates, and space for him to bring up what’s on his mind. Would you prefer to schedule these at the same time each week, or flex them around both your calendars?"
+        },
+        {
+          "role": "user",
+          "content": "Scheduled, definitely. If they're not fixed, something always comes up. I already share agendas ahead of every meeting, even with family—so I'll stick to a simple outline for these calls. That keeps us focused, and makes sure we actually cover what matters, rather than just chatting aimlessly."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a good approach—familiar structure for both of you. You mentioned routines shifting. Has your after-school driving changed as well? I recall you used to take your kids to all their activities personally when in town."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that's shifted. I only drive my younger one to local activities now—my older is out of state, so our contact isn't daily anymore. Instead, I'm coordinating travel and visits for him when possible, like planning weekend trips or arranging his breaks around family events."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense. Coordinating those longer-distance visits adds another layer. Have you thought about syncing monthly visits with major school events, so the whole family can attend and maximize time together? Or do you anticipate making solo trips, given your work commitments?"
+        },
+        {
+          "role": "user",
+          "content": "We’re planning monthly weekend trips, sometimes the whole family, sometimes just me depending on work travel. Aligning visits with school events is ideal, but we’re also juggling my spouse’s teaching schedule and our younger child's activities. The key is making sure we maximize shared time, even if it’s just around those school weekends."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s really thoughtful planning. To streamline logistics, maybe you could build those visits into your strategic planning block—mapping out months ahead, so you avoid last-minute conflicts. Have you adjusted any other routines, like your Sunday family park outings or evening calendar reviews, to accommodate the new schedule?"
+        },
+        {
+          "role": "user",
+          "content": "For now, Sunday park outings still happen—just minus my older child most months. Evening calendar reviews with my spouse are more detailed lately, since we're coordinating travel, calls, and visit plans. Lots of moving pieces, but I still insist on that nightly ritual as a key anchor."
+        },
+        {
+          "role": "assistant",
+          "content": "Anchoring with those shared reviews definitely helps keep everyone aligned. If you ever want, I can help draft travel checklists or shared kanban boards for family tasks—like visit logistics, call schedules, etc. Would that fit your style, or do you prefer to handle the planning offline?"
+        },
+        {
+          "role": "user",
+          "content": "Digital kanban boards for logistics could be useful, as I use them for team tasks at work. As long as it doesn’t turn family planning into another work project—I want to keep some boundaries. But for coordinating visits and calls, it might help. Thanks, this gives me something concrete to work with."
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Accepts vendor proposals only after in-person demos — never approves based on paperwork alone",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Measures blood pressure every morning before breakfast and logs it in a dedicated mobile app — never skips a day",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_009",
+        "fact": "Takes a 10-minute mindfulness break at the office every afternoon; closes office door and silences phone",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Never consumes caffeinated beverages after noon — only water or herbal tea in the afternoon and evening",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Hosts quarterly dinners for his direct reports at his home but never invites upper management",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Responds to all colleague texts within an hour but only replies to non-urgent emails in batches at midday and evening",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_017",
+        "fact": "Explores Columbus metro parks with family one Sunday afternoon per month — refuses to visit the same park twice in a season",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Prefers audiobooks about industrial history during solo travel — never listens to music in the car when alone",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Collects vintage model cars, adding one new piece every quarter, but never displays them outside his private study",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Prepares and eats the same oatmeal and fruit breakfast every weekday — never varies his morning meal except on weekends",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Works out in hotel gyms or outdoors during international trips, regardless of time of day — accepts evening workouts while traveling for merger meetings.",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Uses video conferencing tools for weekly cross-continental leadership check-ins, preferring collaborative whiteboard features over email for real-time updates.",
+        "domain": "work_habits",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Schedules midweek family video calls from Frankfurt to stay connected during international trips.",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "Now keeps his phone on the nightstand to sync and monitor CPAP data each night — devices are allowed in the bedroom solely for CPAP-related use",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Puts on CPAP mask at least 30 minutes before bedtime to acclimate — never goes to bed without it since diagnosis",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Reviews nightly CPAP sleep quality statistics with his spouse weekly — uses the feedback to discuss health goals and adjust bedtime routines",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Temporarily tracks urgent team tasks and updates via email threads and phone calls rather than digital kanban, due to disrupted automated systems after the cybersecurity breach",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Suspends the Thursday strategic planning block to remain available for urgent crisis management and constant incident updates, until the plant breach is resolved",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Checks and responds to plant floor staff texts and calls immediately, overriding his usual batch-response rule, to maintain real-time communication during manual operations post-cyberattack",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Initiates daily morning crisis standups with cross-functional leaders and external consultants until automated systems are restored after the cybersecurity breach",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_037",
+        "fact": "Now reviews written daily shift summaries provided by floor staff during his factory rotation; oral updates are reserved for bi-weekly management sessions only",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Joins informal, ad-hoc standups and huddles during factory shifts without prior agenda — adapts to spontaneous discussions between line teams in rotation",
+        "domain": "work_habits",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_039",
+        "fact": "Wears steel-toed boots and company-standard safety gear during all factory shifts; keeps personal attire and accessories off the floor for compliance",
+        "domain": "daily_routines",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_040",
+        "fact": "Eats lunch in the staff cafeteria with line workers during factory rotation; declines executive dining room access for the duration",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_042",
+        "fact": "Now only sets out work attire the night before; does not prepare workout clothes during recovery from his ankle injury",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_045",
+        "fact": "Transitions to supervised, moderate-intensity cardio on a recumbent bike and low-impact machine circuit under clinic oversight, replacing home upper body-only routines, as required by stricter cardiac activity monitoring",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Excludes all red meat entirely, even during business dining, and requests low-sodium, plant-centric options at all meals including client events",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_047",
+        "fact": "Uses a digital platform to log daily sodium intake and activity minutes, shares logs weekly with his cardiology care team for compliance checks",
+        "domain": "health_body",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_048",
+        "fact": "Declines offers to split appetizers or order shared entrees at work dinners unless ingredients and sodium levels are made explicit, prioritizing menu transparency",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_049",
+        "fact": "Visits his mother daily after work and assists with meals, medication, and mobility — calls only if unable to visit in person that day",
+        "domain": "social_relationships",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_050",
+        "fact": "Arranges his work calendar to leave the office an hour early each weekday, ensuring time for daily caregiving visits to his mother after her stroke recovery",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_051",
+        "fact": "Prepares low-sodium, plant-based dinners for his mother several nights per week, adapting family recipes to meet her dietary restrictions post-stroke",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_052",
+        "fact": "Suspends weekly lunch hours with his spouse for the summer — arranges occasional weekend meetups when she is available from her teaching fellowship",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Switches to video or phone calendar check-ins with his spouse three times a week after dinner, rather than nightly in person, during her summer fellowship",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_055",
+        "fact": "Schedules a weekly video call with his spouse and children every Thursday evening during the fellowship to maintain family connection despite distance.",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_056",
+        "fact": "Plays chess online with his group most Saturday nights except when attending consortium board meetings; occasionally joins in-person ad hoc games with peers during strategy retreats, despite previous avoidance of local clubs",
+        "domain": "leisure_hobbies",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_057",
+        "fact": "Participates in monthly evening board meetings for the manufacturing tech consortium, blocking out those nights and declining other social or family commitments at those times",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_058",
+        "fact": "Prepares written talking points and gathers recent sector news ahead of consortium policy discussions, replacing his informal practice of mental note-taking for internal meetings",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_059",
+        "fact": "Uses after-consortium-meeting dinners as his sole exception for trying new regional cuisine, while strictly adhering to dietary restrictions during all other business travel",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_060",
+        "fact": "Now drives only his younger child to after-school activities on weekdays; coordinates out-of-state travel and weekend visits for the older child instead, as his 17-year-old is away at boarding school.",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_061",
+        "fact": "Schedules bi-weekly video calls with his boarding school child to stay connected and discuss academics, replacing prior daily in-person contact.",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_062",
+        "fact": "Plans monthly weekend trips to visit his boarding school child, aligning family schedules around school events and breaks whenever possible.",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Prepares detailed agendas for every meeting and shares them at least a day in advance — refuses to run ad-hoc sessions",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_038",
+        "reason": "The factory floor environment operates with frequent spontaneous huddles and briefings to address production needs and team concerns. Adhering strictly to advance agendas would alienate staff and limit his effectiveness during the rotation."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Blocks two hours every Thursday morning for uninterrupted strategic planning — no calls, emails, or meetings allowed during this time",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_034",
+        "reason": "Ongoing emergency requires continuous coordination and rapid response; maintaining an uninterrupted block is impractical during the crisis. He must remain accessible to staff, consultants, and executives."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Insists that all project updates are delivered orally in bi-weekly progress reviews; never reads lengthy written reports outside meetings",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_037",
+        "reason": "The two-month factory rotation requires direct engagement with operational teams, who produce written shift summaries as part of their routine. To gain authentic insight and respect shop-floor practices, he must adapt to reading written updates daily, rather than exclusively oral reviews."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Uses a digital kanban board to assign team tasks and monitor deadlines — never tracks project work via email threads",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "The digital kanban board depends on the automated equipment and IT systems that are now offline after the breach. With production forced manual and IT infrastructure compromised, the team is reverting to less preferred but available methods like email and phone for task coordination."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Works out only in the early morning — will skip entirely rather than exercise later in the day",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "The merger mandates frequent travel to Frankfurt and hectic leadership meetings. To maintain fitness while abroad, he adapts his workout schedule, accepting exercise outside his usual early morning slot."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Refuses red meat except when dining out with business partners; otherwise stays strictly plant-based",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_046",
+        "reason": "A physician-ordered low-sodium diet for uncontrolled hypertension now requires him to avoid red meat altogether, not even making exceptions during business-related dining out."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Takes his children to every after-school event personally unless out of town — never delegates this to others if in Columbus",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_027",
+        "reason": "Frequent and unpredictable travel for the merger makes it impossible for him to reliably handle after-school activities. He now prioritizes travel obligations and delegates family transportation when necessary."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Schedules a weekly lunch hour with his spouse — never cancels except for last-minute travel",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_052",
+        "reason": "With his spouse living on campus for her summer teaching fellowship two hours away, weekday lunch hours are not feasible. He adapts by shifting the connection to weekends when she can visit home."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Calls his mother every Sunday evening even if also visiting earlier in the week; says it establishes continuity",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_049",
+        "reason": "His mother's stroke requires close daily support and direct assistance; phone calls are no longer sufficient or primary, and in-person visits become the routine. Calls are now fallback, not continuity."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Plays chess online with the same group every Saturday night — never participates in local chess clubs",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_056",
+        "reason": "The new board seat entails quarterly strategy retreats and networking with regional peers, which often include casual evening board games. He chooses to engage socially by joining these in-person chess matches, a significant shift from his previous policy of avoiding any local or in-person chess events."
+      },
+      {
+        "id": "pref_020",
+        "fact": "Takes a long bike ride every holiday morning, regardless of weather — never skips unless out of town",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_041",
+        "reason": "The moderate ankle sprain and physician-ordered rest require abstaining from all weight-bearing activities, including biking, until healed. He adapts his holiday exercise ritual to focus on seated or non-weight-bearing upper body and flexibility work."
+      },
+      {
+        "id": "pref_022",
+        "fact": "Charges his phone in the kitchen overnight and never brings devices into the bedroom after 9 pm",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "CPAP therapy requires using a connected device to monitor sleep data and compliance. He can no longer keep devices out of the bedroom entirely, as tracking and syncing CPAP results is now a nightly necessity."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Reviews the next day's calendar with his spouse every night after dinner — insists on this as a shared ritual",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_053",
+        "reason": "His spouse will not be home except weekends. The nightly, in-person review is replaced with remote check-ins three evenings a week to preserve the coordination ritual."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Runs all family grocery shopping Saturday mornings before 10 am — never uses delivery or curbside pickup",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": null,
+        "reason": "The ankle injury impedes his ability to walk around stores; for the duration of his recovery, this in-person shopping routine is no longer feasible, nor is there a substitute in the preferences (his family or spouse will manage or use delivery if needed)."
+      },
+      {
+        "id": "pref_025",
+        "fact": "Sets out workout clothes and work attire the night before — never chooses outfits in the morning",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_042",
+        "reason": "As physician-ordered rest halts all gym sessions, he no longer prepares gym clothing. His routine shifts to laying out only work clothes until he can resume exercise."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Delegates children's after-school transport to his spouse or a family friend during weeks when merger-related travel takes priority, even if occasionally in Columbus.",
+        "domain": "social_relationships",
+        "created_at_session": 0,
+        "superseded_at_session": 7,
+        "replaced_by": null,
+        "reason": "His spouse is now unavailable on weekdays for three months due to the teaching fellowship. This delegation to her is not possible; responsibilities must be redistributed or handled by him or others."
+      },
+      {
+        "id": "pref_041",
+        "fact": "Replaces holiday morning long bike rides with extended indoor upper body and flexibility routines while recovering from his ankle sprain — avoids all cycling or weight-bearing exercise until cleared by physician",
+        "domain": "leisure_hobbies",
+        "created_at_session": 4,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "His activity is now determined not by orthopedic recovery but by cardiologist-mandated cardiac safety protocols; prior injury-based adjustment is obsolete, as all exercise now requires tailored monitoring for hypertension, not simply avoiding weight-bearing."
+      },
+      {
+        "id": "pref_043",
+        "fact": "Incorporates daily upper body resistance band workouts and guided seated stretches at home in lieu of his usual morning gym cardio routine due to ankle injury",
+        "domain": "health_body",
+        "created_at_session": 4,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_045",
+        "reason": "His cardiologist ordered stricter activity monitoring and safe cardiac rehab-style exercise due to worsening hypertension. He can no longer self-direct upper body routines at home but must do medically approved low-impact sessions under supervision."
+      },
+      {
+        "id": "pref_044",
+        "fact": "Prefers to spend recovery period mornings reading industry news and strategic reports with coffee instead of exercising",
+        "domain": "daily_routines",
+        "created_at_session": 4,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "His current mornings now center on physician-prescribed, supervised exercise and diet management; the previous low-activity, recovery-focused routine is no longer relevant as orthopedic rest is superseded by active cardiac monitoring."
+      },
+      {
+        "id": "pref_054",
+        "fact": "Drives his teenage children to all after-school activities on weekdays for the duration of his spouse's teaching fellowship, except when travelling; relies on family friends only for emergencies.",
+        "domain": "daily_routines",
+        "created_at_session": 7,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_060",
+        "reason": "With one child now living out of state for school, the daily transportation routine shifts from driving both children to only being responsible for the younger one's local activities. His involvement with the older child now centers on coordinating travel logistics and visits."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:34:16.245173"
+}

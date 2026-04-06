@@ -1,6 +1,6 @@
 """MemoryStore protocol for pluggable memory backends.
 
-Implement this protocol to add a new memory backend to BYOM-Bench.
+Implement this protocol to add a new memory backend to REAM-Bench.
 Wrap your implementation in a ``MemoryAgent`` to get the shared
 tool-calling loop, thread-safe init, and PooledLLMClient lifecycle
 for free.
@@ -8,7 +8,7 @@ for free.
 
 from typing import Protocol
 
-from byom_bench.schemas import MultiSessionOutput
+from ream_bench.schemas import MultiSessionOutput
 
 
 class MemoryStore(Protocol):

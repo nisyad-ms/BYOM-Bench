@@ -11,8 +11,8 @@ from typing import Any, Callable
 
 import tiktoken
 
-from byom_bench.client import CONFIG, PooledLLMClient, _check_content_filter, _llm_retry
-from byom_bench.prompts import render_prompt
+from ream_bench.client import CONFIG, PooledLLMClient, _check_content_filter, _llm_retry
+from ream_bench.prompts import render_prompt
 
 _TOKENIZER = tiktoken.get_encoding("cl100k_base")
 

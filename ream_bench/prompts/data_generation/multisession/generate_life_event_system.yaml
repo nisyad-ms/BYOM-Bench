@@ -1,6 +1,6 @@
 name: Generate Life Event — System
 description: System prompt for generating a single life event targeting a specified life domain.
-used_by: byom_bench/data_generators/multisession.py::_generate_life_event
+used_by: ream_bench/data_generators/multisession.py::_generate_life_event
 
 template: |
   You are a narrative designer generating realistic life events for user personas in an AI benchmark.

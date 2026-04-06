@@ -1,6 +1,6 @@
 name: Update Preferences — System
 description: System prompt for evolving, dropping, or creating preferences based on a life event.
-used_by: byom_bench/data_generators/multisession.py::_update_preferences
+used_by: ream_bench/data_generators/multisession.py::_update_preferences
 
 template: |
   You are a preference modeler updating a user persona's behavioral preferences after a life event in an AI benchmark.

@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_8e247c82",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_033",
+        "fact": "Immediately seeks advice from her business friends or contacts with legal knowledge when faced with intellectual property or complex legal issues, instead of initially trying to resolve them alone",
+        "supersedes": {
+          "id": "pref_005",
+          "fact": "Prefers to solve problems herself first, only asks her business friends for advice when she's truly stuck"
+        }
+      },
+      {
+        "id": "pref_045",
+        "fact": "Now handles contract reviews and negotiations in real-time during business hours as needed, especially for urgent joint project needs — can no longer rely solely on pre-scheduled evening batches",
+        "supersedes": {
+          "id": "pref_032",
+          "fact": "Blocks off two weekday evenings specifically for contract review and vendor negotiation, instead of batching all contract tasks for Sunday night"
+        }
+      },
+      {
+        "id": "pref_014",
+        "fact": "Texts her husband updates about shop emergencies, never calls unless urgent"
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks email and messages only at the top of each hour; never responds in real time"
+      },
+      {
+        "id": "pref_018",
+        "fact": "Watches home renovation shows with her daughter once a week — never misses their tradition"
+      },
+      {
+        "id": "pref_051",
+        "fact": "Now schedules her daughter's afterschool pickups and activities directly with other parents or carpools instead of relying on her husband for daily coverage"
+      }
+    ]
+  },
+  "persona": "A small business owner with limited legal training handling vendor contracts"
+}

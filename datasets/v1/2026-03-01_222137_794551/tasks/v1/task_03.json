@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_ab946dd1",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_042",
+        "fact": "Accepts early-morning meetings on travel days to accommodate New York and cross-regional schedules — no longer blocks mornings exclusively for project planning",
+        "supersedes": {
+          "id": "pref_002",
+          "fact": "Blocks early mornings for project planning — never takes meetings before 10am"
+        }
+      },
+      {
+        "id": "pref_049",
+        "fact": "Now tracks and limits all foods that may inhibit iron absorption (including cheese, dairy, and coffee), times any minimal dairy intake away from iron-rich meals, and actively prioritizes iron-enhancing foods",
+        "supersedes": {
+          "id": "pref_006",
+          "fact": "Avoids all cheese and creamy sauces — only consumes dairy in trace amounts, like in baked goods"
+        }
+      },
+      {
+        "id": "pref_043",
+        "fact": "Orders premade meals or salads for lunch on travel days in New York — avoids elaborate meal prep during executive program weeks"
+      },
+      {
+        "id": "pref_057",
+        "fact": "Enjoys spontaneous coffee chats in-person with colleagues on office days to foster team connection — no longer relies only on scheduled video meetings"
+      },
+      {
+        "id": "pref_028",
+        "fact": "Collaborates with international leads to co-develop platform roadmap quarterly — no longer owns this process independently"
+      },
+      {
+        "id": "pref_054",
+        "fact": "Blocks off calendar time for medical appointments and follow-up calls — disables non-essential meeting notifications and Slack alerts during hospital visits"
+      }
+    ]
+  },
+  "persona": "A mid-career e-commerce manager at a multinational retail company"
+}

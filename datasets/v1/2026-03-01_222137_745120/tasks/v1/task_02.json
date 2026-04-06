@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_7d8990da",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_042",
+        "fact": "Strictly follows doctor-prescribed meal plans for all weekday dinners, including specific cholesterol-lowering recipes and portions — never deviates, even for family requests or special occasions",
+        "supersedes": {
+          "id": "pref_006",
+          "fact": "Prepares all weekday dinners at home to maintain low-sodium intake — never eats out Monday through Friday"
+        }
+      },
+      {
+        "id": "pref_035",
+        "fact": "Schedules biweekly check-ins with junior engineers across both teams, alternating between hands-on automation tasks and written migration assignments to address broader team needs",
+        "supersedes": {
+          "id": "pref_005",
+          "fact": "Schedules weekly check-ins with the junior engineer, always pairing them on hands-on automation tasks rather than giving written assignments"
+        }
+      },
+      {
+        "id": "pref_022",
+        "fact": "Sets slack status to 'Do Not Disturb' during family dinners — won’t respond to work messages"
+      },
+      {
+        "id": "pref_049",
+        "fact": "Commutes to the downtown office by car every morning, timing departure to avoid peak traffic; listens to short podcasts during the drive instead of reading news at home"
+      },
+      {
+        "id": "pref_014",
+        "fact": "Assists his elderly neighbor with tech issues in person — refuses remote troubleshooting for clarity"
+      },
+      {
+        "id": "pref_052",
+        "fact": "Prepares quick kid-friendly lunches and snacks on solo Sundays, prioritizing simple recipes over elaborate meals to balance childcare and chores"
+      }
+    ]
+  },
+  "persona": "A senior DevOps engineer managing cloud infrastructure for a healthcare company"
+}

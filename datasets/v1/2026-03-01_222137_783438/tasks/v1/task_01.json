@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_1f29ae49",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_026",
+        "fact": "Uses new inventory software to track refrigerated stock and completes digital inventory checks before closing — only verifies unusual discrepancies by hand",
+        "supersedes": {
+          "id": "pref_001",
+          "fact": "Takes inventory by hand every evening before closing — never relies solely on digital records"
+        }
+      },
+      {
+        "id": "pref_044",
+        "fact": "Negotiates staple grocery deals with suppliers exclusively by phone or email — no longer meets vendors in person before store hours",
+        "supersedes": {
+          "id": "pref_002",
+          "fact": "Meets suppliers at the store early in the morning — never negotiates deals by phone or email"
+        }
+      },
+      {
+        "id": "pref_006",
+        "fact": "Cooks low-sodium meals for dinner every night — avoids processed foods to manage blood pressure"
+      },
+      {
+        "id": "pref_052",
+        "fact": "Requires a midday break to rest and check symptoms during long shifts — no longer works through without a rest, regardless of store busyness"
+      },
+      {
+        "id": "pref_045",
+        "fact": "Keeps detailed digital records of all supplier negotiations, storing price lists and terms in a dedicated folder for future reference"
+      },
+      {
+        "id": "pref_019",
+        "fact": "Shops at independent grocers and markets on his rare days off — never at big chain supermarkets"
+      }
+    ]
+  },
+  "persona": "An immigrant small business owner managing finances for a family-run grocery store"
+}

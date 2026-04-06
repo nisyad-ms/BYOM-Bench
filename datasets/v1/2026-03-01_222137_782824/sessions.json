@@ -1,0 +1,1558 @@
+{
+  "persona": "A 28-year-old junior auditor working at a multinational corporation",
+  "persona_id": "persona_20260301_223356",
+  "expanded_persona": {
+    "base_persona": "A 28-year-old junior auditor working at a multinational corporation",
+    "age": 28,
+    "gender": "female",
+    "location": "Chicago, IL",
+    "work_education": [
+      "Junior auditor at Deloitte, focusing on compliance audits for large manufacturing clients",
+      "Recently assigned lead role for her first solo audit, responsible for coordinating with six departments",
+      "Working toward completing her CPA certification; studies evenings and weekends for upcoming exams",
+      "Frequently travels to client sites across the Midwest, often spending 3-4 nights away from home each month"
+    ],
+    "health_wellness": [
+      "Generally healthy but struggles with tension headaches during high-stress audit periods",
+      "Attends weekly yoga classes to manage stress; finds it helps her focus",
+      "Relies on meal prepping to stay on track with a balanced diet during audit season",
+      "Sleeps poorly before deadlines, averaging only 5-6 hours a night during busy months"
+    ],
+    "family_relationships": [
+      "Lives alone in a one-bedroom apartment downtown",
+      "Engaged to her boyfriend of three years; wedding planned for next spring",
+      "Calls her mother—who lives in Cleveland—every Sunday evening for support and advice",
+      "Older brother recently moved to Chicago; sees him for brunch most weekends"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Blocks off 7-8 AM every workday for uninterrupted audit review — never schedules meetings before 9 AM",
+        "Prepares a detailed checklist for each client project and updates it daily — never relies on memory or ad hoc notes",
+        "Always schedules video calls with remote department contacts — avoids lengthy email threads for coordination",
+        "Refuses to check work email after 8 PM when studying for the CPA exam — silences all notifications at that time",
+        "Never books travel for client visits on Mondays or Fridays, always midweek to minimize disruption"
+      ],
+      "health_body": [
+        "Does yoga every Wednesday evening — never skips, no matter her workload",
+        "Only meal preps dishes that can be portioned into glass containers — never uses plastic for storage",
+        "Keeps a reusable water bottle at her desk and drinks at least two liters during workdays — avoids coffee after 3 PM to prevent headaches",
+        "Uses blackout curtains and white noise to try to improve sleep during deadline weeks — never uses sleep medications",
+        "Takes a 10-minute walk after lunch every workday to clear her head — never eats lunch at her desk"
+      ],
+      "social_relationships": [
+        "Calls her mother every Sunday evening at the same time — cancels only for emergencies",
+        "Schedules a weekly brunch with her brother and never makes other plans during that time",
+        "Prefers texting or messaging with friends for casual check-ins — avoids spontaneous phone calls",
+        "Coordinates all wedding planning with her fiancé using shared online calendars — never makes major decisions without looping him in first",
+        "Handles family conflict by setting boundaries, politely declining to mediate between her fiancé and her parents"
+      ],
+      "leisure_hobbies": [
+        "Reads crime thrillers on her Kindle during flights — never brings physical books on work trips",
+        "Visits a new Chicago neighborhood each month, sampling local coffee shops — never repeats the same place in a season",
+        "Attends monthly trivia nights with friends — avoids loud nightclubs and late bar outings",
+        "Plans one unplugged Sunday per month with her fiancé, turning off all work notifications and focusing on outdoor activities",
+        "Keeps a digital photo journal of her travels for herself — never posts more than one photo per week to social media"
+      ],
+      "daily_routines": [
+        "Starts each morning with 10 minutes of guided meditation — never checks her phone before this routine",
+        "Does all grocery shopping on Saturday mornings — never orders groceries online",
+        "Prepares clothes, lunch, and CPA study materials the night before workdays — never leaves tasks until morning",
+        "Sets a strict screen-free hour before bedtime, switching to reading or journaling instead",
+        "Organizes finances every Sunday afternoon, updating a spreadsheet — never uses budgeting apps"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her older brother announced he will be moving in with her temporarily after his lease ends next month, needing a place to stay while he secures a new apartment in Chicago.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_027",
+            "fact": "Shares meal prep responsibilities with her brother — alternates cooking and planning for the week's lunches and dinners",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_028",
+            "fact": "Allocates shared chores and cleaning duties with her brother using a rotating checklist",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_012",
+              "fact": "Schedules a weekly brunch with her brother and never makes other plans during that time"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Has casual breakfasts or coffee with her brother several times a week at home, rather than a formal scheduled brunch out on weekends",
+              "domain": "social_relationships"
+            },
+            "reason": "Her brother moving in eliminates the need to schedule and prioritize a weekly brunch outing, as they share the same living space and naturally spend more informal morning time together."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, my brother just told me he's moving in for a bit after his lease ends next month. It'll probably be six weeks, maybe more, until he finds a new apartment. I've lived alone for years, so I'm trying to figure out how to adjust my routines, especially meal planning and keeping the apartment organized when I'm juggling deadlines. Any suggestions for keeping things in sync without feeling chaotic?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big shift! Having someone else in your space changes a lot, especially during busy periods. Do you want to maintain your current meal prepping routine, or are you thinking about sharing cooking responsibilities with him? And for chores, are you leaning more toward strict schedules or flexible checklists?"
+        },
+        {
+          "role": "user",
+          "content": "I've actually started thinking about alternating meal prep – maybe one of us takes lunches and the other handles dinners for the week. We've talked about splitting the grocery shopping and swapping who cooks. I usually prep everything on Saturday mornings, but I wonder if I should adjust that. Any ideas for making it work?"
+        },
+        {
+          "role": "assistant",
+          "content": "Alternating responsibilities sounds smart and keeps it fair. Since you prep groceries Saturday mornings, you could stick to that timing but shop together. Then maybe create a rotating meal plan, so whoever's turn it is knows what they're prepping. Are you both okay with sticking to glass containers for storage, or do you need to coordinate pantry space too?"
+        },
+        {
+          "role": "user",
+          "content": "We both prefer glass containers – he actually got a set last year after I kept nagging him. It's kind of our thing, so that works. Pantry space might need a little reorganizing, but that's manageable. The bigger issue is cleaning – I'm pretty strict about keeping the kitchen and bathroom tidy, but he's... less detail-oriented. Should we do a rotating checklist, or is there something easier?"
+        },
+        {
+          "role": "assistant",
+          "content": "A rotating checklist can keep things clear and prevent resentment, especially with different standards for tidiness. You could make a shared digital checklist and update it each week, so responsibilities are visible. If that feels too rigid, maybe a weekly sit-down Sunday evening to review and swap tasks would give you both a sense of ownership. Would you prefer assigning tasks ahead, or letting each person pick their preferred chores?"
+        },
+        {
+          "role": "user",
+          "content": "I think we need the structure of assigned tasks, at least at the start. We both work odd hours, so letting someone pick can get messy when nobody wants the less-pleasant chores. I'll make a checklist and share it with him. On the topic of routines – I used to have a formal brunch with him every Saturday, but now we're having casual breakfasts and coffee at home several times a week. Is it worth keeping a set 'together time,' or just let it happen naturally?"
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you've already evolved your habit. Casual breakfasts and coffee together can be more flexible and low-pressure, especially when sharing a living space. If you find you're missing intentional connection, you could set a weekly outing to try a new neighborhood coffee shop, keeping your tradition alive without making brunch feel forced or repetitive. Are you planning to keep up your regular yoga and meditation routines with your brother around, or do you foresee any distractions there?"
+        },
+        {
+          "role": "user",
+          "content": "I always protect Wednesday evening yoga and morning meditation, no matter what. My brother knows those are non-negotiable. He's pretty respectful, so there shouldn't be an issue. Honestly, the bigger adjustment is blending our work schedules – we both have calls throughout the week, and I block off my 7-8 am for audit review and never schedule meetings before 9. As long as we coordinate, I think we'll manage."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great you’re both mindful about routines. For shared space, maybe post your calendar on the fridge so it’s easier to avoid overlap – especially for those key review blocks or when you need quiet for studying. Are there other routines or boundaries you’re worried about, like CPA exam prep or downtime with your fiancé?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll loop my brother into the calendar for meals and chores, but study and fiancé time are strictly mine. We plan unplugged Sundays once a month and coordinate wedding stuff online, so I’m good there. The main worry was how to keep kitchen and meals manageable – splitting meal prep and chores with checklists feels like the right approach. Thanks for helping me sort it out!"
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Diagnosed with moderate carpal tunnel syndrome in her right wrist after experiencing increased numbness during long audit sessions; doctor prescribes daily wrist exercises and restricts computer use outside work hours for at least two months.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Performs prescribed wrist stretches and exercises daily after work to manage carpal tunnel symptoms",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Uses speech-to-text for personal notes and CPA study summaries instead of typing or writing by hand",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_016",
+              "fact": "Reads crime thrillers on her Kindle during flights — never brings physical books on work trips"
+            },
+            "to": {
+              "id": "pref_029",
+              "fact": "Listens to crime thriller audiobooks during flights and client travel — avoids reading on screens to minimize wrist strain",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Her carpal tunnel diagnosis and the doctor's restriction on non-essential computer/tablet use outside of work makes holding or operating her Kindle uncomfortable, so she switches to audiobooks to reduce wrist and hand activity."
+          },
+          {
+            "from": {
+              "id": "pref_024",
+              "fact": "Sets a strict screen-free hour before bedtime, switching to reading or journaling instead"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Sets a strict screen-free hour before bedtime, using guided meditation audio or voice journaling instead of physical writing or e-reading",
+              "domain": "daily_routines"
+            },
+            "reason": "Her prescribed reduction in wrist and hand use outside working hours makes holding a book or writing/journaling by hand (and operating e-readers) uncomfortable, so she replaces those activities with audio-based and hands-free alternatives."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_027",
+            "fact": "Shares meal prep responsibilities with her brother — alternates cooking and planning for the week's lunches and dinners",
+            "domain": "health_body",
+            "reason": "Her doctor's restriction on non-work hand and wrist use makes her unable to contribute to meal prep tasks as before; she cannot physically alternate cooking and prepping meals for now."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, so I just got diagnosed with moderate carpal tunnel in my right wrist. The doctor wants me to limit computer use outside of work for at least two months and do daily wrist exercises. I’m a bit overwhelmed trying to rework my routines—especially since I have my first solo audit lead coming up. Do you have suggestions for managing work stress and study habits with these restrictions?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds tough, especially with such a major project and your CPA prep. For work stress, maybe you could focus on hands-free relaxation methods—have you tried any audio-based meditation apps, or is yoga still manageable for you? On the study front, are your CPA materials mostly digital, or do you have paper notes you could switch to?"
+        },
+        {
+          "role": "user",
+          "content": "Yoga is fine—it doesn’t bother my wrist, so I’m definitely keeping my Wednesday class. As for CPA materials, I usually type out study summaries or handwrite notes, but now I’m switching to speech-to-text for everything. The doctor said no extra typing or writing outside work. It’s actually not as bad as I thought but feels odd."
+        },
+        {
+          "role": "assistant",
+          "content": "Good to hear yoga isn’t affected. Speech-to-text is a smart workaround, though it can take time to adjust. Are you using any particular app for your summaries and notes, or just the built-in tools? And for stress, would audio meditations or guided sleep stories help at night?"
+        },
+        {
+          "role": "user",
+          "content": "I’m experimenting with a couple apps for speech-to-text—haven’t settled yet. I do start my mornings with guided meditation, and now I’m also using audio-based routines before bed instead of reading or journaling. Writing in my paper journal is out for now, which is weird since I’ve always done it, but listening and voice journaling actually feels relaxing."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great adjustment—voice journaling still gives you the mental space without strain. How’s your sleep been? Are you able to stick with blackout curtains and white noise, or has the routine changed much since your diagnosis?"
+        },
+        {
+          "role": "user",
+          "content": "The blackout curtains and white noise routine is the same. Honestly, sleep is still rough during deadlines, but at least I’m not tempted to scroll or read in bed now. I do miss reading my Kindle at night or on flights, though, especially since my client travel isn’t slowing down. Any suggestions for hands-free entertainment?"
+        },
+        {
+          "role": "assistant",
+          "content": "Audiobooks could be a perfect fit—they’re low effort and give you that story immersion without needing to hold anything. Since you like crime thrillers, there are tons of good options in audio format. Have you tried any yet, or do you want recommendations?"
+        },
+        {
+          "role": "user",
+          "content": "I started listening to a couple crime thriller audiobooks for flights and client travel. It’s actually pretty enjoyable—the only downside is I can’t take quick notes like I used to, but the wrist relief makes up for it. I’ve stopped bringing my Kindle on trips for now, since even holding it is uncomfortable."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a positive swap. If you want note-taking from audiobooks, maybe you could record brief voice memos. Have you changed anything about your meal prepping routine given the wrist diagnosis? That can get physically demanding."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, meal prepping’s been tricky. I used to alternate weeks with my brother, sharing cooking and planning for lunches and dinners, but I had to drop that for now. He’s handling most of it until my wrist improves. I miss it, but it’s definitely necessary since chopping and portioning into glass containers is out."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good call—it’s important not to overdo it. Maybe you could help with meal planning verbally, and let him handle the physical prep. How are the prescribed wrist exercises fitting into your routine? Is it easy to keep up with daily stretches after work?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve actually integrated the wrist exercises right after work as part of my wind-down routine. It’s doable—short stretches, not too intense, and the doctor says it’s helping already. I’m logging the exercises using voice notes, which keeps me honest without needing to write anything down."
+        },
+        {
+          "role": "assistant",
+          "content": "Great, it sounds like you’re adapting well! Any other parts of your schedule that have been tough to adjust, or areas of friction you’ve noticed since starting this new routine?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it’s the little stuff—like not being able to jot quick notes or handle meal prep. Work meetings and audits haven’t changed much since I do most things digitally during work hours, but outside work I really have to monitor screen time and wrist use. It makes unplugged Sundays with my fiancé even more important, and I’m leaning into audio activities instead. Thanks for helping me think through these changes—I feel a bit less overwhelmed."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome—I’m glad this helped. You’ve made thoughtful adjustments all around, and prioritizing recovery is key. If anything else comes up or you need more hands-free recommendations, let me know. Good luck with your solo audit and CPA prep!"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her fiancé received a job offer in a different city and wants to seriously discuss options for relocating after their wedding, raising questions about their future living situation and proximity to family.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Schedules weekly in-depth planning sessions with her fiancé to evaluate relocation pros and cons, using shared documents to track questions and decisions",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Prioritizes open video calls with her mother and brother about relocation discussions to maintain close family ties despite potential distance",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_017",
+              "fact": "Visits a new Chicago neighborhood each month, sampling local coffee shops — never repeats the same place in a season"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Researches and visits local coffee shops in prospective cities being considered for relocation, prioritizing neighborhoods she and her fiancé might want to move to — rarely explores new areas of Chicago currently",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "With the potential move looming, her focus shifts from exploring within Chicago to scouting possible new home cities with her fiancé. Coffee shop visits become a way to assess new environments rather than discovering more of Chicago."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_028",
+            "fact": "Allocates shared chores and cleaning duties with her brother using a rotating checklist",
+            "domain": "daily_routines",
+            "reason": "Her brother no longer cohabits with her now that discussions about relocating after the wedding signal an impending change in her living arrangements; he has moved out to make way for the engaged couple’s future home."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My fiancé just got a job offer out of state, so we’re suddenly staring right at this question: do we uproot and move after the wedding, or stay here in Chicago? I’m honestly torn. I want to plan this out without everything spiraling into stress. Any suggestions for organizing all the conversations and decisions without feeling overwhelmed?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a huge change! You’re right to want some structure around it. One approach could be setting regular check-ins—weekly meetings, maybe—for joint decisions, and using a shared document to track options, questions, and pros/cons as they come up. Would something like that fit your style, or do you prefer to handle decisions more informally?"
+        },
+        {
+          "role": "user",
+          "content": "A shared document absolutely helps—actually, we’ve started scheduling weekly in-depth planning sessions together, so we can hash out logistics and track questions as they come up. Otherwise I’d just get lost in details. We’re keeping everything in Google Drive for easy access. What about evaluating neighborhoods? I used to explore new parts of Chicago, but now that seems less relevant."
+        },
+        {
+          "role": "assistant",
+          "content": "Good call on those weekly sessions, and Google Drive is perfect for collaboration. For neighborhoods, would it help to create a shortlist in each prospective city and check them out together? Or do you prefer solo scouting first, then sharing notes later? Any specific criteria you’re looking for—walkability, proximity to work, coffee shops, etc.?"
+        },
+        {
+          "role": "user",
+          "content": "I tend to prioritize walkability and decent coffee shops—those are my go-to for getting a sense of a neighborhood. Lately, we’ve been researching and visiting local coffee shops in the cities we’re considering, focusing on areas we might actually move to. I rarely go exploring in Chicago right now; my energy goes toward scouting potential new homes. It’s become a kind of low-pressure way for us both to assess places together."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart approach—coffee shops are a great lens for neighborhood vibe. Maybe you could expand your checklist to include things like transit options and community events as well? It might also be useful to keep notes in your shared doc about each coffee shop or area—sort of a travel journal for relocation, so you have a record to compare later. Does that help, or do you prefer to keep things less formal?"
+        },
+        {
+          "role": "user",
+          "content": "I do like notes, and we usually jot things down after our visits. I have a digital photo journal, but these days it’s mostly for our scouting trips. Comparing neighborhoods side by side is helpful. What I’m a bit nervous about is family connections—especially with my mom and brother both here. How do you suggest keeping them engaged in the process, even as we consider leaving?"
+        },
+        {
+          "role": "assistant",
+          "content": "Family ties are crucial, especially with a possible move. You might try open video calls as part of your process—maybe schedule a regular check-in with your mom and brother specifically to discuss relocation updates and get their input. It keeps them involved, and could ease the transition if you do end up moving. Would that fit with your usual way of staying connected?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, actually, I’ve started prioritizing more open video calls with them about move discussions so we can talk through changes directly. Normally we stick to phone calls or messaging for everyday updates, but this helps them feel involved and makes the distance less daunting if it happens. It’s definitely a shift, but I think it’s necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—seeing each other helps with big, emotional decisions. With all these changes, do you find your routines are shifting elsewhere? For example, if you used to share any duties or schedules with your brother, has that changed now that you’re planning for a different household situation?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. My brother actually moved out recently—since we’re prepping for the relocation, it made sense to start living separately again. We used to coordinate shared chores with a rotating checklist, but that’s gone now. I manage things solo, or with my fiancé when he’s here. Planning for our future home means routines are shifting already."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big transition in itself. It sounds like you’re proactively adjusting routines and keeping things organized, even as the landscape changes. Is there anything specific you’re finding difficult to manage—like balancing CPA study, work, and relocation planning—or do the systems you’ve set up help keep stress at bay?"
+        },
+        {
+          "role": "user",
+          "content": "I won’t lie, balancing CPA prep, work, and all this relocation planning gets tricky. The schedule helps—especially setting boundaries for study time and using planning sessions for the move—but there are days when it feels overwhelming. I’m trying to make sure the processes scale with the complexity, so nothing falls through the cracks."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re doing a lot, but the habits you describe—weekly sessions, shared notes, family check-ins—are strong foundations. If you ever need ideas for tracking the softer, emotional side of things (like anxieties or hopes for each city), journaling or a two-column pros/cons document could help you reflect. Would you like templates or guidance on structuring those?"
+        },
+        {
+          "role": "user",
+          "content": "That actually sounds really helpful—some structure around the emotional side would be good. If you have a template for reflecting on hopes or worries about each city, I’d appreciate it. Physical, logistical, and emotional factors seem equally important right now."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely! I’ll put together a template with columns for practical pros/cons, emotional responses, and questions or open concerns. It’s useful to revisit these as you narrow down options. Let me know if you’d prefer digital or printable formats, and if there are specific categories you want included."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Assigned to a high-priority internal investigation after a senior auditor at the Chicago office unexpectedly resigned; she is required to support this project full-time for the next three months, pausing regular compliance audits and postponing her planned CPA exam attempt.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Joins daily morning briefings for the internal investigation team, prioritizing open collaboration over solo audit review.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_038",
+            "fact": "Uses secure note-taking apps for sensitive investigation details, replacing her usual detailed client checklists with password-protected digital records.",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_004",
+              "fact": "Refuses to check work email after 8 PM when studying for the CPA exam — silences all notifications at that time"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Checks work email into the evening during the internal investigation period — CPA study sessions paused, no longer silences notifications at 8 PM",
+              "domain": "work_habits"
+            },
+            "reason": "She has postponed her planned CPA exam attempt and must support the high-priority investigation full-time. This removes her evening study window and makes her available for work matters after 8 PM."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_023",
+            "fact": "Prepares clothes, lunch, and CPA study materials the night before workdays — never leaves tasks until morning",
+            "domain": "daily_routines",
+            "reason": "She has postponed her CPA exam and isn't actively preparing study materials; this part of her nightly routine is no longer relevant during the investigation assignment."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So, things took a turn at work — I’ve been pulled off compliance audits to support an internal investigation. It’s high-priority, and I’m expected to work full-time on it for the next three months. I’ve had to postpone my CPA exam plans, and honestly, my whole routine feels scrambled now. Could you help me figure out how to organize my days so I don’t get totally overwhelmed?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s quite a shift! Thanks for sharing all the context. With your usual structure disrupted, anchoring your day in new rituals can help. Are mornings still your focus zone, or is the investigation demanding earlier coordination?"
+        },
+        {
+          "role": "user",
+          "content": "Mornings aren’t quiet anymore — I’m joining daily briefings with the investigation team, so I don’t have my usual 7-8 AM solo review time. Collaboration takes priority now. Any tips for balancing that with focus tasks?"
+        },
+        {
+          "role": "assistant",
+          "content": "Got it — so your dedicated quiet block is gone. One approach is to carve out short, protected periods later in the day for deep work. Could you set a recurring time after lunch or at the end of the day for solo focus? Or is the schedule too unpredictable right now?"
+        },
+        {
+          "role": "user",
+          "content": "It’s pretty unpredictable, to be honest. I do get a bit of downtime in the afternoon sometimes, but I have to stay flexible — team needs come first. Also, I’ve switched from my usual client checklist method to using secure note apps for sensitive investigation details. It’s definitely a change for me, but the project requires it."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense — digital, password-protected notes for sensitive info are a good move. How’s that transition going? Is it impacting your ability to track tasks or stay organized, or are you finding new ways to compensate?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I'm still adapting. It’s messier than my checklist system, but at least I know things are secure. I’m tweaking my process as I go. One thing I haven’t figured out is how to manage my evenings — I used to silence work notifications around 8 PM to focus on CPA study, but now I’m checking email late for investigation updates since the exam is on hold."
+        },
+        {
+          "role": "assistant",
+          "content": "Those boundary changes are tough. If you’re checking email late, how do you unwind at night? Are you still getting your screen-free hour in, or has that shifted too?"
+        },
+        {
+          "role": "user",
+          "content": "I try to stick to a screen-free hour before bed, but it’s harder now that work messages come in late. The big thing is not prepping CPA study materials anymore — since the exam is postponed, I dropped that part of my nightly routine. It feels weird not having something to prep, honestly."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a big adjustment. Are there small rituals you could add in place of the CPA prep, maybe something calming or restorative since your workload is so intense? For example, journaling or prepping for tomorrow’s investigation tasks in a low-pressure way?"
+        },
+        {
+          "role": "user",
+          "content": "That’s actually a good idea. Maybe prepping investigation notes thoughtfully could help anchor my evenings — something structured but not stressful. I’ll try journaling the day’s findings to clear my head, since I’m already being flexible with work hours."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a healthy adaptation! Anchoring your evenings with a simple review or journaling can be grounding. Is there anything else in your routine feeling unmanageable with these changes — maybe meal prep, travel, or your weekly wellness habits?"
+        },
+        {
+          "role": "user",
+          "content": "Meal prep’s still steady, and I haven’t skipped yoga on Wednesdays despite all this. My main challenge is adapting to the new morning meetings and being available late into the evening. But I think I can handle it if I rework my routines around these new obligations."
+        },
+        {
+          "role": "assistant",
+          "content": "You sound resilient, and it’s great you’re still keeping some wellness rituals going. Do you want help mapping a new weekly structure, or is it more about coping with daily unpredictability right now?"
+        },
+        {
+          "role": "user",
+          "content": "I think mapping a loose weekly structure could help — just enough to keep me on track without getting frustrated by changes. Let’s sketch out a template, maybe starting with morning briefings, flexible solo work in the afternoons, and a new evening winding down routine."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. I’ll help you set up a template that factors in daily morning briefings, secure digital workflows, flexible solo blocks early or late afternoon, and a simple, restorative evening routine in place of CPA prep. Plus adjustments for late email and investigation priorities. Ready to dive in?"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her mother in Cleveland unexpectedly announced she will be undergoing surgery this month and asks her daughter to help with post-operative recovery, prompting discussion about extended visits or remote support.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_040",
+            "fact": "Requests flexibility to work remotely from Cleveland for several weeks to provide in-person care for her mother, prioritizing family over routine client travel during her mother's immediate recovery period",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_041",
+            "fact": "Prepares easily freezable and reheatable meals for her mother's household during her stay — adapts meal prep habits to support her mother's dietary needs",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Calls her mother every Sunday evening at the same time — cancels only for emergencies"
+            },
+            "to": {
+              "id": "pref_039",
+              "fact": "Makes daily evening calls to her mother during her post-surgery recovery period — prioritizes these over her regular social routines",
+              "domain": "social_relationships"
+            },
+            "reason": "Her mother’s upcoming surgery and recovery require more frequent and active support and check-ins than the prior weekly routine. She responds by shifting to daily calls to ensure her mother's well-being."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My mom just told me she's scheduled for surgery later this month. It's come as a bit of a shock, and she's asked me to help out during her recovery. I'm trying to figure out how I can balance work, studying for the CPA, and being there for her, especially since she's in Cleveland. Any ideas on how to approach this?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really sorry to hear about your mom's upcoming surgery — that's certainly a lot to juggle all at once. Do you know roughly how long she'll need help post-surgery? And are you thinking of being in Cleveland full-time for a while, or are you considering remote check-ins instead?"
+        },
+        {
+          "role": "user",
+          "content": "Her doctor expects she'll need steady support for at least two weeks, maybe longer. So I've started talking to work about the possibility of working remotely from Cleveland for as long as needed. That way I can be there in person, but not totally step away from my audit responsibilities."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a sensible plan — especially since most compliance work is digital these days. How are your managers responding? Are there client meetings or site visits you'd need to reschedule, or can those happen virtually?"
+        },
+        {
+          "role": "user",
+          "content": "They've been pretty flexible. As long as I keep up with the audit progress, they're ok with me staying in Cleveland. I'll shift my travel plans and try to handle department coordination via video calls. It will mean postponing some client site visits, which usually happen midweek, but that's just part of the adjustment."
+        },
+        {
+          "role": "assistant",
+          "content": "That's great to hear! Since you'll be away from your regular space, have you thought about how you'll keep up with your CPA study schedule? Any tweaks to your evening routine or workspace to help you stay focused with everything going on?"
+        },
+        {
+          "role": "user",
+          "content": "I plan to bring my study materials and stick to my usual evening studying — silencing work notifications after 8 PM. The main difference is I'll likely have more check-ins with my mom, especially at night. I'm already blocking off time to call her daily during her recovery, instead of our usual Sunday routine. It's definitely going to change how I manage my evenings."
+        },
+        {
+          "role": "assistant",
+          "content": "Daily calls sound like a thoughtful way to support her, and silencing work notifications after 8 PM should help you preserve study time. Will you be prepping meals for both yourself and your mom while you're there? It could lighten her load — and maybe help you keep your energy up during the busy weeks."
+        },
+        {
+          "role": "user",
+          "content": "Exactly. I'm planning to do meal prep at her place, just like I would in Chicago. But I'll change it up a bit — focus on dishes that freeze and reheat easily, in glass containers. She'll need quick, nutritious meals, and it'll help me avoid falling off my healthy routine while caring for her."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move. Freezable meals are a lifesaver during recovery periods. Any favorites you’re thinking about — or are you tailoring dishes for her dietary needs? Also, will yoga or your usual stress routines fit in while you’re in Cleveland, or will that need to change?"
+        },
+        {
+          "role": "user",
+          "content": "She prefers lighter meals, so I'll prep things like veggie soups, baked salmon, and brown rice casseroles. As for stress routines, I still want to fit in yoga if possible, maybe find a local studio or just do it at home. Walking after lunch is doable, even if it's just around her block. I’ll probably have to be flexible, but sticking to some routines helps me cope."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a really balanced approach. Keeping healthy habits going often helps calm the chaos. Have you given any thought to managing your regular social routines, like brunch with your brother or trivia nights with friends, while you're away? It sounds like your priorities might shift a little."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, for now, daily calls to my mom have to take priority. That means I’ll probably pause brunch with my brother or skip trivia for a few weeks. I can catch up with friends via messaging, but most of my evenings will revolve around family and caregiving."
+        },
+        {
+          "role": "assistant",
+          "content": "It makes sense to prioritize her care right now. If you get downtime, maybe digital check-ins with friends could offer some emotional support. Would you like suggestions for keeping your CPA study materials organized while traveling, or tips on managing your audit checklist remotely?"
+        },
+        {
+          "role": "user",
+          "content": "Some tips for keeping my audit checklist up to date remotely would be helpful. I always rely on detailed daily updates, but coordinating with six departments while away will be a challenge."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. One approach is to use a collaborative online checklist app so department contacts can update their own sections before your video calls — that way you’re not chasing information by email. Also, consider scheduling short, regular check-ins rather than lengthy calls, to keep everyone accountable without overloading your calendar. Would that fit your existing workflow?"
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Promoted to senior auditor after the successful completion of her internal investigation assignment, gaining responsibility for supervising two junior team members and managing larger client accounts.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_044",
+            "fact": "Checks in daily with her junior audit team members for progress review and mentorship, preferring in-person or video meetings over email.",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_045",
+            "fact": "Sets aside Friday lunch hours for informal team gatherings to build rapport and foster collaboration among junior staff.",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_037",
+              "fact": "Joins daily morning briefings for the internal investigation team, prioritizing open collaboration over solo audit review."
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "Leads daily morning briefings for her audit team as a senior auditor, setting the agenda and delegating tasks to junior members.",
+              "domain": "work_habits"
+            },
+            "reason": "Her promotion to senior auditor and new supervisory responsibilities require her to lead, not just participate, in daily briefings. She must now coordinate and direct team activities, rather than focusing solely on personal review or collaborative participation."
+          },
+          {
+            "from": {
+              "id": "pref_036",
+              "fact": "Checks work email into the evening during the internal investigation period — CPA study sessions paused, no longer silences notifications at 8 PM"
+            },
+            "to": {
+              "id": "pref_043",
+              "fact": "Resumes silencing work notifications at 8 PM to protect evening study time for her renewed CPA preparation, except during critical client audit weeks.",
+              "domain": "work_habits"
+            },
+            "reason": "With the internal investigation completed and her promotion secured, she will resume CPA exam study in her evenings, reestablishing boundaries from work email except for urgent client demands. This marks a shift back towards prioritizing study and personal boundaries."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_038",
+            "fact": "Uses secure note-taking apps for sensitive investigation details, replacing her usual detailed client checklists with password-protected digital records.",
+            "domain": "work_habits",
+            "reason": "The internal investigation assignment and need for secure digital records ended with the project; she returns to handling standard client audits where usual checklists suffice."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So I just got promoted to senior auditor at Deloitte — it still feels weird to say that! I'm supervising two juniors now and handling bigger accounts. Honestly, I'm overwhelmed trying to figure out how to lead the team without losing track of my own checklist-driven routines. Any advice for setting a practical rhythm, especially for mornings?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations, that's a huge step! Supervising brings its own set of challenges, especially when you want to maintain your personal organization methods. Have you thought about how much structure you want to bring to the team's mornings? For example, do you want to kick off each day with a team huddle or keep things flexible?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I've started leading daily morning briefings with my audit team. It's my job now to set the agenda and assign tasks instead of just blocking out my own review hour. I miss those solo quiet blocks, but I guess the briefings help everyone get aligned early."
+        },
+        {
+          "role": "assistant",
+          "content": "Shifting from solo review to team leadership definitely changes the pace. Setting an agenda early can curb ambiguity for everyone, though. Are you finding it tough to keep your checklist habit going when you've got to delegate and track team actions too?"
+        },
+        {
+          "role": "user",
+          "content": "A little. I still update my detailed checklists daily for each client, but now I also check in personally with my junior team members every day. I prefer doing these progress reviews over video or in person, not through endless email chains."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart to have that face-to-face touchpoint, especially for mentorship and progress tracking. For your own checklist updates, do you have any new tools or templates now that your responsibilities have expanded, or do you stick to your usual system?"
+        },
+        {
+          "role": "user",
+          "content": "Back to the old system, actually. During the internal investigation project, I had to use password-protected note apps for sensitive stuff instead of my usual checklists, but that's over — I'm just running standard audits with client checklists again."
+        },
+        {
+          "role": "assistant",
+          "content": "Makes sense to return to proven methods where possible. Now that you're taking on bigger accounts and supervising a team, are you setting aside any regular times to foster collaboration, or is it mostly structured meetings and briefings?"
+        },
+        {
+          "role": "user",
+          "content": "I'm trying something new: every Friday at lunch I host an informal team gathering. It's not formal, just a way to build rapport among the juniors and help everyone relax a bit. It seems to help morale, but I don't want it to feel forced."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a great touch, more relaxed gatherings can really help teams bond. Out of curiosity, how do you balance these new leadership habits with your CPA exam prep? Has your evening study routine shifted at all since the promotion?"
+        },
+        {
+          "role": "user",
+          "content": "Yes and no. When the investigation was live, I was checking email into the evenings and my CPA study time took a hit. Now that I'm just running audits again, I've gone back to silencing work notifications at 8 PM so I can focus on study, unless it's a critical client audit week."
+        },
+        {
+          "role": "assistant",
+          "content": "Good move — protecting evening study time is crucial, especially as responsibilities ramp up. For those critical weeks, do you have a backup plan for decompressing when you can't silence notifications, or do you just push through?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I just push through during crunch time, then catch up on sleep and yoga once things settle. Weekly yoga hasn't changed — it's non-negotiable for me, even with the new role."
+        },
+        {
+          "role": "assistant",
+          "content": "Consistency can be your anchor through transitions. Given all these changes — supervising, larger accounts, returning to your old audit routines, and protecting study time — is there anything else about your workflow or boundaries that's been noticeably impacted?"
+        },
+        {
+          "role": "user",
+          "content": "Those are the big ones. The dropped secure note-taking habit is a relief, and the new team check-ins and Friday lunches are energizing so far. Reclaiming my study window makes a real difference too. I think the challenge now is keeping this balance as my responsibilities keep growing."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you're handling the transition thoughtfully. If you need help refining routines or adjusting as your team evolves, let me know — you're off to a strong start!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Started experiencing persistent sleep disturbances, including insomnia and frequent nighttime awakenings, after several months of increased workplace responsibility and stress; referred to a sleep specialist for evaluation and potential treatment.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Tracks her sleep quality nightly in a specialist-recommended sleep journal app and reviews it before each follow-up appointment",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Limits post-dinner screen use and avoids any non-essential work or wedding communication after 9 PM to support her new sleep hygiene routine",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Uses blackout curtains and white noise to try to improve sleep during deadline weeks — never uses sleep medications"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Follows her sleep specialist’s regimen of prescribed sleep aids and relaxation exercises — no longer strictly avoids sleep medication but only uses them under medical supervision",
+              "domain": "health_body"
+            },
+            "reason": "Her persistent insomnia and referral to a sleep specialist indicate her previous strategy is no longer enough. With a medical regimen likely involving prescription aids, she can no longer maintain an outright refusal of sleep medication."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I wanted to talk through some strategies for better sleep. I got referred to a sleep specialist after months of insomnia and waking up at least a few times every night. It's gotten way worse since I took on solo audit lead at work. I know I already have blackout curtains and white noise, but that's clearly not cutting it lately. How do people handle this when stress keeps ramping up?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm really glad you reached out—persistent sleep disturbances can be tough, especially with audit season stress. Can I ask what your specialist is recommending so far? Any new routines or treatments, or is it early in the process? Often, a combination approach works best: environmental tweaks, relaxation exercises, and sometimes medical support."
+        },
+        {
+          "role": "user",
+          "content": "It's early days but already different from my old routine. For the first time, I'm actually using prescribed sleep aids—never thought I'd do that, but my specialist insisted it was necessary alongside new relaxation exercises. I always avoided sleep meds, but right now it's under supervision, so I feel okay about it. I've also started tracking my sleep every night in an app they recommended, to review before my follow-ups."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a thoughtful approach—balancing medication under supervision with data tracking and relaxation work gives you a lot to build on. Are you finding the sleep journal app helpful? Some people notice patterns in their sleep quality that point to certain triggers. And how are you fitting the relaxation exercises into your day, given your workload and commitments like CPA study?"
+        },
+        {
+          "role": "user",
+          "content": "The journal app is actually surprising me. I was skeptical, but it's helping me notice trends—like sleep is a little better on weekends, worse after late-night wedding planning or work emails. And about relaxation exercises: I'm doing some before bed, and trying to limit screens after dinner. My specialist wants me to avoid non-essential communication after 9 PM to improve my sleep hygiene, so I've had to cut back on late work stuff and wedding chats."
+        },
+        {
+          "role": "assistant",
+          "content": "That's impressive—cutting out post-dinner screens and setting a 9 PM communication boundary takes real discipline, especially with CPA study and wedding logistics. Have you noticed if sticking to that cutoff helps your ability to wind down? And, how are your fiancé and your team adjusting to the new boundaries—any friction around those changes?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, it was awkward at first—my fiancé is all for it, so we moved our wedding planning sessions earlier. My team was used to responses late at night, but I finally told them not to expect emails after 8 or 9 PM. Most people get it, but there are a few who keep sending stuff anyway. It’s helping, though—less stimulation late, more time for the relaxation exercises and tracking. I’ve also added reviewing my sleep journal as a nightly routine now, right before bed."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great your fiancé is supportive and most colleagues are on board—it’s never easy shifting communication habits, especially when your work culture is high-stakes. Reviewing your sleep journal nightly sounds like a solid way to reinforce your new routine. Given all these changes, do you feel your sleep is starting to improve, even a little? Or are you still seeing big fluctuations night to night?"
+        },
+        {
+          "role": "user",
+          "content": "I’d say there’s modest improvement. I still get up once or twice most nights, but the nights with screen limits and the prescribed sleep aids are noticeably better—I feel more rested even if I don’t get a full 7 hours. I’m sticking to the journal app and relaxation exercises since every bit helps. If the improvement keeps up, maybe I can taper off the meds eventually and go back to a more natural routine, but for now, medical supervision is key."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like steady progress, and it’s smart to rely on medical supervision for now—so many people try to power through on their own and it just backfires. If you decide to taper down the sleep aids in the future, your improved habits and data from the sleep journal will make that transition easier. Do you need any help finding other tools or routines for winding down earlier, or are you set for now?"
+        },
+        {
+          "role": "user",
+          "content": "I think I’m set with routines and tools for the moment. I just wanted validation that this new regimen is a step forward, since it’s a big shift from my usual never-touch-meds approach. The combo of sleep aids, relaxation, screen limits, and journaling feels manageable, as long as I keep boundaries with colleagues and stick to what the specialist recommends."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re absolutely on the right track—it takes courage to adapt, especially when a core habit (like avoiding meds) has to change for health. Journaling your progress, setting limits, and collaborating with your sleep specialist will build resilience for future audit seasons. Let me know if you hit any new roadblocks or want to brainstorm ways to reinforce your boundaries—your process is genuinely robust."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "During a routine annual physical, her blood pressure is found to be consistently elevated; her doctor orders daily home monitoring and recommends significant changes to her diet and stress management routines.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_051",
+            "fact": "Monitors her blood pressure every morning after waking up and logs results in a designated health app, never skips a day",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_052",
+            "fact": "Avoids caffeine entirely throughout the day, replaces afternoon coffee breaks with herbal tea or water to comply with medical advice",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Only meal preps dishes that can be portioned into glass containers — never uses plastic for storage"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Adopts doctor-recommended low-sodium, heart-healthy meal prep recipes and switches entirely to fresh foods — avoids processed, pre-made dishes and limits salt-heavy cuisines regardless of storage method",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor’s recommendation for significant dietary changes to manage elevated blood pressure means she must shift focus from just container choice to fundamentally changing what she preps: strictly heart-healthy, low-sodium meals and avoiding processed or high-salt foods."
+          },
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Does yoga every Wednesday evening — never skips, no matter her workload"
+            },
+            "to": {
+              "id": "pref_050",
+              "fact": "Expands yoga to a daily routine, switching to morning sessions for improved blood pressure management and stress reduction, not just Wednesday evenings",
+              "domain": "health_body"
+            },
+            "reason": "Her doctor’s advice to improve stress management in response to hypertension motivates her to make yoga a daily, proactive routine rather than a once-weekly activity, especially in the morning when blood pressure tends to be highest."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I just came back from my annual physical and my doctor found my blood pressure was consistently elevated. Now I have to check it every morning, and they're recommending major changes to my diet and stress routine. Honestly, I'm overwhelmed — especially with audit deadlines and CPA studies on top. Can you help me figure out how to make those changes without derailing work and everything else?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds stressful, but it’s good you caught it early and can make adjustments. Let’s break it down: what’s the hardest part so far — the daily checks, the diet changes, or managing stress with your usual workload? We can tackle one piece at a time."
+        },
+        {
+          "role": "user",
+          "content": "The diet changes are definitely tripping me up. My doctor wants me to cut back on sodium, avoid processed stuff, and basically switch to fresh, heart-healthy meals. I used to meal prep with whatever recipes worked in glass containers, but now I actually have to pay attention to ingredients. Any tips for easy low-sodium meal prepping that won’t take forever?"
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move focusing on fresh, whole foods. For meal prepping, roasted veggies, grilled chicken without salt-heavy marinades, and brown rice or quinoa are straightforward and keep well. Flavor with lemon, herbs, and spices instead of salt. Batch prep salads with heart-healthy beans or lentils. Are you able to carve out a consistent prep time, or do you juggle it between travel and studying?"
+        },
+        {
+          "role": "user",
+          "content": "Saturday mornings are still my main grocery and prep time. I just switched to shopping strictly for fresh ingredients, avoiding anything processed or pre-made now, even if it makes meal prep longer. And I’m limiting salt-heavy cuisines entirely, per my doctor. The storage is less important these days — I care more about what’s actually in the food, so I guess my old container obsession doesn’t matter as much."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift, but it sounds like you’re adapting. If you want to save time, chopping veggies and pre-cooking plain proteins on Saturday can help you mix and match for the week. Are you tracking your salt intake, or just sticking to general low-sodium foods?"
+        },
+        {
+          "role": "user",
+          "content": "Right now, I’m mostly just sticking to doctor-recommended recipes and avoiding anything with added salt. I do log my blood pressure every morning after I wake up in a health app — it’s now part of my routine, and I haven’t missed a day yet. That data’s been helpful for my doctor to adjust advice, actually."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s great consistency! Logging each morning is smart since it gives you and your doctor a clear picture. Is the timing—right after waking—working for you, or is it disruptive with your meditation routine or the start of your workday?"
+        },
+        {
+          "role": "user",
+          "content": "It actually fits well. I do my meditation first thing, then yoga, then blood pressure check, all before breakfast now. Yoga’s become a daily thing instead of just Wednesdays, mostly in the mornings so my readings are steady. The doctor said regular stress management helps, so I’m sticking to this even if my schedule is bananas."
+        },
+        {
+          "role": "assistant",
+          "content": "Daily yoga is a big upgrade! That should help with stress and blood pressure. Have you tweaked anything else for stress management—like screen habits, sleep, or coping strategies during audit crunch weeks?"
+        },
+        {
+          "role": "user",
+          "content": "I still use blackout curtains and white noise for sleep, but caffeine was a bigger change. My doctor said I should avoid it entirely, so I stopped coffee and switched to herbal tea or water throughout the day. It’s been weird, but my headaches are less frequent and I’m hoping it helps my blood pressure."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s impressive—the caffeine change isn’t easy, but sounds like it’s paying off! Herbal teas can still give you a comforting break. Any obstacles left—like cravings, social routines, or fitting these changes around your audit lead role?"
+        },
+        {
+          "role": "user",
+          "content": "Cravings are manageable, but audit stress is real. I worry about sticking to this routine during travel and deadlines. I’m blocking off mornings for yoga and meal prepping fresh, but I haven’t figured out how to keep the diet strict when eating out on client trips. Any ideas?"
+        },
+        {
+          "role": "assistant",
+          "content": "Travel is tough with dietary restrictions. Try searching for heart-healthy options before you arrive—grilled proteins, simple salads, or local spots that list sodium counts. You can also bring snacks like unsalted nuts or pre-cut veggies. Are your hotels or sites able to accommodate food requests, or is that unpredictable?"
+        },
+        {
+          "role": "user",
+          "content": "It’s unpredictable, honestly, so I’m planning to bring snacks and maybe prep travel-friendly lunches ahead of time. I’ll ask hotels for salad or grilled chicken, but no guarantees they’ll stay low-sodium. At least my new routine has made me hyperaware of ingredients and planning, which helps me feel more in control."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a strong strategy—preparing snacks and lunches in advance keeps you on track despite unpredictable options. With your new heart-healthy focus, daily yoga, caffeine-free routines, and diligent logging, you’re adapting impressively. Want help with meal ideas, tracking apps, or techniques for relaxing on stressful work trips?"
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Deloitte instituted a mandatory return-to-office policy requiring all senior auditors, including her, to work onsite at the Chicago office five days a week, ending all remote and hybrid work arrangements effective next month.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_055",
+            "fact": "Commutes by public transit every workday, uses train time for CPA exam flashcards and study summaries; avoids driving to maintain focus and reduce stress.",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_056",
+            "fact": "Eats lunch with colleagues in the office cafeteria most days to facilitate team rapport — replaces prior solo lunch walks during remote/hybrid schedules.",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Always schedules video calls with remote department contacts — avoids lengthy email threads for coordination"
+            },
+            "to": {
+              "id": "pref_053",
+              "fact": "Prioritizes in-person meetings for departmental coordination in the Chicago office — schedules video calls only for external or off-site contacts when required",
+              "domain": "work_habits"
+            },
+            "reason": "The mandatory return-to-office policy means most contacts are now physically present and available for face-to-face meetings. This preference evolves from video calls as the default to in-person interactions for onsite staff."
+          },
+          {
+            "from": {
+              "id": "pref_040",
+              "fact": "Requests flexibility to work remotely from Cleveland for several weeks to provide in-person care for her mother, prioritizing family over routine client travel during her mother's immediate recovery period"
+            },
+            "to": {
+              "id": "pref_054",
+              "fact": "No longer requests remote work arrangements for family needs — strictly adheres to the office-required schedule and travel policies set by Deloitte",
+              "domain": "work_habits"
+            },
+            "reason": "The new mandatory onsite policy eliminates flexibility to work remotely from Cleveland or provide direct support for family during workweeks. She must comply with the enforced office attendance."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_005",
+            "fact": "Never books travel for client visits on Mondays or Fridays, always midweek to minimize disruption",
+            "domain": "work_habits",
+            "reason": "With onsite presence required five days a week, and routine travel suspended by policy, this midweek travel booking habit is irrelevant—she won't be booking client-site trips."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Deloitte just announced the mandatory return-to-office policy for all senior auditors. No more hybrid or remote—starting next month, I have to be onsite five days a week. I’m actually a little stressed about how this is going to impact my routines, especially since I'm right in the middle of prepping for my first solo audit and my CPA exams. Any ideas for keeping this transition manageable?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big shift—especially with so much going on! For starters, have you thought about how your commute will affect your mornings or study time? Sometimes carving out pockets in a new routine helps ease the adjustment. What does your typical day look like now, and what's changing with office attendance?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll have to start commuting by train every day now, which actually gives me about 40 minutes each way. I’m planning to use that time for flashcards and CPA study summaries, instead of squeezing study in at home after work. I definitely don’t want to drive—too stressful, and I can’t concentrate on prep in the car anyway."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move using the train for productive study time—and avoiding the stress of driving. How are you blocking off your mornings for audit review now with the office schedule? Are you able to keep your 7-8 AM uninterrupted review time?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah—I still block 7-8 AM for audit review, same as before, and I won’t schedule meetings before 9 AM. I’m finding I need to prep everything the night before, though: clothes, lunch, study materials. Otherwise I’d be too rushed. One thing I’m worried about is how to coordinate with all the departments for the solo audit. With everyone in the office, is it more efficient to do in-person meetings?"
+        },
+        {
+          "role": "assistant",
+          "content": "Good call on prepping everything the night before. And yes, in-person meetings can speed up coordination and build rapport, especially during a big audit. Are you planning to transition away from scheduling video calls with internal teams now that everyone’s onsite?"
+        },
+        {
+          "role": "user",
+          "content": "Exactly. I've basically switched to prioritizing in-person meetings with department contacts at the Chicago office. Video calls are now reserved for client contacts or employees who are genuinely off-site. Honestly, it feels like I’m relearning how to coordinate—it’s weird not relying on Zoom for the day-to-day."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense. In-person can streamline everything, though it takes some adjustment if you’re used to digital. How do you handle lunch during the day—do you still do your afternoon walk, or is your routine changing with the office cafeteria?"
+        },
+        {
+          "role": "user",
+          "content": "That’s another change—I used to take a 10-minute walk after lunch when I was working remotely or hybrid, but lately I've been eating lunch with colleagues in the office cafeteria most days. It's actually helping me feel more connected with the team, but I do miss the solo walks sometimes."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like lunch is turning into a good opportunity for team building. Maybe you could squeeze in a short walk either before or after lunch, or use another break for solo time if you need it. Has the return-to-office impacted your travel routine for client visits too?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah—client-site travel is basically off the table now, at least for a while. That means my old habit of booking site visits midweek, never on Mondays or Fridays, isn't relevant anymore. All coordination is from the main office, so that preference is dropped."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment—losing travel changes the rhythm of the week. Does the lack of flexibility affect your ability to support family or deal with unexpected needs, like visiting your mom in Cleveland?"
+        },
+        {
+          "role": "user",
+          "content": "Unfortunately, yes. I can’t request remote work arrangements anymore, even if there’s a family situation. I have to strictly stick to the office schedule and the travel policies—no exceptions for personal needs. I used to ask for flexibility to help my mom after surgery, but that's off the table now."
+        },
+        {
+          "role": "assistant",
+          "content": "That must be tough, especially when family needs come up. Are there any routines or boundaries you’re holding onto to keep some balance, despite the stricter office policy?"
+        },
+        {
+          "role": "user",
+          "content": "I’m still sticking to yoga every Wednesday night, and meal prepping in glass containers so I don’t have to worry about nutrition during the week. I keep my phone silenced after 8 PM when I’m studying for the CPA. It’s all about protecting the pockets of time I still have control over."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re really proactive in protecting your wellness routines—smart. One last question: have you experimented with any new strategies for sleep or stress now that your days are longer and more social?"
+        },
+        {
+          "role": "user",
+          "content": "I’m trying blackout curtains and white noise for sleep, but deadline weeks are always hard. I do a guided meditation every morning before checking my phone, and I plan one unplugged Sunday a month to recover. I’m hoping those little habits will help offset the office transition, but I'll have to keep tweaking as I go."
+        },
+        {
+          "role": "assistant",
+          "content": "Those sound like solid strategies. If you ever need help optimizing your study schedule—or want to talk through how to balance audit responsibilities with your health and family routines—just ask. Happy to brainstorm with you as things settle!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her fiancé’s parents announced they will be visiting Chicago for an extended two-week stay to help with wedding preparations and want to stay with her and her fiancé, requesting to spend significant time together as a family.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_058",
+            "fact": "Hosts daily group dinners at home with her fiancé and his parents during their stay, preferring home-cooked, communal meals over dining out or ordering takeout.",
+            "domain": "social_relationships"
+          },
+          {
+            "id": "pref_059",
+            "fact": "Allocates evenings for collaborative wedding planning tasks together with her fiancé’s parents, pausing solo calendar updates to facilitate in-person input and shared decision-making.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_019",
+              "fact": "Plans one unplugged Sunday per month with her fiancé, turning off all work notifications and focusing on outdoor activities"
+            },
+            "to": {
+              "id": "pref_057",
+              "fact": "Plans unplugged family-centric weekends that include her fiancé’s parents, turning off work notifications and focusing on shared meals and collaborative wedding tasks instead of private outdoor activities",
+              "domain": "leisure_hobbies"
+            },
+            "reason": "Her fiancé’s parents are staying for two weeks and requested lots of family time for wedding planning. The unplugged time now shifts from private couple activities to group/family-focused routines with significant parental involvement."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I need to strategize. My fiancé’s parents just told us they want to come to Chicago for a two-week stay to help with wedding planning—and they want to stay at our place. I appreciate their enthusiasm but I’ve never hosted for this long, especially while juggling work and CPA exam study. Any tips for integrating them into my routines without totally losing my sanity?"
+        },
+        {
+          "role": "assistant",
+          "content": "That is definitely a big adjustment! Two weeks is a long time, especially with everything else on your plate. When you've hosted before, what kind of boundaries or routines have helped you stay grounded? Are there particular parts of your day you want to protect during their visit?"
+        },
+        {
+          "role": "user",
+          "content": "Normally, I block off 7-8am for undisturbed audit review and never schedule meetings before 9. That’s non-negotiable—even when guests are around. I also keep mornings for meditation and prepping my lunch and study materials the night before, so scrambling isn’t an option. But the evenings are trickier, since I usually spend them on CPA prep or dinner with my fiancé. With his parents here, they’re hoping for lots of family meals and group wedding planning, so my downtime and study blocks might disappear."
+        },
+        {
+          "role": "assistant",
+          "content": "Those morning rituals sound essential, and it makes sense to keep them intact. For evenings, have you talked with your fiancé and his parents about your CPA study needs? Maybe you could set a boundary for an hour or two each night before joining family activities—or would that feel too awkward given their involvement?"
+        },
+        {
+          "role": "user",
+          "content": "We discussed it, but honestly, their idea is to do wedding planning together after dinner most nights. Plus, they want daily dinners at home instead of going out or ordering in. It's a shift for me—usually, I plan unplugged Sundays just for my fiancé and me, focusing on outdoor stuff, but now the unplugged time is all about shared meals and collaborative tasks with his parents. So, I’m pivoting from private couple routines to really group/family-centric weekends while they’re here."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a major evolution in your unplugged routine, and a pretty big adjustment in your downtime too. Hosting home-cooked group dinners every night is ambitious! Are you planning to meal prep for four, or will you cook fresh each night with everyone? Also, is everyone on board with your glass container rule for leftovers?"
+        },
+        {
+          "role": "user",
+          "content": "I’ll stick to glass containers—even for leftovers from group meals. But meal prep will change: instead of prepping solo meals, I’ll focus on recipes we can cook together each evening. They like the idea of communal cooking, and I want to keep it healthier than takeout. We’re skipping restaurants entirely while they’re here, so group dinners at home are now part of the routine."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a smart move—home-cooked meals let you control nutrition and create family connection. Are there particular dishes you’re thinking of for group cooking? Maybe something you can prep partially ahead, so you’re not spending hours each night in the kitchen?"
+        },
+        {
+          "role": "user",
+          "content": "Exactly. I’m looking at things like big salads, sheet pan dinners, or build-your-own tacos we can assemble together. It also keeps cleanup manageable, especially since I’ll need some evenings for wedding planning with everyone. I’ve paused my usual solo calendar updating for wedding details, since now all planning happens in-person as a group. That’s another new routine—no more prepping event tasks independently for these two weeks."
+        },
+        {
+          "role": "assistant",
+          "content": "That collaborative approach should help everyone feel involved, and having group planning sessions might actually speed up the decision process. Do you anticipate any friction from pausing solo calendar updates? Or are you okay with adjusting your workflow for this stretch?"
+        },
+        {
+          "role": "user",
+          "content": "I’m fine with it for now, since everyone’s input needs to be in person. But after they leave, I’ll probably go back to updating wedding tasks in the shared online calendar with my fiancé—it’s just smoother. For now, collaborative evenings are the way forward, even if it feels chaotic compared to my usual step-by-step approach."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like you’re finding ways to balance flexibility and structure, even with these big changes. If dinner and planning evenings ever feel overwhelming, would your fiancé’s parents be open to a game night or some lighter activity occasionally, just to reset? Sometimes a little fun time helps counterbalance all the logistics."
+        },
+        {
+          "role": "user",
+          "content": "That’s a great tip. I’ll suggest board games or trivia one night, since I do miss our monthly trivia outings. It could be a good break from wedding talk, and everyone gets to relax together. Thanks—this is helping me think about how to shape these new, family-focused routines!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Blocks off 7-8 AM every workday for uninterrupted audit review — never schedules meetings before 9 AM",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_002",
+        "fact": "Prepares a detailed checklist for each client project and updates it daily — never relies on memory or ad hoc notes",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Keeps a reusable water bottle at her desk and drinks at least two liters during workdays — avoids coffee after 3 PM to prevent headaches",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Takes a 10-minute walk after lunch every workday to clear her head — never eats lunch at her desk",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_013",
+        "fact": "Prefers texting or messaging with friends for casual check-ins — avoids spontaneous phone calls",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Coordinates all wedding planning with her fiancé using shared online calendars — never makes major decisions without looping him in first",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_015",
+        "fact": "Handles family conflict by setting boundaries, politely declining to mediate between her fiancé and her parents",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Attends monthly trivia nights with friends — avoids loud nightclubs and late bar outings",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Keeps a digital photo journal of her travels for herself — never posts more than one photo per week to social media",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Starts each morning with 10 minutes of guided meditation — never checks her phone before this routine",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Does all grocery shopping on Saturday mornings — never orders groceries online",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Organizes finances every Sunday afternoon, updating a spreadsheet — never uses budgeting apps",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Has casual breakfasts or coffee with her brother several times a week at home, rather than a formal scheduled brunch out on weekends",
+        "domain": "social_relationships",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Listens to crime thriller audiobooks during flights and client travel — avoids reading on screens to minimize wrist strain",
+        "domain": "leisure_hobbies",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_030",
+        "fact": "Sets a strict screen-free hour before bedtime, using guided meditation audio or voice journaling instead of physical writing or e-reading",
+        "domain": "daily_routines",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Performs prescribed wrist stretches and exercises daily after work to manage carpal tunnel symptoms",
+        "domain": "health_body",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_032",
+        "fact": "Uses speech-to-text for personal notes and CPA study summaries instead of typing or writing by hand",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Researches and visits local coffee shops in prospective cities being considered for relocation, prioritizing neighborhoods she and her fiancé might want to move to — rarely explores new areas of Chicago currently",
+        "domain": "leisure_hobbies",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Schedules weekly in-depth planning sessions with her fiancé to evaluate relocation pros and cons, using shared documents to track questions and decisions",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Prioritizes open video calls with her mother and brother about relocation discussions to maintain close family ties despite potential distance",
+        "domain": "social_relationships",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_039",
+        "fact": "Makes daily evening calls to her mother during her post-surgery recovery period — prioritizes these over her regular social routines",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Prepares easily freezable and reheatable meals for her mother's household during her stay — adapts meal prep habits to support her mother's dietary needs",
+        "domain": "health_body",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_042",
+        "fact": "Leads daily morning briefings for her audit team as a senior auditor, setting the agenda and delegating tasks to junior members.",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Resumes silencing work notifications at 8 PM to protect evening study time for her renewed CPA preparation, except during critical client audit weeks.",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_044",
+        "fact": "Checks in daily with her junior audit team members for progress review and mentorship, preferring in-person or video meetings over email.",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Sets aside Friday lunch hours for informal team gatherings to build rapport and foster collaboration among junior staff.",
+        "domain": "work_habits",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_046",
+        "fact": "Follows her sleep specialist’s regimen of prescribed sleep aids and relaxation exercises — no longer strictly avoids sleep medication but only uses them under medical supervision",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Tracks her sleep quality nightly in a specialist-recommended sleep journal app and reviews it before each follow-up appointment",
+        "domain": "health_body",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Limits post-dinner screen use and avoids any non-essential work or wedding communication after 9 PM to support her new sleep hygiene routine",
+        "domain": "daily_routines",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Adopts doctor-recommended low-sodium, heart-healthy meal prep recipes and switches entirely to fresh foods — avoids processed, pre-made dishes and limits salt-heavy cuisines regardless of storage method",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Expands yoga to a daily routine, switching to morning sessions for improved blood pressure management and stress reduction, not just Wednesday evenings",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Monitors her blood pressure every morning after waking up and logs results in a designated health app, never skips a day",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Avoids caffeine entirely throughout the day, replaces afternoon coffee breaks with herbal tea or water to comply with medical advice",
+        "domain": "health_body",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_053",
+        "fact": "Prioritizes in-person meetings for departmental coordination in the Chicago office — schedules video calls only for external or off-site contacts when required",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "No longer requests remote work arrangements for family needs — strictly adheres to the office-required schedule and travel policies set by Deloitte",
+        "domain": "work_habits",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Commutes by public transit every workday, uses train time for CPA exam flashcards and study summaries; avoids driving to maintain focus and reduce stress.",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_056",
+        "fact": "Eats lunch with colleagues in the office cafeteria most days to facilitate team rapport — replaces prior solo lunch walks during remote/hybrid schedules.",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_057",
+        "fact": "Plans unplugged family-centric weekends that include her fiancé’s parents, turning off work notifications and focusing on shared meals and collaborative wedding tasks instead of private outdoor activities",
+        "domain": "leisure_hobbies",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_058",
+        "fact": "Hosts daily group dinners at home with her fiancé and his parents during their stay, preferring home-cooked, communal meals over dining out or ordering takeout.",
+        "domain": "social_relationships",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_059",
+        "fact": "Allocates evenings for collaborative wedding planning tasks together with her fiancé’s parents, pausing solo calendar updates to facilitate in-person input and shared decision-making.",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_003",
+        "fact": "Always schedules video calls with remote department contacts — avoids lengthy email threads for coordination",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_053",
+        "reason": "The mandatory return-to-office policy means most contacts are now physically present and available for face-to-face meetings. This preference evolves from video calls as the default to in-person interactions for onsite staff."
+      },
+      {
+        "id": "pref_004",
+        "fact": "Refuses to check work email after 8 PM when studying for the CPA exam — silences all notifications at that time",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "She has postponed her planned CPA exam attempt and must support the high-priority investigation full-time. This removes her evening study window and makes her available for work matters after 8 PM."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Never books travel for client visits on Mondays or Fridays, always midweek to minimize disruption",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 8,
+        "replaced_by": null,
+        "reason": "With onsite presence required five days a week, and routine travel suspended by policy, this midweek travel booking habit is irrelevant—she won't be booking client-site trips."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Does yoga every Wednesday evening — never skips, no matter her workload",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_050",
+        "reason": "Her doctor’s advice to improve stress management in response to hypertension motivates her to make yoga a daily, proactive routine rather than a once-weekly activity, especially in the morning when blood pressure tends to be highest."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Only meal preps dishes that can be portioned into glass containers — never uses plastic for storage",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "Her doctor’s recommendation for significant dietary changes to manage elevated blood pressure means she must shift focus from just container choice to fundamentally changing what she preps: strictly heart-healthy, low-sodium meals and avoiding processed or high-salt foods."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Uses blackout curtains and white noise to try to improve sleep during deadline weeks — never uses sleep medications",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "Her persistent insomnia and referral to a sleep specialist indicate her previous strategy is no longer enough. With a medical regimen likely involving prescription aids, she can no longer maintain an outright refusal of sleep medication."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Calls her mother every Sunday evening at the same time — cancels only for emergencies",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_039",
+        "reason": "Her mother’s upcoming surgery and recovery require more frequent and active support and check-ins than the prior weekly routine. She responds by shifting to daily calls to ensure her mother's well-being."
+      },
+      {
+        "id": "pref_012",
+        "fact": "Schedules a weekly brunch with her brother and never makes other plans during that time",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "Her brother moving in eliminates the need to schedule and prioritize a weekly brunch outing, as they share the same living space and naturally spend more informal morning time together."
+      },
+      {
+        "id": "pref_016",
+        "fact": "Reads crime thrillers on her Kindle during flights — never brings physical books on work trips",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_029",
+        "reason": "Her carpal tunnel diagnosis and the doctor's restriction on non-essential computer/tablet use outside of work makes holding or operating her Kindle uncomfortable, so she switches to audiobooks to reduce wrist and hand activity."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Visits a new Chicago neighborhood each month, sampling local coffee shops — never repeats the same place in a season",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "With the potential move looming, her focus shifts from exploring within Chicago to scouting possible new home cities with her fiancé. Coffee shop visits become a way to assess new environments rather than discovering more of Chicago."
+      },
+      {
+        "id": "pref_019",
+        "fact": "Plans one unplugged Sunday per month with her fiancé, turning off all work notifications and focusing on outdoor activities",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_057",
+        "reason": "Her fiancé’s parents are staying for two weeks and requested lots of family time for wedding planning. The unplugged time now shifts from private couple activities to group/family-focused routines with significant parental involvement."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Prepares clothes, lunch, and CPA study materials the night before workdays — never leaves tasks until morning",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 3,
+        "replaced_by": null,
+        "reason": "She has postponed her CPA exam and isn't actively preparing study materials; this part of her nightly routine is no longer relevant during the investigation assignment."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Sets a strict screen-free hour before bedtime, switching to reading or journaling instead",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "Her prescribed reduction in wrist and hand use outside working hours makes holding a book or writing/journaling by hand (and operating e-readers) uncomfortable, so she replaces those activities with audio-based and hands-free alternatives."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Shares meal prep responsibilities with her brother — alternates cooking and planning for the week's lunches and dinners",
+        "domain": "health_body",
+        "created_at_session": 0,
+        "superseded_at_session": 1,
+        "replaced_by": null,
+        "reason": "Her doctor's restriction on non-work hand and wrist use makes her unable to contribute to meal prep tasks as before; she cannot physically alternate cooking and prepping meals for now."
+      },
+      {
+        "id": "pref_028",
+        "fact": "Allocates shared chores and cleaning duties with her brother using a rotating checklist",
+        "domain": "daily_routines",
+        "created_at_session": 0,
+        "superseded_at_session": 2,
+        "replaced_by": null,
+        "reason": "Her brother no longer cohabits with her now that discussions about relocating after the wedding signal an impending change in her living arrangements; he has moved out to make way for the engaged couple’s future home."
+      },
+      {
+        "id": "pref_036",
+        "fact": "Checks work email into the evening during the internal investigation period — CPA study sessions paused, no longer silences notifications at 8 PM",
+        "domain": "work_habits",
+        "created_at_session": 3,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_043",
+        "reason": "With the internal investigation completed and her promotion secured, she will resume CPA exam study in her evenings, reestablishing boundaries from work email except for urgent client demands. This marks a shift back towards prioritizing study and personal boundaries."
+      },
+      {
+        "id": "pref_037",
+        "fact": "Joins daily morning briefings for the internal investigation team, prioritizing open collaboration over solo audit review.",
+        "domain": "work_habits",
+        "created_at_session": 3,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "Her promotion to senior auditor and new supervisory responsibilities require her to lead, not just participate, in daily briefings. She must now coordinate and direct team activities, rather than focusing solely on personal review or collaborative participation."
+      },
+      {
+        "id": "pref_038",
+        "fact": "Uses secure note-taking apps for sensitive investigation details, replacing her usual detailed client checklists with password-protected digital records.",
+        "domain": "work_habits",
+        "created_at_session": 3,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "The internal investigation assignment and need for secure digital records ended with the project; she returns to handling standard client audits where usual checklists suffice."
+      },
+      {
+        "id": "pref_040",
+        "fact": "Requests flexibility to work remotely from Cleveland for several weeks to provide in-person care for her mother, prioritizing family over routine client travel during her mother's immediate recovery period",
+        "domain": "work_habits",
+        "created_at_session": 4,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_054",
+        "reason": "The new mandatory onsite policy eliminates flexibility to work remotely from Cleveland or provide direct support for family during workweeks. She must comply with the enforced office attendance."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:33:56.881138"
+}

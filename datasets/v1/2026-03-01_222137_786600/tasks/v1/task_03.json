@@ -1,0 +1,40 @@
+{
+  "task_id": "eval_2a128891",
+  "rubric": {
+    "required_preferences": [
+      {
+        "id": "pref_045",
+        "fact": "Keeps Slack and email notifications on at all times during work hours — prioritizes instant response and real-time coordination over focused solo analysis",
+        "supersedes": {
+          "id": "pref_001",
+          "fact": "Shuts off Slack and email notifications during focused data analysis — only checks messages between tasks"
+        }
+      },
+      {
+        "id": "pref_036",
+        "fact": "Performs CPAP setup routine and machine checks nightly before bed — uses guided meditation apps only if time allows after equipment setup",
+        "supersedes": {
+          "id": "pref_007",
+          "fact": "Uses guided meditation apps for insomnia every night — never skips, even when tired"
+        }
+      },
+      {
+        "id": "pref_038",
+        "fact": "Maintains a CPAP usage and sleep quality journal, recording hours of use and any discomfort nightly for her doctor’s follow-ups"
+      },
+      {
+        "id": "pref_040",
+        "fact": "Checks local pollen and air quality alerts twice daily—morning and evening—to track potential symptom triggers and adjust routines accordingly"
+      },
+      {
+        "id": "pref_024",
+        "fact": "Composes a handwritten daily gratitude note each night before sleep — never uses digital journaling apps"
+      },
+      {
+        "id": "pref_034",
+        "fact": "Declines evening social invitations and limits late-night activities to ensure she’s home for Luna’s evening medication and fluid treatments"
+      }
+    ]
+  },
+  "persona": "A mid-level business analyst at a multinational retail corporation"
+}

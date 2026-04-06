@@ -1,0 +1,1447 @@
+{
+  "persona": "A small business owner with limited legal training handling vendor contracts",
+  "persona_id": "persona_20260301_223718",
+  "expanded_persona": {
+    "base_persona": "A small business owner with limited legal training handling vendor contracts",
+    "age": 38,
+    "gender": "female",
+    "location": "Denver, CO",
+    "work_education": [
+      "Owns a boutique home décor store that employs 4 part-time staff; opened 6 years ago",
+      "Recently expanded online sales, now juggling both in-person and digital order fulfillment",
+      "Manages all vendor relationships herself; spends 4-6 hours per week reviewing and negotiating contracts, relying mostly on Google searches and template sites",
+      "Took an evening course in business law last year but still feels unconfident about contract language, especially liability clauses",
+      "Considering hiring a part-time assistant but worried about budgeting for additional payroll and legal support"
+    ],
+    "health_wellness": [
+      "Deals with chronic lower back pain from standing all day and lifting heavy boxes",
+      "No major medical issues; mostly healthy, but often skips meals when the shop is busy",
+      "Attends a weekly yoga class with her sister to manage stress and improve flexibility",
+      "Sleeps erratically, 5–6 hours on average, especially during inventory turnover periods",
+      "Recently started tracking steps and water intake in an effort to build healthier habits"
+    ],
+    "family_relationships": [
+      "Lives with her husband, a freelance graphic designer, and their 10-year-old daughter",
+      "Her mother, recently widowed, moved into a nearby apartment and relies on her for help with errands and weekly grocery runs",
+      "Routinely balances family time and business demands by closing the shop early each Wednesday for a family dinner",
+      "Has a strong support network including two close friends who are also small business owners in her neighborhood",
+      "Occasionally struggles with guilt about missing her daughter’s school events due to shop emergencies"
+    ],
+    "baseline_preferences": {
+      "work_habits": [
+        "Reviews contracts in batches every Sunday evening — never handles contract tasks during shop hours",
+        "Only negotiates vendor terms via email, never phone or in-person calls, to keep written records",
+        "Relies exclusively on official template sites for contract language — never uses templates sent by vendors",
+        "Schedules online order fulfillment in the mornings; never mixes digital shipping with in-store pickups after noon",
+        "Prefers to solve problems herself first, only asks her business friends for advice when she's truly stuck"
+      ],
+      "health_body": [
+        "Never skips her weekly yoga class, regardless of how busy the shop gets",
+        "Refuses to lift boxes heavier than 25 pounds; asks staff for help with anything heavier",
+        "Tracks water intake daily with her phone — never relies on estimating",
+        "Only eats lunch at her desk in the shop, never leaves the store for food midday",
+        "Uses a lumbar support cushion whenever she's working at the register — never stands without it"
+      ],
+      "social_relationships": [
+        "Calls her mother every Monday morning to plan the week’s errands; never delegates these to anyone else",
+        "Keeps Wednesdays reserved for family and closes shop early, never schedules vendor meetings that day",
+        "Organizes monthly brunches with her business-owning friends, never attends large business networking events",
+        "Texts her husband updates about shop emergencies, never calls unless urgent",
+        "Always volunteers for at least one school event per semester, even if she has to reshuffle her work schedule"
+      ],
+      "leisure_hobbies": [
+        "Spends Saturday afternoons browsing local antique shops for store inspiration, never shops big box retailers for décor",
+        "Gardens in her backyard every Sunday morning, rain or shine",
+        "Watches home renovation shows with her daughter once a week — never misses their tradition",
+        "Uses Pinterest to save new decorating ideas, never relies solely on Instagram feeds",
+        "Prefers weekend day trips to Colorado mountain towns over long vacations each year"
+      ],
+      "daily_routines": [
+        "Plans each day the night before using a paper planner, never uses digital calendar apps",
+        "Checks email and messages only at the top of each hour; never responds in real time",
+        "Preps breakfast for her family every morning before opening the store",
+        "Shops for groceries on Thursdays for both her household and her mother, never makes random trips",
+        "Sets her phone to Do Not Disturb after 8pm every night, no exceptions"
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "session_id": 0,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Experienced a severe lower back spasm while unloading a shipment at the store, resulting in an urgent care visit and a doctor's order to avoid lifting or prolonged standing for at least six weeks.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_028",
+            "fact": "Spends Sunday mornings sketching garden plans and browsing gardening blogs from a seated position, replacing hands-on gardening during her injury recovery",
+            "domain": "leisure_hobbies"
+          },
+          {
+            "id": "pref_029",
+            "fact": "Uses a rolling task chair behind the shop counter to minimize standing throughout each workday",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_007",
+              "fact": "Refuses to lift boxes heavier than 25 pounds; asks staff for help with anything heavier"
+            },
+            "to": {
+              "id": "pref_026",
+              "fact": "Avoids lifting any boxes herself, regardless of weight — all lifting delegated to staff for now",
+              "domain": "health_body"
+            },
+            "reason": "After the severe back spasm and doctor's strict orders, she must refrain from all lifting, not just heavier items, to avoid reinjury during recovery."
+          },
+          {
+            "from": {
+              "id": "pref_006",
+              "fact": "Never skips her weekly yoga class, regardless of how busy the shop gets"
+            },
+            "to": {
+              "id": "pref_027",
+              "fact": "Temporarily skips her weekly yoga class as per doctor's orders; focusing on prescribed gentle stretches at home instead",
+              "domain": "health_body"
+            },
+            "reason": "The doctor's orders prohibit physical activities that could aggravate her back, including her regular yoga class, requiring a full pause or significant modification."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_017",
+            "fact": "Gardens in her backyard every Sunday morning, rain or shine",
+            "domain": "leisure_hobbies",
+            "reason": "Gardening typically requires bending, lifting, and prolonged standing — all banned by her doctor during her six-week recovery. There is no safe way for her to continue this preference at present."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "So I had a pretty bad back spasm unloading a shipment last week—ended up at urgent care and got strict orders: no lifting at all, and I have to avoid standing for long stretches for at least six weeks. I’m honestly pretty freaked out about how this will affect my shop workflow and routines. Any advice on keeping things running (and my sanity) while I’m sidelined?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds really tough, especially since your business is so hands-on. First off, are you able to delegate most lifting and physical tasks to your staff, or will you need to bring in someone extra temporarily to cover that gap? And how are you adapting your customer service and order fulfillment routines given the doctor’s restrictions?"
+        },
+        {
+          "role": "user",
+          "content": "Luckily my four part-timers can handle all the lifting, but I have to avoid even small boxes now—not just the heavy ones. That means I’m staying behind the counter as much as possible and using a rolling chair, which helps. But online orders are tricky—still need to make sure things go out smoothly without doing any lugging myself."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move delegating every bit of lifting. For online fulfillment, would it help to set up a process where staff handles packing and carrying, and you just supervise or manage shipping labels from your seat? Maybe even tweak your morning workflow so your involvement is strictly paperwork or digital tasks. Is that feasible with your team?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I think I can shift to just managing labels and paperwork—maybe set everything up the night before, like I do with my paper planner. I’ll just have to trust the staff to handle pickups and packing. Hard to let go, but no choice for now. By the way, I usually do hands-on gardening on Sunday mornings to decompress, but that’s off the table. Guess I’ll be sketching landscaping ideas from the porch and bingeing gardening blogs instead."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big change—the physical part of gardening definitely isn’t doable right now. Sketching and reading sound like solid options though, and you’ll still get creative inspiration. Would you want recommendations for good gardening blogs or design sites to follow while you recover? Also, how’s the adjustment to less movement during work hours treating you?"
+        },
+        {
+          "role": "user",
+          "content": "I’d actually love some blog suggestions—more ideas, the better! As for movement, I honestly miss my weekly yoga class, but the doc says I have to skip it for now. I'm allowed some gentle stretches at home, but nothing strenuous. I’ve had to really rethink my stress management, since yoga was a big anchor for me."
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you—that’s a tough loss, even if temporary. Would you like help finding gentle stretching routines specifically for back recovery? Or maybe resources for meditation or mindfulness that keep stress in check? How are you planning to keep up with your water and step tracking given all the sitting?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, gentle stretching suggestions would help. As for water and steps, still tracking water on my phone daily. Steps are low, but I’m not worrying too much about numbers while I’m stuck seated. The rolling chair behind the counter is new, but it’s making things way more manageable. Just wish I could be more active—I usually garden, lift light boxes, and stick to a routine. Losing those habits has been rough."
+        },
+        {
+          "role": "assistant",
+          "content": "Great to hear you’re sticking with water tracking—that consistency will benefit your recovery. I can suggest a few gentle back stretches and maybe chair-based movement videos if you’re interested. Since you’ve had to drop hands-on gardening and pause yoga, are there other hobbies or routines helping you unwind? And do you need ideas for ways to keep inspired for store décor while less mobile?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I spend Sunday mornings sketching garden layouts now and scrolling gardening blogs from my chair, since hands-on work is out. Saturday afternoons I still browse local antique stores for inspiration—sticking to shorter visits and sitting as much as possible. I’ll lean on Pinterest and TV shows for new ideas. And yes, anything for seated stretches or chair yoga would be awesome."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect, I’ll pull together some resources for seated stretches, chair yoga, and gentle routines for back health. For décor inspiration, Pinterest board-building and watching renovation shows with your daughter might fill the gap. Antique store visits sound doable if you pace yourself. If you ever want recommendations for accessible shops or inspiring blogs, let me know!"
+        },
+        {
+          "role": "user",
+          "content": "Thanks! I think between sketching, sitting, and shifting my routines, I’ll manage. The hardest thing is letting go of garden time (which has always been non-negotiable for me—even in rain), but there’s just no safe way right now. I’ll lean on creative planning instead. Appreciate your help—it’s a lot, but your advice is helping me adapt."
+        }
+      ]
+    },
+    {
+      "session_id": 1,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Received notice that a long-time vendor is updating their contracts to new terms with stricter liability clauses, requiring all partners—including her store—to review and sign within two weeks or risk losing favored pricing and product access.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_031",
+            "fact": "Shares the updated contract language with her trusted business friends for feedback before signing, rather than handling negotiation alone",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_032",
+            "fact": "Blocks off two weekday evenings specifically for contract review and vendor negotiation, instead of batching all contract tasks for Sunday night",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_003",
+              "fact": "Relies exclusively on official template sites for contract language — never uses templates sent by vendors"
+            },
+            "to": {
+              "id": "pref_030",
+              "fact": "Prioritizes reviewing and negotiating directly from vendor-supplied contract templates, focusing on their specific clauses before consulting template sites",
+              "domain": "work_habits"
+            },
+            "reason": "The vendor has introduced stricter liability clauses and requires all partners to sign their specific contracts. She must now work directly from vendor-provided templates to understand and respond to their terms, rather than relying only on generic templates."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I just got a notice from one of my biggest vendors: they’re updating contracts—liability terms are more aggressive, and everyone has to sign their new template within two weeks or else we lose our pricing and product access. I honestly feel out of my depth here. I know I need to review their template line by line, but those liability clauses make me nervous. What’s the best way to start tackling this?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds stressful—it’s tough when vendors push legal changes on short notice. The best first step is to carefully review the liability sections and highlight anything you don’t fully understand or that seems unfair. Have you compared their new clauses to your usual contract templates, or do they seem like a big departure?"
+        },
+        {
+          "role": "user",
+          "content": "It’s definitely different from what I’m used to. Normally, I’d lean on generic templates from official sites when reviewing contract language, but this time I’m prioritizing the vendor’s template itself since it’s mandatory and pretty specific. I plan to focus on their exact clauses first—then I’ll look to the standard templates for reference if I need it."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a good move—vendors often write terms that don’t match generalized templates. Focusing on their language first helps you catch anything unusual. Are you planning to negotiate any of these new clauses? Sometimes vendors are open to tweaking terms if you raise concerns, especially about liability."
+        },
+        {
+          "role": "user",
+          "content": "I think I’ll have to negotiate, at least on the liability part. But I’m not confident doing it alone this time—I’ve decided to share the updated contract language with two business friends before signing. They’re also shop owners, so their feedback could help me spot risks or alternative wording."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart—another set of eyes (especially from people in your industry) can make a big difference. Are your friends familiar with negotiating with this vendor, or will this be new territory for them too? Would you want to schedule a joint review session, or just email them the contract?"
+        },
+        {
+          "role": "user",
+          "content": "One of them already works with this vendor, so she’s seen similar contracts before—I’m hoping she’ll spot issues I might miss. I’m emailing both of them the contract for feedback, so I have everything in writing. That way, I can pull together suggestions before I respond to the vendor."
+        },
+        {
+          "role": "assistant",
+          "content": "Keeping everything in writing is wise—especially with legal topics. Will you handle the review all at once, or break it up over several evenings? Don’t feel pressured to rush; you want to give yourself time to digest the changes."
+        },
+        {
+          "role": "user",
+          "content": "This is a bigger task than usual, so I’m blocking off two weekday evenings for contract review and vendor negotiation instead of just batching everything Sunday night. It feels less overwhelming if I spread it out, and gives me time to get feedback from my friends before replying."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great adjustment—spreading it out helps avoid burnout or missing details. Do you have a routine for prepping these review sessions (like setting up your workspace or tracking questions), or does it just depend on the contract?"
+        },
+        {
+          "role": "user",
+          "content": "Usually I review contracts at my desk after hours—laptop, legal pad for notes, lots of highlighters. I’m planning to list out all the vendor’s liability changes, then flag anything my friends or I might want clarified or negotiated. If anything feels too risky, I’ll consider reaching out to a legal pro, but I want to see what my friends say first."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds well-organized. As you review, make sure you watch for hidden consequences in the liability section—like indemnification, insurance demands, or limitations of liability. If you need help breaking down any confusing legalese, send me a snippet and I can explain it in plain language. Are you worried most about losses or damages, or something else?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, damages and how much risk I’m expected to carry alone. The vendor’s new terms mention ‘sole responsibility’ for losses during transit, which is different from before. That makes me uneasy, especially since we ship both in-person and online now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s definitely a clause to flag. ‘Sole responsibility’ can expose you to unexpected costs—especially with shipping. You might want to ask the vendor if there’s room to clarify shared liability, or at least set reasonable limits on your exposure. Would you like some sample language to push back on that point?"
+        },
+        {
+          "role": "user",
+          "content": "Sample language would be fantastic. I’ll see what my friends suggest, then maybe use your examples to draft a reply. I want to be clear but not confrontational—my goal is to keep the relationship strong while protecting my business."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—I’ll prep some options for you. Once you get feedback from your friends, combine their insights with the sample language as a foundation for your email negotiations. And let me know if anything else in the contract feels uncertain; I’m happy to walk you through it!"
+        }
+      ]
+    },
+    {
+      "session_id": 2,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "A major online order was flagged for intellectual property infringement after a customer reported a décor item resembled a copyrighted design, prompting her store’s website host to temporarily suspend digital sales pending a legal review.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_034",
+            "fact": "Reviews all new product listings and images for potential copyright issues before posting to the online store, rather than assuming vendor-provided content is safe",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_035",
+            "fact": "Prioritizes taking thorough documentation (screenshots, emails, timelines) of online orders and customer communications whenever a legal issue is raised",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_005",
+              "fact": "Prefers to solve problems herself first, only asks her business friends for advice when she's truly stuck"
+            },
+            "to": {
+              "id": "pref_033",
+              "fact": "Immediately seeks advice from her business friends or contacts with legal knowledge when faced with intellectual property or complex legal issues, instead of initially trying to resolve them alone",
+              "domain": "work_habits"
+            },
+            "reason": "The intellectual property infringement claim and website suspension triggered a situation far outside her expertise, making her realize that tackling serious legal issues alone could have serious consequences for her business. She's now made it a priority to consult others with relevant experience before acting on these matters."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I really need help. My website host just suspended all my online sales because a customer flagged one of my décor items for copyright infringement. Now they're demanding a legal review before I can sell anything online again. I feel totally out of my depth and I'm not sure where to even start protecting myself or getting this sorted quickly. What do you recommend?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds incredibly stressful. First, it’s good you’re prioritizing resolution—website suspensions can seriously impact revenue. Have you already identified which item was flagged, and do you know if it came from a vendor or was your own creation? That’ll help determine next steps."
+        },
+        {
+          "role": "user",
+          "content": "Yes, it was a pillow cover I sourced from a new vendor. They sent images and product descriptions, which I just used to list it online. Now I'm wondering if relying on vendor-provided content was too risky. I didn’t check if the design was safe—should I be reviewing every item myself before posting?"
+        },
+        {
+          "role": "assistant",
+          "content": "Given this situation, it’s definitely wise to review every product listing and image for potential copyright issues before posting. Vendors sometimes overlook legal risks. You could try searching for similar designs online, or even use reverse image search tools for quick checks. Would adding this sort of review to your process fit with how you normally prep digital listings?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I usually batch product uploads on Sunday nights. It'd be a shift for me, but after this I think I have to. Actually, now I'll be reviewing everything myself, not just assuming vendor content is safe. Do you know any tools for copyright checks, or would this need a lawyer?"
+        },
+        {
+          "role": "assistant",
+          "content": "For initial screening, tools like Google Images’ reverse search can help you spot obvious matches. There are copyright databases, but they’re mostly for trademarks and broader works. For ambiguous cases—especially with décor—it’s best to get legal advice. Since you already batch reviews, could you set aside a dedicated slot for copyright checks each Sunday before listing? Or, if things are urgent, are you comfortable reaching out to your business network or legal contacts for guidance?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, before this happened, I tried to solve these sorts of problems myself first. But this IP issue made me realize that's not the smartest approach. I'm now consulting my business friends or anyone with legal know-how right away on copyright or any complex legal stuff, instead of trying to muddle through solo. Have you seen small business owners document everything in cases like this? Should I be archiving emails and screenshots?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a really good shift—having experienced support is crucial in legal matters. And yes, thorough documentation is key. Save all emails with your vendor, screenshots of your product listings, and any communication from the customer or website host. Also write down a timeline of events—when the listing went up, when the complaint arrived, your responses, etc. Those records can be invaluable if the issue escalates, or if you need to defend your position. Do you already have a preferred method for organizing this documentation, or are you developing that process now?"
+        },
+        {
+          "role": "user",
+          "content": "I just started keeping detailed digital folders—screenshots, order emails, complaint timelines—on my laptop after this incident. I never did it before, but now it feels essential. I'm firmly prioritizing it whenever a legal issue pops up online. One question: do you see value in hiring occasional legal help for these reviews, or should I keep relying on my network?"
+        },
+        {
+          "role": "assistant",
+          "content": "For ongoing business, tapping your network is a great first step, especially given budget constraints. However, for IP or liability matters, even a brief consultation with a lawyer can prevent costly mistakes. You might want to find a local attorney who offers hourly advice so you’re not committing to a big retainer. And as you expand your online store, a legal check for new listings could be a worthwhile investment, even occasionally. Would your current Sunday review routine work if you needed to send things to a lawyer beforehand, or would that require tweaking?"
+        },
+        {
+          "role": "user",
+          "content": "Sunday is still best—I review contracts and listings then, never handle this during shop hours. I could send things to a lawyer Sunday and get feedback by midweek. It’d mean planning further ahead for new launches, but that’s manageable now that I know the risks. Also, I’m extra careful about documenting every questionable item and customer conversation from now on—something I never thought to do before."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid plan. Documenting thoroughly and scheduling legal checks as part of your batch process will help protect your store as you grow. If you need resources for finding copyright professionals or tools for tracking infringement, I can pull those together for you. Anything else about the situation that’s making daily routines or in-person operations harder?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly it’s the worry—I’m constantly double-checking everything online now. But at least these changes are giving me more structure and peace of mind. The biggest shift is having to reach out for advice immediately, instead of waiting until I’m totally stuck. That’s new for me, but necessary after how helpless I felt with the website suspension."
+        }
+      ]
+    },
+    {
+      "session_id": 3,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her weekly yoga instructor announced a temporary closure of the studio for renovations, canceling all classes for the next two months and removing her regular stress management and flexibility routine.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_037",
+            "fact": "Schedules a virtual yoga session once a week with her sister over video call, replacing the social component of their studio classes",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_027",
+              "fact": "Temporarily skips her weekly yoga class as per doctor's orders; focusing on prescribed gentle stretches at home instead"
+            },
+            "to": {
+              "id": "pref_036",
+              "fact": "Adopts a self-guided at-home flexibility and stress management routine using video classes, since the studio is closed for renovations",
+              "domain": "health_body"
+            },
+            "reason": "With the closure of her regular yoga studio, she can no longer participate in her weekly in-person class and must replace this with a self-directed home practice to maintain her stress management and flexibility routine."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My yoga studio just announced they're closing for renovations for two months. I'm honestly a little panicked — that weekly class was my main way of staying sane and flexible, especially with all the store stress and my back issues. Any suggestions for keeping up a routine at home? I don’t want to lose ground on all the progress I’ve made."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a tough change, especially when yoga’s been your anchor. The good news is there are plenty of quality video classes you can follow at home. Do you have a favorite type of yoga or particular routines you've enjoyed from the studio? Also, do you have space at home where you can comfortably practice?"
+        },
+        {
+          "role": "user",
+          "content": "I've usually done gentle vinyasa flows with some restorative stretches — nothing too intense since my lower back can act up. I do have space in my living room, though it's a bit cozy, but I can clear it out when my daughter isn't around. The bigger thing is I always went with my sister, so losing that social part is a bummer. We caught up before class every week."
+        },
+        {
+          "role": "assistant",
+          "content": "It sounds like both the movement and the connection mattered to you. Would your sister be up for joining you virtually? You could schedule a weekly video call to do a class together, keeping that social tradition alive and adding accountability. There are apps that let you share screens and practice in sync. Is that something you’d consider?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, yes — we already talked about it and decided to try virtual sessions once a week. We’re still figuring out which platform works best, but it should give us some of that accountability and togetherness. Now I just need to pick the right online classes. I want something structured so I don’t just skip it when things get busy at the shop."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great plan! For structure, you might set a recurring time in your paper planner and treat it as non-negotiable, just like you did with studio classes. You could pick a set of favorite YouTube instructors or sign up for a platform with guided weekly routines. Would you prefer short sessions you can squeeze in, or a full hour like at the studio?"
+        },
+        {
+          "role": "user",
+          "content": "I think aiming for a full hour makes sense — keeps me from cutting corners. And I’ll mark it in my planner so I stick to it. One thing: last year when my doctor told me to skip yoga for a few weeks because of my back, I did just gentle stretches at home, but that wasn’t the same. Now, since the studio is closed, I really want to adopt a full at-home routine using video classes to protect my flexibility and mental health rather than just piecemeal stretches."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid approach. Structured video classes will help recreate the atmosphere and keep things consistent. Make sure to focus on sessions with clear modifications for back safety, and maybe mix in some restorative classes on weeks where lifting at the shop was heavy. Would you like suggestions for reputable YouTube instructors or paid apps, or are you looking for free content only?"
+        },
+        {
+          "role": "user",
+          "content": "Let’s start with free options — I’m cautious about subscriptions since shop expenses are tight right now, especially with online sales picking up. Ideally, classes where I can filter for gentle vinyasa or restorative, and with clear cueing so I don’t get lost without a live instructor. And if you know any tricks for making video calls feel more connected, let me know! My sister and I are used to chatting before class at the studio."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. YouTube channels like Yoga With Adriene, SarahBethYoga, or the Yoga Room have gentle flows and restorative routines with excellent instruction. For connection, maybe set up a pre-class virtual coffee — join your video call 15 minutes early to chat just like before. After class, you could debrief how the session felt. Sounds like your transition plan is already thoughtful!"
+        },
+        {
+          "role": "user",
+          "content": "I love the idea of a pre-class coffee — I’ll suggest that to my sister. And thanks for those instructor tips! Just to clarify, for now I’m completely replacing my weekly in-person yoga class with a self-guided at-home flexibility routine using video classes, plus that virtual session with my sister. So it’ll be a mix of solo and together practice until the studio reopens."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect — it sounds like you’ve adjusted your routine thoughtfully despite the disruption. Remember to keep your practice non-negotiable, and check in with your sister weekly to keep each other motivated. If you ever want recommendations for more advanced routines as you progress, just ask. Good luck, and enjoy keeping your tradition alive at home!"
+        }
+      ]
+    },
+    {
+      "session_id": 4,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "A small business grant program specifically supporting women-owned retail stores in Denver contacted her, inviting her to apply for a $25,000 business development grant that, if awarded, requires her to submit a detailed expansion plan and participate in a series of mentorship workshops over the next six months.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_039",
+            "fact": "Allocates two hours every Friday morning for developing and refining her business expansion plan, separate from regular shop management tasks",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_040",
+            "fact": "Creates a digital folder system to collect materials, notes, and feedback from mentorship programs, transitioning from solely paper planners for grant-related activities",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_013",
+              "fact": "Organizes monthly brunches with her business-owning friends, never attends large business networking events"
+            },
+            "to": {
+              "id": "pref_038",
+              "fact": "Regularly participates in structured mentorship workshops and networking events required by the grant program, while still maintaining monthly brunches with business friends",
+              "domain": "social_relationships"
+            },
+            "reason": "The grant mandates her attendance at mentorship workshops and larger networking sessions with other women-owned businesses, which contradicts her previous aversion to large networking events. She now engages with formal business circles due to grant requirements."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Something major just happened—I got invited to apply for a $25k grant for women-owned retail shops here in Denver. It would mean a lot for the business, but I’ve never had to put together an official expansion plan or join structured mentorship programs before. I’m feeling a little overwhelmed. Where do you think I should start? Especially with the expansion plan part."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations, that's fantastic news! The expansion plan is usually the cornerstone—grant reviewers want to see exactly how you'd use the funds and what your goals are. Do you already have some ideas for how you’d grow? Or are you starting from scratch?"
+        },
+        {
+          "role": "user",
+          "content": "I have some scattered thoughts. Maybe expanding warehouse space, updating our website for digital orders, or even hiring a part-time assistant. But it feels unorganized. I blocked out Friday mornings now—2 hours each week—just for working through this plan. It's the only way I can focus and separate it from day-to-day shop chaos. Any tips for structuring those sessions?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a smart move—setting regular focused blocks is key. For your Friday sessions, I'd start with a simple framework: 1) Map your business goals for the next year, 2) List projects that support those goals, 3) Estimate costs and impact, and 4) Set milestones and timeline. Do you want something like a worksheet or template to help guide those meetings, or do you prefer a more freeform approach?"
+        },
+        {
+          "role": "user",
+          "content": "A structured template would help. I actually set up a digital folder system just for this grant—notes, feedback, materials from mentorship, all digital. I’m still using my paper planner for everything else, but I realized this is too much to track on paper. So, if you have any templates I could put in that folder, that’d be perfect."
+        },
+        {
+          "role": "assistant",
+          "content": "Great pivot! A digital folder makes sharing and editing much easier, especially for grant requirements and workshop notes. I'll send you a basic expansion plan outline (Word or PDF)—let me know your preference. You can fill it in each Friday and keep versions as your ideas evolve. Also, since the grant has mentorship workshops, are you comfortable interacting in those larger networking sessions, or is that something you want strategies for?"
+        },
+        {
+          "role": "user",
+          "content": "That's actually new for me. I used to only go to monthly brunches with my business friends—never big networking events. But the grant requires mentorship workshops and formal networking circles. So now I’m participating regularly, even though I'd normally avoid them. Any advice for getting value from those sessions without getting overwhelmed?"
+        },
+        {
+          "role": "assistant",
+          "content": "Adapting to more structured networking can be tough, but they're usually designed to be welcoming, especially for grant cohorts. It helps to set a few intentional goals: what do you want to learn, who do you want to connect with, and what challenges are you hoping to get advice on? Do you feel comfortable prepping questions or topics ahead of each workshop to steer conversations, or would you rather navigate more spontaneously?"
+        },
+        {
+          "role": "user",
+          "content": "Prepping in advance fits my style; I can’t deal with surprises when I’m out of my comfort zone. I’m adding workshop prep right after my Friday planning block—just a simple list of questions and topics to bring. I also started saving feedback from these sessions in my digital grant folder so I don’t lose track. The digital system is only for grant-related stuff though—everything else is still paper. If you have other prep strategies that aren’t too time-consuming, I’d take those too."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a solid approach. Adding your questions and notes right to your digital folder keeps everything accessible. Other prep strategies: review the agenda ahead of time, jot down one thing you're hoping to get from each session, and—if possible—follow up after with a quick email summary for yourself. That way, nothing gets lost in the shuffle. Need ideas for how to describe your expansion goals to workshop mentors, or are you good for now?"
+        },
+        {
+          "role": "user",
+          "content": "I could use help phrasing expansion goals. I’ve got a general sense, but I want to write them in a way that’s clear and compelling for both the grant reviewers and mentors. I can bring what I draft to the workshops, but I want a starting point first."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. Aim for concise, specific statements that answer: What’s changing? Why now? How will this benefit your business and community? For example: 'Expand warehouse space to accommodate increased online orders, improving efficiency and enabling faster delivery for local customers.' Once you write a draft, I can help you refine it before your workshops."
+        },
+        {
+          "role": "user",
+          "content": "That’s really helpful. I’ll use it as a model and add a few goals for staff hiring and website upgrades. I’ll send you a draft after my next Friday planning session. Thanks for helping me get organized—I was worried this process would be scattered, but having dedicated digital folders and prep time is making it manageable."
+        }
+      ]
+    },
+    {
+      "session_id": 5,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her mother fractured her wrist in a fall and now needs transportation and assistance with daily tasks for the next several weeks, requiring much more frequent visits and hands-on support than before.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_043",
+            "fact": "Keeps her phone off silent throughout the day to remain reachable for urgent calls from her mother or healthcare providers, overriding her usual Do Not Disturb rules",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_044",
+            "fact": "Prepares simple batch-cooked meals for her mother every Sunday, so she can quickly deliver lunch and dinner during the week without daily cooking",
+            "domain": "health_body"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_011",
+              "fact": "Calls her mother every Monday morning to plan the week’s errands; never delegates these to anyone else"
+            },
+            "to": {
+              "id": "pref_041",
+              "fact": "Coordinates with her husband and daughter to split daily support tasks for her mother, and now checks in with her mother by phone every evening instead of managing all errands herself",
+              "domain": "social_relationships"
+            },
+            "reason": "Her mother's fractured wrist requires far more frequent help and daily check-ins, making it impossible for her to single-handedly manage all support and errands. She now involves her immediate family in caregiving and transitions to daily phone check-ins."
+          },
+          {
+            "from": {
+              "id": "pref_015",
+              "fact": "Always volunteers for at least one school event per semester, even if she has to reshuffle her work schedule"
+            },
+            "to": {
+              "id": "pref_042",
+              "fact": "No longer volunteers for her daughter’s school events while her mother is recovering — prioritizes family caregiving responsibilities over extracurricular commitments",
+              "domain": "social_relationships"
+            },
+            "reason": "With her mother needing daily hands-on support, she cannot devote additional time for school volunteering this semester."
+          }
+        ],
+        "dropped": [
+          {
+            "id": "pref_024",
+            "fact": "Shops for groceries on Thursdays for both her household and her mother, never makes random trips",
+            "domain": "daily_routines",
+            "reason": "Her mother's increased need for daily support—including last-minute groceries and medications—means she can't adhere to a single weekly shopping trip for both households. Grocery shopping is now reactive to her mother's needs."
+          }
+        ]
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My mom fractured her wrist last week and needs a lot more help than before—rides to appointments, groceries, managing the house, all of it. I’m honestly overwhelmed trying to fit her care into my schedule and keep up with the shop. Do you have advice for staying organized, or maybe ways to make these extra errands less disruptive?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a really tough balancing act. When you’re dealing with more frequent errands and caregiving, batching tasks and clear scheduling can help reduce stress. Are you handling all these support tasks yourself, or is there anyone who could help divide up the load—maybe family or staff?"
+        },
+        {
+          "role": "user",
+          "content": "I used to do everything myself, but there’s no way I can keep up alone now. My husband and daughter are pitching in. We split up daily tasks—like one of us manages school drop-off, another does meds and groceries for my mom. I also started checking in with her by phone every evening instead of sorting all errands on Monday like I used to. That’s helped, but I still find myself scrambling at weird hours for last-minute things."
+        },
+        {
+          "role": "assistant",
+          "content": "It’s great you’re getting your family involved and moving to daily check-ins—it sounds like you’re adapting quickly. With so many unpredictable errands popping up, would it help to keep a shared task list or calendar for everyone to see and add requests? Or do you prefer something less digital?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I plan everything on paper, and digital calendars just never clicked for me. I prep each day the night before on my own planner, but my husband and daughter use their own routines. We compare notes in person or over dinner. I don’t want to force us into new tech right now—too much change at once."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense—sticking to what works is important when things are stressful. Maybe having a designated spot for handwritten notes or updates everyone can check (like the fridge or a table) could help you coordinate without switching to digital. Since errands can’t be batched like before, have you found new ways to stay ahead on groceries and meals?"
+        },
+        {
+          "role": "user",
+          "content": "I actually had to drop my usual Thursday grocery trip routine. Now it’s all reactive—I pick up groceries or pharmacy items whenever my mom needs something. To avoid endless shopping, I started batch-cooking simple meals for her every Sunday so I can just drop off lunch and dinner during the week. That’s cut down on mid-day scrambling, at least for food."
+        },
+        {
+          "role": "assistant",
+          "content": "Batch-cooking is a smart move for saving time and energy. Since you're more available for urgent calls now, have you adjusted anything about your phone setup or other routines to stay reachable during shop hours?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely. I used to set my phone to Do Not Disturb after 8pm and keep it silent throughout the day except for hourly checks. Now I keep it off silent all day just in case my mom or her doctor calls, even when I’m at the shop or with customers. It’s a big shift, but necessary right now."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a big adjustment—but staying reachable is important with your mom’s situation. With her needing so much hands-on support, are you able to keep up with other commitments like school volunteering, or have you had to pause those for now?"
+        },
+        {
+          "role": "user",
+          "content": "I had to stop volunteering for my daughter’s school events this semester. It feels strange not to help out, but my mom comes first while she’s recovering—I just can’t juggle more community stuff right now."
+        },
+        {
+          "role": "assistant",
+          "content": "Totally understandable—your priorities are in the right place. Would you like strategies for staying connected to those activities in small ways, or is it easier to focus entirely on family and business until your mom recovers?"
+        },
+        {
+          "role": "user",
+          "content": "I think it’s best to focus on family and business for now. I might revisit school stuff next semester, but right now, every hour counts. Thanks for helping me talk this through."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re welcome—I’m glad you’re finding ways to adapt. Let me know if you ever need ideas for meal planning, family task sharing, or quick ways to simplify shop routines during this hectic stretch. You’ve got a lot on your plate, but your approach is solid!"
+        }
+      ]
+    },
+    {
+      "session_id": 6,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her boutique store was selected to partner with a local interior design firm for a featured holiday décor project, requiring her to coordinate joint marketing efforts and manage custom vendor orders with more complex contract terms than she’s handled before.",
+        "domain": "work_education"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_047",
+            "fact": "Prepares a shared online project tracker and requires all collaborating vendors and designers to update it daily for status alignment during the holiday campaign",
+            "domain": "work_habits"
+          },
+          {
+            "id": "pref_048",
+            "fact": "Sets aside extra time each week for researching and learning contract clauses specific to project-based collaborations, distinct from standard template contracts",
+            "domain": "work_habits"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_032",
+              "fact": "Blocks off two weekday evenings specifically for contract review and vendor negotiation, instead of batching all contract tasks for Sunday night"
+            },
+            "to": {
+              "id": "pref_045",
+              "fact": "Now handles contract reviews and negotiations in real-time during business hours as needed, especially for urgent joint project needs — can no longer rely solely on pre-scheduled evening batches",
+              "domain": "work_habits"
+            },
+            "reason": "The partnership with the interior design firm introduces time-sensitive, complex vendor contracts often requiring quick turnaround and coordination. She must respond in the moment rather than deferring all reviews and negotiations to set evenings."
+          },
+          {
+            "from": {
+              "id": "pref_002",
+              "fact": "Only negotiates vendor terms via email, never phone or in-person calls, to keep written records"
+            },
+            "to": {
+              "id": "pref_046",
+              "fact": "Now negotiates vendor terms using both email and scheduled video calls for clarity and quick alignment — maintains call summaries for records",
+              "domain": "work_habits"
+            },
+            "reason": "The joint marketing effort and complex custom orders require more nuanced, fast-paced negotiation with multiple parties; written records alone slow things down and risk misunderstandings."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey! My boutique got selected to partner with a local interior design firm for a big holiday décor campaign. It’s super exciting, but now I’m dealing with custom orders, shared marketing, and way more complex contracts than usual. Suddenly, a lot of things feel urgent and unfamiliar. I’ve mostly relied on templates and slow Sunday night reviews before—now I’m not sure how to keep up or protect myself legally. Any ideas for handling these tricky contract situations without losing my mind?"
+        },
+        {
+          "role": "assistant",
+          "content": "That’s fantastic news—congrats on landing the partnership! But I can see how the pressure might go up with custom orders and joint marketing. When you mention ‘urgent and unfamiliar,’ is it mainly the quick turnaround on contracts that’s stressing you, or are you also worried about specific legal risks, like liability clauses? Are you still batching reviews on Sundays, or has that shifted with the project needs?"
+        },
+        {
+          "role": "user",
+          "content": "It’s both, honestly. The deadlines are nuts—sometimes contracts need tweaks same-day. So my old Sunday batch approach isn’t cutting it anymore. Now I handle reviews and negotiations as things come up, even during business hours, especially for this project. It’s chaotic but necessary. The legal side scares me most, especially those liability sections. I find myself Googling unfamiliar terms mid-day, which isn’t ideal."
+        },
+        {
+          "role": "assistant",
+          "content": "Shifting to real-time reviews must make work more unpredictable, especially while running the shop. With liability clauses, it’s easy to miss subtle language. Would it help to set up a quick checklist for those sections, or would you prefer more targeted tips on what to watch for? Also, since you’re reviewing during business hours now, are you using email for negotiations as before, or mixing in other formats to speed things up?"
+        },
+        {
+          "role": "user",
+          "content": "Yeah, I’ve started mixing things up. Email was too slow for some of these urgent vendor changes, so I now do scheduled video calls to align faster. I still send follow-up summaries afterward to keep written records, though—otherwise details get lost. I’m open to a liability checklist, but I also need pointers on how to handle the collaborative parts. There are shared responsibilities and some unfamiliar clauses about project management between vendors and designers."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart move using video calls for clarity, then backing it up with email summaries—those records will matter if anything goes sideways. For collaborative clauses, it’s helpful to flag terms like ‘joint liability,’ ‘indemnification,’ and shared responsibilities in fulfillment and marketing. Do you have a way to keep everyone on the same page day-to-day, like a shared tracker or document? It can prevent confusion and help clarify who’s responsible for what."
+        },
+        {
+          "role": "user",
+          "content": "Actually, I set up a shared online project tracker and require everyone—vendors, designers included—to update it daily during the campaign. Otherwise, things would fall through the cracks. It’s made a huge difference, but I still worry I’ll miss something in the contracts, especially when a new clause pops up mid-project."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s perfect—an updated tracker is one of the best ways to enforce clarity and accountability. For new and unfamiliar contract language, you might try keeping a running list of clauses you run into, then focus your research there. Are you finding time to dig deeper into those topics, or are you mostly scrambling for quick answers as issues arise?"
+        },
+        {
+          "role": "user",
+          "content": "I’ve started setting aside extra time each week just for researching contract clauses related to project-based collaborations. Way more than I did with standard vendor contracts. It’s helping, but my brain’s on overload some days! Are there any good resources or tools for learning contract language efficiently? I’d rather not have to hire full legal help if I can avoid it."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a proactive approach—dedicated learning time pays off in the long run. Besides Google, you might check out legal blogs focused on small business and contract templates (like Rocket Lawyer or Nolo), and also look at webinars or short online courses specifically about collaborative projects or vendor relations. Some business law associations offer free Q&A sessions for small business owners, which can help clarify gray areas without the full price tag. Would a list of vetted resources or sample clause explanations help with your weekly research?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, please! A resource list would help me structure my learning, and sample explanations would make it less intimidating. I wish I’d anticipated how much more complicated things would get with a group project like this. But at least the tracker and real-time negotiations are keeping things from getting totally out of hand."
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—I’ll share recommendations for trustworthy sites, sample clauses, and business law community forums so you can build your own cheat sheet. You’re handling the transition well: balancing quick responses with solid records, and making everyone update the tracker—that’s exactly what keeps collaboration productive. If you ever hit a wall on a specific clause, you can ping me with the text and I can help break it down."
+        },
+        {
+          "role": "user",
+          "content": "Thanks, that’s reassuring. This partnership is a big leap for my shop, and managing contracts has pushed me way out of my comfort zone. I appreciate having actual strategies instead of just guessing each time. I’ll let you know if a clause stumps me—meanwhile, those resource links will make a huge difference."
+        }
+      ]
+    },
+    {
+      "session_id": 7,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her husband landed a large freelance project that requires intensive work hours for the next three months, leading to him being less available for family responsibilities and evening routines.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_050",
+            "fact": "Checks her daughter’s homework and bedtime routine every night herself, since her husband is unavailable for evening parenting tasks during the project period",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_051",
+            "fact": "Now schedules her daughter's afterschool pickups and activities directly with other parents or carpools instead of relying on her husband for daily coverage",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_023",
+              "fact": "Preps breakfast for her family every morning before opening the store"
+            },
+            "to": {
+              "id": "pref_049",
+              "fact": "Preps a quick breakfast solo most mornings and leaves extra breakfast items for her daughter to heat up herself, as her husband is unavailable for morning routines during his project period",
+              "domain": "daily_routines"
+            },
+            "reason": "With her husband working intensive hours on his new project and unavailable for family routines, she can no longer rely on his help in the morning and must adapt breakfast prep for herself and make it self-service for her daughter."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey there! So my husband just landed this big freelance gig — it's amazing for him, but he's basically working around the clock for the next few months and is out of the family routine. I’m scrambling to rework mornings and evenings, plus I’m handling more pickups and activities for our daughter. I could use practical ideas for keeping family life somewhat sane, especially with everything else on my plate."
+        },
+        {
+          "role": "assistant",
+          "content": "Congrats to your husband — and I can imagine that's a big change for all of you! Since your evenings and mornings are shifting, where are you feeling the pinch most: before school, after school, or those dinner/bedtime hours? Any routines you especially want to keep intact during this period?"
+        },
+        {
+          "role": "user",
+          "content": "Definitely mornings. Breakfast used to be a team effort, but now I’m prepping food solo and leaving stuff for my daughter to heat herself, since my husband’s not around to help. I want it to be healthy but fast. Any suggestions for make-ahead breakfasts or things kids can safely handle on their own?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely—overnight oats, breakfast burritos (wrapped and frozen for reheating), or even mini frittatas (muffin-tin style) are all kid-friendly and quick to prep in batches. Would your daughter enjoy those, or does she have favorites you usually rotate in?"
+        },
+        {
+          "role": "user",
+          "content": "She loves breakfast burritos and toast with peanut butter! Honestly, anything she can just stick in the microwave or toaster is ideal until things settle. Before, we’d sit down together most days, but now it’s a bit more grab-and-go while I rush to get the shop open."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, and burritos/toast hit both the ease and nutrition notes. Do you find it manageable prepping everything yourself, or would a Sunday batch-cooking session help you feel less pressure each morning?"
+        },
+        {
+          "role": "user",
+          "content": "Batching on Sunday fits perfectly! I usually garden then, but I could add quick breakfast prep after. Just need to keep it simple with minimal cleanup since I’ll be doing it solo most mornings while my husband’s focused on his project. Also, I’ve started scheduling my daughter’s afterschool pickups directly with other parents now instead of relying on him, which is new territory for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Coordinating carpools can definitely ease the load if everyone’s on board. Would it help to set up a shared text thread with the parents or a paper calendar to track who’s covering which days? And how is your daughter adjusting to this shift?"
+        },
+        {
+          "role": "user",
+          "content": "She’s been pretty flexible! We have a bunch of good friends in her grade, so the carpools are practical. I use my paper planner every night to map it out, since digital apps just don’t work for me. I was nervous at first, but the other parents are super responsive. Evenings are the bigger challenge, though. Now I’m the one checking homework and handling bedtime myself since my husband’s tied up with deadlines."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re juggling a lot! What’s working—and what’s not—about handling homework and bedtime solo? Is your daughter thriving on the new routine, or do you feel stretched too thin at night?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, doing everything myself some nights is rough, but I try to keep bedtime steady and always check her homework, even if I’m tired. Having our weekly home renovation show watch sesh helps us both unwind. I miss having him pitch in, but it’s temporary, so we’re making it work."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a great way to anchor the evening—and gives you both a reliably cozy routine. Have you tried prepping anything the night before to ease those post-shop evenings, or does your daily work already fill all that planning time?"
+        },
+        {
+          "role": "user",
+          "content": "I always plan my day the night before with my paper planner, so I’ve started jotting in reminders for my daughter’s homework and bedtime. It’s nothing fancy, but it’s helping. I keep Wednesdays reserved for family dinner, so that hasn’t changed—and my shop friends occasionally help in a pinch if I’m running late. It’s mostly about squeezing in extra responsibilities without derailing the routines we care about."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like you’re adapting really thoughtfully while keeping your important rituals in place. With your husband’s schedule so packed, would you consider delegating anything else around the house—or does your comfort zone keep you hands-on for now?"
+        },
+        {
+          "role": "user",
+          "content": "Honestly, I tend to keep things hands-on. I handle grocery runs for both my household and my mom every Thursday, and I always call her Monday mornings to plan errands. I guess I could look for more help, but for now I’m just glad the extra breakfast steps and evening duties are manageable while my husband’s focused on his project."
+        },
+        {
+          "role": "assistant",
+          "content": "You strike a great balance—keeping your support networks close but also running a tight ship at home and the shop! If you ever want strategies for streamlining your week further or quick ways to cue up nutritious breakfasts and bedtime routines, just let me know. You’ve got this."
+        }
+      ]
+    },
+    {
+      "session_id": 8,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "Her daughter's school announced a rescheduled spring concert date due to building repairs, moving the event to a Thursday afternoon, which now overlaps with her usual weekly grocery shopping and errand time for both her household and her mother.",
+        "domain": "family_relationships"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_053",
+            "fact": "Reschedules personal errands and grocery shopping for both her household and her mother flexibly each week based on family and school event changes, rather than a fixed weekday slot",
+            "domain": "daily_routines"
+          },
+          {
+            "id": "pref_054",
+            "fact": "Prioritizes attending her daughter's rescheduled school events even when they disrupt previously fixed caregiving and errand routines",
+            "domain": "social_relationships"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_044",
+              "fact": "Prepares simple batch-cooked meals for her mother every Sunday, so she can quickly deliver lunch and dinner during the week without daily cooking"
+            },
+            "to": {
+              "id": "pref_052",
+              "fact": "Now alternates meal delivery and preparation for her mother with her husband and daughter, coordinating who covers which days depending on schedule conflicts and school events",
+              "domain": "health_body"
+            },
+            "reason": "The rescheduled school concert overlapping her typical Thursday errand and delivery window highlights a conflict—she can't reliably deliver meals every week at the same times and must share this responsibility with family."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some help figuring out my schedule this week. My daughter's school just moved her spring concert to Thursday afternoon because of building repairs. That's usually when I do grocery shopping and lunch drop-off for my mom, so now everything overlaps. Any tips for not dropping the ball when these kinds of changes pop up?"
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a tricky spot! Balancing business, caregiving, and family events can get chaotic when routines shift. Are you looking for ideas on rescheduling errands, or ways to delegate some tasks? Or maybe advice on keeping up with your business obligations while prioritizing the concert?"
+        },
+        {
+          "role": "user",
+          "content": "A bit of both, honestly. I always try to attend my daughter's events—even if they land at awkward times. But I can't skip my mom's grocery run or meal delivery either. Up until now, I handled groceries and meals every Thursday myself, and prepped her meals on Sunday so it's quick. But with this conflict, that's not realistic. Any practical ways to keep everyone covered without losing my sanity?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prioritizing your daughter's concert is absolutely the right move, but it's smart to rethink how you manage the rest. Since Thursdays are out this week, could you shift grocery shopping to another day? Or, if prep and delivery are getting tricky, would your husband or daughter be able to help out? Sometimes splitting tasks across the family makes these surprises easier. What's worked for you before when schedules collide?"
+        },
+        {
+          "role": "user",
+          "content": "Normally, I don't ask anyone else to cover errands for my mom—I'm the organizer, and Monday mornings I call her to plan. But with the concert happening, I'm going to start alternating meal prep and delivery with my husband and daughter. We're coordinating who covers each day, especially if there's a conflict with school stuff. It's new, but seems workable."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a great approach! Sharing meal duties can really lighten your load, especially with evolving schedules. How has it been coordinating everyone—any challenges so far with figuring out who handles what, or does your family adapt pretty well?"
+        },
+        {
+          "role": "user",
+          "content": "We're still figuring it out. It's the first time we've really had to rotate—before, I just made a batch and delivered like clockwork. It's tricky because my husband's freelance schedule fluctuates, and my daughter has afterschool activities. But we're trying to plan ahead based on whatever school events or deadlines pop up, and rescheduling errands flexibly each week instead of sticking to that rigid Thursday slot."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you're all on board and making it work, even if it's a bit more moving pieces than before. Having a flexible plan is smart with so many shifting commitments. Do you feel like this new setup is sustainable, or are there areas where you could still use more support or structure?"
+        },
+        {
+          "role": "user",
+          "content": "I think it'll get easier as we go. It's definitely not my old habit of fixed-day errands—now I just adjust week to week depending on what's happening for the family. The main thing is, I won't compromise on being at my daughter's rescheduled school events, even if that means rearranging things for my mom or my business. It's messy sometimes, but that's my priority."
+        },
+        {
+          "role": "assistant",
+          "content": "That clarity around your priorities will help you navigate the changes, even when things get hectic. If you ever want to automate reminders or keep track of rotating schedules, I can suggest ways to simplify coordination. Or, if you prefer to stick to a paper planner, I can offer ideas for mapping flexible routines onto your current system. Let me know what's most helpful!"
+        }
+      ]
+    },
+    {
+      "session_id": 9,
+      "life_event": {
+        "date": "03/01/2026",
+        "event": "After experiencing persistent fatigue and dizziness during busy store days, her doctor diagnosed her with iron deficiency anemia and advised her to make significant dietary changes and schedule regular blood monitoring.",
+        "domain": "health_wellness"
+      },
+      "preferences": {
+        "created": [
+          {
+            "id": "pref_056",
+            "fact": "Schedules bi-weekly blood test appointments and adjusts shop hours to ensure consistent monitoring, following her doctor's plan for anemia management.",
+            "domain": "health_body"
+          },
+          {
+            "id": "pref_057",
+            "fact": "Plans and logs every meal in a dedicated paper notebook, focusing specifically on iron-rich foods and supplement timing as advised by her doctor.",
+            "domain": "daily_routines"
+          }
+        ],
+        "evolved": [
+          {
+            "from": {
+              "id": "pref_009",
+              "fact": "Only eats lunch at her desk in the shop, never leaves the store for food midday"
+            },
+            "to": {
+              "id": "pref_055",
+              "fact": "Now steps out for lunch at least three times per week — doctor's orders to support dietary changes and proper iron intake; avoids solely desk lunches.",
+              "domain": "health_body"
+            },
+            "reason": "Her diagnosis of iron deficiency anemia requires significant dietary changes that aren't possible with her old habit of eating lunch only at her desk, which often meant skipping meals or eating convenience foods. The doctor's orders to take real breaks and incorporate iron-rich meals force her to leave the shop midday, changing a longstanding routine."
+          }
+        ],
+        "dropped": []
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Hey, I could use some advice. My doctor just diagnosed me with iron deficiency anemia this week—after months of fatigue and feeling dizzy at the shop. She told me I seriously need to rethink my eating habits and schedule regular blood tests. I’ve totally neglected this side of things for so long. Are there ways to actually stick to these changes when my business is this busy? The store is nonstop lately and I’m worried I’ll just fall back into old habits."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds challenging, but it’s great you caught the issue and have clear guidance from your doctor. Sticking to new routines is tough for anyone, especially with a busy shop. For dietary changes, do you have any flexibility in your daily schedule to step away for proper meals, or is it all desk lunches and rushed snacks? And for regular blood tests—how often will you need appointments?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, that’s already one big shift. My doctor was blunt: desk lunches aren’t cutting it. I now have to step out for lunch at least three times a week to eat real meals—no more just grabbing whatever I can and eating at the counter. I resisted it, but she was clear that I’ll never get enough iron if I don’t take real breaks and actually leave the shop midday some days."
+        },
+        {
+          "role": "assistant",
+          "content": "That makes sense, and it's probably healthier for your stress levels too. Do you find it difficult to step away from the store during lunch, or have your staff been able to cover for you so you can stick to your doctor's orders? Is there anything about leaving midday that’s especially tricky—like timing with in-store pickups or online order fulfillment?"
+        },
+        {
+          "role": "user",
+          "content": "I’m still working it out. I usually schedule order fulfillment in the mornings—never mix it with in-store pickups after noon—so at least I don’t have to worry about shipping stuff while I’m gone. My part-time staff are reliable, so they cover the floor while I leave for lunch and run nearby. The hardest part is fighting my habit to just power through and skip eating altogether, especially on days I’m overwhelmed. But the anemia symptoms were a wake-up call."
+        },
+        {
+          "role": "assistant",
+          "content": "That’s a solid workflow, and it’s great your staff helps out. Since stepping out for lunch is new for you, maybe planning ahead could help. Do you prepare meals in advance, or are you buying food nearby? Have you found any spots with iron-rich options, or are you still experimenting?"
+        },
+        {
+          "role": "user",
+          "content": "I’m still experimenting—and, honestly, I didn’t know much about iron-rich foods until my appointment. My doctor had me start logging every meal in a notebook so I can track what I’m eating and when I take supplements. I plan my meals a day in advance (always in my paper planner), but now I use a separate food log for this. That helps keep me accountable and makes it easier to see patterns when I’m at the store."
+        },
+        {
+          "role": "assistant",
+          "content": "Smart system! Having a written meal log could also make prepping lunches easier. Maybe you could batch plan iron-focused lunches for the week, and even prep some ingredients in advance. Are you coordinating supplement timing with meals, per your doctor's advice? Any foods you actually enjoy that help boost iron and fit your routine?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I have to take the iron supplement with food, not on an empty stomach, and space it from my coffee per her instructions. I’m trying spinach salads with chicken, and lentil soup—the food log makes it easy to check I’m actually getting enough. I still eat lunch at my desk on non-busy days, but I track even those. On the three days I step out, I find I make better choices and avoid convenience foods. It’s an adjustment, but necessary."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like you’re making real progress. Since you’re tracking both meals and supplement timing, have you been able to notice improvements already, or is it still early? What about the blood tests—how often do you need them, and has that changed your shop schedule at all?"
+        },
+        {
+          "role": "user",
+          "content": "It’s early days, but I seem less dizzy this past week. For monitoring, my doctor wants bi-weekly blood tests for now. I’ve started scheduling these and actually adjust the shop hours as needed so I don’t miss them. It’s a hassle, but being consistently monitored is part of the plan. I’m hoping this gets easier as I get used to the new routine."
+        },
+        {
+          "role": "assistant",
+          "content": "Bi-weekly appointments are definitely a commitment! Adjusting shop hours shows you’re prioritizing your health—which is huge for a business owner. Does shifting hours for appointments impact your regular errands, inventory or family commitments, or are you able to carve out those blocks pretty smoothly?"
+        },
+        {
+          "role": "user",
+          "content": "Surprisingly, I’ve managed. I plan each day in my paper planner the night before, so I just block out those appointment windows and work around them. It messes with some usual routines—like prepping breakfast earlier if a test is before opening—but my family is on board. I still do grocery shopping on Thursdays and handle my mom’s errands myself, but now I avoid booking blood tests that day so nothing clashes."
+        },
+        {
+          "role": "assistant",
+          "content": "Sounds like you’ve developed a solid system for yourself. Any challenges with staff coverage on those test days, or is everyone flexible? Also, how’s the family adjusting—are you finding enough time for your daughter and husband with all these new health priorities?"
+        },
+        {
+          "role": "user",
+          "content": "Staff’s been great, and my family’s pretty understanding. My daughter likes helping me log meals, and my husband’s flexible since he’s freelance. Wednesday dinners are still sacred—no medical appointments or shop meetings that day. I admit I haven’t figured out every wrinkle yet, but these are big adjustments for me, especially not just eating at my desk and scheduling health stuff."
+        },
+        {
+          "role": "assistant",
+          "content": "You’re making impressive progress. How about stress management—are you still able to make yoga class each week with all the changes? Any other routines helping you feel more balanced as you adapt?"
+        },
+        {
+          "role": "user",
+          "content": "I never skip yoga class. That’s non-negotiable for my sanity and my back, even while adapting for the anemia. If anything, the extra reminders to care for myself have made me more consistent. Keeping up with meal planning, blood monitoring, and real lunch breaks is a challenge, but I’m sticking with it. Thanks for helping me think it through!"
+        }
+      ]
+    }
+  ],
+  "final_state": {
+    "active_preferences": [
+      {
+        "id": "pref_001",
+        "fact": "Reviews contracts in batches every Sunday evening — never handles contract tasks during shop hours",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_004",
+        "fact": "Schedules online order fulfillment in the mornings; never mixes digital shipping with in-store pickups after noon",
+        "domain": "work_habits",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_008",
+        "fact": "Tracks water intake daily with her phone — never relies on estimating",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_010",
+        "fact": "Uses a lumbar support cushion whenever she's working at the register — never stands without it",
+        "domain": "health_body",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_012",
+        "fact": "Keeps Wednesdays reserved for family and closes shop early, never schedules vendor meetings that day",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_014",
+        "fact": "Texts her husband updates about shop emergencies, never calls unless urgent",
+        "domain": "social_relationships",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_016",
+        "fact": "Spends Saturday afternoons browsing local antique shops for store inspiration, never shops big box retailers for décor",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_018",
+        "fact": "Watches home renovation shows with her daughter once a week — never misses their tradition",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_019",
+        "fact": "Uses Pinterest to save new decorating ideas, never relies solely on Instagram feeds",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_020",
+        "fact": "Prefers weekend day trips to Colorado mountain towns over long vacations each year",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_021",
+        "fact": "Plans each day the night before using a paper planner, never uses digital calendar apps",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_022",
+        "fact": "Checks email and messages only at the top of each hour; never responds in real time",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_025",
+        "fact": "Sets her phone to Do Not Disturb after 8pm every night, no exceptions",
+        "domain": "daily_routines",
+        "created_at_session": -1
+      },
+      {
+        "id": "pref_026",
+        "fact": "Avoids lifting any boxes herself, regardless of weight — all lifting delegated to staff for now",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_028",
+        "fact": "Spends Sunday mornings sketching garden plans and browsing gardening blogs from a seated position, replacing hands-on gardening during her injury recovery",
+        "domain": "leisure_hobbies",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_029",
+        "fact": "Uses a rolling task chair behind the shop counter to minimize standing throughout each workday",
+        "domain": "health_body",
+        "created_at_session": 0
+      },
+      {
+        "id": "pref_030",
+        "fact": "Prioritizes reviewing and negotiating directly from vendor-supplied contract templates, focusing on their specific clauses before consulting template sites",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_031",
+        "fact": "Shares the updated contract language with her trusted business friends for feedback before signing, rather than handling negotiation alone",
+        "domain": "work_habits",
+        "created_at_session": 1
+      },
+      {
+        "id": "pref_033",
+        "fact": "Immediately seeks advice from her business friends or contacts with legal knowledge when faced with intellectual property or complex legal issues, instead of initially trying to resolve them alone",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_034",
+        "fact": "Reviews all new product listings and images for potential copyright issues before posting to the online store, rather than assuming vendor-provided content is safe",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_035",
+        "fact": "Prioritizes taking thorough documentation (screenshots, emails, timelines) of online orders and customer communications whenever a legal issue is raised",
+        "domain": "work_habits",
+        "created_at_session": 2
+      },
+      {
+        "id": "pref_036",
+        "fact": "Adopts a self-guided at-home flexibility and stress management routine using video classes, since the studio is closed for renovations",
+        "domain": "health_body",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_037",
+        "fact": "Schedules a virtual yoga session once a week with her sister over video call, replacing the social component of their studio classes",
+        "domain": "social_relationships",
+        "created_at_session": 3
+      },
+      {
+        "id": "pref_038",
+        "fact": "Regularly participates in structured mentorship workshops and networking events required by the grant program, while still maintaining monthly brunches with business friends",
+        "domain": "social_relationships",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_039",
+        "fact": "Allocates two hours every Friday morning for developing and refining her business expansion plan, separate from regular shop management tasks",
+        "domain": "work_habits",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_040",
+        "fact": "Creates a digital folder system to collect materials, notes, and feedback from mentorship programs, transitioning from solely paper planners for grant-related activities",
+        "domain": "daily_routines",
+        "created_at_session": 4
+      },
+      {
+        "id": "pref_041",
+        "fact": "Coordinates with her husband and daughter to split daily support tasks for her mother, and now checks in with her mother by phone every evening instead of managing all errands herself",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_042",
+        "fact": "No longer volunteers for her daughter’s school events while her mother is recovering — prioritizes family caregiving responsibilities over extracurricular commitments",
+        "domain": "social_relationships",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_043",
+        "fact": "Keeps her phone off silent throughout the day to remain reachable for urgent calls from her mother or healthcare providers, overriding her usual Do Not Disturb rules",
+        "domain": "daily_routines",
+        "created_at_session": 5
+      },
+      {
+        "id": "pref_045",
+        "fact": "Now handles contract reviews and negotiations in real-time during business hours as needed, especially for urgent joint project needs — can no longer rely solely on pre-scheduled evening batches",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_046",
+        "fact": "Now negotiates vendor terms using both email and scheduled video calls for clarity and quick alignment — maintains call summaries for records",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_047",
+        "fact": "Prepares a shared online project tracker and requires all collaborating vendors and designers to update it daily for status alignment during the holiday campaign",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_048",
+        "fact": "Sets aside extra time each week for researching and learning contract clauses specific to project-based collaborations, distinct from standard template contracts",
+        "domain": "work_habits",
+        "created_at_session": 6
+      },
+      {
+        "id": "pref_049",
+        "fact": "Preps a quick breakfast solo most mornings and leaves extra breakfast items for her daughter to heat up herself, as her husband is unavailable for morning routines during his project period",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_050",
+        "fact": "Checks her daughter’s homework and bedtime routine every night herself, since her husband is unavailable for evening parenting tasks during the project period",
+        "domain": "daily_routines",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_051",
+        "fact": "Now schedules her daughter's afterschool pickups and activities directly with other parents or carpools instead of relying on her husband for daily coverage",
+        "domain": "social_relationships",
+        "created_at_session": 7
+      },
+      {
+        "id": "pref_052",
+        "fact": "Now alternates meal delivery and preparation for her mother with her husband and daughter, coordinating who covers which days depending on schedule conflicts and school events",
+        "domain": "health_body",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_053",
+        "fact": "Reschedules personal errands and grocery shopping for both her household and her mother flexibly each week based on family and school event changes, rather than a fixed weekday slot",
+        "domain": "daily_routines",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_054",
+        "fact": "Prioritizes attending her daughter's rescheduled school events even when they disrupt previously fixed caregiving and errand routines",
+        "domain": "social_relationships",
+        "created_at_session": 8
+      },
+      {
+        "id": "pref_055",
+        "fact": "Now steps out for lunch at least three times per week — doctor's orders to support dietary changes and proper iron intake; avoids solely desk lunches.",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_056",
+        "fact": "Schedules bi-weekly blood test appointments and adjusts shop hours to ensure consistent monitoring, following her doctor's plan for anemia management.",
+        "domain": "health_body",
+        "created_at_session": 9
+      },
+      {
+        "id": "pref_057",
+        "fact": "Plans and logs every meal in a dedicated paper notebook, focusing specifically on iron-rich foods and supplement timing as advised by her doctor.",
+        "domain": "daily_routines",
+        "created_at_session": 9
+      }
+    ],
+    "superseded_preferences": [
+      {
+        "id": "pref_002",
+        "fact": "Only negotiates vendor terms via email, never phone or in-person calls, to keep written records",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_046",
+        "reason": "The joint marketing effort and complex custom orders require more nuanced, fast-paced negotiation with multiple parties; written records alone slow things down and risk misunderstandings."
+      },
+      {
+        "id": "pref_003",
+        "fact": "Relies exclusively on official template sites for contract language — never uses templates sent by vendors",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 1,
+        "replaced_by": "pref_030",
+        "reason": "The vendor has introduced stricter liability clauses and requires all partners to sign their specific contracts. She must now work directly from vendor-provided templates to understand and respond to their terms, rather than relying only on generic templates."
+      },
+      {
+        "id": "pref_005",
+        "fact": "Prefers to solve problems herself first, only asks her business friends for advice when she's truly stuck",
+        "domain": "work_habits",
+        "created_at_session": -1,
+        "superseded_at_session": 2,
+        "replaced_by": "pref_033",
+        "reason": "The intellectual property infringement claim and website suspension triggered a situation far outside her expertise, making her realize that tackling serious legal issues alone could have serious consequences for her business. She's now made it a priority to consult others with relevant experience before acting on these matters."
+      },
+      {
+        "id": "pref_006",
+        "fact": "Never skips her weekly yoga class, regardless of how busy the shop gets",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_027",
+        "reason": "The doctor's orders prohibit physical activities that could aggravate her back, including her regular yoga class, requiring a full pause or significant modification."
+      },
+      {
+        "id": "pref_007",
+        "fact": "Refuses to lift boxes heavier than 25 pounds; asks staff for help with anything heavier",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": "pref_026",
+        "reason": "After the severe back spasm and doctor's strict orders, she must refrain from all lifting, not just heavier items, to avoid reinjury during recovery."
+      },
+      {
+        "id": "pref_009",
+        "fact": "Only eats lunch at her desk in the shop, never leaves the store for food midday",
+        "domain": "health_body",
+        "created_at_session": -1,
+        "superseded_at_session": 9,
+        "replaced_by": "pref_055",
+        "reason": "Her diagnosis of iron deficiency anemia requires significant dietary changes that aren't possible with her old habit of eating lunch only at her desk, which often meant skipping meals or eating convenience foods. The doctor's orders to take real breaks and incorporate iron-rich meals force her to leave the shop midday, changing a longstanding routine."
+      },
+      {
+        "id": "pref_011",
+        "fact": "Calls her mother every Monday morning to plan the week’s errands; never delegates these to anyone else",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_041",
+        "reason": "Her mother's fractured wrist requires far more frequent help and daily check-ins, making it impossible for her to single-handedly manage all support and errands. She now involves her immediate family in caregiving and transitions to daily phone check-ins."
+      },
+      {
+        "id": "pref_013",
+        "fact": "Organizes monthly brunches with her business-owning friends, never attends large business networking events",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 4,
+        "replaced_by": "pref_038",
+        "reason": "The grant mandates her attendance at mentorship workshops and larger networking sessions with other women-owned businesses, which contradicts her previous aversion to large networking events. She now engages with formal business circles due to grant requirements."
+      },
+      {
+        "id": "pref_015",
+        "fact": "Always volunteers for at least one school event per semester, even if she has to reshuffle her work schedule",
+        "domain": "social_relationships",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": "pref_042",
+        "reason": "With her mother needing daily hands-on support, she cannot devote additional time for school volunteering this semester."
+      },
+      {
+        "id": "pref_017",
+        "fact": "Gardens in her backyard every Sunday morning, rain or shine",
+        "domain": "leisure_hobbies",
+        "created_at_session": -1,
+        "superseded_at_session": 0,
+        "replaced_by": null,
+        "reason": "Gardening typically requires bending, lifting, and prolonged standing — all banned by her doctor during her six-week recovery. There is no safe way for her to continue this preference at present."
+      },
+      {
+        "id": "pref_023",
+        "fact": "Preps breakfast for her family every morning before opening the store",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 7,
+        "replaced_by": "pref_049",
+        "reason": "With her husband working intensive hours on his new project and unavailable for family routines, she can no longer rely on his help in the morning and must adapt breakfast prep for herself and make it self-service for her daughter."
+      },
+      {
+        "id": "pref_024",
+        "fact": "Shops for groceries on Thursdays for both her household and her mother, never makes random trips",
+        "domain": "daily_routines",
+        "created_at_session": -1,
+        "superseded_at_session": 5,
+        "replaced_by": null,
+        "reason": "Her mother's increased need for daily support—including last-minute groceries and medications—means she can't adhere to a single weekly shopping trip for both households. Grocery shopping is now reactive to her mother's needs."
+      },
+      {
+        "id": "pref_027",
+        "fact": "Temporarily skips her weekly yoga class as per doctor's orders; focusing on prescribed gentle stretches at home instead",
+        "domain": "health_body",
+        "created_at_session": 0,
+        "superseded_at_session": 3,
+        "replaced_by": "pref_036",
+        "reason": "With the closure of her regular yoga studio, she can no longer participate in her weekly in-person class and must replace this with a self-directed home practice to maintain her stress management and flexibility routine."
+      },
+      {
+        "id": "pref_032",
+        "fact": "Blocks off two weekday evenings specifically for contract review and vendor negotiation, instead of batching all contract tasks for Sunday night",
+        "domain": "work_habits",
+        "created_at_session": 1,
+        "superseded_at_session": 6,
+        "replaced_by": "pref_045",
+        "reason": "The partnership with the interior design firm introduces time-sensitive, complex vendor contracts often requiring quick turnaround and coordination. She must respond in the moment rather than deferring all reviews and negotiations to set evenings."
+      },
+      {
+        "id": "pref_044",
+        "fact": "Prepares simple batch-cooked meals for her mother every Sunday, so she can quickly deliver lunch and dinner during the week without daily cooking",
+        "domain": "health_body",
+        "created_at_session": 5,
+        "superseded_at_session": 8,
+        "replaced_by": "pref_052",
+        "reason": "The rescheduled school concert overlapping her typical Thursday errand and delivery window highlights a conflict—she can't reliably deliver meals every week at the same times and must share this responsibility with family."
+      }
+    ]
+  },
+  "generation_timestamp": "2026-03-01T22:37:18.664244"
+}
